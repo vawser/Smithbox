@@ -1,0 +1,23 @@
+{
+  "Param": "FaceEditParamHairColor",
+  "Type": "FACE_EDIT_PARAM_COLOR_PRESET",
+  "Name": "FaceEditParamHairColor",
+  "Description": "Defines parameters related to the character face editor.",
+  "Fields": [
+    {
+      "Field": "edit_color_R",
+      "Name": "Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "edit_color_G",
+      "Name": "Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "edit_color_B",
+      "Name": "Color: B",
+      "Description": ""
+    }
+  ]
+}

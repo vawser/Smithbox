@@ -1,0 +1,68 @@
+{
+  "Param": "LotResultPlayAreaParam",
+  "Type": "LOT_RESULT_PLAYAREA_PARAM_ST",
+  "Name": "LotResultPlayAreaParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "Pattern ID",
+      "Description": ""
+    },
+    {
+      "Field": "playArea1",
+      "Name": "Night 1 Play Area ID",
+      "Description": ""
+    },
+    {
+      "Field": "playArea2",
+      "Name": "Night 2 Play Area ID",
+      "Description": ""
+    },
+    {
+      "Field": "bossId1",
+      "Name": "Night 1 Boss ID",
+      "Description": ""
+    },
+    {
+      "Field": "bossId2",
+      "Name": "Night 2 Boss ID",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossId1",
+      "Name": "Extra Night 1 Boss ID",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossId2",
+      "Name": "Extra Night 2 Boss ID",
+      "Description": ""
+    },
+    {
+      "Field": "bossModifier1",
+      "Name": "Night 1 Boss Modifier",
+      "Description": ""
+    },
+    {
+      "Field": "bossModifier2",
+      "Name": "Night 2 Boss Modifier",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossModifier1",
+      "Name": "Extra Night 1 Boss Modifier",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossModifier2",
+      "Name": "Extra Night 2 Boss Modifier",
+      "Description": ""
+    }
+  ]
+}

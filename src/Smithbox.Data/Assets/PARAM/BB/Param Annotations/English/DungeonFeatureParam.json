@@ -1,0 +1,68 @@
+{
+  "Param": "DungeonFeatureParam",
+  "Type": "DUNGEON_FEATURE_PARAM_ST",
+  "Name": "DungeonFeatureParam",
+  "Description": "Chalice dungeon parameters.",
+  "Fields": [
+    {
+      "Field": "featureNameId",
+      "Name": "Feature Name ID",
+      "Description": ""
+    },
+    {
+      "Field": "subFeatureGroupId",
+      "Name": "Sub-Feature Group ID",
+      "Description": ""
+    },
+    {
+      "Field": "eventflagId",
+      "Name": "Event Flag ID Segment",
+      "Description": "Only last 2 digits"
+    },
+    {
+      "Field": "dungeonNamePriority",
+      "Name": "Dungeon Name Priority",
+      "Description": ""
+    },
+    {
+      "Field": "releaseFlagIdOffset",
+      "Name": "Ban Event Flag ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "npcParamIdOffset",
+      "Name": "NPC Param ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotParamIdOffset",
+      "Name": "Itemlot ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "eneSpeffectId",
+      "Name": "Enemy SpEffect Offset",
+      "Description": ""
+    },
+    {
+      "Field": "gemDropCorrectParamId",
+      "Name": "Gem Drop Correction Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenParamIdOffset",
+      "Name": "Gem Generation ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "dungeonNameModifierId",
+      "Name": "Dungeon Name Modifier ID",
+      "Description": ""
+    },
+    {
+      "Field": "dungeonShortNameId",
+      "Name": "Dungeon Short Name ID",
+      "Description": ""
+    }
+  ]
+}

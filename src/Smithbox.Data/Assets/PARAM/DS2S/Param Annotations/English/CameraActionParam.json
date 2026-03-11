@@ -1,0 +1,58 @@
+{
+  "Param": "CameraActionParam",
+  "Type": "CAMERA_ACTION_PARAM",
+  "Name": "CameraActionParam",
+  "Description": "Defines parameters related to the action of the camera.",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "Camera Behavior Type",
+      "Description": "The behavior to use for this camera."
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "Camera Reference Point Type",
+      "Description": "The reference point to use for this camera."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "Horizontal Field of View",
+      "Description": "The field of view (in degrees)."
+    },
+    {
+      "Field": "lookAtOffsetX",
+      "Name": "Focus Offset: X-Axis",
+      "Description": "The look-at focus offset on the x-axis (in metres)."
+    },
+    {
+      "Field": "lookAtOffsetY",
+      "Name": "Focus Offset: Y-Axis",
+      "Description": "The look-at focus offset on the y-axis (in metres)."
+    },
+    {
+      "Field": "lookAtOffsetZ",
+      "Name": "Focus Offset: Z-Axis",
+      "Description": "The look-at focus offset on the z-axis (in metres)."
+    },
+    {
+      "Field": "positionOffsetX",
+      "Name": "Position Offset: X-Axis",
+      "Description": "The position offset on the x-axis (in metres)."
+    },
+    {
+      "Field": "positionOffsetY",
+      "Name": "Position Offset: Y-Axis",
+      "Description": "The position offset on the y-axis (in metres)."
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "Position Offset: Z-Axis",
+      "Description": "The position offset on the z-axis (in metres)."
+    }
+  ]
+}

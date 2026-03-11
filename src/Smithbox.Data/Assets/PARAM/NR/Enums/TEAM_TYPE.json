@@ -1,242 +1,434 @@
 {
-  "DisplayName": "Team Type",
-  "Name": "TEAM_TYPE",
-  "Description": "Character's team type, used to determine allies and enemies.",
+  "Key": "TEAM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TEAM_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "No Change",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Player",
-      "Description": "Player team"
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "White Ghost",
-      "Description": "Allied to player"
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Ghost"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Black Ghost",
-      "Description": "Hostile to Player"
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Ghost"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Grey Ghost",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grey Ghost"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Wandering Ghost",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Ghost"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Enemy",
-      "Description": "Standard enemy team"
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Boss",
-      "Description": "Player hostile, can damage its allies"
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Ally",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ally"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Hostile Ally",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hostile Ally"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Decoy",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Decoy"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Decoy-like",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Decoy-like"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Battle Ally",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Battle Ally"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Invader",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invader"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Neutral",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Neutral"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Charmed",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Charmed"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Invader",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invader"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Watchdogs of Farron",
-      "Description": "Legacy invader team"
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Watchdogs of Farron"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Aldrich Faithful",
-      "Description": "Legacy invader team"
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aldrich Faithful"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Invader - Giant Seed",
-      "Description": "Legacy multiplayer team"
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invader - Giant Seed"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Comatose Sleep",
-      "Description": "Allows player to be attacked by allies and enemies"
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Comatose Sleep"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Watchdogs of Farron - Giant Seed",
-      "Description": "Legacy multiplayer team"
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Watchdogs of Farron - Giant Seed"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Aldrich Faithful - Giant Seed",
-      "Description": "Legacy multiplayer team"
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aldrich Faithful - Giant Seed"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Enemy",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Enemy 2",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy 2"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Strong Enemy",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong Enemy"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Friendly NPC",
-      "Description": "Typical NPC team"
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Friendly NPC"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Hostile NPC",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hostile NPC"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Co-op NPC",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Co-op NPC"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Indiscriminate",
-      "Description": "Hostile to everything"
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Indiscriminate"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Object",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Co-op Mad Phantom",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Co-op Mad Phantom"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Invader Mad Phantom",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invader Mad Phantom"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Arch Enemy Team",
-      "Description": "Player hostile, can damage regular enemies"
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arch Enemy Team"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Unknown Enemy",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Unknown Enemy",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy"
+        }
+      ]
     },
     {
-      "ID": "47",
-      "Name": "Spirit Summon",
-      "Description": ""
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit Summon"
+        }
+      ]
     },
     {
-      "ID": "48",
-      "Name": "Unknown Enemy Team",
-      "Description": ""
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy Team"
+        }
+      ]
     },
     {
-      "ID": "49",
-      "Name": "Unknown Boss",
-      "Description": ""
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Boss"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Unknown Enemy Team",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy Team"
+        }
+      ]
     },
     {
-      "ID": "51",
-      "Name": "Enemy 2 Boss",
-      "Description": ""
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy 2 Boss"
+        }
+      ]
     },
     {
-      "ID": "52",
-      "Name": "Unknown Enemy",
-      "Description": ""
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy"
+        }
+      ]
     },
     {
-      "ID": "53",
-      "Name": "Unknown Enemy 2 Team",
-      "Description": ""
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy 2 Team"
+        }
+      ]
     },
     {
-      "ID": "56",
-      "Name": "Unknown Enemy",
-      "Description": ""
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Enemy"
+        }
+      ]
     },
     {
-      "ID": "77",
-      "Name": "Near Death",
-      "Description": ""
+      "Key": "77",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Near Death"
+        }
+      ]
     },
     {
-      "ID": "80",
-      "Name": "Balancer Raid",
-      "Description": ""
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Balancer Raid"
+        }
+      ]
     }
   ]
 }

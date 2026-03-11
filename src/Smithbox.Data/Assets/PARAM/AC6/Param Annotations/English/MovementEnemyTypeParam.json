@@ -1,0 +1,813 @@
+{
+  "Param": "MovementEnemyTypeParam",
+  "Type": "MOVEMENT_ENEMY_TYPE_PARAM_ST",
+  "Name": "MovementEnemyTypeParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashBoostStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostHorizontalStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landingHorizontalBrakeUseSlowKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landingHorizontalBrakeUseFastKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landingHorizontalSlowBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landingHorizontalFastBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashBoostMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashBoostBeginAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashBoostBeginToMaxAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostHorizontalMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostHorizontalBeginAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostHorizontalBeginToMaxAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostBeginAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostBeginToMaxAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "movementToAnimMoveBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardBrakeRateAtBoost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardBrakeRateAtQuickBoost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardBrakeRateAtNormalBrake",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minStiffSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minStiffTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxStiffSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxStiffTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostBeginAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superJumpUpperBoostBeginToMaxAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAddSpeedToBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurn_MaxTurnAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bLandBrakeEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurn_MaxTurnTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeFromBoostMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeFromQuickBoostMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashFallAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cunterBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cunterBoostBrakeMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostBrakeMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "uTurnBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slidingMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slidingBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyMoveMaxSpeedKMPH_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyMoveAccelMPSS_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyMoveMaxSpeedKMPH_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyMoveAccelMPSS_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyUpBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDownBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingLandBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingFlyBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_BeginBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_PeakBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_BeginToPeakTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMoveMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMoveAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_TimerResetDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostMaxDownSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landDeadBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDeadBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BladeHomingAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedFromVehicleKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalAccelFromVehicleMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperMaxSpeedFromVehicleKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperAccelFromVehicleMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAddUpMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAddUpAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyBoostMoveMaxSpeedKMPH_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyBoostMoveAccelMPSS_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyBoostMoveMaxSpeedKMPH_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyEnemyBoostMoveAccelMPSS_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "groundEnemyMoveMaxSpeedKMPH_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "groundEnemyMoveAccelMPSS_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveAccel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnMaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnMaxAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_ToMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_MinMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_MaxMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2HorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2HorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2DownMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2DownAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpMaxAlt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_BeginBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_PeakBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_BeginToPeakTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_TimerResetDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpSpecifyAlt_PrevSpeedRateH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpSpecifyAlt_GoalAlt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpSpecifyAlt_GravityScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpSpecifyAlt_HorizontalMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

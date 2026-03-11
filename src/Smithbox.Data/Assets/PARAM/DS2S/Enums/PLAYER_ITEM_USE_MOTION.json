@@ -1,112 +1,200 @@
 {
-  "DisplayName": "PLAYER_ITEM_USE_MOTION",
-  "Name": "PLAYER_ITEM_USE_MOTION",
-  "Description": "",
+  "Key": "PLAYER_ITEM_USE_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_ITEM_USE_MOTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "10",
-      "Name": "Take out (one hand)",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Take out (one hand)"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Take out (both hands)",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Take out (both hands)"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Sprinkle powder on body",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sprinkle powder on body"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Eating: Ladder allowed",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eating: Ladder allowed"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Drinking: Ladder allowed",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drinking: Ladder allowed"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Crush the soul: Ladder possible",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crush the soul: Ladder possible"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Paint on weapon",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Paint on weapon"
+        }
+      ]
     },
     {
-      "ID": "80",
-      "Name": "Prayer",
-      "Description": ""
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer"
+        }
+      ]
     },
     {
-      "ID": "90",
-      "Name": "Absorb a big soul",
-      "Description": ""
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Absorb a big soul"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "Throw (light)",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (light)"
+        }
+      ]
     },
     {
-      "ID": "110",
-      "Name": "Throw (weight)",
-      "Description": ""
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (weight)"
+        }
+      ]
     },
     {
-      "ID": "150",
-      "Name": "Draw a sign",
-      "Description": ""
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Draw a sign"
+        }
+      ]
     },
     {
-      "ID": "170",
-      "Name": "Failure: ladder possible",
-      "Description": ""
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Failure: ladder possible"
+        }
+      ]
     },
     {
-      "ID": "180",
-      "Name": "Put",
-      "Description": ""
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put"
+        }
+      ]
     },
     {
-      "ID": "190",
-      "Name": "Press against chest: Ladder possible",
-      "Description": ""
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Press against chest: Ladder possible"
+        }
+      ]
     },
     {
-      "ID": "200",
-      "Name": "Drink est",
-      "Description": ""
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink est"
+        }
+      ]
     },
     {
-      "ID": "210",
-      "Name": "Prayer (loop)",
-      "Description": ""
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer (loop)"
+        }
+      ]
     },
     {
-      "ID": "220",
-      "Name": "Light a torch",
-      "Description": ""
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light a torch"
+        }
+      ]
     },
     {
-      "ID": "230",
-      "Name": "Dragon transformation",
-      "Description": ""
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon transformation"
+        }
+      ]
     },
     {
-      "ID": "240",
-      "Name": "Dragon breath",
-      "Description": ""
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon breath"
+        }
+      ]
     },
     {
-      "ID": "250",
-      "Name": "Dragon roar",
-      "Description": ""
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon roar"
+        }
+      ]
     }
   ]
 }

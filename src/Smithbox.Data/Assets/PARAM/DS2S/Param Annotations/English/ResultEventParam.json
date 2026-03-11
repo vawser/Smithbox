@@ -1,0 +1,53 @@
+{
+  "Param": "ResultEventParam",
+  "Type": "RESULT_EVENT_PARAM",
+  "Name": "ResultEventParam",
+  "Description": "Defines parameters related to the phantom victory in multiplayer sessions.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemlot_id_1",
+      "Name": "[1] Itemlot Id",
+      "Description": ""
+    },
+    {
+      "Field": "itemlot_id_2",
+      "Name": "[2] Itemlot Id",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

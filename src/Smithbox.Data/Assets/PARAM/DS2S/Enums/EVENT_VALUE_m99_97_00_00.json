@@ -1,32 +1,56 @@
 {
-  "DisplayName": "EVENT_VALUE_m99_97_00_00",
-  "Name": "EVENT_VALUE_m99_97_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m99_97_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m99_97_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "12",
-      "Name": "Event ① Progress variable",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event ① Progress variable"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Hoge",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hoge"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Test2",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test2"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Aadd",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aadd"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Test",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
     }
   ]
 }

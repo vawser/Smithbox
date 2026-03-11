@@ -1,0 +1,38 @@
+{
+  "Param": "CameraFadeParam",
+  "Type": "CAMERA_FADE_PARAM_ST",
+  "Name": "CameraFadeParam",
+  "Description": "Determines parameters for camera fading.",
+  "Fields": [
+    {
+      "Field": "NearMinDist",
+      "Name": "Near: Minimum Distance",
+      "Description": "The near minimum fade distance, e.g. the distance at which \u03B1 = 0. In metres."
+    },
+    {
+      "Field": "NearMaxDist",
+      "Name": "Near: Maximum Distance",
+      "Description": "The near maximum fade distance, e.g. where \u03B1 = MiddleAlpha. In metres."
+    },
+    {
+      "Field": "FarMinDist",
+      "Name": "Far: Minimum Distance",
+      "Description": "The far minimum fade distance, e.g. where \u03B1 = MiddleAlpha. In metres."
+    },
+    {
+      "Field": "FarMaxDist",
+      "Name": "Far: Maximum Distance",
+      "Description": "The far maximum fade distance, e.g. the distance at which \u03B1 = 1. In metres."
+    },
+    {
+      "Field": "MiddleAlpha",
+      "Name": "Intermediate Alpha Value",
+      "Description": "The intermediate alpha value between near and far."
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

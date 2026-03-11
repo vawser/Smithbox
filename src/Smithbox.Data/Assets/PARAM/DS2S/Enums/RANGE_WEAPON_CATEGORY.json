@@ -1,47 +1,83 @@
 {
-  "DisplayName": "RANGE_WEAPON_CATEGORY",
-  "Name": "RANGE_WEAPON_CATEGORY",
-  "Description": "",
+  "Key": "RANGE_WEAPON_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RANGE_WEAPON_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "弓",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "弓"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Large bow",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large bow"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Crossbow",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Item shot bow",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item shot bow"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Javelin",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Javelin"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Binoculars",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Binoculars"
+        }
+      ]
     }
   ]
 }

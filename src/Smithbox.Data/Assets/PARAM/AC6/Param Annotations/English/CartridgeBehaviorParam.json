@@ -1,0 +1,113 @@
+{
+  "Param": "CartridgeBehaviorParam",
+  "Type": "CARTRIDGE_BEHAVIOR_PARAM_ST",
+  "Name": "CartridgeBehaviorParam",
+  "Description": "Determines the ejection behavior of ejected bullet cartridges.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "initVelocity",
+      "Name": "Initial Velocity",
+      "Description": "Initial velocity of the cartridge. In metres."
+    },
+    {
+      "Field": "initVelocity_RandomRange",
+      "Name": "Initial Velocity: Random Range",
+      "Description": "Random velocity range of the cartridge. In metres."
+    },
+    {
+      "Field": "chrVelocityTakeoverRate",
+      "Name": "Speed Inheritance: Character",
+      "Description": "Character speed transfer rate."
+    },
+    {
+      "Field": "chrVelocityTakeoverRate_RandomRange",
+      "Name": "Speed Inheritance: Character - Random Range",
+      "Description": "Character speed transfer rate. Random range of the inherited speed."
+    },
+    {
+      "Field": "pitch",
+      "Name": "Ejection Angle",
+      "Description": "Angle from the horizontal angle reference of the dummy polygon (\u002B: \u2191 direction, -: \u2193 direction). In degrees."
+    },
+    {
+      "Field": "pitch_RandomRange",
+      "Name": "Ejection Angle: Random Range",
+      "Description": "The random range of degrees for the ejection angle."
+    },
+    {
+      "Field": "gravity",
+      "Name": "Gravity: Acceleration",
+      "Description": "Acceleration for the cartridge gravity. In metres per second ^ 2."
+    },
+    {
+      "Field": "gravity_RandomRange",
+      "Name": "Gravity: Acceleration - Random Range",
+      "Description": "Acceleration for the cartridge gravity. Random range of the acceleration. In metres per second ^ 2."
+    },
+    {
+      "Field": "angVelocityX",
+      "Name": "Rotational Velocity (X-Axis)",
+      "Description": "Rotational velocity on the X-axis. In degrees per second"
+    },
+    {
+      "Field": "angVelocityX_RandomRange",
+      "Name": "Rotational Velocity (X-Axis) - Random Range",
+      "Description": "Rotational velocity on the X-axis. Random range of the rotational velocity. In degrees per second."
+    },
+    {
+      "Field": "angVelocityY",
+      "Name": "Rotational Velocity (Y-Axis)",
+      "Description": "Rotational velocity on the Y-axis. In degrees per second"
+    },
+    {
+      "Field": "angVelocityY_RandomRange",
+      "Name": "Rotational Velocity (Y-Axis) - Random Range",
+      "Description": "Rotational velocity on the Y-axis. Random range of the rotational velocity. In degrees per second."
+    },
+    {
+      "Field": "angVelocityZ",
+      "Name": "Rotational Velocity (Z-Axis)",
+      "Description": "Rotational velocity on the Z-axis. In degrees per second"
+    },
+    {
+      "Field": "angVelocityZ_RandomRange",
+      "Name": "Rotational Velocity (Z-Axis) - Random Range",
+      "Description": "Rotational velocity on the Z-axis. Random range of the rotational velocity. In degrees per second."
+    },
+    {
+      "Field": "yaw",
+      "Name": "Yaw Angle",
+      "Description": "Angle from the horizontal angle reference of the dummy poly (\u002B: right direction of the dummy poly, -: left direction of the dummy poly)."
+    },
+    {
+      "Field": "yaw_RandomRange",
+      "Name": "Yaw Angle - Random Range",
+      "Description": "Angle from the horizontal angle reference of the dummy poly (\u002B: right direction of the dummy poly, -: left direction of the dummy poly)."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

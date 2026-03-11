@@ -1,0 +1,103 @@
+{
+  "Param": "FeTextEffectParam",
+  "Type": "FE_TEXT_EFFECT_PARAM_ST",
+  "Name": "FeTextEffectParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "resId",
+      "Name": "Resource ID",
+      "Description": "Instance name of the menu resource. ID of TextEffect_X"
+    },
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Text ID to display (-1 No text)."
+    },
+    {
+      "Field": "seId",
+      "Name": "SE ID",
+      "Description": "Voice ID to play (-1 No SE)"
+    },
+    {
+      "Field": "canMixMapName",
+      "Name": "Display Simultaneously with Map Name",
+      "Description": "Whether to display at the same time as the map name"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

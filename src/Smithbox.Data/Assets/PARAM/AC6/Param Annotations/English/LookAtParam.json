@@ -1,0 +1,188 @@
+{
+  "Param": "LookAtParam",
+  "Type": "LOOK_AT_PARAM_ST",
+  "Name": "LookAtParam",
+  "Description": "Determines the parameters relating to look-at cameras.",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "Control Bone Name",
+      "Description": "Bone name to apply to."
+    },
+    {
+      "Field": "bRotEnableX",
+      "Name": "Enable Rotation on X-Axis",
+      "Description": "If ON, rotation of the X-axis is enabled for the look-at camera."
+    },
+    {
+      "Field": "bRotEnableY",
+      "Name": "Enable Rotation on Y-Axis",
+      "Description": "If ON, rotation of the Y-axis is enabled for the look-at camera."
+    },
+    {
+      "Field": "bRotInverse",
+      "Name": "Flip Rotation",
+      "Description": "If ON, the rotation start position is flipped by 180 degrees."
+    },
+    {
+      "Field": "bDirPosShootOffsetEnable",
+      "Name": "Adjust Look-At Direction with Muzzle Position",
+      "Description": "If ON, the look-at direction is corrected by the muzzle position."
+    },
+    {
+      "Field": "upLimitAngleDeg",
+      "Name": "Upwards Limit Angle",
+      "Description": "The upwards limit angle for the look-at camera. In degrees."
+    },
+    {
+      "Field": "downLimitAngleDeg",
+      "Name": "Downwards Limit Angle",
+      "Description": "The downwards limit angle for the look-at camera. In degrees."
+    },
+    {
+      "Field": "maxRotSpeedDegPerSecX",
+      "Name": "Maximum Rotation Speed per Second (X-Axis)",
+      "Description": "The maximum rotation velocity to apply per second on the X-axis. In degrees."
+    },
+    {
+      "Field": "turnAccelDPSS_X",
+      "Name": "Angular Acceleration (X-Axis)",
+      "Description": "The angular acceleration on the X-axis to apply. In degrees per second ^ 2."
+    },
+    {
+      "Field": "offsetBaseDmyPolyId",
+      "Name": "Offset Reference Dummy Polgon ID",
+      "Description": "The dummy polygon ID to use when correcting the Look-At direction. Applies for the discrepency between the rotation axis and the muzzle position. (-1 is used for the weapon shoot dummy polygon)."
+    },
+    {
+      "Field": "leftLimitAngleDeg",
+      "Name": "Left Limit Angle",
+      "Description": "The leftward limit angle for the look-at camera. In degrees."
+    },
+    {
+      "Field": "rightLimitAngleDeg",
+      "Name": "Right Limit Angle",
+      "Description": "The rightward limit angle for the look-at camera. In degrees."
+    },
+    {
+      "Field": "maxRotSpeedDegPerSecY",
+      "Name": "Maximum Rotation Speed per Second (Y-Axis)",
+      "Description": "The maximum rotation velocity to apply per second on the Y-axis. In degrees."
+    },
+    {
+      "Field": "turnAccelDPSS_Y",
+      "Name": "Angular Acceleration (Y-Axis)",
+      "Description": "The angular acceleration on the Y-axis to apply. In degrees per second ^ 2."
+    },
+    {
+      "Field": "lookAheadSecond_Y",
+      "Name": "LookAt Height Peek Duration",
+      "Description": "The minimum duration to look ahead for the height target view position. In seconds."
+    },
+    {
+      "Field": "basePosOffsetY",
+      "Name": "Reference Position Height Offset",
+      "Description": "The reference position to use when calculating the direction for a location shifted by this value on the Y-axis from the rotation axis."
+    },
+    {
+      "Field": "predictionShootObserveTime",
+      "Name": "Target Prediction: Speed Observation Time",
+      "Description": "The duration for which a target is observed for, over the specified velocity, for target prediction."
+    },
+    {
+      "Field": "predictionBulletId",
+      "Name": "Target Prediction: Bullet ID",
+      "Description": "The bullet ID used for target predicition."
+    },
+    {
+      "Field": "predictionMaxTime",
+      "Name": "Target Prediction: Maximum Duration",
+      "Description": "The maximum duration later that a target position can be predicted for."
+    },
+    {
+      "Field": "predictionWepSlotIndex",
+      "Name": "Target Prediction: Weapon Slot Number",
+      "Description": "The weapone equipment slot number to use for the target predicition (attack action)."
+    },
+    {
+      "Field": "bFollowOrbitMode",
+      "Name": "Orbit Root Bone",
+      "Description": "If ON, the control mode for orbiting comes from the root bone of the character."
+    },
+    {
+      "Field": "pad01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTime",
+      "Name": "Fade-Out Duration",
+      "Description": "The fade out duration if Look-At is disabled."
+    },
+    {
+      "Field": "deflectType",
+      "Name": "Deflect Type",
+      "Description": "The deflect type to use."
+    },
+    {
+      "Field": "bLookAtPosFollowTargetMode",
+      "Name": "Follow Look-At Position",
+      "Description": "If ON, the Look-At target position is followed after velocity and acceleration."
+    },
+    {
+      "Field": "bWorldFixRotX",
+      "Name": "Fix the X-Axis Rotation relative to World",
+      "Description": "If ON, the X-axis rotation for Look-At is fixed relative to the World."
+    },
+    {
+      "Field": "bWorldFixRotY",
+      "Name": "Fix the Y-Axis Rotation relative to World",
+      "Description": "If ON, the Y-axis rotation for Look-At is fixed relative to the World."
+    },
+    {
+      "Field": "worldFixRotOffsetAngleDegX",
+      "Name": "World Fix: Fixed Rotation Offset (X-Axis)",
+      "Description": "The fixed offset angle to use for the world fix on the X-axis. In degrees."
+    },
+    {
+      "Field": "worldFixRotOffsetAngleDegY",
+      "Name": "World Fix: Fixed Rotation Offset (Y-Axis)",
+      "Description": "The fixed offset angle to use for the world fix on the Y-axis. In degrees."
+    },
+    {
+      "Field": "lookAtPosFollowTarget_BaseDmyId",
+      "Name": "Track Target Position: Base Dummy Polygon ID",
+      "Description": "The reference dummy polygon ID to use for the track target position mode."
+    },
+    {
+      "Field": "lookAtPosFollowTarget_AcellMPSS",
+      "Name": "Track Target Position: Acceleration",
+      "Description": "The acceleration towards the target in track target position mode. In metres per second ^ 2."
+    },
+    {
+      "Field": "lookAtPosFollowTarget_BrakeMPSS",
+      "Name": "Track Target Position: Deceleration",
+      "Description": "The deceleration in directions other than the target in track target position mode. In metres per second ^ 2."
+    },
+    {
+      "Field": "lookAtPosFollowTarget_MaxSpeedKMH",
+      "Name": "Track Target Position: Maximum Velocity",
+      "Description": "The maximum velocity in track target position mode. In kilometres per hour."
+    },
+    {
+      "Field": "rotRate_X",
+      "Name": "Rotation %: X-Axis",
+      "Description": "The rotation rate to apply to X-axis rotation. 1 is the target direction, cumulative total from the parent joint."
+    },
+    {
+      "Field": "rotRate_Y",
+      "Name": "Rotation %: Y-Axis",
+      "Description": "The rotation rate to apply to Y-axis rotation. 1 is the target direction, cumulative total from the parent joint."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

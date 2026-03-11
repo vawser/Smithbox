@@ -1,12 +1,20 @@
 {
-  "DisplayName": "ONLINE_EVENT_PARAM_ID",
-  "Name": "ONLINE_EVENT_PARAM_ID",
-  "Description": "",
+  "Key": "ONLINE_EVENT_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ONLINE_EVENT_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Management event",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Management event"
+        }
+      ]
     }
   ]
 }

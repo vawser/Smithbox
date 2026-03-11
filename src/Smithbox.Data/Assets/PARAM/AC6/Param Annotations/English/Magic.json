@@ -1,0 +1,313 @@
+{
+  "Param": "Magic",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "Magic",
+  "Description": "Determines the configuraiton of magic. Obsolete.",
+  "Fields": [
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Dialog Message ID",
+      "Description": "The text ID of to use for the \u0027Yes / No\u0027 dialog issued when this spell is used."
+    },
+    {
+      "Field": "limitCancelSpEffectId",
+      "Name": "Ignore Usage Restriction SpEffect ID",
+      "Description": "If the specified SpEffect is active on the player, then usage restrictions for this spell are ignored."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The numeric ID used for ordering each spell in menus."
+    },
+    {
+      "Field": "refId",
+      "Name": "Call ID",
+      "Description": "The call ID to used to specific the Attack, Bullet or SpEffect this spell uses when triggered."
+    },
+    {
+      "Field": "mp",
+      "Name": "FP Consumption",
+      "Description": "The FP consumption of this spell when triggered."
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina Consumption",
+      "Description": "The stamina consumption of this spell when triggered."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The numeric ID used for specifying which icon is used to display this spell in menus."
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "The behavior parameter to use when this spell is triggered."
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "Item Requirement for Purchase",
+      "Description": "The item (or items) that the spell costs in a shop that must be present before it can be purchased."
+    },
+    {
+      "Field": "replaceMagicId",
+      "Name": "State Info Switch: Magic ID",
+      "Description": "The new magic row ID to use when the specified state info is invoked."
+    },
+    {
+      "Field": "maxQuantity",
+      "Name": "Usage Count",
+      "Description": "The number of uses this spell allows when equipped before requiring a bonfire reset."
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "Humanity Consumption",
+      "Description": "The amount of humanity this spell consumes when triggered."
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "Maximum Dexterity",
+      "Description": "The maximum value of dexterity over start value."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "The offset to apply to the SFX ID invoked in the TAE event."
+    },
+    {
+      "Field": "slotLength",
+      "Name": "Slot Usage",
+      "Description": "The number of spell equipment slots this spell occupies."
+    },
+    {
+      "Field": "requirementIntellect",
+      "Name": "Requirement: INT",
+      "Description": "The minimum amount of intelligence (INT) this spell requires for a valid cast."
+    },
+    {
+      "Field": "requirementFaith",
+      "Name": "Requirement: FTH",
+      "Description": "The minimum amount of faith (FTH) this spell requires for a valid cast."
+    },
+    {
+      "Field": "analogDexiterityMin",
+      "Name": "Casting Speed Range: Start",
+      "Description": "The minimum value of dexterity (DEX) to start scaling the cast animation with (via the TimeAct event)."
+    },
+    {
+      "Field": "analogDexiterityMax",
+      "Name": "Casting Speed Range: End",
+      "Description": "The maximum value of dexterity (DEX) to stop scaling the cast animation with (via the TimeAct event)."
+    },
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "Magic School Type",
+      "Description": "The magic school this spell belongs to."
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Call Category",
+      "Description": "The parameter type to use for the call ID."
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "The SpEffect category this spell belongs to"
+    },
+    {
+      "Field": "refType",
+      "Name": "Motion Category",
+      "Description": "The TimeAct offset used in the c0000 TAE to find the casting animations."
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "Menu Type on Usage",
+      "Description": "The type of menu to display when the spell is used."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hasSpEffectType",
+      "Name": "State Info Switch: Value",
+      "Description": "The state info value that triggers the state info switch for this spell, changing the magic row ID it uses."
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "State Info Switch: Replacement Category",
+      "Description": "Additional conditions when switching the spell due to a state info switch occuring."
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "Usage Limit: SpEffect Category",
+      "Description": "The usage categories that this spell will be blocked by if SpEffect with the same category are present."
+    },
+    {
+      "Field": "vowType0",
+      "Name": "Vow Type: 0",
+      "Description": "If ON, this spell is associated with the covenant in slot 0."
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Vow Type: 1",
+      "Description": "If ON, this spell is associated with the covenant in slot 1."
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Vow Type: 2",
+      "Description": "If ON, this spell is associated with the covenant in slot 2."
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Vow Type: 3",
+      "Description": "If ON, this spell is associated with the covenant in slot 3."
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Vow Type: 4",
+      "Description": "If ON, this spell is associated with the covenant in slot 4."
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Vow Type: 5",
+      "Description": "If ON, this spell is associated with the covenant in slot 5."
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Vow Type: 6",
+      "Description": "If ON, this spell is associated with the covenant in slot 6."
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Vow Type: 7",
+      "Description": "If ON, this spell is associated with the covenant in slot 7."
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "Usable in Multiplayer",
+      "Description": "If ON, then the spell can be used in multiplayer sessions."
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "Usable in Multiplayer Only",
+      "Description": "If ON, then the spell can be used in multiplayer sessions, but not in offline sessions."
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "Is Weapon Enchantment",
+      "Description": "If ON, this spell is considered a weapon enhancement spell."
+    },
+    {
+      "Field": "isShieldEnchant",
+      "Name": "Is Shield Enchantment",
+      "Description": "If ON, this spell is considered a shield enhancement spell."
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Enable in Multiplayer: Host",
+      "Description": "If ON, this spell can be used in a sessions where the player is the host."
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Enable in Multiplayer: Gray Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a gray phantom."
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Enable in Multiplayer: White Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a white phantom."
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Enable in Multiplayer: Black Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a black phantom."
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "Disable when Offline",
+      "Description": "If ON, this spell is disabled if the player is not in a multiplayer session."
+    },
+    {
+      "Field": "castResonanceMagic",
+      "Name": "Trigger Resonance",
+      "Description": "If ON, this spell will broadcast resonance across multiplayer sessions (i.e. white rings) that empower the spell."
+    },
+    {
+      "Field": "isValidTough_ProtSADmg",
+      "Name": "Is Toughness Calculated",
+      "Description": "Whether the toughness calculation is performed even if the armor poise is the initial value."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "Vow Type: 8",
+      "Description": "If ON, this spell is associated with the covenant in slot 8."
+    },
+    {
+      "Field": "vowType9",
+      "Name": "Vow Type: 9",
+      "Description": "If ON, this spell is associated with the covenant in slot 9."
+    },
+    {
+      "Field": "vowType10",
+      "Name": "Vow Type: 10",
+      "Description": "If ON, this spell is associated with the covenant in slot 10."
+    },
+    {
+      "Field": "vowType11",
+      "Name": "Vow Type: 11",
+      "Description": "If ON, this spell is associated with the covenant in slot 11."
+    },
+    {
+      "Field": "vowType12",
+      "Name": "Vow Type: 12",
+      "Description": "If ON, this spell is associated with the covenant in slot 12."
+    },
+    {
+      "Field": "vowType13",
+      "Name": "Vow Type: 13",
+      "Description": "If ON, this spell is associated with the covenant in slot 13."
+    },
+    {
+      "Field": "vowType14",
+      "Name": "Vow Type: 14",
+      "Description": "If ON, this spell is associated with the covenant in slot 14."
+    },
+    {
+      "Field": "vowType15",
+      "Name": "Vow Type: 15",
+      "Description": "If ON, this spell is associated with the covenant in slot 15."
+    },
+    {
+      "Field": "castSfxId",
+      "Name": "Cast: Particle ID",
+      "Description": "The SFX ID to use during the cast animation of this spell."
+    },
+    {
+      "Field": "fireSfxId",
+      "Name": "Shoot: Particle ID",
+      "Description": "The SFX ID to use during the shoot animation of this spell."
+    },
+    {
+      "Field": "effectSfxId",
+      "Name": "Effect: Particle ID",
+      "Description": "The SFX ID to use during the effect animation of this spell."
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "Poise Correction",
+      "Description": "The magnification rate to apply to the base value of poise."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

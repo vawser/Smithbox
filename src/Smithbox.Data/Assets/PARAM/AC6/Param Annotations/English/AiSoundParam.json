@@ -1,0 +1,83 @@
+{
+  "Param": "AiSoundParam",
+  "Type": "AI_SOUND_PARAM_ST",
+  "Name": "AiSoundParam",
+  "Description": "Determines the AI response to a sound. Typically triggered along side the actual sound event.",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "AI sound radius"
+    },
+    {
+      "Field": "lifeFrame",
+      "Name": "Duration",
+      "Description": "Time for AI sound to remain"
+    },
+    {
+      "Field": "bSpEffectEnable",
+      "Name": "Is Affected by Sound Radius Magnification",
+      "Description": "Whether it is affected by the special effect Sound Radius Magnification"
+    },
+    {
+      "Field": "type",
+      "Name": "Rate Type",
+      "Description": "AI sound type"
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "Target: Hostile",
+      "Description": "Target:  Hostile"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "Target: Friendly",
+      "Description": "Target:  Allies"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "Target: Self",
+      "Description": "Target: myself"
+    },
+    {
+      "Field": "doSetSearchTarget",
+      "Name": "Set Search Target",
+      "Description": "If ON, set the search target when sound is heard."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rank",
+      "Name": "Rank",
+      "Description": "Character behavior (former: sound type)"
+    },
+    {
+      "Field": "forgetTime",
+      "Name": "Forget Time",
+      "Description": "Time to forget the sound target (overwrite) [sec]"
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "AI sound priority"
+    },
+    {
+      "Field": "soundBehaviorId",
+      "Name": "Sound Behavior ID",
+      "Description": "Behavior ID"
+    },
+    {
+      "Field": "searchPoint",
+      "Name": "Awareness Increase",
+      "Description": "Increased search degree for characters within the audible range of AI sounds"
+    },
+    {
+      "Field": "combatPoint",
+      "Name": "Engagement Level Increase",
+      "Description": "Increased engagement of characters within the audible range of AI sounds"
+    }
+  ]
+}

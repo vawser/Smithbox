@@ -1,12 +1,20 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_33_00_00",
-  "Name": "EVENT_VALUE_m10_33_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_33_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_33_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "60",
-      "Name": "Pledge: Rank comparison: Mouse King",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank comparison: Mouse King"
+        }
+      ]
     }
   ]
 }

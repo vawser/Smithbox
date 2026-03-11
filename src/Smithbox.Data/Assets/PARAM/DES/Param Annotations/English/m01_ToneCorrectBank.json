@@ -1,0 +1,48 @@
+{
+  "Param": "m01_ToneCorrectBank",
+  "Type": "TONE_CORRECT_BANK",
+  "Name": "m01_ToneCorrectBank",
+  "Description": "Determines the parameters for tone map corrections.",
+  "Fields": [
+    {
+      "Field": "brightnessR",
+      "Name": "Brightness %: R",
+      "Description": "Multiplier to red component of the RGB color that corrects the brightness."
+    },
+    {
+      "Field": "brightnessG",
+      "Name": "Brightness %: G",
+      "Description": "Multiplier to green component of the RGB color that corrects the brightness."
+    },
+    {
+      "Field": "brightnessB",
+      "Name": "Brightness %: B",
+      "Description": "Multiplier to blue component of the RGB color that corrects the brightness."
+    },
+    {
+      "Field": "contrastR",
+      "Name": "Contrast %: R",
+      "Description": "Multiplier to red component of the RGB color that corrects the contrast."
+    },
+    {
+      "Field": "contrastG",
+      "Name": "Contrast %: G",
+      "Description": "Multiplier to green component of the RGB color that corrects the contrast."
+    },
+    {
+      "Field": "contrastB",
+      "Name": "Contrast %: B",
+      "Description": "Multiplier to blue component of the RGB color that corrects the contrast."
+    },
+    {
+      "Field": "saturation",
+      "Name": "Saturation %",
+      "Description": "Multiplier to the value that corrects the saturation"
+    },
+    {
+      "Field": "hue",
+      "Name": "Hue %",
+      "Description": "Multiplier to the value that corrects the hue"
+    }
+  ]
+}

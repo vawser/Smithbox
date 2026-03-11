@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,27 @@ public class FieldLayout
 
 public class FieldLayoutEntry
 {
-    public string Title { get; set; }
+    public string Key { get; set; }
+    public List<FieldLayoutNameEntry> Names { get; set; }
     public List<string> Fields { get; set; }
+
+    public string GetName()
+    {
+        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+
+        if (Names.Any(e => e.Language == curLang))
+        {
+            var name = Names.FirstOrDefault(e => e.Language == curLang);
+
+            return name.Name;
+        }
+
+        return "";
+    }
+}
+
+public class FieldLayoutNameEntry
+{
+    public string Language { get; set; }
+    public string Name { get; set; }
 }

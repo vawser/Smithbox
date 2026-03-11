@@ -1,37 +1,65 @@
 {
-  "DisplayName": "SHIELD_TYPE",
-  "Name": "SHIELD_TYPE",
-  "Description": "",
+  "Key": "SHIELD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHIELD_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Small shield",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Small shield (spell)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield (spell)"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium shield",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Medium shield (spell)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield (spell)"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Large shield",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Great shield (spell)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great shield (spell)"
+        }
+      ]
     }
   ]
 }

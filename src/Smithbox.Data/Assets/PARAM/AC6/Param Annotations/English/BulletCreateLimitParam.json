@@ -1,0 +1,18 @@
+{
+  "Param": "BulletCreateLimitParam",
+  "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Name": "BulletCreateLimitParam",
+  "Description": "Determines the maximum spawn count for a projectile.",
+  "Fields": [
+    {
+      "Field": "limitNum_byGroup",
+      "Name": "Max Bullet Count in Group",
+      "Description": "Maximum number of bullets in the same group"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

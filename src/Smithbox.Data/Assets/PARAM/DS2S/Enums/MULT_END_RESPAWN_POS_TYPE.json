@@ -1,22 +1,38 @@
 {
-  "DisplayName": "MULT_END_RESPAWN_POS_TYPE",
-  "Name": "MULT_END_RESPAWN_POS_TYPE",
-  "Description": "",
+  "Key": "MULT_END_RESPAWN_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULT_END_RESPAWN_POS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Original position",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Original position"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "The last bonfire",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The last bonfire"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Same place",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Same place"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "Param": "WwiseValueToStrParam_Switch_BulletGenerateType",
+  "Type": "WWISE_VALUE_TO_STR_CONVERT_PARAM_ST",
+  "Name": "WwiseValueToStrParam_Switch_BulletGenerateType",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "ParamStr",
+      "Name": "Param String",
+      "Description": "Wwise parameter string"
+    }
+  ]
+}

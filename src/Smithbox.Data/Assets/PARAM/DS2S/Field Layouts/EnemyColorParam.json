@@ -3,7 +3,13 @@
   "UngroupedAtBottom": true,
   "Groups": [
         {
-          "Title": "Model Mask 0 - Part 0",
+          "Key": "Model Mask 0 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 0 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern0PartsR0",
             "pattern0PartsG0",
@@ -11,7 +17,13 @@
           ]
         },
         {
-          "Title": "Model Mask 0 - Part 1",
+          "Key": "Model Mask 0 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 0 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern0PartsR1",
             "pattern0PartsG1",
@@ -19,7 +31,13 @@
           ]
         },
         {
-          "Title": "Model Mask 0 - Part 2",
+          "Key": "Model Mask 0 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 0 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern0PartsR2",
             "pattern0PartsG2",
@@ -27,7 +45,13 @@
           ]
         },
         {
-          "Title": "Model Mask 0 - Part 3",
+          "Key": "Model Mask 0 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 0 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern0PartsR3",
             "pattern0PartsG3",
@@ -35,7 +59,13 @@
           ]
         },
         {
-          "Title": "Model Mask 1 - Part 0",
+          "Key": "Model Mask 1 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 1 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern1PartsR0",
             "pattern1PartsG0",
@@ -43,7 +73,13 @@
           ]
         },
         {
-          "Title": "Model Mask 1 - Part 1",
+          "Key": "Model Mask 1 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 1 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern1PartsR1",
             "pattern1PartsG1",
@@ -51,7 +87,13 @@
           ]
         },
         {
-          "Title": "Model Mask 1 - Part 2",
+          "Key": "Model Mask 1 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 1 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern1PartsR2",
             "pattern1PartsG2",
@@ -59,7 +101,13 @@
           ]
         },
         {
-          "Title": "Model Mask 1 - Part 3",
+          "Key": "Model Mask 1 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 1 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern1PartsR3",
             "pattern1PartsG3",
@@ -67,7 +115,13 @@
           ]
         },
         {
-          "Title": "Model Mask 2 - Part 0",
+          "Key": "Model Mask 2 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 2 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern2PartsR0",
             "pattern2PartsG0",
@@ -75,7 +129,13 @@
           ]
         },
         {
-          "Title": "Model Mask 2 - Part 1",
+          "Key": "Model Mask 2 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 2 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern2PartsR1",
             "pattern2PartsG1",
@@ -83,7 +143,13 @@
           ]
         },
         {
-          "Title": "Model Mask 2 - Part 2",
+          "Key": "Model Mask 2 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 2 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern2PartsR2",
             "pattern2PartsG2",
@@ -91,7 +157,13 @@
           ]
         },
         {
-          "Title": "Model Mask 2 - Part 3",
+          "Key": "Model Mask 2 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 2 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern2PartsR3",
             "pattern2PartsG3",
@@ -99,7 +171,13 @@
           ]
         },
         {
-          "Title": "Model Mask 3 - Part 0",
+          "Key": "Model Mask 3 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 3 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern3PartsR0",
             "pattern3PartsG0",
@@ -107,7 +185,13 @@
           ]
         },
         {
-          "Title": "Model Mask 3 - Part 1",
+          "Key": "Model Mask 3 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 3 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern3PartsR1",
             "pattern3PartsG1",
@@ -115,7 +199,13 @@
           ]
         },
         {
-          "Title": "Model Mask 3 - Part 2",
+          "Key": "Model Mask 3 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 3 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern3PartsR2",
             "pattern3PartsG2",
@@ -123,7 +213,13 @@
           ]
         },
         {
-          "Title": "Model Mask 3 - Part 3",
+          "Key": "Model Mask 3 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 3 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern3PartsR3",
             "pattern3PartsG3",
@@ -131,7 +227,13 @@
           ]
         },
         {
-          "Title": "Model Mask 4 - Part 0",
+          "Key": "Model Mask 4 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 4 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern4PartsR0",
             "pattern4PartsG0",
@@ -139,7 +241,13 @@
           ]
         },
         {
-          "Title": "Model Mask 4 - Part 1",
+          "Key": "Model Mask 4 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 4 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern4PartsR1",
             "pattern4PartsG1",
@@ -147,7 +255,13 @@
           ]
         },
         {
-          "Title": "Model Mask 4 - Part 2",
+          "Key": "Model Mask 4 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 4 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern4PartsR2",
             "pattern4PartsG2",
@@ -155,7 +269,13 @@
           ]
         },
         {
-          "Title": "Model Mask 4 - Part 3",
+          "Key": "Model Mask 4 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 4 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern4PartsR3",
             "pattern4PartsG3",
@@ -163,7 +283,13 @@
           ]
         },
         {
-          "Title": "Model Mask 5 - Part 0",
+          "Key": "Model Mask 5 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 5 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern5PartsR0",
             "pattern5PartsG0",
@@ -171,7 +297,13 @@
           ]
         },
         {
-          "Title": "Model Mask 5 - Part 1",
+          "Key": "Model Mask 5 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 5 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern5PartsR1",
             "pattern5PartsG1",
@@ -179,7 +311,13 @@
           ]
         },
         {
-          "Title": "Model Mask 5 - Part 2",
+          "Key": "Model Mask 5 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 5 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern5PartsR2",
             "pattern5PartsG2",
@@ -187,7 +325,13 @@
           ]
         },
         {
-          "Title": "Model Mask 5 - Part 3",
+          "Key": "Model Mask 5 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 5 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern5PartsR3",
             "pattern5PartsG3",
@@ -195,7 +339,13 @@
           ]
         },
         {
-          "Title": "Model Mask 6 - Part 0",
+          "Key": "Model Mask 6 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 6 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern6PartsR0",
             "pattern6PartsG0",
@@ -203,7 +353,13 @@
           ]
         },
         {
-          "Title": "Model Mask 6 - Part 1",
+          "Key": "Model Mask 6 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 6 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern6PartsR1",
             "pattern6PartsG1",
@@ -211,7 +367,13 @@
           ]
         },
         {
-          "Title": "Model Mask 6 - Part 2",
+          "Key": "Model Mask 6 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 6 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern6PartsR2",
             "pattern6PartsG2",
@@ -219,7 +381,13 @@
           ]
         },
         {
-          "Title": "Model Mask 6 - Part 3",
+          "Key": "Model Mask 6 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 6 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern6PartsR3",
             "pattern6PartsG3",
@@ -227,7 +395,13 @@
           ]
         },
         {
-          "Title": "Model Mask 7 - Part 0",
+          "Key": "Model Mask 7 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 7 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern7PartsR0",
             "pattern7PartsG0",
@@ -235,7 +409,13 @@
           ]
         },
         {
-          "Title": "Model Mask 7 - Part 1",
+          "Key": "Model Mask 7 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 7 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern7PartsR1",
             "pattern7PartsG1",
@@ -243,7 +423,13 @@
           ]
         },
         {
-          "Title": "Model Mask 7 - Part 2",
+          "Key": "Model Mask 7 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 7 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern7PartsR2",
             "pattern7PartsG2",
@@ -251,7 +437,13 @@
           ]
         },
         {
-          "Title": "Model Mask 7 - Part 3",
+          "Key": "Model Mask 7 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 7 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern7PartsR3",
             "pattern7PartsG3",
@@ -259,7 +451,13 @@
           ]
         },
         {
-          "Title": "Model Mask 8 - Part 0",
+          "Key": "Model Mask 8 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 8 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern8PartsR0",
             "pattern8PartsG0",
@@ -267,7 +465,13 @@
           ]
         },
         {
-          "Title": "Model Mask 8 - Part 1",
+          "Key": "Model Mask 8 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 8 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern8PartsR1",
             "pattern8PartsG1",
@@ -275,7 +479,13 @@
           ]
         },
         {
-          "Title": "Model Mask 8 - Part 2",
+          "Key": "Model Mask 8 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 8 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern8PartsR2",
             "pattern8PartsG2",
@@ -283,7 +493,13 @@
           ]
         },
         {
-          "Title": "Model Mask 8 - Part 3",
+          "Key": "Model Mask 8 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 8 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern8PartsR3",
             "pattern8PartsG3",
@@ -291,7 +507,13 @@
           ]
         },
         {
-          "Title": "Model Mask 9 - Part 0",
+          "Key": "Model Mask 9 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 9 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern9PartsR0",
             "pattern9PartsG0",
@@ -299,7 +521,13 @@
           ]
         },
         {
-          "Title": "Model Mask 9 - Part 1",
+          "Key": "Model Mask 9 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 9 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern9PartsR1",
             "pattern9PartsG1",
@@ -307,7 +535,13 @@
           ]
         },
         {
-          "Title": "Model Mask 9 - Part 2",
+          "Key": "Model Mask 9 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 9 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern9PartsR2",
             "pattern9PartsG2",
@@ -315,7 +549,13 @@
           ]
         },
         {
-          "Title": "Model Mask 9 - Part 3",
+          "Key": "Model Mask 9 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 9 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern9PartsR3",
             "pattern9PartsG3",
@@ -323,7 +563,13 @@
           ]
         },
         {
-          "Title": "Model Mask 10 - Part 0",
+          "Key": "Model Mask 10 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 10 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern10PartsR0",
             "pattern10PartsG0",
@@ -331,7 +577,13 @@
           ]
         },
         {
-          "Title": "Model Mask 10 - Part 1",
+          "Key": "Model Mask 10 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 10 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern10PartsR1",
             "pattern10PartsG1",
@@ -339,7 +591,13 @@
           ]
         },
         {
-          "Title": "Model Mask 10 - Part 2",
+          "Key": "Model Mask 10 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 10 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern10PartsR2",
             "pattern10PartsG2",
@@ -347,7 +605,13 @@
           ]
         },
         {
-          "Title": "Model Mask 10 - Part 3",
+          "Key": "Model Mask 10 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 10 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern10PartsR3",
             "pattern10PartsG3",
@@ -355,7 +619,13 @@
           ]
         },
         {
-          "Title": "Model Mask 11 - Part 0",
+          "Key": "Model Mask 11 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 11 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern11PartsR0",
             "pattern11PartsG0",
@@ -363,7 +633,13 @@
           ]
         },
         {
-          "Title": "Model Mask 11 - Part 1",
+          "Key": "Model Mask 11 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 11 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern11PartsR1",
             "pattern11PartsG1",
@@ -371,7 +647,13 @@
           ]
         },
         {
-          "Title": "Model Mask 11 - Part 2",
+          "Key": "Model Mask 11 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 11 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern11PartsR2",
             "pattern11PartsG2",
@@ -379,7 +661,13 @@
           ]
         },
         {
-          "Title": "Model Mask 11 - Part 3",
+          "Key": "Model Mask 11 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 11 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern11PartsR3",
             "pattern11PartsG3",
@@ -387,7 +675,13 @@
           ]
         },
         {
-          "Title": "Model Mask 12 - Part 0",
+          "Key": "Model Mask 12 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 12 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern12PartsR0",
             "pattern12PartsG0",
@@ -395,7 +689,13 @@
           ]
         },
         {
-          "Title": "Model Mask 12 - Part 1",
+          "Key": "Model Mask 12 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 12 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern12PartsR1",
             "pattern12PartsG1",
@@ -403,7 +703,13 @@
           ]
         },
         {
-          "Title": "Model Mask 12 - Part 2",
+          "Key": "Model Mask 12 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 12 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern12PartsR2",
             "pattern12PartsG2",
@@ -411,7 +717,13 @@
           ]
         },
         {
-          "Title": "Model Mask 12 - Part 3",
+          "Key": "Model Mask 12 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 12 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern12PartsR3",
             "pattern12PartsG3",
@@ -419,7 +731,13 @@
           ]
         },
         {
-          "Title": "Model Mask 13 - Part 0",
+          "Key": "Model Mask 13 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 13 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern13PartsR0",
             "pattern13PartsG0",
@@ -427,7 +745,13 @@
           ]
         },
         {
-          "Title": "Model Mask 13 - Part 1",
+          "Key": "Model Mask 13 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 13 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern13PartsR1",
             "pattern13PartsG1",
@@ -435,7 +759,13 @@
           ]
         },
         {
-          "Title": "Model Mask 13 - Part 2",
+          "Key": "Model Mask 13 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 13 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern13PartsR2",
             "pattern13PartsG2",
@@ -443,7 +773,13 @@
           ]
         },
         {
-          "Title": "Model Mask 13 - Part 3",
+          "Key": "Model Mask 13 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 13 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern13PartsR3",
             "pattern13PartsG3",
@@ -451,7 +787,13 @@
           ]
         },
         {
-          "Title": "Model Mask 14 - Part 0",
+          "Key": "Model Mask 14 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 14 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern14PartsR0",
             "pattern14PartsG0",
@@ -459,7 +801,13 @@
           ]
         },
         {
-          "Title": "Model Mask 14 - Part 1",
+          "Key": "Model Mask 14 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 14 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern14PartsR1",
             "pattern14PartsG1",
@@ -467,7 +815,13 @@
           ]
         },
         {
-          "Title": "Model Mask 14 - Part 2",
+          "Key": "Model Mask 14 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 14 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern14PartsR2",
             "pattern14PartsG2",
@@ -475,7 +829,13 @@
           ]
         },
         {
-          "Title": "Model Mask 14 - Part 3",
+          "Key": "Model Mask 14 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 14 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern14PartsR3",
             "pattern14PartsG3",
@@ -483,7 +843,13 @@
           ]
         },
         {
-          "Title": "Model Mask 15 - Part 0",
+          "Key": "Model Mask 15 - Part 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 15 - Part 0"
+              }
+          ],
           "Fields": [
             "pattern15PartsR0",
             "pattern15PartsG0",
@@ -491,7 +857,13 @@
           ]
         },
         {
-          "Title": "Model Mask 15 - Part 1",
+          "Key": "Model Mask 15 - Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 15 - Part 1"
+              }
+          ],
           "Fields": [
             "pattern15PartsR1",
             "pattern15PartsG1",
@@ -499,7 +871,13 @@
           ]
         },
         {
-          "Title": "Model Mask 15 - Part 2",
+          "Key": "Model Mask 15 - Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 15 - Part 2"
+              }
+          ],
           "Fields": [
             "pattern15PartsR2",
             "pattern15PartsG2",
@@ -507,7 +885,13 @@
           ]
         },
         {
-          "Title": "Model Mask 15 - Part 3",
+          "Key": "Model Mask 15 - Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Model Mask 15 - Part 3"
+              }
+          ],
           "Fields": [
             "pattern15PartsR3",
             "pattern15PartsG3",

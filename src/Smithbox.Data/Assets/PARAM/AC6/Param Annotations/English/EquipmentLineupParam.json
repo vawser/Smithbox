@@ -1,0 +1,48 @@
+{
+  "Param": "EquipmentLineupParam",
+  "Type": "EQUIPMENT_LINEUP_PARAM",
+  "Name": "EquipmentLineupParam",
+  "Description": "Determines the appearance of equipment in the shop menu.",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "Part ID",
+      "Description": "The part to add to the Parts menu."
+    },
+    {
+      "Field": "price",
+      "Name": "Purchase Cost",
+      "Description": "The purchase cost of the part in the Parts Menu."
+    },
+    {
+      "Field": "eventFlag_forRelease",
+      "Name": "Unlock Flag",
+      "Description": "The event flag required for this part to appear in the Parts menu."
+    },
+    {
+      "Field": "equipType",
+      "Name": "Part Category",
+      "Description": "The category this part appears under in the Parts menu."
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isTrophyTarget",
+      "Name": "Is Achievement Target",
+      "Description": "Is part of the condition for the \u0027Obtain All Parts\u0027 achivement."
+    },
+    {
+      "Field": "rewardCondition",
+      "Name": "Reward Condition",
+      "Description": "The reward condition to unlock this part with. Used for log hunter and mission rewards."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

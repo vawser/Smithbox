@@ -1,0 +1,18 @@
+{
+  "Param": "LockTargetParam",
+  "Type": "LOCK_TARGET_PARAM",
+  "Name": "LockTargetParam",
+  "Description": "Defines parameters related to the lock-on target for the lock-on camera.",
+  "Fields": [
+    {
+      "Field": "value_0",
+      "Name": "Value [0]",
+      "Description": ""
+    },
+    {
+      "Field": "value_1",
+      "Name": "Value [1]",
+      "Description": ""
+    }
+  ]
+}

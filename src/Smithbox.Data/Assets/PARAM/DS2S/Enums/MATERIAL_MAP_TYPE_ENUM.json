@@ -1,102 +1,182 @@
 {
-  "DisplayName": "MATERIAL_MAP_TYPE_ENUM",
-  "Name": "MATERIAL_MAP_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_MAP_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_MAP_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "石",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "石"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "土",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "土"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Carpet",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carpet"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Wood",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "草",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "草"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Gravel",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravel"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "鉄",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鉄"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "砂",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "砂"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "骨",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "骨"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "灰",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "灰"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Water: puddle level",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water: puddle level"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Water: ankle level",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water: ankle level"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "沼",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "沼"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Poisonous swamp",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poisonous swamp"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "油",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "油"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Coal tar",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Lava",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Spider thread",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider thread"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Sulfur crystals",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sulfur crystals"
+        }
+      ]
     }
   ]
 }

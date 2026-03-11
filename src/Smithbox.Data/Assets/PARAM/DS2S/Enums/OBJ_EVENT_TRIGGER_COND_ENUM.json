@@ -1,17 +1,29 @@
 {
-  "DisplayName": "OBJ_EVENT_TRIGGER_COND_ENUM",
-  "Name": "OBJ_EVENT_TRIGGER_COND_ENUM",
-  "Description": "",
+  "Key": "OBJ_EVENT_TRIGGER_COND_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_EVENT_TRIGGER_COND_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "①｜②",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①｜②"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "①＆②",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①＆②"
+        }
+      ]
     }
   ]
 }

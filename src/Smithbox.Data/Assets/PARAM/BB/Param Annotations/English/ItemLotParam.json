@@ -1,0 +1,348 @@
+{
+  "Param": "ItemLotParam",
+  "Type": "ITEMLOT_PARAM_ST",
+  "Name": "ItemLotParam",
+  "Description": "Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set.",
+  "Fields": [
+    {
+      "Field": "lotItemId01",
+      "Name": "Item ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId02",
+      "Name": "Item ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId03",
+      "Name": "Item ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId04",
+      "Name": "Item ID 4",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId05",
+      "Name": "Item ID 5",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId06",
+      "Name": "Item ID 6",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId07",
+      "Name": "Item ID 7",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemId08",
+      "Name": "Item ID 8",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemCategory08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint01",
+      "Name": "Item 1 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint02",
+      "Name": "Item 2 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint03",
+      "Name": "Item 3 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint04",
+      "Name": "Item 4 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint05",
+      "Name": "Item 5 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint06",
+      "Name": "Item 6 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint07",
+      "Name": "Item 7 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemBasePoint08",
+      "Name": "Item 8 Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint01",
+      "Name": "Item 1 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint02",
+      "Name": "Item 2 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint03",
+      "Name": "Item 3 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint04",
+      "Name": "Item 4 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint05",
+      "Name": "Item 5 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint06",
+      "Name": "Item 6 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint07",
+      "Name": "Item 7 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateLotPoint08",
+      "Name": "Item 8 Cumulative Chance",
+      "Description": ""
+    },
+    {
+      "Field": "getItemFlagId01",
+      "Name": "Item Acquisition Flag [1]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId02",
+      "Name": "Item Acquisition Flag [2]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId03",
+      "Name": "Item Acquisition Flag [3]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId04",
+      "Name": "Item Acquisition Flag [4]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId05",
+      "Name": "Item Acquisition Flag [5]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId06",
+      "Name": "Item Acquisition Flag [6]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId07",
+      "Name": "Item Acquisition Flag [7]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId08",
+      "Name": "Item Acquisition Flag [8]",
+      "Description": "Combined use of acquired flag and crunchy frame (0: common use)"
+    },
+    {
+      "Field": "getItemFlagId",
+      "Name": "Item Acquisition Flag",
+      "Description": "Combined use of acquired flag and crunchy frame (0: flag invalid)"
+    },
+    {
+      "Field": "cumulateNumFlagId",
+      "Name": "Item Accumulate Flag [1]",
+      "Description": "For saving the number of lottery (* 8 flag serial number used)"
+    },
+    {
+      "Field": "cumulateNumMax",
+      "Name": "Item Accumulate Max",
+      "Description": "Maximum number of lottery cumulative (0: no cumulative)"
+    },
+    {
+      "Field": "lotItem_Rarity",
+      "Name": "Item Rarity",
+      "Description": "Specify how valuable items are in the treasure chest. When -1, use the rarity of the equipment para without overwriting"
+    },
+    {
+      "Field": "lotItemNum01",
+      "Name": "Item 1 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum02",
+      "Name": "Item 2 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum03",
+      "Name": "Item 3 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum04",
+      "Name": "Item 4 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum05",
+      "Name": "Item 5 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum06",
+      "Name": "Item 6 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum07",
+      "Name": "Item 7 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "lotItemNum08",
+      "Name": "Item 8 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck01",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck02",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck03",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck04",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck05",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck06",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck07",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "enableLuck08",
+      "Name": "Affected by Item Discovery",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset01",
+      "Name": "Item 1 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset02",
+      "Name": "Item 2 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset03",
+      "Name": "Item 3 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset04",
+      "Name": "Item 4 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset05",
+      "Name": "Item 5 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset06",
+      "Name": "Item 6 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset07",
+      "Name": "Item 7 Cumulative Chance Reset",
+      "Description": ""
+    },
+    {
+      "Field": "cumulateReset08",
+      "Name": "Item 8 Cumulative Chance Reset",
+      "Description": ""
+    }
+  ]
+}

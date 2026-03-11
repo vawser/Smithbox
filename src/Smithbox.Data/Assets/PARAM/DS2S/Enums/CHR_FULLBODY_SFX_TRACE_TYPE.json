@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CHR_FULLBODY_SFX_TRACE_TYPE",
-  "Name": "CHR_FULLBODY_SFX_TRACE_TYPE",
-  "Description": "",
+  "Key": "CHR_FULLBODY_SFX_TRACE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_FULLBODY_SFX_TRACE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Horizontal",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Horizontal"
+        }
+      ]
     }
   ]
 }

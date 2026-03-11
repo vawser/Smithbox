@@ -1,0 +1,28 @@
+{
+  "Param": "CharMakeMenuListItemParam",
+  "Type": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Name": "CharMakeMenuListItemParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "Value",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

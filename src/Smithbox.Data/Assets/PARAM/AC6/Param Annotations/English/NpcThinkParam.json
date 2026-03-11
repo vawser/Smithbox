@@ -1,0 +1,918 @@
+{
+  "Param": "NpcThinkParam",
+  "Type": "NPC_THINK_PARAM_ST",
+  "Name": "NpcThinkParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "logicId",
+      "Name": "Logic ID",
+      "Description": "Set the ID of the logic created by the script."
+    },
+    {
+      "Field": "battleGoalID",
+      "Name": "Battle Goal ID",
+      "Description": "Battle goal ID"
+    },
+    {
+      "Field": "searchEye_dist",
+      "Name": "Vision - Distance",
+      "Description": "Search range by visual search."
+    },
+    {
+      "Field": "searchEye_angX",
+      "Name": "Vision - Search Height Angle",
+      "Description": "Searching enemy vision_angle (height) [deg]"
+    },
+    {
+      "Field": "searchEye_angY",
+      "Name": "Vision - Width",
+      "Description": "Search range by visual search."
+    },
+    {
+      "Field": "scriptType",
+      "Name": "Script Type",
+      "Description": "Script type information to interpret"
+    },
+    {
+      "Field": "goalAction_CannotGetTarget",
+      "Name": "Cannot Recapture Enemy: Goal Action",
+      "Description": "Goal action when the target becomes unrecapturable"
+    },
+    {
+      "Field": "coverActionReleaseDist",
+      "Name": "Cover Action Release Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "searchTargetLv1ForgetTime",
+      "Name": "Search Forget Time - Level 1",
+      "Description": "Search enemy Lv1 Target Time to forget."
+    },
+    {
+      "Field": "searchTargetLv2ForgetTime",
+      "Name": "Search Forget Time - Level 2",
+      "Description": "Search enemy Lv2 time to forget the target."
+    },
+    {
+      "Field": "BackHomeLife_OnHitEneWal",
+      "Name": "Back Home Time on Touching Enemy Wall",
+      "Description": "The life of the BackToHome goal when it touches an enemy wall that blocks the block"
+    },
+    {
+      "Field": "SightTargetForgetTime",
+      "Name": "Vision - Search Forget Time",
+      "Description": "Time to forget the visual target."
+    },
+    {
+      "Field": "idAttackCannotMove",
+      "Name": "Blocked Movement - Anim ID",
+      "Description": "An action that automatically takes place when a destructible object stops it."
+    },
+    {
+      "Field": "ear_dist",
+      "Name": "Listen - Distance",
+      "Description": "Hearing search range ..."
+    },
+    {
+      "Field": "callHelp_ActionAnimId",
+      "Name": "Call Help - Action Animation ID",
+      "Description": "Animation ID (EzStateAnimID) when responding"
+    },
+    {
+      "Field": "callHelp_CallActionId",
+      "Name": "Call Help - Call Action ID",
+      "Description": "Action ID (EzStateAnimID) when calling a friend"
+    },
+    {
+      "Field": "eye_dist",
+      "Name": "Vision - Distance",
+      "Description": "Visual search range."
+    },
+    {
+      "Field": "BackHome_GuardActId",
+      "Name": "Guard action ID when returning home",
+      "Description": "Action number to perform when looking at the target when returning home (intended for use in guarding, 0 disables)"
+    },
+    {
+      "Field": "ear_soundcut_dist",
+      "Name": "Listen - Sound Cutoff Distance",
+      "Description": "The distance to reduce the size of the sound source. You will not hear any sound below this distance."
+    },
+    {
+      "Field": "nose_dist",
+      "Name": "Sense - Distance",
+      "Description": "Search range by smell."
+    },
+    {
+      "Field": "maxBackhomeDist",
+      "Name": "Retreat Home - Max Distance",
+      "Description": "COMMON_SetBattleActLogic argument"
+    },
+    {
+      "Field": "backhomeDist",
+      "Name": "Retreat Home - Distance",
+      "Description": "COMMON_SetBattleActLogic argument"
+    },
+    {
+      "Field": "backhomeBattleDist",
+      "Name": "Retreat Home - Battle Distance",
+      "Description": "COMMON_SetBattleActLogic argument"
+    },
+    {
+      "Field": "nonBattleActLife",
+      "Name": "Non-Battle Act Duration when in Combat",
+      "Description": "COMMON_SetBattleActLogic argument"
+    },
+    {
+      "Field": "BackHome_LookTargetTime",
+      "Name": "Retreat Home - Look for Target Time",
+      "Description": "When returning home: Time to look at the target [sec]"
+    },
+    {
+      "Field": "BackHome_LookTargetDist",
+      "Name": "Retreat Home - Look for Target Distance",
+      "Description": "When returning home: Distance to see the target [m]"
+    },
+    {
+      "Field": "SoundTargetForgetTime",
+      "Name": "Listen - Search Forget Time",
+      "Description": "Time to forget the sound target."
+    },
+    {
+      "Field": "BattleStartDist",
+      "Name": "Battle - Start Distance",
+      "Description": ""
+    },
+    {
+      "Field": "callHelp_MyPeerId",
+      "Name": "Call Help - My Peer ID",
+      "Description": "My fellow group ID"
+    },
+    {
+      "Field": "callHelp_CallPeerId",
+      "Name": "Call Help - Call Peer ID",
+      "Description": "Companion group ID to call a companion"
+    },
+    {
+      "Field": "targetSys_DmgEffectRate",
+      "Name": "Target System - Damage Effect Rate",
+      "Description": "Damage impact rate acquisition (target system evaluation information)"
+    },
+    {
+      "Field": "TeamAttackEffectivity",
+      "Name": "Team Attack Effectivity",
+      "Description": "A value for determining the number of simultaneous attacks in a team. Increasing the value reduces the number of people who can participate in the attack at the same time."
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "Vision - Height Angle",
+      "Description": "Visual search range."
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "Vision - Width Angle",
+      "Description": "Visual search range."
+    },
+    {
+      "Field": "disableDark",
+      "Name": "Disable Darkness Modifier to Distance",
+      "Description": "Whether the alert vision_distance and battle start distance are not affected by the darkness"
+    },
+    {
+      "Field": "caravanRole",
+      "Name": "Caravan Role",
+      "Description": "Role in the caravan"
+    },
+    {
+      "Field": "callHelp_CallValidMinDistTarget",
+      "Name": "Call Help - Valid Target Min Distance",
+      "Description": "If it is closer than this value, you cannot call a friend."
+    },
+    {
+      "Field": "callHelp_CallValidRange",
+      "Name": "Call Help - Valid Target Range",
+      "Description": "Do not call if the companion is farther than this value."
+    },
+    {
+      "Field": "callHelp_ForgetTimeByArrival",
+      "Name": "Call Help - Forget Time by Arrival",
+      "Description": "Time to respond"
+    },
+    {
+      "Field": "callHelp_MinWaitTime",
+      "Name": "Call Help - Min Wait Time",
+      "Description": "Minimum time for the first wait goal of the response goal [101 =\u003E 10.1sec]"
+    },
+    {
+      "Field": "callHelp_MaxWaitTime",
+      "Name": "Call Help - Max Wait Time",
+      "Description": "Maximum time for the first waiting goal of the response goal [101 =\u003E 10.1sec]"
+    },
+    {
+      "Field": "goalAction_ToSearchLv1",
+      "Name": "Goal Action - Search Level 1",
+      "Description": "Goal action when target has reached search level 1"
+    },
+    {
+      "Field": "goalAction_ToSearchLv2",
+      "Name": "Goal Action - Search Level 1",
+      "Description": "Goal action when target has reached search level 1"
+    },
+    {
+      "Field": "callHelp_ReplyBehaviorType",
+      "Name": "Call Help - Reply Behavior Type",
+      "Description": "Action type to target position after response"
+    },
+    {
+      "Field": "disablePathMove",
+      "Name": "Disable Path Move",
+      "Description": "Whether to move directly without following the path even if a path move command comes"
+    },
+    {
+      "Field": "skipArrivalVisibleCheck",
+      "Name": "Skip Arrival Visibility Check",
+      "Description": "Do you want to skip the arrival judgment by the line of sight? When set to On, arrival judgment is performed even if the line of sight does not pass."
+    },
+    {
+      "Field": "thinkAttr_doAdmirer",
+      "Name": "Think Attribute - Do Admirer",
+      "Description": "Thinking attribute: When turned on, it plays a role of surrounding."
+    },
+    {
+      "Field": "enableNaviFlg_Edge",
+      "Name": "Navigation - Edge",
+      "Description": "Can you pass through the node cliff? (def: 1)"
+    },
+    {
+      "Field": "enableNaviFlg_LargeSpace",
+      "Name": "Navigation - Large Space",
+      "Description": "Can you pass through the node wide? (def: 1)"
+    },
+    {
+      "Field": "enableNaviFlg_Ladder",
+      "Name": "Navigation - Ladder",
+      "Description": "Can you pass through the node ladder? (def: 0)"
+    },
+    {
+      "Field": "enableNaviFlg_Hole",
+      "Name": "Navigation - Hole",
+      "Description": "Can you go through the node hole? (def: 0)"
+    },
+    {
+      "Field": "enableNaviFlg_Door",
+      "Name": "Navigation - Door",
+      "Description": "Can you pass through the node door? (def: 0)"
+    },
+    {
+      "Field": "enableNaviFlg_InSideWall",
+      "Name": "Navigation - Ignore Navmesh Wall",
+      "Description": "Can you pass through the node in the wall? (def: 0)"
+    },
+    {
+      "Field": "enableNaviFlg_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableNaviFlg_Edge_Ordinary",
+      "Name": "Navigation - Cliff Edge",
+      "Description": "Can you pass the node cliff under normal / alert conditions? (def: 1)"
+    },
+    {
+      "Field": "enableNaviFlg_reserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchThreshold_Lv0toLv1",
+      "Name": "Search Threshold - Level 0 to Level 1",
+      "Description": "Search enemy Lv0  Lv1 threshold"
+    },
+    {
+      "Field": "searchThreshold_Lv1toLv2",
+      "Name": "Search Threshold - Level 1 to Level 2",
+      "Description": "Search enemy Lv1  Lv2 threshold"
+    },
+    {
+      "Field": "platoonReplyTime",
+      "Name": "Platoon - Reply Time",
+      "Description": "Platoon reaction delay time [sec]"
+    },
+    {
+      "Field": "platoonReplyAddRandomTime",
+      "Name": "Platoon - Reply Add Random Time",
+      "Description": "Platoon reaction additional random time [sec]"
+    },
+    {
+      "Field": "cameraEmuLookHalfAngleH",
+      "Name": "Virtual Camera Horizontal Field of View",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "cameraEmuLookHalfAngleV",
+      "Name": "Virtual Camera Vertical Field of View",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "isCameraEmuLockAt",
+      "Name": "Virtual Camera Follows Target",
+      "Description": "Whether the virtual camera should point in the direction of the target."
+    },
+    {
+      "Field": "initialHitResponseType",
+      "Name": "Reaction When Hit While Unspotted",
+      "Description": "How the NPC reacts to being hit w/o having spotted the player."
+    },
+    {
+      "Field": "fixedCannonReleaseDistByDist",
+      "Name": "Turret Mode Release Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "searchTargetDamageForgetTime",
+      "Name": "Target Forget Time After Damage",
+      "Description": "In seconds."
+    },
+    {
+      "Field": "keepTargetRaycastDist",
+      "Name": "Raycast Distance for Target Keeping",
+      "Description": "In meters."
+    },
+    {
+      "Field": "isUseBoostRiseMove",
+      "Name": "Use Boost Increase",
+      "Description": "Whether to use boost rising operation instead of system movement when jumping."
+    },
+    {
+      "Field": "doUseSharedTarget",
+      "Name": "Accept Target Sharing",
+      "Description": "Does this target accept shared target warnings from other entities?"
+    },
+    {
+      "Field": "eye_BackOffsetDist",
+      "Name": "Visual Generation Distance",
+      "Description": "The viering angle starts at this distance behind the center of the character. In meters."
+    },
+    {
+      "Field": "eye_BeginDist",
+      "Name": "Visual Cut Distance",
+      "Description": "This distance is not recognized from the viewing angle position. In meters."
+    },
+    {
+      "Field": "actTypeOnFailedPath",
+      "Name": "Action Type When Pathfinding Fails",
+      "Description": "The default action to take when the end point of an alternative path is reached or when a path search fails."
+    },
+    {
+      "Field": "goalAction_ToNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pathFindCostParamId",
+      "Name": "Path search cost parameter ID",
+      "Description": "Determines pathfinding costs."
+    },
+    {
+      "Field": "actTypeOnNonBtlFailedPath",
+      "Name": "Action Type When Pathfinding Fails (Non-Combat)",
+      "Description": "When there is no target, this is the action to take after changing the current location to the nest."
+    },
+    {
+      "Field": "isBuddyAI",
+      "Name": "Is Buddy AI",
+      "Description": "Thoughts for a buddy? (Unused)"
+    },
+    {
+      "Field": "goalAction_ToCaution",
+      "Name": "Goal Action - To Caution (Sound)",
+      "Description": "Goal action: Target becomes alert due to normal sound detection"
+    },
+    {
+      "Field": "goalAction_ToCautionImportant",
+      "Name": "Goal Action - Alert/Critical Sound",
+      "Description": "Goal action: Target becomes alert due to detection of significant sound."
+    },
+    {
+      "Field": "enableJumpMove",
+      "Name": "Allow Jumps While Moving",
+      "Description": "Allows jumping during movement."
+    },
+    {
+      "Field": "disableLocalSteering",
+      "Name": "Disable Local Steering",
+      "Description": "(Unused) Do you want to turn off local steering, which is the behavior of trying to move while avoiding other characters?"
+    },
+    {
+      "Field": "goalAction_ToCautionThreat",
+      "Name": "Goal Action - Alert State/Threat Sound",
+      "Description": "Goal action: Target becomes alert due to detecting a threat sound"
+    },
+    {
+      "Field": "goalAction_MaxBackHomeAction",
+      "Name": "Goal Action - Returning Home",
+      "Description": "Goal action: Entered a state where you\u0027ll go home no matter what."
+    },
+    {
+      "Field": "MemoryTargetForgetTime",
+      "Name": "Memory target forget time",
+      "Description": "Time to forget memory target. In seconds."
+    },
+    {
+      "Field": "goalAction_BackHomeAction",
+      "Name": "Goal Action - Return home while fighting",
+      "Description": "Goal action: Entered the state of returning home while fighting"
+    },
+    {
+      "Field": "isSearchEnableReycast",
+      "Name": "Spotlight coverage",
+      "Description": "Whether enemy search visibility occlusion (raycast) is enabled."
+    },
+    {
+      "Field": "isAlwaysEyeSightFromDmyPoly",
+      "Name": "Always Align Vision To Dummy Poly",
+      "Description": "Whether to always use dummy poly as the standard for visibility (Dmy ID: 250"
+    },
+    {
+      "Field": "shareTargetType",
+      "Name": "Share Target Type",
+      "Description": "Sets the type of target to share to."
+    },
+    {
+      "Field": "goalAction_ToFind",
+      "Name": "Goal Action - Discovered State",
+      "Description": "Goal action: Target is discovered."
+    },
+    {
+      "Field": "goalAction_ToSearch",
+      "Name": "Goal Action - Searching State",
+      "Description": "Goal action: Searching for enemy."
+    },
+    {
+      "Field": "goalAction_ToDisappear",
+      "Name": "Goal Action - Memory Target State",
+      "Description": "Goal Action: Memory Target State."
+    },
+    {
+      "Field": "changeStateAction_ToNormal",
+      "Name": "Goal Action - Start Normal State",
+      "Description": "Action when transitioning to normal state."
+    },
+    {
+      "Field": "GoalActionID",
+      "Name": "Goal Action - ID",
+      "Description": "ID for general AI behavior outside of combat (only valid when the script type is Operation)."
+    },
+    {
+      "Field": "soundBehaviorId01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundBehaviorId08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enemyMaxDistForBattleThanEventTgt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventTgtMinDistForBattleAndGoToEventTgt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventTgtMinDistForGoToEventTgt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "radar_dist",
+      "Name": "Vision - Radar",
+      "Description": "Radar search range. Radar detects through any object."
+    },
+    {
+      "Field": "eye_VerticalMax",
+      "Name": "Vision - Upper Altitude Limit",
+      "Description": "Upper limit of visual perception altitude. In meters."
+    },
+    {
+      "Field": "eye_VerticalMin",
+      "Name": "Vision - Lower Altitude Limit",
+      "Description": "Lower limit of visual perception altitude. In meters."
+    },
+    {
+      "Field": "searchEye_VerticalMax",
+      "Name": "Vision - Search Upper Altitude Limit",
+      "Description": "Enemy visual recognition upper limit altitude. In meters."
+    },
+    {
+      "Field": "searchEye_VerticalMin",
+      "Name": "Vision - Search Lower Altitude Limit",
+      "Description": "Enemy visual recognition lower limit altitude. In meters."
+    },
+    {
+      "Field": "shareSearchTargetDist",
+      "Name": "Search Target Share Distance",
+      "Description": "Distance at which search targets are shared."
+    },
+    {
+      "Field": "shareAttackTargetDist",
+      "Name": "Attack Target Share Distance",
+      "Description": "Distance at which attack targets are shared."
+    },
+    {
+      "Field": "shareSearchTargetSpeed",
+      "Name": "Search Target Share Speed",
+      "Description": "The upper limit for the \u0027\u0027distance for sharing search targets.\u0027\u0027 The initial value is 0m, and the shared range expands over time. -1 is an invalid value, and immediately shares within the maximum range."
+    },
+    {
+      "Field": "shareAttackTargetSpeed",
+      "Name": "Attack Target Share Speed",
+      "Description": "The upper limit for the \u0027\u0027distance for sharing attack targets.\u0027\u0027 The initial value is 0m, and the shared range expands over time. -1 is an invalid value, and immediately shares within the maximum range."
+    },
+    {
+      "Field": "enemyMaxDistForBattleThanPlayer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerMinDistForBattleAndGoToPlayer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerMinDistForGoToPlayer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fixedCannonReleaseDistByHit",
+      "Name": "Fixed Turret Mode - Disable Distance When Hit",
+      "Description": "Distance to disable fixed gun turret when hit. In meters."
+    },
+    {
+      "Field": "searchEye_BackOffsetDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye_BeginDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_dist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_angX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_angY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_VerticalMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_VerticalMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_BackOffsetDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "searchEye2_BeginDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shareSearchPointTargetDist",
+      "Name": "Target Share Distance",
+      "Description": "(Unused) The distance at which characters\u0027 searchability values are shared. In meters."
+    },
+    {
+      "Field": "shareCombatPointTargetDist",
+      "Name": "Engagement Share Distance",
+      "Description": "(Unused) The distance at which characters share their engagement values. In meters."
+    },
+    {
+      "Field": "shareSearchPointRate",
+      "Name": "Target Share Percentage",
+      "Description": "The percentage of characters who share their targets."
+    },
+    {
+      "Field": "shareCombatPointRate",
+      "Name": "Engagement Share Percentage",
+      "Description": "The percentage of characters who share their engagements."
+    },
+    {
+      "Field": "battleEye_dist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_angX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_angY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_VerticalMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_VerticalMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_BackOffsetDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "battleEye_BeginDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DebugAiThinkParam00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DebugAiThinkParam01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DebugAiThinkParam02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DebugAiThinkParam03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DebugAiThinkParam04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "radar_power",
+      "Name": "Radar Performance",
+      "Description": "A performance value that compares the target\u0027s stealth performance to determine whether it can be detected by radar."
+    },
+    {
+      "Field": "commonAttack_WeaponPlace",
+      "Name": "General Attack - Equipment Part",
+      "Description": "General attack equipment location setting, depending on the number of AI_WEAPON_PLACE_, -1 if none"
+    },
+    {
+      "Field": "doLaunchAiLayer_MOVE01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_MOVETYPE",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_EXTRA01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doLaunchAiLayer_INTERRUPT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "commonAttack_Dist",
+      "Name": "General Attack - Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "coverActionAttackDist",
+      "Name": "Cover Attack - Distance",
+      "Description": "In meters."
+    },
+    {
+      "Field": "shareTargetRecognitionLag",
+      "Name": "Shared Target Recognition Delay",
+      "Description": "Delay time between receiving a shared target and recognizing it. in seconds."
+    },
+    {
+      "Field": "keepSharingTargetAfterDiedTime",
+      "Name": "Shared Target Time After Death",
+      "Description": "The time, in seconds, that target sharing processing will continue after the character dies after reaching maximum range. If set to 0, sharing will stop immediately after death even if the maximum range is not reached."
+    },
+    {
+      "Field": "GeneralAiThinkParam00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GeneralAiThinkParam01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GeneralAiThinkParam02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GeneralAiThinkParam03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GeneralAiThinkParam04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PathSearchWaitTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeEnteredDistOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishHeightOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishHorizontalDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishLandCheckHeightOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFallHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFallHorizontalDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "navimeshNavigatorIterationLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "navivolumeNavigatorIterationLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSearchDisableRaycastForDummyChr",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableInitialPosInGetLastLandingPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doStayDuringNaviSearchInJumpEdgeMove",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk191_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishRaycastRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

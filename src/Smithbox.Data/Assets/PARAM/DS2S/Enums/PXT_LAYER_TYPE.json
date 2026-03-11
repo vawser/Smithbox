@@ -1,22 +1,38 @@
 {
-  "DisplayName": "PXT_LAYER_TYPE",
-  "Name": "PXT_LAYER_TYPE",
-  "Description": "",
+  "Key": "PXT_LAYER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PXT_LAYER_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Vertical reflectance only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vertical reflectance only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Smoothness only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smoothness only"
+        }
+      ]
     }
   ]
 }

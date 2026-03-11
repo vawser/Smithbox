@@ -1,32 +1,56 @@
 {
-  "DisplayName": "LOGIC_DISTANCE_CHECK_TYPE",
-  "Name": "LOGIC_DISTANCE_CHECK_TYPE",
-  "Description": "",
+  "Key": "LOGIC_DISTANCE_CHECK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_DISTANCE_CHECK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Rough",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rough"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Accurate",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Accurate"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Random",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random"
+        }
+      ]
     }
   ]
 }

@@ -1,12 +1,20 @@
 {
-  "DisplayName": "SPELL_TRIGGER_ANIM_TYPE",
-  "Name": "SPELL_TRIGGER_ANIM_TYPE",
-  "Description": "",
+  "Key": "SPELL_TRIGGER_ANIM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_TRIGGER_ANIM_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy"
+        }
+      ]
     }
   ]
 }

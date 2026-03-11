@@ -1,0 +1,128 @@
+{
+  "Param": "BehaviorChangeStateMatrixParam",
+  "Type": "BEHAVIOR_CHANGE_STATE_MATRIX_PARAM_ST",
+  "Name": "BehaviorChangeStateMatrixParam",
+  "Description": "Determines behavior change upon entering various states.",
+  "Fields": [
+    {
+      "Field": "state00",
+      "Name": "State: Above Ground",
+      "Description": ""
+    },
+    {
+      "Field": "state01",
+      "Name": "State: Dash",
+      "Description": ""
+    },
+    {
+      "Field": "state02",
+      "Name": "State: Crouch",
+      "Description": ""
+    },
+    {
+      "Field": "state03",
+      "Name": "State: Cover",
+      "Description": ""
+    },
+    {
+      "Field": "state04",
+      "Name": "State: Fall",
+      "Description": ""
+    },
+    {
+      "Field": "state05",
+      "Name": "State: Aerial Dash",
+      "Description": ""
+    },
+    {
+      "Field": "state06",
+      "Name": "State: Quick Boost",
+      "Description": ""
+    },
+    {
+      "Field": "state07",
+      "Name": "State: Slope Slip",
+      "Description": ""
+    },
+    {
+      "Field": "state08",
+      "Name": "State: While Riding",
+      "Description": ""
+    },
+    {
+      "Field": "state09",
+      "Name": "State: Floating",
+      "Description": ""
+    },
+    {
+      "Field": "state10",
+      "Name": "State: Cover Lifted",
+      "Description": ""
+    },
+    {
+      "Field": "state11",
+      "Name": "State: Tank Hovering",
+      "Description": ""
+    },
+    {
+      "Field": "state12",
+      "Name": "State: Tank Fall",
+      "Description": ""
+    },
+    {
+      "Field": "state13",
+      "Name": "State: VOB",
+      "Description": ""
+    },
+    {
+      "Field": "state14",
+      "Name": "State: Death whilst Grounded",
+      "Description": ""
+    },
+    {
+      "Field": "state15",
+      "Name": "State: Death whilst Aerial",
+      "Description": ""
+    },
+    {
+      "Field": "state16",
+      "Name": "State: 16",
+      "Description": ""
+    },
+    {
+      "Field": "state17",
+      "Name": "State: 17",
+      "Description": ""
+    },
+    {
+      "Field": "state18",
+      "Name": "State: 18",
+      "Description": ""
+    },
+    {
+      "Field": "state19",
+      "Name": "State: 19",
+      "Description": ""
+    },
+    {
+      "Field": "TransitionActionAiType",
+      "Name": "Transition AI Behavior Type",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NoticeStateID",
+      "Name": "AI Notification Transition ID",
+      "Description": ""
+    }
+  ]
+}

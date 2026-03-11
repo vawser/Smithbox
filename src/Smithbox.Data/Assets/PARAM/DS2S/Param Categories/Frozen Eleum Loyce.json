@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Frozen Eleum Loyce",
+  "Key": "Frozen Eleum Loyce",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Frozen Eleum Loyce"
+      }
+  ],
   "Params": [
     "eventlocation_m50_37_00_00",
     "eventparam_m50_37_00_00",

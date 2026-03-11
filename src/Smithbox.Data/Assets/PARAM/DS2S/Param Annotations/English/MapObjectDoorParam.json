@@ -1,0 +1,23 @@
+{
+  "Param": "MapObjectDoorParam",
+  "Type": "MAP_OBJECT_DOOR_PARAM",
+  "Name": "MapObjectDoorParam",
+  "Description": "Defines parameters related to door map objects.",
+  "Fields": [
+    {
+      "Field": "is_twin_door",
+      "Name": "Is Twin Door",
+      "Description": ""
+    },
+    {
+      "Field": "key_guide_id_when_closed",
+      "Name": "Key Guide ID when Closed",
+      "Description": ""
+    },
+    {
+      "Field": "key_guide_id_when_open",
+      "Name": "Key Guide ID when Open",
+      "Description": ""
+    }
+  ]
+}

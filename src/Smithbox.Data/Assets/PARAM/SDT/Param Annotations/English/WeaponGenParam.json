@@ -1,0 +1,63 @@
+{
+  "Param": "WeaponGenParam",
+  "Type": "WEAPON_GEN_PARAM_ST",
+  "Name": "WeaponGenParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "wepParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "Param": "WeaponAttackMotionParam",
+  "Type": "WEAPON_ATTACK_MOTION_PARAM",
+  "Name": "WeaponAttackMotionParam",
+  "Description": "Defines parameters relating to weapon animations.",
+  "Fields": [
+    {
+      "Field": "animation_id",
+      "Name": "Animation ID",
+      "Description": ""
+    },
+    {
+      "Field": "attack_type",
+      "Name": "Attack Type",
+      "Description": ""
+    },
+    {
+      "Field": "startup_speed",
+      "Name": "Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "recovery_speed",
+      "Name": "Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "tracking_start",
+      "Name": "Tracking Start",
+      "Description": ""
+    },
+    {
+      "Field": "tracking_middle",
+      "Name": "Tracking Middle",
+      "Description": ""
+    },
+    {
+      "Field": "tracking_end",
+      "Name": "Tracking End",
+      "Description": ""
+    },
+    {
+      "Field": "weapon_y_orientation",
+      "Name": "Weapon Y Orientation",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "self_pushback_1",
+      "Name": "Self Pushback 1",
+      "Description": ""
+    },
+    {
+      "Field": "self_pushback_2",
+      "Name": "Self Pushback 2",
+      "Description": ""
+    },
+    {
+      "Field": "damage_param_id_1",
+      "Name": "Damage Param ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "damage_param_id_2",
+      "Name": "Damage Param ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "damage_param_id_3",
+      "Name": "Damage Param ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_id_1",
+      "Name": "Swing - Bullet ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_damage_id_1",
+      "Name": "Swing - Bullet Damage ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_id_2",
+      "Name": "Swing - Bullet ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_damage_id_2",
+      "Name": "Swing - Bullet Damage ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_id_3",
+      "Name": "Swing - Bullet ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "swing_bullet_damage_id_3",
+      "Name": "Swing - Bullet Damage ID [3]",
+      "Description": ""
+    }
+  ]
+}

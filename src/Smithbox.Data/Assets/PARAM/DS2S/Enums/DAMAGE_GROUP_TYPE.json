@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DAMAGE_GROUP_TYPE",
-  "Name": "DAMAGE_GROUP_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_GROUP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_GROUP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Own army",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Own army"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Neutral",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Neutral"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Enemy army",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy army"
+        }
+      ]
     }
   ]
 }

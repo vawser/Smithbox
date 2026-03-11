@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DECAL_FLIP_TYPE",
-  "Name": "DECAL_FLIP_TYPE",
-  "Description": "",
+  "Key": "DECAL_FLIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_FLIP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do not",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Do",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Random",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random"
+        }
+      ]
     }
   ]
 }

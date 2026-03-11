@@ -1,92 +1,164 @@
 {
-  "DisplayName": "SP_EFFECT_TARGET_REGION",
-  "Name": "SP_EFFECT_TARGET_REGION",
-  "Description": "",
+  "Key": "SP_EFFECT_TARGET_REGION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_TARGET_REGION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Others",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Others"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Abnormal status - poison",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abnormal status - poison"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Auxiliary-Jihad",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Auxiliary-Jihad"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Equipment - feet",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - feet"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Equipment - Arm",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - Arm"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Equipment - Torso",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - Torso"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Equipment-Head",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment-Head"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Abnormal status - deadly poison",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abnormal status - deadly poison"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Equipment - Ring",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - Ring"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Equipment - left weapon",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - left weapon"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Equipment - right weapon",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipment - right weapon"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Both legs",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both legs"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Abnormal status - wet",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abnormal status - wet"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Status Abnormality - Spell Seal",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Status Abnormality - Spell Seal"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Character",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character"
+        }
+      ]
     },
     {
-      "ID": "127",
-      "Name": "Automatic hand selection for both hands",
-      "Description": ""
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Automatic hand selection for both hands"
+        }
+      ]
     },
     {
-      "ID": "254",
-      "Name": "Not set",
-      "Description": ""
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not set"
+        }
+      ]
     }
   ]
 }

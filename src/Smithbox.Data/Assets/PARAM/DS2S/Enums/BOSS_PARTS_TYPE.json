@@ -1,32 +1,56 @@
 {
-  "DisplayName": "BOSS_PARTS_TYPE",
-  "Name": "BOSS_PARTS_TYPE",
-  "Description": "",
+  "Key": "BOSS_PARTS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_PARTS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Main body",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Main body"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Part 1",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 1"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Part 2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Part 3",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 3"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Part 4",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 4"
+        }
+      ]
     }
   ]
 }

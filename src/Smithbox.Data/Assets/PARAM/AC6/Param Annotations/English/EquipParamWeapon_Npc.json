@@ -1,0 +1,1693 @@
+{
+  "Param": "EquipParamWeapon_Npc",
+  "Type": "EQUIP_PARAM_WEAPON_ST_NPC",
+  "Name": "EquipParamWeapon_Npc",
+  "Description": "Determines the parameters of weapons.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorVariationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used to determine the action parameters to use for this weapon\u0027s attacks."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering ID used to sort this part in the menu."
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "Wandering Equip ID",
+      "Description": "Replacement part ID for wandering ghosts."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]."
+    },
+    {
+      "Field": "weaponWeightRate",
+      "Name": "Equipment Weight Ratio",
+      "Description": "Equipment weight ratio"
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "Repair Value",
+      "Description": "The price required to repair this part."
+    },
+    {
+      "Field": "reinforcePrice",
+      "Name": "Reinforcement Value",
+      "Description": "The reinforcement price for this part."
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "The sell value for this part."
+    },
+    {
+      "Field": "correctStrength",
+      "Name": "Correction: STR",
+      "Description": "Multiplier to the damage derived from the specified stat."
+    },
+    {
+      "Field": "correctAgility",
+      "Name": "Correction: DEX",
+      "Description": "Multiplier to the damage derived from the specified stat."
+    },
+    {
+      "Field": "correctMagic",
+      "Name": "Correction: INT",
+      "Description": "Multiplier to the damage derived from the specified stat."
+    },
+    {
+      "Field": "correctFaith",
+      "Name": "Correction: FTH",
+      "Description": "Multiplier to the damage derived from the specified stat."
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "Guard Absorption %: Kinetic",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "Guard Absorption %: Energy",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption %: Explosive",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "thunGuardCutRate",
+      "Name": "Guard Absorption %: Coral",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "spEffectBehaviorId0",
+      "Name": "SpEffect on Hit: 1",
+      "Description": "A SpEffect to apply when this weapon hits."
+    },
+    {
+      "Field": "spEffectBehaviorId1",
+      "Name": "SpEffect on Hit: 2",
+      "Description": "A SpEffect to apply when this weapon hits."
+    },
+    {
+      "Field": "spEffectBehaviorId2",
+      "Name": "SpEffect on Hit: 3",
+      "Description": "A SpEffect to apply when this weapon hits."
+    },
+    {
+      "Field": "residentSpEffectId",
+      "Name": "Resident SpEffect: 1",
+      "Description": "A SpEffect to apply to the wielder of this weapon."
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "Resident SpEffect: 2",
+      "Description": "A SpEffect to apply to the wielder of this weapon."
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Resident SpEffect: 3",
+      "Description": "A SpEffect to apply to the wielder of this weapon."
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Upgrade Material ID",
+      "Description": "The material requirements for improving this part."
+    },
+    {
+      "Field": "originEquipWep",
+      "Name": "Source ID: \u002B0",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep1",
+      "Name": "Source ID: \u002B1",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep2",
+      "Name": "Source ID: \u002B2",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep3",
+      "Name": "Source ID: \u002B3",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep4",
+      "Name": "Source ID: \u002B4",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep5",
+      "Name": "Source ID: \u002B5",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep6",
+      "Name": "Source ID: \u002B6",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep7",
+      "Name": "Source ID: \u002B7",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep8",
+      "Name": "Source ID: \u002B8",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep9",
+      "Name": "Source ID: \u002B9",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep10",
+      "Name": "Source ID: \u002B10",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep11",
+      "Name": "Source ID: \u002B11",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep12",
+      "Name": "Source ID: \u002B12",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep13",
+      "Name": "Source ID: \u002B13",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep14",
+      "Name": "Source ID: \u002B14",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipWep15",
+      "Name": "Source ID: \u002B15",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "weakA_DamageRate",
+      "Name": "Damage Adjustment %: Type A",
+      "Description": "Damage multiplier applied to targets that are classified as Type A."
+    },
+    {
+      "Field": "weakB_DamageRate",
+      "Name": "Damage Adjustment %: Type B",
+      "Description": "Damage multiplier applied to targets that are classified as Type B."
+    },
+    {
+      "Field": "weakC_DamageRate",
+      "Name": "Damage Adjustment %: Type C",
+      "Description": "Damage multiplier applied to targets that are classified as Type C."
+    },
+    {
+      "Field": "weakD_DamageRate",
+      "Name": "Damage Adjustment %: Type D",
+      "Description": "Damage multiplier applied to targets that are classified as Type D."
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant Item Lot ID",
+      "Description": "-1 No vagrant 0 No lottery 1  With lottery"
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Vagrant Enemy Item Lot ID",
+      "Description": "-1 No drop 0 No lottery 1  With lottery"
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Vagrant Bonus Item Lot ID",
+      "Description": "-1 No drop 0 No lottery 1  With lottery"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "The model ID to use for this part. Also determines the menu preview icon."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID ",
+      "Description": "The icon ID to use for this part."
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "The initial durability of this part."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "Max Durability",
+      "Description": "The maximum durability of this part."
+    },
+    {
+      "Field": "attackThrowEscape",
+      "Name": "Damage: Throw Attack",
+      "Description": "The base damage for throw attack power"
+    },
+    {
+      "Field": "parryDamageLife",
+      "Name": "Parry Damage Duration",
+      "Description": "The duration of parry damage. It is capped by the duration set in the TAE. In frames."
+    },
+    {
+      "Field": "attackBasePhysics",
+      "Name": "Damage: Kinetic",
+      "Description": "The base Kinetic attack power."
+    },
+    {
+      "Field": "attackBaseMagic",
+      "Name": "Damage: Energy",
+      "Description": "The base Energy attack power."
+    },
+    {
+      "Field": "attackBaseFire",
+      "Name": "Damage: Explosive",
+      "Description": "The base Explosive attack power."
+    },
+    {
+      "Field": "attackBaseThunder",
+      "Name": "Damage: Coral",
+      "Description": "The base Coral attack power."
+    },
+    {
+      "Field": "attackBaseStamina",
+      "Name": "Damage: Stamina",
+      "Description": "The base stamina attack power."
+    },
+    {
+      "Field": "saWeaponDamage",
+      "Name": "Damage: Poise",
+      "Description": "The base poise attack power."
+    },
+    {
+      "Field": "saDurability",
+      "Name": "Poise",
+      "Description": "The additional poise to apply when using this weapon during attack animations."
+    },
+    {
+      "Field": "horizontalGuardAngle",
+      "Name": "Horizontal Guard Angle",
+      "Description": "Defense generation range angle when guarding with a weapon (horizontal direction).  In degrees."
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "Guard Stability",
+      "Description": "Defense power against stamina drain from enemy attacks when guarding correctly."
+    },
+    {
+      "Field": "reinforceTypeId",
+      "Name": "Reinforcement Type ID",
+      "Description": "The reinforcement progression to use for this part."
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Sequential Achievement ID",
+      "Description": "The sequential achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "throwAtkRate",
+      "Name": "Critical Hit Multiplier",
+      "Description": "The multiplier to apply to critical hits."
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "Increased Attentuation Range for Ammunition",
+      "Description": "Increase the attentuation range of ammunition by the specified multiplier."
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "The equipment model category used by this part."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender Category",
+      "Description": "The equipment gender category used by this part."
+    },
+    {
+      "Field": "weaponCategory",
+      "Name": "Weapon Category",
+      "Description": "The weapon category of this part."
+    },
+    {
+      "Field": "wepmotionCategory",
+      "Name": "Weapon Animation Set",
+      "Description": "The weapon animation category. Determines the base animation set the weapon uses."
+    },
+    {
+      "Field": "guardmotionCategory",
+      "Name": "Guard Animation Set",
+      "Description": "The weapon animation category used when guarding. Determines the animation set to overlap when guarding."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Presentation: Material",
+      "Description": "Specify particles and sounds at the time of attack (1 set by attribute, material, size)"
+    },
+    {
+      "Field": "defSeMaterial1",
+      "Name": "Defense Presentation: Sound",
+      "Description": "Used for sounds when guarding"
+    },
+    {
+      "Field": "correctType_Physics",
+      "Name": "Damage Correction Graph: Kinetic",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Special attributes to set for attacks"
+    },
+    {
+      "Field": "spAtkcategory",
+      "Name": "Weapon Override Animation Set",
+      "Description": "The weapon override animation category. Determines the override animation set the weapon uses."
+    },
+    {
+      "Field": "wepmotionOneHandId",
+      "Name": "Weapon Idle Animation Set: 1H",
+      "Description": "The weapon idle animation category. Determines the idle animations used when held one-handed."
+    },
+    {
+      "Field": "wepmotionBothHandId",
+      "Name": "Weapon Idle Animation Set: 2H",
+      "Description": "The weapon idle animation category. Determines the idle animations used when held two-handed."
+    },
+    {
+      "Field": "properStrength",
+      "Name": "Requirement: STR",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properAgility",
+      "Name": "Requirement: DEX",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properMagic",
+      "Name": "Requirement: INT",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properFaith",
+      "Name": "Requirement: FTH",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "overStrength",
+      "Name": "STR over Start Value",
+      "Description": "Strength over start value"
+    },
+    {
+      "Field": "attackBaseParry",
+      "Name": "Parry Attack",
+      "Description": "The base parry attack damage value. Applied to the enemy parry defense value."
+    },
+    {
+      "Field": "defenseBaseParry",
+      "Name": "Parry Defense",
+      "Description": "The base parry defense value. Compared against enemy parry attack value."
+    },
+    {
+      "Field": "guardBaseRepel",
+      "Name": "Base Repel: Guard",
+      "Description": "The base repel value when guarding. Compared against enemy repel attack value."
+    },
+    {
+      "Field": "attackBaseRepel",
+      "Name": "Base Repel: Attack",
+      "Description": "The base repel value when attacking. Compared against enemy repel attack value."
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "Guard Absorption Invalidation",
+      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "Guard Level",
+      "Description": "When guarding, the guard animation offset to use when being attacked."
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "Guard Absorption %: Slash",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "Guard Absorption %: Strike",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "Guard Absorption %: Thrust",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "burnGuardResist",
+      "Name": "Guard Absorption %: ACS Anomaly",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "stunGuardResist",
+      "Name": "Guard Absorption %: Electric Discharge",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "highPlasmaGuardResist",
+      "Name": "Guard Absorption %: Plasma",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "curseGuardResist",
+      "Name": "Guard Absorption %: Curse",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "isDurabilityDivergence",
+      "Name": "Is Animation Changed by Durability",
+      "Description": "The offset to apply to the animation set based on durability."
+    },
+    {
+      "Field": "rightHandEquipable",
+      "Name": "Equipped in Front Right Slot",
+      "Description": "If ON, this part can be equipped in the front right slot."
+    },
+    {
+      "Field": "leftHandEquipable",
+      "Name": "Equipped in Front Left Slot",
+      "Description": "If ON, this part can be equipped in the front left slot."
+    },
+    {
+      "Field": "bothHandEquipable",
+      "Name": "Equipped in either Front Slot",
+      "Description": "If ON, this part can be equipped in either front slot."
+    },
+    {
+      "Field": "rightBackEquipable",
+      "Name": "Equipped in Back Right Slot",
+      "Description": "If ON, this part can be equipped in the back right slot."
+    },
+    {
+      "Field": "leftBackEquipable",
+      "Name": "Equipped in Back Left Slot",
+      "Description": "If ON, this part can be equipped in the back left slot."
+    },
+    {
+      "Field": "enableGuard",
+      "Name": "Enables Guard",
+      "Description": "If ON, this weapon will guard with L1 when equipped with left hand."
+    },
+    {
+      "Field": "enableParry",
+      "Name": "Enables Parry",
+      "Description": "If ON, this weapon will arry with L2 when equipped with left hand."
+    },
+    {
+      "Field": "enableMagic",
+      "Name": "Enables Magic",
+      "Description": "If ON, this weapon will cast magic when attacking."
+    },
+    {
+      "Field": "enableSorcery",
+      "Name": "Enables Sorcery",
+      "Description": "If ON, this weapon will cast sorcery when attacking."
+    },
+    {
+      "Field": "enableMiracle",
+      "Name": "Enables Miracles",
+      "Description": "If ON, this weapon will cast miracles when attacking."
+    },
+    {
+      "Field": "enableVowMagic",
+      "Name": "Enables Vow Magic",
+      "Description": "If ON, this weapon will cast vow magic when attacking."
+    },
+    {
+      "Field": "isNormalAttackType",
+      "Name": "Menu Display: Normal",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isBlowAttackType",
+      "Name": "Menu Display: Strike",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isSlashAttackType",
+      "Name": "Menu Display: Slash",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isThrustAttackType",
+      "Name": "Menu Display: Thrust",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "Is Buffable",
+      "Description": "If ON, this weapon be buffed via a tool."
+    },
+    {
+      "Field": "isHeroPointCorrect",
+      "Name": "Apply Humanity Correction",
+      "Description": "If On, applies attack correction based on humanity."
+    },
+    {
+      "Field": "isCustom",
+      "Name": "Is Reinforcable",
+      "Description": "If ON, this weapon can be reinforced via the reinforcement mechanic?"
+    },
+    {
+      "Field": "disableBaseChangeReset",
+      "Name": "Disable Weapon Job Change",
+      "Description": "If ON, prevents the weapon from being changed fundamentally via the ascension mechanic or infusion mechanic."
+    },
+    {
+      "Field": "disableRepair",
+      "Name": "Disable Repair",
+      "Description": "If ON, this weapon cannot be repaired."
+    },
+    {
+      "Field": "isDarkHand",
+      "Name": "Is Dark Hand",
+      "Description": "If ON, this weapon is considered a \u0027Dark Hand\u0027."
+    },
+    {
+      "Field": "simpleModelForDlc",
+      "Name": "Is Simple Model for DLC",
+      "Description": "If ON, this weapon uses a simple model for the DLC."
+    },
+    {
+      "Field": "lanternWep",
+      "Name": "Is Light Source",
+      "Description": "If ON, this weapon is considered a light source."
+    },
+    {
+      "Field": "isVersusGhostWep",
+      "Name": "Is Anti-Ghost Weapon",
+      "Description": "If ON, this weapon can hit \u0027Ghost\u0027 characters."
+    },
+    {
+      "Field": "baseChangeCategory",
+      "Name": "Job Category",
+      "Description": "The weapon job category (e.g. ascension or infusion). Used to display the attribute icon."
+    },
+    {
+      "Field": "isDragonSlayer",
+      "Name": "Is Dragon-Hunter Weapon",
+      "Description": "If ON, is considered a \u0027dragon-hunter\u0027 weapon."
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Can Deposit",
+      "Description": "If ON, this item can be deposited into the repository."
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Is Drop Disabled in Multiplayer",
+      "Description": "If ON, this item cannot be dropped in a multiplayer session."
+    },
+    {
+      "Field": "isDiscard",
+      "Name": "Can Discard",
+      "Description": "If ON, this item can be discarded."
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can be Dropped",
+      "Description": "If ON, this item can be dropped."
+    },
+    {
+      "Field": "isMissileLockNoRayCast",
+      "Name": "Can Lock-on through Cover (Missiles only)",
+      "Description": "If ON, and this weapon is a missle weapon, then lock-on will work through walls."
+    },
+    {
+      "Field": "isPurgeEnable",
+      "Name": "Is Purgable",
+      "Description": "If ON, this weapon can be \u0027purged\u0027, e.g. dropped and no longer usable for the rest of the mission."
+    },
+    {
+      "Field": "extensionEquipable",
+      "Name": "Equipped in Core Expansion Slot",
+      "Description": "If ON, this part can be equipped in the core expansion slot."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defSfxMaterial1",
+      "Name": "Defence Presentation: Particles",
+      "Description": "The particles used when guarding."
+    },
+    {
+      "Field": "wepCollidableType0",
+      "Name": "Weapon Collidable Type: 1",
+      "Description": "The collidable type for this weapon."
+    },
+    {
+      "Field": "wepCollidableType1",
+      "Name": "Weapon Collidable Type: 1",
+      "Description": "The collidable type for this weapon."
+    },
+    {
+      "Field": "wepCollidableType2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wepCollidableType3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxId0",
+      "Name": "[0] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead0",
+      "Name": "[0] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail0",
+      "Name": "[0] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId1",
+      "Name": "[1] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead1",
+      "Name": "[1] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxId2",
+      "Name": "[2] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "traceDmyIdTail2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxId3",
+      "Name": "[3] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead3",
+      "Name": "[3] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail3",
+      "Name": "[3] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId4",
+      "Name": "[4] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead4",
+      "Name": "[4] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail4",
+      "Name": "[4] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId5",
+      "Name": "[5] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead5",
+      "Name": "[5] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail5",
+      "Name": "[5] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId6",
+      "Name": "[6] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead6",
+      "Name": "[6] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail6",
+      "Name": "[6] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId7",
+      "Name": "[7] Attack Trail: Particle ID",
+      "Description": "Particle to display for the attack trail (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead7",
+      "Name": "[7] Attack Trail: Root Dummy Polygon",
+      "Description": "The dummy polygon that points to the root of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail7",
+      "Name": "[7] Attack Trail: Tip Dummy Polygon",
+      "Description": "The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)"
+    },
+    {
+      "Field": "defSfxMaterial2",
+      "Name": "Defence Presentation: Particles (Disabled)",
+      "Description": "The particles used when guarding."
+    },
+    {
+      "Field": "defSeMaterial2",
+      "Name": "Defence Presentation: Sound (Disabled)",
+      "Description": "The sound used when guarding."
+    },
+    {
+      "Field": "absorpParamId",
+      "Name": "Weapon Sheath Position ID",
+      "Description": "The weapon sheath position ID. This value determines the position where the weapon is attached. -1 is the default position."
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "Toughness Correction",
+      "Description": "The multiplier to apply to the current toughness when this weapon is used."
+    },
+    {
+      "Field": "isValidTough_ProtSADmg",
+      "Name": "Is Toughness Perfomed if Poise is Initial Value",
+      "Description": "If ON, the toughness calculation is performed even if the current armor poise is the initial value."
+    },
+    {
+      "Field": "isDualBlade",
+      "Name": "Is Dual Weapon",
+      "Description": "If ON, this weapon is considered a \u0027duel blade\u0027."
+    },
+    {
+      "Field": "isAutoEquip",
+      "Name": "Is Weapon Automatically-Equipped",
+      "Description": "If ON, this weapon is automatically equipped. Only valid for arrows and bolts. Requires the slot to be empty to equip."
+    },
+    {
+      "Field": "isEnableEmergencyStep",
+      "Name": "Is Quickstep Weapon",
+      "Description": "If ON, this weapon is handled as a quickstep weapon in the behavior scripts."
+    },
+    {
+      "Field": "invisibleOnRemo",
+      "Name": "Is Hidden in Cutscenes",
+      "Description": "If ON, this weapon is hidden during cutscenes."
+    },
+    {
+      "Field": "guardBreakAtk_IgnoreProtect",
+      "Name": "Ignore Defense after Guard Break",
+      "Description": "If ON, this weapon ignores defense after an enemy\u0027s guard break."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctType_Magic",
+      "Name": "Damage Correction Graph: Energy",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "correctType_Fire",
+      "Name": "Damage Correction Graph: Explosive",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "correctType_Thunder",
+      "Name": "Damage Correction Graph: Coral",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "weakE_DamageRate",
+      "Name": "Damage Adjustment %: Type E",
+      "Description": "Damage multiplier applied to targets that are classified as Type E."
+    },
+    {
+      "Field": "weakF_DamageRate",
+      "Name": "Damage Adjustment %: Type F",
+      "Description": "Damage multiplier applied to targets that are classified as Type F."
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "Guard Absorption %: Dark",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "attackBaseDark",
+      "Name": "Damage: Dark",
+      "Description": "The base Dark attack power."
+    },
+    {
+      "Field": "correctType_Dark",
+      "Name": "Damage Correction Graph: Dark",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "correctType_Burn",
+      "Name": "Damage Correction Graph: ACS Anomaly",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "swordArtsId",
+      "Name": "Sword Arts ID",
+      "Description": "The Swords Arts ID to use for this weapon."
+    },
+    {
+      "Field": "correctType_HighPlasma",
+      "Name": "Damage Correction Graph: Plasma",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "properLuck",
+      "Name": "Requirement: LCK",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "autoReplenishType",
+      "Name": "Automatic Replenishment Type",
+      "Description": "The type of automatic replenishment available, and whether it is enabled or disabled by default."
+    },
+    {
+      "Field": "swordArtsParamId",
+      "Name": "Sword Arts ID",
+      "Description": "The Swords Arts ID to use for this weapon."
+    },
+    {
+      "Field": "correctLuck",
+      "Name": "Damage Correction Graph: Luck",
+      "Description": "Determine the calculcation correction graph to use when correcting this specified type of damage."
+    },
+    {
+      "Field": "arrowBoltEquipId",
+      "Name": "Quiver: Ammunition ID",
+      "Description": "The weapon ID of the ammunition display model."
+    },
+    {
+      "Field": "DerivationLevelType",
+      "Name": "Derivation Level Type",
+      "Description": "How to handle the reinforcement level when reducing or changing weapons."
+    },
+    {
+      "Field": "enchantSfxSize",
+      "Name": "Enchantment Particle Size",
+      "Description": "ID offset to enchantment SFX ID"
+    },
+    {
+      "Field": "wepTypeForText",
+      "Name": "Menu Display: Weapon Type",
+      "Description": "The weapon type to display in the menu."
+    },
+    {
+      "Field": "physGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Kinetic (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "magGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Energy (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "fireGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Explosive (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "thunGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Coral (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "darkGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Dark (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "burnGuardResist_StaminaShort",
+      "Name": "Guard Absorption %: ACS Anomaly (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "stunGuardResist_StaminaShort",
+      "Name": "Guard Absorption %: Electric Discharge (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "highPlasmaGuardResist_StaminaShort",
+      "Name": "Guard Absorption %: Plasma (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "curseGuardResist_StaminaShort",
+      "Name": "Guard Absorption %: Curse (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "saGuardCutRate",
+      "Name": "Guard Absorption %: Poise",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "saGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Poise (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "staminaGuardCutRate",
+      "Name": "Guard Absorption %: Stamina",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "staminaGuardCutRate_StaminaShort",
+      "Name": "Guard Absorption %: Stamina (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "depletedUraniumToxicGuardResist_StaminaShort",
+      "Name": "Guard Absorption %: Depleted Uranium (no Stamina)",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "depletedUraniumToxicGuardResist",
+      "Name": "Guard Absorption %: Depleted Uranium",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with no stamina."
+    },
+    {
+      "Field": "shoulderEquipType",
+      "Name": "Shoulder Slot Equip Type",
+      "Description": "The equip type for a shoulder slot weapon."
+    },
+    {
+      "Field": "staminaMax",
+      "Name": "Guard: Stamina Capacity",
+      "Description": "The stamina capacity of this booster."
+    },
+    {
+      "Field": "staminaRecoverPerSec",
+      "Name": "Guard: Stamina Recovery",
+      "Description": "The stamina recovery rate. In points per second."
+    },
+    {
+      "Field": "recoverStaminaDelayTimeSec",
+      "Name": "Guard: Stamina Recovery Delay",
+      "Description": "The delay before stamina recovery starts. In seconds."
+    },
+    {
+      "Field": "guardBreakSelfAtk_AtkId",
+      "Name": "Guard Break: Attack ID",
+      "Description": "The attack ID To use during a self-induced guard break."
+    },
+    {
+      "Field": "breakThrowTypeId",
+      "Name": "Guard Break: Throw Type ID",
+      "Description": "The throw type ID to use after a guard break. -1 disables, enemy ignores this."
+    },
+    {
+      "Field": "stealthThrowTypeId",
+      "Name": "Stealth: Throw Type ID",
+      "Description": "The throw type ID to use after a stealth attack. -1 disables, enemy ignores this."
+    },
+    {
+      "Field": "thrustersParamIDForPC",
+      "Name": "Thruster Configuration Offset (for Player)",
+      "Description": "For player, specify the ID of the thruster parameter (0 means no thruster)."
+    },
+    {
+      "Field": "pad4_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxId_1",
+      "Name": "Weapon Particle: 1",
+      "Description": "The SFX ID to apply to this weapon."
+    },
+    {
+      "Field": "residentSfxId_2",
+      "Name": "Weapon Particle: 2",
+      "Description": "The SFX ID to apply to this weapon."
+    },
+    {
+      "Field": "residentSfxId_3",
+      "Name": "Weapon Particle: 3",
+      "Description": "The SFX ID to apply to this weapon."
+    },
+    {
+      "Field": "residentSfxId_4",
+      "Name": "Weapon Particle: 4",
+      "Description": "The SFX ID to apply to this weapon."
+    },
+    {
+      "Field": "residentSfx_DmyId_1",
+      "Name": "Weapon Particle: Dummy Polygon 1",
+      "Description": "The dummy polygon that particle 1 spawns from."
+    },
+    {
+      "Field": "residentSfx_DmyId_2",
+      "Name": "Weapon Particle: Dummy Polygon 2",
+      "Description": "The dummy polygon that particle 2 spawns from."
+    },
+    {
+      "Field": "residentSfx_DmyId_3",
+      "Name": "Weapon Particle: Dummy Polygon 3",
+      "Description": "The dummy polygon that particle 3 spawns from."
+    },
+    {
+      "Field": "residentSfx_DmyId_4",
+      "Name": "Weapon Particle: Dummy Polygon 4",
+      "Description": "The dummy polygon that particle 4 spawns from."
+    },
+    {
+      "Field": "staminaConsumptionRate",
+      "Name": "Stamina Consumption %",
+      "Description": "The multiplier to apply to stamina consumption for attacks from this weapon."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Physics",
+      "Name": "Attack Correction: Kinetic (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Kinetic attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Magic",
+      "Name": "Attack Correction: Energy (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Energy attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Fire",
+      "Name": "Attack Correction: Explosive (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Explosive attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Thunder",
+      "Name": "Attack Correction: Coral (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Coral attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Dark",
+      "Name": "Attack Correction: Dark (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Dark attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_Burn",
+      "Name": "Attack Correction: ACS Anomaly (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base ACS anomaly attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_HighPlasma",
+      "Name": "Attack Correction: Plasma (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Plasma attack power."
+    },
+    {
+      "Field": "vsPlayerDmgCorrectRate_DepletedUraniumToxic",
+      "Name": "Attack Correction: Depleted Uranium (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Depleted Uranium attack power."
+    },
+    {
+      "Field": "attainmentWepStatusStr",
+      "Name": "Special Heavy Attack: STR Requirement",
+      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+    },
+    {
+      "Field": "attainmentWepStatusDex",
+      "Name": "Special Heavy Attack: DEX Requirement",
+      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+    },
+    {
+      "Field": "attainmentWepStatusMag",
+      "Name": "Special Heavy Attack: INT Requirement",
+      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+    },
+    {
+      "Field": "attainmentWepStatusFai",
+      "Name": "Special Heavy Attack: FTH Requirement",
+      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+    },
+    {
+      "Field": "attainmentWepStatusLuc",
+      "Name": "Special Heavy Attack: LCK Requirement",
+      "Description": "The STR requirement to change the heavy attack into a special heavy attack with this weapon."
+    },
+    {
+      "Field": "attackElementCorrectId",
+      "Name": "Attack Attribute Correction ID",
+      "Description": "The attack attribute correction parameters to use when correcting this weapon\u0027s damage."
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Sale Value",
+      "Description": "Price the item is on sale for."
+    },
+    {
+      "Field": "reinforceShopCategory",
+      "Name": "Reinforcement Menu Type",
+      "Description": "The reinforcement menu category this weapon uses."
+    },
+    {
+      "Field": "maxArrowQuantity",
+      "Name": "Ammunition: Maximum Held",
+      "Description": "The maximum number of this weapon (ammunition) that can be held."
+    },
+    {
+      "Field": "residentSfx_1_IsVisibleForHang",
+      "Name": "Hide when Sheathed: Weapon Particle 1",
+      "Description": "If ON, then weapon particle 1 is hidden if the weapon is Sheathed."
+    },
+    {
+      "Field": "residentSfx_2_IsVisibleForHang",
+      "Name": "Hide when Sheathed: Weapon Particle 2",
+      "Description": "If ON, then weapon particle 2 is hidden if the weapon is Sheathed."
+    },
+    {
+      "Field": "residentSfx_3_IsVisibleForHang",
+      "Name": "Hide when Sheathed: Weapon Particle 3",
+      "Description": "If ON, then weapon particle 3 is hidden if the weapon is Sheathed."
+    },
+    {
+      "Field": "residentSfx_4_IsVisibleForHang",
+      "Name": "Hide when Sheathed: Weapon Particle 4",
+      "Description": "If ON, then weapon particle 4 is hidden if the weapon is Sheathed."
+    },
+    {
+      "Field": "isSoulParamIdChange_model0",
+      "Name": "Apply Weapon Particle Parameters: 1",
+      "Description": "Whether the particle paramters for weapon 1 are applied. Typically this is the \u0027soul param id\u0027 and \u0027invisible weapon\u0027 paramters."
+    },
+    {
+      "Field": "isSoulParamIdChange_model1",
+      "Name": "Apply Weapon Particle Parameters: 2",
+      "Description": "Whether the particle paramters for weapon 2 are applied. Typically this is the \u0027soul param id\u0027 and \u0027invisible weapon\u0027 paramters."
+    },
+    {
+      "Field": "isSoulParamIdChange_model2",
+      "Name": "Apply Weapon Particle Parameters: 3",
+      "Description": "Whether the particle paramters for weapon 3 are applied. Typically this is the \u0027soul param id\u0027 and \u0027invisible weapon\u0027 paramters."
+    },
+    {
+      "Field": "isSoulParamIdChange_model3",
+      "Name": "Apply Weapon Particle Parameters: 4",
+      "Description": "Whether the particle paramters for weapon 4 are applied. Typically this is the \u0027soul param id\u0027 and \u0027invisible weapon\u0027 paramters."
+    },
+    {
+      "Field": "wepSeIdOffset",
+      "Name": "Weapon Sound ID Offset",
+      "Description": "The sound offset ID to apply when this weapon is equipped."
+    },
+    {
+      "Field": "baseChangePrice",
+      "Name": "Job Change Price",
+      "Description": "The price to change the base weapon (e.g. ascension or infusion)."
+    },
+    {
+      "Field": "levelSyncCorrectId",
+      "Name": "Level Sync Correction ID",
+      "Description": "The correction ID to use for level syncing."
+    },
+    {
+      "Field": "atkStateId",
+      "Name": "Attack State ID",
+      "Description": "The attack state ID for this weapon."
+    },
+    {
+      "Field": "pad4_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletNum",
+      "Name": "Ammunition: Magazine Rounds",
+      "Description": "Number of rounds loaded per magazine."
+    },
+    {
+      "Field": "magazineReload_InactiveSpeedScale",
+      "Name": "Ammunition: Magazine Reload Speed %",
+      "Description": "The magazine reload speed during storage."
+    },
+    {
+      "Field": "vsPlayerImpactCorrectRate",
+      "Name": "Attack Correction: Impact (for PVP)",
+      "Description": "Player vs. player only. Multiplier to the base Impact attack power."
+    },
+    {
+      "Field": "pad4_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "connectPartsSlotIndex",
+      "Name": "Connected Part Slot Index",
+      "Description": "Part number that works with this equipment when it is an enemy"
+    },
+    {
+      "Field": "isTaeShootTimingOnly",
+      "Name": "Only Fire Bullet via TAE Request",
+      "Description": "The bullet is actually fired only when a shooting request comes from TAE."
+    },
+    {
+      "Field": "verticalGuardAngle",
+      "Name": "Vertical Guard Angle",
+      "Description": "Defense generation range angle when guarding with a weapon (vertical direction). In degrees."
+    },
+    {
+      "Field": "pad4_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "postureBothHandAnimeId",
+      "Name": "Posture Additive Animation ID: Two-Hand",
+      "Description": "The additive animation ID applied to the current animation when this weapon is two-handed."
+    },
+    {
+      "Field": "postureRightHandAnimeId",
+      "Name": "Posture Additive Animation ID: Right-Hand",
+      "Description": "The additive animation ID applied to the current animation when this weapon is right-handed."
+    },
+    {
+      "Field": "postureLeftHandAnimeId",
+      "Name": "Posture Additive Animation ID: Left-Hand",
+      "Description": "The additive animation ID applied to the current animation when this weapon is left-handed."
+    },
+    {
+      "Field": "changeWepParamId",
+      "Name": "Change Weapon ID",
+      "Description": "The weapon ID to use when changing weapons whilst this weapon is the primary."
+    },
+    {
+      "Field": "lookAtParamId",
+      "Name": "LookAt ID",
+      "Description": "The LookAt param ID to use."
+    },
+    {
+      "Field": "pad4_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdAtBreak_0",
+      "Name": "Particle ID: 1 (when Destroyed)",
+      "Description": "The SFX ID to play when the weapon is destroyed."
+    },
+    {
+      "Field": "sfxIdAtBreak_1",
+      "Name": "Particle ID: 2 (when Destroyed)",
+      "Description": "The SFX ID to play when the weapon is destroyed."
+    },
+    {
+      "Field": "sfxIdAtBreak_2",
+      "Name": "Particle ID: 3 (when Destroyed)",
+      "Description": "The SFX ID to play when the weapon is destroyed."
+    },
+    {
+      "Field": "padding3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdAtBreak_DmypolyId_0",
+      "Name": "Particle 1: Dummy Polygon (when Destroyed)",
+      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+    },
+    {
+      "Field": "sfxIdAtBreak_DmypolyId_1",
+      "Name": "Particle 2: Dummy Polygon (when Destroyed)",
+      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+    },
+    {
+      "Field": "sfxIdAtBreak_DmypolyId_2",
+      "Name": "Particle 3: Dummy Polygon (when Destroyed)",
+      "Description": "The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated."
+    },
+    {
+      "Field": "padding4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtDirType",
+      "Name": "LookAt Direction Type",
+      "Description": "Direction to point with LookAt"
+    },
+    {
+      "Field": "bulletShootDirType",
+      "Name": "Bullet Shoot Direction Type",
+      "Description": "The direction to fire bullets in"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "Default Behavior Judgement ID",
+      "Description": "ChrBehavior control program: If \u0027Use behavior judgment ID\u0027 is not checked for shooting, shoot using the set behavior judgment ID"
+    },
+    {
+      "Field": "unk2a4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "totalBulletNum",
+      "Name": "Ammunition: Total Rounds",
+      "Description": "Total number of rounds that can be fired. -1 means infinite."
+    },
+    {
+      "Field": "shieldParamId",
+      "Name": "Shield ID",
+      "Description": "The shield param ID to use when guarding with this weapon. -1 means the weapon\u0027s guard parameters are used."
+    },
+    {
+      "Field": "lockRange",
+      "Name": "Lock Distance",
+      "Description": "The lock distance of the weapon. In metres."
+    },
+    {
+      "Field": "meleeAbility",
+      "Name": "Melee Specialization",
+      "Description": "Determines the amount of angular velocity correction."
+    },
+    {
+      "Field": "lockSightHeightScale",
+      "Name": "Lock Vertical %",
+      "Description": "The vertical scale of the lock-on."
+    },
+    {
+      "Field": "lockSightWidthScale",
+      "Name": "Lock Width %",
+      "Description": "The width scale of the lock-on."
+    },
+    {
+      "Field": "lockTimeSec",
+      "Name": "Lock Time",
+      "Description": "The time to lock-on. In seconds."
+    },
+    {
+      "Field": "bladeHomingParamId",
+      "Name": "Blade Homing ID",
+      "Description": "The blade homing parameters to use for this weapon."
+    },
+    {
+      "Field": "assembleMenuCategory",
+      "Name": "Assembly Menu Category",
+      "Description": "The assembly menu category for this part."
+    },
+    {
+      "Field": "weaponPoseTypeR",
+      "Name": "Weapon Hold Type: Right",
+      "Description": "The weapon hold type in the right-hand."
+    },
+    {
+      "Field": "weaponPoseTypeL",
+      "Name": "Weapon Hold Type: Left",
+      "Description": "The weapon hold type in the left-hand."
+    },
+    {
+      "Field": "equipPanelIconID",
+      "Name": "HUD Icon ID",
+      "Description": "The icon ID for the the weapon panel GUI."
+    },
+    {
+      "Field": "consumeEN",
+      "Name": "Weapon: Energy Consumption",
+      "Description": "The energy consumption of this weapon."
+    },
+    {
+      "Field": "categoryNameTextID",
+      "Name": "Category Name ID",
+      "Description": "The text that appears for this category."
+    },
+    {
+      "Field": "pairEquipWep",
+      "Name": "Pair-equipped Weapon ID",
+      "Description": "The weapon ID to use if two of these weapons are equipped."
+    },
+    {
+      "Field": "operationPartsId",
+      "Name": "Operation Permission Type ID",
+      "Description": "The operation permissions for this weapon."
+    },
+    {
+      "Field": "bulletCost",
+      "Name": "Weapon: Ammunition Cost",
+      "Description": "Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses."
+    },
+    {
+      "Field": "depletedUraniumToxicPaGuardResistRate",
+      "Name": "Pulse Armor - Guard Absorption %: Depleted Uranium",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor."
+    },
+    {
+      "Field": "weaponAttachObjId",
+      "Name": "Weapon Attachment ID",
+      "Description": "The ID of the attachment joint to use for this weapon."
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "triggerActionType_00",
+      "Name": "Trigger Action Type [00]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_01",
+      "Name": "Trigger Action Type [01]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_02",
+      "Name": "Trigger Action Type [02]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_03",
+      "Name": "Trigger Action Type [03]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_04",
+      "Name": "Trigger Action Type [04]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_05",
+      "Name": "Trigger Action Type [05]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_06",
+      "Name": "Trigger Action Type [06]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_07",
+      "Name": "Trigger Action Type [07]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_08",
+      "Name": "Trigger Action Type [08]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_09",
+      "Name": "Trigger Action Type [09]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_10",
+      "Name": "Trigger Action Type [10]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_11",
+      "Name": "Trigger Action Type [11]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_12",
+      "Name": "Trigger Action Type [2]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_13",
+      "Name": "Trigger Action Type [13]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_14",
+      "Name": "Trigger Action Type [14]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_15",
+      "Name": "Trigger Action Type [15]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_16",
+      "Name": "Trigger Action Type [16]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_17",
+      "Name": "Trigger Action Type [17]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_18",
+      "Name": "Trigger Action Type [18]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_19",
+      "Name": "Trigger Action Type [19]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_20",
+      "Name": "Trigger Action Type [20]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_21",
+      "Name": "Trigger Action Type [21]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_22",
+      "Name": "Trigger Action Type [22]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_23",
+      "Name": "Trigger Action Type [23]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_24",
+      "Name": "Trigger Action Type [24]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_25",
+      "Name": "Trigger Action Type [25]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_26",
+      "Name": "Trigger Action Type [26]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_27",
+      "Name": "Trigger Action Type [27]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_28",
+      "Name": "Trigger Action Type [28]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_29",
+      "Name": "Trigger Action Type [29]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_30",
+      "Name": "Trigger Action Type [30]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "triggerActionType_31",
+      "Name": "Trigger Action Type [31]",
+      "Description": "ChrBehavior condition judgment type"
+    },
+    {
+      "Field": "end_pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

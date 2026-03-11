@@ -1,27 +1,47 @@
 {
-  "DisplayName": "OBJ_EVENT_TRIGGER_ENUM",
-  "Name": "OBJ_EVENT_TRIGGER_ENUM",
-  "Description": "",
+  "Key": "OBJ_EVENT_TRIGGER_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_EVENT_TRIGGER_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Key guide",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Key guide"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Destruction",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destruction"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Damage",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage"
+        }
+      ]
     }
   ]
 }

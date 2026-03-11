@@ -1,0 +1,28 @@
+{
+  "Param": "GraphicsConfig_SSAOQuality_win64",
+  "Type": "GRAPHICS_CONFIG_CS_SSAO_QUALITY_DETAIL",
+  "Name": "GraphicsConfig_SSAOQuality_win64",
+  "Description": "Determines the parameters of each screen space ambient occlusion quality level.",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Enable Screen-space Ambient Occulsion",
+      "Description": "If ON, enable screen-space ambient occlusion."
+    },
+    {
+      "Field": "cs_reprojEnabledType",
+      "Name": "Enable SSAO Reprojection",
+      "Description": "If reprojection is enabled, artifacts are hidden from undersampling, but ghosting may occur if reprojection fails."
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "Enable Bilateral Upscaling",
+      "Description": "Determines the bilateral upscaling settings for SSAO."
+    },
+    {
+      "Field": "cs_useNormalEnabledType",
+      "Name": "Enable Normal Usage",
+      "Description": "Determines the normal usage settings for SSAO."
+    }
+  ]
+}

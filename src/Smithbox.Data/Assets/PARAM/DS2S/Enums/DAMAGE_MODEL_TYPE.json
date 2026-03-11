@@ -1,17 +1,29 @@
 {
-  "DisplayName": "DAMAGE_MODEL_TYPE",
-  "Name": "DAMAGE_MODEL_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_MODEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_MODEL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Sphere",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Capsule",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
     }
   ]
 }

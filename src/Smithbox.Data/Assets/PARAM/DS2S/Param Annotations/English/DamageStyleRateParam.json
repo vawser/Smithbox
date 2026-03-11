@@ -1,0 +1,18 @@
+{
+  "Param": "DamageStyleRateParam",
+  "Type": "DAMAGE_STYLE_RATE_PARAM",
+  "Name": "DamageStyleRateParam",
+  "Description": "Defines parameters related to damage rate based on damage style.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

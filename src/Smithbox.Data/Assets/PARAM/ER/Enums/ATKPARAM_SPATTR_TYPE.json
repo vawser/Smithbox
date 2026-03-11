@@ -1,72 +1,128 @@
 {
-  "DisplayName": "ATKPARAM_SPATTR_TYPE",
-  "Name": "ATKPARAM_SPATTR_TYPE",
-  "Description": "Determines the non-physical attack \"element\" of an attack.",
+  "Key": "ATKPARAM_SPATTR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_SPATTR_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Fire",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Holy",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Holy"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Poison",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Scarlet Rot",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scarlet Rot"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Bloodloss",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bloodloss"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Frostbite",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frostbite"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Sleep",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sleep"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Madness",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Madness"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Death Blight",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death Blight"
+        }
+      ]
     },
     {
-      "ID": "254",
-      "Name": "None",
-      "Description": ""
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

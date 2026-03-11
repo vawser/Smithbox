@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Depths / Undead Burg / Undead Parish",
+  "Key": "Depths / Undead Burg / Undead Parish",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Depths / Undead Burg / Undead Parish"
+      }
+  ],
   "Params": [
     "m10_DofBank",
     "m10_EnvLightTexBank",

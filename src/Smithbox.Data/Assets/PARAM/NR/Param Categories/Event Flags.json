@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Event Flags",
+  "Key": "Event Flags",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Event Flags"
+      }
+  ],
   "Params": [
     "EFID_common",
     "EFID_m10_00_00_00",

@@ -1,0 +1,283 @@
+{
+  "Param": "CutsceneGparamWeatherParam",
+  "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Name": "CutsceneGparamWeatherParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "Disable Param - Debug",
+      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DstWeather_Sunny",
+      "Name": "Destination Weather: Sunny",
+      "Description": "Sunny"
+    },
+    {
+      "Field": "DstWeather_ClearSky",
+      "Name": "Destination Weather: Clear Sky",
+      "Description": "Sunny"
+    },
+    {
+      "Field": "DstWeather_WeakCloudy",
+      "Name": "Destination Weather: Light Cloud",
+      "Description": "Light cloudy"
+    },
+    {
+      "Field": "DstWeather_Cloud",
+      "Name": "Destination Weather: Cloud",
+      "Description": "cloudy"
+    },
+    {
+      "Field": "DstWeather_Rain",
+      "Name": "Destination Weather: Rain",
+      "Description": "rain"
+    },
+    {
+      "Field": "DstWeather_HeavyRain",
+      "Name": "Destination Weather: Heavy Rain",
+      "Description": "Heavy rain"
+    },
+    {
+      "Field": "DstWeather_Storm",
+      "Name": "Destination Weather: Storm",
+      "Description": "storm"
+    },
+    {
+      "Field": "DstWeather_StormForBattle",
+      "Name": "Destination Weather: Storm for Battle",
+      "Description": "Storm (for combat with the descendants of the guardian)"
+    },
+    {
+      "Field": "DstWeather_Snow",
+      "Name": "Destination Weather: Snow",
+      "Description": "snow"
+    },
+    {
+      "Field": "DstWeather_HeavySnow",
+      "Name": "Destination Weather: Heavy Snow",
+      "Description": "heavy snow"
+    },
+    {
+      "Field": "DstWeather_Fog",
+      "Name": "Destination Weather: Fog",
+      "Description": "fog"
+    },
+    {
+      "Field": "DstWeather_HeavyFog",
+      "Name": "Destination Weather: Heavy Fog",
+      "Description": "Thick fog"
+    },
+    {
+      "Field": "DstWeather_SandStorm",
+      "Name": "Destination Weather: Sandstorm",
+      "Description": "Sandstorm"
+    },
+    {
+      "Field": "DstWeather_HeavyFogRain",
+      "Name": "Destination Weather: Heavy Fog and Rain",
+      "Description": "Thick fog (rain)"
+    },
+    {
+      "Field": "PostPlayIngameWeather",
+      "Name": "Post Cutscene In-game Weather",
+      "Description": "In-game weather specifications at the end of playback (nothing is done if blank or invalid)"
+    },
+    {
+      "Field": "IndoorOutdoorType",
+      "Name": "Indoor/Outdoor Type",
+      "Description": "When indoors, the SFX specified by Weather SfxId (Outdoor) and Wind SfxId (Outdoor) in Weather Parameter.xlsm will be invalid in the cutscene."
+    },
+    {
+      "Field": "TakeOverDstWeather_Sunny",
+      "Name": "Replacement Weather: Sunny",
+      "Description": "In-game weather SFX to take over? _Sunny"
+    },
+    {
+      "Field": "TakeOverDstWeather_ClearSky",
+      "Name": "Replacement Weather: Clear Sky",
+      "Description": "In-game weather SFX to take over? _ Sunny"
+    },
+    {
+      "Field": "TakeOverDstWeather_WeakCloudy",
+      "Name": "Replacement Weather: Light Cloud",
+      "Description": "Will the in-game weather SFX be taken over? _ Light cloudy"
+    },
+    {
+      "Field": "TakeOverDstWeather_Cloud",
+      "Name": "Replacement Weather: Cloud",
+      "Description": "Will the in-game weather SFX be taken over? _cloudy"
+    },
+    {
+      "Field": "TakeOverDstWeather_Rain",
+      "Name": "Replacement Weather: Rain",
+      "Description": "In-game weather SFX to take over? _rain"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyRain",
+      "Name": "Replacement Weather: Heavy Rain",
+      "Description": "In-game weather SFX to take over? _ Heavy rain"
+    },
+    {
+      "Field": "TakeOverDstWeather_Storm",
+      "Name": "Replacement Weather: Storm",
+      "Description": "In-game weather SFX to take over? _storm"
+    },
+    {
+      "Field": "TakeOverDstWeather_StormForBattle",
+      "Name": "Replacement Weather: Storm for Battle",
+      "Description": "In-game weather SFX to take over? _ Storm (for battle with the descendants of the guardian)"
+    },
+    {
+      "Field": "TakeOverDstWeather_Snow",
+      "Name": "Replacement Weather: Snow",
+      "Description": "In-game weather SFX to take over? _snow"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavySnow",
+      "Name": "Replacement Weather: Heavy Snow",
+      "Description": "In-game weather SFX to take over? _heavy snow"
+    },
+    {
+      "Field": "TakeOverDstWeather_Fog",
+      "Name": "Replacement Weather: Fog",
+      "Description": "Will the in-game weather SFX be taken over? _fog"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyFog",
+      "Name": "Replacement Weather: Heavy Fog",
+      "Description": "Will the in-game weather SFX be taken over? _ Thick fog"
+    },
+    {
+      "Field": "TakeOverDstWeather_SandStorm",
+      "Name": "Replacement Weather: Sandstorm",
+      "Description": "In-game weather SFX to take over? _ Sandstorm"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyFogRain",
+      "Name": "Replacement Weather: Heavy Fog and Rain",
+      "Description": "In-game weather SFX to take over? _ Thick fog (rain)"
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DstWeather_Snowstorm",
+      "Name": "Destination Weather: Snowstorm",
+      "Description": "Snowstorm"
+    },
+    {
+      "Field": "DstWeather_LightningStorm",
+      "Name": "Destination Weather: Lightning Storm",
+      "Description": "Preliminary weather 2"
+    },
+    {
+      "Field": "DstWeather_Reserved3",
+      "Name": "Destination Weather: Reserved 3",
+      "Description": "Preliminary weather 3"
+    },
+    {
+      "Field": "DstWeather_Reserved4",
+      "Name": "Destination Weather: Reserved 4",
+      "Description": "Preliminary weather 4"
+    },
+    {
+      "Field": "DstWeather_Reserved5",
+      "Name": "Destination Weather: Reserved 5",
+      "Description": "Preliminary weather 5"
+    },
+    {
+      "Field": "DstWeather_Reserved6",
+      "Name": "Destination Weather: Reserved 6",
+      "Description": "Preliminary weather 6"
+    },
+    {
+      "Field": "DstWeather_Reserved7",
+      "Name": "Destination Weather: Reserved 7",
+      "Description": "Preliminary weather 7"
+    },
+    {
+      "Field": "DstWeather_Reserved8",
+      "Name": "Destination Weather: Reserved 8",
+      "Description": "Preliminary weather 8"
+    },
+    {
+      "Field": "TakeOverDstWeather_Snowstorm",
+      "Name": "Replacement Weather: Snowstorm",
+      "Description": "In-game weather SFX to take over? _ Snowstorm"
+    },
+    {
+      "Field": "TakeOverDstWeather_LightningStorm",
+      "Name": "Replacement Weather: Lightning Storm",
+      "Description": "In-game weather SFX to take over? _ Storm (thunder)"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved3",
+      "Name": "Replacement Weather: Reserved 3",
+      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 3"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved4",
+      "Name": "Replacement Weather: Reserved 4",
+      "Description": "In-game weather SFX to take over? _ Preliminary weather 4"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved5",
+      "Name": "Replacement Weather: Reserved 5",
+      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 5"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved6",
+      "Name": "Replacement Weather: Reserved 6",
+      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 6"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved7",
+      "Name": "Replacement Weather: Reserved 7",
+      "Description": "Will the in-game weather SFX be taken over? _ Preliminary weather 7"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved8",
+      "Name": "Replacement Weather: Reserved 8",
+      "Description": "In-game weather SFX to take over? _ Preliminary weather 8"
+    },
+    {
+      "Field": "IsEnableApplyMapGdRegionIdForGparam",
+      "Name": "Apply MapGdRegionID for GPARAM Enabled",
+      "Description": "Do you want to apply the mapGD local ID changes to the cutscene weather Gparam as in the in-game? ([GR] SEQ30194)"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "OverrideMapGdRegionId",
+      "Name": "Override MapGdRegion ID",
+      "Description": "Overwrite the ID used for cutscene weather Gparam (-1: No overwrite. MapGD local ID during cutscene playback is used). If Do you want to apply MapGD local ID to weather Gparam? Is x, it is not referenced."
+    },
+    {
+      "Field": "reserved1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

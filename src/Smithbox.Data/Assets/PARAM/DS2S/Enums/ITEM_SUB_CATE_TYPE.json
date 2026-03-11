@@ -1,6 +1,10 @@
 {
-  "DisplayName": "ITEM_SUB_CATE_TYPE",
-  "Name": "ITEM_SUB_CATE_TYPE",
-  "Description": "",
+  "Key": "ITEM_SUB_CATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_SUB_CATE_TYPE"
+    }
+  ],
   "Options": []
 }

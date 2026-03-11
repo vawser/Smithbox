@@ -1,37 +1,65 @@
 {
-  "DisplayName": "BULLET_ATTACH_PARAM_ENUM",
-  "Name": "BULLET_ATTACH_PARAM_ENUM",
-  "Description": "",
+  "Key": "BULLET_ATTACH_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ATTACH_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1000",
-      "Name": "None",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "矢",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "矢"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Oya",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oya"
+        }
+      ]
     },
     {
-      "ID": "4000",
-      "Name": "Bolt",
-      "Description": ""
+      "Key": "4000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
     },
     {
-      "ID": "5000",
-      "Name": "Throwing ax",
-      "Description": ""
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing ax"
+        }
+      ]
     },
     {
-      "ID": "6000",
-      "Name": "Disc shield",
-      "Description": ""
+      "Key": "6000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disc shield"
+        }
+      ]
     }
   ]
 }

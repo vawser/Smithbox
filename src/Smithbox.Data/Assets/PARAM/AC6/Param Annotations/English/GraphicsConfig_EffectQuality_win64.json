@@ -1,0 +1,68 @@
+{
+  "Param": "GraphicsConfig_EffectQuality_win64",
+  "Type": "GRAPHICS_CONFIG_CS_EFFECT_QUALITY_DETAIL",
+  "Name": "GraphicsConfig_EffectQuality_win64",
+  "Description": "Determines the parameters of each particle quality level.",
+  "Fields": [
+    {
+      "Field": "softParticleEnabled",
+      "Name": "Enable Particles",
+      "Description": "If ON, soft particles are enabled."
+    },
+    {
+      "Field": "glowEnabled",
+      "Name": "Enable Particle Glow",
+      "Description": "If ON, particles may glow."
+    },
+    {
+      "Field": "distortionEnable",
+      "Name": "Enable Particle Distortion",
+      "Description": "If ON, particles may distort the screenspace."
+    },
+    {
+      "Field": "cs_upScaleEnabledType",
+      "Name": "Enable Bilateral Upscaling",
+      "Description": "Determines the bilateral upscaling settings for particles."
+    },
+    {
+      "Field": "fNumOnceEmitsScale",
+      "Name": "Number of Emits in Particle Instance",
+      "Description": "Determines the maximum number of emits within one instance of a particle."
+    },
+    {
+      "Field": "fEmitSpanScale",
+      "Name": "Particle Emit Interval",
+      "Description": "Determines the particle emitter interval."
+    },
+    {
+      "Field": "fLodDistance1Scale",
+      "Name": "LOD Distance Scale: 1",
+      "Description": "The first LOD distance scale for particles."
+    },
+    {
+      "Field": "fLodDistance2Scale",
+      "Name": "LOD Distance Scale: 2",
+      "Description": "The second LOD distance scale for particles."
+    },
+    {
+      "Field": "fLodDistance3Scale",
+      "Name": "LOD Distance Scale: 3",
+      "Description": "The third LOD distance scale for particles."
+    },
+    {
+      "Field": "fLodDistance4Scale",
+      "Name": "LOD Distance Scale: 4",
+      "Description": "The fourth LOD distance scale for particles."
+    },
+    {
+      "Field": "fScaleRenderDistanceScale",
+      "Name": "Particle Render Distance Scale",
+      "Description": "The magnification to the distance registered in the reduction buffer for particles."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

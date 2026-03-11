@@ -1,0 +1,28 @@
+{
+  "Param": "GraphicsConfig_DOFQuality_win64",
+  "Type": "GRAPHICS_CONFIG_CS_DOF_QUALITY_DETAIL",
+  "Name": "GraphicsConfig_DOFQuality_win64",
+  "Description": "Determines the parameters of each depth of field quality level.",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Enable Depth-of-Field",
+      "Description": "If ON, depth of field is enabled."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceHiResoBlur",
+      "Name": "Force High Resolution Blur",
+      "Description": "Changes the HiResolutionBlur setting (-1 is forced off, 0 is default, 1 is forced on)"
+    },
+    {
+      "Field": "maxBlurLevel",
+      "Name": "Maximum Blur Level",
+      "Description": "Changes the maximum blur level. (2 is maximum, 1 is lower level by one, 0 is reduced accuracy"
+    }
+  ]
+}

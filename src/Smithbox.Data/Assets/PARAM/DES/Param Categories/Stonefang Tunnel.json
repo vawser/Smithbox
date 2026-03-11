@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Stonefang Tunnel",
+  "Key": "Stonefang Tunnel",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Stonefang Tunnel"
+      }
+  ],
   "Params": [
     "m06_DofBank",
     "m06_EnvLightTexBank",

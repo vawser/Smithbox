@@ -1,0 +1,78 @@
+{
+  "Param": "m17_ShadowBank",
+  "Type": "SHADOW_BANK",
+  "Name": "m17_ShadowBank",
+  "Description": "Determines the parameters for shadow maps.",
+  "Fields": [
+    {
+      "Field": "lightDegRotX",
+      "Name": "Light Source: Horizontal Angle",
+      "Description": "The horizontal angle of the light source affecting this shadow map. In degrees."
+    },
+    {
+      "Field": "lightDegRotY",
+      "Name": "Light Source: Vertical Angle",
+      "Description": "The vertical angle of the light source affecting this shadow map. In degrees."
+    },
+    {
+      "Field": "densityRatio",
+      "Name": "Shadow Density %",
+      "Description": "The density of the shadow map. 100% is the darkest value."
+    },
+    {
+      "Field": "colR",
+      "Name": "Shadow Color: R",
+      "Description": "The red component of the coloring for the shadow map."
+    },
+    {
+      "Field": "colG",
+      "Name": "Shadow Color: G",
+      "Description": "The green component of the coloring for the shadow map."
+    },
+    {
+      "Field": "colB",
+      "Name": "Shadow Color: B",
+      "Description": "The blue component of the coloring for the shadow map."
+    },
+    {
+      "Field": "beginDist",
+      "Name": "Shadow Start Distance",
+      "Description": "The start distance for the shadow map. 0 means the camera\u0027s near clip is used. In metres."
+    },
+    {
+      "Field": "endDist",
+      "Name": "Shadow End Distance",
+      "Description": "The end distance for the shadow map.  In metres."
+    },
+    {
+      "Field": "calibulateFar",
+      "Name": "Automatic Far Clip Adjustment Distance",
+      "Description": "The distance to shorten the end distance by when facing the light source direction."
+    },
+    {
+      "Field": "fadeBeginDist",
+      "Name": "Shadow Fade Start Distance",
+      "Description": "The start distance for fading the shadow map. In metres."
+    },
+    {
+      "Field": "fadeDist",
+      "Name": "Shadow Fade End Distance",
+      "Description": "The end distance for fading the shadow map. In metres."
+    },
+    {
+      "Field": "persedDepthOffset",
+      "Name": "Shadow Depth Offset",
+      "Description": "The z-offset for the shadow map. Negative values reduce the amount of self-shadowing that occurs."
+    },
+    {
+      "Field": "gradFactor",
+      "Name": "Perspective Adjustment",
+      "Description": "Adjusts the perspective of the shadow map. Negative values reduce the perspective, vice versa."
+    },
+    {
+      "Field": "shadowVolumeDepth",
+      "Name": "Shadow Volume Depth",
+      "Description": "The depth of the shadow volume for this shadow map. Increase value for large objects."
+    }
+  ]
+}

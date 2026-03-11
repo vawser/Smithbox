@@ -1,37 +1,65 @@
 {
-  "DisplayName": "DAMAGE_EFFECT_SFX_SIZE",
-  "Name": "DAMAGE_EFFECT_SFX_SIZE",
-  "Description": "",
+  "Key": "DAMAGE_EFFECT_SFX_SIZE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_EFFECT_SFX_SIZE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "-",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "-"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Large",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra extra large"
+        }
+      ]
     }
   ]
 }

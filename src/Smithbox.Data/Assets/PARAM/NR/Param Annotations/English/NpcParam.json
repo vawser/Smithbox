@@ -1,0 +1,1773 @@
+{
+  "Param": "NpcParam",
+  "Type": "NPC_PARAM_ST",
+  "Name": "NpcParam",
+  "Description": "Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorVariationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Variation ID used when calculating the action ID."
+    },
+    {
+      "Field": "resistCorrectId_poison",
+      "Name": "Resist Correction - Poison",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "nameId",
+      "Name": "Name ID",
+      "Description": "NPC Name Message Parameter ID"
+    },
+    {
+      "Field": "turnVellocity",
+      "Name": "Turn Velocity",
+      "Description": "Rotational speed [degrees / second] that can turn in 1 second."
+    },
+    {
+      "Field": "hitHeight",
+      "Name": "Capsule Height",
+      "Description": "The height of the capsule per character."
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "Capsule Radius",
+      "Description": "Radius of capsule per character."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "weight."
+    },
+    {
+      "Field": "hitYOffset",
+      "Name": "Display Position - Height Offset",
+      "Description": "Offset of the model display position in the Y (height) direction. It can be floated from the hit position."
+    },
+    {
+      "Field": "hp",
+      "Name": "Base HP",
+      "Description": "Death grace."
+    },
+    {
+      "Field": "mp",
+      "Name": "Base FP",
+      "Description": "Magic usage."
+    },
+    {
+      "Field": "getSoul",
+      "Name": "Base Runes",
+      "Description": "The amount of soul that a character can get at the time of death."
+    },
+    {
+      "Field": "itemLotId_enemy",
+      "Name": "Enemy Itemlot ID",
+      "Description": "Specify the lottery ID_for enemies of the item to be acquired at the time of death. Please set only one of them."
+    },
+    {
+      "Field": "itemLotId_map",
+      "Name": "Map Itemlot ID",
+      "Description": "Specify for the lottery ID_map of the item to be acquired at the time of death. Please set only one of them."
+    },
+    {
+      "Field": "maxAnkleRollAngle",
+      "Name": "FootIK Ankle Roll Angle Limit",
+      "Description": "FootIK Ankle roll limit angle (-1 no limit)"
+    },
+    {
+      "Field": "chrHitGroupAndNavimesh",
+      "Name": "Chr Hit Judgment",
+      "Description": "Set the hit judgment with other characters (If you hit the ragdoll, other characters will hit the ragdoll)"
+    },
+    {
+      "Field": "faceIconId",
+      "Name": "Face Icon ID",
+      "Description": "NPC face image ID (0 invalid value (default)). Specify the ID of the face image to be displayed in the Sign browsing menu, Kick menu, etc. If it is an invalid value, the dress-up model is displayed."
+    },
+    {
+      "Field": "deactivateDist",
+      "Name": "Deactivation Distance",
+      "Description": "Distance at which the character is deactivated (valid only for open placement characters)"
+    },
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footIkErrorHeightLimit",
+      "Name": "Foot IK Appearance Height Limit",
+      "Description": "FootIK Appearance up / down limit"
+    },
+    {
+      "Field": "humanityLotId",
+      "Name": "Humanity Lot ID",
+      "Description": "Specify the lottery ID of human nature to be acquired at the time of death"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "SpEffect ID [0]",
+      "Description": "Resident special effect 0"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "SpEffect ID [1]",
+      "Description": "Resident special effect 1"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "SpEffect ID [2]",
+      "Description": "Resident special effect 2"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "SpEffect ID [3]",
+      "Description": "Resident special effect 3"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "SpEffect ID [4]",
+      "Description": "Resident special effect 4"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "SpEffect ID [5]",
+      "Description": "Resident special effect 5"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "SpEffect ID [6]",
+      "Description": "Resident special effect 6"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "SpEffect ID [7]",
+      "Description": "Resident special effect 7"
+    },
+    {
+      "Field": "rewardItemLot_1",
+      "Name": "Dormant Power ItemLot ID: Cataclysm",
+      "Description": "The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll.\nUsed during a Cataclysm."
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "Guard Absorption % - Physical",
+      "Description": "Set the damage cut rate when guarding for each attack"
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "Guard Absorption % - Magic",
+      "Description": "If it is not a guard attack, enter 0"
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption % - Fire",
+      "Description": "How much to cut the fire attack?"
+    },
+    {
+      "Field": "thunGuardCutRate",
+      "Name": "Guard Absorption % - Lightning",
+      "Description": "How much to cut the electric shock attack?"
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "Anim ID Offset [1]",
+      "Description": "All animations will be played with IDs shifted by this number. If not, the original anime ID is referenced."
+    },
+    {
+      "Field": "lockGazePoint0",
+      "Name": "Lock Gaze Point - Dummy Poly ID [0]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "lockGazePoint1",
+      "Name": "Lock Gaze Point - Dummy Poly ID [1]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "lockGazePoint2",
+      "Name": "Lock Gaze Point - Dummy Poly ID [2]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "lockGazePoint3",
+      "Name": "Lock Gaze Point - Dummy Poly ID [3]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "lockGazePoint4",
+      "Name": "Lock Gaze Point - Dummy Poly ID [4]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "lockGazePoint5",
+      "Name": "Lock Gaze Point - Dummy Poly ID [5]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "networkWarpDist",
+      "Name": "Network Warp Display",
+      "Description": "Distance to warp instead of complementary movement in network synchronization. Faster people (ex dragons) need to be longer."
+    },
+    {
+      "Field": "dbgBehaviorR1",
+      "Name": "Debug Action - R1",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorL1",
+      "Name": "Debug Action - L1",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorR2",
+      "Name": "Debug Action - R2",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorL2",
+      "Name": "Debug Action - L2",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorRL",
+      "Name": "Debug Action - Square",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorRR",
+      "Name": "Debug Action - Circle",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorRD",
+      "Name": "Debug Action - Cross",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorRU",
+      "Name": "Debug Action - Triangle",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorLL",
+      "Name": "Debug Action - Left D-Pad",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorLR",
+      "Name": "Debug Action - Right D-Pad",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorLD",
+      "Name": "Debug Action - Down D-Pad",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "dbgBehaviorLU",
+      "Name": "Debug Action - Up D-Pad",
+      "Description": "Register the ID from the action parameter tool and specify the action."
+    },
+    {
+      "Field": "animIdOffset2",
+      "Name": "Anim ID Offset [2]",
+      "Description": "All animations will be played with IDs shifted by this number. If not, the animation ID of the animation ID offset 1 is referred to."
+    },
+    {
+      "Field": "partsDamageRate1",
+      "Name": "Damage % Part [1]",
+      "Description": "Magnification that adapts to damage processing for part 1"
+    },
+    {
+      "Field": "partsDamageRate2",
+      "Name": "Damage % Part [2]",
+      "Description": "Magnification that adapts to damage processing for part 2"
+    },
+    {
+      "Field": "partsDamageRate3",
+      "Name": "Damage % Part [3]",
+      "Description": "Magnification that adapts to damage processing for part 3"
+    },
+    {
+      "Field": "partsDamageRate4",
+      "Name": "Damage % Part [4]",
+      "Description": "Magnification that adapts to damage processing for part 4"
+    },
+    {
+      "Field": "partsDamageRate5",
+      "Name": "Damage % Part [5]",
+      "Description": "Magnification that adapts to damage processing for part 5"
+    },
+    {
+      "Field": "partsDamageRate6",
+      "Name": "Damage % Part [6]",
+      "Description": "Magnification to adapt to damage processing for part 6"
+    },
+    {
+      "Field": "partsDamageRate7",
+      "Name": "Damage % Part [7]",
+      "Description": "Magnification that adapts to damage processing for part 7"
+    },
+    {
+      "Field": "partsDamageRate8",
+      "Name": "Damage % Part [8]",
+      "Description": "Magnification that adapts to damage processing for part 8"
+    },
+    {
+      "Field": "weakPartsDamageRate",
+      "Name": "Damage % Weak Part",
+      "Description": "Magnification that adapts to damage processing for weak points"
+    },
+    {
+      "Field": "superArmorRecoverCorrection",
+      "Name": "Poise Recovery Correction",
+      "Description": "Correction value for super armor recovery time"
+    },
+    {
+      "Field": "superArmorBrakeKnockbackDist",
+      "Name": "Poise Knockback Distance",
+      "Description": "Knockback distance that can be used only at the time of SA break"
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina",
+      "Description": "Total amount of stamina."
+    },
+    {
+      "Field": "staminaRecoverBaseVel",
+      "Name": "Stamina Recovery",
+      "Description": "Stamina recovery basic speed [point / s]"
+    },
+    {
+      "Field": "def_phys",
+      "Name": "Defence - Physical",
+      "Description": "Damage reduction base value for physical attacks."
+    },
+    {
+      "Field": "def_slash",
+      "Name": "Defence - Slash",
+      "Description": "Look at the attack attribute, and if it is a slash attribute, reduce the defense power."
+    },
+    {
+      "Field": "def_blow",
+      "Name": "Defence - Strike",
+      "Description": "Look at the attack attribute, and if it is a hit attribute, reduce the defense power."
+    },
+    {
+      "Field": "def_thrust",
+      "Name": "Defence - Thrust",
+      "Description": "Look at the attack attribute, and if it is a piercing attribute, reduce the defense power."
+    },
+    {
+      "Field": "def_mag",
+      "Name": "Defence - Magic",
+      "Description": "Damage reduction base value for magic attacks."
+    },
+    {
+      "Field": "def_fire",
+      "Name": "Defence - Fire",
+      "Description": "Damage reduction base value against fire attack."
+    },
+    {
+      "Field": "def_thunder",
+      "Name": "Defence - Lightning",
+      "Description": "Damage reduction base value against electric shock attack."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Weapon Repel Power",
+      "Description": "Used to determine the repelling of enemy attacks. // It is intended to be repelled by normal attacks other than guards. // Enemies with a hard skin can be repelled without doing anything ... It doesn\u0027t matter if it is a normal enemy."
+    },
+    {
+      "Field": "resist_poison",
+      "Name": "Resist - Poison",
+      "Description": "Difficulty in getting poisonous"
+    },
+    {
+      "Field": "resist_desease",
+      "Name": "Resist - Scarlet Rot",
+      "Description": "Difficulty in getting sick"
+    },
+    {
+      "Field": "resist_blood",
+      "Name": "Resist - Blood Loss",
+      "Description": "Difficulty in getting bleeding abnormalities"
+    },
+    {
+      "Field": "resist_curse",
+      "Name": "Resist - Death Blight",
+      "Description": "Difficulty in dealing with abnormal curse conditions"
+    },
+    {
+      "Field": "ghostModelId",
+      "Name": "Ghost Model ID",
+      "Description": "Replacement model when wandering ghost, texture ID"
+    },
+    {
+      "Field": "normalChangeResouceId",
+      "Name": "Override Resource Chr ID",
+      "Description": "Replace resource ID during normal operation (do not use it unnecessarily)"
+    },
+    {
+      "Field": "guardAngle",
+      "Name": "Guard Angle",
+      "Description": "Defense range angle when guarding weapons. Pending"
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "Guard Absorption % - Slash",
+      "Description": "Looking at the attack type, what percentage of the damage of the slashing attribute is cut? Specify"
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "Guard Absorption % - Strike",
+      "Description": "Looking at the attack type, what percentage of the damage of the hit attribute is cut? Specify"
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "Guard Absorption % - Thrust",
+      "Description": "Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify"
+    },
+    {
+      "Field": "lockGazePoint6",
+      "Name": "Lock Gaze Point - Dummy Poly ID [6]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "normalChangeTexChrId",
+      "Name": "Override Texture Chr ID",
+      "Description": "Normal replacement texture character ID (do not use it unnecessarily)"
+    },
+    {
+      "Field": "dropType",
+      "Name": "Drop Type",
+      "Description": "Display method when dropping an item (corpse emission or item display)"
+    },
+    {
+      "Field": "knockbackRate",
+      "Name": "Received Knockback %",
+      "Description": "Decrease value when receiving knockback damage / Specifically, cut the initial knockback speed of the attacking side"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "Knockback Param ID",
+      "Description": "Set the parameter ID used for knockback"
+    },
+    {
+      "Field": "fallDamageDump",
+      "Name": "Fall Damage Reduction %",
+      "Description": "Fall damage reduction correction [%]"
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "Guard Absorption % - Stamina",
+      "Description": "Defense against enemy stamina attacks when guarding successfully"
+    },
+    {
+      "Field": "resist_sleep",
+      "Name": "Resist - Sleep",
+      "Description": "Difficulty in getting sleep abnormalities"
+    },
+    {
+      "Field": "resist_madness",
+      "Name": "Resist - Madness",
+      "Description": "Difficulty in getting mad"
+    },
+    {
+      "Field": "sleepGuardResist",
+      "Name": "Guard Resist - Sleep",
+      "Description": "How much to cut the attack power against sleep (set as a special effect parameter)"
+    },
+    {
+      "Field": "madnessGuardResist",
+      "Name": "Guard Resist - Madness",
+      "Description": "How much to cut the attack power against madness (set as a special effect parameter)"
+    },
+    {
+      "Field": "lockGazePoint7",
+      "Name": "Lock Gaze Point - Dummy Poly ID [7]",
+      "Description": "Gaze at the Damipoli specified when locking the Lock-on Damipoly 22X (-1 Invalid)"
+    },
+    {
+      "Field": "mpRecoverBaseVel",
+      "Name": "FP Recovery",
+      "Description": "MP recovery basic speed [% / s]"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Weapon Repel Absorption",
+      "Description": "Set a value to attenuate damage when repelling an attack"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "Default LOD Param ID",
+      "Description": "Default LOD Param ID (-1 None)"
+    },
+    {
+      "Field": "drawType",
+      "Name": "Draw Type",
+      "Description": "Drawing type"
+    },
+    {
+      "Field": "npcType",
+      "Name": "NPC Type",
+      "Description": "NPC type. OK if Zako enemies / boss enemies are distinguished"
+    },
+    {
+      "Field": "teamType",
+      "Name": "Team Type",
+      "Description": "NPC attack hit / not hit, aim / not aim setting"
+    },
+    {
+      "Field": "moveType",
+      "Name": "Move Type",
+      "Description": "Moving method. This changes the control."
+    },
+    {
+      "Field": "lockDist",
+      "Name": "Lock Distance",
+      "Description": "Lock-on distance [m]"
+    },
+    {
+      "Field": "materialSe_Weak1",
+      "Name": "Weak Point - SE Material",
+      "Description": "Determines the SE that sounds when the weak point is damaged. 1"
+    },
+    {
+      "Field": "materialSfx_Weak1",
+      "Name": "Weak Point - SFX Material",
+      "Description": "Determines the SFX that occurs when the weak point is damaged. 1"
+    },
+    {
+      "Field": "partsDamageType",
+      "Name": "Parts Damage - Attack Type",
+      "Description": "Determines if weak parts (such as the head) will be affected by all attacks or just arrow attacks.\nHeadshot animation will be used for weak part attacks if it exists."
+    },
+    {
+      "Field": "vowType",
+      "Name": "Vow Type",
+      "Description": "Pledge type"
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "Guard Level",
+      "Description": "When guarding, which guard motion will the enemy attack? Decide"
+    },
+    {
+      "Field": "burnSfxType",
+      "Name": "Burn SFX Type",
+      "Description": "SFX type at the time of combustion"
+    },
+    {
+      "Field": "poisonGuardResist",
+      "Name": "Guard Resist - Poison",
+      "Description": "How much to cut the attack power to poison (set to the special effect parameter)"
+    },
+    {
+      "Field": "diseaseGuardResist",
+      "Name": "Guard Resist - Scarlet Rot",
+      "Description": "How much to cut the attack power (set as a special effect parameter) to make it a plague"
+    },
+    {
+      "Field": "bloodGuardResist",
+      "Name": "Guard Resist - Blood Loss",
+      "Description": "How much to cut the attack power (set as a special effect parameter) to make bleeding"
+    },
+    {
+      "Field": "curseGuardResist",
+      "Name": "Guard Resist - Death Blight",
+      "Description": "How much to cut the attack power (set as a special effect parameter) to make a curse"
+    },
+    {
+      "Field": "parryAttack",
+      "Name": "Parry Attack Power",
+      "Description": "Parry attack power. Used by the parrying side"
+    },
+    {
+      "Field": "parryDefence",
+      "Name": "Parry Defence Power",
+      "Description": "Parry defense. Used by the parried side."
+    },
+    {
+      "Field": "sfxSize",
+      "Name": "SFX Size",
+      "Description": "SFX size"
+    },
+    {
+      "Field": "pushOutCamRegionRadius",
+      "Name": "Push Out Camera Region Radius",
+      "Description": "Camera extrusion area radius [m]"
+    },
+    {
+      "Field": "hitStopType",
+      "Name": "Hit Stop Type",
+      "Description": "Setting whether to perform hit stop processing"
+    },
+    {
+      "Field": "ladderEndChkOffsetTop",
+      "Name": "Ladder End Check Offset Top",
+      "Description": "Upper side of the ladder end judgment offset"
+    },
+    {
+      "Field": "ladderEndChkOffsetLow",
+      "Name": "Ladder End Check Offset Bottom",
+      "Description": "Lower side of ladder end judgment offset"
+    },
+    {
+      "Field": "useRagdollCamHit",
+      "Name": "Use Ragdoll Camera Hit",
+      "Description": "Does the camera hit the enemy ragdoll? (Valid only when hitting the player)"
+    },
+    {
+      "Field": "disableClothRigidHit",
+      "Name": "Disable Cloth Rigid Hit",
+      "Description": "If you want to prevent the cross rigid from hitting you "
+    },
+    {
+      "Field": "useUndulationAddAnimFB",
+      "Name": "Use Undulating Add Anim",
+      "Description": "Whether to use front and back undulation addition"
+    },
+    {
+      "Field": "isWeakA",
+      "Name": "Enemy Type - Type A",
+      "Description": "Special attack A? Special attack A damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "isGhost",
+      "Name": "Is Ghost",
+      "Description": "The opponent\u0027s attack will be able to slip through. The attack hits only when the anti-spirit weapon of the weapon para is attacked with the weapon of . Be careful not to confuse it with a wandering ghost"
+    },
+    {
+      "Field": "isNoDamageMotion",
+      "Name": "Is No Damage Motion",
+      "Description": "Do you not play the damage motion when the damage is 0?"
+    },
+    {
+      "Field": "isUnduration",
+      "Name": "Is Undulating",
+      "Description": "Do you match the back and forth rotation of the character with the undulations of the ground? Cannot be used for flying characters"
+    },
+    {
+      "Field": "isChangeWanderGhost",
+      "Name": "Is Wandering Ghost",
+      "Description": "Will it be a wandering ghost when the player is a client?"
+    },
+    {
+      "Field": "modelDispMask0",
+      "Name": "Model Display Mask [0]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask1",
+      "Name": "Model Display Mask [1]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask2",
+      "Name": "Model Display Mask [2]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask3",
+      "Name": "Model Display Mask [3]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask4",
+      "Name": "Model Display Mask [4]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask5",
+      "Name": "Model Display Mask [5]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask6",
+      "Name": "Model Display Mask [6]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask7",
+      "Name": "Model Display Mask [7]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask8",
+      "Name": "Model Display Mask [8]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask9",
+      "Name": "Model Display Mask [9]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask10",
+      "Name": "Model Display Mask [10]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask11",
+      "Name": "Model Display Mask [11]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask12",
+      "Name": "Model Display Mask [12]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask13",
+      "Name": "Model Display Mask [13]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask14",
+      "Name": "Model Display Mask [14]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask15",
+      "Name": "Model Display Mask [15]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "isEnableNeckTurn",
+      "Name": "Is Enable Neck Turn",
+      "Description": "Do you want to enable the swing set in Param Weaver?"
+    },
+    {
+      "Field": "disableRespawn",
+      "Name": "Disable Respawn upon Rest",
+      "Description": "Do you ban respawn?"
+    },
+    {
+      "Field": "isMoveAnimWait",
+      "Name": "Play Movement Anim until Over",
+      "Description": "Do you want to play the moving animation until the animation is over? (Like a mayfly dragon.)"
+    },
+    {
+      "Field": "isCrowd",
+      "Name": "Reduce Processing Load during Crowds",
+      "Description": "Do you want to reduce the processing load during crowds? For babies (preferably phalanx)"
+    },
+    {
+      "Field": "isWeakB",
+      "Name": "Enemy Type - Type B",
+      "Description": "Special attack B? Special attack B damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "isWeakC",
+      "Name": "Enemy Type - Type C",
+      "Description": "Special attack C? Special attack C damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "isWeakD",
+      "Name": "Enemy Type - Type D",
+      "Description": "Special attack D? Special attack D damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "doesAlwaysUseSpecialTurn",
+      "Name": "Always Use Special Turn",
+      "Description": "Always execute a special turn (even if there is no navigation mesh at the turn destination, the special turn is continuously executed)"
+    },
+    {
+      "Field": "isRideAtkTarget",
+      "Name": "Is Ride Attack Target",
+      "Description": "Will you be the target of a riding special attack (if you are riding)?"
+    },
+    {
+      "Field": "isEnableStepDispInterpolate",
+      "Name": "Enable Step Display Interpolation",
+      "Description": "Whether to use step-over display interpolation"
+    },
+    {
+      "Field": "isStealthTarget",
+      "Name": "Is Stealth Attack Target",
+      "Description": "Is it a stealth attack target?"
+    },
+    {
+      "Field": "disableInitializeDead",
+      "Name": "Disable Init Dead",
+      "Description": "If you do not make an initial death, TRUE, even if you kill and save it, the corpse will not be reproduced."
+    },
+    {
+      "Field": "isHitRumble",
+      "Name": "Is Hit Rumble",
+      "Description": "TRUE if it vibrates when hit. Use when you want to change from a normal hit stop, such as a dead person."
+    },
+    {
+      "Field": "isSmoothTurn",
+      "Name": "Use Smooth Turning",
+      "Description": "Whether to perform interpolation when turning between nodes in route movement"
+    },
+    {
+      "Field": "isWeakE",
+      "Name": "Enemy Type - Type E",
+      "Description": "Special attack E? Special attack E damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "isWeakF",
+      "Name": "Enemy Type - Type F",
+      "Description": "Special attack F? Special attack F damage multiplier will be included in the calculation"
+    },
+    {
+      "Field": "modelDispMask16",
+      "Name": "Model Display Mask [16]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask17",
+      "Name": "Model Display Mask [17]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask18",
+      "Name": "Model Display Mask [18]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask19",
+      "Name": "Model Display Mask [19]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask20",
+      "Name": "Model Display Mask [20]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask21",
+      "Name": "Model Display Mask [21]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask22",
+      "Name": "Model Display Mask [22]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask23",
+      "Name": "Model Display Mask [23]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask24",
+      "Name": "Model Display Mask [24]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask25",
+      "Name": "Model Display Mask [25]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask26",
+      "Name": "Model Display Mask [26]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask27",
+      "Name": "Model Display Mask [27]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask28",
+      "Name": "Model Display Mask [28]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask29",
+      "Name": "Model Display Mask [29]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask30",
+      "Name": "Model Display Mask [30]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask31",
+      "Name": "Model Display Mask [31]",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "itemSearchRadius",
+      "Name": "Item Pickup Radius",
+      "Description": "Radius to be added as a correction to the cylinder radius of normal Item search judgment (applicable to enemy drop items. Used for large characters etc.)"
+    },
+    {
+      "Field": "chrHitHeight",
+      "Name": "Chr Capsule Height",
+      "Description": "The height of the capsule per character."
+    },
+    {
+      "Field": "chrHitRadius",
+      "Name": "Chr Capsule Radius",
+      "Description": "Radius of capsule per character."
+    },
+    {
+      "Field": "specialTurnType",
+      "Name": "Special Turn Type",
+      "Description": "Special turning type"
+    },
+    {
+      "Field": "isSoulGetByBoss",
+      "Name": "Is Boss Soul Drop",
+      "Description": "Do you get a boss in soul?"
+    },
+    {
+      "Field": "isBulletOwner_byObject",
+      "Name": "Is Bullet Owner - By Object",
+      "Description": "If you become the owner of a bullet, a flag that applies the object\u0027s damage calculation related to the bullet. Used for damage correction by power."
+    },
+    {
+      "Field": "isUseLowHitFootIk",
+      "Name": "Use FootIK Filter for Low Hit",
+      "Description": "Whether to use the FootIk filter for low hits"
+    },
+    {
+      "Field": "isCalculatePvPDamage",
+      "Name": "Use PvP Damage Modifiers",
+      "Description": "Decide whether to calculate damage as a player when calculating damage. If it is invalid, it is treated as an enemy."
+    },
+    {
+      "Field": "isHostSyncChr",
+      "Name": "Is Synced with Host World",
+      "Description": "Can only be activated when active in the host world"
+    },
+    {
+      "Field": "isSkipWeakDamageAnim",
+      "Name": "Skip Weak Damage Anim",
+      "Description": "Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation."
+    },
+    {
+      "Field": "isKeepHitOnRide",
+      "Name": "Keep Capsule on Ride",
+      "Description": "When riding on a character with this parameter , the character\u0027s Atari remains while riding."
+    },
+    {
+      "Field": "isSpCollide",
+      "Name": "Is Special Collider",
+      "Description": "Is it a special character?"
+    },
+    {
+      "Field": "def_dark",
+      "Name": "Defence - Holy",
+      "Description": "Damage reduction base value for dark attacks."
+    },
+    {
+      "Field": "threatLv",
+      "Name": "Threat Level",
+      "Description": "Threat level. If it is 0, even if the PC is found, FE that seems to be found is not displayed."
+    },
+    {
+      "Field": "specialTurnDistanceThreshold",
+      "Name": "Special Turn Distance Threshold",
+      "Description": "Make a special turn when the distance to the target is greater than or equal to the set threshold"
+    },
+    {
+      "Field": "autoFootEffectSfxId",
+      "Name": "Automatic Foot Effect - SFX ID",
+      "Description": "The SFX identifier used in the automatic foot effect. (ZZZ of XYYZZZ)"
+    },
+    {
+      "Field": "materialSe1",
+      "Name": "Damaged - Material SE [1]",
+      "Description": "Determine the SE that sounds when damaged. 1. It is OK to set it by appearance."
+    },
+    {
+      "Field": "materialSfx1",
+      "Name": "Damaged - Material SFX [1]",
+      "Description": "Determine the SFX that occurs when you take damage. 1. It is OK to set it by appearance."
+    },
+    {
+      "Field": "materialSe_Weak2",
+      "Name": "Weak Point - Material SE [2]",
+      "Description": "Determines the SE that sounds when the weak point is damaged. 2"
+    },
+    {
+      "Field": "materialSfx_Weak2",
+      "Name": "Weak Point - Material SFX [2]",
+      "Description": "Determines the SFX that occurs when the weak point is damaged. 2"
+    },
+    {
+      "Field": "materialSe2",
+      "Name": "Damaged - Material SE [2]",
+      "Description": "Determine the SE that sounds when damaged. 2. It is OK to set it by appearance."
+    },
+    {
+      "Field": "materialSfx2",
+      "Name": "Damaged - Material SFX [2]",
+      "Description": "Determine the SFX that occurs when you take damage. 2. It is OK to set it by appearance."
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "SpEffect ID [8]",
+      "Description": "Resident special effect 8"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "SpEffect ID [9]",
+      "Description": "Resident special effect 9"
+    },
+    {
+      "Field": "spEffectID10",
+      "Name": "SpEffect ID [10]",
+      "Description": "Resident special effect 10"
+    },
+    {
+      "Field": "spEffectID11",
+      "Name": "SpEffect ID [11]",
+      "Description": "Resident special effects 11"
+    },
+    {
+      "Field": "spEffectID12",
+      "Name": "SpEffect ID [12]",
+      "Description": "Resident special effect 12"
+    },
+    {
+      "Field": "spEffectID13",
+      "Name": "SpEffect ID [13]",
+      "Description": "Resident special effect 13"
+    },
+    {
+      "Field": "spEffectID14",
+      "Name": "SpEffect ID [14]",
+      "Description": "Resident special effect 14"
+    },
+    {
+      "Field": "spEffectID15",
+      "Name": "SpEffect ID [15]",
+      "Description": "Resident special effects 15"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId1",
+      "Name": "Automatic Foot Effect - Decal Base ID [1]",
+      "Description": "Decal to be attached when a foot effect occurs. Floor material is also taken into consideration"
+    },
+    {
+      "Field": "toughness",
+      "Name": "Toughness",
+      "Description": "Basic value of toughness"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "Toughness Correction",
+      "Description": "Correction value for toughness recovery time"
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "Absorption % - Standard",
+      "Description": "Non-attribute damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "Absorption % - Slash",
+      "Description": "Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "Absorption % - Strike",
+      "Description": "Batter damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "Absorption % - Thrust",
+      "Description": "Puncture damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "Absorption % - Magic",
+      "Description": "Magic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "Absorption % - Fire",
+      "Description": "Flame damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "Absorption % - Lightning",
+      "Description": "Electric shock damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "Absorption % - Holy",
+      "Description": "Dark damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value."
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "Guard Absorption % - Holy",
+      "Description": "How much to cut the dark attack?"
+    },
+    {
+      "Field": "clothUpdateOffset",
+      "Name": "Cloth Update Offset",
+      "Description": "Cross update priority offset [m]"
+    },
+    {
+      "Field": "npcPlayerWeightType",
+      "Name": "NPC Player Weight Type",
+      "Description": "Equipment weight type applied for NPC players"
+    },
+    {
+      "Field": "normalChangeModelId",
+      "Name": "Replacement Change - Model ID",
+      "Description": "Normal replacement model, texture ID"
+    },
+    {
+      "Field": "normalChangeAnimChrId",
+      "Name": "Replacement Change - Anim Chr ID",
+      "Description": "Replace the target animation with the specified ID Anibnd"
+    },
+    {
+      "Field": "paintRenderTargetSize",
+      "Name": "Paint Render Target Size",
+      "Description": "Paint render target size [pix]"
+    },
+    {
+      "Field": "resistCorrectId_disease",
+      "Name": "Resist Correction - Scarlet Rot",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "phantomShaderId",
+      "Name": "Phantom Shader ID",
+      "Description": "ID of the phantom parameter .xlsm to apply"
+    },
+    {
+      "Field": "multiPlayCorrectionParamId",
+      "Name": "Multiplayer Correction Param ID",
+      "Description": "Multiplayer correction parameter ID"
+    },
+    {
+      "Field": "maxAnklePitchAngle",
+      "Name": "FootIK Ankle Pitch Limit Angle",
+      "Description": "FootIK Ankle pitch limit angle (-1 no limit). If you have not set Foot End L S in HAT, this angle is used in common with rolls."
+    },
+    {
+      "Field": "resist_freeze",
+      "Name": "Resist - Frostbite",
+      "Description": "Difficulty in getting cold air condition abnormal"
+    },
+    {
+      "Field": "freezeGuardResist",
+      "Name": "Guard Resist - Frostbite",
+      "Description": "How much to cut the attack power against cold air (set as a special effect parameter)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockCameraParamId",
+      "Name": "Lock Camera Param ID",
+      "Description": "The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1"
+    },
+    {
+      "Field": "spEffectID16",
+      "Name": "SpEffect ID [16]",
+      "Description": "Resident special effects 16"
+    },
+    {
+      "Field": "spEffectID17",
+      "Name": "SpEffect ID [17]",
+      "Description": "Resident special effects 17"
+    },
+    {
+      "Field": "spEffectID18",
+      "Name": "SpEffect ID [18]",
+      "Description": "Resident special effects 18"
+    },
+    {
+      "Field": "spEffectID19",
+      "Name": "SpEffect ID [19]",
+      "Description": "Resident special effects 19"
+    },
+    {
+      "Field": "spEffectID20",
+      "Name": "SpEffect ID [20]",
+      "Description": "Resident special effect 20"
+    },
+    {
+      "Field": "spEffectID21",
+      "Name": "SpEffect ID [21]",
+      "Description": "Resident special effect 21"
+    },
+    {
+      "Field": "spEffectID22",
+      "Name": "SpEffect ID [22]",
+      "Description": "Resident special effect 22"
+    },
+    {
+      "Field": "spEffectID23",
+      "Name": "SpEffect ID [23]",
+      "Description": "Resident special effect 23"
+    },
+    {
+      "Field": "spEffectID24",
+      "Name": "SpEffect ID [24]",
+      "Description": "Resident special effect 24"
+    },
+    {
+      "Field": "spEffectID25",
+      "Name": "SpEffect ID [25]",
+      "Description": "Resident special effects 25"
+    },
+    {
+      "Field": "spEffectID26",
+      "Name": "SpEffect ID [26]",
+      "Description": "Resident special effect 26"
+    },
+    {
+      "Field": "spEffectID27",
+      "Name": "SpEffect ID [27]",
+      "Description": "Resident special effect 27"
+    },
+    {
+      "Field": "spEffectID28",
+      "Name": "SpEffect ID [28]",
+      "Description": "Resident special effects 28"
+    },
+    {
+      "Field": "spEffectID29",
+      "Name": "SpEffect ID [29]",
+      "Description": "Resident special effect 29"
+    },
+    {
+      "Field": "spEffectID30",
+      "Name": "SpEffect ID [30]",
+      "Description": "Resident special effect 30"
+    },
+    {
+      "Field": "spEffectID31",
+      "Name": "SpEffect ID [31]",
+      "Description": "Resident special effects 31"
+    },
+    {
+      "Field": "disableLockOnAng",
+      "Name": "Disable Lock-on Angle",
+      "Description": "Create a conical lock-on non-lockable area beneath the enemy. The angle of the size of the cone. Can be changed temporarily from TAE"
+    },
+    {
+      "Field": "clothOffLodLevel",
+      "Name": "LOD Level to Disable Cloth Processing",
+      "Description": "Set the LOD level to turn off cross processing"
+    },
+    {
+      "Field": "isUseFootIKNormalByUnduration",
+      "Name": "Use Foot IK for Undulating Character",
+      "Description": "Do you use the FootIK result to match your character to the undulations of the ground? Cannot be used for flying characters"
+    },
+    {
+      "Field": "attachHitInitializeDead",
+      "Name": "Attach to Ground upon Death",
+      "Description": "Whether to ground the capsule at the time of initial death"
+    },
+    {
+      "Field": "excludeGroupRewardCheck",
+      "Name": "Exclude Group Reward Check",
+      "Description": "Group reward In the judgment of all dead, characters with this parameter  are excluded from the judgment."
+    },
+    {
+      "Field": "enableAILockDmyPoly_212",
+      "Name": "Enable AI Lock Dummy Poly [212]",
+      "Description": "Is Rock Damipoli (for Enemy) 212 Effective?"
+    },
+    {
+      "Field": "enableAILockDmyPoly_213",
+      "Name": "Enable AI Lock Dummy Poly [213]",
+      "Description": "Is Rock Damipoli (for Enemy) 213 Effective?"
+    },
+    {
+      "Field": "enableAILockDmyPoly_214",
+      "Name": "Enable AI Lock Dummy Poly [214]",
+      "Description": "Is Rock Damipoli (for Enemy) 214 Effective?"
+    },
+    {
+      "Field": "disableActivateOpen_xb1",
+      "Name": "Disable Open Activation - XB1",
+      "Description": "Excluded from open_XB1"
+    },
+    {
+      "Field": "disableActivateLegacy_xb1",
+      "Name": "Disable Legacy Activation - XB1",
+      "Description": "Excluded from Legacy_XB1"
+    },
+    {
+      "Field": "estusFlaskRecoveryParamId",
+      "Name": "Flask Recovery Param ID",
+      "Description": "When the character dies, the data ID of the est usage count recovery parameter .xlsm, which is the same as the value, is acquired and the est bottle is recovered. Unused if -1"
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "Role Name ID",
+      "Description": "Specify the role name at the time of summoning. -1 Use the default role name of the target spirit body. 0 No display. 1 or more Used as a text ID."
+    },
+    {
+      "Field": "estusFlaskLotPoint",
+      "Name": "HP/FP Flask Recovery Chance",
+      "Description": "HP / MP est recovery probability when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator."
+    },
+    {
+      "Field": "hpEstusFlaskLotPoint",
+      "Name": "HP Flask Recovery Chance",
+      "Description": "Recovery probability of MP Est when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator."
+    },
+    {
+      "Field": "mpEstusFlaskLotPoint",
+      "Name": "FP Flask Recovery Chance",
+      "Description": "Recovery probability of MP Est when defeating an enemy. The numerator is obtained from the NPC para with 10000 as the denominator."
+    },
+    {
+      "Field": "estusFlaskRecovery_failedLotPointAdd",
+      "Name": "Missed HP/FP Flask Recovery - Bonus Chance",
+      "Description": "Next time probability increase value when you miss the HP / MP est recovery lottery. Addition value of numerator."
+    },
+    {
+      "Field": "hpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "Missed HP Flask Recovery - Bonus Chance",
+      "Description": "The next probability increase value when you miss the HP Est Recovery Lottery. Addition value of numerator."
+    },
+    {
+      "Field": "mpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "Missed FP Flask Recovery - Bonus Chance",
+      "Description": "The next probability increase value when the MP est recovery lottery is missed. Addition value of numerator."
+    },
+    {
+      "Field": "WanderGhostPhantomId",
+      "Name": "Wandering Ghost Phantom ID",
+      "Description": "Phantom shader with ID specified only on the guest side Specify the phantom shader ID and make it an illusion"
+    },
+    {
+      "Field": "hearingHeadSize",
+      "Name": "Listen Head Size",
+      "Description": "The offset size to be set instead of the capsule offset at the time of hearing judgment. Use this value as an offset only if it is set to 0 or higher."
+    },
+    {
+      "Field": "SoundBankId",
+      "Name": "Sound Bank ID",
+      "Description": "Sound bank ID can be specified -1 Use the bank of character ID (resource name)"
+    },
+    {
+      "Field": "forwardUndulationLimit",
+      "Name": "Forward Undulation Limit",
+      "Description": "The upper limit angle when adjusting the front-back angle to the undulation. If the total length is long, it is better to set it lower."
+    },
+    {
+      "Field": "sideUndulationLimit",
+      "Name": "Side Undulation Limit",
+      "Description": "Upper limit angle when adjusting the left and right angles to the undulations. If the total length is long, it is better to set it lower."
+    },
+    {
+      "Field": "deactiveMoveSpeed",
+      "Name": "Platoon - Deactivation Movement Speed",
+      "Description": "Platoon Deactive Movement Speed [m / s]"
+    },
+    {
+      "Field": "deactiveMoveDist",
+      "Name": "Platoon - Deactivation Distance",
+      "Description": "Distance to switch to platoon deactive movement [m]"
+    },
+    {
+      "Field": "enableSoundObjDist",
+      "Name": "Sound Source Validity - Player Distance",
+      "Description": "The distance from the player for which the character sound source is valid. -1 Effective at all distances"
+    },
+    {
+      "Field": "undulationCorrectGain",
+      "Name": "Undulation Angle Correction",
+      "Description": "Set the speed when adjusting the angle to the undulations"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId2",
+      "Name": "Automatic Foot Effect - Decal Base ID [2]",
+      "Description": "Decal to be attached when a foot effect occurs. Floor material is also taken into consideration"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId3",
+      "Name": "Automatic Foot Effect - Decal Base ID [3]",
+      "Description": "Decal to be attached when a foot effect occurs. Floor material is also taken into consideration"
+    },
+    {
+      "Field": "RetargetReferenceChrId",
+      "Name": "Motion Re-target Reference Chr ID",
+      "Description": "Character ID to be referred to when specifying the motion retarget destination"
+    },
+    {
+      "Field": "SfxResBankId",
+      "Name": "SFX Resource Bank ID",
+      "Description": "SFX resource bank ID can be specified -1 Use the bank of character ID (resource name)"
+    },
+    {
+      "Field": "updateActivatePriolity",
+      "Name": "Activation Update Priority",
+      "Description": "Used to determine the activation / renewal level. The larger it is, the lower the update level will be even if you are far from the player."
+    },
+    {
+      "Field": "chrNavimeshFlag_Alive",
+      "Name": "Chr Navmesh Flag - Alive",
+      "Description": "Flag the value of the touching Nav Mesh while the character is alive. Does not follow the movement."
+    },
+    {
+      "Field": "chrNavimeshFlag_Dead",
+      "Name": "Chr Navmesh Flag - Dead",
+      "Description": "Flag the value on the touching Nav Mesh while the character is dying. Does not follow the movement."
+    },
+    {
+      "Field": "affectedByNecromancy",
+      "Name": "Affected By Necromancy",
+      "Description": "Allows NPC to be raised as a ghost when killed by Revenant or her family"
+    },
+    {
+      "Field": "unknown_20b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableSpKillId",
+      "Name": "Enable Kill SpEffect ID Special",
+      "Description": "Whether to enable special kill ID and disable the original one."
+    },
+    {
+      "Field": "unknown_20d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20e",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20f",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20h",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wheelRotType",
+      "Name": "Wheel Rotation Type",
+      "Description": "Wheel control type"
+    },
+    {
+      "Field": "wheelRotRadius",
+      "Name": "Wheel Rotation Radius",
+      "Description": "Specify the radius of the wheel [m]"
+    },
+    {
+      "Field": "retargetMoveRate",
+      "Name": "Retarget Movement Rate",
+      "Description": "Magnification of movement amount at the time of retargeting"
+    },
+    {
+      "Field": "ladderWarpOffset",
+      "Name": "Ladder - Warp Z Offset",
+      "Description": "Offsets along the Damipoly Z-axis at the specified value. Both positive and negative numbers can be specified."
+    },
+    {
+      "Field": "loadAssetId",
+      "Name": "Load Asset ID",
+      "Description": "Asset ID to be read in connection with character loading (for dynamic generation of characters, etc.)."
+    },
+    {
+      "Field": "overlapCameraDmypolyId",
+      "Name": "Overlap Camera - Dummy Poly ID",
+      "Description": "Set the Damipoly ID (220-227) to enable the overlap camera. If it is -1, it will be invalid."
+    },
+    {
+      "Field": "residentMaterialExParamId00",
+      "Name": "Material Ex Param ID [0]",
+      "Description": "Resident Material Expansion Para ID0"
+    },
+    {
+      "Field": "residentMaterialExParamId01",
+      "Name": "Material Ex Param ID [1]",
+      "Description": "Resident Material Expansion Para ID1"
+    },
+    {
+      "Field": "residentMaterialExParamId02",
+      "Name": "Material Ex Param ID [2]",
+      "Description": "Resident Material Expansion Para ID2"
+    },
+    {
+      "Field": "residentMaterialExParamId03",
+      "Name": "Material Ex Param ID [3]",
+      "Description": "Resident Material Expansion Para ID3"
+    },
+    {
+      "Field": "residentMaterialExParamId04",
+      "Name": "Material Ex Param ID [4]",
+      "Description": "Resident Material Expansion Para ID4"
+    },
+    {
+      "Field": "sleepCollectorItemLotId_enemy",
+      "Name": "Sleep Collector - Enemy Item Lot",
+      "Description": "Specify the lottery ID_for enemies of the item to be acquired when collecting Nemuri. Please set only one of them."
+    },
+    {
+      "Field": "sleepCollectorItemLotId_map",
+      "Name": "Sleep Collector - Map Item Lot",
+      "Description": "Specify for the lottery ID_map of the item to be acquired when collecting Nemuri. Please set only one of them."
+    },
+    {
+      "Field": "footIkErrorOnGain",
+      "Name": "Foot IK - Error On Gain",
+      "Description": "FootIK Appearance height correction ON gain value"
+    },
+    {
+      "Field": "footIkErrorOffGain",
+      "Name": "Foot IK - Error Off Gain",
+      "Description": "FootIK Appearance height correction OFF gain value"
+    },
+    {
+      "Field": "SoundAddBankId",
+      "Name": "Sound Add Bank ID",
+      "Description": "You can specify an additional sound bank ID -1 or 0 No addition (SEQ 16135)"
+    },
+    {
+      "Field": "materialVariationValue",
+      "Name": "Material Variation Value",
+      "Description": "It is a value used in combination with the defense material to classify abnormal conditions, damage SFX, and SE. SEQ16473"
+    },
+    {
+      "Field": "materialVariationValue_Weak",
+      "Name": "Weak Point - Material Variation Value",
+      "Description": "It is a value used for variation of abnormal condition, damage SFX, SE in combination with weak point defense material. SEQ16473"
+    },
+    {
+      "Field": "superArmorDurability",
+      "Name": "Poise",
+      "Description": "Super armor durability value"
+    },
+    {
+      "Field": "saRecoveryRate",
+      "Name": "Poise Recovery",
+      "Description": "Correct the SA recovery speed by multiplying the SA basic recovery amount"
+    },
+    {
+      "Field": "saGuardCutRate",
+      "Name": "Guard Absorption % - Poise Damage",
+      "Description": "Cut rate of SA damage when guard is successful"
+    },
+    {
+      "Field": "resistCorrectId_blood",
+      "Name": "Resist Correction - Blood Loss",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "resistCorrectId_curse",
+      "Name": "Resist Correction - Death Blight",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "resistCorrectId_freeze",
+      "Name": "Resist Correction - Frostbite",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "resistCorrectId_sleep",
+      "Name": "Resist Correction - Sleep",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "resistCorrectId_madness",
+      "Name": "Resist Correction - Madness",
+      "Description": "When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter."
+    },
+    {
+      "Field": "chrDeadTutorialFlagId",
+      "Name": "Chr Dead Tutorial Flag ID",
+      "Description": "Event flag ID for the tutorial when the character is defeated for the first time. Flag ON when the character dies."
+    },
+    {
+      "Field": "stepDispInterpolateTime",
+      "Name": "Step Display Interpolation Time",
+      "Description": "Step crossing display interpolation time"
+    },
+    {
+      "Field": "stepDispInterpolateTriggerValue",
+      "Name": "Step Display Interpolation Trigger Value",
+      "Description": "Step crossing display activation judgment value"
+    },
+    {
+      "Field": "lockScoreOffset",
+      "Name": "Lock Score Offset",
+      "Description": "Lock score correction value"
+    },
+    {
+      "Field": "rewardItemLot_2",
+      "Name": "Dormant Power ItemLot ID",
+      "Description": "The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
+    },
+    {
+      "Field": "day2SpEffectID",
+      "Name": "Day 2 SpEffectID",
+      "Description": "An SpEffectID applied only on Day 2"
+    },
+    {
+      "Field": "poiseBonusRate_Magic",
+      "Name": "Poise Bonus %: Magic",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Fire",
+      "Name": "Poise Bonus %: Fire",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Lightning",
+      "Name": "Poise Bonus %: Lightning",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Holy",
+      "Name": "Poise Bonus %: Holy",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Poison",
+      "Name": "Poise Bonus %: Poison",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_ScarletRot",
+      "Name": "Poise Bonus %: Scarlet Rot",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Bleed",
+      "Name": "Poise Bonus %: Blood Loss",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Blight",
+      "Name": "Poise Bonus %: Death Blight",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Frostbite",
+      "Name": "Poise Bonus %: Frostbite",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Sleep",
+      "Name": "Poise Bonus %: Sleep",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Madness",
+      "Name": "Poise Bonus %: Madness",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakA",
+      "Name": "Poise Bonus %: Weak A",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakB",
+      "Name": "Poise Bonus %: Weak B",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakC",
+      "Name": "Poise Bonus %: Weak C",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakD",
+      "Name": "Poise Bonus %: Weak D",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakE",
+      "Name": "Poise Bonus %: Weak E",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_WeakF",
+      "Name": "Poise Bonus %: Weak F",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusRate_Unk",
+      "Name": "Poise Bonus %: Unknown",
+      "Description": "The amount of extra poise damage an attack deals if it is of this type against this enemy."
+    },
+    {
+      "Field": "poiseBonusMax",
+      "Name": "Max Poise Bonus",
+      "Description": "The maximum amount of extra poise damage this enemy receives from the poise bonus rate adjustments."
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chaosMatchingCorrectParamId",
+      "Name": "Chaos Matching: Correction ID",
+      "Description": "Speffect sets that determine enemy scaling for each depth."
+    },
+    {
+      "Field": "chaosMatchingSpEffectSetParamId",
+      "Name": "Chaos Matching: SpEffect Set ID",
+      "Description": "Applies when an enemy is mutated."
+    },
+    {
+      "Field": "chaosMatchingRewardLotId",
+      "Name": "Chaos Matching: Reward ItemLot ID",
+      "Description": "The item lot id that replaces the normal reward itemlot id when an enemy is mutated. Includes the Dormant Power roll."
+    },
+    {
+      "Field": "chaosMatchingItemLotId",
+      "Name": "Chaos Matching: Enemy Itemlot ID",
+      "Description": "The item lot id that replaces the normal enemy itemlot id when an enemy is mutated."
+    },
+    {
+      "Field": "chaosMatchingUnk",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

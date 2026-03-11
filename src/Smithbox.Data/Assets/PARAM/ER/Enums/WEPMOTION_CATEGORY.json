@@ -1,217 +1,389 @@
 {
-  "DisplayName": "WEPMOTION_CATEGORY",
-  "Name": "WEPMOTION_CATEGORY",
-  "Description": "These are TAE motion types used to determine weapon base animations.",
+  "Key": "WEPMOTION_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEPMOTION_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Claw",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Straight Sword",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Twinblade",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twinblade"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Greatsword",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Colossal Sword",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Thrusting Sword",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Curved Sword",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Katana",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Axe",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Colossal Weapon",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Greataxe",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Hammer",
-      "Description": ""
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Flail",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flail"
+        }
+      ]
     },
     {
-      "ID": "35",
-      "Name": "Great Hammer",
-      "Description": ""
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer"
+        }
+      ]
     },
     {
-      "ID": "36",
-      "Name": "Spear",
-      "Description": ""
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear"
+        }
+      ]
     },
     {
-      "ID": "37",
-      "Name": "Great Spear",
-      "Description": ""
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear"
+        }
+      ]
     },
     {
-      "ID": "38",
-      "Name": "Halberd",
-      "Description": ""
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd"
+        }
+      ]
     },
     {
-      "ID": "39",
-      "Name": "Heavy Thrusting Sword",
-      "Description": ""
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Curved Greatsword",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword"
+        }
+      ]
     },
     {
-      "ID": "41",
-      "Name": "Catalyst",
-      "Description": ""
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catalyst"
+        }
+      ]
     },
     {
-      "ID": "42",
-      "Name": "Fist",
-      "Description": ""
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist"
+        }
+      ]
     },
     {
-      "ID": "43",
-      "Name": "Whip",
-      "Description": ""
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip"
+        }
+      ]
     },
     {
-      "ID": "44",
-      "Name": "Bow",
-      "Description": ""
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow"
+        }
+      ]
     },
     {
-      "ID": "45",
-      "Name": "Greatbow",
-      "Description": ""
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow"
+        }
+      ]
     },
     {
-      "ID": "46",
-      "Name": "Crossbow",
-      "Description": ""
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow"
+        }
+      ]
     },
     {
-      "ID": "47",
-      "Name": "Greatshield",
-      "Description": ""
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield"
+        }
+      ]
     },
     {
-      "ID": "48",
-      "Name": "Small Shield",
-      "Description": ""
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Shield"
+        }
+      ]
     },
     {
-      "ID": "49",
-      "Name": "Medium Shield",
-      "Description": ""
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Shield"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Scythe",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scythe"
+        }
+      ]
     },
     {
-      "ID": "51",
-      "Name": "Light Bow",
-      "Description": ""
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light Bow"
+        }
+      ]
     },
     {
-      "ID": "52",
-      "Name": "Ballista",
-      "Description": ""
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ballista"
+        }
+      ]
     },
     {
-      "ID": "53",
-      "Name": "Throwing Blade",
-      "Description": ""
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing Blade"
+        }
+      ]
     },
     {
-      "ID": "55",
-      "Name": "Hand-to-Hand",
-      "Description": ""
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hand-to-Hand"
+        }
+      ]
     },
     {
-      "ID": "56",
-      "Name": "Perfume Bottle",
-      "Description": ""
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Perfume Bottle"
+        }
+      ]
     },
     {
-      "ID": "57",
-      "Name": "Thrusting Shield",
-      "Description": ""
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Shield"
+        }
+      ]
     },
     {
-      "ID": "58",
-      "Name": "Reverse-hand Sword",
-      "Description": ""
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reverse-hand Sword"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Light Greatsword",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light Greatsword"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "Great Katana",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Katana"
+        }
+      ]
     },
     {
-      "ID": "62",
-      "Name": "Beast Claw",
-      "Description": ""
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beast Claw"
+        }
+      ]
     }
   ]
 }

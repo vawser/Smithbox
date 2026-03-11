@@ -1,0 +1,48 @@
+{
+  "Param": "m17_FogBank",
+  "Type": "FOG_BANK",
+  "Name": "m17_FogBank",
+  "Description": "Determines the parameters for fog volumes.",
+  "Fields": [
+    {
+      "Field": "fogBeginZ",
+      "Name": "Fog Start Distance",
+      "Description": "The start distance for the fog."
+    },
+    {
+      "Field": "fogEndZ",
+      "Name": "Fog End Distance",
+      "Description": "The end distance for the fog."
+    },
+    {
+      "Field": "degRotZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "degRotW",
+      "Name": "Fog Strength",
+      "Description": "The strength of the fog. 0 means it is not visible."
+    },
+    {
+      "Field": "colR",
+      "Name": "Fog: R",
+      "Description": "The red component of the RGBA color used for this fog."
+    },
+    {
+      "Field": "colG",
+      "Name": "Fog: G",
+      "Description": "The green component of the RGBA color used for this fog."
+    },
+    {
+      "Field": "colB",
+      "Name": "Fog: B",
+      "Description": "The blue component of the RGBA color used for this fog."
+    },
+    {
+      "Field": "colA",
+      "Name": "Fog: Alpha",
+      "Description": "The alpha component of the RGBA color used for this fog."
+    }
+  ]
+}

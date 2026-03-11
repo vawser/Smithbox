@@ -1,72 +1,128 @@
 {
-  "DisplayName": "DAMAGE_ATTRIBUTE",
-  "Name": "DAMAGE_ATTRIBUTE",
-  "Description": "",
+  "Key": "DAMAGE_ATTRIBUTE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ATTRIBUTE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Physics",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Physics"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Magic power",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic power"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Flame",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Darkness",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Darkness"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Special",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Poison",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Bleeding",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bleeding"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Weapon destruction",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon destruction"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Curse",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curse"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Combustion",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Combustion"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Highly poisonous",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highly poisonous"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Petrification",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrification"
+        }
+      ]
     }
   ]
 }

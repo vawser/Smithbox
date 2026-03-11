@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BULLET_NET_HIT_TYPE",
-  "Name": "BULLET_NET_HIT_TYPE",
-  "Description": "",
+  "Key": "BULLET_NET_HIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_NET_HIT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Attacker",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Defender",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defender"
+        }
+      ]
     }
   ]
 }

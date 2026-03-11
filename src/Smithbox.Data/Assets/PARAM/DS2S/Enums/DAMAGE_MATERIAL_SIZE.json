@@ -1,32 +1,56 @@
 {
-  "DisplayName": "DAMAGE_MATERIAL_SIZE",
-  "Name": "DAMAGE_MATERIAL_SIZE",
-  "Description": "",
+  "Key": "DAMAGE_MATERIAL_SIZE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_MATERIAL_SIZE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Large",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra extra large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra extra large"
+        }
+      ]
     }
   ]
 }

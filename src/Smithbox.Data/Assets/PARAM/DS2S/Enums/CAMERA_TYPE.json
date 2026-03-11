@@ -1,67 +1,119 @@
 {
-  "DisplayName": "CAMERA_TYPE",
-  "Name": "CAMERA_TYPE",
-  "Description": "",
+  "Key": "CAMERA_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Rubber strap camera",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rubber strap camera"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Action camera",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Action camera"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Initial placement camera",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial placement camera"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Mobile tracking camera",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mobile tracking camera"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Combat camera",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Combat camera"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Camera with free range",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera with free range"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Subjective camera",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Subjective camera"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Dark soul camera",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark soul camera"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Normal camera",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal camera"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Menu camera",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Menu camera"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Throwing camera",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing camera"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Event camera",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event camera"
+        }
+      ]
     }
   ]
 }

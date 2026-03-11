@@ -1,0 +1,2213 @@
+{
+  "Param": "EnemyComboBehaviorParam",
+  "Type": "COMBO_BEHAVIOR_PARAM",
+  "Name": "EnemyComboBehaviorParam",
+  "Description": "Defines parameters related to combo behavior.",
+  "Fields": [
+    {
+      "Field": "group_1_ai_action_id",
+      "Name": "[1] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk01",
+      "Name": "[1] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk02",
+      "Name": "[1] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk03",
+      "Name": "[1] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk04",
+      "Name": "[1] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_0",
+      "Name": "[1] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_1",
+      "Name": "[1] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_2",
+      "Name": "[1] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_3",
+      "Name": "[1] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_bullet_id_0",
+      "Name": "[1] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_bullet_id_1",
+      "Name": "[1] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_bullet_id_2",
+      "Name": "[1] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_bullet_id_3",
+      "Name": "[1] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk08",
+      "Name": "[1] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk09",
+      "Name": "[1] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk10",
+      "Name": "[1] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk11",
+      "Name": "[1] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_damage_action_flag_0",
+      "Name": "[1] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_damage_action_flag_1",
+      "Name": "[1] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_damage_action_flag_2",
+      "Name": "[1] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_damage_action_flag_3",
+      "Name": "[1] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_attackmove_id_0",
+      "Name": "[1] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_attackmove_id_1",
+      "Name": "[1] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_attackmove_id_2",
+      "Name": "[1] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_attackmove_id_3",
+      "Name": "[1] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk20",
+      "Name": "[1] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk21",
+      "Name": "[1] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk22",
+      "Name": "[1] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk23",
+      "Name": "[1] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk24",
+      "Name": "[1] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk25",
+      "Name": "[1] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk26",
+      "Name": "[1] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk27",
+      "Name": "[1] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_0_startup_speed",
+      "Name": "[1] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_0_to_1_speed",
+      "Name": "[1] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_1_to_2_speed",
+      "Name": "[1] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_2_to_3_speed",
+      "Name": "[1] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[1] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[1] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[1] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[1] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk28",
+      "Name": "[1] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk29",
+      "Name": "[1] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk30",
+      "Name": "[1] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk31",
+      "Name": "[1] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk32",
+      "Name": "[1] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk33",
+      "Name": "[1] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk34",
+      "Name": "[1] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk35",
+      "Name": "[1] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk36",
+      "Name": "[1] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk37",
+      "Name": "[1] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk38",
+      "Name": "[1] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk39",
+      "Name": "[1] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk40",
+      "Name": "[1] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk41",
+      "Name": "[1] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk42",
+      "Name": "[1] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk43",
+      "Name": "[1] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk44",
+      "Name": "[1] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk45",
+      "Name": "[1] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_combo_cooldown_time",
+      "Name": "[1] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk47",
+      "Name": "[1] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk48",
+      "Name": "[1] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_1_unk49",
+      "Name": "[1] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_ai_action_id",
+      "Name": "[2] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk01",
+      "Name": "[2] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk02",
+      "Name": "[2] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk03",
+      "Name": "[2] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk04",
+      "Name": "[2] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_0",
+      "Name": "[2] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_1",
+      "Name": "[2] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_2",
+      "Name": "[2] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_3",
+      "Name": "[2] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_bullet_id_0",
+      "Name": "[2] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_bullet_id_1",
+      "Name": "[2] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_bullet_id_2",
+      "Name": "[2] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_bullet_id_3",
+      "Name": "[2] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk08",
+      "Name": "[2] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk09",
+      "Name": "[2] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk10",
+      "Name": "[2] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk11",
+      "Name": "[2] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_damage_action_flag_0",
+      "Name": "[2] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_damage_action_flag_1",
+      "Name": "[2] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_damage_action_flag_2",
+      "Name": "[2] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_damage_action_flag_3",
+      "Name": "[2] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_attackmove_id_0",
+      "Name": "[2] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_attackmove_id_1",
+      "Name": "[2] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_attackmove_id_2",
+      "Name": "[2] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_attackmove_id_3",
+      "Name": "[2] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk20",
+      "Name": "[2] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk21",
+      "Name": "[2] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk22",
+      "Name": "[2] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk23",
+      "Name": "[2] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk24",
+      "Name": "[2] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk25",
+      "Name": "[2] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk26",
+      "Name": "[2] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk27",
+      "Name": "[2] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_0_startup_speed",
+      "Name": "[2] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_0_to_1_speed",
+      "Name": "[2] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_1_to_2_speed",
+      "Name": "[2] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_2_to_3_speed",
+      "Name": "[2] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[2] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[2] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[2] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[2] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk28",
+      "Name": "[2] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk29",
+      "Name": "[2] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk30",
+      "Name": "[2] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk31",
+      "Name": "[2] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk32",
+      "Name": "[2] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk33",
+      "Name": "[2] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk34",
+      "Name": "[2] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk35",
+      "Name": "[2] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk36",
+      "Name": "[2] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk37",
+      "Name": "[2] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk38",
+      "Name": "[2] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk39",
+      "Name": "[2] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk40",
+      "Name": "[2] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk41",
+      "Name": "[2] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk42",
+      "Name": "[2] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk43",
+      "Name": "[2] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk44",
+      "Name": "[2] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk45",
+      "Name": "[2] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_combo_cooldown_time",
+      "Name": "[2] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk47",
+      "Name": "[2] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk48",
+      "Name": "[2] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_2_unk49",
+      "Name": "[2] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_ai_action_id",
+      "Name": "[3] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk01",
+      "Name": "[3] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk02",
+      "Name": "[3] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk03",
+      "Name": "[3] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk04",
+      "Name": "[3] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_0",
+      "Name": "[3] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_1",
+      "Name": "[3] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_2",
+      "Name": "[3] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_3",
+      "Name": "[3] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_bullet_id_0",
+      "Name": "[3] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_bullet_id_1",
+      "Name": "[3] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_bullet_id_2",
+      "Name": "[3] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_bullet_id_3",
+      "Name": "[3] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk08",
+      "Name": "[3] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk09",
+      "Name": "[3] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk10",
+      "Name": "[3] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk11",
+      "Name": "[3] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_damage_action_flag_0",
+      "Name": "[3] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_damage_action_flag_1",
+      "Name": "[3] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_damage_action_flag_2",
+      "Name": "[3] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_damage_action_flag_3",
+      "Name": "[3] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_attackmove_id_0",
+      "Name": "[3] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_attackmove_id_1",
+      "Name": "[3] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_attackmove_id_2",
+      "Name": "[3] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_attackmove_id_3",
+      "Name": "[3] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk20",
+      "Name": "[3] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk21",
+      "Name": "[3] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk22",
+      "Name": "[3] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk23",
+      "Name": "[3] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk24",
+      "Name": "[3] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk25",
+      "Name": "[3] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk26",
+      "Name": "[3] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk27",
+      "Name": "[3] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_0_startup_speed",
+      "Name": "[3] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_0_to_1_speed",
+      "Name": "[3] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_1_to_2_speed",
+      "Name": "[3] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_2_to_3_speed",
+      "Name": "[3] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[3] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[3] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[3] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[3] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk28",
+      "Name": "[3] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk29",
+      "Name": "[3] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk30",
+      "Name": "[3] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk31",
+      "Name": "[3] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk32",
+      "Name": "[3] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk33",
+      "Name": "[3] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk34",
+      "Name": "[3] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk35",
+      "Name": "[3] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk36",
+      "Name": "[3] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk37",
+      "Name": "[3] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk38",
+      "Name": "[3] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk39",
+      "Name": "[3] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk40",
+      "Name": "[3] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk41",
+      "Name": "[3] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk42",
+      "Name": "[3] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk43",
+      "Name": "[3] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk44",
+      "Name": "[3] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk45",
+      "Name": "[3] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_combo_cooldown_time",
+      "Name": "[3] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk47",
+      "Name": "[3] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk48",
+      "Name": "[3] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_3_unk49",
+      "Name": "[3] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_ai_action_id",
+      "Name": "[4] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk01",
+      "Name": "[4] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk02",
+      "Name": "[4] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk03",
+      "Name": "[4] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk04",
+      "Name": "[4] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_0",
+      "Name": "[4] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_1",
+      "Name": "[4] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_2",
+      "Name": "[4] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_3",
+      "Name": "[4] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_bullet_id_0",
+      "Name": "[4] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_bullet_id_1",
+      "Name": "[4] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_bullet_id_2",
+      "Name": "[4] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_bullet_id_3",
+      "Name": "[4] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk08",
+      "Name": "[4] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk09",
+      "Name": "[4] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk10",
+      "Name": "[4] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk11",
+      "Name": "[4] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_damage_action_flag_0",
+      "Name": "[4] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_damage_action_flag_1",
+      "Name": "[4] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_damage_action_flag_2",
+      "Name": "[4] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_damage_action_flag_3",
+      "Name": "[4] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_attackmove_id_0",
+      "Name": "[4] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_attackmove_id_1",
+      "Name": "[4] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_attackmove_id_2",
+      "Name": "[4] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_attackmove_id_3",
+      "Name": "[4] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk20",
+      "Name": "[4] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk21",
+      "Name": "[4] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk22",
+      "Name": "[4] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk23",
+      "Name": "[4] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk24",
+      "Name": "[4] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk25",
+      "Name": "[4] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk26",
+      "Name": "[4] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk27",
+      "Name": "[4] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_0_startup_speed",
+      "Name": "[4] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_0_to_1_speed",
+      "Name": "[4] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_1_to_2_speed",
+      "Name": "[4] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_2_to_3_speed",
+      "Name": "[4] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[4] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[4] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[4] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[4] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk28",
+      "Name": "[4] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk29",
+      "Name": "[4] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk30",
+      "Name": "[4] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk31",
+      "Name": "[4] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk32",
+      "Name": "[4] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk33",
+      "Name": "[4] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk34",
+      "Name": "[4] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk35",
+      "Name": "[4] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk36",
+      "Name": "[4] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk37",
+      "Name": "[4] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk38",
+      "Name": "[4] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk39",
+      "Name": "[4] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk40",
+      "Name": "[4] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk41",
+      "Name": "[4] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk42",
+      "Name": "[4] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk43",
+      "Name": "[4] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk44",
+      "Name": "[4] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk45",
+      "Name": "[4] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_combo_cooldown_time",
+      "Name": "[4] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk47",
+      "Name": "[4] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk48",
+      "Name": "[4] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_4_unk49",
+      "Name": "[4] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_ai_action_id",
+      "Name": "[5] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk01",
+      "Name": "[5] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk02",
+      "Name": "[5] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk03",
+      "Name": "[5] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk04",
+      "Name": "[5] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_0",
+      "Name": "[5] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_1",
+      "Name": "[5] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_2",
+      "Name": "[5] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_3",
+      "Name": "[5] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_bullet_id_0",
+      "Name": "[5] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_bullet_id_1",
+      "Name": "[5] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_bullet_id_2",
+      "Name": "[5] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_bullet_id_3",
+      "Name": "[5] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk08",
+      "Name": "[5] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk09",
+      "Name": "[5] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk10",
+      "Name": "[5] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk11",
+      "Name": "[5] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_damage_action_flag_0",
+      "Name": "[5] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_damage_action_flag_1",
+      "Name": "[5] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_damage_action_flag_2",
+      "Name": "[5] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_damage_action_flag_3",
+      "Name": "[5] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_attackmove_id_0",
+      "Name": "[5] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_attackmove_id_1",
+      "Name": "[5] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_attackmove_id_2",
+      "Name": "[5] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_attackmove_id_3",
+      "Name": "[5] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk20",
+      "Name": "[5] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk21",
+      "Name": "[5] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk22",
+      "Name": "[5] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk23",
+      "Name": "[5] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk24",
+      "Name": "[5] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk25",
+      "Name": "[5] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk26",
+      "Name": "[5] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk27",
+      "Name": "[5] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_0_startup_speed",
+      "Name": "[5] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_0_to_1_speed",
+      "Name": "[5] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_1_to_2_speed",
+      "Name": "[5] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_2_to_3_speed",
+      "Name": "[5] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[5] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[5] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[5] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[5] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk28",
+      "Name": "[5] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk29",
+      "Name": "[5] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk30",
+      "Name": "[5] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk31",
+      "Name": "[5] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk32",
+      "Name": "[5] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk33",
+      "Name": "[5] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk34",
+      "Name": "[5] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk35",
+      "Name": "[5] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk36",
+      "Name": "[5] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk37",
+      "Name": "[5] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk38",
+      "Name": "[5] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk39",
+      "Name": "[5] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk40",
+      "Name": "[5] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk41",
+      "Name": "[5] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk42",
+      "Name": "[5] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk43",
+      "Name": "[5] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk44",
+      "Name": "[5] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk45",
+      "Name": "[5] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_combo_cooldown_time",
+      "Name": "[5] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk47",
+      "Name": "[5] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk48",
+      "Name": "[5] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_5_unk49",
+      "Name": "[5] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_ai_action_id",
+      "Name": "[6] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk01",
+      "Name": "[6] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk02",
+      "Name": "[6] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk03",
+      "Name": "[6] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk04",
+      "Name": "[6] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_0",
+      "Name": "[6] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_1",
+      "Name": "[6] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_2",
+      "Name": "[6] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_3",
+      "Name": "[6] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_bullet_id_0",
+      "Name": "[6] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_bullet_id_1",
+      "Name": "[6] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_bullet_id_2",
+      "Name": "[6] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_bullet_id_3",
+      "Name": "[6] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk08",
+      "Name": "[6] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk09",
+      "Name": "[6] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk10",
+      "Name": "[6] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk11",
+      "Name": "[6] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_damage_action_flag_0",
+      "Name": "[6] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_damage_action_flag_1",
+      "Name": "[6] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_damage_action_flag_2",
+      "Name": "[6] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_damage_action_flag_3",
+      "Name": "[6] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_attackmove_id_0",
+      "Name": "[6] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_attackmove_id_1",
+      "Name": "[6] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_attackmove_id_2",
+      "Name": "[6] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_attackmove_id_3",
+      "Name": "[6] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk20",
+      "Name": "[6] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk21",
+      "Name": "[6] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk22",
+      "Name": "[6] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk23",
+      "Name": "[6] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk24",
+      "Name": "[6] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk25",
+      "Name": "[6] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk26",
+      "Name": "[6] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk27",
+      "Name": "[6] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_0_startup_speed",
+      "Name": "[6] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_0_to_1_speed",
+      "Name": "[6] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_1_to_2_speed",
+      "Name": "[6] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_2_to_3_speed",
+      "Name": "[6] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[6] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[6] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[6] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[6] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk28",
+      "Name": "[6] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk29",
+      "Name": "[6] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk30",
+      "Name": "[6] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk31",
+      "Name": "[6] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk32",
+      "Name": "[6] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk33",
+      "Name": "[6] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk34",
+      "Name": "[6] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk35",
+      "Name": "[6] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk36",
+      "Name": "[6] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk37",
+      "Name": "[6] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk38",
+      "Name": "[6] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk39",
+      "Name": "[6] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk40",
+      "Name": "[6] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk41",
+      "Name": "[6] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk42",
+      "Name": "[6] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk43",
+      "Name": "[6] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk44",
+      "Name": "[6] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk45",
+      "Name": "[6] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_combo_cooldown_time",
+      "Name": "[6] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk47",
+      "Name": "[6] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk48",
+      "Name": "[6] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_6_unk49",
+      "Name": "[6] Unk49",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_ai_action_id",
+      "Name": "[7] AI Action ID",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk01",
+      "Name": "[7] Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk02",
+      "Name": "[7] Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk03",
+      "Name": "[7] Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk04",
+      "Name": "[7] Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_0",
+      "Name": "[7] Enemy Damage ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_1",
+      "Name": "[7] Enemy Damage ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_2",
+      "Name": "[7] Enemy Damage ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_3",
+      "Name": "[7] Enemy Damage ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_bullet_id_0",
+      "Name": "[7] Enemy Bullet ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_bullet_id_1",
+      "Name": "[7] Enemy Bullet ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_bullet_id_2",
+      "Name": "[7] Enemy Bullet ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_bullet_id_3",
+      "Name": "[7] Enemy Bullet ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk08",
+      "Name": "[7] Unk08",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk09",
+      "Name": "[7] Unk09",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk10",
+      "Name": "[7] Unk10",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk11",
+      "Name": "[7] Unk11",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_damage_action_flag_0",
+      "Name": "[7] Damage Action Flag 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_damage_action_flag_1",
+      "Name": "[7] Damage Action Flag 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_damage_action_flag_2",
+      "Name": "[7] Damage Action Flag 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_damage_action_flag_3",
+      "Name": "[7] Damage Action Flag 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_attackmove_id_0",
+      "Name": "[7] Enemy Attack Move ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_attackmove_id_1",
+      "Name": "[7] Enemy Attack Move ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_attackmove_id_2",
+      "Name": "[7] Enemy Attack Move ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_attackmove_id_3",
+      "Name": "[7] Enemy Attack Move ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk20",
+      "Name": "[7] Unk20",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk21",
+      "Name": "[7] Unk21",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk22",
+      "Name": "[7] Unk22",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk23",
+      "Name": "[7] Unk23",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk24",
+      "Name": "[7] Unk24",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk25",
+      "Name": "[7] Unk25",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk26",
+      "Name": "[7] Unk26",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk27",
+      "Name": "[7] Unk27",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_0_startup_speed",
+      "Name": "[7] Enemy Damage ID 0 - Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_0_to_1_speed",
+      "Name": "[7] Enemy Damage ID 0 to 1 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_1_to_2_speed",
+      "Name": "[7] Enemy Damage ID 1 to 2 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_2_to_3_speed",
+      "Name": "[7] Enemy Damage ID 2 to 3 Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_0_combo_end_recovery_speed",
+      "Name": "[7] Enemy Damage ID 0 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_1_combo_end_recovery_speed",
+      "Name": "[7] Enemy Damage ID 1 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_2_combo_end_recovery_speed",
+      "Name": "[7] Enemy Damage ID 2 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_enemy_damage_id_3_combo_end_recovery_speed",
+      "Name": "[7] Enemy Damage ID 3 - Combo End Recovery Speed",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk28",
+      "Name": "[7] Unk28",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk29",
+      "Name": "[7] Unk29",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk30",
+      "Name": "[7] Unk30",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk31",
+      "Name": "[7] Unk31",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk32",
+      "Name": "[7] Unk32",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk33",
+      "Name": "[7] Unk33",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk34",
+      "Name": "[7] Unk34",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk35",
+      "Name": "[7] Unk35",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk36",
+      "Name": "[7] Unk36",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk37",
+      "Name": "[7] Unk37",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk38",
+      "Name": "[7] Unk38",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk39",
+      "Name": "[7] Unk39",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk40",
+      "Name": "[7] Unk40",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk41",
+      "Name": "[7] Unk41",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk42",
+      "Name": "[7] Unk42",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk43",
+      "Name": "[7] Unk43",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk44",
+      "Name": "[7] Unk44",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk45",
+      "Name": "[7] Unk45",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_combo_cooldown_time",
+      "Name": "[7] Combo Cooldown Time",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk47",
+      "Name": "[7] Unk47",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk48",
+      "Name": "[7] Unk48",
+      "Description": ""
+    },
+    {
+      "Field": "group_7_unk49",
+      "Name": "[7] Unk49",
+      "Description": ""
+    }
+  ]
+}

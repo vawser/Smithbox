@@ -1,32 +1,56 @@
 {
-  "DisplayName": "WALK_ATTACK_TYPE",
-  "Name": "WALK_ATTACK_TYPE",
-  "Description": "",
+  "Key": "WALK_ATTACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WALK_ATTACK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Walking attack 1",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 1"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Walking attack 2",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 2"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Walking attack 3",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 3"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Walking attack 4",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 4"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Walking attack 5",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 5"
+        }
+      ]
     }
   ]
 }

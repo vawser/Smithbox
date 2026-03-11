@@ -1,0 +1,493 @@
+{
+  "Param": "ENAutoRecoveryControlParam",
+  "Type": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
+  "Name": "ENAutoRecoveryControlParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "entry000_ENRecoveryRate",
+      "Name": "[Idle] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry000_ENMax",
+      "Name": "[Idle] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry000_ENMin",
+      "Name": "[Idle] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry000_DoDelayENRecovery",
+      "Name": "[Idle] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry000_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry000_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry001_ENRecoveryRate",
+      "Name": "[Ground] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry001_ENMax",
+      "Name": "[Ground] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry001_ENMin",
+      "Name": "[Ground] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry001_DoDelayENRecovery",
+      "Name": "[Ground] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry001_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry001_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry002_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry002_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry002_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry002_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry002_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry002_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry003_ENRecoveryRate",
+      "Name": "[Aerial] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry003_ENMax",
+      "Name": "[Aerial] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry003_ENMin",
+      "Name": "[Aerial] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry003_DoDelayENRecovery",
+      "Name": "[Aerial] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry003_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry003_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry004_ENRecoveryRate",
+      "Name": "[Ground Boost] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry004_ENMax",
+      "Name": "[Ground Boost] Energy Max",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry004_ENMin",
+      "Name": "[Ground Boost] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry004_DoDelayENRecovery",
+      "Name": "[Ground Boost] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry004_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry004_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry005_ENRecoveryRate",
+      "Name": "[Aerial Boost] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry005_ENMax",
+      "Name": "[Aerial Boost] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry005_ENMin",
+      "Name": "[Aerial Boost] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry005_DoDelayENRecovery",
+      "Name": "[Aerial Boost] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry005_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry005_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry006_ENRecoveryRate",
+      "Name": "[Tank Drift] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry006_ENMax",
+      "Name": "[Tank Drift] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry006_ENMin",
+      "Name": "[Tank Drift] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry006_DoDelayENRecovery",
+      "Name": "[Tank Drift] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry006_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry006_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry007_ENRecoveryRate",
+      "Name": "[Stance Firing] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry007_ENMax",
+      "Name": "[Stance Firing] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry007_ENMin",
+      "Name": "[Stance Firing] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry007_DoDelayENRecovery",
+      "Name": "[Stance Firing] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry007_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry007_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry008_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry008_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry008_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry008_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry008_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry008_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry009_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry009_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry009_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry009_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry009_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry009_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry010_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry010_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry010_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry010_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry010_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry010_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry011_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry011_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry011_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry011_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry011_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry011_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry012_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry012_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry012_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry012_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry012_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry012_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry013_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry013_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry013_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry013_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry013_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry013_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry014_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry014_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry014_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry014_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry014_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry014_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry015_ENRecoveryRate",
+      "Name": "[?] Energy Recovery Rate",
+      "Description": "Change the energy recovery rate by energy recovery speed x energy recovery rate x 0.01"
+    },
+    {
+      "Field": "entry015_ENMax",
+      "Name": "[?] Energy Max ",
+      "Description": "Specify the maximum energy percentage"
+    },
+    {
+      "Field": "entry015_ENMin",
+      "Name": "[?] Energy Min",
+      "Description": "Specify the lower limit percentage of energy. If -1, use the system-prepared energy debt value."
+    },
+    {
+      "Field": "entry015_DoDelayENRecovery",
+      "Name": "[?] Apply Energy Recovery Delay",
+      "Description": "If enabled, energy recovery delay is applied."
+    },
+    {
+      "Field": "entry015_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "entry015_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

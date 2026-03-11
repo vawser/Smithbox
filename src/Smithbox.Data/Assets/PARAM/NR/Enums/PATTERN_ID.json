@@ -1,267 +1,479 @@
 {
-  "DisplayName": "Pattern ID",
-  "Name": "PATTERN_ID",
-  "Description": "Seed that determines exact placement of bases/bosses and occurance of events",
+  "Key": "PATTERN_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PATTERN_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Gladius - Limveld 1",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 1"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Gladius - Limveld 2",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 2"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Gladius - Limveld 3",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 3"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Gladius - Limveld 4",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 4"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Gladius - Limveld 5",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 5"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Gladius - Limveld 6",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 6"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Gladius - Limveld 7",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 7"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Gladius - Limveld 8",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 8"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Gladius - Limveld 9",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 9"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Gladius - Limveld 10",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 10"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Gladius - Limveld 11",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 11"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Gladius - Limveld 12",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 12"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Gladius - Limveld 13",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 13"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Gladius - Limveld 14",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 14"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Gladius - Limveld 15",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 15"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Gladius - Limveld 16",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 16"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Gladius - Limveld 17",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 17"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Gladius - Limveld 18",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 18"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Gladius - Limveld 19",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 19"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Gladius - Limveld 20",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld 20"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Gladius - Mountaintop 1",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Mountaintop 1"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Gladius - Mountaintop 2",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Mountaintop 2"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Gladius - Mountaintop 3",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Mountaintop 3"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Gladius - Mountaintop 4",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Mountaintop 4"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Gladius - Mountaintop 5",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Mountaintop 5"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Gladius - The Crater 1",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - The Crater 1"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Gladius - The Crater 2",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - The Crater 2"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Gladius - The Crater 3",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - The Crater 3"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Gladius - The Crater 4",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - The Crater 4"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Gladius - The Crater 5",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - The Crater 5"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Gladius - Rotted Woods 1",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Rotted Woods 1"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Gladius - Rotted Woods 2",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Rotted Woods 2"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Gladius - Rotted Woods 3",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Rotted Woods 3"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Gladius - Rotted Woods 4",
-      "Description": ""
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Rotted Woods 4"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Gladius - Rotted Woods 5",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Rotted Woods 5"
+        }
+      ]
     },
     {
-      "ID": "35",
-      "Name": "Gladius - Shrouded City 1",
-      "Description": ""
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Shrouded City 1"
+        }
+      ]
     },
     {
-      "ID": "36",
-      "Name": "Gladius - Shrouded City 2",
-      "Description": ""
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Shrouded City 2"
+        }
+      ]
     },
     {
-      "ID": "37",
-      "Name": "Gladius - Shrouded City 3",
-      "Description": ""
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Shrouded City 3"
+        }
+      ]
     },
     {
-      "ID": "38",
-      "Name": "Gladius - Shrouded City 4",
-      "Description": ""
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Shrouded City 4"
+        }
+      ]
     },
     {
-      "ID": "39",
-      "Name": "Gladius - Shrouded City 5",
-      "Description": ""
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Shrouded City 5"
+        }
+      ]
     },
     {
-      "ID": "319",
-      "Name": "Heolstor - Shrouded City 5",
-      "Description": ""
+      "Key": "319",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heolstor - Shrouded City 5"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Gladius - Limveld DLC 1",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld DLC 1"
+        }
+      ]
     },
     {
-      "ID": "1001",
-      "Name": "Gladius - Limveld DLC 2",
-      "Description": ""
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld DLC 2"
+        }
+      ]
     },
     {
-      "ID": "1002",
-      "Name": "Gladius - Limveld DLC 3",
-      "Description": ""
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld DLC 3"
+        }
+      ]
     },
     {
-      "ID": "1003",
-      "Name": "Gladius - Limveld DLC 4",
-      "Description": ""
+      "Key": "1003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld DLC 4"
+        }
+      ]
     },
     {
-      "ID": "1004",
-      "Name": "Gladius - Limveld DLC 5",
-      "Description": ""
+      "Key": "1004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Limveld DLC 5"
+        }
+      ]
     },
     {
-      "ID": "1005",
-      "Name": "Gladius - Great Hollow 1",
-      "Description": ""
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Great Hollow 1"
+        }
+      ]
     },
     {
-      "ID": "1006",
-      "Name": "Gladius - Great Hollow 2",
-      "Description": ""
+      "Key": "1006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Great Hollow 2"
+        }
+      ]
     },
     {
-      "ID": "1007",
-      "Name": "Gladius - Great Hollow 3",
-      "Description": ""
+      "Key": "1007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Great Hollow 3"
+        }
+      ]
     },
     {
-      "ID": "1008",
-      "Name": "Gladius - Great Hollow 4",
-      "Description": ""
+      "Key": "1008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Great Hollow 4"
+        }
+      ]
     },
     {
-      "ID": "1009",
-      "Name": "Gladius - Great Hollow 5",
-      "Description": ""
+      "Key": "1009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gladius - Great Hollow 5"
+        }
+      ]
     },
     {
-      "ID": "1199",
-      "Name": "Straghess - Shrouded City 5",
-      "Description": ""
+      "Key": "1199",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straghess - Shrouded City 5"
+        }
+      ]
     }
   ]
 }

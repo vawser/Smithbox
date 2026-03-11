@@ -1,52 +1,92 @@
 {
-  "DisplayName": "ENEMY_SHOT_SFX_PARAM_ENUM",
-  "Name": "ENEMY_SHOT_SFX_PARAM_ENUM",
-  "Description": "",
+  "Key": "ENEMY_SHOT_SFX_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_SHOT_SFX_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "None",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "General-purpose bow: from Damipoly ID2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Demon armor bow",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor bow"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "General-purpose bow for lower-class soldiers (deceased)",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow for lower-class soldiers (deceased)"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Fire arrow for lower rank soldiers (deceased)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire arrow for lower rank soldiers (deceased)"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Est bottle",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "General-purpose bow: from Damipoly ID200",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID200"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "General-purpose bow: for Rogue Skeleton (from Damipoly ID201)",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: for Rogue Skeleton (from Damipoly ID201)"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "General-purpose bow: from Damipoly ID203",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose bow: from Damipoly ID203"
+        }
+      ]
     }
   ]
 }

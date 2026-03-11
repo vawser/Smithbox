@@ -1,0 +1,358 @@
+{
+  "Param": "BehaviorParam",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BehaviorParam",
+  "Description": "Determines the behavior parameters used when triggering projectiles and attacks.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "variationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used when calculating the ID for attack parameters. It is not used directly on the actual machine."
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "Behavior Judgement ID",
+      "Description": "Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE."
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "ID Calculation Rule",
+      "Description": ""
+    },
+    {
+      "Field": "refType",
+      "Name": "Reference ID Type",
+      "Description": "Which param type to reference for attack behavior."
+    },
+    {
+      "Field": "consumeSA",
+      "Name": "Action Cost: Poise",
+      "Description": "Set the amount of Poise consumed during action"
+    },
+    {
+      "Field": "refId",
+      "Name": "Reference ID",
+      "Description": "ID of param to use for attack behavior. Param used determined by refType"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "Offset applied to the particle ID invoked in the TAE event"
+    },
+    {
+      "Field": "stamina",
+      "Name": "Action Cost: Stamina",
+      "Description": "Set the amount of stamina consumed during action"
+    },
+    {
+      "Field": "energy",
+      "Name": "Action Cost: Energy",
+      "Description": "Set the amount of energy consumed during action"
+    },
+    {
+      "Field": "mp",
+      "Name": "Action Cost: MP",
+      "Description": "Set the amount of MP consumed during action"
+    },
+    {
+      "Field": "category",
+      "Name": "SpEffect Category",
+      "Description": "The SpEffect category this behavior belongs to"
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "Action Cost: Humanity",
+      "Description": "Set the amount of humanity consumed during action"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shootDmyPolyId",
+      "Name": "Firing: Dummy Polygon Range Start ID",
+      "Description": "The starting ID in a range of Dummy Polygons used for shooting."
+    },
+    {
+      "Field": "shootEndDmyPolyId",
+      "Name": "Firing: Dummy Polygon Range End ID",
+      "Description": "The ending ID in a range of Dummy Polygons used for shooting."
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "Firing: Firing Angle",
+      "Description": "Specifies how far forward the projectile should be fired. In degrees."
+    },
+    {
+      "Field": "shootAngleInterval",
+      "Name": "Firing: Firing Angle Interval (Y-Axis)",
+      "Description": "When firing multiple projectiles, specify the interval at which to fire. (Y axis). In degrees."
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "Firing: Firing Elevation Angle (X-Axis)",
+      "Description": "Additional elevation angle from horizontal. In degrees."
+    },
+    {
+      "Field": "bUseNumShootBullet",
+      "Name": "Consume Multiple Bullets when Firing Simultaneously",
+      "Description": "Consumes bullets for several times when fired simultaneously"
+    },
+    {
+      "Field": "isSequenceShootWhenSameTimeShoot",
+      "Name": "Fire Sequentially even when Firing Simultaneously",
+      "Description": "When firing sequentially using multiple dummy polys, are bullets fired at the same time considered to be fired sequentially?"
+    },
+    {
+      "Field": "isShootAngOffsetDisable",
+      "Name": "Apply Offset only to Guided Targets",
+      "Description": "When OFF, offset is also applied to the shooting angle; when ON, offset is disabled."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shootAngleXInterval",
+      "Name": "Firing: Launch Elevation Angle Interval (X-Axis)",
+      "Description": "When firing multiple projectiles, specify the interval at which to fire.(X-axis). In degrees."
+    },
+    {
+      "Field": "shootAngleZ",
+      "Name": "Firing: Firing Angle Rotation (Z-Axis)",
+      "Description": "Specifies how many times to rotate in the Z-axis direction when launching a projectile. In degrees."
+    },
+    {
+      "Field": "shootAngleZInterval",
+      "Name": "Firing: Firing Angle Rotation Interval (Z-Axis)",
+      "Description": "When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees."
+    },
+    {
+      "Field": "bulletRollAngleZ",
+      "Name": "Firing: Firing Roll Angle (Z-Axis)",
+      "Description": "Additional angle in drilling direction (Z axis). In degrees."
+    },
+    {
+      "Field": "bulletRollAngleZInterbal",
+      "Name": "Firing: Firing Roll Angle Interval (Z-Axis)",
+      "Description": "When firing multiple projectiles, specify the interval at which to fire (Z-axis). In degrees."
+    },
+    {
+      "Field": "bulletRollAngleZRandom",
+      "Name": "Firing: Firing Roll Angle - Random Max (Z-Axis)",
+      "Description": "Upper limit of firing torsion angle random number (0 to 360)"
+    },
+    {
+      "Field": "shootTargetXOffset",
+      "Name": "Firing: Target Offset (X-Axis)",
+      "Description": "Left and right offset of impact position. Shifts the target position left and right during firing and homing. In metres."
+    },
+    {
+      "Field": "targetYOffsetRange",
+      "Name": "Firing: Target Offset (Y-Axis)",
+      "Description": "Vertical offset of impact position. Shifts the target position up and down during firing and homing. In metres."
+    },
+    {
+      "Field": "shootTargetZOffset",
+      "Name": "Firing: Target Offset (Z-Axis)",
+      "Description": "Front and rear offset of impact position. Shifts the target position forward and backward during firing and homing."
+    },
+    {
+      "Field": "numShoot",
+      "Name": "Number of Shots",
+      "Description": "Number of bullets produced per cartridge (emitter). Does not affect ammo consumption"
+    },
+    {
+      "Field": "numContinueShoot",
+      "Name": "Number of Consecutive Shots",
+      "Description": "Number of times to fire continuously. The total number of bullets fired is the number of simultaneous shots x the number of consecutive shots."
+    },
+    {
+      "Field": "cupsleRotationDeg",
+      "Name": "Horizontal Capsule: Initial Roll Angle",
+      "Description": "Rotation angle of horizontal capsule. In degrees."
+    },
+    {
+      "Field": "shootInterval",
+      "Name": "Firing: Consecutive Shoot Interval",
+      "Description": "Number of seconds between shots when firing continuously"
+    },
+    {
+      "Field": "reloadTimeSecond",
+      "Name": "Reload Time",
+      "Description": "Interval between one shot and the next shot"
+    },
+    {
+      "Field": "targetZOffsetRange",
+      "Name": "Curved Firing: Target Offset Range (Z-Axis)",
+      "Description": "Forward and backward offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres."
+    },
+    {
+      "Field": "targetXOffsetRange",
+      "Name": "Curved Firing: Target Offset Range (X-Axis)",
+      "Description": "Left and right offset of the impact position for curved shots. Shifts the target position toward the front or back during firing and homing. In metres."
+    },
+    {
+      "Field": "bTargetAutoOffset",
+      "Name": "Is Target Position Automatically Offset",
+      "Description": "Should you use automatic target position offset?"
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetAutoOffsetBaseDmyPolyId",
+      "Name": "Target Position Automatic Offset: Dummy Polygon ID",
+      "Description": "Reference dummy poly ID used in target position automatic offset"
+    },
+    {
+      "Field": "pa_DrainVal",
+      "Name": "Action Cost: Pulse Armor",
+      "Description": "Set the amount of pulse armor consumed during action"
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pa_OverwriteDelayTimeSec",
+      "Name": "Pulse Armor: Recovery Delay Time Override",
+      "Description": "Amount to override Pulse Armor recovery time (-1 means no override)"
+    },
+    {
+      "Field": "consumeBulletNum",
+      "Name": "Action Cost: Ammunition",
+      "Description": "Number of ammunition consumed when an attack occurs"
+    },
+    {
+      "Field": "recoilBlurAddVal",
+      "Name": "Attack Recoil: Blur Accumulation ",
+      "Description": "Attack recoil blur accumulation amount"
+    },
+    {
+      "Field": "lockTimeSec",
+      "Name": "Missle Lock: Lock Time",
+      "Description": "Time to secondary lock. In seconds."
+    },
+    {
+      "Field": "maxMissileLockNum",
+      "Name": "Missile Lock: Max Count",
+      "Description": "Maximum number of missile locks"
+    },
+    {
+      "Field": "shootEnableLockNum",
+      "Name": "Missle Lock: Firable Count",
+      "Description": "If the lock count number is less than the specified value, firing will not be possible."
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HdPadRumble_Atk_Id",
+      "Name": "HD Vibration on Hit",
+      "Description": "Vibration ID for haptic feedback"
+    },
+    {
+      "Field": "HdPadRumble_Hit_Id",
+      "Name": "HD Vibration on Impact",
+      "Description": "Impact vibration ID for haptic feedback"
+    },
+    {
+      "Field": "HdPadRumble_Priority",
+      "Name": "HD Vibration Priority",
+      "Description": "Playback priority for haptic feedback (0 is low priority, 10 is high priority)"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shotgunParamId",
+      "Name": "Shot Control: ID",
+      "Description": "Shot Control parameter to use."
+    },
+    {
+      "Field": "shotgunBaseDist",
+      "Name": "Shot Control: Base Distance",
+      "Description": "Diffusion reference distance"
+    },
+    {
+      "Field": "heat_AddValue",
+      "Name": "Heat: Build-up (by Point)",
+      "Description": "Heat value accumulated with each bullet"
+    },
+    {
+      "Field": "targetShotgunParamId",
+      "Name": "Target Position Shot Control: ID",
+      "Description": "Offset calculation for target position"
+    },
+    {
+      "Field": "chargeDelayTimeSec",
+      "Name": "Charge Attack: Start Delay",
+      "Description": "Delay time until charging starts after referring to action parameters. In seconds."
+    },
+    {
+      "Field": "continueShootConsumeBulletMaxTimeSec",
+      "Name": "Consecutive Firing: Ammunition Consumption Max Time",
+      "Description": "Maximum time of bullets consumed by continuous consumption. In seconds."
+    },
+    {
+      "Field": "continueShootConsumeBulletMaxNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "continueShootAddHeatMaxTimeSec",
+      "Name": "Consecutive Firing: Heat Accumulation Max Time",
+      "Description": "Maximum amount of heat accumulated through continuous consumption. In seconds."
+    },
+    {
+      "Field": "continueShootAddHeatMaxValue",
+      "Name": "Consecutive Firing: Heat Accumulation Max",
+      "Description": "Maximum amount of heat accumulated through continuous consumption"
+    },
+    {
+      "Field": "lockCountUpTimeSec",
+      "Name": "Lock Count: Add Time",
+      "Description": "Missile lock count up time (lock time from 2nd lock). In seconds."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

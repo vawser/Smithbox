@@ -1,0 +1,208 @@
+{
+  "Param": "ChrRoundDamageParam",
+  "Type": "CHR_ROUND_DAMAGE_PARAM",
+  "Name": "ChrRoundDamageParam",
+  "Description": "Defines parameters related to the damage growth of characters across each journey.",
+  "Fields": [
+    {
+      "Field": "ng0_damage_mult",
+      "Name": "NG\u002B0 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng0_stamina_damage_mult",
+      "Name": "NG\u002B0 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng0_posture_damage_mult",
+      "Name": "NG\u002B0 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng1_damage_mult",
+      "Name": "NG\u002B1 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng1_stamina_damage_mult",
+      "Name": "NG\u002B1 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng1_posture_damage_mult",
+      "Name": "NG\u002B1 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng2_damage_mult",
+      "Name": "NG\u002B2 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng2_stamina_damage_mult",
+      "Name": "NG\u002B2 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng2_posture_damage_mult",
+      "Name": "NG\u002B2 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng3_damage_mult",
+      "Name": "NG\u002B3 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng3_stamina_damage_mult",
+      "Name": "NG\u002B3 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng3_posture_damage_mult",
+      "Name": "NG\u002B3 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng4_damage_mult",
+      "Name": "NG\u002B4 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng4_stamina_damage_mult",
+      "Name": "NG\u002B4 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng4_posture_damage_mult",
+      "Name": "NG\u002B4 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng5_damage_mult",
+      "Name": "NG\u002B5 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng5_stamina_damage_mult",
+      "Name": "NG\u002B5 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng5_posture_damage_mult",
+      "Name": "NG\u002B5 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng6_damage_mult",
+      "Name": "NG\u002B6 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng6_stamina_damage_mult",
+      "Name": "NG\u002B6 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng6_posture_damage_mult",
+      "Name": "NG\u002B6 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng7_damage_mult",
+      "Name": "NG\u002B7 - Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng7_stamina_damage_mult",
+      "Name": "NG\u002B7 - Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng7_posture_damage_mult",
+      "Name": "NG\u002B7 - Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng0_stamina_damage_taken_mult",
+      "Name": "NG\u002B0 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng0_posture_damage_taken_mult",
+      "Name": "NG\u002B0 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng1_stamina_damage_taken_mult",
+      "Name": "NG\u002B1 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng1_posture_damage_taken_mult",
+      "Name": "NG\u002B1 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng2_stamina_damage_taken_mult",
+      "Name": "NG\u002B2 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng2_posture_damage_taken_mult",
+      "Name": "NG\u002B2 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng3_stamina_damage_taken_mult",
+      "Name": "NG\u002B3 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng3_posture_damage_taken_mult",
+      "Name": "NG\u002B3 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng4_stamina_damage_taken_mult",
+      "Name": "NG\u002B4 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng4_posture_damage_taken_mult",
+      "Name": "NG\u002B4 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng5_stamina_damage_taken_mult",
+      "Name": "NG\u002B5 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng5_posture_damage_taken_mult",
+      "Name": "NG\u002B5 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng6_stamina_damage_taken_mult",
+      "Name": "NG\u002B6 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng6_posture_damage_taken_mult",
+      "Name": "NG\u002B6 - Incoming Posture Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng7_stamina_damage_taken_mult",
+      "Name": "NG\u002B7 - Incoming Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "ng7_posture_damage_taken_mult",
+      "Name": "NG\u002B7 - Incoming Posture Damage %",
+      "Description": ""
+    }
+  ]
+}

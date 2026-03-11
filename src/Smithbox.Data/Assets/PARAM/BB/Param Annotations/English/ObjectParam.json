@@ -1,0 +1,128 @@
+{
+  "Param": "ObjectParam",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "ObjectParam",
+  "Description": "Object destruction data",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "Durability until destruction (-1 Indestructible)"
+    },
+    {
+      "Field": "defense",
+      "Name": "Defence",
+      "Description": "Attack power below this value is no damage"
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "External Texture ID",
+      "Description": "mAA / mAA_ ????. Tpf (-1 None) (AA Area number)"
+    },
+    {
+      "Field": "materialId",
+      "Name": "Material ID",
+      "Description": "Material ID. Treated the same as the floor material. When -1, the same behavior as before"
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "Destruction Animation ID",
+      "Description": "What is the animation destruction ID from 0 to what?"
+    },
+    {
+      "Field": "isCamHit",
+      "Name": "Is Camera Hit",
+      "Description": "Does the camera hit (0 not hit, 1 hit)"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "Is Broken by Player Collision",
+      "Description": "Broken when the player touches (0 no, 1)"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "Is Animated Destruction",
+      "Description": "Is it animation destruction (0 physical destruction, 1 animation destruction)"
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "Is Hit by Penetrating Bullets",
+      "Description": "Will the penetrating bullet hit (0 not hit, 1 hit)"
+    },
+    {
+      "Field": "isChrHit",
+      "Name": "Is Character Hit",
+      "Description": "Does the character win (0 not hit, 1 hit)"
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "Cause Weapon Bounce",
+      "Description": "Do you play the attack (0 do not play, 1 play)"
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "Is Disable Destruction on First Appearance",
+      "Description": "Broken at the initial appearance of the player (0 ru, 1 no)"
+    },
+    {
+      "Field": "isLadder",
+      "Name": "Is Ladder",
+      "Description": "Is it a ladder (0 different, 1 yes)"
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "Is Animation Paused in Cutscene",
+      "Description": "Do you want to stop the animation during the poly play (0 not, 1 do)"
+    },
+    {
+      "Field": "isDamageNoHit",
+      "Name": "Is Damage No Hit",
+      "Description": "No damage (0 hit, 1 not hit)"
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "Is Moving Object",
+      "Description": "Is it a moving object (0 different, 1 yes)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "Default LOD Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "Destruction - SFX ID",
+      "Description": "SFXID when destroying an object (-1 default (810030))"
+    },
+    {
+      "Field": "navimeshFlag",
+      "Name": "Navimesh Flag",
+      "Description": "Navigation mesh flag set from the object"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "paintRenderTargetSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakAiSoundId",
+      "Name": "Destruction AI Sound ID",
+      "Description": "AI sound ID generated at the time of destruction"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

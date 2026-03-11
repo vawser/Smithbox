@@ -1,17 +1,29 @@
 {
-  "DisplayName": "LOGIC_DECOY_ENABLE_TYPE",
-  "Name": "LOGIC_DECOY_ENABLE_TYPE",
-  "Description": "",
+  "Key": "LOGIC_DECOY_ENABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_DECOY_ENABLE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Valid",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valid"
+        }
+      ]
     }
   ]
 }

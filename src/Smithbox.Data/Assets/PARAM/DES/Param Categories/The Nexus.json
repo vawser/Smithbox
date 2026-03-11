@@ -1,5 +1,11 @@
 {
-  "DisplayName": "The Nexus / Below the Nexus",
+  "Key": "The Nexus / Below the Nexus",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "The Nexus / Below the Nexus"
+      }
+  ],
   "Params": [
     "m01_DofBank",
     "m01_EnvLightTexBank",

@@ -1,32 +1,56 @@
 {
-  "DisplayName": "ITEM_MODEL_TYPE",
-  "Name": "ITEM_MODEL_TYPE",
-  "Description": "",
+  "Key": "ITEM_MODEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_MODEL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "General purpose",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Weapon",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Armor",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Ring",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Material",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material"
+        }
+      ]
     }
   ]
 }

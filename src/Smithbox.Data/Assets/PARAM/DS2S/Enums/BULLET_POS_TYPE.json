@@ -1,42 +1,74 @@
 {
-  "DisplayName": "BULLET_POS_TYPE",
-  "Name": "BULLET_POS_TYPE",
-  "Description": "",
+  "Key": "BULLET_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_POS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy Polygon",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Line of Sight Direction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Line of Sight Direction"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Dummy Polygon Attach",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Polygon Attach"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Parent Bullet",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent Bullet"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Camera Standard",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera Standard"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Parent Bullet Impact Position",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent Bullet Impact Position"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Parent Direction",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent Direction"
+        }
+      ]
     }
   ]
 }

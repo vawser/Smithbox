@@ -1,0 +1,158 @@
+{
+  "Param": "CustomAttrCostParam",
+  "Type": "CUSTOM_ATTR_COST_PARAM",
+  "Name": "CustomAttrCostParam",
+  "Description": "Defines parameters related to infusion cost.",
+  "Fields": [
+    {
+      "Field": "infusion_1_cost",
+      "Name": "Infusion 1 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_2_cost",
+      "Name": "Infusion 2 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_3_cost",
+      "Name": "Infusion 3 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_4_cost",
+      "Name": "Infusion 4 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_5_cost",
+      "Name": "Infusion 5 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_6_cost",
+      "Name": "Infusion 6 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_7_cost",
+      "Name": "Infusion 7 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_8_cost",
+      "Name": "Infusion 8 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_9_cost",
+      "Name": "Infusion 9 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_10_cost",
+      "Name": "Infusion 10 - Cost",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_1_item",
+      "Name": "Infusion 1 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_2_item",
+      "Name": "Infusion 2 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_3_item",
+      "Name": "Infusion 3 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_4_item",
+      "Name": "Infusion 4 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_5_item",
+      "Name": "Infusion 5 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_6_item",
+      "Name": "Infusion 6 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_7_item",
+      "Name": "Infusion 7 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_8_item",
+      "Name": "Infusion 8 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_9_item",
+      "Name": "Infusion 9 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_10_item",
+      "Name": "Infusion 10 - Infusion Item",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_1_item_amount",
+      "Name": "Infusion 1 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_2_item_amount",
+      "Name": "Infusion 2 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_3_item_amount",
+      "Name": "Infusion 3 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_4_item_amount",
+      "Name": "Infusion 4 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_5_item_amount",
+      "Name": "Infusion 5 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_6_item_amount",
+      "Name": "Infusion 6 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_7_item_amount",
+      "Name": "Infusion 7 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_8_item_amount",
+      "Name": "Infusion 8 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_9_item_amount",
+      "Name": "Infusion 9 - Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "infusion_10_item_amount",
+      "Name": "Infusion 10 - Item Amount",
+      "Description": ""
+    }
+  ]
+}

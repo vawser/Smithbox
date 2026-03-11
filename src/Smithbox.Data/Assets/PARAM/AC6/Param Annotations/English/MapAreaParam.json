@@ -1,0 +1,113 @@
+{
+  "Param": "MapAreaParam",
+  "Type": "MAP_AREA_PARAM_ST",
+  "Name": "MapAreaParam",
+  "Description": "Determines the parameters that relate to map areas.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap00",
+      "Name": "Environmental Map: Morning",
+      "Description": "If the environmental map photography used for the morning time."
+    },
+    {
+      "Field": "EnvMapCap01",
+      "Name": "Environmental Map: Day (A)",
+      "Description": "If the environmental map photography used for the day time."
+    },
+    {
+      "Field": "EnvMapCap02",
+      "Name": "Environmental Map: Day (B)",
+      "Description": "If the environmental map photography used for the day time."
+    },
+    {
+      "Field": "EnvMapCap03",
+      "Name": "Environmental Map: Evening",
+      "Description": "If the environmental map photography used for the evening time."
+    },
+    {
+      "Field": "EnvMapCap04",
+      "Name": "Environmental Map: Night",
+      "Description": "If the environmental map photography used for the night time."
+    },
+    {
+      "Field": "EnvMapCap05",
+      "Name": "Environmental Map: Late Night (A)",
+      "Description": "If the environmental map photography used for the late night time."
+    },
+    {
+      "Field": "EnvMapCap06",
+      "Name": "Environmental Map: Late Night (B)",
+      "Description": "If the environmental map photography used for the late night time."
+    },
+    {
+      "Field": "padding_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserve_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam00",
+      "Name": "Skybox ID: Morning",
+      "Description": "The skybox dome row ID to use during the morning time."
+    },
+    {
+      "Field": "SkydomeParam01",
+      "Name": "Skybox ID: Day (A)",
+      "Description": "The skybox dome row ID to use during the day time."
+    },
+    {
+      "Field": "SkydomeParam02",
+      "Name": "Skybox ID: Day (B)",
+      "Description": "The skybox dome row ID to use during the day time."
+    },
+    {
+      "Field": "SkydomeParam03",
+      "Name": "Skybox ID: Evening",
+      "Description": "The skybox dome row ID to use during the evening time."
+    },
+    {
+      "Field": "SkydomeParam04",
+      "Name": "Skybox ID: Night",
+      "Description": "The skybox dome row ID to use during the night time."
+    },
+    {
+      "Field": "SkydomeParam05",
+      "Name": "Skybox ID: Late Night (A)",
+      "Description": "The skybox dome row ID to use during the late night time."
+    },
+    {
+      "Field": "SkydomeParam06",
+      "Name": "Skybox ID: Late Night (B)",
+      "Description": "The skybox dome row ID to use during the late night time."
+    },
+    {
+      "Field": "Reserve_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

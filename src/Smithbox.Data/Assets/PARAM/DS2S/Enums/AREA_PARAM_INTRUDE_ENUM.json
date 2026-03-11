@@ -1,17 +1,29 @@
 {
-  "DisplayName": "AREA_PARAM_INTRUDE_ENUM",
-  "Name": "AREA_PARAM_INTRUDE_ENUM",
-  "Description": "",
+  "Key": "AREA_PARAM_INTRUDE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AREA_PARAM_INTRUDE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Prohibited",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Permission",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Permission"
+        }
+      ]
     }
   ]
 }

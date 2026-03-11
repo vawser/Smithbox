@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Graphics",
+  "Key": "Graphics",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Graphics"
+      }
+  ],
   "Params": [
     "GraphicsConfig",
     "GraphicsConfig_AAQuality_win64",

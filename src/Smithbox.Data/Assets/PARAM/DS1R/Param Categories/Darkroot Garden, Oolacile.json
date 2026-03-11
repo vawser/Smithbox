@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Darkroot Garden / Oolacile",
+  "Key": "Darkroot Garden / Oolacile",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Darkroot Garden / Oolacile"
+      }
+  ],
   "Params": [
     "m12_DofBank",
     "m12_EnvLightTexBank",

@@ -1,0 +1,13 @@
+{
+  "Param": "MessageBoxParamDialog",
+  "Type": "MESSAGEBOX_PARAM_ST",
+  "Name": "MessageBoxParamDialog",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

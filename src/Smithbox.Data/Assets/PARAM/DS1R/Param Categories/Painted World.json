@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Painted World",
+  "Key": "Painted World",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Painted World"
+      }
+  ],
   "Params": [
     "m11_DofBank",
     "m11_EnvLightTexBank",

@@ -1,37 +1,65 @@
 {
-  "DisplayName": "CHR_CATEGORY_TYPE",
-  "Name": "CHR_CATEGORY_TYPE",
-  "Description": "",
+  "Key": "CHR_CATEGORY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_CATEGORY_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Player",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Enemy",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Middle boss",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle boss"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Boss",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "NPC",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Vagrant",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant"
+        }
+      ]
     }
   ]
 }

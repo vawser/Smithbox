@@ -1,92 +1,164 @@
 {
-  "DisplayName": "EVENT_FLAG_GIMMICK",
-  "Name": "EVENT_FLAG_GIMMICK",
-  "Description": "",
+  "Key": "EVENT_FLAG_GIMMICK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GIMMICK"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "99020100",
-      "Name": "Opened determination of both doors that appear after being destroyed by a lower-class Titan soldier",
-      "Description": ""
+      "Key": "99020100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Opened determination of both doors that appear after being destroyed by a lower-class Titan soldier"
+        }
+      ]
     },
     {
-      "ID": "99020200",
-      "Name": "White door_01 open determination",
-      "Description": ""
+      "Key": "99020200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_01 open determination"
+        }
+      ]
     },
     {
-      "ID": "99020201",
-      "Name": "White door_02 open determination",
-      "Description": ""
+      "Key": "99020201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_02 open determination"
+        }
+      ]
     },
     {
-      "ID": "99020202",
-      "Name": "White door_03 open determination",
-      "Description": ""
+      "Key": "99020202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_03 open determination"
+        }
+      ]
     },
     {
-      "ID": "99020203",
-      "Name": "White door_04 open determination",
-      "Description": ""
+      "Key": "99020203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_04 open determination"
+        }
+      ]
     },
     {
-      "ID": "99020400",
-      "Name": "Extended ladder_1 used determination",
-      "Description": ""
+      "Key": "99020400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extended ladder_1 used determination"
+        }
+      ]
     },
     {
-      "ID": "99020460",
-      "Name": "Judgment of activation of switch for opening/closing lever double door_1",
-      "Description": ""
+      "Key": "99020460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment of activation of switch for opening/closing lever double door_1"
+        }
+      ]
     },
     {
-      "ID": "99020461",
-      "Name": "Block 3 shortcut entrance switch activation determination",
-      "Description": ""
+      "Key": "99020461",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block 3 shortcut entrance switch activation determination"
+        }
+      ]
     },
     {
-      "ID": "99020462",
-      "Name": "Block 3 shortcut exit switch activation determination",
-      "Description": ""
+      "Key": "99020462",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block 3 shortcut exit switch activation determination"
+        }
+      ]
     },
     {
-      "ID": "99020500",
-      "Name": "Open determination of one-way door to cave bonfire room",
-      "Description": ""
+      "Key": "99020500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Open determination of one-way door to cave bonfire room"
+        }
+      ]
     },
     {
-      "ID": "99020630",
-      "Name": "Blow-off royal soldier OBJ first execution judgment",
-      "Description": ""
+      "Key": "99020630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow-off royal soldier OBJ first execution judgment"
+        }
+      ]
     },
     {
-      "ID": "99020631",
-      "Name": "Blows away royal soldier OBJ second execution judgment",
-      "Description": ""
+      "Key": "99020631",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blows away royal soldier OBJ second execution judgment"
+        }
+      ]
     },
     {
-      "ID": "99020632",
-      "Name": "The third blown away royal soldier OBJ has been determined to have been executed.",
-      "Description": ""
+      "Key": "99020632",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The third blown away royal soldier OBJ has been determined to have been executed."
+        }
+      ]
     },
     {
-      "ID": "99020633",
-      "Name": "4th blown away royal soldier OBJ execution judgment",
-      "Description": ""
+      "Key": "99020633",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4th blown away royal soldier OBJ execution judgment"
+        }
+      ]
     },
     {
-      "ID": "99020634",
-      "Name": "Execution judgment of royal soldier OBJ being grabbed",
-      "Description": ""
+      "Key": "99020634",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Execution judgment of royal soldier OBJ being grabbed"
+        }
+      ]
     },
     {
-      "ID": "99020635",
-      "Name": "For determining whether block 3 rumble gimmick has occurred",
-      "Description": ""
+      "Key": "99020635",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For determining whether block 3 rumble gimmick has occurred"
+        }
+      ]
     }
   ]
 }

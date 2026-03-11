@@ -109,7 +109,7 @@ public class ParamListCategories
 
             foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
             {
-                if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($"{category.GetDisplayName()}##userCategory_{category.GetDisplayName()}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     _selectedUserCategory = category;
                     isNewEntryMode = false;
@@ -174,8 +174,13 @@ public class ParamListCategories
                 {
                     isNewEntryMode = false;
 
+                    var nameEntry = new ParamCategoryNameEntry();
+                    nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
+                    nameEntry.Name = NewEntryName;
+
                     var newCategoryEntry = new ParamCategoryEntry();
-                    newCategoryEntry.DisplayName = NewEntryName;
+                    newCategoryEntry.Key = NewEntryName;
+                    newCategoryEntry.DisplayNames = [nameEntry];
                     newCategoryEntry.Params = NewEntryParams;
 
                     Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
@@ -195,7 +200,7 @@ public class ParamListCategories
                     {
                         isInitialEditMode = false;
 
-                        NewEntryName = _selectedUserCategory.DisplayName;
+                        NewEntryName = _selectedUserCategory.GetDisplayName();
                         NewEntryParamsCount = _selectedUserCategory.Params.Count;
                         ForceTop = _selectedUserCategory.ForceTop;
                         ForceBottom = _selectedUserCategory.ForceBottom;
@@ -228,7 +233,7 @@ public class ParamListCategories
                     {
                         isEditEntryMode = false;
 
-                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.GetDisplayName() == NewEntryName).FirstOrDefault();
 
                         if (curEntry != null)
                         {

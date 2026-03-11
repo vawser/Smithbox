@@ -1,17 +1,29 @@
 {
-  "DisplayName": "SPELL_SOUL_CONSUME_TYPE",
-  "Name": "SPELL_SOUL_CONSUME_TYPE",
-  "Description": "",
+  "Key": "SPELL_SOUL_CONSUME_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_SOUL_CONSUME_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Number",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Percentage",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Percentage"
+        }
+      ]
     }
   ]
 }

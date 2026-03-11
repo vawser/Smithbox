@@ -1,67 +1,119 @@
 {
-  "DisplayName": "DAMAGE_DEAD_MOTION_TYPE",
-  "Name": "DAMAGE_DEAD_MOTION_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_DEAD_MOTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_DEAD_MOTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Death by blow",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death by blow"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Slash death",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash death"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Stabbing death",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stabbing death"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Ragdoll death",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ragdoll death"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Magical death",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical death"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Lightning death",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning death"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Death by flames",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death by flames"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Death in darkness",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death in darkness"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Breath death",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Breath death"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Turn undead death",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn undead death"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Death by poison",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death by poison"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Slammed to death",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slammed to death"
+        }
+      ]
     }
   ]
 }

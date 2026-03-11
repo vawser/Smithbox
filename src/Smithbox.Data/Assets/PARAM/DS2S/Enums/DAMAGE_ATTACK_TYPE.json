@@ -1,32 +1,56 @@
 {
-  "DisplayName": "DAMAGE_ATTACK_TYPE",
-  "Name": "DAMAGE_ATTACK_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_ATTACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ATTACK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "None",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Slash",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Piercing",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piercing"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Blow",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Bullet",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet"
+        }
+      ]
     }
   ]
 }

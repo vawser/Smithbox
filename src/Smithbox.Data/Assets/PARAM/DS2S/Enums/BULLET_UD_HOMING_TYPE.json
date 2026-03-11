@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BULLET_UD_HOMING_TYPE",
-  "Name": "BULLET_UD_HOMING_TYPE",
-  "Description": "",
+  "Key": "BULLET_UD_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_UD_HOMING_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Top and bottom",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top and bottom"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Top only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Bottom only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom only"
+        }
+      ]
     }
   ]
 }

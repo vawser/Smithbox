@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Tutorial",
+  "Key": "Tutorial",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Tutorial"
+      }
+  ],
   "Params": [
     "m08_DofBank",
     "m08_EnvLightTexBank",

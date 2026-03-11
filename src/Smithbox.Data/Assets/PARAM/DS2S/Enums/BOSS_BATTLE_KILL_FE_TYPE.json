@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BOSS_BATTLE_KILL_FE_TYPE",
-  "Name": "BOSS_BATTLE_KILL_FE_TYPE",
-  "Description": "",
+  "Key": "BOSS_BATTLE_KILL_FE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_BATTLE_KILL_FE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Primal",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Primal"
+        }
+      ]
     }
   ]
 }

@@ -1,342 +1,614 @@
 {
-  "DisplayName": "WORLD_MAP_ICON_ID",
-  "Name": "WORLD_MAP_ICON_ID",
-  "Description": "These are IDs for the world map icons.",
+  "Key": "WORLD_MAP_ICON_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WORLD_MAP_ICON_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "Grace",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "Blocked Grace",
-      "Description": ""
-    },
-    {
-      "ID": "3",
-      "Name": "Collapsed Church",
-      "Description": ""
-    },
-    {
-      "ID": "4",
-      "Name": "Catacombs Entrance",
-      "Description": ""
-    },
-    {
-      "ID": "5",
-      "Name": "Pillar Ruins",
-      "Description": ""
-    },
-    {
-      "ID": "6",
-      "Name": "Wooden Shack",
-      "Description": ""
-    },
-    {
-      "ID": "7",
-      "Name": "Distant Village",
-      "Description": ""
-    },
-    {
-      "ID": "8",
-      "Name": "Collapsed Tower",
-      "Description": ""
-    },
-    {
-      "ID": "9",
-      "Name": "Evergaol",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "Gatehouse",
-      "Description": ""
-    },
-    {
-      "ID": "11",
-      "Name": "Bridge of Sacrifice",
-      "Description": ""
-    },
-    {
-      "ID": "13",
-      "Name": "Cave",
-      "Description": ""
-    },
-    {
-      "ID": "14",
-      "Name": "Tunnel",
-      "Description": ""
-    },
-    {
-      "ID": "15",
-      "Name": "River Well",
-      "Description": ""
-    },
-    {
-      "ID": "16",
-      "Name": "Hero's Grave",
-      "Description": ""
-    },
-    {
-      "ID": "17",
-      "Name": "Mage's Rise",
-      "Description": ""
-    },
-    {
-      "ID": "18",
-      "Name": "Fort",
-      "Description": ""
-    },
-    {
-      "ID": "19",
-      "Name": "Windmill",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "Cathedral of Manus Celes",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "Grand Lift",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "Encampment",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "Divine Tower",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "Colosseum",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "Castle Morne",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "Caria Manor",
-      "Description": ""
-    },
-    {
-      "ID": "27",
-      "Name": "Shaded Castle",
-      "Description": ""
-    },
-    {
-      "ID": "28",
-      "Name": "Redmane Castle",
-      "Description": ""
-    },
-    {
-      "ID": "29",
-      "Name": "Castle Sol",
-      "Description": ""
-    },
-    {
-      "ID": "30",
-      "Name": "Minor Erdtree",
-      "Description": ""
-    },
-    {
-      "ID": "32",
-      "Name": "Academy Gate Town",
-      "Description": ""
-    },
-    {
-      "ID": "33",
-      "Name": "Sellia Town of Sorcery",
-      "Description": ""
-    },
-    {
-      "ID": "34",
-      "Name": "Ordina Liturgical Town",
-      "Description": ""
-    },
-    {
-      "ID": "35",
-      "Name": "Frenzied Village",
-      "Description": ""
-    },
-    {
-      "ID": "36",
-      "Name": "Windmill Village",
-      "Description": ""
-    },
-    {
-      "ID": "37",
-      "Name": "Ailing Village",
-      "Description": ""
-    },
-    {
-      "ID": "38",
-      "Name": "Jarburg",
-      "Description": ""
-    },
-    {
-      "ID": "39",
-      "Name": "Village of the Albinaurics",
-      "Description": ""
-    },
-    {
-      "ID": "40",
-      "Name": "Hermit Village",
-      "Description": ""
-    },
-    {
-      "ID": "45",
-      "Name": "Mohgwyn Dynasty Mausoleum",
-      "Description": ""
-    },
-    {
-      "ID": "46",
-      "Name": "Eternal City",
-      "Description": ""
-    },
-    {
-      "ID": "47",
-      "Name": "Hallowed Grounds",
-      "Description": ""
-    },
-    {
-      "ID": "50",
-      "Name": "Stormveil Castle",
-      "Description": ""
-    },
-    {
-      "ID": "51",
-      "Name": "Academy of Raya Lucaria",
-      "Description": ""
-    },
-    {
-      "ID": "52",
-      "Name": "The Four Belfries",
-      "Description": ""
-    },
-    {
-      "ID": "53",
-      "Name": "Ruin-Strewn Precipice",
-      "Description": ""
-    },
-    {
-      "ID": "54",
-      "Name": "Bestial Sanctum",
-      "Description": ""
-    },
-    {
-      "ID": "55",
-      "Name": "Miquella's Haligtree",
-      "Description": ""
-    },
-    {
-      "ID": "56",
-      "Name": "Elphael, Brace of the Haligtree",
-      "Description": ""
-    },
-    {
-      "ID": "57",
-      "Name": "Forge of the Giants",
-      "Description": ""
-    },
-    {
-      "ID": "58",
-      "Name": "Volcano Manor",
-      "Description": ""
-    },
-    {
-      "ID": "59",
-      "Name": "Crumbling Farum Azula",
-      "Description": ""
-    },
-    {
-      "ID": "60",
-      "Name": "Leyndell, Royal Capital",
-      "Description": ""
-    },
-    {
-      "ID": "61",
-      "Name": "Subterranean Shunning-Grounds",
-      "Description": ""
-    },
-    {
-      "ID": "62",
-      "Name": "Leyndell, Ashen Capital",
-      "Description": ""
-    },
-    {
-      "ID": "65",
-      "Name": "Chapel of Anticipation",
-      "Description": ""
-    },
-    {
-      "ID": "66",
-      "Name": "Carian Study Hall",
-      "Description": ""
-    },
-    {
-      "ID": "70",
-      "Name": "White Circle with Figure Within",
-      "Description": ""
-    },
-    {
-      "ID": "80",
-      "Name": "NPC Marker",
-      "Description": ""
-    },
-    {
-      "ID": "83",
-      "Name": "Grace Guidance",
-      "Description": ""
-    },
-    {
-      "ID": "84",
-      "Name": "Starlight Guidance",
-      "Description": ""
-    },
-    {
-      "ID": "85",
-      "Name": "Catacomb Guidance",
-      "Description": ""
-    },
-    {
-      "ID": "86",
-      "Name": "NPC Marker (White Fog behind)",
-      "Description": ""
-    },
-    {
-      "ID": "87",
-      "Name": "Red Invasion Marker",
-      "Description": ""
-    },
-    {
-      "ID": "88",
-      "Name": "Red Invasion Marker (faded)",
-      "Description": ""
-    },
-    {
-      "ID": "89",
-      "Name": "Catacomb",
-      "Description": ""
-    },
-    {
-      "ID": "90",
-      "Name": "Catacomb",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grace"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blocked Grace"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Collapsed Church"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catacombs Entrance"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pillar Ruins"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden Shack"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Distant Village"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Collapsed Tower"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evergaol"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gatehouse"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bridge of Sacrifice"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cave"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tunnel"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "River Well"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hero's Grave"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mage's Rise"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fort"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Windmill"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cathedral of Manus Celes"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grand Lift"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Encampment"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Divine Tower"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colosseum"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Morne"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Caria Manor"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shaded Castle"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Redmane Castle"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Sol"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Minor Erdtree"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Academy Gate Town"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sellia Town of Sorcery"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ordina Liturgical Town"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frenzied Village"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Windmill Village"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ailing Village"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jarburg"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Village of the Albinaurics"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hermit Village"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mohgwyn Dynasty Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eternal City"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hallowed Grounds"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stormveil Castle"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Academy of Raya Lucaria"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The Four Belfries"
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ruin-Strewn Precipice"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bestial Sanctum"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miquella's Haligtree"
+        }
+      ]
+    },
+    {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elphael, Brace of the Haligtree"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forge of the Giants"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Volcano Manor"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crumbling Farum Azula"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leyndell, Royal Capital"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Subterranean Shunning-Grounds"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leyndell, Ashen Capital"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chapel of Anticipation"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carian Study Hall"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Circle with Figure Within"
+        }
+      ]
+    },
+    {
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Marker"
+        }
+      ]
+    },
+    {
+      "Key": "83",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grace Guidance"
+        }
+      ]
+    },
+    {
+      "Key": "84",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Starlight Guidance"
+        }
+      ]
+    },
+    {
+      "Key": "85",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catacomb Guidance"
+        }
+      ]
+    },
+    {
+      "Key": "86",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Marker (White Fog behind)"
+        }
+      ]
+    },
+    {
+      "Key": "87",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Invasion Marker"
+        }
+      ]
+    },
+    {
+      "Key": "88",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Invasion Marker (faded)"
+        }
+      ]
+    },
+    {
+      "Key": "89",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catacomb"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catacomb"
+        }
+      ]
     }
   ]
 }

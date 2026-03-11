@@ -1,0 +1,143 @@
+{
+  "Param": "NetworkMsgParam",
+  "Type": "NETWORK_MSG_PARAM_ST",
+  "Name": "NetworkMsgParam",
+  "Description": "Defines summon and invasion message IDs (white/red). Unused in AC6.",
+  "Fields": [
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Soapstone broadcasting priority."
+    },
+    {
+      "Field": "forcePlay",
+      "Name": "Forced Interrupt",
+      "Description": "Interrupt other sessions without the host\u0027s consent?"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalWhite",
+      "Name": "White Sign: White Spirit",
+      "Description": "Default white summon soapstone sign."
+    },
+    {
+      "Field": "umbasaWhite",
+      "Name": "White Sign: Sun Spirit",
+      "Description": "Warrior of Sunlight white summon soapstone sign."
+    },
+    {
+      "Field": "berserkerWhite",
+      "Name": "White Sign: Berserker Spirit",
+      "Description": "Mad white summon soapstone sign."
+    },
+    {
+      "Field": "sinnerHeroWhite",
+      "Name": "White Sign: Darkmoon Spirit",
+      "Description": "Darkmoon white summon soapstone sign."
+    },
+    {
+      "Field": "normalBlack",
+      "Name": "Red Sign: Dark Spirit",
+      "Description": "Default red summon soapstone sign."
+    },
+    {
+      "Field": "umbasaBlack",
+      "Name": "Red Sign: Sun Spirit",
+      "Description": "Warrior of Sunlight red sunnon soapstone sign."
+    },
+    {
+      "Field": "berserkerBlack",
+      "Name": "Red Sign: Berserker Spirit",
+      "Description": "Mad red summon soapstone sign."
+    },
+    {
+      "Field": "forceJoinBlack",
+      "Name": "Invasion: Dark Spirit",
+      "Description": "Default red eye orb."
+    },
+    {
+      "Field": "forceJoinUmbasaBlack",
+      "Name": "Invasion: Sun Spirit",
+      "Description": "Warrior of Sunlight red eye orb."
+    },
+    {
+      "Field": "forceJoinBerserkerBlack",
+      "Name": "Invasion: Berserker Spirit",
+      "Description": "Mad red eye orb."
+    },
+    {
+      "Field": "sinnerHunterVisitor",
+      "Name": "Visit: Darkmoon Spirit",
+      "Description": "Darkmoon blade covenant visitor."
+    },
+    {
+      "Field": "redHunterVisitor",
+      "Name": "Visit: Red Hunter Spirit",
+      "Description": "Red Hunter covenant visitor."
+    },
+    {
+      "Field": "guardianOfBossVisitor",
+      "Name": "Visit: Boss Guardian",
+      "Description": "Boss Guardian covenant visitor."
+    },
+    {
+      "Field": "guardianOfForestMapVisitor",
+      "Name": "Visit: Forest Hunter",
+      "Description": "Forest Hunter ring visitor."
+    },
+    {
+      "Field": "guardianOfAnolisVisitor",
+      "Name": "Visit: Guardian of Anolis",
+      "Description": "Anolis Guardian visitor."
+    },
+    {
+      "Field": "rosaliaBlack",
+      "Name": "Red Sign: Rosaria\u0027s Finger",
+      "Description": "Rosaria\u0027s Finger red summon soapstone sign."
+    },
+    {
+      "Field": "forceJoinRosaliaBlack",
+      "Name": "Invasion: Rosaria\u0027s Finger",
+      "Description": "Rosaria\u0027s Finger red eye orb."
+    },
+    {
+      "Field": "redHunterVisitor2",
+      "Name": "Visit: Red Hunter Spirit 2",
+      "Description": "Red Hunter covenant 2 visitor."
+    },
+    {
+      "Field": "npc1",
+      "Name": "NPC Pseudo-Multiplayer [1]",
+      "Description": "Mimicks multiplayer offline."
+    },
+    {
+      "Field": "npc2",
+      "Name": "NPC Pseudo-Multiplayer [2]",
+      "Description": "Mimicks multiplayer offline."
+    },
+    {
+      "Field": "npc3",
+      "Name": "NPC Pseudo-Multiplayer [3]",
+      "Description": "Mimicks multiplayer offline."
+    },
+    {
+      "Field": "npc4",
+      "Name": "NPC Pseudo-Multiplayer [4]",
+      "Description": "Mimicks multiplayer offline."
+    },
+    {
+      "Field": "battleRoyal",
+      "Name": "Battle Royale",
+      "Description": "All players are on opposing teams. Colluseum."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

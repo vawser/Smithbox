@@ -1,0 +1,23 @@
+{
+  "Param": "UnlockParam_EmblemPiece",
+  "Type": "GAMEDATA_UNLOCK_PARAM",
+  "Name": "UnlockParam_EmblemPiece",
+  "Description": "Outlines what is unlocked when.",
+  "Fields": [
+    {
+      "Field": "unlockType",
+      "Name": "Unlock Type",
+      "Description": ""
+    },
+    {
+      "Field": "refID",
+      "Name": "Reference ID",
+      "Description": "ID for determining release. Target varies depending on type."
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

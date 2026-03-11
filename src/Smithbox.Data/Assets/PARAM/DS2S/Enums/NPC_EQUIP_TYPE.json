@@ -1,17 +1,29 @@
 {
-  "DisplayName": "NPC_EQUIP_TYPE",
-  "Name": "NPC_EQUIP_TYPE",
-  "Description": "",
+  "Key": "NPC_EQUIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_EQUIP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Specification of each equipment",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Specification of each equipment"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Integral molding",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Integral molding"
+        }
+      ]
     }
   ]
 }

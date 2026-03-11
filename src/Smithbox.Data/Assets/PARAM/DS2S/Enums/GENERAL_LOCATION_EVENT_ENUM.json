@@ -1,127 +1,227 @@
 {
-  "DisplayName": "GENERAL_LOCATION_EVENT_ENUM",
-  "Name": "GENERAL_LOCATION_EVENT_ENUM",
-  "Description": "",
+  "Key": "GENERAL_LOCATION_EVENT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERAL_LOCATION_EVENT_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No setting",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No setting"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Black spirit invasion",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black spirit invasion"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Logic",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Event trigger",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event trigger"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Bullet firing",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet firing"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Navigation point",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Navigation point"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Vagrant",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Navigation mesh change",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Navigation mesh change"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Not lockable",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not lockable"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Generator operating conditions",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generator operating conditions"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Event judgment",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event judgment"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Logic intrusion prohibited",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic intrusion prohibited"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Resident event blood letter",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Resident event blood letter"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Event blood letter",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event blood letter"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Wind generator",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wind generator"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Slippery floor",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slippery floor"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Gas",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gas"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Damage",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Bright area",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bright area"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "No blood writing allowed",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No blood writing allowed"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Blood text hidden",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood text hidden"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Petrified statue",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrified statue"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Advice blood letters",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Advice blood letters"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Backread safety between map connections",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backread safety between map connections"
+        }
+      ]
     }
   ]
 }

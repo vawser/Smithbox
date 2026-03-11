@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Forest of Fallen Giants",
+  "Key": "Forest of Fallen Giants",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Forest of Fallen Giants"
+      }
+  ],
   "Params": [
     "demopointlight_scn101010",
     "demopointlight_scn101020",

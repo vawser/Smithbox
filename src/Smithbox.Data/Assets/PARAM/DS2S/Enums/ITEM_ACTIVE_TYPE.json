@@ -1,6 +1,10 @@
 {
-  "DisplayName": "ITEM_ACTIVE_TYPE",
-  "Name": "ITEM_ACTIVE_TYPE",
-  "Description": "",
+  "Key": "ITEM_ACTIVE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_ACTIVE_TYPE"
+    }
+  ],
   "Options": []
 }

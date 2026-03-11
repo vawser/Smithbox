@@ -1,0 +1,113 @@
+{
+  "Param": "ThrowParam",
+  "Type": "THROW_INFO_BANK",
+  "Name": "ThrowParam",
+  "Description": "Determines the parameters for throws.",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "Attacker: Character ID",
+      "Description": "The character ID to define the attacker parameters for."
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "Defender: Character ID",
+      "Description": "The character ID to define the defender parameters for."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PadType",
+      "Name": "Operation Type",
+      "Description": "The operation type for the throw."
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "Attacker State Type",
+      "Description": "The state type in which the attacker may perform the throw."
+    },
+    {
+      "Field": "DefEnableState",
+      "Name": "Defender State Type",
+      "Description": "The state type in which the defender may perform the throw."
+    },
+    {
+      "Field": "isFaceToFace",
+      "Name": "Is Face to Face",
+      "Description": "If ON, attacker and defender face each other."
+    },
+    {
+      "Field": "isMoveAttacker",
+      "Name": "Move Attacker",
+      "Description": "If ON, this throw will move the attacker."
+    },
+    {
+      "Field": "DisableTurn",
+      "Name": "Disable Turning",
+      "Description": "If ON, this throw will disable turning for the defender."
+    },
+    {
+      "Field": "ThrowAtkStateType",
+      "Name": "Attacker: Throw State Type",
+      "Description": "The state type for the throw on the attacker\u0027s side."
+    },
+    {
+      "Field": "ThrowDefStateType",
+      "Name": "Defender: Throw State Type",
+      "Description": "The state type for the throw on the defender\u0027s side."
+    },
+    {
+      "Field": "Dist",
+      "Name": "Allowed Distance",
+      "Description": "The maximum distance the throw is allowed to occur at. In metres."
+    },
+    {
+      "Field": "ValidAngF",
+      "Name": "Valid Angle: Front",
+      "Description": "The angle to the front that is valid for thowing in. In degrees."
+    },
+    {
+      "Field": "ValidAngB",
+      "Name": "Valid Angle: Back",
+      "Description": "The angle to the back that is valid for thowing in. In degrees."
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "Angular Difference: Minimum",
+      "Description": "The minimum angular difference range between own direction and opponent\u0027s direction. In degrees."
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "Angular Difference: Maximum",
+      "Description": "The maximum angular difference range between own direction and opponent\u0027s direction. In degrees."
+    },
+    {
+      "Field": "MoveDist",
+      "Name": "Movement Distance",
+      "Description": "The movement distance when the throw attaches the attacker and defender together."
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "Maximum Relative Height",
+      "Description": "The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is less than this value."
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "Minimum Relative Height",
+      "Description": "The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is above this value."
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "Behavior Judgement ID",
+      "Description": "The behavior judgment ID to use for this throw."
+    },
+    {
+      "Field": "pading",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

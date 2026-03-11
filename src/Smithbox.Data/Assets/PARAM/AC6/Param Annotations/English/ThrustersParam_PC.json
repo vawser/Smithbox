@@ -1,0 +1,3203 @@
+{
+  "Param": "ThrustersParam_PC",
+  "Type": "THRUSTERS_PARAM_PC_ST",
+  "Name": "ThrustersParam_PC",
+  "Description": "Defines where certain particles should appear under various circumstances. For ACs.",
+  "Fields": [
+    {
+      "Field": "DummyID",
+      "Name": "Dummy Polygon ID",
+      "Description": "SFX generation dummy poly position (-1: placement position) dummy poly ID. If specified as a booster, it will be the ID of the dummy poly in the booster."
+    },
+    {
+      "Field": "main_SFXID",
+      "Name": "Main: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "main_SlotNO",
+      "Name": "Main: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "main_useRPCType",
+      "Name": "Main: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "main_IsHorizontal",
+      "Name": "Main: Is Horizontal",
+      "Description": "0: Maintain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "main_IsFollowDmyPoly",
+      "Name": "Main: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "main_IsEraseActionEnd",
+      "Name": "Main: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "main_camouFlageShow",
+      "Name": "Main: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "main_DoPlaySFXForTankLeg",
+      "Name": "Main: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "main_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "main_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "main_Scale",
+      "Name": "Main: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subFront_SFXID",
+      "Name": "Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_SlotNO",
+      "Name": "Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subFront_useRPCType",
+      "Name": "Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subFront_IsHorizontal",
+      "Name": "Front: Is Horizontal",
+      "Description": "0: subFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subFront_IsFollowDmyPoly",
+      "Name": "Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_IsEraseActionEnd",
+      "Name": "Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_camouFlageShow",
+      "Name": "Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subFront_DoPlaySFXForTankLeg",
+      "Name": "Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "subFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_Scale",
+      "Name": "Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subBack_SFXID",
+      "Name": "Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_SlotNO",
+      "Name": "Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subBack_useRPCType",
+      "Name": "Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subBack_IsHorizontal",
+      "Name": "Back: Is Horizontal",
+      "Description": "0: subBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subBack_IsFollowDmyPoly",
+      "Name": "Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_IsEraseActionEnd",
+      "Name": "Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_camouFlageShow",
+      "Name": "Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subBack_DoPlaySFXForTankLeg",
+      "Name": "Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "subBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_Scale",
+      "Name": "Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subLeft_SFXID",
+      "Name": "Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_SlotNO",
+      "Name": "Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subLeft_useRPCType",
+      "Name": "Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subLeft_IsHorizontal",
+      "Name": "Left: Is Horizontal",
+      "Description": "0: subLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subLeft_IsFollowDmyPoly",
+      "Name": "Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_IsEraseActionEnd",
+      "Name": "Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_camouFlageShow",
+      "Name": "Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subLeft_DoPlaySFXForTankLeg",
+      "Name": "Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "subLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_Scale",
+      "Name": "Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subRight_SFXID",
+      "Name": "Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_SlotNO",
+      "Name": "Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subRight_useRPCType",
+      "Name": "Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subRight_IsHorizontal",
+      "Name": "Right: Is Horizontal",
+      "Description": "0: subRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subRight_IsFollowDmyPoly",
+      "Name": "Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_IsEraseActionEnd",
+      "Name": "Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_camouFlageShow",
+      "Name": "Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subRight_DoPlaySFXForTankLeg",
+      "Name": "Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "subRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_Scale",
+      "Name": "Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbFront_SFXID",
+      "Name": "Quick Boost Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_SlotNO",
+      "Name": "Quick Boost Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbFront_useRPCType",
+      "Name": "Quick Boost Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbFront_IsHorizontal",
+      "Name": "Quick Boost Front: Is Horizontal",
+      "Description": "0: qbFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbFront_IsFollowDmyPoly",
+      "Name": "Quick Boost Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_IsEraseActionEnd",
+      "Name": "Quick Boost Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_camouFlageShow",
+      "Name": "Quick Boost Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbFront_DoPlaySFXForTankLeg",
+      "Name": "Quick Boost Front:: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "qbFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_Scale",
+      "Name": "Quick Boost Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbBack_SFXID",
+      "Name": "Quick Boost Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_SlotNO",
+      "Name": "Quick Boost Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbBack_useRPCType",
+      "Name": "Quick Boost Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbBack_IsHorizontal",
+      "Name": "Quick Boost Back: Is Horizontal",
+      "Description": "0: qbBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbBack_IsFollowDmyPoly",
+      "Name": "Quick Boost Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_IsEraseActionEnd",
+      "Name": "Quick Boost Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_camouFlageShow",
+      "Name": "Quick Boost Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbBack_DoPlaySFXForTankLeg",
+      "Name": "Quick Boost Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "qbBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_Scale",
+      "Name": "Quick Boost Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbLeft_SFXID",
+      "Name": "Quick Boost Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_SlotNO",
+      "Name": "Quick Boost Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbLeft_useRPCType",
+      "Name": "Quick Boost Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbLeft_IsHorizontal",
+      "Name": "Quick Boost Left: Is Horizontal",
+      "Description": "0: qbLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbLeft_IsFollowDmyPoly",
+      "Name": "Quick Boost Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_IsEraseActionEnd",
+      "Name": "Quick Boost Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_camouFlageShow",
+      "Name": "Quick Boost Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbLeft_DoPlaySFXForTankLeg",
+      "Name": "Quick Boost Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "qbLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_Scale",
+      "Name": "Quick Boost Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbRight_SFXID",
+      "Name": "Quick Boost Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_SlotNO",
+      "Name": "Quick Boost Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbRight_useRPCType",
+      "Name": "Quick Boost Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbRight_IsHorizontal",
+      "Name": "Quick Boost Right: Is Horizontal",
+      "Description": "0: qbRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbRight_IsFollowDmyPoly",
+      "Name": "Quick Boost Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_IsEraseActionEnd",
+      "Name": "Quick Boost Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_camouFlageShow",
+      "Name": "Quick Boost Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbRight_DoPlaySFXForTankLeg",
+      "Name": "Quick Boost Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "qbRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_Scale",
+      "Name": "Quick Boost Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "lift_SFXID",
+      "Name": "Lift: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "lift_SlotNO",
+      "Name": "Lift: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "lift_useRPCType",
+      "Name": "Lift: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "lift_IsHorizontal",
+      "Name": "Lift: Is Horizontal",
+      "Description": "0: lifttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "lift_IsFollowDmyPoly",
+      "Name": "Lift: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "lift_IsEraseActionEnd",
+      "Name": "Lift: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "lift_camouFlageShow",
+      "Name": "Lift: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "lift_DoPlaySFXForTankLeg",
+      "Name": "Lift: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "lift_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lift_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lift_Scale",
+      "Name": "Lift: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankFront_SFXID",
+      "Name": "Tank Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_SlotNO",
+      "Name": "Tank Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankFront_useRPCType",
+      "Name": "Tank Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankFront_IsHorizontal",
+      "Name": "Tank Front: Is Horizontal",
+      "Description": "0: tankFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankFront_IsFollowDmyPoly",
+      "Name": "Tank Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_IsEraseActionEnd",
+      "Name": "Tank Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_camouFlageShow",
+      "Name": "Tank Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankFront_DoPlaySFXForTankLeg",
+      "Name": "Tank Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_Scale",
+      "Name": "Tank Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankBack_SFXID",
+      "Name": "Tank Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_SlotNO",
+      "Name": "Tank Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankBack_useRPCType",
+      "Name": "Tank Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankBack_IsHorizontal",
+      "Name": "Tank Back: Is Horizontal",
+      "Description": "0: tankBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankBack_IsFollowDmyPoly",
+      "Name": "Tank Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_IsEraseActionEnd",
+      "Name": "Tank Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_camouFlageShow",
+      "Name": "Tank Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankBack_DoPlaySFXForTankLeg",
+      "Name": "Tank Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_Scale",
+      "Name": "Tank Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankDriftLeft_SFXID",
+      "Name": "Tank Drift Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_SlotNO",
+      "Name": "Tank Drift Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankDriftLeft_useRPCType",
+      "Name": "Tank Drift Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankDriftLeft_IsHorizontal",
+      "Name": "Tank Drift Left: Is Horizontal",
+      "Description": "0: tankDriftLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankDriftLeft_IsFollowDmyPoly",
+      "Name": "Tank Drift Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_IsEraseActionEnd",
+      "Name": "Tank Drift Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_camouFlageShow",
+      "Name": "Tank Drift Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankDriftLeft_DoPlaySFXForTankLeg",
+      "Name": "Tank Drift Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankDriftLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_Scale",
+      "Name": "Tank Drift Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankDriftRight_SFXID",
+      "Name": "Tank Drift Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_SlotNO",
+      "Name": "Tank Drift Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankDriftRight_useRPCType",
+      "Name": "Tank Drift Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankDriftRight_IsHorizontal",
+      "Name": "Tank Drift Right: Is Horizontal",
+      "Description": "0: tankDriftRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankDriftRight_IsFollowDmyPoly",
+      "Name": "Tank Drift Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_IsEraseActionEnd",
+      "Name": "Tank Drift Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_camouFlageShow",
+      "Name": "Tank Drift Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankDriftRight_DoPlaySFXForTankLeg",
+      "Name": "Tank Drift Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankDriftRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_Scale",
+      "Name": "Tank Drift Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "quickTurnLeft_SFXID",
+      "Name": "Quick Turn Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_SlotNO",
+      "Name": "Quick Turn Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "quickTurnLeft_useRPCType",
+      "Name": "Quick Turn Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "quickTurnLeft_IsHorizontal",
+      "Name": "Quick Turn Left: Is Horizontal",
+      "Description": "0: quickTurnLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "quickTurnLeft_IsFollowDmyPoly",
+      "Name": "Quick Turn Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_IsEraseActionEnd",
+      "Name": "Quick Turn Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_camouFlageShow",
+      "Name": "Quick Turn Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "quickTurnLeft_DoPlaySFXForTankLeg",
+      "Name": "Quick Turn Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "quickTurnLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_Scale",
+      "Name": "Quick Turn Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "quickTurnRight_SFXID",
+      "Name": "Quick Turn Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_SlotNO",
+      "Name": "Quick Turn Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "quickTurnRight_useRPCType",
+      "Name": "Quick Turn Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "quickTurnRight_IsHorizontal",
+      "Name": "Quick Turn Right: Is Horizontal",
+      "Description": "0: quickTurnRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "quickTurnRight_IsFollowDmyPoly",
+      "Name": "Quick Turn Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_IsEraseActionEnd",
+      "Name": "Quick Turn Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_camouFlageShow",
+      "Name": "Quick Turn Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "quickTurnRight_DoPlaySFXForTankLeg",
+      "Name": "Quick Turn Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "quickTurnRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_Scale",
+      "Name": "Quick Turn Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "assaultBoost_SFXID",
+      "Name": "Assault Boost: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_SlotNO",
+      "Name": "Assault Boost: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "assaultBoost_useRPCType",
+      "Name": "Assault Boost: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "assaultBoost_IsHorizontal",
+      "Name": "Assault Boost: Is Horizontal",
+      "Description": "0: assaultBoosttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "assaultBoost_IsFollowDmyPoly",
+      "Name": "Assault Boost: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_IsEraseActionEnd",
+      "Name": "Assault Boost: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_camouFlageShow",
+      "Name": "Assault Boost: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "assaultBoost_DoPlaySFXForTankLeg",
+      "Name": "Assault Boost: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "assaultBoost_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_Scale",
+      "Name": "Assault Boost: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringStart_SFXID",
+      "Name": "Hover Start: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_SlotNO",
+      "Name": "Hover Start: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringStart_useRPCType",
+      "Name": "Hover Start: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringStart_IsHorizontal",
+      "Name": "Hover Start: Is Horizontal",
+      "Description": "0: hoveringStarttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringStart_IsFollowDmyPoly",
+      "Name": "Hover Start: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_IsEraseActionEnd",
+      "Name": "Hover Start: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_camouFlageShow",
+      "Name": "Hover Start: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringStart_DoPlaySFXForTankLeg",
+      "Name": "Hover Start: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringStart_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_Scale",
+      "Name": "Hover Start: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringStay_SFXID",
+      "Name": "Hover Stay: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_SlotNO",
+      "Name": "Hover Stay: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringStay_useRPCType",
+      "Name": "Hover Stay: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringStay_IsHorizontal",
+      "Name": "Hover Stay: Is Horizontal",
+      "Description": "0: hoveringStaytain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringStay_IsFollowDmyPoly",
+      "Name": "Hover Stay: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_IsEraseActionEnd",
+      "Name": "Hover Stay: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_camouFlageShow",
+      "Name": "Hover Stay: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringStay_DoPlaySFXForTankLeg",
+      "Name": "Hover Stay: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringStay_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_Scale",
+      "Name": "Hover Stay: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringFront_SFXID",
+      "Name": "Hover Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_SlotNO",
+      "Name": "Hover Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringFront_useRPCType",
+      "Name": "Hover Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringFront_IsHorizontal",
+      "Name": "Hover Front: Is Horizontal",
+      "Description": "0: hoveringFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringFront_IsFollowDmyPoly",
+      "Name": "Hover Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_IsEraseActionEnd",
+      "Name": "Hover Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_camouFlageShow",
+      "Name": "Hover Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringFront_DoPlaySFXForTankLeg",
+      "Name": "Hover Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_Scale",
+      "Name": "Hover Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringBack_SFXID",
+      "Name": "Hover Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_SlotNO",
+      "Name": "Hover Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringBack_useRPCType",
+      "Name": "Hover Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringBack_IsHorizontal",
+      "Name": "Hover Back: Is Horizontal",
+      "Description": "0: hoveringBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringBack_IsFollowDmyPoly",
+      "Name": "Hover Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_IsEraseActionEnd",
+      "Name": "Hover Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_camouFlageShow",
+      "Name": "Hover Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringBack_DoPlaySFXForTankLeg",
+      "Name": "Hover Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_Scale",
+      "Name": "Hover Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringLeft_SFXID",
+      "Name": "Hover Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_SlotNO",
+      "Name": "Hover Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringLeft_useRPCType",
+      "Name": "Hover Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringLeft_IsHorizontal",
+      "Name": "Hover Left: Is Horizontal",
+      "Description": "0: hoveringLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringLeft_IsFollowDmyPoly",
+      "Name": "Hover Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_IsEraseActionEnd",
+      "Name": "Hover Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_camouFlageShow",
+      "Name": "Hover Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringLeft_DoPlaySFXForTankLeg",
+      "Name": "Hover Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_Scale",
+      "Name": "Hover Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hoveringRight_SFXID",
+      "Name": "Hover Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_SlotNO",
+      "Name": "Hover Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hoveringRight_useRPCType",
+      "Name": "Hover Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hoveringRight_IsHorizontal",
+      "Name": "Hover Right: Is Horizontal",
+      "Description": "0: hoveringRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hoveringRight_IsFollowDmyPoly",
+      "Name": "Hover Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_IsEraseActionEnd",
+      "Name": "Hover Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_camouFlageShow",
+      "Name": "Hover Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hoveringRight_DoPlaySFXForTankLeg",
+      "Name": "Hover Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hoveringRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_Scale",
+      "Name": "Hover Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "turnLeft_SFXID",
+      "Name": "Turn Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_SlotNO",
+      "Name": "Turn Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "turnLeft_useRPCType",
+      "Name": "Turn Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "turnLeft_IsHorizontal",
+      "Name": "Turn Left: Is Horizontal",
+      "Description": "0: turnLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "turnLeft_IsFollowDmyPoly",
+      "Name": "Turn Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_IsEraseActionEnd",
+      "Name": "Turn Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_camouFlageShow",
+      "Name": "Turn Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "turnLeft_DoPlaySFXForTankLeg",
+      "Name": "Turn Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "turnLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_Scale",
+      "Name": "Turn Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "turnRight_SFXID",
+      "Name": "Turn Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_SlotNO",
+      "Name": "Turn Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "turnRight_useRPCType",
+      "Name": "Turn Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "turnRight_IsHorizontal",
+      "Name": "Turn Right: Is Horizontal",
+      "Description": "0: turnRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "turnRight_IsFollowDmyPoly",
+      "Name": "Turn Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_IsEraseActionEnd",
+      "Name": "Turn Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_camouFlageShow",
+      "Name": "Turn Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "turnRight_DoPlaySFXForTankLeg",
+      "Name": "Turn Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "turnRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_Scale",
+      "Name": "Turn Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "mainStart_SFXID",
+      "Name": "Main Start: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_SlotNO",
+      "Name": "Main Start: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "mainStart_useRPCType",
+      "Name": "Main Start: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "mainStart_IsHorizontal",
+      "Name": "Main Start: Is Horizontal",
+      "Description": "0: mainStarttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "mainStart_IsFollowDmyPoly",
+      "Name": "Main Start: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_IsEraseActionEnd",
+      "Name": "Main Start: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_camouFlageShow",
+      "Name": "Main Start: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "mainStart_DoPlaySFXForTankLeg",
+      "Name": "Main Start: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "mainStart_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_Scale",
+      "Name": "Main Start: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "assaultBoostFinish_SFXID",
+      "Name": "Assault Boost Finish: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_SlotNO",
+      "Name": "Assault Boost Finish: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "assaultBoostFinish_useRPCType",
+      "Name": "Assault Boost Finish: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "assaultBoostFinish_IsHorizontal",
+      "Name": "Assault Boost Finish: Is Horizontal",
+      "Description": "0: assaultBoostFinishtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "assaultBoostFinish_IsFollowDmyPoly",
+      "Name": "Assault Boost Finish: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_IsEraseActionEnd",
+      "Name": "Assault Boost Finish: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_camouFlageShow",
+      "Name": "Assault Boost Finish: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "assaultBoostFinish_DoPlaySFXForTankLeg",
+      "Name": "Assault Boost Finish: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "assaultBoostFinish_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_Scale",
+      "Name": "Assault Boost Finish: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "falling_SFXID",
+      "Name": "Falling: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "falling_SlotNO",
+      "Name": "Falling: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "falling_useRPCType",
+      "Name": "Falling: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "falling_IsHorizontal",
+      "Name": "Falling: Is Horizontal",
+      "Description": "0: fallingtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "falling_IsFollowDmyPoly",
+      "Name": "Falling: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "falling_IsEraseActionEnd",
+      "Name": "Falling: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "falling_camouFlageShow",
+      "Name": "Falling: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "falling_DoPlaySFXForTankLeg",
+      "Name": "Falling: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "falling_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "falling_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "falling_Scale",
+      "Name": "Falling: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "boostExhaustFront_SFXID",
+      "Name": "Boost Exhaust Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_SlotNO",
+      "Name": "Boost Exhaust Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "boostExhaustFront_useRPCType",
+      "Name": "Boost Exhaust Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "boostExhaustFront_IsHorizontal",
+      "Name": "Boost Exhaust Front: Is Horizontal",
+      "Description": "0: boostExhaustFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "boostExhaustFront_IsFollowDmyPoly",
+      "Name": "Boost Exhaust Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_IsEraseActionEnd",
+      "Name": "Boost Exhaust Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_camouFlageShow",
+      "Name": "Boost Exhaust Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "boostExhaustFront_DoPlaySFXForTankLeg",
+      "Name": "Boost Exhaust Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "boostExhaustFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_Scale",
+      "Name": "Boost Exhaust Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "boostExhaustBack_SFXID",
+      "Name": "Boost Exhaust Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_SlotNO",
+      "Name": "Boost Exhaust Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "boostExhaustBack_useRPCType",
+      "Name": "Boost Exhaust Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "boostExhaustBack_IsHorizontal",
+      "Name": "Boost Exhaust Back: Is Horizontal",
+      "Description": "0: boostExhaustBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "boostExhaustBack_IsFollowDmyPoly",
+      "Name": "Boost Exhaust Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_IsEraseActionEnd",
+      "Name": "Boost Exhaust Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_camouFlageShow",
+      "Name": "Boost Exhaust Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "boostExhaustBack_DoPlaySFXForTankLeg",
+      "Name": "Boost Exhaust Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "boostExhaustBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_Scale",
+      "Name": "Boost Exhaust Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "boostExhaustLeft_SFXID",
+      "Name": "Boost Exhaust Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_SlotNO",
+      "Name": "Boost Exhaust Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "boostExhaustLeft_useRPCType",
+      "Name": "Boost Exhaust Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "boostExhaustLeft_IsHorizontal",
+      "Name": "Boost Exhaust Left: Is Horizontal",
+      "Description": "0: boostExhaustLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "boostExhaustLeft_IsFollowDmyPoly",
+      "Name": "Boost Exhaust Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_IsEraseActionEnd",
+      "Name": "Boost Exhaust Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_camouFlageShow",
+      "Name": "Boost Exhaust Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "boostExhaustLeft_DoPlaySFXForTankLeg",
+      "Name": "Boost Exhaust Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "boostExhaustLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_Scale",
+      "Name": "Boost Exhaust Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "boostExhaustRight_SFXID",
+      "Name": "Boost Exhaust Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_SlotNO",
+      "Name": "Boost Exhaust Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "boostExhaustRight_useRPCType",
+      "Name": "Boost Exhaust Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "boostExhaustRight_IsHorizontal",
+      "Name": "Boost Exhaust Right: Is Horizontal",
+      "Description": "0: boostExhaustRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "boostExhaustRight_IsFollowDmyPoly",
+      "Name": "Boost Exhaust Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_IsEraseActionEnd",
+      "Name": "Boost Exhaust Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_camouFlageShow",
+      "Name": "Boost Exhaust Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "boostExhaustRight_DoPlaySFXForTankLeg",
+      "Name": "Boost Exhaust Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "boostExhaustRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_Scale",
+      "Name": "Boost Exhaust Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "boostExhaustFalling_SFXID",
+      "Name": "Boost Exhaust Falling: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_SlotNO",
+      "Name": "Boost Exhaust Falling: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "boostExhaustFalling_useRPCType",
+      "Name": "Boost Exhaust Falling: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "boostExhaustFalling_IsHorizontal",
+      "Name": "Boost Exhaust Falling: Is Horizontal",
+      "Description": "0: boostExhaustFallingtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "boostExhaustFalling_IsFollowDmyPoly",
+      "Name": "Boost Exhaust Falling: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_IsEraseActionEnd",
+      "Name": "Boost Exhaust Falling: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_camouFlageShow",
+      "Name": "Boost Exhaust Falling: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "boostExhaustFalling_DoPlaySFXForTankLeg",
+      "Name": "Boost Exhaust Falling: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "boostExhaustFalling_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_Scale",
+      "Name": "Boost Exhaust Falling: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeFront_SFXID",
+      "Name": "Brake Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_SlotNO",
+      "Name": "Brake Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeFront_useRPCType",
+      "Name": "Brake Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeFront_IsHorizontal",
+      "Name": "Brake Front: Is Horizontal",
+      "Description": "0: brakeFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeFront_IsFollowDmyPoly",
+      "Name": "Brake Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_IsEraseActionEnd",
+      "Name": "Brake Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_camouFlageShow",
+      "Name": "Brake Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeFront_DoPlaySFXForTankLeg",
+      "Name": "Brake Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "brakeFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_Scale",
+      "Name": "Brake Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeBack_SFXID",
+      "Name": "Brake Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_SlotNO",
+      "Name": "Brake Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeBack_useRPCType",
+      "Name": "Brake Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeBack_IsHorizontal",
+      "Name": "Brake Back: Is Horizontal",
+      "Description": "0: brakeBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeBack_IsFollowDmyPoly",
+      "Name": "Brake Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_IsEraseActionEnd",
+      "Name": "Brake Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_camouFlageShow",
+      "Name": "Brake Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeBack_DoPlaySFXForTankLeg",
+      "Name": "Brake Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "brakeBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_Scale",
+      "Name": "Brake Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeLeft_SFXID",
+      "Name": "Brake Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_SlotNO",
+      "Name": "Brake Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeLeft_useRPCType",
+      "Name": "Brake Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeLeft_IsHorizontal",
+      "Name": "Brake Left: Is Horizontal",
+      "Description": "0: brakeLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeLeft_IsFollowDmyPoly",
+      "Name": "Brake Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_IsEraseActionEnd",
+      "Name": "Brake Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_camouFlageShow",
+      "Name": "Brake Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeLeft_DoPlaySFXForTankLeg",
+      "Name": "Brake Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "brakeLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_Scale",
+      "Name": "Brake Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeRight_SFXID",
+      "Name": "Brake Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_SlotNO",
+      "Name": "Brake Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeRight_useRPCType",
+      "Name": "Brake Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeRight_IsHorizontal",
+      "Name": "Brake Right: Is Horizontal",
+      "Description": "0: brakeRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeRight_IsFollowDmyPoly",
+      "Name": "Brake Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_IsEraseActionEnd",
+      "Name": "Brake Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_camouFlageShow",
+      "Name": "Brake Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeRight_DoPlaySFXForTankLeg",
+      "Name": "Brake Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "brakeRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_Scale",
+      "Name": "Brake Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeFalling_SFXID",
+      "Name": "Brake Falling: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_SlotNO",
+      "Name": "Brake Falling: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeFalling_useRPCType",
+      "Name": "Brake Falling: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeFalling_IsHorizontal",
+      "Name": "Brake Falling: Is Horizontal",
+      "Description": "0: brakeFallingtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeFalling_IsFollowDmyPoly",
+      "Name": "Brake Falling: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_IsEraseActionEnd",
+      "Name": "Brake Falling: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_camouFlageShow",
+      "Name": "Brake Falling: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeFalling_DoPlaySFXForTankLeg",
+      "Name": "Brake Falling: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "brakeFalling_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_Scale",
+      "Name": "Brake Falling: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "assaultBoostLoop_SFXID",
+      "Name": "Assault Boost Loop: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_SlotNO",
+      "Name": "Assault Boost Loop: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "assaultBoostLoop_useRPCType",
+      "Name": "Assault Boost Loop: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "assaultBoostLoop_IsHorizontal",
+      "Name": "Assault Boost Loop: Is Horizontal",
+      "Description": "0: assaultBoostLooptain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "assaultBoostLoop_IsFollowDmyPoly",
+      "Name": "Assault Boost Loop: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_IsEraseActionEnd",
+      "Name": "Assault Boost Loop: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_camouFlageShow",
+      "Name": "Assault Boost Loop: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "assaultBoostLoop_DoPlaySFXForTankLeg",
+      "Name": "Assault Boost Loop: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "assaultBoostLoop_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_Scale",
+      "Name": "Assault Boost Loop: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkFront_SFXID",
+      "Name": "Hover Biped Walk Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_SlotNO",
+      "Name": "Hover Biped Walk Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkFront_useRPCType",
+      "Name": "Hover Biped Walk Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsHorizontal",
+      "Name": "Hover Biped Walk Front: Is Horizontal",
+      "Description": "0: hover2LegsWalkFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_camouFlageShow",
+      "Name": "Hover Biped Walk Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkFront_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_Scale",
+      "Name": "Hover Biped Walk Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkBack_SFXID",
+      "Name": "Hover Biped Walk Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_SlotNO",
+      "Name": "Hover Biped Walk Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkBack_useRPCType",
+      "Name": "Hover Biped Walk Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsHorizontal",
+      "Name": "Hover Biped Walk Back: Is Horizontal",
+      "Description": "0: hover2LegsWalkBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_camouFlageShow",
+      "Name": "Hover Biped Walk Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkBack_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_Scale",
+      "Name": "Hover Biped Walk Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_SFXID",
+      "Name": "Hover Biped Walk Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_SlotNO",
+      "Name": "Hover Biped Walk Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_useRPCType",
+      "Name": "Hover Biped Walk Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsHorizontal",
+      "Name": "Hover Biped Walk Left: Is Horizontal",
+      "Description": "0: hover2LegsWalkLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_camouFlageShow",
+      "Name": "Hover Biped Walk Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkLeft_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_Scale",
+      "Name": "Hover Biped Walk Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkRight_SFXID",
+      "Name": "Hover Biped Walk Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_SlotNO",
+      "Name": "Hover Biped Walk Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkRight_useRPCType",
+      "Name": "Hover Biped Walk Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsHorizontal",
+      "Name": "Hover Biped Walk Right: Is Horizontal",
+      "Description": "0: hover2LegsWalkRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_camouFlageShow",
+      "Name": "Hover Biped Walk Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkRight_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_Scale",
+      "Name": "Hover Biped Walk Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_SFXID",
+      "Name": "Hover Biped Walk Turn Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_SlotNO",
+      "Name": "Hover Biped Walk Turn Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_useRPCType",
+      "Name": "Hover Biped Walk Turn Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsHorizontal",
+      "Name": "Hover Biped Walk Turn Left: Is Horizontal",
+      "Description": "0: hover2LegsWalkLeftTurntain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Turn Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Turn Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_camouFlageShow",
+      "Name": "Hover Biped Walk Turn Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Turn Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_Scale",
+      "Name": "Hover Biped Walk Turn Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_SFXID",
+      "Name": "Hover Biped Walk Turn Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_SlotNO",
+      "Name": "Hover Biped Walk Turn Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_useRPCType",
+      "Name": "Hover Biped Walk Turn Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsHorizontal",
+      "Name": "Hover Biped Walk Turn Right: Is Horizontal",
+      "Description": "0: hover2LegsWalkRightTurntain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsFollowDmyPoly",
+      "Name": "Hover Biped Walk Turn Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_IsEraseActionEnd",
+      "Name": "Hover Biped Walk Turn Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_camouFlageShow",
+      "Name": "Hover Biped Walk Turn Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Walk Turn Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_Scale",
+      "Name": "Hover Biped Walk Turn Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunFront_SFXID",
+      "Name": "Hover Biped Run Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_SlotNO",
+      "Name": "Hover Biped Run Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunFront_useRPCType",
+      "Name": "Hover Biped Run Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunFront_IsHorizontal",
+      "Name": "Hover Biped Run Front: Is Horizontal",
+      "Description": "0: hover2LegsRunFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunFront_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_IsEraseActionEnd",
+      "Name": "Hover Biped Run Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_camouFlageShow",
+      "Name": "Hover Biped Run Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunFront_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_Scale",
+      "Name": "Hover Biped Run Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunBack_SFXID",
+      "Name": "Hover Biped Run Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_SlotNO",
+      "Name": "Hover Biped Run Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunBack_useRPCType",
+      "Name": "Hover Biped Run Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunBack_IsHorizontal",
+      "Name": "Hover Biped Run Back: Is Horizontal",
+      "Description": "0: hover2LegsRunBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunBack_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_IsEraseActionEnd",
+      "Name": "Hover Biped Run Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_camouFlageShow",
+      "Name": "Hover Biped Run Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunBack_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_Scale",
+      "Name": "Hover Biped Run Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunLeft_SFXID",
+      "Name": "Hover Biped Run Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_SlotNO",
+      "Name": "Hover Biped Run Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunLeft_useRPCType",
+      "Name": "Hover Biped Run Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsHorizontal",
+      "Name": "Hover Biped Run Left: Is Horizontal",
+      "Description": "0: hover2LegsRunLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_IsEraseActionEnd",
+      "Name": "Hover Biped Run Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_camouFlageShow",
+      "Name": "Hover Biped Run Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunLeft_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_Scale",
+      "Name": "Hover Biped Run Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunRight_SFXID",
+      "Name": "Hover Biped Run Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_SlotNO",
+      "Name": "Hover Biped Run Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunRight_useRPCType",
+      "Name": "Hover Biped Run Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunRight_IsHorizontal",
+      "Name": "Hover Biped Run Right: Is Horizontal",
+      "Description": "0: hover2LegsRunRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunRight_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_IsEraseActionEnd",
+      "Name": "Hover Biped Run Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_camouFlageShow",
+      "Name": "Hover Biped Run Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunRight_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_Scale",
+      "Name": "Hover Biped Run Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_SFXID",
+      "Name": "Hover Biped Run Turn Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_SlotNO",
+      "Name": "Hover Biped Run Turn Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_useRPCType",
+      "Name": "Hover Biped Run Turn Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsHorizontal",
+      "Name": "Hover Biped Run Turn Left: Is Horizontal",
+      "Description": "0: hover2LegsRunLeftTurntain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Turn Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_IsEraseActionEnd",
+      "Name": "Hover Biped Run Turn Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_camouFlageShow",
+      "Name": "Hover Biped Run Turn Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Turn Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_Scale",
+      "Name": "Hover Biped Run Turn Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_SFXID",
+      "Name": "Hover Biped Run Turn Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_SlotNO",
+      "Name": "Hover Biped Run Turn Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_useRPCType",
+      "Name": "Hover Biped Run Turn Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsHorizontal",
+      "Name": "Hover Biped Run Turn Right: Is Horizontal",
+      "Description": "0: hover2LegsRunRightTurntain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsFollowDmyPoly",
+      "Name": "Hover Biped Run Turn Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_IsEraseActionEnd",
+      "Name": "Hover Biped Run Turn Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_camouFlageShow",
+      "Name": "Hover Biped Run Turn Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_DoPlaySFXForTankLeg",
+      "Name": "Hover Biped Run Turn Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_Scale",
+      "Name": "Hover Biped Run Turn Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankQbFront_SFXID",
+      "Name": "Tank Quick Boost Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_SlotNO",
+      "Name": "Tank Quick Boost Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankQbFront_useRPCType",
+      "Name": "Tank Quick Boost Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankQbFront_IsHorizontal",
+      "Name": "Tank Quick Boost Front: Is Horizontal",
+      "Description": "0: tankQbFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankQbFront_IsFollowDmyPoly",
+      "Name": "Tank Quick Boost Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_IsEraseActionEnd",
+      "Name": "Tank Quick Boost Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_camouFlageShow",
+      "Name": "Tank Quick Boost Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankQbFront_DoPlaySFXForTankLeg",
+      "Name": "Tank Quick Boost Front: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankQbFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_Scale",
+      "Name": "Tank Quick Boost Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankQbBack_SFXID",
+      "Name": "Tank Quick Boost Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_SlotNO",
+      "Name": "Tank Quick Boost Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankQbBack_useRPCType",
+      "Name": "Tank Quick Boost Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankQbBack_IsHorizontal",
+      "Name": "Tank Quick Boost Back: Is Horizontal",
+      "Description": "0: tankQbBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankQbBack_IsFollowDmyPoly",
+      "Name": "Tank Quick Boost Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_IsEraseActionEnd",
+      "Name": "Tank Quick Boost Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_camouFlageShow",
+      "Name": "Tank Quick Boost Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankQbBack_DoPlaySFXForTankLeg",
+      "Name": "Tank Quick Boost Back: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankQbBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_Scale",
+      "Name": "Tank Quick Boost Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankQbLeft_SFXID",
+      "Name": "Tank Quick Boost Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_SlotNO",
+      "Name": "Tank Quick Boost Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankQbLeft_useRPCType",
+      "Name": "Tank Quick Boost Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankQbLeft_IsHorizontal",
+      "Name": "Tank Quick Boost Left: Is Horizontal",
+      "Description": "0: tankQbLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankQbLeft_IsFollowDmyPoly",
+      "Name": "Tank Quick Boost Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_IsEraseActionEnd",
+      "Name": "Tank Quick Boost Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_camouFlageShow",
+      "Name": "Tank Quick Boost Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankQbLeft_DoPlaySFXForTankLeg",
+      "Name": "Tank Quick Boost Left: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankQbLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_Scale",
+      "Name": "Tank Quick Boost Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "tankQbRight_SFXID",
+      "Name": "Tank Quick Boost Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_SlotNO",
+      "Name": "Tank Quick Boost Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "tankQbRight_useRPCType",
+      "Name": "Tank Quick Boost Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "tankQbRight_IsHorizontal",
+      "Name": "Tank Quick Boost Right: Is Horizontal",
+      "Description": "0: tankQbRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "tankQbRight_IsFollowDmyPoly",
+      "Name": "Tank Quick Boost Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_IsEraseActionEnd",
+      "Name": "Tank Quick Boost Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_camouFlageShow",
+      "Name": "Tank Quick Boost Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "tankQbRight_DoPlaySFXForTankLeg",
+      "Name": "Tank Quick Boost Right: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "tankQbRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_Scale",
+      "Name": "Tank Quick Boost Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hovertTankGround_SFXID",
+      "Name": "Hover Tank Ground: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_SlotNO",
+      "Name": "Hover Tank Ground: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hovertTankGround_useRPCType",
+      "Name": "Hover Tank Ground: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hovertTankGround_IsHorizontal",
+      "Name": "Hover Tank Ground: Is Horizontal",
+      "Description": "0: hovertTankGroundtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hovertTankGround_IsFollowDmyPoly",
+      "Name": "Hover Tank Ground: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_IsEraseActionEnd",
+      "Name": "Hover Tank Ground: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_camouFlageShow",
+      "Name": "Hover Tank Ground: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hovertTankGround_DoPlaySFXForTankLeg",
+      "Name": "Hover Tank Ground: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hovertTankGround_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_Scale",
+      "Name": "Hover Tank Ground: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hovertTankGroundWater_SFXID",
+      "Name": "Hover Tank Ground [Water]: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_SlotNO",
+      "Name": "Hover Tank Ground [Water]: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hovertTankGroundWater_useRPCType",
+      "Name": "Hover Tank Ground [Water]: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hovertTankGroundWater_IsHorizontal",
+      "Name": "Hover Tank Ground [Water]: Is Horizontal",
+      "Description": "0: hovertTankGroundWatertain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hovertTankGroundWater_IsFollowDmyPoly",
+      "Name": "Hover Tank Ground [Water]: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_IsEraseActionEnd",
+      "Name": "Hover Tank Ground [Water]: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_camouFlageShow",
+      "Name": "Hover Tank Ground [Water]: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hovertTankGroundWater_DoPlaySFXForTankLeg",
+      "Name": "Hover Tank Ground [Water]: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hovertTankGroundWater_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_Scale",
+      "Name": "Hover Tank Ground [Water]: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_SFXID",
+      "Name": "Hover Tank Ground [Shallow Water]: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_SlotNO",
+      "Name": "Hover Tank Ground [Shallow Water]: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_useRPCType",
+      "Name": "Hover Tank Ground [Shallow Water]: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsHorizontal",
+      "Name": "Hover Tank Ground [Shallow Water]: Is Horizontal",
+      "Description": "0: hovertTankGroundWaterShallowtain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsFollowDmyPoly",
+      "Name": "Hover Tank Ground [Shallow Water]: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_IsEraseActionEnd",
+      "Name": "Hover Tank Ground [Shallow Water]: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_camouFlageShow",
+      "Name": "Hover Tank Ground [Shallow Water]: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_DoPlaySFXForTankLeg",
+      "Name": "Hover Tank Ground [Shallow Water]: Display SFX on Tank Legs",
+      "Description": "0 (OFF): Do not play, 1 (ON): Play"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_Scale",
+      "Name": "Hover Tank Ground [Shallow Water]: SFX Scale",
+      "Description": "SFX scale value"
+    }
+  ]
+}

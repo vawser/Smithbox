@@ -1,0 +1,28 @@
+{
+  "Param": "SpEffectSetParam",
+  "Type": "SP_EFFECT_SET_PARAM_ST",
+  "Name": "SpEffectSetParam",
+  "Description": "Defines a set of SpEffects to be applied to a specific enemy from MSB (map).",
+  "Fields": [
+    {
+      "Field": "spEffectId1",
+      "Name": "SpEffect ID [1]",
+      "Description": "Special effect ID1"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "SpEffect ID [2]",
+      "Description": "Special effect ID2"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "SpEffect ID [3]",
+      "Description": "Special effect ID3"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "SpEffect ID [4]",
+      "Description": "Special effect ID4"
+    }
+  ]
+}

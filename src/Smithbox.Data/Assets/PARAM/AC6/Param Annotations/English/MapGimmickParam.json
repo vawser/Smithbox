@@ -1,0 +1,18 @@
+{
+  "Param": "MapGimmickParam",
+  "Type": "MAP_GIMMICK_PARAM_ST",
+  "Name": "MapGimmickParam",
+  "Description": "Determines the parameters that relate to map gimmicks (i.e. catapults).",
+  "Fields": [
+    {
+      "Field": "gimmickType",
+      "Name": "Gimmick Type",
+      "Description": "The numerical offset that determines gimmick type in EMS and EzState systems."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

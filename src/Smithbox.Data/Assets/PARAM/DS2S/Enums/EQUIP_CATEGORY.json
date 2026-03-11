@@ -1,52 +1,92 @@
 {
-  "DisplayName": "EQUIP_CATEGORY",
-  "Name": "EQUIP_CATEGORY",
-  "Description": "",
+  "Key": "EQUIP_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "Illegal Equipment Type",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illegal Equipment Type"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Facial Parts",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Facial Parts"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Head",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Chest",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chest"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Arms",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arms"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Feet",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Feet"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Accessory",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Accessory"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Other",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Number of Types",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Types"
+        }
+      ]
     }
   ]
 }

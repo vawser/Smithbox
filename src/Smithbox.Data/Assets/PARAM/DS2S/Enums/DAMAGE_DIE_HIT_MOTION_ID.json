@@ -1,37 +1,65 @@
 {
-  "DisplayName": "DAMAGE_DIE_HIT_MOTION_ID",
-  "Name": "DAMAGE_DIE_HIT_MOTION_ID",
-  "Description": "",
+  "Key": "DAMAGE_DIE_HIT_MOTION_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_DIE_HIT_MOTION_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Piercing",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piercing"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Attribute",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Blow away",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow away"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Launch",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Launch"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Fall down",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fall down"
+        }
+      ]
     }
   ]
 }

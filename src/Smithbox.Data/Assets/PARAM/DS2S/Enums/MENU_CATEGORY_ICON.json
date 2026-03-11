@@ -1,187 +1,335 @@
 {
-  "DisplayName": "MENU_CATEGORY_ICON",
-  "Name": "MENU_CATEGORY_ICON",
-  "Description": "",
+  "Key": "MENU_CATEGORY_ICON",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_CATEGORY_ICON"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Straight sword",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Two-handed sword",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Curved sword",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Oversized sword",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oversized sword"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Double-edged sword",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword"
+        }
+      ]
     },
     {
-      "ID": "70",
-      "Name": "Stabbing sword",
-      "Description": ""
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stabbing sword"
+        }
+      ]
     },
     {
-      "ID": "80",
-      "Name": "斧",
-      "Description": ""
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "斧"
+        }
+      ]
     },
     {
-      "ID": "90",
-      "Name": "槌",
-      "Description": ""
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "槌"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "槍",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "槍"
+        }
+      ]
     },
     {
-      "ID": "110",
-      "Name": "拳",
-      "Description": ""
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "拳"
+        }
+      ]
     },
     {
-      "ID": "120",
-      "Name": "鞭",
-      "Description": ""
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鞭"
+        }
+      ]
     },
     {
-      "ID": "130",
-      "Name": "Shooting",
-      "Description": ""
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting"
+        }
+      ]
     },
     {
-      "ID": "140",
-      "Name": "Catalyst",
-      "Description": ""
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catalyst"
+        }
+      ]
     },
     {
-      "ID": "150",
-      "Name": "盾",
-      "Description": ""
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "盾"
+        }
+      ]
     },
     {
-      "ID": "400",
-      "Name": "兜",
-      "Description": ""
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "兜"
+        }
+      ]
     },
     {
-      "ID": "410",
-      "Name": "鎧",
-      "Description": ""
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鎧"
+        }
+      ]
     },
     {
-      "ID": "420",
-      "Name": "Kote",
-      "Description": ""
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kote"
+        }
+      ]
     },
     {
-      "ID": "430",
-      "Name": "Armor",
-      "Description": ""
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
     },
     {
-      "ID": "500",
-      "Name": "Ring",
-      "Description": ""
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
     },
     {
-      "ID": "600",
-      "Name": "Arrows & bolts",
-      "Description": ""
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrows & bolts"
+        }
+      ]
     },
     {
-      "ID": "610",
-      "Name": "[Use prohibited/required to output] Arrow",
-      "Description": ""
+      "Key": "610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Use prohibited/required to output] Arrow"
+        }
+      ]
     },
     {
-      "ID": "620",
-      "Name": "[Use prohibited/output required] Bolt",
-      "Description": ""
+      "Key": "620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Use prohibited/output required] Bolt"
+        }
+      ]
     },
     {
-      "ID": "700",
-      "Name": "Active",
-      "Description": ""
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Active"
+        }
+      ]
     },
     {
-      "ID": "710",
-      "Name": "Passive",
-      "Description": ""
+      "Key": "710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Passive"
+        }
+      ]
     },
     {
-      "ID": "720",
-      "Name": "Sauce",
-      "Description": ""
+      "Key": "720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sauce"
+        }
+      ]
     },
     {
-      "ID": "800",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "900",
-      "Name": "Gesture",
-      "Description": ""
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gesture"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Shop weapons",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop weapons"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Shop armor",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop armor"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Shop rings",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop rings"
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Shop arrow",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop arrow"
+        }
+      ]
     },
     {
-      "ID": "1700",
-      "Name": "Shop items",
-      "Description": ""
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop items"
+        }
+      ]
     },
     {
-      "ID": "1800",
-      "Name": "Shop spell",
-      "Description": ""
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shop spell"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Warehouse",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warehouse"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,198 @@
+{
+  "Param": "RelatePhysicalStatToLevelStatParam",
+  "Type": "RELATE_PHYS_STAT_TO_LEVEL_STAT",
+  "Name": "RelatePhysicalStatToLevelStatParam",
+  "Description": "Defines parameters relating statistics to level.",
+  "Fields": [
+    {
+      "Field": "attunement_slots",
+      "Name": "Attunement Slots",
+      "Description": ""
+    },
+    {
+      "Field": "cast_tier",
+      "Name": "Cast Tier",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "max_stamina",
+      "Name": "Max Stamina",
+      "Description": ""
+    },
+    {
+      "Field": "max_equip_load",
+      "Name": "Max Equip Load",
+      "Description": ""
+    },
+    {
+      "Field": "strength_bonus",
+      "Name": "Strength Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "dexterity_bonus",
+      "Name": "Dexterity Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "magic_bonus",
+      "Name": "Magic Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightning_bonus",
+      "Name": "Lightning Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0A",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0D",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0E",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0F",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magic_defence",
+      "Name": "Magic Defence",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightning_defence",
+      "Name": "Lightning Defence",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1D",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1E",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1F",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk25",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

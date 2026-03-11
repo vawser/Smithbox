@@ -1,0 +1,63 @@
+{
+  "Param": "PlayAreaCreateDefaultParam",
+  "Type": "PLAY_AREA_CREATE_DEFAULT_PARAM_ST",
+  "Name": "PlayAreaCreateDefaultParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "Map ID: AA",
+      "Description": "The AA part of the MSB that this targets."
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "Map ID: BB",
+      "Description": "The BB part of the MSB that this targets."
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "Map ID: CC",
+      "Description": "The CC part of the MSB that this targets."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "Placement Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "Placement Position: Z",
+      "Description": ""
+    },
+    {
+      "Field": "endPad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

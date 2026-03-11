@@ -1,72 +1,128 @@
 {
-  "DisplayName": "Hero Moveset ID",
-  "Name": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
-  "Description": "These are TAE motion types used to determine weapon override animations for specfic heros.",
+  "Key": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEPMOTION_HERO_OVERRIDE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "270",
-      "Name": "Wylder - Greatsword",
-      "Description": ""
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wylder - Greatsword"
+        }
+      ]
     },
     {
-      "ID": "271",
-      "Name": "Guardian - Halberd",
-      "Description": ""
+      "Key": "271",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian - Halberd"
+        }
+      ]
     },
     {
-      "ID": "272",
-      "Name": "Ironeye - Bow",
-      "Description": ""
+      "Key": "272",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ironeye - Bow"
+        }
+      ]
     },
     {
-      "ID": "273",
-      "Name": "Duchess - Dagger",
-      "Description": ""
+      "Key": "273",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duchess - Dagger"
+        }
+      ]
     },
     {
-      "ID": "274",
-      "Name": "Raider - Greataxe / Great Hammer / Colossal Weapon",
-      "Description": ""
+      "Key": "274",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raider - Greataxe / Great Hammer / Colossal Weapon"
+        }
+      ]
     },
     {
-      "ID": "275",
-      "Name": "Revenant - Cursed Claws",
-      "Description": ""
+      "Key": "275",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revenant - Cursed Claws"
+        }
+      ]
     },
     {
-      "ID": "276",
-      "Name": "Recluse - Staff / Seal",
-      "Description": ""
+      "Key": "276",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recluse - Staff / Seal"
+        }
+      ]
     },
     {
-      "ID": "277",
-      "Name": "Executor - Katana",
-      "Description": ""
+      "Key": "277",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor - Katana"
+        }
+      ]
     },
     {
-      "ID": "278",
-      "Name": "Executor - Cursed Sword (Suncatcher)",
-      "Description": ""
+      "Key": "278",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor - Cursed Sword (Suncatcher)"
+        }
+      ]
     },
     {
-      "ID": "279",
-      "Name": "Scholar - Thrusting Sword",
-      "Description": ""
+      "Key": "279",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar - Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "280",
-      "Name": "Undertaker - Hammer",
-      "Description": ""
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undertaker - Hammer"
+        }
+      ]
     },
     {
-      "ID": "281",
-      "Name": "Scholar - Frozen Needle",
-      "Description": ""
+      "Key": "281",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar - Frozen Needle"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,713 @@
+{
+  "Param": "CharaInitParam",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CharaInitParam",
+  "Description": "Determines the loadout parameters for Armored Core type characters.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseRec_mp",
+      "Name": "Base Recovery Speed: MP",
+      "Description": "MP recovery amount per second."
+    },
+    {
+      "Field": "baseRec_sp",
+      "Name": "Base Recovery Speed: Stamina",
+      "Description": "Stamina recovery amount per second."
+    },
+    {
+      "Field": "red_Falldam",
+      "Name": "Fall Damage Correction %",
+      "Description": "Damage reduction amount (%) that can serve as a cushion when being attacked from above by another character."
+    },
+    {
+      "Field": "soul",
+      "Name": "Souls",
+      "Description": "Amount of souls you have at the beginning."
+    },
+    {
+      "Field": "equip_Wep_Right",
+      "Name": "Equipped Part: Front Right Weapon",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Subwep_Right",
+      "Name": "Equipped Part: Front Right Weapon (Sub)",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Wep_Left",
+      "Name": "Equipped Part: Front Left Weapon",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Subwep_Left",
+      "Name": "Equipped Part: Front Left Weapon (Sub)",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "Equipped Part: Head",
+      "Description": "The equipment ID to use for this slot."
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "Equipped Part: Core",
+      "Description": "The equipment ID to use for this slot."
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "Equipped Part: Arms",
+      "Description": "The equipment ID to use for this slot."
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "Equipped Part: Legs",
+      "Description": "The equipment ID to use for this slot."
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "Equipped Part: Back Left Weapon",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "Equipped Part: Back Right Weapon",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "Equipped Part: Back Left Weapon (Sub)",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "Equipped Part: Back Right Weapon (Sub)",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "Equipped Accessory: 1",
+      "Description": "The accessory ID to use for this slot."
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "Equipped Accessory: 2",
+      "Description": "The accessory ID to use for this slot."
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "Equipped Accessory: 3",
+      "Description": "The accessory ID to use for this slot."
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "Equipped Accessory: 4",
+      "Description": "The accessory ID to use for this slot."
+    },
+    {
+      "Field": "equip_Accessory05",
+      "Name": "Equipped Accessory: 5",
+      "Description": "The accessory ID to use for this slot."
+    },
+    {
+      "Field": "equip_Skill_01",
+      "Name": "Equipped Skill: 1",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Skill_02",
+      "Name": "Equipped Skill: 2",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Skill_03",
+      "Name": "Equipped Skill: 3",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "Equipped Spell: 1",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "Equipped Spell: 2",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "Equipped Spell: 3",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "Equipped Spell: 4",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "Equipped Spell: 5",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "Equipped Spell: 6",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "Equipped Spell: 7",
+      "Description": "The skill ID to use for this slot."
+    },
+    {
+      "Field": "item_01",
+      "Name": "Held Item: 1",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_02",
+      "Name": "Held Item: 2",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_03",
+      "Name": "Held Item: 3",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_04",
+      "Name": "Held Item: 4",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_05",
+      "Name": "Held Item: 5",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_06",
+      "Name": "Held Item: 6",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_07",
+      "Name": "Held Item: 7",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_08",
+      "Name": "Held Item: 8",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_09",
+      "Name": "Held Item: 9",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "item_10",
+      "Name": "Held Item: 10",
+      "Description": "The item ID to store in this slot."
+    },
+    {
+      "Field": "assemDataID",
+      "Name": "Assembly Data ID",
+      "Description": "ID of aircraft data. Equipment specifications are ignored when set."
+    },
+    {
+      "Field": "padding_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "arrowNum",
+      "Name": "Ammunition Count: Arrow",
+      "Description": ""
+    },
+    {
+      "Field": "boltNum",
+      "Name": "Ammunition Count: Bolt",
+      "Description": ""
+    },
+    {
+      "Field": "subArrowNum",
+      "Name": "Ammunition Count: Arrow (Sub)",
+      "Description": ""
+    },
+    {
+      "Field": "subBoltNum",
+      "Name": "Ammunition Count: Bolt (Sub)",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_sb",
+      "Name": "Trend Coefficient: Sword-Bow Axis",
+      "Description": "Basic QWC value (Sword-Bow)"
+    },
+    {
+      "Field": "QWC_mw",
+      "Name": "Trend Coefficient: Mace-Wand Axis",
+      "Description": "Basic QWC value (Mace-Wand)"
+    },
+    {
+      "Field": "QWC_cd",
+      "Name": "Trend Coefficient: Understanding-Diffusion Axis",
+      "Description": "Basic QWC value (Understanding-Diffusion)"
+    },
+    {
+      "Field": "soulLv",
+      "Name": "Level",
+      "Description": "Initial level"
+    },
+    {
+      "Field": "baseVit",
+      "Name": "Vitality",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseWil",
+      "Name": "Attunement",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "Endurance",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseStr",
+      "Name": "Strength",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseDex",
+      "Name": "Dexterity",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseMag",
+      "Name": "Intelligence",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseFai",
+      "Name": "Faith",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "Luck",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseHeroPoint",
+      "Name": "Humanity",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "baseDurability",
+      "Name": "Durability",
+      "Description": "The level of this stat."
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "Item Count: 1",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "Item Count: 2",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "Item Count: 3",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "Item Count: 4",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "Item Count: 5",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "Item Count: 6",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "Item Count: 7",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "Item Count: 8",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "Item Count: 9",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "Item Count: 10",
+      "Description": "The amount of the specified item in this slot."
+    },
+    {
+      "Field": "bodyScaleHead",
+      "Name": "Body Scale: Head",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "Body Scale: Chest",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "Body Scale: Abdomen",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "bodyScaleRArm",
+      "Name": "Body Scale: Right Arm",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "bodyScaleRLeg",
+      "Name": "Body Scale: Right Leg",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "gestureId0",
+      "Name": "Stored Gesture: 0",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId1",
+      "Name": "Stored Gesture: 1",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId2",
+      "Name": "Stored Gesture: 2",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId3",
+      "Name": "Stored Gesture: 3",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId4",
+      "Name": "Stored Gesture: 4",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId5",
+      "Name": "Stored Gesture: 5",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "gestureId6",
+      "Name": "Stored Gesture: 6",
+      "Description": "The gesture to store at this index for the gesture list."
+    },
+    {
+      "Field": "npcPlayerType",
+      "Name": "NPC Character Type",
+      "Description": "The character type used by non-player characters."
+    },
+    {
+      "Field": "npcPlayerDrawType",
+      "Name": "NPC Draw Type",
+      "Description": "The character draw type used by non-player characters."
+    },
+    {
+      "Field": "npcPlayerSex",
+      "Name": "NPC Gender Type",
+      "Description": "The character gender type used by non-player characters."
+    },
+    {
+      "Field": "vowType",
+      "Name": "Pledge Type",
+      "Description": "The pledge type used by this character."
+    },
+    {
+      "Field": "isOsReinforceChangeLevel",
+      "Name": "Change OST Reinforcement Level",
+      "Description": "[For debugging] Whether to change the level of OS enhancement."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLArm",
+      "Name": "Body Scale: Left Arm",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "bodyScaleLLeg",
+      "Name": "Body Scale: Left Leg",
+      "Description": "Scale for body shape change."
+    },
+    {
+      "Field": "equip_Wep_Right_GenId",
+      "Name": "Equipment Generation: Right Weapon",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Subwep_Right_GenId",
+      "Name": "Equipment Generation: Right Weapon (Sub)",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Wep_Left_GenId",
+      "Name": "Equipment Generation: Left Weapon",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Subwep_Left_GenId",
+      "Name": "Equipment Generation: Left Weapon (Sub)",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Helm_GenId",
+      "Name": "Equipment Generation: Head",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Armer_GenId",
+      "Name": "Equipment Generation: Core",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Gaunt_GenId",
+      "Name": "Equipment Generation: Arms",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Leg_GenId",
+      "Name": "Equipment Generation: Legs",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Subwep_Right3",
+      "Name": "Equipment Generation: Right Weapon (Sub)",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Subwep_Left3",
+      "Name": "Equipment Generation: Left Weapon (Sub)",
+      "Description": "Weapon generation ID."
+    },
+    {
+      "Field": "equip_Booster_Main",
+      "Name": "Equipped Part: Booster",
+      "Description": "The booster ID to use for this slot."
+    },
+    {
+      "Field": "pad01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overrideBaseHp",
+      "Name": "Override Value: AP",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideBaseMp",
+      "Name": "Override Value: MP",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideBaseSp",
+      "Name": "Override Value: Stamina",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideSpRecDelayTime",
+      "Name": "Override Value: Stamina Recovery Delay",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_AttachParts_Right",
+      "Name": "Equipped Part: Right-Hand Attachment",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_ShieldParts",
+      "Name": "Equipped Part: Shield Attachment",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "overrideEnergyMax",
+      "Name": "Override Value: Maximum Energy",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideEnergyRecoveryPerSec",
+      "Name": "Override Value: Energy Recovery",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideEnergyDecreasePerSec",
+      "Name": "Override Value: Energy Consumption",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "overrideEnergyRecoveryDelayTimeSec",
+      "Name": "Override Value: Energy Recovery Delay",
+      "Description": "If the value is -1, the total value of the equipment value is used. Otherwise, override with this value"
+    },
+    {
+      "Field": "equip_BladeParts",
+      "Name": "Equipped Part: Blade Weapon",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_Generator",
+      "Name": "Equipped Part: Generator",
+      "Description": "The generator ID to use for this slot."
+    },
+    {
+      "Field": "equip_Fcs",
+      "Name": "Equipped Part: FCS",
+      "Description": "The fire control system ID to use for this slot."
+    },
+    {
+      "Field": "equip_Extension",
+      "Name": "Equipped Part: Extension",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "equip_AssaultDrive",
+      "Name": "Equipped Part: Core Expansion",
+      "Description": "The weapon ID to use for this slot."
+    },
+    {
+      "Field": "osReinforceLevel_DamageUp_ShootPhysics",
+      "Name": "OST Reinforcement Level: Physical Damage %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_DamageUp_ShootMagic",
+      "Name": "OST Reinforcement Level: Energy Damage %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_DamageUp_ShootFire",
+      "Name": "OST Reinforcement Level: Explosive Damage %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_DamageUp_Melee",
+      "Name": "OST Reinforcement Level: Melee Damage %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_DamageUp_Critical",
+      "Name": "OST Reinforcement Level: Direct Hit Damage %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_DamageCut",
+      "Name": "OST Reinforcement Level: Damage Absorption %",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_KickEnable",
+      "Name": "OST Reinforcement Level: Boost Kick",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_WeaponHanger",
+      "Name": "OST Reinforcement Level: Weapon Bay",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_FreeAimEnable",
+      "Name": "OST Reinforcement Level: Manual Aiming",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_RecoverItem_RecoverUp",
+      "Name": "OST Reinforcement Level: Repair Kits",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_HackingUp",
+      "Name": "OST Reinforcement Level: Access Speed",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_OverWeightOk",
+      "Name": "OST Reinforcement Level: Weight Control",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_AssaultArmor",
+      "Name": "OST Reinforcement Level: Assault Armor",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_FollowingBarrier",
+      "Name": "OST Reinforcement Level: Pulse Protection",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_StationaryBarrier",
+      "Name": "OST Reinforcement Level: Pulse Armor",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_EmergencyBarrier",
+      "Name": "OST Reinforcement Level: Terminal Armor",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "osReinforceLevel_QuickTurn",
+      "Name": "OST Reinforcement Level: Quick Turn",
+      "Description": "For debugging. The level of this upgrade this loadout has."
+    },
+    {
+      "Field": "tailPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,102 +1,182 @@
 {
-  "DisplayName": "DAMAGE_DAMAGE_MOTION_TYPE",
-  "Name": "DAMAGE_DAMAGE_MOTION_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_DAMAGE_MOTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_DAMAGE_MOTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No motion",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No motion"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Minimal damage",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Minimal damage"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Small knockback",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small knockback"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Big knockback",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big knockback"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra damage",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra damage"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Blow away",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow away"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Launch",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Launch"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Breath",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Breath"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Fall down",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fall down"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Parry break",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry break"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Guard break",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard break"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Fainting",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fainting"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Bleeding",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bleeding"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Grab",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grab"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Head shot",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head shot"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Small and medium damage from falling",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small and medium damage from falling"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Heavy damage while falling",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy damage while falling"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Jump ground collision",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump ground collision"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Jump mid-air collision",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump mid-air collision"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "Param": "KnowledgeLoadScreenItemParam",
+  "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Name": "KnowledgeLoadScreenItemParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "unlockFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invalidFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "msgId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

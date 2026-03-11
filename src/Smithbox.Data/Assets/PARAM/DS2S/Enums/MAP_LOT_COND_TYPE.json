@@ -1,12 +1,20 @@
 {
-  "DisplayName": "MAP_LOT_COND_TYPE",
-  "Name": "MAP_LOT_COND_TYPE",
-  "Description": "",
+  "Key": "MAP_LOT_COND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAP_LOT_COND_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Always",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
     }
   ]
 }

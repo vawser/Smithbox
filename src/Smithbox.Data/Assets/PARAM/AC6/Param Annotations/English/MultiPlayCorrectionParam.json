@@ -1,0 +1,48 @@
+{
+  "Param": "MultiPlayCorrectionParam",
+  "Type": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Name": "MultiPlayCorrectionParam",
+  "Description": "Determines the adjustments to apply to client players during a multiplayer session.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "client1SpEffectId",
+      "Name": "Client - SpEffect ID: 1",
+      "Description": "An effect to apply to a friendly client."
+    },
+    {
+      "Field": "client2SpEffectId",
+      "Name": "Client - SpEffect ID: 2",
+      "Description": "An effect to apply to a friendly client."
+    },
+    {
+      "Field": "client3SpEffectId",
+      "Name": "Client - SpEffect ID: 3",
+      "Description": "An effect to apply to a friendly client."
+    },
+    {
+      "Field": "bOverrideSpEffect",
+      "Name": "Adjust SpEffects on Client Count Change",
+      "Description": "If ON, when the number of clients changes, re-assess the SpEffect applications."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

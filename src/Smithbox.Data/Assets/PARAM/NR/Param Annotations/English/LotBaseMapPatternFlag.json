@@ -1,0 +1,53 @@
+{
+  "Param": "LotBaseMapPatternFlag",
+  "Type": "LOT_BASE_MAP_PATTERN_FLAG_ST",
+  "Name": "LotBaseMapPatternFlag",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modifierSet",
+      "Name": "Modifier Set",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier1",
+      "Name": "Required Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier2",
+      "Name": "Required Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier1",
+      "Name": "Excluded Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier2",
+      "Name": "Excluded Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "modifier",
+      "Name": "Modifier",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "Usage Event Flag",
+      "Description": "The event flag that determines the usage of this map pattern base."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": ""
+    }
+  ]
+}

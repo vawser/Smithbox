@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ARROW_TYPE",
-  "Name": "ARROW_TYPE",
-  "Description": "",
+  "Key": "ARROW_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ARROW_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Arrow",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Great Arrow",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Arrow"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Bolt",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
     }
   ]
 }

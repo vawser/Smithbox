@@ -1,0 +1,203 @@
+{
+  "Param": "MoveParam",
+  "Type": "MOVE_PARAM_ST",
+  "Name": "MoveParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "stayId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "walkF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "walkB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "walkL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "walkR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "superDash",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escapeF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escapeB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escapeL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escapeR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "trunR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "largeTurnL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "largeTurnR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stepMove",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyStay",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyWalkF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyWalkFL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyWalkFR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyWalkFL2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyWalkFR2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDashF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDashFL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDashFR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDashFL2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDashFR2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashEscapeF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashEscapeB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashEscapeL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dashEscapeR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "analogMoveParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnNoAnimAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turn45Angle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turn90Angle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnWaitNoAnimAngle",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

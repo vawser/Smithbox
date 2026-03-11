@@ -1,0 +1,48 @@
+{
+  "Param": "MapObjectPlayGoParam",
+  "Type": "MAP_OBJECT_PLAY_GO_DOOR_PARAM",
+  "Name": "MapObjectPlayGoParam",
+  "Description": "Defines parameters related to Majula play region.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,42 +1,74 @@
 {
-  "DisplayName": "GENERATOR_JUDGE_ENUM",
-  "Name": "GENERATOR_JUDGE_ENUM",
-  "Description": "",
+  "Key": "GENERATOR_JUDGE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_JUDGE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "①",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "①&②",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①&②"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "①｜②",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①｜②"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "①&②&③",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①&②&③"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "①|②|③",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "①|②|③"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "(①&②)|③",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(①&②)|③"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "（①|②）&③",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "（①|②）&③"
+        }
+      ]
     }
   ]
 }

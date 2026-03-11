@@ -1,67 +1,119 @@
 {
-  "DisplayName": "DAMAGE_MATERIAL",
-  "Name": "DAMAGE_MATERIAL",
-  "Description": "",
+  "Key": "DAMAGE_MATERIAL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_MATERIAL"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Meat",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Meat"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Leather",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leather"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Tree",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tree"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Stone",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Copper",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Copper"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Iron",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Bone",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Energy",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Flame",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Darkness",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Darkness"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Magic power",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic power"
+        }
+      ]
     }
   ]
 }

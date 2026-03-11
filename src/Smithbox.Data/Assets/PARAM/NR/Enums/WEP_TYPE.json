@@ -1,262 +1,470 @@
 {
-  "DisplayName": "Weapon Type",
-  "Name": "WEP_TYPE",
-  "Description": "Types of weapons that generally share animations.",
+  "Key": "WEP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "Any",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Any"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Straight Sword",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Greatsword",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Colossal Sword",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Curved Sword",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Curved Greatsword",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Katana",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Twinblade",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twinblade"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Thrusting Sword",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Heavy Thrusting Sword",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Axe",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Greataxe",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Hammer",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Great Hammer",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Flail",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flail"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Spear",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Great Spear",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Halberd",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Reaper",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaper"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Fist (Unarmed)",
-      "Description": ""
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist (Unarmed)"
+        }
+      ]
     },
     {
-      "ID": "35",
-      "Name": "Fist",
-      "Description": ""
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist"
+        }
+      ]
     },
     {
-      "ID": "37",
-      "Name": "Claw",
-      "Description": ""
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw"
+        }
+      ]
     },
     {
-      "ID": "39",
-      "Name": "Whip",
-      "Description": ""
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip"
+        }
+      ]
     },
     {
-      "ID": "41",
-      "Name": "Colossal Weapon",
-      "Description": ""
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Light Bow",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light Bow"
+        }
+      ]
     },
     {
-      "ID": "51",
-      "Name": "Bow",
-      "Description": ""
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow"
+        }
+      ]
     },
     {
-      "ID": "53",
-      "Name": "Greatbow",
-      "Description": ""
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow"
+        }
+      ]
     },
     {
-      "ID": "55",
-      "Name": "Crossbow",
-      "Description": ""
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow"
+        }
+      ]
     },
     {
-      "ID": "56",
-      "Name": "Ballista",
-      "Description": ""
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ballista"
+        }
+      ]
     },
     {
-      "ID": "57",
-      "Name": "Glintstone Staff",
-      "Description": ""
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintstone Staff"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "Sacred Seal",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sacred Seal"
+        }
+      ]
     },
     {
-      "ID": "65",
-      "Name": "Small Shield",
-      "Description": ""
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Shield"
+        }
+      ]
     },
     {
-      "ID": "67",
-      "Name": "Medium Shield",
-      "Description": ""
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Shield"
+        }
+      ]
     },
     {
-      "ID": "69",
-      "Name": "Greatshield",
-      "Description": ""
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield"
+        }
+      ]
     },
     {
-      "ID": "81",
-      "Name": "Arrow",
-      "Description": ""
+      "Key": "81",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow"
+        }
+      ]
     },
     {
-      "ID": "83",
-      "Name": "Greatarrow",
-      "Description": ""
+      "Key": "83",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatarrow"
+        }
+      ]
     },
     {
-      "ID": "85",
-      "Name": "Bolt",
-      "Description": ""
+      "Key": "85",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
     },
     {
-      "ID": "86",
-      "Name": "Greatbolt",
-      "Description": ""
+      "Key": "86",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbolt"
+        }
+      ]
     },
     {
-      "ID": "87",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "87",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "Wylder - Greatsword",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wylder - Greatsword"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Guardian - Halberd",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian - Halberd"
+        }
+      ]
     },
     {
-      "ID": "1300",
-      "Name": "Ironeye - Bow",
-      "Description": ""
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ironeye - Bow"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Duchess - Dagger",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duchess - Dagger"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Raider - Greataxe / Great Hammer / Colossal Weapon",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raider - Greataxe / Great Hammer / Colossal Weapon"
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Revenant - Sacred Seal",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revenant - Sacred Seal"
+        }
+      ]
     },
     {
-      "ID": "1700",
-      "Name": "Recluse - Glintstone Staff",
-      "Description": ""
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recluse - Glintstone Staff"
+        }
+      ]
     },
     {
-      "ID": "1800",
-      "Name": "Executor - Katana",
-      "Description": ""
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor - Katana"
+        }
+      ]
     },
     {
-      "ID": "1900",
-      "Name": "Scholar - Thrusting Sword",
-      "Description": ""
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar - Thrusting Sword"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Undertaker - Hammer",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undertaker - Hammer"
+        }
+      ]
     }
   ]
 }

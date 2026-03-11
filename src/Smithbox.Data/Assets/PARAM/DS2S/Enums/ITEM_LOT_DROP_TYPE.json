@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ITEM_LOT_DROP_TYPE",
-  "Name": "ITEM_LOT_DROP_TYPE",
-  "Description": "",
+  "Key": "ITEM_LOT_DROP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_DROP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Confirmed acquisition",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Confirmed acquisition"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Gacha",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gacha"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Confirmed",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Confirmed"
+        }
+      ]
     }
   ]
 }

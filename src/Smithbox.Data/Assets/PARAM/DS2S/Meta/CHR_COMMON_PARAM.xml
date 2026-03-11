@@ -398,127 +398,128 @@
     Wiki="The maximum angular velocity multiplier to apply to the character's ragdoll." />
 
     <ragdollGravityFactorMin
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Gravity Acceleration %: Minimum"
+    Wiki="The minimum acceleration gravity can apply to the character's ragdoll." />
 
     <ragdollGravityFactorMax
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Gravity Acceleration %: Maximum"
+    Wiki="The maximum acceleration gravity can apply to the character's ragdoll." />
 
     <jumpAttackSideAngle
-    AltName=""
-    Wiki="" />
+    AltName="Jump Collision: Horizontal Angle"
+    Wiki="The horizontal angle (in degrees) for jump attack collision." />
 
     <damageRotationSpeed
-    AltName=""
-    Wiki="" />
+    AltName="Damage: Direction Rotation Speed"
+    Wiki="The turning speed (in degrees per second) in the direction of damage that occurs." />
 
     <damageMoveDistRate
-    AltName=""
-    Wiki="" />
+    AltName="Damage: Knockback Reduction %"
+    Wiki="The knockback reduction rate when damage occurs." />
 
     <heavyDamageKnockBackDist
-    AltName=""
-    Wiki="" />
+    AltName="Heavy Damage: Knockback Reduction %"
+    Wiki="The knockback reduction rate when heavy damage occurs." />
 
     <heavyDamageStiff
-    AltName=""
-    Wiki="" />
+    AltName="Heavy Damage: Recovery Time"
+    Wiki="The recovery time (in seconds) when heavy damage occurs." />
 
     <heavyDamageDefenselessTime
-    AltName=""
-    Wiki="" />
+    AltName="Heavy Damage: Vulnerability Time"
+    Wiki="The vulnerability time (in seconds) when heavy damage occurs." />
 
     <bleedingDamageStiff
-    AltName=""
-    Wiki="" />
+    AltName="Bleed Damage: Recovery Time"
+    Wiki="The recovery time (in seconds) when bleed damage occurs." />
 
     <heavyDamageShorteningTime
-    AltName=""
-    Wiki="" />
+    AltName="Heavy Damage: Input Reduction Time"
+    Wiki="The input reduction time (in seconds) when heavy damage occurs." />
 
     <guardBreakDamageDefenselessTime
-    AltName=""
-    Wiki="" />
+    AltName="Guard Break: Vulnerability Time"
+    Wiki="The vulnerability time (in seconds) when a guard break occurs." />
 
     <guardBreakDamageShorteningTime
-    AltName=""
-    Wiki="" />
+    AltName="Guard Break: Input Reduction Time"
+    Wiki="The input reduction time (in seconds) when a guard break occurs." />
 
     <blowDecelerationTimeFirst
-    AltName=""
-    Wiki="" />
+    AltName="Blowback: Deceleration Time - 1"
+    Wiki="The deceleration time (in seconds) when blowback damage occurs." />
 
     <blowDecelerationTimeSecond
-    AltName=""
-    Wiki="" />
+    AltName="Blowback: Deceleration Time - 2"
+    Wiki="The deceleration time (in seconds) when blowback damage occurs." />
 
     <blowDecelerationFirst
-    AltName=""
-    Wiki="" />
+    AltName="Blowback: Deceleration - 1"
+    Wiki="The deceleration (in metres per seconds squared) when blowback damage occurs." />
 
     <blowDecelerationSecond
-    AltName=""
-    Wiki="" />
+    AltName="Blowback: Deceleration - 2"
+    Wiki="The deceleration (in metres per seconds squared) when blowback damage occurs." />
 
     <attackPushBackRate
-    AltName=""
-    Wiki="" />
+    AltName="Attack Pushback %"
+    Wiki="The pushback reflection rate." />
 
     <parryRotationSpeed
-    AltName=""
-    Wiki="" />
+    AltName="Parry Rotation Speed"
+    Wiki="The speed of turning during a parry (in degrees per second)." />
 
     <BreathDamageEnable
-    AltName=""
-    Wiki="" />
+    AltName="Enable Breath Damage"
+    Wiki="If enabled, breath damage can occur." 
+    IsBool="" />
 
     <dummy1
     Padding="" />
 
     <hitLowerBodyHeight
-    AltName=""
-    Wiki="" />
+    AltName="Hit Judgment: Lower Body Height"
+    Wiki="The lower body height for hit judgements." />
 
     <hitFrontAngle
-    AltName=""
-    Wiki="" />
+    AltName="Hit Judgment: Front Angle"
+    Wiki="The front (horizontal) angle used for hit judgements." />
 
     <attackMoveSpeed
-    AltName=""
-    Wiki="" />
+    AltName="Walk Attack: Movement Speed"
+    Wiki="The movement speed of walk attacks (in metres per second)." />
 
     <attackRotationSpeed
-    AltName=""
-    Wiki="" />
+    AltName="Walk Attack: Rotation Speed"
+    Wiki="The turn speed of walk attacks (in degrees per second)." />
 
     <attackRange
-    AltName=""
-    Wiki="" />
+    AltName="Walk Attack: Range"
+    Wiki="The range of walk attacks (in metres)." />
 
     <fLookAtRotationLeftMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Left Rotation Limit"
+    Wiki="The left rotation limit (in degrees) when focusing a target." />
 
     <fLookAtRotationRightMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Right Rotation Limit"
+    Wiki="The right rotation limit (in degrees) when focusing a target." />
 
     <fLookAtRotationUpperMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Upper Rotation Limit"
+    Wiki="The upper rotation limit (in degrees) when focusing a target." />
 
     <fLookAtRotationLownerMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Lower Rotation Limit"
+    Wiki="The lower rotation limit (in degrees) when focusing a target." />
 
     <fLookAtVisibilitySideMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Horizontal Limit"
+    Wiki="The horizontal rotation limit (in degrees) when focusing a target." />
 
     <fLookAtVisibilityUpperMax
-    AltName=""
-    Wiki="" />
+    AltName="Focus: Vertical Limit"
+    Wiki="The vertical rotation limit (in degrees) when focusing a target." />
 
     <fLookAtRotationSideSpeedMax
     AltName=""

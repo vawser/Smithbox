@@ -1,0 +1,168 @@
+{
+  "Param": "ThrowDirectionSfxParam",
+  "Type": "THROW_DIRECTION_SFX_PARAM_ST",
+  "Name": "ThrowDirectionSfxParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "SFX ID [0]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "SFX ID [1]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "SFX ID [2]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "SFX ID [3]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "SFX ID [4]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "SFX ID [5]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "SFX ID [6]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "SFX ID [7]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "SFX ID [8]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "SFX ID [9]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "SFX ID [10]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "SFX ID [11]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "SFX ID [12]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "SFX ID [13]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "SFX ID [14]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "SFX ID [15]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "SFX ID [16]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "SFX ID [17]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "SFX ID [18]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "SFX ID [19]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "SFX ID [20]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "SFX ID [21]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "SFX ID [22]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "SFX ID [23]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "SFX ID [24]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "SFX ID [25]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "SFX ID [26]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "SFX ID [27]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "SFX ID [28]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "SFX ID [29]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "SFX ID [30]",
+      "Description": "ID of SFX to use"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

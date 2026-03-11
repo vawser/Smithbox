@@ -1,0 +1,798 @@
+{
+  "Param": "NpcParam",
+  "Type": "NPC_PARAM_ST",
+  "Name": "NpcParam",
+  "Description": "Determines the parameters for enemy characters.",
+  "Fields": [
+    {
+      "Field": "behaviorVariationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used to determine the action parameters to use for this enemy."
+    },
+    {
+      "Field": "aiThinkId",
+      "Name": "Think ID",
+      "Description": "The think parameters to use for this enemy."
+    },
+    {
+      "Field": "nameId",
+      "Name": "Name ID",
+      "Description": "The name to display for this entity. Only appears on the health bar of c0000 characters."
+    },
+    {
+      "Field": "turnVellocity",
+      "Name": "Turn Velocity",
+      "Description": "The rotation speed of the enemy. In degrees per second."
+    },
+    {
+      "Field": "hitHeight",
+      "Name": "Simple Collision Height",
+      "Description": "Vertical radius of hitbox used for character to character collision. Requires useRagdoll = false"
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "Simple Collision Radius",
+      "Description": "Horizontal radius of hitbox used for character to character collision. Requires useRagdoll = false"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "The weight of the character."
+    },
+    {
+      "Field": "hitYOffset",
+      "Name": "Collision Height Offset",
+      "Description": "The vertical offset of the character\u0027s hitbox. Will cause them to float."
+    },
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "The character\u0027s maximum hit points."
+    },
+    {
+      "Field": "mp",
+      "Name": "MP",
+      "Description": "The character\u0027s maximum mana points."
+    },
+    {
+      "Field": "getSoul",
+      "Name": "Souls",
+      "Description": "The amount of souls dropped on death by this character."
+    },
+    {
+      "Field": "itemLotId_1",
+      "Name": "Item Lot ID: 1",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "itemLotId_2",
+      "Name": "Item Lot ID: 2",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "itemLotId_3",
+      "Name": "Item Lot ID: 3",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "itemLotId_4",
+      "Name": "Item Lot ID: 4",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "itemLotId_5",
+      "Name": "Item Lot ID: 5",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "itemLotId_6",
+      "Name": "Item Lot ID: 6",
+      "Description": "The ID of the item lot to use for item drops for this character\u0027s death."
+    },
+    {
+      "Field": "humanityLotId",
+      "Name": "Humanity Lot ID",
+      "Description": "The humanity item lot to use for humanity rewards upon this character\u0027s death."
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "SpEffect ID: 0",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "SpEffect ID: 1",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "SpEffect ID: 2",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "SpEffect ID: 3",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "SpEffect ID: 4",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "SpEffect ID: 5",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "SpEffect ID: 6",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "SpEffect ID: 7",
+      "Description": "The ID of a SpEffect that affect this character."
+    },
+    {
+      "Field": "GameClearSpEffectID",
+      "Name": "SpEffect ID: Game Clear",
+      "Description": "The ID of a SpEffect that affect this character that only applies on NG\u002B and higher. Used to scale enemy stats for each NG\u002B journey."
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "Guard Absorption %: Physical",
+      "Description": "The percentage reduction in Physical damage taken when this character is guarding."
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "Guard Absorption %: Magic",
+      "Description": "The percentage reduction in Magic damage taken when this character is guarding."
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption %: Fire",
+      "Description": "The percentage reduction in Fire damage taken when this character is guarding."
+    },
+    {
+      "Field": "thunGuardCutRate",
+      "Name": "Guard Absorption %: Lightning",
+      "Description": "The percentage reduction in Lightning damage taken when this character is guarding."
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "Primary Animation ID Offset",
+      "Description": "A value to offset animation IDs by. 0 = a00, 10000 = a01, etc."
+    },
+    {
+      "Field": "moveAnimId",
+      "Name": "Move Animation ID",
+      "Description": "The movement animation to use for this character."
+    },
+    {
+      "Field": "spMoveAnimId1",
+      "Name": "Special Movement Animation ID: 0",
+      "Description": "The special movement animation to use for this character."
+    },
+    {
+      "Field": "spMoveAnimId2",
+      "Name": "Special Movement Animation ID: 1",
+      "Description": "The special movement animation to use for this character."
+    },
+    {
+      "Field": "networkWarpDist",
+      "Name": "Network Warp Judgement Distance",
+      "Description": "The distance at which to warp this character instead of allowing standard movement during network synchronization."
+    },
+    {
+      "Field": "dbgBehaviorR1",
+      "Name": "Debug Action: R1",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorL1",
+      "Name": "Debug Action: L1",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorR2",
+      "Name": "Debug Action: R2",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorL2",
+      "Name": "Debug Action: L2",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorRL",
+      "Name": "Debug Action: Square",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorRR",
+      "Name": "Debug Action: Circle",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorRD",
+      "Name": "Debug Action: Cross",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorRU",
+      "Name": "Debug Action: Triangle",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorLL",
+      "Name": "Debug Action: Left Arrow",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorLR",
+      "Name": "Debug Action: Right Arrow",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorLD",
+      "Name": "Debug Action: Down Arrow",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "dbgBehaviorLU",
+      "Name": "Debug Action: Up Arrow",
+      "Description": "The animation ID to use when the specified button is pressed during a debug session."
+    },
+    {
+      "Field": "animIdOffset2",
+      "Name": "Secondary Animation ID Offset",
+      "Description": "A value to offset animation IDs by. 0 = a00, 10000 = a01, etc."
+    },
+    {
+      "Field": "partsDamageRate1",
+      "Name": "Damage Multiplier: Part 1",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate2",
+      "Name": "Damage Multiplier: Part 2",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate3",
+      "Name": "Damage Multiplier: Part 3",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate4",
+      "Name": "Damage Multiplier: Part 4",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate5",
+      "Name": "Damage Multiplier: Part 5",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate6",
+      "Name": "Damage Multiplier: Part 6",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate7",
+      "Name": "Damage Multiplier: Part 7",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "partsDamageRate8",
+      "Name": "Damage Multiplier: Part 8",
+      "Description": "The multiplier to apply to incoming damage against the mesh assigned as this part."
+    },
+    {
+      "Field": "weakPartsDamageRate",
+      "Name": "Damage Multiplier: Weak Point",
+      "Description": "The multiplier to apply to incoming damage against the weak point part."
+    },
+    {
+      "Field": "superArmorRecoverCorrection",
+      "Name": "Poise Recovery Speed",
+      "Description": "The change to apply to poise recovery speed for this character."
+    },
+    {
+      "Field": "superArmorBrakeKnockbackDist",
+      "Name": "Poise Break Stagger Distance",
+      "Description": "The knockback distance for the stagger when this character\u0027s poise is broken."
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina",
+      "Description": "The maximum stamina for this character.. Used for non c0000 enemies blocking in DS1"
+    },
+    {
+      "Field": "staminaRecoverBaseVel",
+      "Name": "Stamina Recovery Speed",
+      "Description": "The recovery speed for stamina for this character."
+    },
+    {
+      "Field": "def_phys",
+      "Name": "Defense: Physical",
+      "Description": "The flat physical damage defense this character possess."
+    },
+    {
+      "Field": "def_slash",
+      "Name": "Defense: Slash",
+      "Description": "This value is applied to the flat physical defense when the sub-type matches. For example: 10 = \u002B10% defense, -10 = -10% defense"
+    },
+    {
+      "Field": "def_blow",
+      "Name": "Defense: Strike",
+      "Description": "This value is applied to the flat physical defense when the sub-type matches. For example: 10 = \u002B10% defense, -10 = -10% defense"
+    },
+    {
+      "Field": "def_thrust",
+      "Name": "Defense: Thrust",
+      "Description": "This value is applied to the flat physical defense when the sub-type matches. For example: 10 = \u002B10% defense, -10 = -10% defense"
+    },
+    {
+      "Field": "def_mag",
+      "Name": "Defense: Magic",
+      "Description": "The flat magic damage defense this character possess."
+    },
+    {
+      "Field": "def_fire",
+      "Name": "Defense: Fire",
+      "Description": "The flat fire damage defense this character possess."
+    },
+    {
+      "Field": "def_thunder",
+      "Name": "Defense: Lightning",
+      "Description": "The flat lightning damage defense this character possess."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Repulsion Defense",
+      "Description": "Innate deflection defense. Deflected attacks can have their damage reduced via flickDamageCutRate"
+    },
+    {
+      "Field": "resist_poison",
+      "Name": "Status Resist: Poison",
+      "Description": "The flat defense value for this character against the specified resistance type."
+    },
+    {
+      "Field": "resist_desease",
+      "Name": "Status Resist: Toxic",
+      "Description": "The flat defense value for this character against the specified resistance type."
+    },
+    {
+      "Field": "resist_blood",
+      "Name": "Status Resist: Bleed",
+      "Description": "The flat defense value for this character against the specified resistance type."
+    },
+    {
+      "Field": "resist_curse",
+      "Name": "Status Resist: Curse",
+      "Description": "The flat defense value for this character against the specified resistance type."
+    },
+    {
+      "Field": "ghostModelId",
+      "Name": "Wandering Ghost: Model ID",
+      "Description": "The model ID to use for the wandering ghost version of this character."
+    },
+    {
+      "Field": "normalChangeResouceId",
+      "Name": "Normal Change: Resource ID",
+      "Description": "The resource ID to use for the normal texture."
+    },
+    {
+      "Field": "guardAngle",
+      "Name": "Horizontal Guard Angle",
+      "Description": "Defense generation range angle when guarding (horizontal direction). In degrees."
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "Guard Absorption %: Slash",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "Guard Absorption %: Strike",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "Guard Absorption %: Thrust",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "superArmorDurability",
+      "Name": "Poise",
+      "Description": "The amount of poise this character has. Requires dmgLevel to be set to function properly."
+    },
+    {
+      "Field": "normalChangeTexChrId",
+      "Name": "Normal Change: Texture ID",
+      "Description": "The resource ID to use for the character texture."
+    },
+    {
+      "Field": "dropType",
+      "Name": "Item Drop Type",
+      "Description": "Determines behavior and appearance of dropped items."
+    },
+    {
+      "Field": "knockbackRate",
+      "Name": "Knockback %",
+      "Description": "The rate of knockback suffered from sources of knockback from attackers."
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "Knockback ID",
+      "Description": "The parameters to use for knockback."
+    },
+    {
+      "Field": "fallDamageDump",
+      "Name": "Fall Damage %",
+      "Description": "The dampening rate to apply to fall damage suffered."
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "Guard Absorption %: Stamina",
+      "Description": "The amount to reduce stamina damage by when received by the character."
+    },
+    {
+      "Field": "pcAttrB",
+      "Name": "World Tendency: Player (Black)",
+      "Description": "The amount to add to Black World Tendency (for the player) when this character dies."
+    },
+    {
+      "Field": "pcAttrW",
+      "Name": "World Tendency: Player (White)",
+      "Description": "The amount to add to White World Tendency (for the player) when this character dies."
+    },
+    {
+      "Field": "pcAttrL",
+      "Name": "World Tendency: Player (Left)",
+      "Description": "The amount to add to World Tendency (for the player) when this character dies."
+    },
+    {
+      "Field": "pcAttrR",
+      "Name": "World Tendency: Player (Right)",
+      "Description": "The amount to add to World Tendency (for the player) when this character dies."
+    },
+    {
+      "Field": "areaAttrB",
+      "Name": "World Tendency: Area (Black)",
+      "Description": "The amount to add to Black World Tendency (for the area) when this character dies."
+    },
+    {
+      "Field": "areaAttrW",
+      "Name": "World Tendency: Area (White)",
+      "Description": "The amount to add to White World Tendency (for the area) when this character dies."
+    },
+    {
+      "Field": "areaAttrL",
+      "Name": "World Tendency: Area (Left)",
+      "Description": "The amount to add to World Tendency (for the area) when this character dies."
+    },
+    {
+      "Field": "areaAttrR",
+      "Name": "World Tendency: Area (Right)",
+      "Description": "The amount to add to World Tendency (for the area) when this character dies."
+    },
+    {
+      "Field": "mpRecoverBaseVel",
+      "Name": "MP Recovery Speed",
+      "Description": "The speed at which mana points are restored for this character."
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Repulsion Absorption %",
+      "Description": "A multiplier to apply to damage if the source has been deflected. 50 = -50% damage, 90 = -90% damage"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "Default LOD Param ID",
+      "Description": "The default LOD parameter to use for this character."
+    },
+    {
+      "Field": "drawType",
+      "Name": "Draw Type",
+      "Description": "The draw type used for this character. Normally affects the shader used."
+    },
+    {
+      "Field": "npcType",
+      "Name": "Character Type",
+      "Description": "The character type assigned to this character."
+    },
+    {
+      "Field": "teamType",
+      "Name": "Team Type",
+      "Description": "The team type assigned to this character."
+    },
+    {
+      "Field": "moveType",
+      "Name": "Move Type",
+      "Description": "The move type assigned to this character."
+    },
+    {
+      "Field": "lockDist",
+      "Name": "Additional Lock-on Distance",
+      "Description": "Additional maximum lock-on distance added onto base distance defined in LockCamParam"
+    },
+    {
+      "Field": "material",
+      "Name": "Defense Presentation: Sound",
+      "Description": "The sound used when guarding."
+    },
+    {
+      "Field": "materialSfx",
+      "Name": "Defense Presentation: Particle",
+      "Description": "The particles used when guarding."
+    },
+    {
+      "Field": "material_Weak",
+      "Name": "Defense Presentation: Sound (on Weak Point Damage)",
+      "Description": "The sound used when weak point is damaged."
+    },
+    {
+      "Field": "materialSfx_Weak",
+      "Name": "Defense Presentation: Particle (on Weak Point Damage)",
+      "Description": "The particles used when weak point is damaged."
+    },
+    {
+      "Field": "partsDamageType",
+      "Name": "Parts Damage Type",
+      "Description": "Determines if weak parts (such as the head) will be affected by all attacks or just arrow attacks.\nHeadshot animation will be used for weak part attacks if it exists."
+    },
+    {
+      "Field": "maxUndurationAng",
+      "Name": "Maximum Angle for Undulation",
+      "Description": "Maximum angle enemies can rotate vertically while on slopes. Requires isUnduration"
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "Guard Damage Level",
+      "Description": "When guarding, the guard animation offset to use when being attacked."
+    },
+    {
+      "Field": "burnSfxType",
+      "Name": "Burn Particle Type",
+      "Description": "The particle type to use when burning."
+    },
+    {
+      "Field": "poisonGuardResist",
+      "Name": "Guard Absorption %: Poison",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "diseaseGuardResist",
+      "Name": "Guard Absorption %: Toxic",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "bloodGuardResist",
+      "Name": "Guard Absorption %: Bleed",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "curseGuardResist",
+      "Name": "Guard Absorption %: Curse",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "parryAttack",
+      "Name": "Parry Attack",
+      "Description": "The attack power value to use when calculating a parry as the parrying side."
+    },
+    {
+      "Field": "parryDefence",
+      "Name": "Parry Defense",
+      "Description": "The defense power value to use when calculating a parry as the parried side."
+    },
+    {
+      "Field": "sfxSize",
+      "Name": "Particle Size",
+      "Description": "The size of the particles used by this character."
+    },
+    {
+      "Field": "pushOutCamRegionRadius",
+      "Name": "Camera Push-out Radius",
+      "Description": "The collision radius for the character in which a camera is pushed away."
+    },
+    {
+      "Field": "hitStopType",
+      "Name": "Hit Stop Type",
+      "Description": "Determines how enemy is affected by hitstop."
+    },
+    {
+      "Field": "ladderEndChkOffsetTop",
+      "Name": "Top of Ladder Offset",
+      "Description": "The offset to apply when determining the top of a ladder (if this character is climbing). In 1/10 metres."
+    },
+    {
+      "Field": "ladderEndChkOffsetLow",
+      "Name": "Bottom of Ladder Offset",
+      "Description": "The offset to apply when determining the top of a ladder (if this character is climbing). In 1/10 metres."
+    },
+    {
+      "Field": "useRagdollCamHit",
+      "Name": "Is Ragdoll Collision valid for Camera Collision",
+      "Description": "If ON, then the character\u0027s ragdoll can collide with a camera."
+    },
+    {
+      "Field": "disableClothRigidHit",
+      "Name": "Disable Rigid Cloth Collision",
+      "Description": "If ON, rigid cloth collision is ignored for this character."
+    },
+    {
+      "Field": "useRagdoll",
+      "Name": "Use Ragdoll Collision",
+      "Description": "If ON, then ragdoll is used for character to character collision. If false, hitRadius and hitHeight are used instead"
+    },
+    {
+      "Field": "isDemon",
+      "Name": "Is Demon",
+      "Description": "If ON, character will be affected by weapons with antiDemonDamageRate (anti-demon damage)."
+    },
+    {
+      "Field": "isGhost",
+      "Name": "Is Ghost",
+      "Description": "If ON, character is treated as a ghost."
+    },
+    {
+      "Field": "isNoDamageMotion",
+      "Name": "Ignore Damage Motion for Dummy Hits",
+      "Description": "If ON, damage level motion is ignored if the damage suffered is 0."
+    },
+    {
+      "Field": "isUnduration",
+      "Name": "Is Undulating",
+      "Description": "If ON, enemies will rotate vertically on slopes. Rotation angle determines by maxUndurationAng"
+    },
+    {
+      "Field": "isChangeWanderGhost",
+      "Name": "Is Valid for Wandering Ghost",
+      "Description": "If ON, character is valid for the wandering ghost feature."
+    },
+    {
+      "Field": "modelDispMask0",
+      "Name": "Model Mask: 0",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask1",
+      "Name": "Model Mask: 1",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask2",
+      "Name": "Model Mask: 2",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask3",
+      "Name": "Model Mask: 3",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask4",
+      "Name": "Model Mask: 4",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask5",
+      "Name": "Model Mask: 5",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask6",
+      "Name": "Model Mask: 6",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask7",
+      "Name": "Model Mask: 7",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask8",
+      "Name": "Model Mask: 8",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask9",
+      "Name": "Model Mask: 9",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask10",
+      "Name": "Model Mask: 10",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask11",
+      "Name": "Model Mask: 11",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask12",
+      "Name": "Model Mask: 12",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask13",
+      "Name": "Model Mask: 13",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask14",
+      "Name": "Model Mask: 14",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "modelDispMask15",
+      "Name": "Model Mask: 15",
+      "Description": "Displays the model corresponding to the display mask."
+    },
+    {
+      "Field": "isEnableNeckTurn",
+      "Name": "Enable Head Oscillation",
+      "Description": "If ON, then the character\u0027s head will oscillate."
+    },
+    {
+      "Field": "disableRespawn",
+      "Name": "Disable Bonfire Respawn",
+      "Description": "If ON, the character will not reset position and behavior when the player rests at a bonfire."
+    },
+    {
+      "Field": "isMoveAnimWait",
+      "Name": "Is Move Animation Persistent",
+      "Description": "If ON, movement animation will continue during other animations."
+    },
+    {
+      "Field": "isCrowd",
+      "Name": "Is Crowd Character",
+      "Description": "If ON, this character is considered a crowd character and will use a reduced profile when multiple characters are present."
+    },
+    {
+      "Field": "isWeakSaint",
+      "Name": "Is Weak to Divine",
+      "Description": "If ON, character will be affected by weapons with antSaintDamageRate (holy damage)."
+    },
+    {
+      "Field": "isWeakA",
+      "Name": "Is Weak to Occult",
+      "Description": "If ON, character will be affected by weapons with antWeakA_DamageRate (occult damage)."
+    },
+    {
+      "Field": "isWeakB",
+      "Name": "Is Abyssal",
+      "Description": "If ON, character will be affected by weapons with antWeakB_DamageRate (anti-darkwraith damage)."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType",
+      "Name": "Vow Type",
+      "Description": "The pledge type used by this character."
+    },
+    {
+      "Field": "disableInitializeDead",
+      "Name": "Reload Character on Initialisation",
+      "Description": "If true, dead enemies will be alive again when the game is reset without respawning enemies (such as quitting to menu)"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

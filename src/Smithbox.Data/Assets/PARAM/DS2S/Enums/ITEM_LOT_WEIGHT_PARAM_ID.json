@@ -1,22 +1,38 @@
 {
-  "DisplayName": "ITEM_LOT_WEIGHT_PARAM_ID",
-  "Name": "ITEM_LOT_WEIGHT_PARAM_ID",
-  "Description": "",
+  "Key": "ITEM_LOT_WEIGHT_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_WEIGHT_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "0",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Evenly",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evenly"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Must be first",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Must be first"
+        }
+      ]
     }
   ]
 }

@@ -1,37 +1,65 @@
 {
-  "DisplayName": "CHR_WET_ASPECT_PARAM_ID",
-  "Name": "CHR_WET_ASPECT_PARAM_ID",
-  "Description": "",
+  "Key": "CHR_WET_ASPECT_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_ASPECT_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "水",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "水"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Poison wet",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison wet"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Oily",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oily"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Steel",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Steel"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "鏡",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鏡"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Petrification",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrification"
+        }
+      ]
     }
   ]
 }

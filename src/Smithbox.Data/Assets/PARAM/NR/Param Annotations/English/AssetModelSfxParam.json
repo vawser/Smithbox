@@ -1,0 +1,133 @@
+{
+  "Param": "AssetModelSfxParam",
+  "Type": "ASSET_MODEL_SFX_PARAM_ST",
+  "Name": "AssetModelSfxParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId_0",
+      "Name": "SFX ID [0]",
+      "Description": "0: SfxID"
+    },
+    {
+      "Field": "dmypolyId_0",
+      "Name": "Dummy Poly ID [0]",
+      "Description": "0: Damipoli ID"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_1",
+      "Name": "SFX ID [1]",
+      "Description": "1: SfxID"
+    },
+    {
+      "Field": "dmypolyId_1",
+      "Name": "Dummy Poly ID [1]",
+      "Description": "1: Damipoli ID"
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_2",
+      "Name": "SFX ID [2]",
+      "Description": "2: SfxID"
+    },
+    {
+      "Field": "dmypolyId_2",
+      "Name": "Dummy Poly ID [2]",
+      "Description": "2: Damipoli ID"
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_3",
+      "Name": "SFX ID [3]",
+      "Description": "3: SfxID"
+    },
+    {
+      "Field": "dmypolyId_3",
+      "Name": "Dummy Poly ID [3]",
+      "Description": "3: Damipoli ID"
+    },
+    {
+      "Field": "reserve_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_4",
+      "Name": "SFX ID [4]",
+      "Description": "4: SfxID"
+    },
+    {
+      "Field": "dmypolyId_4",
+      "Name": "Dummy Poly ID [4]",
+      "Description": "4: Damipoli ID"
+    },
+    {
+      "Field": "reserve_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_5",
+      "Name": "SFX ID [5]",
+      "Description": "5: SfxID"
+    },
+    {
+      "Field": "dmypolyId_5",
+      "Name": "Dummy Poly ID [5]",
+      "Description": "5: Damipoli ID"
+    },
+    {
+      "Field": "reserve_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_6",
+      "Name": "SFX ID [6]",
+      "Description": "6: SfxID"
+    },
+    {
+      "Field": "dmypolyId_6",
+      "Name": "Dummy Poly ID [6]",
+      "Description": "6: Damipoli ID"
+    },
+    {
+      "Field": "reserve_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_7",
+      "Name": "SFX ID [7]",
+      "Description": "7: SfxID"
+    },
+    {
+      "Field": "dmypolyId_7",
+      "Name": "Dummy Poly ID [7]",
+      "Description": "7: Damipoli ID"
+    },
+    {
+      "Field": "isDisableIV",
+      "Name": "Is Irradiance Volume Disabled",
+      "Description": "When enabled, the effect on irradiance volume shooting is disabled."
+    },
+    {
+      "Field": "reserve_7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

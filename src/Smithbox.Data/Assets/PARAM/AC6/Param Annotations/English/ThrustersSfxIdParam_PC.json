@@ -1,0 +1,48 @@
+{
+  "Param": "ThrustersSfxIdParam_PC",
+  "Type": "THRUSTERS_SFX_ID_PARAM_PC_ST",
+  "Name": "ThrustersSfxIdParam_PC",
+  "Description": "Determines the particles used for various thruster emissions.",
+  "Fields": [
+    {
+      "Field": "sfxId0",
+      "Name": "0: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId1",
+      "Name": "1: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId2",
+      "Name": "2: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId3",
+      "Name": "3: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId4",
+      "Name": "4: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId5",
+      "Name": "5: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId6",
+      "Name": "6: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    },
+    {
+      "Field": "sfxId7",
+      "Name": "7: SFX ID",
+      "Description": "The SFX ID to use for this color type."
+    }
+  ]
+}

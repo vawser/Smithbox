@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DECOY_REACTION_TYPE",
-  "Name": "DECOY_REACTION_TYPE",
-  "Description": "",
+  "Key": "DECOY_REACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECOY_REACTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Always",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Only during attack",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only during attack"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Ignore",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "Param": "Ceremony",
+  "Type": "CEREMONY_PARAM_ST",
+  "Name": "Ceremony",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "eventLayerId",
+      "Name": "Event Layer ID",
+      "Description": "Event maker layer ID"
+    },
+    {
+      "Field": "mapStudioLayerId",
+      "Name": "Map Studio Layer ID",
+      "Description": "Map Studio Layer ID"
+    },
+    {
+      "Field": "multiPlayAreaOffset",
+      "Name": "Play Region ID Offset",
+      "Description": "Multiplayer area ID offset. For example, if you enter 100, the multiplayer area ID will be offset by 100."
+    },
+    {
+      "Field": "overrideMapPlaceNameId",
+      "Name": "Override Map Place Name ID",
+      "Description": "Override the map name ID_place name display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+    },
+    {
+      "Field": "overrideSaveMapNameId",
+      "Name": "Override Save Map Name ID",
+      "Description": "Map name ID_Overwrites the save data display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

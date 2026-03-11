@@ -1,37 +1,65 @@
 {
-  "DisplayName": "RESULT_EVENT_END_TYPE_ENUM",
-  "Name": "RESULT_EVENT_END_TYPE_ENUM",
-  "Description": "",
+  "Key": "RESULT_EVENT_END_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RESULT_EVENT_END_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Multiplayer continues",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer continues"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Achieving purpose",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Achieving purpose"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Own death",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Own death"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Failure",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Failure"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Reaching the goal",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaching the goal"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Multiplayer termination type termination",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer termination type termination"
+        }
+      ]
     }
   ]
 }

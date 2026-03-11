@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CAMERA_GRAPPLER_SELECT_TYPE",
-  "Name": "CAMERA_GRAPPLER_SELECT_TYPE",
-  "Description": "",
+  "Key": "CAMERA_GRAPPLER_SELECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_GRAPPLER_SELECT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "x Shaped Branch",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "x Shaped Branch"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "+ Shaped Branch",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+ Shaped Branch"
+        }
+      ]
     }
   ]
 }

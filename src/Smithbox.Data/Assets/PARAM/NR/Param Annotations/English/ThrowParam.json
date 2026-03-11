@@ -1,0 +1,218 @@
+{
+  "Param": "ThrowParam",
+  "Type": "THROW_PARAM_ST",
+  "Name": "ThrowParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "Attacker - Character ID",
+      "Description": "Throwing side character ID"
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "Defender - Character ID",
+      "Description": "Recipient character ID"
+    },
+    {
+      "Field": "Dist",
+      "Name": "Max Throw Distance",
+      "Description": "Do not throw unless the distance is closer than this value [m]"
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "Height Angle Difference - Min",
+      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown."
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "Height Angle Difference - Max",
+      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is smaller than this angle, it will not be thrown."
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "Upper Height Range",
+      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "Lower Height Range",
+      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "Angle Difference - To Defender",
+      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "Throw Type ID",
+      "Description": "ID that identifies the type of throw (association with attack parameter)"
+    },
+    {
+      "Field": "atkAnimId",
+      "Name": "Attacker - Animation ID",
+      "Description": "Set attack animation ID (linked to EzState)"
+    },
+    {
+      "Field": "defAnimId",
+      "Name": "Defender - Animation ID",
+      "Description": "Set damage animation ID (linked to EzState)"
+    },
+    {
+      "Field": "escHp",
+      "Name": "Self Escape - HP",
+      "Description": "Value that can withstand throwing through"
+    },
+    {
+      "Field": "selfEscCycleTime",
+      "Name": "Self Escape - Cycle Time",
+      "Description": "Cycle time for self-throwing [ms]"
+    },
+    {
+      "Field": "sphereCastRadiusRateTop",
+      "Name": "Sphere Cast - Radius Rate Top",
+      "Description": "Ratio of upper radius of sphere cast [80-\u003E 0.8]"
+    },
+    {
+      "Field": "sphereCastRadiusRateLow",
+      "Name": "Sphere Cast - Radius Rate Low",
+      "Description": "Spherecast lower radius ratio [80-\u003E 0.8]"
+    },
+    {
+      "Field": "PadType",
+      "Name": "Operation Type",
+      "Description": "Operation type"
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "Attack Enable State",
+      "Description": "Please set the state type that can be thrown on the throwing side"
+    },
+    {
+      "Field": "throwFollowingType",
+      "Name": "Throw Following Type",
+      "Description": "How to follow the character possessed by Adsorbed Damipoli while throwing. * Follow-up period is controlled by TAE action"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwType",
+      "Name": "Throw Type",
+      "Description": "Type of throw"
+    },
+    {
+      "Field": "selfEscCycleCnt",
+      "Name": "Self Escape - Cycle Count",
+      "Description": "Number of self-throwing cycles"
+    },
+    {
+      "Field": "dmyHasChrDirType",
+      "Name": "Character Throw - Dummy Poly Direction Type",
+      "Description": "Direction of Damipoli possession character when throwing occurs"
+    },
+    {
+      "Field": "isTurnAtker",
+      "Name": "Throw can Side Turn",
+      "Description": "Does the throwing side turn?"
+    },
+    {
+      "Field": "isSkipWepCate",
+      "Name": "Skip Attacker Weapon Category Check",
+      "Description": "Do you want to skip the attacker\u0027s weapon category check?"
+    },
+    {
+      "Field": "isSkipSphereCast",
+      "Name": "Skip Sphere Cast",
+      "Description": "Do you want to skip the sphere cast?"
+    },
+    {
+      "Field": "isEnableCorrectPos_forThrowAdjust",
+      "Name": "Enable Correct Position for Throw Adjustment",
+      "Description": "If it is set to , the location of the throwing position will be the position of the adsorption Damipoli that has returned to the positional relationship equivalent to the flat ground."
+    },
+    {
+      "Field": "isEnableThrowFollowingFallAssist",
+      "Name": "Enable Throw Following Fall Assist",
+      "Description": "Is the same treatment as the wall removal prevention applied to the fall prevention wall so that it does not fall from the step when the follow-up is released?"
+    },
+    {
+      "Field": "isEnableThrowFollowingFeedback",
+      "Name": "Enable Throw Following Feedback",
+      "Description": "Do you want to return the character with the Adsorbed Damipoli when it comes in contact with a hit or fall prevention wall so that it does not look like it will get stuck in the middle wall or fall from a step?"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkSorbDmyId",
+      "Name": "Attacker - Absorb Dummy ID",
+      "Description": "Where on the throwing side should the receiving side be attracted?"
+    },
+    {
+      "Field": "defSorbDmyId",
+      "Name": "Defender - Absorb Dummy ID",
+      "Description": "Where on the receiving side should the throwing side be adsorbed?"
+    },
+    {
+      "Field": "Dist_start",
+      "Name": "Backstab - Max Throw Distance ",
+      "Description": "Only throw at a distance closer than this value [m] Used for throwing at the start of the Backstab"
+    },
+    {
+      "Field": "DiffAngMin_start",
+      "Name": "Backstab - Height Angle Difference - Min",
+      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown. It is used for throwing at the start of the Backstab."
+    },
+    {
+      "Field": "DiffAngMax_start",
+      "Name": "Backstab - Height Angle Difference - Max",
+      "Description": "The angle difference (Y-axis) between the throwing side and the receiving side must be smaller than this angle to throw. Used for throwing at the start of the Backstab."
+    },
+    {
+      "Field": "upperYRange_start",
+      "Name": "Backstab - Upper Height Range",
+      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+    },
+    {
+      "Field": "lowerYRange_start",
+      "Name": "Backstab - Lower Height Range",
+      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+    },
+    {
+      "Field": "diffAngMyToDef_start",
+      "Name": "Backstab - Angle Difference - To Defender",
+      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown. It will be used for throwing at the start of the Backstab."
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId1",
+      "Name": "Attacker - Throwing Range Judgment - Dummy Poly ID",
+      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId2",
+      "Name": "Defender - Throwing Range Judgment - Dummy Poly ID",
+      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+    },
+    {
+      "Field": "adsrobModelPosInterpolationTime",
+      "Name": "Absorb Model Position Interpolation Time",
+      "Description": "After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)"
+    },
+    {
+      "Field": "throwFollowingEndEasingTime",
+      "Name": "Throw Following End Easing Time",
+      "Description": "Model position interpolation time at the end of tracking"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

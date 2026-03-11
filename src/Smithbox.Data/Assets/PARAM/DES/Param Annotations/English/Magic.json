@@ -1,0 +1,108 @@
+{
+  "Param": "Magic",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "Magic",
+  "Description": "Determines the configuraiton of magic spells.",
+  "Fields": [
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "Magic School Type",
+      "Description": "The magic school this spell belongs to."
+    },
+    {
+      "Field": "refType",
+      "Name": "Motion Category",
+      "Description": "The TimeAct offset used in the c0000 TAE to find the casting animations."
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "Usable in Multiplayer",
+      "Description": "If ON, then the spell can be used in multiplayer sessions."
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "Usable in Multiplayer Only",
+      "Description": "If ON, then the spell can be used in multiplayer sessions, but not in offline sessions."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The numeric ID used for specifying which icon is used to display this spell in menus."
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "The behavior parameter to use when this spell is triggered."
+    },
+    {
+      "Field": "faithForGet",
+      "Name": "Requirement: FTH",
+      "Description": "The minimum amount of faith (FTH) this spell requires for a valid cast."
+    },
+    {
+      "Field": "slotLength",
+      "Name": "Slot Usage",
+      "Description": "The number of spell equipment slots this spell occupies."
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "Is Weapon Enchantment",
+      "Description": "If ON, this spell is considered a weapon enhancement spell."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The numeric ID used for ordering each spell in menus."
+    },
+    {
+      "Field": "basicValue",
+      "Name": "Base Value",
+      "Description": "The base price for this spell."
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "Item Requirement for Purchase",
+      "Description": "The item (or items) that the spell costs in a shop that must be present before it can be purchased."
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Enable in Multiplayer: Host",
+      "Description": "If ON, this spell can be used in a sessions where the player is the host."
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Enable in Multiplayer: Gray Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a gray phantom."
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Enable in Multiplayer: White Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a white phantom."
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Enable in Multiplayer: Black Phantom",
+      "Description": "If ON, this spell can be used in a sessions where the player is a black phantom."
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Dialog Message ID",
+      "Description": "The text ID of to use for the \u0027Yes / No\u0027 dialog issued when this spell is used."
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "Menu Type on Usage",
+      "Description": "The type of menu to display when the spell is used."
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "Disable when Offline",
+      "Description": "If ON, this spell is disabled if the player is not in a multiplayer session."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

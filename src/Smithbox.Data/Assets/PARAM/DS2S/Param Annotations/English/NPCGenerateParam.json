@@ -1,0 +1,103 @@
+{
+  "Param": "NPCGenerateParam",
+  "Type": "NPC_GENERATE_PARAM",
+  "Name": "NPCGenerateParam",
+  "Description": "Defines parameters related to the generation of NPCs.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "right_weapon_id_1",
+      "Name": "[1] Right Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_weapon_id_2",
+      "Name": "[2] Right Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_weapon_id_3",
+      "Name": "[3] Right Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_weapon_id_1",
+      "Name": "[1] Left Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_weapon_id_2",
+      "Name": "[2] Left Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_weapon_id_3",
+      "Name": "[3] Left Weapon ID",
+      "Description": ""
+    },
+    {
+      "Field": "head_armor_id",
+      "Name": "Head Armor ID",
+      "Description": ""
+    },
+    {
+      "Field": "chest_armor_id",
+      "Name": "Chest Armor ID",
+      "Description": ""
+    },
+    {
+      "Field": "hands_armor_id",
+      "Name": "Hands Armor ID",
+      "Description": ""
+    },
+    {
+      "Field": "legs_armor_id",
+      "Name": "Legs Armor ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

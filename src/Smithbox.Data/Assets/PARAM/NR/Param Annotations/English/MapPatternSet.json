@@ -1,0 +1,638 @@
+{
+  "Param": "MapPatternSet",
+  "Type": "MAP_PATTERN_SET_PARAM_ST",
+  "Name": "MapPatternSet",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Chance that this pattern set is used compared to other sets for the expedition."
+    },
+    {
+      "Field": "patternCount",
+      "Name": "Pattern Count",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chaosMatchWeight",
+      "Name": "Deep of Night Weight",
+      "Description": "Chance that this pattern set is used compared to other sets for the expedition during Deep of Night."
+    },
+    {
+      "Field": "eventModifier1",
+      "Name": "Event Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier2",
+      "Name": "Event Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier3",
+      "Name": "Event Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier4",
+      "Name": "Event Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier5",
+      "Name": "Event Modifier 5",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier6",
+      "Name": "Event Modifier 6",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier7",
+      "Name": "Event Modifier 7",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier8",
+      "Name": "Event Modifier 8",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier1_Count",
+      "Name": "Event Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier2_Count",
+      "Name": "Event Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier3_Count",
+      "Name": "Event Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier4_Count",
+      "Name": "Event Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier5_Count",
+      "Name": "Event Modifier 5 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier6_Count",
+      "Name": "Event Modifier 6 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier7_Count",
+      "Name": "Event Modifier 7 Count",
+      "Description": ""
+    },
+    {
+      "Field": "eventModifier8_Count",
+      "Name": "Event Modifier 8 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier1",
+      "Name": "Night 1 Boss Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier2",
+      "Name": "Night 1 Boss Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier3",
+      "Name": "Night 1 Boss Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier4",
+      "Name": "Night 1 Boss Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier5",
+      "Name": "Night 1 Boss Modifier 5",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier6",
+      "Name": "Night 1 Boss Modifier 6",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier7",
+      "Name": "Night 1 Boss Modifier 7",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier8",
+      "Name": "Night 1 Boss Modifier 8",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier9",
+      "Name": "Night 1 Boss Modifier 9",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier10",
+      "Name": "Night 1 Boss Modifier 10",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier11",
+      "Name": "Night 1 Boss Modifier 11",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier12",
+      "Name": "Night 1 Boss Modifier 12",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier13",
+      "Name": "Night 1 Boss Modifier 13",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier14",
+      "Name": "Night 1 Boss Modifier 14",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier15",
+      "Name": "Night 1 Boss Modifier 15",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier16",
+      "Name": "Night 1 Boss Modifier 16",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier1_Count",
+      "Name": "Night 1 Boss Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier2_Count",
+      "Name": "Night 1 Boss Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier3_Count",
+      "Name": "Night 1 Boss Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier4_Count",
+      "Name": "Night 1 Boss Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier5_Count",
+      "Name": "Night 1 Boss Modifier 5 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier6_Count",
+      "Name": "Night 1 Boss Modifier 6 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier7_Count",
+      "Name": "Night 1 Boss Modifier 7 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier8_Count",
+      "Name": "Night 1 Boss Modifier 8 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier9_Count",
+      "Name": "Night 1 Boss Modifier 9 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier10_Count",
+      "Name": "Night 1 Boss Modifier 10 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier11_Count",
+      "Name": "Night 1 Boss Modifier 11 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier12_Count",
+      "Name": "Night 1 Boss Modifier 12 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier13_Count",
+      "Name": "Night 1 Boss Modifier 13 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier14_Count",
+      "Name": "Night 1 Boss Modifier 14 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier15_Count",
+      "Name": "Night 1 Boss Modifier 15 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night1BossModifier16_Count",
+      "Name": "Night 1 Boss Modifier 16 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier1",
+      "Name": "Night 2 Boss Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier2",
+      "Name": "Night 2 Boss Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier3",
+      "Name": "Night 2 Boss Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier4",
+      "Name": "Night 2 Boss Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier5",
+      "Name": "Night 2 Boss Modifier 5",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier6",
+      "Name": "Night 2 Boss Modifier 6",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier7",
+      "Name": "Night 2 Boss Modifier 7",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier8",
+      "Name": "Night 2 Boss Modifier 8",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier9",
+      "Name": "Night 2 Boss Modifier 9",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier10",
+      "Name": "Night 2 Boss Modifier 10",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier11",
+      "Name": "Night 2 Boss Modifier 11",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier12",
+      "Name": "Night 2 Boss Modifier 12",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier13",
+      "Name": "Night 2 Boss Modifier 13",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier14",
+      "Name": "Night 2 Boss Modifier 14",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier15",
+      "Name": "Night 2 Boss Modifier 15",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier16",
+      "Name": "Night 2 Boss Modifier 16",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier1_Count",
+      "Name": "Night 2 Boss Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier2_Count",
+      "Name": "Night 2 Boss Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier3_Count",
+      "Name": "Night 2 Boss Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier4_Count",
+      "Name": "Night 2 Boss Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier5_Count",
+      "Name": "Night 2 Boss Modifier 5 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier6_Count",
+      "Name": "Night 2 Boss Modifier 6 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier7_Count",
+      "Name": "Night 2 Boss Modifier 7 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier8_Count",
+      "Name": "Night 2 Boss Modifier 8 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier9_Count",
+      "Name": "Night 2 Boss Modifier 9 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier10_Count",
+      "Name": "Night 2 Boss Modifier 10 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier11_Count",
+      "Name": "Night 2 Boss Modifier 11 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier12_Count",
+      "Name": "Night 2 Boss Modifier 12 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier13_Count",
+      "Name": "Night 2 Boss Modifier 13 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier14_Count",
+      "Name": "Night 2 Boss Modifier 14 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier15_Count",
+      "Name": "Night 2 Boss Modifier 15 Count",
+      "Description": ""
+    },
+    {
+      "Field": "night2BossModifier16_Count",
+      "Name": "Night 2 Boss Modifier 16 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier1",
+      "Name": "Great Hollow East Fort Main Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier2",
+      "Name": "Great Hollow East Fort Main Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier3",
+      "Name": "Great Hollow East Fort Main Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier4",
+      "Name": "Great Hollow East Fort Main Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier1_Count",
+      "Name": "Great Hollow East Fort Main Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier2_Count",
+      "Name": "Great Hollow East Fort Main Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier3_Count",
+      "Name": "Great Hollow East Fort Main Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortMainModifier4_Count",
+      "Name": "Great Hollow East Fort Main Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier1",
+      "Name": "Great Hollow East Fort Interior Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier2",
+      "Name": "Great Hollow East Fort Interior Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier3",
+      "Name": "Great Hollow East Fort Interior Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier4",
+      "Name": "Great Hollow East Fort Interior Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier1_Count",
+      "Name": "Great Hollow East Fort Interior Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier2_Count",
+      "Name": "Great Hollow East Fort Interior Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier3_Count",
+      "Name": "Great Hollow East Fort Interior Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowEastFortInteriorModifier4_Count",
+      "Name": "Great Hollow East Fort Interior Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier1",
+      "Name": "Great Hollow West Fort Main Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier2",
+      "Name": "Great Hollow West Fort Main Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier3",
+      "Name": "Great Hollow West Fort Main Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier4",
+      "Name": "Great Hollow West Fort Main Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier1_Count",
+      "Name": "Great Hollow West Fort Main Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier2_Count",
+      "Name": "Great Hollow West Fort Main Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier3_Count",
+      "Name": "Great Hollow West Fort Main Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortMainModifier4_Count",
+      "Name": "Great Hollow West Fort Main Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier1",
+      "Name": "Great Hollow West Fort Underground Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier2",
+      "Name": "Great Hollow West Fort Underground Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier3",
+      "Name": "Great Hollow West Fort Underground Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier4",
+      "Name": "Great Hollow West Fort Underground Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier1_Count",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier2_Count",
+      "Name": "Great Hollow West Fort Underground Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier3_Count",
+      "Name": "Great Hollow West Fort Underground Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortUnderModifier4_Count",
+      "Name": "Great Hollow West Fort Underground Modifier 4 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier1",
+      "Name": "Great Hollow West Fort Library Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier2",
+      "Name": "Great Hollow West Fort Library Modifier 2",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier3",
+      "Name": "Great Hollow West Fort Library Modifier 3",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier4",
+      "Name": "Great Hollow West Fort Library Modifier 4",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier1_Count",
+      "Name": "Great Hollow West Fort Library Modifier 1 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier2_Count",
+      "Name": "Great Hollow West Fort Library Modifier 2 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier3_Count",
+      "Name": "Great Hollow West Fort Library Modifier 3 Count",
+      "Description": ""
+    },
+    {
+      "Field": "greatHollowWestFortLibraryModifier4_Count",
+      "Name": "Great Hollow West Fort Library Modifier 4 Count",
+      "Description": ""
+    }
+  ]
+}

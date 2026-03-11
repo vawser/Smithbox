@@ -1,257 +1,461 @@
 {
-  "DisplayName": "EQUIPMENT_ID",
-  "Name": "EQUIPMENT_ID",
-  "Description": "",
+  "Key": "EQUIPMENT_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIPMENT_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Prohibited from use",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Elementary body",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elementary body"
+        }
+      ]
     },
     {
-      "ID": "1010",
-      "Name": "Lightweight warrior",
-      "Description": ""
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightweight warrior"
+        }
+      ]
     },
     {
-      "ID": "1020",
-      "Name": "Thief",
-      "Description": ""
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thief"
+        }
+      ]
     },
     {
-      "ID": "1030",
-      "Name": "Wanderer",
-      "Description": ""
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wanderer"
+        }
+      ]
     },
     {
-      "ID": "1040",
-      "Name": "Hunter",
-      "Description": ""
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunter"
+        }
+      ]
     },
     {
-      "ID": "1050",
-      "Name": "Soldier",
-      "Description": ""
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soldier"
+        }
+      ]
     },
     {
-      "ID": "1060",
-      "Name": "Magic soldier",
-      "Description": ""
+      "Key": "1060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic soldier"
+        }
+      ]
     },
     {
-      "ID": "1080",
-      "Name": "Bandit",
-      "Description": ""
+      "Key": "1080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bandit"
+        }
+      ]
     },
     {
-      "ID": "1090",
-      "Name": "Have-nots",
-      "Description": ""
+      "Key": "1090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Have-nots"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "Traveler's clothes",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traveler's clothes"
+        }
+      ]
     },
     {
-      "ID": "1110",
-      "Name": "Viking",
-      "Description": ""
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Viking"
+        }
+      ]
     },
     {
-      "ID": "1120",
-      "Name": "Magician",
-      "Description": ""
+      "Key": "1120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician"
+        }
+      ]
     },
     {
-      "ID": "1130",
-      "Name": "Clergyman",
-      "Description": ""
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clergyman"
+        }
+      ]
     },
     {
-      "ID": "1140",
-      "Name": "Item master",
-      "Description": ""
+      "Key": "1140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item master"
+        }
+      ]
     },
     {
-      "ID": "1150",
-      "Name": "Hunter",
-      "Description": ""
+      "Key": "1150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunter"
+        }
+      ]
     },
     {
-      "ID": "1160",
-      "Name": "Heavy warrior",
-      "Description": ""
+      "Key": "1160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy warrior"
+        }
+      ]
     },
     {
-      "ID": "1170",
-      "Name": "Berserker",
-      "Description": ""
+      "Key": "1170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Berserker"
+        }
+      ]
     },
     {
-      "ID": "1180",
-      "Name": "Warrior",
-      "Description": ""
+      "Key": "1180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior"
+        }
+      ]
     },
     {
-      "ID": "1190",
-      "Name": "Fighter",
-      "Description": ""
+      "Key": "1190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fighter"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Assassin",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin"
+        }
+      ]
     },
     {
-      "ID": "1210",
-      "Name": "Clown",
-      "Description": ""
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clown"
+        }
+      ]
     },
     {
-      "ID": "1220",
-      "Name": "Explorer",
-      "Description": ""
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Explorer"
+        }
+      ]
     },
     {
-      "ID": "1230",
-      "Name": "Astrologer",
-      "Description": ""
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Astrologer"
+        }
+      ]
     },
     {
-      "ID": "1240",
-      "Name": "Magic swordsman",
-      "Description": ""
+      "Key": "1240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic swordsman"
+        }
+      ]
     },
     {
-      "ID": "1250",
-      "Name": "Knight",
-      "Description": ""
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Knight"
+        }
+      ]
     },
     {
-      "ID": "1260",
-      "Name": "Sorcerer",
-      "Description": ""
+      "Key": "1260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer"
+        }
+      ]
     },
     {
-      "ID": "1270",
-      "Name": "Black magician",
-      "Description": ""
+      "Key": "1270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black magician"
+        }
+      ]
     },
     {
-      "ID": "1280",
-      "Name": "Priest",
-      "Description": ""
+      "Key": "1280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Priest"
+        }
+      ]
     },
     {
-      "ID": "1290",
-      "Name": "Kensei",
-      "Description": ""
+      "Key": "1290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kensei"
+        }
+      ]
     },
     {
-      "ID": "1300",
-      "Name": "Shaman",
-      "Description": ""
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shaman"
+        }
+      ]
     },
     {
-      "ID": "1310",
-      "Name": "Mage",
-      "Description": ""
+      "Key": "1310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mage"
+        }
+      ]
     },
     {
-      "ID": "1320",
-      "Name": "Commander",
-      "Description": ""
+      "Key": "1320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Commander"
+        }
+      ]
     },
     {
-      "ID": "1330",
-      "Name": "Ancient dragon armor",
-      "Description": ""
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon armor"
+        }
+      ]
     },
     {
-      "ID": "9900",
-      "Name": "Test: specular only 1/4",
-      "Description": ""
+      "Key": "9900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: specular only 1/4"
+        }
+      ]
     },
     {
-      "ID": "9901",
-      "Name": "Test: diffuse only 1/4",
-      "Description": ""
+      "Key": "9901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: diffuse only 1/4"
+        }
+      ]
     },
     {
-      "ID": "9902",
-      "Name": "Test: DS 1/16 N 1/4",
-      "Description": ""
+      "Key": "9902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: DS 1/16 N 1/4"
+        }
+      ]
     },
     {
-      "ID": "9903",
-      "Name": "Test: DN 1/4 S 1/16",
-      "Description": ""
+      "Key": "9903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: DN 1/4 S 1/16"
+        }
+      ]
     },
     {
-      "ID": "9904",
-      "Name": "Test: Onion",
-      "Description": ""
+      "Key": "9904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Onion"
+        }
+      ]
     },
     {
-      "ID": "9905",
-      "Name": "Test: Four Horsemen C",
-      "Description": ""
+      "Key": "9905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Four Horsemen C"
+        }
+      ]
     },
     {
-      "ID": "9906",
-      "Name": "Test: Magician",
-      "Description": ""
+      "Key": "9906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Magician"
+        }
+      ]
     },
     {
-      "ID": "9907",
-      "Name": "Test: Princess",
-      "Description": ""
+      "Key": "9907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Princess"
+        }
+      ]
     },
     {
-      "ID": "9908",
-      "Name": "Test: Chainmail",
-      "Description": ""
+      "Key": "9908",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Chainmail"
+        }
+      ]
     },
     {
-      "ID": "9909",
-      "Name": "Test: Iron Golem",
-      "Description": ""
+      "Key": "9909",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Iron Golem"
+        }
+      ]
     },
     {
-      "ID": "9910",
-      "Name": "Test: Witch",
-      "Description": ""
+      "Key": "9910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Witch"
+        }
+      ]
     },
     {
-      "ID": "9911",
-      "Name": "Test: Assassin",
-      "Description": ""
+      "Key": "9911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Assassin"
+        }
+      ]
     },
     {
-      "ID": "9912",
-      "Name": "Test: Saint",
-      "Description": ""
+      "Key": "9912",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Saint"
+        }
+      ]
     },
     {
-      "ID": "9913",
-      "Name": "Test: 3 people haori",
-      "Description": ""
+      "Key": "9913",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: 3 people haori"
+        }
+      ]
     },
     {
-      "ID": "9914",
-      "Name": "Test: King of Firewood",
-      "Description": ""
+      "Key": "9914",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: King of Firewood"
+        }
+      ]
     },
     {
-      "ID": "9915",
-      "Name": "Test: Crown of the Shadow Sun",
-      "Description": ""
+      "Key": "9915",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Crown of the Shadow Sun"
+        }
+      ]
     }
   ]
 }

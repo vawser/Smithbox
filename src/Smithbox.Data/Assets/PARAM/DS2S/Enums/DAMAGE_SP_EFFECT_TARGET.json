@@ -1,27 +1,47 @@
 {
-  "DisplayName": "DAMAGE_SP_EFFECT_TARGET",
-  "Name": "DAMAGE_SP_EFFECT_TARGET",
-  "Description": "",
+  "Key": "DAMAGE_SP_EFFECT_TARGET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_SP_EFFECT_TARGET"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "The one who was eaten",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The one who was eaten"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "The one who gave",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The one who gave"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Both",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both"
+        }
+      ]
     }
   ]
 }

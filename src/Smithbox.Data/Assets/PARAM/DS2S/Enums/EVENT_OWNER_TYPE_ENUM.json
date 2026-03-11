@@ -1,27 +1,47 @@
 {
-  "DisplayName": "EVENT_OWNER_TYPE_ENUM",
-  "Name": "EVENT_OWNER_TYPE_ENUM",
-  "Description": "",
+  "Key": "EVENT_OWNER_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_OWNER_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "O.B.J.",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "O.B.J."
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Character (no sync)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character (no sync)"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Points (no sync)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Points (no sync)"
+        }
+      ]
     }
   ]
 }

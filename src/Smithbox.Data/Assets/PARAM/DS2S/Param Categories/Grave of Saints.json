@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Grave of Saints",
+  "Key": "Grave of Saints",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Grave of Saints"
+      }
+  ],
   "Params": [
     "eventlocation_m10_34_00_00",
     "eventparam_m10_34_00_00",

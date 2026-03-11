@@ -1,0 +1,188 @@
+{
+  "Param": "DamageLevelConvParam",
+  "Type": "DAMAGE_LEVEL_CONV_PARAM_ST",
+  "Name": "DamageLevelConvParam",
+  "Description": "Determines the damage level after each conversion threshold is exceeded.\nThis is linked to Attitude Stability.",
+  "Fields": [
+    {
+      "Field": "damageLevel_00",
+      "Name": "Initial Damage Level",
+      "Description": "Initial damage level."
+    },
+    {
+      "Field": "pad0_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_01",
+      "Name": "Damage Level after Threshold 0 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad1_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_02",
+      "Name": "Damage Level after Threshold 1 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad2_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_03",
+      "Name": "Damage Level after Threshold 2 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad3_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_04",
+      "Name": "Damage Level after Threshold 3 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad4_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_05",
+      "Name": "Damage Level after Threshold 4 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad5_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad5_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_06",
+      "Name": "Damage Level after Threshold 5 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad6_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad6_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_07",
+      "Name": "Damage Level after Threshold 6 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad7_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad7_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_08",
+      "Name": "Damage Level after Threshold 7 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad8_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad8_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_09",
+      "Name": "Damage Level after Threshold 8 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad9_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad9_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_10",
+      "Name": "Damage Level after Threshold 9 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad10_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad10_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageLevel_11",
+      "Name": "Damage Level after Threshold 10 is Exceeded",
+      "Description": "Damage level when previous impact damage threshold is exceeded"
+    },
+    {
+      "Field": "pad11_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

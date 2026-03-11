@@ -1,0 +1,28 @@
+{
+  "Param": "MenuColorTableParam",
+  "Type": "MENU_PARAM_COLOR_TABLE_ST",
+  "Name": "MenuColorTableParam",
+  "Description": "Determines the coloring used for various interface elements.",
+  "Fields": [
+    {
+      "Field": "r",
+      "Name": "Menu Color: R",
+      "Description": "The red component of the color."
+    },
+    {
+      "Field": "g",
+      "Name": "Menu Color: G",
+      "Description": "The green component of the color."
+    },
+    {
+      "Field": "b",
+      "Name": "Menu Color: B",
+      "Description": "The blue component of the color."
+    },
+    {
+      "Field": "a",
+      "Name": "Menu Color: Alpha",
+      "Description": "The alpha component of the color."
+    }
+  ]
+}

@@ -1,67 +1,119 @@
 {
-  "DisplayName": "UNIT_TEST_ENUM",
-  "Name": "UNIT_TEST_ENUM",
-  "Description": "",
+  "Key": "UNIT_TEST_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "UNIT_TEST_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Test value 0",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 0"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Test value 1",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 1"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Test value 2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Test value 3",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 3"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Test value 4",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 4"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Test value 5",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 5"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Test value 6",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 6"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Test value 7",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 7"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Test value 8",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 8"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Test value 9",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 9"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Test value 10",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 10"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Test value 11",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test value 11"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "Param": "LoadBalancerNewDrawDistScaleParam_win64",
+  "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
+  "Name": "LoadBalancerNewDrawDistScaleParam_win64",
+  "Description": "Determines the draw distance scale configuration for the FPS load balancer.",
+  "Fields": [
+    {
+      "Field": "DrawDist_LvBegin",
+      "Name": "Draw Distance: Start",
+      "Description": "The start activation level for the draw distance scaling."
+    },
+    {
+      "Field": "DrawDist_LvEnd",
+      "Name": "Draw Distance: End",
+      "Description": "The end activation level for the draw distance scaling."
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DrawDist_ScaleBegin",
+      "Name": "Scale: Start",
+      "Description": "The start draw distance scale."
+    },
+    {
+      "Field": "DrawDist_ScaleEnd",
+      "Name": "Scale: End",
+      "Description": "The end draw distance scale."
+    },
+    {
+      "Field": "ShadwDrawDist_LvBegin",
+      "Name": "Draw Distance: Start (Shadow)",
+      "Description": "The start activation level for the draw distance scaling of shadows."
+    },
+    {
+      "Field": "ShadwDrawDist_LvEnd",
+      "Name": "Draw Distance: End (Shadow)",
+      "Description": "The end activation level for the draw distance scaling of shadows."
+    },
+    {
+      "Field": "reserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleBegin",
+      "Name": "Scale: Start (Shadow)",
+      "Description": "The start draw distance scale for shadows."
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleEnd",
+      "Name": "Scale: End (Shadow)",
+      "Description": "The end draw distance scale for shadows."
+    },
+    {
+      "Field": "reserve2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,27 +1,47 @@
 {
-  "DisplayName": "CAMERA_BASE_POS_TYPE",
-  "Name": "CAMERA_BASE_POS_TYPE",
-  "Description": "",
+  "Key": "CAMERA_BASE_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_BASE_POS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Master position",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master position"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Center of character",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center of character"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Character head",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character head"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Origin",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Origin"
+        }
+      ]
     }
   ]
 }

@@ -1,187 +1,335 @@
 {
-  "DisplayName": "OBJ_CTRL_TYPE_ENUM",
-  "Name": "OBJ_CTRL_TYPE_ENUM",
-  "Description": "",
+  "Key": "OBJ_CTRL_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_CTRL_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Wooden treasure box",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden treasure box"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Single door",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Both doors",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both doors"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Ladder",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Rope",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rope"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "White door",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Bonfire",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bonfire"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Elevator",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elevator"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Anime hit trap",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Anime hit trap"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Constraint",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Constraint"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Death count display",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death count display"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Display number of bosses defeated",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Display number of bosses defeated"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Broken ladder",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken ladder"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Floor lever: return automatically",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Floor lever: return automatically"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Floor lever: does not return",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Floor lever: does not return"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Floor lever: Continue thinning while inputting buttons",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Floor lever: Continue thinning while inputting buttons"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Vertical lever: return automatically",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vertical lever: return automatically"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Vertical lever: does not return",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vertical lever: does not return"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Hidden door ① (Insect key SFX)",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden door ① (Insect key SFX)"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Hidden door ② (button press)",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden door ② (button press)"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Lowering ladder",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowering ladder"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Character transport object",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character transport object"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Iron treasure box",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron treasure box"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Burnable treasure chest",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Burnable treasure chest"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Insect key (wall)",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insect key (wall)"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Insect key (floor)",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insect key (floor)"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Wall hole lever",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall hole lever"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Lightweight objects",
-      "Description": ""
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightweight objects"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Mimicry object",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimicry object"
+        }
+      ]
     },
     {
-      "ID": "35",
-      "Name": "Petrified statue",
-      "Description": ""
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrified statue"
+        }
+      ]
     },
     {
-      "ID": "36",
-      "Name": "Item distribution treasure chest",
-      "Description": ""
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item distribution treasure chest"
+        }
+      ]
     },
     {
-      "ID": "37",
-      "Name": "Rolling flame barrel",
-      "Description": ""
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rolling flame barrel"
+        }
+      ]
     },
     {
-      "ID": "38",
-      "Name": "Destroy a wall with a rolling barrel of fire",
-      "Description": ""
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destroy a wall with a rolling barrel of fire"
+        }
+      ]
     },
     {
-      "ID": "39",
-      "Name": "Wall torch",
-      "Description": ""
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall torch"
+        }
+      ]
     }
   ]
 }

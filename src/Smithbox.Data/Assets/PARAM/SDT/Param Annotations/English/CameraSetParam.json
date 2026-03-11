@@ -1,0 +1,908 @@
+{
+  "Param": "CameraSetParam",
+  "Type": "CAMERA_SET_PARAM_ST",
+  "Name": "CameraSetParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "lockParamId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camParamId44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginTime44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endTime44",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

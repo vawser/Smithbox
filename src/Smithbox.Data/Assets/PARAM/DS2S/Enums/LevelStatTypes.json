@@ -1,67 +1,119 @@
 {
-  "DisplayName": "LevelStatTypes",
-  "Name": "LevelStatTypes",
-  "Description": "",
+  "Key": "LevelStatTypes",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LevelStatTypes"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Vigor",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vigor"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Endurance",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Endurance"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Vitality",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vitality"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Memory",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Memory"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Strength",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strength"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Skill",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skill"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Intelligence",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Intelligence"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Faith",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Faith"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Resistance",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Resistance"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Agility",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agility"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Luck",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Luck"
+        }
+      ]
     }
   ]
 }

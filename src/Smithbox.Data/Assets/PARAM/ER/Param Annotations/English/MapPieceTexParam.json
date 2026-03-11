@@ -1,0 +1,53 @@
+{
+  "Param": "MapPieceTexParam",
+  "Type": "MAP_PIECE_TEX_PARAM_ST",
+  "Name": "MapPieceTexParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "srcR",
+      "Name": "Pre-conversion - Map Image - R",
+      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcG",
+      "Name": "Pre-conversion - Map Image - G",
+      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcB",
+      "Name": "Pre-conversion - Map Image - B",
+      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saveMapNameId",
+      "Name": "Save Map Name ID",
+      "Description": "Map name ID for displaying save data [PlaceName] (0 - invalid value)"
+    },
+    {
+      "Field": "multiPlayAreaId",
+      "Name": "Multiplayer Area ID",
+      "Description": "Multiplayer area ID (-1 - invalid value)"
+    }
+  ]
+}

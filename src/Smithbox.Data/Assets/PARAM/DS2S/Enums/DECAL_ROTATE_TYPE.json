@@ -1,17 +1,29 @@
 {
-  "DisplayName": "DECAL_ROTATE_TYPE",
-  "Name": "DECAL_ROTATE_TYPE",
-  "Description": "",
+  "Key": "DECAL_ROTATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_ROTATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do not",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Random rotation while maintaining the upward direction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random rotation while maintaining the upward direction"
+        }
+      ]
     }
   ]
 }

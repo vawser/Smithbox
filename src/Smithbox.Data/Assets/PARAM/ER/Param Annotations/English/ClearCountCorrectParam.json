@@ -1,0 +1,168 @@
+{
+  "Param": "ClearCountCorrectParam",
+  "Type": "CLEAR_COUNT_CORRECT_PARAM_ST",
+  "Name": "ClearCountCorrectParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "MaxHpRate",
+      "Name": "Max HP %",
+      "Description": "Maximum HP magnification [%]"
+    },
+    {
+      "Field": "MaxMpRate",
+      "Name": "Max FP %",
+      "Description": "Maximum MP magnification [%]"
+    },
+    {
+      "Field": "MaxStaminaRate",
+      "Name": "Max Stamina %",
+      "Description": "Maximum stamina magnification [%]"
+    },
+    {
+      "Field": "PhysicsAttackRate",
+      "Name": "Damage %: Physical",
+      "Description": "Physical attack power multiplier"
+    },
+    {
+      "Field": "SlashAttackRate",
+      "Name": "Damage %: Slash",
+      "Description": "Slash attack power multiplier"
+    },
+    {
+      "Field": "BlowAttackRate",
+      "Name": "Damage %: Strike",
+      "Description": "Batter attack power multiplier"
+    },
+    {
+      "Field": "ThrustAttackRate",
+      "Name": "Damage %: Thrust",
+      "Description": "Puncture attack power multiplier"
+    },
+    {
+      "Field": "NeturalAttackRate",
+      "Name": "Damage %: Standard",
+      "Description": "Non-attribute attack power multiplier"
+    },
+    {
+      "Field": "MagicAttackRate",
+      "Name": "Damage %: Magic",
+      "Description": "Magic attack power multiplier"
+    },
+    {
+      "Field": "FireAttackRate",
+      "Name": "Damage %: Fire",
+      "Description": "Fire attack power multiplier"
+    },
+    {
+      "Field": "ThunderAttackRate",
+      "Name": "Damage %: Lightning",
+      "Description": "Electric shock attack power multiplier"
+    },
+    {
+      "Field": "DarkAttackRate",
+      "Name": "Damage %: Holy",
+      "Description": "Dark attack power multiplier"
+    },
+    {
+      "Field": "PhysicsDefenseRate",
+      "Name": "Defence %: Physical",
+      "Description": "Physical defense power multiplier"
+    },
+    {
+      "Field": "MagicDefenseRate",
+      "Name": "Defence %: Magic",
+      "Description": "Magic defense multiplier"
+    },
+    {
+      "Field": "FireDefenseRate",
+      "Name": "Defence %: Fire",
+      "Description": "Fire defense multiplier"
+    },
+    {
+      "Field": "ThunderDefenseRate",
+      "Name": "Defence %: Lightning",
+      "Description": "Electric shock defense power multiplier"
+    },
+    {
+      "Field": "DarkDefenseRate",
+      "Name": "Defence %: Holy",
+      "Description": "Dark defense multiplier"
+    },
+    {
+      "Field": "StaminaAttackRate",
+      "Name": "Damage %: Stamina",
+      "Description": "Stamina attack power multiplier"
+    },
+    {
+      "Field": "SoulRate",
+      "Name": "Rune Multiplier",
+      "Description": "Possession soul rate"
+    },
+    {
+      "Field": "PoisionResistRate",
+      "Name": "Resist %: Poison",
+      "Description": "Poison resistance change rate"
+    },
+    {
+      "Field": "DiseaseResistRate",
+      "Name": "Resist %: Scarlet Rot",
+      "Description": "Epidemic resistance change rate"
+    },
+    {
+      "Field": "BloodResistRate",
+      "Name": "Resist %: Blood Loss",
+      "Description": "Bleeding resistance change rate"
+    },
+    {
+      "Field": "CurseResistRate",
+      "Name": "Resist %: Death Blight",
+      "Description": "Curse resistance change rate"
+    },
+    {
+      "Field": "FreezeResistRate",
+      "Name": "Resist %: Frostbite",
+      "Description": "Cold resistance change rate"
+    },
+    {
+      "Field": "BloodDamageRate",
+      "Name": "Damage %: Blood Loss",
+      "Description": "Bleeding damage correction factor"
+    },
+    {
+      "Field": "SuperArmorDamageRate",
+      "Name": "Damage %: Poise",
+      "Description": "SA damage correction factor"
+    },
+    {
+      "Field": "FreezeDamageRate",
+      "Name": "Damage %: Frostbite",
+      "Description": "Cold damage correction factor"
+    },
+    {
+      "Field": "SleepResistRate",
+      "Name": "Resist %: Sleep",
+      "Description": "Sleep tolerance change rate"
+    },
+    {
+      "Field": "MadnessResistRate",
+      "Name": "Resist %: Madness",
+      "Description": "Madness resistance change rate"
+    },
+    {
+      "Field": "SleepDamageRate",
+      "Name": "Damage %: Sleep",
+      "Description": "Sleep damage correction factor"
+    },
+    {
+      "Field": "MadnessDamageRate",
+      "Name": "Damage %: Madness",
+      "Description": "Mad damage correction factor"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

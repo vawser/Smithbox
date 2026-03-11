@@ -1,132 +1,236 @@
 {
-  "DisplayName": "DUAL_WIELDING_PERMISSION_ID",
-  "Name": "DUAL_WIELDING_PERMISSION_ID",
-  "Description": "",
+  "Key": "DUAL_WIELDING_PERMISSION_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DUAL_WIELDING_PERMISSION_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Dual wielding bare hands",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding bare hands"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Dual wield fist",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wield fist"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Dual wield dagger",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wield dagger"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Dual sword sword",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual sword sword"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Two-handed sword",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Dual-edged sword",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual-edged sword"
+        }
+      ]
     },
     {
-      "ID": "70",
-      "Name": "Dual wielding one-handed hammer",
-      "Description": ""
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding one-handed hammer"
+        }
+      ]
     },
     {
-      "ID": "80",
-      "Name": "Two-handed sword",
-      "Description": ""
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
     },
     {
-      "ID": "90",
-      "Name": "Dual-wielding one-handed ax",
-      "Description": ""
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual-wielding one-handed ax"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "Two-handed hammer",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer"
+        }
+      ]
     },
     {
-      "ID": "110",
-      "Name": "Two-handed two-handed oversized sword",
-      "Description": ""
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed two-handed oversized sword"
+        }
+      ]
     },
     {
-      "ID": "120",
-      "Name": "Dual-wielding two-handed ax",
-      "Description": ""
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual-wielding two-handed ax"
+        }
+      ]
     },
     {
-      "ID": "130",
-      "Name": "Two-handed sickle",
-      "Description": ""
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle"
+        }
+      ]
     },
     {
-      "ID": "140",
-      "Name": "Dual-wielding two-handed long ax",
-      "Description": ""
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual-wielding two-handed long ax"
+        }
+      ]
     },
     {
-      "ID": "150",
-      "Name": "Dual wielding spear",
-      "Description": ""
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding spear"
+        }
+      ]
     },
     {
-      "ID": "160",
-      "Name": "Dual wield assault spear",
-      "Description": ""
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wield assault spear"
+        }
+      ]
     },
     {
-      "ID": "170",
-      "Name": "Dual wielding whip",
-      "Description": ""
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding whip"
+        }
+      ]
     },
     {
-      "ID": "180",
-      "Name": "Dual wielding one-handed bow",
-      "Description": ""
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding one-handed bow"
+        }
+      ]
     },
     {
-      "ID": "190",
-      "Name": "Dual-wielding rapid-fire one-handed bow",
-      "Description": ""
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual-wielding rapid-fire one-handed bow"
+        }
+      ]
     },
     {
-      "ID": "200",
-      "Name": "Dual wielding one-handed cane",
-      "Description": ""
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding one-handed cane"
+        }
+      ]
     },
     {
-      "ID": "210",
-      "Name": "Dual wielding one-handed bell",
-      "Description": ""
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding one-handed bell"
+        }
+      ]
     },
     {
-      "ID": "220",
-      "Name": "Dual sword right shield",
-      "Description": ""
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual sword right shield"
+        }
+      ]
     },
     {
-      "ID": "230",
-      "Name": "Dual sword left shield",
-      "Description": ""
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual sword left shield"
+        }
+      ]
     },
     {
-      "ID": "240",
-      "Name": "Dual wielding claws",
-      "Description": ""
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding claws"
+        }
+      ]
     }
   ]
 }

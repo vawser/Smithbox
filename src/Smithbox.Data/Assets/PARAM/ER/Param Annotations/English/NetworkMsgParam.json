@@ -1,0 +1,258 @@
+{
+  "Param": "NetworkMsgParam",
+  "Type": "NETWORK_MSG_PARAM_ST",
+  "Name": "NetworkMsgParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "priority"
+    },
+    {
+      "Field": "forcePlay",
+      "Name": "Force Play",
+      "Description": "Forced interrupt"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalWhite",
+      "Name": "White Phantom - Normal",
+      "Description": "White spirit (white sign)"
+    },
+    {
+      "Field": "umbasaWhite",
+      "Name": "White Phantom - Gold",
+      "Description": "Sun spirit (white sign)"
+    },
+    {
+      "Field": "berserkerWhite",
+      "Name": "White Phantom - Berseker",
+      "Description": "Berserker spirit (white sign)"
+    },
+    {
+      "Field": "sinnerHeroWhite",
+      "Name": "White Phantom - Sinner Hero",
+      "Description": "Sinner Hero Spirit (white sign)"
+    },
+    {
+      "Field": "normalBlack",
+      "Name": "Black Phantom - Normal",
+      "Description": "Dark spirit (red sign)"
+    },
+    {
+      "Field": "umbasaBlack",
+      "Name": "Black Phantom - Gold",
+      "Description": "Sun spirit (red sign)"
+    },
+    {
+      "Field": "berserkerBlack",
+      "Name": "Black Phantom - Berserker",
+      "Description": "Berserker spirit (red sign)"
+    },
+    {
+      "Field": "forceJoinBlack",
+      "Name": "Invasion - Black Phantom - Normal",
+      "Description": "Intrusion_A"
+    },
+    {
+      "Field": "forceJoinUmbasaBlack",
+      "Name": "Invasion - Black Phantom - Gold",
+      "Description": "Sun spirit (intrusion)"
+    },
+    {
+      "Field": "forceJoinBerserkerBlack",
+      "Name": "Invasion - Black Phantom - Berserker",
+      "Description": "Berserker spirit (intrusion)"
+    },
+    {
+      "Field": "sinnerHunterVisitor",
+      "Name": "Sinner Hunter Visitor",
+      "Description": "Sinner hunting spirit (visit)"
+    },
+    {
+      "Field": "redHunterVisitor",
+      "Name": "Red Hunter 1 Visitor",
+      "Description": "Red Scare Spirit (Visit)"
+    },
+    {
+      "Field": "guardianOfBossVisitor",
+      "Name": "Boss Guardian Visitor",
+      "Description": "Boss guardian spirit (visit)"
+    },
+    {
+      "Field": "guardianOfForestMapVisitor",
+      "Name": "Forest Hunter Visitor",
+      "Description": "Map Guardian Spirit_Forest (Visit)"
+    },
+    {
+      "Field": "guardianOfAnolisVisitor",
+      "Name": "Darkmoon Blade Visitor",
+      "Description": "Map Guardian_Anor (Visit)"
+    },
+    {
+      "Field": "rosaliaBlack",
+      "Name": "Black Phantom - Rosalia",
+      "Description": "Rosalia spirit (red sign)"
+    },
+    {
+      "Field": "forceJoinRosaliaBlack",
+      "Name": "Invasion - Black Phantom - Rosalia",
+      "Description": "Rosalia spirit (intrusion)"
+    },
+    {
+      "Field": "redHunterVisitor2",
+      "Name": "Red Hunter 2 Visitor",
+      "Description": "Red Scare Spirit 2 (Visit)"
+    },
+    {
+      "Field": "npc1",
+      "Name": "NPC [1]",
+      "Description": "NPC Pseudo Multi 1"
+    },
+    {
+      "Field": "npc2",
+      "Name": "NPC [2]",
+      "Description": "NPC Pseudo Multi 2"
+    },
+    {
+      "Field": "npc3",
+      "Name": "NPC [3]",
+      "Description": "NPC Pseudo Multi 3"
+    },
+    {
+      "Field": "npc4",
+      "Name": "NPC [4]",
+      "Description": "NPC Pseudo Multi 4"
+    },
+    {
+      "Field": "battleRoyal",
+      "Name": "Arena",
+      "Description": "Battle royale"
+    },
+    {
+      "Field": "npc5",
+      "Name": "NPC [5]",
+      "Description": "NPC Pseudo Multi 5"
+    },
+    {
+      "Field": "npc6",
+      "Name": "NPC [6]",
+      "Description": "NPC Pseudo Multi 6"
+    },
+    {
+      "Field": "npc7",
+      "Name": "NPC [7]",
+      "Description": "NPC Pseudo Multi 7"
+    },
+    {
+      "Field": "npc8",
+      "Name": "NPC [8]",
+      "Description": "NPC Pseudo Multi 8"
+    },
+    {
+      "Field": "npc9",
+      "Name": "NPC [9]",
+      "Description": "NPC Pseudo Multi 9"
+    },
+    {
+      "Field": "npc10",
+      "Name": "NPC [10]",
+      "Description": "NPC Pseudo Multi 10"
+    },
+    {
+      "Field": "npc11",
+      "Name": "NPC [11]",
+      "Description": "NPC Pseudo Multi 11"
+    },
+    {
+      "Field": "npc12",
+      "Name": "NPC [12]",
+      "Description": "NPC Pseudo Multi 12"
+    },
+    {
+      "Field": "npc13",
+      "Name": "NPC [13]",
+      "Description": "NPC Pseudo Multi 13"
+    },
+    {
+      "Field": "npc14",
+      "Name": "NPC [14]",
+      "Description": "NPC Pseudo Multi 14"
+    },
+    {
+      "Field": "npc15",
+      "Name": "NPC [15]",
+      "Description": "NPC Pseudo Multi 15"
+    },
+    {
+      "Field": "npc16",
+      "Name": "NPC [16]",
+      "Description": "NPC Pseudo Multi 16"
+    },
+    {
+      "Field": "forceJoinBlack_B",
+      "Name": "Invasion - Black Phantom - B",
+      "Description": "Intrusion_B"
+    },
+    {
+      "Field": "normalWhite_Npc",
+      "Name": "NPC - White Phantom",
+      "Description": "White spirit (white sign) for NPCs"
+    },
+    {
+      "Field": "forceJoinBlack_Npc",
+      "Name": "NPC - Black Phantom - Invasion",
+      "Description": "For intrusion_A_NPCs"
+    },
+    {
+      "Field": "forceJoinBlack_B_Npc",
+      "Name": "NPC - Black Phantom B - Invasion",
+      "Description": "For intrusion_B_NPCs"
+    },
+    {
+      "Field": "forceJoinBlack_C_Npc",
+      "Name": "NPC - Black Phantom C - Invasion",
+      "Description": "For intrusion_C_NPCs"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npc17",
+      "Name": "NPC [17]",
+      "Description": "NPC Pseudo Multi 17"
+    },
+    {
+      "Field": "npc18",
+      "Name": "NPC [18]",
+      "Description": "NPC Pseudo Multi 18"
+    },
+    {
+      "Field": "npc19",
+      "Name": "NPC [19]",
+      "Description": "NPC Pseudo Multi 19"
+    },
+    {
+      "Field": "npc20",
+      "Name": "NPC [20]",
+      "Description": "NPC Pseudo Multi 20"
+    },
+    {
+      "Field": "npc21",
+      "Name": "NPC [21]",
+      "Description": "NPC Pseudo Multi 21"
+    },
+    {
+      "Field": "pad2_new",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,47 +1,83 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_04_00_00",
-  "Name": "EVENT_VALUE_m10_04_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_04_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_04_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "57",
-      "Name": "Miracle Worker: Revolving Door Behavior Setting",
-      "Description": ""
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Worker: Revolving Door Behavior Setting"
+        }
+      ]
     },
     {
-      "ID": "58",
-      "Name": "Seikyo: Immigrant count",
-      "Description": ""
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Seikyo: Immigrant count"
+        }
+      ]
     },
     {
-      "ID": "59",
-      "Name": "Pledge: Seikyo: Current pledge rank",
-      "Description": ""
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Seikyo: Current pledge rank"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Current number of bonfires lit",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Current number of bonfires lit"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "Pledge: Strong: Current pledge rank",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Strong: Current pledge rank"
+        }
+      ]
     },
     {
-      "ID": "62",
-      "Name": "Armor shop: Armor placement: Quantity setting",
-      "Description": ""
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop: Armor placement: Quantity setting"
+        }
+      ]
     },
     {
-      "ID": "63",
-      "Name": "Armor shop: Armor placement: Counter",
-      "Description": ""
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop: Armor placement: Counter"
+        }
+      ]
     }
   ]
 }

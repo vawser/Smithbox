@@ -1,0 +1,18 @@
+{
+  "Param": "MapObjectTorchParam",
+  "Type": "MAP_OBJECT_TORCH_PARAM",
+  "Name": "MapObjectTorchParam",
+  "Description": "Defines parameters related to the Torch.",
+  "Fields": [
+    {
+      "Field": "torch_duration",
+      "Name": "Torch Duration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

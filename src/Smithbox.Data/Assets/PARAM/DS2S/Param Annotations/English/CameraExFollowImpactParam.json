@@ -1,0 +1,48 @@
+{
+  "Param": "CameraExFollowImpactParam",
+  "Type": "CAMERA_EXFOLLOW_IMPACT_PARAM",
+  "Name": "CameraExFollowImpactParam",
+  "Description": "Defines parameters relating to the camera during backstabs, ripostes and guard breaks.",
+  "Fields": [
+    {
+      "Field": "startTime",
+      "Name": "Start Time",
+      "Description": "The duration (in seconds) before this camera is applied."
+    },
+    {
+      "Field": "frequencyTime",
+      "Name": "Shake Time",
+      "Description": "The duration (in seconds) of the shake period after starting."
+    },
+    {
+      "Field": "endTime",
+      "Name": "End Time",
+      "Description": "The duration (in seconds) after which this camera ends."
+    },
+    {
+      "Field": "fovY",
+      "Name": "Field of View %",
+      "Description": "The field of view multiplier, after adjustment. 100 is no change."
+    },
+    {
+      "Field": "distance",
+      "Name": "Distance %",
+      "Description": "The distance multiplier, after adjustment. 100 is no change."
+    },
+    {
+      "Field": "frequencyNum",
+      "Name": "Shake Count",
+      "Description": "The number of shakes during the shake period."
+    },
+    {
+      "Field": "frequencyFovY",
+      "Name": "Field of View %: During Shake",
+      "Description": "The field of view multiplier, after adjustment during a shake. 100 is no change."
+    },
+    {
+      "Field": "frequencyDistance",
+      "Name": "Distance %: During Shake",
+      "Description": "The distance multiplier, after adjustment during a shake. 100 is no change."
+    }
+  ]
+}

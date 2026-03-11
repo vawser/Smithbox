@@ -1,0 +1,18 @@
+{
+  "Param": "NpcNameSwapParam",
+  "Type": "NPC_NAME_SWAP_PARAM",
+  "Name": "NpcNameSwapParam",
+  "Description": "Defines parameters related to NPC name swap.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

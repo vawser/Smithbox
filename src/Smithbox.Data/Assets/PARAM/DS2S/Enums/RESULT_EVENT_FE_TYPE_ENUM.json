@@ -1,62 +1,110 @@
 {
-  "DisplayName": "RESULT_EVENT_FE_TYPE_ENUM",
-  "Name": "RESULT_EVENT_FE_TYPE_ENUM",
-  "Description": "",
+  "Key": "RESULT_EVENT_FE_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RESULT_EVENT_FE_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Death",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Multi-defeat (finish by yourself)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi-defeat (finish by yourself)"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Multi achievement (general purpose)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi achievement (general purpose)"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Multi achievement (target destruction)",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi achievement (target destruction)"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Multi achievement (cooperation completed)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi achievement (cooperation completed)"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Defeat the boss",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat the boss"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Duel draw",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duel draw"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Winning the duel",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Winning the duel"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Lost duel",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lost duel"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "FE type termination",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "FE type termination"
+        }
+      ]
     }
   ]
 }

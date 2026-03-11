@@ -1,0 +1,63 @@
+{
+  "Param": "EquipMtrlSetParam",
+  "Type": "EQUIP_MTRL_SET_PARAM_ST",
+  "Name": "EquipMtrlSetParam",
+  "Description": "Determines the material costs for various transactions.",
+  "Fields": [
+    {
+      "Field": "materialId01",
+      "Name": "Material ID: 1",
+      "Description": "The item required for the material cost."
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "Material Count: 1",
+      "Description": "The number of the required item needed."
+    },
+    {
+      "Field": "materialId02",
+      "Name": "Material ID: 2",
+      "Description": "The item required for the material cost."
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "Material Count: 2",
+      "Description": "The number of the required item needed."
+    },
+    {
+      "Field": "materialId03",
+      "Name": "Material ID: 3",
+      "Description": "The item required for the material cost."
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "Material Count: 3",
+      "Description": "The number of the required item needed."
+    },
+    {
+      "Field": "materialId04",
+      "Name": "Material ID: 4",
+      "Description": "The item required for the material cost."
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "Material Count: 4",
+      "Description": "The number of the required item needed."
+    },
+    {
+      "Field": "materialId05",
+      "Name": "Material ID: 5",
+      "Description": "The item required for the material cost."
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "Material Count: 5",
+      "Description": "The number of the required item needed."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

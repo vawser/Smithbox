@@ -1,32 +1,56 @@
 {
-  "DisplayName": "ITEM_USED_DIALOG_CHECK_TYPE",
-  "Name": "ITEM_USED_DIALOG_CHECK_TYPE",
-  "Description": "",
+  "Key": "ITEM_USED_DIALOG_CHECK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_USED_DIALOG_CHECK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Not set",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not set"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "No place to check",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No place to check"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Run on host",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Run on host"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Run as guest",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Run as guest"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Execute during duel",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Execute during duel"
+        }
+      ]
     }
   ]
 }

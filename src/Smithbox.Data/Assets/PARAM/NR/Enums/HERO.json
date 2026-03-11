@@ -1,62 +1,110 @@
 {
-  "DisplayName": "Hero",
-  "Name": "HERO",
-  "Description": "IDs for the different heroes.",
+  "Key": "HERO",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HERO"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Any",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Any"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Wylder",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wylder"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Guardian",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Ironeye",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ironeye"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Duchess",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duchess"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Raider",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raider"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Revenant",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revenant"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Recluse",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recluse"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Executor",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Scholar",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Undertaker",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undertaker"
+        }
+      ]
     }
   ]
 }

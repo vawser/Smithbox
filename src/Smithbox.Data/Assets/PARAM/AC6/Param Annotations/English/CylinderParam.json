@@ -1,0 +1,43 @@
+{
+  "Param": "CylinderParam",
+  "Type": "CYLINDER_PARAM_ST",
+  "Name": "CylinderParam",
+  "Description": "Determines parameters related to joint capsules.",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "Control Bone Name",
+      "Description": "Bone name to apply (valid only when the setting method is skeleton)"
+    },
+    {
+      "Field": "dmyPolyId",
+      "Name": "Target Dummy Polygon ID",
+      "Description": "Dummy poly ID to apply (valid only when the setting method is Dummy Polygon)"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "axisZ",
+      "Name": "Inverse Kinematics: Target (Z-Axis)",
+      "Description": "Axis pointing towards the target (so that it does not overlap with other axes)"
+    },
+    {
+      "Field": "axisY",
+      "Name": "Inverse Kinematics: Target (Y-Axis)",
+      "Description": "Axis treated as left/right rotation (so that it does not overlap with other axes)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

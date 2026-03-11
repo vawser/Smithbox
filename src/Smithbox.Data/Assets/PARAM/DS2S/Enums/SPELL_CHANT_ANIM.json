@@ -1,12 +1,20 @@
 {
-  "DisplayName": "SPELL_CHANT_ANIM",
-  "Name": "SPELL_CHANT_ANIM",
-  "Description": "",
+  "Key": "SPELL_CHANT_ANIM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_CHANT_ANIM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Map",
+  "Key": "Map",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Map"
+      }
+  ],
   "Params": [
     "MapPatternCommon",
     "MapPatternMapLotCondition",

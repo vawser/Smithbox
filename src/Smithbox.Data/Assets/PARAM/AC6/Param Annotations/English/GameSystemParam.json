@@ -1,0 +1,1028 @@
+{
+  "Param": "GameSystemParam",
+  "Type": "GAME_SYSTEM_PARAM_ST",
+  "Name": "GameSystemParam",
+  "Description": "Determines various parameters related to game systems and the player.",
+  "Fields": [
+    {
+      "Field": "BaseToughnessRecoverTime",
+      "Name": "Toughness Recovery Time",
+      "Description": "The base recovery rate of toughness. In seconds."
+    },
+    {
+      "Field": "ChrEventTrun_byLeft90",
+      "Name": "Rotation Animation ID: Left 90\u00B0",
+      "Description": "The animation ID to use for the specified character rotation."
+    },
+    {
+      "Field": "ChrEventTrun_byRight90",
+      "Name": "Rotation Animation ID: Right 90\u00B0",
+      "Description": "The animation ID to use for the specified character rotation."
+    },
+    {
+      "Field": "ChrEventTrun_byLeft180",
+      "Name": "Rotation Animation ID: Left 180\u00B0",
+      "Description": "The animation ID to use for the specified character rotation."
+    },
+    {
+      "Field": "ChrEventTrun_byRight180",
+      "Name": "Rotation Animation ID: Right 180\u00B0",
+      "Description": "The animation ID to use for the specified character rotation."
+    },
+    {
+      "Field": "ChrEventTrun_90TurnStartAngle",
+      "Name": "Rotation Animation Start Angle: 90\u00B0",
+      "Description": "The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur."
+    },
+    {
+      "Field": "ChrEventTrun_180TurnStartAngle",
+      "Name": "Rotation Animation Start Angle: 180\u00B0",
+      "Description": "The starting angle for the specified character rotation when it is applied. If the event starts at an angle smaller than this angle, a system turn will occur."
+    },
+    {
+      "Field": "DeptDeceasedItemId",
+      "Name": "Debt Item ID",
+      "Description": "The item ID of the item that determines debt level. If less than 0, the debt will not be treasted as an invalid value."
+    },
+    {
+      "Field": "FlickDamageCutRateSuccessGurad",
+      "Name": "Damage Absorption upon Successful Guard Repel",
+      "Description": "The damage absorption multiplier to use when a guard action successfully repels a weapon."
+    },
+    {
+      "Field": "NpcTalkAnimBeginDiffAngle",
+      "Name": "NPC Conversation Animation: Start Angle",
+      "Description": "The difference angle between the NPC and the player at which a NPC conversation animation will start to occur."
+    },
+    {
+      "Field": "NpcTalkAnimEndDiffAngle",
+      "Name": "NPC Conversation Animation: End Angle",
+      "Description": "The difference angle between the NPC and the player at which a NPC conversation animation will stop occuring."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Optional",
+      "Name": "Ritual Corpse: SpEffect ID - Turn",
+      "Description": "The SpEffect ID to turn an enemy corpse into a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_LevelUp",
+      "Name": "Ritual Corpse: SpEffect ID - Level-up",
+      "Description": "The SpEffect ID given when using the level-up menu at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_StatusReroll",
+      "Name": "Ritual Corpse: SpEffect ID - Attribute Reallocation",
+      "Description": "The SpEffect ID given when using the attribute reallocation menu at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_DeadLevelReset",
+      "Name": "Ritual Corpse: SpEffect ID - Hollowing Reset",
+      "Description": "The SpEffect ID given when using the hollowing reset menu at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Atonement",
+      "Name": "Ritual Corpse: SpEffect ID - Atonement",
+      "Description": "The SpEffect ID given when using the sin atonement menu at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_NpcWhiteGhost",
+      "Name": "Ritual Corpse: SpEffect ID - Spirit Summon",
+      "Description": "The SpEffect ID given when using the spirit summon menu at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Bomb",
+      "Name": "Ritual Corpse: SpEffect ID - Bomb",
+      "Description": "The SpEffect ID given when using the bomb action at a ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_NoInvasion",
+      "Name": "Ritual Corpse: SpEffect ID - Block Invasion",
+      "Description": "The SpEffect ID given when using the block invasion action at a ritual corpse."
+    },
+    {
+      "Field": "CultSwordItemId_LevelUp",
+      "Name": "Ritual Sword: SpEffect ID - Level-up",
+      "Description": "The SpEffect ID for the level-up menu with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_StatusReroll",
+      "Name": "Ritual Sword: SpEffect ID - Attribute Reallocation",
+      "Description": "The SpEffect ID for the attribute reallocation menu with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_DeadLevelReset",
+      "Name": "Ritual Sword: SpEffect ID - Hollowing Reset",
+      "Description": "The SpEffect ID for the hollowing reset menu with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_Atonement",
+      "Name": "Ritual Sword: SpEffect ID - Atonement",
+      "Description": "The SpEffect ID for the sin atonement menu with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_NpcWhiteGhost",
+      "Name": "Ritual Sword: SpEffect ID - Spirit Summon",
+      "Description": "The SpEffect ID for the spirit summon menu with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_Bomb",
+      "Name": "Ritual Sword: SpEffect ID - Bomb",
+      "Description": "The SpEffect ID for the bomb action with a ritual sword."
+    },
+    {
+      "Field": "CultSwordItemId_NoInvasion",
+      "Name": "Ritual Sword: SpEffect ID - Block Invasion",
+      "Description": "The SpEffect ID for the block invasion action with a ritual sword."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_LevelUp",
+      "Name": "Ritual Action: Dialog ID - Level-up",
+      "Description": "The dialogue ID to use when using the level-up action with a ritual implement."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_StatusReroll",
+      "Name": "Ritual Action: Dialog ID - Attribute Reallocation",
+      "Description": "The dialogue ID to use when using the attribute reallocation action with a ritual implement."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_DeadLevelReset",
+      "Name": "Ritual Action: Dialog ID - Hollowing Reset",
+      "Description": "The dialogue ID to use when using the hollowing reset action with a ritual implement."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Atonement",
+      "Name": "Ritual Action: Dialog ID - Atonement",
+      "Description": "The dialogue ID to use when using the atonement action with a ritual implement."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_MaxChr",
+      "Name": "Ritual Action: Dialog ID - Spirit Summon (No Slots)",
+      "Description": "The dialogue ID to use when using the spirit summon action with a ritual implement, with no available summon slots."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaOut",
+      "Name": "Ritual Action: Dialog ID - Spirit Summon (Outside Area)",
+      "Description": "The dialogue ID to use when using the spirit summon action with a ritual implement, when outside of the summoning area."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaClear",
+      "Name": "Ritual Action: Dialog ID - Spirit Summon (Area Clear)",
+      "Description": "The dialogue ID to use when using the spirit summon action with a ritual implement, when an area is cleared."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Bomb",
+      "Name": "Ritual Action: Dialog ID - Bomb",
+      "Description": "The dialogue ID to use when using the bomb action with a ritual implement."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NoInvasion",
+      "Name": "Ritual Action: Dialog ID - Block Invasion",
+      "Description": "The dialogue ID to use when using the block invasion action with a ritual implement."
+    },
+    {
+      "Field": "AcquittalTargetNpcEventFlagId",
+      "Name": "Acquittal: Flag ID",
+      "Description": "The event flag ID to hold whether a NPC has forgotten a player\u0027s sin."
+    },
+    {
+      "Field": "ActiveCultAtonementEventFlagId",
+      "Name": "Atonement: Flag ID",
+      "Description": "The event flag ID to hold whether the player has performed the atonement ritual."
+    },
+    {
+      "Field": "RecoverBelowMaxHpCompletionNoticeSpEffectId",
+      "Name": "Notification SpEffect ID: Recovery when HP is below Max",
+      "Description": "The notification SpEffect ID to use when the \u0027Recovery when HP is below maximum\u0027 SpEffect is completed."
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byHp",
+      "Name": "HP Flask Gain: Particle ID",
+      "Description": "The absorption SFX ID to use when a HP flask is gained."
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byMp",
+      "Name": "MP Flask Gain: Particle ID",
+      "Description": "The absorption SFX ID to use when a MP flask is gained."
+    },
+    {
+      "Field": "RespawnSpecialEffectActiveCheckerSpEffectId",
+      "Name": "Notification SpEffect ID: Resurrection Activation",
+      "Description": "The notification SpEffect ID to use when the \u0027Resurrection\u0027 SpEffect is completed. Mainly used for multiplayer sync."
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byHost",
+      "Name": "Host - Soul Absorption %: Intruder",
+      "Description": "The soul absorption multiplier to use when defeating an intruder as the host."
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost",
+      "Name": "Client - Soul Absorption %: Intruder",
+      "Description": "The soul absorption multiplier to use when defeating an intruder as a client."
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byHost",
+      "Name": "Host - Soul Absorption %: Enemy",
+      "Description": "The soul absorption multiplier to use when defeating an enemy as the host in a multiplayer session."
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost",
+      "Name": "Client - Soul Absorption %: Enemy",
+      "Description": "The soul absorption multiplier to use when defeating an enemy as a client in a multiplayer session."
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Name": "Host - Soul Absorption %: Boss",
+      "Description": "The soul absorption multiplier to use when defeating a boss as the host in a multiplayer session."
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost",
+      "Name": "Client - Soul Absorption %: Boss",
+      "Description": "The soul absorption multiplier to use when defeating a boss as a client in a multiplayer session."
+    },
+    {
+      "Field": "EnemyHpGaugeScreenOffset_byUp",
+      "Name": "Enemy HP Gauge: Screen Offset",
+      "Description": "The offset value in pixels for screen adjustments if the enemy HP gauge covers the entire screen (FullHD standard)."
+    },
+    {
+      "Field": "pad_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_ShootBulletDummypolyId",
+      "Name": "Enemy Detection: Bullet Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the emitted bullet from the enemy detection SpEffect."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionNum",
+      "Name": "Enemy Detection: Maximum Detection Count",
+      "Description": "The maximum number of enemies that can be detected at once by the enemy detection SpEffect."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionLength",
+      "Name": "Enemy Detection: Maximum Detection Distance",
+      "Description": "The maximum distance at which enemies can be detected at once by the enemy detection SpEffect."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopHost",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Sign (Default)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_None",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Sign (Unaligned)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Sign (Sun Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Sign (Berserker Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Sign (Sinner Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
+      "Name": "Enemy Detection: Bullet ID - Co-operator Ring (Intruder Hunter Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_None",
+      "Name": "Enemy Detection: Bullet ID - Intruder Orb (Unaligned)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa",
+      "Name": "Enemy Detection: Bullet ID - Intruder Orb (Sun Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker",
+      "Name": "Enemy Detection: Bullet ID - Intruder Orb (Berserker Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners",
+      "Name": "Enemy Detection: Bullet ID - Intruder Orb (Sinner Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_None",
+      "Name": "Enemy Detection: Bullet ID - Intruder Sign (Unaligned)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa",
+      "Name": "Enemy Detection: Bullet ID - Intruder Sign (Sun Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker",
+      "Name": "Enemy Detection: Bullet ID - Intruder Sign (Berserker Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners",
+      "Name": "Enemy Detection: Bullet ID - Intruder Sign (Sinner Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners",
+      "Name": "Enemy Detection: Bullet ID - Intruder Ring (Sinner Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss",
+      "Name": "Enemy Detection: Bullet ID - Intruder Ring (Boss: Forest Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap",
+      "Name": "Enemy Detection: Bullet ID - Intruder Ring (Map: Forest Covenant)",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_BulletId",
+      "Name": "Dead Again SpEffect: Bullet ID",
+      "Description": "The bullet ID to use for the Dead Again SpEffect."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_ShootBulletDummypolyId",
+      "Name": "Dead Again SpEffect: Bullet Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for the emitted bullet from the Dead Again SpEffect."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_DeadFadeOutTime",
+      "Name": "Dead Again SpEffect: Fade Out Time",
+      "Description": "The fade out time for dead enemies affected by the Dead Again SpEffect."
+    },
+    {
+      "Field": "IgnorNetStateSyncTime_ForThrow",
+      "Name": "Network: Transition Ignore Time at Throw Start",
+      "Description": "The time to ignore transitions at throw start due to network information."
+    },
+    {
+      "Field": "NetPenaltyPointLanDisconnect",
+      "Name": "Network: Multiplayer Penalty - LAN Disconnection",
+      "Description": "The penalty points to apply for a client after LAN disconnection."
+    },
+    {
+      "Field": "NetPenaltyPointProfileSignout",
+      "Name": "Network: Multiplayer Penalty - Profile Sign Out",
+      "Description": "The penalty points to apply for a client after profile sign out."
+    },
+    {
+      "Field": "NetPenaltyPointReboot",
+      "Name": "Network: Multiplayer Penalty - Reboot",
+      "Description": "The penalty points to apply for a client after reboot."
+    },
+    {
+      "Field": "NetPnaltyPointSuspend",
+      "Name": "Network: Multiplayer Penalty - Suspend",
+      "Description": "The penalty points to apply for a client after suspend."
+    },
+    {
+      "Field": "NetPenaltyForgiveItemLimitTime",
+      "Name": "Network: Multiplayer Penalty - Item Forgiveness Time",
+      "Description": "The item forgiveness duration after incurring a multiplayer penalty."
+    },
+    {
+      "Field": "NetPenaltyPointThreshold",
+      "Name": "Network: Multiplayer Penality - Judgement Threshold",
+      "Description": "The threshold at which a multiplayer penalty is incurred."
+    },
+    {
+      "Field": "UncontrolledMoveThresholdTime",
+      "Name": "Network: No Action Kick Duration",
+      "Description": "The duration after which no actions have occured the player will be kicked from the multiplayer session. In seconds."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byNpcEnemy",
+      "Name": "Enemy Detection: Bullet ID - NPC Enemy",
+      "Description": "The detection bullet ID to use for this specified type."
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect",
+      "Name": "Dead Again SpEffect: Active Target Search",
+      "Description": "The SpEffect ID applied during the active target search effect of Dead Again."
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_MaxLength",
+      "Name": "Dead Again SpEffect: Active Target Search Distance",
+      "Description": "The maximum distance for the active target search effect of Dead Again."
+    },
+    {
+      "Field": "NetFpsCheck_fpsThreshold",
+      "Name": "Network: Low FPS Threshold",
+      "Description": "The low FPS threshold at which a player is kicked from a multiplayer session."
+    },
+    {
+      "Field": "NetFpsCheck_lowfpsTImeThreshold",
+      "Name": "Network: Low FPS Duration",
+      "Description": "The duration at which the low FPS threshold is met, after which a player will be kicked from a multiplayer session."
+    },
+    {
+      "Field": "SoloBreakInMaxPoint",
+      "Name": "Maximum Points for Single Intruder",
+      "Description": "The maximum points for solo intruder entry. If this value is exceeded, the host is invaded by a solo player."
+    },
+    {
+      "Field": "NpcTalkTimeOutThreshold",
+      "Name": "NPC Conversation: Voice Timeout",
+      "Description": "The timeout duration for voice playback during NPC conversations. If this timeout is reached, the next talk message occurs."
+    },
+    {
+      "Field": "SendPlayLogIntervalTime",
+      "Name": "Play Log Interval",
+      "Description": "The interval at which the play logging is sent to the server."
+    },
+    {
+      "Field": "Item370_MaxSfxNum",
+      "Name": "Prism Stone: Maximum Particle Count",
+      "Description": "The maximum number of SFX that can originate from the Prism Stone item."
+    },
+    {
+      "Field": "pad_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperAbs",
+      "Name": "Multiplayer: Matching Correction - Absolute Level",
+      "Description": "The matching correction factor applied during multiplier, based on the specified factor."
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperRel",
+      "Name": "Multiplayer: Matching Correction - Relative Level",
+      "Description": "The matching correction factor applied during multiplier, based on the specified factor."
+    },
+    {
+      "Field": "SummonDataCoopMatchingWepLevelMul",
+      "Name": "Multiplayer: Matching Correction - Weapon Reinforcement",
+      "Description": "The matching correction factor applied during multiplier, based on the specified factor."
+    },
+    {
+      "Field": "PickUpBerserkerSignSpEffectBulletId",
+      "Name": "Berserker Sign SpEffect: Bullet ID",
+      "Description": "The bullet ID to use when generating the SpEffect bullet at the sign position."
+    },
+    {
+      "Field": "SucceedBerserkerSelfKillingEffectId",
+      "Name": "Berserker Player Kill: SpEffect ID",
+      "Description": "The SpEffect to apply when the berserker kills the host by themselves."
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperRel",
+      "Name": "Level Sync: Relative Soul Level Coefficient (Friendly Phantom)",
+      "Description": "The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperAbs",
+      "Name": "Level Sync: Absolute Soul Level Coefficient (Friendly Phantom)",
+      "Description": "The soul level coefficient to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingLevelRedSignUpperRel",
+      "Name": "Level Sync: Relative Soul Level Coefficient (Hostile Phantom)",
+      "Description": "The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingLevelRedSignUpperAbs",
+      "Name": "Level Sync: Absolute Soul Level Coefficient (Hostile Phantom)",
+      "Description": "The soul level coefficient to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_0",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_1",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_2",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_3",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_4",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_5",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_6",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_7",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_8",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_9",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_10",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Friendly Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with friendly phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_0",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [0] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_1",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [1] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_2",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [2] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_3",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [3] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_4",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [4] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_5",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [5] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_6",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [6] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_7",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [7] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_8",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [8] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_9",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [9] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_10",
+      "Name": "Level Sync: Maximum Weapon Reinforcement Coefficient [10] (Hostile Phantom)",
+      "Description": "The maximum weapon reinforcement level factor to use when determining whether to apply level synchronization with hostile phantoms."
+    },
+    {
+      "Field": "pad_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SendGlobalEventLogIntervalTime",
+      "Name": "Global Event Log Send Interval",
+      "Description": "The interval at which to send the global event log to the server."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_White",
+      "Name": "Intruder Entry Point: Addition Value (White Phantom)",
+      "Description": "The addition value to apply for intruder entry for intruders of this type into the host\u0027s world."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_Black",
+      "Name": "Intruder Entry Point: Addition Value (Red Phantom)",
+      "Description": "The addition value to apply for intruder entry for intruders of this type into the host\u0027s world."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_ForceJoin",
+      "Name": "Intruder Entry Point: Addition Value (Intruder)",
+      "Description": "The addition value to apply for intruder entry for intruders of this type into the host\u0027s world."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorGuardian",
+      "Name": "Intruder Entry Point: Addition Value (Visitor: Map Guardian)",
+      "Description": "The addition value to apply for intruder entry for intruders of this type into the host\u0027s world."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorRedHunter",
+      "Name": "Intruder Entry Point: Addition Value (Visitor: Red Hunter)",
+      "Description": "The addition value to apply for intruder entry for intruders of this type into the host\u0027s world."
+    },
+    {
+      "Field": "CorpseRedrawingDistance",
+      "Name": "Corpse Redraw Distance",
+      "Description": "The distance at which a corpse will be marked to not be redrawn, even if it comes within draw distance again. In metres."
+    },
+    {
+      "Field": "RedHunter_HostBossAreaGetSoulRate",
+      "Name": "Red Hunter: Soul Multiplier after Boss Entered",
+      "Description": "The soul absorption multiplier applied to the Red Hunter when the host enters a boss arena through the fog gate. This multiplier is applied to the soul value of the Red Hunter next level difference."
+    },
+    {
+      "Field": "StealthSystemSightCutRate_SightHide_NotStealthMode",
+      "Name": "Stealth System: Player in Grass - Enemy Sight Reduction %",
+      "Description": "The enemy visibility reduction rate to apply when the player is in grass but does not have SpEffect 150."
+    },
+    {
+      "Field": "StealthSystemSightCutRate_NotSightHide_StealthMode",
+      "Name": "Stealth System: Player not in Grass - Enemy Sight Reduction %",
+      "Description": "The enemy visibility reduction rate to apply when the player is not in grass and has SpEffect 150."
+    },
+    {
+      "Field": "StealthSystemSightCutRate_SightHide_StealthMode",
+      "Name": "Stealth System: Player in Grass - Enemy Sight Reduction %",
+      "Description": "The enemy visibility reduction rate to apply when the player is in grass and has SpEffect 150."
+    },
+    {
+      "Field": "pad_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Damage_ImpactLifeTimeSec",
+      "Name": "Impact Damage Duration",
+      "Description": "The duration of impact damage when it occurs. In seconds."
+    },
+    {
+      "Field": "HitStopAddDamageAnimScale",
+      "Name": "Animation Playback Speed Ratio during Hit Stop",
+      "Description": "The animation playback speed % during hit stop additive damage."
+    },
+    {
+      "Field": "HitStopAddDamageAnimTimeF",
+      "Name": "Animation Playback Speed Change Time during Hit Shop",
+      "Description": "The animation playback speed change time during hit stop additive damage (in frames, or 1/30 seconds)"
+    },
+    {
+      "Field": "HardHitStopTimeRatePercent",
+      "Name": "Animation Playback Speed Ratio on Hard Hit",
+      "Description": "The animation playback speed ratio upon a hard hit (0 means complete stop)."
+    },
+    {
+      "Field": "CoverCheckRayDist",
+      "Name": "Cover Judgement Raycast Distance",
+      "Description": "The raycast distance used for the wall check when determining which direction to face when covering."
+    },
+    {
+      "Field": "pad_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DamageLevel_LevelUpCount",
+      "Name": "Stagger Count before Collapse",
+      "Description": "The number of staggers allowed before collapsing."
+    },
+    {
+      "Field": "pad_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DamageLevel_LevelUpCountResetTimeSec",
+      "Name": "Stagger Count Reset Duration",
+      "Description": "The duration to reset the stagger count. In seconds."
+    },
+    {
+      "Field": "GrabAttachIntpFrame",
+      "Name": "Grab Interpolation Frame",
+      "Description": "The frame at which a target is grabbed when an entity is attempting a grab."
+    },
+    {
+      "Field": "DeadEffectMaxTime",
+      "Name": "Death Effect Maximum Duration",
+      "Description": "The maximum duration for the death effect. In seconds."
+    },
+    {
+      "Field": "WallBackrash_CeilingAngleDeg",
+      "Name": "Wall Bounce: Ceiling Judgement Angle",
+      "Description": "During a wall bounce, the angle at which the surface will be judged as a ceiling. In degrees."
+    },
+    {
+      "Field": "WallBackrash_WallHitLimitAngleDeg",
+      "Name": "Wall Bounce: Character Front",
+      "Description": "During a wall bounce, the angle that is considered the \u0027front\u0027 of the character. In degrees."
+    },
+    {
+      "Field": "WallBackrash_FloorAngleDeg",
+      "Name": "Wall Bounce: Floor Judgement Angle",
+      "Description": "During a wall bounce, the angle at which the surface will be judged as a floor. In degrees."
+    },
+    {
+      "Field": "outRangeThresholdMaxDist",
+      "Name": "Ricochet: Maximum Threshold Correction Distance",
+      "Description": "The maximum threshold correction distance when determining ricochet. In metres."
+    },
+    {
+      "Field": "outRangeDamageDecayPercent",
+      "Name": "Ricochet: Damage Attenuation %",
+      "Description": "The damage attenuation multiplier to apply during a ricochet."
+    },
+    {
+      "Field": "pad_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_Threshold",
+      "Name": "1: ACS Overload - Screen Effect Threshold",
+      "Description": "The threshold at which to increase the visual screen effect for ACS overload."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_AddRate",
+      "Name": "1: ACS Overload - Screen Effect Strength",
+      "Description": "The addition value to apply when this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_Time",
+      "Name": "1: ACS Overload - Screen Effect Decay",
+      "Description": "The decay rate for the addition value after this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_Threshold",
+      "Name": "2: ACS Overload - Screen Effect Threshold",
+      "Description": "The threshold at which to increase the visual screen effect for ACS overload."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_AddRate",
+      "Name": "2: ACS Overload - Screen Effect Strength",
+      "Description": "The addition value to apply when this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_Time",
+      "Name": "2: ACS Overload - Screen Effect Decay",
+      "Description": "The decay rate for the addition value after this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_Threshold",
+      "Name": "3: ACS Overload - Screen Effect Threshold",
+      "Description": "The threshold at which to increase the visual screen effect for ACS overload."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_AddRate",
+      "Name": "3: ACS Overload - Screen Effect Strength",
+      "Description": "The addition value to apply when this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_Time",
+      "Name": "3: ACS Overload - Screen Effect Decay",
+      "Description": "The decay rate for the addition value after this specific screen effect threshold is reached."
+    },
+    {
+      "Field": "NerveLoad_GParamChangeTime",
+      "Name": "ACS Overload: GParam Change Time",
+      "Description": "The time until the screen effect changes after the ACS overload effect is applied. In seconds."
+    },
+    {
+      "Field": "NerveLoad_InverseCompRate",
+      "Name": "ACS Overload: Display Strength",
+      "Description": "The final display strength of the effect whilst under ACS overload effect."
+    },
+    {
+      "Field": "NerveLoad_InverseCompTime",
+      "Name": "ACS Overload: Display Duration",
+      "Description": "The final display duration of the effect whilst under ACS overload effect."
+    },
+    {
+      "Field": "NerveLoad_NoiseUpdateRate",
+      "Name": "ACS Overload: Noise Update %",
+      "Description": "The noise reduction multiplier after the ACS overload effect occurs."
+    },
+    {
+      "Field": "NerveLoad_MenuRequestRate",
+      "Name": "ACS Overload: Menu Display Strength %",
+      "Description": "The effect addition multiplier when applied from the menu."
+    },
+    {
+      "Field": "NerveLoad_MenuSubRate",
+      "Name": "ACS Overload: Menu Display Duration",
+      "Description": "The effect duration when applied from the menu. In seconds."
+    },
+    {
+      "Field": "NerveLoad_FadeOutWaitTime",
+      "Name": "ACS Overload: Fade Out Delay",
+      "Description": "The delay until the fade-out for the ACS overload particles. In seconds."
+    },
+    {
+      "Field": "NerveLoad_FadeOutTime",
+      "Name": "ACS Overload: Fade Out Duration",
+      "Description": "The duration of the fade-out for the ACS overload particles. In seconds."
+    },
+    {
+      "Field": "pad_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowWallHit_DamageSpeedKMH",
+      "Name": "Wall Collision: Allowable Speed",
+      "Description": "The allowable speed at which to apply blow-off wall collision. In kilometres per hour."
+    },
+    {
+      "Field": "blowWallHit_DamageAngDegH",
+      "Name": "Wall Collision: Allowable Horizontal Angle Difference",
+      "Description": "The allowable horizontal angle difference at which to apply blow-off wall collision. In degrees."
+    },
+    {
+      "Field": "blowWallHit_DamageAngDegV",
+      "Name": "Wall Collision: Allowable Vertical Angle Difference",
+      "Description": "The allowable vertical angle difference at which to apply blow-off wall collision. In degrees."
+    },
+    {
+      "Field": "blowWallHit_BehaviorId_Player",
+      "Name": "Wall Collision: Behavior ID (for Player)",
+      "Description": "The behavior ID to apply upon a wall collision (for the player)."
+    },
+    {
+      "Field": "blowWallHit_BehaviorId_Enemy",
+      "Name": "Wall Collision: Behavior ID (for Enemy)",
+      "Description": "The behavior ID to apply upon a wall collision (for an enemy)."
+    },
+    {
+      "Field": "DeadFadeOutTimeSec",
+      "Name": "Fade Out Duration after Death",
+      "Description": "The fade out duration for characters after death. In seconds."
+    },
+    {
+      "Field": "HackingContinueRadius",
+      "Name": "Hacking: Allowable Radius",
+      "Description": "The radius in which hacking can continue after starting. In metres."
+    },
+    {
+      "Field": "HackingContinueHeight",
+      "Name": "Hacking: Allowable Height",
+      "Description": "The height in which hacking can continue after starting. In metres."
+    },
+    {
+      "Field": "HackingContinueBottom",
+      "Name": "Hacking: Lower Height Offset",
+      "Description": "The height offset to apply to the allowable height from the bottom. In metres."
+    },
+    {
+      "Field": "pad_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PhotModeMoveDist",
+      "Name": "Photo Mode: Allowable Distance",
+      "Description": "The distance from the player entity that the camera is allowed to move to whilst in Photo Mode. In metres."
+    },
+    {
+      "Field": "PhotModeCamHitRadius",
+      "Name": "Photo Mode: Camera Radius",
+      "Description": "The radius of the camera hitbox whilst in Photo Mode. In metres."
+    },
+    {
+      "Field": "HDRumble_Small_Id",
+      "Name": "Vibration ID on Part Switch (Small)",
+      "Description": "The vibration ID for rumble when switching small parts."
+    },
+    {
+      "Field": "HDRumble_Large_Id",
+      "Name": "Vibration ID on Part Switch (Large)",
+      "Description": "The vibration ID for rumble when switching large parts."
+    },
+    {
+      "Field": "Cartridge_Size",
+      "Name": "Cartridge: Capsule Radius",
+      "Description": "The radius of each capsule used for the cartridge case. In metres."
+    },
+    {
+      "Field": "Cartridge_Length",
+      "Name": "Cartridge: Capsule Length",
+      "Description": "The length of each capsule used for the cartridge case. In metres (Must be larger than radius)."
+    },
+    {
+      "Field": "Cartridge_Friction",
+      "Name": "Cartridge: Friction Coefficient",
+      "Description": "The coefficient used for the cartridge friction. Higher values means it is easier to stop."
+    },
+    {
+      "Field": "Cartridge_Restitution",
+      "Name": "Cartridge: Bounce Coefficient",
+      "Description": "The coefficient used for the cartridge bounciness. Higher values means it will bounce more."
+    },
+    {
+      "Field": "Cartridge_EnableDist",
+      "Name": "Cartridge: Effective Distance",
+      "Description": "The maximum effective distance of the cartridge (from the player). In metres."
+    },
+    {
+      "Field": "Cartridge_IsChrRagdollHit",
+      "Name": "Cartridge: Hit Ragdolls",
+      "Description": "If ON, the cartridges will hit character ragdolls."
+    },
+    {
+      "Field": "pad_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Cartridge_DecelerateBeginTime",
+      "Name": "Cartridge: Deceleration Delay",
+      "Description": "The delay before the horizontal deceleration of the cartridge. In seconds."
+    },
+    {
+      "Field": "Cartridge_DecelerateTime",
+      "Name": "Cartridge: Deceleration Duration",
+      "Description": "The duration from the start of the deceleration until it reaches the maximum deceleration rate. In seconds."
+    },
+    {
+      "Field": "Cartridge_DecelerateRate",
+      "Name": "Cartridge: Maximum Deceleration %",
+      "Description": "The maximum horizontal deceleration of the cartridge."
+    },
+    {
+      "Field": "Net_MapHitSfxOmitteDist",
+      "Name": "Arena: Map Impact - Particle Cull Distance",
+      "Description": "In an arena match, this determines the cull distance for SFX that impact the map."
+    },
+    {
+      "Field": "Net_MyTeamHitSfxOmitteCpuExecRate",
+      "Name": "Arena: Friendly Impact - Particle Processing Time",
+      "Description": "In an arena match, this determines if a SFX that impact a friendly character is culled. Based on the processing time for the particle."
+    },
+    {
+      "Field": "HavokGabageCollectionIntervalTime",
+      "Name": "Havok: Garbage Collection Interval",
+      "Description": "The garbage collection interval for Havok\u0027s memeroy fragmentation system. In seconds."
+    },
+    {
+      "Field": "PhotModeMoveScale",
+      "Name": "Photo Mode: Camera Movement Scale",
+      "Description": "The scale for input with regards to camera movement whilst in Photo Mode."
+    },
+    {
+      "Field": "PhotModeTurnScale",
+      "Name": "Photo Mode: Camera Rotation Scale",
+      "Description": "The scale for input with regards to camera rotation whilst in Photo Mode."
+    },
+    {
+      "Field": "PhotModeMoveIpo",
+      "Name": "Photo Mode: Camera Movement Interpolation %",
+      "Description": "The interpolation rate for input with regards to camera movement whilst in Photo Mode."
+    },
+    {
+      "Field": "PhotModeTurnIop",
+      "Name": "Photo Mode: Camera Rotation Interpolation %",
+      "Description": "The interpolation rate for input with regards to camera rotation whilst in Photo Mode."
+    },
+    {
+      "Field": "PhotModeCamSpeedMin",
+      "Name": "Photo Mode: Camera Movement - Minimum Speed",
+      "Description": "The minimum camera movement speed when changed by options whilst in Photo Mode."
+    },
+    {
+      "Field": "PhotModeCamSpeedMax",
+      "Name": "Photo Mode: Camera Movement - Maximum Speed",
+      "Description": "The maximum camera movement speed when changed by options whilst in Photo Mode."
+    },
+    {
+      "Field": "OsTuning_ResetCost",
+      "Name": "OS Tuning: Reset Cost",
+      "Description": "The reset cost for OS improvements (per level)."
+    },
+    {
+      "Field": "reserved_for_menu",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

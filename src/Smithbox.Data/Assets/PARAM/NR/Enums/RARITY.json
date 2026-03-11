@@ -1,32 +1,56 @@
 {
-  "DisplayName": "Rarity",
-  "Name": "RARITY",
-  "Description": "Rarity for various forms of equipment, primarily used for the color.",
+  "Key": "RARITY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RARITY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Common / White",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Common / White"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Uncommon / Blue",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Uncommon / Blue"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Rare / Purple",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rare / Purple"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Legendary / Gold",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Legendary / Gold"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Unique / Red",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unique / Red"
+        }
+      ]
     }
   ]
 }

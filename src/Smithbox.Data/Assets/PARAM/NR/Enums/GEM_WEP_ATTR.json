@@ -1,127 +1,227 @@
 {
-  "DisplayName": "Skill Affinity",
-  "Name": "GEM_WEP_ATTR",
-  "Description": "Affinity IDs for Gems (Ashes of War).",
+  "Key": "GEM_WEP_ATTR",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GEM_WEP_ATTR"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Standard",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Heavy",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Keen",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keen"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Quality",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quality"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Fire",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Flame Art",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame Art"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Sacred",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sacred"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Cold",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cold"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Poison",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Blood",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Occult",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Occult"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Unused",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
     }
   ]
 }

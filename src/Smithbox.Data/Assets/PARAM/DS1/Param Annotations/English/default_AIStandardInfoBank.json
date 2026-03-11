@@ -1,0 +1,208 @@
+{
+  "Param": "default_AIStandardInfoBank",
+  "Type": "AI_STANDARD_INFO_BANK",
+  "Name": "default_AIStandardInfoBank",
+  "Description": "Determines the parameters for enemy AI.",
+  "Fields": [
+    {
+      "Field": "RadarRange",
+      "Name": "Recognition Distance",
+      "Description": "The distance at which characters are recognized. In metres."
+    },
+    {
+      "Field": "RadarAngleX",
+      "Name": "Horziontal Recognition Angle",
+      "Description": "The horziontal angle for the recognition check. In degrees."
+    },
+    {
+      "Field": "RadarAngleY",
+      "Name": "Vertical Recognition Angle",
+      "Description": "The vertical angle for the recognition check. In degrees."
+    },
+    {
+      "Field": "TerritorySize",
+      "Name": "Territory Distance",
+      "Description": "The distance of the owner\u0027s territory. If the recognized character leaves this distance, the owner will return to its initial position."
+    },
+    {
+      "Field": "ThreatBeforeAttackRate",
+      "Name": "Intimidation Probability before Attack",
+      "Description": "The probability of intimidation before an attack."
+    },
+    {
+      "Field": "ForceThreatOnFirstLocked",
+      "Name": "Force Initial Intimidation",
+      "Description": "If ON, always intimidate the player when recognizing the player for the first time."
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Attack1_Distance",
+      "Name": "Attack 1: Distance",
+      "Description": "The distance when attacking with this attack slot."
+    },
+    {
+      "Field": "Attack1_Margin",
+      "Name": "Attack 1: Margin",
+      "Description": "The distance to move between attacks with this attack slot. In metres."
+    },
+    {
+      "Field": "Attack1_Rate",
+      "Name": "Attack 1: Frequency",
+      "Description": "The frequency of this attack slot."
+    },
+    {
+      "Field": "Attack1_ActionID",
+      "Name": "Attack 1: Type",
+      "Description": "The type of attack this attack slot is."
+    },
+    {
+      "Field": "Attack1_DelayMin",
+      "Name": "Attack 1: Minimum Delay",
+      "Description": "The minimum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack1_DelayMax",
+      "Name": "Attack 1: Maximum Delay",
+      "Description": "The maximum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack1_ConeAngle",
+      "Name": "Attack 1: Allowed Angle",
+      "Description": "The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees."
+    },
+    {
+      "Field": "reserve10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Attack2_Distance",
+      "Name": "Attack 2: Distance",
+      "Description": "The distance when attacking with this attack slot."
+    },
+    {
+      "Field": "Attack2_Margin",
+      "Name": "Attack 2: Margin",
+      "Description": "The distance to move between attacks with this attack slot. In metres."
+    },
+    {
+      "Field": "Attack2_Rate",
+      "Name": "Attack 2: Frequency",
+      "Description": "The frequency of this attack slot."
+    },
+    {
+      "Field": "Attack2_ActionID",
+      "Name": "Attack 2: Type",
+      "Description": "The type of attack this attack slot is."
+    },
+    {
+      "Field": "Attack2_DelayMin",
+      "Name": "Attack 2: Minimum Delay",
+      "Description": "The minimum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack2_DelayMax",
+      "Name": "Attack 2: Maximum Delay",
+      "Description": "The maximum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack2_ConeAngle",
+      "Name": "Attack 2: Allowed Angle",
+      "Description": "The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees."
+    },
+    {
+      "Field": "reserve11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Attack3_Distance",
+      "Name": "Attack 3: Distance",
+      "Description": "The distance when attacking with this attack slot."
+    },
+    {
+      "Field": "Attack3_Margin",
+      "Name": "Attack 3: Margin",
+      "Description": "The distance to move between attacks with this attack slot. In metres."
+    },
+    {
+      "Field": "Attack3_Rate",
+      "Name": "Attack 3: Frequency",
+      "Description": "The frequency of this attack slot."
+    },
+    {
+      "Field": "Attack3_ActionID",
+      "Name": "Attack 3: Type",
+      "Description": "The type of attack this attack slot is."
+    },
+    {
+      "Field": "Attack3_DelayMin",
+      "Name": "Attack 3: Minimum Delay",
+      "Description": "The minimum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack3_DelayMax",
+      "Name": "Attack 3: Maximum Delay",
+      "Description": "The maximum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack3_ConeAngle",
+      "Name": "Attack 3: Allowed Angle",
+      "Description": "The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees."
+    },
+    {
+      "Field": "reserve12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Attack4_Distance",
+      "Name": "Attack 4: Distance",
+      "Description": "The distance when attacking with this attack slot."
+    },
+    {
+      "Field": "Attack4_Margin",
+      "Name": "Attack 4: Margin",
+      "Description": "The distance to move between attacks with this attack slot. In metres."
+    },
+    {
+      "Field": "Attack4_Rate",
+      "Name": "Attack 4: Frequency",
+      "Description": "The frequency of this attack slot."
+    },
+    {
+      "Field": "Attack4_ActionID",
+      "Name": "Attack 4: Type",
+      "Description": "The type of attack this attack slot is."
+    },
+    {
+      "Field": "Attack4_DelayMin",
+      "Name": "Attack 4: Minimum Delay",
+      "Description": "The minimum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack4_DelayMax",
+      "Name": "Attack 4: Maximum Delay",
+      "Description": "The maximum delay after an attack that another one can occur. In frames."
+    },
+    {
+      "Field": "Attack4_ConeAngle",
+      "Name": "Attack 4: Allowed Angle",
+      "Description": "The allowable angle between the line of sight and the direction vector toward the target. If within this angle, then the attack will proceed. In degrees."
+    },
+    {
+      "Field": "reserve13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

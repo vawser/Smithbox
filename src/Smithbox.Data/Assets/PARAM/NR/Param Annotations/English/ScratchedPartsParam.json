@@ -1,0 +1,48 @@
+{
+  "Param": "ScratchedPartsParam",
+  "Type": "SCRATCHED_PARTS_PARAM_ST",
+  "Name": "ScratchedPartsParam",
+  "Description": "Handles Ironeye\u0027s Marking, such as damage and animations of characters",
+  "Fields": [
+    {
+      "Field": "characterId",
+      "Name": "Character ID",
+      "Description": "The character this affects."
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "healthPercentDamage",
+      "Name": "Trigger Damage Rate",
+      "Description": "How much percent health to remove when triggered"
+    },
+    {
+      "Field": "healthPercentTrigger",
+      "Name": "Damage Amount to Trigger",
+      "Description": "How much percent health must be removed to trigger"
+    },
+    {
+      "Field": "damageTakenRate",
+      "Name": "Damage Taken Rate",
+      "Description": "How much extra damage character takes when affected"
+    },
+    {
+      "Field": "animationId",
+      "Name": "Animation ID",
+      "Description": "Animation to play when weak point triggers"
+    },
+    {
+      "Field": "dummyPolyId",
+      "Name": "Dummy Poly Id",
+      "Description": "Dummy poly the marking signal attaches to"
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "LockOnParam",
+  "Type": "LOCK_ON_PARAM",
+  "Name": "LockOnParam",
+  "Description": "Defines parameters related to the lock-on camera.",
+  "Fields": [
+    {
+      "Field": "max_distance_auto_release",
+      "Name": "Max Distance Auto Release",
+      "Description": ""
+    },
+    {
+      "Field": "max_distance_initiate",
+      "Name": "Max Distance Initiate",
+      "Description": ""
+    },
+    {
+      "Field": "max_distance_switch_target",
+      "Name": "Max Distance Switch Target",
+      "Description": ""
+    },
+    {
+      "Field": "fov_0",
+      "Name": "FOV [0]",
+      "Description": ""
+    },
+    {
+      "Field": "fov_1",
+      "Name": "FOV [1]",
+      "Description": ""
+    },
+    {
+      "Field": "max_angle_initiate",
+      "Name": "Max Angle Initiate",
+      "Description": ""
+    },
+    {
+      "Field": "max_angle_switch_target",
+      "Name": "Max Angle Switch Target",
+      "Description": ""
+    },
+    {
+      "Field": "max_dist_behind_player",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

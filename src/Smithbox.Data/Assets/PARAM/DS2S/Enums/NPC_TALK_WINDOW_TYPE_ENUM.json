@@ -1,22 +1,38 @@
 {
-  "DisplayName": "NPC_TALK_WINDOW_TYPE_ENUM",
-  "Name": "NPC_TALK_WINDOW_TYPE_ENUM",
-  "Description": "",
+  "Key": "NPC_TALK_WINDOW_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_TALK_WINDOW_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Voice only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Voice only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Do not close manually",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not close manually"
+        }
+      ]
     }
   ]
 }

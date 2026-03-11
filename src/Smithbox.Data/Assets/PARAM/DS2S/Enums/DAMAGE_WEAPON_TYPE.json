@@ -1,32 +1,56 @@
 {
-  "DisplayName": "DAMAGE_WEAPON_TYPE",
-  "Name": "DAMAGE_WEAPON_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_WEAPON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_WEAPON_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "小",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "小"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "中",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "中"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "大",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "大"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     }
   ]
 }

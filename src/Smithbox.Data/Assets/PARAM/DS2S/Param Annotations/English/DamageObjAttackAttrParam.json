@@ -1,0 +1,13 @@
+{
+  "Param": "DamageObjAttackAttrParam",
+  "Type": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
+  "Name": "DamageObjAttackAttrParam",
+  "Description": "Defines parameters related to object attack power.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

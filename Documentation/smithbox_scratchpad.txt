@@ -13,3 +13,10 @@
  - Add support for DS2 flt files
  
  
+
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Configuration"
+      }
+  ],

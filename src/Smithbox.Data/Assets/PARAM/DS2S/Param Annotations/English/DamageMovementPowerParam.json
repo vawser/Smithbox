@@ -1,0 +1,18 @@
+{
+  "Param": "DamageMovementPowerParam",
+  "Type": "DAMAGE_MOVEMENT_POWER_PARAM",
+  "Name": "DamageMovementPowerParam",
+  "Description": "Defines parameters related to damage knockback movement scale.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

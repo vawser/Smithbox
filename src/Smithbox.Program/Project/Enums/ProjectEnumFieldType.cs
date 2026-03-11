@@ -9,7 +9,7 @@ namespace StudioCore.Application;
 
 public enum ProjectEnumFieldType
 {
-    DisplayName = 0,
-    Name = 1,
+    Text = 0,
+    Key = 1,
     Description = 2
 }

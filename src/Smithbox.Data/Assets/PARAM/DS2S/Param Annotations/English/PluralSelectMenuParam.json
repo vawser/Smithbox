@@ -1,0 +1,33 @@
+{
+  "Param": "PluralSelectMenuParam",
+  "Type": "PLURSL_SELECT_MENU_PARAM",
+  "Name": "PluralSelectMenuParam",
+  "Description": "Defines parameters related to Laddersmith Gilligan\u0027s \u0027Set up Ladder\u0027 menu option.",
+  "Fields": [
+    {
+      "Field": "ladder_unlock_index",
+      "Name": "Ladder Unlock Index",
+      "Description": ""
+    },
+    {
+      "Field": "soul_cost",
+      "Name": "Soul Cost",
+      "Description": ""
+    },
+    {
+      "Field": "esd_event_id",
+      "Name": "ESD Event ID",
+      "Description": ""
+    },
+    {
+      "Field": "global_event_flag",
+      "Name": "Event Flag",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

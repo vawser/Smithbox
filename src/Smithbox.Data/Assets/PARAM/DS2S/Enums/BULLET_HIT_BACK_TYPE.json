@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BULLET_HIT_BACK_TYPE",
-  "Name": "BULLET_HIT_BACK_TYPE",
-  "Description": "",
+  "Key": "BULLET_HIT_BACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_HIT_BACK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Disabled",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Enabled",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enabled"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Water Surface",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water Surface"
+        }
+      ]
     }
   ]
 }

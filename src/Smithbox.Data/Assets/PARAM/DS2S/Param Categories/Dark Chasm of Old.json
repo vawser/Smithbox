@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Dark Chasm of Old",
+  "Key": "Dark Chasm of Old",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Dark Chasm of Old"
+      }
+  ],
   "Params": [
     "eventlocation_m40_03_00_00",
     "eventparam_m40_03_00_00",

@@ -1,37 +1,65 @@
 {
-  "DisplayName": "ITEM_COMPLETE_TROPHY_TYPE",
-  "Name": "ITEM_COMPLETE_TROPHY_TYPE",
-  "Description": "",
+  "Key": "ITEM_COMPLETE_TROPHY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_COMPLETE_TROPHY_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Gesture",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gesture"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Miracle",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Dark arts",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark arts"
+        }
+      ]
     }
   ]
 }

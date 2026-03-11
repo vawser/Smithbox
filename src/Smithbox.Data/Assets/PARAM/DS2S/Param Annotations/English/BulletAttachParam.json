@@ -1,0 +1,288 @@
+{
+  "Param": "BulletAttachParam",
+  "Type": "BULLET_ATTACH_PARAM",
+  "Name": "BulletAttachParam",
+  "Description": "Defines parameters relating to the attachment point that fires projectiles.",
+  "Fields": [
+    {
+      "Field": "part1DummyPolyId",
+      "Name": "Part 1: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for this part."
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetPosX",
+      "Name": "Part 1: Position Offset - X",
+      "Description": "The position offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetPosY",
+      "Name": "Part 1: Position Offset - Y",
+      "Description": "The position offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetPosZ",
+      "Name": "Part 1: Position Offset - Z",
+      "Description": "The position offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyPosX",
+      "Name": "Part 1: Position Offset Accuracy: X",
+      "Description": "The accuracy of the position offset on the x-axis for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyPosY",
+      "Name": "Part 1: Position Offset Accuracy: Y",
+      "Description": "The accuracy of the position offset on the y-axis for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyPosZ",
+      "Name": "Part 1: Position Offset Accuracy: Z",
+      "Description": "The accuracy of the position offset on the z-axis for this part."
+    },
+    {
+      "Field": "part1OffsetRotX",
+      "Name": "Part 1: Rotation Offset - X",
+      "Description": "The rotation offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetRotY",
+      "Name": "Part 1: Rotation Offset - Y",
+      "Description": "The rotation offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetRotZ",
+      "Name": "Part 1: Rotation Offset - Z",
+      "Description": "The rotation offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyRotX",
+      "Name": "Part 1: Rotation Offset Accuracy: X",
+      "Description": "The accuracy of the rotation offset on the x-axis for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyRotY",
+      "Name": "Part 1: Rotation Offset Accuracy: Y",
+      "Description": "The accuracy of the rotation offset on the y-axis for this part."
+    },
+    {
+      "Field": "part1OffsetAccuracyRotZ",
+      "Name": "Part 1: Rotation Offset Accuracy: Z",
+      "Description": "The accuracy of the rotation offset on the z-axis for this part."
+    },
+    {
+      "Field": "part2DummyPolyId",
+      "Name": "Part 2: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for this part."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetPosX",
+      "Name": "Part 2: Position Offset - X",
+      "Description": "The position offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetPosY",
+      "Name": "Part 2: Position Offset - Y",
+      "Description": "The position offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetPosZ",
+      "Name": "Part 2: Position Offset - Z",
+      "Description": "The position offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyPosX",
+      "Name": "Part 2: Position Offset Accuracy: X",
+      "Description": "The accuracy of the position offset on the x-axis for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyPosY",
+      "Name": "Part 2: Position Offset Accuracy: Y",
+      "Description": "The accuracy of the position offset on the y-axis for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyPosZ",
+      "Name": "Part 2: Position Offset Accuracy: Z",
+      "Description": "The accuracy of the position offset on the z-axis for this part."
+    },
+    {
+      "Field": "part2OffsetRotX",
+      "Name": "Part 2: Rotation Offset - X",
+      "Description": "The rotation offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetRotY",
+      "Name": "Part 2: Rotation Offset - Y",
+      "Description": "The rotation offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetRotZ",
+      "Name": "Part 2: Rotation Offset - Z",
+      "Description": "The rotation offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyRotX",
+      "Name": "Part 2: Rotation Offset Accuracy: X",
+      "Description": "The accuracy of the rotation offset on the x-axis for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyRotY",
+      "Name": "Part 2: Rotation Offset Accuracy: Y",
+      "Description": "The accuracy of the rotation offset on the y-axis for this part."
+    },
+    {
+      "Field": "part2OffsetAccuracyRotZ",
+      "Name": "Part 2: Rotation Offset Accuracy: Z",
+      "Description": "The accuracy of the rotation offset on the z-axis for this part."
+    },
+    {
+      "Field": "part3DummyPolyId",
+      "Name": "Part 3: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for this part."
+    },
+    {
+      "Field": "dummy2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetPosX",
+      "Name": "Part 3: Position Offset - X",
+      "Description": "The position offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetPosY",
+      "Name": "Part 3: Position Offset - Y",
+      "Description": "The position offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetPosZ",
+      "Name": "Part 3: Position Offset - Z",
+      "Description": "The position offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyPosX",
+      "Name": "Part 3: Position Offset Accuracy: X",
+      "Description": "The accuracy of the position offset on the x-axis for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyPosY",
+      "Name": "Part 3: Position Offset Accuracy: Y",
+      "Description": "The accuracy of the position offset on the y-axis for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyPosZ",
+      "Name": "Part 3: Position Offset Accuracy: Z",
+      "Description": "The accuracy of the position offset on the z-axis for this part."
+    },
+    {
+      "Field": "part3OffsetRotX",
+      "Name": "Part 3: Rotation Offset - X",
+      "Description": "The rotation offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetRotY",
+      "Name": "Part 3: Rotation Offset - Y",
+      "Description": "The rotation offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetRotZ",
+      "Name": "Part 3: Rotation Offset - Z",
+      "Description": "The rotation offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyRotX",
+      "Name": "Part 3: Rotation Offset Accuracy: X",
+      "Description": "The accuracy of the rotation offset on the x-axis for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyRotY",
+      "Name": "Part 3: Rotation Offset Accuracy: Y",
+      "Description": "The accuracy of the rotation offset on the y-axis for this part."
+    },
+    {
+      "Field": "part3OffsetAccuracyRotZ",
+      "Name": "Part 3: Rotation Offset Accuracy: Z",
+      "Description": "The accuracy of the rotation offset on the z-axis for this part."
+    },
+    {
+      "Field": "part4DummyPolyId",
+      "Name": "Part 4: Dummy Polygon ID",
+      "Description": "The dummy polygon ID to use for this part."
+    },
+    {
+      "Field": "dummy3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetPosX",
+      "Name": "Part 4: Position Offset - X",
+      "Description": "The position offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetPosY",
+      "Name": "Part 4: Position Offset - Y",
+      "Description": "The position offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetPosZ",
+      "Name": "Part 4: Position Offset - Z",
+      "Description": "The position offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyPosX",
+      "Name": "Part 4: Position Offset Accuracy: X",
+      "Description": "The accuracy of the position offset on the x-axis for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyPosY",
+      "Name": "Part 4: Position Offset Accuracy: Y",
+      "Description": "The accuracy of the position offset on the y-axis for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyPosZ",
+      "Name": "Part 4: Position Offset Accuracy: Z",
+      "Description": "The accuracy of the position offset on the z-axis for this part."
+    },
+    {
+      "Field": "part4OffsetRotX",
+      "Name": "Part 4: Rotation Offset - X",
+      "Description": "The rotation offset on the x-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetRotY",
+      "Name": "Part 4: Rotation Offset - Y",
+      "Description": "The rotation offset on the y-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetRotZ",
+      "Name": "Part 4: Rotation Offset - Z",
+      "Description": "The rotation offset on the z-axis to use for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyRotX",
+      "Name": "Part 4: Rotation Offset Accuracy: X",
+      "Description": "The accuracy of the rotation offset on the x-axis for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyRotY",
+      "Name": "Part 4: Rotation Offset Accuracy: Y",
+      "Description": "The accuracy of the rotation offset on the y-axis for this part."
+    },
+    {
+      "Field": "part4OffsetAccuracyRotZ",
+      "Name": "Part 4: Rotation Offset Accuracy: Z",
+      "Description": "The accuracy of the rotation offset on the z-axis for this part."
+    }
+  ]
+}

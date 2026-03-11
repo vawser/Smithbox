@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Drangleic Castle & Throne of Want",
+  "Key": "Drangleic Castle & Throne of Want",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Drangleic Castle & Throne of Want"
+      }
+  ],
   "Params": [
     "demopointlight_scn202110",
     "demopointlight_scn202120",

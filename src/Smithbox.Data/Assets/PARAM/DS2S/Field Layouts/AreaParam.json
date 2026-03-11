@@ -3,7 +3,13 @@
   "UngroupedAtBottom": false,
   "Groups": [
     {
-      "Title": "Chameleon",
+      "Key": "Chameleon",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Chameleon"
+          }
+      ],
       "Fields": [
         "chameleonEnableRare",
         "chameleonWeight1",

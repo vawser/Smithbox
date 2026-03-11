@@ -1,357 +1,641 @@
 {
-  "DisplayName": "CHR_ROUND_DROP_SOUL_CATEGORY",
-  "Name": "CHR_ROUND_DROP_SOUL_CATEGORY",
-  "Description": "",
+  "Key": "CHR_ROUND_DROP_SOUL_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_ROUND_DROP_SOUL_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Unused",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "Orbiting Soul Reward Table: Boss",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "Orbiting soul reward table: Normal",
-      "Description": ""
-    },
-    {
-      "ID": "3",
-      "Name": "Orbiting Soul Reward Table: Lower amount of increase",
-      "Description": ""
-    },
-    {
-      "ID": "4",
-      "Name": "Orbiting Soul Reward Table: No increase",
-      "Description": ""
-    },
-    {
-      "ID": "5",
-      "Name": "Reserve slot 1",
-      "Description": ""
-    },
-    {
-      "ID": "6",
-      "Name": "Reserve frame 2",
-      "Description": ""
-    },
-    {
-      "ID": "7",
-      "Name": "Reserve slot 3",
-      "Description": ""
-    },
-    {
-      "ID": "8",
-      "Name": "Reserve frame 4",
-      "Description": ""
-    },
-    {
-      "ID": "9",
-      "Name": "Reserve slot 5",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "Reserve slot 6",
-      "Description": ""
-    },
-    {
-      "ID": "11",
-      "Name": "Reserve slot 7",
-      "Description": ""
-    },
-    {
-      "ID": "12",
-      "Name": "Reserve slot 8",
-      "Description": ""
-    },
-    {
-      "ID": "13",
-      "Name": "Reserve slot 9",
-      "Description": ""
-    },
-    {
-      "ID": "14",
-      "Name": "Reserve slot 10",
-      "Description": ""
-    },
-    {
-      "ID": "15",
-      "Name": "Reserve slot 11",
-      "Description": ""
-    },
-    {
-      "ID": "16",
-      "Name": "Reserve frame 12",
-      "Description": ""
-    },
-    {
-      "ID": "17",
-      "Name": "Reserve slot 13",
-      "Description": ""
-    },
-    {
-      "ID": "18",
-      "Name": "Reserve frame 14",
-      "Description": ""
-    },
-    {
-      "ID": "19",
-      "Name": "Reserve slot 15",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "Reserve slot 16",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "Reserve slot 17",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "Reserve slot 18",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "Reserve slot 19",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "Reserve slot 20",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "Reserve slot 21",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "Reserve frame 22",
-      "Description": ""
-    },
-    {
-      "ID": "27",
-      "Name": "Reserve slot 23",
-      "Description": ""
-    },
-    {
-      "ID": "28",
-      "Name": "Reserve slot 24",
-      "Description": ""
-    },
-    {
-      "ID": "29",
-      "Name": "Reserve slot 25",
-      "Description": ""
-    },
-    {
-      "ID": "30",
-      "Name": "Reserve slot 26",
-      "Description": ""
-    },
-    {
-      "ID": "31",
-      "Name": "Reserve slot 27",
-      "Description": ""
-    },
-    {
-      "ID": "32",
-      "Name": "Reserve slot 28",
-      "Description": ""
-    },
-    {
-      "ID": "33",
-      "Name": "Reserve slot 29",
-      "Description": ""
-    },
-    {
-      "ID": "34",
-      "Name": "Reserve slot 30",
-      "Description": ""
-    },
-    {
-      "ID": "35",
-      "Name": "Reserve frame 31",
-      "Description": ""
-    },
-    {
-      "ID": "36",
-      "Name": "Spare frame 32",
-      "Description": ""
-    },
-    {
-      "ID": "37",
-      "Name": "Reserve frame 33",
-      "Description": ""
-    },
-    {
-      "ID": "38",
-      "Name": "Reserve frame 34",
-      "Description": ""
-    },
-    {
-      "ID": "39",
-      "Name": "Reserve frame 35",
-      "Description": ""
-    },
-    {
-      "ID": "40",
-      "Name": "Reserve frame 36",
-      "Description": ""
-    },
-    {
-      "ID": "41",
-      "Name": "Reserve slot 37",
-      "Description": ""
-    },
-    {
-      "ID": "42",
-      "Name": "Reserve slot 38",
-      "Description": ""
-    },
-    {
-      "ID": "43",
-      "Name": "Reserve slot 39",
-      "Description": ""
-    },
-    {
-      "ID": "44",
-      "Name": "Reserve slot 40",
-      "Description": ""
-    },
-    {
-      "ID": "45",
-      "Name": "Reserve frame 41",
-      "Description": ""
-    },
-    {
-      "ID": "46",
-      "Name": "Reserve frame 42",
-      "Description": ""
-    },
-    {
-      "ID": "47",
-      "Name": "Reserve frame 43",
-      "Description": ""
-    },
-    {
-      "ID": "48",
-      "Name": "Reserve frame 44",
-      "Description": ""
-    },
-    {
-      "ID": "49",
-      "Name": "Reserve frame 45",
-      "Description": ""
-    },
-    {
-      "ID": "50",
-      "Name": "Reserve frame 46",
-      "Description": ""
-    },
-    {
-      "ID": "51",
-      "Name": "Reserve frame 47",
-      "Description": ""
-    },
-    {
-      "ID": "52",
-      "Name": "Reserve frame 48",
-      "Description": ""
-    },
-    {
-      "ID": "53",
-      "Name": "Reserve frame 49",
-      "Description": ""
-    },
-    {
-      "ID": "54",
-      "Name": "Reserve slot 50",
-      "Description": ""
-    },
-    {
-      "ID": "55",
-      "Name": "Reserve frame 51",
-      "Description": ""
-    },
-    {
-      "ID": "56",
-      "Name": "Reserve frame 52",
-      "Description": ""
-    },
-    {
-      "ID": "57",
-      "Name": "Reserve frame 53",
-      "Description": ""
-    },
-    {
-      "ID": "58",
-      "Name": "Reserve frame 54",
-      "Description": ""
-    },
-    {
-      "ID": "59",
-      "Name": "Reserve frame 55",
-      "Description": ""
-    },
-    {
-      "ID": "60",
-      "Name": "Reserve frame 56",
-      "Description": ""
-    },
-    {
-      "ID": "61",
-      "Name": "Reserve frame 57",
-      "Description": ""
-    },
-    {
-      "ID": "62",
-      "Name": "Reserve frame 58",
-      "Description": ""
-    },
-    {
-      "ID": "63",
-      "Name": "Reserve frame 59",
-      "Description": ""
-    },
-    {
-      "ID": "64",
-      "Name": "Reserve slot 60",
-      "Description": ""
-    },
-    {
-      "ID": "65",
-      "Name": "Reserve frame 61",
-      "Description": ""
-    },
-    {
-      "ID": "66",
-      "Name": "Spare frame 62",
-      "Description": ""
-    },
-    {
-      "ID": "67",
-      "Name": "Reserve frame 63",
-      "Description": ""
-    },
-    {
-      "ID": "68",
-      "Name": "Reserve frame 64",
-      "Description": ""
-    },
-    {
-      "ID": "69",
-      "Name": "Reserve frame 65",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Orbiting Soul Reward Table: Boss"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Orbiting soul reward table: Normal"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Orbiting Soul Reward Table: Lower amount of increase"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Orbiting Soul Reward Table: No increase"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 1"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 2"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 3"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 4"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 5"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 6"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 7"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 8"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 9"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 10"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 11"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 12"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 13"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 14"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 15"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 16"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 17"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 18"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 19"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 20"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 21"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 22"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 23"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 24"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 25"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 26"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 27"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 28"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 29"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 30"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 31"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spare frame 32"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 33"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 34"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 35"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 36"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 37"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 38"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 39"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 40"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 41"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 42"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 43"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 44"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 45"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 46"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 47"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 48"
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 49"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 50"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 51"
+        }
+      ]
+    },
+    {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 52"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 53"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 54"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 55"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 56"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 57"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 58"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 59"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve slot 60"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 61"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spare frame 62"
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 63"
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 64"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve frame 65"
+        }
+      ]
     }
   ]
 }

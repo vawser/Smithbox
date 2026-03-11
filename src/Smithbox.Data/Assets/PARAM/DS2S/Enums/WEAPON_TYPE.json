@@ -1,167 +1,299 @@
 {
-  "DisplayName": "WEAPON_TYPE",
-  "Name": "WEAPON_TYPE",
-  "Description": "",
+  "Key": "WEAPON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Bare hands",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bare hands"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "爪",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "爪"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "拳",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "拳"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Stabbing sword",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stabbing sword"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "鞭",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鞭"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Double-edged sword",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "槍",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "槍"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Assault spear",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Curved sword",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "刀",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "刀"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Straight sword",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Two-handed sickle",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Two-handed sword",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Two-handed oversized sword",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Two-handed oversized curved sword",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized curved sword"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "One-handed hammer",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Two-handed hammer",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "One handed ax",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One handed ax"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Two-handed ax",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Two-handed long ax",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "杖",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "杖"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "鈴",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "鈴"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Two-handed bow",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Two-handed longbow",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "One handed bow",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One handed bow"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Small shield",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Medium shield",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Large shield",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Binoculars",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Binoculars"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Fire of sorcery",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire of sorcery"
+        }
+      ]
     }
   ]
 }

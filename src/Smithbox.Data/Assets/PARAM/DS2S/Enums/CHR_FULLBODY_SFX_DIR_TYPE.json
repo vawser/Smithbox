@@ -1,27 +1,47 @@
 {
-  "DisplayName": "CHR_FULLBODY_SFX_DIR_TYPE",
-  "Name": "CHR_FULLBODY_SFX_DIR_TYPE",
-  "Description": "",
+  "Key": "CHR_FULLBODY_SFX_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_FULLBODY_SFX_DIR_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Feet → head",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Feet → head"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Overhead → feet",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overhead → feet"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Front → Back",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Front → Back"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Back → Front",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back → Front"
+        }
+      ]
     }
   ]
 }

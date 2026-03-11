@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Majula",
+  "Key": "Majula",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Majula"
+      }
+  ],
   "Params": [
     "eventlocation_m10_04_00_00",
     "eventparam_m10_04_00_00",

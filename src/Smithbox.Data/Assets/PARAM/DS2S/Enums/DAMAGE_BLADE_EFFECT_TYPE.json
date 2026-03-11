@@ -1,52 +1,92 @@
 {
-  "DisplayName": "DAMAGE_BLADE_EFFECT_TYPE",
-  "Name": "DAMAGE_BLADE_EFFECT_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_BLADE_EFFECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_BLADE_EFFECT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Top⇒Bottom",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top⇒Bottom"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Top left ⇒ Bottom right",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top left ⇒ Bottom right"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Top right⇒Bottom left",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top right⇒Bottom left"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Left ⇒ right",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left ⇒ right"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Right ⇒ Left",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right ⇒ Left"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Lower left ⇒ Upper right",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower left ⇒ Upper right"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Bottom right ⇒ Top left",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom right ⇒ Top left"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Bottom ⇒ Top",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom ⇒ Top"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Thrust",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrust"
+        }
+      ]
     }
   ]
 }

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "NPC_DECEASED_TYPE",
-  "Name": "NPC_DECEASED_TYPE",
-  "Description": "",
+  "Key": "NPC_DECEASED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_DECEASED_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Flesh and blood",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh and blood"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Deceased",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deceased"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Amazing dead",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing dead"
+        }
+      ]
     }
   ]
 }

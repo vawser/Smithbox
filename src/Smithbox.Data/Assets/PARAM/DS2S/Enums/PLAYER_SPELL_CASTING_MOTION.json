@@ -1,152 +1,272 @@
 {
-  "DisplayName": "PLAYER_SPELL_CASTING_MOTION",
-  "Name": "PLAYER_SPELL_CASTING_MOTION",
-  "Description": "",
+  "Key": "PLAYER_SPELL_CASTING_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_SPELL_CASTING_MOTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "38110020",
-      "Name": "Cane_Fire_Stand_Stick out in front",
-      "Description": ""
+      "Key": "38110020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Stick out in front"
+        }
+      ]
     },
     {
-      "ID": "38110120",
-      "Name": "Cane_Fire_Stand_Draw a circle",
-      "Description": ""
+      "Key": "38110120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Draw a circle"
+        }
+      ]
     },
     {
-      "ID": "38110220",
-      "Name": "Staff_Fire_Standing_Slash",
-      "Description": ""
+      "Key": "38110220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff_Fire_Standing_Slash"
+        }
+      ]
     },
     {
-      "ID": "38110320",
-      "Name": "Cane_Fire_Stand_Turn over head",
-      "Description": ""
+      "Key": "38110320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Turn over head"
+        }
+      ]
     },
     {
-      "ID": "38110420",
-      "Name": "Cane_Fire_Stand_Hold above head",
-      "Description": ""
+      "Key": "38110420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Hold above head"
+        }
+      ]
     },
     {
-      "ID": "38110520",
-      "Name": "Cane_Fire_Stand_Wave_off",
-      "Description": ""
+      "Key": "38110520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Wave_off"
+        }
+      ]
     },
     {
-      "ID": "38110620",
-      "Name": "Cane_Fire_Stand_Put on the ground",
-      "Description": ""
+      "Key": "38110620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Put on the ground"
+        }
+      ]
     },
     {
-      "ID": "38110720",
-      "Name": "Staff_Fire_Standing_Magic enchantment",
-      "Description": ""
+      "Key": "38110720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff_Fire_Standing_Magic enchantment"
+        }
+      ]
     },
     {
-      "ID": "38110820",
-      "Name": "Cane_Fire_Stand_Stick out in front (long)",
-      "Description": ""
+      "Key": "38110820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Fire_Stand_Stick out in front (long)"
+        }
+      ]
     },
     {
-      "ID": "38110920",
-      "Name": "Staff_Fire_Standing_Magic enchantment (shield)",
-      "Description": ""
+      "Key": "38110920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff_Fire_Standing_Magic enchantment (shield)"
+        }
+      ]
     },
     {
-      "ID": "38111020",
-      "Name": "Fist_Fire_Stand_Push forward",
-      "Description": ""
+      "Key": "38111020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Fire_Stand_Push forward"
+        }
+      ]
     },
     {
-      "ID": "38111120",
-      "Name": "Magic fire_launch_standing_throwing",
-      "Description": ""
+      "Key": "38111120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic fire_launch_standing_throwing"
+        }
+      ]
     },
     {
-      "ID": "38111220",
-      "Name": "Magical Fire_Fire_Stand_Push forward",
-      "Description": ""
+      "Key": "38111220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Fire_Stand_Push forward"
+        }
+      ]
     },
     {
-      "ID": "38111320",
-      "Name": "Magical Fire_Fire_Standing_Press it to your chest",
-      "Description": ""
+      "Key": "38111320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Fire_Standing_Press it to your chest"
+        }
+      ]
     },
     {
-      "ID": "38111420",
-      "Name": "Magical fire_launch_standing_flame enchantment",
-      "Description": ""
+      "Key": "38111420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical fire_launch_standing_flame enchantment"
+        }
+      ]
     },
     {
-      "ID": "38111520",
-      "Name": "Magic fire_launch_crouching_lower to the ground",
-      "Description": ""
+      "Key": "38111520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic fire_launch_crouching_lower to the ground"
+        }
+      ]
     },
     {
-      "ID": "38111620",
-      "Name": "Magical Fire_Fire_Standing_Arms out in front",
-      "Description": ""
+      "Key": "38111620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Fire_Standing_Arms out in front"
+        }
+      ]
     },
     {
-      "ID": "38111720",
-      "Name": "Magical Fire_Fire_Stand_Draw a circle in front",
-      "Description": ""
+      "Key": "38111720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Fire_Stand_Draw a circle in front"
+        }
+      ]
     },
     {
-      "ID": "38130020",
-      "Name": "Cane_Launching_Standing_Sticking out in front_Both hands",
-      "Description": ""
+      "Key": "38130020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Launching_Standing_Sticking out in front_Both hands"
+        }
+      ]
     },
     {
-      "ID": "39110020",
-      "Name": "Bell_Fire_Standing_Push to the front",
-      "Description": ""
+      "Key": "39110020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Fire_Standing_Push to the front"
+        }
+      ]
     },
     {
-      "ID": "39110120",
-      "Name": "Bell_Launching_Bending_In front of chest",
-      "Description": ""
+      "Key": "39110120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Launching_Bending_In front of chest"
+        }
+      ]
     },
     {
-      "ID": "39110220",
-      "Name": "Bell_launch_standing_slash",
-      "Description": ""
+      "Key": "39110220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_launch_standing_slash"
+        }
+      ]
     },
     {
-      "ID": "39110320",
-      "Name": "Bell_Launching_Bending_Opening both hands",
-      "Description": ""
+      "Key": "39110320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Launching_Bending_Opening both hands"
+        }
+      ]
     },
     {
-      "ID": "39110420",
-      "Name": "Bell_Fire_Rise_Push to the front",
-      "Description": ""
+      "Key": "39110420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Fire_Rise_Push to the front"
+        }
+      ]
     },
     {
-      "ID": "39110520",
-      "Name": "Bell_Launching_Bending_In front of the chest",
-      "Description": ""
+      "Key": "39110520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Launching_Bending_In front of the chest"
+        }
+      ]
     },
     {
-      "ID": "39110620",
-      "Name": "Bell_launch_standing_miracle enchantment",
-      "Description": ""
+      "Key": "39110620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_launch_standing_miracle enchantment"
+        }
+      ]
     },
     {
-      "ID": "39110720",
-      "Name": "Bell_Departure_Stand_Swing right arm down",
-      "Description": ""
+      "Key": "39110720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Departure_Stand_Swing right arm down"
+        }
+      ]
     },
     {
-      "ID": "39110820",
-      "Name": "Bell_Fire_Stand_Spread both arms",
-      "Description": ""
+      "Key": "39110820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Fire_Stand_Spread both arms"
+        }
+      ]
     },
     {
-      "ID": "39110920",
-      "Name": "Bell_Fire_Stand_Push both hands forward",
-      "Description": ""
+      "Key": "39110920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Fire_Stand_Push both hands forward"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,163 @@
+{
+  "Param": "Wind",
+  "Type": "WIND_PARAM_ST",
+  "Name": "Wind",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "commonCapsuleBeginDmyId",
+      "Name": "Common Capsule - Start Dummy Poly ID",
+      "Description": ""
+    },
+    {
+      "Field": "commonCapsuleEndDmyId",
+      "Name": "Common Capsule - End Dummy Poly ID",
+      "Description": ""
+    },
+    {
+      "Field": "commonCapsuleRadius",
+      "Name": "Common Capsule - Radius",
+      "Description": ""
+    },
+    {
+      "Field": "commonReserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxWindEnable",
+      "Name": "Enable Windx VFX",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIgnorePlayerSfx",
+      "Name": "Ignore Player VFX",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIsCollision",
+      "Name": "Is Collision",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDirPitchMin",
+      "Name": "VFX Direction - Pitch Min",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDirPitchMax",
+      "Name": "VFX Direction - Pitch Max",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDirYawMin",
+      "Name": "VFX Direction - Yaw Min",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDirYawMax",
+      "Name": "VFX Direction - Yaw Max",
+      "Description": ""
+    },
+    {
+      "Field": "sfxCycleMin",
+      "Name": "VFX Direction - Cycle Min",
+      "Description": ""
+    },
+    {
+      "Field": "sfxCycleMax",
+      "Name": "VFX Direction - Cycle Max",
+      "Description": ""
+    },
+    {
+      "Field": "sfxSpeedMin",
+      "Name": "VFX Direction - Speed Min",
+      "Description": ""
+    },
+    {
+      "Field": "sfxSpeedMax",
+      "Name": "VFX Direction - Speed Min",
+      "Description": ""
+    },
+    {
+      "Field": "sfxMaximumDrag",
+      "Name": "VFX Direction - Max Drag",
+      "Description": ""
+    },
+    {
+      "Field": "sfxReserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clothWindEnable",
+      "Name": "Enable Wind Effect on Cloth",
+      "Description": ""
+    },
+    {
+      "Field": "clothVertexWind",
+      "Name": "Enable Vertex Wind",
+      "Description": ""
+    },
+    {
+      "Field": "clothPad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "clothDirPitchMin",
+      "Name": "Cloth Direction - Pitch Min",
+      "Description": ""
+    },
+    {
+      "Field": "clothDirPitchMax",
+      "Name": "Cloth Direction - Pitch Max",
+      "Description": ""
+    },
+    {
+      "Field": "clothDirYawMin",
+      "Name": "Cloth Direction - Yaw Min",
+      "Description": ""
+    },
+    {
+      "Field": "clothDirYawMax",
+      "Name": "Cloth Direction - Yaw Max",
+      "Description": ""
+    },
+    {
+      "Field": "clothCycleMin",
+      "Name": "Cloth Direction - Cycle Min",
+      "Description": ""
+    },
+    {
+      "Field": "clothCycleMax",
+      "Name": "Cloth Direction - Cycle Max",
+      "Description": ""
+    },
+    {
+      "Field": "clothSpeedMin",
+      "Name": "Cloth Direction - Speed Min",
+      "Description": ""
+    },
+    {
+      "Field": "clothSpeedMax",
+      "Name": "Cloth Direction - Speed Max",
+      "Description": ""
+    },
+    {
+      "Field": "clothMaximumDrag",
+      "Name": "Cloth Direction - Maximum Drag",
+      "Description": ""
+    },
+    {
+      "Field": "clothReserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

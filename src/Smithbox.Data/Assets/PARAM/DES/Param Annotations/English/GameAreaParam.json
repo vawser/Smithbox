@@ -1,0 +1,23 @@
+{
+  "Param": "GameAreaParam",
+  "Type": "GAME_AREA_PARAM_ST",
+  "Name": "GameAreaParam",
+  "Description": "Determines the soul and humanity drops given upon boss victories.",
+  "Fields": [
+    {
+      "Field": "bonusSoul_single",
+      "Name": "Soul Amount: Singleplayer Clear",
+      "Description": "The amount of souls gained when defeating the associated boss in singleplayer."
+    },
+    {
+      "Field": "bonusSoul_multi",
+      "Name": "Soul Amount: Multiplayer Clear",
+      "Description": "The amount of souls gained when defeating the associated boss in multiplayer."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

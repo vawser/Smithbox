@@ -1,32 +1,56 @@
 {
-  "DisplayName": "SPELL_AVAILABLE_CONDITION",
-  "Name": "SPELL_AVAILABLE_CONDITION",
-  "Description": "",
+  "Key": "SPELL_AVAILABLE_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_AVAILABLE_CONDITION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No conditions",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No conditions"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Catalyst reverse arm “weapon” equipment",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catalyst reverse arm “weapon” equipment"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Equipped with Catalyst Reverse Arm “Shield”",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipped with Catalyst Reverse Arm “Shield”"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Not during multiplayer",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not during multiplayer"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Other than client time",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other than client time"
+        }
+      ]
     }
   ]
 }

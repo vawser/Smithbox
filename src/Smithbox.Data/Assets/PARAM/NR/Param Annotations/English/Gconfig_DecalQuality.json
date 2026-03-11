@@ -1,0 +1,18 @@
+{
+  "Param": "Gconfig_DecalQuality",
+  "Type": "CS_DECAL_QUALITY_DETAIL",
+  "Name": "Gconfig_DecalQuality",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Decal Enabled",
+      "Description": "Decal valid"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "Param": "SpEffectVfxParam",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SpEffectVfxParam",
+  "Description": "All Visual Effects for Special Effects",
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "Midst SFX ID",
+      "Description": "In effect SfxID (-1: invalid)"
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "Midst SE ID",
+      "Description": "In effect SeID (-1: invalid)"
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "Start SFX ID",
+      "Description": "SfxID at activation (-1: invalid)"
+    },
+    {
+      "Field": "initSeId",
+      "Name": "Start SE ID",
+      "Description": "When activated SeID (-1: invalid)"
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "End SFX ID",
+      "Description": "SfxID at the time of cancellation (-1: invalid)"
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "End SE ID",
+      "Description": "SeID at the time of release (-1: invalid)"
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "Camouflage - Start Distance",
+      "Description": "It is the camouflage start distance"
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "Camouflage - End Distance",
+      "Description": "It is the camouflage end distance"
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "Transform - Protector ID",
+      "Description": "Makeover Armor ID (-1: None)"
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "Midst Dummy Poly ID",
+      "Description": "In effect Damipoli ID (-1: Root)"
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "Start Dummy Poly ID",
+      "Description": "Damipoli ID at the time of activation (-1: root)"
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "End Dummy Poly ID",
+      "Description": "Damipoli ID at the time of cancellation (-1: root)"
+    },
+    {
+      "Field": "effectType",
+      "Name": "Effect Type",
+      "Description": "Effect type"
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "Weapon Enchant - Soul Param ID",
+      "Description": "Soul Param ID for Weapon Enchantment (-1: None). Change the applied Phantom Param."
+    },
+    {
+      "Field": "playCategory",
+      "Name": "Play Category",
+      "Description": "Controls effect playback due to duplicate effects"
+    },
+    {
+      "Field": "playPriority",
+      "Name": "Play Priority",
+      "Description": "Set the playback priority when the categories match (lower one has priority)"
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "Large Effect Exists",
+      "Description": "Is there a large effect?"
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "Soul Effect Exists",
+      "Description": "Is there an effect for the soul body?"
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "Camouflage - Invisible while Active",
+      "Description": "Whether to hide the effect when hiding"
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "Camouflage - Enable",
+      "Description": "Do you hide"
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "Camouflage - Invisible for Friend",
+      "Description": "Is it hidden even by allies when hiding?"
+    },
+    {
+      "Field": "addMapAreaBlockOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "Camouflage - Translucent Appearance",
+      "Description": "Only translucent appearance"
+    },
+    {
+      "Field": "transformArmor",
+      "Name": "Is Full Body Protector ID",
+      "Description": "Is the transformation armor ID for the whole body?"
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "Is Invisible Weapon",
+      "Description": "Invisible Weapon for Weapon Enchantment (0: Weapon Show, 1: Weapon Hide)"
+    },
+    {
+      "Field": "isSilence",
+      "Name": "Is Silent",
+      "Description": "Is it silence? (0: No, 1: Yes)"
+    },
+    {
+      "Field": "transformGauntlet",
+      "Name": "Transform: Gauntlet",
+      "Description": "Can I replace the gauntlet with transformation armor ID \u002B2000?"
+    },
+    {
+      "Field": "transformHelmet",
+      "Name": "Transform: Helmet",
+      "Description": "Can you transform the helmet with the transformation armor ID?"
+    },
+    {
+      "Field": "transformLeggings",
+      "Name": "Transform: Leggings",
+      "Description": "Can I replace the leg ties with transformation armor ID \u002B3000?"
+    },
+    {
+      "Field": "transformPriority",
+      "Name": "Transform Priority",
+      "Description": "Transformation priority (0: highest to 7: lowest)"
+    },
+    {
+      "Field": "transformWeaponId",
+      "Name": "Transform: Weapon ID",
+      "Description": "Transformation right hand weapon ID (-1: None)"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

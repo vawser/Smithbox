@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Lost Bastille & Belfry Luna",
+  "Key": "Lost Bastille & Belfry Luna",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Lost Bastille & Belfry Luna"
+      }
+  ],
   "Params": [
     "demopointlight_scn101610",
     "demopointlight_scn101620",

@@ -23,7 +23,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 0,
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -42,7 +42,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -61,7 +61,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -80,7 +80,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 4,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,

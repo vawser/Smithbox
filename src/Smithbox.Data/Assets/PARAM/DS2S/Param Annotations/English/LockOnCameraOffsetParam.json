@@ -1,0 +1,93 @@
+{
+  "Param": "LockOnCameraOffsetParam",
+  "Type": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Name": "LockOnCameraOffsetParam",
+  "Description": "Defines parameters related to the lock-on camera and its offset.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camera_vertical_distance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camera_horizontal_distance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camera_tilt",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

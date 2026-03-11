@@ -1,52 +1,92 @@
 {
-  "DisplayName": "FE_TIME",
-  "Name": "FE_TIME",
-  "Description": "",
+  "Key": "FE_TIME",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FE_TIME"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "《FE SEMI switching time》",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《FE SEMI switching time》"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "《FE HIDE switching time》",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《FE HIDE switching time》"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "《Item acquisition window closing time》",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Item acquisition window closing time》"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "《FE Soul increase/decrease speed》",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《FE Soul increase/decrease speed》"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "《Enemy HP closing time》",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Enemy HP closing time》"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "《Blood letter window closing time》",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Blood letter window closing time》"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "《Multiplayer notification minimum display time》",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Multiplayer notification minimum display time》"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "《Multiplayer notification normal display time》",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Multiplayer notification normal display time》"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "《Multiplayer notification blinking interval》",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《Multiplayer notification blinking interval》"
+        }
+      ]
     }
   ]
 }

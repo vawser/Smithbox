@@ -1,27 +1,47 @@
 {
-  "DisplayName": "PARRY_TYPES",
-  "Name": "PARRY_TYPES",
-  "Description": "",
+  "Key": "PARRY_TYPES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PARRY_TYPES"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "All",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Physics",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Physics"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     }
   ]
 }

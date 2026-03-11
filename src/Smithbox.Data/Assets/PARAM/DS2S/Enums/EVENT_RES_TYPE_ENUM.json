@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_RES_TYPE_ENUM",
-  "Name": "EVENT_RES_TYPE_ENUM",
-  "Description": "",
+  "Key": "EVENT_RES_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_RES_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "MAP",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "MAP"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "NPC",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
@@ -370,7 +371,7 @@ public class ParamFieldDecorators
 
             if (metaContext.DisplayProjectEnum && metaContext.FieldMeta.ProjectEnumType != null)
             {
-                var optionList = ParentView.Project.Handler.ParamData.Enums.List.Where(e => e.Name == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
+                var optionList = ParentView.Project.Handler.ParamData.Enums.List.Where(e => e.Key == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -390,6 +391,8 @@ public class FieldMetaContext
     public ParamEditorView View;
     public ParamMeta Meta;
     public ParamFieldMeta FieldMeta;
+
+    public ParamAnnotationFieldEntry FieldAnnotation;
 
     public string ActiveParam = "";
     public string InternalName = "";
@@ -450,11 +453,18 @@ public class FieldMetaContext
 
     public string FieldReferenceGroup = "";
 
-    public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
+    public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, ParamAnnotationFieldEntry fieldAnnotation, string activeParam, string internalName)
     {
         View = curView;
         Meta = meta;
         FieldMeta = fieldMeta;
+
+        FieldAnnotation = fieldAnnotation;
+
+        if (fieldAnnotation != null)
+        {
+            Description = fieldAnnotation.Description;
+        }
 
         ActiveParam = activeParam;
         InternalName = internalName;
@@ -465,8 +475,6 @@ public class FieldMetaContext
 
         if (fieldMeta != null)
         {
-            Description = fieldMeta?.Wiki;
-
             ParamReferences = fieldMeta?.RefTypes;
             DisplayParamReference = ParamReferences != null;
 
@@ -648,10 +656,7 @@ public static class FieldTooltipHelper
                         $"Increment: {col.Def.Increment}";
                     }
 
-                    if (EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true))
-                    {
-                        context.FieldMeta.Wiki = context.Description;
-                    }
+                    EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true);
 
                     ImGui.SameLine();
                 }
@@ -789,18 +794,13 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ParamData.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List.Where(e => e.Key == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+            ImGui.TextUnformatted($@"   {enumEntry.GetName()}");
             ImGui.PopStyleColor(1);
-
-            if (enumEntry.Description != "")
-            {
-                UIHelper.Tooltip($"   {enumEntry.Description}");
-            }
         }
     }
 
@@ -810,16 +810,16 @@ public static class ProjectEnumHelper
             return;
 
         var enumEntry = curView.Project.Handler.ParamData.Enums.List
-            .Where(e => e.Name == enumType).FirstOrDefault();
+            .Where(e => e.Key == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
             var enumValueName = "";
-            var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
+            var enumValue = enumEntry.Options.Where(e => e.Key == value).FirstOrDefault();
 
             if (enumValue != null)
             {
-                enumValueName = enumValue.Name;
+                enumValueName = enumValue.GetName();
             }
 
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
@@ -828,7 +828,7 @@ public static class ProjectEnumHelper
         }
     }
 
-    public static bool ContextMenu(ParamEditorView curView, ProjectEnumEntry en, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, ParamEnumEntry en, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -844,13 +844,13 @@ public static class ProjectEnumHelper
             {
                 foreach (var option in en.Options)
                 {
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.ID, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Name, " ")
+                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
+                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.GetName(), " ")
                         || enumSearchStr == "")
                     {
-                        if (ImGui.Selectable($"{option.ID}: {option.Name}"))
+                        if (ImGui.Selectable($"{option.Key}: {option.GetName()}"))
                         {
-                            newval = Convert.ChangeType(option.ID, oldval.GetType());
+                            newval = Convert.ChangeType(option.Key, oldval.GetType());
                             ImGui.EndChild();
                             return true;
                         }
@@ -1892,6 +1892,8 @@ public static class AC6_FieldOffsetHelper
 
             var targetMeta = curView.GetParamData().GetParamMeta(firstRow.Def);
 
+            var annotations = curView.Project.Handler.ParamData.GetParamAnnotations(paramString);
+
             foreach (var col in firstRow.Columns)
             {
                 var offset = (int)col.GetByteOffset();
@@ -1900,8 +1902,9 @@ public static class AC6_FieldOffsetHelper
                 {
                     internalName = col.Def.InternalName;
 
-                    var cellmeta = curView.GetParamData().GetParamFieldMeta(targetMeta, col.Def);
-                    displayName = cellmeta.AltName;
+                    var fieldAnnotation = curView.GetParamData().GetFieldAnnotation(annotations, internalName);
+
+                    displayName = fieldAnnotation.Name;
                 }
             }
 

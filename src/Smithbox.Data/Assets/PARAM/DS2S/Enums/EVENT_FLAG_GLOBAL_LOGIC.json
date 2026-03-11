@@ -1,82 +1,146 @@
 {
-  "DisplayName": "EVENT_FLAG_GLOBAL_LOGIC",
-  "Name": "EVENT_FLAG_GLOBAL_LOGIC",
-  "Description": "",
+  "Key": "EVENT_FLAG_GLOBAL_LOGIC",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GLOBAL_LOGIC"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "300001",
-      "Name": "Logic1",
-      "Description": ""
+      "Key": "300001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic1"
+        }
+      ]
     },
     {
-      "ID": "300002",
-      "Name": "Logic2",
-      "Description": ""
+      "Key": "300002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic2"
+        }
+      ]
     },
     {
-      "ID": "300003",
-      "Name": "Logic3",
-      "Description": ""
+      "Key": "300003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic3"
+        }
+      ]
     },
     {
-      "ID": "300004",
-      "Name": "Logic4",
-      "Description": ""
+      "Key": "300004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic4"
+        }
+      ]
     },
     {
-      "ID": "300005",
-      "Name": "Logic5",
-      "Description": ""
+      "Key": "300005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic5"
+        }
+      ]
     },
     {
-      "ID": "300100",
-      "Name": "Fortress of Resistance_Past_Return the behavior of senior giant soldiers to normal after the door is destroyed",
-      "Description": ""
+      "Key": "300100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Return the behavior of senior giant soldiers to normal after the door is destroyed"
+        }
+      ]
     },
     {
-      "ID": "300101",
-      "Name": "Fortress of Resistance_Past_Kingdom Soldiers_Lower soldiers become hostile",
-      "Description": ""
+      "Key": "300101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Kingdom Soldiers_Lower soldiers become hostile"
+        }
+      ]
     },
     {
-      "ID": "300102",
-      "Name": "Fortress of Resistance_Past_Executed an attack to destroy the gate of a trapped senior giant soldier",
-      "Description": ""
+      "Key": "300102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Executed an attack to destroy the gate of a trapped senior giant soldier"
+        }
+      ]
     },
     {
-      "ID": "300103",
-      "Name": "Fortress of Resistance_Past_A senior Titan soldier throws away the soldier he is holding",
-      "Description": ""
+      "Key": "300103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_A senior Titan soldier throws away the soldier he is holding"
+        }
+      ]
     },
     {
-      "ID": "300104",
-      "Name": "Fortress of Resistance_Past_Continuous Falling of Giant Soldiers Event Executed Judgment",
-      "Description": ""
+      "Key": "300104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Continuous Falling of Giant Soldiers Event Executed Judgment"
+        }
+      ]
     },
     {
-      "ID": "300105",
-      "Name": "Fortress of Resistance_Past_Low-class Titan soldiers carry out a wall-destroying attack",
-      "Description": ""
+      "Key": "300105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Low-class Titan soldiers carry out a wall-destroying attack"
+        }
+      ]
     },
     {
-      "ID": "300107",
-      "Name": "Citadel of Resistance_Past_Rumbling preparation soldiers release preparations",
-      "Description": ""
+      "Key": "300107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Citadel of Resistance_Past_Rumbling preparation soldiers release preparations"
+        }
+      ]
     },
     {
-      "ID": "300108",
-      "Name": "Fortress of Resistance_Past_Rumbling preparation soldiers set trap",
-      "Description": ""
+      "Key": "300108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Rumbling preparation soldiers set trap"
+        }
+      ]
     },
     {
-      "ID": "300109",
-      "Name": "Citadel of Resistance_Past_Rolling has already been rolled",
-      "Description": ""
+      "Key": "300109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Citadel of Resistance_Past_Rolling has already been rolled"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "Param": "LotBaseSmallBaseAndSpot",
+  "Type": "LOT_BASE_SMALBASE_AND_SPOT_ST",
+  "Name": "LotBaseSmallBaseAndSpot",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modifier1",
+      "Name": "Modifier 1",
+      "Description": ""
+    },
+    {
+      "Field": "modifier2",
+      "Name": "Modifier 2",
+      "Description": ""
+    }
+  ]
+}

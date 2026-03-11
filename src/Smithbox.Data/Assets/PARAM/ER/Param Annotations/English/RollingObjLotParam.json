@@ -1,0 +1,108 @@
+{
+  "Param": "RollingObjLotParam",
+  "Type": "ROLLING_OBJ_LOT_PARAM_ST",
+  "Name": "RollingObjLotParam",
+  "Description": "Governs the appearance of random AEGs like glowing skulls and tumbleweed. Each row corresponds to a map ID. The AEGs referenced must have a param row and asset behavior type set to \u0027Dynamic\u0027.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AssetId_0",
+      "Name": "Asset ID [0]",
+      "Description": "AssetId_0 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_1",
+      "Name": "Asset ID [1]",
+      "Description": "AssetId_1 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_2",
+      "Name": "Asset ID [2]",
+      "Description": "AssetId_2 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_3",
+      "Name": "Asset ID [3]",
+      "Description": "AssetId_3 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_4",
+      "Name": "Asset ID [4]",
+      "Description": "AssetId_4 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_5",
+      "Name": "Asset ID [5]",
+      "Description": "AssetId_5 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_6",
+      "Name": "Asset ID [6]",
+      "Description": "AssetId_6 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_7",
+      "Name": "Asset ID [7]",
+      "Description": "AssetId_7 (-1 Ignore)"
+    },
+    {
+      "Field": "CreateWeight_0",
+      "Name": "Appearance Weight [0]",
+      "Description": "Appearance ratio point (weight) _0 0 is ignored"
+    },
+    {
+      "Field": "CreateWeight_1",
+      "Name": "Appearance Weight [1]",
+      "Description": "Appearance ratio point (weight) _1"
+    },
+    {
+      "Field": "CreateWeight_2",
+      "Name": "Appearance Weight [2]",
+      "Description": "Appearance ratio point (weight) _2"
+    },
+    {
+      "Field": "CreateWeight_3",
+      "Name": "Appearance Weight [3]",
+      "Description": "Appearance ratio point (weight) _3"
+    },
+    {
+      "Field": "CreateWeight_4",
+      "Name": "Appearance Weight [4]",
+      "Description": "Appearance ratio point (weight) _4"
+    },
+    {
+      "Field": "CreateWeight_5",
+      "Name": "Appearance Weight [5]",
+      "Description": "Appearance ratio point (weight) _5"
+    },
+    {
+      "Field": "CreateWeight_6",
+      "Name": "Appearance Weight [6]",
+      "Description": "Appearance ratio point (weight) _6"
+    },
+    {
+      "Field": "CreateWeight_7",
+      "Name": "Appearance Weight [7]",
+      "Description": "Appearance ratio point (weight) _7"
+    },
+    {
+      "Field": "Reserve_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,42 +1,74 @@
 {
-  "DisplayName": "OBJ_LABBEL_ENUM",
-  "Name": "OBJ_LABBEL_ENUM",
-  "Description": "",
+  "Key": "OBJ_LABBEL_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_LABBEL_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Door",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Door"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Ladder",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Rope",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rope"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Lever",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lever"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Ballista",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ballista"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Broken ladder",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken ladder"
+        }
+      ]
     }
   ]
 }

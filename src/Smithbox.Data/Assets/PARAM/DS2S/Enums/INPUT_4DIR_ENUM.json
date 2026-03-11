@@ -1,32 +1,56 @@
 {
-  "DisplayName": "INPUT_4DIR_ENUM",
-  "Name": "INPUT_4DIR_ENUM",
-  "Description": "",
+  "Key": "INPUT_4DIR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "INPUT_4DIR_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "2",
-      "Name": "<123>Back",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<123>Back"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "<741>Left",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<741>Left"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "<963> Right",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<963> Right"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "＜789＞before",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "＜789＞before"
+        }
+      ]
     }
   ]
 }

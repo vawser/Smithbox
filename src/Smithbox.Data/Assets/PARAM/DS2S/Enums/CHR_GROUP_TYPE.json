@@ -1,22 +1,38 @@
 {
-  "DisplayName": "CHR_GROUP_TYPE",
-  "Name": "CHR_GROUP_TYPE",
-  "Description": "",
+  "Key": "CHR_GROUP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_GROUP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Player army",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player army"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Enemy army",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy army"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Neutral",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Neutral"
+        }
+      ]
     }
   ]
 }

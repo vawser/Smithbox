@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_SIZE_ENUM",
-  "Name": "OBJ_SIZE_ENUM",
-  "Description": "",
+  "Key": "OBJ_SIZE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_SIZE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Compact (dynamic)",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Compact (dynamic)"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Large (dynamic)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large (dynamic)"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Large (static)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large (static)"
+        }
+      ]
     }
   ]
 }

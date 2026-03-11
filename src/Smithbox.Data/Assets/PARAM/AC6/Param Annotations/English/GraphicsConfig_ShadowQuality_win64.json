@@ -1,0 +1,48 @@
+{
+  "Param": "GraphicsConfig_ShadowQuality_win64",
+  "Type": "GRAPHICS_CONFIG_CS_SHADOW_QUALITY_DETAIL",
+  "Name": "GraphicsConfig_ShadowQuality_win64",
+  "Description": "Determines the parameters of each shadow quality level.",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Enable Shadows",
+      "Description": "If ON, shadows are enabled."
+    },
+    {
+      "Field": "maxFilterLevel",
+      "Name": "Shadow Filter",
+      "Description": "The shadow filter to use."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeScaler",
+      "Name": "Shadow Map: Resolution Scaler",
+      "Description": "The resolution scaler to apply to shadow maps."
+    },
+    {
+      "Field": "textureSizeDivider",
+      "Name": "Shadow Map: Resolution Divisor",
+      "Description": "The resolution divisor to apply to shadow maps."
+    },
+    {
+      "Field": "textureMinSize",
+      "Name": "Shadow Map: Minimum Resolution",
+      "Description": "The minimum resolution for a shadow map."
+    },
+    {
+      "Field": "textureMaxSize",
+      "Name": "Shadow Map: Maximum Resolution",
+      "Description": "The maximum resolution for a shadow map."
+    },
+    {
+      "Field": "blurCountBias",
+      "Name": "Shadow Map: Blur Count Bias",
+      "Description": "The shadow map blur count bias to apply (set count bias, unchanged at 0)."
+    }
+  ]
+}

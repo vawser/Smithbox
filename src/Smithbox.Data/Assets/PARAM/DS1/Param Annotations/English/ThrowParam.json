@@ -1,0 +1,143 @@
+{
+  "Param": "ThrowParam",
+  "Type": "THROW_INFO_BANK",
+  "Name": "ThrowParam",
+  "Description": "Determines the parameters for throws.",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "Attacker: Character ID",
+      "Description": "The character ID to define the attacker parameters for."
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "Defender: Character ID",
+      "Description": "The character ID to define the defender parameters for."
+    },
+    {
+      "Field": "Dist",
+      "Name": "Allowed Distance",
+      "Description": "The maximum distance the throw is allowed to occur at. In metres."
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "Angular Difference: Minimum",
+      "Description": "The minimum angular difference range between own direction and opponent\u0027s direction. In degrees."
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "Angular Difference: Maximum",
+      "Description": "The maximum angular difference range between own direction and opponent\u0027s direction. In degrees."
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "Maximum Relative Height",
+      "Description": "The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is less than this value."
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "Minimum Relative Height",
+      "Description": "The throw will not proceed unless the relative distance of the Y-axis from the attacker to the defender is above this value."
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "Maximum Angular Difference",
+      "Description": "The angular difference between the vector in front of the attacker and the vector in the direction from the attacker to the defender. If it is larger than this value, the throw will not proceed."
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "Throw Type ID",
+      "Description": "The throw type ID for this throw. Linked to the throwTypeId field in the AtkParam."
+    },
+    {
+      "Field": "atkAnimId",
+      "Name": "Attacker: Animation ID",
+      "Description": "The animation ID for the attacker when performing the throw (linked with EzState)."
+    },
+    {
+      "Field": "defAnimId",
+      "Name": "Defender: Animation ID",
+      "Description": "The animation ID for the defender when performing the throw (linked with EzState)."
+    },
+    {
+      "Field": "escHp",
+      "Name": "Throw Escape Resistance",
+      "Description": "The amount of \u0027HP\u0027 the throw has. A player can \u0027resist\u0027 the throw, reducing the throw\u0027s resistance per escape cycle. If the resistance is lower than 0, the player is released from the throw."
+    },
+    {
+      "Field": "selfEscCycleTime",
+      "Name": "Throw Escape Cycle Duration",
+      "Description": "The duration of the throw escape cycle for the player. This is the interval that the player can reduce the throw\u0027s resistance in. In milliseconds."
+    },
+    {
+      "Field": "sphereCastRadiusRateTop",
+      "Name": "Sphere Cast: Upper Radius %",
+      "Description": "The ratio of the upper radius when using the sphere cast (this determines if a throw connects)."
+    },
+    {
+      "Field": "sphereCastRadiusRateLow",
+      "Name": "Sphere Cast: Lower Radius %",
+      "Description": "The ratio of the lower radius when using the sphere cast (this determines if a throw connects)."
+    },
+    {
+      "Field": "PadType",
+      "Name": "Operation Type",
+      "Description": "The operation type for the throw."
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "Attacker State Type",
+      "Description": "The state type in which the attacker may perform the throw."
+    },
+    {
+      "Field": "atkSorbDmyId",
+      "Name": "Attacker: Attraction Dummy Polygon ID",
+      "Description": "The dummy polygon used to spawn the sphere cast which determines if a throw connects."
+    },
+    {
+      "Field": "defSorbDmyId",
+      "Name": "Defender: Attraction Dummy Polygon ID",
+      "Description": "The dummy polygon used to spawn the sphere cast which determines if a throw connects."
+    },
+    {
+      "Field": "throwType",
+      "Name": "Throw Type",
+      "Description": "The throw type for this throw."
+    },
+    {
+      "Field": "selfEscCycleCnt",
+      "Name": "Throw Escape Cycle Count",
+      "Description": "The number of throw escape cycles a player has during this throw."
+    },
+    {
+      "Field": "dmyHasChrDirType",
+      "Name": "Throw Direction Type",
+      "Description": "The direction of the throw hold dummy polygon ID when a throw occurs."
+    },
+    {
+      "Field": "isTurnAtker",
+      "Name": "Attacker can Turn",
+      "Description": "If ON, the attacker can turn during the throw."
+    },
+    {
+      "Field": "isSkipWepCate",
+      "Name": "Skip Weapon Category Check",
+      "Description": "If ON, the attacker\u0027s weapon category check is skipped."
+    },
+    {
+      "Field": "isSkipSphereCast",
+      "Name": "Skip Sphere Cast",
+      "Description": "If ON, the sphere cast is skipped."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

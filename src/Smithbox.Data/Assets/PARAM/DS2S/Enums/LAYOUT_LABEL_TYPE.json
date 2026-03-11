@@ -1,497 +1,893 @@
 {
-  "DisplayName": "LAYOUT_LABEL_TYPE",
-  "Name": "LAYOUT_LABEL_TYPE",
-  "Description": "",
+  "Key": "LAYOUT_LABEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LAYOUT_LABEL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "100",
-      "Name": "Length",
-      "Description": ""
-    },
-    {
-      "ID": "101",
-      "Name": "Hide",
-      "Description": ""
-    },
-    {
-      "ID": "102",
-      "Name": "Begin",
-      "Description": ""
-    },
-    {
-      "ID": "103",
-      "Name": "Normal",
-      "Description": ""
-    },
-    {
-      "ID": "104",
-      "Name": "End",
-      "Description": ""
-    },
-    {
-      "ID": "105",
-      "Name": "Highlight_begin",
-      "Description": ""
-    },
-    {
-      "ID": "106",
-      "Name": "Highlight",
-      "Description": ""
-    },
-    {
-      "ID": "107",
-      "Name": "Highlight_end",
-      "Description": ""
-    },
-    {
-      "ID": "108",
-      "Name": "Highlight_fix",
-      "Description": ""
-    },
-    {
-      "ID": "109",
-      "Name": "Begine",
-      "Description": ""
-    },
-    {
-      "ID": "110",
-      "Name": "Left",
-      "Description": ""
-    },
-    {
-      "ID": "111",
-      "Name": "Right",
-      "Description": ""
-    },
-    {
-      "ID": "112",
-      "Name": "Sound",
-      "Description": ""
-    },
-    {
-      "ID": "113",
-      "Name": "Highlight_begine",
-      "Description": ""
-    },
-    {
-      "ID": "114",
-      "Name": "Grayout",
-      "Description": ""
-    },
-    {
-      "ID": "115",
-      "Name": "Semi",
-      "Description": ""
-    },
-    {
-      "ID": "116",
-      "Name": "Back",
-      "Description": ""
-    },
-    {
-      "ID": "117",
-      "Name": "Q_mc",
-      "Description": ""
-    },
-    {
-      "ID": "118",
-      "Name": "Text",
-      "Description": ""
-    },
-    {
-      "ID": "119",
-      "Name": "Test_01",
-      "Description": ""
-    },
-    {
-      "ID": "120",
-      "Name": "Test_02",
-      "Description": ""
-    },
-    {
-      "ID": "121",
-      "Name": "Test_03",
-      "Description": ""
-    },
-    {
-      "ID": "122",
-      "Name": "Off",
-      "Description": ""
-    },
-    {
-      "ID": "123",
-      "Name": "Leaf through",
-      "Description": ""
-    },
-    {
-      "ID": "124",
-      "Name": "Begin_02",
-      "Description": ""
-    },
-    {
-      "ID": "125",
-      "Name": "Put back",
-      "Description": ""
-    },
-    {
-      "ID": "126",
-      "Name": "Select",
-      "Description": ""
-    },
-    {
-      "ID": "127",
-      "Name": "A_mc",
-      "Description": ""
-    },
-    {
-      "ID": "128",
-      "Name": "GaugeButton",
-      "Description": ""
-    },
-    {
-      "ID": "129",
-      "Name": "Highlight_normal",
-      "Description": ""
-    },
-    {
-      "ID": "130",
-      "Name": "Left",
-      "Description": ""
-    },
-    {
-      "ID": "131",
-      "Name": "Right",
-      "Description": ""
-    },
-    {
-      "ID": "132",
-      "Name": "Change",
-      "Description": ""
-    },
-    {
-      "ID": "133",
-      "Name": "End_02",
-      "Description": ""
-    },
-    {
-      "ID": "134",
-      "Name": "Talk_begin",
-      "Description": ""
-    },
-    {
-      "ID": "135",
-      "Name": "Talk",
-      "Description": ""
-    },
-    {
-      "ID": "136",
-      "Name": "Talk_end",
-      "Description": ""
-    },
-    {
-      "ID": "137",
-      "Name": "Big_begin",
-      "Description": ""
-    },
-    {
-      "ID": "138",
-      "Name": "Big_normal",
-      "Description": ""
-    },
-    {
-      "ID": "139",
-      "Name": "Big_end",
-      "Description": ""
-    },
-    {
-      "ID": "140",
-      "Name": "Normal_gray",
-      "Description": ""
-    },
-    {
-      "ID": "141",
-      "Name": "Big_gray_begin",
-      "Description": ""
-    },
-    {
-      "ID": "142",
-      "Name": "Big_gray",
-      "Description": ""
-    },
-    {
-      "ID": "143",
-      "Name": "Big_gray_end",
-      "Description": ""
-    },
-    {
-      "ID": "144",
-      "Name": "Big",
-      "Description": ""
-    },
-    {
-      "ID": "145",
-      "Name": "TopMenu7",
-      "Description": ""
-    },
-    {
-      "ID": "146",
-      "Name": "TopMenu2Text",
-      "Description": ""
-    },
-    {
-      "ID": "147",
-      "Name": "TopMenu1Text",
-      "Description": ""
-    },
-    {
-      "ID": "148",
-      "Name": "Armor",
-      "Description": ""
-    },
-    {
-      "ID": "149",
-      "Name": "Text00",
-      "Description": ""
-    },
-    {
-      "ID": "150",
-      "Name": "SortWindowName",
-      "Description": ""
-    },
-    {
-      "ID": "151",
-      "Name": "BonfireTransH1",
-      "Description": ""
-    },
-    {
-      "ID": "152",
-      "Name": "Red",
-      "Description": ""
-    },
-    {
-      "ID": "153",
-      "Name": "Blue",
-      "Description": ""
-    },
-    {
-      "ID": "154",
-      "Name": "Icon_change",
-      "Description": ""
-    },
-    {
-      "ID": "155",
-      "Name": "On_Line",
-      "Description": ""
-    },
-    {
-      "ID": "156",
-      "Name": "Cursor_normal",
-      "Description": ""
-    },
-    {
-      "ID": "157",
-      "Name": "Cursor_begin",
-      "Description": ""
-    },
-    {
-      "ID": "158",
-      "Name": "Cursor_end",
-      "Description": ""
-    },
-    {
-      "ID": "159",
-      "Name": "Green_normal",
-      "Description": ""
-    },
-    {
-      "ID": "160",
-      "Name": "Green_begin",
-      "Description": ""
-    },
-    {
-      "ID": "161",
-      "Name": "Green_end",
-      "Description": ""
-    },
-    {
-      "ID": "162",
-      "Name": "Red_normal",
-      "Description": ""
-    },
-    {
-      "ID": "163",
-      "Name": "Red_begin",
-      "Description": ""
-    },
-    {
-      "ID": "164",
-      "Name": "Red_end",
-      "Description": ""
-    },
-    {
-      "ID": "165",
-      "Name": "Heart_normal",
-      "Description": ""
-    },
-    {
-      "ID": "166",
-      "Name": "Heart_begin",
-      "Description": ""
-    },
-    {
-      "ID": "167",
-      "Name": "Heart_end",
-      "Description": ""
-    },
-    {
-      "ID": "168",
-      "Name": "Died_normal",
-      "Description": ""
-    },
-    {
-      "ID": "169",
-      "Name": "Died_begin",
-      "Description": ""
-    },
-    {
-      "ID": "170",
-      "Name": "Died_end",
-      "Description": ""
-    },
-    {
-      "ID": "171",
-      "Name": "Gray",
-      "Description": ""
-    },
-    {
-      "ID": "172",
-      "Name": "01",
-      "Description": ""
-    },
-    {
-      "ID": "173",
-      "Name": "02",
-      "Description": ""
-    },
-    {
-      "ID": "174",
-      "Name": "03",
-      "Description": ""
-    },
-    {
-      "ID": "175",
-      "Name": "04",
-      "Description": ""
-    },
-    {
-      "ID": "176",
-      "Name": "05",
-      "Description": ""
-    },
-    {
-      "ID": "177",
-      "Name": "06",
-      "Description": ""
-    },
-    {
-      "ID": "178",
-      "Name": "07",
-      "Description": ""
-    },
-    {
-      "ID": "179",
-      "Name": "08",
-      "Description": ""
-    },
-    {
-      "ID": "180",
-      "Name": "Armor_Top",
-      "Description": ""
-    },
-    {
-      "ID": "181",
-      "Name": "One",
-      "Description": ""
-    },
-    {
-      "ID": "182",
-      "Name": "Eight",
-      "Description": ""
-    },
-    {
-      "ID": "183",
-      "Name": "Up",
-      "Description": ""
-    },
-    {
-      "ID": "184",
-      "Name": "Down",
-      "Description": ""
-    },
-    {
-      "ID": "185",
-      "Name": "Red_blue",
-      "Description": ""
-    },
-    {
-      "ID": "186",
-      "Name": "Black",
-      "Description": ""
-    },
-    {
-      "ID": "187",
-      "Name": "Covenant",
-      "Description": ""
-    },
-    {
-      "ID": "188",
-      "Name": "Individual",
-      "Description": ""
-    },
-    {
-      "ID": "189",
-      "Name": "Picture 3",
-      "Description": ""
-    },
-    {
-      "ID": "190",
-      "Name": "Japan",
-      "Description": ""
-    },
-    {
-      "ID": "191",
-      "Name": "1p",
-      "Description": ""
-    },
-    {
-      "ID": "192",
-      "Name": "2p",
-      "Description": ""
-    },
-    {
-      "ID": "193",
-      "Name": "Normal_select",
-      "Description": ""
-    },
-    {
-      "ID": "194",
-      "Name": "Highlight_begin_select",
-      "Description": ""
-    },
-    {
-      "ID": "195",
-      "Name": "Highlight_select",
-      "Description": ""
-    },
-    {
-      "ID": "196",
-      "Name": "Highlight_end_select",
-      "Description": ""
-    },
-    {
-      "ID": "197",
-      "Name": "Highlight_fix_select",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Length"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hide"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Begin"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_begin"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_end"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_fix"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Begine"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sound"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_begine"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grayout"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Semi"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Q_mc"
+        }
+      ]
+    },
+    {
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Text"
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test_01"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test_02"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test_03"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Off"
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leaf through"
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Begin_02"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put back"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Select"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A_mc"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "GaugeButton"
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_normal"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Change"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End_02"
+        }
+      ]
+    },
+    {
+      "Key": "134",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk_begin"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk_end"
+        }
+      ]
+    },
+    {
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_begin"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_normal"
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_end"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal_gray"
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_gray_begin"
+        }
+      ]
+    },
+    {
+      "Key": "142",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_gray"
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big_gray_end"
+        }
+      ]
+    },
+    {
+      "Key": "144",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big"
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TopMenu7"
+        }
+      ]
+    },
+    {
+      "Key": "146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TopMenu2Text"
+        }
+      ]
+    },
+    {
+      "Key": "147",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TopMenu1Text"
+        }
+      ]
+    },
+    {
+      "Key": "148",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
+    },
+    {
+      "Key": "149",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Text00"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SortWindowName"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BonfireTransH1"
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red"
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue"
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Icon_change"
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On_Line"
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cursor_normal"
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cursor_begin"
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cursor_end"
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Green_normal"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Green_begin"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Green_end"
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red_normal"
+        }
+      ]
+    },
+    {
+      "Key": "163",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red_begin"
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red_end"
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heart_normal"
+        }
+      ]
+    },
+    {
+      "Key": "166",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heart_begin"
+        }
+      ]
+    },
+    {
+      "Key": "167",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heart_end"
+        }
+      ]
+    },
+    {
+      "Key": "168",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Died_normal"
+        }
+      ]
+    },
+    {
+      "Key": "169",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Died_begin"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Died_end"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gray"
+        }
+      ]
+    },
+    {
+      "Key": "172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "01"
+        }
+      ]
+    },
+    {
+      "Key": "173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "02"
+        }
+      ]
+    },
+    {
+      "Key": "174",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "03"
+        }
+      ]
+    },
+    {
+      "Key": "175",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "04"
+        }
+      ]
+    },
+    {
+      "Key": "176",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "05"
+        }
+      ]
+    },
+    {
+      "Key": "177",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "06"
+        }
+      ]
+    },
+    {
+      "Key": "178",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "07"
+        }
+      ]
+    },
+    {
+      "Key": "179",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "08"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor_Top"
+        }
+      ]
+    },
+    {
+      "Key": "181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One"
+        }
+      ]
+    },
+    {
+      "Key": "182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eight"
+        }
+      ]
+    },
+    {
+      "Key": "183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up"
+        }
+      ]
+    },
+    {
+      "Key": "184",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Down"
+        }
+      ]
+    },
+    {
+      "Key": "185",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red_blue"
+        }
+      ]
+    },
+    {
+      "Key": "186",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black"
+        }
+      ]
+    },
+    {
+      "Key": "187",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Covenant"
+        }
+      ]
+    },
+    {
+      "Key": "188",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Individual"
+        }
+      ]
+    },
+    {
+      "Key": "189",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Picture 3"
+        }
+      ]
+    },
+    {
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Japan"
+        }
+      ]
+    },
+    {
+      "Key": "191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1p"
+        }
+      ]
+    },
+    {
+      "Key": "192",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2p"
+        }
+      ]
+    },
+    {
+      "Key": "193",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal_select"
+        }
+      ]
+    },
+    {
+      "Key": "194",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_begin_select"
+        }
+      ]
+    },
+    {
+      "Key": "195",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_select"
+        }
+      ]
+    },
+    {
+      "Key": "196",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_end_select"
+        }
+      ]
+    },
+    {
+      "Key": "197",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Highlight_fix_select"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "Param": "Gconfig_LightingQuality_scarlett",
+  "Type": "CS_LIGHTING_QUALITY_DETAIL",
+  "Name": "Gconfig_LightingQuality_scarlett",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "localLightDistFactor",
+      "Name": "Local Light Distance Factor",
+      "Description": "Local light effective distance coefficient (smaller, it disappears at a short distance)"
+    },
+    {
+      "Field": "localLightShadowEnabled",
+      "Name": "Local Light Shadow Enabled",
+      "Description": "Local light shadow enabled"
+    },
+    {
+      "Field": "forwardPassLightingEnabled",
+      "Name": "Forward Pass Write Enabled",
+      "Description": "Forward pass writing enabled"
+    },
+    {
+      "Field": "localLightShadowSpecLevelMax",
+      "Name": "Local Light Shadow Specular Level",
+      "Description": "Local light shadow spec level. The larger the value, the more light sources will be shadowed."
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

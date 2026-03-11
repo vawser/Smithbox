@@ -1,42 +1,74 @@
 {
-  "DisplayName": "WEAPON_STAMINA_COST_PARAM_ID",
-  "Name": "WEAPON_STAMINA_COST_PARAM_ID",
-  "Description": "",
+  "Key": "WEAPON_STAMINA_COST_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_STAMINA_COST_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Invalid data (unused)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid data (unused)"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Basic set",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basic set"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Two handed set",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two handed set"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "2HIT generation set",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2HIT generation set"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Bow and arrow set",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow and arrow set"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Special strong attack set",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special strong attack set"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Ricard's sword",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ricard's sword"
+        }
+      ]
     }
   ]
 }

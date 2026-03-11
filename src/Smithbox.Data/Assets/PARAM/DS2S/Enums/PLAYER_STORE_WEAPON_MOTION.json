@@ -1,27 +1,47 @@
 {
-  "DisplayName": "PLAYER_STORE_WEAPON_MOTION",
-  "Name": "PLAYER_STORE_WEAPON_MOTION",
-  "Description": "",
+  "Key": "PLAYER_STORE_WEAPON_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_STORE_WEAPON_MOTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Hang on the shoulder",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hang on the shoulder"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Put on the back",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put on the back"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Hang on the waist",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hang on the waist"
+        }
+      ]
     }
   ]
 }

@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CHR_GRAB_ACTION_TYPE",
-  "Name": "CHR_GRAB_ACTION_TYPE",
-  "Description": "",
+  "Key": "CHR_GRAB_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_GRAB_ACTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Thrower",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrower"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "The side that was thrown",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The side that was thrown"
+        }
+      ]
     }
   ]
 }

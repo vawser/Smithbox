@@ -1,0 +1,23 @@
+{
+  "Param": "GameProgressParam",
+  "Type": "GAME_PROGRESS_PARAM_ST",
+  "Name": "GameProgressParam",
+  "Description": "Game Progress data - Handles progress event flags",
+  "Fields": [
+    {
+      "Field": "EventFlagId",
+      "Name": "Event Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "ProgressId",
+      "Name": "Progress ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

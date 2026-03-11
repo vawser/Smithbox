@@ -1,0 +1,153 @@
+{
+  "Param": "ActionButtonParam",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ActionButtonParam",
+  "Description": "Determines the parameters used for interactable prompts.",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "Region Type",
+      "Description": "Range shape (cylinder, prism, capsule)"
+    },
+    {
+      "Field": "category",
+      "Name": "Category",
+      "Description": "category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)."
+    },
+    {
+      "Field": "padding1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "Dummy Poly [1]",
+      "Description": "Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygon or -1 is entered, the center coordinates will be the reference."
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "Dummy Poly [2]",
+      "Description": "Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons"
+    },
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "Radius (cylinder / capsule)"
+    },
+    {
+      "Field": "angle",
+      "Name": "Angle",
+      "Description": "Angle (cylinder)"
+    },
+    {
+      "Field": "depth",
+      "Name": "Depth",
+      "Description": "Depth (prism)"
+    },
+    {
+      "Field": "width",
+      "Name": "Width",
+      "Description": "Width (prism)"
+    },
+    {
+      "Field": "height",
+      "Name": "Height",
+      "Description": "Height (cylinder / prism)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "Bottom Height Offset",
+      "Description": "How much to raise or lower the Y coordinate of the bottom (cylinder / prism)"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "Angle Difference Check Type",
+      "Description": "Angle difference judgment type (cylinder / prism)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "Allowable Angle Difference",
+      "Description": "Allowable angle difference (cylinder / prism)"
+    },
+    {
+      "Field": "spotDummyPoly",
+      "Name": "Action Spot Dummy Polygon",
+      "Description": "If there is no dummy polygon that specifies the dummy polygon ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference."
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "Textbox Type",
+      "Description": "Text box type"
+    },
+    {
+      "Field": "padding3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isInvalidForRide",
+      "Name": "Is Invalid when Riding",
+      "Description": "If enabled, this action will not appear whilst in the \u0027riding\u0027 state."
+    },
+    {
+      "Field": "isGrayoutForRide",
+      "Name": "Is Grayed Out when Riding",
+      "Description": "If enabled, this action will be grayed out whilst in the \u0027riding\u0027 state."
+    },
+    {
+      "Field": "isInvalidForCrouching",
+      "Name": "Invalid for Crouching",
+      "Description": "If enabled, this action will not appear whilst in the \u0027crouching\u0027 state."
+    },
+    {
+      "Field": "isGrayoutForCrouching",
+      "Name": "Greyout for Crouching",
+      "Description": "If enabled, this action will be grayed out whilst in the \u0027crouching\u0027 state."
+    },
+    {
+      "Field": "padding4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "The FMG Entry ID to display."
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "Invalid Event Flag",
+      "Description": "If the event flag is ON, then this action will not appear."
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "Grayout Event Flag",
+      "Description": "If the event flag is ON, then this action will be grayed out."
+    },
+    {
+      "Field": "overrideActionButtonIdForRide",
+      "Name": "Override Button ID for Ride",
+      "Description": "Replace with this action button ID parameter while riding (-1: No replacement)"
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "Execution Invalid Time",
+      "Description": "Invalid time after execution (-infinite by value)"
+    },
+    {
+      "Field": "padding6",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

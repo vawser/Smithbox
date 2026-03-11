@@ -1,42 +1,74 @@
 {
-  "DisplayName": "GUARD_ATTACK_LEVEL_TYPE",
-  "Name": "GUARD_ATTACK_LEVEL_TYPE",
-  "Description": "",
+  "Key": "GUARD_ATTACK_LEVEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARD_ATTACK_LEVEL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "小",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "小"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "中",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "中"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "大",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "大"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Special",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special"
+        }
+      ]
     }
   ]
 }

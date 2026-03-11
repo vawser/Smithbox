@@ -1,0 +1,193 @@
+{
+  "Param": "GrassTypeParam",
+  "Type": "GRASS_TYPE_PARAM_ST",
+  "Name": "GrassTypeParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "lodRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lod0ClusterType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lod1ClusterType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lod2ClusterType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distributionType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDensity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modelName",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flatTextureName",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "billboardTextureName",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalInfluence",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inclinationMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inclinationJitter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scaleBaseMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scaleBaseMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scaleHeightMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scaleHeightMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_r",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_r",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flatSplitType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flatBladeCount",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flatSlant",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flatRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "castShadow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windAmplitude",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "windCycle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "orientationAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "orientationRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spacing",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dithering",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "simpleModelName",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

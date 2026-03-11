@@ -1,0 +1,33 @@
+{
+  "Param": "WaypointParam",
+  "Type": "WAYPOINT_PARAM_ST",
+  "Name": "WaypointParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "attribute1",
+      "Name": "Attribute [1]",
+      "Description": ""
+    },
+    {
+      "Field": "attribute2",
+      "Name": "Attribute [2]",
+      "Description": ""
+    },
+    {
+      "Field": "attribute3",
+      "Name": "Attribute [3]",
+      "Description": ""
+    },
+    {
+      "Field": "attribute4",
+      "Name": "Attribute [4]",
+      "Description": ""
+    },
+    {
+      "Field": "padding4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

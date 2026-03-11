@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Brightstone Cove Tseldora",
+  "Key": "Brightstone Cove Tseldora",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Brightstone Cove Tseldora"
+      }
+  ],
   "Params": [
     "demopointlight_scn101410",
     "demopointlight_scn101420",

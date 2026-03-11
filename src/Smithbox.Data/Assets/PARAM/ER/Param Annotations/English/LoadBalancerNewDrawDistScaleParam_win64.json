@@ -1,0 +1,63 @@
+{
+  "Param": "LoadBalancerNewDrawDistScaleParam_win64",
+  "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
+  "Name": "LoadBalancerNewDrawDistScaleParam_win64",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "DrawDist_LvBegin",
+      "Name": "Draw Distance - Level Start",
+      "Description": "Drawing distance scale activation level (start)"
+    },
+    {
+      "Field": "DrawDist_LvEnd",
+      "Name": "Draw Distance - Level End",
+      "Description": "Drawing distance scale activation level (completed)"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DrawDist_ScaleBegin",
+      "Name": "Draw Distance - Scale Start",
+      "Description": "Drawing distance scale (start)"
+    },
+    {
+      "Field": "DrawDist_ScaleEnd",
+      "Name": "Draw Distance - Scale End",
+      "Description": "Drawing distance scale (completed)"
+    },
+    {
+      "Field": "ShadwDrawDist_LvBegin",
+      "Name": "Shadow Draw Distance - Level Start",
+      "Description": "Shadow drawing distance scale activation level (start)"
+    },
+    {
+      "Field": "ShadwDrawDist_LvEnd",
+      "Name": "Shadow Draw Distance - Level End",
+      "Description": "Shadow drawing distance scale activation level (completed)"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleBegin",
+      "Name": "Shadow Draw Distance - Scale Start",
+      "Description": "Shadow drawing distance scale (start)"
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleEnd",
+      "Name": "Shadow Draw Distance - Scale End",
+      "Description": "Shadow drawing distance scale (completed)"
+    },
+    {
+      "Field": "reserve2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

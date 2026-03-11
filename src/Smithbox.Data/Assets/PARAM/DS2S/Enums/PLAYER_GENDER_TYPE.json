@@ -1,17 +1,29 @@
 {
-  "DisplayName": "PLAYER_GENDER_TYPE",
-  "Name": "PLAYER_GENDER_TYPE",
-  "Description": "",
+  "Key": "PLAYER_GENDER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_GENDER_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Male",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Male"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Woman",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Woman"
+        }
+      ]
     }
   ]
 }

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "HEAL_ITEM_USAGE_TYPE",
-  "Name": "HEAL_ITEM_USAGE_TYPE",
-  "Description": "",
+  "Key": "HEAL_ITEM_USAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HEAL_ITEM_USAGE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Permitted",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Permitted"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Prohibited",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Prohibited if invaded",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited if invaded"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,118 @@
+{
+  "Param": "default_EnemyBehaviorBank",
+  "Type": "ENEMY_STANDARD_INFO_BANK",
+  "Name": "default_EnemyBehaviorBank",
+  "Description": "Determines the parameters for enemy behavior and collision.",
+  "Fields": [
+    {
+      "Field": "EnemyBehaviorID",
+      "Name": "Behavior ID",
+      "Description": "The behavior ID this enemy uses."
+    },
+    {
+      "Field": "HP",
+      "Name": "HP",
+      "Description": "The HP this enemy has."
+    },
+    {
+      "Field": "AttackPower",
+      "Name": "Attack Power",
+      "Description": "The attack power this enemy has."
+    },
+    {
+      "Field": "ChrType",
+      "Name": "Character Type",
+      "Description": "The character type of this enemy."
+    },
+    {
+      "Field": "HitHeight",
+      "Name": "Collision Height",
+      "Description": "The height of the enemy collision capsule. In metres."
+    },
+    {
+      "Field": "HitRadius",
+      "Name": "Collision Radius",
+      "Description": "The radius of the enemy collision capsule. In metres."
+    },
+    {
+      "Field": "Weight",
+      "Name": "Weight",
+      "Description": "The weight of this enemy (for physics)."
+    },
+    {
+      "Field": "DynamicFriction",
+      "Name": "Dynamic Friction",
+      "Description": "The dynamic friction force used for this enemy (for physics)."
+    },
+    {
+      "Field": "StaticFriction",
+      "Name": "Static Friction",
+      "Description": "The static friction force used for this enemy (for physics)."
+    },
+    {
+      "Field": "UpperDefState",
+      "Name": "Initial State: Upper Body",
+      "Description": "The initial state of this enemy\u0027s upper body."
+    },
+    {
+      "Field": "ActionDefState",
+      "Name": "Initial State: Action",
+      "Description": "The initial state of action this enemy has."
+    },
+    {
+      "Field": "RotY_per_Second",
+      "Name": "Y-Axis Rotation Rate",
+      "Description": "The rotation rate on the y-axis for this enemy. In degrees per second."
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RotY_per_Second_old",
+      "Name": "Y-Axis Rotation Rate",
+      "Description": "The rotation rate on the y-axis for this enemy. In degrees per second."
+    },
+    {
+      "Field": "EnableSideStep",
+      "Name": "Enable Sidestep",
+      "Description": "If ON, the enemy can side-step left and right."
+    },
+    {
+      "Field": "UseRagdollHit",
+      "Name": "Enable Ragdoll",
+      "Description": "If ON, then ragdoll collision is used for this enemy."
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina",
+      "Description": "The total amount of stamina this enemy has."
+    },
+    {
+      "Field": "staminaRecover",
+      "Name": "Stamina Recovery",
+      "Description": "The recovery rate per second for stamina this enemy uses."
+    },
+    {
+      "Field": "staminaConsumption",
+      "Name": "Stamina Consumption",
+      "Description": "The base value of stamina consumption this enemy expends when attacking or guarding."
+    },
+    {
+      "Field": "deffenct_Phys",
+      "Name": "Physical Defense",
+      "Description": "The base defense against physical damage."
+    },
+    {
+      "Field": "reserve_last2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

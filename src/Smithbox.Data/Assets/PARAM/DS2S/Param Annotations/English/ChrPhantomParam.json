@@ -1,0 +1,138 @@
+{
+  "Param": "ChrPhantomParam",
+  "Type": "CHR_PHANTOM_PARAM",
+  "Name": "ChrPhantomParam",
+  "Description": "Defines parameters related to body and weapon tints.",
+  "Fields": [
+    {
+      "Field": "phantom_color_1_r",
+      "Name": "Color 1 - R",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_1_g",
+      "Name": "Color 1 - G",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_1_b",
+      "Name": "Color 1 - B",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_1_a",
+      "Name": "Color 1 - Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_2_r",
+      "Name": "Color 2 - R",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_2_g",
+      "Name": "Color 2 - G",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_2_b",
+      "Name": "Color 2 - B",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_2_a",
+      "Name": "Color 2 - Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_3_r",
+      "Name": "Color 3 - R",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_3_g",
+      "Name": "Color 3 - G",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_3_b",
+      "Name": "Color 3 - B",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_3_a",
+      "Name": "Color 3 - Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_4_r",
+      "Name": "Color 4 - R",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_4_g",
+      "Name": "Color 4 - G",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_4_b",
+      "Name": "Color 4 - B",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_4_a",
+      "Name": "Color 4 - Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_5_r",
+      "Name": "Color 5 - R",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_5_g",
+      "Name": "Color 5 - G",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_5_b",
+      "Name": "Color 5 - B",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_color_5_a",
+      "Name": "Color 5 - Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_fade_alpha_start",
+      "Name": "Fade Alpha - Start",
+      "Description": ""
+    },
+    {
+      "Field": "phantom_fade_alpha_end",
+      "Name": "Fade Alpha - End",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

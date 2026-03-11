@@ -1,32 +1,56 @@
 {
-  "DisplayName": "LOGIC_ACTION_PRIORITY_TYPE",
-  "Name": "LOGIC_ACTION_PRIORITY_TYPE",
-  "Description": "",
+  "Key": "LOGIC_ACTION_PRIORITY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_ACTION_PRIORITY_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Attack",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Move",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Defense",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defense"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Avoidance",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Avoidance"
+        }
+      ]
     }
   ]
 }

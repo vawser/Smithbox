@@ -1,0 +1,113 @@
+{
+  "Param": "MapGridCreateHeightDetailLimitInfo",
+  "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_DETAIL_INFO_PARAM_ST",
+  "Name": "MapGridCreateHeightDetailLimitInfo",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "mapId",
+      "Name": "Map ID",
+      "Description": "Refers to the map ID without underscores."
+    },
+    {
+      "Field": "unknown_0x4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2e",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x2f",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x3c",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

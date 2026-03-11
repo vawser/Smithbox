@@ -1,27 +1,47 @@
 {
-  "DisplayName": "OBJ_BREAK_CTRL_TYPE_ENUM",
-  "Name": "OBJ_BREAK_CTRL_TYPE_ENUM",
-  "Description": "",
+  "Key": "OBJ_BREAK_CTRL_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_BREAK_CTRL_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "無",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "無"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Normal destruction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal destruction"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Prefab destruction",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prefab destruction"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Stone statue",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone statue"
+        }
+      ]
     }
   ]
 }

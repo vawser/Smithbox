@@ -1,42 +1,74 @@
 {
-  "DisplayName": "GENERATOR_SP_GENERATE_TYPE",
-  "Name": "GENERATOR_SP_GENERATE_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_SP_GENERATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_SP_GENERATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "White spirit",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White spirit"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Black spirit",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black spirit"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Small white spirit",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small white spirit"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Network player memory usage",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Network player memory usage"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Dress-up NPC: Sorcerer",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dress-up NPC: Sorcerer"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Mouse",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse"
+        }
+      ]
     }
   ]
 }

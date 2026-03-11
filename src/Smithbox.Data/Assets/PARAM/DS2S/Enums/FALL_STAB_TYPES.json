@@ -1,17 +1,29 @@
 {
-  "DisplayName": "FALL_STAB_TYPES",
-  "Name": "FALL_STAB_TYPES",
-  "Description": "",
+  "Key": "FALL_STAB_TYPES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FALL_STAB_TYPES"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Cut",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cut"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Thrust",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrust"
+        }
+      ]
     }
   ]
 }

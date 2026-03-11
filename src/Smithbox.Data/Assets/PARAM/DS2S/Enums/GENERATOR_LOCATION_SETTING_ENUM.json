@@ -1,27 +1,47 @@
 {
-  "DisplayName": "GENERATOR_LOCATION_SETTING_ENUM",
-  "Name": "GENERATOR_LOCATION_SETTING_ENUM",
-  "Description": "",
+  "Key": "GENERATOR_LOCATION_SETTING_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_LOCATION_SETTING_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Above ground",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Above ground"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Air",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Ceiling",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceiling"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "OBJ master position",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OBJ master position"
+        }
+      ]
     }
   ]
 }

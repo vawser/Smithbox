@@ -1,202 +1,362 @@
 {
-  "DisplayName": "CHR_VISUAL_TYPE",
-  "Name": "CHR_VISUAL_TYPE",
-  "Description": "",
+  "Key": "CHR_VISUAL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_VISUAL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Kojiro Phantom",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kojiro Phantom"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "White phantom",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White phantom"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Blue phantom 0",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue phantom 0"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Blue phantom 1",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue phantom 1"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Blue phantom 2",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue phantom 2"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Kogane Phantom",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kogane Phantom"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Gold phantom",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold phantom"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Red phantom 0",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red phantom 0"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Red phantom 1",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red phantom 1"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Red phantom 2",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red phantom 2"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Black phantom",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black phantom"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Dragon Spirit Phantom",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Spirit Phantom"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Abyss phantom",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyss phantom"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Servant phantom",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Servant phantom"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Normal Phantom",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal Phantom"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Bonfire Phantom",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bonfire Phantom"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Grave spirit phantom",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grave spirit phantom"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Illusion phantom",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion phantom"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Blue phantom 3",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue phantom 3"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Red phantom 3",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red phantom 3"
+        }
+      ]
     },
     {
-      "ID": "101",
-      "Name": "Kojiro Phantom-Remaining time-Medium",
-      "Description": ""
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kojiro Phantom-Remaining time-Medium"
+        }
+      ]
     },
     {
-      "ID": "102",
-      "Name": "White Phantom - Remaining time - Medium",
-      "Description": ""
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Phantom - Remaining time - Medium"
+        }
+      ]
     },
     {
-      "ID": "103",
-      "Name": "Kogane Phantom - Remaining time - Medium",
-      "Description": ""
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kogane Phantom - Remaining time - Medium"
+        }
+      ]
     },
     {
-      "ID": "104",
-      "Name": "Gold Phantom - Remaining time - Medium",
-      "Description": ""
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold Phantom - Remaining time - Medium"
+        }
+      ]
     },
     {
-      "ID": "105",
-      "Name": "Red Phantom 0-Remaining time-Medium",
-      "Description": ""
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 0-Remaining time-Medium"
+        }
+      ]
     },
     {
-      "ID": "106",
-      "Name": "Red Phantom 1-Remaining time-Medium",
-      "Description": ""
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 1-Remaining time-Medium"
+        }
+      ]
     },
     {
-      "ID": "107",
-      "Name": "Red Phantom 2-Remaining time-Medium",
-      "Description": ""
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 2-Remaining time-Medium"
+        }
+      ]
     },
     {
-      "ID": "108",
-      "Name": "Red Phantom 3-Remaining time-Medium",
-      "Description": ""
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 3-Remaining time-Medium"
+        }
+      ]
     },
     {
-      "ID": "109",
-      "Name": "Black Phantom-Remaining Time-Medium",
-      "Description": ""
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom-Remaining Time-Medium"
+        }
+      ]
     },
     {
-      "ID": "201",
-      "Name": "Kojiro Phantom-Remaining time-Small",
-      "Description": ""
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kojiro Phantom-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "202",
-      "Name": "White Phantom-Remaining time-Small",
-      "Description": ""
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Phantom-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "203",
-      "Name": "Kogane Phantom-Remaining time-Small",
-      "Description": ""
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kogane Phantom-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "204",
-      "Name": "Gold Phantom-Remaining time-Small",
-      "Description": ""
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gold Phantom-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "205",
-      "Name": "Red Phantom 0-Remaining time-Small",
-      "Description": ""
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 0-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "206",
-      "Name": "Red Phantom 1-Remaining time-Small",
-      "Description": ""
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 1-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "207",
-      "Name": "Red Phantom 2-Remaining time-Small",
-      "Description": ""
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 2-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "208",
-      "Name": "Red Phantom 3-Remaining time-Small",
-      "Description": ""
+      "Key": "208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red Phantom 3-Remaining time-Small"
+        }
+      ]
     },
     {
-      "ID": "209",
-      "Name": "Black Phantom-Remaining time-Small",
-      "Description": ""
+      "Key": "209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom-Remaining time-Small"
+        }
+      ]
     }
   ]
 }

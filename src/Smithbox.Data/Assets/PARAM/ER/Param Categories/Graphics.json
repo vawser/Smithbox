@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Graphics",
+  "Key": "Graphics",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Graphics"
+      }
+  ],
   "Params": [
     "Gconfig_AAQuality",
     "Gconfig_AAQuality_ps4",

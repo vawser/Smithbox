@@ -1,0 +1,58 @@
+{
+  "Param": "AnimMoveCorrectionParam",
+  "Type": "ANIM_MOVE_CORRECTION_PARAM_ST",
+  "Name": "AnimMoveCorrectionParam",
+  "Description": "Determines the movement correction parameters for animations.",
+  "Fields": [
+    {
+      "Field": "charaId",
+      "Name": "Character ID",
+      "Description": "Character ID of the character to which the parameter is applied."
+    },
+    {
+      "Field": "pad2_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "animId",
+      "Name": "Animation ID",
+      "Description": "The animation ID of the animation to which the parameter is applied."
+    },
+    {
+      "Field": "flagId",
+      "Name": "TAE Flag ID",
+      "Description": "TAE flag to which the parameter is applied: Flag ID of Movement Amount Override"
+    },
+    {
+      "Field": "calcGraphParamId",
+      "Name": "Calculation Graph Param ID",
+      "Description": "ID of the correction calculation graph parameter passed to the correction movement calculation control."
+    },
+    {
+      "Field": "charaWeightMax",
+      "Name": "Character Weight: Maximum",
+      "Description": "Upper limit of aircraft weight to be passed to the correction travel calculation control"
+    },
+    {
+      "Field": "charaWeightMin",
+      "Name": "Character Weight: Minimum",
+      "Description": "Lower limit of aircraft weight to be passed to the correction travel calculation control"
+    },
+    {
+      "Field": "moveMax",
+      "Name": "Character Movement: Maximum",
+      "Description": "Upper limit of the amount of travel passed to the compensating travel calculation control"
+    },
+    {
+      "Field": "moveMin",
+      "Name": "Character Movement: Minimum",
+      "Description": "Lower limit of the amount of travel passed to the compensating travel calculation control"
+    },
+    {
+      "Field": "pad99",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

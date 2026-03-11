@@ -1,0 +1,48 @@
+{
+  "Param": "LodPlatform",
+  "Type": "LOD_PLATFORM_ST",
+  "Name": "LodPlatform",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist_Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_BorderDist_Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureLod_Overwrite",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "draw_BorderDist_Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shadowDraw_BorderDist_Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "motionBlur_BorderDist_Scale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

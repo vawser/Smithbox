@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_ITEM_SETTING_TYPE_ENUM",
-  "Name": "OBJ_ITEM_SETTING_TYPE_ENUM",
-  "Description": "",
+  "Key": "OBJ_ITEM_SETTING_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_ITEM_SETTING_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Sex",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sex"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Race",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Race"
+        }
+      ]
     }
   ]
 }

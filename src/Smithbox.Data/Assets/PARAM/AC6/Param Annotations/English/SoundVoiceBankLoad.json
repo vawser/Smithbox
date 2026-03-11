@@ -1,0 +1,7 @@
+{
+  "Param": "SoundVoiceBankLoad",
+  "Type": "WWISE_VALUE_TO_STR_CONVERT_W_PARAM_ST",
+  "Name": "SoundVoiceBankLoad",
+  "Description": null,
+  "Fields": []
+}

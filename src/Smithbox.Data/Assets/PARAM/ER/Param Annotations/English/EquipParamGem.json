@@ -1,0 +1,548 @@
+{
+  "Param": "EquipParamGem",
+  "Type": "EQUIP_PARAM_GEM_ST",
+  "Name": "EquipParamGem",
+  "Description": "Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "rank",
+      "Name": "Rank",
+      "Description": "Magic stone rank"
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "Sort Group ID",
+      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "SpEffect ID [0]",
+      "Description": "Special effect ID00"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "SpEffect ID [1]",
+      "Description": "Special effect ID01"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "SpEffect ID [2]",
+      "Description": "Special effect ID02"
+    },
+    {
+      "Field": "itemGetTutorialFlagId",
+      "Name": "Item Get Tutorial Flag ID",
+      "Description": "Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained."
+    },
+    {
+      "Field": "swordArtsParamId",
+      "Name": "Sword Arts ID",
+      "Description": "ID of the destination arts parameter"
+    },
+    {
+      "Field": "mountValue",
+      "Name": "Application Cost",
+      "Description": "Installation price"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Sale price"
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Sale Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sort ID (-1: Do not collect)"
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "Achievement ID",
+      "Description": "SEQ number of complete trophy"
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Achievement Sequential ID",
+      "Description": "Trophy SEQ number"
+    },
+    {
+      "Field": "configurableWepAttr00",
+      "Name": "Affinity: Standard",
+      "Description": "Configurable weapon attribute ID 0"
+    },
+    {
+      "Field": "configurableWepAttr01",
+      "Name": "Affinity: Heavy",
+      "Description": "Configurable Weapon Attribute ID 1"
+    },
+    {
+      "Field": "configurableWepAttr02",
+      "Name": "Affinity: Keen",
+      "Description": "Configurable Weapon Attribute ID 2"
+    },
+    {
+      "Field": "configurableWepAttr03",
+      "Name": "Affinity: Quality",
+      "Description": "Configurable Weapon Attribute ID 3"
+    },
+    {
+      "Field": "configurableWepAttr04",
+      "Name": "Affinity: Fire",
+      "Description": "Configurable Weapon Attribute ID 4"
+    },
+    {
+      "Field": "configurableWepAttr05",
+      "Name": "Affinity: Flame Art",
+      "Description": "Configurable Weapon Attribute ID 5"
+    },
+    {
+      "Field": "configurableWepAttr06",
+      "Name": "Affinity: Lightning",
+      "Description": "Configurable Weapon Attribute ID 6"
+    },
+    {
+      "Field": "configurableWepAttr07",
+      "Name": "Affinity: Sacred",
+      "Description": "Configurable Weapon Attribute ID 7"
+    },
+    {
+      "Field": "configurableWepAttr08",
+      "Name": "Affinity: Magic",
+      "Description": "Configurable Weapon Attribute ID 8"
+    },
+    {
+      "Field": "configurableWepAttr09",
+      "Name": "Affinity: Cold",
+      "Description": "Configurable Weapon Attribute ID 9"
+    },
+    {
+      "Field": "configurableWepAttr10",
+      "Name": "Affinity: Poison",
+      "Description": "Configurable Weapon Attribute ID 10"
+    },
+    {
+      "Field": "configurableWepAttr11",
+      "Name": "Affinity: Blood",
+      "Description": "Configurable Weapon Attribute ID 11"
+    },
+    {
+      "Field": "configurableWepAttr12",
+      "Name": "Affinity: Occult",
+      "Description": "Configurable Weapon Attribute ID 12"
+    },
+    {
+      "Field": "configurableWepAttr13",
+      "Name": "Affinity: Unused [13]",
+      "Description": "Configurable Weapon Attribute ID 13"
+    },
+    {
+      "Field": "configurableWepAttr14",
+      "Name": "Affinity: Unused [14]",
+      "Description": "Configurable Weapon Attribute ID 14"
+    },
+    {
+      "Field": "configurableWepAttr15",
+      "Name": "Affinity: Unused [15]",
+      "Description": "Configurable Weapon Attribute ID 15"
+    },
+    {
+      "Field": "rarity",
+      "Name": "Rarity",
+      "Description": "Rarity used in item acquisition logs"
+    },
+    {
+      "Field": "configurableWepAttr16",
+      "Name": "Affinity: Unused [16]",
+      "Description": "Configurable Weapon Attribute ID 16"
+    },
+    {
+      "Field": "configurableWepAttr17",
+      "Name": "Affinity: Unused [17]",
+      "Description": "Configurable Weapon Attribute ID 17"
+    },
+    {
+      "Field": "configurableWepAttr18",
+      "Name": "Affinity: Unused [18]",
+      "Description": "Configurable Weapon Attribute ID 18"
+    },
+    {
+      "Field": "configurableWepAttr19",
+      "Name": "Affinity: Unused [19]",
+      "Description": "Configurable Weapon Attribute ID 19"
+    },
+    {
+      "Field": "configurableWepAttr20",
+      "Name": "Affinity: Unused [20]",
+      "Description": "Configurable Weapon Attribute ID 20"
+    },
+    {
+      "Field": "configurableWepAttr21",
+      "Name": "Affinity: Unused [21]",
+      "Description": "Configurable Weapon Attribute ID 21"
+    },
+    {
+      "Field": "configurableWepAttr22",
+      "Name": "Affinity: Unused [22]",
+      "Description": "Configurable Weapon Attribute ID 22"
+    },
+    {
+      "Field": "configurableWepAttr23",
+      "Name": "Affinity: Unused [23]",
+      "Description": "Configurable Weapon Attribute ID 23"
+    },
+    {
+      "Field": "isDiscard",
+      "Name": "Is Discardable",
+      "Description": "Can you throw away the item? TRUE = thrown away"
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Is Droppable",
+      "Description": "Can I put the item on the spot? TRUE = can be placed"
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Is Depositable",
+      "Description": "Can you leave it in the warehouse?"
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Is Drop Disabled in Multiplayer",
+      "Description": "Is multi-drop sharing prohibited?"
+    },
+    {
+      "Field": "showDialogCondType",
+      "Name": "Item Acquisition Dialog Condition Type",
+      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+    },
+    {
+      "Field": "showLogCondType",
+      "Name": "Item Acquisition Show Condition Type",
+      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defaultWepAttr",
+      "Name": "Default Weapon Affinity",
+      "Description": "Default weapon attribute ID. Can be installed even with unopened weapon attributes"
+    },
+    {
+      "Field": "pad2_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSpecialSwordArt",
+      "Name": "Is Special Ash of War",
+      "Description": "Determines whether this Ash of War is considered \u0027special\u0027. Weapons with restrictSpecialSwordArt set to 1 will be unable to slot in these ashes of war."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_Dagger",
+      "Name": "Available: Dagger",
+      "Description": "Can it be attached to Weapon type: Dagger? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SwordNormal",
+      "Name": "Available: Straight Sword",
+      "Description": "Can it be attached to Weapon type: Straight sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SwordLarge",
+      "Name": "Available: Greatsword",
+      "Description": "Can it be attached to Weapon Type: Large Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SwordGigantic",
+      "Name": "Available: Colossal Sword",
+      "Description": "Can it be attached to Weapon Type: Oversized Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SaberNormal",
+      "Name": "Available: Curved Sword",
+      "Description": "Can it be attached to Weapon Type: Curly Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SaberLarge",
+      "Name": "Available: Curved Greatsword",
+      "Description": "Can it be attached to Weapon Type: Omagari Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_katana",
+      "Name": "Available: Katana",
+      "Description": "Can it be attached to Weapon type: Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SwordDoubleEdge",
+      "Name": "Available: Twinblade",
+      "Description": "Can it be attached to Weapon type: Double-edged sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SwordPierce",
+      "Name": "Available: Thrusting Sword",
+      "Description": "Can it be attached to Weapon type: Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_RapierHeavy",
+      "Name": "Available: Heavy Thrusting Sword",
+      "Description": "Can it be attached to Weapon Type: Large Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_AxeNormal",
+      "Name": "Available: Axe",
+      "Description": "Can it be attached to Weapon Type: Ax? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_AxeLarge",
+      "Name": "Available: Greataxe",
+      "Description": "Can it be attached to Weapon Type: Large Ax? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_HammerNormal",
+      "Name": "Available: Hammer",
+      "Description": "Can it be attached to Weapon type: Hammer? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_HammerLarge",
+      "Name": "Available: Great Hammer",
+      "Description": "Can it be attached to Weapon Type: Gavel? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Flail",
+      "Name": "Available: Flail",
+      "Description": "Can it be attached to Weapon Type: Frail? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SpearNormal",
+      "Name": "Available: Spear",
+      "Description": "Can it be attached to Weapon Type: Spear? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SpearLarge",
+      "Name": "Available: Large Spear",
+      "Description": "Can it be attached to Weapon Type: Long Spear? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SpearHeavy",
+      "Name": "Available: Heavy Spear",
+      "Description": "Can it be attached to Weapon Type: Large Spear? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_SpearAxe",
+      "Name": "Available: Halberd",
+      "Description": "Can it be attached to Weapon Type: Halberd? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Sickle",
+      "Name": "Available: Reaper",
+      "Description": "Can it be attached to Weapon type: Sickle? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Knuckle",
+      "Name": "Available: Fist",
+      "Description": "Can it be attached to Weapon type: Fist? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Claw",
+      "Name": "Available: Claw",
+      "Description": "Can it be attached to Weapon type: Claw? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Whip",
+      "Name": "Available: Whip",
+      "Description": "Can it be attached to Weapon type: Whip? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_AxhammerLarge",
+      "Name": "Available: Colossal Weapon",
+      "Description": "Can it be attached to Weapon type: Oversized ax mallet? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_BowSmall",
+      "Name": "Available: Light Bow",
+      "Description": "Can it be attached to Weapon type: Small bow? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_BowNormal",
+      "Name": "Available: Bow",
+      "Description": "Can it be attached to Weapon Type: Bow? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_BowLarge",
+      "Name": "Available: Greatbow",
+      "Description": "Can it be attached to Weapon Type: Large Bow? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ClossBow",
+      "Name": "Available: Crossbow",
+      "Description": "Can it be attached to Weapon Type: Crossbow? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Ballista",
+      "Name": "Available: Ballista",
+      "Description": "Can it be attached to Weapon Type: Varistor? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Staff",
+      "Name": "Available: Staff",
+      "Description": "Can it be attached to Weapon type: Wand? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Sorcery",
+      "Name": "Available: Unused Catalyst",
+      "Description": "Can it be attached to Weapon type: Tattoo? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Talisman",
+      "Name": "Available: Seal",
+      "Description": "Can it be attached to Weapon Type: Holy Mark? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ShieldSmall",
+      "Name": "Available: Small Shield",
+      "Description": "Can it be attached to Weapon Type: Small Shield? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ShieldNormal",
+      "Name": "Available: Medium Shield",
+      "Description": "Can it be attached to Weapon Type: Middle Shield? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ShieldLarge",
+      "Name": "Available: Greatshield",
+      "Description": "Can it be attached to Weapon Type: Large Shield? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_Torch",
+      "Name": "Available: Torch",
+      "Description": "Can it be attached to Weapon type: Torch? No input becomes x"
+    },
+    {
+      "Field": "reserved_canMountWep",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_HandToHand",
+      "Name": "Available: Hand-to-Hand",
+      "Description": "Can it be attached to Weapon type: Hand-to-Hand? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_PerfumeBottle",
+      "Name": "Available: Perfume Bottle",
+      "Description": "Can it be attached to Weapon type: Perfume Bottle? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ThrustingShield",
+      "Name": "Available: Thrusting Shield",
+      "Description": "Can it be attached to Weapon type: Thrusting Shield? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_ThrowingWeapon",
+      "Name": "Available: Throwing Weapon",
+      "Description": "Can it be attached to Weapon type: Throwing Weapon? No input becomes x"
+    },
+    {
+      "Field": "reserved2_canMountWep_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "canMountWep_ReverseHandSword",
+      "Name": "Available: Reverse-hand Sword",
+      "Description": "Can it be attached to Weapon type: Reverse-hand Sword? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_LightGreatsword",
+      "Name": "Available: Light Greatsword",
+      "Description": "Can it be attached to Weapon type: Throwing Weapon? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_GreatKatana",
+      "Name": "Available: Great Katana",
+      "Description": "Can it be attached to Weapon type: Great Katana? No input becomes x"
+    },
+    {
+      "Field": "canMountWep_BeastClaw",
+      "Name": "Available: Beast Claw",
+      "Description": "Can it be attached to Weapon type: Beast Claw? No input becomes x"
+    },
+    {
+      "Field": "reserved_canMountWep_0x3d_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved2_canMountWep",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectMsgId0",
+      "Name": "SpEffect Message ID [0]",
+      "Description": "Effect text ID 00 (Gem_Effect). Magic stone effect text to display in status"
+    },
+    {
+      "Field": "spEffectMsgId1",
+      "Name": "SpEffect Message ID [1]",
+      "Description": "Effect text ID 01 (Gem_Effect). Magic stone effect text to display in status"
+    },
+    {
+      "Field": "spEffectId_forAtk0",
+      "Name": "SpEffect ID - Attack Hit [0]",
+      "Description": "Special effect parameter ID for attack hit"
+    },
+    {
+      "Field": "spEffectId_forAtk1",
+      "Name": "SpEffect ID - Attack Hit [1]",
+      "Description": "Special effect parameter ID for attack hit"
+    },
+    {
+      "Field": "spEffectId_forAtk2",
+      "Name": "SpEffect ID - Attack Hit [2]",
+      "Description": "Special effect parameter ID for attack hit"
+    },
+    {
+      "Field": "mountWepTextId",
+      "Name": "Mount Weapon Text ID",
+      "Description": "Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]"
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

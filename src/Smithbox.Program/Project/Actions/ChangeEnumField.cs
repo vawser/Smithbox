@@ -1,16 +1,18 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.ParamEditor;
+using System.Linq;
 
 
 namespace StudioCore.Application;
 
 public class ChangeEnumField : EditorAction
 {
-    private readonly ProjectEnumEntry Entry;
+    private readonly ParamEnumEntry Entry;
     private readonly object NewValue;
     private readonly object OldValue;
     private readonly ProjectEnumFieldType ChangeType;
 
-    public ChangeEnumField(ProjectEnumEntry curEntry, object oldValue, object newValue, ProjectEnumFieldType changeType)
+    public ChangeEnumField(ParamEnumEntry curEntry, object oldValue, object newValue, ProjectEnumFieldType changeType)
     {
         Entry = curEntry;
         NewValue = newValue;
@@ -22,14 +24,17 @@ public class ChangeEnumField : EditorAction
     {
         switch (ChangeType)
         {
-            case ProjectEnumFieldType.DisplayName:
-                Entry.DisplayName = $"{NewValue}";
+            case ProjectEnumFieldType.Text:
+                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+
+                if(Entry.Names.Any(e => e.Language == curLang))
+                {
+                    var nameEntry = Entry.Names.FirstOrDefault(e => e.Language == curLang);
+                    nameEntry.Text = $"{NewValue}";
+                }
                 break;
-            case ProjectEnumFieldType.Name:
-                Entry.Name = $"{NewValue}";
-                break;
-            case ProjectEnumFieldType.Description:
-                Entry.Description = $"{NewValue}";
+            case ProjectEnumFieldType.Key:
+                Entry.Key = $"{NewValue}";
                 break;
         }
 
@@ -40,14 +45,17 @@ public class ChangeEnumField : EditorAction
     {
         switch (ChangeType)
         {
-            case ProjectEnumFieldType.DisplayName:
-                Entry.DisplayName = $"{OldValue}";
+            case ProjectEnumFieldType.Text:
+                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+
+                if (Entry.Names.Any(e => e.Language == curLang))
+                {
+                    var nameEntry = Entry.Names.FirstOrDefault(e => e.Language == curLang);
+                    nameEntry.Text = $"{OldValue}";
+                }
                 break;
-            case ProjectEnumFieldType.Name:
-                Entry.Name = $"{OldValue}";
-                break;
-            case ProjectEnumFieldType.Description:
-                Entry.Description = $"{OldValue}";
+            case ProjectEnumFieldType.Key:
+                Entry.Key = $"{OldValue}";
                 break;
         }
 

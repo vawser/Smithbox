@@ -1,0 +1,28 @@
+{
+  "Param": "VowParam",
+  "Type": "VOW_PARAM",
+  "Name": "VowParam",
+  "Description": "Defines parameters relating to covenants.",
+  "Fields": [
+    {
+      "Field": "rank_1_requirement",
+      "Name": "Rank 1 Requirement",
+      "Description": ""
+    },
+    {
+      "Field": "rank_2_requirement",
+      "Name": "Rank 2 Requirement",
+      "Description": ""
+    },
+    {
+      "Field": "rank_3_requirement",
+      "Name": "Rank 3 Requirement",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

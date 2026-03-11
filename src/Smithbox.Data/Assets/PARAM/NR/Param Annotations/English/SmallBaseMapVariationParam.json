@@ -1,0 +1,153 @@
+{
+  "Param": "SmallBaseMapVariationParam",
+  "Type": "SMALLBASE_MAP_VARIATION_PARAM_ST",
+  "Name": "SmallBaseMapVariationParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_1",
+      "Name": "Variation Value: 1",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_2",
+      "Name": "Variation Value: 2",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_3",
+      "Name": "Variation Value: 3",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_4",
+      "Name": "Variation Value: 4",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_5",
+      "Name": "Variation Value: 5",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_6",
+      "Name": "Variation Value: 6",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_7",
+      "Name": "Variation Value: 7",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_8",
+      "Name": "Variation Value: 8",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_9",
+      "Name": "Variation Value: 9",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_10",
+      "Name": "Variation Value: 10",
+      "Description": ""
+    },
+    {
+      "Field": "modifier1",
+      "Name": "Modifier: 1",
+      "Description": ""
+    },
+    {
+      "Field": "modifier2",
+      "Name": "Modifier: 2",
+      "Description": ""
+    },
+    {
+      "Field": "modifier3",
+      "Name": "Modifier: 3",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_1",
+      "Name": "Variation Icon ID: 1",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_2",
+      "Name": "Variation Icon ID: 2",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_3",
+      "Name": "Variation Icon ID: 3",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_4",
+      "Name": "Variation Icon ID: 4",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_5",
+      "Name": "Variation Icon ID: 5",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_6",
+      "Name": "Variation Icon ID: 6",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_7",
+      "Name": "Variation Icon ID: 7",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_8",
+      "Name": "Variation Icon ID: 8",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_9",
+      "Name": "Variation Icon ID: 9",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_10",
+      "Name": "Variation Icon ID: 10",
+      "Description": ""
+    }
+  ]
+}

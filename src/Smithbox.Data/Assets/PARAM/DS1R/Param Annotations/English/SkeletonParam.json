@@ -1,0 +1,138 @@
+{
+  "Param": "SkeletonParam",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SkeletonParam",
+  "Description": "Determines the parameters for character skeleton and foot inverse kinematics .",
+  "Fields": [
+    {
+      "Field": "neckTurnGain",
+      "Name": "Neck Turn Gain",
+      "Description": "The amount of gain for neck turning. The higher the value, the faster it turns."
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "Height from Origin to Ground",
+      "Description": "In metres."
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "Minimum Ankle Height",
+      "Description": "The minimum height at which the ankle can be raised. In metres."
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "Maximum Ankle Height",
+      "Description": "The maximum height at which the ankle can be raised. In metres."
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "Maximum Bend Angle",
+      "Description": "Maximum angle at which the knee can be bent (cosine value). In degrees."
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "Minimum Bend Angle",
+      "Description": "Minimum angle at which the knee can be bent (cosine value). In degrees."
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "Lowest Ankle Height",
+      "Description": "If the ankle is lower than this height, assume they are together. In centimetres."
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "Highest Ankle Height",
+      "Description": "If the ankle is higher than this height, assume they are apart. In centimetres."
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "Ankle Raycast: Upward Distance",
+      "Description": "The distance above the ankle at which the raycast occurs. In centimetres."
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "Ankle Raycast: Downward Distance",
+      "Description": "The distance below the ankle at which the raycast occurs. In centimetres."
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "Toe Position: X",
+      "Description": "The x-coordinate of the toe."
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "Toe Position: Y",
+      "Description": "The y-coordinate of the toe."
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "Toe Position: Z",
+      "Description": "The z-coordinate of the toe."
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "Gain on IK Toggle",
+      "Description": "Determines the amount of gain applied when IK is toggled on and off."
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "Gain on Ground Height Increase",
+      "Description": "Determines the amount of gain applied when the ground height increases."
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "Gain on Ground Height Decrease",
+      "Description": "Determines the amount of gain applied when the ground height decreases."
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "Gain on Foot Raise",
+      "Description": "Determines the amount of gain applied when a foot is raised."
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "Gain on Foot Plant",
+      "Description": "Determines the amount of gain applied when a foot is planted to the ground."
+    },
+    {
+      "Field": "footUnlockGain",
+      "Name": "Gain on Foot Lock Toggle",
+      "Description": "Determines the amount of gain applied when a foot is locked or unlocked."
+    },
+    {
+      "Field": "kneeAxisType",
+      "Name": "Knee Axis Type",
+      "Description": "The axial direction of the knee to use."
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "Use Foot Locking",
+      "Description": "If ON, feet and ankles will be locked."
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "Use Foot Placement",
+      "Description": "If ON, foot placement is active."
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "Twist Knee Axis Type",
+      "Description": "Axial direction that ignores rotation of the knee joint for twisting."
+    },
+    {
+      "Field": "neckTurnPriority",
+      "Name": "Neck Turn Priority",
+      "Description": "The lower it is, the faster it will turn. -1 does not turn the head."
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "Neck Turn Maximum Rotation",
+      "Description": "The maximum rotation angle for this joint. Can\u0027t bend beyond this angle."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

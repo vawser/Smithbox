@@ -1,22 +1,38 @@
 {
-  "DisplayName": "CHR_WET_PARAM_ID",
-  "Name": "CHR_WET_PARAM_ID",
-  "Description": "",
+  "Key": "CHR_WET_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Water wet",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water wet"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Poison wet",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison wet"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Oily",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oily"
+        }
+      ]
     }
   ]
 }

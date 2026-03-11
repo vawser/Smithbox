@@ -1,0 +1,108 @@
+{
+  "Param": "NightBossMenuParam",
+  "Type": "NIGHT_BOSS_MENU_PARAM_ST",
+  "Name": "NightBossMenuParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "expeditionNameId",
+      "Name": "Name ID",
+      "Description": "The expedition name for this night boss."
+    },
+    {
+      "Field": "bossIconId",
+      "Name": "Boss Icon ID",
+      "Description": "The icon to display for this night boss in the Expedition menu."
+    },
+    {
+      "Field": "unlockEventFlag",
+      "Name": "Unlock Flag",
+      "Description": "The event flag sthat unlocks this night boss as an expedition."
+    },
+    {
+      "Field": "defeatEventFlag",
+      "Name": "Defeat Flag",
+      "Description": "The event flag set upon defeating this night boss."
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "Map Lot Condition?",
+      "Description": ""
+    },
+    {
+      "Field": "bossNameId",
+      "Name": "Boss Name ID",
+      "Description": "The boss name for this night boss."
+    },
+    {
+      "Field": "defeatedBossIconId",
+      "Name": "Defeated Boss Icon ID",
+      "Description": "The icon to display for this night boss in the Expedition menu when defeated."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering in the Expedition Menu."
+    },
+    {
+      "Field": "descriptionId",
+      "Name": "Boss Description ID",
+      "Description": "The boss description for this night boss."
+    },
+    {
+      "Field": "expeditionBackgroundId",
+      "Name": "Background ID",
+      "Description": "The background to display for this night boss in the Expedition menu."
+    },
+    {
+      "Field": "effectiveAffinity1",
+      "Name": "Effective Affinity 1",
+      "Description": "Icon to display in Effective section"
+    },
+    {
+      "Field": "effectiveAffinity2",
+      "Name": "Effective Affinity 2",
+      "Description": "Icon to display in Effective section"
+    },
+    {
+      "Field": "depth1ChanceWeight",
+      "Name": "Depth 1 Roll Weight",
+      "Description": "The weighting to apply during the boss roll."
+    },
+    {
+      "Field": "depth2ChanceWeight",
+      "Name": "Depth 2 Roll Weight",
+      "Description": "The weighting to apply during the boss roll."
+    },
+    {
+      "Field": "depth3ChanceWeight",
+      "Name": "Depth 3 Roll Weight",
+      "Description": "The weighting to apply during the boss roll."
+    },
+    {
+      "Field": "depth4ChanceWeight",
+      "Name": "Depth 4 Roll Weight",
+      "Description": "The weighting to apply during the boss roll."
+    },
+    {
+      "Field": "depth5ChanceWeight",
+      "Name": "Depth 5 Roll Weight",
+      "Description": "The weighting to apply during the boss roll."
+    },
+    {
+      "Field": "largeBossIconId",
+      "Name": "Large Boss Icon ID",
+      "Description": "The icon to display for this night boss in the Expedition menu."
+    },
+    {
+      "Field": "unk_00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

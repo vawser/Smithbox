@@ -1,72 +1,128 @@
 {
-  "DisplayName": "SPEFFECT_DMGTYPE_NEW",
-  "Name": "SPEFFECT_DMGTYPE_NEW",
-  "Description": "These are categories used to determine the type of stagger the player or enemy takes. (SpEffect version)",
+  "Key": "SPEFFECT_DMGTYPE_NEW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPEFFECT_DMGTYPE_NEW"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Default",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "No Stagger [0: NONE]",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Stagger [0: NONE]"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Minimum Stagger [8: MINIMUM]",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Minimum Stagger [8: MINIMUM]"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Short Stagger [1: SMALL]",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short Stagger [1: SMALL]"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Medium Stagger [2: MEDIUM]",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Stagger [2: MEDIUM]"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Long Stagger [3: LARGE]",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long Stagger [3: LARGE]"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Launch Back [7: SMALL_BLOW]",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Launch Back [7: SMALL_BLOW]"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Big Launch Back [4: EXLARGE]",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big Launch Back [4: EXLARGE]"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Pancake [6: FLING]",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pancake [6: FLING]"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Air Juggle [9: UPPER]",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air Juggle [9: UPPER]"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Push [5: PUSH]",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Push [5: PUSH]"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Huge Launch Back [10: EX_BLAST]",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Huge Launch Back [10: EX_BLAST]"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Flailing Arms [11: BREATH]",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flailing Arms [11: BREATH]"
+        }
+      ]
     }
   ]
 }

@@ -1,17 +1,29 @@
 {
-  "DisplayName": "SOUND_FOOT_TYPE",
-  "Name": "SOUND_FOOT_TYPE",
-  "Description": "",
+  "Key": "SOUND_FOOT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_FOOT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Player",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Specified ID",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Specified ID"
+        }
+      ]
     }
   ]
 }

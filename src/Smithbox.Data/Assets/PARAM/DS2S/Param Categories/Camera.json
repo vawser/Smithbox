@@ -1,11 +1,13 @@
 {
-  "DisplayName": "Camera",
+  "Key": "Camera",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Camera"
+      }
+  ],
   "Params": [
     "CameraActionParam",
-    "CameraAreaParam",
-    "CameraBattleParam",
-    "CameraControlParam",
-    "CameraElasticParam",
     "CameraEventParam",
     "CameraExFollowImpactParam",
     "CameraExFollowParam",

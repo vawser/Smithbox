@@ -1,22 +1,38 @@
 {
-  "DisplayName": "CHR_TAKE_WATER_TYPE",
-  "Name": "CHR_TAKE_WATER_TYPE",
-  "Description": "",
+  "Key": "CHR_TAKE_WATER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_TAKE_WATER_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Large",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     }
   ]
 }

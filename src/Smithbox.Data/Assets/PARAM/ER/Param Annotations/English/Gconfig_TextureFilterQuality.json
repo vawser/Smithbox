@@ -1,0 +1,23 @@
+{
+  "Param": "Gconfig_TextureFilterQuality",
+  "Type": "CS_TEXTURE_FILTER_QUALITY_DETAIL",
+  "Name": "Gconfig_TextureFilterQuality",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "filter",
+      "Name": "Texture Filter",
+      "Description": "filter"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnisoLevel",
+      "Name": "Anisotropic Level",
+      "Description": "Aniso level"
+    }
+  ]
+}

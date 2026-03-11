@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DAMAGE_ARMOR_BREAK_TYPE",
-  "Name": "DAMAGE_ARMOR_BREAK_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_ARMOR_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ARMOR_BREAK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Toughness disabled",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Toughness disabled"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Hyper armor disabled",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hyper armor disabled"
+        }
+      ]
     }
   ]
 }

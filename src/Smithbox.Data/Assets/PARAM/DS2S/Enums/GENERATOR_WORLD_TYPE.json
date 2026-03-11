@@ -1,22 +1,38 @@
 {
-  "DisplayName": "GENERATOR_WORLD_TYPE",
-  "Name": "GENERATOR_WORLD_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_WORLD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_WORLD_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "All",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Normal world only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal world only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Soul black world only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul black world only"
+        }
+      ]
     }
   ]
 }

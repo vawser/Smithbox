@@ -1,0 +1,28 @@
+{
+  "Param": "EnemyDefaultLogicParam",
+  "Type": "ENEMY_DEFAULT_LOGIC_PARAM",
+  "Name": "EnemyDefaultLogicParam",
+  "Description": "Defines parameters related to the default battle logic used by enemies.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "logic_com_param_id",
+      "Name": "Logic Com ID",
+      "Description": ""
+    },
+    {
+      "Field": "enemy_param_id",
+      "Name": "Enemy ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

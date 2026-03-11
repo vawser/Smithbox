@@ -1,0 +1,98 @@
+{
+  "Param": "GemDropDopingParam",
+  "Type": "GEM_DROP_DOPING_PARAM_ST",
+  "Name": "GemDropDopingParam",
+  "Description": "Blood Gem - Drops",
+  "Fields": [
+    {
+      "Field": "rankMin",
+      "Name": "Rank: Lower Limit",
+      "Description": ""
+    },
+    {
+      "Field": "rankMax",
+      "Name": "Rank: Upper Limit",
+      "Description": ""
+    },
+    {
+      "Field": "normalDistributionAve",
+      "Name": "Normal Distribution: Mean Value",
+      "Description": ""
+    },
+    {
+      "Field": "normalDistributionSigma",
+      "Name": "Normal Distribution: Standard Deviation",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateA",
+      "Name": "Slot Type A: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateB",
+      "Name": "Slot Type B: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateC",
+      "Name": "Slot Type C: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateD",
+      "Name": "Slot Type D: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateE",
+      "Name": "Slot Type E: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateF",
+      "Name": "Slot Type F: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_0",
+      "Name": "Directional Appearance Rate [0]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_1",
+      "Name": "Directional Appearance Rate [1]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_2",
+      "Name": "Directional Appearance Rate [2]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_3",
+      "Name": "Directional Appearance Rate [3]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_4",
+      "Name": "Directional Appearance Rate [4]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_5",
+      "Name": "Directional Appearance Rate [5]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_6",
+      "Name": "Directional Appearance Rate [6]",
+      "Description": ""
+    },
+    {
+      "Field": "directionalIdRate_7",
+      "Name": "Directional Appearance Rate [7]",
+      "Description": ""
+    }
+  ]
+}

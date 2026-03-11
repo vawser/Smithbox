@@ -1,0 +1,23 @@
+{
+  "Param": "TorchCtrlParam",
+  "Type": "TORCH_CTRL_PARAM",
+  "Name": "TorchCtrlParam",
+  "Description": "Defines parameters relating to torch availability.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "torch_duration",
+      "Name": "Torch Duration",
+      "Description": ""
+    }
+  ]
+}

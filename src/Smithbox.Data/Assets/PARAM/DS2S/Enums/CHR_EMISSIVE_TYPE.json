@@ -1,27 +1,47 @@
 {
-  "DisplayName": "CHR_EMISSIVE_TYPE",
-  "Name": "CHR_EMISSIVE_TYPE",
-  "Description": "",
+  "Key": "CHR_EMISSIVE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_EMISSIVE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "0, most effective",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0, most effective"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "No. 0 valid",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No. 0 valid"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Most effective",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Most effective"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "None",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

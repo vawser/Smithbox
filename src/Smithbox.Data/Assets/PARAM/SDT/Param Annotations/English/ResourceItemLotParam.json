@@ -1,0 +1,183 @@
+{
+  "Param": "ResourceItemLotParam",
+  "Type": "RESOURCEITEMLOT_PARAM_ST",
+  "Name": "ResourceItemLotParam",
+  "Description": "Handles the drop rate of Resource Items",
+  "Fields": [
+    {
+      "Field": "alreadyGotFlagId",
+      "Name": "",
+      "Description": "Event Flag that is turned on when this Item is obtained, prevents the Item from being obtained again"
+    },
+    {
+      "Field": "resourceItemCategory01",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory02",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory03",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory04",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory05",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory06",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory07",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "resourceItemCategory08",
+      "Name": "",
+      "Description": "Determines which ResourceItem will be dropped"
+    },
+    {
+      "Field": "isAddLottery",
+      "Name": "",
+      "Description": "Items will not drop unless stateInfo 345 is active"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lotBasePoint01",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory01"
+    },
+    {
+      "Field": "lotBasePoint02",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory02"
+    },
+    {
+      "Field": "lotBasePoint03",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory03"
+    },
+    {
+      "Field": "lotBasePoint04",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory04"
+    },
+    {
+      "Field": "lotBasePoint05",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory05"
+    },
+    {
+      "Field": "lotBasePoint06",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory06"
+    },
+    {
+      "Field": "lotBasePoint07",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory07"
+    },
+    {
+      "Field": "lotBasePoint08",
+      "Name": "",
+      "Description": "Drop rate of resourceItemCategory08"
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory01 drops"
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory02 drops"
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory03 drops"
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory04 drops"
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory05 drops"
+    },
+    {
+      "Field": "itemNum06",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory06 drops"
+    },
+    {
+      "Field": "itemNum07",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory07 drops"
+    },
+    {
+      "Field": "itemNum08",
+      "Name": "",
+      "Description": "The amount of items that will be obtianed if resourceItemCategory08 drops"
+    },
+    {
+      "Field": "spLotPointRate01",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory01 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate02",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory02 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate03",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory03 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate04",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory04 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate05",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory05 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate06",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory06 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate07",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory07 can be adjusted by resourceItemDropRate in SpEffects"
+    },
+    {
+      "Field": "spLotPointRate08",
+      "Name": "",
+      "Description": "When enabled, the drop rate of resouceItemCategory08 can be adjusted by resourceItemDropRate in SpEffects"
+    }
+  ]
+}

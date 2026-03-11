@@ -1,32 +1,56 @@
 {
-  "DisplayName": "GUARD_MOTION_TYPE",
-  "Name": "GUARD_MOTION_TYPE",
-  "Description": "",
+  "Key": "GUARD_MOTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARD_MOTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Small retreat",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small retreat"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Great retreat",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great retreat"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Play",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Shield stance",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield stance"
+        }
+      ]
     }
   ]
 }

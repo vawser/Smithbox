@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Gutter & Black Gulch",
+  "Key": "Gutter & Black Gulch",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Gutter & Black Gulch"
+      }
+  ],
   "Params": [
     "demopointlight_scn102510",
     "demospotlight_scn102510",

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "GIMMIC_ROTATION_TYPE",
-  "Name": "GIMMIC_ROTATION_TYPE",
-  "Description": "",
+  "Key": "GIMMIC_ROTATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GIMMIC_ROTATION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dami poly same direction",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dami poly same direction"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dummy poly reverse direction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy poly reverse direction"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Dummy poly relative position direction",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy poly relative position direction"
+        }
+      ]
     }
   ]
 }

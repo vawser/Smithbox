@@ -1,27 +1,47 @@
 {
-  "DisplayName": "MATERIAL_WET_TYPE_ENUM",
-  "Name": "MATERIAL_WET_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_WET_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_WET_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "水",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "水"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "滝",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "滝"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "血",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "血"
+        }
+      ]
     }
   ]
 }

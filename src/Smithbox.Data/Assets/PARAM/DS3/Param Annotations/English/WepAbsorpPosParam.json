@@ -1,0 +1,288 @@
+{
+  "Param": "WepAbsorpPosParam",
+  "Type": "WEP_ABSORP_POS_PARAM_ST",
+  "Name": "WepAbsorpPosParam",
+  "Description": "Weapon Position Dummy Points",
+  "Fields": [
+    {
+      "Field": "hangPosType",
+      "Name": "Sheath Position Type",
+      "Description": "The animation at the time of sword delivery changes depending on this value"
+    },
+    {
+      "Field": "isSkeletonBind",
+      "Name": "Is Skeleton Bind",
+      "Description": "Do you want to combine skeletons?"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "right_0",
+      "Name": "Right Hand - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "left_0",
+      "Name": "Left Hand - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "both_0",
+      "Name": "Both Hand - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding a right-handed weapon with both hands."
+    },
+    {
+      "Field": "leftHang_0",
+      "Name": "Left Sheath - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+    },
+    {
+      "Field": "rightHang_0",
+      "Name": "Right Sheath - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+    },
+    {
+      "Field": "right_1",
+      "Name": "Right Hand - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "left_1",
+      "Name": "Left Hand - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "both_1",
+      "Name": "Both Hand - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding a right-handed weapon with both hands."
+    },
+    {
+      "Field": "leftHang_1",
+      "Name": "Left Sheath - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+    },
+    {
+      "Field": "rightHang_1",
+      "Name": "Right Sheath - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+    },
+    {
+      "Field": "right_2",
+      "Name": "Right Hand - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "left_2",
+      "Name": "Left Hand - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "both_2",
+      "Name": "Both Hand - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding a right-handed weapon with both hands."
+    },
+    {
+      "Field": "leftHang_2",
+      "Name": "Left Sheath - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+    },
+    {
+      "Field": "rightHang_2",
+      "Name": "Right Sheath - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+    },
+    {
+      "Field": "right_3",
+      "Name": "Right Hand - Dummy Poly - Model 3",
+      "Description": "Model 3 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "left_3",
+      "Name": "Left Hand - Dummy Poly - Model 3",
+      "Description": "Model 3 adsorption Damipoli when holding the weapon in one hand."
+    },
+    {
+      "Field": "both_3",
+      "Name": "Both Hand - Dummy Poly - Model 3",
+      "Description": "Model 3 adsorption Damipoli when holding a right-handed weapon with both hands."
+    },
+    {
+      "Field": "leftHang_3",
+      "Name": "Left Sheath - Dummy Poly - Model 3",
+      "Description": "Model 3 Adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+    },
+    {
+      "Field": "rightHang_3",
+      "Name": "Right Sheath - Dummy Poly - Model 3",
+      "Description": "Model 3 Adsorption Damipoli when holding a weapon in his right hand and delivering the weapon."
+    },
+    {
+      "Field": "wepInvisibleType_0",
+      "Name": "Hidden Type - Model 0",
+      "Description": "Hidden type of model 0. When hiding a weapon with TAE, erase the one that matches this"
+    },
+    {
+      "Field": "wepInvisibleType_1",
+      "Name": "Hidden Type - Model 1",
+      "Description": "Hidden type of model 1. When hiding a weapon with TAE, erase the one that matches this"
+    },
+    {
+      "Field": "wepInvisibleType_2",
+      "Name": "Hidden Type - Model 2",
+      "Description": "Hidden type of model 2. When hiding a weapon with TAE, erase the one that matches this"
+    },
+    {
+      "Field": "wepInvisibleType_3",
+      "Name": "Hidden Type - Model 3",
+      "Description": "Model 3 hidden type. When hiding a weapon with TAE, erase the one that matches this"
+    },
+    {
+      "Field": "leftBoth_0",
+      "Name": "Left Both-Hand - Dummy Poly - Model 0",
+      "Description": "Model 0 adsorption Damipoli when holding a left-handed weapon with both hands."
+    },
+    {
+      "Field": "leftBoth_1",
+      "Name": "Left Both-Hand - Dummy Poly - Model 1",
+      "Description": "Model 1 adsorption Damipoli when holding a left-handed weapon with both hands."
+    },
+    {
+      "Field": "leftBoth_2",
+      "Name": "Left Both-Hand - Dummy Poly - Model 2",
+      "Description": "Model 2 adsorption Damipoli when holding a left-handed weapon with both hands."
+    },
+    {
+      "Field": "leftBoth_3",
+      "Name": "Left Both-Hand - Dummy Poly - Model 3",
+      "Description": "Model 3 adsorption Damipoli when holding a left-handed weapon with both hands."
+    },
+    {
+      "Field": "dispPosType_right_0",
+      "Name": "Display Position - Right Hand - Model 0",
+      "Description": "Model 0_ Right-hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_left_0",
+      "Name": "Display Position - Left Hand - Model 0",
+      "Description": "Model 0_Left hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_0",
+      "Name": "Display Position - Right Both-hand - Model 0",
+      "Description": "Model 0_Right-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_0",
+      "Name": "Display Position - Left Both-Hand - Model 0",
+      "Description": "Model 0_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightHang_0",
+      "Name": "Display Position - Right Sheath - Model 0",
+      "Description": "Model 0_ Right-handed sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftHang_0",
+      "Name": "Display Position - Left Sheath - Model 0",
+      "Description": "Model 0_ Left hand sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_right_1",
+      "Name": "Display Position - Right Hand - Model 1",
+      "Description": "Model 1_ Right-hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_left_1",
+      "Name": "Display Position - Left Hand - Model 1",
+      "Description": "Model 1_Left hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_1",
+      "Name": "Display Position - Right Both-hand - Model 1",
+      "Description": "Model 1_Right-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_1",
+      "Name": "Display Position - Left Both-Hand - Model 1",
+      "Description": "Model 1_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightHang_1",
+      "Name": "Display Position - Right Sheath - Model 1",
+      "Description": "Model 1_ Right-handed sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftHang_1",
+      "Name": "Display Position - Left Sheath - Model 1",
+      "Description": "Model 1_ Left hand sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_right_2",
+      "Name": "Display Position - Right Hand - Model 2",
+      "Description": "Model 2_ Right-hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_left_2",
+      "Name": "Display Position - Left Hand - Model 2",
+      "Description": "Model 2_Left hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_2",
+      "Name": "Display Position - Right Both-hand - Model 2",
+      "Description": "Model 2_Right-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_2",
+      "Name": "Display Position - Left Both-Hand - Model 2",
+      "Description": "Model 2_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightHang_2",
+      "Name": "Display Position - Right Sheath - Model 2",
+      "Description": "Model 2_Right-handed sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftHang_2",
+      "Name": "Display Position - Left Sheath - Model 2",
+      "Description": "Model 2_ Left hand sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_right_3",
+      "Name": "Display Position - Right Hand - Model 3",
+      "Description": "Model 3_ Right-hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_left_3",
+      "Name": "Display Position - Left Hand - Model 3",
+      "Description": "Model 3_Left hand display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightBoth_3",
+      "Name": "Display Position - Right Both-hand - Model 3",
+      "Description": "Model 3_Right-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftBoth_3",
+      "Name": "Display Position - Left Both-Hand - Model 3",
+      "Description": "Model 3_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+    },
+    {
+      "Field": "dispPosType_rightHang_3",
+      "Name": "Display Position - Right Sheath - Model 3",
+      "Description": "Model 3_Right-handed sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "dispPosType_leftHang_3",
+      "Name": "Display Position - Left Sheath - Model 3",
+      "Description": "Model 3_ Left hand sword display position (used to specify the non-display position from TAE)"
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

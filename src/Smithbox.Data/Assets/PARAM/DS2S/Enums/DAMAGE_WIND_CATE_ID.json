@@ -1,172 +1,308 @@
 {
-  "DisplayName": "DAMAGE_WIND_CATE_ID",
-  "Name": "DAMAGE_WIND_CATE_ID",
-  "Description": "",
+  "Key": "DAMAGE_WIND_CATE_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_WIND_CATE_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "3100000",
-      "Name": "Immunity-Medium-Attack-General purpose",
-      "Description": ""
+      "Key": "3100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immunity-Medium-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "11100000",
-      "Name": "General-purpose-Minimum-Attack-General purpose",
-      "Description": ""
+      "Key": "11100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Minimum-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "12100000",
-      "Name": "General-purpose-Small-Attack-General purpose",
-      "Description": ""
+      "Key": "12100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Small-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "13100000",
-      "Name": "General-purpose-Medium-Attack-General purpose",
-      "Description": ""
+      "Key": "13100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Medium-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "14100000",
-      "Name": "General-purpose-Large-Attack-General purpose",
-      "Description": ""
+      "Key": "14100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Large-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "15100000",
-      "Name": "General Purpose-Extra Large-Attack-General Purpose",
-      "Description": ""
+      "Key": "15100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Extra Large-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "16100000",
-      "Name": "General Purpose-Extra Large-Attack-General Purpose",
-      "Description": ""
+      "Key": "16100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Extra Large-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "21100000",
-      "Name": "PC-Tiny-Attack-General Purpose",
-      "Description": ""
+      "Key": "21100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Tiny-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "22100000",
-      "Name": "PC-Small-Attack-General Purpose",
-      "Description": ""
+      "Key": "22100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Small-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "23100000",
-      "Name": "PC-Medium-Attack-General purpose",
-      "Description": ""
+      "Key": "23100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Medium-Attack-General purpose"
+        }
+      ]
     },
     {
-      "ID": "24100000",
-      "Name": "PC-Large-Attack-General",
-      "Description": ""
+      "Key": "24100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Large-Attack-General"
+        }
+      ]
     },
     {
-      "ID": "25100000",
-      "Name": "PC-Extra Large-Attack-General Purpose",
-      "Description": ""
+      "Key": "25100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Extra Large-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "26100000",
-      "Name": "PC-Extra Large-Attack-General Purpose",
-      "Description": ""
+      "Key": "26100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Extra Large-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "31100000",
-      "Name": "Enemy - Minimal - Attack - General purpose",
-      "Description": ""
+      "Key": "31100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Minimal - Attack - General purpose"
+        }
+      ]
     },
     {
-      "ID": "31200000",
-      "Name": "Energy - Extremely small - Ground vibration - General purpose",
-      "Description": ""
+      "Key": "31200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy - Extremely small - Ground vibration - General purpose"
+        }
+      ]
     },
     {
-      "ID": "32100000",
-      "Name": "Enemy - Small - Attack - General purpose",
-      "Description": ""
+      "Key": "32100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Small - Attack - General purpose"
+        }
+      ]
     },
     {
-      "ID": "32200000",
-      "Name": "Energy - Small - Ground vibration - General purpose",
-      "Description": ""
+      "Key": "32200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy - Small - Ground vibration - General purpose"
+        }
+      ]
     },
     {
-      "ID": "33100000",
-      "Name": "Enemy-Medium-Attack-General",
-      "Description": ""
+      "Key": "33100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy-Medium-Attack-General"
+        }
+      ]
     },
     {
-      "ID": "33200000",
-      "Name": "Energy-Medium-Ground Vibration-General Purpose",
-      "Description": ""
+      "Key": "33200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy-Medium-Ground Vibration-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "34100000",
-      "Name": "Enemy-Large-Attack-General",
-      "Description": ""
+      "Key": "34100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy-Large-Attack-General"
+        }
+      ]
     },
     {
-      "ID": "34200000",
-      "Name": "Energy-Large-Ground Vibration-General Purpose",
-      "Description": ""
+      "Key": "34200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy-Large-Ground Vibration-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "35100000",
-      "Name": "Enemy - Extra Large - Attack - General Purpose",
-      "Description": ""
+      "Key": "35100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Attack - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "35200000",
-      "Name": "Enemy - Extra Large - Ground Vibration - General Purpose",
-      "Description": ""
+      "Key": "35200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Ground Vibration - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "36100000",
-      "Name": "Enemy - Extra Large - Attack - General Purpose",
-      "Description": ""
+      "Key": "36100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Attack - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "36200000",
-      "Name": "Enemy - Extra Large - Ground Vibration - General Purpose",
-      "Description": ""
+      "Key": "36200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Ground Vibration - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "41100000",
-      "Name": "Object - Minimal - Attack - General purpose",
-      "Description": ""
+      "Key": "41100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Minimal - Attack - General purpose"
+        }
+      ]
     },
     {
-      "ID": "42100000",
-      "Name": "Object-Small-Attack-General Purpose",
-      "Description": ""
+      "Key": "42100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Small-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "43100000",
-      "Name": "Object-Medium-Attack-General Purpose",
-      "Description": ""
+      "Key": "43100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Medium-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "44100000",
-      "Name": "Object-Large-Attack-General Purpose",
-      "Description": ""
+      "Key": "44100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Large-Attack-General Purpose"
+        }
+      ]
     },
     {
-      "ID": "45100000",
-      "Name": "Object - Extra Large - Attack - General Purpose",
-      "Description": ""
+      "Key": "45100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Extra Large - Attack - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "46100000",
-      "Name": "Object - Extra Large - Attack - General Purpose",
-      "Description": ""
+      "Key": "46100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Extra Large - Attack - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "90000000",
-      "Name": "Test",
-      "Description": ""
+      "Key": "90000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
     }
   ]
 }

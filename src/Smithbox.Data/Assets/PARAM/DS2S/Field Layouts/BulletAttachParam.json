@@ -3,7 +3,13 @@
       "UngroupedAtBottom": true,
       "Groups": [
         {
-          "Title": "Part 1",
+          "Key": "Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 1"
+              }
+          ],
           "Fields": [
             "part1DummyPolyId",
             "part1OffsetPosX",
@@ -21,7 +27,13 @@
           ]
         },
         {
-          "Title": "Part 2",
+          "Key": "Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 2"
+              }
+          ],
           "Fields": [
             "part2DummyPolyId",
             "part2OffsetPosX",
@@ -39,7 +51,13 @@
           ]
         },
         {
-          "Title": "Part 3",
+          "Key": "Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 3"
+              }
+          ],
           "Fields": [
             "part3DummyPolyId",
             "part3OffsetPosX",
@@ -57,7 +75,13 @@
           ]
         },
         {
-          "Title": "Part 4",
+          "Key": "Part 4",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 4"
+              }
+          ],
           "Fields": [
             "part4DummyPolyId",
             "part4OffsetPosX",

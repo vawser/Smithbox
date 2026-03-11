@@ -1,22 +1,38 @@
 {
-  "DisplayName": "EQUIP_INTERFERE_GENDER",
-  "Name": "EQUIP_INTERFERE_GENDER",
-  "Description": "",
+  "Key": "EQUIP_INTERFERE_GENDER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_INTERFERE_GENDER"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do not",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Use men's version",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use men's version"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Number of settings",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of settings"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "Param": "MapObjectInstanceTypeParam",
+  "Type": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Name": "MapObjectInstanceTypeParam",
+  "Description": "Defines parameters related to map object instance types.",
+  "Fields": [
+    {
+      "Field": "Unk00a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "object_hp",
+      "Name": "Object HP",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

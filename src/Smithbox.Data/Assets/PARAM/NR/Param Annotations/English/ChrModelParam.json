@@ -1,0 +1,48 @@
+{
+  "Param": "ChrModelParam",
+  "Type": "CHR_MODEL_PARAM_ST",
+  "Name": "ChrModelParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modelMemoryType",
+      "Name": "Model Memory Type",
+      "Description": "Model used memory type"
+    },
+    {
+      "Field": "texMemoryType",
+      "Name": "Texture Memory Type",
+      "Description": "Texture usage memory type"
+    },
+    {
+      "Field": "cameraDitherFadeId",
+      "Name": "Camera Dither Fade ID",
+      "Description": "Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)"
+    },
+    {
+      "Field": "reportAnimMemSizeMb",
+      "Name": "Send Report - Animation Memory Size MB",
+      "Description": "If this value is exceeded, a report will be sent by the reporting system."
+    },
+    {
+      "Field": "unk",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "EQUIP_MODEL_GENDER",
-  "Name": "EQUIP_MODEL_GENDER",
-  "Description": "",
+  "Key": "EQUIP_MODEL_GENDER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_MODEL_GENDER"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Shared",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shared"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Mixed",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mixed"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Gender",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gender"
+        }
+      ]
     }
   ]
 }

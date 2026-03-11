@@ -1,27 +1,47 @@
 {
-  "DisplayName": "CAMERA_COLLIDES_EXEC_TYPE",
-  "Name": "CAMERA_COLLIDES_EXEC_TYPE",
-  "Description": "",
+  "Key": "CAMERA_COLLIDES_EXEC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_COLLIDES_EXEC_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do nothing",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Camera end",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera end"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Movement stop",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Movement stop"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Move to a safe location",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move to a safe location"
+        }
+      ]
     }
   ]
 }

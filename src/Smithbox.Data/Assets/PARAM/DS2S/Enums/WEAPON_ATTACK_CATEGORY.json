@@ -1,47 +1,83 @@
 {
-  "DisplayName": "WEAPON_ATTACK_CATEGORY",
-  "Name": "WEAPON_ATTACK_CATEGORY",
-  "Description": "",
+  "Key": "WEAPON_ATTACK_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_ATTACK_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Strike",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strike"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Slash",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Pierce",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pierce"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Parry",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Spell Parry",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Parry"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Shooting",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting"
+        }
+      ]
     }
   ]
 }

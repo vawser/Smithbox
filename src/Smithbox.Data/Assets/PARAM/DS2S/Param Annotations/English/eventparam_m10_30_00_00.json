@@ -1,0 +1,58 @@
+{
+  "Param": "eventparam_m10_30_00_00",
+  "Type": "EVENT_PARAM",
+  "Name": "eventparam_m10_30_00_00",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "event_id",
+      "Name": "Event ID",
+      "Description": ""
+    },
+    {
+      "Field": "flag_id",
+      "Name": "Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0A",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0D",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0E",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0F",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

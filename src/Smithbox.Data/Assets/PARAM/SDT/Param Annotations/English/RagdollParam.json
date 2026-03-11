@@ -1,0 +1,63 @@
+{
+  "Param": "RagdollParam",
+  "Type": "RAGDOLL_PARAM_ST",
+  "Name": "RagdollParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "hierarchyGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "velocityDamping",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accelGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "velocityGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "positionGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxLinerVelocity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxAngularVelocity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "snapGain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsHitMaskNo",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

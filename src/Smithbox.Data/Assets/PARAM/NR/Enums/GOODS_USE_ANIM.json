@@ -1,267 +1,479 @@
 {
-  "DisplayName": "Goods Anim ID",
-  "Name": "GOODS_USE_ANIM",
-  "Description": "These are TAE motion types used to determine item use animations.",
+  "Key": "GOODS_USE_ANIM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GOODS_USE_ANIM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Consume Item",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consume Item"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Weapon Grease",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon Grease"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Throw Kukri",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Kukri"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Throw Pot #1",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Pot #1"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Telescope",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Telescope"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Soap",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soap"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Memory of Grace",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Memory of Grace"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Drop Item",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drop Item"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Finger",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Finger"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Crush Rune",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crush Rune"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Flask of Crimson Tears",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flask of Crimson Tears"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Quick Weapon Grease",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quick Weapon Grease"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Throw Dart",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Dart"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Flask of Cerulean Tears",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flask of Cerulean Tears"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Throw Pot Backwards",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Pot Backwards"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Consume Flesh",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consume Flesh"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Lantern",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lantern"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Flask of Wondrous Physick",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flask of Wondrous Physick"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Prattling Pate",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prattling Pate"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Spectral Steed Whistle",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spectral Steed Whistle"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Spirit Summon",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit Summon"
+        }
+      ]
     },
     {
-      "ID": "36",
-      "Name": "Finger Remedy",
-      "Description": ""
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Finger Remedy"
+        }
+      ]
     },
     {
-      "ID": "37",
-      "Name": "Finger Severer",
-      "Description": ""
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Finger Severer"
+        }
+      ]
     },
     {
-      "ID": "38",
-      "Name": "Taunter's Tongue",
-      "Description": ""
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Taunter's Tongue"
+        }
+      ]
     },
     {
-      "ID": "39",
-      "Name": "Lucent Baldachin's Blessing",
-      "Description": ""
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lucent Baldachin's Blessing"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Copher Ring",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Copher Ring"
+        }
+      ]
     },
     {
-      "ID": "41",
-      "Name": "Effigy",
-      "Description": ""
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Effigy"
+        }
+      ]
     },
     {
-      "ID": "42",
-      "Name": "Throw Pot #2",
-      "Description": ""
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw Pot #2"
+        }
+      ]
     },
     {
-      "ID": "43",
-      "Name": "Miquella's Needle",
-      "Description": ""
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miquella's Needle"
+        }
+      ]
     },
     {
-      "ID": "44",
-      "Name": "Baldachin's Blessing",
-      "Description": ""
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Baldachin's Blessing"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Shield Grease",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield Grease"
+        }
+      ]
     },
     {
-      "ID": "51",
-      "Name": "Wraith Calling Bell",
-      "Description": ""
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wraith Calling Bell"
+        }
+      ]
     },
     {
-      "ID": "52",
-      "Name": "Mimic's Veil",
-      "Description": ""
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic's Veil"
+        }
+      ]
     },
     {
-      "ID": "54",
-      "Name": "Scriptstone",
-      "Description": ""
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scriptstone"
+        }
+      ]
     },
     {
-      "ID": "55",
-      "Name": "Ancestral Infant's Head",
-      "Description": ""
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancestral Infant's Head"
+        }
+      ]
     },
     {
-      "ID": "56",
-      "Name": "Raisin",
-      "Description": ""
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raisin"
+        }
+      ]
     },
     {
-      "ID": "57",
-      "Name": "Glintstone Scrap",
-      "Description": ""
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintstone Scrap"
+        }
+      ]
     },
     {
-      "ID": "58",
-      "Name": "Gravity Stone Chunk",
-      "Description": ""
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravity Stone Chunk"
+        }
+      ]
     },
     {
-      "ID": "59",
-      "Name": "Gravity Stone Fan",
-      "Description": ""
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravity Stone Fan"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Miranda's Prayer",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miranda's Prayer"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "Bewitching Branch",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bewitching Branch"
+        }
+      ]
     },
     {
-      "ID": "62",
-      "Name": "Blasphemous Claw",
-      "Description": ""
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blasphemous Claw"
+        }
+      ]
     },
     {
-      "ID": "63",
-      "Name": "Omen Bairn",
-      "Description": ""
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Omen Bairn"
+        }
+      ]
     },
     {
-      "ID": "64",
-      "Name": "Shackle",
-      "Description": ""
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shackle"
+        }
+      ]
     },
     {
-      "ID": "65",
-      "Name": "Rune Arc",
-      "Description": ""
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rune Arc"
+        }
+      ]
     },
     {
-      "ID": "66",
-      "Name": "Soft Cotton",
-      "Description": ""
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soft Cotton"
+        }
+      ]
     },
     {
-      "ID": "67",
-      "Name": "Hefty Pot",
-      "Description": ""
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hefty Pot"
+        }
+      ]
     },
     {
-      "ID": "90",
-      "Name": "Spark Aromatic",
-      "Description": ""
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spark Aromatic"
+        }
+      ]
     },
     {
-      "ID": "91",
-      "Name": "Uplifting Aromatic",
-      "Description": ""
+      "Key": "91",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Uplifting Aromatic"
+        }
+      ]
     },
     {
-      "ID": "92",
-      "Name": "Phnatom Great Rune",
-      "Description": ""
+      "Key": "92",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phnatom Great Rune"
+        }
+      ]
     },
     {
-      "ID": "93",
-      "Name": "Bloodboil Aromatic",
-      "Description": ""
+      "Key": "93",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bloodboil Aromatic"
+        }
+      ]
     },
     {
-      "ID": "94",
-      "Name": "Spraymist",
-      "Description": ""
+      "Key": "94",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spraymist"
+        }
+      ]
     }
   ]
 }

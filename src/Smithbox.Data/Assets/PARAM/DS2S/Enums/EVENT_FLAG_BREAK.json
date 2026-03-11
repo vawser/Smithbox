@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_FLAG_BREAK",
-  "Name": "EVENT_FLAG_BREAK",
-  "Description": "",
+  "Key": "EVENT_FLAG_BREAK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_BREAK"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "99040001",
-      "Name": "Destroyed petrified BOSS Salamander《ID:99040001》",
-      "Description": ""
+      "Key": "99040001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destroyed petrified BOSS Salamander《ID:99040001》"
+        }
+      ]
     }
   ]
 }

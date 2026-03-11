@@ -1,42 +1,74 @@
 {
-  "DisplayName": "ATKPARAM_ATKATTR_TYPE",
-  "Name": "ATKPARAM_ATKATTR_TYPE",
-  "Description": "Determines the physical attack \"element\" of an attack.",
+  "Key": "ATKPARAM_ATKATTR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_ATKATTR_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Slash",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Strike",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strike"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Pierce",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pierce"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Standard",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard"
+        }
+      ]
     },
     {
-      "ID": "252",
-      "Name": "EquipParamWeapon atkAttribute2 reference",
-      "Description": ""
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EquipParamWeapon atkAttribute2 reference"
+        }
+      ]
     },
     {
-      "ID": "253",
-      "Name": "EquipParamWeapon atkAttribute reference",
-      "Description": ""
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EquipParamWeapon atkAttribute reference"
+        }
+      ]
     },
     {
-      "ID": "254",
-      "Name": "None",
-      "Description": ""
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

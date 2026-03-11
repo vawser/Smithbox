@@ -1,0 +1,63 @@
+{
+  "Param": "RagdollParam",
+  "Type": "RAGDOLL_PARAM_ST",
+  "Name": "RagdollParam",
+  "Description": "Determines the parameters for ragdolls.",
+  "Fields": [
+    {
+      "Field": "hierarchyGain",
+      "Name": "Heirarchy Gain",
+      "Description": "Lowering it will bring it closer to the original pose, while increasing it will make it squishier."
+    },
+    {
+      "Field": "velocityDamping",
+      "Name": "Speed Decay",
+      "Description": "The rate at which the ragdoll\u0027s movement speed is reduced. When it approaches 0, it returns slowly, and when it approaches 1, it returns suddenly."
+    },
+    {
+      "Field": "accelGain",
+      "Name": "Acceleration Gain",
+      "Description": "Adjustment parameter for rigid acceleration. Lower values will make the movement softer, higher values will make it harder. Should be set to a lower value than the acceleration gain."
+    },
+    {
+      "Field": "velocityGain",
+      "Name": "Speed Gain",
+      "Description": "Rigid speed adjustment parameter. Lower values will make the movement softer, higher values will make it harder. It seems to be set to a lower value than the speed gain."
+    },
+    {
+      "Field": "positionGain",
+      "Name": "Position Gain",
+      "Description": "Adjustment parameter for rigid movement position. Lower values will make the movement softer, higher values will make it harder."
+    },
+    {
+      "Field": "maxLinerVelocity",
+      "Name": "Maximum Speed",
+      "Description": "Maximum movement speed for the rigid body."
+    },
+    {
+      "Field": "maxAngularVelocity",
+      "Name": "Maximum Rotation",
+      "Description": "Maximum rotation speed for the rigid body."
+    },
+    {
+      "Field": "snapGain",
+      "Name": "Snap Gain",
+      "Description": "Adjustment value to get closer to the original pose. Effect similar to position gain."
+    },
+    {
+      "Field": "enable",
+      "Name": "Enable during Damage",
+      "Description": "If ON, the ragdoll moves during damage."
+    },
+    {
+      "Field": "partsHitMaskNo",
+      "Name": "Parts Mask",
+      "Description": "The parts mask value to use. -1 means mask is disabled."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

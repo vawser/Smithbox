@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Shrine of Storms",
+  "Key": "Shrine of Storms",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Shrine of Storms"
+      }
+  ],
   "Params": [
     "m03_DofBank",
     "m03_EnvLightTexBank",

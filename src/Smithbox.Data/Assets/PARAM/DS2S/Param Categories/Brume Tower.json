@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Brume Tower",
+  "Key": "Brume Tower",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Brume Tower"
+      }
+  ],
   "Params": [
     "demopointlight_scn503610",
     "eventlocation_m50_36_00_00",

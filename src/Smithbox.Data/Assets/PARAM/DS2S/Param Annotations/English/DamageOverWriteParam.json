@@ -1,0 +1,143 @@
+{
+  "Param": "DamageOverWriteParam",
+  "Type": "DAMAGE_OVER_WRITE_PARAM",
+  "Name": "DamageOverWriteParam",
+  "Description": "Defines parameters related damage overwrite.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk26",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

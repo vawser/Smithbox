@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Iron Keep & Belfry Sol",
+  "Key": "Iron Keep & Belfry Sol",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Iron Keep & Belfry Sol"
+      }
+  ],
   "Params": [
     "demopointlight_scn101910",
     "demospotlight_scn101910",

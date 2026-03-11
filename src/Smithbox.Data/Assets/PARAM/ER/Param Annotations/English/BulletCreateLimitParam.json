@@ -1,0 +1,28 @@
+{
+  "Param": "BulletCreateLimitParam",
+  "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Name": "BulletCreateLimitParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "limitNum_byGroup",
+      "Name": "Max Amount - By Group",
+      "Description": "Maximum number of creations in the same group"
+    },
+    {
+      "Field": "isLimitEachOwner",
+      "Name": "Is Limited for each Owner",
+      "Description": "Is it restricted for each owner?"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

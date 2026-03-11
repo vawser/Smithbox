@@ -18,11 +18,49 @@ public class ParamEditorPrefs
     }
 
     #region General
-    public static PreferenceItem ParamEditor_Enable_Compact_Mode()
+    public static PreferenceItem ParamEditor_Annotation_Language()
     {
         return new PreferenceItem
         {
             OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Annotation Language",
+            Description = "Determines the language used for meta annotations (i.e. community field names).",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                var languages = curProject.Handler.ParamData.ParamAnnotationLanguages;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Annotation_Language))
+                {
+                    foreach (var entry in languages.Languages)
+                    {
+                        if (ImGui.Selectable(entry.Name))
+                        {
+                            CFG.Current.ParamEditor_Annotation_Language = entry.Name;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+
+    public static PreferenceItem ParamEditor_Enable_Compact_Mode()
+    {
+        return new PreferenceItem
+        {
+            OrderID =1,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 

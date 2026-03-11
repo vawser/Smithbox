@@ -1,0 +1,78 @@
+{
+  "Param": "PostureControlParam_WepLeft",
+  "Type": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
+  "Name": "PostureControlParam_WepLeft",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "a000_leftArmFB",
+      "Name": "[a000] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a000_leftWristFB",
+      "Name": "[a000] Left Wrist - Front/Back",
+      "Description": "Left wrist_front and back"
+    },
+    {
+      "Field": "a000_leftWristIO",
+      "Name": "[a000] Left Wrist - Inside/Outside",
+      "Description": "Left wrist_inside and outside"
+    },
+    {
+      "Field": "a000_leftWeaponRotation",
+      "Name": "[a000] Left Weapon Rotation",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftArmFB",
+      "Name": "[a002] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "a002_leftWristFB",
+      "Name": "[a002] Left Wrist - Front/Back",
+      "Description": "Left wrist_front and back"
+    },
+    {
+      "Field": "a002_leftWristIO",
+      "Name": "[a002] Left Wrist - Inside/Outside",
+      "Description": "Left wrist_inside and outside"
+    },
+    {
+      "Field": "a002_leftWeaponRotation",
+      "Name": "[a002] Left Weapon Rotation",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftArmFB",
+      "Name": "[a003] Left Arm - Front/Back",
+      "Description": "Left arm_front and back"
+    },
+    {
+      "Field": "pad_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWristFB",
+      "Name": "[a003] Left Wrist - Front/Back",
+      "Description": "Left wrist_front and back"
+    },
+    {
+      "Field": "a003_leftWristIO",
+      "Name": "[a003] Left Wrist - Inside/Outside",
+      "Description": "Left wrist_inside and outside"
+    },
+    {
+      "Field": "a003_leftWeaponRotation",
+      "Name": "[a003] Left Weapon Rotation",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

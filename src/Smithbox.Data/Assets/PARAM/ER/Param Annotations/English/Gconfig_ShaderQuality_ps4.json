@@ -1,0 +1,28 @@
+{
+  "Param": "Gconfig_ShaderQuality_ps4",
+  "Type": "CS_SHADER_QUALITY_DETAIL",
+  "Name": "Gconfig_ShaderQuality_ps4",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "sssEnabled",
+      "Name": "SSS Enabled",
+      "Description": "SSS enabled"
+    },
+    {
+      "Field": "tessellationEnabled",
+      "Name": "Tessellation Enabled",
+      "Description": "Tessellation enabled"
+    },
+    {
+      "Field": "highPrecisionNormalEnabled",
+      "Name": "High Precision Normal Enabled",
+      "Description": "High precision normal valid (setting the accuracy of the normal stored in G-Buffer)"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": ""
+    }
+  ]
+}

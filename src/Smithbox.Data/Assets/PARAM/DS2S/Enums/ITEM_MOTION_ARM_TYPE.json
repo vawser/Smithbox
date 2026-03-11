@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ITEM_MOTION_ARM_TYPE",
-  "Name": "ITEM_MOTION_ARM_TYPE",
-  "Description": "",
+  "Key": "ITEM_MOTION_ARM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_MOTION_ARM_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Right hand",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right hand"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Left hand",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left hand"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Both hands",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both hands"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "None",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

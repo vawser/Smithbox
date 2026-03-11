@@ -1,32 +1,56 @@
 {
-  "DisplayName": "EQUIP_BREAK_SOUND_MATERIAL_TYPE",
-  "Name": "EQUIP_BREAK_SOUND_MATERIAL_TYPE",
-  "Description": "",
+  "Key": "EQUIP_BREAK_SOUND_MATERIAL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_BREAK_SOUND_MATERIAL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Iron",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Wood",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Cloth",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloth"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Soul",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
     }
   ]
 }

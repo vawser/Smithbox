@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_19_00_00",
-  "Name": "EVENT_VALUE_m10_19_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_19_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_19_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "60",
-      "Name": "Pledge: Bell Keeper: Current pledge rank",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Bell Keeper: Current pledge rank"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "Pledge: Path to the Ancient Dragon: Current pledge rank",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Path to the Ancient Dragon: Current pledge rank"
+        }
+      ]
     }
   ]
 }

@@ -1,32 +1,56 @@
 {
-  "DisplayName": "DAMAGE_CHARACTER_TYPE",
-  "Name": "DAMAGE_CHARACTER_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_CHARACTER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_CHARACTER_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Spirit Body",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit body"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Raw / Cloth",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raw/cloth"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Slightly Hard",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slightly hard"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Very Hard",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very hard"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Giant / Demon",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant/Demon"
+        }
+      ]
     }
   ]
 }

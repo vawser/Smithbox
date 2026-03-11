@@ -1,0 +1,58 @@
+{
+  "Param": "m13_LensFlareBank",
+  "Type": "LENS_FLARE_BANK",
+  "Name": "m13_LensFlareBank",
+  "Description": "Determines the parameters for lens flares.",
+  "Fields": [
+    {
+      "Field": "texId",
+      "Name": "Texture ID",
+      "Description": "The texture to use for this lens flare."
+    },
+    {
+      "Field": "isFlare",
+      "Name": "Is Flare",
+      "Description": "If ON, this lens flare is treated as a flare. If OFF, then it is a ghost."
+    },
+    {
+      "Field": "enableRoll",
+      "Name": "Enable Rotation",
+      "Description": "If ON, this lens flare can be rotated."
+    },
+    {
+      "Field": "enableScale",
+      "Name": "Enable Scaling",
+      "Description": "If ON, this lens flare can be scaled."
+    },
+    {
+      "Field": "locateDistRate",
+      "Name": "Placement Distance Rate",
+      "Description": "The placement distance rate. 0 is the light source position, 1 is the centre of the screen."
+    },
+    {
+      "Field": "texScale",
+      "Name": "Texture Scale",
+      "Description": "The scale to apply to the lens flare texture."
+    },
+    {
+      "Field": "colR",
+      "Name": "Texture: R",
+      "Description": "The red component of the RGBA color used with the lens flare texture."
+    },
+    {
+      "Field": "colG",
+      "Name": "Texture: G",
+      "Description": "The green component of the RGBA color used with the lens flare texture."
+    },
+    {
+      "Field": "colB",
+      "Name": "Texture: B",
+      "Description": "The blue component of the RGBA color used with the lens flare texture."
+    },
+    {
+      "Field": "colA",
+      "Name": "Texture: Alpha",
+      "Description": "The alpha component of the RGBA color used with the lens flare texture."
+    }
+  ]
+}

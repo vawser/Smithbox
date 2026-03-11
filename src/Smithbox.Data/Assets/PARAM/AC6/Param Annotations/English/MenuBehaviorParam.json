@@ -1,0 +1,23 @@
+{
+  "Param": "MenuBehaviorParam",
+  "Type": "MENU_BEHAVIOR_PARAM",
+  "Name": "MenuBehaviorParam",
+  "Description": "Determines the configuration of buttons in the main menu.",
+  "Fields": [
+    {
+      "Field": "tutorialID",
+      "Name": "Tutorial ID",
+      "Description": "The tutorial to show when this button is used."
+    },
+    {
+      "Field": "enableHelpMenu",
+      "Name": "Enable Help Menu",
+      "Description": "If ON, display the help menu prompt for this button."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

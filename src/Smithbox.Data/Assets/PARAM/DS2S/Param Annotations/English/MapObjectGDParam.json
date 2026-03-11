@@ -1,0 +1,193 @@
+{
+  "Param": "MapObjectGDParam",
+  "Type": "MAP_OBJECT_GD_PARAM",
+  "Name": "MapObjectGDParam",
+  "Description": "Defines parameters related to map objects.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_1",
+      "Name": "SFX ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_2",
+      "Name": "SFX ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_3",
+      "Name": "SFX ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_4",
+      "Name": "SFX ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_5",
+      "Name": "SFX ID [5]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_6",
+      "Name": "SFX ID [6]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_id_7",
+      "Name": "SFX ID [7]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_1",
+      "Name": "SFX Unknown A [1]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_2",
+      "Name": "SFX Unknown A [2]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_3",
+      "Name": "SFX Unknown A [3]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_4",
+      "Name": "SFX Unknown A [4]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_5",
+      "Name": "SFX Unknown A [5]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_6",
+      "Name": "SFX Unknown A [6]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_unknown_a_id_7",
+      "Name": "SFX Unknown A [7]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_1",
+      "Name": "SFX Dummy Poly ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_2",
+      "Name": "SFX Dummy Poly ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_3",
+      "Name": "SFX Dummy Poly ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_4",
+      "Name": "SFX Dummy Poly ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_5",
+      "Name": "SFX Dummy Poly ID [5]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_6",
+      "Name": "SFX Dummy Poly ID [6]",
+      "Description": ""
+    },
+    {
+      "Field": "sfx_dummy_poly_id_7",
+      "Name": "SFX Dummy Poly ID [7]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15d",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

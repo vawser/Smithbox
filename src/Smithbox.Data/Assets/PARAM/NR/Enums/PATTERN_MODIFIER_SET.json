@@ -1,132 +1,236 @@
 {
-  "DisplayName": "Modifier Set",
-  "Name": "PATTERN_MODIFIER_SET",
-  "Description": "Not quite sure, seems to group certain modifiers, or possibly sets a modifier.",
+  "Key": "PATTERN_MODIFIER_SET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PATTERN_MODIFIER_SET"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "160",
-      "Name": "Start Location (Great Hollow)",
-      "Description": ""
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Location (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "190",
-      "Name": "Start Location",
-      "Description": ""
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Location"
+        }
+      ]
     },
     {
-      "ID": "505",
-      "Name": "Event - Extra Night Boss (Great Hollow)",
-      "Description": ""
+      "Key": "505",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Extra Night Boss (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "510",
-      "Name": "Raid - Caligo (Great Hollow)",
-      "Description": ""
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Caligo (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "520",
-      "Name": "Raid - Gladius (Great Hollow)",
-      "Description": ""
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gladius (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "530",
-      "Name": "Event - Frenzy Tower (Great Hollow)",
-      "Description": ""
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Frenzy Tower (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "540",
-      "Name": "Raid - Maris (Great Hollow)",
-      "Description": ""
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Maris (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "550",
-      "Name": "Raid - Gnoster (Great Hollow)",
-      "Description": ""
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gnoster (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "560",
-      "Name": "Raid - Libra (Great Hollow)",
-      "Description": ""
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Libra (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "800",
-      "Name": "Buried Treasure Map",
-      "Description": ""
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Buried Treasure Map"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Event - Extra Night Boss",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Extra Night Boss"
+        }
+      ]
     },
     {
-      "ID": "3010",
-      "Name": "Event - Meteorite",
-      "Description": ""
+      "Key": "3010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Meteorite"
+        }
+      ]
     },
     {
-      "ID": "3020",
-      "Name": "Event - Walking Mausoleum",
-      "Description": ""
+      "Key": "3020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Walking Mausoleum"
+        }
+      ]
     },
     {
-      "ID": "3030",
-      "Name": "Event - Night Horde",
-      "Description": ""
+      "Key": "3030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Night Horde"
+        }
+      ]
     },
     {
-      "ID": "3040",
-      "Name": "Raid - Morgott",
-      "Description": ""
+      "Key": "3040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Morgott"
+        }
+      ]
     },
     {
-      "ID": "3050",
-      "Name": "Raid - Maris",
-      "Description": ""
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Maris"
+        }
+      ]
     },
     {
-      "ID": "3060",
-      "Name": "Raid - Gnoster",
-      "Description": ""
+      "Key": "3060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gnoster"
+        }
+      ]
     },
     {
-      "ID": "3070",
-      "Name": "Raid - Libra",
-      "Description": ""
+      "Key": "3070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Libra"
+        }
+      ]
     },
     {
-      "ID": "3080",
-      "Name": "Event - Frenzy Tower",
-      "Description": ""
+      "Key": "3080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Frenzy Tower"
+        }
+      ]
     },
     {
-      "ID": "3090",
-      "Name": "Event - Ruined Sorcerer's Rise",
-      "Description": ""
+      "Key": "3090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event - Ruined Sorcerer's Rise"
+        }
+      ]
     },
     {
-      "ID": "3110",
-      "Name": "Raid - Caligo",
-      "Description": ""
+      "Key": "3110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Caligo"
+        }
+      ]
     },
     {
-      "ID": "3120",
-      "Name": "Raid - Gladius",
-      "Description": ""
+      "Key": "3120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Gladius"
+        }
+      ]
     },
     {
-      "ID": "3130",
-      "Name": "Raid - Harmonia",
-      "Description": ""
+      "Key": "3130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raid - Harmonia"
+        }
+      ]
     },
     {
-      "ID": "3600",
-      "Name": "Buried Treasure Map (Great Hollow)/Unk Base Game",
-      "Description": ""
+      "Key": "3600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Buried Treasure Map (Great Hollow)/Unk Base Game"
+        }
+      ]
     }
   ]
 }

@@ -1,17 +1,29 @@
 {
-  "DisplayName": "ITEM_LOT_CATE_TYPE",
-  "Name": "ITEM_LOT_CATE_TYPE",
-  "Description": "",
+  "Key": "ITEM_LOT_CATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_CATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Character",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Object",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object"
+        }
+      ]
     }
   ]
 }

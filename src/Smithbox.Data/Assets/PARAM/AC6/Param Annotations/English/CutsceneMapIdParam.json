@@ -1,0 +1,128 @@
+{
+  "Param": "CutsceneMapIdParam",
+  "Type": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Name": "CutsceneMapIdParam",
+  "Description": "Determines playback parameters for a cutscene.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayMapId",
+      "Name": "Playback Map ID",
+      "Description": "A 8-digit map ID. This is the map number used as a reference in the cutscene. If you do not specify the correct map number, the playback position will be shifted."
+    },
+    {
+      "Field": "RequireMapId0",
+      "Name": "Display Requirement: Map ID [1]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId1",
+      "Name": "Display Requirement: Map ID [2]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId2",
+      "Name": "Display Requirement: Map ID [3]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId3",
+      "Name": "Display Requirement: Map ID [4]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId4",
+      "Name": "Display Requirement: Map ID [5]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId5",
+      "Name": "Display Requirement: Map ID [6]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "RequireMapId6",
+      "Name": "Display Requirement: Map ID [7]",
+      "Description": "A 8-digit map ID. This parameter is used as a list by the guest to determine whether the cutscene can be played. If not required, leave it 0 or leave it blank."
+    },
+    {
+      "Field": "CutsceneId",
+      "Name": "Cutscene ID",
+      "Description": "Specific a 8 digit cutscene ID."
+    },
+    {
+      "Field": "isRetryPlayCancel",
+      "Name": "Play on Retrigger",
+      "Description": "Sets the cutscene to replay on when re-triggered."
+    },
+    {
+      "Field": "SkipPlayerBehaviorState",
+      "Name": "Player State after Cutscene Skip",
+      "Description": "Set when you want to specify the state of the player after skipping a cutscene."
+    },
+    {
+      "Field": "PlayerBehaviorState",
+      "Name": "Player State after Cutscene Play",
+      "Description": "Set when you want to specify the state of the player after playing the cutscene."
+    },
+    {
+      "Field": "ToCutsceneFadeoutWhite",
+      "Name": "Is White Fade",
+      "Description": "Should the fade-in at the beginning of the cutscene be white instead of black?"
+    },
+    {
+      "Field": "isSkipMapLoadWait",
+      "Name": "Wait for Map Load after Skip",
+      "Description": "Do you want to display the NowLoading screen and wait for loading when skipping? Mainly settings for catapult cutscenes."
+    },
+    {
+      "Field": "isEventContinue",
+      "Name": "Is Played Continuously in Event",
+      "Description": "HUD is displayed momentarily during continuous regeneration, so this is a flag to avoid it."
+    },
+    {
+      "Field": "isSkipResetToneMap",
+      "Name": "Reset Auto-Exposure on Skip",
+      "Description": "Resets the tone map gparam settings after a skip."
+    },
+    {
+      "Field": "isIngameDecalClearRemoDecalVisible",
+      "Name": "Hide In-game Decals",
+      "Description": "Hides in-game decals, cutscene decals are still displayed."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ToCutsceneFadeoutTime",
+      "Name": "Cutscene Fade-in Time",
+      "Description": "Fade time at the start of cutscene (-1 = system default time). In seconds."
+    },
+    {
+      "Field": "ToIngameFadeinTime",
+      "Name": "Cutscene Fade-out Time",
+      "Description": "Fade time at the end of cutscene (-1 = system default time). In seconds."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "Param": "PlayerStatusItemParam",
+  "Type": "PLAYER_STATUS_ITEM_PARAM",
+  "Name": "PlayerStatusItemParam",
+  "Description": "Defines parameters that control the default items within the inventory for starting classes.",
+  "Fields": [
+    {
+      "Field": "item_1",
+      "Name": "[1] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_2",
+      "Name": "[2] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_3",
+      "Name": "[3] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_4",
+      "Name": "[4] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_5",
+      "Name": "[5] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_6",
+      "Name": "[6] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_7",
+      "Name": "[7] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_8",
+      "Name": "[8] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_9",
+      "Name": "[9] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_10",
+      "Name": "[10] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_11",
+      "Name": "[11] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_12",
+      "Name": "[12] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_13",
+      "Name": "[13] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_14",
+      "Name": "[14] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_15",
+      "Name": "[15] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_16",
+      "Name": "[16] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_17",
+      "Name": "[17] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_18",
+      "Name": "[18] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_19",
+      "Name": "[19] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_20",
+      "Name": "[20] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_1",
+      "Name": "[1] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_2",
+      "Name": "[2] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_3",
+      "Name": "[3] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_4",
+      "Name": "[4] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_5",
+      "Name": "[5] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_6",
+      "Name": "[6] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_7",
+      "Name": "[7] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_8",
+      "Name": "[8] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_9",
+      "Name": "[9] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_10",
+      "Name": "[10] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_11",
+      "Name": "[11] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_12",
+      "Name": "[12] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_13",
+      "Name": "[13] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_14",
+      "Name": "[14] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_15",
+      "Name": "[15] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_16",
+      "Name": "[16] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_17",
+      "Name": "[17] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_18",
+      "Name": "[18] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_19",
+      "Name": "[19] Item Amount",
+      "Description": ""
+    },
+    {
+      "Field": "item_amount_20",
+      "Name": "[20] Item Amount",
+      "Description": ""
+    }
+  ]
+}

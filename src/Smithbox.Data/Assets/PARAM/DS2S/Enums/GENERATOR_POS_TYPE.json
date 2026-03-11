@@ -1,17 +1,29 @@
 {
-  "DisplayName": "GENERATOR_POS_TYPE",
-  "Name": "GENERATOR_POS_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_POS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Above ground",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Above ground"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Air",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,368 @@
+{
+  "Param": "CameraBattleParam",
+  "Type": "CAMERA_BATTLE_PARAM",
+  "Name": "CameraBattleParam",
+  "Description": "Defines parameters relating to the camera in battle.",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "Camera Behavior Type",
+      "Description": "The behavior to use for this camera."
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "Camera Reference Point Type",
+      "Description": "The reference point to use for this camera."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "Horizontal Field of View",
+      "Description": "The field of view (in degrees)."
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk4C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk5C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk64",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk68",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk6C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk70",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk74",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk78",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk7C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk80",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk84",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk88",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk8C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk94",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk98",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk9C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkA0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkA4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkA8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkAC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkB0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkB4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkB8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkBC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkC0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkC4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkC8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkCC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkD0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkD4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkD8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkDC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkE0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkE4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkE8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkEC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkF0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkF4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkF8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnkFC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk100",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk104",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk108",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk110",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk114",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

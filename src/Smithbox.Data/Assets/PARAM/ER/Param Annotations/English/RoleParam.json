@@ -1,0 +1,168 @@
+{
+  "Param": "RoleParam",
+  "Type": "ROLE_PARAM_ST",
+  "Name": "RoleParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "teamType",
+      "Name": "Team Type",
+      "Description": "Team type"
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamId",
+      "Name": "Phantom Param ID - Vow [0]",
+      "Description": "Phantom parameter ID when pledge rank is 0"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "SpEffect ID [0]",
+      "Description": "Resident special effect 0"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "SpEffect ID [1]",
+      "Description": "Resident special effect 1"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "SpEffect ID [2]",
+      "Description": "Resident special effect 2"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "SpEffect ID [3]",
+      "Description": "Resident special effect 3"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "SpEffect ID [4]",
+      "Description": "Resident special effect 4"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "SpEffect ID [5]",
+      "Description": "Resident special effect 5"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "SpEffect ID [6]",
+      "Description": "Resident special effect 6"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "SpEffect ID [7]",
+      "Description": "Resident special effect 7"
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "SpEffect ID [8]",
+      "Description": "Resident special effect 8"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "SpEffect ID [9]",
+      "Description": "Resident special effect 9"
+    },
+    {
+      "Field": "sosSignSfxId",
+      "Name": "Summon Sign - SFX ID",
+      "Description": "SOS sign SFX ID issued by another person"
+    },
+    {
+      "Field": "mySosSignSfxId",
+      "Name": "Personal Summon Sign - SFX ID",
+      "Description": "SOS sign SFX ID issued by me"
+    },
+    {
+      "Field": "summonStartAnimId",
+      "Name": "Player Summon Start - Animation ID",
+      "Description": "Anime ID to play when the player is summoned and the game starts"
+    },
+    {
+      "Field": "itemlotParamId",
+      "Name": "Map Itemlot Param ID",
+      "Description": "Acquisition reward item lottery parameter ID_for map (not -1)"
+    },
+    {
+      "Field": "voiceChatGroup",
+      "Name": "Voice Chat Group",
+      "Description": "Voice chat group"
+    },
+    {
+      "Field": "roleNameColor",
+      "Name": "Role Name Color",
+      "Description": "The color of the role name text displayed on the FE of the network PC"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "Role Name - Text ID",
+      "Description": "Text ID of the role name to be displayed on the FE of the network PC"
+    },
+    {
+      "Field": "threatLv",
+      "Name": "Threat Level",
+      "Description": "Threat level"
+    },
+    {
+      "Field": "phantomParamId_vowRank1",
+      "Name": "Phantom Param ID - Vow Rank [1]",
+      "Description": "Phantom parameter ID when pledge rank is 1"
+    },
+    {
+      "Field": "phantomParamId_vowRank2",
+      "Name": "Phantom Param ID - Vow Rank [2]",
+      "Description": "Phantom parameter ID when pledge rank is 2"
+    },
+    {
+      "Field": "phantomParamId_vowRank3",
+      "Name": "Phantom Param ID - Vow Rank [3]",
+      "Description": "Phantom parameter ID when pledge rank is 3"
+    },
+    {
+      "Field": "spEffectID_vowRank0",
+      "Name": "Phantom Param ID - Vow Rank [4]",
+      "Description": "Special effect ID for SFX when pledge rank 0"
+    },
+    {
+      "Field": "spEffectID_vowRank1",
+      "Name": "Phantom Param ID - Vow Rank [5]",
+      "Description": "Special effect ID for SFX when pledge rank 1"
+    },
+    {
+      "Field": "spEffectID_vowRank2",
+      "Name": "Phantom Param ID - Vow Rank [6]",
+      "Description": "Special effect ID for SFX when pledge rank 2"
+    },
+    {
+      "Field": "spEffectID_vowRank3",
+      "Name": "Phantom Param ID - Vow Rank [7]",
+      "Description": "Special effect ID for SFX when pledge rank 3"
+    },
+    {
+      "Field": "signPhantomId",
+      "Name": "Ghost Phantom ID",
+      "Description": "Multiplayer pledge ghost body sign phantom ID designation for illusion"
+    },
+    {
+      "Field": "nonPlayerSummonStartAnimId",
+      "Name": "NPC Summon Start - Animation ID",
+      "Description": "Anime ID to play when a player other than the player is summoned and the game starts"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

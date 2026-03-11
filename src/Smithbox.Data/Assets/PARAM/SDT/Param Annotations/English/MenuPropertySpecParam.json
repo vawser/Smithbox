@@ -1,0 +1,38 @@
+{
+  "Param": "MenuPropertySpecParam",
+  "Type": "MENUPROPERTY_SPEC",
+  "Name": "MenuPropertySpecParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "CaptionTextID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredPropertyID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CompareType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FormatType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AdhocCaption",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

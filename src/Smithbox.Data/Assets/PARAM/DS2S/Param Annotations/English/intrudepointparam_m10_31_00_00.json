@@ -1,0 +1,18 @@
+{
+  "Param": "intrudepointparam_m10_31_00_00",
+  "Type": "INTRUDE_POINT_PARAM",
+  "Name": "intrudepointparam_m10_31_00_00",
+  "Description": "Defines parameters related to invader spawn points.",
+  "Fields": [
+    {
+      "Field": "play_area_param_id",
+      "Name": "Play Area ID",
+      "Description": ""
+    },
+    {
+      "Field": "intrusion_point_id",
+      "Name": "Intrusion Point ID",
+      "Description": "This is UnkT00 for the point objects in the msb"
+    }
+  ]
+}

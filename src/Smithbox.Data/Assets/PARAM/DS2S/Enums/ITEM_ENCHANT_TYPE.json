@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ITEM_ENCHANT_TYPE",
-  "Name": "ITEM_ENCHANT_TYPE",
-  "Description": "",
+  "Key": "ITEM_ENCHANT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_ENCHANT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Not possible",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not possible"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Pine resin only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pine resin only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Spell enchantment only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell enchantment only"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Pine resin and spell enchantment",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pine resin and spell enchantment"
+        }
+      ]
     }
   ]
 }

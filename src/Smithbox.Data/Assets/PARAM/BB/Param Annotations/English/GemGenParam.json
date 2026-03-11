@@ -1,0 +1,208 @@
+{
+  "Param": "GemGenParam",
+  "Type": "GEM_GEN_PARAM_ST",
+  "Name": "GemGenParam",
+  "Description": "Blood Gem - Effect",
+  "Fields": [
+    {
+      "Field": "isUnique",
+      "Name": "Is Unique",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemNameIdOffset",
+      "Name": "Gem Name ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "disableSlotRateModify",
+      "Name": "Disable Slot Apperance Rate Correction",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateA",
+      "Name": "Slot Type A: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateB",
+      "Name": "Slot Type B: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateC",
+      "Name": "Slot Type C: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateD",
+      "Name": "Slot Type D: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateE",
+      "Name": "Slot Type E: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateF",
+      "Name": "Slot Type F: Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemRankDoping",
+      "Name": "Gem Rank",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_0",
+      "Name": " [0] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_0",
+      "Name": " [0] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_0",
+      "Name": "[0] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_0",
+      "Name": "[0] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_1",
+      "Name": " [1] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_1",
+      "Name": " [1] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_1",
+      "Name": "[1] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_1",
+      "Name": "[1] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_2",
+      "Name": " [2] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_2",
+      "Name": " [2] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_2",
+      "Name": "[2] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_2",
+      "Name": "[2] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_3",
+      "Name": " [3] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_3",
+      "Name": " [3] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_3",
+      "Name": "[3] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_3",
+      "Name": "[3] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_4",
+      "Name": " [4] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_4",
+      "Name": " [4] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_4",
+      "Name": "[4] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_4",
+      "Name": "[4] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_5",
+      "Name": " [5] Gem Generation Param Type",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_5",
+      "Name": " [5] Gem Generation Param",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_5",
+      "Name": "[5] Appearance Rate",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_5",
+      "Name": "[5] Negative Effect Rate",
+      "Description": ""
+    },
+    {
+      "Field": "equipableSegmentBody",
+      "Name": "Can be Attached to Body",
+      "Description": ""
+    },
+    {
+      "Field": "equipableSegmentWeapon",
+      "Name": "Can be Attached to Weapon",
+      "Description": ""
+    },
+    {
+      "Field": "unremovable",
+      "Name": "Cannot be Removed",
+      "Description": ""
+    },
+    {
+      "Field": "isGuestDrop",
+      "Name": "Can be Dropped for Guest",
+      "Description": ""
+    }
+  ]
+}

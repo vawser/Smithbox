@@ -1,37 +1,65 @@
 {
-  "DisplayName": "PLAY_AREA_MULTIPLAY_ENUM",
-  "Name": "PLAY_AREA_MULTIPLAY_ENUM",
-  "Description": "",
+  "Key": "PLAY_AREA_MULTIPLAY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAY_AREA_MULTIPLAY_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal area",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal area"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Abyssal Pilgrimage Area",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyssal Pilgrimage Area"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Bell Keeper Area",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper Area"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Mouse King area",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King area"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Mirror knight battle area",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror knight battle area"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Duel area",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duel area"
+        }
+      ]
     }
   ]
 }

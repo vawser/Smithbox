@@ -1,0 +1,928 @@
+{
+  "Param": "AtkParam_Npc",
+  "Type": "ATK_PARAM_ST",
+  "Name": "AtkParam_Npc",
+  "Description": "Character attack data",
+  "Fields": [
+    {
+      "Field": "Hit0_Radius",
+      "Name": "Hit 0: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "Hit1_Radius",
+      "Name": "Hit 1: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "Hit2_Radius",
+      "Name": "Hit 2: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "Hit3_Radius",
+      "Name": "Hit 3: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "KnockbackDist",
+      "Name": "Knockback Distance",
+      "Description": "Knockback distance of attack."
+    },
+    {
+      "Field": "HitStopTime",
+      "Name": "Hit Stop Time",
+      "Description": "Duration of the \u0027hit\u0027 flag on the target."
+    },
+    {
+      "Field": "spEffect0",
+      "Name": "Target SpEffect [0]",
+      "Description": "Special effect applied to target on hit"
+    },
+    {
+      "Field": "spEffect1",
+      "Name": "Target SpEffect [1]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffect2",
+      "Name": "Target SpEffect [2]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffect3",
+      "Name": "Target SpEffect [3]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffect4",
+      "Name": "Target SpEffect [4]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "Hit0_DmyPoly1",
+      "Name": "Hit 0: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "Hit1_DmyPoly1",
+      "Name": "Hit 1: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "Hit2_DmyPoly1",
+      "Name": "Hit 2: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "Hit3_DmyPoly1",
+      "Name": "Hit 3: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "Hit0_DmyPoly2",
+      "Name": "Hit 0: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "Hit1_DmyPoly2",
+      "Name": "Hit 1: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "Hit2_DmyPoly2",
+      "Name": "Hit 2: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "Hit3_DmyPoly2",
+      "Name": "Hit 3: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "BlowingCorrection",
+      "Name": "Attack Correction: Blowing",
+      "Description": "Correction value when blowing off"
+    },
+    {
+      "Field": "AtkPhysCorrection",
+      "Name": "Attack Correction: Physical",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate physical attack damage."
+    },
+    {
+      "Field": "AtkMagCorrection",
+      "Name": "Attack Correction: Magic",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate magic attack damage."
+    },
+    {
+      "Field": "AtkFireCorrection",
+      "Name": "Attack Correction: Fire",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate fire attack damage."
+    },
+    {
+      "Field": "AtkThunCorrection",
+      "Name": "Attack Correction: Lightning",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate lightning attack damage."
+    },
+    {
+      "Field": "AtkStamCorrection",
+      "Name": "Attack Correction: Stamina",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate stamina attack damage."
+    },
+    {
+      "Field": "GuardAtkRateCorrection",
+      "Name": "Attack Correction: Flick Attack",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character flick attack power."
+    },
+    {
+      "Field": "GuardBreakCorrection",
+      "Name": "Guard Correction: Guard Flick",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to guard flick power.\nPC only."
+    },
+    {
+      "Field": "AtkThrowEscapeCorrection",
+      "Name": "Attack Correction: Throw Escape",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to weapon attacks during throws."
+    },
+    {
+      "Field": "AtkSuperArmorCorrection",
+      "Name": "Attack Correction: Poise",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to damage to target poise."
+    },
+    {
+      "Field": "AtkPhys",
+      "Name": "Damage: Physical",
+      "Description": "Absolute physical attack power of attack."
+    },
+    {
+      "Field": "AtkMag",
+      "Name": "Damage: Magic",
+      "Description": "Absolute magic attack power of attack."
+    },
+    {
+      "Field": "AtkFire",
+      "Name": "Damage: Fire",
+      "Description": "Absolute fire attack power of attack."
+    },
+    {
+      "Field": "AtkThun",
+      "Name": "Damage: Lightning",
+      "Description": "Absolute lightning attack power of attack."
+    },
+    {
+      "Field": "AtkStam",
+      "Name": "Damage: Stamina",
+      "Description": "Absolute stamina attack power of attack."
+    },
+    {
+      "Field": "GuardAtkRate",
+      "Name": "Damage: Flick Attack",
+      "Description": "Absolute flick attack power of attack."
+    },
+    {
+      "Field": "GuardBreakRate",
+      "Name": "Guard: Guard Flick",
+      "Description": "Absolute guard flick power of guard.\nNPC only."
+    },
+    {
+      "Field": "AtkSuperArmor",
+      "Name": "Damage: Poise",
+      "Description": "Absolute poise attack power of attack."
+    },
+    {
+      "Field": "AtkThrowEscape",
+      "Name": "Damage: Throw Escape",
+      "Description": "Absolute attack power of attack during throw."
+    },
+    {
+      "Field": "AtkObj",
+      "Name": "Damage: Object",
+      "Description": "Amount of damage dealt to objects by this attack."
+    },
+    {
+      "Field": "GuardStaminaCutRate",
+      "Name": "Guard Correction: Stability",
+      "Description": "Percentage multiplier applied to stability of guard."
+    },
+    {
+      "Field": "GuardRate",
+      "Name": "Guard Correction: Absorption",
+      "Description": "Percentage multiplier applied to damage absorptions of guard."
+    },
+    {
+      "Field": "ThrowTypeID",
+      "Name": "Throw Type ID",
+      "Description": "Throw to trigger when attack hits. For some reason, throws are triggered using this ID, which is a field within each Throw table entry rather than the ID of the Throw table entry itself."
+    },
+    {
+      "Field": "Hit0_hitType",
+      "Name": "Hit 0: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit1_hitType",
+      "Name": "Hit 1: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit2_hitType",
+      "Name": "Hit 2: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit3_hitType",
+      "Name": "Hit 3: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "hit0_Priority",
+      "Name": "Hit 0: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hit1_Priority",
+      "Name": "Hit 1: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hit2_Priority",
+      "Name": "Hit 2: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hit3_Priority",
+      "Name": "Hit 3: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "damageLevel",
+      "Name": "Damage Level",
+      "Description": "Impact level of attack, which determines how the target reacts to it (e.g. knocked backward, launched into the air, etc.).\nCertain special effects on the target (e.g. Iron Flesh) may re-map this impact level to a different one."
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "Map Hit Type",
+      "Description": "Determines how this attack interacts with the map."
+    },
+    {
+      "Field": "GuardCutCancelRate",
+      "Name": "Guard Absorption Bypass Rate",
+      "Description": "Percentage of target\u0027s current guard rate to bypass.\nGuard bypass starts at 255 for 1 percent bypass to 156 for 100 percent bypass.\n(Needs testing) Values of 1 to 100 will increase guarding effectiveness."
+    },
+    {
+      "Field": "AtkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Type of physical damage done by attack."
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Type of elemental damage done by attack."
+    },
+    {
+      "Field": "atkType",
+      "Name": "Attack Type",
+      "Description": "Determines the sounds and visual effects generated by the attack itself (before hit)."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Material",
+      "Description": "Determines the sounds and visual effects generated when the attack hits. A value of 255 uses the weapon default."
+    },
+    {
+      "Field": "atkSize",
+      "Name": "Attack SE/FX Size",
+      "Description": "Size of sounds and visual effects."
+    },
+    {
+      "Field": "DefMaterial",
+      "Name": "Defence SE Material",
+      "Description": "Determines the sound effects used when guarding. Usually 255 for Player Attacks and 0 (if not a block) or 50 (if blocking) for Non-Player Attacks."
+    },
+    {
+      "Field": "DefSfxMaterial",
+      "Name": "Defence FX Material",
+      "Description": "Determines the visual effects used when guarding. Usually 255 for Player Attacks and 0 (if not a block) or 50 (if blocking) for Non-Player Attacks."
+    },
+    {
+      "Field": "HitSourceType",
+      "Name": "Hit Source Type",
+      "Description": "Specify where you get the model point for attack. Set to 1 for parries, ripostes, and basic body attacks (falling, rolling, etc.), and zero otherwise. Use that pattern."
+    },
+    {
+      "Field": "ThrowFlag",
+      "Name": "Throw Flag",
+      "Description": "Determines how this attack relates to throws: not at all, a throw trigger, or a throw damage parameter."
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "Disable Guard",
+      "Description": "If True, this attack cannot be blocked (e.g. throws)."
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "Disable Stamina Attack",
+      "Description": "If True, this attack will deal no stamina damage, regardless of its stamina attack power."
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "Disable Hit SpEffect",
+      "Description": "If True, this attack will trigger no special effects on the target."
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "Disable Missed Attack Notification For AI",
+      "Description": "If True, the character\u0027s AI will not be informed when this attack misses. Enabled for basic body attacks (falling, rolling, ladder punches, etc.) that are generally not considered to be serious attacks."
+    },
+    {
+      "Field": "repeatHitSfx",
+      "Name": "Repeat Hit Sound FX",
+      "Description": "If True, sound effects will supposedly be repeated as long as the attack continuously hits a wall."
+    },
+    {
+      "Field": "IsArrowAtk",
+      "Name": "Is Arrow Attack: Can Headshot",
+      "Description": "Flags if this attack can land headshots. Frequently flagged for physical projectiles (knives/arrows/bolts)."
+    },
+    {
+      "Field": "IsGhostAtk",
+      "Name": "Is Attack By Ghost",
+      "Description": "Flags if this is an attack of a ghost, which presumably disables wall collision, etc."
+    },
+    {
+      "Field": "isDisableNoDamage",
+      "Name": "Ignore Invincibility Frames",
+      "Description": "If True, this attack will ignore invincibility frames from rolling or backstepping (but not other sources of invincibility such as TAE or events)."
+    },
+    {
+      "Field": "atkPowForSfxSe",
+      "Name": "Attack Power for SFX Effect",
+      "Description": ""
+    },
+    {
+      "Field": "atkDirForSfxSe",
+      "Name": "Attack Direction for SFX Effect",
+      "Description": ""
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "Oppose Target",
+      "Description": "Attack can hit enemy targets"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "Friendly Target",
+      "Description": "Attack can hit friendly targets"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "Self Target",
+      "Description": "Attack can hit self"
+    },
+    {
+      "Field": "isChargeAtk",
+      "Name": "Is Charge Attack",
+      "Description": ""
+    },
+    {
+      "Field": "isShareHitList",
+      "Name": "Is Hit List Shared",
+      "Description": ""
+    },
+    {
+      "Field": "isCheckObjPenetration",
+      "Name": "Is Object Penetration Checked",
+      "Description": ""
+    },
+    {
+      "Field": "0x81_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "0x81_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkBehaviorId",
+      "Name": "Attack Behavior ID",
+      "Description": "Behavior identification value: Extra large damage transition - HKS related"
+    },
+    {
+      "Field": "sameAttackJudgmentId",
+      "Name": "Same Attack Judgment ID",
+      "Description": "Same attack judgment ID"
+    },
+    {
+      "Field": "deathCauseId",
+      "Name": "Death Cause ID",
+      "Description": ""
+    },
+    {
+      "Field": "decalId1",
+      "Name": "Decal ID [1]",
+      "Description": "Decal ID 1 (directly specified)"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "Decal ID [2]",
+      "Description": "Decal ID 2 (directly specified)"
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "Appear AI Sound ID",
+      "Description": "ID of AI sound generated when an attack occurs"
+    },
+    {
+      "Field": "HitAiSoundId",
+      "Name": "Hit AI Sound ID",
+      "Description": "ID of AI sound generated at the time of hit"
+    },
+    {
+      "Field": "HitRumbleId",
+      "Name": "Hit Rumble ID - Default",
+      "Description": "Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies"
+    },
+    {
+      "Field": "HitRumbleIdByNormal",
+      "Name": "Hit Rumble ID - Normal",
+      "Description": "Vibration ID at the time of hit when hitting the tip (-1 invalid)"
+    },
+    {
+      "Field": "HitRumbleIdByMiddle",
+      "Name": "Hit Rumble ID - Middle",
+      "Description": "Vibration ID at the time of hit when hit in the middle (-1 invalid)"
+    },
+    {
+      "Field": "HitRumbleIdByRoot",
+      "Name": "Hit Rumble ID - Root",
+      "Description": "Vibration ID at the time of hit when hitting the root (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId0",
+      "Name": "Trace SFX ID [0]",
+      "Description": "Sword flash SfxID_0 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead0",
+      "Name": "Trace SFX ID [0] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_0 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail0",
+      "Name": "Trace SFX ID [0] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_0"
+    },
+    {
+      "Field": "traceSfxId1",
+      "Name": "Trace SFX ID [1]",
+      "Description": "Sword flash SfxID_1 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead1",
+      "Name": "Trace SFX ID [1] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_1 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail1",
+      "Name": "Trace SFX ID [1] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_1"
+    },
+    {
+      "Field": "traceSfxId2",
+      "Name": "Trace SFX ID [2]",
+      "Description": "Sword flash SfxID_2 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead2",
+      "Name": "Trace SFX ID [2] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_2 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail2",
+      "Name": "Trace SFX ID [2] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_2"
+    },
+    {
+      "Field": "traceSfxId3",
+      "Name": "Trace SFX ID [3]",
+      "Description": "Sword Flash SfxID_3 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead3",
+      "Name": "Trace SFX ID [3] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_3 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail3",
+      "Name": "Trace SFX ID [3] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_3"
+    },
+    {
+      "Field": "traceSfxId4",
+      "Name": "Trace SFX ID [4]",
+      "Description": "Sword Flash SfxID_4 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead4",
+      "Name": "Trace SFX ID [4] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_4 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail4",
+      "Name": "Trace SFX ID [4] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_4"
+    },
+    {
+      "Field": "traceSfxId5",
+      "Name": "Trace SFX ID [5]",
+      "Description": "Sword Flash SfxID_5 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead5",
+      "Name": "Trace SFX ID [5] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_5 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail5",
+      "Name": "Trace SFX ID [5] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_5"
+    },
+    {
+      "Field": "traceSfxId6",
+      "Name": "Trace SFX ID [6]",
+      "Description": "Sword Flash SfxID_6 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead6",
+      "Name": "Trace SFX ID [6] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_6 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail6",
+      "Name": "Trace SFX ID [6] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_6"
+    },
+    {
+      "Field": "traceSfxId7",
+      "Name": "Trace SFX ID [7]",
+      "Description": "Sword Flash SfxID_7 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead7",
+      "Name": "Trace SFX ID [7] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_7 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail7",
+      "Name": "Trace SFX ID [7] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_7"
+    },
+    {
+      "Field": "Hit4_Radius",
+      "Name": "Hit 4: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit5_Radius",
+      "Name": "Hit 5: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit6_Radius",
+      "Name": "Hit 6: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit7_Radius",
+      "Name": "Hit 7: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit8_Radius",
+      "Name": "Hit 8: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit9_Radius",
+      "Name": "Hit 9: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit10_Radius",
+      "Name": "Hit 10: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit11_Radius",
+      "Name": "Hit 11: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit12_Radius",
+      "Name": "Hit 12: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit13_Radius",
+      "Name": "Hit 13: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit14_Radius",
+      "Name": "Hit 14: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit15_Radius",
+      "Name": "Hit 15: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "Hit4_DmyPoly1",
+      "Name": "Hit 4: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit5_DmyPoly1",
+      "Name": "Hit 5: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit6_DmyPoly1",
+      "Name": "Hit 6: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit7_DmyPoly1",
+      "Name": "Hit 7: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit8_DmyPoly1",
+      "Name": "Hit 8: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit9_DmyPoly1",
+      "Name": "Hit 9: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit10_DmyPoly1",
+      "Name": "Hit 10: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit11_DmyPoly1",
+      "Name": "Hit 11: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit12_DmyPoly1",
+      "Name": "Hit 12: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit13_DmyPoly1",
+      "Name": "Hit 13: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit14_DmyPoly1",
+      "Name": "Hit 14: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit15_DmyPoly1",
+      "Name": "Hit 15: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "Hit4_DmyPoly2",
+      "Name": "Hit 4: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit5_DmyPoly2",
+      "Name": "Hit 5: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit6_DmyPoly2",
+      "Name": "Hit 6: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit7_DmyPoly2",
+      "Name": "Hit 7: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit8_DmyPoly2",
+      "Name": "Hit 8: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit9_DmyPoly2",
+      "Name": "Hit 9: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit10_DmyPoly2",
+      "Name": "Hit 10: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit11_DmyPoly2",
+      "Name": "Hit 11: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit12_DmyPoly2",
+      "Name": "Hit 12: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit13_DmyPoly2",
+      "Name": "Hit 13: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit14_DmyPoly2",
+      "Name": "Hit 14: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit15_DmyPoly2",
+      "Name": "Hit 15: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "Hit4_hitType",
+      "Name": "Hit 4: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit5_hitType",
+      "Name": "Hit 5: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit6_hitType",
+      "Name": "Hit 6: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit7_hitType",
+      "Name": "Hit 7: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit8_hitType",
+      "Name": "Hit 8: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit9_hitType",
+      "Name": "Hit 9: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit10_hitType",
+      "Name": "Hit 10: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit11_hitType",
+      "Name": "Hit 11: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit12_hitType",
+      "Name": "Hit 12: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit13_hitType",
+      "Name": "Hit 13: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit14_hitType",
+      "Name": "Hit 14: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "Hit15_hitType",
+      "Name": "Hit 15: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defMaterialVal0",
+      "Name": "Defence SFX Material [1]",
+      "Description": "Used for SFX when guarding. 1"
+    },
+    {
+      "Field": "defMaterialVal1",
+      "Name": "Defence SE Material [2]",
+      "Description": "Used for SE when guarding 2"
+    },
+    {
+      "Field": "defMaterialVal2",
+      "Name": "Defence SFX Material [2]",
+      "Description": "Used for SFX when guarding. 2"
+    },
+    {
+      "Field": "atkDarkCorrection",
+      "Name": "Attack Correction: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "atkDark",
+      "Name": "Damage: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "pad9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableParry",
+      "Name": "Is Disable Parry",
+      "Description": "This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side."
+    },
+    {
+      "Field": "isDisableBothHandsAtkBonus",
+      "Name": "Is Disable 2H ATK Bonus",
+      "Description": "Avoid using the 1.5x growth status adaptation with both hands"
+    },
+    {
+      "Field": "isInvalidatedByNoDamageInAir",
+      "Name": "Is Invalidated by No Damage in Air",
+      "Description": "If Do you want to penetrate invincibility is , this setting will be ignored."
+    },
+    {
+      "Field": "pad8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLevel_vsPlayer",
+      "Name": "Damage Level - Vs. Player",
+      "Description": "Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level."
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate",
+      "Name": "Status Ailment Correction",
+      "Description": "Magnification correction is performed for the abnormal state attack power of special effects."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byPoint",
+      "Name": "Attack Correction - By SpEffect Point",
+      "Description": "Magnification correction is performed for the special effect ~ ~ attack power [point]."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byRate",
+      "Name": "Attack Correction - By SpEffect Power",
+      "Description": "Magnification is corrected for the special effect\u0027s attack power multiplier."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byDmg",
+      "Name": "Attack Correction - By SpEffect Damage",
+      "Description": "Attack side of special effect: ~ ~ Performs magnification correction for damage multiplier."
+    },
+    {
+      "Field": "atkBehaviorId_2",
+      "Name": "Attack Behavior ID [2]",
+      "Description": "Behavior identification value: Plays damage motion only at specific times"
+    },
+    {
+      "Field": "throwDamageAttribute",
+      "Name": "Throw Damage Attribute",
+      "Description": "Attribute flags for throw damage."
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
+      "Name": "Status Ailment Correction - By Point",
+      "Description": "Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction."
+    },
+    {
+      "Field": "atkElementCorrectId",
+      "Name": "Attack Element Correct ID",
+      "Description": "Override for stat scaling behaviour.\nIf -1, equipped weapon determines AttackElementCorrectParam instead."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

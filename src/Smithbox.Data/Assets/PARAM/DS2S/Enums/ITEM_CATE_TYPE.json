@@ -1,62 +1,110 @@
 {
-  "DisplayName": "ITEM_CATE_TYPE",
-  "Name": "ITEM_CATE_TYPE",
-  "Description": "",
+  "Key": "ITEM_CATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_CATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Passive",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Passive"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Source",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Source"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Weapon",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Shield",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Armor",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Ring",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Active",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Active"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Arrow",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     }
   ]
 }

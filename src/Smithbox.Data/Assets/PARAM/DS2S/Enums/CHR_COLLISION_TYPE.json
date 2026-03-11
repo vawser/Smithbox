@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CHR_COLLISION_TYPE",
-  "Name": "CHR_COLLISION_TYPE",
-  "Description": "",
+  "Key": "CHR_COLLISION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_COLLISION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Capsule",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Ragdoll",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ragdoll"
+        }
+      ]
     }
   ]
 }

@@ -1,32 +1,56 @@
 {
-  "DisplayName": "HIT_BACK_WEIGHT_TYPE",
-  "Name": "HIT_BACK_WEIGHT_TYPE",
-  "Description": "",
+  "Key": "HIT_BACK_WEIGHT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HIT_BACK_WEIGHT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Large",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     }
   ]
 }

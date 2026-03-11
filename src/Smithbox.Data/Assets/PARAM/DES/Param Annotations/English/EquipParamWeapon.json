@@ -1,0 +1,448 @@
+{
+  "Param": "EquipParamWeapon",
+  "Type": "EQUIP_PARAM_WEAPON_ST",
+  "Name": "EquipParamWeapon",
+  "Description": "Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon.",
+  "Fields": [
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "The equipment model category used by this equipment."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender Category",
+      "Description": "The equipment gender category used by this equipment."
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "The model ID to use for this equipment."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID ",
+      "Description": "The icon ID to use for this equipment."
+    },
+    {
+      "Field": "weaponCategory",
+      "Name": "Weapon Category",
+      "Description": "The weapon category of this equipment."
+    },
+    {
+      "Field": "wepmotionCategory",
+      "Name": "Weapon Animation Set",
+      "Description": "The weapon animation category. Determines the base animation set the weapon uses."
+    },
+    {
+      "Field": "wepmotionOneHandId",
+      "Name": "Weapon Idle Animation Set: 1H",
+      "Description": "The weapon idle animation category. Determines the idle animations used when held one-handed."
+    },
+    {
+      "Field": "wepmotionBothHandId",
+      "Name": "Weapon Idle Animation Set: 2H",
+      "Description": "The weapon idle animation category. Determines the idle animations used when held two-handed."
+    },
+    {
+      "Field": "rightHandEquipable",
+      "Name": "Equipped in Right Weapon Slot",
+      "Description": "If ON, this equipment can be equipped in the right weapon slot."
+    },
+    {
+      "Field": "leftHandEquipable",
+      "Name": "Equipped in Left Weapon Slot",
+      "Description": "If ON, this equipment can be equipped in the left weapon slot."
+    },
+    {
+      "Field": "bothHandEquipable",
+      "Name": "Equipped in either Weapon Slot",
+      "Description": "If ON, this equipment can be equipped in either weapon slot."
+    },
+    {
+      "Field": "arrowSlotEquipable",
+      "Name": "Equipped in Arrow Slot",
+      "Description": "If ON, this equipment can be equipped in arrow ammunition slot."
+    },
+    {
+      "Field": "boltSlotEquipable",
+      "Name": "Equipped in Bolt Slot",
+      "Description": "If ON, this equipment can be equipped in bolt ammunition slot."
+    },
+    {
+      "Field": "throwable",
+      "Name": "Is Throwable",
+      "Description": "If ON, weapon can be thrown."
+    },
+    {
+      "Field": "existWepCase",
+      "Name": "Has Sheath",
+      "Description": "If ON, weapon has a sheath."
+    },
+    {
+      "Field": "enableGuard",
+      "Name": "Enables Guard",
+      "Description": "If ON, this weapon will guard with L1 when equipped with left hand."
+    },
+    {
+      "Field": "enableParry",
+      "Name": "Enables Parry",
+      "Description": "If ON, this weapon will arry with L2 when equipped with left hand."
+    },
+    {
+      "Field": "enableMagic",
+      "Name": "Enables Sorcery",
+      "Description": "If ON, this weapon will cast sorcery when attacking."
+    },
+    {
+      "Field": "enableMiracle",
+      "Name": "Enables Miracles",
+      "Description": "If ON, this weapon will cast miracles when attacking."
+    },
+    {
+      "Field": "pad_",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxBulletNum",
+      "Name": "Maximum Ammunition Count",
+      "Description": "The maximum amount of ammunition that can be carried (for ammunition weapon entries)."
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "Wandering Equip ID",
+      "Description": "Replacement equipment ID for wandering ghosts."
+    },
+    {
+      "Field": "behaviorVariationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used to determine the action parameters to use for this weapon\u0027s attacks."
+    },
+    {
+      "Field": "isNormalAttackType",
+      "Name": "Menu Display: Normal",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isBlowAttackType",
+      "Name": "Menu Display: Strike",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isSlashAttackType",
+      "Name": "Menu Display: Slash",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "isThrustAttackType",
+      "Name": "Menu Display: Thrust",
+      "Description": "The attack type for menu display."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]."
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "The initial durability of this equipment."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "Max Durability",
+      "Description": "The maximum durability of this equipment."
+    },
+    {
+      "Field": "attackBasePhysics",
+      "Name": "Damage: Physical",
+      "Description": "The base Physical attack power."
+    },
+    {
+      "Field": "attackBaseMagic",
+      "Name": "Damage: Magic",
+      "Description": "The base Magic attack power."
+    },
+    {
+      "Field": "attackBaseFire",
+      "Name": "Damage: Fire",
+      "Description": "The base Fire attack power."
+    },
+    {
+      "Field": "attackBaseStamina",
+      "Name": "Damage: Stamina",
+      "Description": "The base stamina attack power."
+    },
+    {
+      "Field": "attackSuperArmor",
+      "Name": "Damage: Poise",
+      "Description": "The base poise attack power."
+    },
+    {
+      "Field": "attackBaseParry",
+      "Name": "Parry Attack",
+      "Description": "The base parry attack damage value. Applied to the enemy parry defense value."
+    },
+    {
+      "Field": "defenseBaseParry",
+      "Name": "Parry Defense",
+      "Description": "The base parry defense value. Compared against enemy parry attack value."
+    },
+    {
+      "Field": "guardBaseRepel",
+      "Name": "Base Repel: Defense",
+      "Description": "The base repel value when guarding. If a blocked attack has a repel attack value less than the repel defense value, the attack will bounce."
+    },
+    {
+      "Field": "attackBaseRepel",
+      "Name": "Base Repel: Attack",
+      "Description": "The base repel value when attacking. If the victim has a repel defense value greater than the repel attack value, the attack will bounce."
+    },
+    {
+      "Field": "parryDamageLife",
+      "Name": "Parry Damage Duration",
+      "Description": "The duration of parry damage. It is capped by the duration set in the TAE. In frames."
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "Guard Absorption %: Physical",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "Guard Absorption %: Magic",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption %: Fire",
+      "Description": "The absorption to apply to damage of the specified type when this weapon is guarding."
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "Guard Absorption %: Slash",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "Guard Absorption %: Strike",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "Guard Absorption %: Thrust",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "poisonGuardResist",
+      "Name": "Guard Absorption %: Poison",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "diseaseGuardResist",
+      "Name": "Guard Absorption %: Toxic",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "bloodGuardResist",
+      "Name": "Guard Absorption %: Bleed",
+      "Description": "The absorption to apply to damage of the specified type when guarding."
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "Guard Stability",
+      "Description": "Defense power against stamina drain from enemy attacks when guarding correctly."
+    },
+    {
+      "Field": "guardAngle",
+      "Name": "Horizontal Guard Angle",
+      "Description": "Defense generation range angle when guarding with a weapon (horizontal direction). In degrees."
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "Guard Damage Level",
+      "Description": "When guarding, the guard animation offset to use when being attacked."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardKnockbackCutRate",
+      "Name": "Guard: Knockback Absorption %",
+      "Description": "The absorption to apply to knocback speed when guarding."
+    },
+    {
+      "Field": "guardKnockbackBackslash",
+      "Name": "Guard: Knockback Repulsion %",
+      "Description": "The counter-repulsion to the opponent when guarding (after suffering an attack)."
+    },
+    {
+      "Field": "correctStrength",
+      "Name": "Correction: STR",
+      "Description": "The multiplier to the damage corrected by this specified stat."
+    },
+    {
+      "Field": "correctAgility",
+      "Name": "Correction: DEX",
+      "Description": "The multiplier to the damage corrected by this specified stat."
+    },
+    {
+      "Field": "correctMagic",
+      "Name": "Correction: INT",
+      "Description": "The multiplier to the damage corrected by this specified stat."
+    },
+    {
+      "Field": "correctFaith",
+      "Name": "Correction: FTH",
+      "Description": "The multiplier to the damage corrected by this specified stat."
+    },
+    {
+      "Field": "properStrength",
+      "Name": "Requirement: STR",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properAgility",
+      "Name": "Requirement: DEX",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properMagic",
+      "Name": "Requirement: INT",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "properFaith",
+      "Name": "Requirement: FTH",
+      "Description": "The required level of the specified stat to properly wield this weapon."
+    },
+    {
+      "Field": "correctType",
+      "Name": "Damage Correction Graph",
+      "Description": "Determine the calculcation correction graph to use when correcting damage."
+    },
+    {
+      "Field": "qwcType",
+      "Name": "World Tendency Correction Type",
+      "Description": "The attack power correction type to use based on world tendency."
+    },
+    {
+      "Field": "isLuckCorrect",
+      "Name": "Apply Luck Correction",
+      "Description": "If ON, applies attack correction based on luck."
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "Guard Absorption Invalidation",
+      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+    },
+    {
+      "Field": "antiDemonDamageRate",
+      "Name": "Damage Adjustment %: Demon",
+      "Description": "Damage multiplier applied to targets that are classified with isDemon."
+    },
+    {
+      "Field": "spEffectBehaviorId0",
+      "Name": "SpEffect on Hit: 1",
+      "Description": "A SpEffect to apply to the victim when this weapon hits."
+    },
+    {
+      "Field": "spEffectBehaviorId1",
+      "Name": "SpEffect on Hit: 2",
+      "Description": "A SpEffect to apply to the victim when this weapon hits."
+    },
+    {
+      "Field": "spEffectBehaviorId2",
+      "Name": "SpEffect on Hit: 3",
+      "Description": "A SpEffect to apply to the victim when this weapon hits."
+    },
+    {
+      "Field": "residentSpEffectBehaviorId",
+      "Name": "Resident SpEffect Behavior ID",
+      "Description": "A SpEffect to apply to the wielder of this weapon."
+    },
+    {
+      "Field": "customShopType",
+      "Name": "Reinforcement Type",
+      "Description": "The reinforcement menu type to use for this weapon."
+    },
+    {
+      "Field": "pad_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwAtkRate",
+      "Name": "Critical Hit %",
+      "Description": "The multiplier to apply to critical hits."
+    },
+    {
+      "Field": "originEquipWep",
+      "Name": "Source ID",
+      "Description": "The source ID to use for this equipment when changing its base form."
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Upgrade Material ID",
+      "Description": "The material requirements for improving this equipment."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering ID used to sort this part in the menu."
+    },
+    {
+      "Field": "isCustom",
+      "Name": "Is Reinforcable",
+      "Description": "If ON, this weapon can be reinforced via the reinforcement mechanic."
+    },
+    {
+      "Field": "pad_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "Ammunition Distance %",
+      "Description": "Increase the attentuation range of ammunition by the specified multiplier."
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this equipment is associated with, if any."
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Sequential Achievement ID",
+      "Description": "The sequential achievement ID this equipment is associated with, if any."
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "Repair Value",
+      "Description": "The price required to repair this part. Repair cost is calculated using this and durabilityMax"
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The world tendency ID to use for this item."
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "Is Buffable",
+      "Description": "If ON, this weapon be buffed via a tool or spell."
+    },
+    {
+      "Field": "pad_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Value",
+      "Description": "The reinforcement price for this part."
+    }
+  ]
+}

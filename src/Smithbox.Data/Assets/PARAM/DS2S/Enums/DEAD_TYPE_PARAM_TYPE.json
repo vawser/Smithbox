@@ -1,12 +1,20 @@
 {
-  "DisplayName": "DEAD_TYPE_PARAM_TYPE",
-  "Name": "DEAD_TYPE_PARAM_TYPE",
-  "Description": "",
+  "Key": "DEAD_TYPE_PARAM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DEAD_TYPE_PARAM_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Test data",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test data"
+        }
+      ]
     }
   ]
 }

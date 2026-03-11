@@ -1,0 +1,58 @@
+{
+  "Param": "MenuColorTableParam",
+  "Type": "MENU_PARAM_COLOR_TABLE_ST",
+  "Name": "MenuColorTableParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "lerpMode",
+      "Name": "Lerp Mode",
+      "Description": "Interpolation method"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "h",
+      "Name": "Hue",
+      "Description": "Hue. Treat as a fixed value in interpolation"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "s1",
+      "Name": "Saturation [1]",
+      "Description": "Saturation 1. Treated as the first point of interpolation"
+    },
+    {
+      "Field": "v1",
+      "Name": "Brightness [1]",
+      "Description": "Brightness 1. Treated as the first point of interpolation"
+    },
+    {
+      "Field": "s2",
+      "Name": "Saturation [2]",
+      "Description": "Saturation 2. Treated as the second point of interpolation"
+    },
+    {
+      "Field": "v2",
+      "Name": "Brightness [2]",
+      "Description": "Brightness 2. Treated as the second point of interpolation"
+    },
+    {
+      "Field": "s3",
+      "Name": "Saturation [3]",
+      "Description": "Saturation 3. Treated as the third point of interpolation"
+    },
+    {
+      "Field": "v3",
+      "Name": "Brightness [3]",
+      "Description": "Brightness 3. Treated as the third point of interpolation"
+    }
+  ]
+}

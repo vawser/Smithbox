@@ -1,22 +1,38 @@
 {
-  "DisplayName": "ATTACK_POSITION_ENUM",
-  "Name": "ATTACK_POSITION_ENUM",
-  "Description": "",
+  "Key": "ATTACK_POSITION_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATTACK_POSITION_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Upper row",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper row"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Middle row",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle row"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Lower tier",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower tier"
+        }
+      ]
     }
   ]
 }

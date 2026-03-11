@@ -1,17 +1,29 @@
 {
-  "DisplayName": "HIT_GAME_BRIGHT_TYPE_ENUM",
-  "Name": "HIT_GAME_BRIGHT_TYPE_ENUM",
-  "Description": "",
+  "Key": "HIT_GAME_BRIGHT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HIT_GAME_BRIGHT_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Bright",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bright"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dark",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark"
+        }
+      ]
     }
   ]
 }

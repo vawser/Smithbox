@@ -1,112 +1,200 @@
 {
-  "DisplayName": "DAMAGE_EFFECT_SFX_CATEGORY",
-  "Name": "DAMAGE_EFFECT_SFX_CATEGORY",
-  "Description": "",
+  "Key": "DAMAGE_EFFECT_SFX_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_EFFECT_SFX_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "General purpose smoke",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose smoke"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Black smoke",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black smoke"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Spark",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spark"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "炎",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "炎"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Up in flames",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up in flames"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Soul",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "血",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "血"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Body fluid",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body fluid"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "糸",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "糸"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Piece of wood",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piece of wood"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Bone fragment",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone fragment"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Piece of grass",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piece of grass"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Crystal pieces",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crystal pieces"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Gravel",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravel"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Water splash",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water splash"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Viscous droplets",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Viscous droplets"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Lava splash",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava splash"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Magic shock",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic shock"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Dark shock",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark shock"
+        }
+      ]
     }
   ]
 }

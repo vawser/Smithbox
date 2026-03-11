@@ -1,0 +1,258 @@
+{
+  "Param": "ThrowParam",
+  "Type": "THROW_INFO_BANK",
+  "Name": "ThrowParam",
+  "Description": "Responsible for syncing animations of two characters together for things like grabs and deathblows",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkAnimId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defAnimId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "selfEscCycleTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sphereCastRadiusRateTop",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sphereCastRadiusRateLow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PadType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkSorbDmyId_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defSorbDmyId_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwType_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "selfEscCycleCnt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmyHasChrDirType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isTurnAtker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSkipWepCate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSkipSphereCast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkSorbDmyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defSorbDmyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dist_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DiffAngMin_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DiffAngMax_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperYRange_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lowerYRange_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffAngMyToDef_start",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwKind",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalFallOrbitCheck_range",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalFallOrbitCheck_heightLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "additionalConditionSpecialEffect_forAtk",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "additionalConditionSpecialEffect_forDef",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalFallOrbitCheck_timeLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkAnimOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defAnimOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwFollowingType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableThrowFollowingFallAssist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "charaPhysicsHomingId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableThrowFollowingFeedback",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adsrobModelPosInterpolationTime",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

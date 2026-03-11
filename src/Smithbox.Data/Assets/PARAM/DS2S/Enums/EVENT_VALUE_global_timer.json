@@ -1,52 +1,92 @@
 {
-  "DisplayName": "EVENT_VALUE_global_timer",
-  "Name": "EVENT_VALUE_global_timer",
-  "Description": "",
+  "Key": "EVENT_VALUE_global_timer",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_global_timer"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "None",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Giant's Memory_Time limit",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory_Time limit"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Ancient dragon's memory_time limit",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon's memory_time limit"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "3",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "4",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "5",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "6",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "7",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7"
+        }
+      ]
     }
   ]
 }

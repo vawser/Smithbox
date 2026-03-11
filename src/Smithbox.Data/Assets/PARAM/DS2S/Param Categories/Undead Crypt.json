@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Undead Crypt",
+  "Key": "Undead Crypt",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Undead Crypt"
+      }
+  ],
   "Params": [
     "demopointlight_scn202410",
     "demospotlight_scn202410",

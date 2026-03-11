@@ -1,5 +1,12 @@
 {
-  "DisplayName": "Sen's Fortress",
+  "Key": "Sen's Fortress",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Sen's Fortress"
+      }
+  ],
+  
   "Params": [
     "m15_DofBank",
     "m15_EnvLightTexBank",

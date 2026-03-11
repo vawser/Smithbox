@@ -58,6 +58,8 @@ public class CFG
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
 
+    public string ParamEditor_Annotation_Language = "English";
+
     #endregion
 
     #region Project

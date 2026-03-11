@@ -1,0 +1,973 @@
+{
+  "Param": "ChrMoveParam",
+  "Type": "CHR_MOVE_PARAM",
+  "Name": "ChrMoveParam",
+  "Description": "Defines parameters used for player and humanoid character movement.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "walk_acceleration",
+      "Name": "Walk Acceleration",
+      "Description": ""
+    },
+    {
+      "Field": "auto_walk_speed",
+      "Name": "Auto-Walk Speed Trigger",
+      "Description": ""
+    },
+    {
+      "Field": "walk_speed",
+      "Name": "Walk Speed",
+      "Description": ""
+    },
+    {
+      "Field": "walk_deceleration",
+      "Name": "Walk Deceleration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slow_walk_turn_rate",
+      "Name": "Slow Walk Turn Rate",
+      "Description": ""
+    },
+    {
+      "Field": "walk_turn_rate",
+      "Name": "Walk Turn Rate",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dash_speed",
+      "Name": "Dash Speed",
+      "Description": ""
+    },
+    {
+      "Field": "auto_dash_speed",
+      "Name": "Auto-Dash Speed Trigger",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dash_max_speed",
+      "Name": "Dash Max Speed",
+      "Description": ""
+    },
+    {
+      "Field": "dash_deceleration",
+      "Name": "Dash Deceleration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": "Running Turning Related"
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": "Running Turning Related"
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_walk_acceleration",
+      "Name": "Lock-on - Walk Acceleration",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_auto_walk_speed",
+      "Name": "Lock-on - Auto-Walk Speed Trigger",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_walk_speed",
+      "Name": "Lock-on - Walk Speed",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_walk_deceleration",
+      "Name": "Lock-on - Walk Deceleration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_walk_turn_rate",
+      "Name": "Lock-on - Walk Turn Rate",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_run_speed",
+      "Name": "Lock-on - Run Speed",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_auto_dash_speed",
+      "Name": "Lock-on - Auto-Dash Speed Trigger",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_dash_max_speed",
+      "Name": "Lock-on - Dash Max Speed",
+      "Description": ""
+    },
+    {
+      "Field": "lock_on_dash_deceleration",
+      "Name": "Lock-on - Dash Deceleration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk27",
+      "Name": "",
+      "Description": "Locked-on Running Attack Aiming Related"
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": "Locked-on Running Attack Aiming Related"
+    },
+    {
+      "Field": "Unk29",
+      "Name": "",
+      "Description": "Turning Rate While Attacking Related"
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": "Turning Rate While Attacking Related"
+    },
+    {
+      "Field": "Unk31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backstep_speed",
+      "Name": "Backstep Speed",
+      "Description": ""
+    },
+    {
+      "Field": "Unk44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backstep_distance",
+      "Name": "Backstep Distance",
+      "Description": ""
+    },
+    {
+      "Field": "fat_backstep_distance",
+      "Name": "Fat Backstep Distance",
+      "Description": ""
+    },
+    {
+      "Field": "Unk47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roll_speed",
+      "Name": "Roll Speed",
+      "Description": ""
+    },
+    {
+      "Field": "fat_roll_speed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jump_height",
+      "Name": "Jump Height",
+      "Description": ""
+    },
+    {
+      "Field": "Unk51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jump_length_min",
+      "Name": "Jump Length - Min",
+      "Description": ""
+    },
+    {
+      "Field": "jump_length_max",
+      "Name": "Jump Length - Max",
+      "Description": ""
+    },
+    {
+      "Field": "Unk53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jump_gravity_min",
+      "Name": "Jump Gravity - Min",
+      "Description": ""
+    },
+    {
+      "Field": "jump_gravity_max",
+      "Name": "Jump Gravity - Max",
+      "Description": ""
+    },
+    {
+      "Field": "Unk55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fall_death_timer",
+      "Name": "Fall Death Timer",
+      "Description": ""
+    },
+    {
+      "Field": "Unk58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "escape_min_height",
+      "Name": "Escape Minimum Height",
+      "Description": ""
+    },
+    {
+      "Field": "Unk61",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk62",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk63",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk64",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk65",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk66",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk67",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk68",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk69",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk70",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk71",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk72",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk73",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk74",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk75",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk76",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk77",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk78",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk79",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk80",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk81",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk82",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk83",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk84",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk85",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk86",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk87",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk88",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk89",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk91",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk92",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk93",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk94",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk95",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fall_min_vertical_speed",
+      "Name": "Fall State - Minimum Vertical Speed",
+      "Description": ""
+    },
+    {
+      "Field": "fall_distance_breakpoint_1",
+      "Name": "Fall Distance - Breakpoint 1",
+      "Description": ""
+    },
+    {
+      "Field": "fall_distance_breakpoint_2",
+      "Name": "Fall Distance - Breakpoint 2",
+      "Description": ""
+    },
+    {
+      "Field": "fall_distance_breakpoint_3",
+      "Name": "Fall Distance - Breakpoint 3",
+      "Description": ""
+    },
+    {
+      "Field": "fall_distance_max",
+      "Name": "Fall Distance - Max",
+      "Description": ""
+    },
+    {
+      "Field": "Unk96",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk97",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk98",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk99",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk100",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk101",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk102",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk103",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk104",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk105",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk106",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ladder_climb_speed",
+      "Name": "Ladder Climbing Speed",
+      "Description": ""
+    },
+    {
+      "Field": "ladder_fast_climb_speed",
+      "Name": "Ladder Fast Climbing Speed",
+      "Description": ""
+    },
+    {
+      "Field": "ladder_slide_speed",
+      "Name": "Ladder Sliding Speed",
+      "Description": ""
+    },
+    {
+      "Field": "Unk107",
+      "Name": "",
+      "Description": "Ladder Grab Speed Related"
+    },
+    {
+      "Field": "Unk108",
+      "Name": "",
+      "Description": "Ladder Grab Speed Related"
+    },
+    {
+      "Field": "Unk109",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk110",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk111",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk112",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk113",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk114",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk115",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk116",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk117",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk118",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk119",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk120",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk121",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk122",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk123",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk124",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk125",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk126",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk128",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk129",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk130",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk131",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk132",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk133",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk134",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk135",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk136",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk137",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk138",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk139",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk140",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk141",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk142",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk143",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk144",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk145",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk146",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk147",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk148",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk149",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk150",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk151",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk152",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk153",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk154",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk155",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk156",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk157",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

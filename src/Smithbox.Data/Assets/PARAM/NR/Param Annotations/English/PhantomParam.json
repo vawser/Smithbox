@@ -1,0 +1,153 @@
+{
+  "Param": "PhantomParam",
+  "Type": "PHANTOM_PARAM_ST",
+  "Name": "PhantomParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "edgeColorA",
+      "Name": "Edge Color: Alpha",
+      "Description": "Edge color A."
+    },
+    {
+      "Field": "frontColorA",
+      "Name": "Front Color: Alpha",
+      "Description": "The front color is A."
+    },
+    {
+      "Field": "diffMulColorA",
+      "Name": "Diffuse Color: Alpha",
+      "Description": "Diffuse multiplication color A."
+    },
+    {
+      "Field": "specMulColorA",
+      "Name": "Specular Color: Alpha",
+      "Description": "Specular multiplication color A."
+    },
+    {
+      "Field": "lightColorA",
+      "Name": "Light Color: Alpha",
+      "Description": "Light color A."
+    },
+    {
+      "Field": "edgeColorR",
+      "Name": "Edge Color: R",
+      "Description": "Edge color R."
+    },
+    {
+      "Field": "edgeColorG",
+      "Name": "Edge Color: G",
+      "Description": "Edge color G."
+    },
+    {
+      "Field": "edgeColorB",
+      "Name": "Edge Color: B",
+      "Description": "Edge color B."
+    },
+    {
+      "Field": "frontColorR",
+      "Name": "Front Color: R",
+      "Description": "The front color is R."
+    },
+    {
+      "Field": "frontColorG",
+      "Name": "Front Color: G",
+      "Description": "The front color is G."
+    },
+    {
+      "Field": "frontColorB",
+      "Name": "Front Color: B",
+      "Description": "Front color B."
+    },
+    {
+      "Field": "diffMulColorR",
+      "Name": "Diffuse Color: R",
+      "Description": "Diffuse multiplication color R."
+    },
+    {
+      "Field": "diffMulColorG",
+      "Name": "Diffuse Color: G",
+      "Description": "Diffuse multiplication color G."
+    },
+    {
+      "Field": "diffMulColorB",
+      "Name": "Diffuse Color: B",
+      "Description": "Diffuse multiplication color B."
+    },
+    {
+      "Field": "specMulColorR",
+      "Name": "Specular Color: R",
+      "Description": "Specular multiplication color R."
+    },
+    {
+      "Field": "specMulColorG",
+      "Name": "Specular Color: G",
+      "Description": "Specular multiplication color G."
+    },
+    {
+      "Field": "specMulColorB",
+      "Name": "Specular Color: B",
+      "Description": "Specular multiplication color B."
+    },
+    {
+      "Field": "lightColorR",
+      "Name": "Light Color: R",
+      "Description": "Light color R."
+    },
+    {
+      "Field": "lightColorG",
+      "Name": "Light Color: G",
+      "Description": "Light color G."
+    },
+    {
+      "Field": "lightColorB",
+      "Name": "Light Color: B",
+      "Description": "Light color B."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "alpha",
+      "Name": "Overall Alpha",
+      "Description": "The overall transparency."
+    },
+    {
+      "Field": "blendRate",
+      "Name": "Blend Rate",
+      "Description": "The blend ratio."
+    },
+    {
+      "Field": "blendType",
+      "Name": "Blend Type",
+      "Description": "The type of alpha blend."
+    },
+    {
+      "Field": "isEdgeSubtract",
+      "Name": "Perform Edge Color Subtraction",
+      "Description": "Whether to perform edge color subtraction."
+    },
+    {
+      "Field": "isFrontSubtract",
+      "Name": "Perform Front Color Subtraction",
+      "Description": "Is it front color subtraction?"
+    },
+    {
+      "Field": "isNo2Pass",
+      "Name": "Is 1 Pass Only",
+      "Description": "Do you not do 2pass?"
+    },
+    {
+      "Field": "edgePower",
+      "Name": "Edge Width",
+      "Description": "Edge width"
+    },
+    {
+      "Field": "glowScale",
+      "Name": "Glow Strength",
+      "Description": "Glow strength"
+    }
+  ]
+}

@@ -1,52 +1,92 @@
 {
-  "DisplayName": "BOSS_RAGDOLL_PARTS_TYPE",
-  "Name": "BOSS_RAGDOLL_PARTS_TYPE",
-  "Description": "",
+  "Key": "BOSS_RAGDOLL_PARTS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_RAGDOLL_PARTS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Part 1",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 1"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Part 2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Part 3",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 3"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Part 4",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 4"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Part 5",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 5"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Part 6",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 6"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Part 7",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 7"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Part 8",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 8"
+        }
+      ]
     }
   ]
 }

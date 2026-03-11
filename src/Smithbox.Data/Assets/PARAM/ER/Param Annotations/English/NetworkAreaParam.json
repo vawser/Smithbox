@@ -1,0 +1,73 @@
+{
+  "Param": "NetworkAreaParam",
+  "Type": "NETWORK_AREA_PARAM_ST",
+  "Name": "NetworkAreaParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "cellSizeX",
+      "Name": "Cell Size - X",
+      "Description": "Cell size X"
+    },
+    {
+      "Field": "cellSizeY",
+      "Name": "Cell Size - Y",
+      "Description": "Cell size Y"
+    },
+    {
+      "Field": "cellSizeZ",
+      "Name": "Cell Size - Z",
+      "Description": "Cell size Z"
+    },
+    {
+      "Field": "cellOffsetX",
+      "Name": "Cell Offset - X",
+      "Description": "Cell offset X"
+    },
+    {
+      "Field": "cellOffsetY",
+      "Name": "Cell Offset - Y",
+      "Description": "Cell offset Y"
+    },
+    {
+      "Field": "cellOffsetZ",
+      "Name": "Cell Offset - Z",
+      "Description": "Cell offset Z"
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "Enable Bloodstain",
+      "Description": "Effective bloodstain / death illusion"
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "Enable Blood Message",
+      "Description": "Blood character valid"
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "Enable Ghost",
+      "Description": "Phantom effective"
+    },
+    {
+      "Field": "enableMultiPlay",
+      "Name": "Enable Multiplayer",
+      "Description": "Multiplayer enabled"
+    },
+    {
+      "Field": "enableRingSearch",
+      "Name": "Enable Ring Search",
+      "Description": "Is it a search target for ring search? (Area called Kanemori Ash Spirit / Relief Blue Spirit)"
+    },
+    {
+      "Field": "enableBreakInSearch",
+      "Name": "Enable Invasion Search",
+      "Description": "Is it the target of intrusion search?"
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

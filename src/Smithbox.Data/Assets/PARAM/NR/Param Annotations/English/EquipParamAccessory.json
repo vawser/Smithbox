@@ -1,0 +1,143 @@
+{
+  "Param": "EquipParamAccessory",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EquipParamAccessory",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "accessoryGroup",
+      "Name": "Accessory Group",
+      "Description": "Items of the same group cannot be equipped at the same time"
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rarity",
+      "Name": "Rarity",
+      "Description": "Rarity used in item acquisition logs"
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "Sort Group ID",
+      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can Drop",
+      "Description": "Allows talisman to be dropped from inventory"
+    },
+    {
+      "Field": "unknown_5d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5e",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5f",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableVisualCodex",
+      "Name": "Enable Visual Codex",
+      "Description": "Allows talisman to appear in the Visual Codex"
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_1",
+      "Name": "Attached Effect: 1",
+      "Description": "The attached effect to apply when this talisman is equipped."
+    },
+    {
+      "Field": "spEffectId_2",
+      "Name": "Attached Effect: 2",
+      "Description": "The attached effect to apply when this talisman is equipped."
+    },
+    {
+      "Field": "spEffectId_3",
+      "Name": "Attached Effect: 3",
+      "Description": "The attached effect to apply when this talisman is equipped."
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

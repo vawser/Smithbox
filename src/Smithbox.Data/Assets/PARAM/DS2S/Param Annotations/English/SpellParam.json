@@ -1,0 +1,443 @@
+{
+  "Param": "SpellParam",
+  "Type": "SPELL_PARAM",
+  "Name": "SpellParam",
+  "Description": "Defines parameters relating to spells.",
+  "Fields": [
+    {
+      "Field": "spell_class",
+      "Name": "Spell Class",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spell_function",
+      "Name": "Spell Function",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "int_requirement",
+      "Name": "INT Requirement",
+      "Description": ""
+    },
+    {
+      "Field": "fth_requirement",
+      "Name": "FTH Requirement",
+      "Description": ""
+    },
+    {
+      "Field": "right_bullet_id",
+      "Name": "Bullet ID - Right Hand",
+      "Description": ""
+    },
+    {
+      "Field": "right_damage_id",
+      "Name": "Damage ID - Right Hand",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_startup_duration",
+      "Name": "Left 1H - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_unknown_duration",
+      "Name": "Left 1H - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_anim_startup",
+      "Name": "Left 1H - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_anim_cast",
+      "Name": "Left 1H - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_stamina_cost",
+      "Name": "Left 1H - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_startup_duration",
+      "Name": "Right 1H - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_unknown_duration",
+      "Name": "Right 1H - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_anim_startup",
+      "Name": "Right 1H - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_anim_cast",
+      "Name": "Right 1H - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_stamina_cost",
+      "Name": "Right 1H - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_startup_duration",
+      "Name": "Left 2H - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_unknown_duration",
+      "Name": "Left 2H - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_anim_startup",
+      "Name": "Left 2H - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_anim_cast",
+      "Name": "Left 2H - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_stamina_cost",
+      "Name": "Left 2H - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_startup_duration",
+      "Name": "Right 2H - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_unknown_duration",
+      "Name": "Right 2H - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_anim_startup",
+      "Name": "Right 2H - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_anim_cast",
+      "Name": "Right 2H - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_stamina_cost",
+      "Name": "Right 2H - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkA_startup_duration",
+      "Name": "Left Unknown - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkA_unknown_duration",
+      "Name": "Left Unknown - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkA_anim_startup",
+      "Name": "Left Unknown - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkA_anim_cast",
+      "Name": "Left Unknown - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkA_stamina_cost",
+      "Name": "Left Unknown - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkA_startup_duration",
+      "Name": "Right Unknown - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkA_unknown_duration",
+      "Name": "Right Unknown - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkA_anim_startup",
+      "Name": "Right Unknown - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkA_anim_cast",
+      "Name": "Right Unknown - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkA_stamina_cost",
+      "Name": "Right Unknown - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkB_startup_duration",
+      "Name": "Left Unknown - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkB_unknown_duration",
+      "Name": "Left Unknown - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkB_anim_startup",
+      "Name": "Left Unknown - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkB_anim_cast",
+      "Name": "Left Unknown - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_unkB_stamina_cost",
+      "Name": "Left Unknown - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkB_startup_duration",
+      "Name": "Right Unknown - Startup Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkB_unknown_duration",
+      "Name": "Right Unknown - Unknown Duration",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkB_anim_startup",
+      "Name": "Right Unknown - Startup Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkB_anim_cast",
+      "Name": "Right Unknown - Cast Anim ID",
+      "Description": ""
+    },
+    {
+      "Field": "right_unkB_stamina_cost",
+      "Name": "Right Unknown - Stamina Cost",
+      "Description": ""
+    },
+    {
+      "Field": "Unk29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "is_area_of_effect_spell",
+      "Name": "Is Area of Effect Spell",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "staff_sfx",
+      "Name": "Staff SFX",
+      "Description": ""
+    },
+    {
+      "Field": "is_spawn_on_body",
+      "Name": "Spawn on Body",
+      "Description": ""
+    },
+    {
+      "Field": "staff_sfx_dmy_poly_id_1",
+      "Name": "Staff SFX Dummy Poly ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "staff_sfx_dmy_poly_id_2",
+      "Name": "Staff SFX DummyPoly ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "body_sfx",
+      "Name": "Body SFX",
+      "Description": ""
+    },
+    {
+      "Field": "is_spawn_on_weapon",
+      "Name": "Spawn on Weapon",
+      "Description": ""
+    },
+    {
+      "Field": "body_sfx_dmy_poly_id_1",
+      "Name": "Body SFX DummyPoly ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "body_sfx_dmy_poly_id_2",
+      "Name": "Body SFX DummyPoly ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "startup_speed",
+      "Name": "Startup Speed",
+      "Description": ""
+    },
+    {
+      "Field": "cast_speed",
+      "Name": "Cast Speed",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slots_used",
+      "Name": "Slots Used",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_1",
+      "Name": "Casts (Tier 1)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_2",
+      "Name": "Casts (Tier 2)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_3",
+      "Name": "Casts (Tier 3)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_4",
+      "Name": "Casts (Tier 4)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_5",
+      "Name": "Casts (Tier 5)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_6",
+      "Name": "Casts (Tier 6)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_7",
+      "Name": "Casts (Tier 7)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_8",
+      "Name": "Casts (Tier 8)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_9",
+      "Name": "Casts (Tier 9)",
+      "Description": ""
+    },
+    {
+      "Field": "casts_tier_10",
+      "Name": "Casts (Tier 10)",
+      "Description": ""
+    },
+    {
+      "Field": "Unk40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spell_soul_consume_id",
+      "Name": "Spell Soul Consume ID",
+      "Description": ""
+    },
+    {
+      "Field": "left_bullet_id",
+      "Name": "Bullet ID - Left Hand",
+      "Description": ""
+    },
+    {
+      "Field": "left_damage_id",
+      "Name": "Damage ID - Left Hand",
+      "Description": ""
+    }
+  ]
+}

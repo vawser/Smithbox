@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BULLET_LR_HOMING_TYPE",
-  "Name": "BULLET_LR_HOMING_TYPE",
-  "Description": "",
+  "Key": "BULLET_LR_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_LR_HOMING_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Left and right",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left and right"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Left only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Right only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right only"
+        }
+      ]
     }
   ]
 }

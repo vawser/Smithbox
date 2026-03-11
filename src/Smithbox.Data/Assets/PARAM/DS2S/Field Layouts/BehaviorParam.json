@@ -3,7 +3,13 @@
   "UngroupedAtBottom": true,
   "Groups": [
     {
-      "Title": "Action 0",
+      "Key": "Action 0",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 0"
+          }
+      ],
       "Fields": [
         "action0DamageId00",
         "action0DamageId01",
@@ -33,7 +39,13 @@
       ]
     },
     {
-      "Title": "Action 1",
+      "Key": "Action 1",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 1"
+          }
+      ],
       "Fields": [
         "action1DamageId00",
         "action1DamageId01",
@@ -63,7 +75,13 @@
       ]
     },
     {
-      "Title": "Action 2",
+      "Key": "Action 2",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 2"
+          }
+      ],
       "Fields": [
         "action2DamageId00",
         "action2DamageId01",
@@ -93,7 +111,13 @@
       ]
     },
     {
-      "Title": "Action 3",
+      "Key": "Action 3",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 3"
+          }
+      ],
       "Fields": [
         "action3DamageId00",
         "action3DamageId01",
@@ -123,7 +147,13 @@
       ]
     },
     {
-      "Title": "Action 4",
+      "Key": "Action 4",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 4"
+          }
+      ],
       "Fields": [
         "action4DamageId00",
         "action4DamageId01",
@@ -153,7 +183,13 @@
       ]
     },
     {
-      "Title": "Action 5",
+      "Key": "Action 5",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 5"
+          }
+      ],
       "Fields": [
         "action5DamageId00",
         "action5DamageId01",
@@ -183,7 +219,13 @@
       ]
     },
     {
-      "Title": "Action 6",
+      "Key": "Action 6",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 6"
+          }
+      ],
       "Fields": [
         "action6DamageId00",
         "action6DamageId01",
@@ -213,7 +255,13 @@
       ]
     },
     {
-      "Title": "Action 7",
+      "Key": "Action 7",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 7"
+          }
+      ],
       "Fields": [
         "action7DamageId00",
         "action7DamageId01",
@@ -243,7 +291,13 @@
       ]
     },
     {
-      "Title": "Action 8",
+      "Key": "Action 8",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 8"
+          }
+      ],
       "Fields": [
         "action8DamageId00",
         "action8DamageId01",
@@ -273,7 +327,13 @@
       ]
     },
     {
-      "Title": "Action 9",
+      "Key": "Action 9",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Action 9"
+          }
+      ],
       "Fields": [
         "action9DamageId00",
         "action9DamageId01",

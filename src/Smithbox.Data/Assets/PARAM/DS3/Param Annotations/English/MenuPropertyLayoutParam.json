@@ -1,0 +1,33 @@
+{
+  "Param": "MenuPropertyLayoutParam",
+  "Type": "MENUPROPERTY_LAYOUT",
+  "Name": "MenuPropertyLayoutParam",
+  "Description": "Menu Layout Paths",
+  "Fields": [
+    {
+      "Field": "LayoutPath",
+      "Name": "Layout Path",
+      "Description": ""
+    },
+    {
+      "Field": "PropertyID",
+      "Name": "Menu Property ID",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionTextID",
+      "Name": "Caption Text ID",
+      "Description": "If a valid text ID is set, this will be displayed in preference to the property name."
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "Help Text ID",
+      "Description": "Only if this is a valid text ID will it be selectable in the field help."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

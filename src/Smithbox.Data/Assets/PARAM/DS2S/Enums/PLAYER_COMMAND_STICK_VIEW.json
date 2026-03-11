@@ -1,17 +1,29 @@
 {
-  "DisplayName": "PLAYER_COMMAND_STICK_VIEW",
-  "Name": "PLAYER_COMMAND_STICK_VIEW",
-  "Description": "",
+  "Key": "PLAYER_COMMAND_STICK_VIEW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_VIEW"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Camera standards",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera standards"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Player standards",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player standards"
+        }
+      ]
     }
   ]
 }

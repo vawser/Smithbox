@@ -1,5 +1,8 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
@@ -101,9 +104,9 @@ public static class ParamDebugTools
 
         foreach (var param in curProject.Handler.ParamData.PrimaryBank.Params)
         {
-            var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Key);
 
-            var sanitizedWiki = $"{targetParamMeta.Wiki}".Replace("\n", ", ").Replace("|", "-");
+            var sanitizedWiki = $"{annotations.Description}".Replace("\n", ", ").Replace("|", "-");
 
             output = output + $"| [[XXX-refmat:param:{param.Key}]] | {sanitizedWiki} |\n";
         }
@@ -135,6 +138,7 @@ public static class ParamDebugTools
 
         var targetParamDef = curProject.Handler.ParamData.PrimaryBank.GetParamFromName(paramKey);
         var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(targetParamDef.AppliedParamdef);
+        var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
 
         // Fields
         foreach (var field in targetParamDef.AppliedParamdef.Fields)
@@ -274,7 +278,9 @@ public static class ParamDebugTools
                 }
             }
 
-            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
+            var fieldAnnotation = editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.InternalName);
+
+            var sanitizedWiki = $"{fieldAnnotation.Description}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
 
             var colString = "";
 

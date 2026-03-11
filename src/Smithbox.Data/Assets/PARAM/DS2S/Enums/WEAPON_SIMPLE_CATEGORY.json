@@ -1,27 +1,47 @@
 {
-  "DisplayName": "WEAPON_SIMPLE_CATEGORY",
-  "Name": "WEAPON_SIMPLE_CATEGORY",
-  "Description": "",
+  "Key": "WEAPON_SIMPLE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_SIMPLE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Weapon",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Bow",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Crossbow",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Shield",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield"
+        }
+      ]
     }
   ]
 }

@@ -31,11 +31,6 @@ public class ParamMeta
     public Dictionary<PARAMDEF.Field, ParamFieldMeta> Fields = new();
 
     /// <summary>
-    /// Provides a brief description of the param's usage and behaviour
-    /// </summary>
-    public string Wiki { get; set; }
-
-    /// <summary>
     /// Range of grouped rows (eg weapon infusions, itemlot groups)
     /// </summary>
     public int BlockSize { get; set; }
@@ -146,12 +141,6 @@ public class ParamMeta
             XmlNode self = root.SelectSingleNode("Self");
             if (self != null)
             {
-                XmlAttribute WikiEntry = self.Attributes["Wiki"];
-                if (WikiEntry != null)
-                {
-                    Wiki = WikiEntry.InnerText.Replace("\\n", "\n");
-                }
-
                 XmlAttribute GroupSize = self.Attributes["BlockSize"];
                 if (GroupSize != null)
                 {

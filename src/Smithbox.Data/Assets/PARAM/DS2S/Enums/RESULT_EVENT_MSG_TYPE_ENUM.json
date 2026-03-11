@@ -1,32 +1,56 @@
 {
-  "DisplayName": "RESULT_EVENT_MSG_TYPE_ENUM",
-  "Name": "RESULT_EVENT_MSG_TYPE_ENUM",
-  "Description": "",
+  "Key": "RESULT_EVENT_MSG_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RESULT_EVENT_MSG_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No message",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No message"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Text only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Text only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Display dead character name",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Display dead character name"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Show hostname",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Show hostname"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Message type termination",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Message type termination"
+        }
+      ]
     }
   ]
 }

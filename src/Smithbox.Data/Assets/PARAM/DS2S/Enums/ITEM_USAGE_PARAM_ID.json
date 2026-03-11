@@ -1,252 +1,452 @@
 {
-  "DisplayName": "ITEM_USAGE_PARAM_ID",
-  "Name": "ITEM_USAGE_PARAM_ID",
-  "Description": "",
+  "Key": "ITEM_USAGE_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_USAGE_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy (prohibited to use)",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy (prohibited to use)"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Weapon - General Purpose",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon - General Purpose"
+        }
+      ]
     },
     {
-      "ID": "1010",
-      "Name": "Weapon - Keyman's Key",
-      "Description": ""
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon - Keyman's Key"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "Armor - General purpose",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - General purpose"
+        }
+      ]
     },
     {
-      "ID": "1110",
-      "Name": "Armor - No movement",
-      "Description": ""
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - No movement"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Rings - general purpose",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rings - general purpose"
+        }
+      ]
     },
     {
-      "ID": "1300",
-      "Name": "Ring-Event",
-      "Description": ""
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring-Event"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Est bottle",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Consumables - Ladder Permit",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Ladder Permit"
+        }
+      ]
     },
     {
-      "ID": "1610",
-      "Name": "Consumables - Ladder permission (prohibited when entering)",
-      "Description": ""
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Ladder permission (prohibited when entering)"
+        }
+      ]
     },
     {
-      "ID": "1620",
-      "Name": "Consumables - Garbage",
-      "Description": ""
+      "Key": "1620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Garbage"
+        }
+      ]
     },
     {
-      "ID": "1700",
-      "Name": "Consumables - No ladders allowed",
-      "Description": ""
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - No ladders allowed"
+        }
+      ]
     },
     {
-      "ID": "1750",
-      "Name": "Consumables - ammunition",
-      "Description": ""
+      "Key": "1750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - ammunition"
+        }
+      ]
     },
     {
-      "ID": "1800",
-      "Name": "Consumables - Return system",
-      "Description": ""
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Return system"
+        }
+      ]
     },
     {
-      "ID": "1900",
-      "Name": "Consumables-Seoul",
-      "Description": ""
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables-Seoul"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Consumables - Boss Soul",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Boss Soul"
+        }
+      ]
     },
     {
-      "ID": "2100",
-      "Name": "Consumables - Pledge Level Items",
-      "Description": ""
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Pledge Level Items"
+        }
+      ]
     },
     {
-      "ID": "2110",
-      "Name": "Consumables - Online (select)",
-      "Description": ""
+      "Key": "2110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Online (select)"
+        }
+      ]
     },
     {
-      "ID": "2120",
-      "Name": "Consumables - Intrusion Items",
-      "Description": ""
+      "Key": "2120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Intrusion Items"
+        }
+      ]
     },
     {
-      "ID": "2130",
-      "Name": "Consumables - proof of goodwill",
-      "Description": ""
+      "Key": "2130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - proof of goodwill"
+        }
+      ]
     },
     {
-      "ID": "2135",
-      "Name": "Consumables - Proof of Hatred",
-      "Description": ""
+      "Key": "2135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Proof of Hatred"
+        }
+      ]
     },
     {
-      "ID": "2140",
-      "Name": "Consumables - Human Statue",
-      "Description": ""
+      "Key": "2140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Human Statue"
+        }
+      ]
     },
     {
-      "ID": "2150",
-      "Name": "Consumables - Flintstone",
-      "Description": ""
+      "Key": "2150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Consumables - Flintstone"
+        }
+      ]
     },
     {
-      "ID": "2200",
-      "Name": "Tools - Dark Ring",
-      "Description": ""
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dark Ring"
+        }
+      ]
     },
     {
-      "ID": "2210",
-      "Name": "Tools - Estentia Feather",
-      "Description": ""
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Estentia Feather"
+        }
+      ]
     },
     {
-      "ID": "2220",
-      "Name": "Tools - Not available",
-      "Description": ""
+      "Key": "2220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Not available"
+        }
+      ]
     },
     {
-      "ID": "2230",
-      "Name": "Tools - For events only",
-      "Description": ""
+      "Key": "2230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - For events only"
+        }
+      ]
     },
     {
-      "ID": "2240",
-      "Name": "Tools - For event only (cannot be discarded)",
-      "Description": ""
+      "Key": "2240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - For event only (cannot be discarded)"
+        }
+      ]
     },
     {
-      "ID": "2300",
-      "Name": "Tools - Dried fingers",
-      "Description": ""
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dried fingers"
+        }
+      ]
     },
     {
-      "ID": "2400",
-      "Name": "Tools - human face stone",
-      "Description": ""
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - human face stone"
+        }
+      ]
     },
     {
-      "ID": "2410",
-      "Name": "Tools - Sign stone",
-      "Description": ""
+      "Key": "2410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Sign stone"
+        }
+      ]
     },
     {
-      "ID": "2420",
-      "Name": "Tools - Dragon Stone",
-      "Description": ""
+      "Key": "2420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Dragon Stone"
+        }
+      ]
     },
     {
-      "ID": "2500",
-      "Name": "Tools - Gestures",
-      "Description": ""
+      "Key": "2500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Gestures"
+        }
+      ]
     },
     {
-      "ID": "2550",
-      "Name": "Tools - Line theory",
-      "Description": ""
+      "Key": "2550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Line theory"
+        }
+      ]
     },
     {
-      "ID": "2600",
-      "Name": "Tools-Sign",
-      "Description": ""
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools-Sign"
+        }
+      ]
     },
     {
-      "ID": "2601",
-      "Name": "Tools - Online Host",
-      "Description": ""
+      "Key": "2601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online Host"
+        }
+      ]
     },
     {
-      "ID": "2602",
-      "Name": "Tools - Online Guest",
-      "Description": ""
+      "Key": "2602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online Guest"
+        }
+      ]
     },
     {
-      "ID": "2610",
-      "Name": "Tools - Online (Multiple choice)",
-      "Description": ""
+      "Key": "2610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Online (Multiple choice)"
+        }
+      ]
     },
     {
-      "ID": "2620",
-      "Name": "Tools - Giant's Nut Seed",
-      "Description": ""
+      "Key": "2620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Giant's Nut Seed"
+        }
+      ]
     },
     {
-      "ID": "2630",
-      "Name": "Tools - bones of science",
-      "Description": ""
+      "Key": "2630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - bones of science"
+        }
+      ]
     },
     {
-      "ID": "2635",
-      "Name": "Tools-list",
-      "Description": ""
+      "Key": "2635",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools-list"
+        }
+      ]
     },
     {
-      "ID": "2640",
-      "Name": "Tools - Fossil egg",
-      "Description": ""
+      "Key": "2640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Fossil egg"
+        }
+      ]
     },
     {
-      "ID": "2645",
-      "Name": "Tools - Hanging stone",
-      "Description": ""
+      "Key": "2645",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Hanging stone"
+        }
+      ]
     },
     {
-      "ID": "2650",
-      "Name": "Tools - Prize exchange",
-      "Description": ""
+      "Key": "2650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tools - Prize exchange"
+        }
+      ]
     },
     {
-      "ID": "2700",
-      "Name": "Valuables",
-      "Description": ""
+      "Key": "2700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables"
+        }
+      ]
     },
     {
-      "ID": "2701",
-      "Name": "Valuables (to be consumed)",
-      "Description": ""
+      "Key": "2701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (to be consumed)"
+        }
+      ]
     },
     {
-      "ID": "2702",
-      "Name": "Valuables (miracle person)",
-      "Description": ""
+      "Key": "2702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (miracle person)"
+        }
+      ]
     },
     {
-      "ID": "2703",
-      "Name": "Valuables (spell-required status reduction items)",
-      "Description": ""
+      "Key": "2703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables (spell-required status reduction items)"
+        }
+      ]
     }
   ]
 }

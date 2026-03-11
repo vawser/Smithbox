@@ -1,0 +1,28 @@
+{
+  "Param": "NewMenuColorTableParam",
+  "Type": "MENU_PARAM_COLOR_TABLE_ST",
+  "Name": "NewMenuColorTableParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "r",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "a",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,47 +1,83 @@
 {
-  "DisplayName": "EQUIP_CLOTH_CTRL_TYPE",
-  "Name": "EQUIP_CLOTH_CTRL_TYPE",
-  "Description": "",
+  "Key": "EQUIP_CLOTH_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CLOTH_CTRL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do nothing",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Loincloth OFF",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Loincloth OFF"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Miniskirt OFF",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miniskirt OFF"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Long OFF",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long OFF"
+        }
+      ]
     },
     {
-      "ID": "64",
-      "Name": "No cross",
-      "Description": ""
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No cross"
+        }
+      ]
     },
     {
-      "ID": "65",
-      "Name": "Loincloth",
-      "Description": ""
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Loincloth"
+        }
+      ]
     },
     {
-      "ID": "66",
-      "Name": "Miniskirt",
-      "Description": ""
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miniskirt"
+        }
+      ]
     },
     {
-      "ID": "67",
-      "Name": "Long",
-      "Description": ""
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long"
+        }
+      ]
     }
   ]
 }

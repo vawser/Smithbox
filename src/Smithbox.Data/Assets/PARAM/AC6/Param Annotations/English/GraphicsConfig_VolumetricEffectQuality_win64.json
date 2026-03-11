@@ -1,0 +1,98 @@
+{
+  "Param": "GraphicsConfig_VolumetricEffectQuality_win64",
+  "Type": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "GraphicsConfig_VolumetricEffectQuality_win64",
+  "Description": "Determines the parameters of each volumetric particle quality level.",
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "Enable Volumetric Fog",
+      "Description": "If ON, enable volumetric fog."
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "Enable Volumetric Fog Shadows",
+      "Description": "If ON, enable volumetric fog shadows."
+    },
+    {
+      "Field": "fogVolumeEdgeCorrectionLevel",
+      "Name": "Fog Edge Correction Level",
+      "Description": "The fog edge correction level used during bilateral upscaling."
+    },
+    {
+      "Field": "fogVolumeResolution",
+      "Name": "Fog Volume Resolution",
+      "Description": "The processing resolution of placeable fog volumes. (Overrides upscale type setting)."
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "Fog Shadow Sample Count Offset",
+      "Description": "The offset to apply to the fog shadow sample count."
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "Fog: Local Light Distance Scale",
+      "Description": "The local light calculation distance scale within volumetric fog (0 does not calculate local light)."
+    },
+    {
+      "Field": "fogVolumeSizeScaler",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolumeSizeDivider",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolumeDepthScaler",
+      "Name": "Fog Volume Depth Scaler",
+      "Description": "The depth scalar to apply to volumetric fog."
+    },
+    {
+      "Field": "fogVolumeDepthDivider",
+      "Name": "Fog Volume Depth Divisor",
+      "Description": "The depth divisor to apply to volumetric fog."
+    },
+    {
+      "Field": "fogVolumeEnabled",
+      "Name": "Enable Placeable Fog Volumes",
+      "Description": "If ON, placeable fog volumes are enabled."
+    },
+    {
+      "Field": "fogVolumeUpScaleType",
+      "Name": "Fog Upscaling",
+      "Description": "The type of upscaling to apply to the fog."
+    },
+    {
+      "Field": "fogVolumeUpScaleInTwoStageEnabled",
+      "Name": "2-Step Upscaling",
+      "Description": "Upscaling from the reduced buffer will be increased from 1 to 2 stages to reduce flickering."
+    },
+    {
+      "Field": "fogVolumeShadowEnabled",
+      "Name": "Enable Fog Volume Shadow",
+      "Description": "If ON, enables shadows related to the fog volume."
+    },
+    {
+      "Field": "fogVolumeRayMarcingSampleCountOffset",
+      "Name": "Fog Volume Ray Sample Count Offset",
+      "Description": "The offset applied to the sampling number during ray marching for the fog volume."
+    },
+    {
+      "Field": "fogVolumeTwoStepUpScalingEnabled",
+      "Name": "Enable 2-Step Upscaling",
+      "Description": "If ON, use 2-step upscaling when applying upscaling to the fog volume."
+    },
+    {
+      "Field": "fogVolumeForceShadowing",
+      "Name": "Force Fog Volume Shadowing",
+      "Description": "If ON, forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

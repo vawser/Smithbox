@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_31_00_00",
-  "Name": "EVENT_VALUE_m10_31_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_31_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_31_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Number of jailers defeated",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of jailers defeated"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Pledge: Rank comparison: Guardian Knight",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank comparison: Guardian Knight"
+        }
+      ]
     }
   ]
 }

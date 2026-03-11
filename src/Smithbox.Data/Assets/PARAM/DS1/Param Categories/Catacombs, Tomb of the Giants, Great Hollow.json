@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Catacombs / Tomb of the Giants / Great Hollow",
+  "Key": "Catacombs / Tomb of the Giants / Great Hollow",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Catacombs / Tomb of the Giants / Great Hollow"
+      }
+  ],
   "Params": [
     "m13_DofBank",
     "m13_EnvLightTexBank",

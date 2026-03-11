@@ -1,0 +1,98 @@
+{
+  "Param": "demopointlight_scn202110",
+  "Type": "DEMO_POINT_LIGHT_PARAM",
+  "Name": "demopointlight_scn202110",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffuse_color_R",
+      "Name": "Diffuse Color: R",
+      "Description": "The red component of the color."
+    },
+    {
+      "Field": "diffuse_color_G",
+      "Name": "Diffuse Color: G",
+      "Description": "The green component of the color."
+    },
+    {
+      "Field": "diffuse_color_B",
+      "Name": "Diffuse Color: B",
+      "Description": "The blue component of the color."
+    },
+    {
+      "Field": "diffuse_color_A",
+      "Name": "Diffuse Color: Alpha",
+      "Description": "The alpha component of the color."
+    },
+    {
+      "Field": "specular_color_R",
+      "Name": "Specular Color: R",
+      "Description": "The red component of the color."
+    },
+    {
+      "Field": "specular_color_G",
+      "Name": "Specular Color: G",
+      "Description": "The green component of the color."
+    },
+    {
+      "Field": "specular_color_B",
+      "Name": "Specular Color: B",
+      "Description": "The blue component of the color."
+    },
+    {
+      "Field": "specular_color_A",
+      "Name": "Specular Color: Alpha",
+      "Description": "The alpha component of the color."
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

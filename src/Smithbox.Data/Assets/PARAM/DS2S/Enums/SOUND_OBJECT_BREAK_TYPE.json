@@ -1,72 +1,128 @@
 {
-  "DisplayName": "SOUND_OBJECT_BREAK_TYPE",
-  "Name": "SOUND_OBJECT_BREAK_TYPE",
-  "Description": "",
+  "Key": "SOUND_OBJECT_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SOUND_OBJECT_BREAK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "See my id",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "See my id"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Tree (small)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tree (small)"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Wood (middle)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood (middle)"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Tree (large)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tree (large)"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Stone (small)",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone (small)"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Stone (medium)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone (medium)"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Stone (large)",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone (large)"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Pottery (small)",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pottery (small)"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Pottery (medium)",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pottery (medium)"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Pottery (large)",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pottery (large)"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Iron (small)",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron (small)"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Iron (medium)",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron (medium)"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Iron (large)",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron (large)"
+        }
+      ]
     }
   ]
 }

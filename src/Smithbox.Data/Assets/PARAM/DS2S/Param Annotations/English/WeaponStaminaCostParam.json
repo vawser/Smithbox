@@ -1,0 +1,328 @@
+{
+  "Param": "WeaponStaminaCostParam",
+  "Type": "WEAPON_STAMINA_COST_PARAM",
+  "Name": "WeaponStaminaCostParam",
+  "Description": "Defines parameters relating to weapon stamina consumption.",
+  "Fields": [
+    {
+      "Field": "right_1h_light_1",
+      "Name": "Right - 1H Light #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_light_2",
+      "Name": "Right - 1H Light #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_heavy_1",
+      "Name": "Right - 1H Heavy #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_heavy_2",
+      "Name": "Right - 1H Heavy #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_light_run",
+      "Name": "Right - 1H Light Running",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_light_roll",
+      "Name": "Right - 1H Light Rolling",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_light_backstep",
+      "Name": "Right - 1H Light Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_fall",
+      "Name": "Right - 1H Falling",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_land",
+      "Name": "Right - 1H Landing",
+      "Description": ""
+    },
+    {
+      "Field": "right_1h_jump",
+      "Name": "Right - 1H Jumping",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_light_1",
+      "Name": "Right - 2H Light #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_light_2",
+      "Name": "Right - 2H Light #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_heavy_1",
+      "Name": "Right - 2H Heavy #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_heavy_2",
+      "Name": "Right - 2H Heavy #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_light_run",
+      "Name": "Right - 2H Light Running",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_light_roll",
+      "Name": "Right - 2H Light Rolling",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_light_backstep",
+      "Name": "Right - 2H Light Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_fall",
+      "Name": "Right - 2H Falling",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_land",
+      "Name": "Right - 2H Landing",
+      "Description": ""
+    },
+    {
+      "Field": "right_2h_jump",
+      "Name": "Right - 2H Jumping",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_1_1",
+      "Name": "Chain 1 #1",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_1_2",
+      "Name": "Chain 1 #2",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_2_1",
+      "Name": "Chain 2 #1",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_2_2",
+      "Name": "Chain 2 #2",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_run",
+      "Name": "Chain Running",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_roll",
+      "Name": "Chain Rolling",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_backstep",
+      "Name": "Chain Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_fall",
+      "Name": "Chain Falling",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_land",
+      "Name": "Chain Landing",
+      "Description": ""
+    },
+    {
+      "Field": "chain_attack_jump",
+      "Name": "Chain Jumping",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_light_1",
+      "Name": "Right - Powerstance - Light #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_light_2",
+      "Name": "Right - Powerstance - Light #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_heavy_1",
+      "Name": "Right - Powerstance - Heavy #1",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_heavy_2",
+      "Name": "Right - Powerstance - Heavy #2",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_light_run",
+      "Name": "Right - Powerstance - Light Running",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_light_roll",
+      "Name": "Right - Powerstance - Light Rolling",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_light_backstep",
+      "Name": "Right - Powerstance - Light Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_fall",
+      "Name": "Right - Powerstance - Falling",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_land",
+      "Name": "Right - Powerstance - Landing",
+      "Description": ""
+    },
+    {
+      "Field": "right_powerstance_jump",
+      "Name": "Right - Powerstance - Jumping",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_1",
+      "Name": "Left - 1H Light #1",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_2",
+      "Name": "Left - 1H Light #2",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_heavy_1",
+      "Name": "Left - 1H Heavy #1",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_heavy_2",
+      "Name": "Left - 1H Heavy #2",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_run",
+      "Name": "Left - 1H Light Running",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_roll",
+      "Name": "Left - 1H Light Rolling",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_backstep",
+      "Name": "Left - 1H Light Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_fall",
+      "Name": "Left - 1H Falling",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_land",
+      "Name": "Left - 1H Landing",
+      "Description": ""
+    },
+    {
+      "Field": "left_1h_light_jump",
+      "Name": "Left - 1H Jumping",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_light_1",
+      "Name": "Left - 2H Light",
+      "Description": ""
+    },
+    {
+      "Field": "left_2h_heavy_1",
+      "Name": "Left - 2H Heavy",
+      "Description": ""
+    },
+    {
+      "Field": "left_powerstance_light_1",
+      "Name": "Left - Powerstance - Light #1",
+      "Description": ""
+    },
+    {
+      "Field": "left_powerstance_light_2",
+      "Name": "Left - Powerstance - Light #2",
+      "Description": ""
+    },
+    {
+      "Field": "left_powerstance_heavy_1",
+      "Name": "Left - Powerstance - Heavy",
+      "Description": ""
+    },
+    {
+      "Field": "guard_break_1",
+      "Name": "Guard Break #1",
+      "Description": ""
+    },
+    {
+      "Field": "guard_break_2",
+      "Name": "Guard Break #2",
+      "Description": ""
+    },
+    {
+      "Field": "shield_poke_1_1",
+      "Name": "Shield Poke 1 #1",
+      "Description": ""
+    },
+    {
+      "Field": "shield_poke_1_2",
+      "Name": "Shield Poke 1 #2",
+      "Description": ""
+    },
+    {
+      "Field": "shield_poke_2_1",
+      "Name": "Shield Poke 2 #1",
+      "Description": ""
+    },
+    {
+      "Field": "shield_poke_2_2",
+      "Name": "Shield Poke 2 #2",
+      "Description": ""
+    },
+    {
+      "Field": "riposte",
+      "Name": "Riposte",
+      "Description": ""
+    },
+    {
+      "Field": "guard_break_stab",
+      "Name": "Guard Break Stab",
+      "Description": ""
+    },
+    {
+      "Field": "backstab",
+      "Name": "Backstab",
+      "Description": ""
+    }
+  ]
+}

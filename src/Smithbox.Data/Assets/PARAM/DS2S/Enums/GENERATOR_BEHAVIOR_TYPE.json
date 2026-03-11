@@ -1,17 +1,29 @@
 {
-  "DisplayName": "GENERATOR_BEHAVIOR_TYPE",
-  "Name": "GENERATOR_BEHAVIOR_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_BEHAVIOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_BEHAVIOR_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Fixed",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Rush",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rush"
+        }
+      ]
     }
   ]
 }

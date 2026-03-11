@@ -1,0 +1,88 @@
+{
+  "Param": "SessionRewardCommonParam",
+  "Type": "SESSION_REWARD_COMMON_PARAM_ST",
+  "Name": "SessionRewardCommonParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_15",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

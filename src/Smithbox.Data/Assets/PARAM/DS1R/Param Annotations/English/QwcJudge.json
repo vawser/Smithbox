@@ -1,0 +1,48 @@
+{
+  "Param": "QwcJudge",
+  "Type": "QWC_JUDGE_PARAM_ST",
+  "Name": "QwcJudge",
+  "Description": "Determines the parameters for world tendency effects.",
+  "Fields": [
+    {
+      "Field": "pcJudgeUnderWB",
+      "Name": "Player: Black Condition",
+      "Description": "The value that triggers the black player world tendency state."
+    },
+    {
+      "Field": "pcJudgeTopWB",
+      "Name": "Player: White Condition",
+      "Description": "The value that triggers the white player world tendency state."
+    },
+    {
+      "Field": "pcJudgeUnderLR",
+      "Name": "Player: Left Condition",
+      "Description": "The value that triggers the left player world tendency state."
+    },
+    {
+      "Field": "pcJudgeTopLR",
+      "Name": "Player: Right Condition",
+      "Description": "The value that triggers the right player world tendency state."
+    },
+    {
+      "Field": "areaJudgeUnderWB",
+      "Name": "Area: Black Condition",
+      "Description": "The value that triggers the black area world tendency state."
+    },
+    {
+      "Field": "areaJudgeTopWB",
+      "Name": "Area: White Condition",
+      "Description": "The value that triggers the white area world tendency state."
+    },
+    {
+      "Field": "areaJudgeUnderLR",
+      "Name": "Area: Left Condition",
+      "Description": "The value that triggers the left area world tendency state."
+    },
+    {
+      "Field": "areaJudgeTopLR",
+      "Name": "Area: Right Condition",
+      "Description": "The value that triggers the right area world tendency state."
+    }
+  ]
+}

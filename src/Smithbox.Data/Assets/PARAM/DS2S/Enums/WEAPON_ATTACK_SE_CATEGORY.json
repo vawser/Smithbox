@@ -1,67 +1,119 @@
 {
-  "DisplayName": "WEAPON_ATTACK_SE_CATEGORY",
-  "Name": "WEAPON_ATTACK_SE_CATEGORY",
-  "Description": "",
+  "Key": "WEAPON_ATTACK_SE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_ATTACK_SE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Sword type",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword type"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Extra large sword type",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large sword type"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Dagger type",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger type"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Fist type",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist type"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Ax type",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ax type"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Hammer type",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer type"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Spear type",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear type"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Whip system",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip system"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Bow type",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow type"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Crossbow type",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow type"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Cane type",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane type"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Bell type",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell type"
+        }
+      ]
     }
   ]
 }

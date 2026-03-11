@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Memory of Vammar, Orro and Jeigh",
+  "Key": "Memory of Vammar, Orro and Jeigh",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Memory of Vammar, Orro and Jeigh"
+      }
+  ],
   "Params": [
     "demospotlight_scn201010",
     "eventlocation_m20_10_00_00",

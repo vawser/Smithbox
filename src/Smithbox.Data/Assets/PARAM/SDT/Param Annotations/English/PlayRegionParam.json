@@ -1,0 +1,148 @@
+{
+  "Param": "PlayRegionParam",
+  "Type": "PLAY_REGION_PARAM_ST",
+  "Name": "PlayRegionParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "multiPlayZoneId",
+      "Name": "",
+      "Description": "Multiplayer section ID"
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId",
+      "Name": "",
+      "Description": "Multiplayer start restriction event flag ID"
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "",
+      "Description": "Other distances where spirits cannot penetrate"
+    },
+    {
+      "Field": "pcPositionSaveLimitEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayHostLimitEventFlagId",
+      "Name": "",
+      "Description": "Multiplayer host restriction event flag: When this flag is turned ON, multiplayer is prohibited as a host. Expected to include block clear flag. 0: No limit"
+    },
+    {
+      "Field": "cultNpcWhiteGhostEntityId_byFree",
+      "Name": "",
+      "Description": "The beginning of the free frame ID used as the entity ID of the summoned NPC in the NPC white spirit summoning ritual"
+    },
+    {
+      "Field": "bMapGuradianRegion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bYellowCostumeRegion",
+      "Name": "",
+      "Description": "Is it the yellow-robed old man\u0027s signature area?"
+    },
+    {
+      "Field": "isSummonPosStartForRed",
+      "Name": "",
+      "Description": "Is the dark spirit invading the starting direction?"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_1",
+      "Name": "",
+      "Description": "Entity ID 1 of the bonfire used to determine whether to allow the use of warp items"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_2",
+      "Name": "",
+      "Description": "Entity ID 2 of the bonfire used to determine whether to allow the use of warp items"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_3",
+      "Name": "",
+      "Description": "Entity ID 3 of the bonfire used to determine whether to allow the use of warp items"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_4",
+      "Name": "",
+      "Description": "Entity ID 4 of the bonfire used to determine whether to allow the use of warp items"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_5",
+      "Name": "",
+      "Description": "Entity ID 5 of the bonfire used to determine whether to allow the use of warp items"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_1",
+      "Name": "",
+      "Description": "Event flag ID1 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_2",
+      "Name": "",
+      "Description": "Event flag ID2 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_3",
+      "Name": "",
+      "Description": "Event flag ID3 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_4",
+      "Name": "",
+      "Description": "Event flag ID4 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_5",
+      "Name": "",
+      "Description": "Event flag ID5 that determines whether the use of warp items is prohibited. Warp item permission has higher priority than judgment based on bonfire ID."
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "",
+      "Description": "Bloostain Ghost can be seen"
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "",
+      "Description": "Ghosts of other players can be seen"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayHASHostLimitEventFlagId",
+      "Name": "",
+      "Description": "Yellow Robed Old Man Host Restriction Event Flag: When this flag is turned on, multiplayer play as a Yellow Robed Old Man host is prohibited. Expected to include block clear flag. 0: No limit"
+    },
+    {
+      "Field": "returnPointEntityId",
+      "Name": "",
+      "Description": "Return position when the PC falls. Set the entity ID of the MapStudio point type \u0027warp point\u0027. If it is -1, it will return to the save position."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

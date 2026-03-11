@@ -1,27 +1,47 @@
 {
-  "DisplayName": "EVENT_BOOT_TYPE_ENUM",
-  "Name": "EVENT_BOOT_TYPE_ENUM",
-  "Description": "",
+  "Key": "EVENT_BOOT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_BOOT_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "When loading the map",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "When loading the map"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Normal time",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal time"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "External launch",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "External launch"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "The spark of rebirth",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The spark of rebirth"
+        }
+      ]
     }
   ]
 }

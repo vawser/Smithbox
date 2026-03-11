@@ -1,0 +1,68 @@
+{
+  "Param": "FeTextEffectParam",
+  "Type": "FE_TEXT_EFFECT_PARAM_ST",
+  "Name": "FeTextEffectParam",
+  "Description": "Determines the display configuration for various interface text and video.",
+  "Fields": [
+    {
+      "Field": "ResourceID",
+      "Name": "Menu Resource Type",
+      "Description": "The text effect type to use for this text effect."
+    },
+    {
+      "Field": "reserved_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TextID_1st",
+      "Name": "Text ID: 1",
+      "Description": "The first text ID to display. -1 for no text."
+    },
+    {
+      "Field": "SeID",
+      "Name": "Voice ID: 1",
+      "Description": "The first voice ID to play. -1 for no voice."
+    },
+    {
+      "Field": "TextID_2nd",
+      "Name": "Text ID: 2",
+      "Description": "The second text ID to display. -1 for no text."
+    },
+    {
+      "Field": "TextID_3rd",
+      "Name": "Text ID: 3",
+      "Description": "The third text ID to display. -1 for no text."
+    },
+    {
+      "Field": "DispSlot",
+      "Name": "Display Slot",
+      "Description": "The slot to display the text effect in."
+    },
+    {
+      "Field": "reserved_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bMovieSkipEnable",
+      "Name": "Enable Movie Skip",
+      "Description": "If ON, the player can skip the movie playback."
+    },
+    {
+      "Field": "bMovieLoopPlay",
+      "Name": "Enable Movie Loop",
+      "Description": "If ON, the movie is played back in a loop."
+    },
+    {
+      "Field": "MovieID",
+      "Name": "Movie ID",
+      "Description": "The ID of the video to play. -1 for no video."
+    },
+    {
+      "Field": "TextID_4th",
+      "Name": "Text ID: 4",
+      "Description": "The fourth text ID to display. -1 for no text."
+    }
+  ]
+}

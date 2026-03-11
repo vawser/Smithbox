@@ -1,0 +1,48 @@
+{
+  "Param": "maptargetdirparam_m20_10_00_00",
+  "Type": "MAP_TARGET_DIRECTION_PARAM",
+  "Name": "maptargetdirparam_m20_10_00_00",
+  "Description": "Defines parameters related to map targets.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1C",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

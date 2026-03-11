@@ -1,27 +1,47 @@
 {
-  "DisplayName": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
-  "Name": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_ATTACK_TYPE_RATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ATTACK_TYPE_RATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "弱",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "弱"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "強",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "強"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Jump",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Falling",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falling"
+        }
+      ]
     }
   ]
 }

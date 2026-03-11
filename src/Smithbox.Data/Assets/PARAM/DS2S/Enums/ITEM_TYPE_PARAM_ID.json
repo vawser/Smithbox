@@ -1,212 +1,380 @@
 {
-  "DisplayName": "ITEM_TYPE_PARAM_ID",
-  "Name": "ITEM_TYPE_PARAM_ID",
-  "Description": "",
+  "Key": "ITEM_TYPE_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_TYPE_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Prohibited from use",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Weapon",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "盾",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "盾"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Armor",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Armor - No movement",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - No movement"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Ring",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Quiver",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quiver"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "Recovery",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recovery"
+        }
+      ]
     },
     {
-      "ID": "200",
-      "Name": "Prayer",
-      "Description": ""
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer"
+        }
+      ]
     },
     {
-      "ID": "250",
-      "Name": "Prayer (loop)",
-      "Description": ""
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer (loop)"
+        }
+      ]
     },
     {
-      "ID": "260",
-      "Name": "Dark ring",
-      "Description": ""
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark ring"
+        }
+      ]
     },
     {
-      "ID": "270",
-      "Name": "Black Crystal of Farewell",
-      "Description": ""
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Crystal of Farewell"
+        }
+      ]
     },
     {
-      "ID": "300",
-      "Name": "Eat",
-      "Description": ""
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eat"
+        }
+      ]
     },
     {
-      "ID": "400",
-      "Name": "Drink",
-      "Description": ""
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink"
+        }
+      ]
     },
     {
-      "ID": "420",
-      "Name": "Drink (stop)",
-      "Description": ""
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink (stop)"
+        }
+      ]
     },
     {
-      "ID": "450",
-      "Name": "Est bottle",
-      "Description": ""
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
     },
     {
-      "ID": "500",
-      "Name": "Humanity",
-      "Description": ""
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Humanity"
+        }
+      ]
     },
     {
-      "ID": "510",
-      "Name": "Hanging stone",
-      "Description": ""
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hanging stone"
+        }
+      ]
     },
     {
-      "ID": "550",
-      "Name": "Soul",
-      "Description": ""
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
     },
     {
-      "ID": "560",
-      "Name": "Transformation",
-      "Description": ""
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformation"
+        }
+      ]
     },
     {
-      "ID": "570",
-      "Name": "Dragon's breath",
-      "Description": ""
+      "Key": "570",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's breath"
+        }
+      ]
     },
     {
-      "ID": "580",
-      "Name": "Dragon's roar",
-      "Description": ""
+      "Key": "580",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's roar"
+        }
+      ]
     },
     {
-      "ID": "600",
-      "Name": "Paint",
-      "Description": ""
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Paint"
+        }
+      ]
     },
     {
-      "ID": "700",
-      "Name": "Scatter",
-      "Description": ""
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scatter"
+        }
+      ]
     },
     {
-      "ID": "800",
-      "Name": "Put",
-      "Description": ""
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put"
+        }
+      ]
     },
     {
-      "ID": "850",
-      "Name": "Write a signature",
-      "Description": ""
+      "Key": "850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Write a signature"
+        }
+      ]
     },
     {
-      "ID": "900",
-      "Name": "Throw (light)",
-      "Description": ""
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (light)"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Throw (heavy)",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (heavy)"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "矢",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "矢"
+        }
+      ]
     },
     {
-      "ID": "1130",
-      "Name": "Oya",
-      "Description": ""
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oya"
+        }
+      ]
     },
     {
-      "ID": "1160",
-      "Name": "Bolt",
-      "Description": ""
+      "Key": "1160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Ore",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ore"
+        }
+      ]
     },
     {
-      "ID": "1300",
-      "Name": "Torch",
-      "Description": ""
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
     },
     {
-      "ID": "1350",
-      "Name": "Flintstone",
-      "Description": ""
+      "Key": "1350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flintstone"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Prize exchange",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prize exchange"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Give to someone",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Give to someone"
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Strong list",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong list"
+        }
+      ]
     },
     {
-      "ID": "1700",
-      "Name": "Theory of lines",
-      "Description": ""
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Theory of lines"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Gesture",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gesture"
+        }
+      ]
     },
     {
-      "ID": "9000",
-      "Name": "Valuables",
-      "Description": ""
+      "Key": "9000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables"
+        }
+      ]
     }
   ]
 }

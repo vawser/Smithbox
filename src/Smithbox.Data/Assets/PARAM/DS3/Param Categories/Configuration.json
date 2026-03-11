@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Configuration",
+  "Key": "Configuration",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Configuration"
+      }
+  ],
   "Params": [
     "LoadBalancerDrawDistScaleParam",
     "LoadBalancerParam",

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "MOVEMENT_ACTION_TYPE",
-  "Name": "MOVEMENT_ACTION_TYPE",
-  "Description": "",
+  "Key": "MOVEMENT_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MOVEMENT_ACTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Wall action",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall action"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Climbing steps",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Climbing steps"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Jump",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump"
+        }
+      ]
     }
   ]
 }

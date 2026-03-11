@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -167,13 +168,12 @@ public class ParamListWindow
                     if (p != null)
                     {
                         var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                        var Wiki = meta?.Wiki;
+                        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
+
+                        var Wiki = annotations?.Description;
                         if (Wiki != null)
                         {
-                            if (EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
-                            {
-                                meta.Wiki = Wiki;
-                            }
+                            EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true);
                         }
                     }
 
@@ -258,11 +258,13 @@ public class ParamListWindow
             if (categories.Count > 0)
             {
                 // Categories - Forced Top
-                foreach (var category in categories)
+                for(int i = 0; i < categories.Count; i++)
                 {
+                    var category = categories[i];
+
                     if (category.ForceTop)
                     {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        if (ImGui.CollapsingHeader($"{category.GetDisplayName()}##forceTopCategory{i}", ImGuiTreeNodeFlags.DefaultOpen))
                         {
                             DisplayParamList(paramKeyList, category.Params, doFocus, scrollTo);
                         }
@@ -275,27 +277,35 @@ public class ParamListWindow
                     DisplayParamList(paramKeyList, generalParamList, doFocus, scrollTo);
                 }
 
+                int index = 0;
+
                 // Categories - Default
-                foreach (var category in categories)
+                for (int i = 0; i < categories.Count; i++)
                 {
+                    var category = categories[i];
+
                     if (!category.ForceTop && !category.ForceBottom)
                     {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        if (ImGui.CollapsingHeader($"{category.GetDisplayName()}##category{i}", ImGuiTreeNodeFlags.DefaultOpen))
                         {
                             DisplayParamList(paramKeyList, category.Params, doFocus, scrollTo);
                         }
                     }
+                    index++;
                 }
 
                 // Categories - Forced Bottom
-                foreach (var category in categories)
+                for (int i = 0; i < categories.Count; i++)
                 {
+                    var category = categories[i];
+
                     if (category.ForceBottom)
                     {
-                        if (ImGui.CollapsingHeader($"{category.DisplayName}", ImGuiTreeNodeFlags.DefaultOpen))
+                        if (ImGui.CollapsingHeader($"{category.GetDisplayName()}##forceBottomCategory{i}", ImGuiTreeNodeFlags.DefaultOpen))
                         {
                             DisplayParamList(paramKeyList, category.Params, doFocus, scrollTo);
                         }
+
                     }
                 }
             }
@@ -325,14 +335,12 @@ public class ParamListWindow
             if (p != null)
             {
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
+                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
 
-                var Wiki = meta?.Wiki;
+                var Wiki = annotations?.Description;
                 if (Wiki != null)
                 {
-                    if (EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true))
-                    {
-                        meta.Wiki = Wiki;
-                    }
+                    EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true);
                 }
             }
 

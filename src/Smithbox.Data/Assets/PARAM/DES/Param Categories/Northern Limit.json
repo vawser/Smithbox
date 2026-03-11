@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Northern Limit",
+  "Key": "Northern Limit",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Northern Limit"
+      }
+  ],
   "Params": [
     "m07_DofBank",
     "m07_EnvLightTexBank",

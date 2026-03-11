@@ -1,42 +1,74 @@
 {
-  "DisplayName": "GUARD_PASSIVE_LEVEL_TYPE",
-  "Name": "GUARD_PASSIVE_LEVEL_TYPE",
-  "Description": "",
+  "Key": "GUARD_PASSIVE_LEVEL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARD_PASSIVE_LEVEL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Large",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra extra large"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Play",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play"
+        }
+      ]
     }
   ]
 }

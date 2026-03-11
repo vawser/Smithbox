@@ -1,0 +1,43 @@
+{
+  "Param": "TankWheelModelParam",
+  "Type": "TANK_WHEEL_MODEL_PARAM",
+  "Name": "TankWheelModelParam",
+  "Description": "Defines certain attributes of the tank wheel model",
+  "Fields": [
+    {
+      "Field": "baseBoneName",
+      "Name": "Base Bone Name",
+      "Description": "Wheel model joint name"
+    },
+    {
+      "Field": "refSusAIndex_0",
+      "Name": "Before Wheel Index A (For Raycast)",
+      "Description": "Wheel internal control index"
+    },
+    {
+      "Field": "refSusAIndex_1",
+      "Name": "After Wheel Index A (For Raycast)",
+      "Description": "Wheel internal control index"
+    },
+    {
+      "Field": "BoneAxis",
+      "Name": "Bone Axis For Vertical Movement",
+      "Description": "Axis for moving the wheel model joints up/down"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "applyRate",
+      "Name": "Application Rate Direction",
+      "Description": "Application division rate for wheel parameters (0 = 100% for front, 1 = 100% for rear)"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

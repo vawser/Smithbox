@@ -1,0 +1,23 @@
+{
+  "Param": "MapPartsParam",
+  "Type": "MAP_PARTS_PARAM_ST",
+  "Name": "MapPartsParam",
+  "Description": "Determines the parameters that relate to map parts.",
+  "Fields": [
+    {
+      "Field": "camDitherFadeMinDist",
+      "Name": "Camera Dither: Minimum Fade Distance",
+      "Description": "The minimum fade distance for camera dithering for a map part. In metres."
+    },
+    {
+      "Field": "camDitherFadeMaxDist",
+      "Name": "Camera Dither: Maximum Fade Distance",
+      "Description": "The maximum fade distance for camera dithering for a map part. In metres."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

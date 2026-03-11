@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BONFIRE_TYPE_ENUM",
-  "Name": "BONFIRE_TYPE_ENUM",
-  "Description": "",
+  "Key": "BONFIRE_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BONFIRE_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Red fire",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Red fire"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Blue fire",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue fire"
+        }
+      ]
     }
   ]
 }

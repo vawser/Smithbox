@@ -1,0 +1,13 @@
+{
+  "Param": "SfxBlockResShareParam",
+  "Type": "SFX_BLOCK_RES_SHARE_PARAM",
+  "Name": "SfxBlockResShareParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

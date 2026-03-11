@@ -1,412 +1,740 @@
 {
-  "DisplayName": "GENERATOR_PARAM_M99_80_71_05_TYPE",
-  "Name": "GENERATOR_PARAM_M99_80_71_05_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_PARAM_M99_80_71_05_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_PARAM_M99_80_71_05_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Map starting point",
-      "Description": ""
-    },
-    {
-      "ID": "1000",
-      "Name": "1 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "1100",
-      "Name": "2 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "1200",
-      "Name": "3 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "1300",
-      "Name": "4 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "1400",
-      "Name": "5 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "1500",
-      "Name": "6 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "1600",
-      "Name": "7 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "1700",
-      "Name": "8 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "1800",
-      "Name": "9 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "1900",
-      "Name": "10 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "2000",
-      "Name": "11 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "2100",
-      "Name": "12 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2200",
-      "Name": "13 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2300",
-      "Name": "14 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2400",
-      "Name": "15 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2500",
-      "Name": "16 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2600",
-      "Name": "17 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2700",
-      "Name": "18 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2800",
-      "Name": "19 Demon Armor (Dead): Mass production type",
-      "Description": ""
-    },
-    {
-      "ID": "2900",
-      "Name": "20 Demon Armor (Dead): Mass-produced type",
-      "Description": ""
-    },
-    {
-      "ID": "5000",
-      "Name": "1 goblin",
-      "Description": ""
-    },
-    {
-      "ID": "5100",
-      "Name": "2 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5200",
-      "Name": "3 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5300",
-      "Name": "4 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5400",
-      "Name": "5 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5500",
-      "Name": "6 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5600",
-      "Name": "7 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5700",
-      "Name": "8 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5800",
-      "Name": "9 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "5900",
-      "Name": "10 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6000",
-      "Name": "11 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6100",
-      "Name": "12 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6200",
-      "Name": "13 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6300",
-      "Name": "14 goblin",
-      "Description": ""
-    },
-    {
-      "ID": "6400",
-      "Name": "15 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6500",
-      "Name": "16 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6600",
-      "Name": "17 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "6700",
-      "Name": "18 goblin",
-      "Description": ""
-    },
-    {
-      "ID": "6800",
-      "Name": "19 goblin",
-      "Description": ""
-    },
-    {
-      "ID": "6900",
-      "Name": "20 goblins",
-      "Description": ""
-    },
-    {
-      "ID": "10000",
-      "Name": "1 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10100",
-      "Name": "2 augers",
-      "Description": ""
-    },
-    {
-      "ID": "10200",
-      "Name": "3 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10300",
-      "Name": "4 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10400",
-      "Name": "5 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10500",
-      "Name": "6 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10600",
-      "Name": "7 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10700",
-      "Name": "8 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10800",
-      "Name": "9 auger",
-      "Description": ""
-    },
-    {
-      "ID": "10900",
-      "Name": "10 augers",
-      "Description": ""
-    },
-    {
-      "ID": "11000",
-      "Name": "11 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11100",
-      "Name": "12 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11200",
-      "Name": "13 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11300",
-      "Name": "14 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11400",
-      "Name": "15 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11500",
-      "Name": "16 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11600",
-      "Name": "17 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11700",
-      "Name": "18 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11800",
-      "Name": "19 auger",
-      "Description": ""
-    },
-    {
-      "ID": "11900",
-      "Name": "20 augers",
-      "Description": ""
-    },
-    {
-      "ID": "15000",
-      "Name": "1 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15100",
-      "Name": "2 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15200",
-      "Name": "3 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15300",
-      "Name": "4 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15400",
-      "Name": "5 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15500",
-      "Name": "6 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15600",
-      "Name": "7 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15700",
-      "Name": "8 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15800",
-      "Name": "9 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "15900",
-      "Name": "10 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16000",
-      "Name": "11 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16100",
-      "Name": "12 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16200",
-      "Name": "13 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16300",
-      "Name": "14 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16400",
-      "Name": "15 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16500",
-      "Name": "16 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16600",
-      "Name": "17 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16700",
-      "Name": "18 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16800",
-      "Name": "19 Dullahan (Dead J)",
-      "Description": ""
-    },
-    {
-      "ID": "16900",
-      "Name": "20 Dullahan (Dead J)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map starting point"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "14 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "15 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "17 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "18 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "19 Demon Armor (Dead): Mass production type"
+        }
+      ]
+    },
+    {
+      "Key": "2900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20 Demon Armor (Dead): Mass-produced type"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 goblin"
+        }
+      ]
+    },
+    {
+      "Key": "5100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "5900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "14 goblin"
+        }
+      ]
+    },
+    {
+      "Key": "6400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "15 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "17 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "6700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "18 goblin"
+        }
+      ]
+    },
+    {
+      "Key": "6800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "19 goblin"
+        }
+      ]
+    },
+    {
+      "Key": "6900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20 goblins"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 augers"
+        }
+      ]
+    },
+    {
+      "Key": "10200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9 auger"
+        }
+      ]
+    },
+    {
+      "Key": "10900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10 augers"
+        }
+      ]
+    },
+    {
+      "Key": "11000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "14 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "15 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "17 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "18 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "19 auger"
+        }
+      ]
+    },
+    {
+      "Key": "11900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20 augers"
+        }
+      ]
+    },
+    {
+      "Key": "15000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "15900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "11 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "14 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "15 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "16 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "17 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "18 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "19 Dullahan (Dead J)"
+        }
+      ]
+    },
+    {
+      "Key": "16900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20 Dullahan (Dead J)"
+        }
+      ]
     }
   ]
 }

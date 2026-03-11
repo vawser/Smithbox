@@ -1,37 +1,65 @@
 {
-  "DisplayName": "ENEMY_WEAPON_TYPE",
-  "Name": "ENEMY_WEAPON_TYPE",
-  "Description": "",
+  "Key": "ENEMY_WEAPON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_WEAPON_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Initial equipment equipment set 1",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 1"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Initial equipment equipment set 2",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 2"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Initial equipment equipment set 3",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 3"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Initial equipment equipment set 4",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 4"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Initial equipment equipment set 5",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 5"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Initial equipment equipment set 6",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial equipment equipment set 6"
+        }
+      ]
     }
   ]
 }

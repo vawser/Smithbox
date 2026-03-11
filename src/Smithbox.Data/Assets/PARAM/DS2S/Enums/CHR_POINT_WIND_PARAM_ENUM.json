@@ -1,117 +1,209 @@
 {
-  "DisplayName": "CHR_POINT_WIND_PARAM_ENUM",
-  "Name": "CHR_POINT_WIND_PARAM_ENUM",
-  "Description": "",
+  "Key": "CHR_POINT_WIND_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_POINT_WIND_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "None",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1010",
-      "Name": "Tiny-small",
-      "Description": ""
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tiny-small"
+        }
+      ]
     },
     {
-      "ID": "1020",
-      "Name": "Very small-medium",
-      "Description": ""
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very small-medium"
+        }
+      ]
     },
     {
-      "ID": "1030",
-      "Name": "Very small-large",
-      "Description": ""
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very small-large"
+        }
+      ]
     },
     {
-      "ID": "2010",
-      "Name": "Small-small",
-      "Description": ""
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small-small"
+        }
+      ]
     },
     {
-      "ID": "2020",
-      "Name": "Small-middle school",
-      "Description": ""
+      "Key": "2020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small-middle school"
+        }
+      ]
     },
     {
-      "ID": "2030",
-      "Name": "Small-large",
-      "Description": ""
+      "Key": "2030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small-large"
+        }
+      ]
     },
     {
-      "ID": "3010",
-      "Name": "Medium-small",
-      "Description": ""
+      "Key": "3010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium-small"
+        }
+      ]
     },
     {
-      "ID": "3020",
-      "Name": "Medium-medium",
-      "Description": ""
+      "Key": "3020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium-medium"
+        }
+      ]
     },
     {
-      "ID": "3030",
-      "Name": "Medium-large",
-      "Description": ""
+      "Key": "3030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium-large"
+        }
+      ]
     },
     {
-      "ID": "4010",
-      "Name": "Large-small",
-      "Description": ""
+      "Key": "4010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large-small"
+        }
+      ]
     },
     {
-      "ID": "4020",
-      "Name": "Large-medium",
-      "Description": ""
+      "Key": "4020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large-medium"
+        }
+      ]
     },
     {
-      "ID": "4030",
-      "Name": "Large-large",
-      "Description": ""
+      "Key": "4030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large-large"
+        }
+      ]
     },
     {
-      "ID": "5010",
-      "Name": "Extra large-small",
-      "Description": ""
+      "Key": "5010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-small"
+        }
+      ]
     },
     {
-      "ID": "5020",
-      "Name": "Extra large-medium",
-      "Description": ""
+      "Key": "5020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-medium"
+        }
+      ]
     },
     {
-      "ID": "5030",
-      "Name": "Extra large-large",
-      "Description": ""
+      "Key": "5030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-large"
+        }
+      ]
     },
     {
-      "ID": "6010",
-      "Name": "Extra large-small",
-      "Description": ""
+      "Key": "6010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-small"
+        }
+      ]
     },
     {
-      "ID": "6020",
-      "Name": "Extra large-medium",
-      "Description": ""
+      "Key": "6020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-medium"
+        }
+      ]
     },
     {
-      "ID": "6030",
-      "Name": "Extra large-large",
-      "Description": ""
+      "Key": "6030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large-large"
+        }
+      ]
     },
     {
-      "ID": "7010",
-      "Name": "Extra Extra Large-Small",
-      "Description": ""
+      "Key": "7010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra Extra Large-Small"
+        }
+      ]
     },
     {
-      "ID": "7020",
-      "Name": "Extra Extra Large - Medium",
-      "Description": ""
+      "Key": "7020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra Extra Large - Medium"
+        }
+      ]
     },
     {
-      "ID": "7030",
-      "Name": "Extra Extra Large-Large",
-      "Description": ""
+      "Key": "7030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra Extra Large-Large"
+        }
+      ]
     }
   ]
 }

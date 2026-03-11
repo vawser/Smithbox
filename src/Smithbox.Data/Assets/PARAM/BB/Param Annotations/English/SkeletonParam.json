@@ -1,0 +1,138 @@
+{
+  "Param": "SkeletonParam",
+  "Type": "SKELETON_PARAM_ST",
+  "Name": "SkeletonParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "neckTurnGain",
+      "Name": "Neck Turn Gain",
+      "Description": "Swing gain. The higher it is, the faster it spins."
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "Height from Origin to Ground",
+      "Description": ""
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "Minimum Ankle Height",
+      "Description": "Minimum Height at which Ankle is raised"
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "Maximum Ankle Height",
+      "Description": "Maximum Height at which Ankle is raised"
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "Maximum Bend Angle",
+      "Description": "Maximum angle at which the knee can be bent (cosine value)"
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "Minimum Bend Angle",
+      "Description": "Minimum angle at which the knee can be bent (cosine value)"
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "Lowest Ankle Height",
+      "Description": "The lowest position assuming that the ankles are attached"
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "Highest Ankle Height",
+      "Description": "Highest position assuming ankles are apart"
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "Ankle Raycast Upward Distance",
+      "Description": "How high above the ankle should you cast the ray?"
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "Ankle Raycast Downward Distance",
+      "Description": "How far below the ankle should you ray cast?"
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "Toe Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "Toe Position: Y",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "Toe Position: Z",
+      "Description": ""
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "Foot Turning Gain",
+      "Description": "Gain when turning foot contact on and off"
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "Foot Gain on Upward Ramp",
+      "Description": "Gain when ground height increases"
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "Foot Gain on Downward Ramp",
+      "Description": "Gain when ground height decreases"
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "Foot Gain when Raised",
+      "Description": "Gain when the foot is raised"
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "Foot Gain when Planted",
+      "Description": "Gain when foot touches the ground"
+    },
+    {
+      "Field": "footUnlockGain",
+      "Name": "Foot Gain when Unlocked",
+      "Description": "Gain when unlocked"
+    },
+    {
+      "Field": "kneeAxisType",
+      "Name": "Knee Axis Type",
+      "Description": "Axial direction of the knee"
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "Use Foot Locking",
+      "Description": "Do you want to lock (fix?) your feet/ankles?"
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "Use Foot Placement",
+      "Description": "Is foot contact effective?"
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "Twist Knee Axis Type",
+      "Description": "Axial direction of knee joint for twisting"
+    },
+    {
+      "Field": "neckTurnPriority",
+      "Name": "Neck Turn Priority",
+      "Description": "The lower it is, the faster it will turn. -1 does not shake the head"
+    },
+    {
+      "Field": "neckTurnMaxAngle",
+      "Name": "Neck Turn Max Angle",
+      "Description": "Maximum rotation angle for this joint. Can\u0027t bend beyond this angle"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

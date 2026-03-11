@@ -1,0 +1,103 @@
+{
+  "Param": "EnemyEquipWeaponParam",
+  "Type": "CHR_EQUIP_WEAPON_PARAM",
+  "Name": "EnemyEquipWeaponParam",
+  "Description": "Defines parameters used by player and humanoid characters for equip weapons.",
+  "Fields": [
+    {
+      "Field": "chr_id",
+      "Name": "Chr ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weapon_ffx_id",
+      "Name": "",
+      "Description": "Weapon Visual Effect Related"
+    },
+    {
+      "Field": "unk_ffx",
+      "Name": "",
+      "Description": "Body Visual Effect Related"
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

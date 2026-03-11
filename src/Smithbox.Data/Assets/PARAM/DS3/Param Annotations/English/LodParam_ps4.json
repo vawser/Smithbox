@@ -1,0 +1,78 @@
+{
+  "Param": "LodParam_ps4",
+  "Type": "LOD_BANK",
+  "Name": "LodParam_ps4",
+  "Description": "Low Res. Model Load Distance",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "Border Distance: 0 -\u003E 1",
+      "Description": ""
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "Play Distance: 0 -\u003E 1",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "Border Distance: 1 -\u003E 2",
+      "Description": ""
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "Play Distance: 1 -\u003E 2",
+      "Description": ""
+    },
+    {
+      "Field": "textureLod",
+      "Name": "Texture LOD",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lv23_BorderDist",
+      "Name": "Border Distance: 2 -\u003E 3",
+      "Description": ""
+    },
+    {
+      "Field": "lv23_PlayDist",
+      "Name": "Play Distance: 2 -\u003E 3",
+      "Description": ""
+    },
+    {
+      "Field": "lv34_BorderDist",
+      "Name": "Border Distance: 3 -\u003E 4",
+      "Description": ""
+    },
+    {
+      "Field": "lv34_PlayDist",
+      "Name": "Play Distance: 3 -\u003E 4",
+      "Description": ""
+    },
+    {
+      "Field": "lv45_BorderDist",
+      "Name": "Border Distance: 4 -\u003E 5",
+      "Description": ""
+    },
+    {
+      "Field": "lv45_PlayDist",
+      "Name": "Play Distance: 4 -\u003E 5",
+      "Description": ""
+    },
+    {
+      "Field": "DistanceScaleId",
+      "Name": "Distance Scale ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

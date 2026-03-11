@@ -1,0 +1,28 @@
+{
+  "Param": "EstusFlaskMaxReinforceParam",
+  "Type": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
+  "Name": "EstusFlaskMaxReinforceParam",
+  "Description": "Defines parameters related to the Estus Flask.",
+  "Fields": [
+    {
+      "Field": "estus_reinforcement_min",
+      "Name": "Estus Reinforcement - Minimum",
+      "Description": ""
+    },
+    {
+      "Field": "estus_reinforcement_max",
+      "Name": "Estus Reinforcement - Maximum",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

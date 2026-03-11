@@ -1,1287 +1,2315 @@
 {
-  "DisplayName": "Behavior Variation ID",
-  "Name": "BEHAVIOR_VARIATION",
-  "Description": "Behavior Variation IDs, used for determining which sets of BehaviorParams to use.",
+  "Key": "BEHAVIOR_VARIATION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BEHAVIOR_VARIATION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "100",
-      "Name": "Dagger - Base",
-      "Description": ""
-    },
-    {
-      "ID": "101",
-      "Name": "Dagger - Black Knife",
-      "Description": ""
-    },
-    {
-      "ID": "103",
-      "Name": "Dagger - Misericorde/Scorpion's Stinger",
-      "Description": ""
-    },
-    {
-      "ID": "104",
-      "Name": "Dagger - Reduvia",
-      "Description": ""
-    },
-    {
-      "ID": "107",
-      "Name": "Dagger - Glintstone Kris",
-      "Description": ""
-    },
-    {
-      "ID": "109",
-      "Name": "Dagger - Great Knife/Ivory Sickle/Celebrant's Sickle",
-      "Description": ""
-    },
-    {
-      "ID": "110",
-      "Name": "Dagger - Wakizashi",
-      "Description": ""
-    },
-    {
-      "ID": "115",
-      "Name": "Dagger - Erdsteel Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "116",
-      "Name": "Dagger - Blade of Calling",
-      "Description": ""
-    },
-    {
-      "ID": "117",
-      "Name": "Dagger - Duchess' Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "150",
-      "Name": "Dagger Hero - Duchess",
-      "Description": ""
-    },
-    {
-      "ID": "200",
-      "Name": "Straight Sword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "201",
-      "Name": "Straight Sword - Broadsword/Cane Sword",
-      "Description": ""
-    },
-    {
-      "ID": "202",
-      "Name": "Straight Sword - Carian Knight's Sword/Lazuli Glintstone Sword",
-      "Description": ""
-    },
-    {
-      "ID": "204",
-      "Name": "Straight Sword - Coded Sword",
-      "Description": ""
-    },
-    {
-      "ID": "205",
-      "Name": "Straight Sword - Sword of St. Trina",
-      "Description": ""
-    },
-    {
-      "ID": "206",
-      "Name": "Straight Sword - Rotten Crystal Sword",
-      "Description": ""
-    },
-    {
-      "ID": "207",
-      "Name": "Straight Sword - Golden Epitaph",
-      "Description": ""
-    },
-    {
-      "ID": "208",
-      "Name": "Straight Sword - Warhawk's Talon",
-      "Description": ""
-    },
-    {
-      "ID": "209",
-      "Name": "Straight Sword - Short Sword",
-      "Description": ""
-    },
-    {
-      "ID": "210",
-      "Name": "Straight Sword - Miquellan Knight's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "211",
-      "Name": "Straight Sword - Ornamental Straight Sword",
-      "Description": ""
-    },
-    {
-      "ID": "214",
-      "Name": "Straight Sword - Sword of Night and Flame",
-      "Description": ""
-    },
-    {
-      "ID": "215",
-      "Name": "Straight Sword - Regalia of Eochaid",
-      "Description": ""
-    },
-    {
-      "ID": "300",
-      "Name": "Greatsword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "301",
-      "Name": "Greatsword - Dark Moon Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "302",
-      "Name": "Greatsword - Sword of Milos",
-      "Description": ""
-    },
-    {
-      "ID": "303",
-      "Name": "Greatsword - Alabaster Lord's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "305",
-      "Name": "Greatsword - Flamberge",
-      "Description": ""
-    },
-    {
-      "ID": "306",
-      "Name": "Greatsword - Ordovis's Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "307",
-      "Name": "Greatsword - Knight's Greatsword/Banished Knight's Greatsword/Inseparable Sword",
-      "Description": ""
-    },
-    {
-      "ID": "309",
-      "Name": "Greatsword - Death's Poker",
-      "Description": ""
-    },
-    {
-      "ID": "310",
-      "Name": "Greatsword - Sacred Relic Sword",
-      "Description": ""
-    },
-    {
-      "ID": "311",
-      "Name": "Greatsword - Gargoyle's Blackblade",
-      "Description": ""
-    },
-    {
-      "ID": "314",
-      "Name": "Greatsword - Blasphemous Blade",
-      "Description": ""
-    },
-    {
-      "ID": "315",
-      "Name": "Greatsword - Marais Executioner Sword",
-      "Description": ""
-    },
-    {
-      "ID": "317",
-      "Name": "Greatsword - Golden Order Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "318",
-      "Name": "Greatsword - Claymore",
-      "Description": ""
-    },
-    {
-      "ID": "319",
-      "Name": "Greatsword - Helphen's Steeple",
-      "Description": ""
-    },
-    {
-      "ID": "350",
-      "Name": "Greatsword Hero - Wylder",
-      "Description": ""
-    },
-    {
-      "ID": "400",
-      "Name": "Colossal Sword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "401",
-      "Name": "Colossal Sword - Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "402",
-      "Name": "Colossal Sword - Zweihander/Troll Knight's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "403",
-      "Name": "Colossal Sword - Ruins Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "404",
-      "Name": "Colossal Sword - Godslayer's Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "405",
-      "Name": "Colossal Sword - Starscourge Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "406",
-      "Name": "Colossal Sword - Royal Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "407",
-      "Name": "Colossal Sword - Grafted Blade Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "408",
-      "Name": "Colossal Sword - Maliketh's Black Blade",
-      "Description": ""
-    },
-    {
-      "ID": "500",
-      "Name": "Thrusting Sword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "501",
-      "Name": "Thrusting Sword - Frozen Needle",
-      "Description": ""
-    },
-    {
-      "ID": "502",
-      "Name": "Thrusting Sword - Rogier's Rapier",
-      "Description": ""
-    },
-    {
-      "ID": "503",
-      "Name": "Thrusting Sword - Estoc/Noble's Estoc",
-      "Description": ""
-    },
-    {
-      "ID": "550",
-      "Name": "Thrusting Sword Hero - Scholar",
-      "Description": ""
-    },
-    {
-      "ID": "551",
-      "Name": "Thrusting Sword Hero - Scholar Frozen Needle",
-      "Description": ""
-    },
-    {
-      "ID": "600",
-      "Name": "Heavy Thrusting Sword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "601",
-      "Name": "Heavy Thrusting Sword - Dragon King's Cragblade",
-      "Description": ""
-    },
-    {
-      "ID": "602",
-      "Name": "Heavy Thrusting Sword - Bloody Helice",
-      "Description": ""
-    },
-    {
-      "ID": "603",
-      "Name": "Heavy Thrusting Sword - Great Epee",
-      "Description": ""
-    },
-    {
-      "ID": "604",
-      "Name": "Heavy Thrusting Sword - Godskin Stitcher",
-      "Description": ""
-    },
-    {
-      "ID": "700",
-      "Name": "Curved Sword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "701",
-      "Name": "Curved Sword - Beastman's Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "702",
-      "Name": "Curved Sword - Shotel/Nox Flowing Sword",
-      "Description": ""
-    },
-    {
-      "ID": "703",
-      "Name": "Curved Sword - Magma Blade",
-      "Description": ""
-    },
-    {
-      "ID": "706",
-      "Name": "Curved Sword - Flowing Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "707",
-      "Name": "Curved Sword - Wing of Astel",
-      "Description": ""
-    },
-    {
-      "ID": "710",
-      "Name": "Curved Sword - Eclipse Shotel",
-      "Description": ""
-    },
-    {
-      "ID": "712",
-      "Name": "Curved Sword - Mantis Blade",
-      "Description": ""
-    },
-    {
-      "ID": "714",
-      "Name": "Curved Sword - Scimitar/Shamshir",
-      "Description": ""
-    },
-    {
-      "ID": "800",
-      "Name": "Curved Greatsword - Base",
-      "Description": ""
-    },
-    {
-      "ID": "801",
-      "Name": "Curved Greatsword - Zamor Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "802",
-      "Name": "Curved Greatsword - Omen Cleaver",
-      "Description": ""
-    },
-    {
-      "ID": "803",
-      "Name": "Curved Greatsword - Magma Wyrm's Scalesword",
-      "Description": ""
-    },
-    {
-      "ID": "804",
-      "Name": "Curved Greatsword - Bloodhound's Fang",
-      "Description": ""
-    },
-    {
-      "ID": "805",
-      "Name": "Curved Greatsword - Onyx Lord's Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "810",
-      "Name": "Curved Greatsword - Morgott's Cursed Sword",
-      "Description": ""
-    },
-    {
-      "ID": "900",
-      "Name": "Katana - Base",
-      "Description": ""
-    },
-    {
-      "ID": "901",
-      "Name": "Katana - Serpentbone Blade",
-      "Description": ""
-    },
-    {
-      "ID": "902",
-      "Name": "Katana - Hand of Malenia",
-      "Description": ""
-    },
-    {
-      "ID": "903",
-      "Name": "Katana - Meteoric Ore Blade",
-      "Description": ""
-    },
-    {
-      "ID": "904",
-      "Name": "Katana - Nagakiba",
-      "Description": ""
-    },
-    {
-      "ID": "905",
-      "Name": "Katana - Moonveil",
-      "Description": ""
-    },
-    {
-      "ID": "906",
-      "Name": "Katana - Rivers of Blood",
-      "Description": ""
-    },
-    {
-      "ID": "950",
-      "Name": "Katana Hero - Executor",
-      "Description": ""
-    },
-    {
-      "ID": "960",
-      "Name": "Katana Hero - Executor Cursed Sword",
-      "Description": ""
-    },
-    {
-      "ID": "1000",
-      "Name": "Twinblade - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1001",
-      "Name": "Twinblade - Godskin Peeler",
-      "Description": ""
-    },
-    {
-      "ID": "1005",
-      "Name": "Twinblade - Eleonora's Poleblade",
-      "Description": ""
-    },
-    {
-      "ID": "1100",
-      "Name": "Hammer - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1101",
-      "Name": "Hammer - Club/Stone Club",
-      "Description": ""
-    },
-    {
-      "ID": "1102",
-      "Name": "Hammer - Mace/Recluse's (Melee) Staff",
-      "Description": ""
-    },
-    {
-      "ID": "1103",
-      "Name": "Hammer - Monk's Flamemace",
-      "Description": ""
-    },
-    {
-      "ID": "1105",
-      "Name": "Hammer - Morning Star",
-      "Description": ""
-    },
-    {
-      "ID": "1107",
-      "Name": "Hammer - Spiked Club",
-      "Description": ""
-    },
-    {
-      "ID": "1110",
-      "Name": "Hammer - Envoy's Horn",
-      "Description": ""
-    },
-    {
-      "ID": "1112",
-      "Name": "Hammer - Nox Flowing Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "1113",
-      "Name": "Hammer - Ringed Finger",
-      "Description": ""
-    },
-    {
-      "ID": "1115",
-      "Name": "Hammer - Marika's Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "1116",
-      "Name": "Hammer - Scepter of the All-Knowing",
-      "Description": ""
-    },
-    {
-      "ID": "1150",
-      "Name": "Hammer Hero - Undertaker",
-      "Description": ""
-    },
-    {
-      "ID": "1200",
-      "Name": "Great Hammer - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1201",
-      "Name": "Great Hammer - Beastclaw Greathammer",
-      "Description": ""
-    },
-    {
-      "ID": "1202",
-      "Name": "Great Hammer - Devourer's Scepter",
-      "Description": ""
-    },
-    {
-      "ID": "1205",
-      "Name": "Great Hammer - Pickaxe",
-      "Description": ""
-    },
-    {
-      "ID": "1216",
-      "Name": "Great Hammer - Envoy's Long Horn",
-      "Description": ""
-    },
-    {
-      "ID": "1217",
-      "Name": "Great Hammer - Cranial Vessel Candlestand",
-      "Description": ""
-    },
-    {
-      "ID": "1250",
-      "Name": "Great Hammer Hero - Raider",
-      "Description": ""
-    },
-    {
-      "ID": "1300",
-      "Name": "Flail - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1301",
-      "Name": "Flail - Bastard's Stars",
-      "Description": ""
-    },
-    {
-      "ID": "1302",
-      "Name": "Flail - Family Head",
-      "Description": ""
-    },
-    {
-      "ID": "1400",
-      "Name": "Axe - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1401",
-      "Name": "Axe - Hand Axe/Icerind Hatchet/Forked Hatchet",
-      "Description": ""
-    },
-    {
-      "ID": "1406",
-      "Name": "Axe - Iron Cleaver/Celebrant's Cleaver",
-      "Description": ""
-    },
-    {
-      "ID": "1407",
-      "Name": "Axe - Warped Axe/Ripple Blade",
-      "Description": ""
-    },
-    {
-      "ID": "1412",
-      "Name": "Axe - Rosus' Axe",
-      "Description": ""
-    },
-    {
-      "ID": "1414",
-      "Name": "Axe - Stormhawk Axe",
-      "Description": ""
-    },
-    {
-      "ID": "1500",
-      "Name": "Greataxe - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1501",
-      "Name": "Greataxe - Butchering Knife",
-      "Description": ""
-    },
-    {
-      "ID": "1503",
-      "Name": "Greataxe - Crescent Moon Axe",
-      "Description": ""
-    },
-    {
-      "ID": "1504",
-      "Name": "Greataxe - Axe of Godrick",
-      "Description": ""
-    },
-    {
-      "ID": "1511",
-      "Name": "Greataxe - Winged Greathorn",
-      "Description": ""
-    },
-    {
-      "ID": "1550",
-      "Name": "Greataxe Hero - Raider",
-      "Description": ""
-    },
-    {
-      "ID": "1600",
-      "Name": "Spear - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1601",
-      "Name": "Spear - Short Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1602",
-      "Name": "Spear - Bolt of Gransax",
-      "Description": ""
-    },
-    {
-      "ID": "1604",
-      "Name": "Spear - Cleanrot Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1605",
-      "Name": "Spear - Partisan/Spiked Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1606",
-      "Name": "Spear - Pike",
-      "Description": ""
-    },
-    {
-      "ID": "1611",
-      "Name": "Spear - Cross-Naginata",
-      "Description": ""
-    },
-    {
-      "ID": "1612",
-      "Name": "Spear - Death Ritual Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1700",
-      "Name": "Great Spear - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1702",
-      "Name": "Great Spear - Siluria's Tree",
-      "Description": ""
-    },
-    {
-      "ID": "1703",
-      "Name": "Great Spear - Serpent-Hunter",
-      "Description": ""
-    },
-    {
-      "ID": "1705",
-      "Name": "Great Spear - Vyke's War Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1707",
-      "Name": "Great Spear - Treespear",
-      "Description": ""
-    },
-    {
-      "ID": "1711",
-      "Name": "Great Spear - Mohgwyn's Sacred Spear",
-      "Description": ""
-    },
-    {
-      "ID": "1800",
-      "Name": "Halberd - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1801",
-      "Name": "Halberd - Halberd/Banished Knight's Halberd",
-      "Description": ""
-    },
-    {
-      "ID": "1802",
-      "Name": "Halberd - Lucerne/Golden Halberd/Nightrider",
-      "Description": ""
-    },
-    {
-      "ID": "1804",
-      "Name": "Halberd - Commander's Standard",
-      "Description": ""
-    },
-    {
-      "ID": "1810",
-      "Name": "Halberd - Loretta's War Sickle",
-      "Description": ""
-    },
-    {
-      "ID": "1811",
-      "Name": "Halberd - Dragon Halberd",
-      "Description": ""
-    },
-    {
-      "ID": "1812",
-      "Name": "Halberd - Guardian's Swordspear",
-      "Description": ""
-    },
-    {
-      "ID": "1850",
-      "Name": "Halberd Hero - Guardian",
-      "Description": ""
-    },
-    {
-      "ID": "1900",
-      "Name": "Reaper - Base",
-      "Description": ""
-    },
-    {
-      "ID": "1901",
-      "Name": "Reaper - Scythe",
-      "Description": ""
-    },
-    {
-      "ID": "1902",
-      "Name": "Reaper - Halo Scythe",
-      "Description": ""
-    },
-    {
-      "ID": "1906",
-      "Name": "Reaper - Winged Scythe",
-      "Description": ""
-    },
-    {
-      "ID": "2000",
-      "Name": "Whip - Base",
-      "Description": ""
-    },
-    {
-      "ID": "2003",
-      "Name": "Whip - Magma Whip Candlestick",
-      "Description": ""
-    },
-    {
-      "ID": "2005",
-      "Name": "Whip - Urumi",
-      "Description": ""
-    },
-    {
-      "ID": "2006",
-      "Name": "Whip - Giant's Red Braid",
-      "Description": ""
-    },
-    {
-      "ID": "2100",
-      "Name": "Fist - Base",
-      "Description": ""
-    },
-    {
-      "ID": "2101",
-      "Name": "Fist - Katar/Clinging Bone",
-      "Description": ""
-    },
-    {
-      "ID": "2102",
-      "Name": "Fist - Caestus/Spiked Caestus",
-      "Description": ""
-    },
-    {
-      "ID": "2106",
-      "Name": "Fist - Grafted Dragon",
-      "Description": ""
-    },
-    {
-      "ID": "2112",
-      "Name": "Fist - Veteran's Prosthesis",
-      "Description": ""
-    },
-    {
-      "ID": "2113",
-      "Name": "Fist - Cipher Pata",
-      "Description": ""
-    },
-    {
-      "ID": "2150",
-      "Name": "Fist Hero - Revenant's Cursed Claws",
-      "Description": ""
-    },
-    {
-      "ID": "2151",
-      "Name": "Fist - Revenant's Cursed Claws",
-      "Description": ""
-    },
-    {
-      "ID": "2200",
-      "Name": "Claw - Base",
-      "Description": ""
-    },
-    {
-      "ID": "2201",
-      "Name": "Claw - Raptor Talons",
-      "Description": ""
-    },
-    {
-      "ID": "2300",
-      "Name": "Colossal Weapon - Base",
-      "Description": ""
-    },
-    {
-      "ID": "2301",
-      "Name": "Colossal Weapon - Watchdog's Staff",
-      "Description": ""
-    },
-    {
-      "ID": "2302",
-      "Name": "Colossal Weapon - Great Club",
-      "Description": ""
-    },
-    {
-      "ID": "2303",
-      "Name": "Colossal Weapon - Prelate's Inferno Crozier",
-      "Description": ""
-    },
-    {
-      "ID": "2304",
-      "Name": "Colossal Weapon - Giant-Crusher/Raider's Greataxe",
-      "Description": ""
-    },
-    {
-      "ID": "2305",
-      "Name": "Colossal Weapon - Axe of Godfrey",
-      "Description": ""
-    },
-    {
-      "ID": "2306",
-      "Name": "Colossal Weapon - Envoy's Greathorn",
-      "Description": ""
-    },
-    {
-      "ID": "2307",
-      "Name": "Colossal Weapon - Staff of the Avatar/Rotten Staff",
-      "Description": ""
-    },
-    {
-      "ID": "2308",
-      "Name": "Colossal Weapon - Fallingstar Beast Jaw",
-      "Description": ""
-    },
-    {
-      "ID": "2309",
-      "Name": "Colossal Weapon - Ghiza's Wheel",
-      "Description": ""
-    },
-    {
-      "ID": "2310",
-      "Name": "Colossal Weapon - Golem Halberd",
-      "Description": ""
-    },
-    {
-      "ID": "2350",
-      "Name": "Colossal Weapon Hero - Raider",
-      "Description": ""
-    },
-    {
-      "ID": "2400",
-      "Name": "Torch - Base",
-      "Description": ""
-    },
-    {
-      "ID": "2404",
-      "Name": "Torch - St. Trina's Torch",
-      "Description": ""
-    },
-    {
-      "ID": "3000",
-      "Name": "Small Shield - Base",
-      "Description": ""
-    },
-    {
-      "ID": "3020",
-      "Name": "Small Shield - Coil Shield",
-      "Description": ""
-    },
-    {
-      "ID": "3100",
-      "Name": "Medium Shield - Base",
-      "Description": ""
-    },
-    {
-      "ID": "3200",
-      "Name": "Greatshield - Base",
-      "Description": ""
-    },
-    {
-      "ID": "3208",
-      "Name": "Greatshield - Erdtree Greatshield",
-      "Description": ""
-    },
-    {
-      "ID": "3215",
-      "Name": "Greatshield - One-Eyed Shield",
-      "Description": ""
-    },
-    {
-      "ID": "3216",
-      "Name": "Greatshield - Visage Shield",
-      "Description": ""
-    },
-    {
-      "ID": "3300",
-      "Name": "Glintstone Staff - Base",
-      "Description": ""
-    },
-    {
-      "ID": "3309",
-      "Name": "Glintstone Staff - Carian Regal Scepter",
-      "Description": ""
-    },
-    {
-      "ID": "3350",
-      "Name": "Glintstone Staff Hero - Recluse",
-      "Description": ""
-    },
-    {
-      "ID": "3400",
-      "Name": "Sacred Seal - Base",
-      "Description": ""
-    },
-    {
-      "ID": "3450",
-      "Name": "Sacred Seal Hero - Recluse",
-      "Description": ""
-    },
-    {
-      "ID": "4100",
-      "Name": "Bow - Base",
-      "Description": ""
-    },
-    {
-      "ID": "4150",
-      "Name": "Bow Hero - Ironeye",
-      "Description": ""
-    },
-    {
-      "ID": "4200",
-      "Name": "Greatbow - Base",
-      "Description": ""
-    },
-    {
-      "ID": "4201",
-      "Name": "Greatbow - Lion Greatbow",
-      "Description": ""
-    },
-    {
-      "ID": "4300",
-      "Name": "Crossbow - Base",
-      "Description": ""
-    },
-    {
-      "ID": "4400",
-      "Name": "Ballista - Base",
-      "Description": ""
-    },
-    {
-      "ID": "5000",
-      "Name": "Arrow - Base",
-      "Description": ""
-    },
-    {
-      "ID": "5010",
-      "Name": "Arrow - Magic",
-      "Description": ""
-    },
-    {
-      "ID": "5011",
-      "Name": "Arrow - Fire",
-      "Description": ""
-    },
-    {
-      "ID": "5012",
-      "Name": "Arrow - Lightning",
-      "Description": ""
-    },
-    {
-      "ID": "5013",
-      "Name": "Arrow - Holy",
-      "Description": ""
-    },
-    {
-      "ID": "5020",
-      "Name": "Arrow - Poison",
-      "Description": ""
-    },
-    {
-      "ID": "5021",
-      "Name": "Arrow - Scarlet Rot",
-      "Description": ""
-    },
-    {
-      "ID": "5022",
-      "Name": "Arrow - Blood Loss",
-      "Description": ""
-    },
-    {
-      "ID": "5023",
-      "Name": "Arrow - Frostbite",
-      "Description": ""
-    },
-    {
-      "ID": "5024",
-      "Name": "Arrow - Sleep",
-      "Description": ""
-    },
-    {
-      "ID": "5027",
-      "Name": "Arrow - Dragonwound",
-      "Description": ""
-    },
-    {
-      "ID": "5028",
-      "Name": "Arrow - Blackflame",
-      "Description": ""
-    },
-    {
-      "ID": "5029",
-      "Name": "Arrow - Bloodflame",
-      "Description": ""
-    },
-    {
-      "ID": "5050",
-      "Name": "Arrow Hero - Ironeye",
-      "Description": ""
-    },
-    {
-      "ID": "5060",
-      "Name": "Arrow Hero - Ironeye Magic",
-      "Description": ""
-    },
-    {
-      "ID": "5061",
-      "Name": "Arrow Hero - Ironeye Fire",
-      "Description": ""
-    },
-    {
-      "ID": "5062",
-      "Name": "Arrow Hero - Ironeye Lightning",
-      "Description": ""
-    },
-    {
-      "ID": "5063",
-      "Name": "Arrow Hero - Ironeye Holy",
-      "Description": ""
-    },
-    {
-      "ID": "5070",
-      "Name": "Arrow Hero - Ironeye Poison",
-      "Description": ""
-    },
-    {
-      "ID": "5071",
-      "Name": "Arrow Hero - Ironeye Scarlet Rot",
-      "Description": ""
-    },
-    {
-      "ID": "5072",
-      "Name": "Arrow Hero - Ironeye Blood Loss",
-      "Description": ""
-    },
-    {
-      "ID": "5073",
-      "Name": "Arrow Hero - Ironeye Frostbite",
-      "Description": ""
-    },
-    {
-      "ID": "5074",
-      "Name": "Arrow Hero - Ironeye Sleep",
-      "Description": ""
-    },
-    {
-      "ID": "5077",
-      "Name": "Arrow Hero - Ironeye Dragonwound",
-      "Description": ""
-    },
-    {
-      "ID": "5078",
-      "Name": "Arrow Hero - Ironeye Blackflame",
-      "Description": ""
-    },
-    {
-      "ID": "5079",
-      "Name": "Arrow Hero - Ironeye Bloodflame",
-      "Description": ""
-    },
-    {
-      "ID": "5100",
-      "Name": "Greatarrow - Base",
-      "Description": ""
-    },
-    {
-      "ID": "5130",
-      "Name": "Greatarrow - Holy",
-      "Description": ""
-    },
-    {
-      "ID": "5200",
-      "Name": "Bolt - Base",
-      "Description": ""
-    },
-    {
-      "ID": "5231",
-      "Name": "Bolt - Magic",
-      "Description": ""
-    },
-    {
-      "ID": "5300",
-      "Name": "Greatbolt - Base",
-      "Description": ""
-    },
-    {
-      "ID": "20400",
-      "Name": "NPC - Juvenile Scholar",
-      "Description": ""
-    },
-    {
-      "ID": "20410",
-      "Name": "NPC - Larva of Rot",
-      "Description": ""
-    },
-    {
-      "ID": "21000",
-      "Name": "NPC - Black Knife Assassin",
-      "Description": ""
-    },
-    {
-      "ID": "21300",
-      "Name": "NPC - Fell Omen (Morgott)",
-      "Description": ""
-    },
-    {
-      "ID": "21400",
-      "Name": "NPC - Omen",
-      "Description": ""
-    },
-    {
-      "ID": "21500",
-      "Name": "NPC - Lightning Ball",
-      "Description": ""
-    },
-    {
-      "ID": "22700",
-      "Name": "NPC - Giant Crab",
-      "Description": ""
-    },
-    {
-      "ID": "22710",
-      "Name": "NPC - Small Crab",
-      "Description": ""
-    },
-    {
-      "ID": "25000",
-      "Name": "NPC - Crucible Knight",
-      "Description": ""
-    },
-    {
-      "ID": "30000",
-      "Name": "NPC - Exile Soldier",
-      "Description": ""
-    },
-    {
-      "ID": "30100",
-      "Name": "NPC - Banished Knight",
-      "Description": ""
-    },
-    {
-      "ID": "30200",
-      "Name": "NPC - Large Exile Soldier",
-      "Description": ""
-    },
-    {
-      "ID": "30500",
-      "Name": "NPC - Battlefield Commander",
-      "Description": ""
-    },
-    {
-      "ID": "30600",
-      "Name": "NPC - Giant Skeleton",
-      "Description": ""
-    },
-    {
-      "ID": "30610",
-      "Name": "NPC - Giant Beast Skeleton",
-      "Description": ""
-    },
-    {
-      "ID": "30800",
-      "Name": "NPC - Imp",
-      "Description": ""
-    },
-    {
-      "ID": "31000",
-      "Name": "NPC - Bell Bearing Hunter (Elemer)",
-      "Description": ""
-    },
-    {
-      "ID": "31500",
-      "Name": "NPC - Night's Cavalry",
-      "Description": ""
-    },
-    {
-      "ID": "31600",
-      "Name": "NPC - Night's Cavalry Horse",
-      "Description": ""
-    },
-    {
-      "ID": "31700",
-      "Name": "NPC - Albinauric Archer",
-      "Description": ""
-    },
-    {
-      "ID": "31800",
-      "Name": "NPC - Albinauric Archer's Wolf",
-      "Description": ""
-    },
-    {
-      "ID": "31810",
-      "Name": "NPC - Red Wolf",
-      "Description": ""
-    },
-    {
-      "ID": "32000",
-      "Name": "NPC - Nomad",
-      "Description": ""
-    },
-    {
-      "ID": "32100",
-      "Name": "NPC - Nomad's Mule",
-      "Description": ""
-    },
-    {
-      "ID": "32500",
-      "Name": "NPC - Draconic Tree Sentinel",
-      "Description": ""
-    },
-    {
-      "ID": "32510",
-      "Name": "NPC - Tree Sentinel",
-      "Description": ""
-    },
-    {
-      "ID": "32520",
-      "Name": "NPC - Royal Carian Knight (Loretta)",
-      "Description": ""
-    },
-    {
-      "ID": "37030",
-      "Name": "NPC - Page",
-      "Description": ""
-    },
-    {
-      "ID": "43400",
-      "Name": "NPC - Pumpkin Head",
-      "Description": ""
-    },
-    {
-      "ID": "49600",
-      "Name": "NPC - Giant Skeleton Torso",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Base"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Black Knife"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Misericorde/Scorpion's Stinger"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Reduvia"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Glintstone Kris"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Great Knife/Ivory Sickle/Celebrant's Sickle"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Wakizashi"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Erdsteel Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Blade of Calling"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger - Duchess' Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger Hero - Duchess"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Broadsword/Cane Sword"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Carian Knight's Sword/Lazuli Glintstone Sword"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Coded Sword"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Sword of St. Trina"
+        }
+      ]
+    },
+    {
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Rotten Crystal Sword"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Golden Epitaph"
+        }
+      ]
+    },
+    {
+      "Key": "208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Warhawk's Talon"
+        }
+      ]
+    },
+    {
+      "Key": "209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Short Sword"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Miquellan Knight's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Ornamental Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Sword of Night and Flame"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight Sword - Regalia of Eochaid"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Dark Moon Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Sword of Milos"
+        }
+      ]
+    },
+    {
+      "Key": "303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Alabaster Lord's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Flamberge"
+        }
+      ]
+    },
+    {
+      "Key": "306",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Ordovis's Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "307",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Knight's Greatsword/Banished Knight's Greatsword/Inseparable Sword"
+        }
+      ]
+    },
+    {
+      "Key": "309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Death's Poker"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Sacred Relic Sword"
+        }
+      ]
+    },
+    {
+      "Key": "311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Gargoyle's Blackblade"
+        }
+      ]
+    },
+    {
+      "Key": "314",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Blasphemous Blade"
+        }
+      ]
+    },
+    {
+      "Key": "315",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Marais Executioner Sword"
+        }
+      ]
+    },
+    {
+      "Key": "317",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Golden Order Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "318",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Claymore"
+        }
+      ]
+    },
+    {
+      "Key": "319",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword - Helphen's Steeple"
+        }
+      ]
+    },
+    {
+      "Key": "350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword Hero - Wylder"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "402",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Zweihander/Troll Knight's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "403",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Ruins Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Godslayer's Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "405",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Starscourge Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "406",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Royal Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "407",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Grafted Blade Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "408",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Sword - Maliketh's Black Blade"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword - Frozen Needle"
+        }
+      ]
+    },
+    {
+      "Key": "502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword - Rogier's Rapier"
+        }
+      ]
+    },
+    {
+      "Key": "503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword - Estoc/Noble's Estoc"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword Hero - Scholar"
+        }
+      ]
+    },
+    {
+      "Key": "551",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrusting Sword Hero - Scholar Frozen Needle"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword - Dragon King's Cragblade"
+        }
+      ]
+    },
+    {
+      "Key": "602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword - Bloody Helice"
+        }
+      ]
+    },
+    {
+      "Key": "603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword - Great Epee"
+        }
+      ]
+    },
+    {
+      "Key": "604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Thrusting Sword - Godskin Stitcher"
+        }
+      ]
+    },
+    {
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Beastman's Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Shotel/Nox Flowing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Magma Blade"
+        }
+      ]
+    },
+    {
+      "Key": "706",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Flowing Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "707",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Wing of Astel"
+        }
+      ]
+    },
+    {
+      "Key": "710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Eclipse Shotel"
+        }
+      ]
+    },
+    {
+      "Key": "712",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Mantis Blade"
+        }
+      ]
+    },
+    {
+      "Key": "714",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword - Scimitar/Shamshir"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Base"
+        }
+      ]
+    },
+    {
+      "Key": "801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Zamor Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Omen Cleaver"
+        }
+      ]
+    },
+    {
+      "Key": "803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Magma Wyrm's Scalesword"
+        }
+      ]
+    },
+    {
+      "Key": "804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Bloodhound's Fang"
+        }
+      ]
+    },
+    {
+      "Key": "805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Onyx Lord's Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Greatsword - Morgott's Cursed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Base"
+        }
+      ]
+    },
+    {
+      "Key": "901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Serpentbone Blade"
+        }
+      ]
+    },
+    {
+      "Key": "902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Hand of Malenia"
+        }
+      ]
+    },
+    {
+      "Key": "903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Meteoric Ore Blade"
+        }
+      ]
+    },
+    {
+      "Key": "904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Nagakiba"
+        }
+      ]
+    },
+    {
+      "Key": "905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Moonveil"
+        }
+      ]
+    },
+    {
+      "Key": "906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana - Rivers of Blood"
+        }
+      ]
+    },
+    {
+      "Key": "950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana Hero - Executor"
+        }
+      ]
+    },
+    {
+      "Key": "960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana Hero - Executor Cursed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twinblade - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twinblade - Godskin Peeler"
+        }
+      ]
+    },
+    {
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Twinblade - Eleonora's Poleblade"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Club/Stone Club"
+        }
+      ]
+    },
+    {
+      "Key": "1102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Mace/Recluse's (Melee) Staff"
+        }
+      ]
+    },
+    {
+      "Key": "1103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Monk's Flamemace"
+        }
+      ]
+    },
+    {
+      "Key": "1105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Morning Star"
+        }
+      ]
+    },
+    {
+      "Key": "1107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Spiked Club"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Envoy's Horn"
+        }
+      ]
+    },
+    {
+      "Key": "1112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Nox Flowing Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "1113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Ringed Finger"
+        }
+      ]
+    },
+    {
+      "Key": "1115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Marika's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "1116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer - Scepter of the All-Knowing"
+        }
+      ]
+    },
+    {
+      "Key": "1150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hammer Hero - Undertaker"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Beastclaw Greathammer"
+        }
+      ]
+    },
+    {
+      "Key": "1202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Devourer's Scepter"
+        }
+      ]
+    },
+    {
+      "Key": "1205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Pickaxe"
+        }
+      ]
+    },
+    {
+      "Key": "1216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Envoy's Long Horn"
+        }
+      ]
+    },
+    {
+      "Key": "1217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer - Cranial Vessel Candlestand"
+        }
+      ]
+    },
+    {
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hammer Hero - Raider"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flail - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flail - Bastard's Stars"
+        }
+      ]
+    },
+    {
+      "Key": "1302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flail - Family Head"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Hand Axe/Icerind Hatchet/Forked Hatchet"
+        }
+      ]
+    },
+    {
+      "Key": "1406",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Iron Cleaver/Celebrant's Cleaver"
+        }
+      ]
+    },
+    {
+      "Key": "1407",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Warped Axe/Ripple Blade"
+        }
+      ]
+    },
+    {
+      "Key": "1412",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Rosus' Axe"
+        }
+      ]
+    },
+    {
+      "Key": "1414",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe - Stormhawk Axe"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe - Butchering Knife"
+        }
+      ]
+    },
+    {
+      "Key": "1503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe - Crescent Moon Axe"
+        }
+      ]
+    },
+    {
+      "Key": "1504",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe - Axe of Godrick"
+        }
+      ]
+    },
+    {
+      "Key": "1511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe - Winged Greathorn"
+        }
+      ]
+    },
+    {
+      "Key": "1550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greataxe Hero - Raider"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Short Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Bolt of Gransax"
+        }
+      ]
+    },
+    {
+      "Key": "1604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Cleanrot Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1605",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Partisan/Spiked Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1606",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Pike"
+        }
+      ]
+    },
+    {
+      "Key": "1611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Cross-Naginata"
+        }
+      ]
+    },
+    {
+      "Key": "1612",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear - Death Ritual Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Siluria's Tree"
+        }
+      ]
+    },
+    {
+      "Key": "1703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Serpent-Hunter"
+        }
+      ]
+    },
+    {
+      "Key": "1705",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Vyke's War Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1707",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Treespear"
+        }
+      ]
+    },
+    {
+      "Key": "1711",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Spear - Mohgwyn's Sacred Spear"
+        }
+      ]
+    },
+    {
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Halberd/Banished Knight's Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "1802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Lucerne/Golden Halberd/Nightrider"
+        }
+      ]
+    },
+    {
+      "Key": "1804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Commander's Standard"
+        }
+      ]
+    },
+    {
+      "Key": "1810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Loretta's War Sickle"
+        }
+      ]
+    },
+    {
+      "Key": "1811",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Dragon Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "1812",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd - Guardian's Swordspear"
+        }
+      ]
+    },
+    {
+      "Key": "1850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd Hero - Guardian"
+        }
+      ]
+    },
+    {
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaper - Base"
+        }
+      ]
+    },
+    {
+      "Key": "1901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaper - Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "1902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaper - Halo Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "1906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reaper - Winged Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip - Base"
+        }
+      ]
+    },
+    {
+      "Key": "2003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip - Magma Whip Candlestick"
+        }
+      ]
+    },
+    {
+      "Key": "2005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip - Urumi"
+        }
+      ]
+    },
+    {
+      "Key": "2006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip - Giant's Red Braid"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Base"
+        }
+      ]
+    },
+    {
+      "Key": "2101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Katar/Clinging Bone"
+        }
+      ]
+    },
+    {
+      "Key": "2102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Caestus/Spiked Caestus"
+        }
+      ]
+    },
+    {
+      "Key": "2106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Grafted Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "2112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Veteran's Prosthesis"
+        }
+      ]
+    },
+    {
+      "Key": "2113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Cipher Pata"
+        }
+      ]
+    },
+    {
+      "Key": "2150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist Hero - Revenant's Cursed Claws"
+        }
+      ]
+    },
+    {
+      "Key": "2151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist - Revenant's Cursed Claws"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw - Base"
+        }
+      ]
+    },
+    {
+      "Key": "2201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw - Raptor Talons"
+        }
+      ]
+    },
+    {
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Base"
+        }
+      ]
+    },
+    {
+      "Key": "2301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Watchdog's Staff"
+        }
+      ]
+    },
+    {
+      "Key": "2302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Great Club"
+        }
+      ]
+    },
+    {
+      "Key": "2303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Prelate's Inferno Crozier"
+        }
+      ]
+    },
+    {
+      "Key": "2304",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Giant-Crusher/Raider's Greataxe"
+        }
+      ]
+    },
+    {
+      "Key": "2305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Axe of Godfrey"
+        }
+      ]
+    },
+    {
+      "Key": "2306",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Envoy's Greathorn"
+        }
+      ]
+    },
+    {
+      "Key": "2307",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Staff of the Avatar/Rotten Staff"
+        }
+      ]
+    },
+    {
+      "Key": "2308",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Fallingstar Beast Jaw"
+        }
+      ]
+    },
+    {
+      "Key": "2309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Ghiza's Wheel"
+        }
+      ]
+    },
+    {
+      "Key": "2310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon - Golem Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "2350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Colossal Weapon Hero - Raider"
+        }
+      ]
+    },
+    {
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch - Base"
+        }
+      ]
+    },
+    {
+      "Key": "2404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch - St. Trina's Torch"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Shield - Base"
+        }
+      ]
+    },
+    {
+      "Key": "3020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Shield - Coil Shield"
+        }
+      ]
+    },
+    {
+      "Key": "3100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Shield - Base"
+        }
+      ]
+    },
+    {
+      "Key": "3200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield - Base"
+        }
+      ]
+    },
+    {
+      "Key": "3208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield - Erdtree Greatshield"
+        }
+      ]
+    },
+    {
+      "Key": "3215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield - One-Eyed Shield"
+        }
+      ]
+    },
+    {
+      "Key": "3216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield - Visage Shield"
+        }
+      ]
+    },
+    {
+      "Key": "3300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintstone Staff - Base"
+        }
+      ]
+    },
+    {
+      "Key": "3309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintstone Staff - Carian Regal Scepter"
+        }
+      ]
+    },
+    {
+      "Key": "3350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintstone Staff Hero - Recluse"
+        }
+      ]
+    },
+    {
+      "Key": "3400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sacred Seal - Base"
+        }
+      ]
+    },
+    {
+      "Key": "3450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sacred Seal Hero - Recluse"
+        }
+      ]
+    },
+    {
+      "Key": "4100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow - Base"
+        }
+      ]
+    },
+    {
+      "Key": "4150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow Hero - Ironeye"
+        }
+      ]
+    },
+    {
+      "Key": "4200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow - Base"
+        }
+      ]
+    },
+    {
+      "Key": "4201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbow - Lion Greatbow"
+        }
+      ]
+    },
+    {
+      "Key": "4300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crossbow - Base"
+        }
+      ]
+    },
+    {
+      "Key": "4400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ballista - Base"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Base"
+        }
+      ]
+    },
+    {
+      "Key": "5010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Magic"
+        }
+      ]
+    },
+    {
+      "Key": "5011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Fire"
+        }
+      ]
+    },
+    {
+      "Key": "5012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Lightning"
+        }
+      ]
+    },
+    {
+      "Key": "5013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Holy"
+        }
+      ]
+    },
+    {
+      "Key": "5020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Poison"
+        }
+      ]
+    },
+    {
+      "Key": "5021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Scarlet Rot"
+        }
+      ]
+    },
+    {
+      "Key": "5022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Blood Loss"
+        }
+      ]
+    },
+    {
+      "Key": "5023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Frostbite"
+        }
+      ]
+    },
+    {
+      "Key": "5024",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "5027",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Dragonwound"
+        }
+      ]
+    },
+    {
+      "Key": "5028",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Blackflame"
+        }
+      ]
+    },
+    {
+      "Key": "5029",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow - Bloodflame"
+        }
+      ]
+    },
+    {
+      "Key": "5050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye"
+        }
+      ]
+    },
+    {
+      "Key": "5060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Magic"
+        }
+      ]
+    },
+    {
+      "Key": "5061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Fire"
+        }
+      ]
+    },
+    {
+      "Key": "5062",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Lightning"
+        }
+      ]
+    },
+    {
+      "Key": "5063",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Holy"
+        }
+      ]
+    },
+    {
+      "Key": "5070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Poison"
+        }
+      ]
+    },
+    {
+      "Key": "5071",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Scarlet Rot"
+        }
+      ]
+    },
+    {
+      "Key": "5072",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Blood Loss"
+        }
+      ]
+    },
+    {
+      "Key": "5073",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Frostbite"
+        }
+      ]
+    },
+    {
+      "Key": "5074",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "5077",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Dragonwound"
+        }
+      ]
+    },
+    {
+      "Key": "5078",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Blackflame"
+        }
+      ]
+    },
+    {
+      "Key": "5079",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow Hero - Ironeye Bloodflame"
+        }
+      ]
+    },
+    {
+      "Key": "5100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatarrow - Base"
+        }
+      ]
+    },
+    {
+      "Key": "5130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatarrow - Holy"
+        }
+      ]
+    },
+    {
+      "Key": "5200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt - Base"
+        }
+      ]
+    },
+    {
+      "Key": "5231",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt - Magic"
+        }
+      ]
+    },
+    {
+      "Key": "5300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatbolt - Base"
+        }
+      ]
+    },
+    {
+      "Key": "20400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Juvenile Scholar"
+        }
+      ]
+    },
+    {
+      "Key": "20410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Larva of Rot"
+        }
+      ]
+    },
+    {
+      "Key": "21000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Black Knife Assassin"
+        }
+      ]
+    },
+    {
+      "Key": "21300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Fell Omen (Morgott)"
+        }
+      ]
+    },
+    {
+      "Key": "21400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Omen"
+        }
+      ]
+    },
+    {
+      "Key": "21500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Lightning Ball"
+        }
+      ]
+    },
+    {
+      "Key": "22700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Giant Crab"
+        }
+      ]
+    },
+    {
+      "Key": "22710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Small Crab"
+        }
+      ]
+    },
+    {
+      "Key": "25000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Crucible Knight"
+        }
+      ]
+    },
+    {
+      "Key": "30000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Exile Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "30100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Banished Knight"
+        }
+      ]
+    },
+    {
+      "Key": "30200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Large Exile Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "30500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Battlefield Commander"
+        }
+      ]
+    },
+    {
+      "Key": "30600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Giant Skeleton"
+        }
+      ]
+    },
+    {
+      "Key": "30610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Giant Beast Skeleton"
+        }
+      ]
+    },
+    {
+      "Key": "30800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Imp"
+        }
+      ]
+    },
+    {
+      "Key": "31000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Bell Bearing Hunter (Elemer)"
+        }
+      ]
+    },
+    {
+      "Key": "31500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Night's Cavalry"
+        }
+      ]
+    },
+    {
+      "Key": "31600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Night's Cavalry Horse"
+        }
+      ]
+    },
+    {
+      "Key": "31700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Albinauric Archer"
+        }
+      ]
+    },
+    {
+      "Key": "31800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Albinauric Archer's Wolf"
+        }
+      ]
+    },
+    {
+      "Key": "31810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Red Wolf"
+        }
+      ]
+    },
+    {
+      "Key": "32000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Nomad"
+        }
+      ]
+    },
+    {
+      "Key": "32100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Nomad's Mule"
+        }
+      ]
+    },
+    {
+      "Key": "32500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Draconic Tree Sentinel"
+        }
+      ]
+    },
+    {
+      "Key": "32510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Tree Sentinel"
+        }
+      ]
+    },
+    {
+      "Key": "32520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Royal Carian Knight (Loretta)"
+        }
+      ]
+    },
+    {
+      "Key": "37030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Page"
+        }
+      ]
+    },
+    {
+      "Key": "43400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Pumpkin Head"
+        }
+      ]
+    },
+    {
+      "Key": "49600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Giant Skeleton Torso"
+        }
+      ]
     }
   ]
 }

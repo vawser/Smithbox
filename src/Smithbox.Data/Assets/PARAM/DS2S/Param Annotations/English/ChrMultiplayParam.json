@@ -1,0 +1,98 @@
+{
+  "Param": "ChrMultiplayParam",
+  "Type": "CHR_MULTIPLAY_PARAM",
+  "Name": "ChrMultiplayParam",
+  "Description": "Defines parameters used to adjust enemy attributes when in a multiplayer session.",
+  "Fields": [
+    {
+      "Field": "Unk00a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0Ca",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0Cb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1Ca",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1Cb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20b",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

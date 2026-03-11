@@ -1,0 +1,113 @@
+{
+  "Param": "GemCategoryParam",
+  "Type": "GEM_CATEGORY_PARAM_ST",
+  "Name": "GemCategoryParam",
+  "Description": "Blood Gem - Categories",
+  "Fields": [
+    {
+      "Field": "sortNo",
+      "Name": "Sort ID",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate",
+      "Name": "Appearance Rate by Category",
+      "Description": ""
+    },
+    {
+      "Field": "directionalId",
+      "Name": "Directional ID",
+      "Description": ""
+    },
+    {
+      "Field": "cateGroupId",
+      "Name": "Category Group ID",
+      "Description": ""
+    },
+    {
+      "Field": "excludeGroupId",
+      "Name": "Exclusive Group ID",
+      "Description": "Entries with the same ID cannot appear together."
+    },
+    {
+      "Field": "isNegative",
+      "Name": "Is Negative Effect",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeA",
+      "Name": "Enable Slot Type A",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeB",
+      "Name": "Enable Slot Type B",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeC",
+      "Name": "Enable Slot Type C",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeD",
+      "Name": "Enable Slot Type D",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeE",
+      "Name": "Enable Slot Type E",
+      "Description": ""
+    },
+    {
+      "Field": "enableSlotTypeF",
+      "Name": "Enable Slot Type F",
+      "Description": ""
+    },
+    {
+      "Field": "holygrailTypeGroup",
+      "Name": "Holy Grail Type Group ID",
+      "Description": ""
+    },
+    {
+      "Field": "affinityCateId_0",
+      "Name": "Compatibility Category Group ID [0]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityModifyRate_0",
+      "Name": "Compatibility Correction % [0]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityCateId_1",
+      "Name": "Compatibility Category Group ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityModifyRate_1",
+      "Name": "Compatibility Correction % [1]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityCateId_2",
+      "Name": "Compatibility Category Group ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityModifyRate_2",
+      "Name": "Compatibility Correction % [2]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityCateId_3",
+      "Name": "Compatibility Category Group ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "affinityModifyRate_3",
+      "Name": "Compatibility Correction % [3]",
+      "Description": ""
+    }
+  ]
+}

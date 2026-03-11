@@ -1,0 +1,278 @@
+{
+  "Param": "s99_LightBank",
+  "Type": "LIGHT_BANK",
+  "Name": "s99_LightBank",
+  "Description": "Determines the parameters for light maps.",
+  "Fields": [
+    {
+      "Field": "degRotX_0",
+      "Name": "Light 0: Horizontal Angle",
+      "Description": "The horizontal angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "degRotY_0",
+      "Name": "Light 0: Vertical Angle",
+      "Description": "The vertical angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "colR_0",
+      "Name": "Light 0: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_0",
+      "Name": "Light 0: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_0",
+      "Name": "Light 0: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_0",
+      "Name": "Light 0: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "degRotX_1",
+      "Name": "Light 1: Horizontal Angle",
+      "Description": "The horizontal angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "degRotY_1",
+      "Name": "Light 1: Vertical Angle",
+      "Description": "The vertical angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "colR_1",
+      "Name": "Light 1: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_1",
+      "Name": "Light 1: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_1",
+      "Name": "Light 1: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_1",
+      "Name": "Light 1: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "degRotX_2",
+      "Name": "Light 2: Horizontal Angle",
+      "Description": "The horizontal angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "degRotY_2",
+      "Name": "Light 2: Vertical Angle",
+      "Description": "The vertical angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "colR_2",
+      "Name": "Light 2: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_2",
+      "Name": "Light 2: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_2",
+      "Name": "Light 2: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_2",
+      "Name": "Light 2: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colR_u",
+      "Name": "Ambient Lower Hemisphere Light: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_u",
+      "Name": "Ambient Lower Hemisphere Light: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_u",
+      "Name": "Ambient Lower Hemisphere Light: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_u",
+      "Name": "Ambient Lower Hemisphere Light: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colR_d",
+      "Name": "Ambient Upper Hemisphere Light: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_d",
+      "Name": "Ambient Upper Hemisphere Light: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_d",
+      "Name": "Ambient Upper Hemisphere Light: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_d",
+      "Name": "Ambient Upper Hemisphere Light: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colR_du",
+      "Name": "Upper Hemisphere Light: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_du",
+      "Name": "Upper Hemisphere Light: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_du",
+      "Name": "Upper Hemisphere Light: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_du",
+      "Name": "Upper Hemisphere Light: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colR_dd",
+      "Name": "Lower Hemisphere Light: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_dd",
+      "Name": "Lower Hemisphere Light: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_dd",
+      "Name": "Lower Hemisphere Light: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_dd",
+      "Name": "Lower Hemisphere Light: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "degRotX_s",
+      "Name": "Light (Specular): Horizontal Angle",
+      "Description": "The horizontal angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "degRotY_s",
+      "Name": "Light (Specular): Vertical Angle",
+      "Description": "The vertical angle to use for this light source. In degrees."
+    },
+    {
+      "Field": "colR_s",
+      "Name": "Light (Specular): R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colG_s",
+      "Name": "Light (Specular): G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colB_s",
+      "Name": "Light (Specular): B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "colA_s",
+      "Name": "Light (Specular): Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envDif_colR",
+      "Name": "Ambient Light: R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envDif_colG",
+      "Name": "Ambient Light: G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envDif_colB",
+      "Name": "Ambient Light: B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envDif_colA",
+      "Name": "Ambient Light: Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envSpc_colR",
+      "Name": "Ambient Light (Specular): R",
+      "Description": "The red component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envSpc_colG",
+      "Name": "Ambient Light (Specular): G",
+      "Description": "The green component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envSpc_colB",
+      "Name": "Ambient Light (Specular): B",
+      "Description": "The blue component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envSpc_colA",
+      "Name": "Ambient Light (Specular): Alpha",
+      "Description": "The alpha component of the RGBA color used for this light source."
+    },
+    {
+      "Field": "envDif",
+      "Name": "Ambient Light: Diffuse Texture ID",
+      "Description": "The diffuse texture to use for this light source."
+    },
+    {
+      "Field": "envSpc_0",
+      "Name": "Ambient Light: Specular 0 Texture ID",
+      "Description": "The specular texture to use for this light source."
+    },
+    {
+      "Field": "envSpc_1",
+      "Name": "Ambient Light: Specular 1 Texture ID",
+      "Description": "The specular texture to use for this light source."
+    },
+    {
+      "Field": "envSpc_2",
+      "Name": "Ambient Light: Specular 2 Texture ID",
+      "Description": "The specular texture to use for this light source."
+    },
+    {
+      "Field": "envSpc_3",
+      "Name": "Ambient Light: Specular 3 Texture ID",
+      "Description": "The specular texture to use for this light source."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DAMAGE_HIT_POS_TYPE",
-  "Name": "DAMAGE_HIT_POS_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_HIT_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_HIT_POS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Top",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Bottom",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Hit position",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hit position"
+        }
+      ]
     }
   ]
 }

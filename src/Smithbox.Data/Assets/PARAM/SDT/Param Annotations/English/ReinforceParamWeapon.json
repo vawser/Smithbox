@@ -1,0 +1,188 @@
+{
+  "Param": "ReinforceParamWeapon",
+  "Type": "REINFORCE_PARAM_WEAPON_ST",
+  "Name": "ReinforceParamWeapon",
+  "Description": "Weapon upgrade formulas, not used in Sekiro",
+  "Fields": [
+    {
+      "Field": "physicsAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fireAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "thunderAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "staminaAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saWeaponAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saDurabilityRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctStrengthRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctAgilityRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctMagicRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctFaithRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "physicsGuardCutRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicGuardCutRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "thunderGuardCutRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poisonGuardResistRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diseaseGuardResistRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloodGuardResistRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "curseGuardResistRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "staminaGuardDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxReinforceLevel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "correctLuckRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "freezeGuardDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reinforcePriceRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseChangePriceRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "passiveStaminaAtkRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "ChrEditParamBodyScale",
+  "Type": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Name": "ChrEditParamBodyScale",
+  "Description": "Defines parameters relating to the character creation body types.",
+  "Fields": [
+    {
+      "Field": "edit_head",
+      "Name": "Head",
+      "Description": ""
+    },
+    {
+      "Field": "edit_torso",
+      "Name": "Torso",
+      "Description": ""
+    },
+    {
+      "Field": "edit_waist",
+      "Name": "Waist",
+      "Description": ""
+    },
+    {
+      "Field": "edit_arms",
+      "Name": "Arms",
+      "Description": ""
+    },
+    {
+      "Field": "edit_legs",
+      "Name": "Legs",
+      "Description": ""
+    }
+  ]
+}

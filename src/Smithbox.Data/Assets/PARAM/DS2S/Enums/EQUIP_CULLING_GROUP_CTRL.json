@@ -1,27 +1,47 @@
 {
-  "DisplayName": "EQUIP_CULLING_GROUP_CTRL",
-  "Name": "EQUIP_CULLING_GROUP_CTRL",
-  "Description": "",
+  "Key": "EQUIP_CULLING_GROUP_CTRL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CULLING_GROUP_CTRL"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "━",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "━"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "OFF",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OFF"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "ON",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ON"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Number of culling types",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of culling types"
+        }
+      ]
     }
   ]
 }

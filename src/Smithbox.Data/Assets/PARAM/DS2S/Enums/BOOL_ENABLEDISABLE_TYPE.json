@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BOOL_ENABLEDISABLE_TYPE",
-  "Name": "BOOL_ENABLEDISABLE_TYPE",
-  "Description": "",
+  "Key": "BOOL_ENABLEDISABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_ENABLEDISABLE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Disable",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disable"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Enable",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enable"
+        }
+      ]
     }
   ]
 }

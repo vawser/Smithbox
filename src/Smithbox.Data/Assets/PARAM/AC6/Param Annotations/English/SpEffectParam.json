@@ -1,0 +1,1738 @@
+{
+  "Param": "SpEffectParam",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SpEffectParam",
+  "Description": "Determines the parameters for special effects.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param - Product",
+      "Description": "Parameters marked with  are excluded in the Product version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The icon id to display in the interface whilst the effect is active."
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "Trigger at HP Below %",
+      "Description": "The maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40% HP, 80 = less than 80% HP"
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "Duration",
+      "Description": "The duration of effect. In seconds."
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "Trigger Interval",
+      "Description": "The interval for the contents of this effect to be reapplied. 0 = once per frame. In seconds."
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "Maximum HP %",
+      "Description": "Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%, 2 = \u002B100%"
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "Maximum MP %",
+      "Description": "Multiplies maximum MP."
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "Maximum Stamina %",
+      "Description": "Multiplies maximum stamina."
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "Absorption %: Slash",
+      "Description": "Multiplies slash physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "Absorption %: Strike",
+      "Description": "Multiplies strike physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "Absorption %: Thrust",
+      "Description": "Multiplies thrust physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "Absorption %: Kinetic",
+      "Description": "Multiplies Kinetic damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "Absorption %: Energy",
+      "Description": "Multiplies Energy damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "Absorption %: Explosive",
+      "Description": "Multiplies Explosive damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "Absorption %: Coral",
+      "Description": "Multiplies Coral damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "Post-Defense Attack %: Kinetic",
+      "Description": "Multiplies Kinetic damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "Post-Defense Attack %: Energy",
+      "Description": "Multiplies Energy damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "Post-Defense Attack %: Explosive",
+      "Description": "Multiplies Explosive damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "thunderAttackRate",
+      "Name": "Post-Defense Attack %: Coral",
+      "Description": "Multiplies Coral damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "Attack %: Kinetic",
+      "Description": "Multiplies Kinetic damage dealt."
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "Attack %: Energy",
+      "Description": "Multiplies Energy damage dealt."
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "Attack %: Explosive",
+      "Description": "Multiplies Explosive damage dealt."
+    },
+    {
+      "Field": "thunderAttackPowerRate",
+      "Name": "Attack %: Coral",
+      "Description": "Multiplies Coral damage dealt."
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "Damage: Kinetic",
+      "Description": "Adds Kinetic damage to attack rating."
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "Damage: Energy",
+      "Description": "Adds Energy damage to attack rating."
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "Damage: Explosive",
+      "Description": "Adds Explosive damage to attack rating."
+    },
+    {
+      "Field": "thunderAttackPower",
+      "Name": "Damage: Coral",
+      "Description": "Adds Coral damage to attack rating."
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "Defense %: Kinetic",
+      "Description": "Multiplies Kinetic defense."
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "Defense %: Energy",
+      "Description": "Multiplies Energy defense."
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "Defense %: Explosive",
+      "Description": "Multiplies Explosive defense."
+    },
+    {
+      "Field": "thunderDiffenceRate",
+      "Name": "Defense %: Coral",
+      "Description": "Multiplies Coral defense."
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "Defense: Kinetic",
+      "Description": "Adds to Kinetic defense."
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "Defense: Energy",
+      "Description": "Adds to Energy defense."
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "Defense: Explosive",
+      "Description": "Adds to Explosive defense."
+    },
+    {
+      "Field": "thunderDiffence",
+      "Name": "Defense: Coral",
+      "Description": "Adds to Coral defense."
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "Damage on Hit %: Unguarded",
+      "Description": "Multiplier to the damage suffered by the target if it is not guarding when hit."
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "Damage on Hit %: Weak Point",
+      "Description": "Multiplier to the damage suffered by the target if it is hit in a part designated as a \u0027weak point\u0027."
+    },
+    {
+      "Field": "normalSpotChangeRate",
+      "Name": "Damage on Hit %: Standard",
+      "Description": "Multiplier to the damage suffered by the target if it is hit normally."
+    },
+    {
+      "Field": "maxHpChangeRate",
+      "Name": "Maximum HP Source Multiplier",
+      "Description": "Multiplier to the maxHpRate values present on the character this effect belongs to."
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "The ID of BehaviorParam or BehaviorParam_PC to apply to the effect\u0027s owner.\nRequires stateInfo 142 to function for non-player characters.\nRequires stateInfo 171 to function for player characters."
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "Damage HP by Percentage",
+      "Description": "Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum HP of the character."
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "Damage HP by Point",
+      "Description": "Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "Damage MP by Percentage",
+      "Description": "Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character."
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "Damage MP by Point",
+      "Description": "Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "MP Recovery Speed",
+      "Description": "The amount of MP recovered per second."
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "Damage Stamina by Percentage",
+      "Description": "Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character."
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "Damage Stamina by Point",
+      "Description": "Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "Stamina Recovery Speed",
+      "Description": "The amount of stamina recovered per second."
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "Magic Effect Duration Change",
+      "Description": "For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration.\n\nLingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife."
+    },
+    {
+      "Field": "insideDurability",
+      "Name": "Damage Durability by Point",
+      "Description": "Causes Durability loss to the used equipment of the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "maxDurability",
+      "Name": "Hits per Durability Loss",
+      "Description": "Affects hits required before durability is consumed. 5 = \u002B5 hits before durability consumed, -5 = -5 hits before durability consumed"
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "Attack %: Stamina",
+      "Description": "Multiplies stamina damage dealt."
+    },
+    {
+      "Field": "burnAttackPower",
+      "Name": "Inflict: Burn",
+      "Description": "Also known as ACS Anomaly. Adds to the amount of Burn status effect inflicted."
+    },
+    {
+      "Field": "registStun",
+      "Name": "Inflict: Stun",
+      "Description": "Also known as Electric Discharge. Adds to the amount of Stun status effect inflicted."
+    },
+    {
+      "Field": "registHighPlasma",
+      "Name": "Inflict: Plasma",
+      "Description": "Adds to the amount of Plasma status effect inflicted."
+    },
+    {
+      "Field": "registCurse",
+      "Name": "Inflict: Curse",
+      "Description": "Adds to the amount of Curse status effect inflicted."
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "Fall Damage %",
+      "Description": "Does nothing. Fall control effects use stateInfo 47"
+    },
+    {
+      "Field": "soulRate",
+      "Name": "Mission Score %",
+      "Description": "Multiplies score received from enemies during missions."
+    },
+    {
+      "Field": "equipWeightChangeRate",
+      "Name": "Equipment Weight %",
+      "Description": "Multiplies maximum equip weight."
+    },
+    {
+      "Field": "allItemWeightChangeRate",
+      "Name": "Item Weight %",
+      "Description": "Multiplies maximum item weight. Does nothing. Probable DeS remnant."
+    },
+    {
+      "Field": "soul",
+      "Name": "Mission Score",
+      "Description": "Flat increase/decrease to mission score."
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "Animation ID Offset",
+      "Description": "Offsets animation IDs. Frequently used to make enemies swap movesets."
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "Mission Score Possession %",
+      "Description": "Multiplies the amount of score granted after death. Requires base value in character\u0027s NpcParam row."
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "Target Priority Addition",
+      "Description": "Chance for an enemy to switch aggro targets to/away the effect\u0027s owner. Values range from -1 to 1. \u002B1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)."
+    },
+    {
+      "Field": "sightRangeMag_forEnemy",
+      "Name": "Visual Search Magnification % - For Enemy",
+      "Description": "The value to magnify the effect owner\u0027s target\u0027s visual range by."
+    },
+    {
+      "Field": "sightRangeMag_forEnemyBattle",
+      "Name": "Visual Search Magnification % - For Enemy in Combat",
+      "Description": "The value to magnify the effect owner\u0027s target\u0027s visual range by, when in combat."
+    },
+    {
+      "Field": "hearingSearchEnemyRate",
+      "Name": "Auditory Search Magnification %",
+      "Description": "The value to magnify the effect owner\u0027s target\u0027s hearing range by."
+    },
+    {
+      "Field": "setCurseResistPoint",
+      "Name": "Set Curse Resistance",
+      "Description": "The effect owner\u0027s Curse resistance is set to this value."
+    },
+    {
+      "Field": "registBurnChangeRate",
+      "Name": "Resistance %: Burn",
+      "Description": "Multiplies stat based Burn resistance."
+    },
+    {
+      "Field": "registStunChangeRate",
+      "Name": "Resistance %: Stun",
+      "Description": "Multiplies stat based Stun resistance."
+    },
+    {
+      "Field": "registHighPlasmaChangeRate",
+      "Name": "Resistance %: Plasma",
+      "Description": "Multiplies stat based Plasma resistance."
+    },
+    {
+      "Field": "registCurseChangeRate",
+      "Name": "Resistance %: Curse",
+      "Description": "Multiplies stat based Curse resistance."
+    },
+    {
+      "Field": "soulStealRate",
+      "Name": "Soul Steal %",
+      "Description": "The defense power against HP loss when soul steal move is used."
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "Effect Duration Change %",
+      "Description": "Multiplies the duration of the status effect with the stateInfo specified by lifeReductionType."
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "HP Recovery %",
+      "Description": "Multiplies healing received."
+    },
+    {
+      "Field": "replaceSpEffectId",
+      "Name": "Expire SpEffect ID",
+      "Description": "The ID of spEffectParam to add once this effect ends."
+    },
+    {
+      "Field": "cycleOccurrenceSpEffectId",
+      "Name": "Cycle SpEffect ID",
+      "Description": "The ID of spEffectParam to add once every motionInterval."
+    },
+    {
+      "Field": "atkOccurrenceSpEffectId",
+      "Name": "Attack SpEffect ID",
+      "Description": "ID of spEffectParam to add to victim when the owner hits an enemy.\nRequires stateInfo 152 or 153 (and likely other values used for weapon buffs) to work (VFX present)"
+    },
+    {
+      "Field": "guardDefFlickPowerRate",
+      "Name": "Guard Defense Repulsion %",
+      "Description": "The multiplier to apply to guard defense (for deflection)."
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "Guard Stability %",
+      "Description": "Multiplies shield stability. Requires stateInfo 158 (magic shield) or stateInfo 204 (great magic shield) to work (VFX present). Note that stability values over 100 nullify all stamina damage."
+    },
+    {
+      "Field": "rayCastPassedTime",
+      "Name": "Raycast Passed Time",
+      "Description": "Activation time for passing the line of sight (used for the Evil Eye). In milliseconds."
+    },
+    {
+      "Field": "changeSuperArmorPoint",
+      "Name": "Poise",
+      "Description": "Flat increase/decrease to poise. Requires stateInfo 155 to work."
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "Ammunition Distance %",
+      "Description": "Addition to the bowDistRate field of the held weapon for the effect\u0027s owner."
+    },
+    {
+      "Field": "spCategory",
+      "Name": "SpEffect Category",
+      "Description": "Determines special effect stacking behavior; how effects will react when another effect in the same category is added."
+    },
+    {
+      "Field": "categoryPriority",
+      "Name": "Category Priority",
+      "Description": "Used with specific spCategory values to determine stacking behavior. The higher the value, the lower the priority."
+    },
+    {
+      "Field": "saveCategory",
+      "Name": "Save Category",
+      "Description": "Used to save effects so that they remain after quitting and loading the game. Only one effect per saveCategory is saved."
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "Attunement Slots (Magic)",
+      "Description": "Increases attunement slots."
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "Attunement Slots (Miracle)",
+      "Description": "Increases attunement slots."
+    },
+    {
+      "Field": "heroPointDamage",
+      "Name": "Damage: Humanity",
+      "Description": "Flat increase/decrease to humanity stat. -1 = add 1 humanity, 1 = remove 1 humanity"
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Repulsion Defense",
+      "Description": "Modifies the repulsion defense for the effect owner\u0027s current weapon."
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Repulsion Damage Absorption %",
+      "Description": "The absorption rate to use when calculating the repulsion damage for the effect owner\u0027s current weapon."
+    },
+    {
+      "Field": "highPlasmaDamageRate",
+      "Name": "Plasma Damage Incurred %",
+      "Description": "Multiplier to the damage portion of the Plasma status effect when it is triggered on the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_None",
+      "Name": "Damage Level: No Impact",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_S",
+      "Name": "Damage Level: Small Impact",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_M",
+      "Name": "Damage Level: Medium Impact",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_L",
+      "Name": "Damage Level: Large Impact",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_BlowM",
+      "Name": "Damage Level: Medium Blow",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_Push",
+      "Name": "Damage Level: Push",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_Strike",
+      "Name": "Damage Level: Strike",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_BlowS",
+      "Name": "Damage Level: Small Blow",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_Min",
+      "Name": "Damage Level: Minimal",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_Uppercut",
+      "Name": "Damage Level: Uppercut",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_BlowLL",
+      "Name": "Damage Level: Blow Backwards",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "dmgLv_Breath",
+      "Name": "Damage Level: Breath",
+      "Description": "The damage animation to use for this damage level if it is applied to the effect\u0027s owner."
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Attack attribute to use when applying attack against the victim for attacks from this effect\u0027s owner."
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Special attributes to use when applying attack against the victim for attacks from this effect\u0027s owner."
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "State Info",
+      "Description": "ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "Weapon Influence Type",
+      "Description": "Determines how specific fields, such as damage modifiers, behave with certain attack categories"
+    },
+    {
+      "Field": "moveType",
+      "Name": "Movement Type",
+      "Description": "Offsets character movement animations."
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "Effect Duration Change Type",
+      "Description": "Determines the type of status effect to modify the duration of. SpEffects with the specified stateInfo will be affected."
+    },
+    {
+      "Field": "throwCondition",
+      "Name": "Throw Condition",
+      "Description": "Affects the throwing masks."
+    },
+    {
+      "Field": "addBehaviorJudgeId_condition",
+      "Name": "Behavior ID: Condition",
+      "Description": "A condition value for the BehaviorJudgeId value used by the current owner."
+    },
+    {
+      "Field": "addBehaviorJudgeId_add",
+      "Name": "Behavior ID: Add",
+      "Description": "A value for the BehaviorJudgeId value used by the current owner."
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "Apply to Self",
+      "Description": "Will affect the effect\u0027s owner."
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "Apply to Friend",
+      "Description": "Will affect the effect\u0027s owner\u0027s allies."
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "Apply to Enemy",
+      "Description": "Will affect the effect\u0027s owner\u0027s enemies."
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "Apply to Player",
+      "Description": "Will affect the player."
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "Apply to Non-Player",
+      "Description": "Will affect non-player characters."
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "Apply to Host",
+      "Description": "Will affect host player in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "Apply to Phantom",
+      "Description": "Will affect all types of client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetWhiteGhost",
+      "Name": "Apply to Friendly Phantom",
+      "Description": "Will affect friendly client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetBlackGhost",
+      "Name": "Apply to Hostile Phantom",
+      "Description": "Will affect hostile client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "Apply to Attacker",
+      "Description": "When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner"
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "Display Icon when Inactive",
+      "Description": "If ON, the interface icon for the effect will still disabled even if the effect is inactive due to a failed conditional check."
+    },
+    {
+      "Field": "useSpEffectEffect",
+      "Name": "Trigger Particles via SpEffect",
+      "Description": "If ON, visual effects via SpEffectVfxParam will be used. See stateInfo for the ID of SpEffectVfxParam to be used."
+    },
+    {
+      "Field": "bAdjustMagicAblity",
+      "Name": "Apply Intelligence Correction",
+      "Description": "If ON, the intelligence stat will be used to correct various fields, such as damage."
+    },
+    {
+      "Field": "bAdjustFaithAblity",
+      "Name": "Apply Faith Correction",
+      "Description": "If ON, the faith stat will be used to correct various fields, such as damage."
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "Apply Modifiers only after Game Clear",
+      "Description": "If ON, this effect will only be active in NG\u002B or higher."
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "Apply Modifiers to Sorcery",
+      "Description": "If ON, damage and scaling fields will apply to sorcery and pyromancies."
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "Apply Modifiers to Miracles",
+      "Description": "If ON, damage and scaling fields will apply to miracles."
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "Clear Mission Score",
+      "Description": "Sets mission score to 0."
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "Request: Friendly Phantom",
+      "Description": "Used only by White Sign Soapstone. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "Request: Hostile Phantom",
+      "Description": "Used only by Red Sign Soapstone. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "Request: Invader",
+      "Description": "Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "Request: Kick Phantom",
+      "Description": "Possibly kicks all clients out of your world."
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "Request: Leave",
+      "Description": "Used only by Black Separation Crystal. Probably used to leave network sessions."
+    },
+    {
+      "Field": "requestNpcInveda",
+      "Name": "Request: Character Invader",
+      "Description": "Used only by Black Eye Orb (Lautrec quest and cut Shiva quest)."
+    },
+    {
+      "Field": "noDead",
+      "Name": "Is Owner Undying",
+      "Description": "If ON, character cannot become a corpse (and thus die)."
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "Ignore Current HP on Max HP Change",
+      "Description": "Determines how current HP behaves when maximum HP is modified. true = current HP will not change, false = current HP will change with max HP"
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "Disable Durability",
+      "Description": "If ON, disables durability damage to the effect owner\u0027s weapons and armor."
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "Ignore Visual Search Adjustments",
+      "Description": "If ON, visual search adjustments from sightSearchEnemyCut are ignored by the effect owner."
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "Ignore Auditory Search Adjustments",
+      "Description": "If ON, auditory search adjustments from hearingSearchEnemyCut are ignored by the effect owner."
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "Ignore Magic Block",
+      "Description": "If ON, magic blocking effects are ignored by the effect owner (Vow of Silence)."
+    },
+    {
+      "Field": "fakeTargetIgnore",
+      "Name": "Ignore Decoy Target",
+      "Description": "If ON, the effect owner will ignore fake targets (Aural Decoy projectiles)."
+    },
+    {
+      "Field": "fakeTargetIgnoreUndead",
+      "Name": "Ignore Decoy Target (Undead)",
+      "Description": "If ON, the effect owner will ignore fake undead targets (Alluring Skull projectiles)."
+    },
+    {
+      "Field": "fakeTargetIgnoreAnimal",
+      "Name": "Ignore Decoy Target (Animal)",
+      "Description": "If ON, the effect owner will ignore fake animal targets."
+    },
+    {
+      "Field": "disableDepletedUraniumToxic",
+      "Name": "Is Immune to Uranium",
+      "Description": "If ON, effect owner becomes immune to Uranium."
+    },
+    {
+      "Field": "disableBurn",
+      "Name": "Is Immune to Burn",
+      "Description": "If ON, effect owner becomes immune to Burn."
+    },
+    {
+      "Field": "disableStun",
+      "Name": "Is Immune to Stun",
+      "Description": "If ON, effect owner becomes immune to Stun."
+    },
+    {
+      "Field": "disableHighPlasma",
+      "Name": "Is Immune to Plasma",
+      "Description": "If ON, effect owner becomes immune to Plasma."
+    },
+    {
+      "Field": "disableCurse",
+      "Name": "Is Immune to Curse",
+      "Description": "If ON, effect owner becomes immune to curse."
+    },
+    {
+      "Field": "stopCurse",
+      "Name": "Stop Curse",
+      "Description": "If ON, effect owner curse status will not increase or decrease."
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "Enable Duration via TimeAct Event",
+      "Description": "If ON, the effect duration can be extended by a TimeAct event.."
+    },
+    {
+      "Field": "hasTarget",
+      "Name": "Enable Target Activation",
+      "Description": "If ON, enable the activation conditions for the Evil Eye."
+    },
+    {
+      "Field": "isFireDamageCancel",
+      "Name": "Cancel Effect on Explosive Damage",
+      "Description": "If ON, this effect will be cancelled early if Explosive damage is applied to the effect owner."
+    },
+    {
+      "Field": "isExtendSpEffectLife",
+      "Name": "Is Affected by Spell Duration Extension",
+      "Description": "Determines if effectEndurance will be affected by stateInfo 193 which is used by the Lingering Dragoncrest Ring."
+    },
+    {
+      "Field": "isDisableNetSync",
+      "Name": "Do not Sync in Multiplayer",
+      "Description": "Do not synchronize with the net. It does not mean that you will be able to call it locally, but simply do not send it online. For example, a remote character does not activate locally, so nothing happens in that case."
+    },
+    {
+      "Field": "bAdjustStrengthAblity",
+      "Name": "Use Strength Correction",
+      "Description": "Do you want to correct your strength?"
+    },
+    {
+      "Field": "bAdjustAgilityAblity",
+      "Name": "Use Dexterity Correction",
+      "Description": "Do you want to correct your workmanship?"
+    },
+    {
+      "Field": "chargeAttackParamChange",
+      "Name": "Apply to Charged Attacks",
+      "Description": "If ON, this effect is applied to charged attacks."
+    },
+    {
+      "Field": "throwAttackParamChange",
+      "Name": "Apply to Throws",
+      "Description": "If ON, this effect is applied to throws."
+    },
+    {
+      "Field": "vowType0",
+      "Name": "Trigger: None",
+      "Description": "Effect usable while in no covenant."
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Trigger: 1",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Trigger: 2",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Trigger: 3",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Trigger: 4",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Trigger: 5",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Trigger: 6",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Trigger: 7",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType8",
+      "Name": "Trigger: 8",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType9",
+      "Name": "Trigger: 9",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType10",
+      "Name": "Trigger: 10",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType11",
+      "Name": "Trigger: 11",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType12",
+      "Name": "Trigger: 12",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType13",
+      "Name": "Trigger: 13",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType14",
+      "Name": "Trigger: 14",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "vowType15",
+      "Name": "Trigger: 15",
+      "Description": "Effect usable while in ? covenant."
+    },
+    {
+      "Field": "repAtkDmgLv",
+      "Name": "Attacker Damage Level",
+      "Description": "The damage level of the attacking side changes to this value."
+    },
+    {
+      "Field": "sightRangeMag_forMe",
+      "Name": "Visual Search Magnification %",
+      "Description": "The value to magnify the effect owner\u0027s visual range by."
+    },
+    {
+      "Field": "sightRangeMag_forMeBattle",
+      "Name": "Visual Search Magnification % - In Combat",
+      "Description": "The value to magnify the effect owner\u0027s visual range by, when in combat."
+    },
+    {
+      "Field": "effectTargetOpposeTarget",
+      "Name": "Trigger for Hostile Target",
+      "Description": "If ON, this effect will trigger if the current target is considered hostile."
+    },
+    {
+      "Field": "effectTargetFriendlyTarget",
+      "Name": "Trigger for Friendly Target",
+      "Description": "If ON, this effect will trigger if the current target is considered friendly."
+    },
+    {
+      "Field": "effectTargetSelfTarget",
+      "Name": "Trigger for Self Target",
+      "Description": "If ON, this effect will trigger if the current target is considered ourselves."
+    },
+    {
+      "Field": "changeTeamType",
+      "Name": "Team Type",
+      "Description": "Replaces the effect owner\u0027s current team type with the specified type. Requires State Info 132 to apply."
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "Dummy Polgon ID",
+      "Description": "The dummy polygon ID to use for this effect."
+    },
+    {
+      "Field": "vfxId",
+      "Name": "VFX ID: 0",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "accumuOverFireId",
+      "Name": "Accumulator: SpEffect applied at Upper Limit",
+      "Description": "The SpEffect ID to apply when the accumulator reaches the upper limit value."
+    },
+    {
+      "Field": "accumuOverVal",
+      "Name": "Accumulator: Upper Limit Value",
+      "Description": "The upper limit value to use for this accumulator."
+    },
+    {
+      "Field": "accumuUnderFireId",
+      "Name": "Accumulator: SpEffect applied at Lower Limit",
+      "Description": "The SpEffect ID to apply when the accumulator reaches the lower limit value."
+    },
+    {
+      "Field": "accumuUnderVal",
+      "Name": "Accumulator: Lower Limit Value",
+      "Description": "The lower limit value to use for this accumulator."
+    },
+    {
+      "Field": "accumuVal",
+      "Name": "Accumulator: Increment Value",
+      "Description": "The value to increment this accumulator by for each interval of this effect."
+    },
+    {
+      "Field": "hearingSearchEnemyCut",
+      "Name": "Auditory Search Reduction %",
+      "Description": "The value to reduce the distance at which enemies hear the effect\u0027s owner.\n0 = default, 50 = -50% hearing distance, 100 = -100% hearing distance"
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "Visual Search: Height Angle Override",
+      "Description": "Override the height angle used for the visual search cone. Requires State Info 267"
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "Visual Search: Width Angle Override",
+      "Description": "Override the width angle used for the visual search cone. Requires State Info 267"
+    },
+    {
+      "Field": "addDeceasedLv",
+      "Name": "Add Hollowing Level",
+      "Description": "Add this value to the degree of death"
+    },
+    {
+      "Field": "vfxId1",
+      "Name": "VFX ID: 1",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId2",
+      "Name": "VFX ID: 2",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId3",
+      "Name": "VFX ID: 3",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId4",
+      "Name": "VFX ID: 4",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId5",
+      "Name": "VFX ID: 5",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId6",
+      "Name": "VFX ID: 6",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "vfxId7",
+      "Name": "VFX ID: 7",
+      "Description": "The VFX row to use when this effect is present."
+    },
+    {
+      "Field": "registDepletedUraniumToxic",
+      "Name": "Inflict: Uranium",
+      "Description": "Also known as Depleted Uranium. Adds to the amount of Uranium status effect inflicted."
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "Invoked AI Sound ID",
+      "Description": "Invoke a AI sound instance when this effect is applied."
+    },
+    {
+      "Field": "addFootEffectSfxId",
+      "Name": "Automatic Foot Effect: Particle ID Offset",
+      "Description": "The identifier of the foot SFX that is additionally generated during special effects. XYYZZZ ZZZ"
+    },
+    {
+      "Field": "repDefDmgLv",
+      "Name": "Defender Damage Level",
+      "Description": "The damage level of the defending side changes to this value."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "Absorption %: Toughness",
+      "Description": "The absorption value to apply to toughness impacts."
+    },
+    {
+      "Field": "weakDmgRateA",
+      "Name": "Damage Multiplier %: Type A",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type A."
+    },
+    {
+      "Field": "weakDmgRateB",
+      "Name": "Damage Multiplier %: Type B",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type B."
+    },
+    {
+      "Field": "weakDmgRateC",
+      "Name": "Damage Multiplier %: Type C",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type C."
+    },
+    {
+      "Field": "weakDmgRateD",
+      "Name": "Damage Multiplier %: Type D",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type D."
+    },
+    {
+      "Field": "weakDmgRateE",
+      "Name": "Damage Multiplier %: Type E",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type E."
+    },
+    {
+      "Field": "weakDmgRateF",
+      "Name": "Damage Multiplier %: Type F",
+      "Description": "The multiplier applied to damage that is against NPCs tagged as Type F."
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "Absorption %: Dark",
+      "Description": "Multiplies Dark physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "darkDiffenceRate",
+      "Name": "Defense %: Dark",
+      "Description": "Multiplies Dark defense."
+    },
+    {
+      "Field": "darkDiffence",
+      "Name": "Defense: Dark",
+      "Description": "Adds to Dark defense."
+    },
+    {
+      "Field": "darkAttackRate",
+      "Name": "Post-Defense Attack %: Dark",
+      "Description": "Multiplies Dark damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "darkAttackPowerRate",
+      "Name": "Attack %: Dark",
+      "Description": "Multiplies Dark damage dealt."
+    },
+    {
+      "Field": "darkAttackPower",
+      "Name": "Damage: Dark",
+      "Description": "Adds Dark damage to attack rating."
+    },
+    {
+      "Field": "antiDarkSightRadius",
+      "Name": "Full Sight in Darkness: Radius",
+      "Description": "The radius (in metres) when within darkness where the effect owner can see fully."
+    },
+    {
+      "Field": "antiDarkSightDmypolyId",
+      "Name": "Full Sight in Darkness: Dummy Polygon ID",
+      "Description": "The dummy polygon from which the full sight in darkness radius is derived from."
+    },
+    {
+      "Field": "conditionHpRate",
+      "Name": "Trigger if HP is Above %",
+      "Description": "This effect only triggers if the effect owner\u0027s HP is above this specified value."
+    },
+    {
+      "Field": "consumeStaminaRate",
+      "Name": "Stamina Consumption %",
+      "Description": "Using the behavior parameters of the current weapon, multiply the stamina consumption values by this value."
+    },
+    {
+      "Field": "itemDropRate",
+      "Name": "Item Discovery %",
+      "Description": "The value to apply to the item discovery stat. Requires State Info 66 to apply."
+    },
+    {
+      "Field": "hearingSearchRate",
+      "Name": "Auditory Search Correction %",
+      "Description": "Corrects the audibility of AI sound by magnification."
+    },
+    {
+      "Field": "changeBurnResistPoint",
+      "Name": "Status Resistance: Burn",
+      "Description": "Adjust the Burn status resistance for the effect owner."
+    },
+    {
+      "Field": "changeStunResistPoint",
+      "Name": "Status Resistance: Stun",
+      "Description": "Adjust the Stun status resistance for the effect owner."
+    },
+    {
+      "Field": "changeHighPlasmaResistPoint",
+      "Name": "Status Resistance: Plasma",
+      "Description": "Adjust the Plasma status resistance for the effect owner."
+    },
+    {
+      "Field": "changeCurseResistPoint",
+      "Name": "Status Resistance: Curse",
+      "Description": "Adjust the Curse status resistance for the effect owner."
+    },
+    {
+      "Field": "changeDepletedUraniumToxicResistPoint",
+      "Name": "Status Resistance: Uranium",
+      "Description": "Adjust the Uranium status resistance for the effect owner."
+    },
+    {
+      "Field": "slashAttackRate",
+      "Name": "Attacker - Post-Defense Attack %: Slash",
+      "Description": "The multiplier to apply to Slash damage  applied to the effect owner from an attacker (post-defense, bypasses attack rating)."
+    },
+    {
+      "Field": "blowAttackRate",
+      "Name": "Attacker - Post-Defense Attack %: Strike",
+      "Description": "The multiplier to apply to Strike damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)."
+    },
+    {
+      "Field": "thrustAttackRate",
+      "Name": "Attacker - Post-Defense Attack %: Thrust",
+      "Description": "The multiplier to apply to Strike damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)."
+    },
+    {
+      "Field": "neutralAttackRate",
+      "Name": "Attacker - Post-Defense Attack %: Neutral",
+      "Description": "The multiplier to apply to Neutral damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)."
+    },
+    {
+      "Field": "slashAttackPowerRate",
+      "Name": "Attacker - Attack %: Slash",
+      "Description": "The multiplier to apply to Slash damage applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "blowAttackPowerRate",
+      "Name": "Attacker - Attack %: Strike",
+      "Description": "The multiplier to apply to Strike damage applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "thrustAttackPowerRate",
+      "Name": "Attacker - Attack %: Thrust",
+      "Description": "The multiplier to apply to Thrust damage applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "neutralAttackPowerRate",
+      "Name": "Attacker - Attack %: Neutral",
+      "Description": "The multiplier to apply to Neutral damage applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "slashAttackPower",
+      "Name": "Attacker - Damage: Slash",
+      "Description": "The damage value (typed as Slash) applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "blowAttackPower",
+      "Name": "Attacker - Damage: Strike",
+      "Description": "The damage value (typed as Strike) applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "thrustAttackPower",
+      "Name": "Attacker - Damage: Thrust",
+      "Description": "The damage value (typed as Thrust) applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "neutralAttackPower",
+      "Name": "Attacker - Damage: Neutral",
+      "Description": "The damage value (typed as Neutral) applied to the effect owner from an attacker."
+    },
+    {
+      "Field": "changeStrengthPoint",
+      "Name": "Correction: STR",
+      "Description": "The correction value to apply to the STR stat."
+    },
+    {
+      "Field": "changeAgilityPoint",
+      "Name": "Correction: DEX",
+      "Description": "The correction value to apply to the DEX stat."
+    },
+    {
+      "Field": "changeMagicPoint",
+      "Name": "Correction: INT",
+      "Description": "The correction value to apply to the INT stat."
+    },
+    {
+      "Field": "changeFaithPoint",
+      "Name": "Correction: FTH",
+      "Description": "The correction value to apply to the FTH stat."
+    },
+    {
+      "Field": "changeLuckPoint",
+      "Name": "Correction: LCK",
+      "Description": "The correction value to apply to the LCK stat."
+    },
+    {
+      "Field": "recoverArtsPoint_Str",
+      "Name": "Skill Recovery: STR",
+      "Description": "The amount of skill recovered based on the STR stat."
+    },
+    {
+      "Field": "recoverArtsPoint_Dex",
+      "Name": "Skill Recovery: DEX",
+      "Description": "The amount of skill recovered based on the DEX stat."
+    },
+    {
+      "Field": "recoverArtsPoint_Magic",
+      "Name": "Skill Recovery: INT",
+      "Description": "The amount of skill recovered based on the INT stat."
+    },
+    {
+      "Field": "recoverArtsPoint_Miracle",
+      "Name": "Skill Recovery: FTH",
+      "Description": "The amount of skill recovered based on the FTH stat."
+    },
+    {
+      "Field": "wetConditionType",
+      "Name": "Wet Condition Type",
+      "Description": "The type of wetness to apply when this effect is present."
+    },
+    {
+      "Field": "unk26d_0",
+      "Name": "Unknown: 0x26_0",
+      "Description": ""
+    },
+    {
+      "Field": "isUseStatusAilmentAtkPowerCorrect",
+      "Name": "Use Status Correction from Current Weapon",
+      "Description": "If ON, the status attack power multiplier correction of the attack parameter of the current weapon is applied."
+    },
+    {
+      "Field": "isUseAtkParamAtkPowerCorrect",
+      "Name": "Apply Attack Power Correction from Current Weapon",
+      "Description": "If ON, the attack power multiplier correction of the attack parameter of the current weapon is applied."
+    },
+    {
+      "Field": "dontDeleteOnDead",
+      "Name": "Persist through Death",
+      "Description": "If ON, this effect will not be deleted even if the effect owner dies. Mainly used for death effects."
+    },
+    {
+      "Field": "isWaitModeDelete",
+      "Name": "Delete in Wait Mode",
+      "Description": "If ON, this effect is deleted when in Wait mode. Wait mode is a state where the activation status change type or activation HP is met and the state is waiting to be activated. On the other hand, Sleep mode is a state where the priority is lowered due to the overwrite category, etc."
+    },
+    {
+      "Field": "isForgotTarget",
+      "Name": "Forget Target List",
+      "Description": "If ON, the effect owner\u0027s target list will be cleared constantly."
+    },
+    {
+      "Field": "isNoDeadEventBody",
+      "Name": "Has Part Immortality",
+      "Description": "If ON, this effect owner has a part with immortality applied."
+    },
+    {
+      "Field": "isReceiveDamageStagger",
+      "Name": "Convert Damage into Stagger Critical",
+      "Description": "If ON, the damage the effect owner receives will become a stagger critical."
+    },
+    {
+      "Field": "isRadarExclusion",
+      "Name": "Exclude from Radar",
+      "Description": "If ON, the effect owner will be hidden within the radar display."
+    },
+    {
+      "Field": "isForceUpdate",
+      "Name": "Force Character Update",
+      "Description": "If ON, the effect owner will be forcefully updated."
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saReceiveDamageRate",
+      "Name": "Absorption %: Poise Damage",
+      "Description": "The multiplier to apply to incoming Poise damage for the effect owner."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Physics",
+      "Name": "Absorption %: Kinetic - From Player",
+      "Description": "The multiplier to apply to incoming Kinetic damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Magic",
+      "Name": "Absorption %: Energy - From Player",
+      "Description": "The multiplier to apply to incoming Energy damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Fire",
+      "Name": "Absorption %: Explosive - From Player",
+      "Description": "The multiplier to apply to incoming Explosive damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Thunder",
+      "Name": "Absorption %: Coral - From Player",
+      "Description": "The multiplier to apply to incoming Coral damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Dark",
+      "Name": "Absorption %: Dark - From Player",
+      "Description": "The multiplier to apply to incoming Dark damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Physics",
+      "Name": "Absorption %: Kinetic - From NPC",
+      "Description": "The multiplier to apply to incoming Kinetic damage for the effect owner, if the attacker is considered an NPC."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Magic",
+      "Name": "Absorption %: Energy - From NPC",
+      "Description": "The multiplier to apply to incoming Energy damage for the effect owner, if the attacker is considered an NPC."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Fire",
+      "Name": "Absorption %: Explosive - From NPC",
+      "Description": "The multiplier to apply to incoming Explosive damage for the effect owner, if the attacker is considered an NPC."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Thunder",
+      "Name": "Absorption %: Coral - From NPC",
+      "Description": "The multiplier to apply to incoming Coral damage for the effect owner, if the attacker is considered an NPC."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Dark",
+      "Name": "Absorption %: Dark - From NPC",
+      "Description": "The multiplier to apply to incoming Dark damage for the effect owner, if the attacker is considered an NPC."
+    },
+    {
+      "Field": "defObjDmgCorrectRate",
+      "Name": "Absorption %: Object",
+      "Description": "The multiplier to apply to incoming Object damage for the effect owner."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Physics",
+      "Name": "Damage %: Kinetic - Against Player",
+      "Description": "The multiplier to apply to outgoing Kinetic damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Magic",
+      "Name": "Damage %: Energy - Against Player",
+      "Description": "The multiplier to apply to outgoing Energy damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Fire",
+      "Name": "Damage %: Explosive - Against Player",
+      "Description": "The multiplier to apply to outgoing Explosive damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Thunder",
+      "Name": "Damage %: Coral - Against Player",
+      "Description": "The multiplier to apply to outgoing Coral damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Dark",
+      "Name": "Damage %: Dark - Against Player",
+      "Description": "The multiplier to apply to outgoing Dark damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Physics",
+      "Name": "Damage %: Kinetic - Against NPC",
+      "Description": "The multiplier to apply to outgoing Kinetic damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Magic",
+      "Name": "Damage %: Energy - Against NPC",
+      "Description": "The multiplier to apply to outgoing Energy damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Fire",
+      "Name": "Damage %: Explosive - Against NPC",
+      "Description": "The multiplier to apply to outgoing Explosive damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Thunder",
+      "Name": "Damage %: Coral - Against NPC",
+      "Description": "The multiplier to apply to outgoing Coral damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Dark",
+      "Name": "Damage %: Dark - Against NPC",
+      "Description": "The multiplier to apply to outgoing Dark damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "registDepletedUraniumToxicChangeRate",
+      "Name": "Resistance %: Uranium",
+      "Description": "Multiplies stat based Uranium resistance."
+    },
+    {
+      "Field": "invocationConditionsStateChange1",
+      "Name": "Trigger on State Info: 1",
+      "Description": "If the specified state info is present, this effect is activated."
+    },
+    {
+      "Field": "invocationConditionsStateChange2",
+      "Name": "Trigger on State Info: 2",
+      "Description": "If the specified state info is present, this effect is activated."
+    },
+    {
+      "Field": "invocationConditionsStateChange3",
+      "Name": "Trigger on State Info: 3",
+      "Description": "If the specified state info is present, this effect is activated."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrProxyHeightRate",
+      "Name": "Collision Capsule Height %",
+      "Description": "The multiplier to apply to the character\u0027s proxy height collision capsule."
+    },
+    {
+      "Field": "addAwarePointCorrectValue_forMe",
+      "Name": "Search Awareness Correction: Self",
+      "Description": "The search awareness correction to apply to the search angle for the effect owner."
+    },
+    {
+      "Field": "addAwarePointCorrectValue_forTarget",
+      "Name": "Search Awareness Correction: Target",
+      "Description": "The search awareness correction to apply to the search angle for the effect owner\u0027s target."
+    },
+    {
+      "Field": "normalLockRangeAddVal",
+      "Name": "Normal Lock-on: Distance",
+      "Description": "The distance to extend the normal lock-on distance by. In metres."
+    },
+    {
+      "Field": "normalLockRangeAddPer",
+      "Name": "Normal Lock-on: Distance %",
+      "Description": "The percentage distance to extend the normal lock-on distance by."
+    },
+    {
+      "Field": "missileLockRangeAddVal",
+      "Name": "Missile Lock-on: Distance",
+      "Description": "The distance to extend the missile lock-on distance by. In metres."
+    },
+    {
+      "Field": "missileLockRangeAddPer",
+      "Name": "Missile Lock-on: Distance",
+      "Description": "The percentage distance to extend the missile lock-on distance by."
+    },
+    {
+      "Field": "missileMultiLockNumAdd",
+      "Name": "Missile Lock-on: Number of Multi-Locks",
+      "Description": "The amount of multi-locks to add to the base amount of missile multi-locks."
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "missileMultiLockNumMul",
+      "Name": "Missile Lock-on: Number of Multi-Locks %",
+      "Description": "The percentage to multiply the base amount of missile multi-locks by."
+    },
+    {
+      "Field": "magAwarePointCorrectValue_forMe",
+      "Name": "Searchability Magnification Correction: Self",
+      "Description": "The search mangification correction to apply for the effect owner."
+    },
+    {
+      "Field": "magAwarePointCorrectValue_forTarget",
+      "Name": "Searchability Magnification Correction: Target",
+      "Description": "The search mangification correction to apply for the effect owner\u0027s target."
+    },
+    {
+      "Field": "sightRangeMagSearch_forEnemy",
+      "Name": "Seen Target - Visual Search Distance %: Out of Combat",
+      "Description": "The visual search distance multiplier to apply for the effect owner\u0027s \u0027seen\u0027 target when not in combat."
+    },
+    {
+      "Field": "sightRangeMagSearch_forEnemyBattle",
+      "Name": "Seen Target - Visual Search Distance %: In Combat",
+      "Description": "The visual search distance multiplier to apply for the effect owner\u0027s \u0027seen\u0027 target when in combat."
+    },
+    {
+      "Field": "sightRangeMagSearch_forMe",
+      "Name": "Visual Search Distance %: Out of Combat",
+      "Description": "The visual search distance multiplier to apply for the effect owner when not in combat."
+    },
+    {
+      "Field": "sightRangeMagSearch_forMeBattle",
+      "Name": "Visual Search Distance %: In Combat",
+      "Description": "The visual search distance multiplier to apply for the effect owner when in combat."
+    },
+    {
+      "Field": "changeSaPoint",
+      "Name": "Damage: Poise",
+      "Description": "The amount of Poise damage to apply when this effect is present."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heightRateOfJudgmentCapsule",
+      "Name": "Line of Sight: Capsule Height %",
+      "Description": "The multiplier to apply to the effect owner\u0027s collision capsule height when calculating line of sight."
+    },
+    {
+      "Field": "noseDist_overWrite",
+      "Name": "Sense: Distance Override",
+      "Description": "Override the NpcThinkParam parameter for the Sense value of the effect owner with this value."
+    },
+    {
+      "Field": "staminaRecoverSpeedRate",
+      "Name": "Stamina Recovery Speed %",
+      "Description": "The multiplier to apply to Stamina recovery speed of the effect owner."
+    },
+    {
+      "Field": "maxEnergyRate",
+      "Name": "Energy Capacity %",
+      "Description": "The multiplier to apply to the energy capacity of the effect owner."
+    },
+    {
+      "Field": "energyRecoverSpeedRate",
+      "Name": "Energy Recovery Speed %",
+      "Description": "The multiplier to apply to energy recovery speed of the effect owner."
+    },
+    {
+      "Field": "consumeEnergyRate",
+      "Name": "Energy Supply Efficiency %",
+      "Description": "The multiplier to apply to the energy consumption of the effect owner."
+    },
+    {
+      "Field": "changeEnRate",
+      "Name": "Change Energy %",
+      "Description": "The percentage amount of energy to change in the effect owner when this effect is present."
+    },
+    {
+      "Field": "changeEnPoint",
+      "Name": "Change Energy",
+      "Description": "The point amount of energy to change in the effect owner when this effect is present."
+    },
+    {
+      "Field": "energyLastRecoverRate",
+      "Name": "Post-Recovery Energy Recovery Speed %",
+      "Description": "If (Unit energy recovery amount - overall energy consumption) is positive, multiply it by this value to get energy recovery amount."
+    },
+    {
+      "Field": "eventPartsId",
+      "Name": "Target Part: ID",
+      "Description": "If -1, targets all parts."
+    },
+    {
+      "Field": "eventPartsDamageRate",
+      "Name": "Target Part: Damage %",
+      "Description": "The damage multiplier to apply for damage against the target part."
+    },
+    {
+      "Field": "eventPartsReviveRate",
+      "Name": "Target Part: HP Revival %",
+      "Description": "The HP revival rate for the target part."
+    },
+    {
+      "Field": "eventPartsRecoverRate",
+      "Name": "Target Part: HP Recovery %",
+      "Description": "The HP recovery rate for the target part."
+    },
+    {
+      "Field": "changePaRate",
+      "Name": "Pulse Armor: Damage %",
+      "Description": "The damage percentage to apply to the effect owner\u0027s Pulse Armor when this effect is activated."
+    },
+    {
+      "Field": "changePaPoint",
+      "Name": "Pulse Armor: Damage",
+      "Description": "The damage to apply to the effect owner\u0027s Pulse Armor when this effect is activated."
+    },
+    {
+      "Field": "energyDrawRate_GroundBoost",
+      "Name": "Energy Consumption %: Ground Boost",
+      "Description": "The energy consumption multiplier to apply for a ground boost when this effect is present."
+    },
+    {
+      "Field": "energyDrawRate_FlyBoost",
+      "Name": "Energy Consumption %: Aerial Boost",
+      "Description": "The energy consumption multiplier to apply for an aerial boost when this effect is present."
+    },
+    {
+      "Field": "energyDrawRate_UpBoost",
+      "Name": "Energy Consumption %: Vertical Boost",
+      "Description": "The energy consumption multiplier to apply for a vertical boost when this effect is present."
+    },
+    {
+      "Field": "stealthPowerCorrectValue",
+      "Name": "Stealth Power %",
+      "Description": "The multiplier to apply to stealth performance."
+    },
+    {
+      "Field": "overwriteGroupId",
+      "Name": "Override Group ID",
+      "Description": "The override category this effect belongs to."
+    },
+    {
+      "Field": "defPlayerImpactCorrectRate",
+      "Name": "Absorption %: Impact - From Player",
+      "Description": "The multiplier to apply to incoming Impact damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defEnemyImpactCorrectRate",
+      "Name": "Absorption %: Impact - From NPC",
+      "Description": "The multiplier to apply to incoming Impact damage for the effect owner, if the attacker is considered a NPC."
+    },
+    {
+      "Field": "atkPlayerImpactCorrectRate",
+      "Name": "Damage %: Impact - Against Player",
+      "Description": "The multiplier to apply to outgoing Impact damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkEnemyImpactCorrectRate",
+      "Name": "Damage %: Impact - Against NPC",
+      "Description": "The multiplier to apply to outgoing Impact damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "normalLockRangeOverwriteDist",
+      "Name": "Normal Lock-on Distance: Override",
+      "Description": "Overrides the normal lock-on distance (setting it to this specified value)."
+    },
+    {
+      "Field": "residualImpactSubSpeedRate",
+      "Name": "Damage: Accumulative Impact %",
+      "Description": "The multiplier to apply to the accumulative impact against the effect owner."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Pa",
+      "Name": "Damage %: Pulse Armor - Against Player",
+      "Description": "The multiplier to apply to outgoing Pulse Armor damage for the effect owner, if the defender is considered an player."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Pa",
+      "Name": "Damage %: Pulse Armor - Against NPC",
+      "Description": "The multiplier to apply to outgoing Pulse Armor damage for the effect owner, if the defender is considered an NPC."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Pa",
+      "Name": "Absorption %: Pulse Armor - From Player",
+      "Description": "The multiplier to apply to incoming Pulse Armor damage for the effect owner, if the attacker is considered a player."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Pa",
+      "Name": "Absorption %: Pulse Armor - From NPC",
+      "Description": "The multiplier to apply to incoming Pulse Armor damage for the effect owner, if the attacker is considered a NPC."
+    },
+    {
+      "Field": "atkImpactCorrectRate",
+      "Name": "Damage %: Impact",
+      "Description": "The multiplier to apply to outgoing Pulse Armor damage for the effect owner."
+    },
+    {
+      "Field": "unk390",
+      "Name": "Unknown 0x390",
+      "Description": ""
+    },
+    {
+      "Field": "pad8",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

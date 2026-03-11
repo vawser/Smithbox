@@ -1,47 +1,83 @@
 {
-  "DisplayName": "ATTACK_CATEGORY_ENUM",
-  "Name": "ATTACK_CATEGORY_ENUM",
-  "Description": "",
+  "Key": "ATTACK_CATEGORY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATTACK_CATEGORY_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely fast",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely fast"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "速",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "速"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Quick extension",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quick extension"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "普",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "普"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Funobe",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Funobe"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "遅",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "遅"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Delay",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Delay"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Slowest",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slowest"
+        }
+      ]
     }
   ]
 }

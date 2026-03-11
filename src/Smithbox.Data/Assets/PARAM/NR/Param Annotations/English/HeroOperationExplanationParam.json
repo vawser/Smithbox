@@ -1,0 +1,53 @@
+{
+  "Param": "HeroOperationExplanationParam",
+  "Type": "HERO_OPERATION_EXPLANATION_PARAM_ST",
+  "Name": "HeroOperationExplanationParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heroId",
+      "Name": "Hero ID",
+      "Description": "Which hero this explaination appears for."
+    },
+    {
+      "Field": "displaySlot",
+      "Name": "Display Slot",
+      "Description": "The slot in which this explaination is displayed."
+    },
+    {
+      "Field": "midPadding",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hintTextId",
+      "Name": "Hint Text ID",
+      "Description": "The text to use for this hint."
+    },
+    {
+      "Field": "spEffectId",
+      "Name": "SpEffect ID",
+      "Description": ""
+    },
+    {
+      "Field": "shortcutTextId",
+      "Name": "Shortcut Text ID",
+      "Description": "The shortcut text to display."
+    }
+  ]
+}

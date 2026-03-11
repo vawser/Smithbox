@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_FLAG_ITEM",
-  "Name": "EVENT_FLAG_ITEM",
-  "Description": "",
+  "Key": "EVENT_FLAG_ITEM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_ITEM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "63030100",
-      "Name": "[Treasure Corpse] Barely visible from the E3 starting point《ID:63030100》",
-      "Description": ""
+      "Key": "63030100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Treasure Corpse] Barely visible from the E3 starting point《ID:63030100》"
+        }
+      ]
     }
   ]
 }

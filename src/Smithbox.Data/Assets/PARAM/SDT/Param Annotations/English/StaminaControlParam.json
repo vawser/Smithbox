@@ -1,0 +1,248 @@
+{
+  "Param": "StaminaControlParam",
+  "Type": "STAMINA_CONTROL_PARAM_ST",
+  "Name": "StaminaControlParam",
+  "Description": "Posture regen values used by Event960 in TAE",
+  "Fields": [
+    {
+      "Field": "staminaRecoverRatio_forType000",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType000",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType000",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType001",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType001",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType001",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType002",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType002",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType002",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType003",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType003",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType003",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType004",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType004",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType004",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType005",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType005",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType005",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType006",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType006",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType006",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType007",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType007",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType007",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType008",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType008",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType008",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType009",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType009",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType009",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType010",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType010",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType010",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType011",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType011",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType011",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType012",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType012",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType012",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType013",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType013",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType013",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType014",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType014",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType014",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    },
+    {
+      "Field": "staminaRecoverRatio_forType015",
+      "Name": "",
+      "Description": "Change the stamina recovery rate as stamina recovery speed x stamina recovery rate x 0.01"
+    },
+    {
+      "Field": "staminaMaxRatio_forType015",
+      "Name": "",
+      "Description": "Specify the maximum percentage of stamina"
+    },
+    {
+      "Field": "staminaMinRatio_forType015",
+      "Name": "",
+      "Description": "Specify the lower limit percentage of stamina. Debt (negative value) cannot be specified."
+    }
+  ]
+}

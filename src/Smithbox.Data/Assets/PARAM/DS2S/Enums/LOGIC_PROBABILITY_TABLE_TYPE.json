@@ -1,47 +1,83 @@
 {
-  "DisplayName": "LOGIC_PROBABILITY_TABLE_TYPE",
-  "Name": "LOGIC_PROBABILITY_TABLE_TYPE",
-  "Description": "",
+  "Key": "LOGIC_PROBABILITY_TABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_PROBABILITY_TABLE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Extremely low",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely low"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Low",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "High",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Extremely high",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely high"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Other 1",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other 1"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Disabled",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Absolute",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Absolute"
+        }
+      ]
     }
   ]
 }

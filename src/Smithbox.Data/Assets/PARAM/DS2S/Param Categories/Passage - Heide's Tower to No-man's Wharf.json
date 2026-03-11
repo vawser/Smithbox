@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Passage: Heide's Tower to No-man's Wharf",
+  "Key": "Passage: Heide's Tower to No-man's Wharf",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Passage: Heide's Tower to No-man's Wharf"
+      }
+  ],
   "Params": [
     "eventlocation_m10_30_00_00",
     "eventparam_m10_30_00_00",

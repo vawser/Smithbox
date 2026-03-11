@@ -1,0 +1,78 @@
+{
+  "Param": "HitEffectSfxConceptParam",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HitEffectSfxConceptParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "Iron [1]",
+      "Description": "Iron: Concept 1"
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "Iron [2]",
+      "Description": "Iron: Concept 2"
+    },
+    {
+      "Field": "atkLeather_1",
+      "Name": "Leather [1]",
+      "Description": "Leather: Concept 1"
+    },
+    {
+      "Field": "atkLeather_2",
+      "Name": "Leather [2]",
+      "Description": "Leather: Concept 2"
+    },
+    {
+      "Field": "atkWood_1",
+      "Name": "Wood [1]",
+      "Description": "Wooden: Concept 1"
+    },
+    {
+      "Field": "atkWood_2",
+      "Name": "Wood [2]",
+      "Description": "Wooden: Concept 2"
+    },
+    {
+      "Field": "atkBody_1",
+      "Name": "Flesh [1]",
+      "Description": "Meat: Concept 1"
+    },
+    {
+      "Field": "atkBody_2",
+      "Name": "Flesh [2]",
+      "Description": "Meat: Concept 2"
+    },
+    {
+      "Field": "atkStone_1",
+      "Name": "Stone [1]",
+      "Description": "Corrosion: Concept 1"
+    },
+    {
+      "Field": "atkStone_2",
+      "Name": "Stone [2]",
+      "Description": "Corrosion: Concept 2"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "None [1]",
+      "Description": "None: Concept 1"
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "None [2]",
+      "Description": "None: Concept 2"
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

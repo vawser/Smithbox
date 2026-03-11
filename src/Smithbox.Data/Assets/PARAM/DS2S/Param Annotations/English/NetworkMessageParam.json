@@ -1,0 +1,118 @@
+{
+  "Param": "NetworkMessageParam",
+  "Type": "NETWORK_MESSAGE_PARAM",
+  "Name": "NetworkMessageParam",
+  "Description": "Defines parameters related to network messages during multiplayer sessions.",
+  "Fields": [
+    {
+      "Field": "message_type",
+      "Name": "Message Type",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_0",
+      "Name": "Message ID [0]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_1",
+      "Name": "Message ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_2",
+      "Name": "Message ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_3",
+      "Name": "Message ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_4",
+      "Name": "Message ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_5",
+      "Name": "Message ID [5]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_6",
+      "Name": "Message ID [6]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_7",
+      "Name": "Message ID [7]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_8",
+      "Name": "Message ID [8]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_9",
+      "Name": "Message ID [9]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_10",
+      "Name": "Message ID [10]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_11",
+      "Name": "Message ID [11]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_12",
+      "Name": "Message ID [12]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_13",
+      "Name": "Message ID [13]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_14",
+      "Name": "Message ID [14]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_15",
+      "Name": "Message ID [15]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_16",
+      "Name": "Message ID [16]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_17",
+      "Name": "Message ID [17]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_18",
+      "Name": "Message ID [18]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_19",
+      "Name": "Message ID [19]",
+      "Description": ""
+    },
+    {
+      "Field": "message_id_20",
+      "Name": "Message ID [20]",
+      "Description": ""
+    }
+  ]
+}

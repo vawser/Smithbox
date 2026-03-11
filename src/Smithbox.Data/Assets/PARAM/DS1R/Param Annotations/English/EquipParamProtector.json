@@ -1,0 +1,668 @@
+{
+  "Param": "EquipParamProtector",
+  "Type": "EQUIP_PARAM_PROTECTOR_ST",
+  "Name": "EquipParamProtector",
+  "Description": "Determines the parameters of equipment.",
+  "Fields": [
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering ID used to sort this part in the menu."
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "Wandering Equip ID",
+      "Description": "Replacement equipment ID for wandering ghosts."
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Good Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Evil Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "Repair Price",
+      "Description": "Soul cost for repairing this item."
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Price",
+      "Description": "Soul cost of reinforcement. See ShopLineupParam for shop prices."
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "The price when this item is sold. Determines the souls received when feeding this weapon to Frampt"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]."
+    },
+    {
+      "Field": "residentSpEffectId",
+      "Name": "Resident SpEffect ID: 1",
+      "Description": "A SpEffect applied when this part is equipped."
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Resident SpEffect ID: 2",
+      "Description": "A SpEffect applied when this part is equipped."
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Resident SpEffect ID: 3",
+      "Description": "A SpEffect applied when this part is equipped."
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Upgrade Material ID",
+      "Description": "The material requirements for improving this part."
+    },
+    {
+      "Field": "partsDamageRate",
+      "Name": "Part Damage %",
+      "Description": "The damage correction to apply to this part when hit."
+    },
+    {
+      "Field": "corectSARecover",
+      "Name": "Poise Recovery Correction",
+      "Description": "The poise recovery correction value."
+    },
+    {
+      "Field": "originEquipPro",
+      "Name": "Source ID: \u002B0",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro1",
+      "Name": "Source ID: \u002B1",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro2",
+      "Name": "Source ID: \u002B2",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro3",
+      "Name": "Source ID: \u002B3",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro4",
+      "Name": "Source ID: \u002B4",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro5",
+      "Name": "Source ID: \u002B5",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro6",
+      "Name": "Source ID: \u002B6",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro7",
+      "Name": "Source ID: \u002B7",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro8",
+      "Name": "Source ID: \u002B8",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro9",
+      "Name": "Source ID: \u002B9",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro10",
+      "Name": "Source ID: \u002B10",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro11",
+      "Name": "Source ID: \u002B11",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro12",
+      "Name": "Source ID: \u002B12",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro13",
+      "Name": "Source ID: \u002B13",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro14",
+      "Name": "Source ID: \u002B14",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "originEquipPro15",
+      "Name": "Source ID: \u002B15",
+      "Description": "The source ID when this part is reinforced to this level."
+    },
+    {
+      "Field": "faceScaleM_ScaleX",
+      "Name": "Male Face Scale: X",
+      "Description": "The male face scaling factor for the X-axis."
+    },
+    {
+      "Field": "faceScaleM_ScaleZ",
+      "Name": "Male Face Scale: Z",
+      "Description": "The male face scaling factor for the Z-axis."
+    },
+    {
+      "Field": "faceScaleM_MaxX",
+      "Name": "Male Face Max Scale: X",
+      "Description": "The maximum male face scaling factor for the X-axis."
+    },
+    {
+      "Field": "faceScaleM_MaxZ",
+      "Name": "Male Face Max Scale: Z",
+      "Description": "The maximum male face scaling factor for the Z-axis."
+    },
+    {
+      "Field": "faceScaleF_ScaleX",
+      "Name": "Female Face Scale: X",
+      "Description": "The female face scaling factor for the X-axis."
+    },
+    {
+      "Field": "faceScaleF_ScaleZ",
+      "Name": "Female Face Scale: Z",
+      "Description": "The female face scaling factor for the Z-axis."
+    },
+    {
+      "Field": "faceScaleF_MaxX",
+      "Name": "Female Face Max Scale: X",
+      "Description": "The maximum female face scaling factor for the X-axis."
+    },
+    {
+      "Field": "faceScaleF_MaxZ",
+      "Name": "Female Face Max Scale: Z",
+      "Description": "The maximum female face scaling factor for the Z-axis."
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The ID this item uses for world tendency."
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "The model ID to use for this equipment."
+    },
+    {
+      "Field": "iconIdM",
+      "Name": "Male: Icon ID ",
+      "Description": "The icon ID to use for the male gender version."
+    },
+    {
+      "Field": "iconIdF",
+      "Name": "Female: Icon ID ",
+      "Description": "The icon ID to use for the male gender version."
+    },
+    {
+      "Field": "knockBack",
+      "Name": "Knockback",
+      "Description": "The knockback reduction value for this equipment."
+    },
+    {
+      "Field": "knockbackBounceRate",
+      "Name": "Knockback Repulsion %",
+      "Description": "The knockback repulsion value for this equipment."
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "The initial durability for this equipment."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "Max Durability",
+      "Description": "The maximum durability for this equipment."
+    },
+    {
+      "Field": "saDurability",
+      "Name": "Poise",
+      "Description": "The poise durability for this equipment."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Repulsion Defense",
+      "Description": "The weapon repulsion defense for this equipment."
+    },
+    {
+      "Field": "defensePhysics",
+      "Name": "Defense: Physical",
+      "Description": "The flat defense value for this equipment for the specified type."
+    },
+    {
+      "Field": "defenseMagic",
+      "Name": "Defense: Magic",
+      "Description": "The flat defense value for this equipment for the specified type."
+    },
+    {
+      "Field": "defenseFire",
+      "Name": "Defense: Fire",
+      "Description": "The flat defense value for this equipment for the specified type."
+    },
+    {
+      "Field": "defenseThunder",
+      "Name": "Defense: Lightning",
+      "Description": "The flat defense value for this equipment for the specified type."
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "Defense Correction: Slash",
+      "Description": "Percentage modifier to apply to physical defense when struck with slash damage. Example: -50 = -50%, 50 = \u002B50%"
+    },
+    {
+      "Field": "defenseBlow",
+      "Name": "Defense Correction: Strike",
+      "Description": "Percentage modifier to apply to physical defense when struck with strike damage. Example: -50 = -50%, 50 = \u002B50%"
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "Defense Correction: Thrust",
+      "Description": "Percentage modifier to apply to physical defense when struck with thrust damage. Example: -50 = -50%, 50 = \u002B50%"
+    },
+    {
+      "Field": "resistPoison",
+      "Name": "Status Resist: Poison",
+      "Description": "The flat defense value for this equipment for the specified resistance type."
+    },
+    {
+      "Field": "resistDisease",
+      "Name": "Status Resist: Toxic",
+      "Description": "The flat defense value for this equipment for the specified resistance type."
+    },
+    {
+      "Field": "resistBlood",
+      "Name": "Status Resist: Bleed",
+      "Description": "The flat defense value for this equipment for the specified resistance type."
+    },
+    {
+      "Field": "resistCurse",
+      "Name": "Status Resist: Curse",
+      "Description": "The flat defense value for this equipment for the specified resistance type."
+    },
+    {
+      "Field": "reinforceTypeId",
+      "Name": "Reinforcement Type ID",
+      "Description": "The reinforcement progression to use for this equipment."
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "Knockback Parameter ID",
+      "Description": "The knockback parameters to use for this part."
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Repulsion Damage Absorption %",
+      "Description": "The absorption rate to use when calculating the repulsion damage this part incurs."
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "The equipment model category used by this part."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender",
+      "Description": "Gender of equipment model"
+    },
+    {
+      "Field": "protectorCategory",
+      "Name": "Equipment Category",
+      "Description": "The equipment category for this part."
+    },
+    {
+      "Field": "defenseMaterial",
+      "Name": "Defense Presentation: Sound",
+      "Description": "The sound used when guarding."
+    },
+    {
+      "Field": "defenseMaterialSfx",
+      "Name": "Defense Presentation: Particle",
+      "Description": "The particles used when guarding."
+    },
+    {
+      "Field": "partsDmgType",
+      "Name": "Parts Damage Type",
+      "Description": "The type of attack that applies parts damage."
+    },
+    {
+      "Field": "defenseMaterial_Weak",
+      "Name": "Defense Presentation: Sound (on Weak Point Damage)",
+      "Description": "The sound used when weak point is damaged."
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak",
+      "Name": "Defense Presentation: Particle (on Weak Point Damage)",
+      "Description": "The particles used when weak point is damaged."
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Can Deposit",
+      "Description": "If ON, this item can be deposited into the repository."
+    },
+    {
+      "Field": "headEquip",
+      "Name": "Is Helm Equipment",
+      "Description": "If ON, is considered Helm equipment."
+    },
+    {
+      "Field": "bodyEquip",
+      "Name": "Is Chest Equipment",
+      "Description": "If ON, is considered Chest equipment."
+    },
+    {
+      "Field": "armEquip",
+      "Name": "Is Gauntlet Equipment",
+      "Description": "If ON, is considered Gauntlet equipment."
+    },
+    {
+      "Field": "legEquip",
+      "Name": "Is Legs Equipment",
+      "Description": "If ON, is considered Legs equipment."
+    },
+    {
+      "Field": "useFaceScale",
+      "Name": "Use Facescale",
+      "Description": "If ON, this part applies face scaling."
+    },
+    {
+      "Field": "invisibleFlag00",
+      "Name": "Model Mask 0",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag01",
+      "Name": "Model Mask 1",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag02",
+      "Name": "Model Mask 2",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag03",
+      "Name": "Model Mask 3",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag04",
+      "Name": "Model Mask 4",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag05",
+      "Name": "Model Mask 5",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag06",
+      "Name": "Model Mask 6",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag07",
+      "Name": "Model Mask 7",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag08",
+      "Name": "Model Mask 8",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag09",
+      "Name": "Model Mask 9",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag10",
+      "Name": "Model Mask 10",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag11",
+      "Name": "Model Mask 11",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag12",
+      "Name": "Model Mask 12",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag13",
+      "Name": "Model Mask 13",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag14",
+      "Name": "Model Mask 14",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag15",
+      "Name": "Model Mask 15",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag16",
+      "Name": "Model Mask 16",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag17",
+      "Name": "Model Mask 17",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag18",
+      "Name": "Model Mask 18",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag19",
+      "Name": "Model Mask 19",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag20",
+      "Name": "Model Mask 20",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag21",
+      "Name": "Model Mask 21",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag22",
+      "Name": "Model Mask 22",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag23",
+      "Name": "Model Mask 23",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag24",
+      "Name": "Model Mask 24",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag25",
+      "Name": "Model Mask 25",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag26",
+      "Name": "Model Mask 26",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag27",
+      "Name": "Model Mask 27",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag28",
+      "Name": "Model Mask 28",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag29",
+      "Name": "Model Mask 29",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag30",
+      "Name": "Model Mask 30",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag31",
+      "Name": "Model Mask 31",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag32",
+      "Name": "Model Mask 32",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag33",
+      "Name": "Model Mask 33",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag34",
+      "Name": "Model Mask 34",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag35",
+      "Name": "Model Mask 35",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag36",
+      "Name": "Model Mask 36",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag37",
+      "Name": "Model Mask 37",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag38",
+      "Name": "Model Mask 38",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag39",
+      "Name": "Model Mask 39",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag40",
+      "Name": "Model Mask 40",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag41",
+      "Name": "Model Mask 41",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag42",
+      "Name": "Model Mask 42",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag43",
+      "Name": "Model Mask 43",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag44",
+      "Name": "Model Mask 44",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag45",
+      "Name": "Model Mask 45",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag46",
+      "Name": "Model Mask 46",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag47",
+      "Name": "Model Mask 47",
+      "Description": ""
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Is Drop Disabled in Multiplayer",
+      "Description": "If ON, this item cannot be dropped in a multiplayer session."
+    },
+    {
+      "Field": "simpleModelForDlc",
+      "Name": "Simple Model for DLC",
+      "Description": "If ON, there is a simple model for DLC."
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "oldSortId",
+      "Name": "Sort ID (Obsolete)",
+      "Description": "The ordering ID used to sort this part in the menu."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

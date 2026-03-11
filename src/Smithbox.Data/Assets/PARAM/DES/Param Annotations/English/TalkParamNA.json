@@ -1,0 +1,48 @@
+{
+  "Param": "TalkParamNA",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TalkParamNA",
+  "Description": "Determines the parameters for character dialogues.",
+  "Fields": [
+    {
+      "Field": "msgId",
+      "Name": "Message ID",
+      "Description": "The text ID for the message this line of dialogue should display as subtitles."
+    },
+    {
+      "Field": "voiceId",
+      "Name": "Voice ID",
+      "Description": "The voice ID for this line of dialogue."
+    },
+    {
+      "Field": "motionId",
+      "Name": "Motion ID",
+      "Description": "The animation the character speaking this line of dialogue should use during playback."
+    },
+    {
+      "Field": "returnPos",
+      "Name": "Return: Conversation Position",
+      "Description": "The relative position of conversation to return when returning to a conversation."
+    },
+    {
+      "Field": "reactionId",
+      "Name": "Return: Reaction ID",
+      "Description": "The reaction ID to use when returning to a conversation."
+    },
+    {
+      "Field": "eventId",
+      "Name": "Return: Event ID",
+      "Description": "The event ID to use when returning to a conversation."
+    },
+    {
+      "Field": "isMotionLoop",
+      "Name": "Is Motion Looped",
+      "Description": "If ON, the motion animation is looped for this line of dialogue."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -248,6 +248,7 @@ public class FieldValueFinder
             }
 
             var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.Value.AppliedParamdef);
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Key);
 
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
@@ -262,11 +263,12 @@ public class FieldValueFinder
                     PARAMDEF.DefType type = field.Def.DisplayType;
 
                     var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field.Def);
+                    var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.Def.InternalName);
 
                     fieldName = field.Def.InternalName;
                     if (fieldMeta != null)
                     {
-                        fieldDisplayName = fieldMeta.AltName;
+                        fieldDisplayName = fieldAnnotation.Name;
                     }
 
                     var isMatch = false;

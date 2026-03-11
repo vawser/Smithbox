@@ -1,0 +1,48 @@
+{
+  "Param": "CoolTimeParam",
+  "Type": "COOL_TIME_PARAM_ST",
+  "Name": "CoolTimeParam",
+  "Description": "Co-op Phantom cooldowns",
+  "Fields": [
+    {
+      "Field": "limitationTime_0",
+      "Name": "Limitation Time - 0 Co-op Phantoms",
+      "Description": "Time limit [sec] (number of cooperating spirits 0)"
+    },
+    {
+      "Field": "observationTime_0",
+      "Name": "Observation Time - 0 Co-op Phantoms",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 0)"
+    },
+    {
+      "Field": "limitationTime_1",
+      "Name": "Limitation Time - 1 Co-op Phantoms",
+      "Description": "Time limit [sec] (number of cooperating spirits 1)"
+    },
+    {
+      "Field": "observationTime_1",
+      "Name": "Observation Time - 1 Co-op Phantoms",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 1)"
+    },
+    {
+      "Field": "limitationTime_2",
+      "Name": "Limitation Time - 2 Co-op Phantoms",
+      "Description": "Time limit [sec] (number of cooperating spirits 2)"
+    },
+    {
+      "Field": "observationTime_2",
+      "Name": "Observation Time - 2 Co-op Phantoms",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 2)"
+    },
+    {
+      "Field": "limitationTime_3",
+      "Name": "Limitation Time - 3 Co-op Phantoms",
+      "Description": "Time limit [sec] (number of cooperating spirits 3)"
+    },
+    {
+      "Field": "observationTime_3",
+      "Name": "Observation Time - 3 Co-op Phantoms",
+      "Description": "Monitoring time [sec] (number of cooperating spirits 3)"
+    }
+  ]
+}

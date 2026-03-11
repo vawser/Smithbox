@@ -1,0 +1,203 @@
+{
+  "Param": "EnemyCommonParam",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "EnemyCommonParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "reserved0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soundTargetTryApproachTime",
+      "Name": "Sound - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "searchTargetTryApproachTime",
+      "Name": "Search - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "memoryTargetTryApproachTime",
+      "Name": "Memory - Target Try Approach Time",
+      "Description": ""
+    },
+    {
+      "Field": "reserved5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "activateChrByTime_PhantomId",
+      "Name": "Activate Chr by Time - Phantom ID",
+      "Description": "Phantom shader ID used for directing the appearance and disappearance of enemies placed in a specific time zone"
+    },
+    {
+      "Field": "findUnfavorableFailedPointDist",
+      "Name": "Find Unfavourable Failed Point Distance",
+      "Description": "Distance to generate an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+    },
+    {
+      "Field": "findUnfavorableFailedPointHeight",
+      "Name": "Find Unfavourable Failed Point Height",
+      "Description": "The height that causes an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved18",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

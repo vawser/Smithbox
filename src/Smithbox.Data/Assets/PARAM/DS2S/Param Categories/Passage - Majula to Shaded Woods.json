@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Passage: Majula to Shaded Woods",
+  "Key": "Passage: Majula to Shaded Woods",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Passage: Majula to Shaded Woods"
+      }
+  ],
   "Params": [
     "eventlocation_m10_29_00_00",
     "eventparam_m10_29_00_00",

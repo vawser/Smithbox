@@ -1,0 +1,1273 @@
+{
+  "Param": "EnemyCommonParam",
+  "Type": "CHR_COMMON_PARAM",
+  "Name": "EnemyCommonParam",
+  "Description": "Defines parameters relating to the player and humanoid characters.",
+  "Fields": [
+    {
+      "Field": "heightType",
+      "Name": "Height Type",
+      "Description": "The character height type."
+    },
+    {
+      "Field": "weightType",
+      "Name": "Weight Type",
+      "Description": "The character height type."
+    },
+    {
+      "Field": "loadWeightRateMin",
+      "Name": "Medium Armor Weight Ratio: Minimum",
+      "Description": "The minimum weight ratio for worn equipment to be considered \u0027medium armor\u0027."
+    },
+    {
+      "Field": "loadWeightRateMax",
+      "Name": "Medium Armor Weight Ratio: Maximum",
+      "Description": "The maximum weight ratio for worn equipment to be considered \u0027medium armor\u0027."
+    },
+    {
+      "Field": "tireKeepTime",
+      "Name": "Fatigue Duration",
+      "Description": "The duration after stamina has been exhausted before it will start to recover."
+    },
+    {
+      "Field": "staminaCostDash",
+      "Name": "Stamina Consumption: Dash",
+      "Description": "The base stamina consumption cost when dashing."
+    },
+    {
+      "Field": "staminaCostLockOnDash",
+      "Name": "Stamina Consumption: Dash (Locked-on)",
+      "Description": "The base stamina consumption cost when dashing and locked-on to a target."
+    },
+    {
+      "Field": "staminaCostLadder",
+      "Name": "Stamina Consumption: Ladder Dash",
+      "Description": "The base stamina consumption cost when dashing up a ladder."
+    },
+    {
+      "Field": "staminaCostRope",
+      "Name": "Stamina Consumption: Rope Slide",
+      "Description": "The base stamina consumption cost when sliding down a rope."
+    },
+    {
+      "Field": "staminaCostEvasionBase",
+      "Name": "Stamina Consumption: Evasion",
+      "Description": "The base stamina consumption cost when doing an evasive action."
+    },
+    {
+      "Field": "staminaCostStep",
+      "Name": "Stamina Consumption: Backstep",
+      "Description": "The base stamina consumption cost when doing a backstep."
+    },
+    {
+      "Field": "staminaCostRolling",
+      "Name": "Stamina Consumption: Roll",
+      "Description": "The base stamina consumption cost when doing a roll."
+    },
+    {
+      "Field": "staminaCostDashJump",
+      "Name": "Stamina Consumption: Dashing Jump",
+      "Description": "The base stamina consumption cost when doing a dashing jump."
+    },
+    {
+      "Field": "staminaCostStandJump",
+      "Name": "Stamina Consumption: Standing Jump",
+      "Description": "The base stamina consumption cost when doing a standing jump."
+    },
+    {
+      "Field": "staminaCostRateEvasion",
+      "Name": "Stamina Consumption %: Evasion",
+      "Description": "The stamina consumption rate when doing an evasive action."
+    },
+    {
+      "Field": "staminaCostRateAttack",
+      "Name": "Stamina Consumption %: Attack",
+      "Description": "The stamina consumption rate when doing an attack action."
+    },
+    {
+      "Field": "moveDemeritPercentMin",
+      "Name": "Stamina Decrease: Movement Disadvantage - Minimum",
+      "Description": "The minimum rate of movement disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "moveDemeritPercentMax",
+      "Name": "Stamina Decrease: Movement Disadvantage - Maximum",
+      "Description": "The maximum rate of movement disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "equipDemeritPercentMin",
+      "Name": "Stamina Decrease: Equipment Disadvantage - Minimum",
+      "Description": "The minimum rate of equipment disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "equipDemeritPercentMax",
+      "Name": "Stamina Decrease: Equipment Disadvantage - Maximum",
+      "Description": "The maximum rate of equipment disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "attackDemeritPercentMin",
+      "Name": "Stamina Decrease: Attack Disadvantage - Minimum",
+      "Description": "The minimum rate of attack disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "attackDemeritPercentMax",
+      "Name": "Stamina Decrease: Attack Disadvantage - Maximum",
+      "Description": "The maximum rate of attack disadvantage duing stamina decreases."
+    },
+    {
+      "Field": "attackExtraLackOfStatsRate",
+      "Name": "Insufficient Stamina: Attack Status Insufficiency %",
+      "Description": "The insufficiency rate of attack status when insufficient stamina is present for an attack cost."
+    },
+    {
+      "Field": "rollingExtraLackOfStatsRate",
+      "Name": "Insufficient Stamina: Rolling Status Insufficiency %",
+      "Description": "When insufficiency rate of rolling status when insufficient stamina is present for a roll cost."
+    },
+    {
+      "Field": "attackKeepEmptyStaminaTime",
+      "Name": "Exhausted Stamina: Duration from Attack",
+      "Description": "If an attack exhausts all stamina, this is the duration (in seconds) that the stamina bar is kept empty."
+    },
+    {
+      "Field": "emptyStaminaAttackExtraLackOfStatsRate",
+      "Name": "Exhausted Stamina: Attack Status Insufficiency %",
+      "Description": "When insufficiency rate of attack status when stamina is exhausted due to an attack cost."
+    },
+    {
+      "Field": "shotReserveSpeed",
+      "Name": "Exhausted Stamina: Attack Preparation Regeneration %",
+      "Description": "The attack preparation regeneration rate when stamina is exhausted due to an attack cost."
+    },
+    {
+      "Field": "attackWaitSpeed",
+      "Name": "Exhausted Stamina: Attack Standby Regeneration %",
+      "Description": "The attack standby regeneration rate when stamina is exhausted due to an attack cost."
+    },
+    {
+      "Field": "armorType",
+      "Name": "Armor Type",
+      "Description": "The armor type of the character."
+    },
+    {
+      "Field": "damageWeaponType",
+      "Name": "Damage Weapon Type",
+      "Description": "The damage weapon type of the character."
+    },
+    {
+      "Field": "deadRagdollFitGround",
+      "Name": "Ragdoll Follows Ground on Death",
+      "Description": "If enabled, the character\u0027s ragdoll will follow the ground upon death."
+    },
+    {
+      "Field": "dummy0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deadTimerA",
+      "Name": "Death Timer: Elapsed Time A",
+      "Description": "The elapsed time for the death timer (a)."
+    },
+    {
+      "Field": "dyingHpMax",
+      "Name": "Low HP Threshold: Maximum",
+      "Description": "The maximum value considered in the low HP theshold."
+    },
+    {
+      "Field": "dyingHpMin",
+      "Name": "Low HP Threshold: Minimum",
+      "Description": "The minimum value considered in the low HP theshold."
+    },
+    {
+      "Field": "dyingMoveBlendMaxRate",
+      "Name": "Dying Movement Blend %",
+      "Description": "The movement blend rate when dying."
+    },
+    {
+      "Field": "ctrlType",
+      "Name": "Control Type",
+      "Description": "The control type of the character."
+    },
+    {
+      "Field": "collisionType",
+      "Name": "Movement Collision Type",
+      "Description": "The movement collision type of the character."
+    },
+    {
+      "Field": "fHitHeight",
+      "Name": "Movement Collision Height",
+      "Description": "The height (in metres) of the collision capsule during movement."
+    },
+    {
+      "Field": "fHitRadius",
+      "Name": "Movement Collision Radius",
+      "Description": "The radius (in metres) of the collision capsule during movement."
+    },
+    {
+      "Field": "fChrHeight",
+      "Name": "Collision Height",
+      "Description": "The height (in metres) of the collision capsule for the character."
+    },
+    {
+      "Field": "fGuardAngleY",
+      "Name": "Guard Cone Angle: Vertical",
+      "Description": "The angle (in degrees) of the guard cone on the vertical axis."
+    },
+    {
+      "Field": "fGuardAngleX",
+      "Name": "Guard Cone Angle: Horizontal",
+      "Description": "The angle (in degrees) of the guard cone on the horizontal axis."
+    },
+    {
+      "Field": "fMaxLinearVelocity",
+      "Name": "Maximum Speed",
+      "Description": "The maximum linear velocity (in metres per second) this character can move at."
+    },
+    {
+      "Field": "loadGravityRateBaseMin",
+      "Name": "Weight Calculation: Minimum",
+      "Description": "The minimum weight (in kilograms) used in the gravity rate calculation."
+    },
+    {
+      "Field": "loadGravityRateBaseMax",
+      "Name": "Weight Calculation: Maximum",
+      "Description": "The maximum weight (in kilograms) used in the gravity rate calculation."
+    },
+    {
+      "Field": "gravityFactorMin",
+      "Name": "Gravity Acceleration %: Minimum",
+      "Description": "The minimum value for gravity acceleration."
+    },
+    {
+      "Field": "gravityFactorMax",
+      "Name": "Gravity Acceleration %: Maximum",
+      "Description": "The maximum value for gravity acceleration."
+    },
+    {
+      "Field": "gravitySpeedMax",
+      "Name": "Gravity Speed: Maximum",
+      "Description": "The maximum speed gravity can reach when applied to a character."
+    },
+    {
+      "Field": "flyCtrlValue",
+      "Name": "Flight Braking %",
+      "Description": "The braking rate of the character when moving with flight."
+    },
+    {
+      "Field": "lockPointType",
+      "Name": "Lock Point Type",
+      "Description": "The lock point type of the character."
+    },
+    {
+      "Field": "lockDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockCameraCategory",
+      "Name": "Lock Camera: Category",
+      "Description": "The correction category used for the lock-on camera for a character."
+    },
+    {
+      "Field": "lockDisableRadius",
+      "Name": "Lock Camera: Disable Radius",
+      "Description": "The radius (in metres) within which the lock camera is disabled."
+    },
+    {
+      "Field": "lockDisableHeight",
+      "Name": "Lock Camera: Disable Height",
+      "Description": "The height (in metres) within which the lock camera is disabled."
+    },
+    {
+      "Field": "guardKnockBackRateSuperSmall",
+      "Name": "Guard Knockback Reduction %: Very Small",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Very Small\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateSmall",
+      "Name": "Guard Knockback Reduction %: Small",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Small\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateMedium",
+      "Name": "Guard Knockback Reduction %: Medium",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Medium\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateLarge",
+      "Name": "Guard Knockback Reduction %: Large",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Large\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateSuperLarge",
+      "Name": "Guard Knockback Reduction %: Very Large",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Very Large\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateUltraLarge",
+      "Name": "Guard Knockback Reduction %: Immensely Large",
+      "Description": "The guard knockback reduction rate applied when the attacker is considered \u0027Immensely Large\u0027."
+    },
+    {
+      "Field": "guardKnockBackRateFlip",
+      "Name": "Guard Knockback Reduction %: Deflection",
+      "Description": "The guard knockback reduction rate applied during a deflection."
+    },
+    {
+      "Field": "guardRotationRate",
+      "Name": "Guard Rotation %",
+      "Description": "The rotation rate when guarding."
+    },
+    {
+      "Field": "headShotEnable",
+      "Name": "Can Head Shot",
+      "Description": "If enabled, a character can be head shot."
+    },
+    {
+      "Field": "guardBreakEnable",
+      "Name": "Can Guard Break",
+      "Description": "If enabled, a character can be guard broken."
+    },
+    {
+      "Field": "backStabEnable",
+      "Name": "Can Backstab",
+      "Description": "If enabled, a character can be backstabbed."
+    },
+    {
+      "Field": "parryBreakStabEnable",
+      "Name": "Can Riposte after Parry",
+      "Description": "If enabled, a character can be riposted after a parry break."
+    },
+    {
+      "Field": "parryBreakDefenselessTime",
+      "Name": "Riposte Vulnerability Time",
+      "Description": "The riposte vulnerability duration (in seconds) after a parry break."
+    },
+    {
+      "Field": "parryBreakShorteningTime",
+      "Name": "Riposte Input Time Reduction",
+      "Description": "The input time reduction (in seconds) after a parry break."
+    },
+    {
+      "Field": "guardBreakStabEnable",
+      "Name": "Can Riposte after Guard Break",
+      "Description": "If enabled, a character can be riposted after a guard break."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "downAttackLength",
+      "Name": "Down Follow-up Attack: Allowable Distance",
+      "Description": "The allowable distance (in metres) for a down follow-up attack."
+    },
+    {
+      "Field": "backStabSideAngle",
+      "Name": "Backstab Cone Angle: Horizontal",
+      "Description": "The horizontal cone angle (in degrees) between the attacker and victim that a backstab can occur in."
+    },
+    {
+      "Field": "backStabUpSideAngle",
+      "Name": "Backstab Cone Angle: Vertical",
+      "Description": "The vertical cone angle (in degrees) between the attacker and victim that a backstab can occur in."
+    },
+    {
+      "Field": "backStabHeight",
+      "Name": "Backstab Height Difference",
+      "Description": "The allowable height difference (in metres) between the attacker and victim for a backstab to occur."
+    },
+    {
+      "Field": "backStabLength",
+      "Name": "Backstab Distance",
+      "Description": "The allowable distance (in metres) between the attacker and victim for a backstab to occur."
+    },
+    {
+      "Field": "parryBreakStabSideAngle",
+      "Name": "Parry Riposte Cone Angle: Horizontal",
+      "Description": "The horizontal cone angle (in degrees) between the attacker and victim that a parry riposte can occur in."
+    },
+    {
+      "Field": "parryBreakStabUpSideAngle",
+      "Name": "Parry Riposte Cone Angle: Vertical",
+      "Description": "The vertical cone angle (in degrees) between the attacker and victim that a parry riposte can occur in."
+    },
+    {
+      "Field": "parryBreakStabHeight",
+      "Name": "Parry Riposte Height Difference",
+      "Description": "The allowable height difference (in metres) between the attacker and victim for a parry riposte to occur."
+    },
+    {
+      "Field": "parryStabLength",
+      "Name": "Parry Riposte Distance",
+      "Description": "The allowable distance (in metres) between the attacker and victim for a parry riposte to occur."
+    },
+    {
+      "Field": "guardBreakStabSideAngle",
+      "Name": "Guard Riposte Cone Angle: Horizontal",
+      "Description": "The horizontal cone angle (in degrees) between the attacker and victim that a guard break riposte can occur in."
+    },
+    {
+      "Field": "guardBreakStabUpSideAngle",
+      "Name": "Guard Riposte Cone Angle: Vertical",
+      "Description": "The vertical cone angle (in degrees) between the attacker and victim that a guard break riposte can occur in."
+    },
+    {
+      "Field": "guardBreakStabHeight",
+      "Name": "Guard Riposte Height Difference",
+      "Description": "The allowable height difference (in metres) between the attacker and victim for a guard break riposte to occur."
+    },
+    {
+      "Field": "guardBreakStabLength",
+      "Name": "Guard Riposte Distance",
+      "Description": "The allowable distance (in metres) between the attacker and victim for a guard break riposte to occur."
+    },
+    {
+      "Field": "lowerEnable",
+      "Name": "Enable Lower Body Damage",
+      "Description": "If enabled, lower body damage can occur."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lowerDmgBendingValue",
+      "Name": "Lower Body Damage: Crouch Amount %",
+      "Description": "The amount of crouching that occurs when lower body damage occurs."
+    },
+    {
+      "Field": "lowerDmgBendingStartTime",
+      "Name": "Lower Body Damage: Crouch Time",
+      "Description": "The duration (in seconds) of the crouching that occurs when lower body damage occurs."
+    },
+    {
+      "Field": "lowerDmgBendingEndTime",
+      "Name": "Lower Body Damage: Crouch Recovery Time",
+      "Description": "The duration (in seconds) of the crouch recovery that occurs when lower body damage occurs."
+    },
+    {
+      "Field": "lowerDmgMoveDecelerationRate",
+      "Name": "Lower Body Damage: Movement Reduction %",
+      "Description": "The amount of movement speed reduction that occurs when lower body damage occurs."
+    },
+    {
+      "Field": "lowerDmgRotateDecelerationRate",
+      "Name": "Lower Body Damage: Rotation Reduction %",
+      "Description": "The amount of rotation speed reduction that occurs when lower body damage occurs."
+    },
+    {
+      "Field": "ragdollMassFactor",
+      "Name": "Ragdoll Mass %",
+      "Description": "The mass multiplier to apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollFrictionFactor",
+      "Name": "Ragdoll Friction %",
+      "Description": "The friction coefficient multiplier to apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollRestitutionFactor",
+      "Name": "Ragdoll Restitution %",
+      "Description": "The restitution coefficient multiplier to apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollMaxLinearVelocityFactor",
+      "Name": "Ragdoll Maximum Speed %",
+      "Description": "The maximum speed multiplier to apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollMaxAngularVelocityFactor",
+      "Name": "Ragdoll Maximum Angular Velocity %",
+      "Description": "The maximum angular velocity multiplier to apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollGravityFactorMin",
+      "Name": "Ragdoll Gravity Acceleration %: Minimum",
+      "Description": "The minimum acceleration gravity can apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "ragdollGravityFactorMax",
+      "Name": "Ragdoll Gravity Acceleration %: Maximum",
+      "Description": "The maximum acceleration gravity can apply to the character\u0027s ragdoll."
+    },
+    {
+      "Field": "jumpAttackSideAngle",
+      "Name": "Jump Collision: Horizontal Angle",
+      "Description": "The horizontal angle (in degrees) for jump attack collision."
+    },
+    {
+      "Field": "damageRotationSpeed",
+      "Name": "Damage: Direction Rotation Speed",
+      "Description": "The turning speed (in degrees per second) in the direction of damage that occurs."
+    },
+    {
+      "Field": "damageMoveDistRate",
+      "Name": "Damage: Knockback Reduction %",
+      "Description": "The knockback reduction rate when damage occurs."
+    },
+    {
+      "Field": "heavyDamageKnockBackDist",
+      "Name": "Heavy Damage: Knockback Reduction %",
+      "Description": "The knockback reduction rate when heavy damage occurs."
+    },
+    {
+      "Field": "heavyDamageStiff",
+      "Name": "Heavy Damage: Recovery Time",
+      "Description": "The recovery time (in seconds) when heavy damage occurs."
+    },
+    {
+      "Field": "heavyDamageDefenselessTime",
+      "Name": "Heavy Damage: Vulnerability Time",
+      "Description": "The vulnerability time (in seconds) when heavy damage occurs."
+    },
+    {
+      "Field": "bleedingDamageStiff",
+      "Name": "Bleed Damage: Recovery Time",
+      "Description": "The recovery time (in seconds) when bleed damage occurs."
+    },
+    {
+      "Field": "heavyDamageShorteningTime",
+      "Name": "Heavy Damage: Input Reduction Time",
+      "Description": "The input reduction time (in seconds) when heavy damage occurs."
+    },
+    {
+      "Field": "guardBreakDamageDefenselessTime",
+      "Name": "Guard Break: Vulnerability Time",
+      "Description": "The vulnerability time (in seconds) when a guard break occurs."
+    },
+    {
+      "Field": "guardBreakDamageShorteningTime",
+      "Name": "Guard Break: Input Reduction Time",
+      "Description": "The input reduction time (in seconds) when a guard break occurs."
+    },
+    {
+      "Field": "blowDecelerationTimeFirst",
+      "Name": "Blowback: Deceleration Time - 1",
+      "Description": "The deceleration time (in seconds) when blowback damage occurs."
+    },
+    {
+      "Field": "blowDecelerationTimeSecond",
+      "Name": "Blowback: Deceleration Time - 2",
+      "Description": "The deceleration time (in seconds) when blowback damage occurs."
+    },
+    {
+      "Field": "blowDecelerationFirst",
+      "Name": "Blowback: Deceleration - 1",
+      "Description": "The deceleration (in metres per seconds squared) when blowback damage occurs."
+    },
+    {
+      "Field": "blowDecelerationSecond",
+      "Name": "Blowback: Deceleration - 2",
+      "Description": "The deceleration (in metres per seconds squared) when blowback damage occurs."
+    },
+    {
+      "Field": "attackPushBackRate",
+      "Name": "Attack Pushback %",
+      "Description": "The pushback reflection rate."
+    },
+    {
+      "Field": "parryRotationSpeed",
+      "Name": "Parry Rotation Speed",
+      "Description": "The speed of turning during a parry (in degrees per second)."
+    },
+    {
+      "Field": "BreathDamageEnable",
+      "Name": "Enable Breath Damage",
+      "Description": "If enabled, breath damage can occur."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hitLowerBodyHeight",
+      "Name": "Hit Judgment: Lower Body Height",
+      "Description": "The lower body height for hit judgements."
+    },
+    {
+      "Field": "hitFrontAngle",
+      "Name": "Hit Judgment: Front Angle",
+      "Description": "The front (horizontal) angle used for hit judgements."
+    },
+    {
+      "Field": "attackMoveSpeed",
+      "Name": "Walk Attack: Movement Speed",
+      "Description": "The movement speed of walk attacks (in metres per second)."
+    },
+    {
+      "Field": "attackRotationSpeed",
+      "Name": "Walk Attack: Rotation Speed",
+      "Description": "The turn speed of walk attacks (in degrees per second)."
+    },
+    {
+      "Field": "attackRange",
+      "Name": "Walk Attack: Range",
+      "Description": "The range of walk attacks (in metres)."
+    },
+    {
+      "Field": "fLookAtRotationLeftMax",
+      "Name": "Focus: Left Rotation Limit",
+      "Description": "The left rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtRotationRightMax",
+      "Name": "Focus: Right Rotation Limit",
+      "Description": "The right rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtRotationUpperMax",
+      "Name": "Focus: Upper Rotation Limit",
+      "Description": "The upper rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtRotationLownerMax",
+      "Name": "Focus: Lower Rotation Limit",
+      "Description": "The lower rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtVisibilitySideMax",
+      "Name": "Focus: Horizontal Limit",
+      "Description": "The horizontal rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtVisibilityUpperMax",
+      "Name": "Focus: Vertical Limit",
+      "Description": "The vertical rotation limit (in degrees) when focusing a target."
+    },
+    {
+      "Field": "fLookAtRotationSideSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fLookAtRotationUpperSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isLookAtDummyPolyBasePos",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationLeftMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationRightMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationUpperMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationLownerMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtVisibilitySideMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtVisibilityUpperMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationSideSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fShootingLookAtRotationUpperSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shootingIsLookAtDummyPolyBasePos",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shootingLookAtDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly001",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly002",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly003",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly004",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly005",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly006",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly007",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDummyPoly008",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectOffsetMoveRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMargin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMinLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMaxLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRayMaxDownHillLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRayUpDownMargin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footRunSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSuperSmall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSmall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundLevelSuperLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSoundDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "single1HandNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "single1HandStrong",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandedNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "single2HandedStrong",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HandNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HandStrong",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandedNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HandedStrong",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladePartsDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSuperSmall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSmall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustPartsRateSuperLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackDamageRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "receiveSlashDamageRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "receiveThrustDamageRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "receiveStrikeDamageRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStrikeFallDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallStrikeHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSlopeAdjust",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustPitchMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustRollMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustPitchSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeAdjustRollSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabSlashAnim",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabStabAnim",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabGrabParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummyPolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummyPolyReverse",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallStabAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poisonRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poisonRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burningRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "burningRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "curseRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "curseRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedRecoverTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "petrifiedRecoverTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poisonWetEffectTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poisonWetEffectTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "oilWetEffectTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "oilWetEffectTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatierWetEffectTimeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatierWetEffectTimeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemAnimSpeedRateMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemAnimSpeedRateMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "downStiffRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "downShorteningTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageUpperRotationAngleCenter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "environmentSfxRain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "environmentSfxWaterFall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamSmall",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamMedium",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "moveWindParamLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingSdAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkAutoHomingUdAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingSdAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shotAutoHomingUdAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateSlash",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateBlow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateStab",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grabDamageRateBullet",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disallowDamageDecrementDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockInvisibleReleaseTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fHitOffsetX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fHitOffsetZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterHeightLow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterHeightMiddle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "takeWaterDummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRatePhysical",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateMagic",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateMiracle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRatePyromancy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageRateDark",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "Param": "PartsBreakParam",
+  "Type": "PARTS_BREAK_PARAM_ST",
+  "Name": "PartsBreakParam",
+  "Description": "Defines the behavior of broken parts.",
+  "Fields": [
+    {
+      "Field": "boneName",
+      "Name": "Joint Name",
+      "Description": "Specifies the affected joint name."
+    },
+    {
+      "Field": "partsWeight",
+      "Name": "Part Weight",
+      "Description": "Override value for ragdoll weight physics behavior. -1 disables override. 0 causes the object to be treated as a rigid body."
+    },
+    {
+      "Field": "bodySfxDmyId",
+      "Name": "Body SFX Dummy Poly ID",
+      "Description": "Specifies the dummy poly for SFX playback when broken. -1 uses the origin."
+    },
+    {
+      "Field": "partsSfxDmyId",
+      "Name": "Part SFX Dummy Poly ID",
+      "Description": "Specifies the dummy poly for SFX playback when broken. -1 uses the origin."
+    },
+    {
+      "Field": "bodySfxId",
+      "Name": "Body SFX ID",
+      "Description": "Specifies the SFX to use for the body when broken."
+    },
+    {
+      "Field": "partsSfxId",
+      "Name": "Part SFX ID",
+      "Description": "Specifies the SFX to use for the part when broken."
+    },
+    {
+      "Field": "baseSpeedWhenBreak",
+      "Name": "Base Speed At Break",
+      "Description": "The base initial speed used to move the weapon away from the target at the moment of detachment, in m/s. Note that this speed is independent of weight."
+    },
+    {
+      "Field": "partsAnimeType",
+      "Name": "Part Break Animation Type",
+      "Description": "How to animate the detached parts."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsExplosionSfxDmyId",
+      "Name": "Part Explosion SFX Dummy Poly ID",
+      "Description": "Part dummy poly for explosion SFX playback. -1 uses the origin."
+    },
+    {
+      "Field": "bodyExplosionSfxDmyId",
+      "Name": "Body Explosion SFX Dummy Poly ID",
+      "Description": "Body dummy poly for explosion SFX playback. -1 uses the origin."
+    },
+    {
+      "Field": "partsExplosionSfxId",
+      "Name": "Part Explosion SFX ID",
+      "Description": "Specifies the SFX to use for the part explosion."
+    },
+    {
+      "Field": "bodyExplosionSfxId",
+      "Name": "Body Explosion SFX ID",
+      "Description": "Specifies the SFX to use for the body explosion."
+    }
+  ]
+}

@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ITEM_LOT_TARGET_TYPE",
-  "Name": "ITEM_LOT_TARGET_TYPE",
-  "Description": "",
+  "Key": "ITEM_LOT_TARGET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_TARGET_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "All",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Occupation",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Occupation"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Non-destructive/destructive",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Non-destructive/destructive"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Pledge",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge"
+        }
+      ]
     }
   ]
 }

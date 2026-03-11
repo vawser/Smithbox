@@ -1,0 +1,83 @@
+{
+  "Param": "NpcArenaGameEffectParam",
+  "Type": "NPC_ARENA_GAME_EFFECT_PARAM_ST",
+  "Name": "NpcArenaGameEffectParam",
+  "Description": "Defines NPC arena in-match UI and display parameters.",
+  "Fields": [
+    {
+      "Field": "startTextId",
+      "Name": "Pop-up Text ID: Start",
+      "Description": ""
+    },
+    {
+      "Field": "winTextId",
+      "Name": "Pop-up Text ID: Win",
+      "Description": ""
+    },
+    {
+      "Field": "loseTextId",
+      "Name": "Pop-up Text ID: Lose",
+      "Description": ""
+    },
+    {
+      "Field": "drawTextId",
+      "Name": "Pop-up Text ID: Draw",
+      "Description": ""
+    },
+    {
+      "Field": "finishTextTiming",
+      "Name": "Win/Loss Text Timing",
+      "Description": ""
+    },
+    {
+      "Field": "endCutsceneWaitTime",
+      "Name": "Win/Loss Cutscene Delay",
+      "Description": "Delay before cutscene playback after win/loss."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slowWaitTime",
+      "Name": "Slow-Motion Duration",
+      "Description": ""
+    },
+    {
+      "Field": "finishTextTime",
+      "Name": "Win/Loss Text Duration",
+      "Description": "Duration to display win/loss dialogue, in seconds."
+    },
+    {
+      "Field": "playerDeadTextId",
+      "Name": "Player Death: Text ID",
+      "Description": "Text to display on player destruction."
+    },
+    {
+      "Field": "playerDeadTextWaitTime",
+      "Name": "Player Death: Text Duration",
+      "Description": "Duration to display text after player destruction, in seconds."
+    },
+    {
+      "Field": "enemyDeadTextId",
+      "Name": "Enemy Death: Text ID",
+      "Description": "Text to display on enemy destruction."
+    },
+    {
+      "Field": "enemyDeadTextWaitTime",
+      "Name": "Enemy Death: Text Duration",
+      "Description": "Duration to display text after enemy destruction, in seconds."
+    },
+    {
+      "Field": "startupCutsceneId",
+      "Name": "Startup Cutscene ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "Param": "WorldMapPieceParam",
+  "Type": "WORLD_MAP_PIECE_PARAM_ST",
+  "Name": "WorldMapPieceParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "openEventFlagId",
+      "Name": "Open - Event Flag ID",
+      "Description": "Event flag ID of open condition"
+    },
+    {
+      "Field": "openTravelAreaLeft",
+      "Name": "Open - Traversal Area - X Min",
+      "Description": "Coordinates of the traversal area that expands when opened (Xmin)"
+    },
+    {
+      "Field": "openTravelAreaRight",
+      "Name": "Open - Traversal Area - X Max",
+      "Description": "Coordinates of the traversal area that expands when opened (Xmax)"
+    },
+    {
+      "Field": "openTravelAreaTop",
+      "Name": "Open - Traversal Area - Y Min",
+      "Description": "Coordinates of the traversal area that expands when opened (Ymin)"
+    },
+    {
+      "Field": "openTravelAreaBottom",
+      "Name": "Open - Traversal Area - Y Max",
+      "Description": "Coordinates of the traversal area that expands when opened (Ymax)"
+    },
+    {
+      "Field": "acquisitionEventFlagId",
+      "Name": "Acquisition - Event Flag ID",
+      "Description": "Event flag ID of the acquisition production start condition. Assuming that only one of the map fragments is On"
+    },
+    {
+      "Field": "acquisitionEventScale",
+      "Name": "Acquisition - Display Scale",
+      "Description": "Display magnification at the time of acquisition production"
+    },
+    {
+      "Field": "acquisitionEventCenterX",
+      "Name": "Acquisition - Center X Coordinate",
+      "Description": "Center coordinates (X) at the time of acquisition production"
+    },
+    {
+      "Field": "acquisitionEventCenterY",
+      "Name": "Acquisition - Center Y Coordinate",
+      "Description": "For the central seat at the time of acquisition production (Y)"
+    },
+    {
+      "Field": "acquisitionEventResScale",
+      "Name": "Acquisition - Display Resource Scale",
+      "Description": "Display magnification of blindfold resources for acquisition production"
+    },
+    {
+      "Field": "acquisitionEventResOffsetX",
+      "Name": "Acquisition - Resource Offset X",
+      "Description": "Display position offset (X) of blindfold resource for acquisition production"
+    },
+    {
+      "Field": "acquisitionEventResOffsetY",
+      "Name": "Acquisition - Resource Offset Y",
+      "Description": "Offset of display position of blindfold resource for acquisition production (Y)"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

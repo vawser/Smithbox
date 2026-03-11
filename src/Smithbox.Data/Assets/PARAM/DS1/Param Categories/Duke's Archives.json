@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Duke's Archives",
+  "Key": "Duke's Archives",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Duke's Archives"
+      }
+  ],
   "Params": [
     "m17_DofBank",
     "m17_EnvLightTexBank",

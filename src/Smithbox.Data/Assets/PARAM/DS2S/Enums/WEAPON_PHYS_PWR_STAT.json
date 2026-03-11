@@ -1,17 +1,29 @@
 {
-  "DisplayName": "WEAPON_PHYS_PWR_STAT",
-  "Name": "WEAPON_PHYS_PWR_STAT",
-  "Description": "",
+  "Key": "WEAPON_PHYS_PWR_STAT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_PHYS_PWR_STAT"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Muscle strength",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Muscle strength"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Skill",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skill"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,103 @@
+{
+  "Param": "HPEstusFlaskRecoveryParam",
+  "Type": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Name": "HPEstusFlaskRecoveryParam",
+  "Description": "Defines the amount HP/MP flasks that will be refilled when an EstusFlaskRecoveryParam row is awarded",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeOrb_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeOrb_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeOrb_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeOrb_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeSign_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeSign_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeSign_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeSign_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeRing_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeRing_Rosalia",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeRing_Forest",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coopSign_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coopSign_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coopSign_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coopSign_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coopRing_RedHunter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invadeRing_Anor",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

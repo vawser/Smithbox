@@ -1,0 +1,28 @@
+{
+  "Param": "MenuValueTableParam",
+  "Type": "MENU_VALUE_TABLE_SPEC",
+  "Name": "MenuValueTableParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "Value",
+      "Description": "Value to compare"
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Converted text ID"
+    },
+    {
+      "Field": "compareType",
+      "Name": "Compare Type",
+      "Description": "Comparison type"
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

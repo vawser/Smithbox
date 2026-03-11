@@ -1,0 +1,168 @@
+{
+  "Param": "ObjectMaterialSfxParam",
+  "Type": "OBJECT_MATERIAL_SFX_PARAM_ST",
+  "Name": "ObjectMaterialSfxParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId_31",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

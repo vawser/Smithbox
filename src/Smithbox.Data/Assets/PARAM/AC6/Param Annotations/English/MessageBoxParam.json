@@ -1,0 +1,43 @@
+{
+  "Param": "MessageBoxParam",
+  "Type": "MESSAGEBOX_PARAM_ST",
+  "Name": "MessageBoxParam",
+  "Description": "Determines the configuration for message boxes.",
+  "Fields": [
+    {
+      "Field": "msgCategory",
+      "Name": "Category Type",
+      "Description": "The message category this message box uses."
+    },
+    {
+      "Field": "requestPause",
+      "Name": "Request Pause",
+      "Description": "If ON, this message box will request a pause."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "singleActivityCtrl",
+      "Name": "Singleplayer: Control Type",
+      "Description": "The control type to use for this message box."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiActivityCtrl",
+      "Name": "Multiplayer: Control Type",
+      "Description": "The control type to use for this message box."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

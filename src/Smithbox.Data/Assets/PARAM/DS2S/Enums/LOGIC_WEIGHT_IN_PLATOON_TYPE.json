@@ -1,42 +1,74 @@
 {
-  "DisplayName": "LOGIC_WEIGHT_IN_PLATOON_TYPE",
-  "Name": "LOGIC_WEIGHT_IN_PLATOON_TYPE",
-  "Description": "",
+  "Key": "LOGIC_WEIGHT_IN_PLATOON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_WEIGHT_IN_PLATOON_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Super super extra large",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super super extra large"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Super extra large",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super extra large"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Large",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Small",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Ignore",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
     }
   ]
 }

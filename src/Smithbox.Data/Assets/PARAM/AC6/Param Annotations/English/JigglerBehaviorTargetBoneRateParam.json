@@ -1,0 +1,33 @@
+{
+  "Param": "JigglerBehaviorTargetBoneRateParam",
+  "Type": "JIGGLER_BEHAVIOR_TARGET_BONE_RATE_PARAM_ST",
+  "Name": "JigglerBehaviorTargetBoneRateParam",
+  "Description": "Determines the target rate for a jiggle bone.",
+  "Fields": [
+    {
+      "Field": "strTargetBoneName",
+      "Name": "Target Bone Name",
+      "Description": "The bone name to target."
+    },
+    {
+      "Field": "selfRotRateX",
+      "Name": "Rotation %: X-Axis",
+      "Description": "The rotation rate on the X-axis for this bone."
+    },
+    {
+      "Field": "selfRotRateY",
+      "Name": "Rotation %: Y-Axis",
+      "Description": "The rotation rate on the Y-axis for this bone."
+    },
+    {
+      "Field": "selfRotRateZ",
+      "Name": "Rotation %: Z-Axis",
+      "Description": "The rotation rate on the Z-axis for this bone."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

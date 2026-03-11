@@ -1,17 +1,29 @@
 {
-  "DisplayName": "ITEM_LOT_DISP_TYPE",
-  "Name": "ITEM_LOT_DISP_TYPE",
-  "Description": "",
+  "Key": "ITEM_LOT_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_DISP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "2",
-      "Name": "小",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "小"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "大",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "大"
+        }
+      ]
     }
   ]
 }

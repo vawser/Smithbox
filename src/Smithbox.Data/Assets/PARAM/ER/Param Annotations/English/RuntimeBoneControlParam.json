@@ -1,0 +1,38 @@
+{
+  "Param": "RuntimeBoneControlParam",
+  "Type": "RUNTIME_BONE_CONTROL_PARAM_ST",
+  "Name": "RuntimeBoneControlParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "chrId",
+      "Name": "Character ID",
+      "Description": "Character ID"
+    },
+    {
+      "Field": "ctrlType",
+      "Name": "Bone Control Type",
+      "Description": "Control type"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "applyBone",
+      "Name": "Applicable Joint",
+      "Description": "Applicable joint"
+    },
+    {
+      "Field": "targetBone1",
+      "Name": "Target Joint [1]",
+      "Description": "Target joint 1"
+    },
+    {
+      "Field": "targetBone2",
+      "Name": "Target Joint [2]",
+      "Description": "Target joint 2"
+    }
+  ]
+}

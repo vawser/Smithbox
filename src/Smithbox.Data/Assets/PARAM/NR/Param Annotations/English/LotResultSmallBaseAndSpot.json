@@ -1,0 +1,48 @@
+{
+  "Param": "LotResultSmallBaseAndSpot",
+  "Type": "LOT_RESULT_SMALLBASE_AND_SPOT_ST",
+  "Name": "LotResultSmallBaseAndSpot",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "Pattern ID",
+      "Description": "The pattern set this entry belongs to."
+    },
+    {
+      "Field": "attachId",
+      "Name": "Attach Point ID",
+      "Description": "The attach point for this entry."
+    },
+    {
+      "Field": "smallBaseMapId",
+      "Name": "Small Map ID",
+      "Description": ""
+    },
+    {
+      "Field": "mapIndex",
+      "Name": "Map Index",
+      "Description": ""
+    },
+    {
+      "Field": "variationId",
+      "Name": "Variation ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modifier",
+      "Name": "Modifier",
+      "Description": ""
+    }
+  ]
+}

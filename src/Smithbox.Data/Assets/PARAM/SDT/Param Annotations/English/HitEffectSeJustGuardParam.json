@@ -1,0 +1,688 @@
+{
+  "Param": "HitEffectSeJustGuardParam",
+  "Type": "HIT_EFFECT_SE_PARAM_ST",
+  "Name": "HitEffectSeJustGuardParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "Iron_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Iron_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Fire_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wood_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Body_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Eclipse_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Energy_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "None_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy1_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy2_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Dmy3_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maggot_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Wax_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FireFlame_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EclipseGas_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Slash_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Slash_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Slash_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Thrust_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Thrust_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Thrust_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Blow_S",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Blow_L",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnergyStrong_Blow_LL",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

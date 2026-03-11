@@ -1,72 +1,128 @@
 {
-  "DisplayName": "NPC_EVENT_SHOP_ENUM",
-  "Name": "NPC_EVENT_SHOP_ENUM",
-  "Description": "",
+  "Key": "NPC_EVENT_SHOP_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_EVENT_SHOP_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "None",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Level up",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Level up"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Bag shop",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bag shop"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Book store",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Book store"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Weapon blacksmith",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon blacksmith"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Armor shop",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Yorozuya/Tools shop/Coffin shop",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozuya/Tools shop/Coffin shop"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Speller",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Speller"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Armor blacksmith",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor blacksmith"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Material shop",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Phantom shop",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom shop"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Top weapon shop",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top weapon shop"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Priest of indulgences",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Priest of indulgences"
+        }
+      ]
     }
   ]
 }

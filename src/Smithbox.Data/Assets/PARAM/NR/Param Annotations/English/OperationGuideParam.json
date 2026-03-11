@@ -1,0 +1,48 @@
+{
+  "Param": "OperationGuideParam",
+  "Type": "OPERATION_GUIDE_PARAM_ST",
+  "Name": "OperationGuideParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guideTextId",
+      "Name": "Text ID",
+      "Description": "The text to display for this guide."
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

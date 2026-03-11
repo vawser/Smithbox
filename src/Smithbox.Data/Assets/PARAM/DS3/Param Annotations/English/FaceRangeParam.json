@@ -1,0 +1,738 @@
+{
+  "Param": "FaceRangeParam",
+  "Type": "FACE_RANGE_PARAM_ST",
+  "Name": "FaceRangeParam",
+  "Description": "Configuration data for Face paramters",
+  "Fields": [
+    {
+      "Field": "Unknown0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData35",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

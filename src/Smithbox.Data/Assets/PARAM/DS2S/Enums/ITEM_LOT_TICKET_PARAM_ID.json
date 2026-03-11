@@ -1,37 +1,65 @@
 {
-  "DisplayName": "ITEM_LOT_TICKET_PARAM_ID",
-  "Name": "ITEM_LOT_TICKET_PARAM_ID",
-  "Description": "",
+  "Key": "ITEM_LOT_TICKET_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_TICKET_PARAM_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Chief",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chief"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Yes",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
     },
     {
-      "ID": "4000",
-      "Name": "Rhea",
-      "Description": ""
+      "Key": "4000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rhea"
+        }
+      ]
     },
     {
-      "ID": "5000",
-      "Name": "S rare",
-      "Description": ""
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "S rare"
+        }
+      ]
     }
   ]
 }

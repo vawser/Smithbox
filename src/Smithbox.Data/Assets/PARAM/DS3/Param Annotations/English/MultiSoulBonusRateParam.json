@@ -1,0 +1,93 @@
+{
+  "Param": "MultiSoulBonusRateParam",
+  "Type": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Name": "MultiSoulBonusRateParam",
+  "Description": "Souls Multiplier for killing phantoms/invaders",
+  "Fields": [
+    {
+      "Field": "soulMultiplierRate0",
+      "Name": "Soul Modifier - Host",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate1",
+      "Name": "Soul Modifier - Phantom",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate2",
+      "Name": "Soul Modifier - Phantom (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate3",
+      "Name": "Soul Modifier - Phantom (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate4",
+      "Name": "Soul Modifier - Red Sign",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate5",
+      "Name": "Soul Modifier - Red Sign (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate6",
+      "Name": "Soul Modifier - Red Sign (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate7",
+      "Name": "Soul Modifier - Invader",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate8",
+      "Name": "Soul Modifier - Invader (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate9",
+      "Name": "Soul Modifier - Invader (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate10",
+      "Name": "Soul Modifier - Blue Spirit 1",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate11",
+      "Name": "Soul Modifier - Blue Spirit 2",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate12",
+      "Name": "Soul Modifier - Watchdogs of Farron",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate13",
+      "Name": "Soul Modifier - Aldrich Faithful",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate14",
+      "Name": "Soul Modifier - Arena",
+      "Description": ""
+    },
+    {
+      "Field": "soulMultiplierRate15",
+      "Name": "Soul Modifier - Spears of the Church",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

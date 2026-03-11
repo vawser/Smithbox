@@ -1,27 +1,47 @@
 {
-  "DisplayName": "GUARD_RELEASE_SPEED_CATEGORY",
-  "Name": "GUARD_RELEASE_SPEED_CATEGORY",
-  "Description": "",
+  "Key": "GUARD_RELEASE_SPEED_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARD_RELEASE_SPEED_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "10",
-      "Name": "速",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "速"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "中",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "中"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "遅",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "遅"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Extremely slow",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely slow"
+        }
+      ]
     }
   ]
 }

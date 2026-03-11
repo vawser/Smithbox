@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BOOL_YESNO_TYPE",
-  "Name": "BOOL_YESNO_TYPE",
-  "Description": "",
+  "Key": "BOOL_YESNO_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_YESNO_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Yes",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
     }
   ]
 }

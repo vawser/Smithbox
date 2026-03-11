@@ -1,0 +1,58 @@
+{
+  "Param": "WirePointSearchParam",
+  "Type": "WIRE_POINT_SEARCH_PARAM_ST",
+  "Name": "WirePointSearchParam",
+  "Description": "Defines Grappling range",
+  "Fields": [
+    {
+      "Field": "actionDistanceNear",
+      "Name": "",
+      "Description": "Minimum distance for wire action"
+    },
+    {
+      "Field": "actionDistanceFar",
+      "Name": "",
+      "Description": "Maximum distance for wire action"
+    },
+    {
+      "Field": "findDistanceFar",
+      "Name": "",
+      "Description": "Wire action is not possible, but the distance where the point can be seen"
+    },
+    {
+      "Field": "filteringDistanceHeightUpper",
+      "Name": "",
+      "Description": "Upper height when filtering by rectangle"
+    },
+    {
+      "Field": "filteringDistanceHeightLower",
+      "Name": "",
+      "Description": "Bottom height when filtering by rectangle"
+    },
+    {
+      "Field": "filteringDistanceWidth",
+      "Name": "",
+      "Description": "Width when filtering by rectangle"
+    },
+    {
+      "Field": "softlockDistanceHeightUpper",
+      "Name": "",
+      "Description": "Height of the screen range that soft locks the target once captured (top)"
+    },
+    {
+      "Field": "softlockDistanceHeightLower",
+      "Name": "",
+      "Description": "Height of the screen range that soft locks the target once captured (bottom)"
+    },
+    {
+      "Field": "softlockDistanceWidth",
+      "Name": "",
+      "Description": "Width of the screen range that soft locks the target once captured"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

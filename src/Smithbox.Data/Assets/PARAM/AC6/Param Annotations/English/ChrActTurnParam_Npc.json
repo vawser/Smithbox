@@ -1,0 +1,208 @@
+{
+  "Param": "ChrActTurnParam_Npc",
+  "Type": "CHR_ACT_TURN_PARAM_ST",
+  "Name": "ChrActTurnParam_Npc",
+  "Description": "Determines the parameters used when a character turns.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseTurnSpeedDPS",
+      "Name": "Base - Turn Speed",
+      "Description": "Standard turning speed for normal turning, the speed and time turning rate are applied to this value. In degrees per second."
+    },
+    {
+      "Field": "speedTurnRate_MinSpeedKMPH",
+      "Name": "Base - Turn Speed Rate: Minimum Speed",
+      "Description": "The minimum turning speed that will be used. In kilometres per hour."
+    },
+    {
+      "Field": "speedTurnRate_MaxSpeedKMPH",
+      "Name": "Base - Turn Speed Rate: Maximum Speed",
+      "Description": "The maximum turning speed that will be used. In kilometres per hour."
+    },
+    {
+      "Field": "speedTurnRate_MinSpeedTurnRate",
+      "Name": "Base - Turn Speed Rate: % at Minimum Speed",
+      "Description": "Speed \u200B\u200Bturning rate at minimum speed."
+    },
+    {
+      "Field": "speedTurnRate_MaxSpeedTurnRate",
+      "Name": "Base - Turn Speed Rate: % at Maximum Speed",
+      "Description": "Speed \u200B\u200Bturning rate at maximum speed."
+    },
+    {
+      "Field": "timeTurnRate_MinTimeSec",
+      "Name": "Base - Turn Time Rate: Minimum Time",
+      "Description": "The minimum time turning rate will be reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeSec",
+      "Name": "Base - Turn Time Rate: Maximum Time",
+      "Description": "The maximum time turning rate will be reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "timeTurnRate_MinTimeTurnRate",
+      "Name": "Base - Turn Time Rate: % at Minimum Time",
+      "Description": "Time turning rate at minimum time."
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeTurnRate",
+      "Name": "Base - Turn Time Rate: % at Maximum Time",
+      "Description": "Time turning rate at maximum time."
+    },
+    {
+      "Field": "lookTargetModeTurnSpeedDPS",
+      "Name": "Look Target - Turn Speed",
+      "Description": "Turning speed in the mode facing the target direction, reference turning speed is not used. In degrees per second."
+    },
+    {
+      "Field": "lookTargetModeTurnSpeedDPSAtLowDeltaAngle",
+      "Name": "Look Target - Turn Speed with Low Delta",
+      "Description": "Turning speed in the mode facing the target when the angle difference is small, the reference turning speed is not used. In degrees per second."
+    },
+    {
+      "Field": "judgeTurnSpeedThresholdAngleDeg",
+      "Name": "Look Target - Low Delta Judgment Angle",
+      "Description": "If the angle is smaller than this, the low delta angle speed will be used. In degrees."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MinSpeedKMPH",
+      "Name": "Look Target - Turn Speed Rate: Minimum Speed",
+      "Description": "The minimum turning speed that will be used. In kilometres per hour."
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MaxSpeedKMPH",
+      "Name": "Look Target - Turn Speed Rate: Maximum Speed",
+      "Description": "The maximum turning speed that will be used. In kilometres per hour."
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MinSpeedTurnRate",
+      "Name": "Look Target - Turn Speed Rate: % at Minimum Speed",
+      "Description": "Speed \u200B\u200Bturning rate at minimum speed."
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MaxSpeedTurnRate",
+      "Name": "Look Target - Turn Speed Rate: % at Maximum Speed",
+      "Description": "Speed \u200B\u200Bturning rate at maximum speed."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeSec",
+      "Name": "Look Target - Turn Time Rate: Minimum Time",
+      "Description": "The minimum time turning rate will be reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeSec",
+      "Name": "Look Target - Turn Time Rate: Maximum Time",
+      "Description": "The maximum time turning rate will be reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeTurnRate",
+      "Name": "Look Target - Turn Time Rate: % at Minimum Time",
+      "Description": "Time turning rate at minimum time."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeTurnRate",
+      "Name": "Look Target - Turn Time Rate: % at Maximum Time",
+      "Description": "Time turning rate at maximum time."
+    },
+    {
+      "Field": "turnAccelDPSS",
+      "Name": "Turn Acceleration",
+      "Description": "Acceleration to reach turning speed. If you want to set the turning speed from the beginning, set a large value. In degrees per second ^ 2"
+    },
+    {
+      "Field": "lookTargetMode_LookAheadSecond",
+      "Name": "Look Target - Look Ahead Time",
+      "Description": "How many seconds after the target do you try to look when facing the target (for AI)."
+    },
+    {
+      "Field": "timeTurnRate_MinTimeSec_Accel",
+      "Name": "Base - Time Turn Acceleration Rate: Minimum Time",
+      "Description": "The minimum time angular acceleration rate is reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeSec_Accel",
+      "Name": "Base - Time Turn Acceleration Rate: Maximum Time",
+      "Description": "The maximum time angular acceleration rate is reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "timeTurnRate_MinTimeTurnAccelRate",
+      "Name": "Base - Time Turn Acceleration Rate: Minimum Acceleration Rate",
+      "Description": "Time angular acceleration rate at minimum time"
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeTurnAccelRate",
+      "Name": "Base - Time Turn Acceleration Rate: Maximum Acceleration Rate",
+      "Description": "Time angular acceleration rate at maximum time"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeSec_Accel",
+      "Name": "Look Target - Time Turn Acceleration Rate: Minimum Time",
+      "Description": "The minimum time angular acceleration rate is reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeSec_Accel",
+      "Name": "Look Target - Time Turn Acceleration Rate: Maximum Time",
+      "Description": "The maximum time angular acceleration rate is reached within this time after the parameter is switched. In seconds."
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeTurnAccelRate",
+      "Name": "Look Target - Time Turn Acceleration Rate: Minimum Acceleration Rate",
+      "Description": "Time angular acceleration rate at minimum time"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeTurnAccelRate",
+      "Name": "Look Target - Time Turn Acceleration Rate: Maximum Acceleration Rate",
+      "Description": "Time angular acceleration rate at maximum time"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "paramEndIntpTimeSec",
+      "Name": "Angular Acceleration Interpolation Time at Parameter End",
+      "Description": "Time to interpolate acceleration when parameters switch and exit. In seconds."
+    },
+    {
+      "Field": "reverseTurnBrakeDPSS",
+      "Name": "Reverse Turn Brake Peformance",
+      "Description": "Brake when turning in the opposite direction (disabled at -1). In degrees per second ^ 2"
+    },
+    {
+      "Field": "animBlendMaxSpeedDPS_LR",
+      "Name": "Angular Velocity for Left/Right Blend Ratio",
+      "Description": "When the angular velocity exceeds this speed, the blend ratio of left and right animation becomes 1. In degrees per second."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

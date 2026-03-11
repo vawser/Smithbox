@@ -1,0 +1,188 @@
+{
+  "Param": "AreaParam",
+  "Type": "AREA_PARAM",
+  "Name": "AreaParam",
+  "Description": "Defines parameters related to map area, such as mimicry objects and lock-on values.",
+  "Fields": [
+    {
+      "Field": "intrudeEnable",
+      "Name": "Enable Invasion",
+      "Description": "If enabled, invasions are allowed in this area."
+    },
+    {
+      "Field": "aReserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockOnId",
+      "Name": "Lock-On ID",
+      "Description": "The lock-on parameters to use by default in this area."
+    },
+    {
+      "Field": "lockOnIdDark",
+      "Name": "Lock-On ID (Darkness)",
+      "Description": "The lock-on parameters to when within darkness in this area."
+    },
+    {
+      "Field": "lockOnIdTorch",
+      "Name": "Lock-On ID (Torch)",
+      "Description": "The lock-on parameters to use when a torch is wielded in this area."
+    },
+    {
+      "Field": "isPriorityLockOnIdTorch",
+      "Name": "Prioritize Torch Lock-On ID",
+      "Description": "If enabled, the torch lock-on parameters are prioritized over the others."
+    },
+    {
+      "Field": "isAbyss",
+      "Name": "Is Abyss",
+      "Description": "If enabled, this area is considered the Abyss."
+    },
+    {
+      "Field": "waterMaterial",
+      "Name": "Water Material",
+      "Description": "The hit material to use on water contact within this area."
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cameraId",
+      "Name": "Camera ID",
+      "Description": "The camera parameters to use by default for this area."
+    },
+    {
+      "Field": "playerLightSfxId",
+      "Name": "Player Light SFX ID",
+      "Description": "The player light SFX to use for this area."
+    },
+    {
+      "Field": "logicSoundDistance",
+      "Name": "Logic Sound Distance",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostScaleDash",
+      "Name": "Stamina Cost Scale for Dash",
+      "Description": ""
+    },
+    {
+      "Field": "fallWaterSfxId",
+      "Name": "Water SFX ID for Fall Landing",
+      "Description": ""
+    },
+    {
+      "Field": "chameleonEnableRare",
+      "Name": "Enable Chameleon Object",
+      "Description": "If enabled, chameleon objects may occur in this area."
+    },
+    {
+      "Field": "chameleonWeight1",
+      "Name": "Chameleon Object Weight: 1",
+      "Description": "The chance weight for the chameleon object to use slot 1."
+    },
+    {
+      "Field": "chameleonWeight2",
+      "Name": "Chameleon Object Weight: 2",
+      "Description": "The chance weight for the chameleon object to use slot 2."
+    },
+    {
+      "Field": "chameleonWeight3",
+      "Name": "Chameleon Object Weight: 3",
+      "Description": "The chance weight for the chameleon object to use slot 3."
+    },
+    {
+      "Field": "chameleonWeight4",
+      "Name": "Chameleon Object Weight: 4",
+      "Description": "The chance weight for the chameleon object to use slot 4."
+    },
+    {
+      "Field": "chameleonWeight5",
+      "Name": "Chameleon Object Weight: 5",
+      "Description": "The chance weight for the chameleon object to use slot 5."
+    },
+    {
+      "Field": "aReserved2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chameleonId1",
+      "Name": "Chameleon Object: 1",
+      "Description": "The chameleon object for slot 1."
+    },
+    {
+      "Field": "chameleonId2",
+      "Name": "Chameleon Object: 2",
+      "Description": "The chameleon object for slot 2."
+    },
+    {
+      "Field": "chameleonId3",
+      "Name": "Chameleon Object: 3",
+      "Description": "The chameleon object for slot 3."
+    },
+    {
+      "Field": "chameleonId4",
+      "Name": "Chameleon Object: 4",
+      "Description": "The chameleon object for slot 4."
+    },
+    {
+      "Field": "chameleonId5",
+      "Name": "Chameleon Object: 5",
+      "Description": "The chameleon object for slot 5."
+    },
+    {
+      "Field": "chameleonAngle1",
+      "Name": "Chameleon Object Angle: 1",
+      "Description": "The angle correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonAngle2",
+      "Name": "Chameleon Object Angle: 2",
+      "Description": "The angle correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonAngle3",
+      "Name": "Chameleon Object Angle: 3",
+      "Description": "The angle correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonAngle4",
+      "Name": "Chameleon Object Angle: 4",
+      "Description": "The angle correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonAngle5",
+      "Name": "Chameleon Object Angle: 5",
+      "Description": "The angle correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonHeight1",
+      "Name": "Chameleon Object Height: 1",
+      "Description": "The height correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonHeight2",
+      "Name": "Chameleon Object Height: 2",
+      "Description": "The height correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonHeight3",
+      "Name": "Chameleon Object Height: 3",
+      "Description": "The height correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonHeight4",
+      "Name": "Chameleon Object Height: 4",
+      "Description": "The height correction for this chameleon object."
+    },
+    {
+      "Field": "chameleonHeight5",
+      "Name": "Chameleon Object Height: 5",
+      "Description": "The height correction for this chameleon object."
+    }
+  ]
+}

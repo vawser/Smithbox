@@ -1,0 +1,128 @@
+{
+  "Param": "WeatherAssetCreateParam",
+  "Type": "WEATHER_ASSET_CREATE_PARAM_ST",
+  "Name": "WeatherAssetCreateParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AssetId",
+      "Name": "Asset ID",
+      "Description": "Specify the asset ID to generate. AEG999_999-\u003E 999999"
+    },
+    {
+      "Field": "SlotNo",
+      "Name": "Slot Number",
+      "Description": "This is the number for generation control. Only one asset can be generated in the same slot. You can control whether you want to generate duplicates or not."
+    },
+    {
+      "Field": "CreateConditionType",
+      "Name": "Create Condition Type",
+      "Description": "The type of condition of occurrence"
+    },
+    {
+      "Field": "padding0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TransitionSrcWeather",
+      "Name": "Transition Source Weather",
+      "Description": "Specify the transition source weather. It is referenced only when the occurrence condition is transition."
+    },
+    {
+      "Field": "TransitionDstWeather",
+      "Name": "Transition Destination Weather",
+      "Description": "Specify the transition destination weather. It is referenced only when the occurrence condition is transition."
+    },
+    {
+      "Field": "ElapsedTimeCheckweather",
+      "Name": "Check Weather Elapsed Time",
+      "Description": "Specify the weather to check the elapsed time."
+    },
+    {
+      "Field": "padding1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ElapsedTime",
+      "Name": "Elapsed Time",
+      "Description": "Specify the elapsed time. It is referenced only when the occurrence condition is time elapsed. Real time Specify in seconds."
+    },
+    {
+      "Field": "CreateDelayTime",
+      "Name": "Create Delay Time",
+      "Description": "Specifies the time to delay after the generation is determined. The created slot will be in use while it is delayed. Created immediately with 0 or less."
+    },
+    {
+      "Field": "CreateProbability",
+      "Name": "Create Probability",
+      "Description": "Specifies the probability of occurrence when conditions for weather transitions or elapsed time are met."
+    },
+    {
+      "Field": "LifeTime",
+      "Name": "Duration",
+      "Description": "Specifies the life of the generated asset. Real time Specify in seconds."
+    },
+    {
+      "Field": "FadeTime",
+      "Name": "Fade Time",
+      "Description": "Time [seconds] used for fade-in and fade-out. No fade below 0."
+    },
+    {
+      "Field": "EnableCreateTimeMin",
+      "Name": "Enable Create Time Min",
+      "Description": "Specifies a start time that can be generated [0.0 --24.0]. If you put -1 in either the start or the end, it will be treated as unlimited (can be generated in all time)."
+    },
+    {
+      "Field": "EnableCreateTimeMax",
+      "Name": "Enable Create Time Max",
+      "Description": "Specifies the end time that can be generated [0.0 --24.0]. If you put -1 in either the start or the end, it will be treated as unlimited (can be generated in all time)."
+    },
+    {
+      "Field": "CreatePoint0",
+      "Name": "Create Point [0]",
+      "Description": "Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid"
+    },
+    {
+      "Field": "CreatePoint1",
+      "Name": "Create Point [1]",
+      "Description": "Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid"
+    },
+    {
+      "Field": "CreatePoint2",
+      "Name": "Create Point [2]",
+      "Description": "Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid"
+    },
+    {
+      "Field": "CreatePoint3",
+      "Name": "Create Point [3]",
+      "Description": "Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid"
+    },
+    {
+      "Field": "CreateAssetLimitId0",
+      "Name": "Create Asset Limit ID [0]",
+      "Description": "ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)."
+    },
+    {
+      "Field": "CreateAssetLimitId1",
+      "Name": "Create Asset Limit ID [1]",
+      "Description": "ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)."
+    },
+    {
+      "Field": "CreateAssetLimitId2",
+      "Name": "Create Asset Limit ID [2]",
+      "Description": "ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)."
+    },
+    {
+      "Field": "CreateAssetLimitId3",
+      "Name": "Create Asset Limit ID [3]",
+      "Description": "ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)."
+    },
+    {
+      "Field": "Reserved2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

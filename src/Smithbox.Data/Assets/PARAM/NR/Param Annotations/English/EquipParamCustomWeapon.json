@@ -1,0 +1,88 @@
+{
+  "Param": "EquipParamCustomWeapon",
+  "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Name": "EquipParamCustomWeapon",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetWeaponId",
+      "Name": "Target Weapon",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsTableId",
+      "Name": "Target Skill Table",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_1",
+      "Name": "Attached Effect Table: 1",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_2",
+      "Name": "Attached Effect Table: 2",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_3",
+      "Name": "Attached Effect Table: 3",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "weaponLevel",
+      "Name": "Weapon Reinforcement Level",
+      "Description": "The adjusted power level of the weapon"
+    },
+    {
+      "Field": "isCursed",
+      "Name": "Is Unique Weapon",
+      "Description": "Changes weapon color to red if true, and grants a slight damage increase"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicTableId_1",
+      "Name": "Magic Table: 1",
+      "Description": "Spell for slot 1"
+    },
+    {
+      "Field": "magicTableId_2",
+      "Name": "Magic Table: 2",
+      "Description": "Spell for slot 2"
+    },
+    {
+      "Field": "attachEffectTableId_4",
+      "Name": "Attached Effect Table: 4",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_5",
+      "Name": "Attached Effect Table: 5",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_6",
+      "Name": "Attached Effect Table: 6",
+      "Description": "The attached effect table to use."
+    }
+  ]
+}

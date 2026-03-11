@@ -1,27 +1,47 @@
 {
-  "DisplayName": "PLAYER_MULTI_ENTRY_MOTION",
-  "Name": "PLAYER_MULTI_ENTRY_MOTION",
-  "Description": "",
+  "Key": "PLAYER_MULTI_ENTRY_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_MULTI_ENTRY_MOTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Crouching",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crouching"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Standing",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standing"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Sun praise",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sun praise"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Mirror night",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror night"
+        }
+      ]
     }
   ]
 }

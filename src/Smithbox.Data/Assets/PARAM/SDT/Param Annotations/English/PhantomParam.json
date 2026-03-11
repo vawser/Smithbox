@@ -1,0 +1,143 @@
+{
+  "Param": "PhantomParam",
+  "Type": "PHANTOM_PARAM_ST",
+  "Name": "PhantomParam",
+  "Description": "Defines the color and transparency of phantom visual effects",
+  "Fields": [
+    {
+      "Field": "edgeColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "alpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blendRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blendType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEdgeSubtract",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isFrontSubtract",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isNo2Pass",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

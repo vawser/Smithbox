@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Huntsman's Copse & Undead Purgatory",
+  "Key": "Huntsman's Copse & Undead Purgatory",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Huntsman's Copse & Undead Purgatory"
+      }
+  ],
   "Params": [
     "demopointlight_scn102310",
     "demospotlight_scn102310",

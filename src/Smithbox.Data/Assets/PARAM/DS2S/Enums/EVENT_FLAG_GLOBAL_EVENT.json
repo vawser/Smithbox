@@ -1,1877 +1,3377 @@
 {
-  "DisplayName": "EVENT_FLAG_GLOBAL_EVENT",
-  "Name": "EVENT_FLAG_GLOBAL_EVENT",
-  "Description": "",
+  "Key": "EVENT_FLAG_GLOBAL_EVENT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GLOBAL_EVENT"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "100001",
-      "Name": "Gap Cave Clear《ID:100001》",
-      "Description": ""
-    },
-    {
-      "ID": "100002",
-      "Name": "Madura Clear《ID:100002》",
-      "Description": ""
-    },
-    {
-      "ID": "100003",
-      "Name": "Fallen Giant Forest Clear《ID:100003》",
-      "Description": ""
-    },
-    {
-      "ID": "100004",
-      "Name": "Heide Great Fire Tower Clear《ID:100004》",
-      "Description": ""
-    },
-    {
-      "ID": "100005",
-      "Name": "Hidden Port Clear《ID:100005》",
-      "Description": ""
-    },
-    {
-      "ID": "100006",
-      "Name": "Clear the Forgotten Prison《ID:100006》",
-      "Description": ""
-    },
-    {
-      "ID": "100007",
-      "Name": "Hunting Forest Clear《ID:100007》",
-      "Description": ""
-    },
-    {
-      "ID": "100008",
-      "Name": "Tamari no Tani Clear《ID:100008》",
-      "Description": ""
-    },
-    {
-      "ID": "100009",
-      "Name": "Molten Castle Clear《ID:100009》",
-      "Description": ""
-    },
-    {
-      "ID": "100010",
-      "Name": "Saint Tomb Clear《ID:100010》",
-      "Description": ""
-    },
-    {
-      "ID": "100011",
-      "Name": "Scum bottom clear《ID:100011》",
-      "Description": ""
-    },
-    {
-      "ID": "100012",
-      "Name": "Hollow Shadow Forest Clear《ID:100012》",
-      "Description": ""
-    },
-    {
-      "ID": "100013",
-      "Name": "Clear the doorway to Pharos《ID:100013》",
-      "Description": ""
-    },
-    {
-      "ID": "100014",
-      "Name": "Shinseki Town Geldra Clear《ID:100014》",
-      "Description": ""
-    },
-    {
-      "ID": "100015",
-      "Name": "Royal Castle Drangreig Clear《ID:100015》",
-      "Description": ""
-    },
-    {
-      "ID": "100016",
-      "Name": "Amana Altar Clear《ID:100016》",
-      "Description": ""
-    },
-    {
-      "ID": "100017",
-      "Name": "Immortal Temple Clear《ID:100017》",
-      "Description": ""
-    },
-    {
-      "ID": "100018",
-      "Name": "Clear the mansion of Anne Deal《ID:100018》",
-      "Description": ""
-    },
-    {
-      "ID": "100019",
-      "Name": "Guardian Dragon's Nest Clear《ID:100019》",
-      "Description": ""
-    },
-    {
-      "ID": "100020",
-      "Name": "Giant's Memory C Clear《ID:100020》",
-      "Description": ""
-    },
-    {
-      "ID": "100021",
-      "Name": "Giant's Memory A Clear《ID:100021》",
-      "Description": ""
-    },
-    {
-      "ID": "100022",
-      "Name": "Giant's Memory B Clear《ID:100022》",
-      "Description": ""
-    },
-    {
-      "ID": "100023",
-      "Name": "Firelink Throne Clear《ID:100023》",
-      "Description": ""
-    },
-    {
-      "ID": "100024",
-      "Name": "Clear the old dark hole《ID:100024》",
-      "Description": ""
-    },
-    {
-      "ID": "100200",
-      "Name": "Petrified Forest: Encounter with the retired Fire Guardian《ID:100200》",
-      "Description": ""
-    },
-    {
-      "ID": "100800",
-      "Name": "Item acquisition Mausoleum key《ID:100800》",
-      "Description": ""
-    },
-    {
-      "ID": "100801",
-      "Name": "Item acquisition Giant's Soul《ID:100801》",
-      "Description": ""
-    },
-    {
-      "ID": "100802",
-      "Name": "Item acquisition《Item that enters the giant's memory《ID:100802》",
-      "Description": ""
-    },
-    {
-      "ID": "100803",
-      "Name": "Item acquisition lever《ID:100803》",
-      "Description": ""
-    },
-    {
-      "ID": "100804",
-      "Name": "Item acquisition King's ring《ID:100804》",
-      "Description": ""
-    },
-    {
-      "ID": "100830",
-      "Name": "Item acquisition Royal Soldier's Key《ID:100830》",
-      "Description": ""
-    },
-    {
-      "ID": "100831",
-      "Name": "Obtain item《Key of Sin《ID:100831》",
-      "Description": ""
-    },
-    {
-      "ID": "100832",
-      "Name": "Item acquisition Fire key《ID:100832》",
-      "Description": ""
-    },
-    {
-      "ID": "100833",
-      "Name": "Item acquisition Key of Death《ID:100833》",
-      "Description": ""
-    },
-    {
-      "ID": "100834",
-      "Name": "Item acquisition White Key《ID:100834》",
-      "Description": ""
-    },
-    {
-      "ID": "100835",
-      "Name": "Item acquisition《●key《ID:100835》",
-      "Description": ""
-    },
-    {
-      "ID": "100836",
-      "Name": "Obtain item Beast Key《ID:100836》",
-      "Description": ""
-    },
-    {
-      "ID": "100837",
-      "Name": "Obtain item《Mr. A's house key《ID:100837》",
-      "Description": ""
-    },
-    {
-      "ID": "100838",
-      "Name": "Obtain item《Mr. B's house key《ID:100838》",
-      "Description": ""
-    },
-    {
-      "ID": "100839",
-      "Name": "Item acquisition《Immortality Cell Key《ID:100839》",
-      "Description": ""
-    },
-    {
-      "ID": "100840",
-      "Name": "Item acquisition Patch house key《ID:100840》",
-      "Description": ""
-    },
-    {
-      "ID": "100860",
-      "Name": "Item acquisition Fire to give to EX blacksmith《ID:100860》",
-      "Description": ""
-    },
-    {
-      "ID": "100861",
-      "Name": "Item acquisition Miracle person item《ID:100861》",
-      "Description": ""
-    },
-    {
-      "ID": "100862",
-      "Name": "Item acquisition Ladder figurine《ID:100862》",
-      "Description": ""
-    },
-    {
-      "ID": "100863",
-      "Name": "Item acquisition: Brother searching for his sister: Kabuto《ID:100863》",
-      "Description": ""
-    },
-    {
-      "ID": "100864",
-      "Name": "Item acquisition Feather《ID:100864》",
-      "Description": ""
-    },
-    {
-      "ID": "100865",
-      "Name": "Item acquisition undecided (dark arts)《ID:100865》",
-      "Description": ""
-    },
-    {
-      "ID": "100866",
-      "Name": "Item acquisition Fossil egg《ID:100866》",
-      "Description": ""
-    },
-    {
-      "ID": "100867",
-      "Name": "Item acquisition Manscorpion Ring《ID:100867》",
-      "Description": ""
-    },
-    {
-      "ID": "100900",
-      "Name": "Item acquisition: Pledge ring “Mouse King”《ID:100900》",
-      "Description": ""
-    },
-    {
-      "ID": "100901",
-      "Name": "Item acquisition: Pledge ring “Bellkeeper”《ID:100901》",
-      "Description": ""
-    },
-    {
-      "ID": "100902",
-      "Name": "Item acquisition: Pledge ring “Seal of protection”《ID:100902》",
-      "Description": ""
-    },
-    {
-      "ID": "100903",
-      "Name": "Item acquisition: Pledge ring “Mark of Blood Darkness”《ID:100903》",
-      "Description": ""
-    },
-    {
-      "ID": "100950",
-      "Name": "Defeat Beautiful Frog《ID:100950》",
-      "Description": ""
-    },
-    {
-      "ID": "100951",
-      "Name": "Defeat the Spider Queen《ID:100951》",
-      "Description": ""
-    },
-    {
-      "ID": "100952",
-      "Name": "Defeat Molten Iron Demon《ID:100952》",
-      "Description": ""
-    },
-    {
-      "ID": "100953",
-      "Name": "Defeat Silver Chariot《ID:100953》",
-      "Description": ""
-    },
-    {
-      "ID": "100954",
-      "Name": "Defeat Skeleton Noble《ID:100954》",
-      "Description": ""
-    },
-    {
-      "ID": "100955",
-      "Name": "Defeat Jabba the Hut《ID:100955》",
-      "Description": ""
-    },
-    {
-      "ID": "100956",
-      "Name": "Defeat Naga《ID:100956》",
-      "Description": ""
-    },
-    {
-      "ID": "100957",
-      "Name": "Defeat Man Scorpion♀《ID:100957》",
-      "Description": ""
-    },
-    {
-      "ID": "100958",
-      "Name": "Defeat Mirror Knight《ID:100958》",
-      "Description": ""
-    },
-    {
-      "ID": "100959",
-      "Name": "Heavy cavalry: Defeat only soldiers《ID:100959》",
-      "Description": ""
-    },
-    {
-      "ID": "100960",
-      "Name": "Defeat Ornstein《ID:100960》",
-      "Description": ""
-    },
-    {
-      "ID": "100961",
-      "Name": "Double-sided warrior: Defeat snake head《ID:100961》",
-      "Description": ""
-    },
-    {
-      "ID": "100962",
-      "Name": "Defeat the warrior in the mirror《ID:100962》",
-      "Description": ""
-    },
-    {
-      "ID": "100963",
-      "Name": "Defeat the forgotten sinner《ID:100963》",
-      "Description": ""
-    },
-    {
-      "ID": "100964",
-      "Name": "Defeat Demon Knight《ID:100964》",
-      "Description": ""
-    },
-    {
-      "ID": "100965",
-      "Name": "Dog and Mouse: Color ② Defeat《ID:100965》",
-      "Description": ""
-    },
-    {
-      "ID": "100966",
-      "Name": "Defeat Butcher《ID:100966》",
-      "Description": ""
-    },
-    {
-      "ID": "100967",
-      "Name": "Mouse King《ID:100967》",
-      "Description": ""
-    },
-    {
-      "ID": "100968",
-      "Name": "Vagrant: Defeated with luggage《ID:100968》",
-      "Description": ""
-    },
-    {
-      "ID": "100969",
-      "Name": "Vagrant: Defeated without luggage《ID:100969》",
-      "Description": ""
-    },
-    {
-      "ID": "100970",
-      "Name": "Defeat Wyvern《ID:100970》",
-      "Description": ""
-    },
-    {
-      "ID": "100971",
-      "Name": "New Titan Advanced Soldier (Deceased)《ID:100971》",
-      "Description": ""
-    },
-    {
-      "ID": "100972",
-      "Name": "New Titan Advanced Soldier (Living)《ID:100972》",
-      "Description": ""
-    },
-    {
-      "ID": "100973",
-      "Name": "Queen's armor form《ID:100973》",
-      "Description": ""
-    },
-    {
-      "ID": "100974",
-      "Name": "Queen's Knight A《ID:100974》",
-      "Description": ""
-    },
-    {
-      "ID": "100975",
-      "Name": "Queen's Knight B《ID:100975》",
-      "Description": ""
-    },
-    {
-      "ID": "100976",
-      "Name": "Queen's Knight C《ID:100976》",
-      "Description": ""
-    },
-    {
-      "ID": "100977",
-      "Name": "Defeat the ancient dragon《ID:100977》",
-      "Description": ""
-    },
-    {
-      "ID": "100978",
-      "Name": "Defeat King Vanclad《ID:100978》",
-      "Description": ""
-    },
-    {
-      "ID": "100979",
-      "Name": "Defeat Agaduran's Stand: Scum Bottom《ID:100979》",
-      "Description": ""
-    },
-    {
-      "ID": "100980",
-      "Name": "Defeat Agaduran's Stand: Hollow Shadow Forest《ID:100980》",
-      "Description": ""
-    },
-    {
-      "ID": "100981",
-      "Name": "Defeat Agaduran's Stand: Ojo Drangraig《ID:100981》",
-      "Description": ""
-    },
-    {
-      "ID": "101850",
-      "Name": "Unknown: Delete if unnecessary《ID:101850》",
-      "Description": ""
-    },
-    {
-      "ID": "102080",
-      "Name": "Dragon Shrine Maiden: Number of bosses defeated: 1《ID:102080》",
-      "Description": ""
-    },
-    {
-      "ID": "102081",
-      "Name": "Dragon Shrine Maiden: Number of bosses defeated: 2《ID:102081》",
-      "Description": ""
-    },
-    {
-      "ID": "102082",
-      "Name": "Dragon Shrine Maiden: Number of bosses defeated: 3《ID:102082》",
-      "Description": ""
-    },
-    {
-      "ID": "102083",
-      "Name": "Dragon Shrine Maiden: Number of bosses defeated: 4《ID:102083》",
-      "Description": ""
-    },
-    {
-      "ID": "102086",
-      "Name": "Dragon Shrine Maiden: Inside the castle: Generation stopped《ID:102086》",
-      "Description": ""
-    },
-    {
-      "ID": "102087",
-      "Name": "Dragon Shrine Maiden: Immortal Temple: Generation stopped《ID:102087》",
-      "Description": ""
-    },
-    {
-      "ID": "102088",
-      "Name": "Dragon Shrine Maiden: Andeel's Hall: Generation stopped《ID:102088》",
-      "Description": ""
-    },
-    {
-      "ID": "102160",
-      "Name": "Ladder shop: Install a ladder《ID:102160》",
-      "Description": ""
-    },
-    {
-      "ID": "102170",
-      "Name": "Ladder shop: Migrate: Install long ladder《ID:102170》",
-      "Description": ""
-    },
-    {
-      "ID": "102171",
-      "Name": "Ladder shop: Migrate: Set up middle ladder《ID:102171》",
-      "Description": ""
-    },
-    {
-      "ID": "102172",
-      "Name": "Ladder shop: Migrate: Set up a small ladder《ID:102172》",
-      "Description": ""
-    },
-    {
-      "ID": "102173",
-      "Name": "Ladder shop: Migration: Equipment transfer《ID:102173》",
-      "Description": ""
-    },
-    {
-      "ID": "102320",
-      "Name": "Pilgrim of the Abyss: Equipment Transfer《ID:102320》",
-      "Description": ""
-    },
-    {
-      "ID": "102322",
-      "Name": "Pilgrim of the Abyss: 1st encounter《ID:102322》",
-      "Description": ""
-    },
-    {
-      "ID": "102323",
-      "Name": "Pilgrim of the Abyss: 2nd Encounter《ID:102323》",
-      "Description": ""
-    },
-    {
-      "ID": "102324",
-      "Name": "Pilgrim of the Abyss: 3rd Encounter《ID:102324》",
-      "Description": ""
-    },
-    {
-      "ID": "102325",
-      "Name": "Pilgrim of the Abyss: Magic Square Opening (Kudzu Bottom)《ID:102325》",
-      "Description": ""
-    },
-    {
-      "ID": "102326",
-      "Name": "Pilgrim of the Abyss: Magic Square Opening (Drangraig)《ID:102326》",
-      "Description": ""
-    },
-    {
-      "ID": "102327",
-      "Name": "Pilgrim of the Abyss: Magic Square Opening (Shadow Forest)《ID:102327》",
-      "Description": ""
-    },
-    {
-      "ID": "102328",
-      "Name": "Pilgrim of the Abyss: Magic Square Invasion (Kudzu Bottom)《ID:102328》",
-      "Description": ""
-    },
-    {
-      "ID": "102329",
-      "Name": "Pilgrim of the Abyss: Magic Square Invasion (Drangraig)《ID:102329》",
-      "Description": ""
-    },
-    {
-      "ID": "102330",
-      "Name": "Pilgrim of the Abyss: Magic Square Invasion (Shadow Forest)《ID:102330》",
-      "Description": ""
-    },
-    {
-      "ID": "102350",
-      "Name": "Dwarf: Death location: Valley of the Pool《ID:102350》",
-      "Description": ""
-    },
-    {
-      "ID": "102351",
-      "Name": "Dwarf: Death location: Hidden Port《ID:102351》",
-      "Description": ""
-    },
-    {
-      "ID": "102352",
-      "Name": "Dwarf: Place of death: Scum bottom《ID:102352》",
-      "Description": ""
-    },
-    {
-      "ID": "102353",
-      "Name": "Dwarf: Death location: Pharos doorway《ID:102353》",
-      "Description": ""
-    },
-    {
-      "ID": "102354",
-      "Name": "Dwarf: Death location: Altar of Amana《ID:102354》",
-      "Description": ""
-    },
-    {
-      "ID": "102355",
-      "Name": "Dwarf: Equipment transfer《ID:102355》",
-      "Description": ""
-    },
-    {
-      "ID": "102380",
-      "Name": "Broken Blue Sect Warrior: Equipment Transfer《ID:102380》",
-      "Description": ""
-    },
-    {
-      "ID": "102480",
-      "Name": "Female knight: 1st encounter《ID:102480》",
-      "Description": ""
-    },
-    {
-      "ID": "102481",
-      "Name": "Female knight: 2nd encounter《ID:102481》",
-      "Description": ""
-    },
-    {
-      "ID": "102482",
-      "Name": "Female Knight: 3rd Encounter《ID:102482》",
-      "Description": ""
-    },
-    {
-      "ID": "102483",
-      "Name": "Female Knight: 4th Encounter《ID:102483》",
-      "Description": ""
-    },
-    {
-      "ID": "102484",
-      "Name": "Female Knight: Castle of Oblivion: Generation stopped《ID:102484》",
-      "Description": ""
-    },
-    {
-      "ID": "102485",
-      "Name": "Female Knight: Tamari no Tani: Generation stopped《ID:102485》",
-      "Description": ""
-    },
-    {
-      "ID": "102486",
-      "Name": "Female Knight: Hidden Port: Generation stopped《ID:102486》",
-      "Description": ""
-    },
-    {
-      "ID": "102487",
-      "Name": "Female Knight: Scum Bottom: Generation Stopped《ID:102487》",
-      "Description": ""
-    },
-    {
-      "ID": "102488",
-      "Name": "Female knight: Item transfer: 2nd encounter: Talk to: Part 2《ID:102488》",
-      "Description": ""
-    },
-    {
-      "ID": "102489",
-      "Name": "Female knight: Item transfer: 3rd encounter: Talk to: Part 1《ID:102489》",
-      "Description": ""
-    },
-    {
-      "ID": "102490",
-      "Name": "Female Knight: Equipment Transfer《ID:102490》",
-      "Description": ""
-    },
-    {
-      "ID": "102491",
-      "Name": "Female Knight: Place of Death: Hidden Port《ID:102491》",
-      "Description": ""
-    },
-    {
-      "ID": "102492",
-      "Name": "Female Knight: Place of Death: Castle of Oblivion《ID:102492》",
-      "Description": ""
-    },
-    {
-      "ID": "102493",
-      "Name": "Female Knight: Place of death: Tamari no Tani《ID:102493》",
-      "Description": ""
-    },
-    {
-      "ID": "102494",
-      "Name": "Female Knight: Place of Death: Bottom of Scum《ID:102494》",
-      "Description": ""
-    },
-    {
-      "ID": "102495",
-      "Name": "Female Knight: Place of death: Mansion of An Deal《ID:102495》",
-      "Description": ""
-    },
-    {
-      "ID": "102496",
-      "Name": "Female Knight: Death《ID:102496》",
-      "Description": ""
-    },
-    {
-      "ID": "102520",
-      "Name": "Yorozu Baba: Equipment Transfer《ID:102520》",
-      "Description": ""
-    },
-    {
-      "ID": "102620",
-      "Name": "Material shop: Equipment transfer《ID:102620》",
-      "Description": ""
-    },
-    {
-      "ID": "102800",
-      "Name": "Contained person: Equipment transfer《ID:102800》",
-      "Description": ""
-    },
-    {
-      "ID": "102880",
-      "Name": "《ID:102880》 who handed over the ``Dark Mark of Blood''",
-      "Description": ""
-    },
-    {
-      "ID": "102881",
-      "Name": "Black Phantom Shop: Received pledge ranking 1《ID:102881》",
-      "Description": ""
-    },
-    {
-      "ID": "102882",
-      "Name": "Black Phantom Shop: Received pledge ranking 2《ID:102882》",
-      "Description": ""
-    },
-    {
-      "ID": "102883",
-      "Name": "Black Phantom Shop: Received pledge ranking 3《ID:102883》",
-      "Description": ""
-    },
-    {
-      "ID": "102900",
-      "Name": "Chaplain of Absolution: Equipment Transfer《ID:102900》",
-      "Description": ""
-    },
-    {
-      "ID": "102920",
-      "Name": "《ID:102920》 who handed over the ``Seal of Protection''",
-      "Description": ""
-    },
-    {
-      "ID": "102921",
-      "Name": "Guardian Knight: Received pledge ranking 1《ID:102921》",
-      "Description": ""
-    },
-    {
-      "ID": "102922",
-      "Name": "Guardian Knight: Received pledge ranking 2《ID:102922》",
-      "Description": ""
-    },
-    {
-      "ID": "102923",
-      "Name": "Guardian Knight: Received pledge ranking 3《ID:102923》",
-      "Description": ""
-    },
-    {
-      "ID": "104100",
-      "Name": "Sealed person: Unsealed 《ID:104100》",
-      "Description": ""
-    },
-    {
-      "ID": "104600",
-      "Name": "Dwarf: 1st encounter《ID:104600》",
-      "Description": ""
-    },
-    {
-      "ID": "104601",
-      "Name": "Dwarf: 2nd encounter《ID:104601》",
-      "Description": ""
-    },
-    {
-      "ID": "104602",
-      "Name": "Dwarf: 3rd encounter《ID:104602》",
-      "Description": ""
-    },
-    {
-      "ID": "104603",
-      "Name": "Dwarf: 4th encounter《ID:104603》",
-      "Description": ""
-    },
-    {
-      "ID": "104604",
-      "Name": "Dwarf: 5th encounter《ID:104604》",
-      "Description": ""
-    },
-    {
-      "ID": "104605",
-      "Name": "Dwarf: 6th encounter《ID:104605》",
-      "Description": ""
-    },
-    {
-      "ID": "104606",
-      "Name": "Dwarf: 7th encounter《ID:104606》",
-      "Description": ""
-    },
-    {
-      "ID": "104607",
-      "Name": "Dwarf: 8th encounter《ID:104607》",
-      "Description": ""
-    },
-    {
-      "ID": "104608",
-      "Name": "Dwarf: 9th encounter《ID:104608》",
-      "Description": ""
-    },
-    {
-      "ID": "104609",
-      "Name": "Dwarf: 10th encounter《ID:104609》",
-      "Description": ""
-    },
-    {
-      "ID": "104610",
-      "Name": "Dwarf: Encounter 11th《ID:104610》",
-      "Description": ""
-    },
-    {
-      "ID": "104611",
-      "Name": "Dwarf: Encounter 12th《ID:104611》",
-      "Description": ""
-    },
-    {
-      "ID": "104612",
-      "Name": "Dwarf: Encounter 13《ID:104612》",
-      "Description": ""
-    },
-    {
-      "ID": "104613",
-      "Name": "Dwarf: 14th encounter《ID:104613》",
-      "Description": ""
-    },
-    {
-      "ID": "104614",
-      "Name": "Dwarf: 15th encounter《ID:104614》",
-      "Description": ""
-    },
-    {
-      "ID": "104615",
-      "Name": "Dwarf: 16th encounter《ID:104615》",
-      "Description": ""
-    },
-    {
-      "ID": "104616",
-      "Name": "Dwarf: Encounter 17th《ID:104616》",
-      "Description": ""
-    },
-    {
-      "ID": "104617",
-      "Name": "Dwarf: 18th encounter《ID:104617》",
-      "Description": ""
-    },
-    {
-      "ID": "104618",
-      "Name": "Dwarf: Encounter 19th《ID:104618》",
-      "Description": ""
-    },
-    {
-      "ID": "104619",
-      "Name": "Dwarf: 20th encounter《ID:104619》",
-      "Description": ""
-    },
-    {
-      "ID": "104700",
-      "Name": "[Migration] Dullahan《ID:104700》",
-      "Description": ""
-    },
-    {
-      "ID": "104701",
-      "Name": "[Migration] Grave Keeper《ID:104701》",
-      "Description": ""
-    },
-    {
-      "ID": "104704",
-      "Name": "[Migration] Dragon Shrine Maiden《ID:104704》",
-      "Description": ""
-    },
-    {
-      "ID": "104705",
-      "Name": "[Migration] Dragon Shrine Maiden (Child)《ID:104705》",
-      "Description": ""
-    },
-    {
-      "ID": "104707",
-      "Name": "[Migration] Queen《ID:104707》",
-      "Description": ""
-    },
-    {
-      "ID": "104708",
-      "Name": "[Migration] Ladder shop《ID:104708》",
-      "Description": ""
-    },
-    {
-      "ID": "104709",
-      "Name": "[Migration] Retired Firekeeper 1《ID:104709》",
-      "Description": ""
-    },
-    {
-      "ID": "104710",
-      "Name": "[Migration] Retired fire protection woman 2《ID:104710》",
-      "Description": ""
-    },
-    {
-      "ID": "104711",
-      "Name": "[Migration] Retired fire guard 3《ID:104711》",
-      "Description": ""
-    },
-    {
-      "ID": "104713",
-      "Name": "[Migration] Spirit of the Prime Minister《ID:104713》",
-      "Description": ""
-    },
-    {
-      "ID": "104714",
-      "Name": "[Migration] Fire protection woman housekeeper《ID:104714》",
-      "Description": ""
-    },
-    {
-      "ID": "104715",
-      "Name": "[Migration] Kingdom Captain《ID:104715》",
-      "Description": ""
-    },
-    {
-      "ID": "104716",
-      "Name": "[Migration] Pilgrim of the Abyss《ID:104716》",
-      "Description": ""
-    },
-    {
-      "ID": "104717",
-      "Name": "[Migration] Dwarf《ID:104717》",
-      "Description": ""
-    },
-    {
-      "ID": "104719",
-      "Name": "[Migration] Broken Qing Sect Warrior《ID:104719》",
-      "Description": ""
-    },
-    {
-      "ID": "104720",
-      "Name": "[Migration] Wandering Warrior《ID:104720》",
-      "Description": ""
-    },
-    {
-      "ID": "104721",
-      "Name": "[Migration] Gekkoji《ID:104721》",
-      "Description": ""
-    },
-    {
-      "ID": "104722",
-      "Name": "[Migration] Patch《ID:104722》",
-      "Description": ""
-    },
-    {
-      "ID": "104723",
-      "Name": "[Migration] Map drawing《ID:104723》",
-      "Description": ""
-    },
-    {
-      "ID": "104724",
-      "Name": "[Migration] Female Knight《ID:104724》",
-      "Description": ""
-    },
-    {
-      "ID": "104725",
-      "Name": "[Migration] Bell Keeper《ID:104725》",
-      "Description": ""
-    },
-    {
-      "ID": "104726",
-      "Name": "[Migration] Yorozu Hag《ID:104726》",
-      "Description": ""
-    },
-    {
-      "ID": "104727",
-      "Name": "[Migration] Bard Girl 1《ID:104727》",
-      "Description": ""
-    },
-    {
-      "ID": "104728",
-      "Name": "[Migration] Bard Girl 2《ID:104728》",
-      "Description": ""
-    },
-    {
-      "ID": "104729",
-      "Name": "[Migration] Prisoner Girl《ID:104729》",
-      "Description": ""
-    },
-    {
-      "ID": "104730",
-      "Name": "[Migration] Armor shop《ID:104730》",
-      "Description": ""
-    },
-    {
-      "ID": "104731",
-      "Name": "[Migration] Material shop《ID:104731》",
-      "Description": ""
-    },
-    {
-      "ID": "104732",
-      "Name": "[Migration] Witchcraft《ID:104732》",
-      "Description": ""
-    },
-    {
-      "ID": "104733",
-      "Name": "[Immigration] Blacksmith《ID:104733》",
-      "Description": ""
-    },
-    {
-      "ID": "104734",
-      "Name": "[Immigration] EX blacksmith《ID:104734》",
-      "Description": ""
-    },
-    {
-      "ID": "104736",
-      "Name": "[Immigration] Magician《ID:104736》",
-      "Description": ""
-    },
-    {
-      "ID": "104737",
-      "Name": "[Migration] Spellmania《ID:104737》",
-      "Description": ""
-    },
-    {
-      "ID": "104738",
-      "Name": "[Migration] Miracle Man《ID:104738》",
-      "Description": ""
-    },
-    {
-      "ID": "104739",
-      "Name": "[Migration] Dark magician《ID:104739》",
-      "Description": ""
-    },
-    {
-      "ID": "104740",
-      "Name": "[Migration] Contained person《ID:104740》",
-      "Description": ""
-    },
-    {
-      "ID": "104741",
-      "Name": "[Immigration] Curious item shop《ID:104741》",
-      "Description": ""
-    },
-    {
-      "ID": "104742",
-      "Name": "[Migration] Top weapon shop《ID:104742》",
-      "Description": ""
-    },
-    {
-      "ID": "104743",
-      "Name": "[Immigration] Cat《ID:104743》",
-      "Description": ""
-    },
-    {
-      "ID": "104744",
-      "Name": "[Migration] Black Phantom Shop《ID:104744》",
-      "Description": ""
-    },
-    {
-      "ID": "104745",
-      "Name": "[Migration] Chaplain of Absolution《ID:104745》",
-      "Description": ""
-    },
-    {
-      "ID": "104746",
-      "Name": "[Migration] Guardian Knight《ID:104746》",
-      "Description": ""
-    },
-    {
-      "ID": "104747",
-      "Name": "[Migration] Sparkling Girl《ID:104747》",
-      "Description": ""
-    },
-    {
-      "ID": "104748",
-      "Name": "[Migration] Mouse King《ID:104748》",
-      "Description": ""
-    },
-    {
-      "ID": "104749",
-      "Name": "[Migration] Man Scorpion (male)《ID:104749》",
-      "Description": ""
-    },
-    {
-      "ID": "104751",
-      "Name": "[Migration] Three Sisters 1《ID:104751》",
-      "Description": ""
-    },
-    {
-      "ID": "104752",
-      "Name": "[Migration] Three Sisters 2《ID:104752》",
-      "Description": ""
-    },
-    {
-      "ID": "104753",
-      "Name": "[Migration] Three Sisters 3《ID:104753》",
-      "Description": ""
-    },
-    {
-      "ID": "104800",
-      "Name": "[Enemy] Dullahan《ID:104800》",
-      "Description": ""
-    },
-    {
-      "ID": "104801",
-      "Name": "[Enemy] Grave Keeper《ID:104801》",
-      "Description": ""
-    },
-    {
-      "ID": "104804",
-      "Name": "[Enemy] Dragon Shrine Maiden《ID:104804》",
-      "Description": ""
-    },
-    {
-      "ID": "104805",
-      "Name": "[Enemy] Dragon Shrine Maiden (Child)《ID:104805》",
-      "Description": ""
-    },
-    {
-      "ID": "104807",
-      "Name": "[Enemy] Queen《ID:104807》",
-      "Description": ""
-    },
-    {
-      "ID": "104808",
-      "Name": "[Enemy] Ladder shop《ID:104808》",
-      "Description": ""
-    },
-    {
-      "ID": "104809",
-      "Name": "[Hostile] Retired fire protection woman 1《ID:104809》",
-      "Description": ""
-    },
-    {
-      "ID": "104810",
-      "Name": "[Enemy] Retired Firekeeper 2《ID:104810》",
-      "Description": ""
-    },
-    {
-      "ID": "104811",
-      "Name": "[Enemy] Retired Firekeeper 3《ID:104811》",
-      "Description": ""
-    },
-    {
-      "ID": "104812",
-      "Name": "[Enemy] Kingdom tactician (past)《ID:104812》",
-      "Description": ""
-    },
-    {
-      "ID": "104813",
-      "Name": "[Enemy] Spirit of the Prime Minister《ID:104813》",
-      "Description": ""
-    },
-    {
-      "ID": "104814",
-      "Name": "[Enemy] Firekeeper Housekeeper《ID:104814》",
-      "Description": ""
-    },
-    {
-      "ID": "104815",
-      "Name": "[Enemy] Kingdom Captain《ID:104815》",
-      "Description": ""
-    },
-    {
-      "ID": "104816",
-      "Name": "[Enemy] Pilgrim of the Abyss《ID:104816》",
-      "Description": ""
-    },
-    {
-      "ID": "104817",
-      "Name": "[Enemy] Dwarf《ID:104817》",
-      "Description": ""
-    },
-    {
-      "ID": "104819",
-      "Name": "[Enemy] Broken Blue Sect Warrior《ID:104819》",
-      "Description": ""
-    },
-    {
-      "ID": "104820",
-      "Name": "[Enemy] Wandering Warrior《ID:104820》",
-      "Description": ""
-    },
-    {
-      "ID": "104821",
-      "Name": "[Enemy] Old Man Moonlight《ID:104821》",
-      "Description": ""
-    },
-    {
-      "ID": "104822",
-      "Name": "[Hostile] Patch《ID:104822》",
-      "Description": ""
-    },
-    {
-      "ID": "104823",
-      "Name": "[Hostile] Map writer《ID:104823》",
-      "Description": ""
-    },
-    {
-      "ID": "104824",
-      "Name": "[Enemy] Female Knight《ID:104824》",
-      "Description": ""
-    },
-    {
-      "ID": "104825",
-      "Name": "[Enemy] Bell Keeper《ID:104825》",
-      "Description": ""
-    },
-    {
-      "ID": "104826",
-      "Name": "[Enemy] Yorozu Hag《ID:104826》",
-      "Description": ""
-    },
-    {
-      "ID": "104827",
-      "Name": "[Enemy] Bard Girl 1《ID:104827》",
-      "Description": ""
-    },
-    {
-      "ID": "104828",
-      "Name": "[Enemy] Bard Girl 2《ID:104828》",
-      "Description": ""
-    },
-    {
-      "ID": "104829",
-      "Name": "[Enemy] Prisoner Girl《ID:104829》",
-      "Description": ""
-    },
-    {
-      "ID": "104830",
-      "Name": "[Enemy] Armor shop《ID:104830》",
-      "Description": ""
-    },
-    {
-      "ID": "104831",
-      "Name": "[Enemy] Material shop《ID:104831》",
-      "Description": ""
-    },
-    {
-      "ID": "104832",
-      "Name": "[Enemy] Sorcerer《ID:104832》",
-      "Description": ""
-    },
-    {
-      "ID": "104833",
-      "Name": "[Enemy] Blacksmith《ID:104833》",
-      "Description": ""
-    },
-    {
-      "ID": "104834",
-      "Name": "[Enemy] EX Blacksmith《ID:104834》",
-      "Description": ""
-    },
-    {
-      "ID": "104836",
-      "Name": "[Enemy] Magician《ID:104836》",
-      "Description": ""
-    },
-    {
-      "ID": "104837",
-      "Name": "[Enemy] Spellmania《ID:104837》",
-      "Description": ""
-    },
-    {
-      "ID": "104838",
-      "Name": "[Enemy] Miracle Man《ID:104838》",
-      "Description": ""
-    },
-    {
-      "ID": "104839",
-      "Name": "[Enemy] Dark magician《ID:104839》",
-      "Description": ""
-    },
-    {
-      "ID": "104840",
-      "Name": "[Enemy] Contained person《ID:104840》",
-      "Description": ""
-    },
-    {
-      "ID": "104841",
-      "Name": "[Enemy] Curious item shop《ID:104841》",
-      "Description": ""
-    },
-    {
-      "ID": "104842",
-      "Name": "[Enemy] Top weapon shop《ID:104842》",
-      "Description": ""
-    },
-    {
-      "ID": "104843",
-      "Name": "[Hostile] Cat《ID:104843》",
-      "Description": ""
-    },
-    {
-      "ID": "104844",
-      "Name": "[Enemy] Black Phantom Shop《ID:104844》",
-      "Description": ""
-    },
-    {
-      "ID": "104845",
-      "Name": "[Enemy] Chaplain of Absolution《ID:104845》",
-      "Description": ""
-    },
-    {
-      "ID": "104846",
-      "Name": "[Enemy] Guardian Knight《ID:104846》",
-      "Description": ""
-    },
-    {
-      "ID": "104847",
-      "Name": "[Opponent] Sparkling Girl《ID:104847》",
-      "Description": ""
-    },
-    {
-      "ID": "104848",
-      "Name": "[Enemy] Mouse King《ID:104848》",
-      "Description": ""
-    },
-    {
-      "ID": "104849",
-      "Name": "[Enemy] Man Scorpion (Male)《ID:104849》",
-      "Description": ""
-    },
-    {
-      "ID": "104851",
-      "Name": "[Enemy] Three Sisters 1《ID:104851》",
-      "Description": ""
-    },
-    {
-      "ID": "104852",
-      "Name": "[Enemy] Three Sisters 2《ID:104852》",
-      "Description": ""
-    },
-    {
-      "ID": "104853",
-      "Name": "[Enemy] Three Sisters 3《ID:104853》",
-      "Description": ""
-    },
-    {
-      "ID": "104900",
-      "Name": "[Death] Dullahan《ID:104900》",
-      "Description": ""
-    },
-    {
-      "ID": "104901",
-      "Name": "[Death] Grave Keeper《ID:104901》",
-      "Description": ""
-    },
-    {
-      "ID": "104904",
-      "Name": "[Death] Dragon Shrine Maiden《ID:104904》",
-      "Description": ""
-    },
-    {
-      "ID": "104905",
-      "Name": "[Death] Dragon Shrine Maiden (Child)《ID:104905》",
-      "Description": ""
-    },
-    {
-      "ID": "104907",
-      "Name": "[Death] Queen《ID:104907》",
-      "Description": ""
-    },
-    {
-      "ID": "104908",
-      "Name": "[Death] Ladder shop《ID:104908》",
-      "Description": ""
-    },
-    {
-      "ID": "104909",
-      "Name": "[Death] Retired fire protection woman 1《ID:104909》",
-      "Description": ""
-    },
-    {
-      "ID": "104910",
-      "Name": "[Death] Retired fire protection woman 2《ID:104910》",
-      "Description": ""
-    },
-    {
-      "ID": "104911",
-      "Name": "[Death] Retired fire protection woman 3《ID:104911》",
-      "Description": ""
-    },
-    {
-      "ID": "104913",
-      "Name": "[Death] Spirit of the Prime Minister《ID:104913》",
-      "Description": ""
-    },
-    {
-      "ID": "104914",
-      "Name": "[Death] Firekeeper Housekeeper《ID:104914》",
-      "Description": ""
-    },
-    {
-      "ID": "104915",
-      "Name": "[Death] Kingdom Captain《ID:104915》",
-      "Description": ""
-    },
-    {
-      "ID": "104916",
-      "Name": "[Death] Pilgrim of the Abyss《ID:104916》",
-      "Description": ""
-    },
-    {
-      "ID": "104917",
-      "Name": "[Death] Dwarf《ID:104917》",
-      "Description": ""
-    },
-    {
-      "ID": "104919",
-      "Name": "[Death] Broken Blue Sect Warrior《ID:104919》",
-      "Description": ""
-    },
-    {
-      "ID": "104920",
-      "Name": "[Death] Wandering Warrior《ID:104920》",
-      "Description": ""
-    },
-    {
-      "ID": "104921",
-      "Name": "[Death] Gekkoji《ID:104921》",
-      "Description": ""
-    },
-    {
-      "ID": "104922",
-      "Name": "[Death] Patch《ID:104922》",
-      "Description": ""
-    },
-    {
-      "ID": "104923",
-      "Name": "[Death] Cartographer《ID:104923》",
-      "Description": ""
-    },
-    {
-      "ID": "104924",
-      "Name": "[Death] Female Knight《ID:104924》",
-      "Description": ""
-    },
-    {
-      "ID": "104925",
-      "Name": "[Death] Bell Keeper《ID:104925》",
-      "Description": ""
-    },
-    {
-      "ID": "104926",
-      "Name": "[Death] Yorozu Hag《ID:104926》",
-      "Description": ""
-    },
-    {
-      "ID": "104927",
-      "Name": "[Death] Bard Girl 1《ID:104927》",
-      "Description": ""
-    },
-    {
-      "ID": "104928",
-      "Name": "[Death] Bard Girl 2《ID:104928》",
-      "Description": ""
-    },
-    {
-      "ID": "104929",
-      "Name": "[Death] Prisoner Girl《ID:104929》",
-      "Description": ""
-    },
-    {
-      "ID": "104930",
-      "Name": "[Death] Armorer《ID:104930》",
-      "Description": ""
-    },
-    {
-      "ID": "104931",
-      "Name": "[Death] Material shop《ID:104931》",
-      "Description": ""
-    },
-    {
-      "ID": "104932",
-      "Name": "[Death] Witchcraft《ID:104932》",
-      "Description": ""
-    },
-    {
-      "ID": "104933",
-      "Name": "[Death] Blacksmith《ID:104933》",
-      "Description": ""
-    },
-    {
-      "ID": "104934",
-      "Name": "[Death] EX Blacksmith《ID:104934》",
-      "Description": ""
-    },
-    {
-      "ID": "104936",
-      "Name": "[Death] Magician《ID:104936》",
-      "Description": ""
-    },
-    {
-      "ID": "104937",
-      "Name": "[Death] Spellmania《ID:104937》",
-      "Description": ""
-    },
-    {
-      "ID": "104938",
-      "Name": "[Death] Miracle Man《ID:104938》",
-      "Description": ""
-    },
-    {
-      "ID": "104939",
-      "Name": "[Death] Dark magician《ID:104939》",
-      "Description": ""
-    },
-    {
-      "ID": "104940",
-      "Name": "[Death] Contained person《ID:104940》",
-      "Description": ""
-    },
-    {
-      "ID": "104941",
-      "Name": "[Death] Curious item shop《ID:104941》",
-      "Description": ""
-    },
-    {
-      "ID": "104942",
-      "Name": "[Death] Top Weapon Shop《ID:104942》",
-      "Description": ""
-    },
-    {
-      "ID": "104943",
-      "Name": "[Death] Cat《ID:104943》",
-      "Description": ""
-    },
-    {
-      "ID": "104944",
-      "Name": "[Death] Black Phantomya《ID:104944》",
-      "Description": ""
-    },
-    {
-      "ID": "104945",
-      "Name": "[Death] Chaplain of Absolution《ID:104945》",
-      "Description": ""
-    },
-    {
-      "ID": "104946",
-      "Name": "[Death] Guardian Knight《ID:104946》",
-      "Description": ""
-    },
-    {
-      "ID": "104947",
-      "Name": "[Death] Kirakira Musume《ID:104947》",
-      "Description": ""
-    },
-    {
-      "ID": "104948",
-      "Name": "[Death] Mouse King《ID:104948》",
-      "Description": ""
-    },
-    {
-      "ID": "104949",
-      "Name": "[Death] Manscorpion (male)《ID:104949》",
-      "Description": ""
-    },
-    {
-      "ID": "104951",
-      "Name": "[Death] Three Sisters 1《ID:104951》",
-      "Description": ""
-    },
-    {
-      "ID": "104952",
-      "Name": "[Death] Three Sisters 2《ID:104952》",
-      "Description": ""
-    },
-    {
-      "ID": "104953",
-      "Name": "[Death] Three Sisters 3《ID:104953》",
-      "Description": ""
-    },
-    {
-      "ID": "104954",
-      "Name": "[Death] Pilgrim of the Abyss (Scum Bottom)《ID:104954》",
-      "Description": ""
-    },
-    {
-      "ID": "104955",
-      "Name": "[Death] Pilgrim of the Abyss (Ojo Drangraig)《ID:104955》",
-      "Description": ""
-    },
-    {
-      "ID": "104956",
-      "Name": "[Death] Pilgrim of the Abyss (Forest of Hollow Shadows)《ID:104956》",
-      "Description": ""
-    },
-    {
-      "ID": "104957",
-      "Name": "[Death] Pilgrim of the Abyss (after signing the vow)《ID:104957》",
-      "Description": ""
-    },
-    {
-      "ID": "105040",
-      "Name": "Madura_Modern_Bonfire 01《ID:105040》",
-      "Description": ""
-    },
-    {
-      "ID": "105050",
-      "Name": "Giant's Forest_Bonfire 01《ID:105050》",
-      "Description": ""
-    },
-    {
-      "ID": "105051",
-      "Name": "Giant's Forest_Bonfire 02《ID:105051》",
-      "Description": ""
-    },
-    {
-      "ID": "105052",
-      "Name": "Giant's Forest_Bonfire 03《ID:105052》",
-      "Description": ""
-    },
-    {
-      "ID": "105053",
-      "Name": "Giant's Forest_Bonfire 04《ID:105053》",
-      "Description": ""
-    },
-    {
-      "ID": "105054",
-      "Name": "Giant's Forest_Bonfire 05《ID:105054》",
-      "Description": ""
-    },
-    {
-      "ID": "105060",
-      "Name": "Amana Altar_Bonfire 01《ID:105060》",
-      "Description": ""
-    },
-    {
-      "ID": "105061",
-      "Name": "Amana Altar_Bonfire 02《ID:105061》",
-      "Description": ""
-    },
-    {
-      "ID": "105062",
-      "Name": "Amana Altar_Bonfire 03《ID:105062》",
-      "Description": ""
-    },
-    {
-      "ID": "105063",
-      "Name": "Amana Altar_Bonfire 04《ID:105063》",
-      "Description": ""
-    },
-    {
-      "ID": "105064",
-      "Name": "Amana Altar_Bonfire 05《ID:105064》",
-      "Description": ""
-    },
-    {
-      "ID": "105070",
-      "Name": "Beastman Forest_Bonfire 01《ID:105070》",
-      "Description": ""
-    },
-    {
-      "ID": "105071",
-      "Name": "Beastman Forest_Bonfire 02《ID:105071》",
-      "Description": ""
-    },
-    {
-      "ID": "105080",
-      "Name": "Spider City_Bonfire 01《ID:105080》",
-      "Description": ""
-    },
-    {
-      "ID": "105081",
-      "Name": "Spider City_Bonfire 02《ID:105081》",
-      "Description": ""
-    },
-    {
-      "ID": "105082",
-      "Name": "Spider City_Bonfire 03《ID:105082》",
-      "Description": ""
-    },
-    {
-      "ID": "105083",
-      "Name": "Spider City_Bonfire 04《ID:105083》",
-      "Description": ""
-    },
-    {
-      "ID": "105100",
-      "Name": "Prison of Oblivion_Bonfire 01《ID:105100》",
-      "Description": ""
-    },
-    {
-      "ID": "105101",
-      "Name": "Prison of Oblivion_Bonfire 02《ID:105101》",
-      "Description": ""
-    },
-    {
-      "ID": "105102",
-      "Name": "Prison of Oblivion_Bonfire 03《ID:105102》",
-      "Description": ""
-    },
-    {
-      "ID": "105103",
-      "Name": "Prison of Oblivion_Bonfire 04《ID:105103》",
-      "Description": ""
-    },
-    {
-      "ID": "105104",
-      "Name": "Prison of Oblivion_Bonfire 05《ID:105104》",
-      "Description": ""
-    },
-    {
-      "ID": "105105",
-      "Name": "Prison of Oblivion_Bonfire 06《ID:105105》",
-      "Description": ""
-    },
-    {
-      "ID": "105106",
-      "Name": "Prison of Oblivion_Bonfire 07《ID:105106》",
-      "Description": ""
-    },
-    {
-      "ID": "105107",
-      "Name": "Prison of Oblivion_Bonfire 08《ID:105107》",
-      "Description": ""
-    },
-    {
-      "ID": "105110",
-      "Name": "Tamari no Tani_Bonfire 01《ID:105110》",
-      "Description": ""
-    },
-    {
-      "ID": "105111",
-      "Name": "Tamari no Tani_Bonfire 02《ID:105111》",
-      "Description": ""
-    },
-    {
-      "ID": "105112",
-      "Name": "Tamari no Tani_Bonfire 03《ID:105112》",
-      "Description": ""
-    },
-    {
-      "ID": "105113",
-      "Name": "Tamari no Tani_Bonfire 04《ID:105113》",
-      "Description": ""
-    },
-    {
-      "ID": "105114",
-      "Name": "Tamari no Tani_Bonfire 05《ID:105114》",
-      "Description": ""
-    },
-    {
-      "ID": "105115",
-      "Name": "Tamari no Tani_Bonfire 06《ID:105115》",
-      "Description": ""
-    },
-    {
-      "ID": "105120",
-      "Name": "Underground Port_Bonfire 01《ID:105120》",
-      "Description": ""
-    },
-    {
-      "ID": "105130",
-      "Name": "Melted Iron Fortress_Bonfire 01《ID:105130》",
-      "Description": ""
-    },
-    {
-      "ID": "105131",
-      "Name": "Melted Iron Fortress_Bonfire 02《ID:105131》",
-      "Description": ""
-    },
-    {
-      "ID": "105132",
-      "Name": "Melted Iron Fortress_Bonfire 03《ID:105132》",
-      "Description": ""
-    },
-    {
-      "ID": "105140",
-      "Name": "Iwamine Castle_Modern_Bonfire 01《ID:105140》",
-      "Description": ""
-    },
-    {
-      "ID": "105150",
-      "Name": "Hunting Forest_Bonfire 01《ID:105150》",
-      "Description": ""
-    },
-    {
-      "ID": "105151",
-      "Name": "Hunting Forest_Bonfire 02《ID:105151》",
-      "Description": ""
-    },
-    {
-      "ID": "105152",
-      "Name": "Hunting Forest_Bonfire 03《ID:105152》",
-      "Description": ""
-    },
-    {
-      "ID": "105153",
-      "Name": "Hunting Forest_Bonfire 04《ID:105153》",
-      "Description": ""
-    },
-    {
-      "ID": "105180",
-      "Name": "Scum Bottom_Bonfire 01《ID:105180》",
-      "Description": ""
-    },
-    {
-      "ID": "105181",
-      "Name": "Scum Bottom_Bonfire 02《ID:105181》",
-      "Description": ""
-    },
-    {
-      "ID": "105182",
-      "Name": "Scum Bottom_Bonfire 03《ID:105182》",
-      "Description": ""
-    },
-    {
-      "ID": "105183",
-      "Name": "Scum Bottom_Bonfire 04《ID:105183》",
-      "Description": ""
-    },
-    {
-      "ID": "105190",
-      "Name": "Cathedral_Bonfire 01《ID:105190》",
-      "Description": ""
-    },
-    {
-      "ID": "105191",
-      "Name": "Cathedral_Bonfire 02《ID:105191》",
-      "Description": ""
-    },
-    {
-      "ID": "105192",
-      "Name": "Cathedral_Bonfire 03《ID:105192》",
-      "Description": ""
-    },
-    {
-      "ID": "105200",
-      "Name": "Dragon Shrine Ceremony Area_Bonfire 01《ID:105200》",
-      "Description": ""
-    },
-    {
-      "ID": "105201",
-      "Name": "Dragon Shrine Ceremony Area_Bonfire 02《ID:105201》",
-      "Description": ""
-    },
-    {
-      "ID": "105240",
-      "Name": "Fortress of Resistance_Past_Bonfire 01《ID:105240》",
-      "Description": ""
-    },
-    {
-      "ID": "105241",
-      "Name": "Fortress of Resistance_Past_Bonfire 02《ID:105241》",
-      "Description": ""
-    },
-    {
-      "ID": "105250",
-      "Name": "Underground Valley_Bonfire 01《ID:105250》",
-      "Description": ""
-    },
-    {
-      "ID": "105251",
-      "Name": "Underground Valley_Bonfire 02《ID:105251》",
-      "Description": ""
-    },
-    {
-      "ID": "105260",
-      "Name": "Iwamine Castle_Past_Bonfire 01《ID:105260》",
-      "Description": ""
-    },
-    {
-      "ID": "105261",
-      "Name": "Iwamine Castle_Past_Bonfire 02《ID:105261》",
-      "Description": ""
-    },
-    {
-      "ID": "105270",
-      "Name": "Mausoleum_Bonfire 01《ID:105270》",
-      "Description": ""
-    },
-    {
-      "ID": "105271",
-      "Name": "Mausoleum_Bonfire 02《ID:105271》",
-      "Description": ""
-    },
-    {
-      "ID": "105280",
-      "Name": "Sewer_Bonfire 01《ID:105280》",
-      "Description": ""
-    },
-    {
-      "ID": "105281",
-      "Name": "Sewer_Bonfire 02《ID:105281》",
-      "Description": ""
-    },
-    {
-      "ID": "109997",
-      "Name": "Ninja test map bonfire 1《ID:109997》",
-      "Description": ""
-    },
-    {
-      "ID": "109998",
-      "Name": "Fortress of Resistance_Past_Kingdom Soldier_Lower Soldier Hostility《ID:109998》",
-      "Description": ""
-    },
-    {
-      "ID": "109999",
-      "Name": "Ninja Test Map Bonfire 2《ID:109999》",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "100001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave Clear《ID:100001》"
+        }
+      ]
+    },
+    {
+      "Key": "100002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Madura Clear《ID:100002》"
+        }
+      ]
+    },
+    {
+      "Key": "100003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant Forest Clear《ID:100003》"
+        }
+      ]
+    },
+    {
+      "Key": "100004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower Clear《ID:100004》"
+        }
+      ]
+    },
+    {
+      "Key": "100005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port Clear《ID:100005》"
+        }
+      ]
+    },
+    {
+      "Key": "100006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clear the Forgotten Prison《ID:100006》"
+        }
+      ]
+    },
+    {
+      "Key": "100007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest Clear《ID:100007》"
+        }
+      ]
+    },
+    {
+      "Key": "100008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani Clear《ID:100008》"
+        }
+      ]
+    },
+    {
+      "Key": "100009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle Clear《ID:100009》"
+        }
+      ]
+    },
+    {
+      "Key": "100010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint Tomb Clear《ID:100010》"
+        }
+      ]
+    },
+    {
+      "Key": "100011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scum bottom clear《ID:100011》"
+        }
+      ]
+    },
+    {
+      "Key": "100012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest Clear《ID:100012》"
+        }
+      ]
+    },
+    {
+      "Key": "100013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clear the doorway to Pharos《ID:100013》"
+        }
+      ]
+    },
+    {
+      "Key": "100014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shinseki Town Geldra Clear《ID:100014》"
+        }
+      ]
+    },
+    {
+      "Key": "100015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangreig Clear《ID:100015》"
+        }
+      ]
+    },
+    {
+      "Key": "100016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar Clear《ID:100016》"
+        }
+      ]
+    },
+    {
+      "Key": "100017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple Clear《ID:100017》"
+        }
+      ]
+    },
+    {
+      "Key": "100018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clear the mansion of Anne Deal《ID:100018》"
+        }
+      ]
+    },
+    {
+      "Key": "100019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Dragon's Nest Clear《ID:100019》"
+        }
+      ]
+    },
+    {
+      "Key": "100020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory C Clear《ID:100020》"
+        }
+      ]
+    },
+    {
+      "Key": "100021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory A Clear《ID:100021》"
+        }
+      ]
+    },
+    {
+      "Key": "100022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Memory B Clear《ID:100022》"
+        }
+      ]
+    },
+    {
+      "Key": "100023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Firelink Throne Clear《ID:100023》"
+        }
+      ]
+    },
+    {
+      "Key": "100024",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clear the old dark hole《ID:100024》"
+        }
+      ]
+    },
+    {
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrified Forest: Encounter with the retired Fire Guardian《ID:100200》"
+        }
+      ]
+    },
+    {
+      "Key": "100800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Mausoleum key《ID:100800》"
+        }
+      ]
+    },
+    {
+      "Key": "100801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Giant's Soul《ID:100801》"
+        }
+      ]
+    },
+    {
+      "Key": "100802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition《Item that enters the giant's memory《ID:100802》"
+        }
+      ]
+    },
+    {
+      "Key": "100803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition lever《ID:100803》"
+        }
+      ]
+    },
+    {
+      "Key": "100804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition King's ring《ID:100804》"
+        }
+      ]
+    },
+    {
+      "Key": "100830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Royal Soldier's Key《ID:100830》"
+        }
+      ]
+    },
+    {
+      "Key": "100831",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtain item《Key of Sin《ID:100831》"
+        }
+      ]
+    },
+    {
+      "Key": "100832",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Fire key《ID:100832》"
+        }
+      ]
+    },
+    {
+      "Key": "100833",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Key of Death《ID:100833》"
+        }
+      ]
+    },
+    {
+      "Key": "100834",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition White Key《ID:100834》"
+        }
+      ]
+    },
+    {
+      "Key": "100835",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition《●key《ID:100835》"
+        }
+      ]
+    },
+    {
+      "Key": "100836",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtain item Beast Key《ID:100836》"
+        }
+      ]
+    },
+    {
+      "Key": "100837",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtain item《Mr. A's house key《ID:100837》"
+        }
+      ]
+    },
+    {
+      "Key": "100838",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obtain item《Mr. B's house key《ID:100838》"
+        }
+      ]
+    },
+    {
+      "Key": "100839",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition《Immortality Cell Key《ID:100839》"
+        }
+      ]
+    },
+    {
+      "Key": "100840",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Patch house key《ID:100840》"
+        }
+      ]
+    },
+    {
+      "Key": "100860",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Fire to give to EX blacksmith《ID:100860》"
+        }
+      ]
+    },
+    {
+      "Key": "100861",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Miracle person item《ID:100861》"
+        }
+      ]
+    },
+    {
+      "Key": "100862",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Ladder figurine《ID:100862》"
+        }
+      ]
+    },
+    {
+      "Key": "100863",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition: Brother searching for his sister: Kabuto《ID:100863》"
+        }
+      ]
+    },
+    {
+      "Key": "100864",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Feather《ID:100864》"
+        }
+      ]
+    },
+    {
+      "Key": "100865",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition undecided (dark arts)《ID:100865》"
+        }
+      ]
+    },
+    {
+      "Key": "100866",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Fossil egg《ID:100866》"
+        }
+      ]
+    },
+    {
+      "Key": "100867",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition Manscorpion Ring《ID:100867》"
+        }
+      ]
+    },
+    {
+      "Key": "100900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition: Pledge ring “Mouse King”《ID:100900》"
+        }
+      ]
+    },
+    {
+      "Key": "100901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition: Pledge ring “Bellkeeper”《ID:100901》"
+        }
+      ]
+    },
+    {
+      "Key": "100902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition: Pledge ring “Seal of protection”《ID:100902》"
+        }
+      ]
+    },
+    {
+      "Key": "100903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item acquisition: Pledge ring “Mark of Blood Darkness”《ID:100903》"
+        }
+      ]
+    },
+    {
+      "Key": "100950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Beautiful Frog《ID:100950》"
+        }
+      ]
+    },
+    {
+      "Key": "100951",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat the Spider Queen《ID:100951》"
+        }
+      ]
+    },
+    {
+      "Key": "100952",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Molten Iron Demon《ID:100952》"
+        }
+      ]
+    },
+    {
+      "Key": "100953",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Silver Chariot《ID:100953》"
+        }
+      ]
+    },
+    {
+      "Key": "100954",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Skeleton Noble《ID:100954》"
+        }
+      ]
+    },
+    {
+      "Key": "100955",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Jabba the Hut《ID:100955》"
+        }
+      ]
+    },
+    {
+      "Key": "100956",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Naga《ID:100956》"
+        }
+      ]
+    },
+    {
+      "Key": "100957",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Man Scorpion♀《ID:100957》"
+        }
+      ]
+    },
+    {
+      "Key": "100958",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Mirror Knight《ID:100958》"
+        }
+      ]
+    },
+    {
+      "Key": "100959",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry: Defeat only soldiers《ID:100959》"
+        }
+      ]
+    },
+    {
+      "Key": "100960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Ornstein《ID:100960》"
+        }
+      ]
+    },
+    {
+      "Key": "100961",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-sided warrior: Defeat snake head《ID:100961》"
+        }
+      ]
+    },
+    {
+      "Key": "100962",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat the warrior in the mirror《ID:100962》"
+        }
+      ]
+    },
+    {
+      "Key": "100963",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat the forgotten sinner《ID:100963》"
+        }
+      ]
+    },
+    {
+      "Key": "100964",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Demon Knight《ID:100964》"
+        }
+      ]
+    },
+    {
+      "Key": "100965",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog and Mouse: Color ② Defeat《ID:100965》"
+        }
+      ]
+    },
+    {
+      "Key": "100966",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Butcher《ID:100966》"
+        }
+      ]
+    },
+    {
+      "Key": "100967",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King《ID:100967》"
+        }
+      ]
+    },
+    {
+      "Key": "100968",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: Defeated with luggage《ID:100968》"
+        }
+      ]
+    },
+    {
+      "Key": "100969",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: Defeated without luggage《ID:100969》"
+        }
+      ]
+    },
+    {
+      "Key": "100970",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Wyvern《ID:100970》"
+        }
+      ]
+    },
+    {
+      "Key": "100971",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Advanced Soldier (Deceased)《ID:100971》"
+        }
+      ]
+    },
+    {
+      "Key": "100972",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Advanced Soldier (Living)《ID:100972》"
+        }
+      ]
+    },
+    {
+      "Key": "100973",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's armor form《ID:100973》"
+        }
+      ]
+    },
+    {
+      "Key": "100974",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A《ID:100974》"
+        }
+      ]
+    },
+    {
+      "Key": "100975",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight B《ID:100975》"
+        }
+      ]
+    },
+    {
+      "Key": "100976",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C《ID:100976》"
+        }
+      ]
+    },
+    {
+      "Key": "100977",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat the ancient dragon《ID:100977》"
+        }
+      ]
+    },
+    {
+      "Key": "100978",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat King Vanclad《ID:100978》"
+        }
+      ]
+    },
+    {
+      "Key": "100979",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Agaduran's Stand: Scum Bottom《ID:100979》"
+        }
+      ]
+    },
+    {
+      "Key": "100980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Agaduran's Stand: Hollow Shadow Forest《ID:100980》"
+        }
+      ]
+    },
+    {
+      "Key": "100981",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defeat Agaduran's Stand: Ojo Drangraig《ID:100981》"
+        }
+      ]
+    },
+    {
+      "Key": "101850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown: Delete if unnecessary《ID:101850》"
+        }
+      ]
+    },
+    {
+      "Key": "102080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Number of bosses defeated: 1《ID:102080》"
+        }
+      ]
+    },
+    {
+      "Key": "102081",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Number of bosses defeated: 2《ID:102081》"
+        }
+      ]
+    },
+    {
+      "Key": "102082",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Number of bosses defeated: 3《ID:102082》"
+        }
+      ]
+    },
+    {
+      "Key": "102083",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Number of bosses defeated: 4《ID:102083》"
+        }
+      ]
+    },
+    {
+      "Key": "102086",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Inside the castle: Generation stopped《ID:102086》"
+        }
+      ]
+    },
+    {
+      "Key": "102087",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Immortal Temple: Generation stopped《ID:102087》"
+        }
+      ]
+    },
+    {
+      "Key": "102088",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Andeel's Hall: Generation stopped《ID:102088》"
+        }
+      ]
+    },
+    {
+      "Key": "102160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Install a ladder《ID:102160》"
+        }
+      ]
+    },
+    {
+      "Key": "102170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migrate: Install long ladder《ID:102170》"
+        }
+      ]
+    },
+    {
+      "Key": "102171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migrate: Set up middle ladder《ID:102171》"
+        }
+      ]
+    },
+    {
+      "Key": "102172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migrate: Set up a small ladder《ID:102172》"
+        }
+      ]
+    },
+    {
+      "Key": "102173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration: Equipment transfer《ID:102173》"
+        }
+      ]
+    },
+    {
+      "Key": "102320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Equipment Transfer《ID:102320》"
+        }
+      ]
+    },
+    {
+      "Key": "102322",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: 1st encounter《ID:102322》"
+        }
+      ]
+    },
+    {
+      "Key": "102323",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: 2nd Encounter《ID:102323》"
+        }
+      ]
+    },
+    {
+      "Key": "102324",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: 3rd Encounter《ID:102324》"
+        }
+      ]
+    },
+    {
+      "Key": "102325",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Opening (Kudzu Bottom)《ID:102325》"
+        }
+      ]
+    },
+    {
+      "Key": "102326",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Opening (Drangraig)《ID:102326》"
+        }
+      ]
+    },
+    {
+      "Key": "102327",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Opening (Shadow Forest)《ID:102327》"
+        }
+      ]
+    },
+    {
+      "Key": "102328",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Invasion (Kudzu Bottom)《ID:102328》"
+        }
+      ]
+    },
+    {
+      "Key": "102329",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Invasion (Drangraig)《ID:102329》"
+        }
+      ]
+    },
+    {
+      "Key": "102330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss: Magic Square Invasion (Shadow Forest)《ID:102330》"
+        }
+      ]
+    },
+    {
+      "Key": "102350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Death location: Valley of the Pool《ID:102350》"
+        }
+      ]
+    },
+    {
+      "Key": "102351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Death location: Hidden Port《ID:102351》"
+        }
+      ]
+    },
+    {
+      "Key": "102352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Place of death: Scum bottom《ID:102352》"
+        }
+      ]
+    },
+    {
+      "Key": "102353",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Death location: Pharos doorway《ID:102353》"
+        }
+      ]
+    },
+    {
+      "Key": "102354",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Death location: Altar of Amana《ID:102354》"
+        }
+      ]
+    },
+    {
+      "Key": "102355",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Equipment transfer《ID:102355》"
+        }
+      ]
+    },
+    {
+      "Key": "102380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken Blue Sect Warrior: Equipment Transfer《ID:102380》"
+        }
+      ]
+    },
+    {
+      "Key": "102480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female knight: 1st encounter《ID:102480》"
+        }
+      ]
+    },
+    {
+      "Key": "102481",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female knight: 2nd encounter《ID:102481》"
+        }
+      ]
+    },
+    {
+      "Key": "102482",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: 3rd Encounter《ID:102482》"
+        }
+      ]
+    },
+    {
+      "Key": "102483",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: 4th Encounter《ID:102483》"
+        }
+      ]
+    },
+    {
+      "Key": "102484",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Castle of Oblivion: Generation stopped《ID:102484》"
+        }
+      ]
+    },
+    {
+      "Key": "102485",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Tamari no Tani: Generation stopped《ID:102485》"
+        }
+      ]
+    },
+    {
+      "Key": "102486",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Hidden Port: Generation stopped《ID:102486》"
+        }
+      ]
+    },
+    {
+      "Key": "102487",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Scum Bottom: Generation Stopped《ID:102487》"
+        }
+      ]
+    },
+    {
+      "Key": "102488",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female knight: Item transfer: 2nd encounter: Talk to: Part 2《ID:102488》"
+        }
+      ]
+    },
+    {
+      "Key": "102489",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female knight: Item transfer: 3rd encounter: Talk to: Part 1《ID:102489》"
+        }
+      ]
+    },
+    {
+      "Key": "102490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Equipment Transfer《ID:102490》"
+        }
+      ]
+    },
+    {
+      "Key": "102491",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Place of Death: Hidden Port《ID:102491》"
+        }
+      ]
+    },
+    {
+      "Key": "102492",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Place of Death: Castle of Oblivion《ID:102492》"
+        }
+      ]
+    },
+    {
+      "Key": "102493",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Place of death: Tamari no Tani《ID:102493》"
+        }
+      ]
+    },
+    {
+      "Key": "102494",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Place of Death: Bottom of Scum《ID:102494》"
+        }
+      ]
+    },
+    {
+      "Key": "102495",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Place of death: Mansion of An Deal《ID:102495》"
+        }
+      ]
+    },
+    {
+      "Key": "102496",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight: Death《ID:102496》"
+        }
+      ]
+    },
+    {
+      "Key": "102520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Baba: Equipment Transfer《ID:102520》"
+        }
+      ]
+    },
+    {
+      "Key": "102620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Equipment transfer《ID:102620》"
+        }
+      ]
+    },
+    {
+      "Key": "102800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Contained person: Equipment transfer《ID:102800》"
+        }
+      ]
+    },
+    {
+      "Key": "102880",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《ID:102880》 who handed over the ``Dark Mark of Blood''"
+        }
+      ]
+    },
+    {
+      "Key": "102881",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop: Received pledge ranking 1《ID:102881》"
+        }
+      ]
+    },
+    {
+      "Key": "102882",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop: Received pledge ranking 2《ID:102882》"
+        }
+      ]
+    },
+    {
+      "Key": "102883",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop: Received pledge ranking 3《ID:102883》"
+        }
+      ]
+    },
+    {
+      "Key": "102900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Absolution: Equipment Transfer《ID:102900》"
+        }
+      ]
+    },
+    {
+      "Key": "102920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "《ID:102920》 who handed over the ``Seal of Protection''"
+        }
+      ]
+    },
+    {
+      "Key": "102921",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight: Received pledge ranking 1《ID:102921》"
+        }
+      ]
+    },
+    {
+      "Key": "102922",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight: Received pledge ranking 2《ID:102922》"
+        }
+      ]
+    },
+    {
+      "Key": "102923",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight: Received pledge ranking 3《ID:102923》"
+        }
+      ]
+    },
+    {
+      "Key": "104100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person: Unsealed 《ID:104100》"
+        }
+      ]
+    },
+    {
+      "Key": "104600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 1st encounter《ID:104600》"
+        }
+      ]
+    },
+    {
+      "Key": "104601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 2nd encounter《ID:104601》"
+        }
+      ]
+    },
+    {
+      "Key": "104602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 3rd encounter《ID:104602》"
+        }
+      ]
+    },
+    {
+      "Key": "104603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 4th encounter《ID:104603》"
+        }
+      ]
+    },
+    {
+      "Key": "104604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 5th encounter《ID:104604》"
+        }
+      ]
+    },
+    {
+      "Key": "104605",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 6th encounter《ID:104605》"
+        }
+      ]
+    },
+    {
+      "Key": "104606",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 7th encounter《ID:104606》"
+        }
+      ]
+    },
+    {
+      "Key": "104607",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 8th encounter《ID:104607》"
+        }
+      ]
+    },
+    {
+      "Key": "104608",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 9th encounter《ID:104608》"
+        }
+      ]
+    },
+    {
+      "Key": "104609",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 10th encounter《ID:104609》"
+        }
+      ]
+    },
+    {
+      "Key": "104610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Encounter 11th《ID:104610》"
+        }
+      ]
+    },
+    {
+      "Key": "104611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Encounter 12th《ID:104611》"
+        }
+      ]
+    },
+    {
+      "Key": "104612",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Encounter 13《ID:104612》"
+        }
+      ]
+    },
+    {
+      "Key": "104613",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 14th encounter《ID:104613》"
+        }
+      ]
+    },
+    {
+      "Key": "104614",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 15th encounter《ID:104614》"
+        }
+      ]
+    },
+    {
+      "Key": "104615",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 16th encounter《ID:104615》"
+        }
+      ]
+    },
+    {
+      "Key": "104616",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Encounter 17th《ID:104616》"
+        }
+      ]
+    },
+    {
+      "Key": "104617",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 18th encounter《ID:104617》"
+        }
+      ]
+    },
+    {
+      "Key": "104618",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: Encounter 19th《ID:104618》"
+        }
+      ]
+    },
+    {
+      "Key": "104619",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf: 20th encounter《ID:104619》"
+        }
+      ]
+    },
+    {
+      "Key": "104700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Dullahan《ID:104700》"
+        }
+      ]
+    },
+    {
+      "Key": "104701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Grave Keeper《ID:104701》"
+        }
+      ]
+    },
+    {
+      "Key": "104704",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Dragon Shrine Maiden《ID:104704》"
+        }
+      ]
+    },
+    {
+      "Key": "104705",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Dragon Shrine Maiden (Child)《ID:104705》"
+        }
+      ]
+    },
+    {
+      "Key": "104707",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Queen《ID:104707》"
+        }
+      ]
+    },
+    {
+      "Key": "104708",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Ladder shop《ID:104708》"
+        }
+      ]
+    },
+    {
+      "Key": "104709",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Retired Firekeeper 1《ID:104709》"
+        }
+      ]
+    },
+    {
+      "Key": "104710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Retired fire protection woman 2《ID:104710》"
+        }
+      ]
+    },
+    {
+      "Key": "104711",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Retired fire guard 3《ID:104711》"
+        }
+      ]
+    },
+    {
+      "Key": "104713",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Spirit of the Prime Minister《ID:104713》"
+        }
+      ]
+    },
+    {
+      "Key": "104714",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Fire protection woman housekeeper《ID:104714》"
+        }
+      ]
+    },
+    {
+      "Key": "104715",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Kingdom Captain《ID:104715》"
+        }
+      ]
+    },
+    {
+      "Key": "104716",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Pilgrim of the Abyss《ID:104716》"
+        }
+      ]
+    },
+    {
+      "Key": "104717",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Dwarf《ID:104717》"
+        }
+      ]
+    },
+    {
+      "Key": "104719",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Broken Qing Sect Warrior《ID:104719》"
+        }
+      ]
+    },
+    {
+      "Key": "104720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Wandering Warrior《ID:104720》"
+        }
+      ]
+    },
+    {
+      "Key": "104721",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Gekkoji《ID:104721》"
+        }
+      ]
+    },
+    {
+      "Key": "104722",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Patch《ID:104722》"
+        }
+      ]
+    },
+    {
+      "Key": "104723",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Map drawing《ID:104723》"
+        }
+      ]
+    },
+    {
+      "Key": "104724",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Female Knight《ID:104724》"
+        }
+      ]
+    },
+    {
+      "Key": "104725",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Bell Keeper《ID:104725》"
+        }
+      ]
+    },
+    {
+      "Key": "104726",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Yorozu Hag《ID:104726》"
+        }
+      ]
+    },
+    {
+      "Key": "104727",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Bard Girl 1《ID:104727》"
+        }
+      ]
+    },
+    {
+      "Key": "104728",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Bard Girl 2《ID:104728》"
+        }
+      ]
+    },
+    {
+      "Key": "104729",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Prisoner Girl《ID:104729》"
+        }
+      ]
+    },
+    {
+      "Key": "104730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Armor shop《ID:104730》"
+        }
+      ]
+    },
+    {
+      "Key": "104731",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Material shop《ID:104731》"
+        }
+      ]
+    },
+    {
+      "Key": "104732",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Witchcraft《ID:104732》"
+        }
+      ]
+    },
+    {
+      "Key": "104733",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Immigration] Blacksmith《ID:104733》"
+        }
+      ]
+    },
+    {
+      "Key": "104734",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Immigration] EX blacksmith《ID:104734》"
+        }
+      ]
+    },
+    {
+      "Key": "104736",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Immigration] Magician《ID:104736》"
+        }
+      ]
+    },
+    {
+      "Key": "104737",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Spellmania《ID:104737》"
+        }
+      ]
+    },
+    {
+      "Key": "104738",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Miracle Man《ID:104738》"
+        }
+      ]
+    },
+    {
+      "Key": "104739",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Dark magician《ID:104739》"
+        }
+      ]
+    },
+    {
+      "Key": "104740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Contained person《ID:104740》"
+        }
+      ]
+    },
+    {
+      "Key": "104741",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Immigration] Curious item shop《ID:104741》"
+        }
+      ]
+    },
+    {
+      "Key": "104742",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Top weapon shop《ID:104742》"
+        }
+      ]
+    },
+    {
+      "Key": "104743",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Immigration] Cat《ID:104743》"
+        }
+      ]
+    },
+    {
+      "Key": "104744",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Black Phantom Shop《ID:104744》"
+        }
+      ]
+    },
+    {
+      "Key": "104745",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Chaplain of Absolution《ID:104745》"
+        }
+      ]
+    },
+    {
+      "Key": "104746",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Guardian Knight《ID:104746》"
+        }
+      ]
+    },
+    {
+      "Key": "104747",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Sparkling Girl《ID:104747》"
+        }
+      ]
+    },
+    {
+      "Key": "104748",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Mouse King《ID:104748》"
+        }
+      ]
+    },
+    {
+      "Key": "104749",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Man Scorpion (male)《ID:104749》"
+        }
+      ]
+    },
+    {
+      "Key": "104751",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Three Sisters 1《ID:104751》"
+        }
+      ]
+    },
+    {
+      "Key": "104752",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Three Sisters 2《ID:104752》"
+        }
+      ]
+    },
+    {
+      "Key": "104753",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Migration] Three Sisters 3《ID:104753》"
+        }
+      ]
+    },
+    {
+      "Key": "104800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Dullahan《ID:104800》"
+        }
+      ]
+    },
+    {
+      "Key": "104801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Grave Keeper《ID:104801》"
+        }
+      ]
+    },
+    {
+      "Key": "104804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Dragon Shrine Maiden《ID:104804》"
+        }
+      ]
+    },
+    {
+      "Key": "104805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Dragon Shrine Maiden (Child)《ID:104805》"
+        }
+      ]
+    },
+    {
+      "Key": "104807",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Queen《ID:104807》"
+        }
+      ]
+    },
+    {
+      "Key": "104808",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Ladder shop《ID:104808》"
+        }
+      ]
+    },
+    {
+      "Key": "104809",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hostile] Retired fire protection woman 1《ID:104809》"
+        }
+      ]
+    },
+    {
+      "Key": "104810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Retired Firekeeper 2《ID:104810》"
+        }
+      ]
+    },
+    {
+      "Key": "104811",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Retired Firekeeper 3《ID:104811》"
+        }
+      ]
+    },
+    {
+      "Key": "104812",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Kingdom tactician (past)《ID:104812》"
+        }
+      ]
+    },
+    {
+      "Key": "104813",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Spirit of the Prime Minister《ID:104813》"
+        }
+      ]
+    },
+    {
+      "Key": "104814",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Firekeeper Housekeeper《ID:104814》"
+        }
+      ]
+    },
+    {
+      "Key": "104815",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Kingdom Captain《ID:104815》"
+        }
+      ]
+    },
+    {
+      "Key": "104816",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Pilgrim of the Abyss《ID:104816》"
+        }
+      ]
+    },
+    {
+      "Key": "104817",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Dwarf《ID:104817》"
+        }
+      ]
+    },
+    {
+      "Key": "104819",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Broken Blue Sect Warrior《ID:104819》"
+        }
+      ]
+    },
+    {
+      "Key": "104820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Wandering Warrior《ID:104820》"
+        }
+      ]
+    },
+    {
+      "Key": "104821",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Old Man Moonlight《ID:104821》"
+        }
+      ]
+    },
+    {
+      "Key": "104822",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hostile] Patch《ID:104822》"
+        }
+      ]
+    },
+    {
+      "Key": "104823",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hostile] Map writer《ID:104823》"
+        }
+      ]
+    },
+    {
+      "Key": "104824",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Female Knight《ID:104824》"
+        }
+      ]
+    },
+    {
+      "Key": "104825",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Bell Keeper《ID:104825》"
+        }
+      ]
+    },
+    {
+      "Key": "104826",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Yorozu Hag《ID:104826》"
+        }
+      ]
+    },
+    {
+      "Key": "104827",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Bard Girl 1《ID:104827》"
+        }
+      ]
+    },
+    {
+      "Key": "104828",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Bard Girl 2《ID:104828》"
+        }
+      ]
+    },
+    {
+      "Key": "104829",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Prisoner Girl《ID:104829》"
+        }
+      ]
+    },
+    {
+      "Key": "104830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Armor shop《ID:104830》"
+        }
+      ]
+    },
+    {
+      "Key": "104831",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Material shop《ID:104831》"
+        }
+      ]
+    },
+    {
+      "Key": "104832",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Sorcerer《ID:104832》"
+        }
+      ]
+    },
+    {
+      "Key": "104833",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Blacksmith《ID:104833》"
+        }
+      ]
+    },
+    {
+      "Key": "104834",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] EX Blacksmith《ID:104834》"
+        }
+      ]
+    },
+    {
+      "Key": "104836",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Magician《ID:104836》"
+        }
+      ]
+    },
+    {
+      "Key": "104837",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Spellmania《ID:104837》"
+        }
+      ]
+    },
+    {
+      "Key": "104838",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Miracle Man《ID:104838》"
+        }
+      ]
+    },
+    {
+      "Key": "104839",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Dark magician《ID:104839》"
+        }
+      ]
+    },
+    {
+      "Key": "104840",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Contained person《ID:104840》"
+        }
+      ]
+    },
+    {
+      "Key": "104841",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Curious item shop《ID:104841》"
+        }
+      ]
+    },
+    {
+      "Key": "104842",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Top weapon shop《ID:104842》"
+        }
+      ]
+    },
+    {
+      "Key": "104843",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hostile] Cat《ID:104843》"
+        }
+      ]
+    },
+    {
+      "Key": "104844",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Black Phantom Shop《ID:104844》"
+        }
+      ]
+    },
+    {
+      "Key": "104845",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Chaplain of Absolution《ID:104845》"
+        }
+      ]
+    },
+    {
+      "Key": "104846",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Guardian Knight《ID:104846》"
+        }
+      ]
+    },
+    {
+      "Key": "104847",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Opponent] Sparkling Girl《ID:104847》"
+        }
+      ]
+    },
+    {
+      "Key": "104848",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Mouse King《ID:104848》"
+        }
+      ]
+    },
+    {
+      "Key": "104849",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Man Scorpion (Male)《ID:104849》"
+        }
+      ]
+    },
+    {
+      "Key": "104851",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Three Sisters 1《ID:104851》"
+        }
+      ]
+    },
+    {
+      "Key": "104852",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Three Sisters 2《ID:104852》"
+        }
+      ]
+    },
+    {
+      "Key": "104853",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Enemy] Three Sisters 3《ID:104853》"
+        }
+      ]
+    },
+    {
+      "Key": "104900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Dullahan《ID:104900》"
+        }
+      ]
+    },
+    {
+      "Key": "104901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Grave Keeper《ID:104901》"
+        }
+      ]
+    },
+    {
+      "Key": "104904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Dragon Shrine Maiden《ID:104904》"
+        }
+      ]
+    },
+    {
+      "Key": "104905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Dragon Shrine Maiden (Child)《ID:104905》"
+        }
+      ]
+    },
+    {
+      "Key": "104907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Queen《ID:104907》"
+        }
+      ]
+    },
+    {
+      "Key": "104908",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Ladder shop《ID:104908》"
+        }
+      ]
+    },
+    {
+      "Key": "104909",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Retired fire protection woman 1《ID:104909》"
+        }
+      ]
+    },
+    {
+      "Key": "104910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Retired fire protection woman 2《ID:104910》"
+        }
+      ]
+    },
+    {
+      "Key": "104911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Retired fire protection woman 3《ID:104911》"
+        }
+      ]
+    },
+    {
+      "Key": "104913",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Spirit of the Prime Minister《ID:104913》"
+        }
+      ]
+    },
+    {
+      "Key": "104914",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Firekeeper Housekeeper《ID:104914》"
+        }
+      ]
+    },
+    {
+      "Key": "104915",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Kingdom Captain《ID:104915》"
+        }
+      ]
+    },
+    {
+      "Key": "104916",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Pilgrim of the Abyss《ID:104916》"
+        }
+      ]
+    },
+    {
+      "Key": "104917",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Dwarf《ID:104917》"
+        }
+      ]
+    },
+    {
+      "Key": "104919",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Broken Blue Sect Warrior《ID:104919》"
+        }
+      ]
+    },
+    {
+      "Key": "104920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Wandering Warrior《ID:104920》"
+        }
+      ]
+    },
+    {
+      "Key": "104921",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Gekkoji《ID:104921》"
+        }
+      ]
+    },
+    {
+      "Key": "104922",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Patch《ID:104922》"
+        }
+      ]
+    },
+    {
+      "Key": "104923",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Cartographer《ID:104923》"
+        }
+      ]
+    },
+    {
+      "Key": "104924",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Female Knight《ID:104924》"
+        }
+      ]
+    },
+    {
+      "Key": "104925",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Bell Keeper《ID:104925》"
+        }
+      ]
+    },
+    {
+      "Key": "104926",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Yorozu Hag《ID:104926》"
+        }
+      ]
+    },
+    {
+      "Key": "104927",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Bard Girl 1《ID:104927》"
+        }
+      ]
+    },
+    {
+      "Key": "104928",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Bard Girl 2《ID:104928》"
+        }
+      ]
+    },
+    {
+      "Key": "104929",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Prisoner Girl《ID:104929》"
+        }
+      ]
+    },
+    {
+      "Key": "104930",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Armorer《ID:104930》"
+        }
+      ]
+    },
+    {
+      "Key": "104931",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Material shop《ID:104931》"
+        }
+      ]
+    },
+    {
+      "Key": "104932",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Witchcraft《ID:104932》"
+        }
+      ]
+    },
+    {
+      "Key": "104933",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Blacksmith《ID:104933》"
+        }
+      ]
+    },
+    {
+      "Key": "104934",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] EX Blacksmith《ID:104934》"
+        }
+      ]
+    },
+    {
+      "Key": "104936",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Magician《ID:104936》"
+        }
+      ]
+    },
+    {
+      "Key": "104937",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Spellmania《ID:104937》"
+        }
+      ]
+    },
+    {
+      "Key": "104938",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Miracle Man《ID:104938》"
+        }
+      ]
+    },
+    {
+      "Key": "104939",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Dark magician《ID:104939》"
+        }
+      ]
+    },
+    {
+      "Key": "104940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Contained person《ID:104940》"
+        }
+      ]
+    },
+    {
+      "Key": "104941",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Curious item shop《ID:104941》"
+        }
+      ]
+    },
+    {
+      "Key": "104942",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Top Weapon Shop《ID:104942》"
+        }
+      ]
+    },
+    {
+      "Key": "104943",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Cat《ID:104943》"
+        }
+      ]
+    },
+    {
+      "Key": "104944",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Black Phantomya《ID:104944》"
+        }
+      ]
+    },
+    {
+      "Key": "104945",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Chaplain of Absolution《ID:104945》"
+        }
+      ]
+    },
+    {
+      "Key": "104946",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Guardian Knight《ID:104946》"
+        }
+      ]
+    },
+    {
+      "Key": "104947",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Kirakira Musume《ID:104947》"
+        }
+      ]
+    },
+    {
+      "Key": "104948",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Mouse King《ID:104948》"
+        }
+      ]
+    },
+    {
+      "Key": "104949",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Manscorpion (male)《ID:104949》"
+        }
+      ]
+    },
+    {
+      "Key": "104951",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Three Sisters 1《ID:104951》"
+        }
+      ]
+    },
+    {
+      "Key": "104952",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Three Sisters 2《ID:104952》"
+        }
+      ]
+    },
+    {
+      "Key": "104953",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Three Sisters 3《ID:104953》"
+        }
+      ]
+    },
+    {
+      "Key": "104954",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Pilgrim of the Abyss (Scum Bottom)《ID:104954》"
+        }
+      ]
+    },
+    {
+      "Key": "104955",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Pilgrim of the Abyss (Ojo Drangraig)《ID:104955》"
+        }
+      ]
+    },
+    {
+      "Key": "104956",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Pilgrim of the Abyss (Forest of Hollow Shadows)《ID:104956》"
+        }
+      ]
+    },
+    {
+      "Key": "104957",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Death] Pilgrim of the Abyss (after signing the vow)《ID:104957》"
+        }
+      ]
+    },
+    {
+      "Key": "105040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Madura_Modern_Bonfire 01《ID:105040》"
+        }
+      ]
+    },
+    {
+      "Key": "105050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Forest_Bonfire 01《ID:105050》"
+        }
+      ]
+    },
+    {
+      "Key": "105051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Forest_Bonfire 02《ID:105051》"
+        }
+      ]
+    },
+    {
+      "Key": "105052",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Forest_Bonfire 03《ID:105052》"
+        }
+      ]
+    },
+    {
+      "Key": "105053",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Forest_Bonfire 04《ID:105053》"
+        }
+      ]
+    },
+    {
+      "Key": "105054",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant's Forest_Bonfire 05《ID:105054》"
+        }
+      ]
+    },
+    {
+      "Key": "105060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar_Bonfire 01《ID:105060》"
+        }
+      ]
+    },
+    {
+      "Key": "105061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar_Bonfire 02《ID:105061》"
+        }
+      ]
+    },
+    {
+      "Key": "105062",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar_Bonfire 03《ID:105062》"
+        }
+      ]
+    },
+    {
+      "Key": "105063",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar_Bonfire 04《ID:105063》"
+        }
+      ]
+    },
+    {
+      "Key": "105064",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Altar_Bonfire 05《ID:105064》"
+        }
+      ]
+    },
+    {
+      "Key": "105070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beastman Forest_Bonfire 01《ID:105070》"
+        }
+      ]
+    },
+    {
+      "Key": "105071",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beastman Forest_Bonfire 02《ID:105071》"
+        }
+      ]
+    },
+    {
+      "Key": "105080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider City_Bonfire 01《ID:105080》"
+        }
+      ]
+    },
+    {
+      "Key": "105081",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider City_Bonfire 02《ID:105081》"
+        }
+      ]
+    },
+    {
+      "Key": "105082",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider City_Bonfire 03《ID:105082》"
+        }
+      ]
+    },
+    {
+      "Key": "105083",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider City_Bonfire 04《ID:105083》"
+        }
+      ]
+    },
+    {
+      "Key": "105100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 01《ID:105100》"
+        }
+      ]
+    },
+    {
+      "Key": "105101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 02《ID:105101》"
+        }
+      ]
+    },
+    {
+      "Key": "105102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 03《ID:105102》"
+        }
+      ]
+    },
+    {
+      "Key": "105103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 04《ID:105103》"
+        }
+      ]
+    },
+    {
+      "Key": "105104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 05《ID:105104》"
+        }
+      ]
+    },
+    {
+      "Key": "105105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 06《ID:105105》"
+        }
+      ]
+    },
+    {
+      "Key": "105106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 07《ID:105106》"
+        }
+      ]
+    },
+    {
+      "Key": "105107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion_Bonfire 08《ID:105107》"
+        }
+      ]
+    },
+    {
+      "Key": "105110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 01《ID:105110》"
+        }
+      ]
+    },
+    {
+      "Key": "105111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 02《ID:105111》"
+        }
+      ]
+    },
+    {
+      "Key": "105112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 03《ID:105112》"
+        }
+      ]
+    },
+    {
+      "Key": "105113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 04《ID:105113》"
+        }
+      ]
+    },
+    {
+      "Key": "105114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 05《ID:105114》"
+        }
+      ]
+    },
+    {
+      "Key": "105115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tamari no Tani_Bonfire 06《ID:105115》"
+        }
+      ]
+    },
+    {
+      "Key": "105120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Underground Port_Bonfire 01《ID:105120》"
+        }
+      ]
+    },
+    {
+      "Key": "105130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress_Bonfire 01《ID:105130》"
+        }
+      ]
+    },
+    {
+      "Key": "105131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress_Bonfire 02《ID:105131》"
+        }
+      ]
+    },
+    {
+      "Key": "105132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress_Bonfire 03《ID:105132》"
+        }
+      ]
+    },
+    {
+      "Key": "105140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iwamine Castle_Modern_Bonfire 01《ID:105140》"
+        }
+      ]
+    },
+    {
+      "Key": "105150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest_Bonfire 01《ID:105150》"
+        }
+      ]
+    },
+    {
+      "Key": "105151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest_Bonfire 02《ID:105151》"
+        }
+      ]
+    },
+    {
+      "Key": "105152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest_Bonfire 03《ID:105152》"
+        }
+      ]
+    },
+    {
+      "Key": "105153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest_Bonfire 04《ID:105153》"
+        }
+      ]
+    },
+    {
+      "Key": "105180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scum Bottom_Bonfire 01《ID:105180》"
+        }
+      ]
+    },
+    {
+      "Key": "105181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scum Bottom_Bonfire 02《ID:105181》"
+        }
+      ]
+    },
+    {
+      "Key": "105182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scum Bottom_Bonfire 03《ID:105182》"
+        }
+      ]
+    },
+    {
+      "Key": "105183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scum Bottom_Bonfire 04《ID:105183》"
+        }
+      ]
+    },
+    {
+      "Key": "105190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cathedral_Bonfire 01《ID:105190》"
+        }
+      ]
+    },
+    {
+      "Key": "105191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cathedral_Bonfire 02《ID:105191》"
+        }
+      ]
+    },
+    {
+      "Key": "105192",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cathedral_Bonfire 03《ID:105192》"
+        }
+      ]
+    },
+    {
+      "Key": "105200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Ceremony Area_Bonfire 01《ID:105200》"
+        }
+      ]
+    },
+    {
+      "Key": "105201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Ceremony Area_Bonfire 02《ID:105201》"
+        }
+      ]
+    },
+    {
+      "Key": "105240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Bonfire 01《ID:105240》"
+        }
+      ]
+    },
+    {
+      "Key": "105241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Bonfire 02《ID:105241》"
+        }
+      ]
+    },
+    {
+      "Key": "105250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Underground Valley_Bonfire 01《ID:105250》"
+        }
+      ]
+    },
+    {
+      "Key": "105251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Underground Valley_Bonfire 02《ID:105251》"
+        }
+      ]
+    },
+    {
+      "Key": "105260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iwamine Castle_Past_Bonfire 01《ID:105260》"
+        }
+      ]
+    },
+    {
+      "Key": "105261",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iwamine Castle_Past_Bonfire 02《ID:105261》"
+        }
+      ]
+    },
+    {
+      "Key": "105270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mausoleum_Bonfire 01《ID:105270》"
+        }
+      ]
+    },
+    {
+      "Key": "105271",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mausoleum_Bonfire 02《ID:105271》"
+        }
+      ]
+    },
+    {
+      "Key": "105280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sewer_Bonfire 01《ID:105280》"
+        }
+      ]
+    },
+    {
+      "Key": "105281",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sewer_Bonfire 02《ID:105281》"
+        }
+      ]
+    },
+    {
+      "Key": "109997",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ninja test map bonfire 1《ID:109997》"
+        }
+      ]
+    },
+    {
+      "Key": "109998",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Kingdom Soldier_Lower Soldier Hostility《ID:109998》"
+        }
+      ]
+    },
+    {
+      "Key": "109999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ninja Test Map Bonfire 2《ID:109999》"
+        }
+      ]
     }
   ]
 }

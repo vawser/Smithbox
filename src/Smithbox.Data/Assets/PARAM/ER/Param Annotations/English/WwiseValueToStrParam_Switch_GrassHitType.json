@@ -1,0 +1,28 @@
+{
+  "Param": "WwiseValueToStrParam_Switch_GrassHitType",
+  "Type": "WWISE_VALUE_TO_STR_CONVERT_PARAM_ST",
+  "Name": "WwiseValueToStrParam_Switch_GrassHitType",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ParamStr",
+      "Name": "Param String",
+      "Description": "Wwise parameter string"
+    }
+  ]
+}

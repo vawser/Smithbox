@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_FLAG_NPC_ACTION",
-  "Name": "EVENT_FLAG_NPC_ACTION",
-  "Description": "",
+  "Key": "EVENT_FLAG_NPC_ACTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_NPC_ACTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "999999999",
-      "Name": "Test",
-      "Description": ""
+      "Key": "999999999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
     }
   ]
 }

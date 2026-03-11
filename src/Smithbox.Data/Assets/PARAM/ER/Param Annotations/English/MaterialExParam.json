@@ -1,0 +1,48 @@
+{
+  "Param": "MaterialExParam",
+  "Type": "MATERIAL_EX_PARAM_ST",
+  "Name": "MaterialExParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "Material Param Name",
+      "Description": "Set the parameter name of the material. Up to 31 characters"
+    },
+    {
+      "Field": "materialId",
+      "Name": "Material ID",
+      "Description": "NPC Para - Resident Material Expansion Para ID setting -1 for all materials"
+    },
+    {
+      "Field": "materialParamValue0",
+      "Name": "Material Param Value - R",
+      "Description": "NPC Para - Resident Material Extended Para ID Settings"
+    },
+    {
+      "Field": "materialParamValue1",
+      "Name": "Material Param Value - G",
+      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+    },
+    {
+      "Field": "materialParamValue2",
+      "Name": "Material Param Value - B",
+      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+    },
+    {
+      "Field": "materialParamValue3",
+      "Name": "Material Param Value - A",
+      "Description": "NPC Para - Resident Material Extended Para ID Settings"
+    },
+    {
+      "Field": "materialParamValue4",
+      "Name": "Material Param Value - I",
+      "Description": "NPC Para - Resident Material Expansion Para ID Settings"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

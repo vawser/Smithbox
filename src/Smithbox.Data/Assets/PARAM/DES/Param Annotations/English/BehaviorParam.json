@@ -1,0 +1,108 @@
+{
+  "Param": "BehaviorParam",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BehaviorParam",
+  "Description": "Determines the behavior parameters used when triggering projectiles and attacks.",
+  "Fields": [
+    {
+      "Field": "variationId",
+      "Name": "Behavior Variation ID",
+      "Description": "Used when calculating the ID for attack parameters. It is not used directly on the actual machine."
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "Behavior Judgement ID",
+      "Description": "Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TAE."
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "ID Calculation Rule",
+      "Description": "The EzState behavior type to use for ID calculation."
+    },
+    {
+      "Field": "refType",
+      "Name": "Call ID Type",
+      "Description": "Which param type to reference for attack behavior."
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkParamId",
+      "Name": "Attack Call ID",
+      "Description": "The ID to call for attack behavior."
+    },
+    {
+      "Field": "bulletParamId",
+      "Name": "Bullet Call ID",
+      "Description": "The ID to call for attack behavior."
+    },
+    {
+      "Field": "spEffectId",
+      "Name": "SpEffect Call ID",
+      "Description": "The ID to call for attack behavior."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "Offset applied to the particle ID invoked in the TAE event."
+    },
+    {
+      "Field": "category",
+      "Name": "Action Category",
+      "Description": "The action category this behavior belongs to."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "Action Cost: Stamina",
+      "Description": "Set the amount of stamina consumed during action."
+    },
+    {
+      "Field": "mp",
+      "Name": "Action Cost: MP",
+      "Description": "Set the amount of MP consumed during action."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkType",
+      "Name": "Attack Presentation Type",
+      "Description": "Specify the particles and sounds at the time of attack (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Presentation: Material",
+      "Description": "Specify the particles and sounds at the time of attack (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "defMaterial",
+      "Name": "Defense Presentation: Material",
+      "Description": "Specify the particles and sounds when guarding against this attack. (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "atkSize",
+      "Name": "Attack Presentation: Size",
+      "Description": "Specify particles and sounds at the time of attack (Although it is reserved, it is used, so be sure to set it blank or small)."
+    },
+    {
+      "Field": "defSfxMaterial",
+      "Name": "Defense Presentation: Particles",
+      "Description": "The particles used when guarding against this attack."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

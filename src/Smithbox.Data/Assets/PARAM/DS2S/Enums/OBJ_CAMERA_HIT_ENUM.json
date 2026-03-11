@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_CAMERA_HIT_ENUM",
-  "Name": "OBJ_CAMERA_HIT_ENUM",
-  "Description": "",
+  "Key": "OBJ_CAMERA_HIT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_CAMERA_HIT_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Close to PC",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Close to PC"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Do nothing",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Translucency",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Translucency"
+        }
+      ]
     }
   ]
 }

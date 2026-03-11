@@ -1,0 +1,153 @@
+{
+  "Param": "MenuPropertySpecParam",
+  "Type": "MENUPROPERTY_SPEC",
+  "Name": "MenuPropertySpecParam",
+  "Description": "Determines the data sources for various menu elements.",
+  "Fields": [
+    {
+      "Field": "CaptionTextID",
+      "Name": "Caption Text ID",
+      "Description": "The text ID to use for the caption for this element."
+    },
+    {
+      "Field": "IconID",
+      "Name": "Icon ID",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredPropertyID",
+      "Name": "Required Property ID",
+      "Description": "The required proprerty ID for this element."
+    },
+    {
+      "Field": "CompareType",
+      "Name": "Compare Type",
+      "Description": "Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)."
+    },
+    {
+      "Field": "FormatType",
+      "Name": "Format Type",
+      "Description": "The format type for this element."
+    },
+    {
+      "Field": "AdhocCaption",
+      "Name": "Comment",
+      "Description": "The developer comment left for this element."
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "Description Text ID",
+      "Description": "The text ID to use for the description for this element."
+    },
+    {
+      "Field": "EditType",
+      "Name": "Edit Type",
+      "Description": "The edit type for this element."
+    },
+    {
+      "Field": "EditParamBool",
+      "Name": "Slider: Is Looped",
+      "Description": "If ON, the slider will loop around."
+    },
+    {
+      "Field": "IndexRefParamID",
+      "Name": "Index Reference Parameter ID",
+      "Description": "The index reference parameter for this element."
+    },
+    {
+      "Field": "ExtractedParamOperaion",
+      "Name": "Overall Operation Type",
+      "Description": "The operation to apply after the two extractions. X being extraction value 0, and Y being extraction value 1."
+    },
+    {
+      "Field": "reserved1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EditParam2",
+      "Name": "Slider: Adjustment Value",
+      "Description": "The amount the slider will adjust per tick."
+    },
+    {
+      "Field": "EditParam0",
+      "Name": "Slider: Minimum Value",
+      "Description": "The minimum value for the slider."
+    },
+    {
+      "Field": "EditParam1",
+      "Name": "Slider: Maximum Value",
+      "Description": "The maximum value for the slider."
+    },
+    {
+      "Field": "extract0_Target",
+      "Name": "X: Target Type",
+      "Description": "The parameters to be extracted."
+    },
+    {
+      "Field": "extract0_MemberType",
+      "Name": "X: Primitive Type",
+      "Description": "The primitive type of the parameter to be extracted."
+    },
+    {
+      "Field": "extract0_Operation",
+      "Name": "X: Operation Type",
+      "Description": "The operation to apply to the extracted parameter value."
+    },
+    {
+      "Field": "extract0_MemberTailOffset",
+      "Name": "X: Parameter Offset",
+      "Description": "This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset."
+    },
+    {
+      "Field": "extract0_Constant0",
+      "Name": "X: Constant 0",
+      "Description": "This is the X value used when multiplying the passed parameter value."
+    },
+    {
+      "Field": "extract0_Constant1",
+      "Name": "X: Constant 1",
+      "Description": "This is the Y value used when adding to the passed parameter value."
+    },
+    {
+      "Field": "extract0_reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "extract1_Target",
+      "Name": "Y: Target Type",
+      "Description": "The parameters to be extracted."
+    },
+    {
+      "Field": "extract1_MemberType",
+      "Name": "Y: Primitive Type",
+      "Description": "The primitive type of the parameter to be extracted."
+    },
+    {
+      "Field": "extract1_Operation",
+      "Name": "Y: Operation Type",
+      "Description": "The operation to apply to the extracted parameter value."
+    },
+    {
+      "Field": "extract1_MemberTailOffset",
+      "Name": "Y: Parameter Offset",
+      "Description": "This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset."
+    },
+    {
+      "Field": "extract1_Constant0",
+      "Name": "Y: Constant 0",
+      "Description": "This is the X value used when multiplying the passed parameter value."
+    },
+    {
+      "Field": "extract1_Constant1",
+      "Name": "Y: Constant 1",
+      "Description": "This is the Y value used when adding to the passed parameter value."
+    },
+    {
+      "Field": "extract1_reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

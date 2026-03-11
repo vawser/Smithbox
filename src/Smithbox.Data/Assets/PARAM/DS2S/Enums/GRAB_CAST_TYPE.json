@@ -1,22 +1,38 @@
 {
-  "DisplayName": "GRAB_CAST_TYPE",
-  "Name": "GRAB_CAST_TYPE",
-  "Description": "",
+  "Key": "GRAB_CAST_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAB_CAST_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Thrower",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrower"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "The side that was thrown",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The side that was thrown"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "None",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

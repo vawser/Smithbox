@@ -1,0 +1,58 @@
+{
+  "Param": "CustomAttrSpecParam",
+  "Type": "CUSTOM_ATTR_SPEC_PARAM",
+  "Name": "CustomAttrSpecParam",
+  "Description": "Defines parameters related to infusion availability.",
+  "Fields": [
+    {
+      "Field": "allowed_infusion_basic",
+      "Name": "Allowed Infusion: Basic",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_fire",
+      "Name": "Allowed Infusion: Fire",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_magic",
+      "Name": "Allowed Infusion: Magic",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_lightning",
+      "Name": "Allowed Infusion: Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_dark",
+      "Name": "Allowed Infusion: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_poison",
+      "Name": "Allowed Infusion: Poison",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_bleed",
+      "Name": "Allowed Infusion: Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_raw",
+      "Name": "Allowed Infusion: Raw",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_enchanted",
+      "Name": "Allowed Infusion: Enchanted",
+      "Description": ""
+    },
+    {
+      "Field": "allowed_infusion_mundane",
+      "Name": "Allowed Infusion: Mundane",
+      "Description": ""
+    }
+  ]
+}

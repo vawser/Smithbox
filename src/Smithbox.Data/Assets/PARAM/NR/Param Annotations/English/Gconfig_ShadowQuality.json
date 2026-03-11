@@ -1,0 +1,48 @@
+{
+  "Param": "Gconfig_ShadowQuality",
+  "Type": "CS_SHADOW_QUALITY_DETAIL",
+  "Name": "Gconfig_ShadowQuality",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Shadow Enabled",
+      "Description": "Shadow is enabled"
+    },
+    {
+      "Field": "maxFilterLevel",
+      "Name": "Maximum Filter Level",
+      "Description": "Maximum filter quality allowed"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeScaler",
+      "Name": "Texture Size Scalar",
+      "Description": "Scaler with set shadow map resolution"
+    },
+    {
+      "Field": "textureSizeDivider",
+      "Name": "Texture Size Division",
+      "Description": "Divide the set shadow map resolution"
+    },
+    {
+      "Field": "textureMinSize",
+      "Name": "Minimum Resolution",
+      "Description": "Clamp resolution"
+    },
+    {
+      "Field": "textureMaxSize",
+      "Name": "Maximum Resolution",
+      "Description": "Clamp the resolution. It will be the resolution judgment for each cascade"
+    },
+    {
+      "Field": "blurCountBias",
+      "Name": "Blur Count Bias",
+      "Description": "Blur count bias (set count bias, unchanged at 0)"
+    }
+  ]
+}

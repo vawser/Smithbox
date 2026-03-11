@@ -1,27 +1,47 @@
 {
-  "DisplayName": "BULLET_PENETRATION_TYPE",
-  "Name": "BULLET_PENETRATION_TYPE",
-  "Description": "",
+  "Key": "BULLET_PENETRATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_PENETRATION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Disabled",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Enabled",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enabled"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Non-Contact",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Non-Contact"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Slide",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slide"
+        }
+      ]
     }
   ]
 }

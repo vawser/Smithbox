@@ -77,6 +77,7 @@ public class ParamFieldWindow
         Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView)
     {
         var meta = ParentView.GetParamData().GetParamMeta(curRow.Def);
+        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(activeParam);
 
         var imguiId = 0;
         var showParamCompare = auxRows.Count > 0;
@@ -92,16 +93,16 @@ public class ParamFieldWindow
 
         if (useGroups)
         {
-            DisplayLayoutTable(meta, curRow, vanillaRow, auxRows, compareRow, ref propSearchString, activeParam, isActiveView, ref imguiId);
+            DisplayLayoutTable(meta, annotations, curRow, vanillaRow, auxRows, compareRow, ref propSearchString, activeParam, isActiveView, ref imguiId);
         }
         else
         {
-            DisplayFlatTable(meta, curRow, vanillaRow, auxRows, compareRow, ref propSearchString, activeParam, isActiveView, ref imguiId);
+            DisplayFlatTable(meta, annotations, curRow, vanillaRow, auxRows, compareRow, ref propSearchString, activeParam, isActiveView, ref imguiId);
         }
     }
 
     // Default field display
-    public void DisplayFlatTable(ParamMeta meta, Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
+    public void DisplayFlatTable(ParamMeta meta, ParamAnnotationEntry annotations, Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
         Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView, ref int imguiId)
     {
         var showParamCompare = auxRows.Count > 0;
@@ -155,7 +156,7 @@ public class ParamFieldWindow
             int infoImGuiID = 1000;
 
             // ID and Name
-            DisplayRowFields(curRow, meta, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
+            DisplayRowFields(curRow, meta, annotations, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
 
             var search = propSearchString;
             List<(ParamEditorPseudoColumn, Param.Column)> cols = CacheBank.GetCached(Editor, curRow, "fieldFilter",
@@ -173,7 +174,7 @@ public class ParamFieldWindow
                 {
                     int pinnedImGuiID = 2000;
 
-                    DisplayPinnedFields(pinnedFields, meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
+                    DisplayPinnedFields(pinnedFields, meta, annotations, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
                         auxCols, ref imguiId, activeParam, ref pinnedImGuiID, columnCount);
 
                     EditorTableUtils.ImguiTableSeparator();
@@ -181,7 +182,7 @@ public class ParamFieldWindow
             }
 
             // Main Fields
-            DisplayFields(meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols, auxCols, ref imguiId,
+            DisplayFields(meta, annotations, curRow, vanillaRow, auxRows, compareRow, cols, vcols, auxCols, ref imguiId,
                 activeParam, pinnedFields, columnCount);
 
             ImGui.EndTable();
@@ -189,7 +190,7 @@ public class ParamFieldWindow
     }
 
     // Field Display affected by Field Layout
-    public void DisplayLayoutTable(ParamMeta meta, Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
+    public void DisplayLayoutTable(ParamMeta meta, ParamAnnotationEntry annotations, Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
         Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView, ref int imguiId)
     {
         var showParamCompare = auxRows.Count > 0;
@@ -253,7 +254,7 @@ public class ParamFieldWindow
             int infoImGuiID = 1000;
 
             // ID and Name
-            DisplayRowFields(curRow, meta, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
+            DisplayRowFields(curRow, meta, annotations, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
 
             // Pinned Fields
             if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
@@ -262,7 +263,7 @@ public class ParamFieldWindow
                 {
                     int pinnedImGuiID = 2000;
 
-                    DisplayPinnedFields(pinnedFields, meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
+                    DisplayPinnedFields(pinnedFields, meta, annotations, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
                         auxCols, ref imguiId, activeParam, ref pinnedImGuiID, columnCount);
 
                     EditorTableUtils.ImguiTableSeparator();
@@ -275,7 +276,7 @@ public class ParamFieldWindow
         // Main Fields (by group)
         ImGui.BeginChild("GroupedFields");
 
-        DisplayFields(meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols, auxCols, ref imguiId,
+        DisplayFields(meta, annotations, curRow, vanillaRow, auxRows, compareRow, cols, vcols, auxCols, ref imguiId,
             activeParam, pinnedFields, columnCount);
 
         ImGui.EndChild();
@@ -472,21 +473,22 @@ public class ParamFieldWindow
         }
     }
 
-    private void DisplayRowFields(Param.Row row, ParamMeta meta, Param.Row vrow,
+    private void DisplayRowFields(Param.Row row, ParamMeta meta, ParamAnnotationEntry annotations, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, string activeParam, int columnCount)
     {
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
 
-        PropEditorPropInfoRow(row, meta, vrow, auxRows, crow, nameProp, "Name", ref imguiId,
+        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, nameProp, "Name", ref imguiId,
             activeParam);
-        PropEditorPropInfoRow(row, meta, vrow, auxRows, crow, idProp, "ID", ref imguiId,
+        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, idProp, "ID", ref imguiId,
             activeParam);
 
         ImGui.Spacing();
     }
 
-    private void DisplayPinnedFields(List<string> pinList, ParamMeta meta,
+    private void DisplayPinnedFields(List<string> pinList, 
+        ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols, List<(ParamEditorPseudoColumn, Param.Column)> vcols,
         List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols, ref int imguiId, string activeParam, ref int index, int columnCount)
@@ -505,7 +507,9 @@ public class ParamFieldWindow
 
             for (var i = 0; i < primaryMatches.Count; i++)
             {
-                PropEditorPropCellRow(meta,
+                PropEditorPropCellRow(
+                    meta,
+                    annotations,
                     row,
                     crow,
                     primaryMatches[i],
@@ -525,7 +529,8 @@ public class ParamFieldWindow
         return EditorTableUtils.ImGuiTableStdColumnsNoScroll(tableId, columnCount);
     }
 
-    private void DisplayFields(ParamMeta meta, Param.Row row, Param.Row vrow,
+    private void DisplayFields(ParamMeta meta, ParamAnnotationEntry annotations, 
+        Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
         List<(ParamEditorPseudoColumn, Param.Column)> vcols,
@@ -573,13 +578,13 @@ public class ParamFieldWindow
                     if (pinnedFields?.Count > 0)
                     {
                         int pi = 0;
-                        DisplayPinnedFields(pinnedFields, meta, row, vrow, auxRows, crow,
+                        DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
                             cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
                         EditorTableUtils.ImguiTableSeparator();
                     }
                 }
 
-                RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref index);
+                RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref index);
             }
 
             return;
@@ -589,7 +594,7 @@ public class ParamFieldWindow
         if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible && pinnedFields?.Count > 0)
         {
             int pi = 0;
-            DisplayPinnedFields(pinnedFields, meta, row, vrow, auxRows, crow,
+            DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
                 cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
             EditorTableUtils.ImguiTableSeparator();
         }
@@ -599,7 +604,7 @@ public class ParamFieldWindow
 
         if(!groupsDef.UngroupedAtBottom)
         {
-            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
+            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
         }
 
         foreach (var group in groupsDef.Groups)
@@ -614,15 +619,15 @@ public class ParamFieldWindow
             if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
             {
                 bool open = ImGui.CollapsingHeader(
-                    $"{group.Title}##grp_{activeParam}_{group.Title}",
+                    $"{group.GetName()}##grp_{activeParam}_{group.Key}",
                     ImGuiTreeNodeFlags.DefaultOpen);
 
-                if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Title}", columnCount))
+                if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Key}", columnCount))
                 {
                     int idx = 0;
                     foreach (var field in groupFields)
                     {
-                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
                     }
 
                     ImGui.EndTable();
@@ -630,14 +635,14 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
             {
-                UIHelper.SimpleHeader($"{group.Title}", "");
+                UIHelper.SimpleHeader($"{group.GetName()}", "");
 
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Title}", columnCount))
+                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Key}", columnCount))
                 {
                     int idx = 0;
                     foreach (var field in groupFields)
                     {
-                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
                     }
 
                     ImGui.EndTable();
@@ -645,12 +650,12 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
             {
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Title}", columnCount))
+                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Key}", columnCount))
                 {
                     int idx = 0;
                     foreach (var field in groupFields)
                     {
-                        RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
                     }
 
                     ImGui.EndTable();
@@ -662,11 +667,12 @@ public class ParamFieldWindow
 
         if (groupsDef.UngroupedAtBottom)
         {
-            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
+            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
         }
     }
 
-    private void RenderField(ParamMeta meta, Param.Row row, Param.Row vrow,
+    private void RenderField(ParamMeta meta, ParamAnnotationEntry annotations, 
+        Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
         List<(ParamEditorPseudoColumn, Param.Column)> vcols,
@@ -709,7 +715,7 @@ public class ParamFieldWindow
 
         for (var i = 0; i < matches.Count; i++)
         {
-            PropEditorPropCellRow(meta, row, crow,
+            PropEditorPropCellRow(meta, annotations, row, crow,
                 matches[i],
                 vrow,
                 vmatches.Count > i ? vmatches[i] : (ParamEditorPseudoColumn.None, null),
@@ -725,7 +731,8 @@ public class ParamFieldWindow
     private void DisplayUnsortedFields(
         List<string> fieldOrder,
         HashSet<string> groupedFieldNames,
-        ParamMeta meta, Param.Row row, Param.Row vrow,
+        ParamMeta meta, ParamAnnotationEntry annotations, 
+        Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
         List<(ParamEditorPseudoColumn, Param.Column)> vcols,
@@ -770,7 +777,7 @@ public class ParamFieldWindow
                 int idx = 0;
                 foreach (var field in miscFieldOrder)
                 {
-                    RenderField(meta, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    RenderField(meta, annotations,row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
                 }
 
                 ImGui.EndTable();
@@ -779,7 +786,8 @@ public class ParamFieldWindow
     }
 
     // Many parameter options, which may be simplified.
-    private void PropEditorPropInfoRow(Param.Row row, ParamMeta meta, Param.Row vrow,
+    private void PropEditorPropInfoRow(Param.Row row,
+        ParamMeta meta, ParamAnnotationEntry annotations, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId, string activeParam)
     {
         FieldRow(
@@ -791,6 +799,7 @@ public class ParamFieldWindow
             "header",
             visualName,
             null,
+            null,
             prop.PropertyType,
             prop,
             null,
@@ -801,7 +810,8 @@ public class ParamFieldWindow
             null);
     }
 
-    private void PropEditorPropCellRow(ParamMeta meta, Param.Row row, Param.Row crow,
+    private void PropEditorPropCellRow(ParamMeta meta, ParamAnnotationEntry annotations, 
+        Param.Row row, Param.Row crow,
         (ParamEditorPseudoColumn, Param.Column) col, Param.Row vrow, (ParamEditorPseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(ParamEditorPseudoColumn, Param.Column)> auxCols, string fieldOffset,
         ref int imguiId, string activeParam, bool isPinned)
@@ -814,6 +824,7 @@ public class ParamFieldWindow
             ref imguiId,
             fieldOffset != null ? "0x" + fieldOffset : null, col.Item2.Def.InternalName,
             Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, col.Item2.Def),
+            Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, col.Item2.Def.InternalName),
             col.GetColumnType(),
             typeof(Param.Cell).GetProperty("Value"),
             row[col.Item2],
@@ -826,11 +837,11 @@ public class ParamFieldWindow
 
 
     private void FieldRow(object oldval, object compareval, object vanillaval,
-        List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta,
+        List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta, ParamAnnotationFieldEntry fieldAnnotation,
         Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta meta, string activeParam,
         bool isPinned, Param.Column col)
     {
-        var metaContext = new FieldMetaContext(ParentView, meta, cellMeta, activeParam, internalName);
+        var metaContext = new FieldMetaContext(ParentView, meta, cellMeta, fieldAnnotation, activeParam, internalName);
 
         object newval = null;
 
@@ -873,7 +884,7 @@ public class ParamFieldWindow
             ImGui.SameLine();
 
             // Name column
-            PropertyRowName(fieldOffset, ref internalName, cellMeta);
+            PropertyRowName(fieldOffset, ref internalName, cellMeta, fieldAnnotation);
 
             // Cache
             ParentView.FieldDecorators.HandleCache(metaContext, row, oldval);
@@ -1165,62 +1176,45 @@ public class ParamFieldWindow
         return $"{col.GetByteOffset().ToString("x")} [{offS}-{offS + col.Def.BitSize - 1}]";
     }
 
-    private void PropertyRowName(string fieldOffset, ref string internalName, ParamFieldMeta cellMeta)
+    private void PropertyRowName(string fieldOffset, ref string internalName, ParamFieldMeta cellMeta, ParamAnnotationFieldEntry fieldAnnotation)
     {
-        var altName = cellMeta?.AltName;
+        var altName = fieldAnnotation?.Name;
 
-        if (cellMeta != null && ParentView.MetaEditor.IsInEditorMode)
+        var printedName = internalName;
+
+        if (!string.IsNullOrWhiteSpace(altName))
         {
-            var editName = !string.IsNullOrWhiteSpace(altName) ? altName : internalName;
-            ImGui.InputText("##editName", ref editName, 128);
+            switch (CFG.Current.ParamEditor_FieldNameMode)
+            {
+                case ParamFieldNameMode.Source:
+                    printedName = internalName;
+                    break;
 
-            if (editName.Equals(internalName) || editName.Equals(""))
-            {
-                cellMeta.AltName = null;
-            }
-            else
-            {
-                cellMeta.AltName = editName;
+                case ParamFieldNameMode.Community:
+                    printedName = altName;
+                    break;
+
+                case ParamFieldNameMode.Source_Community:
+                    printedName = $"{internalName} ({altName})";
+                    break;
+
+                case ParamFieldNameMode.Community_Source:
+                    printedName = $"{altName} ({internalName})";
+                    break;
             }
         }
-        else
+
+        if (fieldOffset != null && CFG.Current.ParamEditor_Field_List_Display_Offsets)
         {
-            var printedName = internalName;
-
-            if (!string.IsNullOrWhiteSpace(altName))
-            {
-                switch (CFG.Current.ParamEditor_FieldNameMode)
-                {
-                    case ParamFieldNameMode.Source:
-                        printedName = internalName;
-                        break;
-
-                    case ParamFieldNameMode.Community:
-                        printedName = altName;
-                        break;
-
-                    case ParamFieldNameMode.Source_Community:
-                        printedName = $"{internalName} ({altName})";
-                        break;
-
-                    case ParamFieldNameMode.Community_Source:
-                        printedName = $"{altName} ({internalName})";
-                        break;
-                }
-            }
-
-            if (fieldOffset != null && CFG.Current.ParamEditor_Field_List_Display_Offsets)
-            {
-                printedName = $"{fieldOffset} {printedName}";
-            }
-
-            ImGui.TextUnformatted(printedName);
+            printedName = $"{fieldOffset} {printedName}";
         }
+
+        ImGui.TextUnformatted(printedName);
     }
 
     private void FieldName_ContextMenu(FieldMetaContext metaContext, string internalName, string activeParam, bool showPinOptions, bool isPinned, Param.Column col, Type propType, dynamic oldval, bool isNameMenu)
     {
-        var altName = metaContext.FieldMeta?.AltName;
+        var altName = metaContext.FieldAnnotation?.Name;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f));
 

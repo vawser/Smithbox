@@ -1,187 +1,335 @@
 {
-  "DisplayName": "MATERIAL_TYPE_ENUM",
-  "Name": "MATERIAL_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "(No setting)",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(No setting)"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "None",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Iron",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Heavy iron",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy iron"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Tree",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tree"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Water",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Swamp",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Swamp"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Wood",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wood"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Living Flesh",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh of the living"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Dead Flesh",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corpse meat"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Insect",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insect"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Giant",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Bone",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Copper",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Copper"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Energy",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Flame",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Darkness",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Darkness"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Magic power",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic power"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Stone",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Soil",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soil"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Carpet",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carpet"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Grass",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grass"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Gravel",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravel"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Cloth",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cloth"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Sand",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sand"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Ash",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ash"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Poisonous swamp",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poisonous swamp"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Oil",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oil"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Coal tar",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Lava",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "Spider thread",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider thread"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "Sulfur crystals",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sulfur crystals"
+        }
+      ]
     },
     {
-      "ID": "33",
-      "Name": "Soul",
-      "Description": ""
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
     },
     {
-      "ID": "34",
-      "Name": "Beautiful voice frog",
-      "Description": ""
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful voice frog"
+        }
+      ]
     },
     {
-      "ID": "35",
-      "Name": "Number of materials",
-      "Description": ""
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of materials"
+        }
+      ]
     }
   ]
 }

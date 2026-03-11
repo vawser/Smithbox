@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Doors of Pharros",
+  "Key": "Doors of Pharros",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Doors of Pharros"
+      }
+  ],
   "Params": [
     "eventlocation_m10_33_00_00",
     "eventparam_m10_33_00_00",

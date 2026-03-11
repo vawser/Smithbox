@@ -221,11 +221,13 @@ public class FieldNameFinder
 
             var def = p.Value.AppliedParamdef;
             var meta = Editor.Project.Handler.ParamData.GetParamMeta(def);
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Key);
 
             foreach (var field in def.Fields)
             {
                 bool addResult = false;
                 var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field);
+                var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.InternalName);
 
                 foreach (var entry in searchComponents)
                 {
@@ -259,9 +261,9 @@ public class FieldNameFinder
                     }
 
                     // Display Name
-                    if (fieldMeta.AltName != null && IncludeCommunityNameInSearch)
+                    if (fieldAnnotation.Name != null && IncludeCommunityNameInSearch)
                     {
-                        var displayNameComponents = fieldMeta.AltName.Split(" ");
+                        var displayNameComponents = fieldAnnotation.Name.Split(" ");
 
                         foreach (var displayComponent in displayNameComponents)
                         {
@@ -283,9 +285,9 @@ public class FieldNameFinder
                     }
 
                     // Wiki
-                    if (fieldMeta.Wiki != null && IncludeDescriptionInSearch)
+                    if (fieldAnnotation.Description != null && IncludeDescriptionInSearch)
                     {
-                        var descriptionComponents = fieldMeta.Wiki.Split(" ");
+                        var descriptionComponents = fieldAnnotation.Description.Split(" ");
 
                         foreach (var descriptionComponent in descriptionComponents)
                         {
@@ -311,7 +313,7 @@ public class FieldNameFinder
                 {
                     var result = new DataSearchResult();
                     result.FieldInternalName = field.InternalName;
-                    result.FieldDisplayName = fieldMeta.AltName;
+                    result.FieldDisplayName = fieldAnnotation.Name;
                     result.ParamName = p.Key;
 
                     output.Add(result);

@@ -1,0 +1,48 @@
+{
+  "Param": "CoolTimeParam",
+  "Type": "COOL_TIME_PARAM_ST",
+  "Name": "CoolTimeParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "limitationTime_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "observeTime_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "observeTime_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "observeTime_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "observeTime_3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

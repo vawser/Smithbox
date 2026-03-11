@@ -1,22 +1,38 @@
 {
-  "DisplayName": "NPC_FACE_TYPE",
-  "Name": "NPC_FACE_TYPE",
-  "Description": "",
+  "Key": "NPC_FACE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_FACE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Fixed face",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed face"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Player face",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player face"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Dullahan face",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan face"
+        }
+      ]
     }
   ]
 }

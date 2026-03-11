@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Kiln of the First Flame / Northern Undead Asylum",
+  "Key": "Kiln of the First Flame / Northern Undead Asylum",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Kiln of the First Flame / Northern Undead Asylum"
+      }
+  ],
   "Params": [
     "m18_DofBank",
     "m18_EnvLightTexBank",

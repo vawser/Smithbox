@@ -1,287 +1,515 @@
 {
-  "DisplayName": "WEAPON_ID",
-  "Name": "WEAPON_ID",
-  "Description": "",
+  "Key": "WEAPON_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_ID"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Prohibited from use",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "1010",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "Parrying dagger",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parrying dagger"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Broken straight sword",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken straight sword"
+        }
+      ]
     },
     {
-      "ID": "1210",
-      "Name": "Short sword",
-      "Description": ""
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short sword"
+        }
+      ]
     },
     {
-      "ID": "1220",
-      "Name": "Long sword",
-      "Description": ""
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long sword"
+        }
+      ]
     },
     {
-      "ID": "1230",
-      "Name": "Broadsword",
-      "Description": ""
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broadsword"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Estoc",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Estoc"
+        }
+      ]
     },
     {
-      "ID": "1410",
-      "Name": "Mail breaker",
-      "Description": ""
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mail breaker"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Rapier",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rapier"
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Falchion",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falchion"
+        }
+      ]
     },
     {
-      "ID": "1610",
-      "Name": "Shortel",
-      "Description": ""
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shortel"
+        }
+      ]
     },
     {
-      "ID": "1650",
-      "Name": "Scimitar",
-      "Description": ""
+      "Key": "1650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scimitar"
+        }
+      ]
     },
     {
-      "ID": "1700",
-      "Name": "Uchikatana",
-      "Description": ""
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Uchikatana"
+        }
+      ]
     },
     {
-      "ID": "1710",
-      "Name": "Clothesline",
-      "Description": ""
+      "Key": "1710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clothesline"
+        }
+      ]
     },
     {
-      "ID": "1720",
-      "Name": "Demon sword",
-      "Description": ""
+      "Key": "1720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon sword"
+        }
+      ]
     },
     {
-      "ID": "1800",
-      "Name": "Bastard sword",
-      "Description": ""
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bastard sword"
+        }
+      ]
     },
     {
-      "ID": "1810",
-      "Name": "Flamberge",
-      "Description": ""
+      "Key": "1810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flamberge"
+        }
+      ]
     },
     {
-      "ID": "1820",
-      "Name": "Claymore",
-      "Description": ""
+      "Key": "1820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claymore"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Hand ax",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hand ax"
+        }
+      ]
     },
     {
-      "ID": "2010",
-      "Name": "Battle ax",
-      "Description": ""
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Battle ax"
+        }
+      ]
     },
     {
-      "ID": "2200",
-      "Name": "Crescent ax",
-      "Description": ""
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crescent ax"
+        }
+      ]
     },
     {
-      "ID": "2210",
-      "Name": "Great ax",
-      "Description": ""
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great ax"
+        }
+      ]
     },
     {
-      "ID": "2400",
-      "Name": "Club",
-      "Description": ""
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Club"
+        }
+      ]
     },
     {
-      "ID": "2410",
-      "Name": "Mace",
-      "Description": ""
+      "Key": "2410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mace"
+        }
+      ]
     },
     {
-      "ID": "2420",
-      "Name": "Morning star",
-      "Description": ""
+      "Key": "2420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Morning star"
+        }
+      ]
     },
     {
-      "ID": "2430",
-      "Name": "Reinforcement club",
-      "Description": ""
+      "Key": "2430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reinforcement club"
+        }
+      ]
     },
     {
-      "ID": "2440",
-      "Name": "Blacksmith's hammer",
-      "Description": ""
+      "Key": "2440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith's hammer"
+        }
+      ]
     },
     {
-      "ID": "2600",
-      "Name": "Large club",
-      "Description": ""
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large club"
+        }
+      ]
     },
     {
-      "ID": "2610",
-      "Name": "Pickaxe",
-      "Description": ""
+      "Key": "2610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pickaxe"
+        }
+      ]
     },
     {
-      "ID": "2620",
-      "Name": "Great club",
-      "Description": ""
+      "Key": "2620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great club"
+        }
+      ]
     },
     {
-      "ID": "2800",
-      "Name": "Short spear",
-      "Description": ""
+      "Key": "2800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short spear"
+        }
+      ]
     },
     {
-      "ID": "2810",
-      "Name": "Long spear",
-      "Description": ""
+      "Key": "2810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long spear"
+        }
+      ]
     },
     {
-      "ID": "2820",
-      "Name": "Pike",
-      "Description": ""
+      "Key": "2820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pike"
+        }
+      ]
     },
     {
-      "ID": "2830",
-      "Name": "Partisan",
-      "Description": ""
+      "Key": "2830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Partisan"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Long sickle",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long sickle"
+        }
+      ]
     },
     {
-      "ID": "3200",
-      "Name": "Lucerne",
-      "Description": ""
+      "Key": "3200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lucerne"
+        }
+      ]
     },
     {
-      "ID": "3210",
-      "Name": "Size",
-      "Description": ""
+      "Key": "3210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Size"
+        }
+      ]
     },
     {
-      "ID": "3220",
-      "Name": "Halberd",
-      "Description": ""
+      "Key": "3220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd"
+        }
+      ]
     },
     {
-      "ID": "3400",
-      "Name": "Bare fist",
-      "Description": ""
+      "Key": "3400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bare fist"
+        }
+      ]
     },
     {
-      "ID": "3410",
-      "Name": "Claw",
-      "Description": ""
+      "Key": "3410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claw"
+        }
+      ]
     },
     {
-      "ID": "3500",
-      "Name": "Cestus",
-      "Description": ""
+      "Key": "3500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cestus"
+        }
+      ]
     },
     {
-      "ID": "3600",
-      "Name": "Whip",
-      "Description": ""
+      "Key": "3600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip"
+        }
+      ]
     },
     {
-      "ID": "3610",
-      "Name": "Ibaramuchi",
-      "Description": ""
+      "Key": "3610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ibaramuchi"
+        }
+      ]
     },
     {
-      "ID": "3800",
-      "Name": "Magician's wand",
-      "Description": ""
+      "Key": "3800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician's wand"
+        }
+      ]
     },
     {
-      "ID": "4200",
-      "Name": "Short bow",
-      "Description": ""
+      "Key": "4200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short bow"
+        }
+      ]
     },
     {
-      "ID": "4210",
-      "Name": "Longbow",
-      "Description": ""
+      "Key": "4210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Longbow"
+        }
+      ]
     },
     {
-      "ID": "4220",
-      "Name": "Composite bow",
-      "Description": ""
+      "Key": "4220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Composite bow"
+        }
+      ]
     },
     {
-      "ID": "4600",
-      "Name": "Light crossbow",
-      "Description": ""
+      "Key": "4600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light crossbow"
+        }
+      ]
     },
     {
-      "ID": "4610",
-      "Name": "Heavy crossbow",
-      "Description": ""
+      "Key": "4610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy crossbow"
+        }
+      ]
     },
     {
-      "ID": "4800",
-      "Name": "Item shot bow",
-      "Description": ""
+      "Key": "4800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item shot bow"
+        }
+      ]
     },
     {
-      "ID": "4900",
-      "Name": "Javelin shot",
-      "Description": ""
+      "Key": "4900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Javelin shot"
+        }
+      ]
     },
     {
-      "ID": "9900",
-      "Name": "Test: Dragon King's Great Ax",
-      "Description": ""
+      "Key": "9900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Dragon King's Great Ax"
+        }
+      ]
     },
     {
-      "ID": "9901",
-      "Name": "Test: Sumowhammer",
-      "Description": ""
+      "Key": "9901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Sumowhammer"
+        }
+      ]
     },
     {
-      "ID": "9902",
-      "Name": "Test: Staff of Izalith",
-      "Description": ""
+      "Key": "9902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Staff of Izalith"
+        }
+      ]
     }
   ]
 }

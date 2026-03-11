@@ -1,0 +1,198 @@
+{
+  "Param": "GrabParam",
+  "Type": "GRAB_PARAM",
+  "Name": "GrabParam",
+  "Description": "Defines parameters related to grabs.",
+  "Fields": [
+    {
+      "Field": "attacker_dummy_poly_id",
+      "Name": "Attacker Dummy Poly ID",
+      "Description": ""
+    },
+    {
+      "Field": "attacker_orientation",
+      "Name": "Attacker Orientation",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk0C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defender_dummy_poly_id",
+      "Name": "Defender Dummy Poly ID",
+      "Description": ""
+    },
+    {
+      "Field": "defender_orientation",
+      "Name": "Defender Orientation",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shift_target",
+      "Name": "Shift Target",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3D",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3E",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3F",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_x",
+      "Name": "Relative Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_z",
+      "Name": "Relative Position: Z",
+      "Description": ""
+    },
+    {
+      "Field": "Unk48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk4C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distance_confirmation_type",
+      "Name": "Distance Confirmation Type",
+      "Description": ""
+    },
+    {
+      "Field": "enable_angle_confirmation_type",
+      "Name": "Enable Angle Confirmation Type",
+      "Description": ""
+    },
+    {
+      "Field": "Unk50c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk50d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minimum_distance_x",
+      "Name": "Minimum Distance: X",
+      "Description": ""
+    },
+    {
+      "Field": "minimum_distance_y",
+      "Name": "Minimum Distance: Y",
+      "Description": ""
+    },
+    {
+      "Field": "minimum_distance_z",
+      "Name": "Minimum Distance: Z",
+      "Description": ""
+    },
+    {
+      "Field": "Unk60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk64",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk68",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "angle_difference_unk_1",
+      "Name": "Angle Difference: Unk 1",
+      "Description": ""
+    },
+    {
+      "Field": "angle_difference_unk_2",
+      "Name": "Angle Difference: Unk 2",
+      "Description": ""
+    },
+    {
+      "Field": "angle_difference_unk_3",
+      "Name": "Angle Difference: Unk 3",
+      "Description": ""
+    },
+    {
+      "Field": "Unk78",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "angle_difference_maximum",
+      "Name": "Angle Difference: Maximum",
+      "Description": ""
+    }
+  ]
+}

@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BULLET_EMIT_ENTITY_TYPE",
-  "Name": "BULLET_EMIT_ENTITY_TYPE",
-  "Description": "",
+  "Key": "BULLET_EMIT_ENTITY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_EMIT_ENTITY_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "User",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "User"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Target",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Parent Bullet",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent Bullet"
+        }
+      ]
     }
   ]
 }

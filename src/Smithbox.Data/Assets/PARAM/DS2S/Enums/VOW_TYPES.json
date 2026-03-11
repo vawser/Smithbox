@@ -1,62 +1,110 @@
 {
-  "DisplayName": "VOW_TYPES",
-  "Name": "VOW_TYPES",
-  "Description": "",
+  "Key": "VOW_TYPES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "VOW_TYPES"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No pledge",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No pledge"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Warrior of the sun",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior of the sun"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Guardian knight",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian knight"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Dark spirit of blood",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark spirit of blood"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Blue cult",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue cult"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "King of rats",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King of rats"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Bell keeper",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell keeper"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Path to the ancient dragon",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Path to the ancient dragon"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Strong one",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong one"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Pilgrimage to the abyss",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrimage to the abyss"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Number of elements (not used)",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of elements (not used)"
+        }
+      ]
     }
   ]
 }

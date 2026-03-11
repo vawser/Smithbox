@@ -1,0 +1,523 @@
+{
+  "Param": "EnemyBulletParam",
+  "Type": "BULLET_PARAM",
+  "Name": "EnemyBulletParam",
+  "Description": "Defines parameters relating to projectiles.",
+  "Fields": [
+    {
+      "Field": "bulletSfxId",
+      "Name": "SFX ID",
+      "Description": "The SFX ID to use for this bullet."
+    },
+    {
+      "Field": "emitEntityType",
+      "Name": "Generation Type",
+      "Description": "The generation type used for this bullet."
+    },
+    {
+      "Field": "emitteType",
+      "Name": "Source Type",
+      "Description": "The source type used for this bullet."
+    },
+    {
+      "Field": "netSync",
+      "Name": "Multiplayer Sync Type",
+      "Description": "The sync type used for this bullet in multiplayer."
+    },
+    {
+      "Field": "enableAutoHoming",
+      "Name": "Enable Auto-Homing",
+      "Description": "If enabled, auto-homing is active for this bullet."
+    },
+    {
+      "Field": "shootOffsetY",
+      "Name": "Generation Position Offset: Y",
+      "Description": "The position offset on the y-axis that is applied during bullet generation."
+    },
+    {
+      "Field": "shootOffsetX",
+      "Name": "Generation Position Offset: X",
+      "Description": "The position offset on the y-axis that is applied during bullet generation."
+    },
+    {
+      "Field": "shootOffsetZ",
+      "Name": "Generation Position Offset: Z",
+      "Description": "The position offset on the y-axis that is applied during bullet generation."
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "Generation Rotation Offset: Y",
+      "Description": "The rotation offset on the y-axis that is applied during bullet generation."
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "Generation Rotation Offset: XZ",
+      "Description": "The rotation offset on the x-axis and z-axis that is applied during bullet generation."
+    },
+    {
+      "Field": "upDownCorrectAngle",
+      "Name": "Correction Rotation: Vertical",
+      "Description": "The correction to apply up/down to the bullet\u0027s rotation."
+    },
+    {
+      "Field": "rightleftCorrectAngle",
+      "Name": "Correction Rotation: Horizontal",
+      "Description": "The correction to apply left/right to the bullet\u0027s rotation."
+    },
+    {
+      "Field": "upDownAccuracy",
+      "Name": "Directional Accuracy: Vertical",
+      "Description": "The accuracy to apply to the up/down rotation."
+    },
+    {
+      "Field": "rightLeftAccuracy",
+      "Name": "Directional Accuracy: Horizontal",
+      "Description": "The accuracy to apply to the left/right rotation."
+    },
+    {
+      "Field": "upDownEstimateFuture",
+      "Name": "Predict Position: Vertical",
+      "Description": "If enabled, predict the next up/down position of the bullet."
+    },
+    {
+      "Field": "rightLeftEstimateFuture",
+      "Name": "Predict Position: Horizontal",
+      "Description": "If enabled, predict the next left/right position of the bullet."
+    },
+    {
+      "Field": "simultaneouslyNum",
+      "Name": "Max Simultaneous Count",
+      "Description": "The maximum number of simultaneous instances of this bullet."
+    },
+    {
+      "Field": "automaticShootNum",
+      "Name": "Continuous Shot Count",
+      "Description": "The number of continuous shots for this bullet."
+    },
+    {
+      "Field": "simultaneouslyAngleY",
+      "Name": "Simultaneous Shot: Y-Axis Interval",
+      "Description": "The angle increment on the y-axis for each simultaneous bullet."
+    },
+    {
+      "Field": "simultaneouslyAngleXZ",
+      "Name": "Simultaneous Shot: XZ-Axis Interval",
+      "Description": "The angle increment on the x-axis and z-axis for each simultaneous bullet."
+    },
+    {
+      "Field": "automaticInterval",
+      "Name": "Continuous Shot Interval",
+      "Description": "The duration (in seconds) between each continuous shot."
+    },
+    {
+      "Field": "automaticAngleY",
+      "Name": "Continuous Shot: Y-Axis Interval",
+      "Description": "The angle increment on the y-axis for each continuous bullet."
+    },
+    {
+      "Field": "automaticAngleXZ",
+      "Name": "Continuous Shot: XZ-Axis Interval",
+      "Description": "The angle increment on the x-axis and z-axis for each continuous bullet."
+    },
+    {
+      "Field": "simultaneouslyLoopMax",
+      "Name": "Simultaneous Shot: Max Dummy Polygon ID",
+      "Description": "The maximum dummy polygon ID to increment up to during a simultaneous shot."
+    },
+    {
+      "Field": "automaticLoopMax",
+      "Name": "Continuous Shot: Max Dummy Polygon ID",
+      "Description": "The maximum dummy polygon ID to increment up to during a continuous shot."
+    },
+    {
+      "Field": "enableSimultaneouslyMuzzleFlash",
+      "Name": "Simultaneous Shot: Has Muzzle Flash",
+      "Description": "If enabled, simultaneous shot may produce muzzle flash."
+    },
+    {
+      "Field": "enableAutomaticMuzzleFlash",
+      "Name": "Continuous Shot: Has Muzzle Flash",
+      "Description": "If enabled, simultaneous shot may produce continuous flash."
+    },
+    {
+      "Field": "bulletLife",
+      "Name": "Life Duration",
+      "Description": "The life duration of the bullet (in seconds). Once this is reached, the bullet expires."
+    },
+    {
+      "Field": "initialVelocity",
+      "Name": "Initial Velocity",
+      "Description": "The initial velocity of the bullet (in metres per second)."
+    },
+    {
+      "Field": "acceleStartTime",
+      "Name": "Acceleration Start Time",
+      "Description": "The duration before acceleration begins for the bullet (in seconds)."
+    },
+    {
+      "Field": "acceleration",
+      "Name": "Acceleration",
+      "Description": "The acceleration (in metres per second) to apply to the bullet each second, up to the max speed."
+    },
+    {
+      "Field": "maxSpeed",
+      "Name": "Maximum Speed",
+      "Description": "The maximum speed of the bullet (in metres per second)."
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "The weight of the bullet."
+    },
+    {
+      "Field": "downStartTime",
+      "Name": "Gravity Start Time",
+      "Description": "The duration before drop-off begins for the bullet (in seconds)."
+    },
+    {
+      "Field": "gravityValue",
+      "Name": "Gravity Strength",
+      "Description": "The gravity applied to the bullet during its drop-off."
+    },
+    {
+      "Field": "externalForce",
+      "Name": "External Force",
+      "Description": "In metres per second."
+    },
+    {
+      "Field": "updownRotateSpeed",
+      "Name": "Initial Speed of Vertical Rotation",
+      "Description": "The initial speed for any vertical rotation the bullet undergoes (in metres per second)."
+    },
+    {
+      "Field": "updownRotateStartTime",
+      "Name": "Vertical Rotation Start Time",
+      "Description": "The duration before vertical rotation begins to apply to the bullet (in seconds)."
+    },
+    {
+      "Field": "updownRotateAccel",
+      "Name": "Vertical Rotation Acceleration",
+      "Description": "The rotational acceleration (in metres per second) to apply to the bullet each second during vertical rotation, up to the max rotation."
+    },
+    {
+      "Field": "updownRotateMaxAngle",
+      "Name": "Maximum Vertical Rotation",
+      "Description": "The maximum vertical rotational speed the bullet can reach (in metres per second)."
+    },
+    {
+      "Field": "leftrightRotateSpeed",
+      "Name": "Initial Speed of Horizontal Rotation",
+      "Description": "The initial speed for any horizontal rotation the bullet undergoes (in metres per second)."
+    },
+    {
+      "Field": "leftrightRotateStartTime",
+      "Name": "Horizontal Rotation Start Time",
+      "Description": "The duration before horizontal rotation begins to apply to the bullet (in seconds)."
+    },
+    {
+      "Field": "leftrightRotateAccel",
+      "Name": "Horizontal Rotation Acceleration",
+      "Description": "The rotational acceleration (in metres per second) to apply to the bullet each second during horizontal rotation, up to the max rotation."
+    },
+    {
+      "Field": "leftrightRotateMaxAngle",
+      "Name": "Horizontal Vertical Rotation",
+      "Description": "The maximum horizontal rotational speed the bullet can reach (in metres per second)."
+    },
+    {
+      "Field": "homingUDType",
+      "Name": "Vertical Homing Type",
+      "Description": "The homing type to use for vertical tracking."
+    },
+    {
+      "Field": "homingLRType",
+      "Name": "Horizontal Homing Type",
+      "Description": "The homing type to use for horizontal tracking."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "homingStopDistance",
+      "Name": "Homing Stop Distance",
+      "Description": "The distance (in metres) after which tracking stops."
+    },
+    {
+      "Field": "homingStopAngle",
+      "Name": "Homing Stop Rotation",
+      "Description": "The rotation (in degrees) after which tracking stops."
+    },
+    {
+      "Field": "homingAngle",
+      "Name": "Homing Rotation",
+      "Description": "The rotation (in degrees) to apply during tracking."
+    },
+    {
+      "Field": "homingOffDisableTime",
+      "Name": "Homing Stop Time",
+      "Description": "The duration (in seconds) after which tracking is disabled."
+    },
+    {
+      "Field": "homingStartTime",
+      "Name": "Homing Start Time",
+      "Description": "The duration (in seconds) after which tracking is enabled."
+    },
+    {
+      "Field": "quickCorrectTime",
+      "Name": "Quick Correction Start Time",
+      "Description": "The duration (in seconds) before quick correction occurs for this bullet."
+    },
+    {
+      "Field": "quickCorrectUDAngle",
+      "Name": "Quick Correction Vertical Rotation",
+      "Description": "The vertical rotation to apply during quick correction."
+    },
+    {
+      "Field": "quickCorrectLRAngle",
+      "Name": "Quick Correction Horizontal Rotation",
+      "Description": "The horizontal rotation to apply during quick correction."
+    },
+    {
+      "Field": "penetration",
+      "Name": "Penetration Type: Character",
+      "Description": "The penetration type to use against characters for this bullet."
+    },
+    {
+      "Field": "penetrationMap",
+      "Name": "Penetration Type: Map",
+      "Description": "The penetration type to use against map pieces for this bullet."
+    },
+    {
+      "Field": "penetrationObj",
+      "Name": "Penetration Type: Object",
+      "Description": "The penetration type to use against objects for this bullet."
+    },
+    {
+      "Field": "penetrationWater",
+      "Name": "Penetration Type: Water",
+      "Description": "The penetration type to use against water for this bullet."
+    },
+    {
+      "Field": "muzzleFlashSfxId",
+      "Name": "Muzzle Flash SFX ID",
+      "Description": "The SFX ID to use for the muzzle flash produced by this bullet."
+    },
+    {
+      "Field": "isSfxEraseRoot",
+      "Name": "Immediate SFX Delete",
+      "Description": "If enabled, the SFX for the bullet is immediately deleted when it expires."
+    },
+    {
+      "Field": "isDefenderHitNetSync",
+      "Name": "Hit Decision for Defender",
+      "Description": "If enabled, the bullet makes a hit decision for the defender."
+    },
+    {
+      "Field": "explosionOffsetUpDown",
+      "Name": "Impact Position Correction: Vertical",
+      "Description": "The position correction for impacts (explosions) on the vertical axis."
+    },
+    {
+      "Field": "explosionOffsetRightLeft",
+      "Name": "Impact Position Correction: Horizontal",
+      "Description": "The position correction for impacts (explosions) on the horizontal axis."
+    },
+    {
+      "Field": "explosionSfxId",
+      "Name": "Impact SFX ID",
+      "Description": "The SFX ID to use for impacts from this bullet."
+    },
+    {
+      "Field": "attachSfxId",
+      "Name": "Attach SFX ID",
+      "Description": "The SFX ID to use for piercing particles from this bullet."
+    },
+    {
+      "Field": "attachLife",
+      "Name": "Attach Duration",
+      "Description": "The duration (in seconds) of piercing particles."
+    },
+    {
+      "Field": "attachOffset",
+      "Name": "Attach Offset",
+      "Description": "The depth offset (in metres) of piercing particles."
+    },
+    {
+      "Field": "attachParam",
+      "Name": "Attach Generation Type",
+      "Description": "The piercing generation type to use for this bullet."
+    },
+    {
+      "Field": "isAttachDisableBulletDir",
+      "Name": "Ignore Direction on Attach",
+      "Description": "If enabled, direction is ignored upon piercing."
+    },
+    {
+      "Field": "explosionForceUp",
+      "Name": "Explode Upwards",
+      "Description": "If enabled, bullet impact is forced upwards."
+    },
+    {
+      "Field": "isDeleteEqualBulletId",
+      "Name": "Delete Shared Bullet ID",
+      "Description": "If multiple bullets of the same ID exist, delete existing ones when this bullet is generated."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "childeBulletId",
+      "Name": "Child Bullet ID: 1",
+      "Description": "The bullet ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "childeDamageId",
+      "Name": "Child Damage ID: 1",
+      "Description": "The damage ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "childeBulletId02",
+      "Name": "Child Bullet ID: 2",
+      "Description": "The bullet ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "childeDamageId02",
+      "Name": "Child Damage ID: 2",
+      "Description": "The damage ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "childeBulletId03",
+      "Name": "Child Bullet ID: 3",
+      "Description": "The bullet ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "childeDamageId03",
+      "Name": "Child Damage ID: 3",
+      "Description": "The damage ID of a child bullet from this bullet."
+    },
+    {
+      "Field": "isChildeExplosion",
+      "Name": "Children Generate Impacts",
+      "Description": "If enabled, child bullets are considered explosions."
+    },
+    {
+      "Field": "isChildeLife",
+      "Name": "Children Inherit Life Duration",
+      "Description": "If enabled, child bullets inherit this bullet\u0027s life duration."
+    },
+    {
+      "Field": "isChildeArea",
+      "Name": "Children Generate Range Invasion",
+      "Description": "If enabled, child bullet ???."
+    },
+    {
+      "Field": "isChildeContinue",
+      "Name": "Emit Child Bullets",
+      "Description": "If enabled, this bullet will emit child bullets at regular intervals."
+    },
+    {
+      "Field": "childeAreaRange",
+      "Name": "Children Judgement Distance",
+      "Description": "The judgment distance of child bullets."
+    },
+    {
+      "Field": "childeAreaUDAngle",
+      "Name": "Children Judgement Rotation: Vertical",
+      "Description": "The judgement rotation of child bullets on the vertical axis."
+    },
+    {
+      "Field": "childeAreaLRAngle",
+      "Name": "Children Judgement Rotation: Horizontal",
+      "Description": "The judgement rotation of child bullets on the horizontal axis."
+    },
+    {
+      "Field": "childeDelay",
+      "Name": "Child Delay Time",
+      "Description": "The delay duration for child bullets."
+    },
+    {
+      "Field": "decalId",
+      "Name": "Pasted Decal ID",
+      "Description": "The decal that is pasted to the surface this bullet touches."
+    },
+    {
+      "Field": "isSpellParry",
+      "Name": "Is Spell Parry Possible",
+      "Description": "If enabled, this bullet can be spell parried."
+    },
+    {
+      "Field": "isSpellParryNoDamageThrough",
+      "Name": "Is Partial Spell Parry Possible",
+      "Description": "If enabled, this bullet can be spell parried, but damage still occurs."
+    },
+    {
+      "Field": "onDamageType",
+      "Name": "Contact Damage Type",
+      "Description": "The damage type applied when this bullet touches a surface."
+    },
+    {
+      "Field": "hitbackType",
+      "Name": "Repulsion Type",
+      "Description": "The hit back type applied when this bullet is repulsed."
+    },
+    {
+      "Field": "spellParryAngleX",
+      "Name": "Spell Parry: X-Axis Repulsion Angle",
+      "Description": "The angle on the x-axis the bullet is repulsed (via spell parry)."
+    },
+    {
+      "Field": "spellParryAngleY",
+      "Name": "Spell Parry: Y-Axis Repulsion Angle",
+      "Description": "The angle on the y-axis the bullet is repulsed (via spell parry)."
+    },
+    {
+      "Field": "spellParryAngleZ",
+      "Name": "Spell Parry: Z-Axis Repulsion Angle",
+      "Description": "The angle on the z-axis the bullet is repulsed (via spell parry)."
+    },
+    {
+      "Field": "hitbackSfxId",
+      "Name": "Repulsion SFX ID",
+      "Description": "The SFX ID to use when this bullet is repulsed (via spell parry)."
+    },
+    {
+      "Field": "parryAngleAccuracyX",
+      "Name": "Repulsion Accuracy: X-Axis",
+      "Description": "The repulsion accuracy for the x-axis angle."
+    },
+    {
+      "Field": "parryAngleAccuracyY",
+      "Name": "Repulsion Accuracy: Y-Axis",
+      "Description": "The repulsion accuracy for the y-axis angle."
+    },
+    {
+      "Field": "parryAngleAccuracyZ",
+      "Name": "Repulsion Accuracy: Z-Axis",
+      "Description": "The repulsion accuracy for the z-axis angle."
+    },
+    {
+      "Field": "parryAccelSpeed",
+      "Name": "Repulsion Acceleration",
+      "Description": "The acceleration added to the repulsed bullet."
+    },
+    {
+      "Field": "childeInterval",
+      "Name": "Child Shot Interval",
+      "Description": "The interval (in seconds) that a child bullet is emitted at."
+    },
+    {
+      "Field": "homingStopTargetDistance",
+      "Name": "Homing Stop Target Distance",
+      "Description": "The distance (in metres) from lock-on target after which tracking stops."
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

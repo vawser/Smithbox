@@ -1,0 +1,68 @@
+{
+  "Param": "WeatherLotTexParam_m61",
+  "Type": "WEATHER_LOT_TEX_PARAM_ST_DLC02",
+  "Name": "WeatherLotTexParam_m61",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "srcR",
+      "Name": "Pre-conversion - Map Color: R",
+      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcG",
+      "Name": "Pre-conversion - Map Color: G",
+      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcB",
+      "Name": "Pre-conversion - Map Color: B",
+      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherLogId",
+      "Name": "Weather Lottery ID",
+      "Description": "Weather lottery ID (-1: No setting (default value))"
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

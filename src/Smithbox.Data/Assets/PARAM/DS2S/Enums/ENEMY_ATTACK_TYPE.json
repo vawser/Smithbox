@@ -1,612 +1,1100 @@
 {
-  "DisplayName": "ENEMY_ATTACK_TYPE",
-  "Name": "ENEMY_ATTACK_TYPE",
-  "Description": "",
+  "Key": "ENEMY_ATTACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ENEMY_ATTACK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Template",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "Walking 1",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "Walking 2",
-      "Description": ""
-    },
-    {
-      "ID": "3",
-      "Name": "Walking 3",
-      "Description": ""
-    },
-    {
-      "ID": "4",
-      "Name": "Walking 4",
-      "Description": ""
-    },
-    {
-      "ID": "5",
-      "Name": "Walking 5",
-      "Description": ""
-    },
-    {
-      "ID": "6",
-      "Name": "Walking 6",
-      "Description": ""
-    },
-    {
-      "ID": "7",
-      "Name": "Walking 7",
-      "Description": ""
-    },
-    {
-      "ID": "8",
-      "Name": "Walking 8",
-      "Description": ""
-    },
-    {
-      "ID": "9",
-      "Name": "Walking 9",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "Walking 10",
-      "Description": ""
-    },
-    {
-      "ID": "11",
-      "Name": "Walking 11",
-      "Description": ""
-    },
-    {
-      "ID": "12",
-      "Name": "Walking 12",
-      "Description": ""
-    },
-    {
-      "ID": "13",
-      "Name": "Walking 13",
-      "Description": ""
-    },
-    {
-      "ID": "14",
-      "Name": "Walking 14",
-      "Description": ""
-    },
-    {
-      "ID": "15",
-      "Name": "Walking 15",
-      "Description": ""
-    },
-    {
-      "ID": "16",
-      "Name": "Walking 16",
-      "Description": ""
-    },
-    {
-      "ID": "17",
-      "Name": "Walking 17",
-      "Description": ""
-    },
-    {
-      "ID": "18",
-      "Name": "Walking 18",
-      "Description": ""
-    },
-    {
-      "ID": "19",
-      "Name": "Walking 19",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "Spot 1",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "Spot 2",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "Spot 3",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "Spot 4",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "Spot 5",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "Spot 6",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "The spot 7",
-      "Description": ""
-    },
-    {
-      "ID": "27",
-      "Name": "Spot 8",
-      "Description": ""
-    },
-    {
-      "ID": "28",
-      "Name": "Spot 9",
-      "Description": ""
-    },
-    {
-      "ID": "29",
-      "Name": "Spot 10",
-      "Description": ""
-    },
-    {
-      "ID": "30",
-      "Name": "Spot 11",
-      "Description": ""
-    },
-    {
-      "ID": "31",
-      "Name": "Spot 12",
-      "Description": ""
-    },
-    {
-      "ID": "32",
-      "Name": "Spot 13",
-      "Description": ""
-    },
-    {
-      "ID": "33",
-      "Name": "Spot 14",
-      "Description": ""
-    },
-    {
-      "ID": "34",
-      "Name": "Spot 15",
-      "Description": ""
-    },
-    {
-      "ID": "35",
-      "Name": "Spot 16",
-      "Description": ""
-    },
-    {
-      "ID": "36",
-      "Name": "Spot 17",
-      "Description": ""
-    },
-    {
-      "ID": "37",
-      "Name": "Spot 18",
-      "Description": ""
-    },
-    {
-      "ID": "38",
-      "Name": "Spot 19",
-      "Description": ""
-    },
-    {
-      "ID": "39",
-      "Name": "Spot 20",
-      "Description": ""
-    },
-    {
-      "ID": "40",
-      "Name": "Spot 21",
-      "Description": ""
-    },
-    {
-      "ID": "41",
-      "Name": "Spot 22",
-      "Description": ""
-    },
-    {
-      "ID": "42",
-      "Name": "Spot 23",
-      "Description": ""
-    },
-    {
-      "ID": "43",
-      "Name": "Spot 24",
-      "Description": ""
-    },
-    {
-      "ID": "44",
-      "Name": "Spot 25",
-      "Description": ""
-    },
-    {
-      "ID": "45",
-      "Name": "Spot 26",
-      "Description": ""
-    },
-    {
-      "ID": "46",
-      "Name": "Spot 27",
-      "Description": ""
-    },
-    {
-      "ID": "47",
-      "Name": "Spot 28",
-      "Description": ""
-    },
-    {
-      "ID": "48",
-      "Name": "Shooting 1",
-      "Description": ""
-    },
-    {
-      "ID": "49",
-      "Name": "Shooting 2",
-      "Description": ""
-    },
-    {
-      "ID": "50",
-      "Name": "Shooting 3",
-      "Description": ""
-    },
-    {
-      "ID": "51",
-      "Name": "Shooting 4",
-      "Description": ""
-    },
-    {
-      "ID": "52",
-      "Name": "Shooting 5",
-      "Description": ""
-    },
-    {
-      "ID": "53",
-      "Name": "Shooting 6",
-      "Description": ""
-    },
-    {
-      "ID": "54",
-      "Name": "Shooting 7",
-      "Description": ""
-    },
-    {
-      "ID": "61",
-      "Name": "Slow walking 1",
-      "Description": ""
-    },
-    {
-      "ID": "62",
-      "Name": "Slow walking 2",
-      "Description": ""
-    },
-    {
-      "ID": "63",
-      "Name": "Slow walking 3",
-      "Description": ""
-    },
-    {
-      "ID": "64",
-      "Name": "Slow walking 4",
-      "Description": ""
-    },
-    {
-      "ID": "65",
-      "Name": "Slow walking 5",
-      "Description": ""
-    },
-    {
-      "ID": "66",
-      "Name": "Slow walking 6",
-      "Description": ""
-    },
-    {
-      "ID": "67",
-      "Name": "Slow walking 7",
-      "Description": ""
-    },
-    {
-      "ID": "68",
-      "Name": "Slow walking 8",
-      "Description": ""
-    },
-    {
-      "ID": "69",
-      "Name": "Slow walking 9",
-      "Description": ""
-    },
-    {
-      "ID": "70",
-      "Name": "Slow walking 10",
-      "Description": ""
-    },
-    {
-      "ID": "100",
-      "Name": "Mirror night 1",
-      "Description": ""
-    },
-    {
-      "ID": "105",
-      "Name": "Silver chariot 1",
-      "Description": ""
-    },
-    {
-      "ID": "106",
-      "Name": "Ornstein Action 18 Boost Thrust",
-      "Description": ""
-    },
-    {
-      "ID": "110",
-      "Name": "Kingdom Heavy Warrior 1",
-      "Description": ""
-    },
-    {
-      "ID": "111",
-      "Name": "Kingdom heavy warrior 2",
-      "Description": ""
-    },
-    {
-      "ID": "112",
-      "Name": "Wheel skeleton 1",
-      "Description": ""
-    },
-    {
-      "ID": "113",
-      "Name": "Artificial immortal 1",
-      "Description": ""
-    },
-    {
-      "ID": "114",
-      "Name": "Rogue 1",
-      "Description": ""
-    },
-    {
-      "ID": "500",
-      "Name": "Small general purpose 1 Speed ​​1.0x Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "501",
-      "Name": "Small general purpose 2 Speed ​​1.0x Turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "510",
-      "Name": "Small general purpose 10 speed 1.2 times rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "511",
-      "Name": "Small general purpose 11 speed 1.2 times turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "520",
-      "Name": "Small general purpose 20 Speed ​​1.4 times Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "521",
-      "Name": "Small general purpose 21 speed 1.4 times rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "530",
-      "Name": "Compact general-purpose 30, speed 1.6 times, turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "531",
-      "Name": "Small general purpose 31 speed 1.6 times rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "600",
-      "Name": "Small size discontinued 1 Speed ​​1.0 times Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "601",
-      "Name": "Small size discontinued 2 Speed ​​1.0 times Turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "610",
-      "Name": "Small size discontinued 10 Speed ​​1.2 times Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "611",
-      "Name": "Small size discontinued 11 Speed ​​1.2 times Turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "620",
-      "Name": "Small size discontinued 20 Speed ​​1.4 times Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "621",
-      "Name": "Small size discontinued 21 Speed ​​1.4 times Turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "630",
-      "Name": "Small size discontinued 30 Speed ​​1.6 times Turning 120",
-      "Description": ""
-    },
-    {
-      "ID": "631",
-      "Name": "Small size discontinued 31 Speed ​​1.6 times Turning 180",
-      "Description": ""
-    },
-    {
-      "ID": "1000",
-      "Name": "Boss General Purpose 1 Speed ​​1.0x Attack Turn 120",
-      "Description": ""
-    },
-    {
-      "ID": "1010",
-      "Name": "Boss general purpose 2 speed 1.0x attack rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "1020",
-      "Name": "Boss general purpose 3 speed 1.0x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1030",
-      "Name": "Boss general purpose 4 speed 1.0x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1100",
-      "Name": "Boss general purpose 10 speed 1.2x attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1110",
-      "Name": "Boss General Purpose 11 Speed ​​1.2x Attack Turn 180",
-      "Description": ""
-    },
-    {
-      "ID": "1120",
-      "Name": "Boss General Purpose 12 Speed ​​1.2x Attack Turn 240",
-      "Description": ""
-    },
-    {
-      "ID": "1130",
-      "Name": "Boss general purpose 13 speed 1.2x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1200",
-      "Name": "Boss general purpose 20, speed 1.4x, attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1210",
-      "Name": "Boss General Purpose 21 Speed ​​1.4x Attack Turn 180",
-      "Description": ""
-    },
-    {
-      "ID": "1220",
-      "Name": "Boss general purpose 22 speed 1.4x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1230",
-      "Name": "Boss general purpose 23 speed 1.4x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1300",
-      "Name": "Boss general purpose 30, speed 1.6x, attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1310",
-      "Name": "General purpose boss 31 Speed ​​1.6x Attack rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "1320",
-      "Name": "Boss general purpose 32 speed 1.6x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1330",
-      "Name": "Boss general purpose 33 speed 1.6x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1400",
-      "Name": "Boss general purpose 40, speed 1.8x, attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1410",
-      "Name": "General purpose boss 41 Speed ​​1.8x Attack rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "1420",
-      "Name": "Boss general purpose 42 speed 1.8x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1430",
-      "Name": "Boss general purpose 43 speed 1.8x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1500",
-      "Name": "Boss general purpose 50, speed 2.0x, attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1510",
-      "Name": "Boss General Purpose 51 Speed ​​2.0x Attack Turn 180",
-      "Description": ""
-    },
-    {
-      "ID": "1520",
-      "Name": "Boss general purpose 52 speed 2.0x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1530",
-      "Name": "Boss general purpose 53 speed 2.0x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "1600",
-      "Name": "Boss general purpose 60, speed 0.8x, attack rotation 120",
-      "Description": ""
-    },
-    {
-      "ID": "1610",
-      "Name": "Boss general purpose 61 speed 0.8x attack rotation 180",
-      "Description": ""
-    },
-    {
-      "ID": "1620",
-      "Name": "Boss general purpose 62 speed 0.8x attack rotation 240",
-      "Description": ""
-    },
-    {
-      "ID": "1630",
-      "Name": "Boss general purpose 63 speed 0.8x attack rotation 90",
-      "Description": ""
-    },
-    {
-      "ID": "2000",
-      "Name": "On the spot 120 turns with right foot Damipori 5",
-      "Description": ""
-    },
-    {
-      "ID": "2010",
-      "Name": "On the spot, right foot 180 turn Damipori 5",
-      "Description": ""
-    },
-    {
-      "ID": "2100",
-      "Name": "On the spot left foot 120 turns Damipori 6",
-      "Description": ""
-    },
-    {
-      "ID": "2110",
-      "Name": "On the spot left foot 180 turn Damipori 6",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Template"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 4"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 5"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 6"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 7"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 8"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 9"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 10"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 11"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 12"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 13"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 14"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 15"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 16"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 17"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 18"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking 19"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 1"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 2"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 3"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 4"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 5"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 6"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The spot 7"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 8"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 9"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 10"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 11"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 12"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 13"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 14"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 15"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 16"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 17"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 18"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 19"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 20"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 21"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 22"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 23"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 24"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 25"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 26"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 27"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot 28"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 1"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 2"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 3"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 4"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 5"
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 6"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting 7"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 1"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 2"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 3"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 4"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 5"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 6"
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 7"
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 8"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 9"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slow walking 10"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror night 1"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver chariot 1"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornstein Action 18 Boost Thrust"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Heavy Warrior 1"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom heavy warrior 2"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel skeleton 1"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial immortal 1"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue 1"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 1 Speed ​​1.0x Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 2 Speed ​​1.0x Turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 10 speed 1.2 times rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 11 speed 1.2 times turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 20 Speed ​​1.4 times Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "521",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 21 speed 1.4 times rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Compact general-purpose 30, speed 1.6 times, turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "531",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small general purpose 31 speed 1.6 times rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 1 Speed ​​1.0 times Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 2 Speed ​​1.0 times Turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 10 Speed ​​1.2 times Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 11 Speed ​​1.2 times Turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 20 Speed ​​1.4 times Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "621",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 21 Speed ​​1.4 times Turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 30 Speed ​​1.6 times Turning 120"
+        }
+      ]
+    },
+    {
+      "Key": "631",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size discontinued 31 Speed ​​1.6 times Turning 180"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss General Purpose 1 Speed ​​1.0x Attack Turn 120"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 2 speed 1.0x attack rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 3 speed 1.0x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 4 speed 1.0x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 10 speed 1.2x attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss General Purpose 11 Speed ​​1.2x Attack Turn 180"
+        }
+      ]
+    },
+    {
+      "Key": "1120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss General Purpose 12 Speed ​​1.2x Attack Turn 240"
+        }
+      ]
+    },
+    {
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 13 speed 1.2x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 20, speed 1.4x, attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss General Purpose 21 Speed ​​1.4x Attack Turn 180"
+        }
+      ]
+    },
+    {
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 22 speed 1.4x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 23 speed 1.4x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 30, speed 1.6x, attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose boss 31 Speed ​​1.6x Attack rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "1320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 32 speed 1.6x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 33 speed 1.6x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 40, speed 1.8x, attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose boss 41 Speed ​​1.8x Attack rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "1420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 42 speed 1.8x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 43 speed 1.8x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 50, speed 2.0x, attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss General Purpose 51 Speed ​​2.0x Attack Turn 180"
+        }
+      ]
+    },
+    {
+      "Key": "1520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 52 speed 2.0x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 53 speed 2.0x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 60, speed 0.8x, attack rotation 120"
+        }
+      ]
+    },
+    {
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 61 speed 0.8x attack rotation 180"
+        }
+      ]
+    },
+    {
+      "Key": "1620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 62 speed 0.8x attack rotation 240"
+        }
+      ]
+    },
+    {
+      "Key": "1630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss general purpose 63 speed 0.8x attack rotation 90"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On the spot 120 turns with right foot Damipori 5"
+        }
+      ]
+    },
+    {
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On the spot, right foot 180 turn Damipori 5"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On the spot left foot 120 turns Damipori 6"
+        }
+      ]
+    },
+    {
+      "Key": "2110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On the spot left foot 180 turn Damipori 6"
+        }
+      ]
     }
   ]
 }

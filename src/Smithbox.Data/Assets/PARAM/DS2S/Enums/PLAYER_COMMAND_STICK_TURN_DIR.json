@@ -1,17 +1,29 @@
 {
-  "DisplayName": "PLAYER_COMMAND_STICK_TURN_DIR",
-  "Name": "PLAYER_COMMAND_STICK_TURN_DIR",
-  "Description": "",
+  "Key": "PLAYER_COMMAND_STICK_TURN_DIR",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_TURN_DIR"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Rotate right",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rotate right"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Left rotation",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left rotation"
+        }
+      ]
     }
   ]
 }

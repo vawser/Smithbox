@@ -1,27 +1,47 @@
 {
-  "DisplayName": "DAMAGE_DIRECTION_TYPE",
-  "Name": "DAMAGE_DIRECTION_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_DIRECTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_DIRECTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Relative position",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Relative position"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Relative position to the bullet",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Relative position to the bullet"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Direction specification",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Direction specification"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Direction of travel",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Direction of travel"
+        }
+      ]
     }
   ]
 }

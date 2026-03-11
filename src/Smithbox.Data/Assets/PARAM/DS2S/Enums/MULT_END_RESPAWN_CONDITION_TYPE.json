@@ -1,17 +1,29 @@
 {
-  "DisplayName": "MULT_END_RESPAWN_CONDITION_TYPE",
-  "Name": "MULT_END_RESPAWN_CONDITION_TYPE",
-  "Description": "",
+  "Key": "MULT_END_RESPAWN_CONDITION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULT_END_RESPAWN_CONDITION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Original state",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Original state"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Refresh",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Refresh"
+        }
+      ]
     }
   ]
 }

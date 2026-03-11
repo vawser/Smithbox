@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Unused",
+  "Key": "Unused",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Unused"
+      }
+  ],
   "Params": [
     "CameraAreaParam",
     "CameraBattleParam",

@@ -1,12 +1,20 @@
 {
-  "DisplayName": "FORCE_ACTION_TYPE",
-  "Name": "FORCE_ACTION_TYPE",
-  "Description": "",
+  "Key": "FORCE_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FORCE_ACTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy"
+        }
+      ]
     }
   ]
 }

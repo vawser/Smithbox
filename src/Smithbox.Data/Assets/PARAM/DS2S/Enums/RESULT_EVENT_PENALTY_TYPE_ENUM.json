@@ -1,22 +1,38 @@
 {
-  "DisplayName": "RESULT_EVENT_PENALTY_TYPE_ENUM",
-  "Name": "RESULT_EVENT_PENALTY_TYPE_ENUM",
-  "Description": "",
+  "Key": "RESULT_EVENT_PENALTY_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RESULT_EVENT_PENALTY_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Pledged contribution-1",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledged contribution-1"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Penalty type termination",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Penalty type termination"
+        }
+      ]
     }
   ]
 }

@@ -1,67 +1,119 @@
 {
-  "DisplayName": "DAMAGE_OBJ_ATTACK_ATTR_ENUM",
-  "Name": "DAMAGE_OBJ_ATTACK_ATTR_ENUM",
-  "Description": "",
+  "Key": "DAMAGE_OBJ_ATTACK_ATTR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_OBJ_ATTACK_ATTR_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Dummy (prohibited to use)",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy (prohibited to use)"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "No destruction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No destruction"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Gust of wind",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gust of wind"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Throwing grab",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing grab"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Piercing - Cannot destroy urn",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piercing - Cannot destroy urn"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Piercing",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piercing"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Slash",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
     },
     {
-      "ID": "40",
-      "Name": "Blow",
-      "Description": ""
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow"
+        }
+      ]
     },
     {
-      "ID": "50",
-      "Name": "Explosion",
-      "Description": ""
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Explosion"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "Giant",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant"
+        }
+      ]
     },
     {
-      "ID": "150",
-      "Name": "Extra large explosion",
-      "Description": ""
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large explosion"
+        }
+      ]
     },
     {
-      "ID": "200",
-      "Name": "Indestructible",
-      "Description": ""
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Indestructible"
+        }
+      ]
     }
   ]
 }

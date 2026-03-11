@@ -124,18 +124,6 @@ public class ParamFieldMeta
             ProjectEnumType = ProjectEnum.InnerText;
         }
 
-        XmlAttribute AlternateName = fieldMeta.Attributes["AltName"];
-        if (AlternateName != null)
-        {
-            AltName = AlternateName.InnerText;
-        }
-
-        XmlAttribute WikiText = fieldMeta.Attributes["Wiki"];
-        if (WikiText != null)
-        {
-            Wiki = WikiText.InnerText.Replace("\\n", "\n");
-        }
-
         XmlAttribute IsBoolean = fieldMeta.Attributes["IsBool"];
         if (IsBoolean != null)
         {
@@ -291,16 +279,6 @@ public class ParamFieldMeta
     ///     Set of generally acceptable values, named
     /// </summary>
     public ParamEnum EnumType { get; set; }
-
-    /// <summary>
-    ///     Alternate name for a field not provided by source defs or paramfiles.
-    /// </summary>
-    public string AltName { get; set; }
-
-    /// <summary>
-    ///     A big tooltip to explain the field to the user
-    /// </summary>
-    public string Wiki { get; set; }
 
     /// <summary>
     ///     Is this u8 field actually a boolean?

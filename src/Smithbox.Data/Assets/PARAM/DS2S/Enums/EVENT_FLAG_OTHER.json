@@ -1,397 +1,713 @@
 {
-  "DisplayName": "EVENT_FLAG_OTHER",
-  "Name": "EVENT_FLAG_OTHER",
-  "Description": "",
+  "Key": "EVENT_FLAG_OTHER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_OTHER"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "80050006",
-      "Name": "Patch event executed determination《ID:80050006》",
-      "Description": ""
-    },
-    {
-      "ID": "80050010",
-      "Name": "Judgment for generating the first mouse from the mouse hole《ID:80050010》",
-      "Description": ""
-    },
-    {
-      "ID": "80050011",
-      "Name": "Judgment of second mouse generation from mouse hole《ID:80050011》",
-      "Description": ""
-    },
-    {
-      "ID": "80050012",
-      "Name": "Judgment of generation of third mouse from mouse hole《ID:80050012》",
-      "Description": ""
-    },
-    {
-      "ID": "80050013",
-      "Name": "Judgment of generation of 4th mouse from mouse hole《ID:80050013》",
-      "Description": ""
-    },
-    {
-      "ID": "80050014",
-      "Name": "Mouse generation event executed determination《ID:80050014》",
-      "Description": ""
-    },
-    {
-      "ID": "80050015",
-      "Name": "Flame passage_left_operation judgment《ID:80050015》",
-      "Description": ""
-    },
-    {
-      "ID": "80050016",
-      "Name": "Flame passage_center_operation judgment《ID:80050016》",
-      "Description": ""
-    },
-    {
-      "ID": "80050017",
-      "Name": "Flame passage_right_operation judgment《ID:80050017》",
-      "Description": ""
-    },
-    {
-      "ID": "80050019",
-      "Name": "Patch trap door opening/closing judgment《ID:80050019》",
-      "Description": ""
-    },
-    {
-      "ID": "80050021",
-      "Name": "Illusion generation judgment for a PC running on a non-existent bridge《ID:80050021》",
-      "Description": ""
-    },
-    {
-      "ID": "80050022",
-      "Name": "Illusion generation judgment of PC running in the area where the door will be destroyed《ID:80050022》",
-      "Description": ""
-    },
-    {
-      "ID": "80050025",
-      "Name": "PC running on a non-existent bridge phantom event execution judgment 《ID:80050025》",
-      "Description": ""
-    },
-    {
-      "ID": "80050026",
-      "Name": "Phantom event execution judgment of PC running in the area where the door will be destroyed《ID:80050026》",
-      "Description": ""
-    },
-    {
-      "ID": "80050027",
-      "Name": "Flame Cave_Operation Judgment《ID:80050027》",
-      "Description": ""
-    },
-    {
-      "ID": "80050030",
-      "Name": "Creation judgment of phantom PC and Guard captain《ID:80050030》",
-      "Description": ""
-    },
-    {
-      "ID": "80050031",
-      "Name": "Phantom arrangement A01《ID:80050031》",
-      "Description": ""
-    },
-    {
-      "ID": "80050032",
-      "Name": "Phantom arrangement A02《ID:80050032》",
-      "Description": ""
-    },
-    {
-      "ID": "80050033",
-      "Name": "Phantom arrangement B01《ID:80050033》",
-      "Description": ""
-    },
-    {
-      "ID": "80050034",
-      "Name": "Phantom arrangement B02《ID:80050034》",
-      "Description": ""
-    },
-    {
-      "ID": "80050035",
-      "Name": "Phantom arrangement C01《ID:80050035》",
-      "Description": ""
-    },
-    {
-      "ID": "80050036",
-      "Name": "Phantom arrangement C02《ID:80050036》",
-      "Description": ""
-    },
-    {
-      "ID": "80050037",
-      "Name": "Phantom arrangement D01《ID:80050037》",
-      "Description": ""
-    },
-    {
-      "ID": "80050038",
-      "Name": "Phantom placement first time A03《ID:80050038》",
-      "Description": ""
-    },
-    {
-      "ID": "80050039",
-      "Name": "Coal tar activation flag 01《ID:80050039》",
-      "Description": ""
-    },
-    {
-      "ID": "80050040",
-      "Name": "Coal tar activation flag 02《ID:80050040》",
-      "Description": ""
-    },
-    {
-      "ID": "80050041",
-      "Name": "Coal tar activation flag 03《ID:80050041》",
-      "Description": ""
-    },
-    {
-      "ID": "80050042",
-      "Name": "Coal tar startup state judgment test flag《ID:80050042》",
-      "Description": ""
-    },
-    {
-      "ID": "80050200",
-      "Name": "Giant soldier's continuous fall event execution completion judgment《ID:80050200》",
-      "Description": ""
-    },
-    {
-      "ID": "80050201",
-      "Name": "Start of generation of the first continuous falling giant soldier《ID:80050201》",
-      "Description": ""
-    },
-    {
-      "ID": "80050202",
-      "Name": "Generation of the second consecutively falling giant soldier begins《ID:80050202》",
-      "Description": ""
-    },
-    {
-      "ID": "80050203",
-      "Name": "Start of generation of the third consecutively falling giant soldier《ID:80050203》",
-      "Description": ""
-    },
-    {
-      "ID": "80050235",
-      "Name": "Frontline fireball_source group A operation judgment《ID:80050235》",
-      "Description": ""
-    },
-    {
-      "ID": "80050236",
-      "Name": "Frontline fireball_source group B operation judgment《ID:80050236》",
-      "Description": ""
-    },
-    {
-      "ID": "80060003",
-      "Name": "Event Vagrant is currently appearing《ID:80060003》",
-      "Description": ""
-    },
-    {
-      "ID": "80060004",
-      "Name": "*test_Salamander Polyplay Played Judgment《ID:80060004》",
-      "Description": ""
-    },
-    {
-      "ID": "80060005",
-      "Name": "White door 1 access flag (for surprise attack logic)《ID:80060005》",
-      "Description": ""
-    },
-    {
-      "ID": "80060210",
-      "Name": "Cave vibration event execution determination 1《ID:80060210》",
-      "Description": ""
-    },
-    {
-      "ID": "80060211",
-      "Name": "Cave vibration event execution determination 2《ID:80060211》",
-      "Description": ""
-    },
-    {
-      "ID": "80060212",
-      "Name": "Judgment that a large tremor has occurred within the castle wall《ID:80060212》",
-      "Description": ""
-    },
-    {
-      "ID": "80060213",
-      "Name": "A fireball has landed on the tower at the end of the slope《ID:80060213》",
-      "Description": ""
-    },
-    {
-      "ID": "80060214",
-      "Name": "Judgment that a fireball has landed on the roof《ID:80060214》",
-      "Description": ""
-    },
-    {
-      "ID": "80060216",
-      "Name": "Vibration event inside the fort execution determination 1《ID:80060216》",
-      "Description": ""
-    },
-    {
-      "ID": "80060217",
-      "Name": "Fireball has landed on the roof on the side of the wall《ID:80060217》",
-      "Description": ""
-    },
-    {
-      "ID": "80060300",
-      "Name": "*Temporary response soldiers appear in August《ID:80060300》",
-      "Description": ""
-    },
-    {
-      "ID": "80060302",
-      "Name": "*For provisional support in August version_Suspension of single-shot falling giant soldier《ID:80060302》",
-      "Description": ""
-    },
-    {
-      "ID": "80060303",
-      "Name": "*Activation of door test trap《ID:80060303》",
-      "Description": ""
-    },
-    {
-      "ID": "80060304",
-      "Name": "*Stop flag《ID:80060304》",
-      "Description": ""
-    },
-    {
-      "ID": "80060305",
-      "Name": "*test poly play played judgment《ID:80060305》",
-      "Description": ""
-    },
-    {
-      "ID": "80070007",
-      "Name": "Elevator position flag《ID:80070007》",
-      "Description": ""
-    },
-    {
-      "ID": "80070008",
-      "Name": "Elevator use prohibition flag《ID:80070008》",
-      "Description": ""
-    },
-    {
-      "ID": "80080001",
-      "Name": "BOSS Salamander's threatening sound has occurred (ID:80080001)",
-      "Description": ""
-    },
-    {
-      "ID": "80090002",
-      "Name": "Judgment that the Vagrant event has been executed《ID:80090002》",
-      "Description": ""
-    },
-    {
-      "ID": "80090009",
-      "Name": "Alarm treasure chest opening flag (for surprise logic)《ID:80090009》",
-      "Description": ""
-    },
-    {
-      "ID": "80090018",
-      "Name": "Bird feather item possession determination《ID:80090018》",
-      "Description": ""
-    },
-    {
-      "ID": "80090028",
-      "Name": "Salamander Tail Cut Flag《ID:80090028》",
-      "Description": ""
-    },
-    {
-      "ID": "80090050",
-      "Name": "Insect pot_large: Enemy appearance flag《ID:80090050》",
-      "Description": ""
-    },
-    {
-      "ID": "80090051",
-      "Name": "Insect pot_small: Enemy appearance flag《ID:80090051》",
-      "Description": ""
-    },
-    {
-      "ID": "80090060",
-      "Name": "Petrification stop release flag《ID:80090060》",
-      "Description": ""
-    },
-    {
-      "ID": "80090215",
-      "Name": "Door destruction initial action end judgment《ID:80090215》",
-      "Description": ""
-    },
-    {
-      "ID": "80090237",
-      "Name": "Oiwa OBJ's rumble starts《ID:80090237》",
-      "Description": ""
-    },
-    {
-      "ID": "80090238",
-      "Name": "Rumor event completed judgment《ID:80090238》",
-      "Description": ""
-    },
-    {
-      "ID": "80090250",
-      "Name": "Returns the behavior of senior giant soldiers to normal after the door is destroyed《ID:80090250》",
-      "Description": ""
-    },
-    {
-      "ID": "80090251",
-      "Name": "Royal Soldier_Lower Soldier Hostility《ID:80090251》",
-      "Description": ""
-    },
-    {
-      "ID": "80090252",
-      "Name": "Execute a gate destruction attack on a trapped senior giant soldier《ID:80090252》",
-      "Description": ""
-    },
-    {
-      "ID": "80090253",
-      "Name": "A senior giant soldier throws away the soldier he is holding 《ID:80090253》",
-      "Description": ""
-    },
-    {
-      "ID": "80090254",
-      "Name": "Giant soldier's continuous falling event has been executed 《ID:80090254》",
-      "Description": ""
-    },
-    {
-      "ID": "80090255",
-      "Name": "A low-class giant soldier performs a wall-destroying attack《ID:80090255》",
-      "Description": ""
-    },
-    {
-      "ID": "80090256",
-      "Name": "Gorogoro Preparatory Soldier releases preparation《ID:80090256》",
-      "Description": ""
-    },
-    {
-      "ID": "80090257",
-      "Name": "Rumbling preparation soldiers activate trap《ID:80090257》",
-      "Description": ""
-    },
-    {
-      "ID": "80090258",
-      "Name": "The rumble has been rolled《ID:80090258》",
-      "Description": ""
-    },
-    {
-      "ID": "80090301",
-      "Name": "*Temporary support for August_ Passage passage determination《ID:80090301》",
-      "Description": ""
-    },
-    {
-      "ID": "80090310",
-      "Name": "End of multiplayer section《ID:80090310》",
-      "Description": ""
-    },
-    {
-      "ID": "80090311",
-      "Name": "Boss room《ID:80090311》",
-      "Description": ""
-    },
-    {
-      "ID": "80090312",
-      "Name": "Host goal point《ID:80090312》",
-      "Description": ""
-    },
-    {
-      "ID": "80090313",
-      "Name": "Mouse King Ash Spirit Goal Point《ID:80090313》",
-      "Description": ""
-    },
-    {
-      "ID": "80090314",
-      "Name": "Scenario White Door《ID:80090314》",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "80050006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch event executed determination《ID:80050006》"
+        }
+      ]
+    },
+    {
+      "Key": "80050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment for generating the first mouse from the mouse hole《ID:80050010》"
+        }
+      ]
+    },
+    {
+      "Key": "80050011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment of second mouse generation from mouse hole《ID:80050011》"
+        }
+      ]
+    },
+    {
+      "Key": "80050012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment of generation of third mouse from mouse hole《ID:80050012》"
+        }
+      ]
+    },
+    {
+      "Key": "80050013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment of generation of 4th mouse from mouse hole《ID:80050013》"
+        }
+      ]
+    },
+    {
+      "Key": "80050014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse generation event executed determination《ID:80050014》"
+        }
+      ]
+    },
+    {
+      "Key": "80050015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame passage_left_operation judgment《ID:80050015》"
+        }
+      ]
+    },
+    {
+      "Key": "80050016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame passage_center_operation judgment《ID:80050016》"
+        }
+      ]
+    },
+    {
+      "Key": "80050017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame passage_right_operation judgment《ID:80050017》"
+        }
+      ]
+    },
+    {
+      "Key": "80050019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch trap door opening/closing judgment《ID:80050019》"
+        }
+      ]
+    },
+    {
+      "Key": "80050021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion generation judgment for a PC running on a non-existent bridge《ID:80050021》"
+        }
+      ]
+    },
+    {
+      "Key": "80050022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illusion generation judgment of PC running in the area where the door will be destroyed《ID:80050022》"
+        }
+      ]
+    },
+    {
+      "Key": "80050025",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC running on a non-existent bridge phantom event execution judgment 《ID:80050025》"
+        }
+      ]
+    },
+    {
+      "Key": "80050026",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom event execution judgment of PC running in the area where the door will be destroyed《ID:80050026》"
+        }
+      ]
+    },
+    {
+      "Key": "80050027",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame Cave_Operation Judgment《ID:80050027》"
+        }
+      ]
+    },
+    {
+      "Key": "80050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Creation judgment of phantom PC and Guard captain《ID:80050030》"
+        }
+      ]
+    },
+    {
+      "Key": "80050031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement A01《ID:80050031》"
+        }
+      ]
+    },
+    {
+      "Key": "80050032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement A02《ID:80050032》"
+        }
+      ]
+    },
+    {
+      "Key": "80050033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement B01《ID:80050033》"
+        }
+      ]
+    },
+    {
+      "Key": "80050034",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement B02《ID:80050034》"
+        }
+      ]
+    },
+    {
+      "Key": "80050035",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement C01《ID:80050035》"
+        }
+      ]
+    },
+    {
+      "Key": "80050036",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement C02《ID:80050036》"
+        }
+      ]
+    },
+    {
+      "Key": "80050037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom arrangement D01《ID:80050037》"
+        }
+      ]
+    },
+    {
+      "Key": "80050038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom placement first time A03《ID:80050038》"
+        }
+      ]
+    },
+    {
+      "Key": "80050039",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar activation flag 01《ID:80050039》"
+        }
+      ]
+    },
+    {
+      "Key": "80050040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar activation flag 02《ID:80050040》"
+        }
+      ]
+    },
+    {
+      "Key": "80050041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar activation flag 03《ID:80050041》"
+        }
+      ]
+    },
+    {
+      "Key": "80050042",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar startup state judgment test flag《ID:80050042》"
+        }
+      ]
+    },
+    {
+      "Key": "80050200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant soldier's continuous fall event execution completion judgment《ID:80050200》"
+        }
+      ]
+    },
+    {
+      "Key": "80050201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start of generation of the first continuous falling giant soldier《ID:80050201》"
+        }
+      ]
+    },
+    {
+      "Key": "80050202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generation of the second consecutively falling giant soldier begins《ID:80050202》"
+        }
+      ]
+    },
+    {
+      "Key": "80050203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start of generation of the third consecutively falling giant soldier《ID:80050203》"
+        }
+      ]
+    },
+    {
+      "Key": "80050235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frontline fireball_source group A operation judgment《ID:80050235》"
+        }
+      ]
+    },
+    {
+      "Key": "80050236",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frontline fireball_source group B operation judgment《ID:80050236》"
+        }
+      ]
+    },
+    {
+      "Key": "80060003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Event Vagrant is currently appearing《ID:80060003》"
+        }
+      ]
+    },
+    {
+      "Key": "80060004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*test_Salamander Polyplay Played Judgment《ID:80060004》"
+        }
+      ]
+    },
+    {
+      "Key": "80060005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door 1 access flag (for surprise attack logic)《ID:80060005》"
+        }
+      ]
+    },
+    {
+      "Key": "80060210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cave vibration event execution determination 1《ID:80060210》"
+        }
+      ]
+    },
+    {
+      "Key": "80060211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cave vibration event execution determination 2《ID:80060211》"
+        }
+      ]
+    },
+    {
+      "Key": "80060212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment that a large tremor has occurred within the castle wall《ID:80060212》"
+        }
+      ]
+    },
+    {
+      "Key": "80060213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A fireball has landed on the tower at the end of the slope《ID:80060213》"
+        }
+      ]
+    },
+    {
+      "Key": "80060214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment that a fireball has landed on the roof《ID:80060214》"
+        }
+      ]
+    },
+    {
+      "Key": "80060216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vibration event inside the fort execution determination 1《ID:80060216》"
+        }
+      ]
+    },
+    {
+      "Key": "80060217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fireball has landed on the roof on the side of the wall《ID:80060217》"
+        }
+      ]
+    },
+    {
+      "Key": "80060300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*Temporary response soldiers appear in August《ID:80060300》"
+        }
+      ]
+    },
+    {
+      "Key": "80060302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*For provisional support in August version_Suspension of single-shot falling giant soldier《ID:80060302》"
+        }
+      ]
+    },
+    {
+      "Key": "80060303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*Activation of door test trap《ID:80060303》"
+        }
+      ]
+    },
+    {
+      "Key": "80060304",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*Stop flag《ID:80060304》"
+        }
+      ]
+    },
+    {
+      "Key": "80060305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*test poly play played judgment《ID:80060305》"
+        }
+      ]
+    },
+    {
+      "Key": "80070007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elevator position flag《ID:80070007》"
+        }
+      ]
+    },
+    {
+      "Key": "80070008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elevator use prohibition flag《ID:80070008》"
+        }
+      ]
+    },
+    {
+      "Key": "80080001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BOSS Salamander's threatening sound has occurred (ID:80080001)"
+        }
+      ]
+    },
+    {
+      "Key": "80090002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Judgment that the Vagrant event has been executed《ID:80090002》"
+        }
+      ]
+    },
+    {
+      "Key": "80090009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alarm treasure chest opening flag (for surprise logic)《ID:80090009》"
+        }
+      ]
+    },
+    {
+      "Key": "80090018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bird feather item possession determination《ID:80090018》"
+        }
+      ]
+    },
+    {
+      "Key": "80090028",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander Tail Cut Flag《ID:80090028》"
+        }
+      ]
+    },
+    {
+      "Key": "80090050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insect pot_large: Enemy appearance flag《ID:80090050》"
+        }
+      ]
+    },
+    {
+      "Key": "80090051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insect pot_small: Enemy appearance flag《ID:80090051》"
+        }
+      ]
+    },
+    {
+      "Key": "80090060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrification stop release flag《ID:80090060》"
+        }
+      ]
+    },
+    {
+      "Key": "80090215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Door destruction initial action end judgment《ID:80090215》"
+        }
+      ]
+    },
+    {
+      "Key": "80090237",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oiwa OBJ's rumble starts《ID:80090237》"
+        }
+      ]
+    },
+    {
+      "Key": "80090238",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rumor event completed judgment《ID:80090238》"
+        }
+      ]
+    },
+    {
+      "Key": "80090250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Returns the behavior of senior giant soldiers to normal after the door is destroyed《ID:80090250》"
+        }
+      ]
+    },
+    {
+      "Key": "80090251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier_Lower Soldier Hostility《ID:80090251》"
+        }
+      ]
+    },
+    {
+      "Key": "80090252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Execute a gate destruction attack on a trapped senior giant soldier《ID:80090252》"
+        }
+      ]
+    },
+    {
+      "Key": "80090253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A senior giant soldier throws away the soldier he is holding 《ID:80090253》"
+        }
+      ]
+    },
+    {
+      "Key": "80090254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant soldier's continuous falling event has been executed 《ID:80090254》"
+        }
+      ]
+    },
+    {
+      "Key": "80090255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A low-class giant soldier performs a wall-destroying attack《ID:80090255》"
+        }
+      ]
+    },
+    {
+      "Key": "80090256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gorogoro Preparatory Soldier releases preparation《ID:80090256》"
+        }
+      ]
+    },
+    {
+      "Key": "80090257",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rumbling preparation soldiers activate trap《ID:80090257》"
+        }
+      ]
+    },
+    {
+      "Key": "80090258",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The rumble has been rolled《ID:80090258》"
+        }
+      ]
+    },
+    {
+      "Key": "80090301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*Temporary support for August_ Passage passage determination《ID:80090301》"
+        }
+      ]
+    },
+    {
+      "Key": "80090310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End of multiplayer section《ID:80090310》"
+        }
+      ]
+    },
+    {
+      "Key": "80090311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss room《ID:80090311》"
+        }
+      ]
+    },
+    {
+      "Key": "80090312",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host goal point《ID:80090312》"
+        }
+      ]
+    },
+    {
+      "Key": "80090313",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King Ash Spirit Goal Point《ID:80090313》"
+        }
+      ]
+    },
+    {
+      "Key": "80090314",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scenario White Door《ID:80090314》"
+        }
+      ]
     }
   ]
 }

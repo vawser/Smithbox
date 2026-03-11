@@ -1,0 +1,298 @@
+{
+  "Param": "HolygrailExParam",
+  "Type": "HOLYGRAIL_EX_PARAM_ST",
+  "Name": "HolygrailExParam",
+  "Description": "Chalice Dungeon - Rituals",
+  "Fields": [
+    {
+      "Field": "ritualLv",
+      "Name": "Ritual Level",
+      "Description": ""
+    },
+    {
+      "Field": "attributeId",
+      "Name": "Attribute ID",
+      "Description": ""
+    },
+    {
+      "Field": "mapBaseId",
+      "Name": "Map Base ID",
+      "Description": ""
+    },
+    {
+      "Field": "holygrailTypeId",
+      "Name": "Holy Grail Type ID",
+      "Description": ""
+    },
+    {
+      "Field": "variationNum",
+      "Name": "Random Structure Generation Count",
+      "Description": ""
+    },
+    {
+      "Field": "mainFeature_1",
+      "Name": "Main Feature ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dungeonNameBaseId",
+      "Name": "Dungeon Name Base ID",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueBaseFlagId",
+      "Name": "Unique Base Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem00_head",
+      "Name": "[0] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem00_tail",
+      "Name": "[0] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem01_head",
+      "Name": "[1] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem01_tail",
+      "Name": "[1] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem02_head",
+      "Name": "[2] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem02_tail",
+      "Name": "[2] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem03_head",
+      "Name": "[3] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem03_tail",
+      "Name": "[3] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "directMapUid",
+      "Name": "Direct Map UID",
+      "Description": ""
+    },
+    {
+      "Field": "requiredMaterialId",
+      "Name": "Required Material ID",
+      "Description": ""
+    },
+    {
+      "Field": "groupFrameNameId",
+      "Name": "Group Selection Frame Name ID",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem04_head",
+      "Name": "[4] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem04_tail",
+      "Name": "[4] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem05_head",
+      "Name": "[5] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem05_tail",
+      "Name": "[5] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem06_head",
+      "Name": "[6] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem06_tail",
+      "Name": "[6] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem07_head",
+      "Name": "[7] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem07_tail",
+      "Name": "[7] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem08_head",
+      "Name": "[8] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem08_tail",
+      "Name": "[8] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem09_head",
+      "Name": "[9] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem09_tail",
+      "Name": "[9] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem10_head",
+      "Name": "[10] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem10_tail",
+      "Name": "[10] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem11_head",
+      "Name": "[11] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem11_tail",
+      "Name": "[11] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem12_head",
+      "Name": "[12] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem12_tail",
+      "Name": "[12] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem13_head",
+      "Name": "[13] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem13_tail",
+      "Name": "[13] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "fixedSf_1_subFeatureLotId",
+      "Name": "Fixed: Sub-Feature Lottery ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "fixedSf_2_subFeatureLotId",
+      "Name": "Fixed: Sub-Feature Lottery ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "fixedSf_3_subFeatureLotId",
+      "Name": "Fixed: Sub-Feature Lottery ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "fixedSf_4_subFeatureLotId",
+      "Name": "Fixed: Sub-Feature Lottery ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "fixedSf_5_subFeatureLotId",
+      "Name": "Fixed: Sub-Feature Lottery ID [5]",
+      "Description": ""
+    },
+    {
+      "Field": "freeSf_1_subFeatureLotId",
+      "Name": "Free: Sub-Feature Lottery ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "freeSf_2_subFeatureLotId",
+      "Name": "Free: Sub-Feature Lottery ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "freeSf_3_subFeatureLotId",
+      "Name": "Free: Sub-Feature Lottery ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem14_head",
+      "Name": "[14] Unique Item - Prefix",
+      "Description": ""
+    },
+    {
+      "Field": "uniqueItem14_tail",
+      "Name": "[14] Unique Item - Postfix",
+      "Description": ""
+    },
+    {
+      "Field": "isGenericHolygrail",
+      "Name": "Is Generic",
+      "Description": ""
+    },
+    {
+      "Field": "releaseFlagIdOffset",
+      "Name": "Ban Event Flag Offset ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_1_subFeatureLotId",
+      "Name": "Group: Sub-Feature Lottery ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_2_subFeatureLotId",
+      "Name": "Group: Sub-Feature Lottery ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_3_subFeatureLotId",
+      "Name": "Group: Sub-Feature Lottery ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_4_subFeatureLotId",
+      "Name": "Group: Sub-Feature Lottery ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_5_subFeatureLotId",
+      "Name": "Group: Sub-Feature Lottery ID [5]",
+      "Description": ""
+    }
+  ]
+}

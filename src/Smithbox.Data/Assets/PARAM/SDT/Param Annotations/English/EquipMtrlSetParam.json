@@ -1,0 +1,113 @@
+{
+  "Param": "EquipMtrlSetParam",
+  "Type": "EQUIP_MTRL_SET_PARAM_ST",
+  "Name": "EquipMtrlSetParam",
+  "Description": "Defines items used for upgrades and shops",
+  "Fields": [
+    {
+      "Field": "materialId01",
+      "Name": "",
+      "Description": "Item that will be consumed upradging or purchasing"
+    },
+    {
+      "Field": "materialId02",
+      "Name": "",
+      "Description": "Item that will be consumed upradging or purchasing"
+    },
+    {
+      "Field": "materialId03",
+      "Name": "",
+      "Description": "Item that will be consumed upradging or purchasing"
+    },
+    {
+      "Field": "materialId04",
+      "Name": "",
+      "Description": "Item that will be consumed upradging or purchasing"
+    },
+    {
+      "Field": "materialId05",
+      "Name": "",
+      "Description": "Item that will be consumed upradging or purchasing"
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "",
+      "Description": "How much of materialId01 will be consumed?"
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "",
+      "Description": "How much of materialId02 will be consumed?"
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "",
+      "Description": "How much of materialId03 will be consumed?"
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "",
+      "Description": "How much of materialId04 will be consumed?"
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "",
+      "Description": "How much of materialId05 will be consumed?"
+    },
+    {
+      "Field": "materialCate01",
+      "Name": "",
+      "Description": "Determines what param materialId01 references"
+    },
+    {
+      "Field": "materialCate02",
+      "Name": "",
+      "Description": "Determines what param materialId02 references"
+    },
+    {
+      "Field": "materialCate03",
+      "Name": "",
+      "Description": "Determines what param materialId03 references"
+    },
+    {
+      "Field": "materialCate04",
+      "Name": "",
+      "Description": "Determines what param materialId04 references"
+    },
+    {
+      "Field": "materialCate05",
+      "Name": "",
+      "Description": "Determines what param materialId05 references"
+    },
+    {
+      "Field": "isDisableDispNum01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableDispNum02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableDispNum03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableDispNum04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableDispNum05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

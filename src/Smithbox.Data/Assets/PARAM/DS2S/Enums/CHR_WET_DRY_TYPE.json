@@ -1,22 +1,38 @@
 {
-  "DisplayName": "CHR_WET_DRY_TYPE",
-  "Name": "CHR_WET_DRY_TYPE",
-  "Description": "",
+  "Key": "CHR_WET_DRY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_DRY_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Head gets dry easily",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head gets dry easily"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Feet become dry easily",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Feet become dry easily"
+        }
+      ]
     }
   ]
 }

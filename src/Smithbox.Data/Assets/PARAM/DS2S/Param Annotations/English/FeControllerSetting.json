@@ -1,0 +1,23 @@
+{
+  "Param": "FeControllerSetting",
+  "Type": "FE_CONTROLLER_SETTING_PARAM",
+  "Name": "FeControllerSetting",
+  "Description": "Defines parameters related to the controller settings for the character face editor.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

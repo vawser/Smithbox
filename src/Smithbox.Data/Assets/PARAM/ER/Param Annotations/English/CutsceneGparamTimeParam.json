@@ -1,0 +1,73 @@
+{
+  "Param": "CutsceneGparamTimeParam",
+  "Type": "CUTSCENE_GPARAM_TIME_PARAM_ST",
+  "Name": "CutsceneGparamTimeParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "Disable Param - Debug",
+      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DstTimezone_Morning",
+      "Name": "Destination Timezone: Morning",
+      "Description": "Morning (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_Noon",
+      "Name": "Destination Timezone: Noon",
+      "Description": "Day A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_AfterNoon",
+      "Name": "Destination Timezone: Afternoon",
+      "Description": "Noon-B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_Evening",
+      "Name": "Destination Timezone: Evening",
+      "Description": "Evening (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_Night",
+      "Name": "Destination Timezone: Night",
+      "Description": "Night (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_DeepNightA",
+      "Name": "Destination Timezone: Deep Night A",
+      "Description": "Midnight A (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "DstTimezone_DeepNightB",
+      "Name": "Destination Timezone: Deep Night B",
+      "Description": "Midnight B (Refer to the cutscene time conversion setting sheet for the conversion time)"
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PostPlayIngameTime",
+      "Name": "Post Cutscene In-game Time",
+      "Description": "Specify in-game time at the end of playback [hour] [-1.0 to 24.0] (-1 (less than 0): do nothing)"
+    }
+  ]
+}

@@ -1,67 +1,119 @@
 {
-  "DisplayName": "Damage Level",
-  "Name": "ATKPARAM_DMGTYPE_NEW",
-  "Description": "These are categories used to determine the type of stagger the player or enemy takes. (AtkParam version)",
+  "Key": "ATKPARAM_DMGTYPE_NEW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_DMGTYPE_NEW"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No Stagger [0: NONE]",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Stagger [0: NONE]"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Short Stagger [1: SMALL]",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short Stagger [1: SMALL]"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium Stagger [2: MIDDLE]",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium Stagger [2: MIDDLE]"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Long Stagger [3: LARGE]",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long Stagger [3: LARGE]"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Big Launch Back [4: EXLARGE]",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big Launch Back [4: EXLARGE]"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Push [5: PUSH]",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Push [5: PUSH]"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Pancake [6: FLING]",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pancake [6: FLING]"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Launch Back [7: SMALL_BLOW]",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Launch Back [7: SMALL_BLOW]"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Minimum Stagger [8: MINIMUM]",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Minimum Stagger [8: MINIMUM]"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Air Juggle [9: UPPER]",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air Juggle [9: UPPER]"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Huge Launch Back [10: EX_BLAST]",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Huge Launch Back [10: EX_BLAST]"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Flailing Arms [11: BREATH]",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flailing Arms [11: BREATH]"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "Param": "GameMapParam",
+  "Type": "GAME_MAP_PARAM_ST",
+  "Name": "GameMapParam",
+  "Description": "Level Data - Time",
+  "Fields": [
+    {
+      "Field": "settingNo_timeSlotA",
+      "Name": "Light Group ID: Evening",
+      "Description": ""
+    },
+    {
+      "Field": "settingNo_timeSlotB",
+      "Name": "Light Group ID: Sunset",
+      "Description": ""
+    },
+    {
+      "Field": "settingNo_timeSlotC",
+      "Name": "Light Group ID: Night",
+      "Description": ""
+    },
+    {
+      "Field": "settingNo_timeSlotD",
+      "Name": "Light Group ID: Blood Moon",
+      "Description": ""
+    }
+  ]
+}

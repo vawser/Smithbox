@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BLADE_HOMING_TYPE",
-  "Name": "BLADE_HOMING_TYPE",
-  "Description": "",
+  "Key": "BLADE_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BLADE_HOMING_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Upper body",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper body"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Whole body",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whole body"
+        }
+      ]
     }
   ]
 }

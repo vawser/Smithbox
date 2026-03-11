@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_RESIDENT_SFX_POINT_ENUM",
-  "Name": "OBJ_RESIDENT_SFX_POINT_ENUM",
-  "Description": "",
+  "Key": "OBJ_RESIDENT_SFX_POINT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_RESIDENT_SFX_POINT_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Master",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Center",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Damipoly specification",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damipoly specification"
+        }
+      ]
     }
   ]
 }

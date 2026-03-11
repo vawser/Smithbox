@@ -1,0 +1,328 @@
+{
+  "Param": "ItemLotParam2_SvrEvent",
+  "Type": "ITEM_LOT_PARAM2",
+  "Name": "ItemLotParam2_SvrEvent",
+  "Description": "Defines parameters related to item lots.",
+  "Fields": [
+    {
+      "Field": "lots_dropped_order",
+      "Name": "Lots Dropped Order",
+      "Description": "Determines the order lots are granted."
+    },
+    {
+      "Field": "lots_dropped_num",
+      "Name": "Lots Dropped",
+      "Description": "Number of lots this itemLot will provide."
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "amount_lot_0",
+      "Name": "[0] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_1",
+      "Name": "[1] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_2",
+      "Name": "[2] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_3",
+      "Name": "[3] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_4",
+      "Name": "[4] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_5",
+      "Name": "[5] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_6",
+      "Name": "[6] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_7",
+      "Name": "[7] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_8",
+      "Name": "[8] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "amount_lot_9",
+      "Name": "[9] Amount",
+      "Description": "Determines the amount of the lot item awarded."
+    },
+    {
+      "Field": "reinforcement_lot_0",
+      "Name": "[0] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_1",
+      "Name": "[1] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_2",
+      "Name": "[2] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_3",
+      "Name": "[3] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_4",
+      "Name": "[4] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_5",
+      "Name": "[5] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_6",
+      "Name": "[6] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_7",
+      "Name": "[7] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_8",
+      "Name": "[8] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "reinforcement_lot_9",
+      "Name": "[9] Reinforcement Level",
+      "Description": "The reinforcement level to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_0",
+      "Name": "[0] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_1",
+      "Name": "[1] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_2",
+      "Name": "[2] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_3",
+      "Name": "[3] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_4",
+      "Name": "[4] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_5",
+      "Name": "[5] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_6",
+      "Name": "[6] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_7",
+      "Name": "[7] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_8",
+      "Name": "[8] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infusion_lot_9",
+      "Name": "[9] Infusion",
+      "Description": "The infusion to apply to the lot item"
+    },
+    {
+      "Field": "infinite_lot_0",
+      "Name": "[0] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_1",
+      "Name": "[1] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_2",
+      "Name": "[2] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_3",
+      "Name": "[3] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_4",
+      "Name": "[4] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_5",
+      "Name": "[5] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_6",
+      "Name": "[6] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_7",
+      "Name": "[7] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_8",
+      "Name": "[8] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "infinite_lot_9",
+      "Name": "[9] Is Dropped Infinitely",
+      "Description": "Determines if this item may continue to drop after dropping once."
+    },
+    {
+      "Field": "item_lot_0",
+      "Name": "[0] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_1",
+      "Name": "[1] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_2",
+      "Name": "[2] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_3",
+      "Name": "[3] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_4",
+      "Name": "[4] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_5",
+      "Name": "[5] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_6",
+      "Name": "[6] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_7",
+      "Name": "[7] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_8",
+      "Name": "[8] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "item_lot_9",
+      "Name": "[9] Item ID",
+      "Description": ""
+    },
+    {
+      "Field": "chance_lot_0",
+      "Name": "[0] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_1",
+      "Name": "[1] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_2",
+      "Name": "[2] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_3",
+      "Name": "[3] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_4",
+      "Name": "[4] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_5",
+      "Name": "[5] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_6",
+      "Name": "[6] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_7",
+      "Name": "[7] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_8",
+      "Name": "[8] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    },
+    {
+      "Field": "chance_lot_9",
+      "Name": "[9] Chance",
+      "Description": "The base percentage for this item.\nEach base percentage is added together, the result is the overall chance for an item to drop for the itemlot.\nThen during a second roll, the individual percentages are used to determine which item to drop."
+    }
+  ]
+}

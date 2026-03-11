@@ -1,42 +1,74 @@
 {
-  "DisplayName": "RANGED_ATK_SHOT_SE_CATEGORY",
-  "Name": "RANGED_ATK_SHOT_SE_CATEGORY",
-  "Description": "",
+  "Key": "RANGED_ATK_SHOT_SE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RANGED_ATK_SHOT_SE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "弓",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "弓"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Large bow",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large bow"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Miracle",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Dark arts",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark arts"
+        }
+      ]
     }
   ]
 }

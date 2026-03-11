@@ -1,0 +1,48 @@
+{
+  "Param": "ChrWetAspectParam",
+  "Type": "CHR_WET_ASPECT_PARAM",
+  "Name": "ChrWetAspectParam",
+  "Description": "Defines parameters related to the wet attributes applied by wet aspects.",
+  "Fields": [
+    {
+      "Field": "color_r",
+      "Name": "Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "color_g",
+      "Name": "Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "color_b",
+      "Name": "Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

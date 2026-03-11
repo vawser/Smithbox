@@ -1,0 +1,13 @@
+{
+  "Param": "CutsceneWeatherOverrideGparamConvertParam",
+  "Type": "CUTSCENE_WEATHER_OVERRIDE_GPARAM_ID_CONVERT_PARAM_ST",
+  "Name": "CutsceneWeatherOverrideGparamConvertParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "weatherOverrideGparamId",
+      "Name": "Weather Override GPARAM ID",
+      "Description": "The ID of the ?? part of s00_00_0000_WeatherOverride_ ??. Gparam"
+    }
+  ]
+}

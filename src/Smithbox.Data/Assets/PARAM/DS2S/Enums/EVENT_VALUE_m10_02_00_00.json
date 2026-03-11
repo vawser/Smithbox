@@ -1,17 +1,29 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_02_00_00",
-  "Name": "EVENT_VALUE_m10_02_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_02_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_02_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Kirakira Musume: Behavior settings",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kirakira Musume: Behavior settings"
+        }
+      ]
     }
   ]
 }

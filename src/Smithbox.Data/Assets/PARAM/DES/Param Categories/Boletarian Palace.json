@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Boletarian Palace",
+  "Key": "Boletarian Palace",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Boletarian Palace"
+      }
+  ],
   "Params": [
     "m02_DofBank",
     "m02_EnvLightTexBank",

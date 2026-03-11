@@ -1,17 +1,29 @@
 {
-  "DisplayName": "DOOR_TYPE_ENUM",
-  "Name": "DOOR_TYPE_ENUM",
-  "Description": "",
+  "Key": "DOOR_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DOOR_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Single door",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Both doors",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both doors"
+        }
+      ]
     }
   ]
 }

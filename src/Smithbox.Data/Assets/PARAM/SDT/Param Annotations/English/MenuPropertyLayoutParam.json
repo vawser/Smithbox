@@ -1,0 +1,33 @@
+{
+  "Param": "MenuPropertyLayoutParam",
+  "Type": "MENUPROPERTY_LAYOUT",
+  "Name": "MenuPropertyLayoutParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "LayoutPath",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PropertyID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionTextID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "Param": "PhysicalStatsPerLevelStatValuesParam",
+  "Type": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
+  "Name": "PhysicalStatsPerLevelStatValuesParam",
+  "Description": "Defines parameters related to the player stats gained per level.",
+  "Fields": [
+    {
+      "Field": "soul_level",
+      "Name": "soul Level",
+      "Description": ""
+    },
+    {
+      "Field": "attunement_slots",
+      "Name": "Attunement Slots",
+      "Description": ""
+    },
+    {
+      "Field": "cast_amount_tier",
+      "Name": "Cast Amount Tier",
+      "Description": ""
+    },
+    {
+      "Field": "stat_hp",
+      "Name": "HP",
+      "Description": ""
+    },
+    {
+      "Field": "stat_stamina",
+      "Name": "Stamina",
+      "Description": ""
+    },
+    {
+      "Field": "stat_max_equip_load",
+      "Name": "Max Equip Load",
+      "Description": ""
+    },
+    {
+      "Field": "stat_strength_bonus",
+      "Name": "Strength Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_dexterity_bonus",
+      "Name": "Dexterity Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_magic_bonus",
+      "Name": "Magic Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_fire_bonus",
+      "Name": "Fire Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_lightning_bonus",
+      "Name": "Lightning Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_dark_bonus",
+      "Name": "Dark Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_poison_bonus",
+      "Name": "Poison Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "stat_bleed_bonus",
+      "Name": "Bleed Bonus",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stat_cast_speed",
+      "Name": "Cast Speed",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_bleed",
+      "Name": "Absorption - Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_poison",
+      "Name": "Absorption - Poison",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_petrify",
+      "Name": "Absorption - Petrify",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_curse",
+      "Name": "Absorption - Curse",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_magic",
+      "Name": "Absorption - Magic",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_fire",
+      "Name": "Absorption - Fire",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_lightning",
+      "Name": "Absorption - Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "absorption_dark",
+      "Name": "Absorption - Dark",
+      "Description": ""
+    },
+    {
+      "Field": "agility_backstep",
+      "Name": "Invincibility - Backstep",
+      "Description": ""
+    },
+    {
+      "Field": "agility_roll",
+      "Name": "Invincibility - Roll",
+      "Description": ""
+    },
+    {
+      "Field": "agility_landing_roll",
+      "Name": "Invincibility - Landing Roll",
+      "Description": ""
+    },
+    {
+      "Field": "agility_weapon_swap",
+      "Name": "Weapon Swap Speed",
+      "Description": ""
+    },
+    {
+      "Field": "agility_item_use",
+      "Name": "Item Use Speed",
+      "Description": ""
+    },
+    {
+      "Field": "agility_block_speed",
+      "Name": "Blocking Speed",
+      "Description": ""
+    },
+    {
+      "Field": "defence_physical",
+      "Name": "Physical Defense",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "non_vigor_hp_stat_gain",
+      "Name": "Non-Vigor HP Per Stat",
+      "Description": ""
+    },
+    {
+      "Field": "stat_mundane_scaling",
+      "Name": "Mundane Scaling",
+      "Description": ""
+    },
+    {
+      "Field": "stat_poise",
+      "Name": "Poise",
+      "Description": ""
+    }
+  ]
+}

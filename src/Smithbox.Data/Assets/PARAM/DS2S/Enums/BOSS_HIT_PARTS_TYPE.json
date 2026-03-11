@@ -1,112 +1,200 @@
 {
-  "DisplayName": "BOSS_HIT_PARTS_TYPE",
-  "Name": "BOSS_HIT_PARTS_TYPE",
-  "Description": "",
+  "Key": "BOSS_HIT_PARTS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_HIT_PARTS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Part 1",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 1"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Part 2",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 2"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Part 3",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 3"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Part 4",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 4"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Part 5",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 5"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Part 6",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 6"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Part 7",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 7"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Part 8",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 8"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Part 9",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 9"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Part 10",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 10"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Part 11",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 11"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Part 12",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 12"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Part 13",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 13"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Part 14",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 14"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Part 15",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 15"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Part 16",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 16"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Part 17",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 17"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Part 18",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 18"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Part 19",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 19"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Part 20",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Part 20"
+        }
+      ]
     }
   ]
 }

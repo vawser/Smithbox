@@ -1,0 +1,48 @@
+{
+  "Param": "BladeHomingAutoCancelEnableParam",
+  "Type": "BLADE_HOMING_AUTO_CANCEL_ENABLE_PARAM_ST",
+  "Name": "BladeHomingAutoCancelEnableParam",
+  "Description": "Determines the homing cancellation behavior for a blade melee attack.",
+  "Fields": [
+    {
+      "Field": "cancelAngDegR",
+      "Name": "Tracking Interrupt: Right Angle",
+      "Description": "Interrupt above the specified right angle. In degrees."
+    },
+    {
+      "Field": "cancelAngDegL",
+      "Name": "Tracking Interrupt: Left Angle",
+      "Description": "Interrupt above the specified left angle. In degrees."
+    },
+    {
+      "Field": "cancelAngDegU",
+      "Name": "Tracking Interrupt: Upward Angle",
+      "Description": "Interrupt above the specified upward angle. In degrees."
+    },
+    {
+      "Field": "cancelAngDegD",
+      "Name": "Tracking Interrupt: Downward Angle",
+      "Description": "Interrupt above the specified downward angle. In degrees."
+    },
+    {
+      "Field": "cancelDist",
+      "Name": "Tracking Interrupt: Cancel Distance",
+      "Description": "Interrupted within this distance. -1 = infinity = no interruption at distance. In metres."
+    },
+    {
+      "Field": "nolockMinTimeSec",
+      "Name": "Minimum Time without Lock",
+      "Description": "Minimum time without no lock. In seconds."
+    },
+    {
+      "Field": "outTargetDist",
+      "Name": "Blade Homing Effective Distance",
+      "Description": "When the target is outside this distance, the behavior is non-locking. -1 always behaves when locked"
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

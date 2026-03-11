@@ -1,0 +1,23 @@
+{
+  "Param": "MapPartsParam",
+  "Type": "MAP_PARTS_PARAM_ST",
+  "Name": "MapPartsParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "camDitherFadeMinDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camDitherFadeMaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

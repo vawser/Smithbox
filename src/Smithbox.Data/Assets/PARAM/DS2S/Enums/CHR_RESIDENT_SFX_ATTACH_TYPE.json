@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CHR_RESIDENT_SFX_ATTACH_TYPE",
-  "Name": "CHR_RESIDENT_SFX_ATTACH_TYPE",
-  "Description": "",
+  "Key": "CHR_RESIDENT_SFX_ATTACH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_RESIDENT_SFX_ATTACH_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Damipori",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damipori"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Bone",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone"
+        }
+      ]
     }
   ]
 }

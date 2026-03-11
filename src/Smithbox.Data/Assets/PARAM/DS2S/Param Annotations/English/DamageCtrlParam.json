@@ -1,0 +1,308 @@
+{
+  "Param": "DamageCtrlParam",
+  "Type": "DAMAGE_CTRL_PARAM",
+  "Name": "DamageCtrlParam",
+  "Description": "Defines parameters related to attacks.",
+  "Fields": [
+    {
+      "Field": "damage_type",
+      "Name": "Damage Type",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stagger_mode",
+      "Name": "Stagger Mode",
+      "Description": ""
+    },
+    {
+      "Field": "disable_parry",
+      "Name": "Disable Parry",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_guard_bypass_mult",
+      "Name": "Damage: Guard Bypass Multiplier",
+      "Description": "Amount of damage that bypasses guards. 100 = 100%"
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stagger_type",
+      "Name": "Stagger Type",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "is_instant_kill",
+      "Name": "Is Instant Kill",
+      "Description": ""
+    },
+    {
+      "Field": "posture_damage",
+      "Name": "Posture Damage",
+      "Description": ""
+    },
+    {
+      "Field": "is_always_deal_stamina_damage",
+      "Name": "Is Always Deal Stamina Damage",
+      "Description": ""
+    },
+    {
+      "Field": "is_only_affect_hollows",
+      "Name": "Is Only Affect Hollows",
+      "Description": ""
+    },
+    {
+      "Field": "knockdown_time_mult",
+      "Name": "Knockdown Time %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vertical_throw_distance",
+      "Name": "Vertical Throw Distance",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "block_interaction",
+      "Name": "Block Interaction",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camera_noise_param_id",
+      "Name": "Camera Noise ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_rumble_param_id",
+      "Name": "Pad Rumble ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad_rumble_time",
+      "Name": "Pad Rumble Duration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_window_category_id",
+      "Name": "Damage Window Category ID",
+      "Description": ""
+    },
+    {
+      "Field": "instability_time",
+      "Name": "Instability Duration",
+      "Description": ""
+    },
+    {
+      "Field": "Unk29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poise_damage",
+      "Name": "Poise Damage",
+      "Description": ""
+    },
+    {
+      "Field": "tip_hit_min_distance",
+      "Name": "Tip Hit - Minimum Distance",
+      "Description": ""
+    },
+    {
+      "Field": "tip_hit_max_distance",
+      "Name": "Tip Hit - Maximum Distance",
+      "Description": ""
+    },
+    {
+      "Field": "tip_hit_damage_mult",
+      "Name": "Tip Hit - Damage Reduction",
+      "Description": ""
+    },
+    {
+      "Field": "Unk37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tip_hit_posture_damage_mult",
+      "Name": "Tip Hit - Posture Damage Reduction",
+      "Description": ""
+    },
+    {
+      "Field": "tip_hit_poise_damage_mult",
+      "Name": "Tip Hit - Poise Damage Reduction",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,858 @@
+{
+  "Param": "CharaInitParam",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CharaInitParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "baseRec_mp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseRec_sp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "red_Falldam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Right",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Left",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Left",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "item_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerFaceGenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerThinkId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseMp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseSp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "arrowNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boltNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subArrowNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subBoltNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_sb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_mw",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_cd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soulLv",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseVit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseWil",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseStr",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDex",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseMag",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseFai",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseHeroPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseDurability",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleHead",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleRArm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleRLeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerDrawType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerSex",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLArm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLLeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Right_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Left_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Left_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Helm_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Armer_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Gaunt_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Leg_GenId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Left3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultSwordId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HpEstMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MpEstMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItem_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryItemNum_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resourceItemNumA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resourceItemNumB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resourceItemNumC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseBody",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseTaikan",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "revivalMaxNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwSkill01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwSkill02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwSkill03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "skillLv",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

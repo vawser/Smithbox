@@ -1,0 +1,88 @@
+{
+  "Param": "eventlocation_m10_18_00_00",
+  "Type": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Name": "eventlocation_m10_18_00_00",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PositionX",
+      "Name": "Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "PositionY",
+      "Name": "Position: Y",
+      "Description": ""
+    },
+    {
+      "Field": "PositionZ",
+      "Name": "Position: Z",
+      "Description": ""
+    },
+    {
+      "Field": "RotationX",
+      "Name": "Rotation: X",
+      "Description": ""
+    },
+    {
+      "Field": "RotationY",
+      "Name": "Rotation: Y",
+      "Description": ""
+    },
+    {
+      "Field": "RotationZ",
+      "Name": "Rotation: Z",
+      "Description": ""
+    },
+    {
+      "Field": "RegionTypeMaybe",
+      "Name": "Region Type",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1A",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1B",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ScaleX",
+      "Name": "Scale: X",
+      "Description": ""
+    },
+    {
+      "Field": "ScaleY",
+      "Name": "Scale: Y",
+      "Description": ""
+    },
+    {
+      "Field": "ScaleZ",
+      "Name": "Scale: Z",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2A",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2C",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

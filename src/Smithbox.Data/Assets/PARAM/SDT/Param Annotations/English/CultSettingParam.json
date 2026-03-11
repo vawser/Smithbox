@@ -1,0 +1,43 @@
+{
+  "Param": "CultSettingParam",
+  "Type": "CULT_SETTING_PARAM_ST",
+  "Name": "CultSettingParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "carryGrabLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "carryGrabAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultDead_GlobalFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultDead_Probability",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultDeadType_First",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultDeadType_Probability",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

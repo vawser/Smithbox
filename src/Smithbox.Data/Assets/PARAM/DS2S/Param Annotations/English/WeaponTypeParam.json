@@ -1,0 +1,533 @@
+{
+  "Param": "WeaponTypeParam",
+  "Type": "WEAPON_TYPE_PARAM",
+  "Name": "WeaponTypeParam",
+  "Description": "Defines parameters relating to weapon type and position.",
+  "Fields": [
+    {
+      "Field": "is_cast_sorceries",
+      "Name": "Cast Sorceries",
+      "Description": ""
+    },
+    {
+      "Field": "is_cast_miracles",
+      "Name": "Cast Miracles",
+      "Description": ""
+    },
+    {
+      "Field": "is_cast_pyromancies",
+      "Name": "Cast Pyromancies",
+      "Description": ""
+    },
+    {
+      "Field": "is_cast_hexes_staves",
+      "Name": "Cast Hexes (Staff)",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_2h_right",
+      "Name": "Grip Style: 2H Right",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_2h_left",
+      "Name": "Grip Style: 2H Left",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_1h_right",
+      "Name": "Grip Style: 1H Right",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_1h_left",
+      "Name": "Grip Style: 1H Left",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_powerstance_right",
+      "Name": "Grip Style: Powerstance Right",
+      "Description": ""
+    },
+    {
+      "Field": "grip_style_powerstance_left",
+      "Name": "Grip Style: Powerstance Left",
+      "Description": ""
+    },
+    {
+      "Field": "powerstance_swap_type",
+      "Name": "Powerstance Swap Type",
+      "Description": ""
+    },
+    {
+      "Field": "position_1h_right",
+      "Name": "Position: 1H Right",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_1h_right",
+      "Name": "Relative Position: 1H Right",
+      "Description": ""
+    },
+    {
+      "Field": "position_1h_left",
+      "Name": "Position: 1H Left",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_1h_left",
+      "Name": "Relative Position: 1H Left",
+      "Description": ""
+    },
+    {
+      "Field": "position_2h_right",
+      "Name": "Position: 2H Right",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_2h_right",
+      "Name": "Relative Position: 2H Right",
+      "Description": ""
+    },
+    {
+      "Field": "position_unknown1",
+      "Name": "Position: Unknown 1",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_unknown1",
+      "Name": "Relative Position: Unknown 1",
+      "Description": ""
+    },
+    {
+      "Field": "position_2h_left",
+      "Name": "Position: 2H Left",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_2h_left",
+      "Name": "Relative Position: 2H Left",
+      "Description": ""
+    },
+    {
+      "Field": "position_unknown2",
+      "Name": "Position: Unknown 2",
+      "Description": ""
+    },
+    {
+      "Field": "relative_position_unknown2",
+      "Name": "Relative Position: Unknown 2",
+      "Description": ""
+    },
+    {
+      "Field": "holsterPosition_right",
+      "Name": "Holster Position: Right",
+      "Description": ""
+    },
+    {
+      "Field": "holsterrelative_position_right",
+      "Name": "Holster Relative Position: Right",
+      "Description": ""
+    },
+    {
+      "Field": "holsterPosition_left",
+      "Name": "Holster Position: Left",
+      "Description": ""
+    },
+    {
+      "Field": "holsterrelative_position_left",
+      "Name": "Holster Relative Position: Left",
+      "Description": ""
+    },
+    {
+      "Field": "cast_type",
+      "Name": "Cast Type",
+      "Description": ""
+    },
+    {
+      "Field": "weapon_category_name",
+      "Name": "Weapon Category Name",
+      "Description": ""
+    },
+    {
+      "Field": "swing_sound",
+      "Name": "Swing Sound",
+      "Description": ""
+    },
+    {
+      "Field": "powerstance_category",
+      "Name": "Powerstance Category",
+      "Description": "Determines weapon power stance compatability."
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "is_cast_hexes_chime",
+      "Name": "Cast Hexes (Chime)",
+      "Description": ""
+    },
+    {
+      "Field": "left_hand_damage_mult",
+      "Name": "Left Hand Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "left_hand_stamina_damage_mult",
+      "Name": "Left Hand Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "right_hand_damage_mult",
+      "Name": "Right Hand Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "right_hand_stamina_damage_mult",
+      "Name": "Right Hand Stamina Damage %",
+      "Description": ""
+    },
+    {
+      "Field": "counter_damage",
+      "Name": "Counter Damage",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bow_distance",
+      "Name": "Bow Range",
+      "Description": ""
+    },
+    {
+      "Field": "backstab_check_anim",
+      "Name": "Backstab - Check Animation ID",
+      "Description": ""
+    },
+    {
+      "Field": "guardbreak_check_anim",
+      "Name": "Guard Break - Check Animation ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guard_stamina_regen",
+      "Name": "Guard Stamina Regeneration %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cast_speed",
+      "Name": "Cast Speed",
+      "Description": ""
+    },
+    {
+      "Field": "Unk52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk61",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk62",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk63",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mundane_scaling_mult",
+      "Name": "Mundane Scaling %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk64",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

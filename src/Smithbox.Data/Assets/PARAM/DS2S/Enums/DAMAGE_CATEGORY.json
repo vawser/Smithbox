@@ -1,57 +1,101 @@
 {
-  "DisplayName": "DAMAGE_CATEGORY",
-  "Name": "DAMAGE_CATEGORY",
-  "Description": "",
+  "Key": "DAMAGE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No motion",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No motion"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Minimal damage",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Minimal damage"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Small knockback damage",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small knockback damage"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Medium knockback damage",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium knockback damage"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Large knockback damage",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large knockback damage"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra atmospheric damage",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra atmospheric damage"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Blowout damage",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blowout damage"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Launch damage",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Launch damage"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Breath damage",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Breath damage"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Down damage",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Down damage"
+        }
+      ]
     }
   ]
 }

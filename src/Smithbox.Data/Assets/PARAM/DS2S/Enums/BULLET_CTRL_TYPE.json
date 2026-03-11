@@ -1,32 +1,56 @@
 {
-  "DisplayName": "BULLET_CTRL_TYPE",
-  "Name": "BULLET_CTRL_TYPE",
-  "Description": "",
+  "Key": "BULLET_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_CTRL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Damipori",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damipori"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Follow the person",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow the person"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Foot tracking",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Foot tracking"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Homing target",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Homing target"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Wall crawling",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall crawling"
+        }
+      ]
     }
   ]
 }

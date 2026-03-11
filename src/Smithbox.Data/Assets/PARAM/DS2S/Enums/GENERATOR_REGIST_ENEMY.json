@@ -1,22 +1,38 @@
 {
-  "DisplayName": "GENERATOR_REGIST_ENEMY",
-  "Name": "GENERATOR_REGIST_ENEMY",
-  "Description": "",
+  "Key": "GENERATOR_REGIST_ENEMY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_REGIST_ENEMY"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "None",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Player",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Test enemy",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test enemy"
+        }
+      ]
     }
   ]
 }

@@ -1,17 +1,29 @@
 {
-  "DisplayName": "PLAYER_COMMAND_STICK_SIDE",
-  "Name": "PLAYER_COMMAND_STICK_SIDE",
-  "Description": "",
+  "Key": "PLAYER_COMMAND_STICK_SIDE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_SIDE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Left stick",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left stick"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Right stick",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right stick"
+        }
+      ]
     }
   ]
 }

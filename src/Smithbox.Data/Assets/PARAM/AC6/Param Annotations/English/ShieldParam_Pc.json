@@ -1,0 +1,128 @@
+{
+  "Param": "ShieldParam_Pc",
+  "Type": "SHIELD_PARAM_ST",
+  "Name": "ShieldParam_Pc",
+  "Description": "Defines certain shield or PA-related values for players and NPCs.",
+  "Fields": [
+    {
+      "Field": "shieldGuardBaseDmyId",
+      "Name": "Guard Base Dummy Poly ID",
+      "Description": "Dummy Poly ID used as the direction reference (-1 is Master)"
+    },
+    {
+      "Field": "shieldGuardIsPosMaster",
+      "Name": "Guard Detect Position Master Override",
+      "Description": "Whether to detect if the position is the character\u0027s Master position, rather than the dummy poly position."
+    },
+    {
+      "Field": "reserved1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shieldGuardDirAngDegH",
+      "Name": "Horizontal Guard Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "shieldGuardDirAngDegV",
+      "Name": "Vertical Guard Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "shieldGuardRangeAngDegH",
+      "Name": "Horizontal Guard Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "shieldGuardRangeAngDegV",
+      "Name": "Vertical Guard Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa1GuardBaseDmyId",
+      "Name": "Pulse Armor Guard Base Dummy Poly ID",
+      "Description": "Dummy poly ID used for Pulse Armor."
+    },
+    {
+      "Field": "pa1GuardIsPosMaster",
+      "Name": "Pulse Armor Detect Position Master Override",
+      "Description": "Whether to detect if the position is the character\u0027s Master position, rather than the dummy poly position."
+    },
+    {
+      "Field": "reserved2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pa1GuardDirAngDegH",
+      "Name": "Horizontal Pulse Armor Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa1GuardDirAngDegV",
+      "Name": "Vertical Pulse Armor Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa1GuardRangeAngDegH",
+      "Name": "Horizontal Pulse Armor Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa1GuardRangeAngDegV",
+      "Name": "Vertical Pulse Armor Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa2GuardBaseDmyId",
+      "Name": "Pulse Armor Guard Base Dummy Poly ID",
+      "Description": "Dummy poly ID used for Pulse Armor."
+    },
+    {
+      "Field": "pa2GuardIsPosMaster",
+      "Name": "Pulse Armor Detect Position Master Override",
+      "Description": "Whether to detect if the position is the character\u0027s Master position, rather than the dummy poly position."
+    },
+    {
+      "Field": "reserved3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pa2GuardDirAngDegH",
+      "Name": "Horizontal Pulse Armor Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa2GuardDirAngDegV",
+      "Name": "Vertical Pulse Armor Angle",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa2GuardRangeAngDegH",
+      "Name": "Horizontal Pulse Armor Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "pa2GuardRangeAngDegV",
+      "Name": "Vertical Pulse Armor Range",
+      "Description": "In degrees."
+    },
+    {
+      "Field": "reserved4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "paReuseEnableThreshold",
+      "Name": "Pulse Armor Recovery Guard Value",
+      "Description": "Specifies when PA can be used again after a guard break."
+    },
+    {
+      "Field": "reserved_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

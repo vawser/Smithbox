@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Development Layouts",
+  "Key": "Development",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Development"
+      }
+  ],
   "Params": [
     "m99_DofBank",
     "m99_EnvLightTexBank",

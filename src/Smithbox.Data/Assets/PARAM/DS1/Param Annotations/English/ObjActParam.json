@@ -1,0 +1,93 @@
+{
+  "Param": "ObjActParam",
+  "Type": "OBJ_ACT_PARAM_ST",
+  "Name": "ObjActParam",
+  "Description": "Determines the parameters for interactions.",
+  "Fields": [
+    {
+      "Field": "actionEnableMsgId",
+      "Name": "Enabled: Message ID",
+      "Description": "The text ID to use for the prompt message if this interaction is enabled."
+    },
+    {
+      "Field": "actionFailedMsgId",
+      "Name": "Failed: Message ID",
+      "Description": "The text ID to use for the prompt message if this interaction fails."
+    },
+    {
+      "Field": "spQualifiedPassEventFlag",
+      "Name": "Bypass Qualification Check: Event Flag ID",
+      "Description": "The event flag ID that causes the qualification checks to be ignored for this interaction."
+    },
+    {
+      "Field": "validDist",
+      "Name": "Use Distance",
+      "Description": "The maximum distance at which this interaction can be triggered. In metres."
+    },
+    {
+      "Field": "playerAnimId",
+      "Name": "Use Action: Player Animation ID",
+      "Description": "The player animation to use when this interaction is used by a player."
+    },
+    {
+      "Field": "chrAnimId",
+      "Name": "Use Action: Character Animation ID",
+      "Description": "The player animation to use when this interaction is used by a non-player character."
+    },
+    {
+      "Field": "spQualifiedId",
+      "Name": "Qualification ID: 1",
+      "Description": "The requirements to use this interaction, can either be a EquipParamGoods or SpEffectParam row.\nspQualifiedType determines which type to reference."
+    },
+    {
+      "Field": "spQualifiedId2",
+      "Name": "Qualification ID: 2",
+      "Description": "The requirements to use this interaction, can either be a EquipParamGoods or SpEffectParam row.\nspQualifiedType2 determines which type to reference."
+    },
+    {
+      "Field": "objDummyId",
+      "Name": "Use: Dummy Polygon ID",
+      "Description": "The dummy polygon belonging to the attached object for this interaction that determines the \u0027action\u0027 position."
+    },
+    {
+      "Field": "objAnimId",
+      "Name": "Use: Object Animation ID",
+      "Description": "The object animation to use when this interaction is used."
+    },
+    {
+      "Field": "validPlayerAngle",
+      "Name": "Valid Player Angle",
+      "Description": "The usage cone where a player can trigger this interaction (on the player\u0027s side). Effective angular difference between the player\u0027s orientation vector and the object\u0027s orientation vector. In degrees."
+    },
+    {
+      "Field": "spQualifiedType",
+      "Name": "Qualification Type: 1",
+      "Description": "The requirement type to use for spQualifiedID."
+    },
+    {
+      "Field": "spQualifiedType2",
+      "Name": "Qualification Type: 2",
+      "Description": "The requirement type to use for spQualifiedID2."
+    },
+    {
+      "Field": "validObjAngle",
+      "Name": "Valid Object Angle",
+      "Description": "The usage cone where a player can trigger this interaction (on the object\u0027s side). Effective angular difference between the player\u0027s orientation vector and the object\u0027s orientation vector. In degrees."
+    },
+    {
+      "Field": "chrSorbType",
+      "Name": "Character Attraction Type",
+      "Description": "How the user character is attracted into the object during usage."
+    },
+    {
+      "Field": "eventKickTiming",
+      "Name": "Interaction Activation Timing",
+      "Description": "The timing for the interaction activation."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

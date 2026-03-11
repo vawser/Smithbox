@@ -1,67 +1,119 @@
 {
-  "DisplayName": "ITEM_MENU_ICON_CATEGORY",
-  "Name": "ITEM_MENU_ICON_CATEGORY",
-  "Description": "",
+  "Key": "ITEM_MENU_ICON_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_MENU_ICON_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "-1",
-      "Name": "None",
-      "Description": ""
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "0",
-      "Name": "Weapons (WP)",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapons (WP)"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Shield (SD)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield (SD)"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Helmet (HD)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Helmet (HD)"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Armor (BD)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor (BD)"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Kote (AM)",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kote (AM)"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Gusoku (LG)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gusoku (LG)"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Arrow (AS)",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrow (AS)"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Ring",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Item",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Spell (MA)",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell (MA)"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Gesture (GE)",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gesture (GE)"
+        }
+      ]
     }
   ]
 }

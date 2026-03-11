@@ -1,0 +1,13 @@
+{
+  "Param": "SoundObjectBreakParam",
+  "Type": "SOUND_OBJECT_BREAK_PARAM",
+  "Name": "SoundObjectBreakParam",
+  "Description": "Defines parameters relating to the sound of destructible objects.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

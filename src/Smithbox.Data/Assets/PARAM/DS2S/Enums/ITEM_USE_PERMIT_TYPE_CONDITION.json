@@ -1,22 +1,38 @@
 {
-  "DisplayName": "ITEM_USE_PERMIT_TYPE_CONDITION",
-  "Name": "ITEM_USE_PERMIT_TYPE_CONDITION",
-  "Description": "",
+  "Key": "ITEM_USE_PERMIT_TYPE_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_USE_PERMIT_TYPE_CONDITION"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Living person",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living person"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Deceased",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deceased"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Living & dead",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living & dead"
+        }
+      ]
     }
   ]
 }

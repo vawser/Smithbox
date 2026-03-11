@@ -1,0 +1,78 @@
+{
+  "Param": "EnemyAttackMoveParam",
+  "Type": "ENEMY_ATTACK_MOVE_PARAM",
+  "Name": "EnemyAttackMoveParam",
+  "Description": "Defines parameters related to enemy attack moves.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "attack_move_speed",
+      "Name": "Speed",
+      "Description": ""
+    },
+    {
+      "Field": "attack_move_turn_rate_1",
+      "Name": "Turn Rate [1]",
+      "Description": ""
+    },
+    {
+      "Field": "attack_move_turn_rate_2",
+      "Name": "Turn Rate [2]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk2C",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk34",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

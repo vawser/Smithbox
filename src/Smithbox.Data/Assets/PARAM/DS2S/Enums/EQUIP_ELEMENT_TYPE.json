@@ -1,57 +1,101 @@
 {
-  "DisplayName": "EQUIP_ELEMENT_TYPE",
-  "Name": "EQUIP_ELEMENT_TYPE",
-  "Description": "",
+  "Key": "EQUIP_ELEMENT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_ELEMENT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Physics",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Physics"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Magic power",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic power"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "雷",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "雷"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "炎",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "炎"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "闇",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "闇"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "毒",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "毒"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Bleeding",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bleeding"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Weapon destruction",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon destruction"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Petrification",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrification"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "呪",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "呪"
+        }
+      ]
     }
   ]
 }

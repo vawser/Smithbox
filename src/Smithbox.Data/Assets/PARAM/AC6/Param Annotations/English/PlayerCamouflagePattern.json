@@ -1,0 +1,53 @@
+{
+  "Param": "PlayerCamouflagePattern",
+  "Type": "PLAYER_CAMOUFLAGE_PATTERN_PARAM_ST",
+  "Name": "PlayerCamouflagePattern",
+  "Description": "Defines the Pattern options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Camouflage.dds and SB_Camouflage.layout\n\nRow ID \u002B 210701 links the Preset to the FMG name it uses in the menu.",
+  "Fields": [
+    {
+      "Field": "Small",
+      "Name": "Pattern Scale: Small Part",
+      "Description": "The UV scale to use with the pattern texture when applied to \u0027Small\u0027 parts."
+    },
+    {
+      "Field": "Medium",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Large",
+      "Name": "Pattern Scale: Large Part",
+      "Description": "The UV scale to use with the pattern texture when applied to \u0027Large\u0027 parts."
+    },
+    {
+      "Field": "Slot0_enabled",
+      "Name": "Slot 0 Enabled",
+      "Description": "Is slot 0 colorable?"
+    },
+    {
+      "Field": "Slot1_enabled",
+      "Name": "Slot 1 Enabled",
+      "Description": "Is slot 1 colorable?"
+    },
+    {
+      "Field": "Slot2_enabled",
+      "Name": "Slot 2 Enabled",
+      "Description": "Is slot 2 colorable?"
+    },
+    {
+      "Field": "Slot3_enabled",
+      "Name": "Slot 3 Enabled",
+      "Description": "Is slot 3 colorable?"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

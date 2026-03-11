@@ -1,0 +1,58 @@
+{
+  "Param": "DamageWindCateParam",
+  "Type": "DAMAGE_WIND_CATE_PARAM",
+  "Name": "DamageWindCateParam",
+  "Description": "Defines parameters related to damage window categories.",
+  "Fields": [
+    {
+      "Field": "Unk00a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

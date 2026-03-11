@@ -1,32 +1,56 @@
 {
-  "DisplayName": "SPELL_CATEGORY",
-  "Name": "SPELL_CATEGORY",
-  "Description": "",
+  "Key": "SPELL_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Miracle",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Dark magic",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark magic"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Dark miracle",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark miracle"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "Param": "ChrEmissiveParam",
+  "Type": "CHR_EMISSIVE_PARAM",
+  "Name": "ChrEmissiveParam",
+  "Description": "Defines parameters used by emissive materials on characters.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

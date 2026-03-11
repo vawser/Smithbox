@@ -1,0 +1,93 @@
+{
+  "Param": "GameAreaParam",
+  "Type": "GAME_AREA_PARAM_ST",
+  "Name": "GameAreaParam",
+  "Description": "Defines Boss XP and Sen rewards",
+  "Fields": [
+    {
+      "Field": "bonusSoul_single",
+      "Name": "",
+      "Description": "Amount of Souls obtained when the boss is defeated during singleplayer"
+    },
+    {
+      "Field": "bonusSoul_multi",
+      "Name": "",
+      "Description": "Amount of Souls obtained when the boss is defeated during multiplayer"
+    },
+    {
+      "Field": "humanityPointCountFlagIdTop",
+      "Name": "",
+      "Description": "Leading flag ID for managing humanity drop points"
+    },
+    {
+      "Field": "humanityDropPoint1",
+      "Name": "",
+      "Description": "Threshold 1 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint2",
+      "Name": "",
+      "Description": "Threshold 2 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint3",
+      "Name": "",
+      "Description": "Threshold 3 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint4",
+      "Name": "",
+      "Description": "Threshold 4 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint5",
+      "Name": "",
+      "Description": "Threshold 5 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint6",
+      "Name": "",
+      "Description": "Threshold 6 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint7",
+      "Name": "",
+      "Description": "Threshold 7 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint8",
+      "Name": "",
+      "Description": "Threshold 8 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint9",
+      "Name": "",
+      "Description": "Threshold 9 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint10",
+      "Name": "",
+      "Description": "Threshold 10 for acquiring humanity"
+    },
+    {
+      "Field": "soloBreakInPoint_Min",
+      "Name": "",
+      "Description": "The minimum number of solo entry points added when defeating an area boss"
+    },
+    {
+      "Field": "soloBreakInPoint_Max",
+      "Name": "",
+      "Description": "The maximum number of solo entry points added when defeating an area boss"
+    },
+    {
+      "Field": "bonusSkillPoint",
+      "Name": "",
+      "Description": "Amount of XP obtianed when the boss is defeated"
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

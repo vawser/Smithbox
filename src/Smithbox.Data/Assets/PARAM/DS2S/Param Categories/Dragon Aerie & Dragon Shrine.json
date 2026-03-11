@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Dragon Aerie & Dragon Shrine",
+  "Key": "Dragon Aerie & Dragon Shrine",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Dragon Aerie & Dragon Shrine"
+      }
+  ],
   "Params": [
     "eventlocation_m10_27_00_00",
     "eventparam_m10_27_00_00",

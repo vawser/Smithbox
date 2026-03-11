@@ -1,22 +1,38 @@
 {
-  "DisplayName": "COMBO_ROUTE_TYPE",
-  "Name": "COMBO_ROUTE_TYPE",
-  "Description": "",
+  "Key": "COMBO_ROUTE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "COMBO_ROUTE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Root",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Root"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Derivation 1",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Derivation 1"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Derivation 2",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Derivation 2"
+        }
+      ]
     }
   ]
 }

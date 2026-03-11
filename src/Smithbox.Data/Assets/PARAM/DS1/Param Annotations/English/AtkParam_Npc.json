@@ -1,0 +1,363 @@
+{
+  "Param": "AtkParam_Npc",
+  "Type": "ATK_PARAM_ST",
+  "Name": "AtkParam_Npc",
+  "Description": "Determines the hitbox and damage parameters for attacks.",
+  "Fields": [
+    {
+      "Field": "hit0_Radius",
+      "Name": "Hit 0: Radius",
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
+    },
+    {
+      "Field": "hit1_Radius",
+      "Name": "Hit 1: Radius",
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
+    },
+    {
+      "Field": "hit2_Radius",
+      "Name": "Hit 2: Radius",
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
+    },
+    {
+      "Field": "hit3_Radius",
+      "Name": "Hit 3: Radius",
+      "Description": "Determines the radius of the hitbox (sphere/capsule)."
+    },
+    {
+      "Field": "knockbackDist",
+      "Name": "Knockback Distance",
+      "Description": "Determines the distance the victim is knocked back by. In metres per second."
+    },
+    {
+      "Field": "hitStopTime",
+      "Name": "Hit Stop Time",
+      "Description": "The duration that the victim\u0027s animations are paused for when hit. In seconds."
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "SpEffect ID: 0",
+      "Description": "SpEffect ID applied to victim by this attack."
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "SpEffect ID: 1",
+      "Description": "SpEffect ID applied to victim by this attack."
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "SpEffect ID: 2",
+      "Description": "SpEffect ID applied to victim by this attack."
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "SpEffect ID: 3",
+      "Description": "SpEffect ID applied to victim by this attack."
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "SpEffect ID: 4",
+      "Description": "SpEffect ID applied to victim by this attack."
+    },
+    {
+      "Field": "hit0_DmyPoly1",
+      "Name": "Hit 0: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit1_DmyPoly1",
+      "Name": "Hit 1: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit2_DmyPoly1",
+      "Name": "Hit 2: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit3_DmyPoly1",
+      "Name": "Hit 3: Initial Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tip of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit0_DmyPoly2",
+      "Name": "Hit 0: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit1_DmyPoly2",
+      "Name": "Hit 1: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit2_DmyPoly2",
+      "Name": "Hit 2: Secondary Dummy Polygon ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "hit3_DmyPoly2",
+      "Name": "Hit 3: Secondary Dummy Poly ID",
+      "Description": "The dummy polygon ID to place the sphere hitbox, or the tail of the capsule hitbox, for this hit."
+    },
+    {
+      "Field": "blowingCorrection",
+      "Name": "Attack Correction: Blow-off",
+      "Description": "The multiplier to apply to the base blow-off value."
+    },
+    {
+      "Field": "atkPhysCorrection",
+      "Name": "Attack Correction: Physical",
+      "Description": "The multiplier to apply to the base Physical attack value."
+    },
+    {
+      "Field": "atkMagCorrection",
+      "Name": "Attack Correction: Magic",
+      "Description": "The multiplier to apply to the base Magic attack value."
+    },
+    {
+      "Field": "atkFireCorrection",
+      "Name": "Attack Correction: Fire",
+      "Description": "The multiplier to apply to the base Fire attack value."
+    },
+    {
+      "Field": "atkThunCorrection",
+      "Name": "Attack Correction: Lightning",
+      "Description": "The multiplier to apply to the base Lightning attack value."
+    },
+    {
+      "Field": "atkStamCorrection",
+      "Name": "Attack Correction: Stamina",
+      "Description": "The multiplier to apply to the base stamina attack value."
+    },
+    {
+      "Field": "guardAtkRateCorrection",
+      "Name": "Attack Correction: Guard Attack",
+      "Description": "The multiplier to apply to the base guard attack value. Compared against the deflection defense value to determine if the attack will bounce."
+    },
+    {
+      "Field": "guardBreakCorrection",
+      "Name": "Attack Correction: Guard Defense",
+      "Description": "Player only. The multiplier to the base guard defense value. Compared against the deflection attack value to determine if the attack will bounce."
+    },
+    {
+      "Field": "atkThrowEscapeCorrection",
+      "Name": "Attack Correction: Throw Attack",
+      "Description": "The multiplier to apply to the base throw attack value."
+    },
+    {
+      "Field": "atkSuperArmorCorrection",
+      "Name": "Attack Correction: Poise",
+      "Description": "Player only. The multiplier to apply to the base poise attack value."
+    },
+    {
+      "Field": "atkPhys",
+      "Name": "Damage: Physical",
+      "Description": "The base Physical attack value. Used primarily for NPC attacks."
+    },
+    {
+      "Field": "atkMag",
+      "Name": "Damage: Magic",
+      "Description": "The base Magic attack value. Used primarily for NPC attacks."
+    },
+    {
+      "Field": "atkFire",
+      "Name": "Damage: Fire",
+      "Description": "The base Fire attack value. Used primarily for NPC attacks."
+    },
+    {
+      "Field": "atkThun",
+      "Name": "Damage: Lightning",
+      "Description": "The base Lightning attack value. Used primarily for NPC attacks."
+    },
+    {
+      "Field": "atkStam",
+      "Name": "Damage: Stamina",
+      "Description": "The base stamina attack value."
+    },
+    {
+      "Field": "guardAtkRate",
+      "Name": "Damage: Guard Attack",
+      "Description": "The base guard attack value. Compared against the guard defense value to determine if the attack will bounce."
+    },
+    {
+      "Field": "guardBreakRate",
+      "Name": "Damage: Guard Defense",
+      "Description": "The base guard defense value. Compared against the guard attack value to determine if the attack will bounce."
+    },
+    {
+      "Field": "atkSuperArmor",
+      "Name": "Damage: Poise",
+      "Description": "The base poise attack value."
+    },
+    {
+      "Field": "atkThrowEscape",
+      "Name": "Damage: Throw Attack",
+      "Description": "The base throw attack value."
+    },
+    {
+      "Field": "atkObj",
+      "Name": "Damage: Object Destruction",
+      "Description": "The base object destruction value. Applied to the object\u0027s HP."
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "Guard Absorption Correction: Stamina",
+      "Description": "The multiplier to apply to the reduction of stamina damage when guarding. Positive values increase guard stability, negative values decrease it."
+    },
+    {
+      "Field": "guardRate",
+      "Name": "Guard Absorption",
+      "Description": "The multiplier to apply to the guard absorption value from the weapon. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. \u002B 1)"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "Throw Type ID",
+      "Description": "The throw type ID to use with this attack against the victim."
+    },
+    {
+      "Field": "hit0_hitType",
+      "Name": "Hit 0: Hit Type",
+      "Description": "The hit collision type for this hit slot."
+    },
+    {
+      "Field": "hit1_hitType",
+      "Name": "Hit 1: Hit Type",
+      "Description": "The hit collision type for this hit slot."
+    },
+    {
+      "Field": "hit2_hitType",
+      "Name": "Hit 2: Hit Type",
+      "Description": "The hit collision type for this hit slot."
+    },
+    {
+      "Field": "hit3_hitType",
+      "Name": "Hit 3: Hit Type",
+      "Description": "The hit collision type for this hit slot."
+    },
+    {
+      "Field": "hti0_Priority",
+      "Name": "Hit 0: Priority",
+      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti1_Priority",
+      "Name": "Hit 1: Priority",
+      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti2_Priority",
+      "Name": "Hit 2: Priority",
+      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti3_Priority",
+      "Name": "Hit 3: Priority",
+      "Description": "The priority for this hit slot. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "dmgLevel",
+      "Name": "Damage Level: Hostile",
+      "Description": "The damage animation to apply to the victim of this attack."
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "Map Hit Type",
+      "Description": "Which map do you see around the attack? The set"
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "Guard Absorption Invalidation",
+      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Attack attribute to use when applying attack against the victim."
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Special attributes to use when applying attack against the victim."
+    },
+    {
+      "Field": "atkType",
+      "Name": "Attack Presentation Type",
+      "Description": "Specify the particles and sounds at the time of attack (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Presentation: Material",
+      "Description": "Specify the particles and sounds at the time of attack (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "atkSize",
+      "Name": "Attack Presentation: Size",
+      "Description": "Specify particles and sounds at the time of attack (Although it is reserved, it is used, so be sure to set it blank or small)."
+    },
+    {
+      "Field": "defMaterial",
+      "Name": "Defense Presentation: Material",
+      "Description": "Specify the particles and sounds when guarding against this attack. (1 set by attribute, material, size)."
+    },
+    {
+      "Field": "defSfxMaterial",
+      "Name": "Defense Presentation: Particles",
+      "Description": "The particles used when guarding against this attack."
+    },
+    {
+      "Field": "hitSourceType",
+      "Name": "Hit Source Type",
+      "Description": "The source of the dummy Polygon ID to use for this attack."
+    },
+    {
+      "Field": "throwFlag",
+      "Name": "Throw Type",
+      "Description": "The flag used to determine the throwing parameters for this attack."
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "Ignore Guard",
+      "Description": "If ON, then this attack ignores the victim\u0027s guard and applies the damage animation automatically."
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "Disable Guard Drain",
+      "Description": "If ON, then this attack will not reduce the victim\u0027s stamina as a result of them guarding the attack."
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "Disable Hit SpEffect",
+      "Description": "If ON, then this attack will not apply on-hit SpEffects to the victim."
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "Disable Missed Attack Notification",
+      "Description": "If ON, then the enemy AI is not given notification of a missed attack."
+    },
+    {
+      "Field": "repeatHitSfx",
+      "Name": "Repeat Hit Particles",
+      "Description": "If ON, does the on-hit SFX for this attack repeat forever upon collision."
+    },
+    {
+      "Field": "isArrowAtk",
+      "Name": "Enable Part Destruction",
+      "Description": "If ON, then this attack will count as damage to a destructable enemy part."
+    },
+    {
+      "Field": "isGhostAtk",
+      "Name": "Enable Ghost Destruction",
+      "Description": "If ON, then this attack will count as damage to a ghost enemy."
+    },
+    {
+      "Field": "isDisableNoDamage",
+      "Name": "Ignore Invulnerability Frames",
+      "Description": "If ON, then invulnerability frames (such as roll frames) are ignored by this attack. Complete invulnerability is NOT ignored however."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,257 +1,461 @@
 {
-  "DisplayName": "GENERATOR_PARAM_M20_10_00_00_TYPE",
-  "Name": "GENERATOR_PARAM_M20_10_00_00_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_PARAM_M20_10_00_00_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_PARAM_M20_10_00_00_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "30",
-      "Name": "[Kingdom Captain] NPC memory 1",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kingdom Captain] NPC memory 1"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "[Kingdom Captain] NPC Memory 3",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kingdom Captain] NPC Memory 3"
+        }
+      ]
     },
     {
-      "ID": "32",
-      "Name": "[Kingdom Captain] NPC (Ghost)",
-      "Description": ""
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kingdom Captain] NPC (Ghost)"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "[Moonlight Old Man] NPC",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Moonlight Old Man] NPC"
+        }
+      ]
     },
     {
-      "ID": "61",
-      "Name": "[Moonlight Old Man] NPC (ghost)",
-      "Description": ""
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Moonlight Old Man] NPC (ghost)"
+        }
+      ]
     },
     {
-      "ID": "800",
-      "Name": "[BOSS] New Titan Senior Soldier (Deceased)",
-      "Description": ""
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[BOSS] New Titan Senior Soldier (Deceased)"
+        }
+      ]
     },
     {
-      "ID": "1000",
-      "Name": "Kingdom soldier (living): Battle in the tunnel 1",
-      "Description": ""
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Battle in the tunnel 1"
+        }
+      ]
     },
     {
-      "ID": "1001",
-      "Name": "Kingdom soldier (living): Battle in the tunnel 2",
-      "Description": ""
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Battle in the tunnel 2"
+        }
+      ]
     },
     {
-      "ID": "1100",
-      "Name": "Titan senior soldier (giant): Dual sword style_Piazza 1 at the end of the tunnel",
-      "Description": ""
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan senior soldier (giant): Dual sword style_Piazza 1 at the end of the tunnel"
+        }
+      ]
     },
     {
-      "ID": "1110",
-      "Name": "Kingdom soldier (living): Plaza 2 at the end of the tunnel",
-      "Description": ""
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Plaza 2 at the end of the tunnel"
+        }
+      ]
     },
     {
-      "ID": "1111",
-      "Name": "Kingdom soldier (living): Square at the end of the tunnel 3",
-      "Description": ""
+      "Key": "1111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Square at the end of the tunnel 3"
+        }
+      ]
     },
     {
-      "ID": "1200",
-      "Name": "Giant Junior Soldier (Titan): Bare Hands_Beyond the Arc de Triomphe 1",
-      "Description": ""
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Bare Hands_Beyond the Arc de Triomphe 1"
+        }
+      ]
     },
     {
-      "ID": "1210",
-      "Name": "Kingdom Soldier (living): Beyond the Arc de Triomphe 2",
-      "Description": ""
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (living): Beyond the Arc de Triomphe 2"
+        }
+      ]
     },
     {
-      "ID": "1211",
-      "Name": "Kingdom Soldier (living): Beyond the Arc de Triomphe 3",
-      "Description": ""
+      "Key": "1211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (living): Beyond the Arc de Triomphe 3"
+        }
+      ]
     },
     {
-      "ID": "1220",
-      "Name": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 1",
-      "Description": ""
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 1"
+        }
+      ]
     },
     {
-      "ID": "1221",
-      "Name": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 2",
-      "Description": ""
+      "Key": "1221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Bow: Confronting the fireball giant on the roof 2"
+        }
+      ]
     },
     {
-      "ID": "1330",
-      "Name": "Titan Junior Soldier Fire (Titan): Bare Hands: Attacks from the rooftop",
-      "Description": ""
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan Junior Soldier Fire (Titan): Bare Hands: Attacks from the rooftop"
+        }
+      ]
     },
     {
-      "ID": "1400",
-      "Name": "Titan senior soldier (giant): Dual sword style: Jump attack",
-      "Description": ""
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan senior soldier (giant): Dual sword style: Jump attack"
+        }
+      ]
     },
     {
-      "ID": "1410",
-      "Name": "Kingdom soldier (living): Spear: Medium shield: Role crushed by jump 1",
-      "Description": ""
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Spear: Medium shield: Role crushed by jump 1"
+        }
+      ]
     },
     {
-      "ID": "1420",
-      "Name": "Kingdom soldier (living): two-handed sword: bow: role crushed by jump 2",
-      "Description": ""
+      "Key": "1420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): two-handed sword: bow: role crushed by jump 2"
+        }
+      ]
     },
     {
-      "ID": "1500",
-      "Name": "Giant Junior Soldier (Titan): Bare-handed: Thrusts out of the building's blind spot.",
-      "Description": ""
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Bare-handed: Thrusts out of the building's blind spot."
+        }
+      ]
     },
     {
-      "ID": "1600",
-      "Name": "Giant Junior Soldier (Titan): Two-handed club: Guard in front of the goal",
-      "Description": ""
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Two-handed club: Guard in front of the goal"
+        }
+      ]
     },
     {
-      "ID": "2000",
-      "Name": "Giant Junior Soldier (Titan): Bare Hands_Chandelier Passage 1",
-      "Description": ""
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan): Bare Hands_Chandelier Passage 1"
+        }
+      ]
     },
     {
-      "ID": "2010",
-      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 2",
-      "Description": ""
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 2"
+        }
+      ]
     },
     {
-      "ID": "2011",
-      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 3",
-      "Description": ""
+      "Key": "2011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword: Bow_Chandelier passage 3"
+        }
+      ]
     },
     {
-      "ID": "2100",
-      "Name": "Kingdom soldier (living): Spear: Medium shield_In front of the chandelier passage stairs",
-      "Description": ""
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Spear: Medium shield_In front of the chandelier passage stairs"
+        }
+      ]
     },
     {
-      "ID": "2200",
-      "Name": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 1",
-      "Description": ""
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 1"
+        }
+      ]
     },
     {
-      "ID": "2201",
-      "Name": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 2",
-      "Description": ""
+      "Key": "2201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): In front of sub route rubble_wounded soldier 2"
+        }
+      ]
     },
     {
-      "ID": "2202",
-      "Name": "Kingdom soldier (living): In front of sub route rubble_injured soldier 3",
-      "Description": ""
+      "Key": "2202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): In front of sub route rubble_injured soldier 3"
+        }
+      ]
     },
     {
-      "ID": "2230",
-      "Name": "Kingdom soldier (living): In front of sub route rubble_Ballista",
-      "Description": ""
+      "Key": "2230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): In front of sub route rubble_Ballista"
+        }
+      ]
     },
     {
-      "ID": "2300",
-      "Name": "Kingdom soldier (living): Bow_on top of the wooden scaffolding in the plaza 1",
-      "Description": ""
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Bow_on top of the wooden scaffolding in the plaza 1"
+        }
+      ]
     },
     {
-      "ID": "2301",
-      "Name": "Kingdom soldier (living): Bow_2 on the wooden scaffolding in the plaza",
-      "Description": ""
+      "Key": "2301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Bow_2 on the wooden scaffolding in the plaza"
+        }
+      ]
     },
     {
-      "ID": "2320",
-      "Name": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 1 from above the gate",
-      "Description": ""
+      "Key": "2320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 1 from above the gate"
+        }
+      ]
     },
     {
-      "ID": "2321",
-      "Name": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 2 from above the gate",
-      "Description": ""
+      "Key": "2321",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword_Molotov cocktail 2 from above the gate"
+        }
+      ]
     },
     {
-      "ID": "2400",
-      "Name": "Titan senior soldier (giant): Dual sword style_Piazza in front of the arch",
-      "Description": ""
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan senior soldier (giant): Dual sword style_Piazza in front of the arch"
+        }
+      ]
     },
     {
-      "ID": "2410",
-      "Name": "Kingdom soldier (living): Blocker in the square in front of the arch 1",
-      "Description": ""
+      "Key": "2410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Blocker in the square in front of the arch 1"
+        }
+      ]
     },
     {
-      "ID": "2411",
-      "Name": "Kingdom soldier (living): Blocker in the square in front of the arch 2",
-      "Description": ""
+      "Key": "2411",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Blocker in the square in front of the arch 2"
+        }
+      ]
     },
     {
-      "ID": "2430",
-      "Name": "Kingdom soldier (living): Guard the square ladder in front of the arch.",
-      "Description": ""
+      "Key": "2430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Guard the square ladder in front of the arch."
+        }
+      ]
     },
     {
-      "ID": "2510",
-      "Name": "Kingdom soldier (living): To the left of the ballista behind the arch.",
-      "Description": ""
+      "Key": "2510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): To the left of the ballista behind the arch."
+        }
+      ]
     },
     {
-      "ID": "2511",
-      "Name": "Kingdom soldier (living): To the right of the ballista behind the arch.",
-      "Description": ""
+      "Key": "2511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): To the right of the ballista behind the arch."
+        }
+      ]
     },
     {
-      "ID": "2600",
-      "Name": "Kingdom soldier (living): To the left of the ballista next to the castle wall crane",
-      "Description": ""
+      "Key": "2600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): To the left of the ballista next to the castle wall crane"
+        }
+      ]
     },
     {
-      "ID": "2610",
-      "Name": "Kingdom soldier (living): Right of the ballista next to the castle wall crane",
-      "Description": ""
+      "Key": "2610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Right of the ballista next to the castle wall crane"
+        }
+      ]
     },
     {
-      "ID": "2900",
-      "Name": "Titan senior soldier (giant): Dual swords: Sniped by ballista role 1",
-      "Description": ""
+      "Key": "2900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan senior soldier (giant): Dual swords: Sniped by ballista role 1"
+        }
+      ]
     },
     {
-      "ID": "2910",
-      "Name": "Giant junior soldier Fire (giant): Bare hands: Sniped by ballista role 2",
-      "Description": ""
+      "Key": "2910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant junior soldier Fire (giant): Bare hands: Sniped by ballista role 2"
+        }
+      ]
     },
     {
-      "ID": "3000",
-      "Name": "Titan Senior Soldier (Titan): Dual Sword Style_Frontline 1",
-      "Description": ""
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan Senior Soldier (Titan): Dual Sword Style_Frontline 1"
+        }
+      ]
     },
     {
-      "ID": "3010",
-      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 2",
-      "Description": ""
+      "Key": "3010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 2"
+        }
+      ]
     },
     {
-      "ID": "3011",
-      "Name": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 3",
-      "Description": ""
+      "Key": "3011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Two-handed sword: Bow_Frontline 3"
+        }
+      ]
     },
     {
-      "ID": "3012",
-      "Name": "Kingdom Soldier (Living): Spear_Frontline 4",
-      "Description": ""
+      "Key": "3012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Living): Spear_Frontline 4"
+        }
+      ]
     },
     {
-      "ID": "3013",
-      "Name": "Kingdom soldier (living): Spear_Frontline 5",
-      "Description": ""
+      "Key": "3013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom soldier (living): Spear_Frontline 5"
+        }
+      ]
     },
     {
-      "ID": "9990",
-      "Name": "[Event Test] Giant Soldier Appears from a Broken Wall",
-      "Description": ""
+      "Key": "9990",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Event Test] Giant Soldier Appears from a Broken Wall"
+        }
+      ]
     }
   ]
 }

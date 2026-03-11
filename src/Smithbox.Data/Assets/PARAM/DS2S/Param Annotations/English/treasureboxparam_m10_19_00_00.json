@@ -1,0 +1,38 @@
+{
+  "Param": "treasureboxparam_m10_19_00_00",
+  "Type": "MAP_OBJECT_TREASURE_BOX_PARAM",
+  "Name": "treasureboxparam_m10_19_00_00",
+  "Description": "Defines parameters related to treasure chests.",
+  "Fields": [
+    {
+      "Field": "chest_type",
+      "Name": "Chest Type",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_id_1",
+      "Name": "Trapped Chest Bullet [1]",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_id_2",
+      "Name": "Trapped Chest Bullet [2]",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_id_3",
+      "Name": "Trapped Chest Bullet [3]",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_id_4",
+      "Name": "Trapped Chest Bullet [4]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

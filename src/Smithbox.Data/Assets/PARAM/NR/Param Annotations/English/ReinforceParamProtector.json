@@ -1,0 +1,103 @@
+{
+  "Param": "ReinforceParamProtector",
+  "Type": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Name": "ReinforceParamProtector",
+  "Description": "Defines upgrades of Armor. Unused in Elden Ring.\nTailoring is handled by a shop and functions as total item replacement, not variation.",
+  "Fields": [
+    {
+      "Field": "physicsDefRate",
+      "Name": "Defence %: Physical",
+      "Description": "Physical defense correction value"
+    },
+    {
+      "Field": "magicDefRate",
+      "Name": "Defence %: Magic",
+      "Description": "Magic defense correction value"
+    },
+    {
+      "Field": "fireDefRate",
+      "Name": "Defence %: Fire",
+      "Description": "Fire defense correction value"
+    },
+    {
+      "Field": "thunderDefRate",
+      "Name": "Defence %: Lightning",
+      "Description": "Electric shock defense correction value"
+    },
+    {
+      "Field": "slashDefRate",
+      "Name": "Defence %: Slash",
+      "Description": "Slash defense correction value"
+    },
+    {
+      "Field": "blowDefRate",
+      "Name": "Defence %: Strike",
+      "Description": "Impact defense correction value"
+    },
+    {
+      "Field": "thrustDefRate",
+      "Name": "Defence %: Thrust",
+      "Description": "Correction value of piercing defense power"
+    },
+    {
+      "Field": "resistPoisonRate",
+      "Name": "Aux Resist %: Poison",
+      "Description": "Poison resistance correction value"
+    },
+    {
+      "Field": "resistDiseaseRate",
+      "Name": "Aux Resist %: Scarlet Rot",
+      "Description": "Epidemic resistance correction value"
+    },
+    {
+      "Field": "resistBloodRate",
+      "Name": "Aux Resist %: Blood Loss",
+      "Description": "Bleeding resistance correction value"
+    },
+    {
+      "Field": "resistCurseRate",
+      "Name": "Aux Resist %: Death Blight",
+      "Description": "Curse resistance correction value"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "Passive SpEffect ID [1] Offset",
+      "Description": "Addition correction value for resident special effect ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Passive SpEffect ID [2] Offset",
+      "Description": "Addition correction value for resident special effect ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Passive SpEffect ID [3] Offset",
+      "Description": "Addition correction value for resident special effect ID3"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Reinforcement Material Set ID",
+      "Description": "Addition correction value of material parameter ID"
+    },
+    {
+      "Field": "darkDefRate",
+      "Name": "Absorption %: Holy",
+      "Description": "Dark defense correction value"
+    },
+    {
+      "Field": "resistFreezeRate",
+      "Name": "Aux Resist %: Frost",
+      "Description": "Cold resistance correction value"
+    },
+    {
+      "Field": "resistSleepRate",
+      "Name": "Aux Resist %: Sleep",
+      "Description": "Correction value for sleep tolerance"
+    },
+    {
+      "Field": "resistMadnessRate",
+      "Name": "Aux Resist %: Madness",
+      "Description": "Madness resistance correction value"
+    }
+  ]
+}

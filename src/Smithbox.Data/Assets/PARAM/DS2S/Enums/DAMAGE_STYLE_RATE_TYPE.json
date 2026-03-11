@@ -1,22 +1,38 @@
 {
-  "DisplayName": "DAMAGE_STYLE_RATE_TYPE",
-  "Name": "DAMAGE_STYLE_RATE_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_STYLE_RATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_STYLE_RATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "One hand",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One hand"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Both hands",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both hands"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Dual wielding",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding"
+        }
+      ]
     }
   ]
 }

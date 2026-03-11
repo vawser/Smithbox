@@ -1,0 +1,113 @@
+{
+  "Param": "PlayAreaCreateParam",
+  "Type": "PLAY_AREA_CREATE_PARAM_ST",
+  "Name": "PlayAreaCreateParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "Map ID: AA",
+      "Description": "The AA part of the MSB that this targets."
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "Map ID: BB",
+      "Description": "The BB part of the MSB that this targets."
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "Map ID: CC",
+      "Description": "The CC part of the MSB that this targets."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "Placement Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "Placement Position: Z",
+      "Description": ""
+    },
+    {
+      "Field": "day1Flag",
+      "Name": "Day 1 Flag",
+      "Description": ""
+    },
+    {
+      "Field": "day2Flag",
+      "Name": "Day 2 Flag",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier1",
+      "Name": "Required Modifier: 1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier1",
+      "Name": "Excluded Modifier: 1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier2",
+      "Name": "Excluded Modifier: 2",
+      "Description": ""
+    },
+    {
+      "Field": "bossAttachPoint",
+      "Name": "Boss Attachment Point",
+      "Description": "The attach point for this entry."
+    },
+    {
+      "Field": "connectColEntityId",
+      "Name": "Connect Collision Entity ID",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier2",
+      "Name": "Required Modifier: 2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossAttachPoint",
+      "Name": "Extra Boss Attachment Point",
+      "Description": "The attach point for this entry."
+    }
+  ]
+}

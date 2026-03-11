@@ -1,0 +1,218 @@
+{
+  "Param": "EquipParamAccessory",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EquipParamAccessory",
+  "Description": "Determines the parameters of accessories.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId",
+      "Name": "Reference ID",
+      "Description": "Reference ID to use for this accessory."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Action ID (= Skill)"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Base Price",
+      "Description": "Basic price"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering within the menu."
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWC ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "Equipment model number"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Sequential Achievement ID",
+      "Description": "The sequential achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "Equipment model type"
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender",
+      "Description": "Gender of equipment model"
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "Accessory Type",
+      "Description": "Armor category"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Reference Type",
+      "Description": " ID category [Attack, Projectile, Special]"
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "Behavior Category",
+      "Description": "There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so set the effect for each action so that it can correspond to an effect such as \u0027powering up only weapon attacks\u0027. Set \u0027None\u0027 for items that do not require settings, such as ballistas."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant Item Lot ID",
+      "Description": "-1: No vagrant 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Vagrant Bonus Item Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Vagrant Enemy Item Lot ID",
+      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Is Depositable",
+      "Description": "Can be deposited in the repository."
+    },
+    {
+      "Field": "isEquipOutBrake",
+      "Name": "Destroy on Unequip",
+      "Description": "Is destroyed when unequipped."
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Block Drop in Multiplayer",
+      "Description": "Block the ability to drop in multiplayer sessions."
+    },
+    {
+      "Field": "isDiscard",
+      "Name": "Is Discardable",
+      "Description": "Can be discarded."
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Is Droppable",
+      "Description": "Can be dropped."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Sell Price",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "accessoryGroup",
+      "Name": "Accessory Group",
+      "Description": "Items of the same group cannot be equipped at the same time"
+    },
+    {
+      "Field": "vowType",
+      "Name": "Pledge Type",
+      "Description": "The pledge type that can use this accessory."
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "Number of Completed Achievement ID",
+      "Description": "SEQ number of complete trophy"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "SpEffect ID: 1",
+      "Description": "The SpEffect present on this accessory."
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "SpEffect ID: 2",
+      "Description": "The SpEffect present on this accessory."
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "SpEffect ID: 3",
+      "Description": "The SpEffect present on this accessory."
+    },
+    {
+      "Field": "residentSpEffectId4",
+      "Name": "SpEffect ID: 4",
+      "Description": "The SpEffect present on this accessory."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

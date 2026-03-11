@@ -1,0 +1,78 @@
+{
+  "Param": "KeyAssignParam",
+  "Type": "KEY_ASSIGN_PARAM_ST",
+  "Name": "KeyAssignParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "padKeyId",
+      "Name": "Pad: Key ID",
+      "Description": "A key on a controller."
+    },
+    {
+      "Field": "keyboardModifyKey",
+      "Name": "Keyboard: Modifier Key ID",
+      "Description": "A modifier key on a keyboard."
+    },
+    {
+      "Field": "keyboardKeyId",
+      "Name": "Keyboard: Key ID",
+      "Description": "A key on a keyboard."
+    },
+    {
+      "Field": "mouseModifyKey",
+      "Name": "Mouse: Modified Key ID",
+      "Description": "A modifier key on a mouse."
+    },
+    {
+      "Field": "mouseKeyId",
+      "Name": "Mouse: Key ID",
+      "Description": "A key on a mouse."
+    },
+    {
+      "Field": "shortcutNameId",
+      "Name": "Name ID",
+      "Description": "The name to use for this key assignment."
+    },
+    {
+      "Field": "shortcutHelpID",
+      "Name": "Description ID",
+      "Description": "The description to use for this key assignment."
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "direction",
+      "Name": "Direction",
+      "Description": "For pad sticks. Works for both X and Y axes."
+    },
+    {
+      "Field": "unknown_3c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unkKey",
+      "Name": "Unknown Key",
+      "Description": ""
+    },
+    {
+      "Field": "sharedKey",
+      "Name": "Shared Pad Key",
+      "Description": "Pad action shared with this when holding Y/Triangle."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

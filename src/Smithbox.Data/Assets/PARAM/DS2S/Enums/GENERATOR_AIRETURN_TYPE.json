@@ -1,17 +1,29 @@
 {
-  "DisplayName": "GENERATOR_AIRETURN_TYPE",
-  "Name": "GENERATOR_AIRETURN_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_AIRETURN_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_AIRETURN_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Walk back",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walk back"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dash back",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dash back"
+        }
+      ]
     }
   ]
 }

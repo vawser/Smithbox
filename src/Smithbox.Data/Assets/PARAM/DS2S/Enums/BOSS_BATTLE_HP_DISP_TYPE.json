@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BOSS_BATTLE_HP_DISP_TYPE",
-  "Name": "BOSS_BATTLE_HP_DISP_TYPE",
-  "Description": "",
+  "Key": "BOSS_BATTLE_HP_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOSS_BATTLE_HP_DISP_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Total HP",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Total HP"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Remaining HP",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remaining HP"
+        }
+      ]
     }
   ]
 }

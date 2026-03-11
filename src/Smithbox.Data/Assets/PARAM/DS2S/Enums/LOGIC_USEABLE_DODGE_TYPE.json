@@ -1,27 +1,47 @@
 {
-  "DisplayName": "LOGIC_USEABLE_DODGE_TYPE",
-  "Name": "LOGIC_USEABLE_DODGE_TYPE",
-  "Description": "",
+  "Key": "LOGIC_USEABLE_DODGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_USEABLE_DODGE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Step",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Step"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Rolling",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rolling"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Both",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both"
+        }
+      ]
     }
   ]
 }

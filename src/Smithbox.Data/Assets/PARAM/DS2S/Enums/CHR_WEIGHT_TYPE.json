@@ -1,47 +1,83 @@
 {
-  "DisplayName": "CHR_WEIGHT_TYPE",
-  "Name": "CHR_WEIGHT_TYPE",
-  "Description": "",
+  "Key": "CHR_WEIGHT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WEIGHT_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Very small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Small",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Very Large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Extremely Large",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super extra large"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Immensely Large",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super super extra large"
+        }
+      ]
     }
   ]
 }

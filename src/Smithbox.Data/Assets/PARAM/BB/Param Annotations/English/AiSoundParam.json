@@ -1,0 +1,48 @@
+{
+  "Param": "AiSoundParam",
+  "Type": "AI_SOUND_PARAM_ST",
+  "Name": "AiSoundParam",
+  "Description": "How AIs react to sound",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "AI sound radius"
+    },
+    {
+      "Field": "lifeFrame",
+      "Name": "Duration",
+      "Description": "Time for AI sound to remain"
+    },
+    {
+      "Field": "bSpEffectEnable",
+      "Name": "Is Affected by Sound Radius Magnification",
+      "Description": "Whether it is affected by the special effect Sound Radius Magnification"
+    },
+    {
+      "Field": "type",
+      "Name": "Rate Type",
+      "Description": "AI sound type"
+    },
+    {
+      "Field": "fakeTargetType",
+      "Name": "Fake Target Type",
+      "Description": ""
+    },
+    {
+      "Field": "interestCategory",
+      "Name": "Interest Category",
+      "Description": ""
+    },
+    {
+      "Field": "useHitDamageTeam",
+      "Name": "Is Hit Damage Team",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

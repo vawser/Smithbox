@@ -1,0 +1,13 @@
+{
+  "Param": "SoundSpecialEquipmentParam",
+  "Type": "SOUND_SPECIAL_EQUIPMENT_PARAM",
+  "Name": "SoundSpecialEquipmentParam",
+  "Description": "Defines parameters relating to the sound of equipment.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

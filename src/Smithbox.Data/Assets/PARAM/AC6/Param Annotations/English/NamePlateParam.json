@@ -1,0 +1,28 @@
+{
+  "Param": "NamePlateParam",
+  "Type": "NAMEPLATE_PARAM",
+  "Name": "NamePlateParam",
+  "Description": "Determines the parameters to use for a nameplate.",
+  "Fields": [
+    {
+      "Field": "catalogTextID",
+      "Name": "Display Text ID",
+      "Description": "The text ID to use for the display of this nameplate within the shop."
+    },
+    {
+      "Field": "price",
+      "Name": "Price",
+      "Description": "The cost of this nameplate."
+    },
+    {
+      "Field": "unk08",
+      "Name": "Unknown 0x08",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

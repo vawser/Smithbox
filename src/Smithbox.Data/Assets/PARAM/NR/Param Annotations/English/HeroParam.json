@@ -1,0 +1,188 @@
+{
+  "Param": "HeroParam",
+  "Type": "HERO_PARAM_ST",
+  "Name": "HeroParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "properPortraitId",
+      "Name": "Portrait ID",
+      "Description": "The in-game looking portrait to use for this character."
+    },
+    {
+      "Field": "simplePortraitId",
+      "Name": "Icon Portrait ID",
+      "Description": "The simple icon portrait to use for this character."
+    },
+    {
+      "Field": "characterUnlockFlag",
+      "Name": "Character Unlock Flag",
+      "Description": "The flag that must be ON for this character to be unlocked."
+    },
+    {
+      "Field": "characterNameId",
+      "Name": "Name ID",
+      "Description": "The name of this character."
+    },
+    {
+      "Field": "characterSkillTitleId",
+      "Name": "Character Skill Title ID",
+      "Description": "The title of the character skill for this character."
+    },
+    {
+      "Field": "characterSkillSummaryId",
+      "Name": "Character Skill Summary ID",
+      "Description": "The summary of the character skill for this character."
+    },
+    {
+      "Field": "characterSkillIconId",
+      "Name": "Character Skill Icon ID",
+      "Description": "The icon ID for the character skill."
+    },
+    {
+      "Field": "ultimateArtTitleId",
+      "Name": "Ultimate Art Title ID",
+      "Description": "The title of the ultimate art for this character."
+    },
+    {
+      "Field": "ultimateArtSummaryId",
+      "Name": "Ultimate Art Summary ID",
+      "Description": "The summary of the ultimate art for this character."
+    },
+    {
+      "Field": "ultimateArtIconId",
+      "Name": "Ultimate Art Icon ID",
+      "Description": "The icon ID for the ultimate art."
+    },
+    {
+      "Field": "backgroundDescriptionId",
+      "Name": "Background Description ID",
+      "Description": "The background description for this character."
+    },
+    {
+      "Field": "midPadding",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heroStatusParamId",
+      "Name": "Hero Status ID",
+      "Description": ""
+    },
+    {
+      "Field": "ultimateArtCharge",
+      "Name": "Ultimate Art Charge",
+      "Description": "Amount of ultimate charge required to perform ultimate art"
+    },
+    {
+      "Field": "characterAbilityCooldown",
+      "Name": "Character Ability Cooldown",
+      "Description": "In seconds."
+    },
+    {
+      "Field": "characterAbilityUsageCount",
+      "Name": "Character Skill Usage Count",
+      "Description": "The maximum number of uses that can be stored for the character skill."
+    },
+    {
+      "Field": "passiveAbilityTitleId",
+      "Name": "Passive Ability Title ID",
+      "Description": "The title of the passive ability for this character."
+    },
+    {
+      "Field": "passiveAbilitySummaryId",
+      "Name": "Passive Ability Summary ID",
+      "Description": "The summary of the passive ability for this character."
+    },
+    {
+      "Field": "passiveAbilityIconId",
+      "Name": "Passive Ability Icon ID",
+      "Description": "The icon ID for the passive ability."
+    },
+    {
+      "Field": "smallHudIconId",
+      "Name": "Small HUD Icon ID",
+      "Description": "The icon ID for the a small HUD element."
+    },
+    {
+      "Field": "characterSkillDescriptionId",
+      "Name": "Character Skill Description ID",
+      "Description": "The description of the character skill for this character."
+    },
+    {
+      "Field": "ultimateArtDescriptionId",
+      "Name": "Ultimate Art Description ID",
+      "Description": "The description of the ultimate art for this character."
+    },
+    {
+      "Field": "passiveAbilityDescriptionId",
+      "Name": "Passive Ability Description ID",
+      "Description": "The description of the passive ability for this character."
+    },
+    {
+      "Field": "defaultWeaponTypeDiscovery",
+      "Name": "Default Weapon Type Discovery",
+      "Description": "Default weaponTypeDiscovery for each character."
+    },
+    {
+      "Field": "unknown_39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

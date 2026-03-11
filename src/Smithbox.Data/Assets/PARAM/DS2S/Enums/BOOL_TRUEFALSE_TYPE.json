@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BOOL_TRUEFALSE_TYPE",
-  "Name": "BOOL_TRUEFALSE_TYPE",
-  "Description": "",
+  "Key": "BOOL_TRUEFALSE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_TRUEFALSE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "FALSE",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "FALSE"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "TRUE",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TRUE"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,208 @@
+{
+  "Param": "SwordArtsParam",
+  "Type": "SWORD_ARTS_PARAM_ST",
+  "Name": "SwordArtsParam",
+  "Description": "Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data.",
+  "Fields": [
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "Sort Group ID",
+      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    },
+    {
+      "Field": "artsSpeedType",
+      "Name": "Speed Type",
+      "Description": "Determines which cancel table skill will use"
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isRefRightArts",
+      "Name": "Use Right Skill",
+      "Description": "Use right hand weapon\u0027s Skill if this skill is in the left hand"
+    },
+    {
+      "Field": "isGrayOutLeftHand",
+      "Name": "Hide in Left Hand",
+      "Description": "Hide name/icon when left-handed"
+    },
+    {
+      "Field": "isGrayOutRightHand",
+      "Name": "Hide in Right Hand",
+      "Description": "Hide name/icon when right-handed"
+    },
+    {
+      "Field": "isGrayOutBothHand",
+      "Name": "Hide in Both Hand",
+      "Description": "Hide name/icon when two-handed"
+    },
+    {
+      "Field": "enableSparringGrounds",
+      "Name": "Enable Sparring Grounds/Visual Codex",
+      "Description": "Allows skill to appear in Sparring Grounds/Visual Codex"
+    },
+    {
+      "Field": "swordArtsType",
+      "Name": "Skill Animation ID",
+      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The menu ordering for Weapon Skills"
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Text ID for arts description"
+    },
+    {
+      "Field": "useMagicPoint_L1",
+      "Name": "FP Consumption - L1",
+      "Description": "MP consumed when issuing arts by L1"
+    },
+    {
+      "Field": "useMagicPoint_L2",
+      "Name": "FP Consumption - L2",
+      "Description": "MP consumed when issuing arts by L2"
+    },
+    {
+      "Field": "useMagicPoint_R1",
+      "Name": "FP Consumption - R1",
+      "Description": "MP consumed when issuing arts by R1"
+    },
+    {
+      "Field": "useMagicPoint_R2",
+      "Name": "FP Consumption - R2",
+      "Description": "MP consumed when issuing arts by R2"
+    },
+    {
+      "Field": "isStartSkill_Duchess",
+      "Name": "Starting Skill - Duchess",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Wylder",
+      "Name": "Starting Skill - Wylder",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Executor",
+      "Name": "Starting Skill - Executor",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Guardian",
+      "Name": "Starting Skill - Guardian",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Raider",
+      "Name": "Starting Skill - Raider",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Revenant",
+      "Name": "Starting Skill - Revenant",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Ironeye",
+      "Name": "Starting Skill - Ironeye",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "isStartSkill_Recluse",
+      "Name": "Starting Skill - Recluse",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "defaultWepAttr",
+      "Name": "Default Weapon Affinity",
+      "Description": "Default weapon attribute ID. Can be installed even with unopened weapon attributes"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The icon for this sword art."
+    },
+    {
+      "Field": "aiUsageId",
+      "Name": "AI Usage Judgment ID",
+      "Description": "AI usage judgment ID"
+    },
+    {
+      "Field": "usabilityTextId",
+      "Name": "Usability Text ID",
+      "Description": "The text ID for the usability description."
+    },
+    {
+      "Field": "atkParamId",
+      "Name": "Attack ID",
+      "Description": "Used for unused menu power display"
+    },
+    {
+      "Field": "sparringGroundsWeaponId",
+      "Name": "Sparring Grounds Weapon",
+      "Description": "Base weapon used for Sparring Grounds"
+    },
+    {
+      "Field": "sparringGroundsEventFlagId",
+      "Name": "Appearance Event Flag ID",
+      "Description": "Event flag that determines if skill will appear in Sparring Grounds/Visual Codex"
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Scholar",
+      "Name": "Starting Skill - Scholar",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "unknown_4e",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4f",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4g",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Undertaker",
+      "Name": "Starting Skill - Undertaker",
+      "Description": "Allows skill from relic to apply to starting weapon for this hero"
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

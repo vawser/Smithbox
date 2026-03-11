@@ -1,22 +1,38 @@
 {
-  "DisplayName": "LOGIC_EYESIGHT_BASE_TYPE",
-  "Name": "LOGIC_EYESIGHT_BASE_TYPE",
-  "Description": "",
+  "Key": "LOGIC_EYESIGHT_BASE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_EYESIGHT_BASE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Light/dark",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light/dark"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dark/light",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark/light"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Common",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Common"
+        }
+      ]
     }
   ]
 }

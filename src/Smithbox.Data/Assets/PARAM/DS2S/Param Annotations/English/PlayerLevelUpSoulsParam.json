@@ -1,0 +1,23 @@
+{
+  "Param": "PlayerLevelUpSoulsParam",
+  "Type": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Name": "PlayerLevelUpSoulsParam",
+  "Description": "Defines parameters that control the cost of leveling up.",
+  "Fields": [
+    {
+      "Field": "soul_level",
+      "Name": "Soul Level",
+      "Description": ""
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soul_level_cost",
+      "Name": "Soul Level Cost",
+      "Description": ""
+    }
+  ]
+}

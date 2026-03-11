@@ -1,0 +1,38 @@
+{
+  "Param": "generatorregistparam_m10_14_00_00",
+  "Type": "GENERATOR_REGIST_PARAM",
+  "Name": "generatorregistparam_m10_14_00_00",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "EnemyParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LogicParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefaultLogicParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpawnState",
+      "Name": "",
+      "Description": "What position/state the entity takes when spawning."
+    },
+    {
+      "Field": "DrawGroup",
+      "Name": "",
+      "Description": "Determines when the game renders an entity."
+    },
+    {
+      "Field": "Unk0F",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

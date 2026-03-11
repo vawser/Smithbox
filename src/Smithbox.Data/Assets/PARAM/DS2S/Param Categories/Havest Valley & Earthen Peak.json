@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Havest Valley & Earthen Peak",
+  "Key": "Harvest Valley & Earthen Peak",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Harvest Valley & Earthen Peak"
+      }
+  ],
   "Params": [
     "eventlocation_m10_17_00_00",
     "eventparam_m10_17_00_00",

@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,14 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
     internal void Setup()
     {
         ParamMeta pMeta = null;
+        ParamAnnotationEntry pAnnotation = null;
 
         unpacker = row =>
         {
             var metaDict = CurrentView.GetParamData().ParamMeta;
             pMeta = metaDict[row.Item2.Def];
+
+            pAnnotation = CurrentView.GetParamData().GetParamAnnotations(CurrentView.Selection.GetActiveParam());
 
             List<(ParamEditorPseudoColumn, Param.Column)> list = new();
             list.Add((ParamEditorPseudoColumn.ID, null));
@@ -52,8 +56,9 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
 
                     if (cell.Item2 != null)
                     {
-                        var meta = lenient ? pMeta.GetField(cell.Item2.Def) : null;
-                        if (lenient && meta?.AltName != null && rx.IsMatch(meta?.AltName))
+                        var fieldAnnotation = CurrentView.GetParamData().GetFieldAnnotation(pAnnotation, cell.Item2.Def.InternalName);
+
+                        if (lenient && fieldAnnotation?.Name != null && rx.IsMatch(fieldAnnotation?.Name))
                         {
                             return true;
                         }

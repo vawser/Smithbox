@@ -1,0 +1,38 @@
+{
+  "Param": "MapVolumeFogParam",
+  "Type": "MAP_VOLUME_FOG_PARAM",
+  "Name": "MapVolumeFogParam",
+  "Description": "Defines parameters related to map fog volumes.\nSet via the Fog MSB section.",
+  "Fields": [
+    {
+      "Field": "color_r",
+      "Name": "Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "color_b",
+      "Name": "Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "color_g",
+      "Name": "Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "color_alpha",
+      "Name": "Color: Alpha",
+      "Description": ""
+    },
+    {
+      "Field": "fog_size",
+      "Name": "Fog Size",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

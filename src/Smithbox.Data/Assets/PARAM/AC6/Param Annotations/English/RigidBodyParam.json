@@ -1,0 +1,98 @@
+{
+  "Param": "RigidBodyParam",
+  "Type": "RIGID_BODY_PARAM_ST",
+  "Name": "RigidBodyParam",
+  "Description": "Determines parameters related to the rigid body.",
+  "Fields": [
+    {
+      "Field": "mass",
+      "Name": "Mass",
+      "Description": "Mass of the rigid body."
+    },
+    {
+      "Field": "friction",
+      "Name": "Friction Coefficient",
+      "Description": "Friction coefficient of the rigid body surface."
+    },
+    {
+      "Field": "restitution",
+      "Name": "Restitution Coefficient",
+      "Description": "Elastic modulus of the rigid body."
+    },
+    {
+      "Field": "maxLinearSpeed",
+      "Name": "Maximum Speed",
+      "Description": "Maxmum linear speed allowed for rigid bodies, in m/s."
+    },
+    {
+      "Field": "maxAngularSpeed",
+      "Name": "Maximum Angular Velocity",
+      "Description": "Maximul angular speed allowed for rigid bodies, in degrees/frame."
+    },
+    {
+      "Field": "linearDamping",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "angularDamping",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gravityFactor",
+      "Name": "Gravity",
+      "Description": "The gravity factor to apply to the rigid body."
+    },
+    {
+      "Field": "softContactForceFactor",
+      "Name": "Soft Contact",
+      "Description": "The soft contact factor to apply to the rigid body."
+    },
+    {
+      "Field": "softContactDampFactor",
+      "Name": "Soft Contact Dampening",
+      "Description": "The soft contact dampening factor to apply to the rigid body."
+    },
+    {
+      "Field": "softContactSeperationVelocity",
+      "Name": "Soft Contact Separation Velocity",
+      "Description": "Soft contact push-off velocity."
+    },
+    {
+      "Field": "softContactForceFactorSoft",
+      "Name": "Soft Contact Force (Soft)",
+      "Description": "Soft contact force. Soft."
+    },
+    {
+      "Field": "softContactDampFactorSoft",
+      "Name": "Soft Contact Dampening (Soft)",
+      "Description": "Soft contact dampening. Soft."
+    },
+    {
+      "Field": "softContactSeperationVelocitySoft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "softContactForceFactorHard",
+      "Name": "Soft Contact Force (Hard)",
+      "Description": "Soft contact force. Hard."
+    },
+    {
+      "Field": "softContactDampFactorHard",
+      "Name": "Soft Contact Dampening (Hard)",
+      "Description": "Soft contact dampening. Hard."
+    },
+    {
+      "Field": "softContactSeperationVelocityHard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

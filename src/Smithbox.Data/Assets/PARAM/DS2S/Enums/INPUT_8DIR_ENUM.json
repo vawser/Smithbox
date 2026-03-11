@@ -1,47 +1,83 @@
 {
-  "DisplayName": "INPUT_8DIR_ENUM",
-  "Name": "INPUT_8DIR_ENUM",
-  "Description": "",
+  "Key": "INPUT_8DIR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "INPUT_8DIR_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "<1>Left rear",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<1>Left rear"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "<2> Back",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<2> Back"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "<3>Right rear",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<3>Right rear"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "<4>Left",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<4>Left"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "<6> Right",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<6> Right"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "<7> Front left",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<7> Front left"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "＜8＞before",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "＜8＞before"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "<9> Right front",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "<9> Right front"
+        }
+      ]
     }
   ]
 }

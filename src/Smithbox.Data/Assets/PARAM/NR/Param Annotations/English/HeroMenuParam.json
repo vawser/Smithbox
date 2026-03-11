@@ -1,0 +1,88 @@
+{
+  "Param": "HeroMenuParam",
+  "Type": "HERO_MENU_PARAM_ST",
+  "Name": "HeroMenuParam",
+  "Description": "Handles various visual information for Heros, such as appearances in menus and Visual Codex stats.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "Character ID",
+      "Description": "Possibly default CharaInitParam"
+    },
+    {
+      "Field": "characterSelectPoseAnim",
+      "Name": "Character Select Pose",
+      "Description": "The animation to use for this character when at Character Selection. (Unused)"
+    },
+    {
+      "Field": "characterSelectCameraId",
+      "Name": "Character Select Camera ID",
+      "Description": "The menu camera to use for this character when at Character Selection. (Unused)"
+    },
+    {
+      "Field": "changeGarbCameraId",
+      "Name": "Change Garb Camera ID",
+      "Description": "The menu camera to use for this character when at Change Garb."
+    },
+    {
+      "Field": "changeGarbPoseAnim",
+      "Name": "Change Garb Pose",
+      "Description": "The animation to use for this character when at Change Garb."
+    },
+    {
+      "Field": "hpGrade",
+      "Name": "HP Grade",
+      "Description": "HP letter grade for Visual Codex"
+    },
+    {
+      "Field": "fpGrade",
+      "Name": "FP Grade",
+      "Description": "FP letter grade for Visual Codex"
+    },
+    {
+      "Field": "staminaGrade",
+      "Name": "Stamina Grade",
+      "Description": "Stamina letter grade for Visual Codex"
+    },
+    {
+      "Field": "strengthGrade",
+      "Name": "Strength Grade",
+      "Description": "Strength letter grade for Visual Codex"
+    },
+    {
+      "Field": "dexterityGrade",
+      "Name": "Dexterity Grade",
+      "Description": "Dexterity letter grade for Visual Codex"
+    },
+    {
+      "Field": "intelligenceGrade",
+      "Name": "Intelligence Grade",
+      "Description": "Intelligence letter grade for Visual Codex"
+    },
+    {
+      "Field": "faithGrade",
+      "Name": "Faith Grade",
+      "Description": "Faith letter grade for Visual Codex"
+    },
+    {
+      "Field": "arcaneGrade",
+      "Name": "Arcane Grade",
+      "Description": "Arcane letter grade for Visual Codex"
+    }
+  ]
+}

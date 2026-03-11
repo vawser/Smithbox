@@ -1,2187 +1,3935 @@
 {
-  "DisplayName": "PLAYER_NORMAL_ATTACK_MOTION",
-  "Name": "PLAYER_NORMAL_ATTACK_MOTION",
-  "Description": "",
+  "Key": "PLAYER_NORMAL_ATTACK_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_NORMAL_ATTACK_MOTION"
+    }
+  ],
   "Options": [
     {
-      "ID": "20010010",
-      "Name": "Fist_One-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "20010011",
-      "Name": "Fist_One-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20010012",
-      "Name": "Fist_One-handed melee_Weak 1_Varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "20010020",
-      "Name": "Fist_One-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "20010021",
-      "Name": "Fist_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20010030",
-      "Name": "Fist_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "20010031",
-      "Name": "Fist_One-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20010210",
-      "Name": "Fist_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "20010211",
-      "Name": "Fist_One-handed Dash_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20010220",
-      "Name": "Fist_One-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "20010230",
-      "Name": "Fist_One-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "20010240",
-      "Name": "Fist_one handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "20010250",
-      "Name": "Fist_one hand falling",
-      "Description": ""
-    },
-    {
-      "ID": "20010260",
-      "Name": "Fist_One hand jump fall",
-      "Description": ""
-    },
-    {
-      "ID": "20010270",
-      "Name": "Fist_One-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "20010280",
-      "Name": "Fist_One-handed throw and grab (medium)",
-      "Description": ""
-    },
-    {
-      "ID": "20010282",
-      "Name": "Fist_One-handed throw and grab (large)",
-      "Description": ""
-    },
-    {
-      "ID": "20010290",
-      "Name": "Fist_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "20010300",
-      "Name": "Fist_One-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "20010310",
-      "Name": "Fist_One-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "20010320",
-      "Name": "Fist_One-handed guard break stab",
-      "Description": ""
-    },
-    {
-      "ID": "20030010",
-      "Name": "Fist_Two handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "20030011",
-      "Name": "Fist_Two-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20030020",
-      "Name": "Fist_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "20030021",
-      "Name": "Fist_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20030030",
-      "Name": "Fist_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "20030031",
-      "Name": "Fist_Two-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "20030037",
-      "Name": "Fist_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "20030210",
-      "Name": "Fist_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "20030220",
-      "Name": "Fist_Rolling with both hands",
-      "Description": ""
-    },
-    {
-      "ID": "20030270",
-      "Name": "Fist_Two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "20050010",
-      "Name": "Fist_Two-handed two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "20050020",
-      "Name": "Fist_Two-handed two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "20050030",
-      "Name": "Fist_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "20320010",
-      "Name": "Fist_one hand guard",
-      "Description": ""
-    },
-    {
-      "ID": "20510100",
-      "Name": "Fist_binoculars",
-      "Description": ""
-    },
-    {
-      "ID": "20510510",
-      "Name": "Fist_Ladder top attack weak",
-      "Description": ""
-    },
-    {
-      "ID": "20510520",
-      "Name": "Fist_Ladder top attack strong",
-      "Description": ""
-    },
-    {
-      "ID": "20510530",
-      "Name": "Fist_Ladder down attack weak",
-      "Description": ""
-    },
-    {
-      "ID": "20510540",
-      "Name": "Fist_Ladder down attack strong",
-      "Description": ""
-    },
-    {
-      "ID": "21010010",
-      "Name": "Dagger_One-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "21010011",
-      "Name": "Dagger_One-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21010012",
-      "Name": "Dagger_One-handed melee_Weak 1_Varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "21010020",
-      "Name": "Dagger_One-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "21010021",
-      "Name": "Dagger_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21010030",
-      "Name": "Dagger_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "21010031",
-      "Name": "Dagger_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21010210",
-      "Name": "Dagger_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "21010220",
-      "Name": "Dagger_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "21010240",
-      "Name": "Dagger_One-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "21010250",
-      "Name": "Dagger_One hand falling",
-      "Description": ""
-    },
-    {
-      "ID": "21010260",
-      "Name": "Dagger_One-handed jump fall",
-      "Description": ""
-    },
-    {
-      "ID": "21010270",
-      "Name": "Dagger_One-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "21010290",
-      "Name": "Dagger_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "21010300",
-      "Name": "Dagger_One-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "21010310",
-      "Name": "Dagger_One-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "21010320",
-      "Name": "Dagger_One-handed guard break stab",
-      "Description": ""
-    },
-    {
-      "ID": "21030010",
-      "Name": "Dagger_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "21030011",
-      "Name": "Dagger_Two-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21030020",
-      "Name": "Dagger_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "21030021",
-      "Name": "Dagger_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21030030",
-      "Name": "Dagger_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "21030031",
-      "Name": "Dagger_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "21030210",
-      "Name": "Dagger_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "21030270",
-      "Name": "Dagger_Two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "21050010",
-      "Name": "Dagger_Dual wield two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "21050020",
-      "Name": "Dagger_Dual wield two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "21050030",
-      "Name": "Dagger_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "22010010",
-      "Name": "Stinging sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "22010020",
-      "Name": "Stinging sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "22010021",
-      "Name": "Stinging sword_one-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "22010030",
-      "Name": "Sashiken_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "22010031",
-      "Name": "Sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "22010032",
-      "Name": "Sword_one-handed melee_strong 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "22010037",
-      "Name": "Sashiken_One-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "22010210",
-      "Name": "Sashiken_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "22010220",
-      "Name": "Sashiken_One-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "22030010",
-      "Name": "Stinging sword_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "22030011",
-      "Name": "Sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "22030020",
-      "Name": "Stinging sword_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "22030021",
-      "Name": "Sword_two-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "22030030",
-      "Name": "Sashiken_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "22030031",
-      "Name": "Sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "22030037",
-      "Name": "Sashiken_Two-handed melee_Strength 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "22030210",
-      "Name": "Sashiken_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "22030220",
-      "Name": "Sashiken_Two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "23010010",
-      "Name": "Whip_One-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "23010011",
-      "Name": "Whip_One-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23010020",
-      "Name": "Whip_One-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "23010021",
-      "Name": "Whip_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23010030",
-      "Name": "Whip_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "23010031",
-      "Name": "Whip_One-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23010210",
-      "Name": "Whip_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "23010220",
-      "Name": "Whip_One-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "23010240",
-      "Name": "Whip_One-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "23010270",
-      "Name": "Whip_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "23030010",
-      "Name": "Whip_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "23030011",
-      "Name": "Whip_Two-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23030020",
-      "Name": "Whip_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "23030021",
-      "Name": "Whip_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23030030",
-      "Name": "Whip_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "23030031",
-      "Name": "Whip_Two-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "23030210",
-      "Name": "Whip_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "23030220",
-      "Name": "Whip_both hands rolling",
-      "Description": ""
-    },
-    {
-      "ID": "23050010",
-      "Name": "Whip_Dual wield two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "23050020",
-      "Name": "Whip_Dual wield two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "23050030",
-      "Name": "Whip_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "24010010",
-      "Name": "Double-edged sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "24010011",
-      "Name": "Double-edged sword_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24010020",
-      "Name": "Double-edged sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "24010021",
-      "Name": "Double-edged sword_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24010030",
-      "Name": "Double-edged sword_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "24010031",
-      "Name": "Double-edged sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24010210",
-      "Name": "Double-edged sword_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "24010220",
-      "Name": "Double-edged sword_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "24030010",
-      "Name": "Double-edged sword_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "24030011",
-      "Name": "Double-edged sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24030020",
-      "Name": "Double-edged sword_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "24030021",
-      "Name": "Double-edged sword_two-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24030030",
-      "Name": "Double-edged sword_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "24030031",
-      "Name": "Double-edged sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "24030037",
-      "Name": "Double-edged sword_Two-handed melee_Strength 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "24030210",
-      "Name": "Double-edged sword_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "24030220",
-      "Name": "Double-edged sword_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "25010010",
-      "Name": "Spear_One-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "25010011",
-      "Name": "Spear_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25010020",
-      "Name": "Spear_One-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "25010030",
-      "Name": "Spear_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "25010031",
-      "Name": "Spear_One-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25010038",
-      "Name": "Spear_One-handed melee_Strong 1_Special 02",
-      "Description": ""
-    },
-    {
-      "ID": "25010210",
-      "Name": "Spear_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "25010220",
-      "Name": "Spear_One-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "25010221",
-      "Name": "Spear_one-handed rolling_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25010240",
-      "Name": "Spear_One-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "25010250",
-      "Name": "Spear_one hand falling",
-      "Description": ""
-    },
-    {
-      "ID": "25010270",
-      "Name": "Spear_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "25010300",
-      "Name": "Spear_One-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "25010310",
-      "Name": "Spear_One-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "25010320",
-      "Name": "Spear_One-handed guard break stab",
-      "Description": ""
-    },
-    {
-      "ID": "25030010",
-      "Name": "Spear_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "25030011",
-      "Name": "Spear_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25030020",
-      "Name": "Spear_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "25030030",
-      "Name": "Spear_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "25030031",
-      "Name": "Spear_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25030038",
-      "Name": "Spear_Two-handed melee_Strong 1_Special 02",
-      "Description": ""
-    },
-    {
-      "ID": "25030210",
-      "Name": "Spear_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "25030220",
-      "Name": "Spear_Two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "25030221",
-      "Name": "Spear_Two-handed rolling_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "25030230",
-      "Name": "Spear_Two-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "25030270",
-      "Name": "Spear_Two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "25050010",
-      "Name": "Spear_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "25050020",
-      "Name": "Spear_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "25050030",
-      "Name": "Spear_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "25330010",
-      "Name": "Spear_Two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "26010010",
-      "Name": "Assault Spear_One-handed Melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "26010020",
-      "Name": "Assault spear_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "26010030",
-      "Name": "Assault Spear_One-handed Melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "26010210",
-      "Name": "Assault spear_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "26010220",
-      "Name": "Assault spear_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "26030010",
-      "Name": "Assault Spear_Two-handed Melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "26030020",
-      "Name": "Assault spear_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "26030030",
-      "Name": "Assault Spear_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "26030210",
-      "Name": "Assault spear_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "26030220",
-      "Name": "Assault spear_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "26050210",
-      "Name": "Assault Spear_Two-handed Dash",
-      "Description": ""
-    },
-    {
-      "ID": "27010010",
-      "Name": "Curved sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "27010011",
-      "Name": "Curved sword_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "27010020",
-      "Name": "Curved sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "27010021",
-      "Name": "Curved sword_one-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "27010030",
-      "Name": "Curved sword_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "27010031",
-      "Name": "Curved sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "27010037",
-      "Name": "Curved sword_one-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "27010210",
-      "Name": "Curved sword_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "27010220",
-      "Name": "Curved sword_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "27010240",
-      "Name": "Curved sword_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "27010290",
-      "Name": "Curved sword_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "27030010",
-      "Name": "Curved sword_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "27030011",
-      "Name": "Curved sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "27030020",
-      "Name": "Curved sword_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "27030030",
-      "Name": "Curved Sword_Two-handed Melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "27030031",
-      "Name": "Curved sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "27030037",
-      "Name": "Curved sword_two-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "27030210",
-      "Name": "Curved sword_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "27030220",
-      "Name": "Curved sword_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "27050010",
-      "Name": "Curved Sword_Dual Wield Two-handed Melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "27050020",
-      "Name": "Curved Sword_Dual Wield Two-handed Melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "27050030",
-      "Name": "Curved Sword_Dual Wield Two-handed Melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "27050037",
-      "Name": "Curved Sword_Two-handed Melee_Strength 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "28010010",
-      "Name": "Sword_One-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "28010011",
-      "Name": "Sword_One-handed melee_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "28010020",
-      "Name": "Sword_One-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "28010021",
-      "Name": "Sword_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "28010030",
-      "Name": "Sword_One-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "28010031",
-      "Name": "Sword_One-handed melee_Strong 1_Barié 01",
-      "Description": ""
-    },
-    {
-      "ID": "28010210",
-      "Name": "Katana_One-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "28010220",
-      "Name": "Katana_One-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "28030010",
-      "Name": "Sword_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "28030011",
-      "Name": "Sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "28030020",
-      "Name": "Sword_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "28030021",
-      "Name": "Sword_two-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "28030030",
-      "Name": "Sword_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "28030031",
-      "Name": "Sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "28030037",
-      "Name": "Sword_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "28030210",
-      "Name": "Katana_Two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "28030220",
-      "Name": "Sword_both-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "28030270",
-      "Name": "Sword_Two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "29010010",
-      "Name": "Straight sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "29010011",
-      "Name": "Straight sword_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29010012",
-      "Name": "Straight sword_one-handed melee_weak 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "29010020",
-      "Name": "Straight sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "29010021",
-      "Name": "Straight sword_one-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29010022",
-      "Name": "Straight sword_one-handed melee_weak 2_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "29010030",
-      "Name": "Straight sword_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "29010031",
-      "Name": "Straight sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29010038",
-      "Name": "Straight sword_one-handed melee_strong 1_special 02",
-      "Description": ""
-    },
-    {
-      "ID": "29010210",
-      "Name": "Straight sword_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "29010220",
-      "Name": "Straight sword_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "29010221",
-      "Name": "Straight sword_one-handed rolling_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29010230",
-      "Name": "Straight sword_one-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "29010240",
-      "Name": "Straight sword_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "29010250",
-      "Name": "Straight sword_one hand falling",
-      "Description": ""
-    },
-    {
-      "ID": "29010260",
-      "Name": "Straight sword_one-handed jump fall",
-      "Description": ""
-    },
-    {
-      "ID": "29010270",
-      "Name": "Straight sword_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "29010290",
-      "Name": "Straight sword_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "29010300",
-      "Name": "Straight sword_one-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "29010310",
-      "Name": "Straight sword_one-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "29010320",
-      "Name": "Straight sword_one-handed guard break stab",
-      "Description": ""
-    },
-    {
-      "ID": "29030010",
-      "Name": "Straight sword_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "29030011",
-      "Name": "Straight sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29030012",
-      "Name": "Straight sword_two-handed melee_weak 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "29030020",
-      "Name": "Straight sword_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "29030021",
-      "Name": "Straight sword_two handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29030030",
-      "Name": "Straight sword_two-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "29030031",
-      "Name": "Straight sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "29030037",
-      "Name": "Straight sword_two-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "29030038",
-      "Name": "Straight sword_Two-handed melee_Strong 1_Special 02",
-      "Description": ""
-    },
-    {
-      "ID": "29030210",
-      "Name": "Straight sword_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "29030220",
-      "Name": "Straight sword_both-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "29030230",
-      "Name": "Straight sword_two-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "29030270",
-      "Name": "Straight sword_two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "29050010",
-      "Name": "Straight sword_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "29050020",
-      "Name": "Straight sword_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "29050030",
-      "Name": "Straight sword_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "29330010",
-      "Name": "Straight sword_two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "30010010",
-      "Name": "Two-handed sickle_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "30010020",
-      "Name": "Two-handed sickle_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "30010030",
-      "Name": "Two-handed sickle_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "30010210",
-      "Name": "Two-handed sickle_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "30010220",
-      "Name": "Two-handed sickle_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "30010240",
-      "Name": "Two-handed sickle_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "30030010",
-      "Name": "Two-handed sickle_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "30030020",
-      "Name": "Two-handed sickle_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "30030030",
-      "Name": "Two-handed sickle_two-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "30030037",
-      "Name": "Two-handed sickle_Two-handed melee_Strength 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "30030210",
-      "Name": "Two-handed sickle_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "30030220",
-      "Name": "Two-handed sickle_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "31010010",
-      "Name": "Two-handed sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "31010011",
-      "Name": "Two-handed sword_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31010012",
-      "Name": "Two-handed sword_one-handed melee_weak 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "31010020",
-      "Name": "Two-handed sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "31010021",
-      "Name": "Two-handed sword_one-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31010022",
-      "Name": "Two-handed sword_one-handed melee_weak 2_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "31010030",
-      "Name": "Two-handed sword_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "31010031",
-      "Name": "Two-handed sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31010032",
-      "Name": "Two-handed sword_one-handed melee_strong 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "31010033",
-      "Name": "Two-handed sword_one-handed melee_strong 1_varie 03",
-      "Description": ""
-    },
-    {
-      "ID": "31010210",
-      "Name": "Two-handed sword_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "31010220",
-      "Name": "Two-handed sword_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "31010240",
-      "Name": "Two-handed sword_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "31030010",
-      "Name": "Two-handed sword_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "31030011",
-      "Name": "Two-handed sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31030020",
-      "Name": "Two-handed sword_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "31030021",
-      "Name": "Two-handed sword_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31030030",
-      "Name": "Two-handed sword_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "31030031",
-      "Name": "Two-handed sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "31030037",
-      "Name": "Two-handed sword_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "31030038",
-      "Name": "Two-handed sword_Two-handed melee_Strength 1_Special 02",
-      "Description": ""
-    },
-    {
-      "ID": "31030210",
-      "Name": "Two-handed sword_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "31030220",
-      "Name": "Two-handed sword_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "32010010",
-      "Name": "Two-handed oversized sword_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "32010011",
-      "Name": "Two-handed oversized sword_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32010020",
-      "Name": "Two-handed oversized sword_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "32010021",
-      "Name": "Two-handed oversized sword_One-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32010030",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "32010031",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32010032",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "32010037",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "32010038",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1_special 02",
-      "Description": ""
-    },
-    {
-      "ID": "32010039",
-      "Name": "Two-handed oversized sword_one-handed melee_strong 1_special 03",
-      "Description": ""
-    },
-    {
-      "ID": "32010210",
-      "Name": "Two-handed oversized sword_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "32010220",
-      "Name": "Two-handed oversized sword_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "32010230",
-      "Name": "Two-handed oversized sword_One-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "32010240",
-      "Name": "Two-handed oversized sword_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "32010250",
-      "Name": "Two-handed oversized sword_One hand falling",
-      "Description": ""
-    },
-    {
-      "ID": "32010260",
-      "Name": "Two-handed oversized sword_one-handed jump fall",
-      "Description": ""
-    },
-    {
-      "ID": "32010270",
-      "Name": "両手特大剣_片手追討ち",
-      "Description": ""
-    },
-    {
-      "ID": "32010280",
-      "Name": "Two-handed oversized sword_one-handed throw and grab (medium)",
-      "Description": ""
-    },
-    {
-      "ID": "32010300",
-      "Name": "Two-handed oversized sword_one-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "32010310",
-      "Name": "Two-handed oversized sword_one-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "32010320",
-      "Name": "Two-handed oversized sword_one-handed guard break stub",
-      "Description": ""
-    },
-    {
-      "ID": "32030010",
-      "Name": "Two-handed oversized sword_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "32030011",
-      "Name": "Two-handed oversized sword_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32030012",
-      "Name": "Two-handed oversized sword_two-handed melee_weak 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "32030020",
-      "Name": "Two-handed oversized sword_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "32030021",
-      "Name": "Two-handed oversized sword_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32030022",
-      "Name": "Two-handed oversized sword_Two-handed melee_Weak 2_Varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "32030030",
-      "Name": "Two-handed oversized sword_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "32030031",
-      "Name": "Two-handed oversized sword_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "32030037",
-      "Name": "Two-handed oversized sword_Two-handed melee_Strength 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "32030038",
-      "Name": "Two-handed oversized sword_Two-handed melee_Strong 1_Special 02",
-      "Description": ""
-    },
-    {
-      "ID": "32030039",
-      "Name": "Two-handed oversized sword_Two-handed melee_Strength 1_Special 03",
-      "Description": ""
-    },
-    {
-      "ID": "32030210",
-      "Name": "Two-handed oversized sword_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "32030220",
-      "Name": "Two-handed oversized sword_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "32030230",
-      "Name": "Two-handed oversized sword_two-handed guard break",
-      "Description": ""
-    },
-    {
-      "ID": "32030270",
-      "Name": "Two-handed oversized sword_two-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "32030290",
-      "Name": "Two-handed extra large sword_two-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "32050010",
-      "Name": "Two-handed oversized sword_Two-handed two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "32050020",
-      "Name": "Two-handed oversized sword_Two-handed two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "32050030",
-      "Name": "Two-handed oversized sword_Two-handed two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "33010010",
-      "Name": "One-handed hammer_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "33010020",
-      "Name": "One-handed hammer_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "33010030",
-      "Name": "One-handed hammer_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "33010210",
-      "Name": "One-handed hammer_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "33010220",
-      "Name": "One-handed mallet_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "33030010",
-      "Name": "One-handed hammer_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "33030020",
-      "Name": "One-handed hammer_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "33030030",
-      "Name": "One-handed hammer_two-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "33030210",
-      "Name": "One-handed hammer_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "33050010",
-      "Name": "One-handed hammer_Two-handed two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "33050020",
-      "Name": "One-handed hammer_Two-handed two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "33050030",
-      "Name": "One-handed hammer_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "34010010",
-      "Name": "Two-handed hammer_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "34010011",
-      "Name": "Two-handed hammer_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34010020",
-      "Name": "Two-handed hammer_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "34010021",
-      "Name": "Two-handed hammer_one-handed close-range_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34010030",
-      "Name": "Two-handed hammer_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "34010210",
-      "Name": "Two-handed hammer_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "34010220",
-      "Name": "Two-handed mallet_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "34010240",
-      "Name": "Two-handed hammer_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "34030010",
-      "Name": "Two-handed hammer_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "34030011",
-      "Name": "Two-handed hammer_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34030020",
-      "Name": "Two-handed hammer_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "34030021",
-      "Name": "Two-handed hammer_two-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34030030",
-      "Name": "Two-handed hammer_two-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "34030031",
-      "Name": "Two-handed hammer_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34030210",
-      "Name": "Two-handed hammer_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "34030220",
-      "Name": "Both-handed mallet_both-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "34030221",
-      "Name": "Both-handed mallet_both-handed rolling_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "34050010",
-      "Name": "Two-handed hammer_Two-handed two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "34050020",
-      "Name": "Two-handed hammer_Dual wield two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "34050030",
-      "Name": "Two-handed hammer_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "35010010",
-      "Name": "One-handed ax_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "35010011",
-      "Name": "One-handed ax_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "35010020",
-      "Name": "One-handed ax_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "35010030",
-      "Name": "One-handed ax_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "35010031",
-      "Name": "One-handed ax_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "35010037",
-      "Name": "One-handed ax_one-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "35030010",
-      "Name": "One-handed ax_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "35030020",
-      "Name": "One-handed ax_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "35030030",
-      "Name": "One-handed ax_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "35030037",
-      "Name": "One-handed ax_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "35330010",
-      "Name": "One-handed ax_two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "36010010",
-      "Name": "Two-handed ax_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "36010011",
-      "Name": "Two-handed ax_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "36010020",
-      "Name": "Two-handed ax_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "36010030",
-      "Name": "Two-handed ax_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "36010031",
-      "Name": "Two-handed ax_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "36010037",
-      "Name": "Two-handed ax_one-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "36010210",
-      "Name": "Two-handed ax_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "36010220",
-      "Name": "Two-handed ax_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "36010300",
-      "Name": "Two-handed ax_one-handed backstab",
-      "Description": ""
-    },
-    {
-      "ID": "36010310",
-      "Name": "Two-handed ax_one-handed parry break stab",
-      "Description": ""
-    },
-    {
-      "ID": "36010320",
-      "Name": "Two-handed ax_one-handed guard break stab",
-      "Description": ""
-    },
-    {
-      "ID": "36030010",
-      "Name": "Two-handed ax_Two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "36030011",
-      "Name": "Two-handed ax_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "36030012",
-      "Name": "Two-handed ax_two-handed melee_weak 1_varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "36030020",
-      "Name": "Two-handed ax_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "36030022",
-      "Name": "Two-handed ax_Two-handed melee_Weak 2_Varie 02",
-      "Description": ""
-    },
-    {
-      "ID": "36030030",
-      "Name": "Two-handed ax_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "36030037",
-      "Name": "Two-handed ax_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "36030220",
-      "Name": "Two-handed ax_two-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "36330010",
-      "Name": "Two-handed ax_two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "37010010",
-      "Name": "Two-handed long ax_one-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "37010011",
-      "Name": "Two-handed long ax_one-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37010020",
-      "Name": "Two-handed long ax_one-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "37010021",
-      "Name": "Two-handed long ax_one-handed melee_weak 2_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37010030",
-      "Name": "Two-handed long ax_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "37010031",
-      "Name": "Two-handed long ax_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37010037",
-      "Name": "Two-handed long ax_one-handed melee_strong 1_special 01",
-      "Description": ""
-    },
-    {
-      "ID": "37010210",
-      "Name": "Two-handed long ax_one-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "37010220",
-      "Name": "Two-handed long ax_one-handed rolling",
-      "Description": ""
-    },
-    {
-      "ID": "37010270",
-      "Name": "Two-handed long ax_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "37030010",
-      "Name": "Two-handed long ax_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "37030011",
-      "Name": "Two-handed long ax_two-handed melee_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37030020",
-      "Name": "Two-handed long ax_Two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "37030021",
-      "Name": "Two-handed long ax_Two-handed melee_Weak 2_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37030030",
-      "Name": "Two-handed long ax_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "37030031",
-      "Name": "Two-handed long ax_Two-handed melee_Strong 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37030037",
-      "Name": "Two-handed long ax_Two-handed melee_Strong 1_Special 01",
-      "Description": ""
-    },
-    {
-      "ID": "37030210",
-      "Name": "Two-handed long ax_two-handed dash",
-      "Description": ""
-    },
-    {
-      "ID": "37030211",
-      "Name": "Two-handed long ax_two-handed dash_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "37050010",
-      "Name": "Two-handed long ax_Dual wield two-handed melee_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "37050020",
-      "Name": "Two-handed long ax_Dual wield two-handed melee_Weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "37050030",
-      "Name": "Two-handed long ax_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "40030030",
-      "Name": "Two-handed bow_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "40230010",
-      "Name": "Two-handed bow_two-handed shooting_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "41230010",
-      "Name": "Two-handed longbow_two-handed shooting_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "41230011",
-      "Name": "Two-handed longbow_two-handed shooting_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "42210010",
-      "Name": "One-handed bow_one-handed shooting_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "42210011",
-      "Name": "One-handed bow_one-handed shooting_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "42230010",
-      "Name": "One-handed bow_two-handed shooting_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "42230011",
-      "Name": "One-handed bow_two-handed shooting_weak 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "42250010",
-      "Name": "One-handed bow_Two-handed two-handed shooting_Weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "42250011",
-      "Name": "One-handed bow_Two-handed two-handed shooting_Weak 1_Varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "44010290",
-      "Name": "Small shield_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "44320010",
-      "Name": "Small shield_one-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "44340010",
-      "Name": "Small shield_two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "45010030",
-      "Name": "Medium shield_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "45010270",
-      "Name": "Medium shield_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "45010290",
-      "Name": "Medium shield_one-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "45030010",
-      "Name": "Medium shield_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "45030020",
-      "Name": "Medium shield_two-handed melee_weak 2",
-      "Description": ""
-    },
-    {
-      "ID": "45030030",
-      "Name": "Medium shield_two-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "45030290",
-      "Name": "Medium shield_two-handed parry",
-      "Description": ""
-    },
-    {
-      "ID": "45320010",
-      "Name": "Medium shield_one-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "45340010",
-      "Name": "Medium shield_two-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "46010030",
-      "Name": "Large shield_one-handed melee_strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "46010031",
-      "Name": "Large shield_one-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "46010240",
-      "Name": "Large shield_one-handed jump",
-      "Description": ""
-    },
-    {
-      "ID": "46010270",
-      "Name": "Great shield_one-handed pursuit",
-      "Description": ""
-    },
-    {
-      "ID": "46030010",
-      "Name": "Large shield_two-handed melee_weak 1",
-      "Description": ""
-    },
-    {
-      "ID": "46030030",
-      "Name": "Large shield_Two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "46030031",
-      "Name": "Large shield_two-handed melee_strong 1_varie 01",
-      "Description": ""
-    },
-    {
-      "ID": "46050030",
-      "Name": "Large shield_Dual wield two-handed melee_Strong 1",
-      "Description": ""
-    },
-    {
-      "ID": "46320010",
-      "Name": "Large shield_one-handed guard",
-      "Description": ""
-    },
-    {
-      "ID": "46340010",
-      "Name": "Large shield_two-handed guard",
-      "Description": ""
+      "Key": "20010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "20010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20010012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Weak 1_Varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "20010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "20010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "20010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "20010211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed Dash_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "20010230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "20010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_one handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "20010250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_one hand falling"
+        }
+      ]
+    },
+    {
+      "Key": "20010260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One hand jump fall"
+        }
+      ]
+    },
+    {
+      "Key": "20010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "20010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed throw and grab (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "20010282",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed throw and grab (large)"
+        }
+      ]
+    },
+    {
+      "Key": "20010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "20010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "20010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "20010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "20030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "20030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "20030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "20030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "20030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "20030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "20030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Rolling with both hands"
+        }
+      ]
+    },
+    {
+      "Key": "20030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "20050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "20050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Two-handed two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "20050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "20320010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_one hand guard"
+        }
+      ]
+    },
+    {
+      "Key": "20510100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_binoculars"
+        }
+      ]
+    },
+    {
+      "Key": "20510510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Ladder top attack weak"
+        }
+      ]
+    },
+    {
+      "Key": "20510520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Ladder top attack strong"
+        }
+      ]
+    },
+    {
+      "Key": "20510530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Ladder down attack weak"
+        }
+      ]
+    },
+    {
+      "Key": "20510540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Ladder down attack strong"
+        }
+      ]
+    },
+    {
+      "Key": "21010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "21010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21010012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Weak 1_Varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "21010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "21010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "21010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "21010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "21010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "21010250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One hand falling"
+        }
+      ]
+    },
+    {
+      "Key": "21010260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed jump fall"
+        }
+      ]
+    },
+    {
+      "Key": "21010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "21010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "21010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "21010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "21010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "21030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "21030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "21030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "21030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "21030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "21030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "21050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Dual wield two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "21050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Dual wield two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "21050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "22010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stinging sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "22010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stinging sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "22010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stinging sword_one-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "22010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "22010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "22010032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_one-handed melee_strong 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "22010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_One-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "22010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "22010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_One-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "22030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stinging sword_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "22030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "22030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stinging sword_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "22030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "22030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "22030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "22030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_Two-handed melee_Strength 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "22030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "22030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sashiken_Two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "23010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "23010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "23010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "23010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "23010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "23010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_One-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "23010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "23030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "23030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "23030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "23030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "23030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "23030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_both hands rolling"
+        }
+      ]
+    },
+    {
+      "Key": "23050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Dual wield two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "23050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Dual wield two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "23050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whip_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "24010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "24010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "24010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "24010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "24010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "24030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "24030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "24030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "24030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "24030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_Two-handed melee_Strength 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "24030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "24030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-edged sword_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "25010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "25010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "25010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "25010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25010038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed melee_Strong 1_Special 02"
+        }
+      ]
+    },
+    {
+      "Key": "25010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "25010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "25010221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_one-handed rolling_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "25010250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_one hand falling"
+        }
+      ]
+    },
+    {
+      "Key": "25010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "25010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "25010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "25030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "25030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "25030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "25030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25030038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Strong 1_Special 02"
+        }
+      ]
+    },
+    {
+      "Key": "25030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "25030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "25030221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed rolling_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "25030230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "25030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "25050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "25050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "25050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "25330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_Two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "26010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Spear_One-handed Melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "26010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "26010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Spear_One-handed Melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "26010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "26010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "26030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Spear_Two-handed Melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "26030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "26030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Spear_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "26030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "26030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault spear_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "26050210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Spear_Two-handed Dash"
+        }
+      ]
+    },
+    {
+      "Key": "27010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "27010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "27010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "27010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "27010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "27010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "27010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "27010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "27010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "27010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "27010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "27030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "27030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "27030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "27030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword_Two-handed Melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "27030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "27030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "27030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "27030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved sword_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "27050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword_Dual Wield Two-handed Melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "27050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword_Dual Wield Two-handed Melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "27050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword_Dual Wield Two-handed Melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "27050037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved Sword_Two-handed Melee_Strength 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "28010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "28010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "28010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "28010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "28010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "28010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_One-handed melee_Strong 1_Barié 01"
+        }
+      ]
+    },
+    {
+      "Key": "28010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana_One-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "28010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana_One-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "28030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "28030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "28030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "28030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "28030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "28030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "28030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "28030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katana_Two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "28030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_both-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "28030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword_Two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "29010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "29010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29010012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "29010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "29010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29010022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_weak 2_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "29010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "29010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29010038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed melee_strong 1_special 02"
+        }
+      ]
+    },
+    {
+      "Key": "29010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "29010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "29010221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed rolling_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29010230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "29010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "29010250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one hand falling"
+        }
+      ]
+    },
+    {
+      "Key": "29010260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed jump fall"
+        }
+      ]
+    },
+    {
+      "Key": "29010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "29010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "29010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "29010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "29010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "29030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "29030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29030012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_weak 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "29030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "29030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "29030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "29030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "29030038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_Two-handed melee_Strong 1_Special 02"
+        }
+      ]
+    },
+    {
+      "Key": "29030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "29030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_both-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "29030230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "29030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "29050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "29050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "29050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "29330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "30010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "30010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "30010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "30010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "30010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "30010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "30030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "30030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "30030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_two-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "30030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_Two-handed melee_Strength 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "30030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "30030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "31010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "31010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31010012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "31010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "31010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31010022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_weak 2_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "31010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "31010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31010032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_strong 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "31010033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed melee_strong 1_varie 03"
+        }
+      ]
+    },
+    {
+      "Key": "31010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "31010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "31010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "31030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "31030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "31030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "31030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "31030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "31030038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_Two-handed melee_Strength 1_Special 02"
+        }
+      ]
+    },
+    {
+      "Key": "31030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "31030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "32010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "32010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "32010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_One-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "32010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32010032",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "32010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "32010038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1_special 02"
+        }
+      ]
+    },
+    {
+      "Key": "32010039",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed melee_strong 1_special 03"
+        }
+      ]
+    },
+    {
+      "Key": "32010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "32010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "32010230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_One-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "32010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "32010250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_One hand falling"
+        }
+      ]
+    },
+    {
+      "Key": "32010260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed jump fall"
+        }
+      ]
+    },
+    {
+      "Key": "32010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "両手特大剣_片手追討ち"
+        }
+      ]
+    },
+    {
+      "Key": "32010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed throw and grab (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "32010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "32010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "32010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed guard break stub"
+        }
+      ]
+    },
+    {
+      "Key": "32030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "32030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32030012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed melee_weak 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "32030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "32030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32030022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Weak 2_Varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "32030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "32030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "32030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Strength 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "32030038",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Strong 1_Special 02"
+        }
+      ]
+    },
+    {
+      "Key": "32030039",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed melee_Strength 1_Special 03"
+        }
+      ]
+    },
+    {
+      "Key": "32030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "32030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "32030230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed guard break"
+        }
+      ]
+    },
+    {
+      "Key": "32030270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_two-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "32030290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed extra large sword_two-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "32050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "32050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "32050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_Two-handed two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "33010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "33010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "33010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "33010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "33010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed mallet_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "33030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "33030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "33030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_two-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "33030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "33050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_Two-handed two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "33050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_Two-handed two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "33050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed hammer_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "34010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "34010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "34010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed close-range_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "34010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "34010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed mallet_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "34010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "34030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "34030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "34030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "34030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "34030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both-handed mallet_both-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "34030221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both-handed mallet_both-handed rolling_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "34050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_Two-handed two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "34050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_Dual wield two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "34050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed hammer_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "35010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "35010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "35010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "35010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "35010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "35010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_one-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "35030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "35030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "35030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "35030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "35330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed ax_two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "36010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "36010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "36010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "36010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "36010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "36010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "36010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "36010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "36010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "36010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "36010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "36030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "36030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "36030012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed melee_weak 1_varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "36030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "36030022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed melee_Weak 2_Varie 02"
+        }
+      ]
+    },
+    {
+      "Key": "36030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "36030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "36030220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "36330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "37010010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "37010011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37010020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "37010021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_weak 2_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "37010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37010037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed melee_strong 1_special 01"
+        }
+      ]
+    },
+    {
+      "Key": "37010210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "37010220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed rolling"
+        }
+      ]
+    },
+    {
+      "Key": "37010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "37030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "37030011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_two-handed melee_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "37030021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Two-handed melee_Weak 2_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "37030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Two-handed melee_Strong 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37030037",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Two-handed melee_Strong 1_Special 01"
+        }
+      ]
+    },
+    {
+      "Key": "37030210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_two-handed dash"
+        }
+      ]
+    },
+    {
+      "Key": "37030211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_two-handed dash_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "37050010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Dual wield two-handed melee_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "37050020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Dual wield two-handed melee_Weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "37050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed long ax_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "40030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "40230010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed bow_two-handed shooting_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "41230010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow_two-handed shooting_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "41230011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed longbow_two-handed shooting_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "42210010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_one-handed shooting_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "42210011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_one-handed shooting_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "42230010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_two-handed shooting_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "42230011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_two-handed shooting_weak 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "42250010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_Two-handed two-handed shooting_Weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "42250011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "One-handed bow_Two-handed two-handed shooting_Weak 1_Varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "44010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "44320010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield_one-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "44340010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small shield_two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "45010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "45010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "45010290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_one-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "45030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "45030020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_two-handed melee_weak 2"
+        }
+      ]
+    },
+    {
+      "Key": "45030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_two-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "45030290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_two-handed parry"
+        }
+      ]
+    },
+    {
+      "Key": "45320010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_one-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "45340010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield_two-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "46010030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_one-handed melee_strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "46010031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_one-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "46010240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_one-handed jump"
+        }
+      ]
+    },
+    {
+      "Key": "46010270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great shield_one-handed pursuit"
+        }
+      ]
+    },
+    {
+      "Key": "46030010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_two-handed melee_weak 1"
+        }
+      ]
+    },
+    {
+      "Key": "46030030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_Two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "46030031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_two-handed melee_strong 1_varie 01"
+        }
+      ]
+    },
+    {
+      "Key": "46050030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_Dual wield two-handed melee_Strong 1"
+        }
+      ]
+    },
+    {
+      "Key": "46320010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_one-handed guard"
+        }
+      ]
+    },
+    {
+      "Key": "46340010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large shield_two-handed guard"
+        }
+      ]
     }
   ]
 }

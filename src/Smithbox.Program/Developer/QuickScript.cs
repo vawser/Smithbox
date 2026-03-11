@@ -1,8 +1,11 @@
 ﻿using Andre.Formats;
+using DotNext;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using Org.BouncyCastle.Crypto;
 using Pfim;
 using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +14,8 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace StudioCore.Application;
 
@@ -20,9 +25,156 @@ public class QuickScript
 
     public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        BuildFolder = $@"{CFG.Current.Developer_Smithbox_Build_Folder}\src\Smithbox.Data\Assets\PARAM\DS2S\Icon Layouts";
+        ConvertParamMeta(curProject);
+    }
 
-        GenerateIconLayouts_DS2();
+    public static void ConvertParamMeta(ProjectEntry curProject)
+    {
+        var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        var paramData = curProject.Handler.ParamData;
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in paramData.ParamMeta)
+        {
+            var meta = entry.Value;
+
+            var xml = SerializeToXml(meta);
+
+            var outputPath = Path.Combine(outputFolder, $"{meta.Name}.json");
+
+            File.WriteAllText(outputPath, xml);
+        }
+    }
+    public static string SerializeToXml(object input)
+    {
+        XmlSerializer ser = new XmlSerializer(input.GetType(), "");
+        string result = string.Empty;
+
+        using (MemoryStream memStm = new MemoryStream())
+        {
+            ser.Serialize(memStm, input);
+
+            memStm.Position = 0;
+            result = new StreamReader(memStm).ReadToEnd();
+        }
+
+        return result;
+    }
+
+    //public static void ConvertParamEnums(ProjectEntry curProject)
+    //{
+    //    var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+    //    var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
+
+    //    if (!Directory.Exists(outputFolder))
+    //    {
+    //        Directory.CreateDirectory(outputFolder);
+    //    }
+
+    //    var paramData = curProject.Handler.ParamData;
+
+    //    var options = new JsonSerializerOptions
+    //    {
+    //        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+    //        WriteIndented = true,
+    //        IncludeFields = true
+    //    };
+
+    //    foreach (var entry in paramData.Enums.List)
+    //    {
+    //        var key = entry.Name;
+    //        var title = entry.DisplayName;
+
+    //        ParamEnumEntry newEntry = new(key, title);
+
+    //        foreach (var opt in entry.Options)
+    //        {
+    //            var optKey = opt.ID;
+    //            var optTitle = opt.Name;
+
+    //            ParamEnumOption newOption = new(optKey, optTitle);
+
+    //            newEntry.Options.Add(newOption);
+    //        }
+
+    //        var outputPath = Path.Combine(outputFolder, $"{key}.json");
+
+    //        var jsonString = JsonSerializer.Serialize(newEntry, typeof(ParamEnumEntry), options);
+
+    //        File.WriteAllText(outputPath, jsonString);
+    //    }
+    //}
+
+    public void GenerateParamAnnotations(ProjectEntry curProject)
+    {
+        //var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        //var outputFolder = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\{type}\Param Annotations\English";
+
+        //if(!Directory.Exists(outputFolder))
+        //{
+        //    Directory.CreateDirectory(outputFolder);
+        //}
+
+        //var meta = curProject.Handler.ParamData.ParamMeta;
+
+        //foreach(var param in curProject.Handler.ParamData.PrimaryBank.Params)
+        //{
+        //    var curMeta = curProject.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+
+        //    var newAnnotatioEntry = new ParamAnnotationEntry();
+        //    newAnnotatioEntry.Param = param.Key;
+        //    newAnnotatioEntry.Type = param.Value.ParamType;
+        //    newAnnotatioEntry.Name = param.Key;
+        //    newAnnotatioEntry.Description = curMeta.Wiki;
+
+        //    foreach(var field in curMeta.Fields)
+        //    {
+        //        var newFieldEntry = new ParamAnnotationFieldEntry();
+        //        newFieldEntry.Field = field.Key.InternalName;
+
+        //        if (field.Value.AltName != null && field.Value.AltName != "")
+        //        {
+        //            newFieldEntry.Name = field.Value.AltName;
+        //        }
+        //        else
+        //        {
+        //            newFieldEntry.Name = "";
+        //        }
+
+        //        if (field.Value.Wiki != null && field.Value.Wiki != "")
+        //        {
+        //            newFieldEntry.Description = field.Value.Wiki;
+        //        }
+        //        else
+        //        {
+        //            newFieldEntry.Description = "";
+        //        }
+
+        //        newAnnotatioEntry.Fields.Add(newFieldEntry);
+        //    }
+
+        //    var outputPath = Path.Combine(outputFolder, $"{param.Key}.json");
+
+        //    var jsonString = JsonSerializer.Serialize(newAnnotatioEntry, ParamEditorJsonSerializerContext.Default.ParamAnnotationEntry);
+
+        //    File.WriteAllText(outputPath, jsonString);
+        //}
     }
 
     public static void GenerateIconLayouts_DS2()

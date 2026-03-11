@@ -1,0 +1,13 @@
+{
+  "Param": "MapObjectChrSpeedScaleParam",
+  "Type": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
+  "Name": "MapObjectChrSpeedScaleParam",
+  "Description": "Defines parameters related to character speed on map objects.",
+  "Fields": [
+    {
+      "Field": "object_chr_speed_scale",
+      "Name": "Character Speed Scale",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "BonfireWarpParam",
+  "Type": "BONFIRE_WARP_PARAM_ST",
+  "Name": "BonfireWarpParam",
+  "Description": "Settings for Sculptor\u0027s Idol menu and warps",
+  "Fields": [
+    {
+      "Field": "eventflagId",
+      "Name": "",
+      "Description": "Event flag for unlocking this Idol"
+    },
+    {
+      "Field": "bonfireEntityId",
+      "Name": "",
+      "Description": "EntityId of the Idol object, defined in the map"
+    },
+    {
+      "Field": "msgId",
+      "Name": "",
+      "Description": "Display message ID"
+    },
+    {
+      "Field": "menuTextId",
+      "Name": "",
+      "Description": "Warp menu description text ID"
+    },
+    {
+      "Field": "menuImageId",
+      "Name": "",
+      "Description": "Warp menu thumbnail image ID"
+    },
+    {
+      "Field": "menuPageNo",
+      "Name": "",
+      "Description": "Which map menu will this Idol warp appear in?"
+    },
+    {
+      "Field": "isHome",
+      "Name": "",
+      "Description": "Is this Idol the home base?"
+    },
+    {
+      "Field": "blockCultId",
+      "Name": "",
+      "Description": "Changes the Ceremony Id when warping to this Idol"
+    },
+    {
+      "Field": "grayoutEventflagId",
+      "Name": "",
+      "Description": "Event flag that prevents you from warping to this Idol after it\u0027s already been unlocked"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

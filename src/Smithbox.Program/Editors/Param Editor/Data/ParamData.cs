@@ -28,13 +28,16 @@ public class ParamData : IDisposable
     public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
     public Dictionary<PARAMDEF, ParamMeta> ParamMeta = new();
 
+    public ParamAnnotationLanguages ParamAnnotationLanguages = new();
+    public ParamAnnotations ParamAnnotations = new();
+
     // Base meta data
     public ParamTypeInfo ParamTypeInfo;
     public TableParams TableParamList;
     public ParamReloaderOffsets ParamReloaderOffsets;
 
     // User-overridable meta data
-    public ProjectEnumResource Enums;
+    public ParamEnums Enums;
     public ParamCategories ParamCategories;
     public ParamCommutativityGroups ParamCommutativityGroups;
     public FieldReferenceGroups FieldReferenceGroups;
@@ -81,6 +84,19 @@ public class ParamData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Param Editor] Setup the PARAM meta.");
+        }
+
+        // Param Annotations
+        Task<bool> paramAnnotationTask = SetupParamAnnotations();
+        bool paramAnnotationTaskResult = await paramAnnotationTask;
+
+        if (!paramAnnotationTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM annotations.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM annotations.");
         }
 
         // Param Enums
@@ -458,6 +474,36 @@ public class ParamData : IDisposable
         }
     }
 
+    public ParamAnnotationEntry GetParamAnnotations(string paramName)
+    {
+        var curLangString = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = ParamAnnotationLanguages.Languages.FirstOrDefault(e => e.Name == curLangString);
+
+        if (curLang == null)
+            return null;
+
+        var curAnnotations = ParamAnnotations.Entries[curLang];
+        var curParam = curAnnotations.Params.FirstOrDefault(e => e.Param == paramName);
+
+        if(curParam == null)
+            return null;
+
+        return curParam;
+    }
+
+    public ParamAnnotationFieldEntry GetFieldAnnotation(ParamAnnotationEntry annotations, string fieldName)
+    {
+        if (annotations == null)
+            return null;
+
+        var match = annotations.Fields.FirstOrDefault(e => e.Field == fieldName);
+
+        if (match == null) 
+            return null;
+
+        return match;
+    }
+
     public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
     {
         if (curMeta != null && curMeta.Fields != null && curMeta.Fields.ContainsKey(def))
@@ -511,6 +557,72 @@ public class ParamData : IDisposable
         return true;
     }
 
+    public async Task<bool> SetupParamAnnotations()
+    {
+        await Task.Yield();
+
+        ParamAnnotationLanguages = new();
+
+        // Build the language list first
+        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", "Annotation Languages.json");
+
+        if (Path.Exists(sourcefile))
+        {
+            var file = File.ReadAllText(sourcefile);
+            try
+            {
+                ParamAnnotationLanguages = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamAnnotationLanguages);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation languages: {file}", LogPriority.High, e);
+            }
+        }
+        else
+        {
+            // Default to English if the file is missing
+            var english = new ParamAnnotationLanguageEntry();
+            english.Name = "English";
+            english.Folder = "English";
+
+            ParamAnnotationLanguages.Languages.Add(english);
+        }
+
+        // Then build the annotations
+        ParamAnnotations = new();
+
+        foreach (var lang in ParamAnnotationLanguages.Languages)
+        {
+            var paramList = new ParamAnnotationList();
+            ParamAnnotations.Entries.Add(lang, paramList);
+
+            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamAnnotationEntry);
+
+                        if (!ParamAnnotations.Entries[lang].Params.Any(e => e.Param == layout.Param))
+                        {
+                            ParamAnnotations.Entries[lang].Params.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation entry: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
     public async Task<bool> SetupParamEnums()
     {
         await Task.Yield();
@@ -529,9 +641,9 @@ public class ParamData : IDisposable
                     var file = File.ReadAllText(entry);
                     try
                     {
-                        var layout = JsonSerializer.Deserialize(file, ProjectJsonSerializerContext.Default.ProjectEnumEntry);
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
 
-                        if (!Enums.List.Any(e => e.Name == layout.Name))
+                        if (!Enums.List.Any(e => e.Key == layout.Key))
                         {
                             Enums.List.Add(layout);
                         }
@@ -555,9 +667,9 @@ public class ParamData : IDisposable
                     var file = File.ReadAllText(entry);
                     try
                     {
-                        var layout = JsonSerializer.Deserialize(file, ProjectJsonSerializerContext.Default.ProjectEnumEntry);
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
 
-                        if (!Enums.List.Any(e => e.Name == layout.Name))
+                        if (!Enums.List.Any(e => e.Key == layout.Key))
                         {
                             Enums.List.Add(layout);
                         }
@@ -739,7 +851,7 @@ public class ParamData : IDisposable
                     {
                         var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCategoryEntry);
 
-                        if (!ParamCategories.Categories.Any(e => e.DisplayName == layout.DisplayName))
+                        if (!ParamCategories.Categories.Any(e => e.Key == layout.Key))
                         {
                             ParamCategories.Categories.Add(layout);
                         }
@@ -765,7 +877,7 @@ public class ParamData : IDisposable
                     {
                         var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCategoryEntry);
 
-                        if (!ParamCategories.Categories.Any(e => e.DisplayName == layout.DisplayName))
+                        if (!ParamCategories.Categories.Any(e => e.Key == layout.Key))
                         {
                             ParamCategories.Categories.Add(layout);
                         }

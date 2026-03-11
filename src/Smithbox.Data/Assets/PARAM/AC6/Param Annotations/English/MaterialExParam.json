@@ -1,0 +1,48 @@
+{
+  "Param": "MaterialExParam",
+  "Type": "MATERIAL_EX_PARAM_ST",
+  "Name": "MaterialExParam",
+  "Description": "Determines the configuration of material parameters.",
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "Material Param Name",
+      "Description": "Set the parameter name of the material. Up to 31 characters."
+    },
+    {
+      "Field": "materialId",
+      "Name": "Material ID",
+      "Description": "The material expansion paramter ID to use for NPCs. -1 for all materials."
+    },
+    {
+      "Field": "materialParamValue0",
+      "Name": "Material Param Value: R",
+      "Description": "The material parameter value used for the red component of a color."
+    },
+    {
+      "Field": "materialParamValue1",
+      "Name": "Material Param Value: G",
+      "Description": "The material parameter value used for the green component of a color."
+    },
+    {
+      "Field": "materialParamValue2",
+      "Name": "Material Param Value: B",
+      "Description": "The material parameter value used for the blue component of a color."
+    },
+    {
+      "Field": "materialParamValue3",
+      "Name": "Material Param Value: Alpha",
+      "Description": "The material parameter value used for the alpha component of a color."
+    },
+    {
+      "Field": "materialParamValue4",
+      "Name": "Material Param Value: Intensity",
+      "Description": "The material parameter value used for intensity."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

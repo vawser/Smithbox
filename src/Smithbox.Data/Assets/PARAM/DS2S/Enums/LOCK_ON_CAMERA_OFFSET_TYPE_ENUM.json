@@ -1,192 +1,344 @@
 {
-  "DisplayName": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
-  "Name": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
-  "Description": "",
+  "Key": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOCK_ON_CAMERA_OFFSET_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "10010",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "10010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "10020",
-      "Name": "Small size",
-      "Description": ""
+      "Key": "10020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small size"
+        }
+      ]
     },
     {
-      "ID": "10030",
-      "Name": "Medium size",
-      "Description": ""
+      "Key": "10030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium size"
+        }
+      ]
     },
     {
-      "ID": "10040",
-      "Name": "Large",
-      "Description": ""
+      "Key": "10040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "10050",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "10050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "10060",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "10060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "10070",
-      "Name": "Special special large size",
-      "Description": ""
+      "Key": "10070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special special large size"
+        }
+      ]
     },
     {
-      "ID": "21540",
-      "Name": "Exclusive - Skeleton Aristocrat",
-      "Description": ""
+      "Key": "21540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Skeleton Aristocrat"
+        }
+      ]
     },
     {
-      "ID": "22120",
-      "Name": "Dedicated-Wyvern",
-      "Description": ""
+      "Key": "22120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated-Wyvern"
+        }
+      ]
     },
     {
-      "ID": "22235",
-      "Name": "Exclusive-Giant Rat",
-      "Description": ""
+      "Key": "22235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Giant Rat"
+        }
+      ]
     },
     {
-      "ID": "23033",
-      "Name": "Dedicated - Double-sided Warrior: Snake Head",
-      "Description": ""
+      "Key": "23033",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Double-sided Warrior: Snake Head"
+        }
+      ]
     },
     {
-      "ID": "23050",
-      "Name": "Exclusive - Demon Knight",
-      "Description": ""
+      "Key": "23050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Demon Knight"
+        }
+      ]
     },
     {
-      "ID": "23096",
-      "Name": "Exclusive-New Titan Senior Soldier (Deceased)",
-      "Description": ""
+      "Key": "23096",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-New Titan Senior Soldier (Deceased)"
+        }
+      ]
     },
     {
-      "ID": "23097",
-      "Name": "Exclusive - New Titan Advanced Soldier (Living)",
-      "Description": ""
+      "Key": "23097",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - New Titan Advanced Soldier (Living)"
+        }
+      ]
     },
     {
-      "ID": "23180",
-      "Name": "Dedicated - Vagrant",
-      "Description": ""
+      "Key": "23180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Vagrant"
+        }
+      ]
     },
     {
-      "ID": "23240",
-      "Name": "Dedicated-Gargoyle",
-      "Description": ""
+      "Key": "23240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated-Gargoyle"
+        }
+      ]
     },
     {
-      "ID": "23250",
-      "Name": "Exclusive - Warrior in the Mirror",
-      "Description": ""
+      "Key": "23250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Warrior in the Mirror"
+        }
+      ]
     },
     {
-      "ID": "23260",
-      "Name": "Dedicated - Butcher",
-      "Description": ""
+      "Key": "23260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Butcher"
+        }
+      ]
     },
     {
-      "ID": "23320",
-      "Name": "Exclusive-Queen's Knight A",
-      "Description": ""
+      "Key": "23320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight A"
+        }
+      ]
     },
     {
-      "ID": "23330",
-      "Name": "Exclusive-Queen's Knight B",
-      "Description": ""
+      "Key": "23330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight B"
+        }
+      ]
     },
     {
-      "ID": "23340",
-      "Name": "Exclusive-Queen's Knight C",
-      "Description": ""
+      "Key": "23340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's Knight C"
+        }
+      ]
     },
     {
-      "ID": "25000",
-      "Name": "Exclusive - Jabba the Hutt",
-      "Description": ""
+      "Key": "25000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Jabba the Hutt"
+        }
+      ]
     },
     {
-      "ID": "25010",
-      "Name": "Exclusive-Naga",
-      "Description": ""
+      "Key": "25010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Naga"
+        }
+      ]
     },
     {
-      "ID": "25030",
-      "Name": "Exclusive-Man Scorpion♀",
-      "Description": ""
+      "Key": "25030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Man Scorpion♀"
+        }
+      ]
     },
     {
-      "ID": "25040",
-      "Name": "Exclusive-Mirror Knight",
-      "Description": ""
+      "Key": "25040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Mirror Knight"
+        }
+      ]
     },
     {
-      "ID": "25061",
-      "Name": "Exclusive - Agaduran's Stand",
-      "Description": ""
+      "Key": "25061",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Agaduran's Stand"
+        }
+      ]
     },
     {
-      "ID": "25146",
-      "Name": "Dedicated - Old King",
-      "Description": ""
+      "Key": "25146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Old King"
+        }
+      ]
     },
     {
-      "ID": "26000",
-      "Name": "Exclusive-Ancient Dragon",
-      "Description": ""
+      "Key": "26000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Ancient Dragon"
+        }
+      ]
     },
     {
-      "ID": "26020",
-      "Name": "Exclusive-Beautiful Frog",
-      "Description": ""
+      "Key": "26020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Beautiful Frog"
+        }
+      ]
     },
     {
-      "ID": "26030",
-      "Name": "Exclusive-Spider Queen",
-      "Description": ""
+      "Key": "26030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Spider Queen"
+        }
+      ]
     },
     {
-      "ID": "26031",
-      "Name": "Exclusive-Spider Queen (Cliff)",
-      "Description": ""
+      "Key": "26031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Spider Queen (Cliff)"
+        }
+      ]
     },
     {
-      "ID": "26070",
-      "Name": "Dedicated - Molten Demon",
-      "Description": ""
+      "Key": "26070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Molten Demon"
+        }
+      ]
     },
     {
-      "ID": "26110",
-      "Name": "Dedicated - Heavy Cavalry",
-      "Description": ""
+      "Key": "26110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Heavy Cavalry"
+        }
+      ]
     },
     {
-      "ID": "26191",
-      "Name": "Dedicated - Silver Chariot",
-      "Description": ""
+      "Key": "26191",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Silver Chariot"
+        }
+      ]
     },
     {
-      "ID": "26250",
-      "Name": "Dedicated - Ornstein",
-      "Description": ""
+      "Key": "26250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dedicated - Ornstein"
+        }
+      ]
     },
     {
-      "ID": "26260",
-      "Name": "Exclusive - Forgotten Sinners",
-      "Description": ""
+      "Key": "26260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive - Forgotten Sinners"
+        }
+      ]
     },
     {
-      "ID": "26270",
-      "Name": "Exclusive-Queen's armor form",
-      "Description": ""
+      "Key": "26270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Exclusive-Queen's armor form"
+        }
+      ]
     }
   ]
 }

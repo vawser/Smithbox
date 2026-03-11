@@ -1,0 +1,193 @@
+{
+  "Param": "LoadBalancerParam",
+  "Type": "LOAD_BALANCER_PARAM_ST",
+  "Name": "LoadBalancerParam",
+  "Description": "Determines the configuration of the FPS load balancer.",
+  "Fields": [
+    {
+      "Field": "lowerFpsThreshold",
+      "Name": "Low FPS Threshold",
+      "Description": "If the FPS falls below this amount, then the load balancer level increases by 1."
+    },
+    {
+      "Field": "upperFpsThreshold",
+      "Name": "High FPS Threshold",
+      "Description": "If the FPS exceeds this amount, then the load balancer level reduces by 1."
+    },
+    {
+      "Field": "lowerFpsContinousCount",
+      "Name": "Low FPS Threshold Count",
+      "Description": "If the FPS falls below this amount for the specified number of consecutive frames, the load balancer level increases by 1."
+    },
+    {
+      "Field": "upperFpsContinousCount",
+      "Name": "High FPS Threshold Count",
+      "Description": "If the FPS exceeds this amount for the specified number of consecutive frames, the load balancer level reduces by 1."
+    },
+    {
+      "Field": "downAfterChangeSleep",
+      "Name": "Sleep Duration after Level Reduction",
+      "Description": "The number of frames to ignore monitoring for after a load balancer level reduction."
+    },
+    {
+      "Field": "upAfterChangeSleep",
+      "Name": "Sleep Duration after Level Increment",
+      "Description": "The number of frames to ignore monitoring for after a load balancer level increment."
+    },
+    {
+      "Field": "postProcessLightShaft",
+      "Name": "Reduction - Post Process: Light Shafts",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessBloom",
+      "Name": "Reduction - Post Process: Bloom",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessGlow",
+      "Name": "Reduction - Post Process: Glow",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessAA",
+      "Name": "Reduction - Post Process: Anti-Aliasing",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessSSAO",
+      "Name": "Reduction - Post Process: Screen-space Ambient Occulusion",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessDOF",
+      "Name": "Reduction - Post Process: Depth of Field",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessMotionBlur",
+      "Name": "Reduction - Post Process: Motion Blur",
+      "Description": "The filter level to use for this post process effect."
+    },
+    {
+      "Field": "postProcessMotionBlurIteration",
+      "Name": "Reduction - Post Process: Motion Blur Iteration Reduction",
+      "Description": "The reduction amount to apply to motion blur iterations."
+    },
+    {
+      "Field": "reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shadowBlur",
+      "Name": "Reduction - Shadow: Blur",
+      "Description": "The blur level to use for shadows."
+    },
+    {
+      "Field": "sfxParticleHalf",
+      "Name": "Reduction - Particles: Emitter Count",
+      "Description": "The reduction amount to apply to SFX emitter count."
+    },
+    {
+      "Field": "sfxReflection",
+      "Name": "Reduction - Particles: Reflection",
+      "Description": "The reduction amount to apply to SFX reflection."
+    },
+    {
+      "Field": "sfxWaterInteraction",
+      "Name": "Reduction - Particles: Water Interaction",
+      "Description": "The reduction amount to apply to SFX water interaction."
+    },
+    {
+      "Field": "sfxGlow",
+      "Name": "Reduction - Particles: Glow",
+      "Description": "The reduction amount to apply to SFX glow."
+    },
+    {
+      "Field": "sfxDistortion",
+      "Name": "Reduction - Particles: Distortion",
+      "Description": "The reduction amount to apply to SFX distortion."
+    },
+    {
+      "Field": "sftSoftSprite",
+      "Name": "Reduction - Particles: Soft Sprites",
+      "Description": "The reduction amount to apply to SFX soft sprites."
+    },
+    {
+      "Field": "sfxLightShaft",
+      "Name": "Reduction - Particles: Light Shafts",
+      "Description": "The reduction amount to apply to SFX light shafts."
+    },
+    {
+      "Field": "sfxScaleRenderDistanceScale",
+      "Name": "Reduction - Particles: Render Distance",
+      "Description": "Adjust the render distance of SFX in the reduced buffer based on SFX distance."
+    },
+    {
+      "Field": "dynamicResolution",
+      "Name": "Dynamic Resolution",
+      "Description": "The level of dynamic resolution to use."
+    },
+    {
+      "Field": "shadowCascade0ResolutionHalf",
+      "Name": "Shadow Resolution: Cascade 0 (Half)",
+      "Description": "Reduce the resolution of shadows (cascade 0) by half."
+    },
+    {
+      "Field": "shadowCascade1ResolutionHalf",
+      "Name": "Shadow Resolution: Cascade 1 (Half)",
+      "Description": "Reduce the resolution of shadows (cascade 1) by half."
+    },
+    {
+      "Field": "chrWetDisablePlayer",
+      "Name": "Player: Disable Wetness (Host)",
+      "Description": "Disable wetness for the host player."
+    },
+    {
+      "Field": "chrWetDisableRemotePlayer",
+      "Name": "Player: Disable Wetness (Client)",
+      "Description": "Disable wetness for the client players."
+    },
+    {
+      "Field": "chrWetDisableEnemy",
+      "Name": "Player: Disable Wetness (Enemy)",
+      "Description": "Disable wetness for enemies."
+    },
+    {
+      "Field": "dynamicResolutionPercentageMin",
+      "Name": "Dynamic Resolution: Minimum %",
+      "Description": "The minimum limit for dynamic resolution."
+    },
+    {
+      "Field": "dynamicResolutionPercentageMax",
+      "Name": "Dynamic Resolution: Maximum %",
+      "Description": "The maximum limit for dynamic resolution."
+    },
+    {
+      "Field": "sfxBulletCartridgeParticleEnableDist",
+      "Name": "Particles: Cartridge Emittance Distance",
+      "Description": "The distance at which cartridges will be generated, if the distance between the generation location and the camera is within this value. In metres."
+    },
+    {
+      "Field": "sfxLowerFpsThreshold",
+      "Name": "Particles: Low FPS Threshold",
+      "Description": "If the FPS falls below this amount due to SFX, then the load balancer level increases by 1."
+    },
+    {
+      "Field": "dynamicResolutionMinChangePeriod",
+      "Name": "Dynamic Resolution: Minimum Change Duration",
+      "Description": "The minimum change duration for each reduction step when reducing the resolution due to poor performance."
+    },
+    {
+      "Field": "dynamicResolutionStartResolution",
+      "Name": "Dynamic Resolution: Start Resolution",
+      "Description": "The initial resolution percentage for dynamic resolution (based on the the used resolution)."
+    },
+    {
+      "Field": "reserve1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,32 +1,56 @@
 {
-  "DisplayName": "CHR_PHANTOM_BLEND_TYPE",
-  "Name": "CHR_PHANTOM_BLEND_TYPE",
-  "Description": "",
+  "Key": "CHR_PHANTOM_BLEND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_PHANTOM_BLEND_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Translucent",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Translucent"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Multiplication",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplication"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Addition",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Addition"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Subtraction",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Subtraction"
+        }
+      ]
     }
   ]
 }

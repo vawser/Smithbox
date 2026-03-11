@@ -1,97 +1,173 @@
 {
-  "DisplayName": "WEAPON_ACTION_CONTROL_TYPES",
-  "Name": "WEAPON_ACTION_CONTROL_TYPES",
-  "Description": "",
+  "Key": "WEAPON_ACTION_CONTROL_TYPES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_ACTION_CONTROL_TYPES"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Melee attack [on the spot]",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [on the spot]"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Melee attack [pursuit turn]",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [pursuit turn]"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Melee attack [direction change]",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [direction change]"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Melee attack [Shield ready]",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [Shield ready]"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Melee attack [Shield stance possible & turning homing]",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [Shield stance possible & turning homing]"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Melee attack [Turning & tracking not possible]",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [Turning & tracking not possible]"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Melee attack [Jump]",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee attack [Jump]"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Shooting attack [two-handed bow]",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting attack [two-handed bow]"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Shooting attack [two-handed longbow]",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting attack [two-handed longbow]"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Shooting attack [one-handed crossbow]",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting attack [one-handed crossbow]"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Shooting attack [dual wield two-handed crossbow]",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooting attack [dual wield two-handed crossbow]"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Spell",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Guard",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Parry",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Two-handed",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Precision shooting",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Precision shooting"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Binoculars",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Binoculars"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Shrine of Amana",
+  "Key": "Shrine of Amana",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Shrine of Amana"
+      }
+  ],
   "Params": [
     "eventlocation_m20_11_00_00",
     "eventparam_m20_11_00_00",

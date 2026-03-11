@@ -1,52 +1,92 @@
 {
-  "DisplayName": "CHR_EDIT_FACE_PARAM_CATEGORY",
-  "Name": "CHR_EDIT_FACE_PARAM_CATEGORY",
-  "Description": "",
+  "Key": "CHR_EDIT_FACE_PARAM_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_EDIT_FACE_PARAM_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Whole face",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whole face"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Face shape",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face shape"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Eyebrows",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eyebrows"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Eye",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eye"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Nose",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nose"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Mouth",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouth"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Chin",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chin"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Beard",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beard"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "None",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     }
   ]
 }

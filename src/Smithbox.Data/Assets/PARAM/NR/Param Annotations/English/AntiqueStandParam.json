@@ -1,0 +1,78 @@
+{
+  "Param": "AntiqueStandParam",
+  "Type": "ANTIQUE_STAND_PARAM_ST",
+  "Name": "AntiqueStandParam",
+  "Description": "Defines the parameters for relic vessels.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The icon to display for this relic vessel in the menu."
+    },
+    {
+      "Field": "heroType",
+      "Name": "Hero Type",
+      "Description": "Which heros can use this relic vessel."
+    },
+    {
+      "Field": "relicSlot1",
+      "Name": "Relic Slot Color: 1",
+      "Description": "The color for the first relic slot."
+    },
+    {
+      "Field": "relicSlot2",
+      "Name": "Relic Slot Color: 2",
+      "Description": "The color for the second relic slot."
+    },
+    {
+      "Field": "relicSlot3",
+      "Name": "Relic Slot Color: 3",
+      "Description": "The color for the third relic slot."
+    },
+    {
+      "Field": "unlockFlag",
+      "Name": "Unlock Flag",
+      "Description": "The unlock flag for this relic vessel."
+    },
+    {
+      "Field": "goodsId",
+      "Name": "Linked Goods ID",
+      "Description": "The linked goods item for this relic vessel."
+    },
+    {
+      "Field": "deepRelicSlot1",
+      "Name": "Depths Relic Slot Color: 1",
+      "Description": "The color for the first depths relic slot."
+    },
+    {
+      "Field": "deepRelicSlot2",
+      "Name": "Depths Relic Slot Color: 2",
+      "Description": "The color for the second depths relic slot."
+    },
+    {
+      "Field": "deepRelicSlot3",
+      "Name": "Depths Relic Slot Color: 3",
+      "Description": "The color for the third depths relic slot."
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

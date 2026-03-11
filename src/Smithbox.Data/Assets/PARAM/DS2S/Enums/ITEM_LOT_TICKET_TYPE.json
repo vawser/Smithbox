@@ -1,37 +1,65 @@
 {
-  "DisplayName": "ITEM_LOT_TICKET_TYPE",
-  "Name": "ITEM_LOT_TICKET_TYPE",
-  "Description": "",
+  "Key": "ITEM_LOT_TICKET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_TICKET_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Cheap",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cheap"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Normal",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "High",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Rare",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rare"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "S rare",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "S rare"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "Param": "ChrPhysicsHomingParam",
+  "Type": "CHR_PHYSICS_HOMING_ST",
+  "Name": "ChrPhysicsHomingParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "targetOffsetX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "targetBaseDmyPolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallCorrectionChase",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallCorrectionTurn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallCorrectionChaseMaxAcceleration",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "initialVelocityCorrection",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallCorrectionGuaranteeArrival",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallCorrectionChaseMaxVelocityRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

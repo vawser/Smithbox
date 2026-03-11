@@ -1,0 +1,108 @@
+{
+  "Param": "HPEstusFlaskRecoveryParam",
+  "Type": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Name": "HPEstusFlaskRecoveryParam",
+  "Description": "Retrieve Charges For Estus Flask by killing enemies",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "Host",
+      "Description": "Number of host est recovery"
+    },
+    {
+      "Field": "invadeOrb_None",
+      "Name": "Red Eye Orb - None",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Umbasa",
+      "Name": "Red Eye Orb - Warriors of Sunlight",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Berserker",
+      "Name": "Red Eye Orb - Mound-makers",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Sinners",
+      "Name": "Red Eye Orb - Sinner",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeSign_None",
+      "Name": "Red Soapstone - None",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Umbasa",
+      "Name": "Red Soapstone - Warriors of Sunlight",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Berserker",
+      "Name": "Red Soapstone - Mound-makers",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Sinners",
+      "Name": "Red Soapstone - Sinner",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeRing_Sinners",
+      "Name": "Covenant Invasion - Sinner",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "invadeRing_Rosalia",
+      "Name": "Covenant Invasion - Rosaria\u0027s Fingers",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "invadeRing_Forest",
+      "Name": "Covenant Invasion - Watchdogs of Farron",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "coopSign_None",
+      "Name": "White Soapstone - None",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Umbasa",
+      "Name": "White Soapstone - Warriors of Sunlight",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Berserker",
+      "Name": "White Soapstone - Mound-makers",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Sinners",
+      "Name": "White Soapstone - Sinner",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopRing_RedHunter",
+      "Name": "White Soapstone - Red Hunter",
+      "Description": "Cooperation route is the number of est recovery of the power of the ring"
+    },
+    {
+      "Field": "invadeRing_Anor",
+      "Name": "Covenant Invasion - Darkmoon Blade",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "paramReplaceRate",
+      "Name": "Replacement Rate",
+      "Description": "Recovery number Parameter replacement rate"
+    },
+    {
+      "Field": "paramReplaceId",
+      "Name": "Replace ID",
+      "Description": "Recovery number Parameter replacement destination ID"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "Param": "SkillParam",
+  "Type": "SKILL_PARAM_ST",
+  "Name": "SkillParam",
+  "Description": "Handles Skills",
+  "Fields": [
+    {
+      "Field": "virtualWeaponId",
+      "Name": "",
+      "Description": "Weapon given to the player when the skill is obtained, used for dummy weapons"
+    },
+    {
+      "Field": "unlockEventFlag",
+      "Name": "",
+      "Description": "This skill will be locked until this event flag is on"
+    },
+    {
+      "Field": "parent1",
+      "Name": "",
+      "Description": "Skill needed to unlock this skill"
+    },
+    {
+      "Field": "parent2",
+      "Name": "",
+      "Description": "Skill needed to unlock this skill"
+    },
+    {
+      "Field": "parent3",
+      "Name": "",
+      "Description": "Skill needed to unlock this skill"
+    },
+    {
+      "Field": "acquireWeaponId",
+      "Name": "",
+      "Description": "Weapon given to the player when the skill is obtained, used for useable Combat Arts and Prosthetics"
+    },
+    {
+      "Field": "reinforceWeaponId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffect1",
+      "Name": "",
+      "Description": "Applies SpEffect to the player when this skill is unlocked"
+    },
+    {
+      "Field": "spEffect2",
+      "Name": "",
+      "Description": "Applies SpEffect to the player when this skill is unlocked"
+    },
+    {
+      "Field": "spEffect3",
+      "Name": "",
+      "Description": "Applies SpEffect to the player when this skill is unlocked"
+    },
+    {
+      "Field": "dispRow",
+      "Name": "",
+      "Description": "Horizontal position of the skill in the skill tree"
+    },
+    {
+      "Field": "dispCol",
+      "Name": "",
+      "Description": "Vertical position of the skill in the skill tree"
+    },
+    {
+      "Field": "unenforementWepId",
+      "Name": "",
+      "Description": "Dummy weapon used to hide the skill until viewing is unlocked, this one specifies the type of skill"
+    },
+    {
+      "Field": "unreleaseWepId",
+      "Name": "",
+      "Description": "Dummy weapon used to hide the skill until viewing is unlocked, this one doesn\u0027t specify the type of skill"
+    },
+    {
+      "Field": "menuPageNo",
+      "Name": "",
+      "Description": "Skill Tree this skill appears in. 0=Shinobi 1=Prosthetic 2=Ashina 3=Temple 4=Mushin -1=No tree"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addResourceItemA",
+      "Name": "",
+      "Description": "Increases the maximum amount of held spirit emblems when the skill is obtained and only when it\u0027s obtained"
+    },
+    {
+      "Field": "unlovkViewSkill0",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill1",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill2",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill3",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill4",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill5",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill6",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "unlovkViewSkill7",
+      "Name": "",
+      "Description": "Skills needed to view what the skill is, only one is needed to unlock viewing"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

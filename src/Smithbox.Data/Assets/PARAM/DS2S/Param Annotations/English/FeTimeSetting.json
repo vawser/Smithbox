@@ -1,0 +1,13 @@
+{
+  "Param": "FeTimeSetting",
+  "Type": "FE_TIME_SETTING_PARAM",
+  "Name": "FeTimeSetting",
+  "Description": "Defines parameters related to the message box interface.",
+  "Fields": [
+    {
+      "Field": "time_duration",
+      "Name": "Duration",
+      "Description": ""
+    }
+  ]
+}

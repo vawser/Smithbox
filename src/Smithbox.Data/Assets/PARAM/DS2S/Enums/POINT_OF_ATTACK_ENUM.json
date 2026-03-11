@@ -1,52 +1,92 @@
 {
-  "DisplayName": "POINT_OF_ATTACK_ENUM",
-  "Name": "POINT_OF_ATTACK_ENUM",
-  "Description": "",
+  "Key": "POINT_OF_ATTACK_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "POINT_OF_ATTACK_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Bottom left <1>",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom left <1>"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Bottom <2>",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom <2>"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Bottom right <3>",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom right <3>"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Left <4>",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left <4>"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Center <5>",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center <5>"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Right <6>",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right <6>"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Top left <7>",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top left <7>"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Top<8>",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top<8>"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Top right <9>",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top right <9>"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "Param": "MissionSystemMsgAnswerParam",
+  "Type": "MISSION_SYS_MSG_ANSWER_PARAM_ST",
+  "Name": "MissionSystemMsgAnswerParam",
+  "Description": "Determines the parameters for mission reactions.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkParamId",
+      "Name": "Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "The priority of this reaction."
+    },
+    {
+      "Field": "dispLimitNum",
+      "Name": "Reaction Limit",
+      "Description": "The maximum number of instances of this reaction."
+    },
+    {
+      "Field": "dispLimitGroupId",
+      "Name": "Reaction Group ID",
+      "Description": "The group ID to use for the reaction limit."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

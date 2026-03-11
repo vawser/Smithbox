@@ -1,0 +1,283 @@
+{
+  "Param": "SmallBaseAndSpotAttachPoint",
+  "Type": "SMALLBASE_AND_SPOT_ATTACH_POINT_ST",
+  "Name": "SmallBaseAndSpotAttachPoint",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "Map ID: AA",
+      "Description": "The AA part of the MSB that this targets."
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "Map ID: BB",
+      "Description": "The BB part of the MSB that this targets."
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "Map ID: CC",
+      "Description": "The CC part of the MSB that this targets."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "attachPointEntityId",
+      "Name": "Attachment Point Entity ID",
+      "Description": ""
+    },
+    {
+      "Field": "defaultSmallBase",
+      "Name": "Default Small Base ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "Placement Location: X",
+      "Description": "The x coordinate in the MSB to place this attach point."
+    },
+    {
+      "Field": "posY",
+      "Name": "Placement Location: Y",
+      "Description": "The y coordinate in the MSB to place this attach point."
+    },
+    {
+      "Field": "posZ",
+      "Name": "Placement Location: Z",
+      "Description": "The Z coordinate in the MSB to place this attach point."
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

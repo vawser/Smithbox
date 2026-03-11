@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_RESIDENT_SFX_CTRL_ENUM",
-  "Name": "OBJ_RESIDENT_SFX_CTRL_ENUM",
-  "Description": "",
+  "Key": "OBJ_RESIDENT_SFX_CTRL_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_RESIDENT_SFX_CTRL_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Disappears when broken",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disappears when broken"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Only after destruction",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only after destruction"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Everytime",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Everytime"
+        }
+      ]
     }
   ]
 }

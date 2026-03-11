@@ -1,0 +1,158 @@
+{
+  "Param": "ArrowParam",
+  "Type": "ARROW_PARAM",
+  "Name": "ArrowParam",
+  "Description": "Defines parameters for ammunition, covering arrows, greatarrows and bolts.",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "Display SFX for Aim",
+      "Description": "The arrow SFX to display when aiming this arrow."
+    },
+    {
+      "Field": "lightBulletId0",
+      "Name": "Slot 0: Light Bullet",
+      "Description": "The bullet to trigger on light attack for slot 0."
+    },
+    {
+      "Field": "heavyBulletId0",
+      "Name": "Slot 0: Heavy Bullet",
+      "Description": "The bullet to trigger on heavy attack for slot 0."
+    },
+    {
+      "Field": "lightDamageId0",
+      "Name": "Slot 0: Light Bullet Damage",
+      "Description": "The damage profile to use for light bullet in slot 0."
+    },
+    {
+      "Field": "heavyDamageId0",
+      "Name": "Slot 0: Heavy Bullet Damage",
+      "Description": "The damage profile to use for heavy bullet in slot 0."
+    },
+    {
+      "Field": "lightBulletId1",
+      "Name": "Slot 1: Light Bullet",
+      "Description": "The bullet to trigger on light attack for slot 1."
+    },
+    {
+      "Field": "heavyBulletId1",
+      "Name": "Slot 1: Heavy Bullet",
+      "Description": "The bullet to trigger on heavy attack for slot 1."
+    },
+    {
+      "Field": "lightDamageId1",
+      "Name": "Slot 1: Light Bullet Damage",
+      "Description": "The damage profile to use for light bullet in slot 1."
+    },
+    {
+      "Field": "heavyDamageId1",
+      "Name": "Slot 1: Heavy Bullet Damage",
+      "Description": "The damage profile to use for heavy bullet in slot 1."
+    },
+    {
+      "Field": "lightBulletId2",
+      "Name": "Slot 2: Light Bullet",
+      "Description": "The bullet to trigger on light attack for slot 2."
+    },
+    {
+      "Field": "heavyBulletId2",
+      "Name": "Slot 2: Heavy Bullet",
+      "Description": "The bullet to trigger on heavy attack for slot 2."
+    },
+    {
+      "Field": "lightDamageId2",
+      "Name": "Slot 2: Light Bullet Damage",
+      "Description": "The damage profile to use for light bullet in slot 2."
+    },
+    {
+      "Field": "heavyDamageId2",
+      "Name": "Slot 2: Heavy Bullet Damage",
+      "Description": "The damage profile to use for heavy bullet in slot 2."
+    },
+    {
+      "Field": "lightBulletId3",
+      "Name": "Slot 3: Light Bullet",
+      "Description": "The bullet to trigger on light attack for slot 3."
+    },
+    {
+      "Field": "heavyBulletId3",
+      "Name": "Slot 3: Heavy Bullet",
+      "Description": "The bullet to trigger on heavy attack for slot 3."
+    },
+    {
+      "Field": "lightDamageId3",
+      "Name": "Slot 3: Light Bullet Damage",
+      "Description": "The damage profile to use for light bullet in slot 3."
+    },
+    {
+      "Field": "heavyDamageId3",
+      "Name": "Slot 3: Heavy Bullet Damage",
+      "Description": "The damage profile to use for heavy bullet in slot 3."
+    },
+    {
+      "Field": "modelIdInQuiver",
+      "Name": "Quiver Model ID",
+      "Description": "The model ID of the arrow within the quiver."
+    },
+    {
+      "Field": "menuPhysicalAttack",
+      "Name": "Menu: Physical Attack",
+      "Description": "The physical attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuMagicAttack",
+      "Name": "Menu: Magic Attack",
+      "Description": "The magic attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuThunderAttack",
+      "Name": "Menu: Lightning Attack",
+      "Description": "The lightning attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuFireAttack",
+      "Name": "Menu: Fire Attack",
+      "Description": "The fire attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menudarkAttack",
+      "Name": "Menu: Dark Attack",
+      "Description": "The dark attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuPoisonAttack",
+      "Name": "Menu: Poison Attack",
+      "Description": "The poison attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuBleedAttack",
+      "Name": "Menu: Bleed Attack",
+      "Description": "The bleed attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "menuWeaponBreakAttack",
+      "Name": "Menu: Durability Attack",
+      "Description": "The durability attack to display for this arrow in the menu. Display only."
+    },
+    {
+      "Field": "arrowType",
+      "Name": "Arrow Type",
+      "Description": "The type of arrow this is."
+    },
+    {
+      "Field": "menuAttackCategory1",
+      "Name": "Menu: Attack Attribute 1",
+      "Description": "The first attack attribute for this arrow."
+    },
+    {
+      "Field": "menuAttackCategory2",
+      "Name": "Menu: Attack Attribute 2",
+      "Description": "The second attack attribute for this arrow."
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

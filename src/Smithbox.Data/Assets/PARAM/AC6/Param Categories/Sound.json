@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Sound",
+  "Key": "Sound",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Sound"
+      }
+  ],
   "Params": [
     "WwiseValueToStrParam_ReflectAuxBusType",
     "WwiseValueToStrParam_ReflectTextureType",

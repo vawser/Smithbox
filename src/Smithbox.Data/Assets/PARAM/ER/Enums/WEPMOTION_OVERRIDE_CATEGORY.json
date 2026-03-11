@@ -1,537 +1,965 @@
 {
-  "DisplayName": "WEPMOTION_OVERRIDE_CATEGORY",
-  "Name": "WEPMOTION_OVERRIDE_CATEGORY",
-  "Description": "These are TAE motion types used to determine weapon override animations.",
+  "Key": "WEPMOTION_OVERRIDE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEPMOTION_OVERRIDE_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "100",
-      "Name": "Great Knife/Ivory Sickle/Celebrant's Sickle",
-      "Description": ""
-    },
-    {
-      "ID": "101",
-      "Name": "Misericorde/Scorpion's Stinger/Glintstone Kris",
-      "Description": ""
-    },
-    {
-      "ID": "103",
-      "Name": "Erdsteel Dagger/Blade of Calling/Black Knife",
-      "Description": ""
-    },
-    {
-      "ID": "104",
-      "Name": "Wakizashi",
-      "Description": ""
-    },
-    {
-      "ID": "110",
-      "Name": "Broadsword/Cane Sword",
-      "Description": ""
-    },
-    {
-      "ID": "111",
-      "Name": "Short Sword",
-      "Description": ""
-    },
-    {
-      "ID": "112",
-      "Name": "Miquellan Knight's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "113",
-      "Name": "Carian Knight's Sword/Lazuli Glintstone Sword",
-      "Description": ""
-    },
-    {
-      "ID": "117",
-      "Name": "Warhawk's Talon",
-      "Description": ""
-    },
-    {
-      "ID": "120",
-      "Name": "Eleonora's Poleblade",
-      "Description": ""
-    },
-    {
-      "ID": "121",
-      "Name": "Godskin Peeler",
-      "Description": ""
-    },
-    {
-      "ID": "125",
-      "Name": "Claymore",
-      "Description": ""
-    },
-    {
-      "ID": "126",
-      "Name": "Flamberge",
-      "Description": ""
-    },
-    {
-      "ID": "127",
-      "Name": "Sword of Milos/Death's Poker",
-      "Description": ""
-    },
-    {
-      "ID": "128",
-      "Name": "Knight's Greatsword/Banished Knight's Greatsword/Inseparable Sword",
-      "Description": ""
-    },
-    {
-      "ID": "129",
-      "Name": "Dark Moon Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "130",
-      "Name": "Marais Executioner's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "135",
-      "Name": "Zweihander/Troll Knight's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "136",
-      "Name": "Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "138",
-      "Name": "Ruins Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "137",
-      "Name": "Godslayer's Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "145",
-      "Name": "Estoc/Noble's Estoc",
-      "Description": ""
-    },
-    {
-      "ID": "146",
-      "Name": "Rogier's Rapier",
-      "Description": ""
-    },
-    {
-      "ID": "147",
-      "Name": "Frozen Needle",
-      "Description": ""
-    },
-    {
-      "ID": "150",
-      "Name": "Godskin Stitcher",
-      "Description": ""
-    },
-    {
-      "ID": "151",
-      "Name": "Great Epee",
-      "Description": ""
-    },
-    {
-      "ID": "155",
-      "Name": "Shotel/Eclipse Shotel /Nox Flowing Sword",
-      "Description": ""
-    },
-    {
-      "ID": "156",
-      "Name": "Scimitar/Shamshir",
-      "Description": ""
-    },
-    {
-      "ID": "157",
-      "Name": "Flowing Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "158",
-      "Name": "Mantis Blade",
-      "Description": ""
-    },
-    {
-      "ID": "159",
-      "Name": "Wing of Astel",
-      "Description": ""
-    },
-    {
-      "ID": "161",
-      "Name": "Beastman's Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "165",
-      "Name": "Serpentbone Blade",
-      "Description": ""
-    },
-    {
-      "ID": "166",
-      "Name": "Meteoric Ore Blade",
-      "Description": ""
-    },
-    {
-      "ID": "167",
-      "Name": "Nagakiba",
-      "Description": ""
-    },
-    {
-      "ID": "170",
-      "Name": "Hand Axe/Icerind Hatchet/Forked Hatchet",
-      "Description": ""
-    },
-    {
-      "ID": "171",
-      "Name": "Warped Axe/Ripple Blade",
-      "Description": ""
-    },
-    {
-      "ID": "172",
-      "Name": "Iron Cleaver/Celebrant's Cleaver",
-      "Description": ""
-    },
-    {
-      "ID": "175",
-      "Name": "Butchering Knife",
-      "Description": ""
-    },
-    {
-      "ID": "176",
-      "Name": "Pickaxe",
-      "Description": ""
-    },
-    {
-      "ID": "177",
-      "Name": "Axe of Godrick/Crescent Moon Axe",
-      "Description": ""
-    },
-    {
-      "ID": "180",
-      "Name": "Club/Stone Club",
-      "Description": ""
-    },
-    {
-      "ID": "181",
-      "Name": "Spiked Club",
-      "Description": ""
-    },
-    {
-      "ID": "182",
-      "Name": "Morning Star/Scepter of the All-Knowing",
-      "Description": ""
-    },
-    {
-      "ID": "183",
-      "Name": "Mace",
-      "Description": ""
-    },
-    {
-      "ID": "184",
-      "Name": "Monk's Flamemace",
-      "Description": ""
-    },
-    {
-      "ID": "196",
-      "Name": "Prelate's Inferno Crozier",
-      "Description": ""
-    },
-    {
-      "ID": "195",
-      "Name": "Great Club",
-      "Description": ""
-    },
-    {
-      "ID": "197",
-      "Name": "Giant-Crusher",
-      "Description": ""
-    },
-    {
-      "ID": "198",
-      "Name": "Golem's Halberd",
-      "Description": ""
-    },
-    {
-      "ID": "200",
-      "Name": "Partisan/Spiked Spear/Death Ritual Spear",
-      "Description": ""
-    },
-    {
-      "ID": "201",
-      "Name": "Pike",
-      "Description": ""
-    },
-    {
-      "ID": "202",
-      "Name": "Cross-Naginata",
-      "Description": ""
-    },
-    {
-      "ID": "203",
-      "Name": "Short Spear/Cleanrot Spear",
-      "Description": ""
-    },
-    {
-      "ID": "205",
-      "Name": "Vyke's War Spear/Siluria's Tree",
-      "Description": ""
-    },
-    {
-      "ID": "206",
-      "Name": "Treespear",
-      "Description": ""
-    },
-    {
-      "ID": "207",
-      "Name": "Serpent-Hunter",
-      "Description": ""
-    },
-    {
-      "ID": "210",
-      "Name": "Halberd/Commander's Standard/Banished Knight's Halberd/Dragon Halberd",
-      "Description": ""
-    },
-    {
-      "ID": "211",
-      "Name": "Lucerne/Golden Halberd/Nightrider Glaive",
-      "Description": ""
-    },
-    {
-      "ID": "212",
-      "Name": "Guardian's Swordspear/Loretta's War Sickle",
-      "Description": ""
-    },
-    {
-      "ID": "215",
-      "Name": "Zamor Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "216",
-      "Name": "Omen Cleaver/Magma Wyrm's Scalesword",
-      "Description": ""
-    },
-    {
-      "ID": "225",
-      "Name": "Scythe",
-      "Description": ""
-    },
-    {
-      "ID": "220",
-      "Name": "Katar/Veteran's Prosthesis",
-      "Description": ""
-    },
-    {
-      "ID": "221",
-      "Name": "Caestus",
-      "Description": ""
-    },
-    {
-      "ID": "226",
-      "Name": "Urumi",
-      "Description": ""
-    },
-    {
-      "ID": "227",
-      "Name": "Raptor Talons",
-      "Description": ""
-    },
-    {
-      "ID": "230",
-      "Name": "Albinauric Bow",
-      "Description": ""
-    },
-    {
-      "ID": "232",
-      "Name": "Harp Bow",
-      "Description": ""
-    },
-    {
-      "ID": "233",
-      "Name": "Pulley Crossbow",
-      "Description": ""
-    },
-    {
-      "ID": "236",
-      "Name": "Full Moon Crossbow",
-      "Description": ""
-    },
-    {
-      "ID": "240",
-      "Name": "Seal",
-      "Description": ""
-    },
-    {
-      "ID": "241",
-      "Name": "Sword Lance",
-      "Description": ""
-    },
-    {
-      "ID": "246",
-      "Name": "Dane's Footwork",
-      "Description": ""
-    },
-    {
-      "ID": "247",
-      "Name": "Smithscript Spear",
-      "Description": ""
-    },
-    {
-      "ID": "248",
-      "Name": "Smithscript Axe",
-      "Description": ""
-    },
-    {
-      "ID": "249",
-      "Name": "Rellana's Twin Blades",
-      "Description": ""
-    },
-    {
-      "ID": "250",
-      "Name": "Smithscript Greathammer",
-      "Description": ""
-    },
-    {
-      "ID": "251",
-      "Name": "Smithscript Cirque",
-      "Description": ""
-    },
-    {
-      "ID": "252",
-      "Name": "Swift Spear",
-      "Description": ""
-    },
-    {
-      "ID": "253",
-      "Name": "Black Steel Greathammer",
-      "Description": ""
-    },
-    {
-      "ID": "254",
-      "Name": "Claws of Night",
-      "Description": ""
-    },
-    {
-      "ID": "255",
-      "Name": "Falx / Horned Warrior's Sword",
-      "Description": ""
-    },
-    {
-      "ID": "257",
-      "Name": "Dancing Blade of Ranah",
-      "Description": ""
-    },
-    {
-      "ID": "258",
-      "Name": "Death Knight's Twin Axes",
-      "Description": ""
-    },
-    {
-      "ID": "259",
-      "Name": "Golem Fist",
-      "Description": ""
-    },
-    {
-      "ID": "261",
-      "Name": "Rabbath's Cannon",
-      "Description": ""
-    },
-    {
-      "ID": "262",
-      "Name": "Main-gauche",
-      "Description": ""
-    },
-    {
-      "ID": "263",
-      "Name": "Fire Knight's Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "264",
-      "Name": "Lizard Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "265",
-      "Name": "Curseblade's Cirque",
-      "Description": ""
-    },
-    {
-      "ID": "266",
-      "Name": "Spear of the Impaler",
-      "Description": ""
-    },
-    {
-      "ID": "267",
-      "Name": "Bloodfiend's Arm",
-      "Description": ""
-    },
-    {
-      "ID": "268",
-      "Name": "Putrescence Cleaver",
-      "Description": ""
-    },
-    {
-      "ID": "288",
-      "Name": "Nanaya's Torch",
-      "Description": ""
-    },
-    {
-      "ID": "289",
-      "Name": "Lamenting Visage",
-      "Description": ""
-    },
-    {
-      "ID": "290",
-      "Name": "Staff of the Great Beyond",
-      "Description": ""
-    },
-    {
-      "ID": "291",
-      "Name": "Ghostflame Torch",
-      "Description": ""
-    },
-    {
-      "ID": "292",
-      "Name": "St. Trina's Torch",
-      "Description": ""
-    },
-    {
-      "ID": "293",
-      "Name": "Carian Sorcery Sword",
-      "Description": ""
-    },
-    {
-      "ID": "522",
-      "Name": "Unarmed",
-      "Description": ""
-    },
-    {
-      "ID": "831",
-      "Name": "Axe of Godfrey",
-      "Description": ""
-    },
-    {
-      "ID": "832",
-      "Name": "Starscourge Greatsword",
-      "Description": ""
-    },
-    {
-      "ID": "839",
-      "Name": "Ghiza's Wheel",
-      "Description": ""
-    },
-    {
-      "ID": "852",
-      "Name": "Ornamental Straight Sword",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Knife/Ivory Sickle/Celebrant's Sickle"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Misericorde/Scorpion's Stinger/Glintstone Kris"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Erdsteel Dagger/Blade of Calling/Black Knife"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wakizashi"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broadsword/Cane Sword"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short Sword"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miquellan Knight's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carian Knight's Sword/Lazuli Glintstone Sword"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warhawk's Talon"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eleonora's Poleblade"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Godskin Peeler"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claymore"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flamberge"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword of Milos/Death's Poker"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Knight's Greatsword/Banished Knight's Greatsword/Inseparable Sword"
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Moon Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Marais Executioner's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Zweihander/Troll Knight's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ruins Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Godslayer's Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Estoc/Noble's Estoc"
+        }
+      ]
+    },
+    {
+      "Key": "146",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogier's Rapier"
+        }
+      ]
+    },
+    {
+      "Key": "147",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frozen Needle"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Godskin Stitcher"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Epee"
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shotel/Eclipse Shotel /Nox Flowing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scimitar/Shamshir"
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flowing Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mantis Blade"
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wing of Astel"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beastman's Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Serpentbone Blade"
+        }
+      ]
+    },
+    {
+      "Key": "166",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Meteoric Ore Blade"
+        }
+      ]
+    },
+    {
+      "Key": "167",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nagakiba"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hand Axe/Icerind Hatchet/Forked Hatchet"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warped Axe/Ripple Blade"
+        }
+      ]
+    },
+    {
+      "Key": "172",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron Cleaver/Celebrant's Cleaver"
+        }
+      ]
+    },
+    {
+      "Key": "175",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butchering Knife"
+        }
+      ]
+    },
+    {
+      "Key": "176",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pickaxe"
+        }
+      ]
+    },
+    {
+      "Key": "177",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe of Godrick/Crescent Moon Axe"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Club/Stone Club"
+        }
+      ]
+    },
+    {
+      "Key": "181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spiked Club"
+        }
+      ]
+    },
+    {
+      "Key": "182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Morning Star/Scepter of the All-Knowing"
+        }
+      ]
+    },
+    {
+      "Key": "183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mace"
+        }
+      ]
+    },
+    {
+      "Key": "184",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Monk's Flamemace"
+        }
+      ]
+    },
+    {
+      "Key": "196",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prelate's Inferno Crozier"
+        }
+      ]
+    },
+    {
+      "Key": "195",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Club"
+        }
+      ]
+    },
+    {
+      "Key": "197",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant-Crusher"
+        }
+      ]
+    },
+    {
+      "Key": "198",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Golem's Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Partisan/Spiked Spear/Death Ritual Spear"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pike"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cross-Naginata"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short Spear/Cleanrot Spear"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vyke's War Spear/Siluria's Tree"
+        }
+      ]
+    },
+    {
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Treespear"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Serpent-Hunter"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Halberd/Commander's Standard/Banished Knight's Halberd/Dragon Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lucerne/Golden Halberd/Nightrider Glaive"
+        }
+      ]
+    },
+    {
+      "Key": "212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian's Swordspear/Loretta's War Sickle"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Zamor Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Omen Cleaver/Magma Wyrm's Scalesword"
+        }
+      ]
+    },
+    {
+      "Key": "225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Katar/Veteran's Prosthesis"
+        }
+      ]
+    },
+    {
+      "Key": "221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Caestus"
+        }
+      ]
+    },
+    {
+      "Key": "226",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Urumi"
+        }
+      ]
+    },
+    {
+      "Key": "227",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raptor Talons"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Albinauric Bow"
+        }
+      ]
+    },
+    {
+      "Key": "232",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Harp Bow"
+        }
+      ]
+    },
+    {
+      "Key": "233",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulley Crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "236",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Moon Crossbow"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Seal"
+        }
+      ]
+    },
+    {
+      "Key": "241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword Lance"
+        }
+      ]
+    },
+    {
+      "Key": "246",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dane's Footwork"
+        }
+      ]
+    },
+    {
+      "Key": "247",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smithscript Spear"
+        }
+      ]
+    },
+    {
+      "Key": "248",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smithscript Axe"
+        }
+      ]
+    },
+    {
+      "Key": "249",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rellana's Twin Blades"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smithscript Greathammer"
+        }
+      ]
+    },
+    {
+      "Key": "251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smithscript Cirque"
+        }
+      ]
+    },
+    {
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Swift Spear"
+        }
+      ]
+    },
+    {
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Steel Greathammer"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Claws of Night"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falx / Horned Warrior's Sword"
+        }
+      ]
+    },
+    {
+      "Key": "257",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dancing Blade of Ranah"
+        }
+      ]
+    },
+    {
+      "Key": "258",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death Knight's Twin Axes"
+        }
+      ]
+    },
+    {
+      "Key": "259",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Golem Fist"
+        }
+      ]
+    },
+    {
+      "Key": "261",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rabbath's Cannon"
+        }
+      ]
+    },
+    {
+      "Key": "262",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Main-gauche"
+        }
+      ]
+    },
+    {
+      "Key": "263",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire Knight's Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "264",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lizard Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "265",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curseblade's Cirque"
+        }
+      ]
+    },
+    {
+      "Key": "266",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear of the Impaler"
+        }
+      ]
+    },
+    {
+      "Key": "267",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bloodfiend's Arm"
+        }
+      ]
+    },
+    {
+      "Key": "268",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Putrescence Cleaver"
+        }
+      ]
+    },
+    {
+      "Key": "288",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nanaya's Torch"
+        }
+      ]
+    },
+    {
+      "Key": "289",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lamenting Visage"
+        }
+      ]
+    },
+    {
+      "Key": "290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Staff of the Great Beyond"
+        }
+      ]
+    },
+    {
+      "Key": "291",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ghostflame Torch"
+        }
+      ]
+    },
+    {
+      "Key": "292",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "St. Trina's Torch"
+        }
+      ]
+    },
+    {
+      "Key": "293",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carian Sorcery Sword"
+        }
+      ]
+    },
+    {
+      "Key": "522",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unarmed"
+        }
+      ]
+    },
+    {
+      "Key": "831",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Axe of Godfrey"
+        }
+      ]
+    },
+    {
+      "Key": "832",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Starscourge Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "839",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ghiza's Wheel"
+        }
+      ]
+    },
+    {
+      "Key": "852",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornamental Straight Sword"
+        }
+      ]
     }
   ]
 }

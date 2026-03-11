@@ -1,0 +1,53 @@
+{
+  "Param": "GemeffectParam",
+  "Type": "GEMEFFECT_PARAM_ST",
+  "Name": "GemeffectParam",
+  "Description": "Unused",
+  "Fields": [
+    {
+      "Field": "spEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "categoryId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "effectRank",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rankMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rankMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disposalPrice",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemIconIdOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_forAtk",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

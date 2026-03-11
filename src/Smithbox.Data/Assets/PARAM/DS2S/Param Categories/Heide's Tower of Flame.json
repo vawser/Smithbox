@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Heide's Tower of Flame",
+  "Key": "Heide's Tower of Flame",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Heide's Tower of Flame"
+      }
+  ],
   "Params": [
     "eventlocation_m10_31_00_00",
     "eventparam_m10_31_00_00",

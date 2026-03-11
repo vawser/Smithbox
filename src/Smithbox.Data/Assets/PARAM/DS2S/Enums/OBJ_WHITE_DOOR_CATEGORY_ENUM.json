@@ -1,37 +1,65 @@
 {
-  "DisplayName": "OBJ_WHITE_DOOR_CATEGORY_ENUM",
-  "Name": "OBJ_WHITE_DOOR_CATEGORY_ENUM",
-  "Description": "",
+  "Key": "OBJ_WHITE_DOOR_CATEGORY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_WHITE_DOOR_CATEGORY_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "End of multiplayer section",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End of multiplayer section"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Boss room",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss room"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Boss room exit",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss room exit"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Host goal point",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host goal point"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Mouse King Ashrei goal point",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King Ashrei goal point"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Scenario white door",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scenario white door"
+        }
+      ]
     }
   ]
 }

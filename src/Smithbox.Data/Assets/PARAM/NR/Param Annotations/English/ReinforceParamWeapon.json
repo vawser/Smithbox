@@ -1,0 +1,208 @@
+{
+  "Param": "ReinforceParamWeapon",
+  "Type": "REINFORCE_PARAM_WEAPON_ST",
+  "Name": "ReinforceParamWeapon",
+  "Description": "Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)",
+  "Fields": [
+    {
+      "Field": "physicsAtkRate",
+      "Name": "Damage %: Physical",
+      "Description": "Physical attack power correction value"
+    },
+    {
+      "Field": "magicAtkRate",
+      "Name": "Damage %: Magic",
+      "Description": "Magic attack power correction value"
+    },
+    {
+      "Field": "fireAtkRate",
+      "Name": "Damage %: Fire",
+      "Description": "Fire attack power correction value"
+    },
+    {
+      "Field": "thunderAtkRate",
+      "Name": "Damage %: Lightning",
+      "Description": "Correction value of electric shock attack power"
+    },
+    {
+      "Field": "staminaAtkRate",
+      "Name": "Damage %: Stamina",
+      "Description": "Stamina attack power correction value"
+    },
+    {
+      "Field": "saWeaponAtkRate",
+      "Name": "Damage %: Poise",
+      "Description": "Super Armor Weapon Attack Color Correction Value"
+    },
+    {
+      "Field": "saDurabilityRate",
+      "Name": "Poise Durability",
+      "Description": "SA endurance correction value"
+    },
+    {
+      "Field": "correctStrengthRate",
+      "Name": "Correction %: STR",
+      "Description": "Correction value of muscle strength correction"
+    },
+    {
+      "Field": "correctAgilityRate",
+      "Name": "Correction %: DEX",
+      "Description": "Correction value of agility correction"
+    },
+    {
+      "Field": "correctMagicRate",
+      "Name": "Correction %: INT",
+      "Description": "Correction value of magic power correction"
+    },
+    {
+      "Field": "correctFaithRate",
+      "Name": "Correction %: FTH",
+      "Description": "Correction value of faith correction"
+    },
+    {
+      "Field": "physicsGuardCutRate",
+      "Name": "Guard Absorption %: Physical",
+      "Description": "Correction value of physical attack cut rate when guarding"
+    },
+    {
+      "Field": "magicGuardCutRate",
+      "Name": "Guard Absorption %: Magic",
+      "Description": "Correction value of magic attack cut rate when guarding"
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "Guard Absorption %: Fire",
+      "Description": "Correction value of flame attack cut rate when guarding"
+    },
+    {
+      "Field": "thunderGuardCutRate",
+      "Name": "Guard Absorption %: Lightning",
+      "Description": "Correction value of electric shock attack cut rate when guarding"
+    },
+    {
+      "Field": "poisonGuardResistRate",
+      "Name": "Guard Absorption %: Poison",
+      "Description": "Correction value of poison attack cut rate when guarding"
+    },
+    {
+      "Field": "diseaseGuardResistRate",
+      "Name": "Guard Absorption %: Scarlet Rot",
+      "Description": "Correction value of plague attack cut rate when guarding"
+    },
+    {
+      "Field": "bloodGuardResistRate",
+      "Name": "Guard Absorption %: Blood Loss",
+      "Description": "Correction value for bleeding attack cut rate when guarding"
+    },
+    {
+      "Field": "curseGuardResistRate",
+      "Name": "Guard Absorption %: Death Blight",
+      "Description": "Correction value of curse attack cut rate when guarding"
+    },
+    {
+      "Field": "staminaGuardDefRate",
+      "Name": "Guard Absorption %: Stability",
+      "Description": "Correction value of stamina defense power when guarding"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Behavior SpEffect [1] Offset",
+      "Description": "Addition correction value for special effect ID1"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "Behavior SpEffect [2] Offset",
+      "Description": "Addition correction value for special effect ID2"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "Behavior SpEffect [3] Offset",
+      "Description": "Addition correction value for special effect ID3"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "Passive SpEffect [1] Offset",
+      "Description": "Addition correction value for resident special effect ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Passive SpEffect [2] Offset",
+      "Description": "Addition correction value for resident special effect ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Passive SpEffect [3] Offset",
+      "Description": "Addition correction value for resident special effect ID3"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Reinforcement Material Set Offset",
+      "Description": "Addition correction value of material parameter ID"
+    },
+    {
+      "Field": "maxReinforceLevel",
+      "Name": "Max Reinforcement Level",
+      "Description": "Level value for maximum enhanced weapon level"
+    },
+    {
+      "Field": "darkAtkRate",
+      "Name": "Damage %: Holy",
+      "Description": "Dark attack power correction value"
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "Guard Absorption %: Holy",
+      "Description": "Correction value of darkness attack cut rate when guarding"
+    },
+    {
+      "Field": "correctLuckRate",
+      "Name": "Correction %: ARC",
+      "Description": "Correction value of luck correction"
+    },
+    {
+      "Field": "freezeGuardDefRate",
+      "Name": "Guard Absorption %: Frostbite",
+      "Description": "Correction value of cold air attack cut rate when guarding"
+    },
+    {
+      "Field": "reinforcePriceRate",
+      "Name": "Reinforce Price Rate",
+      "Description": "Correction value to multiply the enhancement price of the weapon parameter"
+    },
+    {
+      "Field": "baseChangePriceRate",
+      "Name": "Base Change Price Rate",
+      "Description": "Correction value to multiply the evolution price of the weapon parameter"
+    },
+    {
+      "Field": "enableGemRank",
+      "Name": "Ash of War Rank",
+      "Description": "Mountable magic stone rank"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sleepGuardDefRate",
+      "Name": "Guard Absorption %: Sleep",
+      "Description": "Correction value of sleep attack cut rate when guarding"
+    },
+    {
+      "Field": "madnessGuardDefRate",
+      "Name": "Guard Absorption %: Madness",
+      "Description": "Correction value of mad attack cut rate when guarding"
+    },
+    {
+      "Field": "baseAtkRate",
+      "Name": "Damage %: BaseAtk",
+      "Description": "Damage multiplier for attacks with isAddBaseAtk in AtkParam, typically used with Ash of Wars."
+    },
+    {
+      "Field": "correctSpellScalingRate",
+      "Name": "Spellcast Scaling Correction",
+      "Description": "Correction value for sorcery and incant scaling"
+    }
+  ]
+}

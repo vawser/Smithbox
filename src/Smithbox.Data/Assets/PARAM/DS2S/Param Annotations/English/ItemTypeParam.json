@@ -1,0 +1,58 @@
+{
+  "Param": "ItemTypeParam",
+  "Type": "ITEM_TYPE_PARAM",
+  "Name": "ItemTypeParam",
+  "Description": "Defines parameters related to item types.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "movement_correction_amount",
+      "Name": "Movement Correction Amount",
+      "Description": ""
+    },
+    {
+      "Field": "movement_correction_delay",
+      "Name": "Movement Correction Delay",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "animation_index",
+      "Name": "Animation Index",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

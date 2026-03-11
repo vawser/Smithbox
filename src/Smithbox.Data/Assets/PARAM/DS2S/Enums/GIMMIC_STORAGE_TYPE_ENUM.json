@@ -1,27 +1,47 @@
 {
-  "DisplayName": "GIMMIC_STORAGE_TYPE_ENUM",
-  "Name": "GIMMIC_STORAGE_TYPE_ENUM",
-  "Description": "",
+  "Key": "GIMMIC_STORAGE_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GIMMIC_STORAGE_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Left hand",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left hand"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Right hand",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right hand"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Both hands",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both hands"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Anor Londo",
+  "Key": "Anor Londo",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Anor Londo"
+      }
+  ],
   "Params": [
     "m15_1_DofBank",
     "m15_1_EnvLightTexBank",

@@ -1,17 +1,29 @@
 {
-  "DisplayName": "DUAL_WIELDING_CATEGORY",
-  "Name": "DUAL_WIELDING_CATEGORY",
-  "Description": "",
+  "Key": "DUAL_WIELDING_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DUAL_WIELDING_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Dual wielding permission",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding permission"
+        }
+      ]
     }
   ]
 }

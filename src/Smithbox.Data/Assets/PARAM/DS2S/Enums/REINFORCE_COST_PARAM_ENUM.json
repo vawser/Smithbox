@@ -1,2577 +1,4637 @@
 {
-  "DisplayName": "REINFORCE_COST_PARAM_ENUM",
-  "Name": "REINFORCE_COST_PARAM_ENUM",
-  "Description": "",
+  "Key": "REINFORCE_COST_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "REINFORCE_COST_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None: No reinforcement",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "Function test",
-      "Description": ""
-    },
-    {
-      "ID": "100100",
-      "Name": "Bottom: fist",
-      "Description": ""
-    },
-    {
-      "ID": "100200",
-      "Name": "Bottom: Claw",
-      "Description": ""
-    },
-    {
-      "ID": "100300",
-      "Name": "Bottom: Whip",
-      "Description": ""
-    },
-    {
-      "ID": "100400",
-      "Name": "Bottom: Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "100500",
-      "Name": "Bottom: Sashiken",
-      "Description": ""
-    },
-    {
-      "ID": "100600",
-      "Name": "Bottom: Spear",
-      "Description": ""
-    },
-    {
-      "ID": "100700",
-      "Name": "Bottom: Assault Spear",
-      "Description": ""
-    },
-    {
-      "ID": "100800",
-      "Name": "Lowest rank: double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "100900",
-      "Name": "Bottom: Curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "101000",
-      "Name": "Lowest rank: Straight sword",
-      "Description": ""
-    },
-    {
-      "ID": "101100",
-      "Name": "Bottom: Sword",
-      "Description": ""
-    },
-    {
-      "ID": "101200",
-      "Name": "Bottom: Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "101300",
-      "Name": "Bottom: Two-handed oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "101350",
-      "Name": "Bottom: Two-handed Omagariken",
-      "Description": ""
-    },
-    {
-      "ID": "101400",
-      "Name": "Bottom: One-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "101500",
-      "Name": "Bottom: Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "101600",
-      "Name": "Bottom: One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "101700",
-      "Name": "Lowest level: two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "101800",
-      "Name": "Bottom: two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "101900",
-      "Name": "Bottom: Two-handed long axe",
-      "Description": ""
-    },
-    {
-      "ID": "102000",
-      "Name": "Lowest: Two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "102100",
-      "Name": "Bottom: Two-handed longbow",
-      "Description": ""
-    },
-    {
-      "ID": "102200",
-      "Name": "Bottom: One-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "102300",
-      "Name": "Bottom: Cane",
-      "Description": ""
-    },
-    {
-      "ID": "102400",
-      "Name": "Bottom: Bell",
-      "Description": ""
-    },
-    {
-      "ID": "102500",
-      "Name": "Bottom: Fire of magic",
-      "Description": ""
-    },
-    {
-      "ID": "102600",
-      "Name": "Bottom: Small shield",
-      "Description": ""
-    },
-    {
-      "ID": "102700",
-      "Name": "Lowest rank: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "102800",
-      "Name": "Bottom: Great Shield",
-      "Description": ""
-    },
-    {
-      "ID": "200100",
-      "Name": "Lower: fist",
-      "Description": ""
-    },
-    {
-      "ID": "200200",
-      "Name": "Lower: Claw",
-      "Description": ""
-    },
-    {
-      "ID": "200300",
-      "Name": "Lower: Whip",
-      "Description": ""
-    },
-    {
-      "ID": "200400",
-      "Name": "Lower: Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "200500",
-      "Name": "Lower level: Sashiken",
-      "Description": ""
-    },
-    {
-      "ID": "200600",
-      "Name": "Lower: Spear",
-      "Description": ""
-    },
-    {
-      "ID": "200700",
-      "Name": "Lower level: Assault spear",
-      "Description": ""
-    },
-    {
-      "ID": "200800",
-      "Name": "Lower: Double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "200900",
-      "Name": "Lower: curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "201000",
-      "Name": "Lower: Straight sword",
-      "Description": ""
-    },
-    {
-      "ID": "201100",
-      "Name": "Lower: sword",
-      "Description": ""
-    },
-    {
-      "ID": "201200",
-      "Name": "Lower: Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "201300",
-      "Name": "Lower: Two-handed oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "201350",
-      "Name": "Lower level: Two-handed Omagariken",
-      "Description": ""
-    },
-    {
-      "ID": "201400",
-      "Name": "Lower: One-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "201500",
-      "Name": "Lower: Two-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "201600",
-      "Name": "Lower level: one-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "201700",
-      "Name": "Lower: two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "201800",
-      "Name": "Lower: two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "201900",
-      "Name": "Lower: Two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "202000",
-      "Name": "Lower level: two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "202100",
-      "Name": "Lower: Two-handed longbow",
-      "Description": ""
-    },
-    {
-      "ID": "202200",
-      "Name": "Lower: One-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "202300",
-      "Name": "Lower: Cane",
-      "Description": ""
-    },
-    {
-      "ID": "202400",
-      "Name": "Lower: Bell",
-      "Description": ""
-    },
-    {
-      "ID": "202500",
-      "Name": "Lower level: Fire of magic",
-      "Description": ""
-    },
-    {
-      "ID": "202600",
-      "Name": "Lower: small shield",
-      "Description": ""
-    },
-    {
-      "ID": "202700",
-      "Name": "Lower: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "202800",
-      "Name": "Lower: Large shield",
-      "Description": ""
-    },
-    {
-      "ID": "300100",
-      "Name": "Medium: fist",
-      "Description": ""
-    },
-    {
-      "ID": "300200",
-      "Name": "Medium: Nail",
-      "Description": ""
-    },
-    {
-      "ID": "300300",
-      "Name": "Medium: Whip",
-      "Description": ""
-    },
-    {
-      "ID": "300400",
-      "Name": "Medium: Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "300500",
-      "Name": "Medium: Sword",
-      "Description": ""
-    },
-    {
-      "ID": "300600",
-      "Name": "Middle: Spear",
-      "Description": ""
-    },
-    {
-      "ID": "300700",
-      "Name": "Medium: Assault Spear",
-      "Description": ""
-    },
-    {
-      "ID": "300800",
-      "Name": "Medium: Double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "300900",
-      "Name": "Medium: Curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "301000",
-      "Name": "Medium: Straight sword",
-      "Description": ""
-    },
-    {
-      "ID": "301100",
-      "Name": "Medium: sword",
-      "Description": ""
-    },
-    {
-      "ID": "301200",
-      "Name": "Medium: Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "301300",
-      "Name": "Medium: Two-handed oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "301350",
-      "Name": "Medium: Two-handed Omagariken",
-      "Description": ""
-    },
-    {
-      "ID": "301400",
-      "Name": "Medium: One-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "301500",
-      "Name": "Medium: Two-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "301600",
-      "Name": "Medium: One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "301700",
-      "Name": "Medium: Two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "301800",
-      "Name": "Medium: two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "301900",
-      "Name": "Medium: Two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "302000",
-      "Name": "Medium: Two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "302100",
-      "Name": "Medium: Two-handed longbow",
-      "Description": ""
-    },
-    {
-      "ID": "302200",
-      "Name": "Medium: One-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "302300",
-      "Name": "Medium: Cane",
-      "Description": ""
-    },
-    {
-      "ID": "302400",
-      "Name": "Medium: Bell",
-      "Description": ""
-    },
-    {
-      "ID": "302500",
-      "Name": "Medium: Fire of magic",
-      "Description": ""
-    },
-    {
-      "ID": "302600",
-      "Name": "Medium: small shield",
-      "Description": ""
-    },
-    {
-      "ID": "302700",
-      "Name": "Medium: medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "302800",
-      "Name": "Medium: Large shield",
-      "Description": ""
-    },
-    {
-      "ID": "400100",
-      "Name": "Top: Fist",
-      "Description": ""
-    },
-    {
-      "ID": "400200",
-      "Name": "Top: Nail",
-      "Description": ""
-    },
-    {
-      "ID": "400300",
-      "Name": "Top: Whip",
-      "Description": ""
-    },
-    {
-      "ID": "400400",
-      "Name": "Top: Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "400500",
-      "Name": "Top: Sashiken",
-      "Description": ""
-    },
-    {
-      "ID": "400600",
-      "Name": "Top: Spear",
-      "Description": ""
-    },
-    {
-      "ID": "400700",
-      "Name": "Top: Assault Spear",
-      "Description": ""
-    },
-    {
-      "ID": "400800",
-      "Name": "Top: Double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "400900",
-      "Name": "Top: Curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "401000",
-      "Name": "Top: Straight sword",
-      "Description": ""
-    },
-    {
-      "ID": "401100",
-      "Name": "Top: sword",
-      "Description": ""
-    },
-    {
-      "ID": "401200",
-      "Name": "Top: Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "401300",
-      "Name": "Top: Two-handed oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "401350",
-      "Name": "Top: Two-handed Omagariken",
-      "Description": ""
-    },
-    {
-      "ID": "401400",
-      "Name": "High rank: One-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "401500",
-      "Name": "High rank: two-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "401600",
-      "Name": "Top: One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "401700",
-      "Name": "Top: Two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "401800",
-      "Name": "High rank: two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "401900",
-      "Name": "Top: Two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "402000",
-      "Name": "High rank: two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "402100",
-      "Name": "Top: Two-handed longbow",
-      "Description": ""
-    },
-    {
-      "ID": "402200",
-      "Name": "Top: One-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "402300",
-      "Name": "Top: Cane",
-      "Description": ""
-    },
-    {
-      "ID": "402400",
-      "Name": "Top: Bell",
-      "Description": ""
-    },
-    {
-      "ID": "402500",
-      "Name": "Top: Fire of magic",
-      "Description": ""
-    },
-    {
-      "ID": "402600",
-      "Name": "Top: Small shield",
-      "Description": ""
-    },
-    {
-      "ID": "402700",
-      "Name": "High rank: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "402800",
-      "Name": "High rank: large shield",
-      "Description": ""
-    },
-    {
-      "ID": "500100",
-      "Name": "Top: fist",
-      "Description": ""
-    },
-    {
-      "ID": "500200",
-      "Name": "Top: Claw",
-      "Description": ""
-    },
-    {
-      "ID": "500300",
-      "Name": "Top level: whip",
-      "Description": ""
-    },
-    {
-      "ID": "500400",
-      "Name": "Top: Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "500500",
-      "Name": "Top level: Sashiken",
-      "Description": ""
-    },
-    {
-      "ID": "500600",
-      "Name": "Top: Spear",
-      "Description": ""
-    },
-    {
-      "ID": "500700",
-      "Name": "Top level: Assault spear",
-      "Description": ""
-    },
-    {
-      "ID": "500800",
-      "Name": "Top level: double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "500900",
-      "Name": "Top level: curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "501000",
-      "Name": "Top level: Straight sword",
-      "Description": ""
-    },
-    {
-      "ID": "501100",
-      "Name": "Top level: sword",
-      "Description": ""
-    },
-    {
-      "ID": "501200",
-      "Name": "Top level: two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "501300",
-      "Name": "Top level: two-handed oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "501350",
-      "Name": "Top level: Two-handed Omagariken",
-      "Description": ""
-    },
-    {
-      "ID": "501400",
-      "Name": "Top level: One-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "501500",
-      "Name": "Top level: two-handed hammer",
-      "Description": ""
-    },
-    {
-      "ID": "501600",
-      "Name": "Top level: one-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "501700",
-      "Name": "Top level: two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "501800",
-      "Name": "Top level: two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "501900",
-      "Name": "Top level: two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "502000",
-      "Name": "Top level: two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "502100",
-      "Name": "Top level: Two-handed longbow",
-      "Description": ""
-    },
-    {
-      "ID": "502200",
-      "Name": "Top: One-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "502300",
-      "Name": "Top level: cane",
-      "Description": ""
-    },
-    {
-      "ID": "502400",
-      "Name": "Top: Bell",
-      "Description": ""
-    },
-    {
-      "ID": "502500",
-      "Name": "Top level: Magic fire",
-      "Description": ""
-    },
-    {
-      "ID": "502600",
-      "Name": "Top level: small shield",
-      "Description": ""
-    },
-    {
-      "ID": "502700",
-      "Name": "Top level: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "502800",
-      "Name": "Top level: large shield",
-      "Description": ""
-    },
-    {
-      "ID": "2008000",
-      "Name": "None: Tiny: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "2008001",
-      "Name": "None: Very small: Armor - body",
-      "Description": ""
-    },
-    {
-      "ID": "2008002",
-      "Name": "None: Tiny: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "2008003",
-      "Name": "None: Tiny: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "2108000",
-      "Name": "Lowest: Tiny: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "2108001",
-      "Name": "Lowest: Extremely Small: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "2108002",
-      "Name": "Lowest: Tiny: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "2108003",
-      "Name": "Lowest: Tiny: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "2208004",
-      "Name": "Lower: Tiny: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "2208005",
-      "Name": "Lower: Minimal: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "2208006",
-      "Name": "Lower: Minimal: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "2208007",
-      "Name": "Lower: Tiny: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "2308008",
-      "Name": "Medium: Very Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "2308009",
-      "Name": "Medium: Very Small: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "2308010",
-      "Name": "Medium: Very Small: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "2308011",
-      "Name": "Medium: Very Small: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "2408012",
-      "Name": "Top: Minimal: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "2408013",
-      "Name": "Top: Minimal: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "2408014",
-      "Name": "Top: Minimal: Armor - Arms",
-      "Description": ""
-    },
-    {
-      "ID": "2408015",
-      "Name": "Top: Minimal: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "2508016",
-      "Name": "Top: Tiny: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "2508017",
-      "Name": "Top: Tiny: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "2508018",
-      "Name": "Top: Tiny: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "2508019",
-      "Name": "Top: Tiny: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "3008000",
-      "Name": "None: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3008001",
-      "Name": "None: Small: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "3008002",
-      "Name": "None: Small: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "3008003",
-      "Name": "None: Small: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "3108000",
-      "Name": "Bottom: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3108001",
-      "Name": "Bottom: Small: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "3108002",
-      "Name": "Bottom: Small: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "3108003",
-      "Name": "Bottom: Small: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "3208004",
-      "Name": "Lower: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3208005",
-      "Name": "Lower: Small: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "3208006",
-      "Name": "Lower: Small: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "3208007",
-      "Name": "Lower: Small: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "3308008",
-      "Name": "Medium: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3308009",
-      "Name": "Medium: Small: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "3308010",
-      "Name": "Medium: Small: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "3308011",
-      "Name": "Medium: Small: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "3408012",
-      "Name": "Upper: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3408013",
-      "Name": "Upper: Small: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "3408014",
-      "Name": "Upper: Small: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "3408015",
-      "Name": "Upper: Small: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "3508016",
-      "Name": "Top: Small: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "3508017",
-      "Name": "Top: Small: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "3508018",
-      "Name": "Top: Small: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "3508019",
-      "Name": "Top: Small: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "4008000",
-      "Name": "None: Medium: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "4008001",
-      "Name": "None: Medium: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "4008002",
-      "Name": "None: Medium: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "4008003",
-      "Name": "None: Medium: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "4108000",
-      "Name": "Lowest: Middle: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "4108001",
-      "Name": "Lowest: Middle: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "4108002",
-      "Name": "Lowest: Middle: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "4108003",
-      "Name": "Lowest: Middle: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "4208004",
-      "Name": "Lower: Middle: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "4208005",
-      "Name": "Lower: Middle: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "4208006",
-      "Name": "Lower: Middle: Armor - Arms",
-      "Description": ""
-    },
-    {
-      "ID": "4208007",
-      "Name": "Lower: Middle: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "4308008",
-      "Name": "Medium: Medium: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "4308009",
-      "Name": "Medium: Medium: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "4308010",
-      "Name": "Medium: Medium: Armor - Arms",
-      "Description": ""
-    },
-    {
-      "ID": "4308011",
-      "Name": "Medium: Medium: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "4408012",
-      "Name": "Top: Middle: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "4408013",
-      "Name": "Top: Middle: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "4408014",
-      "Name": "Top: Middle: Armor - Arms",
-      "Description": ""
-    },
-    {
-      "ID": "4408015",
-      "Name": "Top: Middle: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "4508016",
-      "Name": "Top: Medium: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "4508017",
-      "Name": "Top: Middle: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "4508018",
-      "Name": "Top: Middle: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "4508019",
-      "Name": "Top: Middle: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "5008000",
-      "Name": "None: Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "5008001",
-      "Name": "None: Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "5008002",
-      "Name": "None: Large: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "5008003",
-      "Name": "None: Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "5108000",
-      "Name": "Bottom: Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "5108001",
-      "Name": "Lowest: Large: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "5108002",
-      "Name": "Lowest: Large: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "5108003",
-      "Name": "Bottom: Large: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "5208004",
-      "Name": "Lower: Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "5208005",
-      "Name": "Lower: Large: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "5208006",
-      "Name": "Lower: Large: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "5208007",
-      "Name": "Lower: Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "5308008",
-      "Name": "Medium: Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "5308009",
-      "Name": "Medium: Large: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "5308010",
-      "Name": "Medium: Large: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "5308011",
-      "Name": "Medium: Large: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "5408012",
-      "Name": "Top: Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "5408013",
-      "Name": "Top: Large: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "5408014",
-      "Name": "Top: Large: Armor - Arms",
-      "Description": ""
-    },
-    {
-      "ID": "5408015",
-      "Name": "Top: Large: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "5508016",
-      "Name": "Top: Large: Armor - Head",
-      "Description": ""
-    },
-    {
-      "ID": "5508017",
-      "Name": "Top: Large: Armor - Body",
-      "Description": ""
-    },
-    {
-      "ID": "5508018",
-      "Name": "Top: Large: Armor - Arm",
-      "Description": ""
-    },
-    {
-      "ID": "5508019",
-      "Name": "Top: Large: Armor - Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6008000",
-      "Name": "None: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6008001",
-      "Name": "None: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6008002",
-      "Name": "None: Extra Large: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "6008003",
-      "Name": "None: Extra Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6108000",
-      "Name": "Bottom: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6108001",
-      "Name": "Bottom: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6108002",
-      "Name": "Bottom: Extra Large: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "6108003",
-      "Name": "Bottom: Extra Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6208004",
-      "Name": "Lower: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6208005",
-      "Name": "Lower: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6208006",
-      "Name": "Lower: Extra Large: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "6208007",
-      "Name": "Lower: Extra Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6308008",
-      "Name": "Medium: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6308009",
-      "Name": "Medium: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6308010",
-      "Name": "Medium: Extra Large: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "6308011",
-      "Name": "Medium: Extra Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6408012",
-      "Name": "Top: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6408013",
-      "Name": "Top: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6408014",
-      "Name": "Top: Extra Large: Armor-Arm",
-      "Description": ""
-    },
-    {
-      "ID": "6408015",
-      "Name": "Top: Extra Large: Armor-Legs",
-      "Description": ""
-    },
-    {
-      "ID": "6508016",
-      "Name": "Top: Extra Large: Armor-Head",
-      "Description": ""
-    },
-    {
-      "ID": "6508017",
-      "Name": "Top: Extra Large: Armor - Torso",
-      "Description": ""
-    },
-    {
-      "ID": "6508018",
-      "Name": "Top: Extra Large: Armor-Arms",
-      "Description": ""
-    },
-    {
-      "ID": "6508019",
-      "Name": "Top: Extra Large: Armor - Feet",
-      "Description": ""
-    },
-    {
-      "ID": "10000000",
-      "Name": "Kingdom tactician's dagger",
-      "Description": ""
-    },
-    {
-      "ID": "10000100",
-      "Name": "Phantom Mage's one-handed sword catalyst (magic power)",
-      "Description": ""
-    },
-    {
-      "ID": "10000200",
-      "Name": "Dullahan's one-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000300",
-      "Name": "Spell Four Heavenly Kings (Magic) Piercing Sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000400",
-      "Name": "Manscorpion♂'s piercing sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000500",
-      "Name": "Dullahan's curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000600",
-      "Name": "Leviathan's sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000700",
-      "Name": "Stalker warrior sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000800",
-      "Name": "Royal Guard Captain's Two-Handed Sword",
-      "Description": ""
-    },
-    {
-      "ID": "10000900",
-      "Name": "Black knight sword",
-      "Description": ""
-    },
-    {
-      "ID": "10001000",
-      "Name": "Avenge warrior's one-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "10001100",
-      "Name": "Crescent ax",
-      "Description": ""
-    },
-    {
-      "ID": "10001200",
-      "Name": "Black knight great ax",
-      "Description": ""
-    },
-    {
-      "ID": "10001300",
-      "Name": "Blacksmith's hammer",
-      "Description": ""
-    },
-    {
-      "ID": "10001400",
-      "Name": "Dairyuga",
-      "Description": ""
-    },
-    {
-      "ID": "10001500",
-      "Name": "Hermit Crab Castle Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "10001600",
-      "Name": "Demon Sledgehammer",
-      "Description": ""
-    },
-    {
-      "ID": "10001700",
-      "Name": "Patch spear",
-      "Description": ""
-    },
-    {
-      "ID": "10001800",
-      "Name": "Wandering Knight's Assault Spear A",
-      "Description": ""
-    },
-    {
-      "ID": "10001900",
-      "Name": "Black Phantomya's two-handed sickle",
-      "Description": ""
-    },
-    {
-      "ID": "10002000",
-      "Name": "Leviathan's Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "10002100",
-      "Name": "Brain stem sacred tree double-handed spear mallet",
-      "Description": ""
-    },
-    {
-      "ID": "10002200",
-      "Name": "After the destruction of the brainstem sacred tree",
-      "Description": ""
-    },
-    {
-      "ID": "10002300",
-      "Name": "Saint's Attendant 1's Two-Handed Long Ax",
-      "Description": ""
-    },
-    {
-      "ID": "10002400",
-      "Name": "Black knight spear",
-      "Description": ""
-    },
-    {
-      "ID": "10002500",
-      "Name": "Castle Town Elder's Whip",
-      "Description": ""
-    },
-    {
-      "ID": "10002600",
-      "Name": "Lich's Miraculous Dark Arts Staff",
-      "Description": ""
-    },
-    {
-      "ID": "10002700",
-      "Name": "Spell Four Heavenly Kings (Magic) One-handed Staff",
-      "Description": ""
-    },
-    {
-      "ID": "10002800",
-      "Name": "Spell Four Heavenly Kings (Magic) One-handed Staff",
-      "Description": ""
-    },
-    {
-      "ID": "10002900",
-      "Name": "Dragon's Festival One-handed Bell",
-      "Description": ""
-    },
-    {
-      "ID": "10003000",
-      "Name": "Spell Four Heavenly Kings (Miracle) One-handed Bell",
-      "Description": ""
-    },
-    {
-      "ID": "10003100",
-      "Name": "Black knight great sword",
-      "Description": ""
-    },
-    {
-      "ID": "10003200",
-      "Name": "Curved double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "10003300",
-      "Name": "Kingdom tactician's small shield",
-      "Description": ""
-    },
-    {
-      "ID": "10003400",
-      "Name": "Necromancer's Shield",
-      "Description": ""
-    },
-    {
-      "ID": "10003500",
-      "Name": "Guard captain's middle shield",
-      "Description": ""
-    },
-    {
-      "ID": "10003600",
-      "Name": "Spell Four Heavenly Kings (Miracle) Medium Shield",
-      "Description": ""
-    },
-    {
-      "ID": "10003700",
-      "Name": "Medium shield of the four heavenly kings of spell (curse)",
-      "Description": ""
-    },
-    {
-      "ID": "10003800",
-      "Name": "Dullahan medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "10003900",
-      "Name": "Phantom Knight's large shield (left)",
-      "Description": ""
-    },
-    {
-      "ID": "10004000",
-      "Name": "Phantom Knight's large shield (right)",
-      "Description": ""
-    },
-    {
-      "ID": "10004100",
-      "Name": "Havel's Great Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20000000",
-      "Name": "Naga dagger",
-      "Description": ""
-    },
-    {
-      "ID": "20000100",
-      "Name": "Ancient Dragon Straight Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000200",
-      "Name": "Spider Queen's Piercing Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000300",
-      "Name": "Two-sided warrior's curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000400",
-      "Name": "Spider Queen's Curved Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000500",
-      "Name": "Demon sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000600",
-      "Name": "Mirror Knight's two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000700",
-      "Name": "Moonlight sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000800",
-      "Name": "King Vanglad's two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "20000900",
-      "Name": "Ancient dragon two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "20001000",
-      "Name": "Queen's Knight A's Two-handed Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20001100",
-      "Name": "Queen's Knight C's two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "20001200",
-      "Name": "Meat cutting knife",
-      "Description": ""
-    },
-    {
-      "ID": "20001300",
-      "Name": "Giant Guard Captain's Two-Handed Ax",
-      "Description": ""
-    },
-    {
-      "ID": "20001400",
-      "Name": "Old dragon two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "20001500",
-      "Name": "Ancient Dragon Warpick",
-      "Description": ""
-    },
-    {
-      "ID": "20001600",
-      "Name": "Two-faced warrior's thorn club",
-      "Description": ""
-    },
-    {
-      "ID": "20001700",
-      "Name": "Molten Iron Demon's Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "20001800",
-      "Name": "Queen's Knight B's Hammer",
-      "Description": ""
-    },
-    {
-      "ID": "20001900",
-      "Name": "Salamander spear",
-      "Description": ""
-    },
-    {
-      "ID": "20002000",
-      "Name": "Gargoyle spears",
-      "Description": ""
-    },
-    {
-      "ID": "20002100",
-      "Name": "Ornstein's spear",
-      "Description": ""
-    },
-    {
-      "ID": "20002200",
-      "Name": "Silver Chariot's Assault Spear",
-      "Description": ""
-    },
-    {
-      "ID": "20002300",
-      "Name": "Jabba the Hutt's Two-Handed Scythe",
-      "Description": ""
-    },
-    {
-      "ID": "20002400",
-      "Name": "Two-handed sickle in the queen's armor form",
-      "Description": ""
-    },
-    {
-      "ID": "20002500",
-      "Name": "Heavy cavalry two-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "20002600",
-      "Name": "Skeleton Nobleman's Two-Handed Ax",
-      "Description": ""
-    },
-    {
-      "ID": "20002700",
-      "Name": "Beautiful frog whip",
-      "Description": ""
-    },
-    {
-      "ID": "20002800",
-      "Name": "Queen bell",
-      "Description": ""
-    },
-    {
-      "ID": "20002900",
-      "Name": "Heavy cavalry two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "20003000",
-      "Name": "Queen's two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "20003100",
-      "Name": "Dragon hunter's bow",
-      "Description": ""
-    },
-    {
-      "ID": "20003200",
-      "Name": "Silver Chariot's one-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "20003300",
-      "Name": "Two-sided warrior's Ōmagari sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003400",
-      "Name": "Double-headed wyvern's large curved sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003500",
-      "Name": "Demon Knight's Oversized Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003600",
-      "Name": "Double-headed wyvern oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003700",
-      "Name": "King Vanclad's oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003800",
-      "Name": "Vagrant (Soul) Oversized Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20003900",
-      "Name": "Agaduran's oversized sword",
-      "Description": ""
-    },
-    {
-      "ID": "20004000",
-      "Name": "Forgotten Sinner's Oversized Sword",
-      "Description": ""
-    },
-    {
-      "ID": "20004100",
-      "Name": "Heavy cavalry double-edged sword",
-      "Description": ""
-    },
-    {
-      "ID": "20004200",
-      "Name": "Queen's Knight C's Small Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004300",
-      "Name": "King Vanglad's Medium Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004400",
-      "Name": "Queen's Knight A Medium Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004500",
-      "Name": "Elder Dragon Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004600",
-      "Name": "Mirror Knight's Great Shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004700",
-      "Name": "Heavy cavalry shield",
-      "Description": ""
-    },
-    {
-      "ID": "20004800",
-      "Name": "Vagrant's Great Shield",
-      "Description": ""
-    },
-    {
-      "ID": "30000000",
-      "Name": "1160 [Heavy Warrior] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30000100",
-      "Name": "1160 [Heavy Warrior] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30000200",
-      "Name": "1160 [Heavy Warrior] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30000300",
-      "Name": "1160 [Heavy Warrior]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30000400",
-      "Name": "1340 [Yellow coat]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30000500",
-      "Name": "1340 [Yellow coat]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30000600",
-      "Name": "1340 [Yellow coat]・Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30000700",
-      "Name": "1340 [Yellow coat]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30000800",
-      "Name": "1350 [Priest of Absolution]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30000900",
-      "Name": "1350 [Priest of Absolution] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30001000",
-      "Name": "1350 [Priest of Absolution] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30001100",
-      "Name": "1350 [Priest of Absolution]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30001200",
-      "Name": "1360 [Transparent Armor] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30001300",
-      "Name": "1360 [Transparent Armor] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30001400",
-      "Name": "1360 [Transparent Armor] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30001500",
-      "Name": "1360 [Transparent Armor]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30001600",
-      "Name": "1361 [Transparent Armor: Opaque] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30001700",
-      "Name": "1361 [Transparent Armor: Opaque] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30001800",
-      "Name": "1361 [Transparent Armor: Opaque] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30001900",
-      "Name": "1361 [Transparent Armor: Opaque]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30002000",
-      "Name": "1370 [Painting Guardian] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30002100",
-      "Name": "1370 [Painting Guardian] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30002200",
-      "Name": "1370 [Painting Guardian] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30002300",
-      "Name": "1370 [Painting Guardian]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30002400",
-      "Name": "1430 [Sniper Head]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30002500",
-      "Name": "1430 [Sniper Head]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30002600",
-      "Name": "1430 [Sniper Head]・Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30002700",
-      "Name": "1430 [Sniper Head]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30002800",
-      "Name": "1440 [Lucky Gauntlet] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30002900",
-      "Name": "1440 [Lucky Gauntlet] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30003000",
-      "Name": "1440 [Lucky Gauntlet] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30003100",
-      "Name": "1440 [Lucky Gauntlet]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30003200",
-      "Name": "1450 [barrel]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30003300",
-      "Name": "1450 [barrel]・chest",
-      "Description": ""
-    },
-    {
-      "ID": "30003400",
-      "Name": "1450 [barrel] arm",
-      "Description": ""
-    },
-    {
-      "ID": "30003500",
-      "Name": "1450 [barrel]・foot",
-      "Description": ""
-    },
-    {
-      "ID": "30003600",
-      "Name": "1460 [Cat boots]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30003700",
-      "Name": "1460 [Cat boots]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30003800",
-      "Name": "1460 [Cat boots]・Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30003900",
-      "Name": "1460 [Cat boots]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30004000",
-      "Name": "1470 [Butterfly Armor] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30004100",
-      "Name": "1470 [Butterfly Armor] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30004200",
-      "Name": "1470 [Butterfly Armor] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30004300",
-      "Name": "1470 [Butterfly Armor]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30004400",
-      "Name": "1480 [Katalina Warrior] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30004500",
-      "Name": "1480 [Katalina Warrior] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30004600",
-      "Name": "1480 [Catalina Warrior] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30004700",
-      "Name": "1480 [Katalina Warrior]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30004800",
-      "Name": "1500 [Witch]・Head",
-      "Description": ""
-    },
-    {
-      "ID": "30004900",
-      "Name": "1500 [Witch]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30005000",
-      "Name": "1500 [Witch]・Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30005100",
-      "Name": "1500 [Witch]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30005200",
-      "Name": "1501 [Witch - Different head 1] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30005300",
-      "Name": "1501 [Witch - Different Head 1]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30005400",
-      "Name": "1501 [Witch - Different Head 1] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30005500",
-      "Name": "1501 [Witch-Different Head 1]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30005600",
-      "Name": "1502 [Witch - Different Head 2] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30005700",
-      "Name": "1502 [Witch - Different Head 2]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30005800",
-      "Name": "1502 [Witch - Different Head 2] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30005900",
-      "Name": "1502 [Witch - Different Head 2]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30006000",
-      "Name": "2360 [Dark Wraith] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30006100",
-      "Name": "2360 [Dark Wraith] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30006200",
-      "Name": "2360 [Dark Wraith] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30006300",
-      "Name": "2360 [Dark Wraith]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30006400",
-      "Name": "2540 [Skeleton Noble] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30006500",
-      "Name": "2540 [Skeleton Noble] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30006600",
-      "Name": "2540 [Skeleton Noble] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30006700",
-      "Name": "2540 [Skeleton Noble]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30006800",
-      "Name": "3040 [Banshee (Dead): Color ①] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30006900",
-      "Name": "3040 [Banshee (Dead): Color ①]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30007000",
-      "Name": "3040 [Banshee (Dead): Color ①] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30007100",
-      "Name": "3040 [Banshee (Dead): Color ①]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30007200",
-      "Name": "3050 [Demon Knight] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30007300",
-      "Name": "3050 [Demon Knight] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30007400",
-      "Name": "3050 [Demon Knight] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30007500",
-      "Name": "3050 [Demon Knight]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30007600",
-      "Name": "3070 [Dullahan (dead)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30007700",
-      "Name": "3070 [Dullahan (Dead)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30007800",
-      "Name": "3070 [Dullahan (dead)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30007900",
-      "Name": "3070 [Dullahan (Dead)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30008000",
-      "Name": "3250 [Warrior in the Mirror] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30008100",
-      "Name": "3250 [Warrior in the Mirror] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30008200",
-      "Name": "3250 [Warrior in the Mirror] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30008300",
-      "Name": "3250 [Warrior in the Mirror]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30008400",
-      "Name": "3320 [Queen's Knight A] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30008500",
-      "Name": "3320 [Queen's Knight A] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30008600",
-      "Name": "3320 [Queen's Knight A] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30008700",
-      "Name": "3320 [Queen's Knight A]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30008800",
-      "Name": "3330 [Queen's Knight B] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30008900",
-      "Name": "3330 [Queen's Knight B] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30009000",
-      "Name": "3330 [Queen's Knight B] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30009100",
-      "Name": "3330 [Queen's Knight B]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30009200",
-      "Name": "3340 [Queen's Knight C] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30009300",
-      "Name": "3340 [Queen's Knight C] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30009400",
-      "Name": "3340 [Queen's Knight C] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30009500",
-      "Name": "3340 [Queen's Knight C]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30009600",
-      "Name": "5040 [Mirror Knight] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30009700",
-      "Name": "5040 [Mirror Knight] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30009800",
-      "Name": "5040 [Mirror Knight] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30009900",
-      "Name": "5040 [Mirror Knight]・Feet",
-      "Description": ""
-    },
-    {
-      "ID": "30010000",
-      "Name": "5060 [Agaduran] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30010100",
-      "Name": "5060 [Agaduran]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30010200",
-      "Name": "5060 [Agaduran] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30010300",
-      "Name": "5060 [Agaduran]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30010400",
-      "Name": "5090 [Dark Bishop] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30010500",
-      "Name": "5090 [Dark Bishop] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30010600",
-      "Name": "5090 [Dark Bishop] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30010700",
-      "Name": "5090 [Dark Bishop] Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30010800",
-      "Name": "5130 [King Vangrat (past)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30010900",
-      "Name": "5130 [King Vangrat (Past)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30011000",
-      "Name": "5130 [King Vangrat (past)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30011100",
-      "Name": "5130 [King Vangrat (past)] Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30011200",
-      "Name": "6100 [Heavy Cavalry/Heavy Knight (Living)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30011300",
-      "Name": "6100 [Heavy Cavalry/Heavy Knight (Living)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30011400",
-      "Name": "6100 [Heavy cavalry/heavy knight (living)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30011500",
-      "Name": "6100 [Heavy cavalry soldier/heavy knight (living)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30011600",
-      "Name": "6180 [Silver Chariot] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30011700",
-      "Name": "6180 [Silver Chariot] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30011800",
-      "Name": "6180 [Silver Chariot] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30011900",
-      "Name": "6180 [Silver Chariot]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30012000",
-      "Name": "6260 [Forgotten Sinner] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30012100",
-      "Name": "6260 [Forgotten Sinner] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30012200",
-      "Name": "6260 [Forgotten Sinner] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30012300",
-      "Name": "6260 [Forgotten Sinner] Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30012400",
-      "Name": "7210 [Kingdom Tactician (Past)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30012500",
-      "Name": "7210 [Kingdom Tactician (Past)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30012600",
-      "Name": "7210 [Kingdom Tactician (Past)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30012700",
-      "Name": "7210 [Kingdom Tactician (Past)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30012800",
-      "Name": "7240 [Captain of the Guard] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30012900",
-      "Name": "7240 [Captain of the Guard] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30013000",
-      "Name": "7240 [Captain of the Guard] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30013100",
-      "Name": "7240 [Captain of the Guard]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30013200",
-      "Name": "7550 [Stalker Warrior] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30013300",
-      "Name": "7550 [Stalker Warrior] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30013400",
-      "Name": "7550 [Stalker Warrior] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30013500",
-      "Name": "7550 [Stalker Warrior] Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30013600",
-      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30013700",
-      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30013800",
-      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30013900",
-      "Name": "7680 [Spell Four Heavenly Kings (Magic)] Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30014000",
-      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30014100",
-      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30014200",
-      "Name": "7690 [Spell Four Heavenly Kings (Miracle)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30014300",
-      "Name": "7690 [Spell Four Heavenly Kings (Miracle)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30014400",
-      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30014500",
-      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30014600",
-      "Name": "7700 [Spell Four Heavenly Kings (Magic)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30014700",
-      "Name": "7700 [Spell Four Heavenly Kings (Magic)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "30014800",
-      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Head",
-      "Description": ""
-    },
-    {
-      "ID": "30014900",
-      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Chest",
-      "Description": ""
-    },
-    {
-      "ID": "30015000",
-      "Name": "7710 [Spell Four Heavenly Kings (Dark Arts)] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "30015100",
-      "Name": "7710 [Spell Four Heavenly Kings (Dark Art)]・Foot",
-      "Description": ""
-    },
-    {
-      "ID": "40000000",
-      "Name": "1330 [Ancient Dragon Armor] Head",
-      "Description": ""
-    },
-    {
-      "ID": "40000100",
-      "Name": "1330 [Armor of the Ancient Dragon]・Chest",
-      "Description": ""
-    },
-    {
-      "ID": "40000200",
-      "Name": "1330 [Armor of the Ancient Dragon] Arm",
-      "Description": ""
-    },
-    {
-      "ID": "40000300",
-      "Name": "1330 [Ancient Dragon Armor]・Feet",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: No reinforcement"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Function test"
+        }
+      ]
+    },
+    {
+      "Key": "100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: fist"
+        }
+      ]
+    },
+    {
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Claw"
+        }
+      ]
+    },
+    {
+      "Key": "100300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "100400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "100500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "100600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "100700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "100800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest rank: double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "100900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest rank: Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "101100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Sword"
+        }
+      ]
+    },
+    {
+      "Key": "101200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "101300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "101350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Two-handed Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "101400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: One-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "101500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "101600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "101700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest level: two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "101800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "101900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Two-handed long axe"
+        }
+      ]
+    },
+    {
+      "Key": "102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "102100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "102200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: One-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "102300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Cane"
+        }
+      ]
+    },
+    {
+      "Key": "102400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Bell"
+        }
+      ]
+    },
+    {
+      "Key": "102500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Fire of magic"
+        }
+      ]
+    },
+    {
+      "Key": "102600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Small shield"
+        }
+      ]
+    },
+    {
+      "Key": "102700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest rank: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "102800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: fist"
+        }
+      ]
+    },
+    {
+      "Key": "200200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Claw"
+        }
+      ]
+    },
+    {
+      "Key": "200300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "200400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "200500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "200600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "200700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: Assault spear"
+        }
+      ]
+    },
+    {
+      "Key": "200800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "200900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: sword"
+        }
+      ]
+    },
+    {
+      "Key": "201200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "201300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "201350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: Two-handed Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "201400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: One-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "201500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "201600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "201700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "201800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "201900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "202100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "202200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: One-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "202300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Cane"
+        }
+      ]
+    },
+    {
+      "Key": "202400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Bell"
+        }
+      ]
+    },
+    {
+      "Key": "202500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower level: Fire of magic"
+        }
+      ]
+    },
+    {
+      "Key": "202600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: small shield"
+        }
+      ]
+    },
+    {
+      "Key": "202700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "202800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Large shield"
+        }
+      ]
+    },
+    {
+      "Key": "300100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: fist"
+        }
+      ]
+    },
+    {
+      "Key": "300200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Nail"
+        }
+      ]
+    },
+    {
+      "Key": "300300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "300400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "300500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Sword"
+        }
+      ]
+    },
+    {
+      "Key": "300600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "300700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "300800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "300900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "301100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: sword"
+        }
+      ]
+    },
+    {
+      "Key": "301200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "301300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "301350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "301400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: One-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "301500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "301600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "301700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "301800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "301900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "302100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "302200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: One-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "302300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Cane"
+        }
+      ]
+    },
+    {
+      "Key": "302400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Bell"
+        }
+      ]
+    },
+    {
+      "Key": "302500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Fire of magic"
+        }
+      ]
+    },
+    {
+      "Key": "302600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: small shield"
+        }
+      ]
+    },
+    {
+      "Key": "302700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "302800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Large shield"
+        }
+      ]
+    },
+    {
+      "Key": "400100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Fist"
+        }
+      ]
+    },
+    {
+      "Key": "400200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Nail"
+        }
+      ]
+    },
+    {
+      "Key": "400300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Whip"
+        }
+      ]
+    },
+    {
+      "Key": "400400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "400500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "400600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "400700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "400800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "400900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "401000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "401100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: sword"
+        }
+      ]
+    },
+    {
+      "Key": "401200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "401300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "401350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "401400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: One-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "401500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "401600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "401700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "401800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "401900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "402000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "402100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "402200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: One-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "402300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Cane"
+        }
+      ]
+    },
+    {
+      "Key": "402400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Bell"
+        }
+      ]
+    },
+    {
+      "Key": "402500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Fire of magic"
+        }
+      ]
+    },
+    {
+      "Key": "402600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Small shield"
+        }
+      ]
+    },
+    {
+      "Key": "402700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "402800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High rank: large shield"
+        }
+      ]
+    },
+    {
+      "Key": "500100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: fist"
+        }
+      ]
+    },
+    {
+      "Key": "500200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Claw"
+        }
+      ]
+    },
+    {
+      "Key": "500300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: whip"
+        }
+      ]
+    },
+    {
+      "Key": "500400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "500500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "500600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Spear"
+        }
+      ]
+    },
+    {
+      "Key": "500700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Assault spear"
+        }
+      ]
+    },
+    {
+      "Key": "500800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "500900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "501100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: sword"
+        }
+      ]
+    },
+    {
+      "Key": "501200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "501300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "501350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Two-handed Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "501400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: One-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "501500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed hammer"
+        }
+      ]
+    },
+    {
+      "Key": "501600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "501700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "501800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "501900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "502100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Two-handed longbow"
+        }
+      ]
+    },
+    {
+      "Key": "502200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: One-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "502300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: cane"
+        }
+      ]
+    },
+    {
+      "Key": "502400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Bell"
+        }
+      ]
+    },
+    {
+      "Key": "502500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Magic fire"
+        }
+      ]
+    },
+    {
+      "Key": "502600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: small shield"
+        }
+      ]
+    },
+    {
+      "Key": "502700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "502800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top level: large shield"
+        }
+      ]
+    },
+    {
+      "Key": "2008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Tiny: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "2008001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Very small: Armor - body"
+        }
+      ]
+    },
+    {
+      "Key": "2008002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Tiny: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "2008003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Tiny: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "2108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Tiny: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "2108001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Extremely Small: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "2108002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Tiny: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "2108003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Tiny: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "2208004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Tiny: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "2208005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Minimal: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "2208006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Minimal: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "2208007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Tiny: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "2308008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Very Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "2308009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Very Small: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "2308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Very Small: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "2308011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Very Small: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "2408012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Minimal: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "2408013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Minimal: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "2408014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Minimal: Armor - Arms"
+        }
+      ]
+    },
+    {
+      "Key": "2408015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Minimal: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "2508016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Tiny: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "2508017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Tiny: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "2508018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Tiny: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "2508019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Tiny: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "3008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3008001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Small: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "3008002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Small: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "3008003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Small: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "3108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3108001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Small: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "3108002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Small: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "3108003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Small: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "3208004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3208005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Small: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "3208006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Small: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "3208007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Small: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "3308008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3308009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Small: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "3308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Small: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "3308011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Small: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "3408012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3408013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper: Small: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "3408014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper: Small: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "3408015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper: Small: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "3508016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Small: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "3508017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Small: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "3508018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Small: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "3508019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Small: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "4008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Medium: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "4008001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Medium: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "4008002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Medium: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "4008003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Medium: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "4108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Middle: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "4108001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Middle: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "4108002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Middle: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "4108003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Middle: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "4208004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Middle: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "4208005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Middle: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "4208006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Middle: Armor - Arms"
+        }
+      ]
+    },
+    {
+      "Key": "4208007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Middle: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "4308008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Medium: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "4308009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Medium: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "4308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Medium: Armor - Arms"
+        }
+      ]
+    },
+    {
+      "Key": "4308011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Medium: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "4408012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "4408013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "4408014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Arms"
+        }
+      ]
+    },
+    {
+      "Key": "4408015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "4508016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Medium: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "4508017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "4508018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "4508019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Middle: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "5008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "5008001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "5008002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Large: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "5008003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "5108001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Large: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "5108002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lowest: Large: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "5108003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Large: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5208004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "5208005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Large: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "5208006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Large: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "5208007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5308008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "5308009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Large: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "5308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Large: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "5308011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Large: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5408012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "5408013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "5408014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Arms"
+        }
+      ]
+    },
+    {
+      "Key": "5408015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "5508016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Head"
+        }
+      ]
+    },
+    {
+      "Key": "5508017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Body"
+        }
+      ]
+    },
+    {
+      "Key": "5508018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Arm"
+        }
+      ]
+    },
+    {
+      "Key": "5508019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Large: Armor - Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6008001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6008002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Extra Large: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "6008003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None: Extra Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6108001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6108002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Extra Large: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "6108003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bottom: Extra Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6208004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6208005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6208006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Extra Large: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "6208007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower: Extra Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6308008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6308009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Extra Large: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "6308011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium: Extra Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6408012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6408013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6408014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor-Arm"
+        }
+      ]
+    },
+    {
+      "Key": "6408015",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor-Legs"
+        }
+      ]
+    },
+    {
+      "Key": "6508016",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor-Head"
+        }
+      ]
+    },
+    {
+      "Key": "6508017",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor - Torso"
+        }
+      ]
+    },
+    {
+      "Key": "6508018",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor-Arms"
+        }
+      ]
+    },
+    {
+      "Key": "6508019",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top: Extra Large: Armor - Feet"
+        }
+      ]
+    },
+    {
+      "Key": "10000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom tactician's dagger"
+        }
+      ]
+    },
+    {
+      "Key": "10000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Mage's one-handed sword catalyst (magic power)"
+        }
+      ]
+    },
+    {
+      "Key": "10000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan's one-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Manscorpion♂'s piercing sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan's curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leviathan's sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stalker warrior sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Captain's Two-Handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "10000900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight sword"
+        }
+      ]
+    },
+    {
+      "Key": "10001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Avenge warrior's one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "10001100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crescent ax"
+        }
+      ]
+    },
+    {
+      "Key": "10001200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight great ax"
+        }
+      ]
+    },
+    {
+      "Key": "10001300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith's hammer"
+        }
+      ]
+    },
+    {
+      "Key": "10001400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dairyuga"
+        }
+      ]
+    },
+    {
+      "Key": "10001500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hermit Crab Castle Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "10001600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Sledgehammer"
+        }
+      ]
+    },
+    {
+      "Key": "10001700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch spear"
+        }
+      ]
+    },
+    {
+      "Key": "10001800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight's Assault Spear A"
+        }
+      ]
+    },
+    {
+      "Key": "10001900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantomya's two-handed sickle"
+        }
+      ]
+    },
+    {
+      "Key": "10002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Leviathan's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "10002100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Brain stem sacred tree double-handed spear mallet"
+        }
+      ]
+    },
+    {
+      "Key": "10002200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After the destruction of the brainstem sacred tree"
+        }
+      ]
+    },
+    {
+      "Key": "10002300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint's Attendant 1's Two-Handed Long Ax"
+        }
+      ]
+    },
+    {
+      "Key": "10002400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight spear"
+        }
+      ]
+    },
+    {
+      "Key": "10002500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Town Elder's Whip"
+        }
+      ]
+    },
+    {
+      "Key": "10002600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lich's Miraculous Dark Arts Staff"
+        }
+      ]
+    },
+    {
+      "Key": "10002700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "10002800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Magic) One-handed Staff"
+        }
+      ]
+    },
+    {
+      "Key": "10002900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's Festival One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "10003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Miracle) One-handed Bell"
+        }
+      ]
+    },
+    {
+      "Key": "10003100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black knight great sword"
+        }
+      ]
+    },
+    {
+      "Key": "10003200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curved double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "10003300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom tactician's small shield"
+        }
+      ]
+    },
+    {
+      "Key": "10003400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer's Shield"
+        }
+      ]
+    },
+    {
+      "Key": "10003500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard captain's middle shield"
+        }
+      ]
+    },
+    {
+      "Key": "10003600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Four Heavenly Kings (Miracle) Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "10003700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium shield of the four heavenly kings of spell (curse)"
+        }
+      ]
+    },
+    {
+      "Key": "10003800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "10003900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight's large shield (left)"
+        }
+      ]
+    },
+    {
+      "Key": "10004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight's large shield (right)"
+        }
+      ]
+    },
+    {
+      "Key": "10004100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Havel's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Naga dagger"
+        }
+      ]
+    },
+    {
+      "Key": "20000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen's Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-sided warrior's curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen's Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanglad's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "20000900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "20001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A's Two-handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20001100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C's two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "20001200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Meat cutting knife"
+        }
+      ]
+    },
+    {
+      "Key": "20001300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Guard Captain's Two-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "20001400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old dragon two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "20001500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Dragon Warpick"
+        }
+      ]
+    },
+    {
+      "Key": "20001600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-faced warrior's thorn club"
+        }
+      ]
+    },
+    {
+      "Key": "20001700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Demon's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "20001800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight B's Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "20001900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander spear"
+        }
+      ]
+    },
+    {
+      "Key": "20002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle spears"
+        }
+      ]
+    },
+    {
+      "Key": "20002100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornstein's spear"
+        }
+      ]
+    },
+    {
+      "Key": "20002200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot's Assault Spear"
+        }
+      ]
+    },
+    {
+      "Key": "20002300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jabba the Hutt's Two-Handed Scythe"
+        }
+      ]
+    },
+    {
+      "Key": "20002400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sickle in the queen's armor form"
+        }
+      ]
+    },
+    {
+      "Key": "20002500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry two-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "20002600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Nobleman's Two-Handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "20002700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful frog whip"
+        }
+      ]
+    },
+    {
+      "Key": "20002800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen bell"
+        }
+      ]
+    },
+    {
+      "Key": "20002900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "20003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "20003100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon hunter's bow"
+        }
+      ]
+    },
+    {
+      "Key": "20003200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot's one-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "20003300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-sided warrior's Ōmagari sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-headed wyvern's large curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Knight's Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-headed wyvern oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanclad's oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant (Soul) Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20003900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "20004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forgotten Sinner's Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "20004100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry double-edged sword"
+        }
+      ]
+    },
+    {
+      "Key": "20004200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C's Small Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King Vanglad's Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elder Dragon Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry shield"
+        }
+      ]
+    },
+    {
+      "Key": "20004800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant's Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "30000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1160 [Heavy Warrior] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1160 [Heavy Warrior] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1160 [Heavy Warrior] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1160 [Heavy Warrior]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30000400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1340 [Yellow coat]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30000500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1340 [Yellow coat]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30000600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1340 [Yellow coat]・Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30000700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1340 [Yellow coat]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30000800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1350 [Priest of Absolution]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30000900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1350 [Priest of Absolution] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1350 [Priest of Absolution] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30001100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1350 [Priest of Absolution]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30001200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1360 [Transparent Armor] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30001300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1360 [Transparent Armor] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30001400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1360 [Transparent Armor] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30001500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1360 [Transparent Armor]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30001600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1361 [Transparent Armor: Opaque] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30001700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1361 [Transparent Armor: Opaque] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30001800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1361 [Transparent Armor: Opaque] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30001900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1361 [Transparent Armor: Opaque]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1370 [Painting Guardian] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30002100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1370 [Painting Guardian] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30002200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1370 [Painting Guardian] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30002300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1370 [Painting Guardian]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30002400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1430 [Sniper Head]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30002500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1430 [Sniper Head]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30002600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1430 [Sniper Head]・Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30002700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1430 [Sniper Head]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30002800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1440 [Lucky Gauntlet] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30002900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1440 [Lucky Gauntlet] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1440 [Lucky Gauntlet] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30003100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1440 [Lucky Gauntlet]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30003200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1450 [barrel]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30003300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1450 [barrel]・chest"
+        }
+      ]
+    },
+    {
+      "Key": "30003400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1450 [barrel] arm"
+        }
+      ]
+    },
+    {
+      "Key": "30003500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1450 [barrel]・foot"
+        }
+      ]
+    },
+    {
+      "Key": "30003600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1460 [Cat boots]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30003700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1460 [Cat boots]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30003800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1460 [Cat boots]・Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30003900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1460 [Cat boots]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1470 [Butterfly Armor] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30004100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1470 [Butterfly Armor] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30004200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1470 [Butterfly Armor] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30004300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1470 [Butterfly Armor]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30004400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1480 [Katalina Warrior] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30004500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1480 [Katalina Warrior] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30004600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1480 [Catalina Warrior] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30004700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1480 [Katalina Warrior]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30004800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1500 [Witch]・Head"
+        }
+      ]
+    },
+    {
+      "Key": "30004900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1500 [Witch]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1500 [Witch]・Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30005100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1500 [Witch]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30005200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1501 [Witch - Different head 1] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30005300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1501 [Witch - Different Head 1]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30005400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1501 [Witch - Different Head 1] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30005500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1501 [Witch-Different Head 1]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30005600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1502 [Witch - Different Head 2] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30005700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1502 [Witch - Different Head 2]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30005800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1502 [Witch - Different Head 2] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30005900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1502 [Witch - Different Head 2]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2360 [Dark Wraith] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30006100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2360 [Dark Wraith] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30006200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2360 [Dark Wraith] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30006300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2360 [Dark Wraith]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30006400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2540 [Skeleton Noble] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30006500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2540 [Skeleton Noble] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30006600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2540 [Skeleton Noble] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30006700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2540 [Skeleton Noble]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30006800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3040 [Banshee (Dead): Color ①] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30006900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3040 [Banshee (Dead): Color ①]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3040 [Banshee (Dead): Color ①] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30007100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3040 [Banshee (Dead): Color ①]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30007200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3050 [Demon Knight] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30007300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3050 [Demon Knight] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30007400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3050 [Demon Knight] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30007500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3050 [Demon Knight]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30007600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3070 [Dullahan (dead)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30007700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3070 [Dullahan (Dead)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30007800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3070 [Dullahan (dead)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30007900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3070 [Dullahan (Dead)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3250 [Warrior in the Mirror] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30008100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3250 [Warrior in the Mirror] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30008200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3250 [Warrior in the Mirror] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30008300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3250 [Warrior in the Mirror]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30008400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3320 [Queen's Knight A] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30008500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3320 [Queen's Knight A] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30008600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3320 [Queen's Knight A] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30008700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3320 [Queen's Knight A]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30008800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3330 [Queen's Knight B] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30008900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3330 [Queen's Knight B] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3330 [Queen's Knight B] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30009100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3330 [Queen's Knight B]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30009200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3340 [Queen's Knight C] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30009300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3340 [Queen's Knight C] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30009400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3340 [Queen's Knight C] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30009500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3340 [Queen's Knight C]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30009600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5040 [Mirror Knight] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30009700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5040 [Mirror Knight] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30009800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5040 [Mirror Knight] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30009900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5040 [Mirror Knight]・Feet"
+        }
+      ]
+    },
+    {
+      "Key": "30010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5060 [Agaduran] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30010100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5060 [Agaduran]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30010200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5060 [Agaduran] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5060 [Agaduran]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30010400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5090 [Dark Bishop] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30010500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5090 [Dark Bishop] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30010600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5090 [Dark Bishop] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30010700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5090 [Dark Bishop] Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30010800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5130 [King Vangrat (past)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30010900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5130 [King Vangrat (Past)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30011000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5130 [King Vangrat (past)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30011100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5130 [King Vangrat (past)] Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30011200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6100 [Heavy Cavalry/Heavy Knight (Living)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30011300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6100 [Heavy Cavalry/Heavy Knight (Living)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30011400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6100 [Heavy cavalry/heavy knight (living)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30011500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6100 [Heavy cavalry soldier/heavy knight (living)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30011600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6180 [Silver Chariot] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30011700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6180 [Silver Chariot] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30011800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6180 [Silver Chariot] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30011900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6180 [Silver Chariot]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30012000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6260 [Forgotten Sinner] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30012100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6260 [Forgotten Sinner] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30012200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6260 [Forgotten Sinner] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30012300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6260 [Forgotten Sinner] Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30012400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7210 [Kingdom Tactician (Past)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30012500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7210 [Kingdom Tactician (Past)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30012600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7210 [Kingdom Tactician (Past)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30012700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7210 [Kingdom Tactician (Past)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30012800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7240 [Captain of the Guard] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30012900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7240 [Captain of the Guard] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30013000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7240 [Captain of the Guard] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30013100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7240 [Captain of the Guard]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30013200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7550 [Stalker Warrior] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30013300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7550 [Stalker Warrior] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30013400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7550 [Stalker Warrior] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30013500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7550 [Stalker Warrior] Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30013600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7680 [Spell Four Heavenly Kings (Magic)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30013700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7680 [Spell Four Heavenly Kings (Magic)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30013800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7680 [Spell Four Heavenly Kings (Magic)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30013900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7680 [Spell Four Heavenly Kings (Magic)] Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30014000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7690 [Spell Four Heavenly Kings (Miracle)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30014100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7690 [Spell Four Heavenly Kings (Miracle)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30014200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7690 [Spell Four Heavenly Kings (Miracle)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30014300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7690 [Spell Four Heavenly Kings (Miracle)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30014400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7700 [Spell Four Heavenly Kings (Magic)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30014500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7700 [Spell Four Heavenly Kings (Magic)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30014600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7700 [Spell Four Heavenly Kings (Magic)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30014700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7700 [Spell Four Heavenly Kings (Magic)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "30014800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7710 [Spell Four Heavenly Kings (Dark Arts)] Head"
+        }
+      ]
+    },
+    {
+      "Key": "30014900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7710 [Spell Four Heavenly Kings (Dark Arts)] Chest"
+        }
+      ]
+    },
+    {
+      "Key": "30015000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7710 [Spell Four Heavenly Kings (Dark Arts)] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "30015100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7710 [Spell Four Heavenly Kings (Dark Art)]・Foot"
+        }
+      ]
+    },
+    {
+      "Key": "40000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1330 [Ancient Dragon Armor] Head"
+        }
+      ]
+    },
+    {
+      "Key": "40000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1330 [Armor of the Ancient Dragon]・Chest"
+        }
+      ]
+    },
+    {
+      "Key": "40000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1330 [Armor of the Ancient Dragon] Arm"
+        }
+      ]
+    },
+    {
+      "Key": "40000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1330 [Ancient Dragon Armor]・Feet"
+        }
+      ]
     }
   ]
 }

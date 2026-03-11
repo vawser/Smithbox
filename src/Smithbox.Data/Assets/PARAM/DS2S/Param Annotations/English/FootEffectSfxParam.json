@@ -1,0 +1,223 @@
+{
+  "Param": "FootEffectSfxParam",
+  "Type": "FOOT_EFFECT_SFX_PARAM",
+  "Name": "FootEffectSfxParam",
+  "Description": "Defines parameters related to the SFX used for footsteps.",
+  "Fields": [
+    {
+      "Field": "foot_sfx_0",
+      "Name": "Footstep SFX [0]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_1",
+      "Name": "Footstep SFX [1]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_2",
+      "Name": "Footstep SFX [2]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_3",
+      "Name": "Footstep SFX [3]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_4",
+      "Name": "Footstep SFX [4]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_5",
+      "Name": "Footstep SFX [5]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_6",
+      "Name": "Footstep SFX [6]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_7",
+      "Name": "Footstep SFX [7]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_8",
+      "Name": "Footstep SFX [8]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_9",
+      "Name": "Footstep SFX [9]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_10",
+      "Name": "Footstep SFX [10]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_11",
+      "Name": "Footstep SFX [11]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_12",
+      "Name": "Footstep SFX [12]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_13",
+      "Name": "Footstep SFX [13]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_14",
+      "Name": "Footstep SFX [14]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_15",
+      "Name": "Footstep SFX [15]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_16",
+      "Name": "Footstep SFX [16]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_17",
+      "Name": "Footstep SFX [17]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_18",
+      "Name": "Footstep SFX [18]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_19",
+      "Name": "Footstep SFX [19]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_20",
+      "Name": "Footstep SFX [20]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_21",
+      "Name": "Footstep SFX [21]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_22",
+      "Name": "Footstep SFX [22]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_23",
+      "Name": "Footstep SFX [23]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_24",
+      "Name": "Footstep SFX [24]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_25",
+      "Name": "Footstep SFX [25]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_26",
+      "Name": "Footstep SFX [26]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_27",
+      "Name": "Footstep SFX [27]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_28",
+      "Name": "Footstep SFX [28]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_29",
+      "Name": "Footstep SFX [29]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_30",
+      "Name": "Footstep SFX [30]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_31",
+      "Name": "Footstep SFX [31]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_32",
+      "Name": "Footstep SFX [32]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_33",
+      "Name": "Footstep SFX [33]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_34",
+      "Name": "Footstep SFX [34]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_35",
+      "Name": "Footstep SFX [35]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_36",
+      "Name": "Footstep SFX [36]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_37",
+      "Name": "Footstep SFX [37]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_38",
+      "Name": "Footstep SFX [38]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_39",
+      "Name": "Footstep SFX [39]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_40",
+      "Name": "Footstep SFX [40]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_41",
+      "Name": "Footstep SFX [41]",
+      "Description": ""
+    },
+    {
+      "Field": "foot_sfx_42",
+      "Name": "Footstep SFX [42]",
+      "Description": ""
+    }
+  ]
+}

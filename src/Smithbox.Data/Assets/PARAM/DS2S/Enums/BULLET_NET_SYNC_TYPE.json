@@ -1,32 +1,56 @@
 {
-  "DisplayName": "BULLET_NET_SYNC_TYPE",
-  "Name": "BULLET_NET_SYNC_TYPE",
-  "Description": "",
+  "Key": "BULLET_NET_SYNC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_NET_SYNC_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Not synced",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not synced"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Emitter synchronization",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Emitter synchronization"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Bullet synchronization",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet synchronization"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Coordinate emitter synchronization",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coordinate emitter synchronization"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Placed bullet synchronization",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Placed bullet synchronization"
+        }
+      ]
     }
   ]
 }

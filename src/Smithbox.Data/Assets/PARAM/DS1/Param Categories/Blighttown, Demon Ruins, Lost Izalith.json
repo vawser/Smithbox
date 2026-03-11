@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Blighttown / Demon Ruins / Lost Izalith",
+  "Key": "Blighttown / Demon Ruins / Lost Izalith",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Blighttown / Demon Ruins / Lost Izalith"
+      }
+  ],
   "Params": [
     "m14_DofBank",
     "m14_EnvLightTexBank",

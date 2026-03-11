@@ -1,0 +1,108 @@
+{
+  "Param": "NpcEventParam",
+  "Type": "NPC_EVENT_PARAM",
+  "Name": "NpcEventParam",
+  "Description": "Defines parameters related NPC events and conversations.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shopLineupStartRow",
+      "Name": "Shop Lineup - Start Row ID",
+      "Description": ""
+    },
+    {
+      "Field": "shopLineupEndRow",
+      "Name": "Shop Lineup - End Row ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "displayItemTextId",
+      "Name": "NPC Menu - Item Text ID",
+      "Description": "The text ID for \u0027Offer X\u0027 option within the menu."
+    },
+    {
+      "Field": "shopLineupParamId",
+      "Name": "Unknown Shop Lineup ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "npcMenu_NameID",
+      "Name": "NPC Menu - Name Text ID",
+      "Description": "The text ID for the NPC\u0027s name within the menu."
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk15",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,52 +1,92 @@
 {
-  "DisplayName": "MAP_OBJECT_WEIGHT_PARAM_TYPE",
-  "Name": "MAP_OBJECT_WEIGHT_PARAM_TYPE",
-  "Description": "",
+  "Key": "MAP_OBJECT_WEIGHT_PARAM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAP_OBJECT_WEIGHT_PARAM_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Object weight_no",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_no"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Object weight_very small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_very small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Object weight_small",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_small"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Object weight_medium",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_medium"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Object weight_large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Object weight_extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_extra large"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Object weight_extra large",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_extra large"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Object weight_∞",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_∞"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Object weight_for stone statues",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object weight_for stone statues"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,11 @@
 {
-  "DisplayName": "New Londo Ruins / Valley of Drakes",
+  "Key": "New Londo Ruins / Valley of Drakes",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "New Londo Ruins / Valley of Drakes"
+      }
+  ],
   "Params": [
     "m16_DofBank",
     "m16_EnvLightTexBank",

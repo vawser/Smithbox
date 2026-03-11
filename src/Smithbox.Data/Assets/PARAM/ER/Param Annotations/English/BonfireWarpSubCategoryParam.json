@@ -1,0 +1,43 @@
+{
+  "Param": "BonfireWarpSubCategoryParam",
+  "Type": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
+  "Name": "BonfireWarpSubCategoryParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Subcategory display name Text ID [MenuText]"
+    },
+    {
+      "Field": "tabId",
+      "Name": "Tab ID",
+      "Description": "Kagaribi Warp Tab ID. ID of the tab to which this subcategory belongs"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Tab Sort ID",
+      "Description": "Bonfire Warp Tab Sort ID. Display order of subcategories in tabs"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

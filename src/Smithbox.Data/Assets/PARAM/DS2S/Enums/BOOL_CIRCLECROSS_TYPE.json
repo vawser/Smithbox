@@ -1,17 +1,29 @@
 {
-  "DisplayName": "BOOL_CIRCLECROSS_TYPE",
-  "Name": "BOOL_CIRCLECROSS_TYPE",
-  "Description": "",
+  "Key": "BOOL_CIRCLECROSS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_CIRCLECROSS_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "×",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "×"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "○",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "○"
+        }
+      ]
     }
   ]
 }

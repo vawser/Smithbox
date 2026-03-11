@@ -1,0 +1,133 @@
+{
+  "Param": "SwordArtsParam",
+  "Type": "SWORD_ARTS_PARAM_ST",
+  "Name": "SwordArtsParam",
+  "Description": "Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsType",
+      "Name": "Sword Arts Type (Obsolete)",
+      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
+    },
+    {
+      "Field": "artsSpeedType",
+      "Name": "Arts Speed Type",
+      "Description": "Which cancellation timing do you see? 0: Normal (left hand attack) / 1: Early / 2: Slow"
+    },
+    {
+      "Field": "refStatus",
+      "Name": "Reference Status Type",
+      "Description": "Which system of arts points to refer to"
+    },
+    {
+      "Field": "isRefRightArts",
+      "Name": "Is Right-hand Arts Reference",
+      "Description": "When set to the arts of the left-handed weapon, the arts of the right-handed weapon are displayed in FE. Assumed to be used for weapon maneuvers etc."
+    },
+    {
+      "Field": "isGrayoutLeftHand",
+      "Name": "Is Greyout Left-hand",
+      "Description": "Whether to gray out when displaying the arts name of the left hand (one-handed)"
+    },
+    {
+      "Field": "isGrayoutRightHand",
+      "Name": "Is Greyout Right-hand",
+      "Description": "Whether to gray out when displaying the arts name of the right hand (one-handed)"
+    },
+    {
+      "Field": "isGrayoutBothHand",
+      "Name": "Is Greyout Both-hand",
+      "Description": "Whether to gray out when displaying the arts name of both hands"
+    },
+    {
+      "Field": "reserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePoint_L1",
+      "Name": "Arts Points - L1",
+      "Description": "Points to spend when putting out arts by L1"
+    },
+    {
+      "Field": "usePoint_L2",
+      "Name": "Arts Points - L2",
+      "Description": "Points to spend when putting out arts by L2"
+    },
+    {
+      "Field": "usePoint_R1",
+      "Name": "Arts Points - R1",
+      "Description": "Points to spend when putting out arts by R1"
+    },
+    {
+      "Field": "usePoint_R2",
+      "Name": "Arts Points - R2",
+      "Description": "Points to spend when putting out arts by R2"
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "Text ID for arts description"
+    },
+    {
+      "Field": "useMagicPoint_L1",
+      "Name": "FP Consumption - L1",
+      "Description": "MP consumed when issuing arts by L1"
+    },
+    {
+      "Field": "useMagicPoint_L2",
+      "Name": "FP Consumption - L2",
+      "Description": "MP consumed when issuing arts by L2"
+    },
+    {
+      "Field": "useMagicPoint_R1",
+      "Name": "FP Consumption - R1",
+      "Description": "MP consumed when issuing arts by R1"
+    },
+    {
+      "Field": "useMagicPoint_R2",
+      "Name": "FP Consumption - R2",
+      "Description": "MP consumed when issuing arts by R2"
+    },
+    {
+      "Field": "shieldIconType",
+      "Name": "Shield Icon Type",
+      "Description": "If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para."
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsTypeNew",
+      "Name": "Sword Arts Type",
+      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "ID of the icon displayed in FE etc."
+    },
+    {
+      "Field": "aiUsageId",
+      "Name": "AI Usage Judgment ID",
+      "Description": "AI usage judgment ID"
+    }
+  ]
+}

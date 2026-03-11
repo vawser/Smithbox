@@ -1,0 +1,98 @@
+{
+  "Param": "ThrowKindParam",
+  "Type": "THROW_KIND_PARAM_ST",
+  "Name": "ThrowKindParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "throwTypeId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "noThrowInputSpecialEffect_forDef",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "derivationSourceThrowKind",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwChangeId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwCheckSituation",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "acceptableButton",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwKindCheckMethod",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwKindCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "checkPriority",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doesSkipWeaponCategoryCheck",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "doesCheckNormalFallOrbit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isThrowBeginning",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defAliveCheck",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "checkAction_ActionUnlock_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "checkAction_ActionUnlock_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "throwSkillId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "checkAction_ActionUnlock_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

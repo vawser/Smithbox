@@ -1,0 +1,28 @@
+{
+  "Param": "FeColorSetParam",
+  "Type": "FE_COLOR_SET_PARAM",
+  "Name": "FeColorSetParam",
+  "Description": "Defines parameters related to the color sets of characters.",
+  "Fields": [
+    {
+      "Field": "color_set_R",
+      "Name": "Color Set: R",
+      "Description": ""
+    },
+    {
+      "Field": "color_set_G",
+      "Name": "Color Set: G",
+      "Description": ""
+    },
+    {
+      "Field": "color_set_B",
+      "Name": "Color Set: B",
+      "Description": ""
+    },
+    {
+      "Field": "color_set_A",
+      "Name": "Color Set: A",
+      "Description": ""
+    }
+  ]
+}

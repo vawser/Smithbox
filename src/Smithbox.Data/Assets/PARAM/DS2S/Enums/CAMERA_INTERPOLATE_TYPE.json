@@ -1,32 +1,56 @@
 {
-  "DisplayName": "CAMERA_INTERPOLATE_TYPE",
-  "Name": "CAMERA_INTERPOLATE_TYPE",
-  "Description": "",
+  "Key": "CAMERA_INTERPOLATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_INTERPOLATE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "No interpolation",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No interpolation"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Instant switching",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Instant switching"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Linear interpolation",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Linear interpolation"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Quadratic interpolation",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quadratic interpolation"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Quadratic curve interpolation 2",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quadratic curve interpolation 2"
+        }
+      ]
     }
   ]
 }

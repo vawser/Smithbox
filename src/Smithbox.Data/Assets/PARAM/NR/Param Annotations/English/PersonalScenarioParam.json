@@ -1,0 +1,83 @@
+{
+  "Param": "PersonalScenarioParam",
+  "Type": "PERSONAL_SCENARIO_PARAM_ST",
+  "Name": "PersonalScenarioParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "personalScenarioObjectiveId",
+      "Name": "Scenario Objective ID",
+      "Description": "The personal scenario objective to use."
+    },
+    {
+      "Field": "objectiveFlagId",
+      "Name": "Objective Flag",
+      "Description": "The event flag for this objective."
+    },
+    {
+      "Field": "personalScenarioTitleId",
+      "Name": "Scenario Title ID",
+      "Description": "The personal scenario title to use."
+    },
+    {
+      "Field": "personalScenarioBodyId",
+      "Name": "Scenario Body ID",
+      "Description": "The personal scenario body text to use."
+    },
+    {
+      "Field": "personalScenarioImageId",
+      "Name": "Scenario Image ID",
+      "Description": "The personal scenario image to use."
+    },
+    {
+      "Field": "heroId",
+      "Name": "Character ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flashbackFlagId",
+      "Name": "Flashback Flag",
+      "Description": "The event flag for flashback."
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spawnpointEntityId",
+      "Name": "Spawn Point Entity ID",
+      "Description": "The entity ID of the region to spawn at."
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

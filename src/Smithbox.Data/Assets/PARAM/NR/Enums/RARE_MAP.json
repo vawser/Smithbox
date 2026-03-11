@@ -1,37 +1,65 @@
 {
-  "DisplayName": "Map",
-  "Name": "RARE_MAP",
-  "Description": "ID for the different variants of Limveld",
+  "Key": "RARE_MAP",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RARE_MAP"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Limveld",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Limveld"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Mountaintop",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mountaintop"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "The Crater",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "The Crater"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Rotted Woods",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rotted Woods"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Great Hollow",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Hollow"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Shrouded City",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shrouded City"
+        }
+      ]
     }
   ]
 }

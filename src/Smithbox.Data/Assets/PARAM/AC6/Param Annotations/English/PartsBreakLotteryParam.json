@@ -1,0 +1,58 @@
+{
+  "Param": "PartsBreakLotteryParam",
+  "Type": "PARTS_BREAK_LOTTERY_PARAM_ST",
+  "Name": "PartsBreakLotteryParam",
+  "Description": "Defines how likely different parts are to break.",
+  "Fields": [
+    {
+      "Field": "pair0_Value",
+      "Name": "Judgement Value [0]",
+      "Description": ""
+    },
+    {
+      "Field": "pair0_Weight",
+      "Name": "Weighting Value [0]",
+      "Description": ""
+    },
+    {
+      "Field": "pair1_Value",
+      "Name": "Judgement Value [1]",
+      "Description": ""
+    },
+    {
+      "Field": "pair1_Weight",
+      "Name": "Weighting Value [1]",
+      "Description": ""
+    },
+    {
+      "Field": "pair2_Value",
+      "Name": "Judgement Value [2]",
+      "Description": ""
+    },
+    {
+      "Field": "pair2_Weight",
+      "Name": "Weighting Value [2]",
+      "Description": ""
+    },
+    {
+      "Field": "pair3_Value",
+      "Name": "Judgement Value [3]",
+      "Description": ""
+    },
+    {
+      "Field": "pair3_Weight",
+      "Name": "Weighting Value [3]",
+      "Description": ""
+    },
+    {
+      "Field": "pair4_Value",
+      "Name": "Judgement Value [4]",
+      "Description": ""
+    },
+    {
+      "Field": "pair4_Weight",
+      "Name": "Weighting Value [4]",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Param": "OverlayMaterialParam",
+  "Type": "OVERLAY_MATERIAL_PARAM_ST",
+  "Name": "OverlayMaterialParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "Material Param Name",
+      "Description": "Set the parameter name of the material. Up to 31 characters"
+    },
+    {
+      "Field": "materialId",
+      "Name": "Material ID",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamValue0",
+      "Name": "Material Param Value",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamValue1",
+      "Name": "Material Param Value",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

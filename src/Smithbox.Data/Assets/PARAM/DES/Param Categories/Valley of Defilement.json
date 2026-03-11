@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Valley of Defilement",
+  "Key": "Valley of Defilement",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Valley of Defilement"
+      }
+  ],
   "Params": [
     "m05_DofBank",
     "m05_EnvLightTexBank",

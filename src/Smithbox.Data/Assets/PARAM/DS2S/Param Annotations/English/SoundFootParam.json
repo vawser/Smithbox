@@ -1,0 +1,13 @@
+{
+  "Param": "SoundFootParam",
+  "Type": "SOUND_FOOT_PARAM",
+  "Name": "SoundFootParam",
+  "Description": "Defines parameters relating to the sound of footsteps.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

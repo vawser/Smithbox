@@ -1,0 +1,98 @@
+{
+  "Param": "ReinforceParamProtector",
+  "Type": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Name": "ReinforceParamProtector",
+  "Description": "Armor upgrades, not used in Sekiro",
+  "Fields": [
+    {
+      "Field": "physicsDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fireDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slashDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "thrustDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistPoisonRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistDiseaseRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistBloodRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistCurseRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "darkDefRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistFreezeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

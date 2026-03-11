@@ -1,37 +1,65 @@
 {
-  "DisplayName": "EQUIP_CULLING_GROUP_SET_TARGET",
-  "Name": "EQUIP_CULLING_GROUP_SET_TARGET",
-  "Description": "",
+  "Key": "EQUIP_CULLING_GROUP_SET_TARGET",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CULLING_GROUP_SET_TARGET"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "All parts",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All parts"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Torso only",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torso only"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Helmet only",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Helmet only"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Arm only",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arm only"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Legs only",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Legs only"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Face (hair) only",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face (hair) only"
+        }
+      ]
     }
   ]
 }

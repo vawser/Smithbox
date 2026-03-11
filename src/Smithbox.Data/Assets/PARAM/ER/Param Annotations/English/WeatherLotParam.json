@@ -1,0 +1,213 @@
+{
+  "Param": "WeatherLotParam",
+  "Type": "WEATHER_LOT_PARAM_ST",
+  "Name": "WeatherLotParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherType0",
+      "Name": "Weather Type [0]",
+      "Description": "Weather type 0"
+    },
+    {
+      "Field": "weatherType1",
+      "Name": "Weather Type [1]",
+      "Description": "Weather type 1"
+    },
+    {
+      "Field": "weatherType2",
+      "Name": "Weather Type [2]",
+      "Description": "Weather type 2"
+    },
+    {
+      "Field": "weatherType3",
+      "Name": "Weather Type [3]",
+      "Description": "Weather type 3"
+    },
+    {
+      "Field": "weatherType4",
+      "Name": "Weather Type [4]",
+      "Description": "Weather type 4"
+    },
+    {
+      "Field": "weatherType5",
+      "Name": "Weather Type [5]",
+      "Description": "Weather type 5"
+    },
+    {
+      "Field": "weatherType6",
+      "Name": "Weather Type [6]",
+      "Description": "Weather type 6"
+    },
+    {
+      "Field": "weatherType7",
+      "Name": "Weather Type [7]",
+      "Description": "Weather type 7"
+    },
+    {
+      "Field": "weatherType8",
+      "Name": "Weather Type [8]",
+      "Description": "Weather type 8"
+    },
+    {
+      "Field": "weatherType9",
+      "Name": "Weather Type [9]",
+      "Description": "Weather type 9"
+    },
+    {
+      "Field": "weatherType10",
+      "Name": "Weather Type [10]",
+      "Description": "Weather type 10"
+    },
+    {
+      "Field": "weatherType11",
+      "Name": "Weather Type [11]",
+      "Description": "Weather type 11"
+    },
+    {
+      "Field": "weatherType12",
+      "Name": "Weather Type [12]",
+      "Description": "Weather type 12"
+    },
+    {
+      "Field": "weatherType13",
+      "Name": "Weather Type [13]",
+      "Description": "Weather type 13"
+    },
+    {
+      "Field": "weatherType14",
+      "Name": "Weather Type [14]",
+      "Description": "Weather type 14"
+    },
+    {
+      "Field": "weatherType15",
+      "Name": "Weather Type [15]",
+      "Description": "Weather type 15"
+    },
+    {
+      "Field": "lotteryWeight0",
+      "Name": "Lottery Weight [0]",
+      "Description": "Lottery weight 0"
+    },
+    {
+      "Field": "lotteryWeight1",
+      "Name": "Lottery Weight [1]",
+      "Description": "Lottery weight 1"
+    },
+    {
+      "Field": "lotteryWeight2",
+      "Name": "Lottery Weight [2]",
+      "Description": "Lottery weight 2"
+    },
+    {
+      "Field": "lotteryWeight3",
+      "Name": "Lottery Weight [3]",
+      "Description": "Lottery weight 3"
+    },
+    {
+      "Field": "lotteryWeight4",
+      "Name": "Lottery Weight [4]",
+      "Description": "Lottery weight 4"
+    },
+    {
+      "Field": "lotteryWeight5",
+      "Name": "Lottery Weight [5]",
+      "Description": "Lottery weight 5"
+    },
+    {
+      "Field": "lotteryWeight6",
+      "Name": "Lottery Weight [6]",
+      "Description": "Lottery weight 6"
+    },
+    {
+      "Field": "lotteryWeight7",
+      "Name": "Lottery Weight [7]",
+      "Description": "Lottery weight 7"
+    },
+    {
+      "Field": "lotteryWeight8",
+      "Name": "Lottery Weight [8]",
+      "Description": "Lottery weight 8"
+    },
+    {
+      "Field": "lotteryWeight9",
+      "Name": "Lottery Weight [9]",
+      "Description": "Lottery weight 9"
+    },
+    {
+      "Field": "lotteryWeight10",
+      "Name": "Lottery Weight [10]",
+      "Description": "Lottery weight 10"
+    },
+    {
+      "Field": "lotteryWeight11",
+      "Name": "Lottery Weight [11]",
+      "Description": "Lottery weight 11"
+    },
+    {
+      "Field": "lotteryWeight12",
+      "Name": "Lottery Weight [12]",
+      "Description": "Lottery weight 12"
+    },
+    {
+      "Field": "lotteryWeight13",
+      "Name": "Lottery Weight [13]",
+      "Description": "Lottery weight 13"
+    },
+    {
+      "Field": "lotteryWeight14",
+      "Name": "Lottery Weight [14]",
+      "Description": "Lottery weight 14"
+    },
+    {
+      "Field": "lotteryWeight15",
+      "Name": "Lottery Weight [15]",
+      "Description": "Lottery weight 15"
+    },
+    {
+      "Field": "timezoneLimit",
+      "Name": "Timezone Limit",
+      "Description": "Time zone condition list"
+    },
+    {
+      "Field": "timezoneStartHour",
+      "Name": "Timezone Start Hour",
+      "Description": "Direct time specification_start_hour"
+    },
+    {
+      "Field": "timezoneStartMinute",
+      "Name": "Timezone Start Minute",
+      "Description": "Direct time specification_start_minute"
+    },
+    {
+      "Field": "timezoneEndHour",
+      "Name": "Timezone End Hour",
+      "Description": "Direct time specification_start_hour"
+    },
+    {
+      "Field": "timezoneEndMinute",
+      "Name": "Timezone End Minute",
+      "Description": "Direct time specification_start_minute"
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

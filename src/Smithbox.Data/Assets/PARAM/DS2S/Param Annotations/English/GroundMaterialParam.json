@@ -1,0 +1,118 @@
+{
+  "Param": "GroundMaterialParam",
+  "Type": "GROUND_MATERIAL_PARAM",
+  "Name": "GroundMaterialParam",
+  "Description": "Defines parameters related to ground materials.",
+  "Fields": [
+    {
+      "Field": "material_param_id",
+      "Name": "Material Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "move_speed_mult",
+      "Name": "Move Speed %",
+      "Description": ""
+    },
+    {
+      "Field": "turn_speed_mult",
+      "Name": "Turn Speed %",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_id",
+      "Name": "Damage ID",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk12",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

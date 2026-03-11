@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Things Betwixt",
+  "Key": "Things Betwixt",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Things Betwixt"
+      }
+  ],
   "Params": [
     "demopointlight_scn100200",
     "demopointlight_scn100210",

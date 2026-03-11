@@ -1,0 +1,168 @@
+{
+  "Param": "GameAreaParam",
+  "Type": "GAME_AREA_PARAM_ST",
+  "Name": "GameAreaParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bonusSoul_single",
+      "Name": "Bonus Runes - Singleplayer",
+      "Description": "Amount of soul that can be obtained when defeating an area boss (in single play)"
+    },
+    {
+      "Field": "bonusSoul_multi",
+      "Name": "Bonus Runes - Multiplayer",
+      "Description": "Amount of soul that can be obtained when defeating an area boss (during multiplayer)"
+    },
+    {
+      "Field": "humanityPointCountFlagIdTop",
+      "Name": "Humanity Point Count Flag ID",
+      "Description": "First flag ID for managing humanity drop points (using 20 Bit)"
+    },
+    {
+      "Field": "humanityDropPoint1",
+      "Name": "Humanity Drop Threshold [1]",
+      "Description": "Threshold for acquiring humanity 1"
+    },
+    {
+      "Field": "humanityDropPoint2",
+      "Name": "Humanity Drop Threshold [2]",
+      "Description": "Threshold 2 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint3",
+      "Name": "Humanity Drop Threshold [3]",
+      "Description": "Threshold 3 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint4",
+      "Name": "Humanity Drop Threshold [4]",
+      "Description": "Threshold 4 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint5",
+      "Name": "Humanity Drop Threshold [5]",
+      "Description": "Threshold 5 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint6",
+      "Name": "Humanity Drop Threshold [6]",
+      "Description": "Threshold 6 for acquiring humanity"
+    },
+    {
+      "Field": "humanityDropPoint7",
+      "Name": "Humanity Drop Threshold [7]",
+      "Description": "Threshold for acquiring humanity 7"
+    },
+    {
+      "Field": "humanityDropPoint8",
+      "Name": "Humanity Drop Threshold [8]",
+      "Description": "Threshold for acquiring humanity 8"
+    },
+    {
+      "Field": "humanityDropPoint9",
+      "Name": "Humanity Drop Threshold [9]",
+      "Description": "Threshold for acquiring humanity 9"
+    },
+    {
+      "Field": "humanityDropPoint10",
+      "Name": "Humanity Drop Threshold [10]",
+      "Description": "Threshold 10 for acquiring humanity"
+    },
+    {
+      "Field": "soloBreakInPoint_Min",
+      "Name": "Min Invasion Spawns added after Boss Defeat",
+      "Description": "The minimum value of solo intrusion points to be added when defeating an area boss."
+    },
+    {
+      "Field": "soloBreakInPoint_Max",
+      "Name": "Max Invasion Spawns added after Boss Defeat",
+      "Description": "The maximum value of solo intrusion points to be added when defeating an area boss."
+    },
+    {
+      "Field": "defeatBossFlagId_forSignAimList",
+      "Name": "Boss Defeat Flag - For Purpose List",
+      "Description": "If this flag is ON, it will not be displayed in the list of purpose settings at the time of hosting. If it is 0, it is always displayed."
+    },
+    {
+      "Field": "displayAimFlagId",
+      "Name": "Display Purpose Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "foundBossFlagId",
+      "Name": "Discovered Boss Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "foundBossTextId",
+      "Name": "Discovered Boss Text ID",
+      "Description": ""
+    },
+    {
+      "Field": "notFindBossTextId",
+      "Name": "Undiscovered Boss Text ID",
+      "Description": ""
+    },
+    {
+      "Field": "bossChallengeFlagId",
+      "Name": "Boss Challenge Flag ID",
+      "Description": "Boss challengeable flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag ON is targeted. If it is 0, it is always the target."
+    },
+    {
+      "Field": "defeatBossFlagId",
+      "Name": "Boss Defeat Flag ID",
+      "Description": "Boss defeat flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag OFF is targeted."
+    },
+    {
+      "Field": "bossPosX",
+      "Name": "Boss Coordinate X",
+      "Description": "Boss position_X coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "bossPosY",
+      "Name": "Boss Coordinate Y",
+      "Description": "Boss position_Y coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "bossPosZ",
+      "Name": "Boss Coordinate Z",
+      "Description": "Boss position_Z coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "bossMapAreaNo",
+      "Name": "Map Area",
+      "Description": "Boss position_area number (mXX_00_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "bossMapBlockNo",
+      "Name": "Map Block",
+      "Description": "Boss position_grid X number (m00_XX_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "bossMapMapNo",
+      "Name": "Map Region",
+      "Description": "Boss position_grid Z number (m00_00_XX_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

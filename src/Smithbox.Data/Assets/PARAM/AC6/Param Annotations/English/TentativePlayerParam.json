@@ -1,0 +1,2383 @@
+{
+  "Param": "TentativePlayerParam",
+  "Type": "TENTATIVE_PLAYER_PARAM_ST",
+  "Name": "TentativePlayerParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "PlayerFootEffect_bySFX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MoveNotchAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MovementGravity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HighSpeedBrakeStartSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostRestartSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BrakeStartSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BrakeEndSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "StiffThresholdAltM",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnStartAngleDeg_90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnStartAngleDeg_180",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostDirSpeedRate_Side",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostDirSpeedRate_Back",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostDirAccelRate_Side",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostDirAccelRate_Back",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostDirDownAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetLeftTurnAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetRightTurnAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetLeftTurnAngleDegAtTurning",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetRightTurnAngleDegAtTurning",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetLeftLargeTurnAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetRightLargeTurnAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeHorizontalScreenRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeVerticalScreenRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BoostSwitchBackCondAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FourLegFlyMoveSwitchBackCondAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerGlideFootEffect_bySFX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DelayTurn_MaxTurnAngDegPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UnlockAfterCrossingAngleThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lookTargetOffsetLerpSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "freeCameraMaxOffsetTimeForSemiAutoLock",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateVertical",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DisableLockPrevAutoSightingTargetTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boosterLocomotionReturnLerpTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FocusPointMaxDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMaxDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMarginHorizontal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateHorizontal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PadSuperDashReleaseTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PadHoldTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShieldChargePadHoldTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PadPushL3_ToBoostTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeFixedValueAtNormalGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeRateAtNormalGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeFixedValueAtActiveGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeRateAtActiveGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeFixedValueAtShieldBarrier",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeRateAtShieldBarrier",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DashStaminaMaxValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DashStaminaHealValuePerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DashStaminaDrainValuePerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrActCondFallSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DashStaminaCoolTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyLimitAlt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AimModeTrgettingAreaSearchRayDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAltSpMiddelPadRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAltSpMaxPadRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WallJump_WallMovePadAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WallJump_MiddlePadAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WallJump_MaxPadAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FallThrowActiveFallSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FallBrakeStartSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FallMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PropellerFallBrakeStartSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PropellerFallMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stabilityBaseVal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RunDelayReleaseTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WalkToRunPadRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShootActLockCamParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShootActRumbleId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnBrakeMinAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnBrakeMaxAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnBrakeMinSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TurnBrakeMinBrakeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "KeepLockWhenTgtInvisibleTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QuickBoostActLockCamParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CameraHorizontalRotMarginDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockCamParamLerpRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltStartXSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltMaxXSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MaxZTiltAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltInterpolateFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltEndInterpolateFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_rotSpeedRate_onQuickTurn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_rotSpeed_Min",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_rotSpeed_Max",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_rotHiSpeed_Min",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_rotHiSpeed_Max",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PassiveGuardSpecRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_BladeHoming_UpAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_BladeHoming_DownAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isOverShoulderViewOnlyLeftSide",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpMaxSpeedInputTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtSpinePerf",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TankGroundMoveAddAnim_MinAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "TankGroundMoveAddAnim_ChangeAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LastPositionInNaviVolume_UpdateDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtArmPerf",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PropellerPartsAnimRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackMultiFrameHitIntervalTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackRateAtAutoGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackRateAtActiveGuard",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackRateInAir",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHoming_ModelRotAngSpeedDegPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unricochetAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ricochetProbability",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperAngleAtRicochet",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lowerAngleAtRicochet",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "originalVecRateAtRicochet",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "originalVecRateAtLast",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "changeVelocityTimeFromRicochetting",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "noEquipDummyWepId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AimActLockRangeScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladehoming_InertiaCondAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RideAccelRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RideSlopeThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QuickTurnRotAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IsNoShootPredictionRateSubWhenFreeCamera",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IsRicochetNoResetResidualImpactSubTimer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QuickTurnRotTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QuickTurnInputRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RevLegsQb_MoveRotVertAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "noHandEquipDummyWepId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overShoulderRadLerpRateInQuickCameraTurn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardSuccessfulBrakingTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "guardSuccessfulBrakeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrHeightMinForCameraWallCheck",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FlyBoostMove180Turn_StopSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetMarking_TimeOutSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashForceEndTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashGoalOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashStartRoundAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashGoalAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashMaxRoundAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashEndRoundAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashEndSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetMarking_ForgetDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetMarking_ChachDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetMarking_ChachAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetChangeWaitTimeMouse",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetChangeMouseInputCoefficient",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk200",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeTimeScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeDecayRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeGoalSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRandMinRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRandMaxRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRandGenMinTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRandGenMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPermanentStunStateValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForQuickCameraTurnX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForQuickCameraTurnX_LerpRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_MinTurnSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_MaxTurnSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_SfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_MinBrakeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_MinSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "turnFootSfx_MaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hangWeaponLAttachDmyPolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hangWeaponRAttachDmyPolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpableHeightOnBoostMove",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsModelForceMoveTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "partsModelForceStopTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heavyWeightAddAnimRightId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heavyWeightAddAnimLeftId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_StopRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MinSpeedBlendRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedBlendRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyLookAt_BeginHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyLookAt_MaxHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "keepShootStandbyTimeAfterTargetDisappear",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeDistanceAfterKillClose",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeDistanceAfterKillFar",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeAngleWhenSwitchTarget",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeDistanceForBackLock",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltInterpolateFrameSlowMagnification",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZTiltEndInterpolateFrameSlowMagnification",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "raycastToAboveObjectLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "raycastToAboveObjectInterval",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "onBarrierdSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "onBarrierdSpeedMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "onBarrierdSpeedMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "triggerContinueTimeToMultiLock",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeKeepLockTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mouseBaseCoefficient",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mouseCoefficientMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mouseCoefficientMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_CenterOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrBehaviorCond_MoveLookAtErrAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostGroundAlt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk30c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_53_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanEffectWaitTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reconRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeFixedValueAtPA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeRateAtPA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_StopRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MinSpeedBlendRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedBlendRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lookingCameraJudgeThresholdAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shootTargetOffsetDistanceAtUnlock",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrFrontScoreDirectionWeightWhenUnlock",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "completelyInvisibleCheckVerticalAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_258",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealth_ChangeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealth_power",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "deadEffectMaxTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallDeadDamageRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShootPredictionRateRecoverRateWhenFreeCamera",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ShootPredictionRateAddBaseRateByDistWhenFreeCamera",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanOutlineDisableDistOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanOutlineFadeDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanOutlineDisableDistOffset_forDown",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scanOutlineFadeDist_forDown",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_BaseOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_MaxAccelDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_MinAccelDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_AccelSubBrakeRatePerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_NoAccelAddBrakeRatePerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_AccelGravityRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMinWireDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMaxWireDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMove_VerticalOffsetDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camRotSpeedPerOnThrowing",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camReturnLimitDegOnThrowing",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hacking_atkpower",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hacking_range",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalLock_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "missileLock_MaxDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "missileLock_MaxLockNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiLockTaretNumMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalLock_1stLockDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "geomLockEnableRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRangeAngleAfterKill",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockSiteHeightScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockSiteWidthScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnableSearchDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnableSearchDistanceAfterHack",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockOnRangeOutRemineTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "waitTimeAfterQuickCameraTurn",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveModelUpDown_IntpRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveModelUpDown_LimitDistU",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveModelUpDown_LimitDistD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveModelUpDown_SlopeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_253",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cover_RayCastLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cover_RayCastSideOffsetRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rockonSmokeRatePlayer",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rockonSmokeRateEnemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk430",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTexScroll_FowardScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankTexScroll_RotationScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointInterval",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointRange_Max",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointRange_Min",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointAngle_Max",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointAngle_Min",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelReturnTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelReturnRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelFinishRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpInputTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpKeepTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelReturnLifeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelShootLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelPointBrake",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelReturnPointRange_Max",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelReturnPointRange_Min",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelArrivalLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelMoveKeepTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "funnelShootStartTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_260",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DeadLockOnDisableWaiteFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallThroughLockRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierDurable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierTimeSecTillRegene",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierTimeSecTillRegeneDanger",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierRegeneAmount",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierRegeneAmountDanger",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierRegeneIntervalSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierRegeneIntervalSecDanger",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fpsBarrierDangerThresholdPercent",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_261",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_263",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperQBRollAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperQBRollRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperQBPitchAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperQBPitchRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "freeCamParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overShoulderCamParamID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "consumeEN_propellerMove",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "consumeFixedEN_HyperJump",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EN_MinValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "consumeFixedEN_WallJump",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerChrHitHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerChrHitRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerMapHitHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerMapHitRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playerWeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_262",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "consumeFixedEN_Jump",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "completelyInvisibleCheckMaxDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "completelyInvisibleCheckHorizontalAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camMapHitHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camMapHitRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camOwnerHitHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camOwnerHitRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camOwnerHitIntpRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pointMoveSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cover_RayCastMoveOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lerpTimeMaxAfterMeleeAttackCam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lerpRateTargetAfterLerpTimeAfterMeleeAttackCam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lerpRateLerpRateAfterLerpTimeAfterMeleeAttackCam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "finishLerpDistanceAfterMeleeAttackCam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "finishLerpAngleAfterMeleeAttackCam",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpLimitCountResetRayBeginOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpLimitCountResetRayEndOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpLimitCountResetSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_BackDmgAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_FwdDmgAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_BackDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_BackSpDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_BackSaDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_FwdDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_FwdSpDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_FwdSaDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_SideDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_SideSpDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "backDmg_SideSaDmgScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_OverRangeDecayRate_P",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_OverRangeDecayRate_E",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slope_UpMoveCancelAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_270",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyTrunk_BodyGaugePoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyTrunk_ActionGaugePoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkId12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_271",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "precedeInput_InputTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addImpactDisableTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockTargetCandidateAngleRangeWhenSwitchWithStick",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyTrunk_PointHealWaitTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bodyTrunk_PointHealPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AirRagister_BrakeRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "residualImpactSubSpeed_EnMaxSwitchWaitTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "QB_MassBase",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAttackCamDistanceRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAttackCamAngleRangeHorizontal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "meleeAttackCamAngleRangeVertical",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coreChargeEnemyDamageDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coreChargeEnemyDamageSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coreChargeEnemyDeadDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coreChargeEnemyDeadSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Curse1_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Curse2_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Burn_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Stun_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_HighPlasma_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_DepletedUraniumToxic_Player",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Curse1_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Curse2_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Burn_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Stun_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_HighPlasma_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_DepletedUraniumToxic_Enemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_110",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "purge_FadeOutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "purge_FadeOutBeginTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "purge_FadeOutDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magazine_FadeOutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magazine_FadeOutBeginTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magazine_FadeOutDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickCameraTurnRequestMinInputThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickCameraTurnShortTimeThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickCameraTurnRotateLerpRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMarginVertical",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickCameraTurnInputRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_111",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "asm_AjustMinHeightObjA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "asm_AjustMaxHeightObjA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_effectTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_fadeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_lineEffectTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_lineAlpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_dispRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScaleU",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScaleV",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScrollSpeedU",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScrollSpeedV",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "repair_dispFadeRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallOutInvincibleTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "onlieArenaRespawnInvincibleTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camFade_playerModelTargetAlpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camFade_playerFadeDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "asm_DamageVisualScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tank_RollMaxPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tank_FrontUpMaxPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tank_FrontDownMaxPerSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tank_NormalAvgFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_LineColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_LineColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_LineColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_fadeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_lineEffectTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_lineAlpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_dispRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScaleU",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScaleV",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScrollSpeedU",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScrollSpeedV",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_dispFadeRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallOutSpEffectDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x6fc",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x700",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x704",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x708",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_999",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

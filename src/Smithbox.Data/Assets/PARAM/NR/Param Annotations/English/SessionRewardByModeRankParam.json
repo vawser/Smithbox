@@ -1,0 +1,88 @@
+{
+  "Param": "SessionRewardByModeRankParam",
+  "Type": "SESSION_REWARD_BY_MODE_RANK_PARAM_ST",
+  "Name": "SessionRewardByModeRankParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unk_00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rank",
+      "Name": "Rank",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_1",
+      "Name": "Reward Item Lot ID: 1",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_2",
+      "Name": "Reward Item Lot ID: 2",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_3",
+      "Name": "Reward Item Lot ID: 3",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId_4",
+      "Name": "Reward Item Lot ID: 4",
+      "Description": ""
+    },
+    {
+      "Field": "unk_14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_15",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

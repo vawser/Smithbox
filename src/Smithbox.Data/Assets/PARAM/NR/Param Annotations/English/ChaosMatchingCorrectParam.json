@@ -1,0 +1,33 @@
+{
+  "Param": "ChaosMatchingCorrectParam",
+  "Type": "CHAOS_MATCHING_CORRECT_PARAM_ST",
+  "Name": "ChaosMatchingCorrectParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "spEffect00",
+      "Name": "SpEffect: 0",
+      "Description": ""
+    },
+    {
+      "Field": "spEffect01",
+      "Name": "SpEffect: 0",
+      "Description": ""
+    },
+    {
+      "Field": "spEffect02",
+      "Name": "SpEffect: 0",
+      "Description": ""
+    },
+    {
+      "Field": "spEffect03",
+      "Name": "SpEffect: 0",
+      "Description": ""
+    },
+    {
+      "Field": "spEffect04",
+      "Name": "SpEffect: 0",
+      "Description": ""
+    }
+  ]
+}

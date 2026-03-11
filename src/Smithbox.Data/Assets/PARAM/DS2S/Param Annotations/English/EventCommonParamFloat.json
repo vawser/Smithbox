@@ -1,0 +1,13 @@
+{
+  "Param": "EventCommonParamFloat",
+  "Type": "EVENT_COMMON_PARAM_FLOAT_ST",
+  "Name": "EventCommonParamFloat",
+  "Description": "Defines parameters related to events.",
+  "Fields": [
+    {
+      "Field": "event_value",
+      "Name": "Value",
+      "Description": ""
+    }
+  ]
+}

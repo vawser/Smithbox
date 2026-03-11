@@ -1,0 +1,38 @@
+{
+  "Param": "GrassLodRangeParam",
+  "Type": "GRASS_LOD_RANGE_PARAM_ST",
+  "Name": "GrassLodRangeParam",
+  "Description": "Determines the parameters used for grass LOD ranges.",
+  "Fields": [
+    {
+      "Field": "LOD0_range",
+      "Name": "LOD 0: Switch Distance",
+      "Description": "The distance at which to switch drawing method for LOD0 cluster type."
+    },
+    {
+      "Field": "LOD0_play",
+      "Name": "LOD 0: Fade Start",
+      "Description": "The distance at which to start fading LOD0 cluster type."
+    },
+    {
+      "Field": "LOD1_range",
+      "Name": "LOD 1: Switch Distance",
+      "Description": "The distance at which to switch drawing method for LOD1 cluster type."
+    },
+    {
+      "Field": "LOD1_play",
+      "Name": "LOD 1: Fade Start",
+      "Description": "The distance at which to start fading LOD1 cluster type."
+    },
+    {
+      "Field": "LOD2_range",
+      "Name": "LOD 2: Switch Distance",
+      "Description": "The distance at which to switch drawing method for LOD2 cluster type."
+    },
+    {
+      "Field": "LOD2_play",
+      "Name": "LOD 2: Fade Start",
+      "Description": "The distance at which to start fading LOD2 cluster type."
+    }
+  ]
+}

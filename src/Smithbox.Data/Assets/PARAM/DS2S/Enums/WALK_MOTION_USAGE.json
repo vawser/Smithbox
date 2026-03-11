@@ -1,22 +1,38 @@
 {
-  "DisplayName": "WALK_MOTION_USAGE",
-  "Name": "WALK_MOTION_USAGE",
-  "Description": "",
+  "Key": "WALK_MOTION_USAGE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WALK_MOTION_USAGE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Stand-by",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stand-by"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Foot reverse standby",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Foot reverse standby"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Move",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move"
+        }
+      ]
     }
   ]
 }

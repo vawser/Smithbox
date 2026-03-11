@@ -1,0 +1,28 @@
+{
+  "Param": "WhiteCoolTimeParam",
+  "Type": "WHITE_COOL_TIME_PARAM_ST",
+  "Name": "WhiteCoolTimeParam",
+  "Description": "Determines the parameters for friendly phantoms.",
+  "Fields": [
+    {
+      "Field": "timeLimit0",
+      "Name": "Time Limit: 0",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit1",
+      "Name": "Time Limit: 1",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit2",
+      "Name": "Time Limit: 2",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit3",
+      "Name": "Time Limit: 3",
+      "Description": ""
+    }
+  ]
+}

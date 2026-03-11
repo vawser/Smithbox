@@ -1,552 +1,992 @@
 {
-  "DisplayName": "GENERATOR_PARAM_M10_10_00_00_TYPE",
-  "Name": "GENERATOR_PARAM_M10_10_00_00_TYPE",
-  "Description": "",
+  "Key": "GENERATOR_PARAM_M10_10_00_00_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_PARAM_M10_10_00_00_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "65",
-      "Name": "[NPC Patch] NPC Patch (Modern)",
-      "Description": ""
-    },
-    {
-      "ID": "110",
-      "Name": "[NPC Bag Shop] NPC Cloana",
-      "Description": ""
-    },
-    {
-      "ID": "135",
-      "Name": "[NPC speller] NPC Karion (modern day)",
-      "Description": ""
-    },
-    {
-      "ID": "520",
-      "Name": "[Black Spirit] Black Phantom A",
-      "Description": ""
-    },
-    {
-      "ID": "526",
-      "Name": "[White Spirit] White Phantom A",
-      "Description": ""
-    },
-    {
-      "ID": "801",
-      "Name": "[BOSS] Salamander",
-      "Description": ""
-    },
-    {
-      "ID": "1000",
-      "Name": "[Kawara_Cadaver Mimicry Tutorial] Lower-class soldier (deceased): Bare hands: Mimicry to a corpse_1",
-      "Description": ""
-    },
-    {
-      "ID": "1010",
-      "Name": "[Kawara_Melee for gazing] Lower-class soldier (deceased): One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "1011",
-      "Name": "[River bed_Wake up when you go deep] Lower-class soldier (deceased): Bare hands: Mimicking as a corpse_1",
-      "Description": ""
-    },
-    {
-      "ID": "1020",
-      "Name": "[Riverside_Strong Enemy Waiting] Wandering Knight (Dead): Assault Spear_Head C",
-      "Description": ""
-    },
-    {
-      "ID": "1030",
-      "Name": "[Kawara_Melee for watching] Lower class soldier (deceased): One-handed sword: Small shield",
-      "Description": ""
-    },
-    {
-      "ID": "1031",
-      "Name": "[River bed_Wake up when you go deep] Lower-class soldier (deceased): Dagger: Mimicry as a corpse_1",
-      "Description": ""
-    },
-    {
-      "ID": "1040",
-      "Name": "[On the river bridge_long distance] Lower class soldier (deceased): Two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "1050",
-      "Name": "[Past BOSS room underground entrance_dash to approach] Kingdom soldier (deceased): Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "1060",
-      "Name": "[Past BOSS room underground_Surprise attack from side hole] Lower-class soldier (deceased): Bare-handed",
-      "Description": ""
-    },
-    {
-      "ID": "1100",
-      "Name": "[Outer Wall Passage_Strong Enemy Wandering] Wandering Knight (Dead): Assault Spear_Head C",
-      "Description": ""
-    },
-    {
-      "ID": "1110",
-      "Name": "[Outer wall passageway small room_Front standby] Lower-class soldier (deceased): One-handed ax (area standby)",
-      "Description": ""
-    },
-    {
-      "ID": "1111",
-      "Name": "[Outer wall passageway small room_surprise attack] Lower-class soldier (deceased): Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "1120",
-      "Name": "[Small space in the outer wall passage_Surprise attack from behind a wooden box] Lower-class soldier (deceased): Bare-handed (visual assault)",
-      "Description": ""
-    },
-    {
-      "ID": "1130",
-      "Name": "[Outer wall passage_path blocked] Kingdom soldier (deceased): Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "1140",
-      "Name": "[Outer Wall Passage Stairs_Assault] Lower-class soldier (deceased): Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "1220",
-      "Name": "[Outer wall wooden scaffolding_close] Lower-class soldier (deceased): Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "1221",
-      "Name": "[Outer wall wooden scaffolding_close] Lower-class soldier (dead): One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "1230",
-      "Name": "[Outer wall wooden scaffolding_down the ladder] Lower class soldier (deceased): Dagger: Outer wall wooden scaffolding on the ladder_Ambush",
-      "Description": ""
-    },
-    {
-      "ID": "1231",
-      "Name": "[Outer wall wooden scaffolding_down the ladder] Lower-class soldier (deceased): One-handed ax: Outer wall wooden scaffolding on the ladder_Ambush",
-      "Description": ""
-    },
-    {
-      "ID": "1240",
-      "Name": "[Below the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "1244",
-      "Name": "[Under the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Bare hands_1",
-      "Description": ""
-    },
-    {
-      "ID": "1245",
-      "Name": "[Under the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Bare hands_2",
-      "Description": ""
-    },
-    {
-      "ID": "1247",
-      "Name": "[Upper Salamander Cave_Overhead surprise attack] Lower-class soldier (deceased): One-handed sword: Small shield: Mimicry as a corpse_Overhead surprise attack",
-      "Description": ""
-    },
-    {
-      "ID": "1250",
-      "Name": "[Main tower side path_assault] Kingdom soldier (deceased): Two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "1400",
-      "Name": "[Waterway_Run and Assault] Kingdom Soldier (Dead): Two-handed sword",
-      "Description": ""
-    },
-    {
-      "ID": "1401",
-      "Name": "[Waterway_Run and Assault] Kingdom Soldier (Deceased): Two-handed long axe",
-      "Description": ""
-    },
-    {
-      "ID": "1500",
-      "Name": "[Lighthouse room_surprise attack] Lower-class soldier (deceased): Dagger (mimicking corpse_first action throw)",
-      "Description": ""
-    },
-    {
-      "ID": "1600",
-      "Name": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_1",
-      "Description": ""
-    },
-    {
-      "ID": "1601",
-      "Name": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_2",
-      "Description": ""
-    },
-    {
-      "ID": "1602",
-      "Name": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_3",
-      "Description": ""
-    },
-    {
-      "ID": "1610",
-      "Name": "[Lattice Gate Passage_Shadow of OBJ] Corpse Scavenging Rat: Color ①: Dark Passage_1",
-      "Description": ""
-    },
-    {
-      "ID": "1620",
-      "Name": "[Lattice Gate Passage_Backstab Target] Corpse Scavenging Rat: Color ①: Dark Passage",
-      "Description": ""
-    },
-    {
-      "ID": "1630",
-      "Name": "[Lattice Gate Passage_Gap] Corpse Scavenging Rat: Color ①: Dark Passage",
-      "Description": ""
-    },
-    {
-      "ID": "1700",
-      "Name": "[Cracked Plaza Rooftop_Long Distance] Kingdom Soldier (Dead): Bow",
-      "Description": ""
-    },
-    {
-      "ID": "1710",
-      "Name": "[Inside the Fissure Plaza building_Bridge chase] Kingdom soldier (deceased): Two-handed sword: Lattice gate passage_Open the door and drive the bridge",
-      "Description": ""
-    },
-    {
-      "ID": "1711",
-      "Name": "[Inside the Fissure Plaza Building_Long Distance] Lower-class soldier (deceased): Two-handed bow",
-      "Description": ""
-    },
-    {
-      "ID": "1720",
-      "Name": "[Cracked Plaza Rooftop_Ladder Climb Interference] Lower-class soldier (dead): One-handed sword: Small shield",
-      "Description": ""
-    },
-    {
-      "ID": "1730",
-      "Name": "[Inside the Fissure Square building_standby in front] Lower-class soldier (deceased): Dagger",
-      "Description": ""
-    },
-    {
-      "ID": "1731",
-      "Name": "[Inside the Fissure Square building_OBJ surprise attack from the shadows] Lower-class soldier (deceased): One-handed ax",
-      "Description": ""
-    },
-    {
-      "ID": "1740",
-      "Name": "[Crack Square_Melee] Kingdom Heavy Soldier: Color ①: Wall Breaker",
-      "Description": ""
-    },
-    {
-      "ID": "1901",
-      "Name": "[Submerged Plaza_Long Distance] Lower-class Soldier (Dead): Two-handed Bow_2",
-      "Description": ""
-    },
-    {
-      "ID": "1931",
-      "Name": "[Molotov cocktail on the roof of the submerged plaza] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (fixed gun battery, no replacement)_2",
-      "Description": ""
-    },
-    {
-      "ID": "1950",
-      "Name": "[Submerged plaza_Ladder climbing obstruction] Kingdom soldier (deceased): Spear: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "1960",
-      "Name": "[Submerged Square Cave_Rumbling Startup] Lower-class soldier (deceased): Bare hands",
-      "Description": ""
-    },
-    {
-      "ID": "2120",
-      "Name": "[In front of the iron grate in the submerged plaza_treasure escort] Kingdom heavy soldier: Color ①",
-      "Description": ""
-    },
-    {
-      "ID": "2170",
-      "Name": "[Submerged Square_Long Distance] Lower-class Soldier (Dead): Two-handed Bow_1",
-      "Description": ""
-    },
-    {
-      "ID": "2180",
-      "Name": "[On the roof of the submerged plaza_close] Kingdom soldier (deceased): Piercing sword: Medium shield",
-      "Description": ""
-    },
-    {
-      "ID": "2200",
-      "Name": "[Molotov cocktail on the roof of the submerged plaza] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (fixed turret, no replacement)_1",
-      "Description": ""
-    },
-    {
-      "ID": "2210",
-      "Name": "[Submerged Square_Formidable Enemy Falling Appears] Wandering Knight (Dead): Assault Spear_Head C",
-      "Description": ""
-    },
-    {
-      "ID": "2220",
-      "Name": "[L-shaped passage_Falling surprise attack B] Kingdom soldier (deceased): Piercing sword: Medium shield: L-shaped passage_Jumping down",
-      "Description": ""
-    },
-    {
-      "ID": "2350",
-      "Name": "[Side communication passageway_patch trap] Kingdom soldier (deceased): Two-handed long axe: For patch passageway_dash proximity",
-      "Description": ""
-    },
-    {
-      "ID": "2351",
-      "Name": "[Side communication passage_patch trap] Lower-class soldier (deceased): One-handed sword: Small shield: For patch passage_dash proximity",
-      "Description": ""
-    },
-    {
-      "ID": "2352",
-      "Name": "[Side connecting passageway_patch trap] Lower class soldier (deceased): Bare hand: For patch passageway_dash proximity",
-      "Description": ""
-    },
-    {
-      "ID": "2353",
-      "Name": "[Side communication passage_patch trap] Lower-class soldier (deceased): Two-handed bow: For patch passage",
-      "Description": ""
-    },
-    {
-      "ID": "2355",
-      "Name": "[Side communication passage_patch trap] Lower-class soldier (deceased): One-handed ax: For patch passage",
-      "Description": ""
-    },
-    {
-      "ID": "2480",
-      "Name": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Two-handed long ax",
-      "Description": ""
-    },
-    {
-      "ID": "2481",
-      "Name": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Spear: Medium shield: Treasure room: Group activation",
-      "Description": ""
-    },
-    {
-      "ID": "2482",
-      "Name": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Piercing sword: Medium shield_1",
-      "Description": ""
-    },
-    {
-      "ID": "2483",
-      "Name": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Two-handed sword: Treasure room: Group activation",
-      "Description": ""
-    },
-    {
-      "ID": "2484",
-      "Name": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Piercing sword: Medium shield_2",
-      "Description": ""
-    },
-    {
-      "ID": "2800",
-      "Name": "[Front right bottom of narrow stairs_close] Kingdom soldier (deceased): Spear: Medium shield: Area activation",
-      "Description": ""
-    },
-    {
-      "ID": "2830",
-      "Name": "[Under the narrow stairs on the right of the front line_flame jar] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (area standby)",
-      "Description": ""
-    },
-    {
-      "ID": "2900",
-      "Name": "[Frontline central staircase_time-lagged pincer] Kingdom soldier (deceased): Piercing sword: Medium shield_time-lagged pincer dash close range",
-      "Description": ""
-    },
-    {
-      "ID": "2950",
-      "Name": "[Front Center Stairs] Soul Black",
-      "Description": ""
-    },
-    {
-      "ID": "3000",
-      "Name": "[Inside the center of the front line_pincer encirclement] Lower-class soldier (deceased): One-handed ax: Disguised as a corpse_Very close range",
-      "Description": ""
-    },
-    {
-      "ID": "3002",
-      "Name": "[Inside the center of the front line_pincer encirclement] Lower-class soldier (deceased): One-handed sword: Small shield: Disguised as a corpse_Very close range",
-      "Description": ""
-    },
-    {
-      "ID": "3050",
-      "Name": "[Top of the giant sword inside the center of the front line_Pushing close] Kingdom soldier (deceased): Piercing sword: Medium shield: Jumping onto the giant sword and surprise attack",
-      "Description": ""
-    },
-    {
-      "ID": "3200",
-      "Name": "[Frontline center_formation] Kingdom heavy soldiers: Color ①",
-      "Description": ""
-    },
-    {
-      "ID": "3201",
-      "Name": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_1",
-      "Description": ""
-    },
-    {
-      "ID": "3202",
-      "Name": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_2",
-      "Description": ""
-    },
-    {
-      "ID": "3203",
-      "Name": "[Frontline center_formation] Kingdom soldier (deceased): Spear: Medium shield_3",
-      "Description": ""
-    },
-    {
-      "ID": "3204",
-      "Name": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_4",
-      "Description": ""
-    },
-    {
-      "ID": "3300",
-      "Name": "[Center of the front line_Stone statue surprise attack] Kingdom soldier (deceased): Two-handed sword: Bow holding_Stone statue overhead",
-      "Description": ""
-    },
-    {
-      "ID": "3350",
-      "Name": "[Center of the front line_surprise attack by falling from the scaffold] Soul Black",
-      "Description": ""
-    },
-    {
-      "ID": "3400",
-      "Name": "[Waterway_Rat B] Corpse scavenging rat: Color ①: Near elevator_1",
-      "Description": ""
-    },
-    {
-      "ID": "3410",
-      "Name": "[Waterway_Dash Proximity] Kingdom Soldier (Dead): Spear: Medium Shield: Dash surprise attack in front of the elevator",
-      "Description": ""
-    },
-    {
-      "ID": "3411",
-      "Name": "[Waterway_Dash Proximity] Kingdom Soldier (Dead): Piercing Sword: Medium Shield: Dash Surprise Attack in Front of Elevator",
-      "Description": ""
-    },
-    {
-      "ID": "5000",
-      "Name": "[Front right rooftop_Ishimori] Ishimori",
-      "Description": ""
-    },
-    {
-      "ID": "5700",
-      "Name": "[Front left rooftop_Vagrant first appearance] Vagrant A",
-      "Description": ""
-    },
-    {
-      "ID": "9000",
-      "Name": "[Flame Cave_Fire Breathing] Salamander",
-      "Description": ""
-    },
-    {
-      "ID": "9100",
-      "Name": "[Salamander Room_Test] Salamander_1",
-      "Description": ""
-    },
-    {
-      "ID": "9101",
-      "Name": "[Salamander Room_Test] Salamander_2",
-      "Description": ""
-    },
-    {
-      "ID": "9102",
-      "Name": "[Salamander Room_Test] Salamander_3",
-      "Description": ""
-    },
-    {
-      "ID": "9940",
-      "Name": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_1",
-      "Description": ""
-    },
-    {
-      "ID": "9941",
-      "Name": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_2",
-      "Description": ""
-    },
-    {
-      "ID": "9942",
-      "Name": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_3",
-      "Description": ""
-    },
-    {
-      "ID": "9950",
-      "Name": "[Dark Passage_Proximity] Corpse Scavenging Rat: Color ①: Dark Passage: For GGD",
-      "Description": ""
-    },
-    {
-      "ID": "9960",
-      "Name": "[Dark Passage_Proximity] Kingdom Heavy Soldier: Color ①: For GGD_1",
-      "Description": ""
-    },
-    {
-      "ID": "9961",
-      "Name": "[Dark Passage_Proximity] Kingdom Heavy Soldier: Color ①: For GGD_2",
-      "Description": ""
-    },
-    {
-      "ID": "9970",
-      "Name": "[Crack Square_Ax Throwing] Heavy Dwarf: Two-handed ax x 2: Head A",
-      "Description": ""
-    },
-    {
-      "ID": "9971",
-      "Name": "[Submerged square_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A",
-      "Description": ""
-    },
-    {
-      "ID": "9972",
-      "Name": "[Above L-shaped passage_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A",
-      "Description": ""
-    },
-    {
-      "ID": "9973",
-      "Name": "[River slope_Ax throwing] Heavy dwarf: Two-handed ax x 2: Head A",
-      "Description": ""
-    },
-    {
-      "ID": "9974",
-      "Name": "[Giant Sword Passage_Ax Throwing] Heavy Dwarf: Two-handed ax x 2: Head A_1",
-      "Description": ""
-    },
-    {
-      "ID": "9975",
-      "Name": "[Giant Sword Passage_Axe Throwing] Heavy Dwarf: Two-handed ax x 2: Head A_2",
-      "Description": ""
-    },
-    {
-      "ID": "9977",
-      "Name": "[Tip of giant sword_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A",
-      "Description": ""
-    },
-    {
-      "ID": "9978",
-      "Name": "[Scaffolding on the giant sword_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A: Behind the giant sword",
-      "Description": ""
-    },
-    {
-      "ID": "9980",
-      "Name": "[Fissure Square_Shooting] Kingdom Soldier (Dead): Bow",
-      "Description": ""
-    },
-    {
-      "ID": "9990",
-      "Name": "[Under the waterway_test placement] Salamander_1",
-      "Description": ""
-    },
-    {
-      "ID": "9991",
-      "Name": "[Under the waterway_test placement] Salamander_2",
-      "Description": ""
-    },
-    {
-      "ID": "9992",
-      "Name": "[Under the waterway_test placement] Salamander_3",
-      "Description": ""
-    },
-    {
-      "ID": "9997",
-      "Name": "[Boss battle_Movement_Boss room shape test] Salamander",
-      "Description": ""
-    },
-    {
-      "ID": "9998",
-      "Name": "[Boss battle_Boss petrified state] Salamander (petrified)",
-      "Description": ""
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[NPC Patch] NPC Patch (Modern)"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[NPC Bag Shop] NPC Cloana"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[NPC speller] NPC Karion (modern day)"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Black Spirit] Black Phantom A"
+        }
+      ]
+    },
+    {
+      "Key": "526",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[White Spirit] White Phantom A"
+        }
+      ]
+    },
+    {
+      "Key": "801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[BOSS] Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kawara_Cadaver Mimicry Tutorial] Lower-class soldier (deceased): Bare hands: Mimicry to a corpse_1"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kawara_Melee for gazing] Lower-class soldier (deceased): One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "1011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[River bed_Wake up when you go deep] Lower-class soldier (deceased): Bare hands: Mimicking as a corpse_1"
+        }
+      ]
+    },
+    {
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Riverside_Strong Enemy Waiting] Wandering Knight (Dead): Assault Spear_Head C"
+        }
+      ]
+    },
+    {
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kawara_Melee for watching] Lower class soldier (deceased): One-handed sword: Small shield"
+        }
+      ]
+    },
+    {
+      "Key": "1031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[River bed_Wake up when you go deep] Lower-class soldier (deceased): Dagger: Mimicry as a corpse_1"
+        }
+      ]
+    },
+    {
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[On the river bridge_long distance] Lower class soldier (deceased): Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Past BOSS room underground entrance_dash to approach] Kingdom soldier (deceased): Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Past BOSS room underground_Surprise attack from side hole] Lower-class soldier (deceased): Bare-handed"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer Wall Passage_Strong Enemy Wandering] Wandering Knight (Dead): Assault Spear_Head C"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall passageway small room_Front standby] Lower-class soldier (deceased): One-handed ax (area standby)"
+        }
+      ]
+    },
+    {
+      "Key": "1111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall passageway small room_surprise attack] Lower-class soldier (deceased): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Small space in the outer wall passage_Surprise attack from behind a wooden box] Lower-class soldier (deceased): Bare-handed (visual assault)"
+        }
+      ]
+    },
+    {
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall passage_path blocked] Kingdom soldier (deceased): Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer Wall Passage Stairs_Assault] Lower-class soldier (deceased): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall wooden scaffolding_close] Lower-class soldier (deceased): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall wooden scaffolding_close] Lower-class soldier (dead): One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall wooden scaffolding_down the ladder] Lower class soldier (deceased): Dagger: Outer wall wooden scaffolding on the ladder_Ambush"
+        }
+      ]
+    },
+    {
+      "Key": "1231",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Outer wall wooden scaffolding_down the ladder] Lower-class soldier (deceased): One-handed ax: Outer wall wooden scaffolding on the ladder_Ambush"
+        }
+      ]
+    },
+    {
+      "Key": "1240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Below the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1244",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Bare hands_1"
+        }
+      ]
+    },
+    {
+      "Key": "1245",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the wooden scaffolding on the outer wall_proximity of wandering] Lower-class soldier (deceased): Bare hands_2"
+        }
+      ]
+    },
+    {
+      "Key": "1247",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Upper Salamander Cave_Overhead surprise attack] Lower-class soldier (deceased): One-handed sword: Small shield: Mimicry as a corpse_Overhead surprise attack"
+        }
+      ]
+    },
+    {
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Main tower side path_assault] Kingdom soldier (deceased): Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Waterway_Run and Assault] Kingdom Soldier (Dead): Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "1401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Waterway_Run and Assault] Kingdom Soldier (Deceased): Two-handed long axe"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lighthouse room_surprise attack] Lower-class soldier (deceased): Dagger (mimicking corpse_first action throw)"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_1"
+        }
+      ]
+    },
+    {
+      "Key": "1601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_2"
+        }
+      ]
+    },
+    {
+      "Key": "1602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Darkness Surprise Attack] Corpse Scavenging Rat: Color ①: Darkness Passage_3"
+        }
+      ]
+    },
+    {
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Shadow of OBJ] Corpse Scavenging Rat: Color ①: Dark Passage_1"
+        }
+      ]
+    },
+    {
+      "Key": "1620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Backstab Target] Corpse Scavenging Rat: Color ①: Dark Passage"
+        }
+      ]
+    },
+    {
+      "Key": "1630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Lattice Gate Passage_Gap] Corpse Scavenging Rat: Color ①: Dark Passage"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Cracked Plaza Rooftop_Long Distance] Kingdom Soldier (Dead): Bow"
+        }
+      ]
+    },
+    {
+      "Key": "1710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the Fissure Plaza building_Bridge chase] Kingdom soldier (deceased): Two-handed sword: Lattice gate passage_Open the door and drive the bridge"
+        }
+      ]
+    },
+    {
+      "Key": "1711",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the Fissure Plaza Building_Long Distance] Lower-class soldier (deceased): Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "1720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Cracked Plaza Rooftop_Ladder Climb Interference] Lower-class soldier (dead): One-handed sword: Small shield"
+        }
+      ]
+    },
+    {
+      "Key": "1730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the Fissure Square building_standby in front] Lower-class soldier (deceased): Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1731",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the Fissure Square building_OBJ surprise attack from the shadows] Lower-class soldier (deceased): One-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "1740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Crack Square_Melee] Kingdom Heavy Soldier: Color ①: Wall Breaker"
+        }
+      ]
+    },
+    {
+      "Key": "1901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged Plaza_Long Distance] Lower-class Soldier (Dead): Two-handed Bow_2"
+        }
+      ]
+    },
+    {
+      "Key": "1931",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Molotov cocktail on the roof of the submerged plaza] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (fixed gun battery, no replacement)_2"
+        }
+      ]
+    },
+    {
+      "Key": "1950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged plaza_Ladder climbing obstruction] Kingdom soldier (deceased): Spear: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "1960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged Square Cave_Rumbling Startup] Lower-class soldier (deceased): Bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "2120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[In front of the iron grate in the submerged plaza_treasure escort] Kingdom heavy soldier: Color ①"
+        }
+      ]
+    },
+    {
+      "Key": "2170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged Square_Long Distance] Lower-class Soldier (Dead): Two-handed Bow_1"
+        }
+      ]
+    },
+    {
+      "Key": "2180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[On the roof of the submerged plaza_close] Kingdom soldier (deceased): Piercing sword: Medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Molotov cocktail on the roof of the submerged plaza] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (fixed turret, no replacement)_1"
+        }
+      ]
+    },
+    {
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged Square_Formidable Enemy Falling Appears] Wandering Knight (Dead): Assault Spear_Head C"
+        }
+      ]
+    },
+    {
+      "Key": "2220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[L-shaped passage_Falling surprise attack B] Kingdom soldier (deceased): Piercing sword: Medium shield: L-shaped passage_Jumping down"
+        }
+      ]
+    },
+    {
+      "Key": "2350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Side communication passageway_patch trap] Kingdom soldier (deceased): Two-handed long axe: For patch passageway_dash proximity"
+        }
+      ]
+    },
+    {
+      "Key": "2351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Side communication passage_patch trap] Lower-class soldier (deceased): One-handed sword: Small shield: For patch passage_dash proximity"
+        }
+      ]
+    },
+    {
+      "Key": "2352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Side connecting passageway_patch trap] Lower class soldier (deceased): Bare hand: For patch passageway_dash proximity"
+        }
+      ]
+    },
+    {
+      "Key": "2353",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Side communication passage_patch trap] Lower-class soldier (deceased): Two-handed bow: For patch passage"
+        }
+      ]
+    },
+    {
+      "Key": "2355",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Side communication passage_patch trap] Lower-class soldier (deceased): One-handed ax: For patch passage"
+        }
+      ]
+    },
+    {
+      "Key": "2480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "2481",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Spear: Medium shield: Treasure room: Group activation"
+        }
+      ]
+    },
+    {
+      "Key": "2482",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Piercing sword: Medium shield_1"
+        }
+      ]
+    },
+    {
+      "Key": "2483",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Two-handed sword: Treasure room: Group activation"
+        }
+      ]
+    },
+    {
+      "Key": "2484",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ballista room basement_treasure room] Kingdom soldier (deceased): Piercing sword: Medium shield_2"
+        }
+      ]
+    },
+    {
+      "Key": "2800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Front right bottom of narrow stairs_close] Kingdom soldier (deceased): Spear: Medium shield: Area activation"
+        }
+      ]
+    },
+    {
+      "Key": "2830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the narrow stairs on the right of the front line_flame jar] Kingdom soldier (deceased): Two-handed sword: Molotov cocktail (area standby)"
+        }
+      ]
+    },
+    {
+      "Key": "2900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline central staircase_time-lagged pincer] Kingdom soldier (deceased): Piercing sword: Medium shield_time-lagged pincer dash close range"
+        }
+      ]
+    },
+    {
+      "Key": "2950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Front Center Stairs] Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the center of the front line_pincer encirclement] Lower-class soldier (deceased): One-handed ax: Disguised as a corpse_Very close range"
+        }
+      ]
+    },
+    {
+      "Key": "3002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Inside the center of the front line_pincer encirclement] Lower-class soldier (deceased): One-handed sword: Small shield: Disguised as a corpse_Very close range"
+        }
+      ]
+    },
+    {
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Top of the giant sword inside the center of the front line_Pushing close] Kingdom soldier (deceased): Piercing sword: Medium shield: Jumping onto the giant sword and surprise attack"
+        }
+      ]
+    },
+    {
+      "Key": "3200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline center_formation] Kingdom heavy soldiers: Color ①"
+        }
+      ]
+    },
+    {
+      "Key": "3201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_1"
+        }
+      ]
+    },
+    {
+      "Key": "3202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_2"
+        }
+      ]
+    },
+    {
+      "Key": "3203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline center_formation] Kingdom soldier (deceased): Spear: Medium shield_3"
+        }
+      ]
+    },
+    {
+      "Key": "3204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline center_Formation] Kingdom soldier (deceased): Spear: Medium shield_4"
+        }
+      ]
+    },
+    {
+      "Key": "3300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Center of the front line_Stone statue surprise attack] Kingdom soldier (deceased): Two-handed sword: Bow holding_Stone statue overhead"
+        }
+      ]
+    },
+    {
+      "Key": "3350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Center of the front line_surprise attack by falling from the scaffold] Soul Black"
+        }
+      ]
+    },
+    {
+      "Key": "3400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Waterway_Rat B] Corpse scavenging rat: Color ①: Near elevator_1"
+        }
+      ]
+    },
+    {
+      "Key": "3410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Waterway_Dash Proximity] Kingdom Soldier (Dead): Spear: Medium Shield: Dash surprise attack in front of the elevator"
+        }
+      ]
+    },
+    {
+      "Key": "3411",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Waterway_Dash Proximity] Kingdom Soldier (Dead): Piercing Sword: Medium Shield: Dash Surprise Attack in Front of Elevator"
+        }
+      ]
+    },
+    {
+      "Key": "5000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Front right rooftop_Ishimori] Ishimori"
+        }
+      ]
+    },
+    {
+      "Key": "5700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Front left rooftop_Vagrant first appearance] Vagrant A"
+        }
+      ]
+    },
+    {
+      "Key": "9000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Flame Cave_Fire Breathing] Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "9100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Salamander Room_Test] Salamander_1"
+        }
+      ]
+    },
+    {
+      "Key": "9101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Salamander Room_Test] Salamander_2"
+        }
+      ]
+    },
+    {
+      "Key": "9102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Salamander Room_Test] Salamander_3"
+        }
+      ]
+    },
+    {
+      "Key": "9940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_1"
+        }
+      ]
+    },
+    {
+      "Key": "9941",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_2"
+        }
+      ]
+    },
+    {
+      "Key": "9942",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Frontline central rooftop_punchline] Slave beast (wild): General purpose: For GGD_3"
+        }
+      ]
+    },
+    {
+      "Key": "9950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Dark Passage_Proximity] Corpse Scavenging Rat: Color ①: Dark Passage: For GGD"
+        }
+      ]
+    },
+    {
+      "Key": "9960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Dark Passage_Proximity] Kingdom Heavy Soldier: Color ①: For GGD_1"
+        }
+      ]
+    },
+    {
+      "Key": "9961",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Dark Passage_Proximity] Kingdom Heavy Soldier: Color ①: For GGD_2"
+        }
+      ]
+    },
+    {
+      "Key": "9970",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Crack Square_Ax Throwing] Heavy Dwarf: Two-handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "9971",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Submerged square_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "9972",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Above L-shaped passage_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "9973",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[River slope_Ax throwing] Heavy dwarf: Two-handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "9974",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Giant Sword Passage_Ax Throwing] Heavy Dwarf: Two-handed ax x 2: Head A_1"
+        }
+      ]
+    },
+    {
+      "Key": "9975",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Giant Sword Passage_Axe Throwing] Heavy Dwarf: Two-handed ax x 2: Head A_2"
+        }
+      ]
+    },
+    {
+      "Key": "9977",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tip of giant sword_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "9978",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scaffolding on the giant sword_axe throwing] Heavy dwarf: Two-handed ax x 2: Head A: Behind the giant sword"
+        }
+      ]
+    },
+    {
+      "Key": "9980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fissure Square_Shooting] Kingdom Soldier (Dead): Bow"
+        }
+      ]
+    },
+    {
+      "Key": "9990",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the waterway_test placement] Salamander_1"
+        }
+      ]
+    },
+    {
+      "Key": "9991",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the waterway_test placement] Salamander_2"
+        }
+      ]
+    },
+    {
+      "Key": "9992",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Under the waterway_test placement] Salamander_3"
+        }
+      ]
+    },
+    {
+      "Key": "9997",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Boss battle_Movement_Boss room shape test] Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "9998",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Boss battle_Boss petrified state] Salamander (petrified)"
+        }
+      ]
     }
   ]
 }

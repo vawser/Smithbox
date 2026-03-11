@@ -1,0 +1,13 @@
+{
+  "Param": "EventCommonParam",
+  "Type": "EVENT_COMMON_PARAM_ST",
+  "Name": "EventCommonParam",
+  "Description": "Defines parameters related to events.",
+  "Fields": [
+    {
+      "Field": "event_value",
+      "Name": "Value",
+      "Description": ""
+    }
+  ]
+}

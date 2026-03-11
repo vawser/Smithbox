@@ -1,0 +1,13 @@
+{
+  "Param": "LoadingDisplayItemParam",
+  "Type": "LOADING_DISPLAY_ITEM_PARAM",
+  "Name": "LoadingDisplayItemParam",
+  "Description": "Defines parameters related to the loading screen items.",
+  "Fields": [
+    {
+      "Field": "display_flag_id",
+      "Name": "Display Flag ID",
+      "Description": ""
+    }
+  ]
+}

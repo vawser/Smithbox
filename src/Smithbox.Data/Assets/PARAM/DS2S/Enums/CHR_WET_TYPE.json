@@ -1,22 +1,38 @@
 {
-  "DisplayName": "CHR_WET_TYPE",
-  "Name": "CHR_WET_TYPE",
-  "Description": "",
+  "Key": "CHR_WET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_WET_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "1",
-      "Name": "Water wet",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water wet"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Poison wet",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison wet"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Oily",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oily"
+        }
+      ]
     }
   ]
 }

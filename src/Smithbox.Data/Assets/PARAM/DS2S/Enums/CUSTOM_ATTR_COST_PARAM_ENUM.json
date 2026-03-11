@@ -1,32 +1,56 @@
 {
-  "DisplayName": "CUSTOM_ATTR_COST_PARAM_ENUM",
-  "Name": "CUSTOM_ATTR_COST_PARAM_ENUM",
-  "Description": "",
+  "Key": "CUSTOM_ATTR_COST_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CUSTOM_ATTR_COST_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Do not change attributes",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not change attributes"
+        }
+      ]
     },
     {
-      "ID": "100000",
-      "Name": "Attribute enhancement - normal",
-      "Description": ""
+      "Key": "100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute enhancement - normal"
+        }
+      ]
     },
     {
-      "ID": "100100",
-      "Name": "Attribute Enhancement - Dragon Weapon",
-      "Description": ""
+      "Key": "100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute Enhancement - Dragon Weapon"
+        }
+      ]
     },
     {
-      "ID": "100200",
-      "Name": "Attribute Enhancement - Light Stone",
-      "Description": ""
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attribute Enhancement - Light Stone"
+        }
+      ]
     },
     {
-      "ID": "900000",
-      "Name": "Test",
-      "Description": ""
+      "Key": "900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "Param": "EquipmentMenuManageCategoryParam",
+  "Type": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
+  "Name": "EquipmentMenuManageCategoryParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PropertyLayoutID",
+      "Name": "Menu Layout",
+      "Description": "Determines how this element is laid out in the menu."
+    },
+    {
+      "Field": "CategoryNameTextID",
+      "Name": "Category Name ID",
+      "Description": "The text that appears for this category."
+    },
+    {
+      "Field": "CategoryIconID",
+      "Name": "Category Icon ID",
+      "Description": "ID of category icon."
+    },
+    {
+      "Field": "SortID",
+      "Name": "Sort ID",
+      "Description": "Determines the order of this entry within the menu. 0 is top."
+    },
+    {
+      "Field": "HelpID",
+      "Name": "Help ID",
+      "Description": "ID of the movie to play for the help video."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

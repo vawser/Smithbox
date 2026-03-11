@@ -1,0 +1,1113 @@
+{
+  "Param": "MovementAcTypeParam",
+  "Type": "MOVEMENT_AC_TYPE_PARAM_ST",
+  "Name": "MovementAcTypeParam",
+  "Description": "Determines the movement parameters based on AC type.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedKMPH",
+      "Name": "Jump: Maximum Horizontal Speed",
+      "Description": "The maximum horizontal speed when performing a jump. In kilometres per hour."
+    },
+    {
+      "Field": "jumpHorizontalAccelMPSS",
+      "Name": "Jump: Horizontal Acceleration",
+      "Description": "The horizontal acceleration when performing a jump. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "jumpUpperMaxSpeedKMPH",
+      "Name": "Jump: Maximum Vertical Speed",
+      "Description": "The maximum vertical speed when performing a jump. In kilometres per hour."
+    },
+    {
+      "Field": "jumpUpperAccelMPSS",
+      "Name": "Jump: Vertical Acceleration",
+      "Description": "The vertical acceleration when performing a jump. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostMaxSpeedKMPH",
+      "Name": "Quick Boost: Maximum Speed",
+      "Description": "The maximum speed when performing a quick boost. In kilometres per hour."
+    },
+    {
+      "Field": "quickBoostAccelMPSS",
+      "Name": "Quick Boost: Acceleration",
+      "Description": "The acceleration when performing a quick boost. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "landingHorizontalBrakeUseSlowKMH",
+      "Name": "Ground Brake: Minimum Speed Trigger",
+      "Description": "If the current speed is below the specified speed, low-speed ground braking is activated. In kilometres per hour."
+    },
+    {
+      "Field": "landingHorizontalBrakeUseFastKMH",
+      "Name": "Ground Brake: Maximum Speed Trigger",
+      "Description": "If the current speed is above the specified speed, high-speed ground braking is activated. In kilometres per hour."
+    },
+    {
+      "Field": "landingHorizontalSlowBrakeMPSS",
+      "Name": "Ground Brake: Deceleration (Low-Speed)",
+      "Description": "The amount of deceleration to apply during a low-speed ground brake. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "landingHorizontalFastBrakeMPSS",
+      "Name": "Ground Brake: Deceleration (High-Speed)",
+      "Description": "The amount of deceleration to apply during a high-speed ground brake. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "Air Brake: Horizontal Deceleration",
+      "Description": "The amount of deceleration to apply during a forced air brake after the maximum horizontal speed has been exceeded. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "flyUpBrakeMPSS",
+      "Name": "Air Brake: Vertical Deceleration",
+      "Description": "The amount of deceleration to apply during a forced air brake after the maximum vertical speed has been exceeded. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "quickBoostUpperMaxSpeedKMPH",
+      "Name": "Quick Boost: Maximum Speed Increase",
+      "Description": "The increase to apply to maximum speed during a quick boost. In kilometres per hour."
+    },
+    {
+      "Field": "quickBoostUpperAccelMPSS",
+      "Name": "Quick Boost: Vertical Acceleration",
+      "Description": "The amount of vertical acceleration to apply during a quick boost. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAccelTimeSec",
+      "Name": "Quick Boost: Acceleration Duration",
+      "Description": "The duration of the acceleration during a quick boost. In seconds."
+    },
+    {
+      "Field": "movementToAnimMoveBrakeMPSS",
+      "Name": "Movement to Animation Brake: Deceleration",
+      "Description": "The amount of deceleration to apply after a movement to animation transition. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "guardBrakeRateAtBoost",
+      "Name": "Brake Magnification: Guard from Boost",
+      "Description": "The amount of brake magnification if transitioning to guard animation after boost."
+    },
+    {
+      "Field": "guardBrakeRateAtQuickBoost",
+      "Name": "Brake Magnification: Guard from Quick Boost",
+      "Description": "The amount of brake magnification if transitioning to guard animation after quick boost."
+    },
+    {
+      "Field": "guardBrakeRateAtNormalBrake",
+      "Name": "Brake Magnification: Guard from Brake",
+      "Description": "The amount of brake magnification if transitioning to guard animation after brake."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostMoveSwitchBackGroundBrakeMPSS",
+      "Name": "Switch to Ground Boost Brake: Deceleration",
+      "Description": "The amount of acceleration to apply after switching back to ground boost. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "boostMoveSwitchBackFlyBrakeMPSS",
+      "Name": "Switch to Air Boost Brake: Deceleration",
+      "Description": "The amount of acceleration to apply after switching back to air boost. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "boostMoveSubGroundAccelMPSS",
+      "Name": "Ground Boost Direction Correction Acceleration",
+      "Description": "The amount of acceleration for correcting the direction of ground boost movement. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "boostMoveSubFlyAccelMPSS",
+      "Name": "Air Boost Direction Correction Acceleration",
+      "Description": "The amount of acceleration for correcting the direction of air boost movement. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "assaultBoostSubAccelMPSS",
+      "Name": "Assault Boost Direction Correction Acceleration",
+      "Description": "The amount of acceleration for correcting the direction of assault boost movement. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "bladeHomingSubAccelMPSS",
+      "Name": "Blade Homing Direction Correction Acceleration",
+      "Description": "The amount of acceleration for correcting the direction of blade homing movement. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "pad9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minStiffSpeedKMPH",
+      "Name": "Minimum Landing Stiffness Speed",
+      "Description": "The minimum recovery time is used when landing at speeds below this speed. In kilometres per hour."
+    },
+    {
+      "Field": "minStiffTimeSec",
+      "Name": "Minimum Landing Stiffness Time",
+      "Description": "The minimum stiffness duration. In seconds."
+    },
+    {
+      "Field": "maxStiffSpeedKMPH",
+      "Name": "Maximum Landing Stiffness Speed",
+      "Description": "The maximum recovery time is used when landing at speeds above this speed. In kilometres per hour."
+    },
+    {
+      "Field": "maxStiffTimeSec",
+      "Name": "Maximum Landing Stiffness Time",
+      "Description": "The maximum stiffness duration. In seconds."
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "Velocity Feedback %",
+      "Description": "The percentage of velocity that reflects actual movement. Smaller values feel heavier."
+    },
+    {
+      "Field": "tankTurnOffset_CenterOffset",
+      "Name": "Tank Rotation: Pivot Center Offset",
+      "Description": "The tank pivot offset. Front is positive values, back is negative values."
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffset",
+      "Name": "Tank Rotation: Maximum Forward Offset",
+      "Description": "The tank pivot offset to apply when travelling forward at maximum forward speed."
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffset",
+      "Name": "Tank Rotation: Maximum Backward Offset",
+      "Description": "The tank pivot offset to apply when travelling backward at maximum backward speed."
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
+      "Name": "Tank Rotation: Maximum Forward Speed",
+      "Description": "The maximum speed forward at which the maximum forward offset is applied. In kilometres per hour."
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
+      "Name": "Tank Rotation: Maximum Backward Speed",
+      "Description": "The maximum speed backward at which the maximum backward offset is applied. In kilometres per hour."
+    },
+    {
+      "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
+      "Name": "Tank Rotation: Maximum Deviation Angle",
+      "Description": "The maximum deviation angle between movement direction and speed direction. In degrees."
+    },
+    {
+      "Field": "assaultBoostSideAvoidSubAccelMPSS",
+      "Name": "Assault Boost: Evasion Direction Correction Acceleration",
+      "Description": "The amount of acceleration for correcting the direction of lateral evasion movement durinbg an assault boost. In kilometres per hour ^ 2."
+    },
+    {
+      "Field": "quickBoostAddSpeedToBoostMaxSpeedKMPH",
+      "Name": "Quick Boost: Maximum Speed Addition",
+      "Description": "The maximum amount of speed added during a dash boost to the quick boost speed. In kilometres per hour."
+    },
+    {
+      "Field": "quickTurn_MaxTurnAngleDeg",
+      "Name": "Quick Turn: Maximum Turning Angle",
+      "Description": "The maximum turning angle during a quick turn. In degrees."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurn_MaxTurnTimeSec",
+      "Name": "Quick Turn: Maximum Turning Time",
+      "Description": "The maximum duration for a quick turn. In seconds."
+    },
+    {
+      "Field": "roundDashMaxSpeedKMPH",
+      "Name": "Dash: Maximum Speed",
+      "Description": "The maximum dash speed. In kilometres per hour."
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashAccelMPSS",
+      "Name": "Dash: Turn Acceleration",
+      "Description": "The turn acceleration during a dash. In metres per second ^ 2."
+    },
+    {
+      "Field": "roundDashBrakeMPSS",
+      "Name": "Dash: ",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeFromBoostMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeFromQuickBoostMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashFallAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cunterBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cunterBoostBrakeMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyBoostBrakeMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "uTurnBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperQuickBoostHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallQuickBoostHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slidingMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slidingBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingLandBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHomingFlyBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_BeginBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_PeakBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_BeginToPeakTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMoveMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wireMoveAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damageBrake_TimerResetDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDownBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "landDeadBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "flyDeadBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BladeHomingAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMaxSpeedFromVehicleKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalAccelFromVehicleMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperMaxSpeedFromVehicleKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperAccelFromVehicleMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpMaxSpeedKMPH_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAccelMPSS_H",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAddUpMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAddUpAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealthDashBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealthDashBoostStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealthDashBoostMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealthDashBoostBeginAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stealthDashBoostBeginToMaxAccelTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectUpMinDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectUpMaxDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectDownMinDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectDownMaxDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectUpMaxAccelRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectUpMaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectDownMaxAccelRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeEffectDownMaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpMaxSpeedKMPH_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wallJumpAccelMPSS_V",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHorizontalMinSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "jumpUpperMinSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "propellerFlyBoostHorizontalMinSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "propellerFlyBoostHorizontalMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "freeFallMaxHorizontalSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "freeFallMaxHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostAccelAnimTimeFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostSpeedKeepTimeFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickBoostMaxSpeedForAnimKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostUpperBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostUpperMoveHorizontalSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostUpperMoveHorizontalBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnMaxSpeedRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnMaxAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBoostBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeed_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccel_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxSpeedMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveMaxAccelMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayRate_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MinAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelRate_MaxAng",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveDecayMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelMinAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveAccelMaxAngDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveSpeed",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSlideMoveSideMoveAccel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpHorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpHorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpUpperBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperJumpHorizontalInitSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_ToMaxTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_MinMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrake_MaxMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostAutosightingUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostAutosightingUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostAutosightingUpBtnUpperMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostAutosightingUpBtnUpperAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostDownMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hyperBoostDownAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostToWalkRunBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2HorizontalMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2HorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2DownMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2DownAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostV2UpMaxAlt",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostStartAccel_GroundCondSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostStartAccel_GroundAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostStartAccel_FlyCondSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boostStartAccel_FlyAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_BeginBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_PeakBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_BeginToPeakTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blowDeadBrake_TimerResetDelayTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostChangePerfStartAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "upperBoostChangePerfMaxAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandOutDirBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandRunOutDirBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDashOutDirBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandSwitchBackMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandSwitchBackAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandSwitchBackBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandSwitchBackOutDirBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandDriftOutDirBrakeMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_UpperMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_DownMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_HorizontalMaxSpeedKMH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_HorizontalAccelMPSS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_StartCondSpeedH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_StartAccelH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_SwtichBackBrake",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fourLegFlyMove_SubAccel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeBoostMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeDashMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeDriftMaxSpeedKMPH",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnSpeedDPS",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeStartTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "tankLandTurnBrakeEndTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

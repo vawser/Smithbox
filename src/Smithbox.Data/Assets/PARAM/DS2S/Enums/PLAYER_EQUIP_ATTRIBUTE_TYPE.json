@@ -1,57 +1,101 @@
 {
-  "DisplayName": "PLAYER_EQUIP_ATTRIBUTE_TYPE",
-  "Name": "PLAYER_EQUIP_ATTRIBUTE_TYPE",
-  "Description": "",
+  "Key": "PLAYER_EQUIP_ATTRIBUTE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_EQUIP_ATTRIBUTE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Flame",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Magic",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Darkness",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Darkness"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Poison",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Bleeding",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bleeding"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Crude",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crude"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Magic power",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic power"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Abyss",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Abyss"
+        }
+      ]
     }
   ]
 }

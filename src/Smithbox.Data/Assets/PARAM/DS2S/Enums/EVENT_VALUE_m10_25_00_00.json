@@ -1,27 +1,47 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_25_00_00",
-  "Name": "EVENT_VALUE_m10_25_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_25_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_25_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Enemies whose number of appearances changes: Number of appearances",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemies whose number of appearances changes: Number of appearances"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Enemies whose number of appearances changes: death count",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemies whose number of appearances changes: death count"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Pledge: Rank Comparison: Pilgrim of the Abyss",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank Comparison: Pilgrim of the Abyss"
+        }
+      ]
     }
   ]
 }

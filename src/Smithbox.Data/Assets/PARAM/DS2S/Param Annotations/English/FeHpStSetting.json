@@ -1,0 +1,73 @@
+{
+  "Param": "FeHpStSetting",
+  "Type": "FE_HP_ST_GUAGE_SETTING_PARAM",
+  "Name": "FeHpStSetting",
+  "Description": "Defines parameters related to the player HP interface.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "damage_threshold_major_damage_player",
+      "Name": "Major Damage Threshold: Player",
+      "Description": ""
+    },
+    {
+      "Field": "damage_threshold_major_damage_enemy",
+      "Name": "Major Damage Threshold: Enemy",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "player_bar_hp_min_length",
+      "Name": "HP Bar: Minimum Length",
+      "Description": ""
+    },
+    {
+      "Field": "player_bar_stamina_min_length",
+      "Name": "Stamina Bar: Minimum Length",
+      "Description": ""
+    },
+    {
+      "Field": "player_bar_hp_max_length",
+      "Name": "HP Bar: Maximum Length",
+      "Description": ""
+    },
+    {
+      "Field": "player_bar_stamina_max_length",
+      "Name": "Stamina Bar: Maximum Length",
+      "Description": ""
+    }
+  ]
+}

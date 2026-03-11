@@ -1,32 +1,56 @@
 {
-  "DisplayName": "ATTACK_RANGE_ENUM",
-  "Name": "ATTACK_RANGE_ENUM",
-  "Description": "",
+  "Key": "ATTACK_RANGE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATTACK_RANGE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Super close range",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super close range"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Short distance",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Short distance"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium distance",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium distance"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Long distance",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Long distance"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Super long distance",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super long distance"
+        }
+      ]
     }
   ]
 }

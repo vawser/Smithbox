@@ -1,32 +1,56 @@
 {
-  "DisplayName": "SP_EFFECT_DUPLICATION",
-  "Name": "SP_EFFECT_DUPLICATION",
-  "Description": "",
+  "Key": "SP_EFFECT_DUPLICATION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_DUPLICATION"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Not set",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not set"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Duplicate permission",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duplicate permission"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Overwrite",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overwrite"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Rejected",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rejected"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Overwrite if time is too long",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Overwrite if time is too long"
+        }
+      ]
     }
   ]
 }

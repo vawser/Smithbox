@@ -1,22 +1,38 @@
 {
-  "DisplayName": "BULLET_HOMING_TYPE",
-  "Name": "BULLET_HOMING_TYPE",
-  "Description": "",
+  "Key": "BULLET_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_HOMING_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Master position",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master position"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Predicted position",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Predicted position"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+  "Param": "CultSettingParam",
+  "Type": "CULT_SETTING_PARAM_ST",
+  "Name": "CultSettingParam",
+  "Description": "Bonfire Sacrifice data (cut feature)",
+  "Fields": [
+    {
+      "Field": "Distance",
+      "Name": "Distance",
+      "Description": ""
+    },
+    {
+      "Field": "Angle",
+      "Name": "Angle",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId",
+      "Name": "Event Flag ID",
+      "Description": ""
+    },
+    {
+      "Field": "Coefficient",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultState1",
+      "Name": "Cult Dead Type - First",
+      "Description": ""
+    },
+    {
+      "Field": "CultState2",
+      "Name": "Cult Dead Type - Probability",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

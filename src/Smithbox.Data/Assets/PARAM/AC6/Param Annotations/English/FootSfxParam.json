@@ -1,0 +1,1063 @@
+{
+  "Param": "FootSfxParam",
+  "Type": "FOOT_SFX_PARAM_ST",
+  "Name": "FootSfxParam",
+  "Description": "Determines the particles that are supplied to various foot-related properties.",
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "Particle ID: 0",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "Particle ID: 1",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "Particle ID: 2",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "Particle ID: 3",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "Particle ID: 4",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "Particle ID: 5",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "Particle ID: 6",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "Particle ID: 7",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "Particle ID: 8",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "Particle ID: 9",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "Particle ID: 10",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "Particle ID: 11",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "Particle ID: 12",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "Particle ID: 13",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "Particle ID: 14",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "Particle ID: 15",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "Particle ID: 16",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "Particle ID: 17",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "Particle ID: 18",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "Particle ID: 19",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "Particle ID: 20",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "Particle ID: 21",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "Particle ID: 22",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "Particle ID: 23",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "Particle ID: 24",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "Particle ID: 25",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "Particle ID: 26",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "Particle ID: 27",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "Particle ID: 28",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "Particle ID: 29",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "Particle ID: 30",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_31",
+      "Name": "Particle ID: 31",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_32",
+      "Name": "Particle ID: 32",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_33",
+      "Name": "Particle ID: 33",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_34",
+      "Name": "Particle ID: 34",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_35",
+      "Name": "Particle ID: 35",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_36",
+      "Name": "Particle ID: 36",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_37",
+      "Name": "Particle ID: 37",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_38",
+      "Name": "Particle ID: 38",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_39",
+      "Name": "Particle ID: 39",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_40",
+      "Name": "Particle ID: 40",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_41",
+      "Name": "Particle ID: 41",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_42",
+      "Name": "Particle ID: 42",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_43",
+      "Name": "Particle ID: 43",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_44",
+      "Name": "Particle ID: 44",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_45",
+      "Name": "Particle ID: 45",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_46",
+      "Name": "Particle ID: 46",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_47",
+      "Name": "Particle ID: 47",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_48",
+      "Name": "Particle ID: 48",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_49",
+      "Name": "Particle ID: 49",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_50",
+      "Name": "Particle ID: 50",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_51",
+      "Name": "Particle ID: 51",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_52",
+      "Name": "Particle ID: 52",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_53",
+      "Name": "Particle ID: 53",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_54",
+      "Name": "Particle ID: 54",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_55",
+      "Name": "Particle ID: 55",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_56",
+      "Name": "Particle ID: 56",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_57",
+      "Name": "Particle ID: 57",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_58",
+      "Name": "Particle ID: 58",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_59",
+      "Name": "Particle ID: 59",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_60",
+      "Name": "Particle ID: 60",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_61",
+      "Name": "Particle ID: 61",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_62",
+      "Name": "Particle ID: 62",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_63",
+      "Name": "Particle ID: 63",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_64",
+      "Name": "Particle ID: 64",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_65",
+      "Name": "Particle ID: 65",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_66",
+      "Name": "Particle ID: 66",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_67",
+      "Name": "Particle ID: 67",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_68",
+      "Name": "Particle ID: 68",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_69",
+      "Name": "Particle ID: 69",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_70",
+      "Name": "Particle ID: 70",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_71",
+      "Name": "Particle ID: 71",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_72",
+      "Name": "Particle ID: 72",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_73",
+      "Name": "Particle ID: 73",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_74",
+      "Name": "Particle ID: 74",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_75",
+      "Name": "Particle ID: 75",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_76",
+      "Name": "Particle ID: 76",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_77",
+      "Name": "Particle ID: 77",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_78",
+      "Name": "Particle ID: 78",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_79",
+      "Name": "Particle ID: 79",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_80",
+      "Name": "Particle ID: 80",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_81",
+      "Name": "Particle ID: 81",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_82",
+      "Name": "Particle ID: 82",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_83",
+      "Name": "Particle ID: 83",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_84",
+      "Name": "Particle ID: 84",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_85",
+      "Name": "Particle ID: 85",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_86",
+      "Name": "Particle ID: 86",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_87",
+      "Name": "Particle ID: 87",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_88",
+      "Name": "Particle ID: 88",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_89",
+      "Name": "Particle ID: 89",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_90",
+      "Name": "Particle ID: 90",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_91",
+      "Name": "Particle ID: 91",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_92",
+      "Name": "Particle ID: 92",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_93",
+      "Name": "Particle ID: 93",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_94",
+      "Name": "Particle ID: 94",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_95",
+      "Name": "Particle ID: 95",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_96",
+      "Name": "Particle ID: 96",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_97",
+      "Name": "Particle ID: 97",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_98",
+      "Name": "Particle ID: 98",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_99",
+      "Name": "Particle ID: 99",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_100",
+      "Name": "Particle ID: 100",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_101",
+      "Name": "Particle ID: 101",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_102",
+      "Name": "Particle ID: 102",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_103",
+      "Name": "Particle ID: 103",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_104",
+      "Name": "Particle ID: 104",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_105",
+      "Name": "Particle ID: 105",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_106",
+      "Name": "Particle ID: 106",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_107",
+      "Name": "Particle ID: 107",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_108",
+      "Name": "Particle ID: 108",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_109",
+      "Name": "Particle ID: 109",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_110",
+      "Name": "Particle ID: 110",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_111",
+      "Name": "Particle ID: 111",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_112",
+      "Name": "Particle ID: 112",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_113",
+      "Name": "Particle ID: 113",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_114",
+      "Name": "Particle ID: 114",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_115",
+      "Name": "Particle ID: 115",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_116",
+      "Name": "Particle ID: 116",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_117",
+      "Name": "Particle ID: 117",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_118",
+      "Name": "Particle ID: 118",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_119",
+      "Name": "Particle ID: 119",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_120",
+      "Name": "Particle ID: 120",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_121",
+      "Name": "Particle ID: 121",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_122",
+      "Name": "Particle ID: 122",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_123",
+      "Name": "Particle ID: 123",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_124",
+      "Name": "Particle ID: 124",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_125",
+      "Name": "Particle ID: 125",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_126",
+      "Name": "Particle ID: 126",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_127",
+      "Name": "Particle ID: 127",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_128",
+      "Name": "Particle ID: 128",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_129",
+      "Name": "Particle ID: 129",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_130",
+      "Name": "Particle ID: 130",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_131",
+      "Name": "Particle ID: 131",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_132",
+      "Name": "Particle ID: 132",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_133",
+      "Name": "Particle ID: 133",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_134",
+      "Name": "Particle ID: 134",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_135",
+      "Name": "Particle ID: 135",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_136",
+      "Name": "Particle ID: 136",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_137",
+      "Name": "Particle ID: 137",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_138",
+      "Name": "Particle ID: 138",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_139",
+      "Name": "Particle ID: 139",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_140",
+      "Name": "Particle ID: 140",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_141",
+      "Name": "Particle ID: 141",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_142",
+      "Name": "Particle ID: 142",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_143",
+      "Name": "Particle ID: 143",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_144",
+      "Name": "Particle ID: 144",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_145",
+      "Name": "Particle ID: 145",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_146",
+      "Name": "Particle ID: 146",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_147",
+      "Name": "Particle ID: 147",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_148",
+      "Name": "Particle ID: 148",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_149",
+      "Name": "Particle ID: 149",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_150",
+      "Name": "Particle ID: 150",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_151",
+      "Name": "Particle ID: 151",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_152",
+      "Name": "Particle ID: 152",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_153",
+      "Name": "Particle ID: 153",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_154",
+      "Name": "Particle ID: 154",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_155",
+      "Name": "Particle ID: 155",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_156",
+      "Name": "Particle ID: 156",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_157",
+      "Name": "Particle ID: 157",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_158",
+      "Name": "Particle ID: 158",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_159",
+      "Name": "Particle ID: 159",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_160",
+      "Name": "Particle ID: 160",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_161",
+      "Name": "Particle ID: 161",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_162",
+      "Name": "Particle ID: 162",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_163",
+      "Name": "Particle ID: 163",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_164",
+      "Name": "Particle ID: 164",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_165",
+      "Name": "Particle ID: 165",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_166",
+      "Name": "Particle ID: 166",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_167",
+      "Name": "Particle ID: 167",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_168",
+      "Name": "Particle ID: 168",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_169",
+      "Name": "Particle ID: 169",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_170",
+      "Name": "Particle ID: 170",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_171",
+      "Name": "Particle ID: 171",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_172",
+      "Name": "Particle ID: 172",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_173",
+      "Name": "Particle ID: 173",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_174",
+      "Name": "Particle ID: 174",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_175",
+      "Name": "Particle ID: 175",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_176",
+      "Name": "Particle ID: 176",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_177",
+      "Name": "Particle ID: 177",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_178",
+      "Name": "Particle ID: 178",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_179",
+      "Name": "Particle ID: 179",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_180",
+      "Name": "Particle ID: 180",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_181",
+      "Name": "Particle ID: 181",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_182",
+      "Name": "Particle ID: 182",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_183",
+      "Name": "Particle ID: 183",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_184",
+      "Name": "Particle ID: 184",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_185",
+      "Name": "Particle ID: 185",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_186",
+      "Name": "Particle ID: 186",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_187",
+      "Name": "Particle ID: 187",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_188",
+      "Name": "Particle ID: 188",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_189",
+      "Name": "Particle ID: 189",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_190",
+      "Name": "Particle ID: 190",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_191",
+      "Name": "Particle ID: 191",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_192",
+      "Name": "Particle ID: 192",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_193",
+      "Name": "Particle ID: 193",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_194",
+      "Name": "Particle ID: 194",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_195",
+      "Name": "Particle ID: 195",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_196",
+      "Name": "Particle ID: 196",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_197",
+      "Name": "Particle ID: 197",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_198",
+      "Name": "Particle ID: 198",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_199",
+      "Name": "Particle ID: 199",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_200",
+      "Name": "Particle ID: 200",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_201",
+      "Name": "Particle ID: 201",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_202",
+      "Name": "Particle ID: 202",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_203",
+      "Name": "Particle ID: 203",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_204",
+      "Name": "Particle ID: 204",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_205",
+      "Name": "Particle ID: 205",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_206",
+      "Name": "Particle ID: 206",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_207",
+      "Name": "Particle ID: 207",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_208",
+      "Name": "Particle ID: 208",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_209",
+      "Name": "Particle ID: 209",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    },
+    {
+      "Field": "sfxId_210",
+      "Name": "Particle ID: 210",
+      "Description": "Numerical value entered in the Foot effect identifier item of the NPC parameter, numerical value entered in the Additional foot effect identifier item of the special effect parameter, Particle IDentifier set in the TAE action Foot effect"
+    }
+  ]
+}

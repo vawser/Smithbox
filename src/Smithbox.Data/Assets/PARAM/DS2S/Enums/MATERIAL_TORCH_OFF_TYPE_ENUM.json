@@ -1,22 +1,38 @@
 {
-  "DisplayName": "MATERIAL_TORCH_OFF_TYPE_ENUM",
-  "Name": "MATERIAL_TORCH_OFF_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_TORCH_OFF_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_TORCH_OFF_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Always",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "When avoiding",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "When avoiding"
+        }
+      ]
     }
   ]
 }

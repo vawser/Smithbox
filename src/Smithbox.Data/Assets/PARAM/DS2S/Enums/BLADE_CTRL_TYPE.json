@@ -1,32 +1,56 @@
 {
-  "DisplayName": "BLADE_CTRL_TYPE",
-  "Name": "BLADE_CTRL_TYPE",
-  "Description": "",
+  "Key": "BLADE_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BLADE_CTRL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Spot Attack",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot Attack"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Walking Attack",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking Attack"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Walking Shooting",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking Shooting"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Spot Shooting",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spot Shooting"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "Param": "ShopLineupParam",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "ShopLineupParam",
+  "Description": "Determines the parameters for shops.",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "Item ID",
+      "Description": "The item ID that is sold."
+    },
+    {
+      "Field": "value",
+      "Name": "Sale Price",
+      "Description": "The cost of item sold. Overrides the sellValue in item\u0027s row."
+    },
+    {
+      "Field": "mtrlId",
+      "Name": "Material ID",
+      "Description": "The material cost when purchasing an item, or equipping a spell."
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "Stock Flag ID",
+      "Description": "The ID of an 8-bit event value that stores sold item quantity. Used for any items that are not sold infinitely."
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "Demon\u0027s Souls leftover. Probably doesn\u0027t work."
+    },
+    {
+      "Field": "sellQuantity",
+      "Name": "Quantity",
+      "Description": "The maximum amount of items that can be sold. -1 for infinite. Requires an eventFlag for quantity sold to be saved."
+    },
+    {
+      "Field": "shopType",
+      "Name": "Shop Type",
+      "Description": "The type of shop this row belongs to."
+    },
+    {
+      "Field": "equipType",
+      "Name": "Equipment Type",
+      "Description": "The type of equipment the sold item is."
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

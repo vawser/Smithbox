@@ -1,37 +1,65 @@
 {
-  "DisplayName": "REINFORCE_SPEC_PARAM_ENUM",
-  "Name": "REINFORCE_SPEC_PARAM_ENUM",
-  "Description": "",
+  "Key": "REINFORCE_SPEC_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "REINFORCE_SPEC_PARAM_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Enhanced specification test",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced specification test"
+        }
+      ]
     },
     {
-      "ID": "100100",
-      "Name": "Dagger",
-      "Description": ""
+      "Key": "100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
     },
     {
-      "ID": "100200",
-      "Name": "Straight sword",
-      "Description": ""
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword"
+        }
+      ]
     },
     {
-      "ID": "100300",
-      "Name": "Two-handed sword",
-      "Description": ""
+      "Key": "100300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
     },
     {
-      "ID": "100400",
-      "Name": "Two-handed oversized sword",
-      "Description": ""
+      "Key": "100400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword"
+        }
+      ]
     },
     {
-      "ID": "100500",
-      "Name": "Test moonlight sword",
-      "Description": ""
+      "Key": "100500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test moonlight sword"
+        }
+      ]
     }
   ]
 }

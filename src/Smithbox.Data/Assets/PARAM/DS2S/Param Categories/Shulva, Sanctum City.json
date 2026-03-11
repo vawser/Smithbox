@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Shulva, Sanctum City",
+  "Key": "Shulva, Sanctum City",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Shulva, Sanctum City"
+      }
+  ],
   "Params": [
     "eventlocation_m50_35_00_00",
     "eventparam_m50_35_00_00",

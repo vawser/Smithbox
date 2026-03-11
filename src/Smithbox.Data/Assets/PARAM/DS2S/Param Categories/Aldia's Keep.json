@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Aldia's Keep",
+  "Key": "Aldia's Keep",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Aldia's Keep"
+      }
+  ],
   "Params": [
     "eventlocation_m10_15_00_00",
     "eventparam_m10_15_00_00",

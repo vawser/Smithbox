@@ -1,32 +1,56 @@
 {
-  "DisplayName": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
-  "Name": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
-  "Description": "",
+  "Key": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_PRIORITY_IN_PLATOON_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Middle boss",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle boss"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "High level weakling",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High level weakling"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Medium level weakling",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium level weakling"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Low level weakling",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low level weakling"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Ignore",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
     }
   ]
 }

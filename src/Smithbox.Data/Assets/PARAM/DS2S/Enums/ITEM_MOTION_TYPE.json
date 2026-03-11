@@ -1,27 +1,47 @@
 {
-  "DisplayName": "ITEM_MOTION_TYPE",
-  "Name": "ITEM_MOTION_TYPE",
-  "Description": "",
+  "Key": "ITEM_MOTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_MOTION_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Scatter",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scatter"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Drink",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Throw",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Crush",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crush"
+        }
+      ]
     }
   ]
 }

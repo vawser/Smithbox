@@ -1,0 +1,28 @@
+{
+  "Param": "DamageSfxTraceDummyPolyColorParam",
+  "Type": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
+  "Name": "DamageSfxTraceDummyPolyColorParam",
+  "Description": "Defines parameters related to SFX trace dummy polygon color.",
+  "Fields": [
+    {
+      "Field": "color_r",
+      "Name": "Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "color_g",
+      "Name": "Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "color_b",
+      "Name": "Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "color_a",
+      "Name": "Color: Alpha",
+      "Description": ""
+    }
+  ]
+}

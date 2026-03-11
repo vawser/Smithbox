@@ -1,12 +1,20 @@
 {
-  "DisplayName": "EVENT_VALUE_m20_21_00_00",
-  "Name": "EVENT_VALUE_m20_21_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m20_21_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m20_21_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "60",
-      "Name": "Pledge: Rank Comparison: Pilgrim of the Abyss",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank Comparison: Pilgrim of the Abyss"
+        }
+      ]
     }
   ]
 }

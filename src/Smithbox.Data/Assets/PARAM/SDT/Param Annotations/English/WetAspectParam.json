@@ -1,0 +1,73 @@
+{
+  "Param": "WetAspectParam",
+  "Type": "WET_ASPECT_PARAM_ST",
+  "Name": "WetAspectParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "diffColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refColorA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shininessRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shininess",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

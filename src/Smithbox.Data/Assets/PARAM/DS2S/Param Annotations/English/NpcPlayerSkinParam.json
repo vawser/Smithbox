@@ -1,0 +1,73 @@
+{
+  "Param": "NpcPlayerSkinParam",
+  "Type": "NPC_PLAYER_SKIN_PARAM",
+  "Name": "NpcPlayerSkinParam",
+  "Description": "Defines parameters related to NPC skin.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02d",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03c",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03d",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

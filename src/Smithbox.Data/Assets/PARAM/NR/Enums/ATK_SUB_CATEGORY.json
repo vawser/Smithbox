@@ -1,282 +1,506 @@
 {
-  "DisplayName": "Attack Category",
-  "Name": "ATK_SUB_CATEGORY",
-  "Description": "These are categories used by SpEffects to filter when they are applied.",
+  "Key": "ATK_SUB_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_SUB_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Full Moon Sorcery",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Moon Sorcery"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Carian Sword Sorcery",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Carian Sword Sorcery"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Glintblade Sorcery",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Glintblade Sorcery"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Stonedigger Sorcery",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stonedigger Sorcery"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Crystalian Sorcery",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crystalian Sorcery"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Comet Sorcery",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Comet Sorcery"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Star Sorcery",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Star Sorcery"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Magma Sorcery",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magma Sorcery"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Thorn Sorcery",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thorn Sorcery"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Death Sorcery",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Death Sorcery"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Gravity Sorcery",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravity Sorcery"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Night Sorcery",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Night Sorcery"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Cold Sorcery",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cold Sorcery"
+        }
+      ]
     },
     {
-      "ID": "14",
-      "Name": "Comet Azur",
-      "Description": ""
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Comet Azur"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Stars of Ruin",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stars of Ruin"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Godslayer Incantation",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Godslayer Incantation"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Giantsflame Incantation",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giantsflame Incantation"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Dragon Cult Incantation",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Cult Incantation"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Bestial Incantation",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bestial Incantation"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Golden Order Incantation",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Golden Order Incantation"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Dragon Communion Incantation",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Communion Incantation"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Frenzied Flame Incantation",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Frenzied Flame Incantation"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Noble Presence",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Noble Presence"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Aspect of the Crucible Incantation",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aspect of the Crucible Incantation"
+        }
+      ]
     },
     {
-      "ID": "100",
-      "Name": "Charged Heavy Attack",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Charged Heavy Attack"
+        }
+      ]
     },
     {
-      "ID": "101",
-      "Name": "Horseback Attack",
-      "Description": ""
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Horseback Attack"
+        }
+      ]
     },
     {
-      "ID": "102",
-      "Name": "Jump Attack",
-      "Description": ""
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump Attack"
+        }
+      ]
     },
     {
-      "ID": "103",
-      "Name": "Guard Counter Attack",
-      "Description": ""
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard Counter Attack"
+        }
+      ]
     },
     {
-      "ID": "104",
-      "Name": "Final Chain Attack",
-      "Description": ""
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Final Chain Attack"
+        }
+      ]
     },
     {
-      "ID": "105",
-      "Name": "Ranged Weapon Attack",
-      "Description": ""
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ranged Weapon Attack"
+        }
+      ]
     },
     {
-      "ID": "106",
-      "Name": "Roar Attack",
-      "Description": ""
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Roar Attack"
+        }
+      ]
     },
     {
-      "ID": "107",
-      "Name": "Breath Attack",
-      "Description": ""
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Breath Attack"
+        }
+      ]
     },
     {
-      "ID": "108",
-      "Name": "Thrown Pot Item Attack",
-      "Description": ""
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrown Pot Item Attack"
+        }
+      ]
     },
     {
-      "ID": "109",
-      "Name": "Perfume Item Attack",
-      "Description": ""
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Perfume Item Attack"
+        }
+      ]
     },
     {
-      "ID": "110",
-      "Name": "Charged Spell Attack",
-      "Description": ""
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Charged Spell Attack"
+        }
+      ]
     },
     {
-      "ID": "111",
-      "Name": "Charged Skill Attack",
-      "Description": ""
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Charged Skill Attack"
+        }
+      ]
     },
     {
-      "ID": "112",
-      "Name": "Skill Attack",
-      "Description": ""
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skill Attack"
+        }
+      ]
     },
     {
-      "ID": "113",
-      "Name": "Radahn's Spear",
-      "Description": ""
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Radahn's Spear"
+        }
+      ]
     },
     {
-      "ID": "114",
-      "Name": "Ancestral Infant's Head",
-      "Description": ""
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancestral Infant's Head"
+        }
+      ]
     },
     {
-      "ID": "116",
-      "Name": "Wraith Roar",
-      "Description": ""
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wraith Roar"
+        }
+      ]
     },
     {
-      "ID": "117",
-      "Name": "Wraith Attack",
-      "Description": ""
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wraith Attack"
+        }
+      ]
     },
     {
-      "ID": "118",
-      "Name": "Golden Arrow",
-      "Description": ""
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Golden Arrow"
+        }
+      ]
     },
     {
-      "ID": "119",
-      "Name": "Initial Standard Attack",
-      "Description": ""
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Initial Standard Attack"
+        }
+      ]
     },
     {
-      "ID": "120",
-      "Name": "Throwing Knife Item Attack",
-      "Description": ""
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing Knife Item Attack"
+        }
+      ]
     },
     {
-      "ID": "121",
-      "Name": "Throwing Stone Item Attack",
-      "Description": ""
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throwing Stone Item Attack"
+        }
+      ]
     },
     {
-      "ID": "122",
-      "Name": "Character Skill",
-      "Description": ""
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character Skill"
+        }
+      ]
     },
     {
-      "ID": "123",
-      "Name": "Ultimate Art",
-      "Description": ""
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ultimate Art"
+        }
+      ]
     },
     {
-      "ID": "124",
-      "Name": "Two-handed Attack",
-      "Description": ""
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed Attack"
+        }
+      ]
     },
     {
-      "ID": "125",
-      "Name": "Dual Wield Attack",
-      "Description": ""
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual Wield Attack"
+        }
+      ]
     },
     {
-      "ID": "126",
-      "Name": "No-Damage Sudden Death",
-      "Description": ""
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No-Damage Sudden Death"
+        }
+      ]
     },
     {
-      "ID": "127",
-      "Name": "Dash Attack",
-      "Description": ""
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dash Attack"
+        }
+      ]
     },
     {
-      "ID": "128",
-      "Name": "Rolling Attack",
-      "Description": ""
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rolling Attack"
+        }
+      ]
     },
     {
-      "ID": "129",
-      "Name": "Backstep Attack",
-      "Description": ""
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstep Attack"
+        }
+      ]
     },
     {
-      "ID": "130",
-      "Name": "Melee Weapon Attack",
-      "Description": ""
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee Weapon Attack"
+        }
+      ]
     }
   ]
 }

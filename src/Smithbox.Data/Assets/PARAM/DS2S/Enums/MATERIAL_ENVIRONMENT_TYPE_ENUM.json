@@ -1,37 +1,65 @@
 {
-  "DisplayName": "MATERIAL_ENVIRONMENT_TYPE_ENUM",
-  "Name": "MATERIAL_ENVIRONMENT_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_ENVIRONMENT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_ENVIRONMENT_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Puddle",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Puddle"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "滝",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "滝"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "雨",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "雨"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "毒",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "毒"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "油",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "油"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "Param": "BulletCreateLimitParam",
+  "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Name": "BulletCreateLimitParam",
+  "Description": "Set the spawn limit for bullets",
+  "Fields": [
+    {
+      "Field": "maxAmmount",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

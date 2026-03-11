@@ -1,0 +1,18 @@
+{
+  "Param": "DamageAttackTypeRateParam",
+  "Type": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
+  "Name": "DamageAttackTypeRateParam",
+  "Description": "Defines parameters related to the damage multiplier used by different types of attacks.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

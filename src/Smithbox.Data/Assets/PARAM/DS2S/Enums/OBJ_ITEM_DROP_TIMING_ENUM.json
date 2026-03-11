@@ -1,22 +1,38 @@
 {
-  "DisplayName": "OBJ_ITEM_DROP_TIMING_ENUM",
-  "Name": "OBJ_ITEM_DROP_TIMING_ENUM",
-  "Description": "",
+  "Key": "OBJ_ITEM_DROP_TIMING_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_ITEM_DROP_TIMING_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Not set",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not set"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Always",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "After destruction",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "After destruction"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "Param": "ShopLineupParam",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "ShopLineupParam",
+  "Description": "Defines parameters relating to NPC shops and boss soul exchanges.",
+  "Fields": [
+    {
+      "Field": "item_id",
+      "Name": "Item ID",
+      "Description": "The item to offer."
+    },
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_flag",
+      "Name": "Enable Flag",
+      "Description": "The item is visible when this flag is ON."
+    },
+    {
+      "Field": "disable_flag",
+      "Name": "Disable Flag",
+      "Description": "The item is not visible when this flag is ON."
+    },
+    {
+      "Field": "material_id",
+      "Name": "Material ID",
+      "Description": ""
+    },
+    {
+      "Field": "duplicate_item_id",
+      "Name": "Duplicate Item ID",
+      "Description": "Remove all sources of this item if purchased from other vendors."
+    },
+    {
+      "Field": "Unk01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "price_rate",
+      "Name": "Price Rate",
+      "Description": "The percentage of the base price the item costs."
+    },
+    {
+      "Field": "quantity",
+      "Name": "Quantity",
+      "Description": "Amount to get."
+    }
+  ]
+}

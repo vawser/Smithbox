@@ -1,0 +1,53 @@
+{
+  "Param": "PlayerMaterialPresetParam",
+  "Type": "PLAYER_MATERIAL_PRESET_PARAM_ST",
+  "Name": "PlayerMaterialPresetParam",
+  "Description": "Defines the Material options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Material.dds and SB_Material.layout\n\nRow ID \u002B 210900 links the Preset to the FMG name it uses in the menu.",
+  "Fields": [
+    {
+      "Field": "Shininess",
+      "Name": "Luster",
+      "Description": "Intensity of the reflection"
+    },
+    {
+      "Field": "Metalness",
+      "Name": "Metallic",
+      "Description": "Intensity of the metallic factor"
+    },
+    {
+      "Field": "Glow",
+      "Name": "Glow Level",
+      "Description": "Even for the glossiness parameter, make sure to set the glow level to 1. Otherwise, the image will be completely black."
+    },
+    {
+      "Field": "TexIdLayer0",
+      "Name": "Layer 1 Material",
+      "Description": "6-digit texture ID (AEGXXX_YYY) for layer 1"
+    },
+    {
+      "Field": "TexIdLayer1",
+      "Name": "Layer 2 Material",
+      "Description": "6-digit texture ID (AEGXXX_YYY) for layer 2"
+    },
+    {
+      "Field": "TexIdLayer2",
+      "Name": "Layer 3 Material",
+      "Description": "6-digit texture ID (AEGXXX_YYY) for layer 3"
+    },
+    {
+      "Field": "MaterialTex_Albedo",
+      "Name": "Albedo Texture",
+      "Description": "Reference ID for material replacement in coloring"
+    },
+    {
+      "Field": "MaterialTex_Normal_Shininess",
+      "Name": "Normal/Shininess Texture",
+      "Description": "Reference ID for material replacement in coloring"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "Gconfig_DOFQuality_xboxone",
+  "Type": "CS_DOF_QUALITY_DETAIL",
+  "Name": "Gconfig_DOFQuality_xboxone",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Depth of Field Enabled",
+      "Description": "DOF permission"
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceHiResoBlur",
+      "Name": "Force High Resolution Blur",
+      "Description": "Change the HiResolutionBlur setting (-1- forced off, 0- as-is, 1- forced on)"
+    },
+    {
+      "Field": "maxBlurLevel",
+      "Name": "Maximum Blur Level",
+      "Description": "Maximum blur level. 2- Maximum, 1- Level to one paragraph, 0- Further reduce accuracy"
+    }
+  ]
+}

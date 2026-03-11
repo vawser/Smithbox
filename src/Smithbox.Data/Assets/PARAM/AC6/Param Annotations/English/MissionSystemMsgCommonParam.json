@@ -1,0 +1,103 @@
+{
+  "Param": "MissionSystemMsgCommonParam",
+  "Type": "MISSION_SYS_MSG_COMMON_PARAM_ST",
+  "Name": "MissionSystemMsgCommonParam",
+  "Description": "Determines the parameters for player state reactions.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "playEventFlagId0",
+      "Name": "0: Playback Condition Flag ID",
+      "Description": "The playback condition flag for this reaction."
+    },
+    {
+      "Field": "talkParamId0",
+      "Name": "0: Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "playEventFlagId1",
+      "Name": "1: Playback Condition Flag ID",
+      "Description": "The playback condition flag for this reaction."
+    },
+    {
+      "Field": "talkParamId1",
+      "Name": "1: Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "playEventFlagId2",
+      "Name": "2: Playback Condition Flag ID",
+      "Description": "The playback condition flag for this reaction."
+    },
+    {
+      "Field": "talkParamId2",
+      "Name": "2: Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "playEventFlagId3",
+      "Name": "3: Playback Condition Flag ID",
+      "Description": "The playback condition flag for this reaction."
+    },
+    {
+      "Field": "talkParamId3",
+      "Name": "3: Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "playEventFlagId4",
+      "Name": "4: Playback Condition Flag ID",
+      "Description": "The playback condition flag for this reaction."
+    },
+    {
+      "Field": "talkParamId4",
+      "Name": "4: Talk Param ID",
+      "Description": "The conversation parameter ID to use."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "The priority of this reaction."
+    },
+    {
+      "Field": "dispLimitNum",
+      "Name": "Reaction Limit",
+      "Description": "The maximum number of instances of this reaction."
+    },
+    {
+      "Field": "dispCoolTime",
+      "Name": "Minimum Reaction Interval",
+      "Description": "The minimum amount of time that must pass between repeats of this reaction. In seconds."
+    },
+    {
+      "Field": "answerCategoryOffsetId",
+      "Name": "Reaction Category Offset ID",
+      "Description": "The offset ID to apply for this reaction. -1 means no interaction"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

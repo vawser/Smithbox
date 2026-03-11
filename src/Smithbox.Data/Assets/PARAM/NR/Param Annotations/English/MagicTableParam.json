@@ -1,0 +1,33 @@
+{
+  "Param": "MagicTableParam",
+  "Type": "MAGIC_TABLE_PARAM_ST",
+  "Name": "MagicTableParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicId",
+      "Name": "Magic ID",
+      "Description": "The item this table references."
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "Roll Weight",
+      "Description": "The weighting to apply during the roll."
+    }
+  ]
+}

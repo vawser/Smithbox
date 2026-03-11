@@ -1,0 +1,553 @@
+{
+  "Param": "FaceGenParam",
+  "Type": "FACE_PARAM_ST",
+  "Name": "FaceGenParam",
+  "Description": "Determines the configuration of NPC faces.",
+  "Fields": [
+    {
+      "Field": "faceGeoData00",
+      "Name": "Face - Geometry Data [00]",
+      "Description": "Face - Geometry Data [00]"
+    },
+    {
+      "Field": "faceGeoData01",
+      "Name": "Face - Geometry Data [01]",
+      "Description": "Face - Geometry Data [01]"
+    },
+    {
+      "Field": "faceGeoData02",
+      "Name": "Face - Geometry Data [02]",
+      "Description": "Face - Geometry Data [02]"
+    },
+    {
+      "Field": "faceGeoData03",
+      "Name": "Face - Geometry Data [03]",
+      "Description": "Face - Geometry Data [03]"
+    },
+    {
+      "Field": "faceGeoData04",
+      "Name": "Face - Geometry Data [04]",
+      "Description": "Face - Geometry Data [04]"
+    },
+    {
+      "Field": "faceGeoData05",
+      "Name": "Face - Geometry Data [05]",
+      "Description": "Face - Geometry Data [05]"
+    },
+    {
+      "Field": "faceGeoData06",
+      "Name": "Face - Geometry Data [06]",
+      "Description": "Face - Geometry Data [06]"
+    },
+    {
+      "Field": "faceGeoData07",
+      "Name": "Face - Geometry Data [07]",
+      "Description": "Face - Geometry Data [07]"
+    },
+    {
+      "Field": "faceGeoData08",
+      "Name": "Face - Geometry Data [08]",
+      "Description": "Face - Geometry Data [08]"
+    },
+    {
+      "Field": "faceGeoData09",
+      "Name": "Face - Geometry Data [09]",
+      "Description": "Face - Geometry Data [09]"
+    },
+    {
+      "Field": "faceGeoData10",
+      "Name": "Face - Geometry Data [10]",
+      "Description": "Face - Geometry Data [10]"
+    },
+    {
+      "Field": "faceGeoData11",
+      "Name": "Face - Geometry Data [11]",
+      "Description": "Face - Geometry Data [11]"
+    },
+    {
+      "Field": "faceGeoData12",
+      "Name": "Face - Geometry Data [12]",
+      "Description": "Face - Geometry Data [12]"
+    },
+    {
+      "Field": "faceGeoData13",
+      "Name": "Face - Geometry Data [13]",
+      "Description": "Face - Geometry Data [13]"
+    },
+    {
+      "Field": "faceGeoData14",
+      "Name": "Face - Geometry Data [14]",
+      "Description": "Face - Geometry Data [14]"
+    },
+    {
+      "Field": "faceGeoData15",
+      "Name": "Face - Geometry Data [15]",
+      "Description": "Face - Geometry Data [15]"
+    },
+    {
+      "Field": "faceGeoData16",
+      "Name": "Face - Geometry Data [16]",
+      "Description": "Face - Geometry Data [16]"
+    },
+    {
+      "Field": "faceGeoData17",
+      "Name": "Face - Geometry Data [17]",
+      "Description": "Face - Geometry Data [17]"
+    },
+    {
+      "Field": "faceGeoData18",
+      "Name": "Face - Geometry Data [18]",
+      "Description": "Face - Geometry Data [18]"
+    },
+    {
+      "Field": "faceGeoData19",
+      "Name": "Face - Geometry Data [19]",
+      "Description": "Face - Geometry Data [19]"
+    },
+    {
+      "Field": "faceGeoData20",
+      "Name": "Face - Geometry Data [20]",
+      "Description": "Face - Geometry Data [20]"
+    },
+    {
+      "Field": "faceGeoData21",
+      "Name": "Face - Geometry Data [21]",
+      "Description": "Face - Geometry Data [21]"
+    },
+    {
+      "Field": "faceGeoData22",
+      "Name": "Face - Geometry Data [22]",
+      "Description": "Face - Geometry Data [22]"
+    },
+    {
+      "Field": "faceGeoData23",
+      "Name": "Face - Geometry Data [23]",
+      "Description": "Face - Geometry Data [23]"
+    },
+    {
+      "Field": "faceGeoData24",
+      "Name": "Face - Geometry Data [24]",
+      "Description": "Face - Geometry Data [24]"
+    },
+    {
+      "Field": "faceGeoData25",
+      "Name": "Face - Geometry Data [25]",
+      "Description": "Face - Geometry Data [25]"
+    },
+    {
+      "Field": "faceGeoData26",
+      "Name": "Face - Geometry Data [26]",
+      "Description": "Face - Geometry Data [26]"
+    },
+    {
+      "Field": "faceGeoData27",
+      "Name": "Face - Geometry Data [27]",
+      "Description": "Face - Geometry Data [27]"
+    },
+    {
+      "Field": "faceGeoData28",
+      "Name": "Face - Geometry Data [28]",
+      "Description": "Face - Geometry Data [28]"
+    },
+    {
+      "Field": "faceGeoData29",
+      "Name": "Face - Geometry Data [29]",
+      "Description": "Face - Geometry Data [29]"
+    },
+    {
+      "Field": "faceGeoData30",
+      "Name": "Face - Geometry Data [30]",
+      "Description": "Face - Geometry Data [30]"
+    },
+    {
+      "Field": "faceGeoData31",
+      "Name": "Face - Geometry Data [31]",
+      "Description": "Face - Geometry Data [31]"
+    },
+    {
+      "Field": "faceGeoData32",
+      "Name": "Face - Geometry Data [32]",
+      "Description": "Face - Geometry Data [32]"
+    },
+    {
+      "Field": "faceGeoData33",
+      "Name": "Face - Geometry Data [33]",
+      "Description": "Face - Geometry Data [33]"
+    },
+    {
+      "Field": "faceGeoData34",
+      "Name": "Face - Geometry Data [34]",
+      "Description": "Face - Geometry Data [34]"
+    },
+    {
+      "Field": "faceGeoData35",
+      "Name": "Face - Geometry Data [35]",
+      "Description": "Face - Geometry Data [35]"
+    },
+    {
+      "Field": "faceGeoData36",
+      "Name": "Face - Geometry Data [36]",
+      "Description": "Face - Geometry Data [36]"
+    },
+    {
+      "Field": "faceGeoData37",
+      "Name": "Face - Geometry Data [37]",
+      "Description": "Face - Geometry Data [37]"
+    },
+    {
+      "Field": "faceGeoData38",
+      "Name": "Face - Geometry Data [38]",
+      "Description": "Face - Geometry Data [38]"
+    },
+    {
+      "Field": "faceGeoData39",
+      "Name": "Face - Geometry Data [39]",
+      "Description": "Face - Geometry Data [39]"
+    },
+    {
+      "Field": "faceGeoData40",
+      "Name": "Face - Geometry Data [40]",
+      "Description": "Face - Geometry Data [40]"
+    },
+    {
+      "Field": "faceGeoData41",
+      "Name": "Face - Geometry Data [41]",
+      "Description": "Face - Geometry Data [41]"
+    },
+    {
+      "Field": "faceGeoData42",
+      "Name": "Face - Geometry Data [42]",
+      "Description": "Face - Geometry Data [42]"
+    },
+    {
+      "Field": "faceGeoData43",
+      "Name": "Face - Geometry Data [43]",
+      "Description": "Face - Geometry Data [43]"
+    },
+    {
+      "Field": "faceGeoData44",
+      "Name": "Face - Geometry Data [44]",
+      "Description": "Face - Geometry Data [44]"
+    },
+    {
+      "Field": "faceGeoData45",
+      "Name": "Face - Geometry Data [45]",
+      "Description": "Face - Geometry Data [45]"
+    },
+    {
+      "Field": "faceGeoData46",
+      "Name": "Face - Geometry Data [46]",
+      "Description": "Face - Geometry Data [46]"
+    },
+    {
+      "Field": "faceGeoData47",
+      "Name": "Face - Geometry Data [47]",
+      "Description": "Face - Geometry Data [47]"
+    },
+    {
+      "Field": "faceGeoData48",
+      "Name": "Face - Geometry Data [48]",
+      "Description": "Face - Geometry Data [48]"
+    },
+    {
+      "Field": "faceGeoData49",
+      "Name": "Face - Geometry Data [49]",
+      "Description": "Face - Geometry Data [49]"
+    },
+    {
+      "Field": "faceTexData00",
+      "Name": "Face - Texture Data [00]",
+      "Description": "Face - Texture Data [00]"
+    },
+    {
+      "Field": "faceTexData01",
+      "Name": "Face - Texture Data [01]",
+      "Description": "Face - Texture Data [01]"
+    },
+    {
+      "Field": "faceTexData02",
+      "Name": "Face - Texture Data [02]",
+      "Description": "Face - Texture Data [02]"
+    },
+    {
+      "Field": "faceTexData03",
+      "Name": "Face - Texture Data [03]",
+      "Description": "Face - Texture Data [03]"
+    },
+    {
+      "Field": "faceTexData04",
+      "Name": "Face - Texture Data [04]",
+      "Description": "Face - Texture Data [04]"
+    },
+    {
+      "Field": "faceTexData05",
+      "Name": "Face - Texture Data [05]",
+      "Description": "Face - Texture Data [05]"
+    },
+    {
+      "Field": "faceTexData06",
+      "Name": "Face - Texture Data [06]",
+      "Description": "Face - Texture Data [06]"
+    },
+    {
+      "Field": "faceTexData07",
+      "Name": "Face - Texture Data [07]",
+      "Description": "Face - Texture Data [07]"
+    },
+    {
+      "Field": "faceTexData08",
+      "Name": "Face - Texture Data [08]",
+      "Description": "Face - Texture Data [08]"
+    },
+    {
+      "Field": "faceTexData09",
+      "Name": "Face - Texture Data [09]",
+      "Description": "Face - Texture Data [09]"
+    },
+    {
+      "Field": "faceTexData10",
+      "Name": "Face - Texture Data [10]",
+      "Description": "Face - Texture Data [10]"
+    },
+    {
+      "Field": "faceTexData11",
+      "Name": "Face - Texture Data [11]",
+      "Description": "Face - Texture Data [11]"
+    },
+    {
+      "Field": "faceTexData12",
+      "Name": "Face - Texture Data [12]",
+      "Description": "Face - Texture Data [12]"
+    },
+    {
+      "Field": "faceTexData13",
+      "Name": "Face - Texture Data [13]",
+      "Description": "Face - Texture Data [13]"
+    },
+    {
+      "Field": "faceTexData14",
+      "Name": "Face - Texture Data [14]",
+      "Description": "Face - Texture Data [14]"
+    },
+    {
+      "Field": "faceTexData15",
+      "Name": "Face - Texture Data [15]",
+      "Description": "Face - Texture Data [15]"
+    },
+    {
+      "Field": "faceTexData16",
+      "Name": "Face - Texture Data [16]",
+      "Description": "Face - Texture Data [16]"
+    },
+    {
+      "Field": "faceTexData17",
+      "Name": "Face - Texture Data [17]",
+      "Description": "Face - Texture Data [17]"
+    },
+    {
+      "Field": "faceTexData18",
+      "Name": "Face - Texture Data [18]",
+      "Description": "Face - Texture Data [18]"
+    },
+    {
+      "Field": "faceTexData19",
+      "Name": "Face - Texture Data [19]",
+      "Description": "Face - Texture Data [19]"
+    },
+    {
+      "Field": "faceTexData20",
+      "Name": "Face - Texture Data [20]",
+      "Description": "Face - Texture Data [20]"
+    },
+    {
+      "Field": "faceTexData21",
+      "Name": "Face - Texture Data [21]",
+      "Description": "Face - Texture Data [21]"
+    },
+    {
+      "Field": "faceTexData22",
+      "Name": "Face - Texture Data [22]",
+      "Description": "Face - Texture Data [22]"
+    },
+    {
+      "Field": "faceTexData23",
+      "Name": "Face - Texture Data [23]",
+      "Description": "Face - Texture Data [23]"
+    },
+    {
+      "Field": "faceTexData24",
+      "Name": "Face - Texture Data [24]",
+      "Description": "Face - Texture Data [24]"
+    },
+    {
+      "Field": "faceTexData25",
+      "Name": "Face - Texture Data [25]",
+      "Description": "Face - Texture Data [25]"
+    },
+    {
+      "Field": "faceTexData26",
+      "Name": "Face - Texture Data [26]",
+      "Description": "Face - Texture Data [26]"
+    },
+    {
+      "Field": "faceTexData27",
+      "Name": "Face - Texture Data [27]",
+      "Description": "Face - Texture Data [27]"
+    },
+    {
+      "Field": "faceTexData28",
+      "Name": "Face - Texture Data [28]",
+      "Description": "Face - Texture Data [28]"
+    },
+    {
+      "Field": "faceTexData29",
+      "Name": "Face - Texture Data [29]",
+      "Description": "Face - Texture Data [29]"
+    },
+    {
+      "Field": "faceTexData30",
+      "Name": "Face - Texture Data [30]",
+      "Description": "Face - Texture Data [30]"
+    },
+    {
+      "Field": "faceTexData31",
+      "Name": "Face - Texture Data [31]",
+      "Description": "Face - Texture Data [31]"
+    },
+    {
+      "Field": "faceTexData32",
+      "Name": "Face - Texture Data [32]",
+      "Description": "Face - Texture Data [32]"
+    },
+    {
+      "Field": "faceTexData33",
+      "Name": "Face - Texture Data [33]",
+      "Description": "Face - Texture Data [33]"
+    },
+    {
+      "Field": "faceTexData34",
+      "Name": "Face - Texture Data [34]",
+      "Description": "Face - Texture Data [34]"
+    },
+    {
+      "Field": "faceTexData35",
+      "Name": "Face - Texture Data [35]",
+      "Description": "Face - Texture Data [35]"
+    },
+    {
+      "Field": "faceTexData36",
+      "Name": "Face - Texture Data [36]",
+      "Description": "Face - Texture Data [36]"
+    },
+    {
+      "Field": "faceTexData37",
+      "Name": "Face - Texture Data [37]",
+      "Description": "Face - Texture Data [37]"
+    },
+    {
+      "Field": "faceTexData38",
+      "Name": "Face - Texture Data [38]",
+      "Description": "Face - Texture Data [38]"
+    },
+    {
+      "Field": "faceTexData39",
+      "Name": "Face - Texture Data [39]",
+      "Description": "Face - Texture Data [39]"
+    },
+    {
+      "Field": "faceTexData40",
+      "Name": "Face - Texture Data [40]",
+      "Description": "Face - Texture Data [40]"
+    },
+    {
+      "Field": "faceTexData41",
+      "Name": "Face - Texture Data [41]",
+      "Description": "Face - Texture Data [41]"
+    },
+    {
+      "Field": "faceTexData42",
+      "Name": "Face - Texture Data [42]",
+      "Description": "Face - Texture Data [42]"
+    },
+    {
+      "Field": "faceTexData43",
+      "Name": "Face - Texture Data [43]",
+      "Description": "Face - Texture Data [43]"
+    },
+    {
+      "Field": "faceTexData44",
+      "Name": "Face - Texture Data [44]",
+      "Description": "Face - Texture Data [44]"
+    },
+    {
+      "Field": "faceTexData45",
+      "Name": "Face - Texture Data [45]",
+      "Description": "Face - Texture Data [45]"
+    },
+    {
+      "Field": "faceTexData46",
+      "Name": "Face - Texture Data [46]",
+      "Description": "Face - Texture Data [46]"
+    },
+    {
+      "Field": "faceTexData47",
+      "Name": "Face - Texture Data [47]",
+      "Description": "Face - Texture Data [47]"
+    },
+    {
+      "Field": "faceTexData48",
+      "Name": "Face - Texture Data [48]",
+      "Description": "Face - Texture Data [48]"
+    },
+    {
+      "Field": "faceTexData49",
+      "Name": "Face - Texture Data [49]",
+      "Description": "Face - Texture Data [49]"
+    },
+    {
+      "Field": "hairStyle",
+      "Name": "Hairstyle",
+      "Description": "The hairstyle this face uses."
+    },
+    {
+      "Field": "hairColor_Base",
+      "Name": "Hairstyle Default Color",
+      "Description": "The default hair color."
+    },
+    {
+      "Field": "hairColor_R",
+      "Name": "Hair Color: R",
+      "Description": "The red component of the RGB color shift from the default color."
+    },
+    {
+      "Field": "hairColor_G",
+      "Name": "Hair Color: G",
+      "Description": "The green component of the RGB color shift from the default color."
+    },
+    {
+      "Field": "hairColor_B",
+      "Name": "Hair Color: B",
+      "Description": "The blue component of the RGB color shift from the default color."
+    },
+    {
+      "Field": "eyeColor_R",
+      "Name": "Eye Color: R",
+      "Description": "The red component of the RGB color."
+    },
+    {
+      "Field": "eyeColor_G",
+      "Name": "Eye Color: G",
+      "Description": "The green component of the RGB color."
+    },
+    {
+      "Field": "eyeColor_B",
+      "Name": "Eye Color: B",
+      "Description": "The blue component of the RGB color."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

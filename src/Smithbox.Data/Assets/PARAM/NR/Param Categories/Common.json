@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Common",
+  "Key": "Common",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Common"
+      }
+  ],
   "ForceTop": true,
   "Params": [
     "AtkParam_Npc",

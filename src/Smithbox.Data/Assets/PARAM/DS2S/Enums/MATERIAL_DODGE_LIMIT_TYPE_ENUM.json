@@ -1,27 +1,47 @@
 {
-  "DisplayName": "MATERIAL_DODGE_LIMIT_TYPE_ENUM",
-  "Name": "MATERIAL_DODGE_LIMIT_TYPE_ENUM",
-  "Description": "",
+  "Key": "MATERIAL_DODGE_LIMIT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MATERIAL_DODGE_LIMIT_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Mild",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mild"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Severe",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Severe"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Prohibited",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited"
+        }
+      ]
     }
   ]
 }

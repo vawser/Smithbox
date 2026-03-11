@@ -1,152 +1,272 @@
 {
-  "DisplayName": "DAMAGE_EFFECT_SFX_TYPE_ENUM",
-  "Name": "DAMAGE_EFFECT_SFX_TYPE_ENUM",
-  "Description": "",
+  "Key": "DAMAGE_EFFECT_SFX_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_EFFECT_SFX_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "General purpose smoke",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose smoke"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Spark",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spark"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Flame",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Lightning",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightning"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Soul",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Blood",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Body fluid",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body fluid"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Piece of wood",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piece of wood"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Bone fragment",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone fragment"
+        }
+      ]
     },
     {
-      "ID": "15",
-      "Name": "Gravel",
-      "Description": ""
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravel"
+        }
+      ]
     },
     {
-      "ID": "16",
-      "Name": "Water splash",
-      "Description": ""
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Water splash"
+        }
+      ]
     },
     {
-      "ID": "17",
-      "Name": "Viscous droplets",
-      "Description": ""
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Viscous droplets"
+        }
+      ]
     },
     {
-      "ID": "18",
-      "Name": "Lava splash",
-      "Description": ""
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lava splash"
+        }
+      ]
     },
     {
-      "ID": "19",
-      "Name": "Magic shock",
-      "Description": ""
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic shock"
+        }
+      ]
     },
     {
-      "ID": "20",
-      "Name": "Dark shock",
-      "Description": ""
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark shock"
+        }
+      ]
     },
     {
-      "ID": "21",
-      "Name": "Boss petrification",
-      "Description": ""
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss petrification"
+        }
+      ]
     },
     {
-      "ID": "22",
-      "Name": "Stone water",
-      "Description": ""
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone water"
+        }
+      ]
     },
     {
-      "ID": "23",
-      "Name": "Stone energy",
-      "Description": ""
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone energy"
+        }
+      ]
     },
     {
-      "ID": "24",
-      "Name": "Ghost behind",
-      "Description": ""
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ghost behind"
+        }
+      ]
     },
     {
-      "ID": "25",
-      "Name": "Poisonous swamp",
-      "Description": ""
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poisonous swamp"
+        }
+      ]
     },
     {
-      "ID": "26",
-      "Name": "Oil",
-      "Description": ""
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oil"
+        }
+      ]
     },
     {
-      "ID": "27",
-      "Name": "Acid",
-      "Description": ""
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Acid"
+        }
+      ]
     },
     {
-      "ID": "28",
-      "Name": "Mud",
-      "Description": ""
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mud"
+        }
+      ]
     },
     {
-      "ID": "29",
-      "Name": "Soil",
-      "Description": ""
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soil"
+        }
+      ]
     },
     {
-      "ID": "30",
-      "Name": "Sand",
-      "Description": ""
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sand"
+        }
+      ]
     },
     {
-      "ID": "31",
-      "Name": "General purpose smoke (living meat)",
-      "Description": ""
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose smoke (living meat)"
+        }
+      ]
     },
     {
-      "ID": "1008",
-      "Name": "Blood: green",
-      "Description": ""
+      "Key": "1008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood: green"
+        }
+      ]
     },
     {
-      "ID": "2008",
-      "Name": "Blood: none",
-      "Description": ""
+      "Key": "2008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood: none"
+        }
+      ]
     }
   ]
 }

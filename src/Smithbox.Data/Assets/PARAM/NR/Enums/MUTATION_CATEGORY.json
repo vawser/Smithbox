@@ -1,97 +1,173 @@
 {
-  "DisplayName": "Mutation Category",
-  "Name": "MUTATION_CATEGORY",
-  "Description": "Used for determining Deep of Night mutation/variant categories",
+  "Key": "MUTATION_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MUTATION_CATEGORY"
+    }
+  ],
   "Options": [
     {
-      "ID": "100",
-      "Name": "Standard Enemy A",
-      "Description": ""
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Enemy A"
+        }
+      ]
     },
     {
-      "ID": "101",
-      "Name": "Standard Enemy B",
-      "Description": ""
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Enemy B"
+        }
+      ]
     },
     {
-      "ID": "103",
-      "Name": "Standard Enemy C",
-      "Description": ""
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Enemy C"
+        }
+      ]
     },
     {
-      "ID": "104",
-      "Name": "Standard Enemy D",
-      "Description": ""
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Enemy D"
+        }
+      ]
     },
     {
-      "ID": "105",
-      "Name": "Standard Enemy (Great Hollow)",
-      "Description": ""
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Enemy (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "110",
-      "Name": "Base Boss",
-      "Description": ""
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Base Boss"
+        }
+      ]
     },
     {
-      "ID": "120",
-      "Name": "Field Boss",
-      "Description": ""
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Field Boss"
+        }
+      ]
     },
     {
-      "ID": "130",
-      "Name": "Castle Elite",
-      "Description": ""
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Elite"
+        }
+      ]
     },
     {
-      "ID": "131",
-      "Name": "Castle Enemy",
-      "Description": ""
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Enemy"
+        }
+      ]
     },
     {
-      "ID": "135",
-      "Name": "Eastern Fort Boss/Elite (Great Hollow)",
-      "Description": ""
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Boss/Elite (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "136",
-      "Name": "Western Fort Boss/Elite (Great Hollow)",
-      "Description": ""
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Boss/Elite (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "137",
-      "Name": "Eastern Fort Enemy (Great Hollow)",
-      "Description": ""
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eastern Fort Enemy (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "138",
-      "Name": "Western Fort Enemy (Great Hollow)",
-      "Description": ""
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Western Fort Enemy (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "140",
-      "Name": "Scarab",
-      "Description": ""
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scarab"
+        }
+      ]
     },
     {
-      "ID": "141",
-      "Name": "Scarab (Great Hollow)",
-      "Description": ""
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scarab (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "150",
-      "Name": "Mine Elite",
-      "Description": ""
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mine Elite"
+        }
+      ]
     },
     {
-      "ID": "151",
-      "Name": "Mine Elite (Great Hollow)",
-      "Description": ""
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mine Elite (Great Hollow)"
+        }
+      ]
     },
     {
-      "ID": "160",
-      "Name": "Evergaol Boss",
-      "Description": ""
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evergaol Boss"
+        }
+      ]
     }
   ]
 }

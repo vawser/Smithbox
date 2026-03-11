@@ -1,0 +1,18 @@
+{
+  "Param": "MapObjectWeightParam",
+  "Type": "MAP_OBJECT_WEIGHT_PARAM",
+  "Name": "MapObjectWeightParam",
+  "Description": "Defines parameters related to map object weight.",
+  "Fields": [
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

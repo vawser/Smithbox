@@ -1,0 +1,13 @@
+{
+  "Param": "ChrModelParam",
+  "Type": "CHR_MODEL_PARAM",
+  "Name": "ChrModelParam",
+  "Description": "Defines parameters used by character models.",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

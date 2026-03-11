@@ -1,17 +1,29 @@
 {
-  "DisplayName": "CHR_CTRL_TYPE",
-  "Name": "CHR_CTRL_TYPE",
-  "Description": "",
+  "Key": "CHR_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_CTRL_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Walking",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Flight",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flight"
+        }
+      ]
     }
   ]
 }

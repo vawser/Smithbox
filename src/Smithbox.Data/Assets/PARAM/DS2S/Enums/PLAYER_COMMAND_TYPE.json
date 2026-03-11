@@ -1,27 +1,47 @@
 {
-  "DisplayName": "PLAYER_COMMAND_TYPE",
-  "Name": "PLAYER_COMMAND_TYPE",
-  "Description": "",
+  "Key": "PLAYER_COMMAND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Stick tilt",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick tilt"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Stick player",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick player"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Stick rotation",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick rotation"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Push down the sticks at the same time",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Push down the sticks at the same time"
+        }
+      ]
     }
   ]
 }

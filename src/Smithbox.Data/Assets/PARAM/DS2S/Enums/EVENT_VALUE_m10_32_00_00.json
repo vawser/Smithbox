@@ -1,52 +1,92 @@
 {
-  "DisplayName": "EVENT_VALUE_m10_32_00_00",
-  "Name": "EVENT_VALUE_m10_32_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m10_32_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_32_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Phantom enemy 01_Number of generation",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 01_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Phantom enemy 02_Number of generation",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 02_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Phantom enemy 03_Number of generation",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 03_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Phantom enemy 04_Number of generation",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 04_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Phantom enemy 05_Number of generation",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 05_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Phantom enemy 06_Number of generation",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 06_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Phantom enemy 07_Number of generation",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom enemy 07_Number of generation"
+        }
+      ]
     },
     {
-      "ID": "60",
-      "Name": "Pledge: Rank Comparison: Pilgrim of the Abyss",
-      "Description": ""
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank Comparison: Pilgrim of the Abyss"
+        }
+      ]
     }
   ]
 }

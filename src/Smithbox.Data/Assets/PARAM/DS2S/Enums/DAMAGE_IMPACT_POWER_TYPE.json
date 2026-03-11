@@ -1,42 +1,74 @@
 {
-  "DisplayName": "DAMAGE_IMPACT_POWER_TYPE",
-  "Name": "DAMAGE_IMPACT_POWER_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_IMPACT_POWER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_IMPACT_POWER_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Extremely small",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extremely small"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Small",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Medium",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Large",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Extra large",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Extra extra large",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra extra large"
+        }
+      ]
     }
   ]
 }

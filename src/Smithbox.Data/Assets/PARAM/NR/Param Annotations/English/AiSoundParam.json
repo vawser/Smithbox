@@ -1,0 +1,83 @@
+{
+  "Param": "AiSoundParam",
+  "Type": "AI_SOUND_PARAM_ST",
+  "Name": "AiSoundParam",
+  "Description": "Determines the AI response to a sound. Typically triggered along side the actual sound event.",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "AI sound radius"
+    },
+    {
+      "Field": "lifeFrame",
+      "Name": "Duration",
+      "Description": "Time for AI sound to remain"
+    },
+    {
+      "Field": "bSpEffectEnable",
+      "Name": "Is Affected by Sound Radius Magnification",
+      "Description": "Whether it is affected by the special effect Sound Radius Magnification"
+    },
+    {
+      "Field": "type",
+      "Name": "Rate Type",
+      "Description": "AI sound type"
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "Target: Hostile",
+      "Description": "Target:  Hostile"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "Target: Friendly",
+      "Description": "Target:  Allies"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "Target: Self",
+      "Description": "Target: myself"
+    },
+    {
+      "Field": "disableOnTargetPCompany",
+      "Name": "Disable on Targeting Player",
+      "Description": "You can\u0027t listen while targeting your PC"
+    },
+    {
+      "Field": "rank",
+      "Name": "Rank",
+      "Description": "Character behavior (former: sound type)"
+    },
+    {
+      "Field": "forgetTime",
+      "Name": "Forget Time",
+      "Description": "Time to forget the sound target (overwrite) [sec]"
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "AI sound priority"
+    },
+    {
+      "Field": "soundBehaviorId",
+      "Name": "Sound Behavior ID",
+      "Description": "Behavior ID"
+    },
+    {
+      "Field": "aiSoundLevel",
+      "Name": "AI Sound Level",
+      "Description": "How hard it is to hear"
+    },
+    {
+      "Field": "replaningState",
+      "Name": "Replanning State",
+      "Description": "AI state setting to run replanning when listening to AI sound"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

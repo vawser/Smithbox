@@ -1,5 +1,11 @@
 {
-  "DisplayName": "No-man's Wharf",
+  "Key": "No-man's Wharf",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "No-man's Wharf"
+      }
+  ],
   "Params": [
     "demopointlight_scn101820",
     "demospotlight_scn101820",

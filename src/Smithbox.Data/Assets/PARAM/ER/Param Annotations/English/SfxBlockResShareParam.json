@@ -1,0 +1,13 @@
+{
+  "Param": "SfxBlockResShareParam",
+  "Type": "SFX_BLOCK_RES_SHARE_PARAM",
+  "Name": "SfxBlockResShareParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "shareBlockRsMapUidVal",
+      "Name": "Shared Resource Block - Map UID",
+      "Description": "The map number that references the resource. Set the numerical value of the map number. (m12_34_56_78  12345678)"
+    }
+  ]
+}

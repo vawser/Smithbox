@@ -1,27 +1,47 @@
 {
-  "DisplayName": "KEY_GUIDE_SHAPE_TYPE",
-  "Name": "KEY_GUIDE_SHAPE_TYPE",
-  "Description": "",
+  "Key": "KEY_GUIDE_SHAPE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "KEY_GUIDE_SHAPE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Sphere",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Cylinder",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cylinder"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Capsule",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Box",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Box"
+        }
+      ]
     }
   ]
 }

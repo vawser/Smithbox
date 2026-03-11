@@ -1,0 +1,988 @@
+{
+  "Param": "NpcEquipPartsParam",
+  "Type": "NPC_EQUIP_PARTS_PARAM_ST",
+  "Name": "NpcEquipPartsParam",
+  "Description": "Defines where weapon models attach for NPCs.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weaponId0",
+      "Name": "Weapon Model [0]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId1",
+      "Name": "Weapon Model [1]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId2",
+      "Name": "Weapon Model [2]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId3",
+      "Name": "Weapon Model [3]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId4",
+      "Name": "Weapon Model [4]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId5",
+      "Name": "Weapon Model [5]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId6",
+      "Name": "Weapon Model [6]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId7",
+      "Name": "Weapon Model [7]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId8",
+      "Name": "Weapon Model [8]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId9",
+      "Name": "Weapon Model [9]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId10",
+      "Name": "Weapon Model [10]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId11",
+      "Name": "Weapon Model [11]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId12",
+      "Name": "Weapon Model [12]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId13",
+      "Name": "Weapon Model [13]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId14",
+      "Name": "Weapon Model [14]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId15",
+      "Name": "Weapon Model [15]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId16",
+      "Name": "Weapon Model [16]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId17",
+      "Name": "Weapon Model [17]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId18",
+      "Name": "Weapon Model [18]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId19",
+      "Name": "Weapon Model [19]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId20",
+      "Name": "Weapon Model [20]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId21",
+      "Name": "Weapon Model [21]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId22",
+      "Name": "Weapon Model [22]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId23",
+      "Name": "Weapon Model [23]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId24",
+      "Name": "Weapon Model [24]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId25",
+      "Name": "Weapon Model [25]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId26",
+      "Name": "Weapon Model [26]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId27",
+      "Name": "Weapon Model [27]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId28",
+      "Name": "Weapon Model [28]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId29",
+      "Name": "Weapon Model [29]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId30",
+      "Name": "Weapon Model [30]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponId31",
+      "Name": "Weapon Model [31]",
+      "Description": "Refers to the wp_e_XXXX part models"
+    },
+    {
+      "Field": "weaponDmyId0",
+      "Name": "Mount Destination: Dummy Poly [0]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId1",
+      "Name": "Mount Destination: Dummy Poly [1]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId2",
+      "Name": "Mount Destination: Dummy Poly [2]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId3",
+      "Name": "Mount Destination: Dummy Poly [3]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId4",
+      "Name": "Mount Destination: Dummy Poly [4]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId5",
+      "Name": "Mount Destination: Dummy Poly [5]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId6",
+      "Name": "Mount Destination: Dummy Poly [6]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId7",
+      "Name": "Mount Destination: Dummy Poly [7]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId8",
+      "Name": "Mount Destination: Dummy Poly [8]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId9",
+      "Name": "Mount Destination: Dummy Poly [9]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId10",
+      "Name": "Mount Destination: Dummy Poly [10]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId11",
+      "Name": "Mount Destination: Dummy Poly [11]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId12",
+      "Name": "Mount Destination: Dummy Poly [12]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId13",
+      "Name": "Mount Destination: Dummy Poly [13]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId14",
+      "Name": "Mount Destination: Dummy Poly [14]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId15",
+      "Name": "Mount Destination: Dummy Poly [15]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId16",
+      "Name": "Mount Destination: Dummy Poly [16]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId17",
+      "Name": "Mount Destination: Dummy Poly [17]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId18",
+      "Name": "Mount Destination: Dummy Poly [18]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId19",
+      "Name": "Mount Destination: Dummy Poly [19]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId20",
+      "Name": "Mount Destination: Dummy Poly [20]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId21",
+      "Name": "Mount Destination: Dummy Poly [21]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId22",
+      "Name": "Mount Destination: Dummy Poly [22]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId23",
+      "Name": "Mount Destination: Dummy Poly [23]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId24",
+      "Name": "Mount Destination: Dummy Poly [24]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId25",
+      "Name": "Mount Destination: Dummy Poly [25]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId26",
+      "Name": "Mount Destination: Dummy Poly [26]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId27",
+      "Name": "Mount Destination: Dummy Poly [27]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId28",
+      "Name": "Mount Destination: Dummy Poly [28]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId29",
+      "Name": "Mount Destination: Dummy Poly [29]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId30",
+      "Name": "Mount Destination: Dummy Poly [30]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponDmyId31",
+      "Name": "Mount Destination: Dummy Poly [31]",
+      "Description": "Weapon attachment dummy poly ID"
+    },
+    {
+      "Field": "weaponAttachObjId0",
+      "Name": "Attach Joint ID [0]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId1",
+      "Name": "Attach Joint ID [1]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId2",
+      "Name": "Attach Joint ID [2]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId3",
+      "Name": "Attach Joint ID [3]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId4",
+      "Name": "Attach Joint ID [4]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId5",
+      "Name": "Attach Joint ID [5]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId6",
+      "Name": "Attach Joint ID [6]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId7",
+      "Name": "Attach Joint ID [7]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId8",
+      "Name": "Attach Joint ID [8]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId9",
+      "Name": "Attach Joint ID [9]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId10",
+      "Name": "Attach Joint ID [10]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId11",
+      "Name": "Attach Joint ID [11]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId12",
+      "Name": "Attach Joint ID [12]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId13",
+      "Name": "Attach Joint ID [13]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId14",
+      "Name": "Attach Joint ID [14]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId15",
+      "Name": "Attach Joint ID [15]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId16",
+      "Name": "Attach Joint ID [16]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId17",
+      "Name": "Attach Joint ID [17]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId18",
+      "Name": "Attach Joint ID [18]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId19",
+      "Name": "Attach Joint ID [19]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId20",
+      "Name": "Attach Joint ID [20]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId21",
+      "Name": "Attach Joint ID [21]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId22",
+      "Name": "Attach Joint ID [22]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId23",
+      "Name": "Attach Joint ID [23]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId24",
+      "Name": "Attach Joint ID [24]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId25",
+      "Name": "Attach Joint ID [25]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId26",
+      "Name": "Attach Joint ID [26]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId27",
+      "Name": "Attach Joint ID [27]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId28",
+      "Name": "Attach Joint ID [28]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId29",
+      "Name": "Attach Joint ID [29]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId30",
+      "Name": "Attach Joint ID [30]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "weaponAttachObjId31",
+      "Name": "Attach Joint ID [31]",
+      "Description": "Weapon attachment joint param ID. Used primarily for individual models with multiple weapons in them"
+    },
+    {
+      "Field": "bInitVisible0",
+      "Name": "Part Display Setting [0]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible1",
+      "Name": "Part Display Setting [1]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible2",
+      "Name": "Part Display Setting [2]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible3",
+      "Name": "Part Display Setting [3]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible4",
+      "Name": "Part Display Setting [4]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible5",
+      "Name": "Part Display Setting [5]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible6",
+      "Name": "Part Display Setting [6]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible7",
+      "Name": "Part Display Setting [7]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible8",
+      "Name": "Part Display Setting [8]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible9",
+      "Name": "Part Display Setting [9]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible10",
+      "Name": "Part Display Setting [10]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible11",
+      "Name": "Part Display Setting [11]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible12",
+      "Name": "Part Display Setting [12]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible13",
+      "Name": "Part Display Setting [13]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible14",
+      "Name": "Part Display Setting [14]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible15",
+      "Name": "Part Display Setting [15]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible16",
+      "Name": "Part Display Setting [16]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible17",
+      "Name": "Part Display Setting [17]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible18",
+      "Name": "Part Display Setting [18]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible19",
+      "Name": "Part Display Setting [19]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible20",
+      "Name": "Part Display Setting [20]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible21",
+      "Name": "Part Display Setting [21]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible22",
+      "Name": "Part Display Setting [22]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible23",
+      "Name": "Part Display Setting [23]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible24",
+      "Name": "Part Display Setting [24]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible25",
+      "Name": "Part Display Setting [25]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible26",
+      "Name": "Part Display Setting [26]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible27",
+      "Name": "Part Display Setting [27]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible28",
+      "Name": "Part Display Setting [28]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible29",
+      "Name": "Part Display Setting [29]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible30",
+      "Name": "Part Display Setting [30]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "bInitVisible31",
+      "Name": "Part Display Setting [31]",
+      "Description": "Initial display setting of this part"
+    },
+    {
+      "Field": "breakSfxId0",
+      "Name": "Destruction SFX ID [0]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId1",
+      "Name": "Destruction SFX ID [1]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId2",
+      "Name": "Destruction SFX ID [2]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId3",
+      "Name": "Destruction SFX ID [3]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId4",
+      "Name": "Destruction SFX ID [4]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId5",
+      "Name": "Destruction SFX ID [5]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId6",
+      "Name": "Destruction SFX ID [6]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId7",
+      "Name": "Destruction SFX ID [7]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId8",
+      "Name": "Destruction SFX ID [8]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId9",
+      "Name": "Destruction SFX ID [9]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId10",
+      "Name": "Destruction SFX ID [10]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId11",
+      "Name": "Destruction SFX ID [11]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId12",
+      "Name": "Destruction SFX ID [12]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId13",
+      "Name": "Destruction SFX ID [13]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId14",
+      "Name": "Destruction SFX ID [14]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId15",
+      "Name": "Destruction SFX ID [15]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId16",
+      "Name": "Destruction SFX ID [16]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId17",
+      "Name": "Destruction SFX ID [17]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId18",
+      "Name": "Destruction SFX ID [18]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId19",
+      "Name": "Destruction SFX ID [19]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId20",
+      "Name": "Destruction SFX ID [20]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId21",
+      "Name": "Destruction SFX ID [21]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId22",
+      "Name": "Destruction SFX ID [22]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId23",
+      "Name": "Destruction SFX ID [23]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId24",
+      "Name": "Destruction SFX ID [24]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId25",
+      "Name": "Destruction SFX ID [25]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId26",
+      "Name": "Destruction SFX ID [26]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId27",
+      "Name": "Destruction SFX ID [27]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId28",
+      "Name": "Destruction SFX ID [28]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId29",
+      "Name": "Destruction SFX ID [29]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId30",
+      "Name": "Destruction SFX ID [30]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakSfxId31",
+      "Name": "Destruction SFX ID [31]",
+      "Description": "Particle emitted when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId0",
+      "Name": "Destruction Sfx Dummy Poly [0]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId1",
+      "Name": "Destruction Sfx Dummy Poly [1]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId2",
+      "Name": "Destruction Sfx Dummy Poly [2]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId3",
+      "Name": "Destruction Sfx Dummy Poly [3]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId4",
+      "Name": "Destruction Sfx Dummy Poly [4]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId5",
+      "Name": "Destruction Sfx Dummy Poly [5]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId6",
+      "Name": "Destruction Sfx Dummy Poly [6]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId7",
+      "Name": "Destruction Sfx Dummy Poly [7]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId8",
+      "Name": "Destruction Sfx Dummy Poly [8]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId9",
+      "Name": "Destruction Sfx Dummy Poly [9]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId10",
+      "Name": "Destruction Sfx Dummy Poly [10]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId11",
+      "Name": "Destruction Sfx Dummy Poly [11]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId12",
+      "Name": "Destruction Sfx Dummy Poly [12]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId13",
+      "Name": "Destruction Sfx Dummy Poly [13]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId14",
+      "Name": "Destruction Sfx Dummy Poly [14]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId15",
+      "Name": "Destruction Sfx Dummy Poly [15]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId16",
+      "Name": "Destruction Sfx Dummy Poly [16]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId17",
+      "Name": "Destruction Sfx Dummy Poly [17]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId18",
+      "Name": "Destruction Sfx Dummy Poly [18]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId19",
+      "Name": "Destruction Sfx Dummy Poly [19]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId20",
+      "Name": "Destruction Sfx Dummy Poly [20]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId21",
+      "Name": "Destruction Sfx Dummy Poly [21]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId22",
+      "Name": "Destruction Sfx Dummy Poly [22]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId23",
+      "Name": "Destruction Sfx Dummy Poly [23]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId24",
+      "Name": "Destruction Sfx Dummy Poly [24]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId25",
+      "Name": "Destruction Sfx Dummy Poly [25]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId26",
+      "Name": "Destruction Sfx Dummy Poly [26]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId27",
+      "Name": "Destruction Sfx Dummy Poly [27]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId28",
+      "Name": "Destruction Sfx Dummy Poly [28]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId29",
+      "Name": "Destruction Sfx Dummy Poly [29]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId30",
+      "Name": "Destruction Sfx Dummy Poly [30]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    },
+    {
+      "Field": "breakDmyId31",
+      "Name": "Destruction Sfx Dummy Poly [31]",
+      "Description": "Dummy poly used to emit particles when this part is destroyed"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "CutsceneParam",
+  "Type": "CUTSCENE_PARAM_ST",
+  "Name": "CutsceneParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "doPausePrevCutsceneBgm",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bgmFadeoutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bgmFadeinTime",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,472 +1,848 @@
 {
-  "DisplayName": "LOGIC_general_flag_value",
-  "Name": "LOGIC_general_flag_value",
-  "Description": "",
+  "Key": "LOGIC_general_flag_value",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_general_flag_value"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "(1) For BOSS attack count_1",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "(7)□Event notification flag ON",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "(3) Boss battle mode",
-      "Description": ""
-    },
-    {
-      "ID": "1",
-      "Name": "(4) Return: Tracking",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "(1) For BOSS attack count_2",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "(4) Return: wait and see",
-      "Description": ""
-    },
-    {
-      "ID": "2",
-      "Name": "(7) ■Event notification flag OFF",
-      "Description": ""
-    },
-    {
-      "ID": "3",
-      "Name": "(4) Return: Unable to return home",
-      "Description": ""
-    },
-    {
-      "ID": "3",
-      "Name": "(1) For BOSS attack count_3",
-      "Description": ""
-    },
-    {
-      "ID": "4",
-      "Name": "(1) For BOSS attack count_4",
-      "Description": ""
-    },
-    {
-      "ID": "4",
-      "Name": "(4) With startup state",
-      "Description": ""
-    },
-    {
-      "ID": "5",
-      "Name": "(4) Return: Gate movement",
-      "Description": ""
-    },
-    {
-      "ID": "5",
-      "Name": "(1) For BOSS attack count_5",
-      "Description": ""
-    },
-    {
-      "ID": "6",
-      "Name": "(1) For BOSS attack count_6",
-      "Description": ""
-    },
-    {
-      "ID": "7",
-      "Name": "(1) For BOSS attack count_7",
-      "Description": ""
-    },
-    {
-      "ID": "8",
-      "Name": "(1) For BOSS attack count_8",
-      "Description": ""
-    },
-    {
-      "ID": "9",
-      "Name": "(1) For BOSS attack count_9",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "(0) Target behavior: Visual recognition",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "(3) Special attack mode",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "(1) For BOSS attack count_10",
-      "Description": ""
-    },
-    {
-      "ID": "10",
-      "Name": "(4) Successful navigation search",
-      "Description": ""
-    },
-    {
-      "ID": "11",
-      "Name": "(0) Target behavior: Lower stop",
-      "Description": ""
-    },
-    {
-      "ID": "11",
-      "Name": "(2) Normal time",
-      "Description": ""
-    },
-    {
-      "ID": "12",
-      "Name": "(0) Target behavior: Invisibility",
-      "Description": ""
-    },
-    {
-      "ID": "12",
-      "Name": "(2) Fixed artillery battery",
-      "Description": ""
-    },
-    {
-      "ID": "13",
-      "Name": "(0) Generator return",
-      "Description": ""
-    },
-    {
-      "ID": "13",
-      "Name": "(2) First contact made",
-      "Description": ""
-    },
-    {
-      "ID": "14",
-      "Name": "(0) Targetless behavior",
-      "Description": ""
-    },
-    {
-      "ID": "14",
-      "Name": "(2) Battle mode",
-      "Description": ""
-    },
-    {
-      "ID": "15",
-      "Name": "(0) Initial response start",
-      "Description": ""
-    },
-    {
-      "ID": "16",
-      "Name": "(0) Initial response completed",
-      "Description": ""
-    },
-    {
-      "ID": "17",
-      "Name": "(0) Target behavior: Disappearance",
-      "Description": ""
-    },
-    {
-      "ID": "18",
-      "Name": "(0) Target behavior: Sound response",
-      "Description": ""
-    },
-    {
-      "ID": "19",
-      "Name": "(0) Unused",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "(3) Possible to change perspective",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "(0) Target action: Preparation for return",
-      "Description": ""
-    },
-    {
-      "ID": "20",
-      "Name": "(4) Navigation search failure",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "(1) 1 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "(3) Attack waiting mode",
-      "Description": ""
-    },
-    {
-      "ID": "21",
-      "Name": "(5) Long distance equipment 1",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "(3) Sound reaction: Search mode",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "(1) 2 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "22",
-      "Name": "(5) Long distance equipment 2",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "(1) 3 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "(3) Sound response: ignore mode",
-      "Description": ""
-    },
-    {
-      "ID": "23",
-      "Name": "(5) Long distance equipment 3",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "(3) Sound response: startup mode",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "(1) 4 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "24",
-      "Name": "(5) Long range equipment 4",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "(1) 5 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "(3) Startup state attack release mode",
-      "Description": ""
-    },
-    {
-      "ID": "25",
-      "Name": "(5) Long distance equipment 5",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "(1) 6 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "(3) Flag or visibility activation mode",
-      "Description": ""
-    },
-    {
-      "ID": "26",
-      "Name": "(5) Long-distance equipment 6",
-      "Description": ""
-    },
-    {
-      "ID": "27",
-      "Name": "(1) 7 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "27",
-      "Name": "(3) Group startup off mode",
-      "Description": ""
-    },
-    {
-      "ID": "28",
-      "Name": "(1) 8 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "28",
-      "Name": "(3) Waiting for attack or sound reaction: startup mode",
-      "Description": ""
-    },
-    {
-      "ID": "29",
-      "Name": "(1) 9 for lower state map",
-      "Description": ""
-    },
-    {
-      "ID": "29",
-      "Name": "(3) Immediate startup mode",
-      "Description": ""
-    },
-    {
-      "ID": "30",
-      "Name": "(1) 10 for lower state maps",
-      "Description": ""
-    },
-    {
-      "ID": "37",
-      "Name": "Value 1",
-      "Description": ""
-    },
-    {
-      "ID": "38",
-      "Name": "Value 2",
-      "Description": ""
-    },
-    {
-      "ID": "39",
-      "Name": "Value 3",
-      "Description": ""
-    },
-    {
-      "ID": "40",
-      "Name": "Value 4",
-      "Description": ""
-    },
-    {
-      "ID": "41",
-      "Name": "Value 5",
-      "Description": ""
-    },
-    {
-      "ID": "42",
-      "Name": "Value 6",
-      "Description": ""
-    },
-    {
-      "ID": "43",
-      "Name": "Value 7",
-      "Description": ""
-    },
-    {
-      "ID": "44",
-      "Name": "Value 8",
-      "Description": ""
-    },
-    {
-      "ID": "45",
-      "Name": "Value 9",
-      "Description": ""
-    },
-    {
-      "ID": "46",
-      "Name": "Value 10",
-      "Description": ""
-    },
-    {
-      "ID": "47",
-      "Name": "Value 11",
-      "Description": ""
-    },
-    {
-      "ID": "48",
-      "Name": "Value 12",
-      "Description": ""
-    },
-    {
-      "ID": "49",
-      "Name": "Value 13",
-      "Description": ""
-    },
-    {
-      "ID": "50",
-      "Name": "Value 14",
-      "Description": ""
-    },
-    {
-      "ID": "51",
-      "Name": "Value 15",
-      "Description": ""
-    },
-    {
-      "ID": "52",
-      "Name": "Value 16",
-      "Description": ""
-    },
-    {
-      "ID": "53",
-      "Name": "Value 17",
-      "Description": ""
-    },
-    {
-      "ID": "54",
-      "Name": "Value 18",
-      "Description": ""
-    },
-    {
-      "ID": "55",
-      "Name": "Value 19",
-      "Description": ""
-    },
-    {
-      "ID": "56",
-      "Name": "Value 20",
-      "Description": ""
-    },
-    {
-      "ID": "57",
-      "Name": "Value 21",
-      "Description": ""
-    },
-    {
-      "ID": "58",
-      "Name": "Value 22",
-      "Description": ""
-    },
-    {
-      "ID": "59",
-      "Name": "Value 23",
-      "Description": ""
-    },
-    {
-      "ID": "60",
-      "Name": "Value 24",
-      "Description": ""
-    },
-    {
-      "ID": "61",
-      "Name": "Value 25",
-      "Description": ""
-    },
-    {
-      "ID": "62",
-      "Name": "Value 26",
-      "Description": ""
-    },
-    {
-      "ID": "63",
-      "Name": "Value 27",
-      "Description": ""
-    },
-    {
-      "ID": "64",
-      "Name": "Value 28",
-      "Description": ""
-    },
-    {
-      "ID": "65",
-      "Name": "Value 29",
-      "Description": ""
-    },
-    {
-      "ID": "66",
-      "Name": "Value 30",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(7)□Event notification flag ON"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Boss battle mode"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Return: Tracking"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Return: wait and see"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(7) ■Event notification flag OFF"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Return: Unable to return home"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_4"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) With startup state"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Return: Gate movement"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_5"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_6"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_7"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_8"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_9"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target behavior: Visual recognition"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Special attack mode"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) For BOSS attack count_10"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Successful navigation search"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target behavior: Lower stop"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(2) Normal time"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target behavior: Invisibility"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(2) Fixed artillery battery"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Generator return"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(2) First contact made"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Targetless behavior"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(2) Battle mode"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Initial response start"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Initial response completed"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target behavior: Disappearance"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target behavior: Sound response"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Unused"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Possible to change perspective"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(0) Target action: Preparation for return"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(4) Navigation search failure"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 1 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Attack waiting mode"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long distance equipment 1"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Sound reaction: Search mode"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 2 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long distance equipment 2"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 3 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Sound response: ignore mode"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long distance equipment 3"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Sound response: startup mode"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 4 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long range equipment 4"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 5 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Startup state attack release mode"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long distance equipment 5"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 6 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Flag or visibility activation mode"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(5) Long-distance equipment 6"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 7 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Group startup off mode"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 8 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Waiting for attack or sound reaction: startup mode"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 9 for lower state map"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(3) Immediate startup mode"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1) 10 for lower state maps"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 1"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 2"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 3"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 4"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 5"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 6"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 7"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 8"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 9"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 10"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 11"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 12"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 13"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 14"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 15"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 16"
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 17"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 18"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 19"
+        }
+      ]
+    },
+    {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 20"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 21"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 22"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 23"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 24"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 25"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 26"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 27"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 28"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 29"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Value 30"
+        }
+      ]
     }
   ]
 }

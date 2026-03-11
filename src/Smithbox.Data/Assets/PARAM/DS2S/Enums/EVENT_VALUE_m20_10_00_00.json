@@ -1,12 +1,20 @@
 {
-  "DisplayName": "EVENT_VALUE_m20_10_00_00",
-  "Name": "EVENT_VALUE_m20_10_00_00",
-  "Description": "",
+  "Key": "EVENT_VALUE_m20_10_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m20_10_00_00"
+    }
+  ],
   "Options": [
     {
-      "ID": "10",
-      "Name": "Royal soldiers/lower-rank soldiers killed",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal soldiers/lower-rank soldiers killed"
+        }
+      ]
     }
   ]
 }

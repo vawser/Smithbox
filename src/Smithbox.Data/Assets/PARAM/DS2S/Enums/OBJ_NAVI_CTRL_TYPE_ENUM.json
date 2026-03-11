@@ -1,42 +1,74 @@
 {
-  "DisplayName": "OBJ_NAVI_CTRL_TYPE_ENUM",
-  "Name": "OBJ_NAVI_CTRL_TYPE_ENUM",
-  "Description": "",
+  "Key": "OBJ_NAVI_CTRL_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_NAVI_CTRL_TYPE_ENUM"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Wall",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Destructible",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destructible"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Prohibited during events",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited during events"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Small wall",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small wall"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Medium wall",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium wall"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Large wall",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large wall"
+        }
+      ]
     }
   ]
 }

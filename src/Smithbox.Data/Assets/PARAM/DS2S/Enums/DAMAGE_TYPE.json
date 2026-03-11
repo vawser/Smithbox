@@ -1,77 +1,137 @@
 {
-  "DisplayName": "DAMAGE_TYPE",
-  "Name": "DAMAGE_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Sword small",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword small"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Tochu",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tochu"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Sword size",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword size"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Sword launch",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword launch"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Sword blow (straight line)",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword blow (straight line)"
+        }
+      ]
     },
     {
-      "ID": "5",
-      "Name": "Sword blow (rotation)",
-      "Description": ""
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword blow (rotation)"
+        }
+      ]
     },
     {
-      "ID": "6",
-      "Name": "Sword cut through (rotation)",
-      "Description": ""
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sword cut through (rotation)"
+        }
+      ]
     },
     {
-      "ID": "7",
-      "Name": "Small blow",
-      "Description": ""
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small blow"
+        }
+      ]
     },
     {
-      "ID": "8",
-      "Name": "Batting",
-      "Description": ""
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Batting"
+        }
+      ]
     },
     {
-      "ID": "9",
-      "Name": "Big blow",
-      "Description": ""
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Big blow"
+        }
+      ]
     },
     {
-      "ID": "10",
-      "Name": "Striking launch",
-      "Description": ""
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Striking launch"
+        }
+      ]
     },
     {
-      "ID": "11",
-      "Name": "Blow away (straight line)",
-      "Description": ""
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow away (straight line)"
+        }
+      ]
     },
     {
-      "ID": "12",
-      "Name": "Blow away (rotation)",
-      "Description": ""
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow away (rotation)"
+        }
+      ]
     },
     {
-      "ID": "13",
-      "Name": "Blow through (rotation)",
-      "Description": ""
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow through (rotation)"
+        }
+      ]
     }
   ]
 }

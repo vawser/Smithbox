@@ -1,0 +1,43 @@
+{
+  "Param": "MissionManagementParam",
+  "Type": "MISSION_MANAGEMENT_PARAM_ST",
+  "Name": "MissionManagementParam",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "missionId",
+      "Name": "Mission ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapPatternMapLotConditionId",
+      "Name": "Modifier",
+      "Description": ""
+    }
+  ]
+}

@@ -1,27 +1,47 @@
 {
-  "DisplayName": "GENERATOR_REGIST_OBJECT",
-  "Name": "GENERATOR_REGIST_OBJECT",
-  "Description": "",
+  "Key": "GENERATOR_REGIST_OBJECT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_REGIST_OBJECT"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Player",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Skeleton Soldier (Logic 9997)",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9997)"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Skeleton Soldier (Logic 9996)",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9996)"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Skeleton Soldier (Logic 9995)",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton Soldier (Logic 9995)"
+        }
+      ]
     }
   ]
 }

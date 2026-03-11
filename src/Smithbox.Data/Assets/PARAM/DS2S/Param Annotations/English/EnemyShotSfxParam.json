@@ -1,0 +1,18 @@
+{
+  "Param": "EnemyShotSfxParam",
+  "Type": "ENEMY_SHOT_SFX_PARAM",
+  "Name": "EnemyShotSfxParam",
+  "Description": "Defines parameters related to SFX used for enemy arrows.",
+  "Fields": [
+    {
+      "Field": "sfx_id",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy_poly_id",
+      "Name": "Dummy Poly ID",
+      "Description": ""
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Hero",
+  "Key": "Hero",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Hero"
+      }
+  ],
   "Params": [
     "HeroParam",
     "HeroMenuCameraParam",

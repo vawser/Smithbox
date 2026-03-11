@@ -14,6 +14,13 @@ namespace StudioCore.Editors.ParamEditor;
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
 
+// Param Annotations
+[JsonSerializable(typeof(ParamAnnotations))]
+[JsonSerializable(typeof(ParamAnnotationEntry))]
+[JsonSerializable(typeof(ParamAnnotationFieldEntry))]
+
+[JsonSerializable(typeof(ParamAnnotationLanguages))]
+[JsonSerializable(typeof(ParamAnnotationLanguageEntry))]
 
 // Icon Configurations
 [JsonSerializable(typeof(IconConfigurations))]
@@ -34,6 +41,7 @@ namespace StudioCore.Editors.ParamEditor;
 // Param Categories
 [JsonSerializable(typeof(ParamCategories))]
 [JsonSerializable(typeof(ParamCategoryEntry))]
+[JsonSerializable(typeof(ParamCategoryNameEntry))]
 
 // Commutative Param Groups
 [JsonSerializable(typeof(ParamCommutativityGroups))]
@@ -74,6 +82,13 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(FieldLayouts))]
 [JsonSerializable(typeof(FieldLayout))]
 [JsonSerializable(typeof(FieldLayoutEntry))]
+
+// Param Enums
+[JsonSerializable(typeof(ParamEnums))]
+[JsonSerializable(typeof(ParamEnumEntry))]
+[JsonSerializable(typeof(ParamEnumOption))]
+[JsonSerializable(typeof(ParamCategoryTextEntry))]
+
 
 internal partial class ParamEditorJsonSerializerContext : JsonSerializerContext
 {

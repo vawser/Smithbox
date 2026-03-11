@@ -1,0 +1,583 @@
+{
+  "Param": "BulletShotgunParam_PC",
+  "Type": "BULLET_SHOTGUN_PARAM_ST",
+  "Name": "BulletShotgunParam_PC",
+  "Description": "Determines the shot spread for a bullet.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coordErrorType",
+      "Name": "Coordinate Error Direction",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "coordErrorDist",
+      "Name": "Coordinate Error Amount",
+      "Description": "In metres."
+    },
+    {
+      "Field": "pos0_bulletPosX",
+      "Name": "Bullet Position: X [0]",
+      "Description": ""
+    },
+    {
+      "Field": "pos0_bulletPosY",
+      "Name": "Bullet Position: Y [0]",
+      "Description": ""
+    },
+    {
+      "Field": "pos0_bulletPosZ",
+      "Name": "Bullet Position: Z [0]",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosX",
+      "Name": "Bullet Position: X [1]",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosY",
+      "Name": "Bullet Position: Y [1]",
+      "Description": ""
+    },
+    {
+      "Field": "pos1_bulletPosZ",
+      "Name": "Bullet Position: Z [1]",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosX",
+      "Name": "Bullet Position: X [2]",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosY",
+      "Name": "Bullet Position: Y [2]",
+      "Description": ""
+    },
+    {
+      "Field": "pos2_bulletPosZ",
+      "Name": "Bullet Position: Z [2]",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosX",
+      "Name": "Bullet Position: X [3]",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosY",
+      "Name": "Bullet Position: Y [3]",
+      "Description": ""
+    },
+    {
+      "Field": "pos3_bulletPosZ",
+      "Name": "Bullet Position: Z [3]",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosX",
+      "Name": "Bullet Position: X [4]",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosY",
+      "Name": "Bullet Position: Y [4]",
+      "Description": ""
+    },
+    {
+      "Field": "pos4_bulletPosZ",
+      "Name": "Bullet Position: Z [4]",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosX",
+      "Name": "Bullet Position: X [5]",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosY",
+      "Name": "Bullet Position: Y [5]",
+      "Description": ""
+    },
+    {
+      "Field": "pos5_bulletPosZ",
+      "Name": "Bullet Position: Z [5]",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosX",
+      "Name": "Bullet Position: X [6]",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosY",
+      "Name": "Bullet Position: Y [6]",
+      "Description": ""
+    },
+    {
+      "Field": "pos6_bulletPosZ",
+      "Name": "Bullet Position: Z [6]",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosX",
+      "Name": "Bullet Position: X [7]",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosY",
+      "Name": "Bullet Position: Y [7]",
+      "Description": ""
+    },
+    {
+      "Field": "pos7_bulletPosZ",
+      "Name": "Bullet Position: Z [7]",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosX",
+      "Name": "Bullet Position: X [8]",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosY",
+      "Name": "Bullet Position: Y [8]",
+      "Description": ""
+    },
+    {
+      "Field": "pos8_bulletPosZ",
+      "Name": "Bullet Position: Z [8]",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosX",
+      "Name": "Bullet Position: X [9]",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosY",
+      "Name": "Bullet Position: Y [9]",
+      "Description": ""
+    },
+    {
+      "Field": "pos9_bulletPosZ",
+      "Name": "Bullet Position: Z [9]",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosX",
+      "Name": "Bullet Position: X [10]",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosY",
+      "Name": "Bullet Position: Y [10]",
+      "Description": ""
+    },
+    {
+      "Field": "pos10_bulletPosZ",
+      "Name": "Bullet Position: Z [10]",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosX",
+      "Name": "Bullet Position: X [11]",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosY",
+      "Name": "Bullet Position: Y [11]",
+      "Description": ""
+    },
+    {
+      "Field": "pos11_bulletPosZ",
+      "Name": "Bullet Position: Z [11]",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosX",
+      "Name": "Bullet Position: X [12]",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosY",
+      "Name": "Bullet Position: Y [12]",
+      "Description": ""
+    },
+    {
+      "Field": "pos12_bulletPosZ",
+      "Name": "Bullet Position: Z [12]",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosX",
+      "Name": "Bullet Position: X [13]",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosY",
+      "Name": "Bullet Position: Y [13]",
+      "Description": ""
+    },
+    {
+      "Field": "pos13_bulletPosZ",
+      "Name": "Bullet Position: Z [13]",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosX",
+      "Name": "Bullet Position: X [14]",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosY",
+      "Name": "Bullet Position: Y [14]",
+      "Description": ""
+    },
+    {
+      "Field": "pos14_bulletPosZ",
+      "Name": "Bullet Position: Z [14]",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosX",
+      "Name": "Bullet Position: X [15]",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosY",
+      "Name": "Bullet Position: Y [15]",
+      "Description": ""
+    },
+    {
+      "Field": "pos15_bulletPosZ",
+      "Name": "Bullet Position: Z [15]",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosX",
+      "Name": "Bullet Position: X [16]",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosY",
+      "Name": "Bullet Position: Y [16]",
+      "Description": ""
+    },
+    {
+      "Field": "pos16_bulletPosZ",
+      "Name": "Bullet Position: Z [16]",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosX",
+      "Name": "Bullet Position: X [17]",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosY",
+      "Name": "Bullet Position: Y [17]",
+      "Description": ""
+    },
+    {
+      "Field": "pos17_bulletPosZ",
+      "Name": "Bullet Position: Z [17]",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosX",
+      "Name": "Bullet Position: X [18]",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosY",
+      "Name": "Bullet Position: Y [18]",
+      "Description": ""
+    },
+    {
+      "Field": "pos18_bulletPosZ",
+      "Name": "Bullet Position: Z [18]",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosX",
+      "Name": "Bullet Position: X [19]",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosY",
+      "Name": "Bullet Position: Y [19]",
+      "Description": ""
+    },
+    {
+      "Field": "pos19_bulletPosZ",
+      "Name": "Bullet Position: Z [19]",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosX",
+      "Name": "Bullet Position: X [20]",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosY",
+      "Name": "Bullet Position: Y [20]",
+      "Description": ""
+    },
+    {
+      "Field": "pos20_bulletPosZ",
+      "Name": "Bullet Position: Z [20]",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosX",
+      "Name": "Bullet Position: X [21]",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosY",
+      "Name": "Bullet Position: Y [21]",
+      "Description": ""
+    },
+    {
+      "Field": "pos21_bulletPosZ",
+      "Name": "Bullet Position: Z [21]",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosX",
+      "Name": "Bullet Position: X [22]",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosY",
+      "Name": "Bullet Position: Y [22]",
+      "Description": ""
+    },
+    {
+      "Field": "pos22_bulletPosZ",
+      "Name": "Bullet Position: Z [22]",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosX",
+      "Name": "Bullet Position: X [23]",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosY",
+      "Name": "Bullet Position: Y [23]",
+      "Description": ""
+    },
+    {
+      "Field": "pos23_bulletPosZ",
+      "Name": "Bullet Position: Z [23]",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosX",
+      "Name": "Bullet Position: X [24]",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosY",
+      "Name": "Bullet Position: Y [24]",
+      "Description": ""
+    },
+    {
+      "Field": "pos24_bulletPosZ",
+      "Name": "Bullet Position: Z [24]",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosX",
+      "Name": "Bullet Position: X [25]",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosY",
+      "Name": "Bullet Position: Y [25]",
+      "Description": ""
+    },
+    {
+      "Field": "pos25_bulletPosZ",
+      "Name": "Bullet Position: Z [25]",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosX",
+      "Name": "Bullet Position: X [26]",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosY",
+      "Name": "Bullet Position: Y [26]",
+      "Description": ""
+    },
+    {
+      "Field": "pos26_bulletPosZ",
+      "Name": "Bullet Position: Z [26]",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosX",
+      "Name": "Bullet Position: X [27]",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosY",
+      "Name": "Bullet Position: Y [27]",
+      "Description": ""
+    },
+    {
+      "Field": "pos27_bulletPosZ",
+      "Name": "Bullet Position: Z [27]",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosX",
+      "Name": "Bullet Position: X [28]",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosY",
+      "Name": "Bullet Position: Y [28]",
+      "Description": ""
+    },
+    {
+      "Field": "pos28_bulletPosZ",
+      "Name": "Bullet Position: Z [28]",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosX",
+      "Name": "Bullet Position: X [29]",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosY",
+      "Name": "Bullet Position: Y [29]",
+      "Description": ""
+    },
+    {
+      "Field": "pos29_bulletPosZ",
+      "Name": "Bullet Position: Z [29]",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosX",
+      "Name": "Bullet Position: X [30]",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosY",
+      "Name": "Bullet Position: Y [30]",
+      "Description": ""
+    },
+    {
+      "Field": "pos30_bulletPosZ",
+      "Name": "Bullet Position: Z [30]",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosX",
+      "Name": "Bullet Position: X [31]",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosY",
+      "Name": "Bullet Position: Y [31]",
+      "Description": ""
+    },
+    {
+      "Field": "pos31_bulletPosZ",
+      "Name": "Bullet Position: Z [31]",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosX",
+      "Name": "Bullet Position: X [32]",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosY",
+      "Name": "Bullet Position: Y [32]",
+      "Description": ""
+    },
+    {
+      "Field": "pos32_bulletPosZ",
+      "Name": "Bullet Position: Z [32]",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosX",
+      "Name": "Bullet Position: X [33]",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosY",
+      "Name": "Bullet Position: Y [33]",
+      "Description": ""
+    },
+    {
+      "Field": "pos33_bulletPosZ",
+      "Name": "Bullet Position: Z [33]",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosX",
+      "Name": "Bullet Position: X [34]",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosY",
+      "Name": "Bullet Position: Y [34]",
+      "Description": ""
+    },
+    {
+      "Field": "pos34_bulletPosZ",
+      "Name": "Bullet Position: Z [34]",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosX",
+      "Name": "Bullet Position: X [35]",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosY",
+      "Name": "Bullet Position: Y [35]",
+      "Description": ""
+    },
+    {
+      "Field": "pos35_bulletPosZ",
+      "Name": "Bullet Position: Z [35]",
+      "Description": ""
+    }
+  ]
+}

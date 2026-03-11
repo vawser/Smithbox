@@ -1,27 +1,47 @@
 {
-  "DisplayName": "DAMAGE_GUARD_BREAK_TYPE",
-  "Name": "DAMAGE_GUARD_BREAK_TYPE",
-  "Description": "",
+  "Key": "DAMAGE_GUARD_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_GUARD_BREAK_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "None",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Parry invalid",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry invalid"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Guard disabled",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard disabled"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Parry, guard invalid",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry, guard invalid"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "Param": "WhiteSignCoolTimeParam",
+  "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Name": "WhiteSignCoolTimeParam",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "timeLimit0",
+      "Name": "Time Limit - Sign Summon",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit1",
+      "Name": "Time Limit - Sign Summon with Dried Finger",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit2",
+      "Name": "Time Limit - Blue Spirit",
+      "Description": ""
+    },
+    {
+      "Field": "timeLimit3",
+      "Name": "Time Limit - Blue Spirit with Dried Finger",
+      "Description": ""
+    }
+  ]
+}

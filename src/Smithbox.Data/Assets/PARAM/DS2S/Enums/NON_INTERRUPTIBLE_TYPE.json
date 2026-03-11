@@ -1,32 +1,56 @@
 {
-  "DisplayName": "NON_INTERRUPTIBLE_TYPE",
-  "Name": "NON_INTERRUPTIBLE_TYPE",
-  "Description": "",
+  "Key": "NON_INTERRUPTIBLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NON_INTERRUPTIBLE_TYPE"
+    }
+  ],
   "Options": [
     {
-      "ID": "0",
-      "Name": "Invalid",
-      "Description": ""
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
     },
     {
-      "ID": "1",
-      "Name": "Super armor",
-      "Description": ""
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Super armor"
+        }
+      ]
     },
     {
-      "ID": "2",
-      "Name": "Hyper armor",
-      "Description": ""
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hyper armor"
+        }
+      ]
     },
     {
-      "ID": "3",
-      "Name": "Invincible",
-      "Description": ""
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invincible"
+        }
+      ]
     },
     {
-      "ID": "4",
-      "Name": "Damage nullified",
-      "Description": ""
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage nullified"
+        }
+      ]
     }
   ]
 }

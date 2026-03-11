@@ -1,5 +1,11 @@
 {
-  "DisplayName": "Tower of Latria",
+  "Key": "Tower of Latria",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Tower of Latria"
+      }
+  ],
   "Params": [
     "m04_DofBank",
     "m04_EnvLightTexBank",
