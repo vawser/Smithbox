@@ -1,0 +1,38 @@
+{
+  "Key": "ARTS_SPEED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ARTS_SPEED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Hand (Flag 16)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quick (Flag 103)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard (Flag 104)"
+        }
+      ]
+    }
+  ]
+}

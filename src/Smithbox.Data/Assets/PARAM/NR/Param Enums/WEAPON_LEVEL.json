@@ -1,0 +1,56 @@
+{
+  "Key": "WEAPON_LEVEL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_LEVEL"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+3"
+        }
+      ]
+    },
+    {
+      "Key": "256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cursed"
+        }
+      ]
+    }
+  ]
+}

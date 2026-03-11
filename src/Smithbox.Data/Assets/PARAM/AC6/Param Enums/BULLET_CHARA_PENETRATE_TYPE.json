@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_CHARA_PENETRATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_CHARA_PENETRATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Penetration"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low Penetration"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal Penetration"
+        }
+      ]
+    }
+  ]
+}

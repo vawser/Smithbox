@@ -1,0 +1,38 @@
+{
+  "Key": "HMP_FLOOR_WET_TIMING",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HMP_FLOOR_WET_TIMING"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TAE"
+        }
+      ]
+    }
+  ]
+}

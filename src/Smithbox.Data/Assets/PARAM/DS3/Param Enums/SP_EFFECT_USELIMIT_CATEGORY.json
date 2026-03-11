@@ -1,0 +1,29 @@
+{
+  "Key": "SP_EFFECT_USELIMIT_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_USELIMIT_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Head Stones"
+        }
+      ]
+    }
+  ]
+}

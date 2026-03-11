@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_ENERGY_CONSUME_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_ENERGY_CONSUME_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Infinite"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAPHICS_CONFIG_CS_GCONFIG_ENABLED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keep GParam Settings"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Disable"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force Enable"
+        }
+      ]
+    }
+  ]
+}

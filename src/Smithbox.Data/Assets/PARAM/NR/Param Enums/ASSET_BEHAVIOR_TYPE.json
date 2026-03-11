@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_BEHAVIOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_BEHAVIOR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dynamic"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Static"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Partial Static"
+        }
+      ]
+    }
+  ]
+}

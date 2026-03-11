@@ -1,0 +1,47 @@
+{
+  "Key": "CUSTOMSHOP_NPC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CUSTOMSHOP_NPC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Pillar"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mine Shaft"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DS"
+        }
+      ]
+    }
+  ]
+}

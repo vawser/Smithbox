@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_SFX_CREATE_POSTURE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SFX_CREATE_POSTURE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Global Y Axis"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Impact"
+        }
+      ]
+    }
+  ]
+}

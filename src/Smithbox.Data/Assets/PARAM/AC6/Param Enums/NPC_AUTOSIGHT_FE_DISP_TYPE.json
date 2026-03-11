@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_AUTOSIGHT_FE_DISP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_AUTOSIGHT_FE_DISP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weakness"
+        }
+      ]
+    }
+  ]
+}

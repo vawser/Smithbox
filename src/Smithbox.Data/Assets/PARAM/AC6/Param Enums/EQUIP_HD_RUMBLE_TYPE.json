@@ -1,0 +1,29 @@
+{
+  "Key": "EQUIP_HD_RUMBLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_HD_RUMBLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    }
+  ]
+}

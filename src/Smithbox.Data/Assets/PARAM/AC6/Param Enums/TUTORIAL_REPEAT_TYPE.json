@@ -1,0 +1,29 @@
+{
+  "Key": "TUTORIAL_REPEAT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TUTORIAL_REPEAT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Can only display once"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Can display more than once"
+        }
+      ]
+    }
+  ]
+}

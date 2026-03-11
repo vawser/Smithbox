@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_CHILDREN_EMITTE_PURPOSE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_CHILDREN_EMITTE_PURPOSE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Impact"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small Bullet"
+        }
+      ]
+    }
+  ]
+}

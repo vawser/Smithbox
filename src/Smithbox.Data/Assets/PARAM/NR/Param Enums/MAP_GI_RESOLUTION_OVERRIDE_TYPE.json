@@ -1,0 +1,29 @@
+{
+  "Key": "MAP_GI_RESOLUTION_OVERRIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAP_GI_RESOLUTION_OVERRIDE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type -1"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    }
+  ]
+}

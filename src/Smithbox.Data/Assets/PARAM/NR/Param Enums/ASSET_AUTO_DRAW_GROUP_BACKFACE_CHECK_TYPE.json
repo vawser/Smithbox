@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore dynamic asset"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes"
+        }
+      ]
+    }
+  ]
+}

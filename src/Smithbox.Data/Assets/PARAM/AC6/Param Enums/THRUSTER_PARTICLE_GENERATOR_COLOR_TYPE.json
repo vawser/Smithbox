@@ -1,0 +1,47 @@
+{
+  "Key": "THRUSTER_PARTICLE_GENERATOR_COLOR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THRUSTER_PARTICLE_GENERATOR_COLOR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire Orange"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Blue"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coral Red"
+        }
+      ]
+    }
+  ]
+}

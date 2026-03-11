@@ -1,0 +1,56 @@
+{
+  "Key": "BULLET_EMITTE_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_EMITTE_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random radius around owner"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Higher elevation"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nearby victim origin. If no victims, targets projectile origin."
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random radius around nearest victim"
+        }
+      ]
+    }
+  ]
+}

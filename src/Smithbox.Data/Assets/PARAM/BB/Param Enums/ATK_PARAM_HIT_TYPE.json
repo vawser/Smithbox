@@ -1,0 +1,47 @@
+{
+  "Key": "ATK_PARAM_HIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PARAM_HIT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal (tip)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Root"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map collision detection"
+        }
+      ]
+    }
+  ]
+}

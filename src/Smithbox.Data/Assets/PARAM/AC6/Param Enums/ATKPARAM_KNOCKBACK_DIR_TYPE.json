@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_KNOCKBACK_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_KNOCKBACK_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No correction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corrected by angle of attacker and victim"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corrected by the angle of the attacker and victim in the horizontal direction only"
+        }
+      ]
+    }
+  ]
+}

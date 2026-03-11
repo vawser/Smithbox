@@ -1,0 +1,29 @@
+{
+  "Key": "DECAL_PARAM_BLEND_MODE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_PARAM_BLEND_MODE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mode 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mode 2"
+        }
+      ]
+    }
+  ]
+}

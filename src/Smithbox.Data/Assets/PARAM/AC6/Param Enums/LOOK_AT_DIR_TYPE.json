@@ -1,0 +1,38 @@
+{
+  "Key": "LOOK_AT_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOOK_AT_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera"
+        }
+      ]
+    }
+  ]
+}

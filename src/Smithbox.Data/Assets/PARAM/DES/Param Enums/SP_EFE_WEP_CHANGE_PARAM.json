@@ -1,0 +1,56 @@
+{
+  "Key": "SP_EFE_WEP_CHANGE_PARAM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFE_WEP_CHANGE_PARAM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply to All"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right-hand weapon attacks only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left-hand weapon attacks only"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kick"
+        }
+      ]
+    }
+  ]
+}

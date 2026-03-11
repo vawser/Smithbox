@@ -1,0 +1,29 @@
+{
+  "Key": "GRASS_SHADOW_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRASS_SHADOW_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "On"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Off"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Key": "ASSET_SLOD_CAP_ANGLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_SLOD_CAP_ANGLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20 Degrees"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "30 Degrees"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "45 Degrees"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "90 Degrees"
+        }
+      ]
+    }
+  ]
+}

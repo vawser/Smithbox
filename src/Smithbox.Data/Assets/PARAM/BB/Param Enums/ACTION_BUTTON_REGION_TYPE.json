@@ -1,0 +1,29 @@
+{
+  "Key": "ACTION_BUTTON_REGION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ACTION_BUTTON_REGION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cylinder"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Square"
+        }
+      ]
+    }
+  ]
+}

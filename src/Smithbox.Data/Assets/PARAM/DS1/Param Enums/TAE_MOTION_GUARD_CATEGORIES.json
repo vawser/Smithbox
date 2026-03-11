@@ -1,0 +1,38 @@
+{
+  "Key": "TAE_MOTION_GUARD_CATEGORIES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TAE_MOTION_GUARD_CATEGORIES"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    }
+  ]
+}

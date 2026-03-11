@@ -1,0 +1,20 @@
+{
+  "Key": "GOODS_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GOODS_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recovery"
+        }
+      ]
+    }
+  ]
+}

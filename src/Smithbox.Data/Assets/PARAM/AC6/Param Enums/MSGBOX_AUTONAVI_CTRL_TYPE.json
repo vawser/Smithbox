@@ -1,0 +1,38 @@
+{
+  "Key": "MSGBOX_AUTONAVI_CTRL_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MSGBOX_AUTONAVI_CTRL_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Continue"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Suspend"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yes to Continue"
+        }
+      ]
+    }
+  ]
+}

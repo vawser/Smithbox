@@ -1,0 +1,218 @@
+{
+  "Key": "CS_PAD_KEY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CS_PAD_KEY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up"
+        }
+      ]
+    },
+    {
+      "Key": "2001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Down"
+        }
+      ]
+    },
+    {
+      "Key": "2002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left"
+        }
+      ]
+    },
+    {
+      "Key": "2003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right"
+        }
+      ]
+    },
+    {
+      "Key": "2004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A"
+        }
+      ]
+    },
+    {
+      "Key": "2005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "B"
+        }
+      ]
+    },
+    {
+      "Key": "2006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X"
+        }
+      ]
+    },
+    {
+      "Key": "2007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y"
+        }
+      ]
+    },
+    {
+      "Key": "2008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Bottom Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "2009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Bottom Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Stick: Push"
+        }
+      ]
+    },
+    {
+      "Key": "2011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Stick: Push"
+        }
+      ]
+    },
+    {
+      "Key": "2012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back"
+        }
+      ]
+    },
+    {
+      "Key": "2013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start"
+        }
+      ]
+    },
+    {
+      "Key": "2900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OK"
+        }
+      ]
+    },
+    {
+      "Key": "2901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cancel"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Top Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "3001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Top Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "3002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Stick: X"
+        }
+      ]
+    },
+    {
+      "Key": "3003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Stick: Y"
+        }
+      ]
+    },
+    {
+      "Key": "3004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Stick: X"
+        }
+      ]
+    },
+    {
+      "Key": "3005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Stick: Y"
+        }
+      ]
+    }
+  ]
+}

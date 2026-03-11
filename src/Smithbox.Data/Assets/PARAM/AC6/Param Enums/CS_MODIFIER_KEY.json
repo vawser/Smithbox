@@ -1,0 +1,47 @@
+{
+  "Key": "CS_MODIFIER_KEY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CS_MODIFIER_KEY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ctrl +"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt +"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shift +"
+        }
+      ]
+    }
+  ]
+}

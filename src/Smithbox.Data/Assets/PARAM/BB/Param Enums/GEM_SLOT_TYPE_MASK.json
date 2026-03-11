@@ -1,0 +1,56 @@
+{
+  "Key": "GEM_SLOT_TYPE_MASK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GEM_SLOT_TYPE_MASK"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Radial"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Triangle"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Waning"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Circle"
+        }
+      ]
+    },
+    {
+      "Key": "2147483904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    }
+  ]
+}

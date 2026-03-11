@@ -1,0 +1,47 @@
+{
+  "Key": "TUTORIAL_EXT_ACTJUDGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TUTORIAL_EXT_ACTJUDGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multi-lock firing with right back missile"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Was lock target switched"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Was lock assist mode switched"
+        }
+      ]
+    }
+  ]
+}

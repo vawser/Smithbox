@@ -1,0 +1,38 @@
+{
+  "Key": "WEP_DISP_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_DISP_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right hand"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left hand"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other"
+        }
+      ]
+    }
+  ]
+}

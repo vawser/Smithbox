@@ -1,0 +1,47 @@
+{
+  "Key": "Mask",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "Mask"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Show Male / Show Female"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hide Male / Hide Female"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hide Male / Show Female"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Show Male / Hide Female"
+        }
+      ]
+    }
+  ]
+}

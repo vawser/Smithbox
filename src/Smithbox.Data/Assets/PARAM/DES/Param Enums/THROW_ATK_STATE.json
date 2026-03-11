@@ -1,0 +1,20 @@
+{
+  "Key": "THROW_ATK_STATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_ATK_STATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    }
+  ]
+}

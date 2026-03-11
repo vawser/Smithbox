@@ -1,0 +1,47 @@
+{
+  "Key": "WEAPON_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy Combat Art"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Martial Art"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Latent Skill"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Useable weapons"
+        }
+      ]
+    }
+  ]
+}

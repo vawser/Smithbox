@@ -1,0 +1,47 @@
+{
+  "Key": "EQUIP_ATK_POWER_COND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_ATK_POWER_COND_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack Power only"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack Power * Number of Simultaneous Shots"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack Power * Max Number of Multi-Stage Hits"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack Power * Number of Simultaneous Shots * Max Number of Multi-Stage Hits"
+        }
+      ]
+    }
+  ]
+}

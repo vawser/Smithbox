@@ -1,0 +1,38 @@
+{
+  "Key": "ASSET_HIT_CREATE_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_HIT_CREATE_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LO Only"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HI Only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    }
+  ]
+}

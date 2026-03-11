@@ -1,0 +1,38 @@
+{
+  "Key": "ATK_PARAM_MAP_HIT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PARAM_MAP_HIT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Projectile"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hazard"
+        }
+      ]
+    }
+  ]
+}

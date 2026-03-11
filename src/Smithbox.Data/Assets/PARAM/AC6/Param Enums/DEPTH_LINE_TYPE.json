@@ -1,0 +1,65 @@
+{
+  "Key": "DEPTH_LINE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DEPTH_LINE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single Color: Straight Line"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single Color: Concentric Circle"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Texture: Line Addition"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Texture: Concentric Circle Addition"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Texture: Translucent Line Addition"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Texture: Translucent Concentric Circle Addition"
+        }
+      ]
+    }
+  ]
+}

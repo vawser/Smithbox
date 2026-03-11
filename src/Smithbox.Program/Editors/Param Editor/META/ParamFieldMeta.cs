@@ -118,7 +118,8 @@ public class ParamFieldMeta
         XmlAttribute Enum = fieldMeta.Attributes["Enum"];
         if (Enum != null)
         {
-            EnumType = parent.ParamEnums.GetValueOrDefault(Enum.InnerText, null);
+            ShowProjectEnumList = true;
+            ProjectEnumType = Enum.InnerText;
         }
 
         XmlAttribute ProjectEnum = fieldMeta.Attributes["ProjectEnum"];

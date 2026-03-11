@@ -1,0 +1,479 @@
+{
+  "Key": "SP_EFFECT_SPCATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_SPCATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Persist through Death"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stack Self"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reset on Apply"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "163",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "166",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "167",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "168",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "174",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous w/ Matching Priority"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "1006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Highest (Category Priority)"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First"
+        }
+      ]
+    },
+    {
+      "Key": "10001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Damage Level Change)"
+        }
+      ]
+    },
+    {
+      "Key": "10002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First"
+        }
+      ]
+    },
+    {
+      "Key": "10003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Blood Loss)"
+        }
+      ]
+    },
+    {
+      "Key": "10004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Poison)"
+        }
+      ]
+    },
+    {
+      "Key": "10005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Scarlet Rot)"
+        }
+      ]
+    },
+    {
+      "Key": "10006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First"
+        }
+      ]
+    },
+    {
+      "Key": "10007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Frostbite)"
+        }
+      ]
+    },
+    {
+      "Key": "10008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Death Blight)"
+        }
+      ]
+    },
+    {
+      "Key": "10009",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Sleep)"
+        }
+      ]
+    },
+    {
+      "Key": "10010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Madness)"
+        }
+      ]
+    }
+  ]
+}

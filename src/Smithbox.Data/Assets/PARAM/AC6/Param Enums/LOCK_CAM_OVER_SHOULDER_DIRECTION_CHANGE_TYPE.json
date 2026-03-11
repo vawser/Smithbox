@@ -1,0 +1,47 @@
+{
+  "Key": "LOCK_CAM_OVER_SHOULDER_DIRECTION_CHANGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOCK_CAM_OVER_SHOULDER_DIRECTION_CHANGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Press and Hold (Angle)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Press and Hold (Time)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play Short"
+        }
+      ]
+    }
+  ]
+}

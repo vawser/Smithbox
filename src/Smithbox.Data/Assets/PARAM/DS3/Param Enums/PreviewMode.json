@@ -1,0 +1,38 @@
+{
+  "Key": "PreviewMode",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PreviewMode"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Body Armored"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Body Naked"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face Close Up"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "ATK_PARAM_PARTSDMGTYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PARAM_PARTSDMGTYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arrows"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All attacks"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "ATK_PATAM_GRABFLAG_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_PATAM_GRABFLAG_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grab Start"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grab Finish"
+        }
+      ]
+    }
+  ]
+}

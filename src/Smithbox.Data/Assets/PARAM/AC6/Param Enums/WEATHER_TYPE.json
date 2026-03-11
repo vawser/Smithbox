@@ -1,0 +1,83 @@
+{
+  "Key": "WEATHER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEATHER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sunny"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rain"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Storm (Weak)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Storm (Strong)"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Geyser"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Geyser (Small and Large)"
+        }
+      ]
+    },
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "-2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "All Weather"
+        }
+      ]
+    }
+  ]
+}

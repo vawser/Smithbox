@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_DEFLECTED_ACTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_DEFLECTED_ACTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play animation xxx"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play animation xxx"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Reaction"
+        }
+      ]
+    }
+  ]
+}

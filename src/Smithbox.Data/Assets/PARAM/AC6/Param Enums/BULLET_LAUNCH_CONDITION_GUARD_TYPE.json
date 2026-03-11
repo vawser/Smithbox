@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_LAUNCH_CONDITION_GUARD_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_LAUNCH_CONDITION_GUARD_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only if not guarded"
+        }
+      ]
+    }
+  ]
+}

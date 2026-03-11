@@ -1,0 +1,47 @@
+{
+  "Key": "AI_SOUND_RANK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AI_SOUND_RANK"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal Sound"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Important Sound"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Threat Sound"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Auditory Hallucination"
+        }
+      ]
+    }
+  ]
+}

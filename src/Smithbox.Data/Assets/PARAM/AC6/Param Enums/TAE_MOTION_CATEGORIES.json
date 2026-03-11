@@ -1,0 +1,281 @@
+{
+  "Key": "TAE_MOTION_CATEGORIES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TAE_MOTION_CATEGORIES"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BURST RIFLE / LINEAR RIFLE"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BURST ASSAULT RIFLE / ASSAULT RIFLE / HEAVY MACHINE GUN"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BURST MACHINE GUN / MACHINE GUN"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "GATLING GUN"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BAZOOKA"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SHOTGUN"
+        }
+      ]
+    },
+    {
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "GRENADE LAUNCHER"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NEEDLE GUN / BURST HANDGUN / BOMB LAUNCHER / STUN GUN"
+        }
+      ]
+    },
+    {
+      "Key": "208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HANDGUN"
+        }
+      ]
+    },
+    {
+      "Key": "209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "MISSILE LAUNCHER / SIEGE MISSILE LAUNCHER"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SPLIT MISSILE LAUNCHER / PULSE MISSILE LAUNCHER"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER HANDGUN / CORAL RIFLE / LASER RIFLE / MULTI ENERGY RIFLE"
+        }
+      ]
+    },
+    {
+      "Key": "212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PLASMA RIFLE / CORAL RIFLE"
+        }
+      ]
+    },
+    {
+      "Key": "213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PULSE GUN"
+        }
+      ]
+    },
+    {
+      "Key": "214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "FLAMETHROWER"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER SHOTGUN"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LIGHT WAVE BLADE / CORAL OSCILLATOR"
+        }
+      ]
+    },
+    {
+      "Key": "251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CORAL OSCILLATOR"
+        }
+      ]
+    },
+    {
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PLASMA THROWER"
+        }
+      ]
+    },
+    {
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PILE BUNKER"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PULSE BLADE"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER BLADE"
+        }
+      ]
+    },
+    {
+      "Key": "256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER SLICER"
+        }
+      ]
+    },
+    {
+      "Key": "257",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER DAGGER"
+        }
+      ]
+    },
+    {
+      "Key": "258",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LASER LANCE"
+        }
+      ]
+    },
+    {
+      "Key": "259",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CHAINSAW"
+        }
+      ]
+    },
+    {
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "STUN BATON"
+        }
+      ]
+    },
+    {
+      "Key": "261",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EXPLOSIVE THROWER"
+        }
+      ]
+    },
+    {
+      "Key": "262",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "FISTS"
+        }
+      ]
+    }
+  ]
+}

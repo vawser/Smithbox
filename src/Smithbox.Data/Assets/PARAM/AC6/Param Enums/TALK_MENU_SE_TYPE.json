@@ -1,0 +1,47 @@
+{
+  "Key": "TALK_MENU_SE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TALK_MENU_SE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Com Sound On 1"
+        }
+      ]
+    },
+    {
+      "Key": "1501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Com Sound On 2"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Com Sound Off 1"
+        }
+      ]
+    },
+    {
+      "Key": "1601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Com Sound Off 2"
+        }
+      ]
+    }
+  ]
+}

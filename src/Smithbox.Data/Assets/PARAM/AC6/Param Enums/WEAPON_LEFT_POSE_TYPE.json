@@ -1,0 +1,29 @@
+{
+  "Key": "WEAPON_LEFT_POSE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_LEFT_POSE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Built-in"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double Trigger only"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "DEFLECT_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DEFLECT_ACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker's Right"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker's Left"
+        }
+      ]
+    }
+  ]
+}

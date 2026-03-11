@@ -29,6 +29,52 @@ public class QuickScript
         ConvertParamMeta(curProject);
     }
 
+    public static void ConvertEnums(ProjectEntry curProject)
+    {
+        var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
+
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        var paramData = curProject.Handler.ParamData;
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in paramData.ParamMeta)
+        {
+            var meta = entry.Value;
+
+            var enums = meta.ParamEnums.Values;
+
+            foreach (var enumEntry in enums)
+            {
+                var outputPath = Path.Combine(outputFolder, $"{enumEntry.Name}.json");
+
+                var newEnum = new ParamEnumEntry(enumEntry.Name, enumEntry.Name);
+
+                foreach(var opt in enumEntry.Values)
+                {
+                    var newOpt = new ParamEnumOption(opt.Key, opt.Value);
+                    newEnum.Options.Add(newOpt);
+                }
+
+                var jsonString = JsonSerializer.Serialize(newEnum, typeof(ParamEnumEntry), options);
+
+                File.WriteAllText(outputPath, jsonString);
+            }
+        }
+    }
+
     public static void ConvertParamMeta(ProjectEntry curProject)
     {
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
@@ -106,24 +152,24 @@ public class QuickScript
         root.AppendChild(self);
 
         // --- Enums node ---
-        if (meta.ParamEnums.Any())
-        {
-            XmlElement enums = doc.CreateElement("Enums");
-            foreach (var (_, paramEnum) in meta.ParamEnums)
-            {
-                XmlElement enumEl = doc.CreateElement("Enum");
-                enumEl.SetAttribute("Name", paramEnum.Name);
-                foreach (var (value, name) in paramEnum.Values)
-                {
-                    XmlElement option = doc.CreateElement("Option");
-                    option.SetAttribute("Value", value);
-                    option.SetAttribute("Name", name);
-                    enumEl.AppendChild(option);
-                }
-                enums.AppendChild(enumEl);
-            }
-            root.AppendChild(enums);
-        }
+        //if (meta.ParamEnums.Any())
+        //{
+        //    XmlElement enums = doc.CreateElement("Enums");
+        //    foreach (var (_, paramEnum) in meta.ParamEnums)
+        //    {
+        //        XmlElement enumEl = doc.CreateElement("Enum");
+        //        enumEl.SetAttribute("Name", paramEnum.Name);
+        //        foreach (var (value, name) in paramEnum.Values)
+        //        {
+        //            XmlElement option = doc.CreateElement("Option");
+        //            option.SetAttribute("Value", value);
+        //            option.SetAttribute("Name", name);
+        //            enumEl.AppendChild(option);
+        //        }
+        //        enums.AppendChild(enumEl);
+        //    }
+        //    root.AppendChild(enums);
+        //}
 
         // --- ColorEdit node ---
         if (meta.ColorEditors.Any())
@@ -190,7 +236,7 @@ public class QuickScript
                 fieldEl.SetAttribute("Enum", fieldMeta.EnumType.Name);
 
             if (fieldMeta.ShowProjectEnumList)
-                fieldEl.SetAttribute("ProjectEnum", fieldMeta.ProjectEnumType);
+                fieldEl.SetAttribute("Enum", fieldMeta.ProjectEnumType);
 
             if (fieldMeta.IsBool)
                 fieldEl.SetAttribute("IsBool", "");

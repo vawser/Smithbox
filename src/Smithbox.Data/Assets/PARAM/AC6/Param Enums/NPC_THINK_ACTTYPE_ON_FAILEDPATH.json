@@ -1,0 +1,56 @@
+{
+  "Key": "NPC_THINK_ACTTYPE_ON_FAILEDPATH",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_ACTTYPE_ON_FAILEDPATH"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing (move straight ahead)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stand by (fixed position)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stand by (change position periodically)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wander"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Return to home point"
+        }
+      ]
+    }
+  ]
+}

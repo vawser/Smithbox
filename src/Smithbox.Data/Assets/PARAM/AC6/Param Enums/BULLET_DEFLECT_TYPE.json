@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_DEFLECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_DEFLECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Simple"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Detailed"
+        }
+      ]
+    }
+  ]
+}

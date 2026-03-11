@@ -1,0 +1,38 @@
+{
+  "Key": "MENU_COLOR_LERP_MODE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_COLOR_LERP_MODE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2"
+        }
+      ]
+    }
+  ]
+}

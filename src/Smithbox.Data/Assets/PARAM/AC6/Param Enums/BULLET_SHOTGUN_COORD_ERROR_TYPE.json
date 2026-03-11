@@ -1,0 +1,47 @@
+{
+  "Key": "BULLET_SHOTGUN_COORD_ERROR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SHOTGUN_COORD_ERROR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up/Down/Left/Right"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Front/Back/Left/Right"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Up/Down"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Omnidirectional"
+        }
+      ]
+    }
+  ]
+}

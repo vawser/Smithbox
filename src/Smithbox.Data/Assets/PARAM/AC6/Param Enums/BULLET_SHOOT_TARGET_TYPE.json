@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_SHOOT_TARGET_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SHOOT_TARGET_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lock Target"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Point Specification"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shooter"
+        }
+      ]
+    }
+  ]
+}

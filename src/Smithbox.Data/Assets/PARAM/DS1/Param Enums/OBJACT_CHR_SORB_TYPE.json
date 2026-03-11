@@ -1,0 +1,29 @@
+{
+  "Key": "OBJACT_CHR_SORB_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJACT_CHR_SORB_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move to Dummy Polygon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn towards Dummy Polygon"
+        }
+      ]
+    }
+  ]
+}

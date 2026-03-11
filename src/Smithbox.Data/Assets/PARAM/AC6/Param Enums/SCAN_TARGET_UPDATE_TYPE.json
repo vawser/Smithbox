@@ -1,0 +1,29 @@
+{
+  "Key": "SCAN_TARGET_UPDATE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SCAN_TARGET_UPDATE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Constantly Updated"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Only at Moment of Use"
+        }
+      ]
+    }
+  ]
+}

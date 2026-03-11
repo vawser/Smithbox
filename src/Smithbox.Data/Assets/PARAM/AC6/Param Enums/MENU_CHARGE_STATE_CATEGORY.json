@@ -1,0 +1,38 @@
+{
+  "Key": "MENU_CHARGE_STATE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_CHARGE_STATE_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Base Charge"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Charge"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Charge (Two-Stage)"
+        }
+      ]
+    }
+  ]
+}

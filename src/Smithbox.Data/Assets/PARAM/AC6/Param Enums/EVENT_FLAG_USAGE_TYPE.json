@@ -1,0 +1,20 @@
+{
+  "Key": "EVENT_FLAG_USAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_USAGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ON/OFF"
+        }
+      ]
+    }
+  ]
+}
