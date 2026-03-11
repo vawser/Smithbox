@@ -44,6 +44,8 @@ public class ParamPinGroups
 
         if (ImGui.CollapsingHeader("Pin Groups"))
         {
+            ImGui.BeginChild("PinGroupToolSection");
+
             UpdateGroupList();
 
             UIHelper.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
@@ -184,6 +186,8 @@ public class ParamPinGroups
             }
 
             ImGui.Columns(1);
+
+            ImGui.EndChild();
         }
     }
     

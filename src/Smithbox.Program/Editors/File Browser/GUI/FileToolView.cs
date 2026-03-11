@@ -89,6 +89,8 @@ public class FileToolView
 
     public void DisplayUnpacker()
     {
+        ImGui.BeginChild("GameUnpackerToolSection");
+
         var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
@@ -243,6 +245,8 @@ public class FileToolView
 
             ImGui.EndChild();
         }
+
+        ImGui.EndChild();
     }
 
     public bool HasUnpackedGame()

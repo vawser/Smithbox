@@ -85,7 +85,9 @@ public class DisplayGroupTool
         {
             if (ImGui.CollapsingHeader("Render Groups"))
             {
+                ImGui.BeginChild("RenderGroupToolSection");
                 DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
+                ImGui.EndChild();
             }
         }
     }

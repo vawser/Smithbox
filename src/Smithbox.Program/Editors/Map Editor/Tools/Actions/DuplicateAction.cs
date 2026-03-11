@@ -67,7 +67,9 @@ public class DuplicateAction
 
         if (ImGui.CollapsingHeader("Duplicate"))
         {
+            ImGui.BeginChild("DuplicateToolSection");
             DisplayMenu();
+            ImGui.EndChild();
         }
     }
 

@@ -30,6 +30,8 @@ public class ModelInsightView
             if (View.Selection.SelectedModelWrapper == null)
                 return;
 
+            ImGui.BeginChild("ModelInsightToolSection");
+
             var curModelData = View.ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedModelWrapper.Name);
 
             if (curModelData.Value != null && curModelData.Value != View.ModelInsightHelper.SelectedDataEntry)
@@ -50,6 +52,8 @@ public class ModelInsightView
             }
 
             Display();
+
+            ImGui.EndChild();
         }
     }
 

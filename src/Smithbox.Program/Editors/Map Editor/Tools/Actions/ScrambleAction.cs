@@ -72,6 +72,8 @@ public class ScrambleAction
 
         if (ImGui.CollapsingHeader("Scramble"))
         {
+            ImGui.BeginChild("ScrambleToolSection");
+
             var randomOffsetMin_Pos_X = CFG.Current.Scrambler_OffsetMin_Position_X;
             var randomOffsetMin_Pos_Y = CFG.Current.Scrambler_OffsetMin_Position_Y;
             var randomOffsetMin_Pos_Z = CFG.Current.Scrambler_OffsetMin_Position_Z;
@@ -283,6 +285,8 @@ public class ScrambleAction
             {
                 ApplyScramble();
             }
+
+            ImGui.EndChild();
         }
     }
 

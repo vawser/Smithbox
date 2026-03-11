@@ -204,7 +204,11 @@ public class RotateAction
 
         if (ImGui.CollapsingHeader("Rotate"))
         {
+            ImGui.BeginChild("RotateToolSection");
+
             DisplayMenu();
+
+            ImGui.EndChild();
         }
     }
 

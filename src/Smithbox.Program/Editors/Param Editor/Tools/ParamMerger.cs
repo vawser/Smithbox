@@ -43,6 +43,8 @@ public class ParamMerger
         // Merge Params
         if (ImGui.CollapsingHeader("Param Merger"))
         {
+            ImGui.BeginChild("ParamMergerToolSection");
+
             UIHelper.WrappedText("Select a compatible project below to merge into your current project.");
             UIHelper.WrappedText("");
             UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
@@ -199,6 +201,8 @@ public class ParamMerger
             }
 
             UIHelper.WrappedText("");
+
+            ImGui.EndChild();
         }
     }
 

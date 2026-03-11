@@ -43,7 +43,9 @@ public class ModelMaskToggler
 
         //    ImGui.Separator();
 
+        //ImGui.BeginChild("ModelMAskToolSection");
         //    Display();
+        //ImGui.EndChild();
         //}
     }
 

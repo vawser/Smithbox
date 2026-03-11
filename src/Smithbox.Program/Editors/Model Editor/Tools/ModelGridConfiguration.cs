@@ -21,6 +21,8 @@ public class ModelGridConfiguration
     {
         if (ImGui.CollapsingHeader("Model Grid Configuration"))
         {
+            ImGui.BeginChild("ModelGridToolSection");
+
             // Primary
             if (CurrentModelGridType is TargetMapGridType.Primary)
             {
@@ -257,6 +259,8 @@ public class ModelGridConfiguration
                 }
                 UIHelper.Tooltip("The number of grid squares that make up the grid.");
             }
+
+            ImGui.EndChild();
         }
     }
 }

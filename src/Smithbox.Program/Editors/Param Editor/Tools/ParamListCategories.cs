@@ -38,6 +38,8 @@ public class ParamListCategories
     {
         if (ImGui.CollapsingHeader("Param List Categories"))
         {
+            ImGui.BeginChild("ParamListCategories");
+
             var categories = Project.Handler.ParamData.ParamCategories;
 
             if (categories == null)
@@ -256,6 +258,8 @@ public class ParamListCategories
                     }
                 }
             }
+
+            ImGui.EndChild();
         }
     }
 

@@ -194,6 +194,8 @@ public class ParamToolMenu
                 {
                     if (ImGui.CollapsingHeader("Data Finders"))
                     {
+                        ImGui.BeginChild("DataFinderToolSection");
+
                         if (ImGui.BeginTabBar("dataFinderTabs"))
                         {
 
@@ -241,6 +243,8 @@ public class ParamToolMenu
 
                             ImGui.EndTabBar();
                         }
+
+                        ImGui.EndChild();
                     }
                 }
 
@@ -248,6 +252,8 @@ public class ParamToolMenu
                 {
                     if (ImGui.CollapsingHeader("Mass Edit"))
                     {
+                        ImGui.BeginChild("MassEditToolSection");
+
                         if (ImGui.BeginTabBar("massEditTabs"))
                         {
 
@@ -268,6 +274,8 @@ public class ParamToolMenu
 
                             ImGui.EndTabBar();
                         }
+
+                        ImGui.EndChild();
                     }
                 }
             }

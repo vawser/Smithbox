@@ -69,6 +69,8 @@ public class ReplicateAction
 
         if (ImGui.CollapsingHeader("Replicate"))
         {
+            ImGui.BeginChild("ReplicateToolSection");
+
             UIHelper.SimpleHeader("Replicate Style", "Replicate Style", "The style in which the replication occurs.", UI.Current.ImGui_Default_Text_Color);
 
             if (ImGui.Checkbox("Line", ref CFG.Current.Replicator_Mode_Line))
@@ -251,6 +253,8 @@ public class ReplicateAction
             {
                 ApplyReplicate();
             }
+
+            ImGui.EndChild();
         }
     }
 

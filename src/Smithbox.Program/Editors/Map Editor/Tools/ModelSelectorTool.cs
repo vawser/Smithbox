@@ -33,6 +33,8 @@ public class ModelSelectorTool
     {
         if (ImGui.CollapsingHeader("Model Selector"))
         {
+            ImGui.BeginChild("ModelSelectorToolSection");
+
             ImGui.InputText($"##selectorFilter", ref _searchInput, 255);
             UIHelper.Tooltip("Filter the model selector list. Separate terms are split via the + character.");
 
@@ -74,6 +76,8 @@ public class ModelSelectorTool
             {
                 ImGui.Text("You must select a valid map object first.");
             }
+
+            ImGui.EndChild();
         }
     }
 

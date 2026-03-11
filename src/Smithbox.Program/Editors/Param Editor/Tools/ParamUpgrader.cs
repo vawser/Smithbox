@@ -38,7 +38,9 @@ public class ParamUpgrader
 
         if (ImGui.CollapsingHeader("Param Upgrader"))
         {
+            ImGui.BeginChild("ParamUpgraderToolSection");
             UpgraderMenu();
+            ImGui.EndChild();
         }
     }
 

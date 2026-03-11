@@ -23,6 +23,8 @@ public class MapGridTool
     {
         if (ImGui.CollapsingHeader("Map Grid Configuration"))
         {
+            ImGui.BeginChild("GridConfigToolSection");
+
             // Primary
             if (CurrentMapGridType is TargetMapGridType.Primary)
             {
@@ -259,6 +261,8 @@ public class MapGridTool
                 }
                 UIHelper.Tooltip("The number of grid squares that make up the grid.");
             }
+
+            ImGui.EndChild();
         }
     }
 }

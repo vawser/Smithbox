@@ -27,6 +27,8 @@ public class TextureExport
 
         if (ImGui.CollapsingHeader("Export Texture"))
         {
+            ImGui.BeginChild("TextureExportToolSection");
+
             UIHelper.WrappedText("Export the viewed texture.");
             UIHelper.WrappedText("");
 
@@ -72,6 +74,8 @@ public class TextureExport
             {
                 ExportTextureHandler();
             }
+
+            ImGui.EndChild();
         }
     }
 

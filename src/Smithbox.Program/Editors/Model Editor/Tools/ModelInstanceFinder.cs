@@ -40,6 +40,8 @@ public class ModelInstanceFinder
 
         if (ImGui.CollapsingHeader("Model Instance Finder"))
         {
+            ImGui.BeginChild("ModelInstanceFinderToolSection");
+
             UIHelper.WrappedText("Search through all maps for usage of the specificed model name.");
             UIHelper.WrappedText("");
 
@@ -63,6 +65,8 @@ public class ModelInstanceFinder
             UIHelper.WrappedText("");
 
             DisplayInstances();
+
+            ImGui.EndChild();
         }
     }
 

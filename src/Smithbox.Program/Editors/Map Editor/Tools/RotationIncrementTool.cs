@@ -42,6 +42,8 @@ public class RotationIncrementTool
 
         if (ImGui.CollapsingHeader("Rotation Increments"))
         {
+            ImGui.BeginChild("RotationIncrementToolSection");
+
             UIHelper.SimpleHeader("Current Rotation Increment", "Current Rotation Increment", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
             View.RotationIncrementTool.DisplayCurrentRotateIncrement();
@@ -104,6 +106,8 @@ public class RotationIncrementTool
                 CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
             }
             UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+            ImGui.EndChild();
         }
     }
 

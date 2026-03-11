@@ -210,6 +210,8 @@ public class PositionIncrementTool
 
         if (ImGui.CollapsingHeader("Position Increments"))
         {
+            ImGui.BeginChild("PositionIncrementToolSection");
+
             UIHelper.SimpleHeader("Current Position Increment", "Current Position Increment", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)}", UI.Current.ImGui_Default_Text_Color);
 
             View.PositionIncrementTool.DisplayCurrentPositionIncrement();
@@ -275,6 +277,8 @@ public class PositionIncrementTool
 
             ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication);
             UIHelper.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
+
+            ImGui.EndChild();
         }
     }
 

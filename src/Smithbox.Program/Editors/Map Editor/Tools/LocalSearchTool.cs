@@ -52,7 +52,9 @@ public class LocalSearchTool
 
         if (ImGui.CollapsingHeader("Local Property Search"))
         {
+            ImGui.BeginChild("LocalPropSearchToolSection");
             Display();
+            ImGui.EndChild();
         }
     }
 

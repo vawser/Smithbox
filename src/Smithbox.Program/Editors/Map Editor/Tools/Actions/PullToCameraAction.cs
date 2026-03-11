@@ -73,6 +73,8 @@ public class PullToCameraAction
 
         if (ImGui.CollapsingHeader("Pull to Camera"))
         {
+            ImGui.BeginChild("PullToCameraToolSection");
+
             UIHelper.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
 
             DPI.ApplyInputWidth(windowWidth);
@@ -92,6 +94,8 @@ public class PullToCameraAction
             {
                 ApplyMoveToCamera();
             }
+
+            ImGui.EndChild();
         }
     }
 
