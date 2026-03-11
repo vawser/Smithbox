@@ -13,10 +13,7 @@
  - Add support for DS2 flt files
  
  
-
-  "DisplayNames": [
-      {
-        "Language": "English",
-        "Name": "Configuration"
-      }
-  ],
+- Finish converting the AlternativeOrders into Field Layouts
+- Add in all the new DS2 defs
+- Add in blank DS2 metas for the new defs
+- Add in black DS2 annotations for the new defs

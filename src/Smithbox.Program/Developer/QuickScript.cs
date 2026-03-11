@@ -26,7 +26,84 @@ public class QuickScript
 
     public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        ConvertParamMeta(curProject);
+        GenerateFieldLayouts(curProject);
+    }
+
+    public static void GenerateFieldLayouts(ProjectEntry curProject)
+    {
+        var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
+
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        var paramData = curProject.Handler.ParamData;
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in paramData.PrimaryBank.Params)
+        {
+            var key = entry.Key;
+
+            var meta = paramData.GetParamMeta(entry.Value.AppliedParamdef);
+
+            var parts = meta.AlternateOrder;
+
+            if (meta.AlternateOrder == null)
+                continue;
+
+            var outputPath = Path.Combine(outputFolder, $"{key}.json");
+
+            var newEntry = true;
+
+            var layout = new FieldLayout();
+
+            layout.Name = key;
+
+            var currentEntry = new FieldLayoutEntry();
+
+            foreach (var part in parts)
+            {
+                if(newEntry)
+                {
+                    layout.Groups.Add(currentEntry);
+
+                    currentEntry = new FieldLayoutEntry();
+
+                    var nameEntry = new FieldLayoutNameEntry();
+                    nameEntry.Language = "English";
+                    nameEntry.Name = "TODO";
+
+                    currentEntry.Names.Add(nameEntry);
+
+                    currentEntry.Key = $"TODO";
+                    currentEntry.Fields = new();
+
+                    newEntry = false;
+                }
+
+                if (part == "-")
+                {
+                    newEntry = true;
+                    continue;
+                }
+
+                currentEntry.Fields.Add(part);
+            }
+
+            var jsonString = JsonSerializer.Serialize(layout, typeof(FieldLayout), options);
+            File.WriteAllText(outputPath, jsonString);
+
+        }
     }
 
     public static void ConvertEnums(ProjectEntry curProject)

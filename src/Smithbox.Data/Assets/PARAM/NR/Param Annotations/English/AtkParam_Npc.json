@@ -941,7 +941,7 @@
     },
     {
       "Field": "statusAilmentAtkPowerCorrectRate",
-      "Name": "Status Ailment Correction",
+      "Name": "Attack Correction - Status Ailment",
       "Description": "Magnification correction is performed for the abnormal state attack power of special effects."
     },
     {

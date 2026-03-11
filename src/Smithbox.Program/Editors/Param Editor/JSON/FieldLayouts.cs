@@ -17,13 +17,13 @@ public class FieldLayout
     public string Name { get; set; }
     public bool UngroupedAtBottom { get; set; }
 
-    public List<FieldLayoutEntry> Groups { get; set; }
+    public List<FieldLayoutEntry> Groups { get; set; } = new();
 }
 
 public class FieldLayoutEntry
 {
     public string Key { get; set; }
-    public List<FieldLayoutNameEntry> Names { get; set; }
+    public List<FieldLayoutNameEntry> Names { get; set; } = new();
     public List<string> Fields { get; set; }
 
     public string GetName()

@@ -775,15 +775,52 @@ public class ParamFieldWindow
 
         if (miscFieldOrder.Count > 0)
         {
-            if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
+            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
             {
-                int idx = 0;
-                foreach (var field in miscFieldOrder)
+                bool open = ImGui.CollapsingHeader(
+                    $"Unsorted##grp_{activeParam}_misc",
+                    ImGuiTreeNodeFlags.DefaultOpen);
+
+                if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {
-                    RenderField(meta, annotations,row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    int idx = 0;
+                    foreach (var field in miscFieldOrder)
+                    {
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    }
+
+                    ImGui.EndTable();
+                }
+            }
+            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
+            {
+                UIHelper.SimpleHeader($"Unsorted", "");
+
+                if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
+                {
+                    int idx = 0;
+                    foreach (var field in miscFieldOrder)
+                    {
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    }
+
+                    ImGui.EndTable();
+                }
+            }
+            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+            {
+                if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
+                {
+                    int idx = 0;
+                    foreach (var field in miscFieldOrder)
+                    {
+                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                    }
+
+                    ImGui.EndTable();
                 }
 
-                ImGui.EndTable();
+                ImGui.Separator();
             }
         }
     }
