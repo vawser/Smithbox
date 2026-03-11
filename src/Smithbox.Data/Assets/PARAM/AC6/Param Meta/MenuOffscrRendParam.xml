@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of the camera when viewing menu elements." />
+  
+  <Field>
+    <camAtPosX
+    AltName="Gaze Point: X"
+    Wiki="The camera gaze point's position on the x-axis." />
+    
+    <camAtPosY
+    AltName="Gaze Point: Y"
+    Wiki="The camera gaze point's position on the y-axis." />
+    
+    <camAtPosZ
+    AltName="Gaze Point: Z"
+    Wiki="The camera gaze point's position on the z-axis." />
+    
+    <camDist
+    AltName="Distance"
+    Wiki="The distance the camera is from the player entity. In metres." />
+    
+    <camRotX
+    AltName="Rotation: X"
+    Wiki="The camera's rotation on the x-axis." />
+    
+    <camRotY
+    AltName="Rotation: Y"
+    Wiki="The camera's rotation on the y-axis." />
+    
+    <camFov
+    AltName="Field of View"
+    Wiki="The field of view of the camera." />
+    
+    <camDistMin
+    AltName="Minimum Distance"
+    Wiki="The minimum distance for the camera to be placed at. In metres." />
+    
+    <camDistMax
+    AltName="Maximum Distance"
+    Wiki="The maximum distance for the camera to be placed at. In metres." />
+    
+    <camRotXMin
+    AltName="Minimum Rotation: X"
+    Wiki="The minimum angle for the camera's rotation on the x-axis." />
+    
+    <camRotXMax
+    AltName="Maximum Rotation: X"
+    Wiki="The maximum angle for the camera's rotation on the x-axis." />
+    
+    <GparamID
+    AltName="GParam ID"
+    Wiki="The gparam ID to use for this camera." />
+    
+    <camOffsetX
+    AltName="Offset: X"
+    Wiki="The offset rate for the camera on the x-axis (0.5 will shift half the screen). In metres." />
+    
+    <camOffsetY
+    AltName="Offset: Y"
+    Wiki="The offset rate for the camera on the y-axis (0.5 will shift half the screen). In metres." />
+    
+    <camOffsetZ
+    AltName="Offset: Z"
+    Wiki="The offset rate for the camera on the z-axis. In metres." />
+    
+    <camRefDmyPolyId
+    AltName="Referenced Dummy Polygon ID"
+    Wiki="If set to a valid ID, the dummy polygon ID will be used to calculate the gaze point and rotation." />
+    
+    <boosterModelLookAt
+    AltName="Set Gaze Point to Booster"
+    Wiki="If ON, then the camera's gaze point is fixed to the position of the Booster model." 
+    IsBool="" />
+    
+    <HandHightRef
+    AltName="Use Hand Height for Gaze Point"
+    Wiki="If ON, hand height is used instead of core height for the gaze point." 
+    IsBool="" />
+    
+    <padbit
+    AltName=""
+    Padding="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <mapIconRefDmyPolyId
+    AltName="Mission Location Icon: Dummy Polygon ID"
+    Wiki="The dummy polygon ID that is used to place the mission location display icon." />
+    
+    <legType4LegRefParamId
+    AltName="Reference ID for Bipedal"
+    Wiki="The MenuOffscrRendParam row to use if the player is using Bipedal legs." 
+    Refs="MenuOffscrRendParam" />
+    
+    <legTypeTankRefParamId
+    AltName="Reference ID for Treads"
+    Wiki="The MenuOffscrRendParam row to use if the player is using Treads (tank legs)." 
+    Refs="MenuOffscrRendParam" />
+  </Field>
+</PARAMMETA>

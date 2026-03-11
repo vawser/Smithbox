@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of screen effect filters." />
+  
+  <Field>
+    <ToneLateralDispersion0
+    AltName="Chromatic Aberration Deviation: 0"
+    Wiki="The chormatic aberration deviation to use for this filter." />
+    
+    <ToneLateralDispersion1
+    AltName="Chromatic Aberration Deviation: 1"
+    Wiki="The chormatic aberration deviation to use for this filter." />
+    
+    <NoiseTexIdx
+    AltName="Noise Texture: Index"
+    Wiki="The index of the noise texture to use." />
+    
+    <NoizeMaskTexIdx
+    AltName="Noise Texture: Mask Index"
+    Wiki="The index of the noise texture mask to use." />
+    
+    <reserve0
+    AltName=""
+    Padding="" />
+    
+    <NoiseTexScaleX
+    AltName="Noise Texture: Horizontal Scale"
+    Wiki="The horizontal scaling for the noise texture." />
+    
+    <NoiseTexScaleY
+    AltName="Noise Texture: Vertical Scale"
+    Wiki="The vertical scaling for the noise texture." />
+    
+    <NoiseTexBlendRate
+    AltName="Noise Texture: Blend Rate"
+    Wiki="The blending rate for the noise texture." />
+    
+    <NoiseTexNoMenuDrawBlendRate
+    AltName="Noise Texture: External Blend Rate"
+    Wiki="The blend rate for the noise texture for areas outside of the menu. 0 only applies to the menu drawing area, 1 to the entire screen." />
+    
+    <NoiseTexUpdateTime
+    AltName="Noise Texture: Update Interval"
+    Wiki="The random update interval for the noise texture." />
+    
+    <Contrast
+    AltName="Contrast"
+    Wiki="The contrast value for this filter." />
+    
+    <CenterThin
+    AltName="Noise Centre Dilution"
+    Wiki="The amount of noise dilution to apply to the centre of the screen. -1 means no noise near centre, 1 means full noise near centre." />
+    
+    <reserve1
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

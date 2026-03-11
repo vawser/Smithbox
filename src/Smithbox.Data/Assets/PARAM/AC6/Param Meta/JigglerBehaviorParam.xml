@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the rotational behavior of a jiggle bone."/>
+  
+  <Field>
+    <minAccelMPSS
+    AltName="Minimum Acceleration for Rotation"
+    Wiki="The minimum acceleration to start the rotation of the bone. In metres per second ^ 2." />
+    
+    <maxAccelMPSS
+    AltName="Acceleration for Maximum Rotation"
+    Wiki="The acceleration at which the rotational force reaches it maximum value. In metres per second ^ 2." />
+    
+    <minSpeedKMH
+    AltName="Minimum Velocity for Rotation"
+    Wiki="The minimum velocity to start the rotation of the bone. In kilometres per hour." />
+    
+    <maxSpeedKMH
+    AltName="Velocity for Maximum Rotation"
+    Wiki="The velocity at which the rotational force reaches it maximum value. In kilometres per hour." />
+    
+    <rotAccelScaleX
+    AltName="Rotational Acceleration: X-Axis"
+    Wiki="The coefficient for rotating the X-axis velocity and acceleration." />
+    
+    <rotAccelScaleY
+    AltName="Rotational Acceleration: Y-Axis"
+    Wiki="The coefficient for rotating the Y-axis velocity and acceleration." />
+    
+    <rotDecayValueX
+    AltName="Rotational Decay: X-Axis"
+    Wiki="The coefficient that dampens the angular velocity on the X-axis." />
+    
+    <rotDecayValueY
+    AltName="Rotational Decay: Y-Axis"
+    Wiki="The coefficient that dampens the angular velocity on the Y-axis." />
+    
+    <limitMinAngReflecRateX
+    AltName="Reflection Rate at Minimum Angle: X-Axis"
+    Wiki="The reflection rate when the X-axis rotation reaches it's minimum angle." />
+    
+    <limitMaxAngReflecRateX
+    AltName="Reflection Rate at Maximum Angle: X-Axis"
+    Wiki="The reflection rate when the X-axis rotation reaches it's maximum angle." />
+    
+    <limitMinAngReflecRateY
+    AltName="Reflection Rate at Minimum Angle: Y-Axis"
+    Wiki="The reflection rate when the Y-axis rotation reaches it's minimum angle." />
+    
+    <limitMaxAngReflecRateY
+    AltName="Reflection Rate at Maximum Angle: Y-Axis"
+    Wiki="The reflection rate when the Y-axis rotation reaches it's maximum angle." />
+    
+    <reserved3
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the error handling for actions in the menu." />
+  
+  <Field>
+    <ErrorCode
+    AltName="Error Code"
+    Wiki="The error code for this error message."
+    Enum="MENU_ERRORHANDLING_PARAM_ERROR_CODE" />
+    
+    <MsgID
+    AltName="Error Message ID"
+    Wiki="The text ID to display for this error message." 
+    FmgRef="Modern_Menu_Dialogue" />
+    
+    <MsgCategory
+    AltName="Error Message Category"
+    Wiki="The category this error message belongs to."
+    Enum="MSGBOX_MSG_CATE" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="MENU_ERRORHANDLING_PARAM_ERROR_CODE" type="u32">
+        <Option Value="-1" Name="Other" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Unknown" />
+        <Option Value="2" Name="Invalid" />
+        <Option Value="3" Name="Out of Memory" />
+        <Option Value="12" Name="Invalid Login Version" />
+        <Option Value="15" Name="Out of Service" />
+        <Option Value="16" Name="Account Banned" />
+        <Option Value="20" Name="VAC Banned" />
+    </Enum> 
+    <Enum Name="MSGBOX_MSG_CATE" type="s16">
+        <Option Value="203" Name="System" />
+        <Option Value="204" Name="Dialog" />
+    </Enum> 
+  </Enums>
+</PARAMMETA>

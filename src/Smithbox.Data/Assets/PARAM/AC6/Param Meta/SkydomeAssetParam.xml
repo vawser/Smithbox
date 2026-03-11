@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <AssetId0 AltName="Asset Param ID [1]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId1 AltName="Asset Param ID [2]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId2 AltName="Asset Param ID [3]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId3 AltName="Asset Param ID [4]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId4 AltName="Asset Param ID [5]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId5 AltName="Asset Param ID [6]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId6 AltName="Asset Param ID [7]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId7 AltName="Asset Param ID [8]" Wiki="Asset to reference for the skybox. AEGXXX_XXX" Refs="AssetEnvironmentGeometryParam" />
+    <pad1 Padding="" />
+    <pad2 Padding="" />
+	<reserved0 Padding="" />
+  </Field>
+  <Self Wiki="Defines the skybox assets displayed at different times of day." />
+</PARAMMETA>

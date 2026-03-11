@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the default graphics configuration levels." />
+  
+  <Field>
+    <textureFilterQuality 
+    AltName="Texture Filter Quality" 
+    Wiki="The texture filter quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <aaQuality 
+    AltName="Anti-Aliasing Quality" 
+    Wiki="The anti-aliasing (AA) quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <ssaoQuality 
+    AltName="Screen-space Ambient Occlusion Quality" 
+    Wiki="The screen-space ambient occlusion (SSAO) quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <dofQuality 
+    AltName="Depth of Field Quality" 
+    Wiki="The depth of field (DOF) quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <motionBlurQuality 
+    AltName="Motion Blur Quality" 
+    Wiki="The motion blur quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <shadowQuality 
+    AltName="Shadow Quality" 
+    Wiki="The shadow quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <lightingQuality 
+    AltName="Lighting Quality" 
+    Wiki="The lighting quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <effectQuality 
+    AltName="Particle Quality" 
+    Wiki="The particle effect quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <decalQuality 
+    AltName="Decal Quality" 
+    Wiki="The decal quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <reflectionQuality 
+    AltName="Reflection Quality" 
+    Wiki="The reflection quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <waterQuality 
+    AltName="Water Quality" 
+    Wiki="The water quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <shaderQuality 
+    AltName="Shader Quality" 
+    Wiki="The shader quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <volumetricEffectQuality 
+    AltName="Volumetric Particle Quality" 
+    Wiki="The volumetric particle quality to default to." 
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <raytracingQuality
+    AltName="Raytracing Quality"
+    Wiki="The raytracing quality (RT) to default to."
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <giDataQuality
+    AltName="Global Illumination Quality"
+    Wiki="The global illumination (GI) quality to default to."
+    Enum="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" />
+    
+    <pad1 AltName=""/>
+  </Field>
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM" type="u8">
+        <Option Value="0" Name="Disabled" />
+        <Option Value="1" Name="Low" />
+        <Option Value="2" Name="Middle" />
+        <Option Value="3" Name="High" />
+        <Option Value="4" Name="Ultra" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

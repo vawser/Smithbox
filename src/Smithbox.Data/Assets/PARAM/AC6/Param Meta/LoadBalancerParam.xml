@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of the FPS load balancer."/>
+  
+  <Field>
+    <lowerFpsThreshold
+    AltName="Low FPS Threshold"
+    Wiki="If the FPS falls below this amount, then the load balancer level increases by 1." />
+    
+    <upperFpsThreshold
+    AltName="High FPS Threshold"
+    Wiki="If the FPS exceeds this amount, then the load balancer level reduces by 1." />
+    
+    <lowerFpsContinousCount
+    AltName="Low FPS Threshold Count"
+    Wiki="If the FPS falls below this amount for the specified number of consecutive frames, the load balancer level increases by 1." />
+    
+    <upperFpsContinousCount
+    AltName="High FPS Threshold Count"
+    Wiki="If the FPS exceeds this amount for the specified number of consecutive frames, the load balancer level reduces by 1." />
+    
+    <downAfterChangeSleep
+    AltName="Sleep Duration after Level Reduction"
+    Wiki="The number of frames to ignore monitoring for after a load balancer level reduction." />
+    
+    <upAfterChangeSleep
+    AltName="Sleep Duration after Level Increment"
+    Wiki="The number of frames to ignore monitoring for after a load balancer level increment." />
+    
+    <postProcessLightShaft
+    AltName="Reduction - Post Process: Light Shafts"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessBloom
+    AltName="Reduction - Post Process: Bloom"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessGlow
+    AltName="Reduction - Post Process: Glow"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessAA
+    AltName="Reduction - Post Process: Anti-Aliasing"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessSSAO
+    AltName="Reduction - Post Process: Screen-space Ambient Occulusion"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessDOF
+    AltName="Reduction - Post Process: Depth of Field"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessMotionBlur
+    AltName="Reduction - Post Process: Motion Blur"
+    Wiki="The filter level to use for this post process effect." />
+    
+    <postProcessMotionBlurIteration
+    AltName="Reduction - Post Process: Motion Blur Iteration Reduction"
+    Wiki="The reduction amount to apply to motion blur iterations." />
+    
+    <reserve0
+    AltName=""
+    Padding="" />
+    
+    <shadowBlur
+    AltName="Reduction - Shadow: Blur"
+    Wiki="The blur level to use for shadows." />
+    
+    <sfxParticleHalf
+    AltName="Reduction - Particles: Emitter Count"
+    Wiki="The reduction amount to apply to SFX emitter count." />
+    
+    <sfxReflection
+    AltName="Reduction - Particles: Reflection"
+    Wiki="The reduction amount to apply to SFX reflection." />
+    
+    <sfxWaterInteraction
+    AltName="Reduction - Particles: Water Interaction"
+    Wiki="The reduction amount to apply to SFX water interaction." />
+    
+    <sfxGlow
+    AltName="Reduction - Particles: Glow"
+    Wiki="The reduction amount to apply to SFX glow." />
+    
+    <sfxDistortion
+    AltName="Reduction - Particles: Distortion"
+    Wiki="The reduction amount to apply to SFX distortion." />
+    
+    <sftSoftSprite
+    AltName="Reduction - Particles: Soft Sprites"
+    Wiki="The reduction amount to apply to SFX soft sprites." />
+    
+    <sfxLightShaft
+    AltName="Reduction - Particles: Light Shafts"
+    Wiki="The reduction amount to apply to SFX light shafts." />
+    
+    <sfxScaleRenderDistanceScale
+    AltName="Reduction - Particles: Render Distance"
+    Wiki="Adjust the render distance of SFX in the reduced buffer based on SFX distance." />
+    
+    <dynamicResolution
+    AltName="Dynamic Resolution"
+    Wiki="The level of dynamic resolution to use." />
+    
+    <shadowCascade0ResolutionHalf
+    AltName="Shadow Resolution: Cascade 0 (Half)"
+    Wiki="Reduce the resolution of shadows (cascade 0) by half." />
+    
+    <shadowCascade1ResolutionHalf
+    AltName="Shadow Resolution: Cascade 1 (Half)"
+    Wiki="Reduce the resolution of shadows (cascade 1) by half." />
+    
+    <chrWetDisablePlayer
+    AltName="Player: Disable Wetness (Host)"
+    Wiki="Disable wetness for the host player." />
+    
+    <chrWetDisableRemotePlayer
+    AltName="Player: Disable Wetness (Client)"
+    Wiki="Disable wetness for the client players." />
+    
+    <chrWetDisableEnemy
+    AltName="Player: Disable Wetness (Enemy)"
+    Wiki="Disable wetness for enemies." />
+    
+    <dynamicResolutionPercentageMin
+    AltName="Dynamic Resolution: Minimum %"
+    Wiki="The minimum limit for dynamic resolution." />
+    
+    <dynamicResolutionPercentageMax
+    AltName="Dynamic Resolution: Maximum %"
+    Wiki="The maximum limit for dynamic resolution." />
+    
+    <sfxBulletCartridgeParticleEnableDist
+    AltName="Particles: Cartridge Emittance Distance"
+    Wiki="The distance at which cartridges will be generated, if the distance between the generation location and the camera is within this value. In metres." />
+    
+    <sfxLowerFpsThreshold
+    AltName="Particles: Low FPS Threshold"
+    Wiki="If the FPS falls below this amount due to SFX, then the load balancer level increases by 1." />
+    
+    <dynamicResolutionMinChangePeriod
+    AltName="Dynamic Resolution: Minimum Change Duration"
+    Wiki="The minimum change duration for each reduction step when reducing the resolution due to poor performance." />
+    
+    <dynamicResolutionStartResolution
+    AltName="Dynamic Resolution: Start Resolution"
+    Wiki="The initial resolution percentage for dynamic resolution (based on the the used resolution)." />
+    
+    <reserve1
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

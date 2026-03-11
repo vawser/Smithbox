@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the behavior of an attack action." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <atkStateId
+    AltName="Attack State ID"
+    Wiki="Attack state ID" />
+    
+    <behaviorJudgeId
+    AltName="Default Behavior Judgement ID"
+    Wiki="ChrBehavior control program: If 'Use behavior judgment ID' is not checked for shooting, shoot using the set behavior judgment ID" />
+    
+    <connectPartsSlotIndex
+    AltName="Connected Part Slot Index"
+    Wiki="Part number that works with this equipment when it is an enemy. This determines the slot used for the attack action." />
+    
+    <pad_01
+    AltName=""
+    Padding="" />
+    
+    <lookAtParamId
+    AltName="LookAt ID"
+    Wiki="Parameter ID of LookAt to use"
+    Refs="LookAtParam,LookAtParam_Npc" />
+    
+    <lookAtDirType 
+    AltName="LookAt Direction Type"
+    Wiki="Direction to point with LookAt"
+    Enum="LOOK_AT_DIR_TYPE" />
+    
+    <bulletShootDirType
+    AltName="Bullet Shoot Direction Type"
+    Wiki="The direction to fire bullets in"
+    Enum="BULLET_SHOOT_DIR_TYPE" />
+    
+    <pad_02
+    AltName=""
+    Padding="" />
+    
+    <triggerActionType_00
+    AltName="Trigger Action Type [00]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_01
+    AltName="Trigger Action Type [01]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_02
+    AltName="Trigger Action Type [02]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_03
+    AltName="Trigger Action Type [03]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_04
+    AltName="Trigger Action Type [04]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_05
+    AltName="Trigger Action Type [05]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_06
+    AltName="Trigger Action Type [06]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_07
+    AltName="Trigger Action Type [07]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_08
+    AltName="Trigger Action Type [08]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_09
+    AltName="Trigger Action Type [09]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_10
+    AltName="Trigger Action Type [10]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_11
+    AltName="Trigger Action Type [11]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_12
+    AltName="Trigger Action Type [2]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_13
+    AltName="Trigger Action Type [13]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_14
+    AltName="Trigger Action Type [14]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_15
+    AltName="Trigger Action Type [15]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_16
+    AltName="Trigger Action Type [16]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_17
+    AltName="Trigger Action Type [17]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_18
+    AltName="Trigger Action Type [18]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_19
+    AltName="Trigger Action Type [19]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_20
+    AltName="Trigger Action Type [20]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_21
+    AltName="Trigger Action Type [21]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_22
+    AltName="Trigger Action Type [22]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_23
+    AltName="Trigger Action Type [23]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_24
+    AltName="Trigger Action Type [24]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_25
+    AltName="Trigger Action Type [25]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_26
+    AltName="Trigger Action Type [26]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_27
+    AltName="Trigger Action Type [27]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_28
+    AltName="Trigger Action Type [28]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_29
+    AltName="Trigger Action Type [29]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_30
+    AltName="Trigger Action Type [30]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_31
+    AltName="Trigger Action Type [31]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <bladeHomingParamId
+    AltName="Blade Homing Param ID"
+    Wiki="Blade Homing param to use" 
+    Refs="BladeHomingParam" />
+    
+    <isTaeShootTimingOnly
+    AltName="Only Fire Bullet via TAE Request"
+    Wiki="The bullet is actually fired only when a shooting request comes from TAE." 
+    IsBool="" />
+    
+    <alertShowType
+    AltName="HUD: Alert Display Type"
+    Wiki="HUD alert display type"
+    Enum="ATK_ACT_PARAM_ALERT_SHOW_TYPE" />
+    
+    <alertLevel
+    AltName="HUD: Alert Level"
+    Wiki="HUD alert classification"
+    Enum="ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL" />
+    
+    <isDeadShootEnable
+    AltName="Can Shoot when Dead"
+    Wiki="Can still shoot even if dead."
+    IsBool="" />
+    
+    <lockRange
+    AltName="Lock Distance"
+    Wiki="Secondary lock distance (currently valid only for NPCs). In metres." />
+    
+    <lockTimeSec
+    AltName="Lock Time"
+    Wiki="Time until secondary lock (currently valid only for NPCs). In seconds." />
+    
+    <pad_04
+    AltName=""
+    Padding="" />
+    
+    <shootIndicationType
+    AltName="HUD: Incoming Shot Warning" 
+    Wiki="Whether to display HUD element about strong shot incoming"
+    Enum="ATK_ACT_PARAM_SHOOT_INDICATION_TYPE" />
+    
+    <isReloadInputExcludeTrigger
+    AltName="Exclude Trigger for Reload Input"
+    Wiki="Whether to exclude trigger operation during reload operation (pad operation only)" 
+    IsBool="" />
+    
+    <pad_05
+    AltName=""
+    Padding="" />
+    
+    <shootIndicationDmypolyId
+    AltName="HUD: Incoming Shot Warning - Dummy Polygon ID"
+    Wiki="Dummy Polygon ID to use for displaying Incoming Shot Warning" />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Single Attack" />
+      <Option Value="2" Name="Continuous Attack" />
+      <Option Value="3" Name="Guard" />
+      <Option Value="4" Name="Melee Attack" />
+      <Option Value="5" Name="Charge Melee Attack" />
+      <Option Value="6" Name="Charge Shoot Attack" />
+      <Option Value="7" Name="Fast Single Attack" />
+    </Enum>  
+    <Enum Name="LOOK_AT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Target" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Camera" />
+    </Enum>  
+    <Enum Name="BULLET_SHOOT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Dummy Polygon" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Dummy Polygon (Ignore Target)" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_ALERT_SHOW_TYPE" type="u8">
+      <Option Value="0" Name="Trigger" />
+      <Option Value="2" Name="Do not release" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_SHOOT_INDICATION_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Strong Shot Warning" />
+    </Enum>  
+    <Enum Name="ATK_ACT_PARAM_TRIGGER_ALERT_LEVEL" type="u8">
+      <Option Value="0" Name="Small" />
+      <Option Value="1" Name="Large" />
+      <Option Value="2" Name="Number of Levels" />
+    </Enum>  
+  </Enums>
+</PARAMMETA>

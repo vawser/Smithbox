@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters that relate to map areas." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding="" />
+    
+    <EnvMapCap00
+    AltName="Environmental Map: Morning"
+    Wiki="If the environmental map photography used for the morning time."
+    IsBool="" />
+    
+    <EnvMapCap01
+    AltName="Environmental Map: Day (A)"
+    Wiki="If the environmental map photography used for the day time."
+    IsBool="" />
+    
+    <EnvMapCap02
+    AltName="Environmental Map: Day (B)"
+    Wiki="If the environmental map photography used for the day time."
+    IsBool="" />
+    
+    <EnvMapCap03
+    AltName="Environmental Map: Evening"
+    Wiki="If the environmental map photography used for the evening time."
+    IsBool="" />
+    
+    <EnvMapCap04
+    AltName="Environmental Map: Night"
+    Wiki="If the environmental map photography used for the night time."
+    IsBool="" />
+    
+    <EnvMapCap05
+    AltName="Environmental Map: Late Night (A)"
+    Wiki="If the environmental map photography used for the late night time."
+    IsBool="" />
+    
+    <EnvMapCap06
+    AltName="Environmental Map: Late Night (B)"
+    Wiki="If the environmental map photography used for the late night time."
+    IsBool="" />
+    
+    <padding_1
+    AltName=""
+    Padding="" />
+    
+    <Reserve_0
+    AltName=""
+    Padding="" />
+    
+    <SkydomeParam00
+    AltName="Skybox ID: Morning"
+    Wiki="The skybox dome row ID to use during the morning time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam01
+    AltName="Skybox ID: Day (A)"
+    Wiki="The skybox dome row ID to use during the day time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam02
+    AltName="Skybox ID: Day (B)"
+    Wiki="The skybox dome row ID to use during the day time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam03
+    AltName="Skybox ID: Evening"
+    Wiki="The skybox dome row ID to use during the evening time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam04
+    AltName="Skybox ID: Night"
+    Wiki="The skybox dome row ID to use during the night time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam05
+    AltName="Skybox ID: Late Night (A)"
+    Wiki="The skybox dome row ID to use during the late night time." 
+    Refs="SkydomeAssetParam" />
+    
+    <SkydomeParam06
+    AltName="Skybox ID: Late Night (B)"
+    Wiki="The skybox dome row ID to use during the late night time." 
+    Refs="SkydomeAssetParam" />
+    
+    <Reserve_1
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

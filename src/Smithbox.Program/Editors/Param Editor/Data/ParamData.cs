@@ -520,9 +520,9 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
-        var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
         if (CFG.Current.Param_Editor_Enable_Param_Meta_Override)
         {
@@ -632,7 +632,7 @@ public class ParamData : IDisposable
         if (CFG.Current.Param_Editor_Enable_Param_Enum_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
-            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
 
             if (Path.Exists(projectFolder))
             {
@@ -658,7 +658,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Enum_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Enums");
+            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
 
             if (Path.Exists(sourceFolder))
             {

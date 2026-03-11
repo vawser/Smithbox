@@ -322,7 +322,7 @@ public class ProjectEnumMenu
 
     public void Save()
     {
-        var projectFolder = Path.Join(Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Orchestrator.SelectedProject.Descriptor.ProjectType), "Enums");
+        var projectFolder = Path.Join(Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
 
         var enums = Orchestrator.SelectedProject.Handler.ParamData.Enums;
 

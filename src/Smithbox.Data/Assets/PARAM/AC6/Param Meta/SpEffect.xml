@@ -1,0 +1,1686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for special effects." 
+  Row0Dummy="" />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="SpEffectParam" 
+    Name="Special Effects" />
+  </DisplayNames>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param - Product" 
+    Wiki="Parameters marked with  are excluded in the Product version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <iconId 
+    AltName="Icon ID"
+    Wiki="The icon id to display in the interface whilst the effect is active." />
+    
+    <conditionHp 
+    AltName="Trigger at HP Below %"
+    Wiki="The maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40% HP, 80 = less than 80% HP" />
+    
+    <effectEndurance 
+    AltName="Duration"
+    Wiki="The duration of effect. In seconds." />
+    
+    <motionInterval 
+    AltName="Trigger Interval"
+    Wiki="The interval for the contents of this effect to be reapplied. 0 = once per frame. In seconds." />
+    
+    <maxHpRate 
+    AltName="Maximum HP %"
+    Wiki="Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%, 2 = +100%" />
+    
+    <maxMpRate 
+    AltName="Maximum MP %"
+    Wiki="Multiplies maximum MP." 
+    Obsolete="" />
+    
+    <maxStaminaRate 
+    AltName="Maximum Stamina %"
+    Wiki="Multiplies maximum stamina." />
+    
+    <slashDamageCutRate 
+    AltName="Absorption %: Slash"
+    Wiki="Multiplies slash physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <blowDamageCutRate 
+    AltName="Absorption %: Strike"
+    Wiki="Multiplies strike physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <thrustDamageCutRate 
+    AltName="Absorption %: Thrust"
+    Wiki="Multiplies thrust physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <neutralDamageCutRate 
+    AltName="Absorption %: Kinetic"
+    Wiki="Multiplies Kinetic damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <magicDamageCutRate 
+    AltName="Absorption %: Energy"
+    Wiki="Multiplies Energy damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <fireDamageCutRate 
+    AltName="Absorption %: Explosive"
+    Wiki="Multiplies Explosive damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <thunderDamageCutRate 
+    AltName="Absorption %: Coral"
+    Wiki="Multiplies Coral damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <physicsAttackRate 
+    AltName="Post-Defense Attack %: Kinetic"
+    Wiki="Multiplies Kinetic damage dealt (post-defense, bypasses attack rating)" />
+    
+    <magicAttackRate 
+    AltName="Post-Defense Attack %: Energy"
+    Wiki="Multiplies Energy damage dealt (post-defense, bypasses attack rating)" />
+    
+    <fireAttackRate 
+    AltName="Post-Defense Attack %: Explosive"
+    Wiki="Multiplies Explosive damage dealt (post-defense, bypasses attack rating)" />
+    
+    <thunderAttackRate 
+    AltName="Post-Defense Attack %: Coral"
+    Wiki="Multiplies Coral damage dealt (post-defense, bypasses attack rating)" />
+    
+    <physicsAttackPowerRate 
+    AltName="Attack %: Kinetic"
+    Wiki="Multiplies Kinetic damage dealt." />
+    
+    <magicAttackPowerRate 
+    AltName="Attack %: Energy"
+    Wiki="Multiplies Energy damage dealt." />
+    
+    <fireAttackPowerRate 
+    AltName="Attack %: Explosive"
+    Wiki="Multiplies Explosive damage dealt." />
+    
+    <thunderAttackPowerRate 
+    AltName="Attack %: Coral"
+    Wiki="Multiplies Coral damage dealt." />
+    
+    <physicsAttackPower 
+    AltName="Damage: Kinetic"
+    Wiki="Adds Kinetic damage to attack rating." />
+    
+    <magicAttackPower 
+    AltName="Damage: Energy"
+    Wiki="Adds Energy damage to attack rating." />
+    
+    <fireAttackPower 
+    AltName="Damage: Explosive"
+    Wiki="Adds Explosive damage to attack rating." />
+    
+    <thunderAttackPower 
+    AltName="Damage: Coral"
+    Wiki="Adds Coral damage to attack rating." />
+    
+    <physicsDiffenceRate 
+    AltName="Defense %: Kinetic"
+    Wiki="Multiplies Kinetic defense." />
+    
+    <magicDiffenceRate 
+    AltName="Defense %: Energy"
+    Wiki="Multiplies Energy defense." />
+    
+    <fireDiffenceRate
+    AltName="Defense %: Explosive"
+    Wiki="Multiplies Explosive defense." />
+    
+    <thunderDiffenceRate 
+    AltName="Defense %: Coral"
+    Wiki="Multiplies Coral defense." />
+    
+    <physicsDiffence 
+    AltName="Defense: Kinetic"
+    Wiki="Adds to Kinetic defense." />
+    
+    <magicDiffence 
+    AltName="Defense: Energy"
+    Wiki="Adds to Energy defense." />
+    
+    <fireDiffence 
+    AltName="Defense: Explosive"
+    Wiki="Adds to Explosive defense." />
+    
+    <thunderDiffence 
+    AltName="Defense: Coral"
+    Wiki="Adds to Coral defense." />
+    
+    <NoGuardDamageRate 
+    AltName="Damage on Hit %: Unguarded"
+    Wiki="Multiplier to the damage suffered by the target if it is not guarding when hit." />
+    
+    <vitalSpotChangeRate 
+    AltName="Damage on Hit %: Weak Point"
+    Wiki="Multiplier to the damage suffered by the target if it is hit in a part designated as a 'weak point'." />
+    
+    <normalSpotChangeRate 
+    AltName="Damage on Hit %: Standard"
+    Wiki="Multiplier to the damage suffered by the target if it is hit normally." />
+    
+    <maxHpChangeRate 
+    AltName="Maximum HP Source Multiplier"
+    Wiki="Multiplier to the maxHpRate values present on the character this effect belongs to." />
+    
+    <behaviorId 
+    AltName="Behavior ID"
+    Wiki="The ID of BehaviorParam or BehaviorParam_PC to apply to the effect's owner.\nRequires stateInfo 142 to function for non-player characters.\nRequires stateInfo 171 to function for player characters." 
+    Refs="BehaviorParam(stateInfo=142),BehaviorParam_PC(stateInfo=171)" />
+    
+    <changeHpRate 
+    AltName="Damage HP by Percentage"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum HP of the character." />
+    
+    <changeHpPoint 
+    AltName="Damage HP by Point"
+    Wiki="Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <changeMpRate 
+    AltName="Damage MP by Percentage"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeMpPoint 
+    AltName="Damage MP by Point"
+    Wiki="Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <mpRecoverChangeSpeed 
+    AltName="MP Recovery Speed" 
+    Wiki="The amount of MP recovered per second." />
+    
+    <changeStaminaRate 
+    AltName="Damage Stamina by Percentage"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character." />
+    
+    <changeStaminaPoint 
+    AltName="Damage Stamina by Point"
+    Wiki="Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <staminaRecoverChangeSpeed 
+    AltName="Stamina Recovery Speed" 
+    Wiki="The amount of stamina recovered per second." />
+    
+    <staminaRecoverChangeSpeed 
+    AltName="Stamina Recovery Speed" 
+    Wiki="The amount of stamina recovered per second." />
+    
+    <magicEffectTimeChange 
+    AltName="Magic Effect Duration Change"
+    Wiki="For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration.\n\nLingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife." 
+    Obsolete="" />
+    
+    <insideDurability 
+    AltName="Damage Durability by Point"
+    Wiki="Causes Durability loss to the used equipment of the character this effect belongs to by the set value. Negative values will restore. The value is a flat value." />
+    
+    <maxDurability 
+    AltName="Hits per Durability Loss"
+    Wiki="Affects hits required before durability is consumed. 5 = +5 hits before durability consumed, -5 = -5 hits before durability consumed" />
+    
+    <staminaAttackRate 
+    AltName="Attack %: Stamina"
+    Wiki="Multiplies stamina damage dealt." />
+    
+    <burnAttackPower
+    AltName="Inflict: Burn"
+    Wiki="Also known as ACS Anomaly. Adds to the amount of Burn status effect inflicted." />
+    
+    <registStun 
+    AltName="Inflict: Stun"
+    Wiki="Also known as Electric Discharge. Adds to the amount of Stun status effect inflicted." />
+    
+    <registHighPlasma 
+    AltName="Inflict: Plasma"
+    Wiki="Adds to the amount of Plasma status effect inflicted." />
+    
+    <registCurse 
+    AltName="Inflict: Curse"
+    Wiki="Adds to the amount of Curse status effect inflicted." />
+    
+    <fallDamageRate 
+    AltName="Fall Damage %"
+    Wiki="Does nothing. Fall control effects use stateInfo 47" 
+    Obsolete="" />
+    
+    <soulRate 
+    AltName="Mission Score %"
+    Wiki="Multiplies score received from enemies during missions." />
+    
+    <equipWeightChangeRate 
+    AltName="Equipment Weight %"
+    Wiki="Multiplies maximum equip weight." />
+    
+    <allItemWeightChangeRate 
+    AltName="Item Weight %"
+    Wiki="Multiplies maximum item weight. Does nothing. Probable DeS remnant." 
+    Obsolete="" />
+    
+    <soul 
+    AltName="Mission Score"
+    Wiki="Flat increase/decrease to mission score." />
+    
+    <animIdOffset 
+    AltName="Animation ID Offset"
+    Wiki="Offsets animation IDs. Frequently used to make enemies swap movesets." />
+    
+    <haveSoulRate 
+    AltName="Mission Score Possession %"
+    Wiki="Multiplies the amount of score granted after death. Requires base value in character's NpcParam row." />
+    
+    <targetPriority 
+    AltName="Target Priority Addition"
+    Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
+    
+    <sightRangeMag_forEnemy 
+    AltName="Visual Search Magnification % - For Enemy"
+    Wiki="The value to magnify the effect owner's target's visual range by." />
+    
+    <sightRangeMag_forEnemyBattle 
+    AltName="Visual Search Magnification % - For Enemy in Combat"
+    Wiki="The value to magnify the effect owner's target's visual range by, when in combat." />
+    
+    <hearingSearchEnemyRate 
+    AltName="Auditory Search Magnification %"
+    Wiki="The value to magnify the effect owner's target's hearing range by." />
+    
+    <setCurseResistPoint
+    AltName="Set Curse Resistance"
+    Wiki="The effect owner's Curse resistance is set to this value." />
+    
+    <registBurnChangeRate 
+    AltName="Resistance %: Burn"
+    Wiki="Multiplies stat based Burn resistance." />
+    
+    <registStunChangeRate 
+    AltName="Resistance %: Stun"
+    Wiki="Multiplies stat based Stun resistance." />
+    
+    <registHighPlasmaChangeRate 
+    AltName="Resistance %: Plasma"
+    Wiki="Multiplies stat based Plasma resistance." />
+    
+    <registCurseChangeRate 
+    AltName="Resistance %: Curse"
+    Wiki="Multiplies stat based Curse resistance." />
+    
+    <soulStealRate 
+    AltName="Soul Steal %"
+    Wiki="The defense power against HP loss when soul steal move is used." 
+    Obsolete="" />
+    
+    <lifeReductionRate 
+    AltName="Effect Duration Change %"
+    Wiki="Multiplies the duration of the status effect with the stateInfo specified by lifeReductionType." />
+    
+    <hpRecoverRate 
+    AltName="HP Recovery %"
+    Wiki="Multiplies healing received." />
+    
+    <replaceSpEffectId 
+    AltName="Expire SpEffect ID"
+    Wiki="The ID of spEffectParam to add once this effect ends." 
+    Refs="SpEffectParam" />
+    
+    <cycleOccurrenceSpEffectId 
+    AltName="Cycle SpEffect ID"
+    Wiki="The ID of spEffectParam to add once every motionInterval." 
+    Refs="SpEffectParam" />
+    
+    <atkOccurrenceSpEffectId 
+    AltName="Attack SpEffect ID"
+    Wiki="ID of spEffectParam to add to victim when the owner hits an enemy.\nRequires stateInfo 152 or 153 (and likely other values used for weapon buffs) to work (VFX present)" 
+    Refs="SpEffectParam" />
+    
+    <guardDefFlickPowerRate 
+    AltName="Guard Defense Repulsion %"
+    Wiki="The multiplier to apply to guard defense (for deflection)." />
+    
+    <guardStaminaCutRate 
+    AltName="Guard Stability %"
+    Wiki="Multiplies shield stability. Requires stateInfo 158 (magic shield) or stateInfo 204 (great magic shield) to work (VFX present). Note that stability values over 100 nullify all stamina damage." />
+    
+    <rayCastPassedTime 
+    AltName="Raycast Passed Time"
+    Wiki="Activation time for passing the line of sight (used for the Evil Eye). In milliseconds." />
+    
+    <changeSuperArmorPoint 
+    AltName="Poise"
+    Wiki="Flat increase/decrease to poise. Requires stateInfo 155 to work." />
+    
+    <bowDistRate 
+    AltName="Ammunition Distance %" 
+    Wiki="Addition to the bowDistRate field of the held weapon for the effect's owner." />
+    
+    <spCategory 
+    AltName="SpEffect Category"
+    Wiki="Determines special effect stacking behavior; how effects will react when another effect in the same category is added." 
+    Enum="SP_EFFECT_SPCATEGORY" />
+    
+    <categoryPriority 
+    AltName="Category Priority"
+    Wiki="Used with specific spCategory values to determine stacking behavior. The higher the value, the lower the priority." />
+    
+    <saveCategory 
+    AltName="Save Category"
+    Wiki="Used to save effects so that they remain after quitting and loading the game. Only one effect per saveCategory is saved." 
+    Enum="SP_EFFECT_SAVE_CATEGORY"/>
+    
+    <changeMagicSlot 
+    AltName="Attunement Slots (Magic)"
+    Wiki="Increases attunement slots." 
+    Obsolete="" />
+    
+    <changeMiracleSlot 
+    AltName="Attunement Slots (Miracle)"
+    Wiki="Increases attunement slots." 
+    Obsolete="" />
+    
+    <heroPointDamage 
+    AltName="Damage: Humanity"
+    Wiki="Flat increase/decrease to humanity stat. -1 = add 1 humanity, 1 = remove 1 humanity" />
+    
+    <defFlickPower 
+    AltName="Repulsion Defense" 
+    Wiki="Modifies the repulsion defense for the effect owner's current weapon." />
+    
+    <flickDamageCutRate 
+    AltName="Repulsion Damage Absorption %" 
+    Wiki="The absorption rate to use when calculating the repulsion damage for the effect owner's current weapon." />
+    
+    <highPlasmaDamageRate 
+    AltName="Plasma Damage Incurred %"
+    Wiki="Multiplier to the damage portion of the Plasma status effect when it is triggered on the effect's owner." />
+    
+    <dmgLv_None 
+    AltName="Damage Level: No Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_S 
+    AltName="Damage Level: Small Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_M 
+    AltName="Damage Level: Medium Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_L 
+    AltName="Damage Level: Large Impact" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowM 
+    AltName="Damage Level: Medium Blow" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Push 
+    AltName="Damage Level: Push" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Strike 
+    AltName="Damage Level: Strike" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowS 
+    AltName="Damage Level: Small Blow" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Min 
+    AltName="Damage Level: Minimal" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Uppercut 
+    AltName="Damage Level: Uppercut" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_BlowLL 
+    AltName="Damage Level: Blow Backwards" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <dmgLv_Breath 
+    AltName="Damage Level: Breath" 
+    Wiki="The damage animation to use for this damage level if it is applied to the effect's owner." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <atkAttribute 
+    AltName="Attack Attribute" 
+    Wiki="Attack attribute to use when applying attack against the victim for attacks from this effect's owner." 
+    Enum="ATKPARAM_ATKATTR_TYPE" />
+    
+    <spAttribute 
+    AltName="Special Attribute" 
+    Wiki="Special attributes to use when applying attack against the victim for attacks from this effect's owner." 
+    Enum="ATKPARAM_SPATTR_TYPE" />
+    
+    <stateInfo 
+    AltName="State Info" 
+    Wiki="ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."
+    ProjectEnum="SP_EFFECT_TYPE" 
+    Refs="SpEffectVfxParam(useSpEffectEffect=1)" />
+    
+    <wepParamChange 
+    AltName="Weapon Influence Type"
+    Wiki="Determines how specific fields, such as damage modifiers, behave with certain attack categories" 
+    Enum="SP_EFE_WEP_CHANGE_PARAM" />
+    
+    <moveType 
+    AltName="Movement Type"
+    Wiki="Offsets character movement animations." 
+    Enum="SP_EFFECT_MOVE_TYPE" />
+    
+    <lifeReductionType 
+    AltName="Effect Duration Change Type"
+    Wiki="Determines the type of status effect to modify the duration of. SpEffects with the specified stateInfo will be affected." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <throwCondition 
+    AltName="Throw Condition"
+    Wiki="Affects the throwing masks." 
+    Enum="SP_EFFECT_THROW_CONDITION_TYPE" />
+    
+    <addBehaviorJudgeId_condition 
+    AltName="Behavior ID: Condition"
+    Wiki="A condition value for the BehaviorJudgeId value used by the current owner." />
+    
+    <addBehaviorJudgeId_add 
+    AltName="Behavior ID: Add"
+    Wiki="A value for the BehaviorJudgeId value used by the current owner." />
+    
+    <effectTargetSelf 
+    AltName="Apply to Self"
+    Wiki="Will affect the effect's owner." 
+    IsBool="" />
+    
+    <effectTargetFriend 
+    AltName="Apply to Friend"
+    Wiki="Will affect the effect's owner's allies." 
+    IsBool="" />
+    
+    <effectTargetEnemy 
+    AltName="Apply to Enemy"
+    Wiki="Will affect the effect's owner's enemies." 
+    IsBool="" />
+    
+    <effectTargetPlayer 
+    AltName="Apply to Player"
+    Wiki="Will affect the player." 
+    IsBool="" />
+    
+    <effectTargetAI 
+    AltName="Apply to Non-Player"
+    Wiki="Will affect non-player characters." 
+    IsBool="" />
+    
+    <effectTargetLive 
+    AltName="Apply to Host"
+    Wiki="Will affect host player in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetGhost 
+    AltName="Apply to Phantom"
+    Wiki="Will affect all types of client players in multiplayer sessions." 
+    IsBool="" />
+    
+    <effectTargetWhiteGhost 
+    AltName="Apply to Friendly Phantom"
+    Wiki="Will affect friendly client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetBlackGhost 
+    AltName="Apply to Hostile Phantom"
+    Wiki="Will affect hostile client players in multiplayer sessions."  
+    IsBool="" />
+    
+    <effectTargetAttacker 
+    AltName="Apply to Attacker"
+    Wiki="When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner" 
+    IsBool="" />
+    
+    <dispIconNonactive 
+    AltName="Display Icon when Inactive"
+    Wiki="If ON, the interface icon for the effect will still disabled even if the effect is inactive due to a failed conditional check." 
+    IsBool="" />
+    
+    <useSpEffectEffect 
+    AltName="Trigger Particles via SpEffect"
+    Wiki="If ON, visual effects via SpEffectVfxParam will be used. See stateInfo for the ID of SpEffectVfxParam to be used." 
+    IsBool="" />
+    
+    <bAdjustMagicAblity 
+    AltName="Apply Intelligence Correction"
+    Wiki="If ON, the intelligence stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bAdjustFaithAblity 
+    AltName="Apply Faith Correction"
+    Wiki="If ON, the faith stat will be used to correct various fields, such as damage." 
+    IsBool="" />
+    
+    <bGameClearBonus 
+    AltName="Apply Modifiers only after Game Clear"
+    Wiki="If ON, this effect will only be active in NG+ or higher." 
+    IsBool="" />
+    
+    <magParamChange 
+    AltName="Apply Modifiers to Sorcery"
+    Wiki="If ON, damage and scaling fields will apply to sorcery and pyromancies." 
+    IsBool="" />
+    
+    <miracleParamChange 
+    AltName="Apply Modifiers to Miracles"
+    Wiki="If ON, damage and scaling fields will apply to miracles." 
+    IsBool="" />
+    
+    <clearSoul 
+    AltName="Clear Mission Score"
+    Wiki="Sets mission score to 0." 
+    IsBool="" />
+    
+    <requestSOS 
+    AltName="Request: Friendly Phantom"
+    Wiki="Used only by White Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestBlackSOS 
+    AltName="Request: Hostile Phantom"
+    Wiki="Used only by Red Sign Soapstone. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestForceJoinBlackSOS 
+    AltName="Request: Invader"
+    Wiki="Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking." 
+    IsBool="" />
+    
+    <requestKickSession 
+    AltName="Request: Kick Phantom"
+    Wiki="Possibly kicks all clients out of your world." 
+    IsBool="" />
+    
+    <requestLeaveSession 
+    AltName="Request: Leave"
+    Wiki="Used only by Black Separation Crystal. Probably used to leave network sessions." 
+    IsBool="" />
+    
+    <requestNpcInveda 
+    AltName="Request: Character Invader"
+    Wiki="Used only by Black Eye Orb (Lautrec quest and cut Shiva quest)." 
+    IsBool="" />
+    
+    <noDead 
+    AltName="Is Owner Undying"
+    Wiki="If ON, character cannot become a corpse (and thus die)." 
+    IsBool="" />
+    
+    <bCurrHPIndependeMaxHP 
+    AltName="Ignore Current HP on Max HP Change"
+    Wiki="Determines how current HP behaves when maximum HP is modified. true = current HP will not change, false = current HP will change with max HP" 
+    IsBool="" />
+    
+    <corrosionIgnore 
+    AltName="Disable Durability"
+    Wiki="If ON, disables durability damage to the effect owner's weapons and armor." 
+    IsBool="" />
+    
+    <sightSearchCutIgnore 
+    AltName="Ignore Visual Search Adjustments"
+    Wiki="If ON, visual search adjustments from sightSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <hearingSearchCutIgnore 
+    AltName="Ignore Auditory Search Adjustments"
+    Wiki="If ON, auditory search adjustments from hearingSearchEnemyCut are ignored by the effect owner." 
+    IsBool="" />
+    
+    <antiMagicIgnore 
+    AltName="Ignore Magic Block"
+    Wiki="If ON, magic blocking effects are ignored by the effect owner (Vow of Silence)." 
+    IsBool="" />
+    
+    <fakeTargetIgnore 
+    AltName="Ignore Decoy Target"
+    Wiki="If ON, the effect owner will ignore fake targets (Aural Decoy projectiles)." 
+    IsBool="" />
+    
+    <fakeTargetIgnoreUndead 
+    AltName="Ignore Decoy Target (Undead)"
+    Wiki="If ON, the effect owner will ignore fake undead targets (Alluring Skull projectiles)." 
+    IsBool="" />
+    
+    <fakeTargetIgnoreAnimal 
+    AltName="Ignore Decoy Target (Animal)"
+    Wiki="If ON, the effect owner will ignore fake animal targets." 
+    IsBool="" />
+    
+    <disableDepletedUraniumToxic 
+    AltName="Is Immune to Uranium"
+    Wiki="If ON, effect owner becomes immune to Uranium." 
+    IsBool="" />
+    
+    <disableBurn 
+    AltName="Is Immune to Burn"
+    Wiki="If ON, effect owner becomes immune to Burn." 
+    IsBool="" />
+    
+    <disableStun 
+    AltName="Is Immune to Stun"
+    Wiki="If ON, effect owner becomes immune to Stun." 
+    IsBool="" />
+    
+    <disableHighPlasma 
+    AltName="Is Immune to Plasma"
+    Wiki="If ON, effect owner becomes immune to Plasma." 
+    IsBool="" />
+    
+    <disableCurse 
+    AltName="Is Immune to Curse"
+    Wiki="If ON, effect owner becomes immune to curse." 
+    IsBool="" />
+    
+    <stopCurse 
+    AltName="Stop Curse"
+    Wiki="If ON, effect owner curse status will not increase or decrease." 
+    IsBool="" />
+    
+    <enableLifeTime 
+    AltName="Enable Duration via TimeAct Event"
+    Wiki="If ON, the effect duration can be extended by a TimeAct event.." 
+    IsBool="" />
+    
+    <hasTarget 
+    AltName="Enable Target Activation"
+    Wiki="If ON, enable the activation conditions for the Evil Eye." 
+    IsBool="" />
+    
+    <isFireDamageCancel 
+    AltName="Cancel Effect on Explosive Damage"
+    Wiki="If ON, this effect will be cancelled early if Explosive damage is applied to the effect owner." 
+    IsBool="" />
+    
+    <isExtendSpEffectLife 
+    AltName="Is Affected by Spell Duration Extension"
+    Wiki="Determines if effectEndurance will be affected by stateInfo 193 which is used by the Lingering Dragoncrest Ring." 
+    IsBool="" />
+    
+    <isDisableNetSync 
+    AltName="Do not Sync in Multiplayer" 
+    Wiki="Do not synchronize with the net. It does not mean that you will be able to call it locally, but simply do not send it online. For example, a remote character does not activate locally, so nothing happens in that case." 
+    IsBool="" />
+    
+    <bAdjustStrengthAblity 
+    AltName="Use Strength Correction" 
+    Wiki="Do you want to correct your strength?" 
+    IsBool="" />
+    
+    <bAdjustAgilityAblity 
+    AltName="Use Dexterity Correction" 
+    Wiki="Do you want to correct your workmanship?" 
+    IsBool="" />
+    
+    <chargeAttackParamChange 
+    AltName="Apply to Charged Attacks" 
+    Wiki="If ON, this effect is applied to charged attacks." 
+    IsBool="" />
+    
+    <throwAttackParamChange 
+    AltName="Apply to Throws" 
+    Wiki="If ON, this effect is applied to throws." 
+    IsBool="" />
+    
+    <vowType0 
+    AltName="Trigger: None"
+    Wiki="Effect usable while in no covenant." 
+    IsBool="" />
+    
+    <vowType1 
+    AltName="Trigger: 1"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType2 
+    AltName="Trigger: 2"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType3 
+    AltName="Trigger: 3"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType4 
+    AltName="Trigger: 4"
+    Wiki="Effect usable while in ? covenant." 
+    IsBool="" />
+    
+    <vowType5 
+    AltName="Trigger: 5"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType6 
+    AltName="Trigger: 6"
+    Wiki="Effect usable while in ? covenant." 
+    IsBool="" />
+    
+    <vowType7 
+    AltName="Trigger: 7"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType8 
+    AltName="Trigger: 8"
+    Wiki="Effect usable while in ? covenant." 
+    IsBool="" />
+    
+    <vowType9 
+    AltName="Trigger: 9"
+    Wiki="Effect usable while in ? covenant." 
+    IsBool="" />
+    
+    <vowType10 
+    AltName="Trigger: 10"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType11 
+    AltName="Trigger: 11"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType12 
+    AltName="Trigger: 12"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType13 
+    AltName="Trigger: 13"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType14 
+    AltName="Trigger: 14"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <vowType15 
+    AltName="Trigger: 15"
+    Wiki="Effect usable while in ? covenant."
+    IsBool="" />
+    
+    <repAtkDmgLv 
+    AltName="Attacker Damage Level" 
+    Wiki="The damage level of the attacking side changes to this value." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <sightRangeMag_forMe 
+    AltName="Visual Search Magnification %"
+    Wiki="The value to magnify the effect owner's visual range by." />
+    
+    <sightRangeMag_forMeBattle 
+    AltName="Visual Search Magnification % - In Combat"
+    Wiki="The value to magnify the effect owner's visual range by, when in combat." />
+    
+    <effectTargetOpposeTarget 
+    AltName="Trigger for Hostile Target" 
+    Wiki="If ON, this effect will trigger if the current target is considered hostile." 
+    IsBool="" />
+    
+    <effectTargetFriendlyTarget 
+    AltName="Trigger for Friendly Target" 
+    Wiki="If ON, this effect will trigger if the current target is considered friendly." 
+    IsBool="" />
+    
+    <effectTargetSelfTarget 
+    AltName="Trigger for Self Target" 
+    Wiki="If ON, this effect will trigger if the current target is considered ourselves." 
+    IsBool="" />
+    
+    <changeTeamType 
+    AltName="Team Type" 
+    Wiki="Replaces the effect owner's current team type with the specified type. Requires State Info 132 to apply." 
+    Enum="SP_EFFECT_CHANGE_TEAM_TYPE" />
+    
+    <dmypolyId
+    AltName="Dummy Polgon ID"
+    Wiki="The dummy polygon ID to use for this effect." />
+
+    <vfxId 
+    AltName="VFX ID: 0" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <accumuOverFireId 
+    AltName="Accumulator: SpEffect applied at Upper Limit" 
+    Wiki="The SpEffect ID to apply when the accumulator reaches the upper limit value." 
+    Refs="SpEffectParam" />
+    
+    <accumuOverVal 
+    AltName="Accumulator: Upper Limit Value" 
+    Wiki="The upper limit value to use for this accumulator." />
+    
+    <accumuUnderFireId 
+    AltName="Accumulator: SpEffect applied at Lower Limit" 
+    Wiki="The SpEffect ID to apply when the accumulator reaches the lower limit value." 
+    Refs="SpEffectParam" />
+    
+    <accumuUnderVal 
+    AltName="Accumulator: Lower Limit Value" 
+    Wiki="The lower limit value to use for this accumulator." />
+    
+    <accumuVal 
+    AltName="Accumulator: Increment Value" 
+    Wiki="The value to increment this accumulator by for each interval of this effect." />
+    
+    <hearingSearchEnemyCut 
+    AltName="Auditory Search Reduction %"
+    Wiki="The value to reduce the distance at which enemies hear the effect's owner.\n0 = default, 50 = -50% hearing distance, 100 = -100% hearing distance" />
+    
+    <eye_angX 
+    AltName="Visual Search: Height Angle Override"
+    Wiki="Override the height angle used for the visual search cone. Requires State Info 267" />
+    
+    <eye_angY 
+    AltName="Visual Search: Width Angle Override"
+    Wiki="Override the width angle used for the visual search cone. Requires State Info 267" />
+
+    <addDeceasedLv 
+    AltName="Add Hollowing Level" 
+    Wiki="Add this value to the degree of death" />
+    
+    <vfxId1 
+    AltName="VFX ID: 1" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId2
+    AltName="VFX ID: 2" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId3 
+    AltName="VFX ID: 3" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId4
+    AltName="VFX ID: 4" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId5 
+    AltName="VFX ID: 5" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId6
+    AltName="VFX ID: 6" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <vfxId7 
+    AltName="VFX ID: 7" 
+    Wiki="The VFX row to use when this effect is present." 
+    Refs="SpEffectVfxParam" />
+    
+    <registDepletedUraniumToxic 
+    AltName="Inflict: Uranium"
+    Wiki="Also known as Depleted Uranium. Adds to the amount of Uranium status effect inflicted." />
+    
+    <AppearAiSoundId 
+    AltName="Invoked AI Sound ID" 
+    Wiki="Invoke a AI sound instance when this effect is applied." 
+    Refs="AiSoundParam" />
+    
+    <addFootEffectSfxId 
+    AltName="Automatic Foot Effect: Particle ID Offset" 
+    Wiki="The identifier of the foot SFX that is additionally generated during special effects. XYYZZZ ZZZ" 
+    Refs="FootSfxParam"/>
+    
+    <repDefDmgLv 
+    AltName="Defender Damage Level" 
+    Wiki="The damage level of the defending side changes to this value." 
+    Enum="ATKPARAM_REP_DMGTYPE" />
+    
+    <pad4
+    Padding="" />
+    
+    <toughnessDamageCutRate 
+    AltName="Absorption %: Toughness" 
+    Wiki="The absorption value to apply to toughness impacts." />
+    
+    <weakDmgRateA 
+    AltName="Damage Multiplier %: Type A" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type A." />
+    
+    <weakDmgRateB 
+    AltName="Damage Multiplier %: Type B" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type B." />
+    
+    <weakDmgRateC 
+    AltName="Damage Multiplier %: Type C" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type C." />
+    
+    <weakDmgRateD 
+    AltName="Damage Multiplier %: Type D" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type D." />
+    
+    <weakDmgRateE 
+    AltName="Damage Multiplier %: Type E" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type E." />
+    
+    <weakDmgRateF 
+    AltName="Damage Multiplier %: Type F" 
+    Wiki="The multiplier applied to damage that is against NPCs tagged as Type F." />
+    
+    <darkDamageCutRate 
+    AltName="Absorption %: Dark"
+    Wiki="Multiplies Dark physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased." />
+    
+    <darkDiffenceRate 
+    AltName="Defense %: Dark"
+    Wiki="Multiplies Dark defense." />
+    
+    <darkDiffence 
+    AltName="Defense: Dark"
+    Wiki="Adds to Dark defense." />
+    
+    <darkAttackRate 
+    AltName="Post-Defense Attack %: Dark"
+    Wiki="Multiplies Dark damage dealt (post-defense, bypasses attack rating)" />
+    
+    <darkAttackPowerRate 
+    AltName="Attack %: Dark"
+    Wiki="Multiplies Dark damage dealt." />
+    
+    <darkAttackPower 
+    AltName="Damage: Dark"
+    Wiki="Adds Dark damage to attack rating." />
+    
+    <antiDarkSightRadius 
+    AltName="Full Sight in Darkness: Radius" 
+    Wiki="The radius (in metres) when within darkness where the effect owner can see fully." />
+    
+    <antiDarkSightDmypolyId 
+    AltName="Full Sight in Darkness: Dummy Polygon ID" 
+    Wiki="The dummy polygon from which the full sight in darkness radius is derived from." />
+    
+    <conditionHpRate 
+    AltName="Trigger if HP is Above %" 
+    Wiki="This effect only triggers if the effect owner's HP is above this specified value." />
+    
+    <consumeStaminaRate 
+    AltName="Stamina Consumption %" 
+    Wiki="Using the behavior parameters of the current weapon, multiply the stamina consumption values by this value." />
+    
+    <itemDropRate 
+    AltName="Item Discovery %" 
+    Wiki="The value to apply to the item discovery stat. Requires State Info 66 to apply." />
+    
+    <hearingSearchRate 
+    AltName="Auditory Search Correction %" 
+    Wiki="Corrects the audibility of AI sound by magnification." />
+    
+    <changeBurnResistPoint 
+    AltName="Status Resistance: Burn" 
+    Wiki="Adjust the Burn status resistance for the effect owner." />
+    
+    <changeStunResistPoint 
+    AltName="Status Resistance: Stun" 
+    Wiki="Adjust the Stun status resistance for the effect owner." />
+    
+    <changeHighPlasmaResistPoint 
+    AltName="Status Resistance: Plasma" 
+    Wiki="Adjust the Plasma status resistance for the effect owner." />
+    
+    <changeCurseResistPoint 
+    AltName="Status Resistance: Curse" 
+    Wiki="Adjust the Curse status resistance for the effect owner." />
+    
+    <changeDepletedUraniumToxicResistPoint 
+    AltName="Status Resistance: Uranium" 
+    Wiki="Adjust the Uranium status resistance for the effect owner." />
+    
+    <slashAttackRate 
+    AltName="Attacker - Post-Defense Attack %: Slash" 
+    Wiki="The multiplier to apply to Slash damage  applied to the effect owner from an attacker (post-defense, bypasses attack rating)." />
+    
+    <blowAttackRate 
+    AltName="Attacker - Post-Defense Attack %: Strike" 
+    Wiki="The multiplier to apply to Strike damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)." />
+    
+    <thrustAttackRate 
+    AltName="Attacker - Post-Defense Attack %: Thrust" 
+    Wiki="The multiplier to apply to Strike damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)." />
+    
+    <neutralAttackRate 
+    AltName="Attacker - Post-Defense Attack %: Neutral" 
+    Wiki="The multiplier to apply to Neutral damage applied to the effect owner from an attacker (post-defense, bypasses attack rating)." />
+    
+    <slashAttackPowerRate 
+    AltName="Attacker - Attack %: Slash" 
+    Wiki="The multiplier to apply to Slash damage applied to the effect owner from an attacker." />
+    
+    <blowAttackPowerRate 
+    AltName="Attacker - Attack %: Strike" 
+    Wiki="The multiplier to apply to Strike damage applied to the effect owner from an attacker." />
+    
+    <thrustAttackPowerRate 
+    AltName="Attacker - Attack %: Thrust" 
+    Wiki="The multiplier to apply to Thrust damage applied to the effect owner from an attacker." />
+    
+    <neutralAttackPowerRate 
+    AltName="Attacker - Attack %: Neutral" 
+    Wiki="The multiplier to apply to Neutral damage applied to the effect owner from an attacker." />
+    
+    <slashAttackPower 
+    AltName="Attacker - Damage: Slash"
+    Wiki="The damage value (typed as Slash) applied to the effect owner from an attacker." />
+    
+    <blowAttackPower 
+    AltName="Attacker - Damage: Strike"
+    Wiki="The damage value (typed as Strike) applied to the effect owner from an attacker." />
+    
+    <thrustAttackPower 
+    AltName="Attacker - Damage: Thrust"
+    Wiki="The damage value (typed as Thrust) applied to the effect owner from an attacker." />
+    
+    <neutralAttackPower 
+    AltName="Attacker - Damage: Neutral"
+    Wiki="The damage value (typed as Neutral) applied to the effect owner from an attacker." />
+    
+    <changeStrengthPoint 
+    AltName="Correction: STR" 
+    Wiki="The correction value to apply to the STR stat." />
+    
+    <changeAgilityPoint 
+    AltName="Correction: DEX" 
+    Wiki="The correction value to apply to the DEX stat." />
+    
+    <changeMagicPoint 
+    AltName="Correction: INT" 
+    Wiki="The correction value to apply to the INT stat." />
+    
+    <changeFaithPoint 
+    AltName="Correction: FTH" 
+    Wiki="The correction value to apply to the FTH stat." />
+    
+    <changeLuckPoint 
+    AltName="Correction: LCK" 
+    Wiki="The correction value to apply to the LCK stat." />
+    
+    <recoverArtsPoint_Str 
+    AltName="Skill Recovery: STR" 
+    Wiki="The amount of skill recovered based on the STR stat." />
+    
+    <recoverArtsPoint_Dex 
+    AltName="Skill Recovery: DEX" 
+    Wiki="The amount of skill recovered based on the DEX stat." />
+    
+    <recoverArtsPoint_Magic 
+    AltName="Skill Recovery: INT" 
+    Wiki="The amount of skill recovered based on the INT stat." />
+    
+    <recoverArtsPoint_Miracle 
+    AltName="Skill Recovery: FTH" 
+    Wiki="The amount of skill recovered based on the FTH stat." />
+    
+    <wetConditionType
+    AltName="Wet Condition Type"
+    Wiki="The type of wetness to apply when this effect is present." 
+    Enum="SP_EFFECT_WET_CONDITION_TYPE" />
+    
+    <unk26d_0
+    AltName="Unknown: 0x26_0" 
+    Wiki="" />
+    
+    <isUseStatusAilmentAtkPowerCorrect 
+    AltName="Use Status Correction from Current Weapon" 
+    Wiki="If ON, the status attack power multiplier correction of the attack parameter of the current weapon is applied." 
+    IsBool="" />
+    
+    <isUseAtkParamAtkPowerCorrect 
+    AltName="Apply Attack Power Correction from Current Weapon" 
+    Wiki="If ON, the attack power multiplier correction of the attack parameter of the current weapon is applied." 
+    IsBool="" />
+    
+    <dontDeleteOnDead 
+    AltName="Persist through Death" 
+    Wiki="If ON, this effect will not be deleted even if the effect owner dies. Mainly used for death effects." 
+    IsBool="" />
+    
+    <isWaitModeDelete 
+    AltName="Delete in Wait Mode"
+    Wiki="If ON, this effect is deleted when in Wait mode. Wait mode is a state where the activation status change type or activation HP is met and the state is waiting to be activated. On the other hand, Sleep mode is a state where the priority is lowered due to the overwrite category, etc." 
+    IsBool="" />
+   
+    <isForgotTarget
+    AltName="Forget Target List"
+    Wiki="If ON, the effect owner's target list will be cleared constantly." 
+    IsBool="" />
+   
+    <isNoDeadEventBody
+    AltName="Has Part Immortality"
+    Wiki="If ON, this effect owner has a part with immortality applied." 
+    IsBool="" />
+   
+    <isReceiveDamageStagger
+    AltName="Convert Damage into Stagger Critical"
+    Wiki="If ON, the damage the effect owner receives will become a stagger critical." 
+    IsBool="" />
+   
+    <isRadarExclusion
+    AltName="Exclude from Radar"
+    Wiki="If ON, the effect owner will be hidden within the radar display." 
+    IsBool="" />
+   
+    <isForceUpdate
+    AltName="Force Character Update"
+    Wiki="If ON, the effect owner will be forcefully updated." 
+    IsBool="" />
+    
+    <pad10
+    Padding="" />
+    
+    <pad5
+    Padding="" />
+   
+    <saReceiveDamageRate 
+    AltName="Absorption %: Poise Damage" 
+    Wiki="The multiplier to apply to incoming Poise damage for the effect owner." />
+
+    <defPlayerDmgCorrectRate_Physics 
+    AltName="Absorption %: Kinetic - From Player" 
+    Wiki="The multiplier to apply to incoming Kinetic damage for the effect owner, if the attacker is considered a player." />
+    
+    <defPlayerDmgCorrectRate_Magic 
+    AltName="Absorption %: Energy - From Player" 
+    Wiki="The multiplier to apply to incoming Energy damage for the effect owner, if the attacker is considered a player." />
+    
+    <defPlayerDmgCorrectRate_Fire 
+    AltName="Absorption %: Explosive - From Player" 
+    Wiki="The multiplier to apply to incoming Explosive damage for the effect owner, if the attacker is considered a player." />
+    
+    <defPlayerDmgCorrectRate_Thunder 
+    AltName="Absorption %: Coral - From Player" 
+    Wiki="The multiplier to apply to incoming Coral damage for the effect owner, if the attacker is considered a player." />
+    
+    <defPlayerDmgCorrectRate_Dark 
+    AltName="Absorption %: Dark - From Player" 
+    Wiki="The multiplier to apply to incoming Dark damage for the effect owner, if the attacker is considered a player." />
+    
+    <defEnemyDmgCorrectRate_Physics 
+    AltName="Absorption %: Kinetic - From NPC" 
+    Wiki="The multiplier to apply to incoming Kinetic damage for the effect owner, if the attacker is considered an NPC." />
+    
+    <defEnemyDmgCorrectRate_Magic 
+    AltName="Absorption %: Energy - From NPC" 
+    Wiki="The multiplier to apply to incoming Energy damage for the effect owner, if the attacker is considered an NPC." />
+    
+    <defEnemyDmgCorrectRate_Fire 
+    AltName="Absorption %: Explosive - From NPC" 
+    Wiki="The multiplier to apply to incoming Explosive damage for the effect owner, if the attacker is considered an NPC." />
+    
+    <defEnemyDmgCorrectRate_Thunder 
+    AltName="Absorption %: Coral - From NPC" 
+    Wiki="The multiplier to apply to incoming Coral damage for the effect owner, if the attacker is considered an NPC." />
+    
+    <defEnemyDmgCorrectRate_Dark 
+    AltName="Absorption %: Dark - From NPC" 
+    Wiki="The multiplier to apply to incoming Dark damage for the effect owner, if the attacker is considered an NPC." />
+    
+    <defObjDmgCorrectRate 
+    AltName="Absorption %: Object" 
+    Wiki="The multiplier to apply to incoming Object damage for the effect owner." />
+    
+    <atkPlayerDmgCorrectRate_Physics 
+    AltName="Damage %: Kinetic - Against Player" 
+    Wiki="The multiplier to apply to outgoing Kinetic damage for the effect owner, if the defender is considered an player." />
+    
+    <atkPlayerDmgCorrectRate_Magic 
+    AltName="Damage %: Energy - Against Player" 
+    Wiki="The multiplier to apply to outgoing Energy damage for the effect owner, if the defender is considered an player." />
+    
+    <atkPlayerDmgCorrectRate_Fire 
+    AltName="Damage %: Explosive - Against Player" 
+    Wiki="The multiplier to apply to outgoing Explosive damage for the effect owner, if the defender is considered an player." />
+    
+    <atkPlayerDmgCorrectRate_Thunder 
+    AltName="Damage %: Coral - Against Player" 
+    Wiki="The multiplier to apply to outgoing Coral damage for the effect owner, if the defender is considered an player." />
+    
+    <atkPlayerDmgCorrectRate_Dark 
+    AltName="Damage %: Dark - Against Player" 
+    Wiki="The multiplier to apply to outgoing Dark damage for the effect owner, if the defender is considered an player." />
+    
+    <atkEnemyDmgCorrectRate_Physics 
+    AltName="Damage %: Kinetic - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Kinetic damage for the effect owner, if the defender is considered an NPC." />
+    
+    <atkEnemyDmgCorrectRate_Magic 
+    AltName="Damage %: Energy - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Energy damage for the effect owner, if the defender is considered an NPC." />
+    
+    <atkEnemyDmgCorrectRate_Fire 
+    AltName="Damage %: Explosive - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Explosive damage for the effect owner, if the defender is considered an NPC." />
+    
+    <atkEnemyDmgCorrectRate_Thunder 
+    AltName="Damage %: Coral - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Coral damage for the effect owner, if the defender is considered an NPC." />
+    
+    <atkEnemyDmgCorrectRate_Dark 
+    AltName="Damage %: Dark - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Dark damage for the effect owner, if the defender is considered an NPC." />
+    
+    <registDepletedUraniumToxicChangeRate 
+    AltName="Resistance %: Uranium"
+    Wiki="Multiplies stat based Uranium resistance." />
+    
+    <invocationConditionsStateChange1 
+    AltName="Trigger on State Info: 1" 
+    Wiki="If the specified state info is present, this effect is activated." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <invocationConditionsStateChange2
+    AltName="Trigger on State Info: 2" 
+    Wiki="If the specified state info is present, this effect is activated." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <invocationConditionsStateChange3 
+    AltName="Trigger on State Info: 3" 
+    Wiki="If the specified state info is present, this effect is activated." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <pad
+    Padding="" />
+    
+    <chrProxyHeightRate 
+    AltName="Collision Capsule Height %" 
+    Wiki="The multiplier to apply to the character's proxy height collision capsule." />
+    
+    <addAwarePointCorrectValue_forMe 
+    AltName="Search Awareness Correction: Self" 
+    Wiki="The search awareness correction to apply to the search angle for the effect owner." />
+    
+    <addAwarePointCorrectValue_forTarget 
+    AltName="Search Awareness Correction: Target" 
+    Wiki="The search awareness correction to apply to the search angle for the effect owner's target." />
+    
+    <normalLockRangeAddVal
+    AltName="Normal Lock-on: Distance"
+    Wiki="The distance to extend the normal lock-on distance by. In metres." />
+    
+    <normalLockRangeAddPer
+    AltName="Normal Lock-on: Distance %"
+    Wiki="The percentage distance to extend the normal lock-on distance by." />
+    
+    <missileLockRangeAddVal
+    AltName="Missile Lock-on: Distance"
+    Wiki="The distance to extend the missile lock-on distance by. In metres." />
+    
+    <missileLockRangeAddPer
+    AltName="Missile Lock-on: Distance"
+    Wiki="The percentage distance to extend the missile lock-on distance by." />
+    
+    <missileMultiLockNumAdd
+    AltName="Missile Lock-on: Number of Multi-Locks"
+    Wiki="The amount of multi-locks to add to the base amount of missile multi-locks." />
+    
+    <pad7
+    Padding="" />
+    
+    <missileMultiLockNumMul
+    AltName="Missile Lock-on: Number of Multi-Locks %"
+    Wiki="The percentage to multiply the base amount of missile multi-locks by." />
+    
+    <magAwarePointCorrectValue_forMe
+    AltName="Searchability Magnification Correction: Self"
+    Wiki="The search mangification correction to apply for the effect owner." />
+    
+    <magAwarePointCorrectValue_forTarget
+    AltName="Searchability Magnification Correction: Target"
+    Wiki="The search mangification correction to apply for the effect owner's target." />
+    
+    <sightRangeMagSearch_forEnemy
+    AltName="Seen Target - Visual Search Distance %: Out of Combat"
+    Wiki="The visual search distance multiplier to apply for the effect owner's 'seen' target when not in combat." />
+    
+    <sightRangeMagSearch_forEnemyBattle
+    AltName="Seen Target - Visual Search Distance %: In Combat"
+    Wiki="The visual search distance multiplier to apply for the effect owner's 'seen' target when in combat." />
+    
+    <sightRangeMagSearch_forMe
+    AltName="Visual Search Distance %: Out of Combat"
+    Wiki="The visual search distance multiplier to apply for the effect owner when not in combat." />
+    
+    <sightRangeMagSearch_forMeBattle
+    AltName="Visual Search Distance %: In Combat"
+    Wiki="The visual search distance multiplier to apply for the effect owner when in combat." />
+    
+    <changeSaPoint
+    AltName="Damage: Poise"
+    Wiki="The amount of Poise damage to apply when this effect is present." />
+    
+    <pad2
+    Padding="" />
+    
+    <heightRateOfJudgmentCapsule
+    AltName="Line of Sight: Capsule Height %"
+    Wiki="The multiplier to apply to the effect owner's collision capsule height when calculating line of sight." />
+    
+    <noseDist_overWrite
+    AltName="Sense: Distance Override"
+    Wiki="Override the NpcThinkParam parameter for the Sense value of the effect owner with this value." />
+    
+    <staminaRecoverSpeedRate
+    AltName="Stamina Recovery Speed %"
+    Wiki="The multiplier to apply to Stamina recovery speed of the effect owner." />
+    
+    <maxEnergyRate 
+    AltName="Energy Capacity %" 
+    Wiki="The multiplier to apply to the energy capacity of the effect owner." />
+    
+    <energyRecoverSpeedRate
+    AltName="Energy Recovery Speed %"
+    Wiki="The multiplier to apply to energy recovery speed of the effect owner." />
+    
+    <consumeEnergyRate 
+    AltName="Energy Supply Efficiency %" 
+    Wiki="The multiplier to apply to the energy consumption of the effect owner." />
+    
+    <changeEnRate 
+    AltName="Change Energy %" 
+    Wiki="The percentage amount of energy to change in the effect owner when this effect is present." />
+    
+    <changeEnPoint 
+    AltName="Change Energy" 
+    Wiki="The point amount of energy to change in the effect owner when this effect is present." />
+    
+    <energyLastRecoverRate 
+    AltName="Post-Recovery Energy Recovery Speed %" 
+    Wiki="If (Unit energy recovery amount - overall energy consumption) is positive, multiply it by this value to get energy recovery amount." />
+    
+    <eventPartsId
+    AltName="Target Part: ID"
+    Wiki="If -1, targets all parts." />
+    
+    <eventPartsDamageRate
+    AltName="Target Part: Damage %"
+    Wiki="The damage multiplier to apply for damage against the target part." />
+    
+    <eventPartsReviveRate
+    AltName="Target Part: HP Revival %"
+    Wiki="The HP revival rate for the target part." />
+    
+    <eventPartsRecoverRate
+    AltName="Target Part: HP Recovery %"
+    Wiki="The HP recovery rate for the target part." />
+    
+    <changePaRate
+    AltName="Pulse Armor: Damage %"
+    Wiki="The damage percentage to apply to the effect owner's Pulse Armor when this effect is activated." />
+    
+    <changePaPoint
+    AltName="Pulse Armor: Damage"
+    Wiki="The damage to apply to the effect owner's Pulse Armor when this effect is activated." />
+    
+    <energyDrawRate_GroundBoost
+    AltName="Energy Consumption %: Ground Boost"
+    Wiki="The energy consumption multiplier to apply for a ground boost when this effect is present." />
+    
+    <energyDrawRate_FlyBoost
+    AltName="Energy Consumption %: Aerial Boost"
+    Wiki="The energy consumption multiplier to apply for an aerial boost when this effect is present." />
+    
+    <energyDrawRate_UpBoost
+    AltName="Energy Consumption %: Vertical Boost"
+    Wiki="The energy consumption multiplier to apply for a vertical boost when this effect is present." />
+    
+    <stealthPowerCorrectValue
+    AltName="Stealth Power %"
+    Wiki="The multiplier to apply to stealth performance." />
+    
+    <overwriteGroupId
+    AltName="Override Group ID"
+    Wiki="The override category this effect belongs to." />
+    
+    <defPlayerImpactCorrectRate 
+    AltName="Absorption %: Impact - From Player" 
+    Wiki="The multiplier to apply to incoming Impact damage for the effect owner, if the attacker is considered a player." />
+    
+    <defEnemyImpactCorrectRate 
+    AltName="Absorption %: Impact - From NPC" 
+    Wiki="The multiplier to apply to incoming Impact damage for the effect owner, if the attacker is considered a NPC." />
+    
+    <atkPlayerImpactCorrectRate 
+    AltName="Damage %: Impact - Against Player" 
+    Wiki="The multiplier to apply to outgoing Impact damage for the effect owner, if the defender is considered an player." />
+    
+    <atkEnemyImpactCorrectRate 
+    AltName="Damage %: Impact - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Impact damage for the effect owner, if the defender is considered an NPC." />
+    
+    <normalLockRangeOverwriteDist
+    AltName="Normal Lock-on Distance: Override"
+    Wiki="Overrides the normal lock-on distance (setting it to this specified value)." />
+    
+    <residualImpactSubSpeedRate
+    AltName="Damage: Accumulative Impact %"
+    Wiki="The multiplier to apply to the accumulative impact against the effect owner." />
+    
+    <atkPlayerDmgCorrectRate_Pa 
+    AltName="Damage %: Pulse Armor - Against Player" 
+    Wiki="The multiplier to apply to outgoing Pulse Armor damage for the effect owner, if the defender is considered an player." />
+    
+    <atkEnemyDmgCorrectRate_Pa 
+    AltName="Damage %: Pulse Armor - Against NPC" 
+    Wiki="The multiplier to apply to outgoing Pulse Armor damage for the effect owner, if the defender is considered an NPC." />
+    
+    <defPlayerDmgCorrectRate_Pa 
+    AltName="Absorption %: Pulse Armor - From Player" 
+    Wiki="The multiplier to apply to incoming Pulse Armor damage for the effect owner, if the attacker is considered a player." />
+    
+    <defEnemyDmgCorrectRate_Pa 
+    AltName="Absorption %: Pulse Armor - From NPC" 
+    Wiki="The multiplier to apply to incoming Pulse Armor damage for the effect owner, if the attacker is considered a NPC." />
+    
+    <atkImpactCorrectRate
+    AltName="Damage %: Impact"
+    Wiki="The multiplier to apply to outgoing Pulse Armor damage for the effect owner." />
+    
+    <unk390
+    AltName="Unknown 0x390"
+    Wiki="" />
+    
+    <pad8 Padding="" />
+    
+  </Field>
+  
+  <Enums>
+   <Enum Name="SP_EFFECT_SPCATEGORY" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Persist through Death" />
+        <Option Value="10" Name="Stack Self" />
+        <Option Value="20" Name="Reset on Apply" />
+        <Option Value="100" Name="Remove Previous" />
+        <Option Value="110" Name="Remove Previous" />
+        <Option Value="120" Name="Remove Previous" />
+        <Option Value="130" Name="Remove Previous" />
+        <Option Value="131" Name="Remove Previous" />
+        <Option Value="132" Name="Remove Previous" />
+        <Option Value="133" Name="Remove Previous" />
+        <Option Value="140" Name="Remove Previous" />
+        <Option Value="150" Name="Remove Previous" />
+        <Option Value="151" Name="Remove Previous" />
+        <Option Value="152" Name="Remove Previous" />
+        <Option Value="153" Name="Remove Previous" />
+        <Option Value="154" Name="Remove Previous" />
+        <Option Value="155" Name="Remove Previous" />
+        <Option Value="156" Name="Remove Previous" />
+        <Option Value="157" Name="Remove Previous" />
+        <Option Value="158" Name="Remove Previous" />
+        <Option Value="159" Name="Remove Previous" />
+        <Option Value="160" Name="Remove Previous" />
+        <Option Value="161" Name="Remove Previous" />
+        <Option Value="162" Name="Remove Previous" />
+        <Option Value="163" Name="Remove Previous" />
+        <Option Value="164" Name="Remove Previous" />
+        <Option Value="165" Name="Remove Previous" />
+        <Option Value="166" Name="Remove Previous" />
+        <Option Value="167" Name="Remove Previous" />
+        <Option Value="168" Name="Remove Previous" />
+        <Option Value="174" Name="Remove Previous" />
+        <Option Value="200" Name="Remove Previous w/ Matching Priority" />
+        <Option Value="201" Name="Remove Previous" />
+        <Option Value="1000" Name="Apply Highest (Category Priority)" />
+        <Option Value="1001" Name="Apply Highest (Category Priority)" />
+        <Option Value="1002" Name="Apply Highest (Category Priority)" />
+        <Option Value="1003" Name="Apply Highest (Category Priority)" />
+        <Option Value="1004" Name="Apply Highest (Category Priority)" />
+        <Option Value="1005" Name="Apply Highest (Category Priority)" />
+        <Option Value="1006" Name="Apply Highest (Category Priority)" />
+        <Option Value="10000" Name="Apply First" />
+        <Option Value="10001" Name="Apply First (Damage Level Change)" />
+        <Option Value="10002" Name="Apply First" />
+        <Option Value="10003" Name="Apply First (Plasma)" />
+        <Option Value="10004" Name="Apply First (ACS Anomaly)" />
+        <Option Value="10005" Name="Apply First (Electric Discharge)" />
+        <Option Value="10006" Name="Apply First" />
+        <Option Value="10007" Name="Apply First (Uranium)" />
+        <Option Value="10008" Name="Apply First (Unused A)" />
+    </Enum>
+    <Enum Name="SP_EFFECT_SAVE_CATEGORY" type="s8">
+        <Option Value="-1" Name="No Slot" />
+        <Option Value="0" Name="Slot 0" />
+        <Option Value="1" Name="Slot 1" />
+        <Option Value="2" Name="Slot 2" />
+        <Option Value="3" Name="Slot 3" />
+        <Option Value="4" Name="Slot 4" />
+        <Option Value="5" Name="Slot 5" />
+        <Option Value="6" Name="Slot 6" />
+        <Option Value="7" Name="Slot 7" />
+        <Option Value="8" Name="Slot 8" />
+        <Option Value="9" Name="Slot 9" />
+        <Option Value="10" Name="Slot 10" />
+        <Option Value="11" Name="Slot 11" />
+        <Option Value="12" Name="Slot 12" />
+    </Enum>
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="No Stagger" />
+        <Option Value="2" Name="Short Stagger" />
+        <Option Value="3" Name="Long Stagger" />
+        <Option Value="4" Name="Stagger to Floor" />
+        <Option Value="5" Name="Stagger Backwards" />
+        <Option Value="6" Name="Faceplant" />
+        <Option Value="7" Name="Stagger to Floor" />
+        <Option Value="8" Name="Faceplant" />
+        <Option Value="9" Name="Air Juggle Stagger" />
+        <Option Value="10" Name="Push" />
+        <Option Value="11" Name="Strong Stagger" />
+        <Option Value="12" Name="Stagger Backwards" />
+    </Enum>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Damage: None" />
+        <Option Value="10" Name="Damage: Energy" />
+        <Option Value="11" Name="Damage: Explosive" />
+        <Option Value="12" Name="Damage: Coral" />
+        <Option Value="13" Name="Damage: Unknown (Holy)" />
+        <Option Value="20" Name="Status: ACS Anomaly" />
+        <Option Value="21" Name="Status: Electric Discharge" />
+        <Option Value="22" Name="Status: Plasma" />
+        <Option Value="23" Name="Status: Uranium" />
+        <Option Value="26" Name="Status: Unused A" />
+    </Enum>
+    <Enum Name="SP_EFE_WEP_CHANGE_PARAM" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Right-hand" />
+        <Option Value="2" Name="Left-hand" />
+        <Option Value="3" Name="Self" />
+        <Option Value="4" Name="Kick" />
+    </Enum>
+    <Enum Name="SP_EFFECT_MOVE_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+    </Enum>
+    <Enum Name="SP_EFFECT_THROW_CONDITION_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Forbidden" />
+        <Option Value="2" Name="Parry" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="Fall" />
+        <Option Value="5" Name="Hornet Ring" />
+        <Option Value="6" Name="Lifedrain" />
+        <Option Value="7" Name="Unknown" />
+        <Option Value="8" Name="Unknown" />
+        <Option Value="9" Name="Unknown" />
+        <Option Value="10" Name="Unknown" />
+        <Option Value="11" Name="Unknown" />
+        <Option Value="12" Name="Unknown" />
+        <Option Value="13" Name="Unknown" />
+        <Option Value="14" Name="Unknown" />
+        <Option Value="15" Name="Unknown" />
+    </Enum>
+    <Enum Name="TEAM_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Guest" />
+      <Option Value="2" Name="Host" />
+      <Option Value="3" Name="Wingman" />
+      <Option Value="4" Name="Junior Wingman" />
+      <Option Value="5" Name="Enemy" />
+      <Option Value="6" Name="Strong Enemy" />
+      <Option Value="7" Name="Third Force" />
+      <Option Value="8" Name="Beserker" />
+      <Option Value="9" Name="Character for Object Destruction" />
+      <Option Value="10" Name="Character for Object Destruction (Wingman)" />
+      <Option Value="11" Name="Character for Object Destruction (Enemy)" />
+      <Option Value="12" Name="Object" />
+      <Option Value="13" Name="Third Force (Ally)" />
+      <Option Value="14" Name="Gimmick Battery (Ally)" />
+    </Enum>
+    <Enum Name="SP_EFFECT_WET_CONDITION_TYPE" type="u8">
+      <Option Value="0" Name="Water" />
+      <Option Value="1" Name="Poison" />
+      <Option Value="2" Name="Mud" />
+      <Option Value="3" Name="Frost" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

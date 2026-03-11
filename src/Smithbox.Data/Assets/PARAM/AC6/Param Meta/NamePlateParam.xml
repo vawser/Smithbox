@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters to use for a nameplate." />
+  
+  <Field>
+    <catalogTextID
+    AltName="Display Text ID"
+    Wiki="The text ID to use for the display of this nameplate within the shop." />
+    
+    <price
+    AltName="Price"
+    Wiki="The cost of this nameplate." />
+    
+    <unk08
+    AltName="Unknown 0x08"
+    Wiki="" />
+    
+    <pad
+    Padding="" />
+  </Field>
+</PARAMMETA>

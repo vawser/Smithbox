@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to lock-on camera configurations, and the default camera."/>
+  
+  <Field>
+    <camDistTarget
+    AltName="Camera: Target Distance"
+    Wiki="The distance the camera is placed from the current target. In metres." />
+    
+    <rotRangeMinX
+    AltName="Rotation: Minimum X-Axis Value"
+    Wiki="The minimum rotational value on the X-axis for the camera. In degrees." />
+    
+    <lockRotXShiftRatio_Base
+    AltName="Lock-on - Rotation: Shift Ratio"
+    Wiki="The standard value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom." />
+    
+    <chrOrgOffset_Y
+    AltName="Character: Height Offset (Ground)"
+    Wiki="The height of the camera's look point (from the character's root position, when touching the ground). In metres." />
+    
+    <chrLockRangeMaxRadius
+    AltName="Character: Max Lock Radius"
+    Wiki="The maximum radius from the character's root position that the camera can be locked-on to." />
+    
+    <camFovY
+    AltName="Camera: Vertical Field of View"
+    Wiki="The vertical field of view to apply when active to the camera." />
+    
+    <chrTransChaseRateForNormalX
+    AltName="Character: Horizontal Tracking %"
+    Wiki="The character tracking rate for left and right motion, applied to the camera." />
+    
+    <chrTransChaseRateForNormalU
+    AltName="Character: Vertical Tracking %"
+    Wiki="The character tracking rate for up and down motion, applied to the camera." />
+    
+    <chrTransChaseRateForNormalF
+    AltName="Character: Forward Tracking %"
+    Wiki="The character tracking rate for forward motion, applied to the camera." />
+    
+    <chrTransChaseRateForNormalB
+    AltName="Character: Backward Tracking %"
+    Wiki="The character tracking rate for backward motion, applied to the camera." />
+    
+    <lockRotXShiftRatio_LerpRate
+    AltName="Lock-on - Rotation: Interpolation for Shift Ratio"
+    Wiki="The interpolation rate for the 'Rotation: Shift Ratio' field, independant of distance." />
+    
+    <shoulderOverDeg
+    AltName="Over-the-Shoulder: Angle"
+    Wiki="If not 0, then an over-the-shoulder perspective is applied. If positive, the character is to the left, if negative, to the right." />
+    
+    <lockCamParamLerpRate
+    AltName="Lock-on - Interpolation %"
+    Wiki="The interpolation rate for the lock-camera parameters." />
+    
+    <shoulderOverChangeDirectionMethod
+    AltName="Over-the-Shoulder: Turning Method"
+    Wiki="The turning method applied for the over-the-shoulder perspective." 
+    Enum="LOCK_CAM_OVER_SHOULDER_DIRECTION_CHANGE_TYPE" />
+    
+    <pad2
+    AltName=""
+    Padding="" />
+    
+    <shoulderOverChangeDirectionSpeed
+    AltName="Over-the-Shoulder: Turning Speed"
+    Wiki="The turning speed for the over-the-shoulder perspective, if the method is 'Press and Hold (Angle)'" />
+    
+    <shoulderOverChangeDirectionTimeThreshold
+    AltName="Over-the-Shoulder: Turning Time Threshold"
+    Wiki="The turning time threshold for the over-the-shoulder perspective, if the method is 'Press and Hold (Time)'" />
+    
+    <shoulderOverChangeDirectionLerpRate
+    AltName="Over-the-Shoulder: Turning Interpolation %"
+    Wiki="The turning interpolation rate for the over-the-shoulder perspective." />
+    
+    <chrTransChaseRateParam_AccelMaxX
+    AltName="Character: Horizontal Tracking Acceleration"
+    Wiki="The maximum acceleration rate when tracking a character on the horizontal (X-axis) plane. In metres per second ^ 2." />
+    
+    <chrTransChaseRateParam_ChaseRateDecreaseMaxX
+    AltName="Character: Horizontal Tracking Deceleration"
+    Wiki="The maximum deceleration if tracking a character on the horizontal (X-axis) plane, after having reached acceleration maximum. In metres per second ^ 2." />
+    
+    <chrTransChaseRateForNormalX_LerpRate
+    AltName="Character: Horizontal Tracking Interpolation %"
+    Wiki="The interpolation rate for tracking a character on the horizontal (X-axis) plane." />
+    
+    <shoulderOverChangeDirectionShortTimeThreshold
+    AltName="Over-the-Shoulder: Turning Time Threshold (Play Short)"
+    Wiki="The turning time threshold for the over-the-shoulder perspective, if the method is 'Play Short'. Do not set below 1 frame." />
+    
+    <chrTransChaseRateParam_AccelMaxY
+    AltName="Character: Vertical Tracking Acceleration"
+    Wiki="The maximum acceleration rate when tracking a character on the vertical (Y-axis) plane. In metres per second ^ 2." />
+    
+    <chrTransChaseRateParam_ChaseRateDecreaseMaxY
+    AltName="Character: Vertical Tracking Deceleration"
+    Wiki="The maximum deceleration if tracking a character on the vertical (Y-axis) plane, after having reached acceleration maximum. In metres per second ^ 2." />
+    
+    <chrTransChaseRateForNormalY_LerpRate
+    AltName="Character: Vertical Tracking Interpolation %"
+    Wiki="The interpolation rate for tracking a character on the vertical (Y-axis) plane." />
+    
+    <shoulderOverChangeDirectionMinAngleThreshold
+    AltName="Over-the-Shoulder: Minimum Rotation Input Threshold (Play Short)"
+    Wiki="The minimum rotation input threshold for the over-the-shoulder perspective, if the method is 'Play Short'. In radians." />
+    
+    <lockRotChaseRate
+    AltName="Lock-on - Rotation Tracking %"
+    Wiki="The tracking rate when the camera is locked-on to another character." />
+    
+    <rotSpeed_Min_X
+    AltName="Rotation Speed: Minimum (X-Axis)"
+    Wiki="The minimum rotation speed on the X-axis. In degrees per second." />
+    
+    <rotSpeed_Max_X
+    AltName="Rotation Speed: Maximum (X-Axis)"
+    Wiki="The maximum rotation speed on the X-axis. In degrees per second." />
+    
+    <rotHiSpeed_Min_X
+    AltName="Rotation High Speed: Minimum (X-Axis)"
+    Wiki="The minimum rotation speed on the X-axis in the high-speed state. In degrees per second." />
+    
+    <rotHiSpeed_Max_X
+    AltName="Rotation High Speed: Maximum (X-Axis)"
+    Wiki="The maximum rotation speed on the X-axis in the high-speed state. In degrees per second." />
+    
+    <priority
+    AltName="Priority"
+    Wiki="The priority at which this parameter is applied. If the priority is the same as another, the ordering is handled internally." />
+    
+    <doInverseTurnDirection
+    AltName="Over-the-Shoulder: Reverse Direction of Rotation"
+    Wiki="If ON, when the character is on the left-hand side of the screen, and turns to the right, the over-the-shoulder perspective will switch, and vice versa. " 
+    IsBool="" />
+    
+    <doUseOverShoulderViewWhenLockOn
+    AltName="Over-the-Shoulder: Apply when Locked"
+    Wiki="If ON, then the over-the-shoulder perspective will apply whilst locked-on." 
+    IsBool="" />
+    
+    <doUseOverShoulderViewWhenNotLockOn
+    AltName="Over-the-Shoulder: Apply when Unlocked"
+    Wiki="If ON, then the over-the-shoulder perspective will apply whilst not locked-on." 
+    IsBool="" />
+    
+    <doIgnoreOptionRotSpeedRate
+    AltName="Ignore Optional Rotation Speed %"
+    Wiki="If ON, optional rotation speed rate is ignored (if ignored, the value used is 5)." 
+    IsBool="" />
+    
+    <padding0
+    AltName=""
+    Padding="" />
+    
+    <padding01
+    AltName=""
+    Padding="" />
+    
+    <locksiteMoveFactor
+    AltName="Lock-on - Reticule Movement %"
+    Wiki="The factor to use with the movement speed value for the lock reticule when moving." />
+    
+    <rotRangeMaxX
+    AltName="Rotation: Maximum X-Axis Value"
+    Wiki="The maximum rotational value on the X-axis for the camera. In degrees." />
+    
+    <rotRangeMinY
+    AltName="Rotation: Minimum Y-Axis Value"
+    Wiki="The minimum rotational value on the Y-axis for the camera. In degrees." />
+    
+    <rotRangeMaxY
+    AltName="Rotation: Maximum Y-Axis Value"
+    Wiki="The maximum rotational value on the Y-axis for the camera. In degrees." />
+    
+    <chrTransChaseRateForNormalD
+    AltName="Character: Down Tracking %"
+    Wiki="The character tracking rate for down motion, applied to the camera." />
+    
+    <lockRotXShiftRatio_Min
+    AltName="Lock-on - Rotation: Minimum Shift Ratio"
+    Wiki="The minimum value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom." />
+    
+    <lockRotXShiftRatio_Max
+    AltName="Lock-on - Rotation: Maximum Shift Ratio"
+    Wiki="The maximum value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom." />
+    
+    <lockRotXShiftRatio_LerpMinDist
+    AltName="Lock-on - Rotation: Shift Ratio - Interpolation Minimum Distance"
+    Wiki="The minimum distance for the interpolation of the rotation * rotation shift rate." />
+    
+    <lockRotXShiftRatio_LerpMidMinDist
+    AltName="Lock-on - Rotation: Shift Ratio - Interpolation Middle-Minimum Distance"
+    Wiki="The middle-minimum distance for the interpolation of the rotation * rotation shift rate." />
+    
+    <lockRotXShiftRatio_LerpMidMaxDist
+    AltName="Lock-on - Rotation: Shift Ratio - Interpolation Middle-Maximum Distance"
+    Wiki="The middle-maximum distance for the interpolation of the rotation * rotation shift rate." />
+    
+    <lockRotXShiftRatio_LerpMaxDist
+    AltName="Lock-on - Rotation: Shift Ratio - Interpolation Maximum Distance"
+    Wiki="The maximum distance for the interpolation of the rotation * rotation shift rate." />
+    
+    <chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxX
+    AltName="Character: Maximum Horizontal Tracking Reduction from Speed"
+    Wiki="The maximum amount of horizontal tracking reduction due to the speed of the character." />
+    
+    <chrTransChaseRateParam_MaxHorizontalSpeed
+    AltName="Character: Minimum Horizontal Tracking Speed"
+    Wiki="The horizontal speed at which the horizontal tracking rate is the lowest. In metres per second." />
+    
+    <chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxFront
+    AltName="Character: Maximum Horizontal Tracking Reduction from Speed (Front)"
+    Wiki="The maximum amount of horizontal (front) tracking reduction due to the speed of the character." />
+    
+    <chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxBack
+    AltName="Character: Maximum Horizontal Tracking Reduction from Speed (Back)"
+    Wiki="The maximum amount of horizontal (Back) tracking reduction due to the speed of the character." />
+    
+    <closeToTargetDistance
+    AltName="Camera: Minimum Lock-on Distance"
+    Wiki="The minimum distance away from a target that the camera is able to lock-on to them. In metres." />
+    
+    <overShoulderRadLerpRate
+    AltName="Over-the-Shoulder: Interpolation %"
+    Wiki="The interpolation rate for the over-the-shoulder turning. In radians." />
+    
+    <overShoulderRadLerpRateWhenLockOnOff
+    AltName="Over-the-Shoulder: Interpolation % (Unlocked)"
+    Wiki="The interpolation rate for the over-the-shoulder turning when unlocked. In radians." />
+    
+    <overShoulderRadLerpRateLerpRate
+    AltName="Over-the-Shoulder: Interpolation of Interpolation %"
+    Wiki="The interpolation of the interpolation rate for the over-the-shoulder turning. In radians." />
+    
+    <chrTransChaseRateForQBX
+    AltName="Quick Boost: Horizontal Tracking %"
+    Wiki="The horizontal tracking rate during quick-boost of characters." />
+    
+    <chrTransChaseRateForQBF
+    AltName="Quick Boost: Forward Tracking %"
+    Wiki="The forward tracking rate during quick-boost of characters." />
+    
+    <chrTransChaseRateForQBB
+    AltName="Quick Boost: Backward Tracking %"
+    Wiki="The backward tracking rate during quick-boost of characters." />
+    
+    <chrTransChaseRateForBoostX
+    AltName="Quick Boost: Horizontal Tracking"
+    Wiki="The horizontal tracking value during quick-boost of characters." />
+    
+    <chrTransChaseRateForBoostF
+    AltName="Quick Boost: Forward Tracking"
+    Wiki="The forward tracking value during quick-boost of characters." />
+    
+    <chrTransChaseRateForBoostB
+    AltName="Quick Boost: Backward Tracking"
+    Wiki="The backward tracking value during quick-boost of characters." />
+    
+    <chrTransChaseRateForNormalF_LerpRate
+    AltName="Quick Boost: Interpolation % of Forward Tracking"
+    Wiki="The interpolation rate of the forward tracking rate during quick-boost." />
+    
+    <chrTransChaseRateForNormalB_LerpRate
+    AltName="Quick Boost: Interpolation % of Backward Tracking"
+    Wiki="The interpolation rate of the backward tracking rate during quick-boost." />
+    
+    <shootTargetLookUpAngAtUnlock
+    AltName="Shoot Target: Look Angle (Unlocked)"
+    Wiki="The angle at which the camera looks when it is a free camera (whilst unlocked)." />
+    
+    <shootTargetLookUpAngAtLock
+    AltName="Shoot Target: Look Angle (Locked)"
+    Wiki="The angle at which the camera looks when it is a free camera (whilst locked)." />
+    
+    <lockRotChasePlayAngHorizontal
+    AltName="Lock-on - Rotation: Horizontal Tracking Angle"
+    Wiki="The horizontal tracking rotation angle to use during lock-on. In degrees." />
+    
+    <camLookupOffsetY
+    AltName="Camera Look: Height Correction (Up)"
+    Wiki="The offset to apply to the upwards camera look on the Y-axis. In metres." />
+    
+    <camLookupOffsetZ
+    AltName="Camera Look: Depth Correction (Up)"
+    Wiki="The offset to apply to the upwards camera look on the Z-axis. In metres." />
+    
+    <camLookdownOffsetY
+    AltName="Camera Look: Height Correction (Down)"
+    Wiki="The offset to apply to the downwards camera look on the Y-axis. In metres." />
+    
+    <camLookdownOffsetZ
+    AltName="Camera Look: Depth Correction (Down)"
+    Wiki="The offset to apply to the downwards camera look on the Z-axis. In metres." />
+    
+    <lockRotChaseRateRecoverRateAfterCrossing
+    AltName="Lock-on Target: Rotation Speed (Passing)"
+    Wiki="The higher the value, the faster the camera will rotate towards the target after moving pass them." />
+    
+    <crossingLockRotChaseRate
+    AltName="Lock-on Target: Rotation Tracking % (Passing)"
+    Wiki="The lock-on rotation tracking rate to apply after moving pass the target. The smaller the value, the more linear our movement will be." />
+    
+    <crossingLastTime
+    AltName="Passing Effect Duration"
+    Wiki="The duration of the passing moment, the moment we pass our target." />
+    
+    <crossingHorizontalDistanceThreshold
+    AltName="Horziontal Threshold for Passing"
+    Wiki="The horziontal distance threshold to trigger the passing state between us and our target. In metres." />
+    
+    <crossingRelativeVelocityThreshold
+    AltName="Relative Velocity Threshold for Passing"
+    Wiki="The relative velocity required to 'pass' our target. The horizontal velocity between us and our target must be above this threshold." />
+    
+    <lockRotChasePlayAngVertical
+    AltName="Lock-on - Rotation: Vertical Tracking Angle"
+    Wiki="The vertical tracking rotation angle to use during lock-on. In degrees." />
+    
+    <lockRotChasePlayAngHorizontalReturnLerpRate
+    AltName="Lock-on - Rotation: Horziontal Return Interpolation %"
+    Wiki="The interpolation rate when the target returns to the centre of the screen from a horizontal angle." />
+    
+    <lockRotChasePlayAngVerticalReturnLerpRate
+    AltName="Lock-on - Rotation: Vertical Return Interpolation %"
+    Wiki="The interpolation rate when the target returns to the centre of the screen from a vertical angle." />
+    
+    <camAutoPullWhenLookUpRotXThreshold
+    AltName="Automatic Camera Pull: X-Axis Rotation Threshold"
+    Wiki="Applies when the camera looks up. The angle on the X-axis at which the threshold for the automatic camera pulling occurs. -1 means it will trigger if the camera descends to the character's root position. Set to 90 to disable the pulling." />
+    
+    <camAutoPullWhenLookUpWeight
+    AltName="Automatic Camera Pull: Weight"
+    Wiki="Applies when the camera looks up. The higher the weight, the lower the rotation. Higher values mean the view is pulled closer to the character, away from the target." />
+    
+    <camAutoPullWhenLookUpCamDistWeight
+    AltName="Automatic Camera Pull: Magnification"
+    Wiki="Applies when the camera looks up. The magnification rate to apply to the automatic camera pulling." />
+    
+    <camAutoPullWhenLookUpCamDistMax
+    AltName="Automatic Camera Pull: Maximum Distance."
+    Wiki="Applies when the camera looks up. The maximum distance for the automatic camera pulling." />
+    
+    <chrOrgOffset_Y_Up
+    AltName="Character: Height Offset (Ascending)"
+    Wiki="The height of the camera's look point (from the character's root position, whilst ascending). In metres." />
+    
+    <chrOrgOffset_Y_Down
+    AltName="Character: Height Offset (Descending)"
+    Wiki="The height of the camera's look point (from the character's root position, whilst descending). In metres." />
+    
+    <chrOrgOffset_Y_LerpRate
+    AltName="Character: Height Offset Interpolation %"
+    Wiki="The interpolation rate for the character height offset." />
+    
+    <chrOrgOffset_Y_MuteAirLerpRate
+    AltName="Character: Height Offset Interpolation % (Disable Camera Aerial Offset)"
+    Wiki="The interpolation rate for the character height offset, after the 'Disable camera aerial offset (for PC)' event has been triggered via TAE." />
+    
+    <playerFadeDist
+    AltName="Character: Dither Fade Distance"
+    Wiki="The distance between the camera and the character at which the dither fade starts." />
+    
+    <rotSpeed_Min_Y
+    AltName="Rotation Speed: Minimum (Y-Axis)"
+    Wiki="The minimum rotation speed on the Y-axis. In degrees per second." />
+    
+    <rotSpeed_Max_Y
+    AltName="Rotation Speed: Maximum (Y-Axis)"
+    Wiki="The maximum rotation speed on the Y-axis. In degrees per second." />
+    
+    <rotHiSpeed_Min_Y
+    AltName="Rotation High-Speed: Minimum (Y-Axis)"
+    Wiki="The minimum rotation high-speed on the Y-axis. In degrees per second." />
+    
+    <rotHiSpeed_Max_Y
+    AltName="Rotation High-Speed: Maximum (Y-Axis)"
+    Wiki="The maximum rotation high-speed on the Y-axis. In degrees per second." />
+    
+    <reserve031
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="LOCK_CAM_OVER_SHOULDER_DIRECTION_CHANGE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Press and Hold (Angle)" />
+        <Option Value="2" Name="Press and Hold (Time)" />
+        <Option Value="3" Name="Play Short" />
+    </Enum> 
+    
+  </Enums>
+  
+</PARAMMETA>

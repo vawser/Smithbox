@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of various parameters relating to the interface." />
+  
+  <Field>
+    <SoloPlayDeath_ToFadeOutTime 
+    AltName="Death Message: Fade Out Delay (Singleplayer)" 
+    Wiki="The duration that the 'YOU DIED' is displayed before fading out if in singleplayer." />
+    
+    <PartyGhostDeath_ToFadeOutTime 
+    AltName="Death Message: Fade Out Delay (Multiplayer)" 
+    Wiki="The duration that the 'YOU DIED' is displayed before fading out if a client in a multiplayer session." />
+    
+    <PlayerMaxHpLimit 
+    AltName="Max Displayed Player AP" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by resources is used when displaying the AP gauge." />
+    
+    <PlayerMaxMpLimit 
+    AltName="Max Diplayed Player FP" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the FP gauge." />
+    
+    <PlayerMaxSpLimit 
+    AltName="Max Displayed Player Energy" 
+    Wiki="The value with which to calculate what percentage of the length of the gauge prepared by the resource is used when displaying the Energy gauge." />
+    
+    <ActionPanelChangeThreshold_Vel 
+    AltName="Action Panel Change Threshold: Player Velocity" 
+    Wiki="The action panel switchable player speed. Switching is possible when below this speed." />
+    
+    <ActionPanelChangeThreshold_PassTime 
+    AltName="Action Panel Change Threshold: Pass Time" 
+    Wiki="The consideration time for speeding up players who can switch action panels. Use the average speed during this time (maximum 4 seconds according to the system)." />
+    
+    <PlayerMaxAddHp 
+    AltName="Max Addition to Player AP" 
+    Wiki="The maximum value to be added to the player's maximum AP when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <PlayerMaxAddMp 
+    AltName="Max Addition to Player FP" 
+    Wiki="The maximum value to be added to the player's maximum FP when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <PlayerMaxAddSp 
+    AltName="Max Addition to Player Energy" 
+    Wiki="The maximum value to be added to the player's maximum Energy when calculating what percentage of the gauge length affected by the addition is used." />
+    
+    <DecalPosOffsetX 
+    AltName="Decal Display: Horizontal Offset" 
+    Wiki="The horizontal offset to apply to decal display position." />
+    
+    <DecalPosOffsetY 
+    AltName="Decal Display: Vertical Offset" 
+    Wiki="The vertical offset to apply to decal display position." />
+    
+    <TargetStateSearchDurationTime 
+    AltName="Search Icon: Display Duration" 
+    Wiki="The time that the Search icon to be displayed on the HUD. In seconds." />
+    
+    <TargetStateBattleDurationTime 
+    AltName="Battle Icon: Display Duration" 
+    Wiki="The time that the Battle icon to be displayed on the HUD. In seconds." />
+    
+    <VolatilizeFadeBeginSec 
+    AltName="Impact Gauge: Fade Delay" 
+    Wiki="The time that the Impact gauge is displayed for on the HUD before fading out. In seconds." />
+    
+    <MakerRendRangeWidth 
+    AltName="Marker: Rendering Width" 
+    Wiki="The width of the rendering range that a marker can be drawn in." />
+    
+    <MakerRendRangeHeight 
+    AltName="Marker: Rendering Height" 
+    Wiki="The height of the rendering range that a marker can be drawn in." />
+    
+    <HpBarFadeOutTime 
+    AltName="AP Gauge: Fade Delay" 
+    Wiki="The time that the AP gauge is displayed on the HUD before fading out. In seconds." />
+    
+    <ZeroHpBarFadeOutTime 
+    AltName="AP Gauge: Fade Delay (Dead)" 
+    Wiki="The time that the AP gauge is displayed on the HUD before fading out, when the player is killed. In seconds." />
+    
+    <HitFEViewTime 
+    AltName="Hit Marker: Display Duration" 
+    Wiki="The duration to a hit marker is displayed on the HUD for. In seconds." />
+    
+    <HackingGaugeFadeOutTime 
+    AltName="Hacking Gauge: Fade Delay" 
+    Wiki="The time that the Hacking gauge is displayed on the HUD before fading out. In seconds." />
+    
+    <VolatilizeCombineSec 
+    AltName="Impact Gauge: Update Duration" 
+    Wiki="The time before the Impact gauge is updated to its new state after a hit. In seconds." />
+    
+    <MiniMap_WorldDispRange 
+    AltName="Minimap: World Display Range" 
+    Wiki="The display range for the world in the minimap. In metres." />
+    
+    <MiniMap_RaderRange 
+    AltName="Minimap: Radar Range" 
+    Wiki="The range of the radar effect in the minimap. In metres" />
+    
+    <EnemyLooksLikeSABreakThreshold 
+    AltName="Stagger Break Indicator Threshold" 
+    Wiki="The threshold (ratio) of Stagger value that produces indicator that enemy is vulnerable to Stagger Break." />
+    
+    <CamLockInterpolationFactor 
+    AltName="Locked Camera: Interpolation Coefficient" 
+    Wiki="The coefficient used to supplement lock-on movement when camera is fixed." />
+    
+    <CamUnlockInterpolationFactor 
+    AltName="Locked Camera: Release Interpolation Coefficient" 
+    Wiki="The coefficient used to supplement lock-on movement when a fixed camera is released." />
+    
+    <EnemySearchIconFadeOutTime 
+    AltName="Search Icon: Fade Out Delay" 
+    Wiki="The duration before the enemy search indicator icon starts facing out. In seconds." />
+    
+    <LockSite_DisableLockDistance 
+    AltName="Locked Camera: Release Interpolation Distance"
+    Wiki="The distance between the lock-on and the target position after which the lock-on will be interpolated." />
+    
+    <GetSoulAnimStartTime 
+    AltName="Soul Acquisition Animation Delay" 
+    Wiki="The duration before the soul acquisition animation occurs after recieving souls. In seconds." />
+    
+    <DangerFEViewTime 
+    AltName="Danger Icon: Display Time" 
+    Wiki="The time that the Danger icon to be displayed on the HUD. In seconds." />
+    
+    <TosScrollSpeed_Normal 
+    AltName="Terms of Use: Scroll Speed (Normal)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
+    <TosScrollSpeed_Fast 
+    AltName="Terms of Use: Scroll Speed (Fast)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
+    <TosScrollSpeed_Mouse 
+    AltName="Terms of Use: Scroll Speed (Mouse)" 
+    Wiki="The speed of scrolling through the terms of use. In pixels." />
+    
+    <TosFastScrollCount 
+    AltName="Terms of Use: Number of Fast Scrolls" 
+    Wiki="The number of allowable fast scrolls." />
+    
+    <PreOpeningMovie_WaitSec 
+    AltName="Prologue Delay" 
+    Wiki="The duration before the prologue movie plays. In seconds." />
+    
+    <StaffRoll_PlaySec 
+    AltName="Credit Roll Duration" 
+    Wiki="The duration the staff credit roll plays for. In seconds." />
+    
+    <MIniMap3D_PlayerIconScale 
+    AltName="3D Minimap: Player Icon Scale" 
+    Wiki="The scale value of the player icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_TargetSpotIconScale 
+    AltName="3D Minimap: Target Spotted Icon Scale" 
+    Wiki="The scale value of the target spotted icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_EnemyIconScale 
+    AltName="3D Minimap: Enemy Icon Scale" 
+    Wiki="The scale value of the enemy icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_RaderIconScale 
+    AltName="3D Minimap: Radar Icon Scale" 
+    Wiki="The scale value of the radar icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_MissionRegionHeight 
+    AltName="3D Minimap: Operational Area Height Scale" 
+    Wiki="The scale value for the height of the operational area when displayed on the 3D minimap." />
+    
+    <MIniMap3D_MaintenancePointIconScale 
+    AltName="3D Minimap: Supply Point Icon Scale" 
+    Wiki="The scale value of the supply point icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_CatapultIconScale 
+    AltName="3D Minimap: Catapult Icon Scale" 
+    Wiki="The scale value of the catapult point icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_RouteIconScale 
+    AltName="3D Minimap: Route Icon Scale" 
+    Wiki="The scale value of the route icon when displayed on the 3D minimap." />
+    
+    <FE_MissionLine_FadeInTime 
+    AltName="Mission Area Boundary: Fade-in Duration" 
+    Wiki="The fade-in time for the mission area boundary interface element to appear. In seconds." />
+    
+    <FE_MissionRegionSfxId 
+    AltName="Mission Area Boundary: Particle ID" 
+    Wiki="The SFX ID to use for the mission region boundary." 
+    ParticleAlias="" />
+    
+    <FE_MissionRegionStartLineDist 
+    AltName="Mission Area Boundary: Start Distance" 
+    Wiki="The distance at which the mission area boundary lines will start to appear. In metres." />
+    
+    <FE_MissionRegionLineDist 
+    AltName="Mission Area Boundary: Color Shift Distance" 
+    Wiki="The distance at which the color of the mission area boundary shifts. In metres." />
+    
+    <FE_MissionRegionLineHeight 
+    AltName="Mission Area Boundary: Height" 
+    Wiki="The vertical width of the mission area boundary line. In metres." />
+    
+    <FE_MissionRegionLineTexTile 
+    AltName="Mission Area Boundary: Tiling Scale" 
+    Wiki="The tiling scale for the boundary line texture." />
+    
+    <FE_MissionRegionLineHeightOffset 
+    AltName="Mission Area Boundary: Height Offset" 
+    Wiki="The height offset to apply to the boundary line." />
+    
+    <MiniMap_RepairPointAlphaBeginHeith 
+    AltName="Minimap: Repair Point Transparency - Start Height" 
+    Wiki="The start height for applying the fade transparency to the repair point icon (on the minimap). Distance is compared to the player's position. In metres." />
+    
+    <MiniMap_RepairPointAlphaEndHeith 
+    AltName="Minimap: Repair Point Transparency - End Height" 
+    Wiki="The end height for applying the fade transparency to the repair point icon (on the minimap). Distance is compared to the player's position. In metres." />
+    
+    <MiniMap_RepairPointAlphaMin 
+    AltName="Minimap: Repair Point Transparency - Minimum Alpha" 
+    Wiki="The minimum alpha value to use for transparency when fading the repair point icon (on the minimap)." />
+    
+    <FE_MissionRegionLineAddBlend 
+    AltName="Mission Area Boundary: Use Additive Blending" 
+    Wiki="If ON, draw the boundary lines in the mission area with additive blending." 
+    IsBool="" />
+    
+    <FE_MissionRegionLineUseSfx 
+    AltName="Mission Area Boundary: Use Particles" 
+    Wiki="If ON, the boundary lines will be expressed using particles (SFX)." 
+    IsBool="" />
+    
+    <pad_26 
+    Padding="" />
+    
+    <MiniMap_ChangeInterval 
+    AltName="Minimap: Change Interval" 
+    Wiki="The interval at which the minimap display changes when the map is switched. In seconds." />
+    
+    <DoubleLockSightOffset 
+    AltName="Lock-on Reticule Offset for Dual Pistols" 
+    Wiki="The distance to shift the lock-on reticule from the centre position when using two pistols." />
+    
+    <MIniMap3D_TowerIconScale 
+    AltName="3D Minimap: Tower Icon Scale" 
+    Wiki="The scale value of the tower icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_CityIconScale 
+    AltName="3D Minimap: City Icon Scale" 
+    Wiki="The scale value of the city icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_ForitfiedCityIconScale 
+    AltName="3D Minimap: Fortified City Icon Scale" 
+    Wiki="The scale value of the fortified city icon when displayed on the 3D minimap." />
+    
+    <MIniMap3D_ColonySpotIconScale 
+    AltName="3D Minimap: Colony Ship Icon Scale" 
+    Wiki="The scale value of the colony ship icon when displayed on the 3D minimap." />
+    
+    <AsmView_LensShiftLimitX 
+    AltName="View Mode: Model Movable Range (X)" 
+    Wiki="The model movable range (on the x-axis) in view mode." />
+    
+    <AsmView_LensShiftLimitY 
+    AltName="View Mode: Model Movable Range (Y)" 
+    Wiki="The model movable range (on the y-axis) in view mode." />
+    
+    <DisableLockCursorAlpha 
+    AltName="Lock Reticule Transparency" 
+    Wiki="The alpha value of the lock cursor when shooting is disabled." />
+    
+    <ItemGetLogAliveTime 
+    AltName="Item Acquisition Log: Item Display Duration" 
+    Wiki="The time it takes to add one line to the item acquistion log and then fade it out. In seconds." />
+    
+    <PartsModelRotationInputWaitTimeSec 
+    AltName="Assembly Menu: Rotation Input Time Threshold" 
+    Wiki="When in the assembly menu, the duration to check for to determine if there has been no pad input for model rotation. In seconds." />
+    
+    <GrageCallSpecialEffectId 
+    AltName="Garage Helicopter Call: SpEffect ID" 
+    Wiki="The SpEffect ID that is applied when selecting the garage helicopter call." 
+    Refs="SpEffectParam" />
+    
+    <FE_LowHP_rate 
+    AltName="Low HP Threshold % for HUD Effects" 
+    Wiki="The threshold value used to determine that the remaining HP ratio is low." />
+    
+    <FE_LowBarrier_rate 
+    AltName="Low Shield Threshold % for HUD Effects" 
+    Wiki="The threshold value used to determine that the remaining shield ratio is low." />
+    
+    <pad_998 
+    Padding="" />
+    
+    <FE_LargeDamageDetect_HP_rate 
+    AltName="HP Threshold % for Large Damage HUD Effect" 
+    Wiki="The threshold value used to determine that a large damage event has occured." />
+    
+    <FE_LargeDamageDetect_CollectTime 
+    AltName="Large Damage Detection Time" 
+    Wiki="The duration over which damage can be suffered for it to be counted as a 'large damage' event. In seconds." />
+    
+    <Garage_FocusWaitTime 
+    AltName="Garage: Camera Animation Delay when Focused" 
+    Wiki="The delay before the camera animation starts when focusing on an item in the garage. In seconds." />
+    
+    <Garage_FadeTime 
+    AltName="Garage: Fade Effect Time" 
+    Wiki="The duration of the fading that occurs in conjuction with the garage camera animation." />
+    
+    <FE_MissionLine_Width 
+    AltName="Strategy Line: Display Width" 
+    Wiki="The display width to use for the strategy line. In metres." />
+    
+    <FE_MissionLine_FadeOutTime 
+    AltName="Strategy Line: Fade Out Time" 
+    Wiki="The fade out duration when leaving the strategy line location. In seconds." />
+    
+    <FE_MissionLineWarningStartLineDist 
+    AltName="Warning Line: Display Start Distance" 
+    Wiki="The distance at which the warning line is displayed. In metres." />
+    
+    <FE_MissionLineWarningLineDist 
+    AltName="Warning Line: Color Shift Distance" 
+    Wiki="The distance at which the color of the warning line shifts. In metres." />
+    
+    <Garage_CamPadWaitTime 
+    AltName="Garage: Pad Input Detection Delay" 
+    Wiki="The delay from playing the camera animation to accepting new camera pad input. In seconds." />
+    
+    <Garage_ChangeHeadPlayAnimId 
+    AltName="Garage: Head Assembly Change - Animation ID" 
+    Wiki="The animation that plays after changing a head part in the assembly menu." />
+    
+    <Garage_ChangeCorePlayAnimId 
+    AltName="Garage: Core Assembly Change - Animation ID" 
+    Wiki="The animation that plays after changing a core part in the assembly menu." />
+    
+    <Garage_ChangeArmPlayAnimId 
+    AltName="Garage: Arm Assembly Change - Animation ID" 
+    Wiki="The animation that plays after changing an arm part in the assembly menu." />
+    
+    <Garage_ChangeLegPlayAnimId 
+    AltName="Garage: Leg Assembly Change - Animation ID" 
+    Wiki="The animation that plays after changing a leg part in the assembly menu." />
+    
+    <Garage_ChangePlayAnimId 
+    AltName="Garage: Assembly Change - Animation ID" 
+    Wiki="The animation that plays after changing a part in the assembly menu." />
+    
+    <Garage_CamPadSpeedY 
+    AltName="Garage: Vertical Camera Movement Speed" 
+    Wiki="The vertical movement speed of the camera when in the garage. In metres per second." />
+    
+    <Garage_CamPadSpeedX 
+    AltName="Garage: Horizontal Camera Movement Speed" 
+    Wiki="The horizontal movement speed of the camera when in the garage. In metres per second." />
+    
+    <FE_RegionLineUpDownOffset 
+    AltName="Mission Area Boundary: Vertical Display Offset" 
+    Wiki="The vertical display offset of lines above and below the mission area line." />
+    
+    <FE_RegionEdgeSfxHideDist 
+    AltName="Mission Area Edge: Particle Hide Distance" 
+    Wiki="The distance at which the mission area edge SFX is hidden. In metres." />
+    
+    <FE_RegionEdgeSfxFadeDist 
+    AltName="Mission Area Edge: Particle Fade Distance" 
+    Wiki="The distance at which the mission area edge SFX fades at. The start fade distance is the sum of this distance and the hide distance. In metres." />
+    
+    <FE_RegionEdgeTexWidth 
+    AltName="Mission Area Edge: Texture Width" 
+    Wiki="The display width of the mission area edge texture. In metres." />
+    
+    <FE_RegionEdgeTexHeight 
+    AltName="Mission Area Edge: Texture Height" 
+    Wiki="The display height of the mission area edge texture. In metres." />
+    
+    <FE_RegionEdgeTexOffsetX 
+    AltName="Mission Area Edge: Horizontal Texture Offset" 
+    Wiki="The texture position offset (on the x-axis) for the mission area edge texture. In metres." />
+    
+    <FE_RegionEdgeTexOffsetY 
+    AltName="Mission Area Edge: Vertical Texture Offset" 
+    Wiki="The texture position offset (on the y-axis) for the mission area edge texture. In metres." />
+    
+    <FE_Region_UpperLimitDist 
+    AltName="Mission Area Line: Maximum Height" 
+    Wiki="The maximum height to use for the mission area boundary line when hitting the map ceiling. In metres." />
+    
+    <FE_Region_LowerLimitDist 
+    AltName="Mission Area Line: Minimum Height" 
+    Wiki="The minimum height to use for the mission area boundary line when hitting the map floor. In metres." />
+    
+    <Garage_BriefingBokeTime 
+    AltName="Briefing: Blur Duration" 
+    Wiki="The time it takes for the briefing background blur to reach its completely blurred state. In seconds." />
+    
+    <Garage_BriefingBokeWaitTime 
+    AltName="Briefing: Camera Animation Blur Delay" 
+    Wiki="The delay before the blurring starts if the camera is playing an animation (during a briefing)." />
+    
+    <Garage_BriefingBokeRate 
+    AltName="Briefing: Blur %" 
+    Wiki="The blur rate to use for the briefing background blur." />
+    
+    <CoralFeWeak_FE_CoralScrollSpeed 
+    AltName="Weak Coral Effect: Scroll Speed" 
+    Wiki="The texture scroll speed for the weak coral HUD effect." />
+    
+    <CoralFeWeak_FE_CoralDispWidth 
+    AltName="Weak Coral Effect: Display Width" 
+    Wiki="The standard width of the horizontal texture display width for the weak coral HUD effect." />
+    
+    <CoralFeWeak_FE_CoralDispFadeInTime 
+    AltName="Weak Coral Effect: Fade In Duration" 
+    Wiki="The fade in duration for the weak coral HUD effect. In seconds." />
+    
+    <CoralFeWeak_FE_CoralColorR 
+    AltName="Weak Coral Effect: R" 
+    Wiki="The red component of the RGBA color used by the weak coral HUD effect." />
+    
+    <CoralFeWeak_FE_CoralColorG 
+    AltName="Weak Coral Effect: G" 
+    Wiki="The green component of the RGBA color used by the weak coral HUD effect." />
+    
+    <CoralFeWeak_FE_CoralColorB 
+    AltName="Weak Coral Effect: B" 
+    Wiki="The blue component of the RGBA color used by the weak coral HUD effect." />
+    
+    <CoralFeWeak_FE_CoralColorA 
+    AltName="Weak Coral Effect: Alpha" 
+    Wiki="The alpha component of the RGBA color used by the weak coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralScrollSpeed 
+    AltName="Strong Coral Effect: Scroll Speed" 
+    Wiki="The texture scroll speed for the strong coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralDispWidth 
+    AltName="Strong Coral Effect: Display Width" 
+    Wiki="The standard width of the horizontal texture display width for the strong coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralDispFadeInTime 
+    AltName="Strong Coral Effect: Fade In Duration" 
+    Wiki="The fade in duration for the strong coral HUD effect. In seconds." />
+    
+    <CoralFeStrength_FE_CoralColorR 
+    AltName="Strong Coral Effect: R" 
+    Wiki="The red component of the RGBA color used by the strong coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralColorG 
+    AltName="Strong Coral Effect: G" 
+    Wiki="The green component of the RGBA color used by the strong coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralColorB 
+    AltName="Strong Coral Effect: B" 
+    Wiki="The blue component of the RGBA color used by the strong coral HUD effect." />
+    
+    <CoralFeStrength_FE_CoralColorA 
+    AltName="Strong Coral Effect: Alpha" 
+    Wiki="The alpha component of the RGBA color used by the strong coral HUD effect." />
+    
+    <FE_VsFloatingInfo_Range 
+    AltName="Comparison: Floating Display Range" 
+    Wiki="The floating display range to use for comparison." />
+    
+    <FE_ShowDamageAccumulationTimeSec 
+    AltName="Damage Display Duration" 
+    Wiki="The cumulative time for damage display. In seconds." />
+    
+    <pad_end 
+    Padding="" />
+  </Field>
+  
+  <ColorEdit>
+    <ColorEditor 
+    Name="Weak Coral" 
+    Fields="CoralFeWeak_FE_CoralColorR,CoralFeWeak_FE_CoralColorG,CoralFeWeak_FE_CoralColorB" 
+    PlacedField="CoralFeWeak_FE_CoralColorA" />
+    
+    <ColorEditor 
+    Name="Strong Coral" 
+    Fields="CoralFeStrength_FE_CoralColorR,CoralFeStrength_FE_CoralColorG,CoralFeStrength_FE_CoralColorB" 
+    PlacedField="CoralFeStrength_FE_CoralColorA" />
+    
+  </ColorEdit>
+</PARAMMETA>

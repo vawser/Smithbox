@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+ <PARAMMETA XmlVersion="0">
+  <Self Wiki="Determines the parameters for event flags." />
+  
+  <Field>
+    <usageType 
+    AltName="Usage Type" 
+    Wiki="The usage type of the flag." 
+    Enum="EVENT_FLAG_USAGE_TYPE" />
+    
+    <padding1 
+    AltName="" 
+    Padding=""/>
+    
+    <flagNum 
+    AltName="Reserved Flag Count" 
+    Wiki="The number of event flags reserved for this flag. The count is the specified row ID + this field - 1." />
+    
+    <padding2 
+    AltName="" 
+    Padding=""/>
+    
+  </Field>
+  <Enums>
+    <Enum Name="EVENT_FLAG_USAGE_TYPE" type="u8">
+        <Option Value="1" Name="ON/OFF" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

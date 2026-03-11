@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Determines the ejection behavior of ejected bullet cartridges."/>
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <initVelocity
+    AltName="Initial Velocity"
+    Wiki="Initial velocity of the cartridge. In metres." />
+    
+    <initVelocity_RandomRange
+    AltName="Initial Velocity: Random Range"
+    Wiki="Random velocity range of the cartridge. In metres." />
+    
+    <chrVelocityTakeoverRate
+    AltName="Speed Inheritance: Character"
+    Wiki="Character speed transfer rate." />
+    
+    <chrVelocityTakeoverRate_RandomRange
+    AltName="Speed Inheritance: Character - Random Range"
+    Wiki="Character speed transfer rate. Random range of the inherited speed." />
+    
+    <pitch
+    AltName="Ejection Angle"
+    Wiki="Angle from the horizontal angle reference of the dummy polygon (+: ↑ direction, -: ↓ direction). In degrees." />
+    
+    <pitch_RandomRange
+    AltName="Ejection Angle: Random Range"
+    Wiki="The random range of degrees for the ejection angle." />
+    
+    <gravity
+    AltName="Gravity: Acceleration"
+    Wiki="Acceleration for the cartridge gravity. In metres per second ^ 2." />
+    
+    <gravity_RandomRange
+    AltName="Gravity: Acceleration - Random Range"
+    Wiki="Acceleration for the cartridge gravity. Random range of the acceleration. In metres per second ^ 2." />
+    
+    <angVelocityX
+    AltName="Rotational Velocity (X-Axis)"
+    Wiki="Rotational velocity on the X-axis. In degrees per second" />
+    
+    <angVelocityX_RandomRange
+    AltName="Rotational Velocity (X-Axis) - Random Range"
+    Wiki="Rotational velocity on the X-axis. Random range of the rotational velocity. In degrees per second." />
+    
+    <angVelocityY
+    AltName="Rotational Velocity (Y-Axis)"
+    Wiki="Rotational velocity on the Y-axis. In degrees per second" />
+    
+    <angVelocityY_RandomRange
+    AltName="Rotational Velocity (Y-Axis) - Random Range"
+    Wiki="Rotational velocity on the Y-axis. Random range of the rotational velocity. In degrees per second." />
+    
+    <angVelocityZ
+    AltName="Rotational Velocity (Z-Axis)"
+    Wiki="Rotational velocity on the Z-axis. In degrees per second" />
+    
+    <angVelocityZ_RandomRange
+    AltName="Rotational Velocity (Z-Axis) - Random Range"
+    Wiki="Rotational velocity on the Z-axis. Random range of the rotational velocity. In degrees per second." />
+    
+    <yaw
+    AltName="Yaw Angle"
+    Wiki="Angle from the horizontal angle reference of the dummy poly (+: right direction of the dummy poly, -: left direction of the dummy poly)." />
+    
+    <yaw_RandomRange
+    AltName="Yaw Angle - Random Range"
+    Wiki="Angle from the horizontal angle reference of the dummy poly (+: right direction of the dummy poly, -: left direction of the dummy poly)." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+  </Enums>
+</PARAMMETA>

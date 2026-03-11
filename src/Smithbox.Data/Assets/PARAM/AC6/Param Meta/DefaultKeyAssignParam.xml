@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="DefaultKeyAssignPrioritySuppression" type="u8">
+        <Option Value="0" Name="False" />
+        <Option Value="1" Name="True" />
+    </Enum>
+    <Enum Name="DefaultKeyAssignPadKey" type="s32">
+    </Enum>
+  </Enums>
+  <Field>
+    <priority0 AltName="Pad 0" Wiki="Lower suppression pad 0" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority1 AltName="For GUI framework" Wiki="Pad for lower suppression GUI framework" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority2 AltName="Pad 2" Wiki="Lower suppression pad 2" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority3 AltName="Debug menu mode switching" Wiki="Lower suppression debug menu mode switching pad" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority4 AltName="Pad 4" Wiki="Lower suppression pad 4" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority5 AltName="Pad debug menu" Wiki="Lower suppression pad Debug menu pad" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority6 AltName="Pad 6" Wiki="Lower suppression pad 6" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority7 AltName="Pad 7" Wiki="Lower suppression pad 7" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority8 AltName="Pad 8" Wiki="Lower suppression pad 8" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority9 AltName="Pad 9" Wiki="Lower suppression pad 9" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority10 AltName="Pad 10" Wiki="Lower suppression pad 10" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority11 AltName="Pad 11" Wiki="Lower suppression pad 11" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority12 AltName="Pad 12" Wiki="Lower suppression pad 12" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority13 AltName="Pad 13" Wiki="Lower suppression pad 13" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority14 AltName="Pad 14" Wiki="Lower suppression pad 14" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority15 AltName="Pad 15" Wiki="Lower suppression pad 15" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority16 AltName="Pad 16" Wiki="Lower suppression pad 16" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority17 AltName="Pad 17" Wiki="Lower suppression pad 17" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority18 AltName="Pad 18" Wiki="Lower suppression pad 18" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority19 AltName="Pad 19" Wiki="Lower suppression pad 19" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority20 AltName="Pad 20" Wiki="Lower suppression pad 20" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority21 AltName="Pad 21" Wiki="Lower suppression pad 21" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority22 AltName="Pad 22" Wiki="Lower suppression pad 22" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority23 AltName="Pad 23" Wiki="Lower suppression pad 23" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority24 AltName="Pad 24" Wiki="Lower suppression pad 24" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority25 AltName="Pad 25" Wiki="Lower suppression pad 25" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority26 AltName="Pad 26" Wiki="Lower suppression pad 26" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority27 AltName="Pad 27" Wiki="Lower suppression pad 27" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority28 AltName="Pad 28" Wiki="Lower suppression pad 28" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority29 AltName="Pad 29" Wiki="Lower suppression pad 29" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority30 AltName="Pad 30" Wiki="Lower suppression pad 30" Enum="DefaultKeyAssignPrioritySuppression" />
+    <priority31 AltName="Pad 31" Wiki="Lower suppression pad 31" Enum="DefaultKeyAssignPrioritySuppression" />
+    <dummy1 AltName=""/>
+    <dummy2 AltName=""/>
+    <phyisicalKey_0 AltName="Pad physical key" Wiki="Pad physical key" Enum="DefaultKeyAssignPadKey" />
+  </Field>
+  <Self />
+</PARAMMETA>

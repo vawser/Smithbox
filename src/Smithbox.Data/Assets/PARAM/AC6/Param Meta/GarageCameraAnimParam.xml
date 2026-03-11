@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the handling of garage camera animation." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+     
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding=""/>
+    
+    <set00_beginCameraId 
+    AltName="0: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set00_endCameraId 
+    AltName="0: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set00_bNoWait 
+    AltName="0: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set00_bFade 
+    AltName="0: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set00_bBoke 
+    AltName="0: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set00_bOtherAnimCancel 
+    AltName="0: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set00_bFilterAnimOnly 
+    AltName="0: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set00_bCameraHightFixed 
+    AltName="0: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set00_padbit
+    AltName="" 
+    Padding="" />
+
+    <set00_laneCamStartFrame 
+    AltName="0: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set00_baseDmyPolyId 
+    AltName="0: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set00_laneCamLockAtEntityId 
+    AltName="0: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set00_laneCamPointIdx 
+    AltName="0: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set00_laneCamLookAtDmyPolyId 
+    AltName="0: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set01_beginCameraId 
+    AltName="1: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set01_endCameraId 
+    AltName="1: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set01_bNoWait 
+    AltName="1: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set01_bFade 
+    AltName="1: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set01_bBoke 
+    AltName="1: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set01_bOtherAnimCancel 
+    AltName="1: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set01_bFilterAnimOnly 
+    AltName="1: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set01_bCameraHightFixed 
+    AltName="1: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set01_padbit
+    AltName="" 
+    Padding="" />
+
+    <set01_laneCamStartFrame 
+    AltName="1: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set01_baseDmyPolyId 
+    AltName="1: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set01_laneCamLockAtEntityId 
+    AltName="1: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set01_laneCamPointIdx 
+    AltName="1: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set01_laneCamLookAtDmyPolyId 
+    AltName="1: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set02_beginCameraId 
+    AltName="2: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set02_endCameraId 
+    AltName="2: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set02_bNoWait 
+    AltName="2: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set02_bFade 
+    AltName="2: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set02_bBoke 
+    AltName="2: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set02_bOtherAnimCancel 
+    AltName="2: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set02_bFilterAnimOnly 
+    AltName="2: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set02_bCameraHightFixed 
+    AltName="2: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set02_padbit
+    AltName="" 
+    Padding="" />
+
+    <set02_laneCamStartFrame 
+    AltName="2: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set02_baseDmyPolyId 
+    AltName="2: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set02_laneCamLockAtEntityId 
+    AltName="2: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set02_laneCamPointIdx 
+    AltName="2: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set02_laneCamLookAtDmyPolyId 
+    AltName="2: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set03_beginCameraId 
+    AltName="3: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set03_endCameraId 
+    AltName="3: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set03_bNoWait 
+    AltName="3: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set03_bFade 
+    AltName="3: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set03_bBoke 
+    AltName="3: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set03_bOtherAnimCancel 
+    AltName="3: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set03_bFilterAnimOnly 
+    AltName="3: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set03_bCameraHightFixed 
+    AltName="3: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set03_padbit
+    AltName="" 
+    Padding="" />
+
+    <set03_laneCamStartFrame 
+    AltName="3: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set03_baseDmyPolyId 
+    AltName="3: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set03_laneCamLockAtEntityId 
+    AltName="3: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set03_laneCamPointIdx 
+    AltName="3: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set03_laneCamLookAtDmyPolyId 
+    AltName="3: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set04_beginCameraId 
+    AltName="4: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set04_endCameraId 
+    AltName="4: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set04_bNoWait 
+    AltName="4: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set04_bFade 
+    AltName="4: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set04_bBoke 
+    AltName="4: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set04_bOtherAnimCancel 
+    AltName="4: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set04_bFilterAnimOnly 
+    AltName="4: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set04_bCameraHightFixed 
+    AltName="4: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set04_padbit
+    AltName="" 
+    Padding="" />
+
+    <set04_laneCamStartFrame 
+    AltName="4: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set04_baseDmyPolyId 
+    AltName="4: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set04_laneCamLockAtEntityId 
+    AltName="4: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set04_laneCamPointIdx 
+    AltName="4: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set04_laneCamLookAtDmyPolyId 
+    AltName="4: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set05_beginCameraId 
+    AltName="5: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set05_endCameraId 
+    AltName="5: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set05_bNoWait 
+    AltName="5: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set05_bFade 
+    AltName="5: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set05_bBoke 
+    AltName="5: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set05_bOtherAnimCancel 
+    AltName="5: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set05_bFilterAnimOnly 
+    AltName="5: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set05_bCameraHightFixed 
+    AltName="5: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set05_padbit
+    AltName="" 
+    Padding="" />
+
+    <set05_laneCamStartFrame 
+    AltName="5: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set05_baseDmyPolyId 
+    AltName="5: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set05_laneCamLockAtEntityId 
+    AltName="5: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set05_laneCamPointIdx 
+    AltName="5: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set05_laneCamLookAtDmyPolyId 
+    AltName="5: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set06_beginCameraId 
+    AltName="6: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set06_endCameraId 
+    AltName="6: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set06_bNoWait 
+    AltName="6: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set06_bFade 
+    AltName="6: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set06_bBoke 
+    AltName="6: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set06_bOtherAnimCancel 
+    AltName="6: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set06_bFilterAnimOnly 
+    AltName="6: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set06_bCameraHightFixed 
+    AltName="6: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set06_padbit
+    AltName="" 
+    Padding="" />
+
+    <set06_laneCamStartFrame 
+    AltName="6: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set06_baseDmyPolyId 
+    AltName="6: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set06_laneCamLockAtEntityId 
+    AltName="6: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set06_laneCamPointIdx 
+    AltName="6: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set06_laneCamLookAtDmyPolyId 
+    AltName="6: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set07_beginCameraId 
+    AltName="7: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set07_endCameraId 
+    AltName="7: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set07_bNoWait 
+    AltName="7: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set07_bFade 
+    AltName="7: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set07_bBoke 
+    AltName="7: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set07_bOtherAnimCancel 
+    AltName="7: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set07_bFilterAnimOnly 
+    AltName="7: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set07_bCameraHightFixed 
+    AltName="7: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set07_padbit
+    AltName="" 
+    Padding="" />
+
+    <set07_laneCamStartFrame 
+    AltName="7: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set07_baseDmyPolyId 
+    AltName="7: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set07_laneCamLockAtEntityId 
+    AltName="7: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set07_laneCamPointIdx 
+    AltName="7: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set07_laneCamLookAtDmyPolyId 
+    AltName="7: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set08_beginCameraId 
+    AltName="8: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set08_endCameraId 
+    AltName="8: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set08_bNoWait 
+    AltName="8: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set08_bFade 
+    AltName="8: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set08_bBoke 
+    AltName="8: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set08_bOtherAnimCancel 
+    AltName="8: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set08_bFilterAnimOnly 
+    AltName="8: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set08_bCameraHightFixed 
+    AltName="8: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set08_padbit
+    AltName="" 
+    Padding="" />
+
+    <set08_laneCamStartFrame 
+    AltName="8: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set08_baseDmyPolyId 
+    AltName="8: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set08_laneCamLockAtEntityId 
+    AltName="8: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set08_laneCamPointIdx 
+    AltName="8: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set08_laneCamLookAtDmyPolyId 
+    AltName="8: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set09_beginCameraId 
+    AltName="9: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set09_endCameraId 
+    AltName="9: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set09_bNoWait 
+    AltName="9: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set09_bFade 
+    AltName="9: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set09_bBoke 
+    AltName="9: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set09_bOtherAnimCancel 
+    AltName="9: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set09_bFilterAnimOnly 
+    AltName="9: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set09_bCameraHightFixed 
+    AltName="9: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set09_padbit
+    AltName="" 
+    Padding="" />
+
+    <set09_laneCamStartFrame 
+    AltName="9: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set09_baseDmyPolyId 
+    AltName="9: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set09_laneCamLockAtEntityId 
+    AltName="9: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set09_laneCamPointIdx 
+    AltName="9: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set09_laneCamLookAtDmyPolyId 
+    AltName="9: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set10_beginCameraId 
+    AltName="10: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set10_endCameraId 
+    AltName="10: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set10_bNoWait 
+    AltName="10: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set10_bFade 
+    AltName="10: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set10_bBoke 
+    AltName="10: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set10_bOtherAnimCancel 
+    AltName="10: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set10_bFilterAnimOnly 
+    AltName="10: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set10_bCameraHightFixed 
+    AltName="10: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set10_padbit
+    AltName="" 
+    Padding="" />
+
+    <set10_laneCamStartFrame 
+    AltName="10: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set10_baseDmyPolyId 
+    AltName="10: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set10_laneCamLockAtEntityId 
+    AltName="10: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set10_laneCamPointIdx 
+    AltName="10: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set10_laneCamLookAtDmyPolyId 
+    AltName="10: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set11_beginCameraId 
+    AltName="11: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set11_endCameraId 
+    AltName="11: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set11_bNoWait 
+    AltName="11: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set11_bFade 
+    AltName="11: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set11_bBoke 
+    AltName="11: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set11_bOtherAnimCancel 
+    AltName="11: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set11_bFilterAnimOnly 
+    AltName="11: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set11_bCameraHightFixed 
+    AltName="11: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set11_padbit
+    AltName="" 
+    Padding="" />
+
+    <set11_laneCamStartFrame 
+    AltName="11: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set11_baseDmyPolyId 
+    AltName="11: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set11_laneCamLockAtEntityId 
+    AltName="11: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set11_laneCamPointIdx 
+    AltName="11: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set11_laneCamLookAtDmyPolyId 
+    AltName="11: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set12_beginCameraId 
+    AltName="12: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set12_endCameraId 
+    AltName="12: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set12_bNoWait 
+    AltName="12: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set12_bFade 
+    AltName="12: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set12_bBoke 
+    AltName="12: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set12_bOtherAnimCancel 
+    AltName="12: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set12_bFilterAnimOnly 
+    AltName="12: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set12_bCameraHightFixed 
+    AltName="12: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set12_padbit
+    AltName="" 
+    Padding="" />
+
+    <set12_laneCamStartFrame 
+    AltName="12: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set12_baseDmyPolyId 
+    AltName="12: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set12_laneCamLockAtEntityId 
+    AltName="12: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set12_laneCamPointIdx 
+    AltName="12: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set12_laneCamLookAtDmyPolyId 
+    AltName="12: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set13_beginCameraId 
+    AltName="13: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set13_endCameraId 
+    AltName="13: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set13_bNoWait 
+    AltName="13: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set13_bFade 
+    AltName="13: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set13_bBoke 
+    AltName="13: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set13_bOtherAnimCancel 
+    AltName="13: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set13_bFilterAnimOnly 
+    AltName="13: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set13_bCameraHightFixed 
+    AltName="13: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set13_padbit
+    AltName="" 
+    Padding="" />
+
+    <set13_laneCamStartFrame 
+    AltName="13: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set13_baseDmyPolyId 
+    AltName="13: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set13_laneCamLockAtEntityId 
+    AltName="13: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set13_laneCamPointIdx 
+    AltName="13: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set13_laneCamLookAtDmyPolyId 
+    AltName="13: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set14_beginCameraId 
+    AltName="14: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set14_endCameraId 
+    AltName="14: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set14_bNoWait 
+    AltName="14: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set14_bFade 
+    AltName="14: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set14_bBoke 
+    AltName="14: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set14_bOtherAnimCancel 
+    AltName="14: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set14_bFilterAnimOnly 
+    AltName="14: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set14_bCameraHightFixed 
+    AltName="14: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set14_padbit
+    AltName="" 
+    Padding="" />
+
+    <set14_laneCamStartFrame 
+    AltName="14: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set14_baseDmyPolyId 
+    AltName="14: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set14_laneCamLockAtEntityId 
+    AltName="14: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set14_laneCamPointIdx 
+    AltName="14: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set14_laneCamLookAtDmyPolyId 
+    AltName="14: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+    <set15_beginCameraId 
+    AltName="15: Start Camera ID" 
+    Wiki="Camera ID to play at start." 
+    Separator="" />
+
+    <set15_endCameraId 
+    AltName="15: End Camera ID" 
+    Wiki="Camera ID to play at end." />
+
+    <set15_bNoWait 
+    AltName="15: Play Immediately" 
+    Wiki="Play now or wait for system wait time if not play." 
+    IsBool="" />
+
+    <set15_bFade 
+    AltName="15: Fade " 
+    Wiki="Fade in and fade out according to the camera animation (if there is no animation, the system will process at a fixed time)" 
+    IsBool="" />
+
+    <set15_bBoke 
+    AltName="15: Blur" 
+    Wiki="Blur according to the camera animation (if there is no animation, process at a fixed system time)" 
+    IsBool="" />
+
+    <set15_bOtherAnimCancel 
+    AltName="15: Cancel Current Playback if Reset" 
+    Wiki="Do you want to cancel the end playback of this camera before starting playback?" 
+    IsBool="" />
+
+    <set15_bFilterAnimOnly 
+    AltName="15: Is Filter Effects Only" 
+    Wiki="Only the screen effect animation and the camera animation refer only to the animation frame." 
+    IsBool="" />
+
+    <set15_bCameraHightFixed 
+    AltName="15: Is Camera Height Fixed" 
+    Wiki="Even if the height of the viewpoint dummy poly is moved during animation, it will be the difference from the reference height." 
+    IsBool="" />
+
+    <set15_padbit
+    AltName="" 
+    Padding="" />
+
+    <set15_laneCamStartFrame 
+    AltName="15: Lane Camera: Initial Frame" 
+    Wiki="Initial frame of lane camera animation when switching cameras." />
+
+    <set15_baseDmyPolyId 
+    AltName="15: Base Dummy Polygon ID" 
+    Wiki="Play the camera based on the specified dummy polygon (i.e. playback position offset)." />
+
+    <set15_laneCamLockAtEntityId 
+    AltName="15: Lane Camera: Perspective Entity ID" 
+    Wiki="If the lane camera viewpoint entity ID (value of the last two digits of 101700) is -1, it is the own aircraft." />
+
+    <set15_laneCamPointIdx 
+    AltName="15: Lane Camera: Region Entity ID" 
+    Wiki="Entity ID referenced by the lane camera point region (value of the last digit of 101600)." />
+
+    <set15_laneCamLookAtDmyPolyId 
+    AltName="15: Lane Camera: Viewpoint Dummy Polygon ID" Wiki="Damipoly ID from the lane camera viewpoint (if -1, damipoly 899 of your own aircraft's head part)" />
+    
+  </Field>
+</PARAMMETA>

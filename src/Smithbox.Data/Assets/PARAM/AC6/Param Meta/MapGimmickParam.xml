@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters that relate to map gimmicks (i.e. catapults)." />
+  
+  <Field>
+    <gimmickType
+    AltName="Gimmick Type"
+    Wiki="The numerical offset that determines gimmick type in EMS and EzState systems." />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the display configuration for various interface text and video." />
+  
+  <Field>
+    <ResourceID
+    AltName="Menu Resource Type"
+    Wiki="The text effect type to use for this text effect." 
+    Enum="FE_TEXT_EFFECT_RES_ID" />
+    
+    <reserved_1
+    AltName=""
+    Padding="" />
+    
+    <TextID_1st
+    AltName="Text ID: 1"
+    Wiki="The first text ID to display. -1 for no text." 
+    FmgRef="Event_Text"/>
+  
+    <SeID
+    AltName="Voice ID: 1"
+    Wiki="The first voice ID to play. -1 for no voice." 
+    SoundAlias="" />
+    
+    <TextID_2nd
+    AltName="Text ID: 2"
+    Wiki="The second text ID to display. -1 for no text." 
+    FmgRef="Event_Text"/>
+    
+    <TextID_3rd
+    AltName="Text ID: 3"
+    Wiki="The third text ID to display. -1 for no text." 
+    FmgRef="Event_Text"/>
+    
+    <DispSlot
+    AltName="Display Slot"
+    Wiki="The slot to display the text effect in." 
+    Enum="FE_TEXT_EFFECT_SLOT_TYPE" />
+  
+    <reserved_2
+    AltName=""
+    Padding="" />
+    
+    <bMovieSkipEnable
+    AltName="Enable Movie Skip"
+    Wiki="If ON, the player can skip the movie playback."
+    IsBool="" />
+    
+    <bMovieLoopPlay
+    AltName="Enable Movie Loop"
+    Wiki="If ON, the movie is played back in a loop."
+    IsBool="" />
+    
+    <MovieID 
+    AltName="Movie ID"
+    Wiki="The ID of the video to play. -1 for no video."
+    MovieAlias="" />
+    
+    <TextID_4th
+    AltName="Text ID: 4"
+    Wiki="The fourth text ID to display. -1 for no text." 
+    FmgRef="Event_Text"/>
+    
+  </Field>
+  <Enums>
+    <Enum Name="FE_TEXT_EFFECT_RES_ID" type="s16">
+        <Option Value="-1" Name="Disabled" />
+        
+        <Option Value="1" Name="Old Resource" />
+        <Option Value="2" Name="Old Resource" />
+        <Option Value="3" Name="Old Resource" />
+        <Option Value="4" Name="Old Resource" />
+        <Option Value="5" Name="Old Resource" />
+        <Option Value="6" Name="Old Resource" />
+        <Option Value="7" Name="Old Resource" />
+        <Option Value="13" Name="Old Resource" />
+        
+        <Option Value="101" Name="Top Left - Good" />
+        <Option Value="102" Name="Top Left - Normal" />
+        <Option Value="103" Name="Top Left - Bad" />
+        
+        <Option Value="111" Name="Centre - Good" />
+        <Option Value="112" Name="Centre - Normal" />
+        <Option Value="113" Name="Centre - Bad" />
+        <Option Value="114" Name="Centre - Neutral" />
+        <Option Value="115" Name="Centre, Second Row - Good" />
+        <Option Value="116" Name="Centre, Second Row - Normal" />
+        <Option Value="117" Name="Centre, Second Row - Bad" />
+        
+        <Option Value="121" Name="Centre Element - Good" />
+        <Option Value="122" Name="Centre Element - Normal" />
+        <Option Value="123" Name="Centre Element - Bad" />
+        <Option Value="124" Name="Centre Element - Neutral" />
+        
+        <Option Value="125" Name="Centre Small, Second Row - Good" />
+        <Option Value="126" Name="Centre Small, Second Row - Normal" />
+        <Option Value="127" Name="Centre Small, Second Row - Bad" />
+        <Option Value="128" Name="Centre Small, Second Row - Neutral" />
+        
+        <Option Value="140" Name="Settlement Win" />
+        <Option Value="141" Name="Settlement Loss" />
+        <Option Value="142" Name="Settlement Division" />
+        <Option Value="143" Name="Waiting for Synchronization" />
+        <Option Value="144" Name="3v3 Time Up" />
+        
+        <Option Value="200" Name="Mission Goal" />
+        <Option Value="210" Name="Mission Goal with Counter" />
+        <Option Value="300" Name="Chapter Display" />
+        <Option Value="400" Name="Location Display" />
+        
+        <Option Value="500" Name="Normal Communication" />
+        <Option Value="501" Name="Normal Communication Interception" />
+        <Option Value="502" Name="Encrypted Communication, with Logo" />
+        <Option Value="503" Name="Encrypted Communication, no Logo" />
+        
+        <Option Value="800" Name="Video Playback" />
+        <Option Value="801" Name="Video Playback for Garage" />
+        <Option Value="802" Name="Video Playback, Fullscreen" />
+        
+        <Option Value="1000" Name="Mission Release" />
+        <Option Value="1117" Name="Centre, Second Row - Bad" />
+        
+        <Option Value="2000" Name="Pre-match Performance: 1v1 A" />
+        <Option Value="2001" Name="Pre-match Performance: 1v1 B" />
+        <Option Value="2002" Name="Pre-match Performance: 3v3 A" />
+        <Option Value="2003" Name="Pre-match Performance: 3v3 B" />
+        <Option Value="2100" Name="Arena Pre-match Performance" />
+    </Enum>
+    <Enum Name="FE_TEXT_EFFECT_SLOT_TYPE" type="s8">
+        <Option Value="0" Name="Basic Notification" />
+        <Option Value="1" Name="Location Name" />
+        <Option Value="2" Name="Chapter" />
+        <Option Value="3" Name="Mission Objective" />
+        <Option Value="4" Name="Communication Conversation" />
+        <Option Value="5" Name="In-game Video" />
+        <Option Value="6" Name="Mission Start" />
+        <Option Value="6" Name="Garage Video" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the input configuration for gestures." />
+  
+  <Field>
+    <key
+    AltName="Input Key"
+    Wiki="The main input key to detect."
+    Enum="CS_MENU_KEY_forParamDef" />
+    
+    <shiftInput
+    AltName="Shift Key"
+    Wiki="The shift input key to detect."
+    Enum="CS_MENU_SHIFTINPUT_TYPE" />
+    
+    <reserved1
+    AltName=""
+    Padding="" />
+    
+    <enableSimpleGuide
+    AltName="Enable Simple Display"
+    Wiki="If ON, simple key guide may be displayed, otherwise only detailed key guide is shown."
+    IsBool="" />
+    
+    <guideTextID
+    AltName="Key Guide Text ID"
+    Wiki="The text ID to use for the key guide. -1 will display 'data explanation' (debug function)."
+    FmgRef="Modern_Menu_Key_Guide" />
+    
+    <seID
+    AltName="Sound ID"
+    Wiki="The sound ID to play when the input is triggered." 
+    SoundAlias="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="CS_MENU_KEY_forParamDef" type="s16">
+        <Option Value="-1" Name="None" />
+        <Option Value="22" Name="Up" />
+        <Option Value="23" Name="Down" />
+        <Option Value="24" Name="Left" />
+        <Option Value="25" Name="Right" />
+        <Option Value="26" Name="Decision" />
+        <Option Value="27" Name="Cancel" />
+        <Option Value="28" Name="Triangle" />
+        <Option Value="29" Name="Square" />
+        <Option Value="30" Name="L1" />
+        <Option Value="31" Name="R1" />
+        <Option Value="32" Name="L2" />
+        <Option Value="33" Name="R2" />
+        <Option Value="34" Name="L3" />
+        <Option Value="35" Name="R3" />
+        <Option Value="20" Name="Auxiliary Menu" />
+        <Option Value="21" Name="Start" />
+        <Option Value="36" Name="Back" />
+        <Option Value="10000" Name="Left Stick: Left / Right" />
+        <Option Value="10001" Name="Left Stick: Up / Down" />
+        <Option Value="10002" Name="Right Stick: Left / Right" />
+        <Option Value="10003" Name="Right Stick: Up / Down" />
+        <Option Value="10004" Name="Up / Down" />
+        <Option Value="10005" Name="Left / Right" />
+        <Option Value="10006" Name="L1 / R1" />
+        <Option Value="10007" Name="L2 / R2" />
+    </Enum> 
+    <Enum Name="CS_MENU_SHIFTINPUT_TYPE" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="81" Name="Left" />
+        <Option Value="82" Name="Right" />
+    </Enum> 
+  </Enums>
+  
+</PARAMMETA>

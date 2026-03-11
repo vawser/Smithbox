@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  <Field>
+    <BeginDist 
+    AltName="Start Distance" 
+    Wiki="Scan start distance (in metres)" />
+    
+    <EndDist 
+    AltName="End Distance" 
+    Wiki="Scan end distance (in metres)" />
+    
+    <StepDist 
+    AltName="Update Step Distance" 
+    Wiki="Distance traveled in 1 frame (in metres)" />
+    
+    <LineLength 
+    AltName="Line Length" 
+    Wiki="Length of the line (in metres)" />
+    
+    <FadeOutTime 
+    AltName="Fade Out Time" 
+    Wiki="Time until fade out (in seconds)" />
+    
+    <AccelTime 
+    AltName="Acceleration Time" 
+    Wiki="Time to accelerate (in seconds)" />
+    
+    <MoveCount 
+    AltName="Number of Scans" 
+    Wiki="The number of scans to perform." />
+    
+    <MoveType 
+    AltName="Draw Type" 
+    Wiki="The draw type used for this line." 
+    Enum="DEPTH_LINE_TYPE" />
+    
+    <reserve0 
+    AltName=""
+    Padding="" />
+    
+    <R 
+    AltName="Color: R" 
+    Wiki="" />
+    
+    <G 
+    AltName="Color: G" 
+    Wiki="" />
+    
+    <B 
+    AltName="Color: B" 
+    Wiki="" />
+    
+    <A 
+    AltName="Color: A" 
+    Wiki="" />
+    
+    <texParam00_texScale 
+    AltName="Texture Param [0]: Texture Scale" 
+    Wiki="" />
+    
+    <texParam00_texOffsetSpeed 
+    AltName="Texture Param [0]: Texture Animation Speed" 
+    Wiki="U value animated in 1 second" />
+    
+    <texParam01_texScale 
+    AltName="Texture Param [1]: Texture Scale" 
+    Wiki="" />
+    
+    <texParam01_texOffsetSpeed 
+    AltName="Texture Param [1]: Texture Animation Speed" 
+    Wiki="U value animated in 1 second" />
+    
+    <reserve1 Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="DEPTH_LINE_TYPE" type="u8">
+        <Option Value="0" Name="Single Color: Straight Line" />
+        <Option Value="1" Name="Single Color: Concentric Circle" />
+        <Option Value="2" Name="Texture: Line Addition" />
+        <Option Value="3" Name="Texture: Concentric Circle Addition" />
+        <Option Value="4" Name="Texture: Translucent Line Addition" />
+        <Option Value="5" Name="Texture: Translucent Concentric Circle Addition" />
+    </Enum> 
+  </Enums>
+  <ColorEdit>
+    <ColorEditor 
+    Name="Color" 
+    Fields="R,G,B" 
+    PlacedField="R" />
+  </ColorEdit>
+</PARAMMETA>

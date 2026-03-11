@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for mission reactions."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <talkParamId 
+    AltName="Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <priority
+    AltName="Priority"
+    Wiki="The priority of this reaction." />
+    
+    <dispLimitNum
+    AltName="Reaction Limit"
+    Wiki="The maximum number of instances of this reaction." />
+    
+    <dispLimitGroupId
+    AltName="Reaction Group ID"
+    Wiki="The group ID to use for the reaction limit." />
+    
+    <pad 
+    Padding="" />
+  </Field>
+</PARAMMETA>

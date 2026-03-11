@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters that relate to map parts." />
+  
+  <Field>
+    <camDitherFadeMinDist
+    AltName="Camera Dither: Minimum Fade Distance"
+    Wiki="The minimum fade distance for camera dithering for a map part. In metres." />
+    
+    <camDitherFadeMaxDist
+    AltName="Camera Dither: Maximum Fade Distance"
+    Wiki="The maximum fade distance for camera dithering for a map part. In metres." />
+    
+    <pad
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

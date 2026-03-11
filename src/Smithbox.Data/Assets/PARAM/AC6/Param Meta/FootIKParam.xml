@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines to Havok parameters to use for foot inverse kinematics (IK)." />
+  
+  <Field>
+    <onOffHokanTime
+    AltName="Interpolation Time on IK Toggle"
+    Wiki="Determines the interpolation time when IK is toggled on and off." />
+    
+    <onOffGain
+    AltName="Gain on IK Toggle"
+    Wiki="Determines the amount of gain applied when IK is toggled on and off." />
+    
+    <groundAscendingGain
+    AltName="Gain on Ground Height Increase"
+    Wiki="Determines the amount of gain applied when the ground height increases." />
+    
+    <groundDescendingGain
+    AltName="Gain on Ground Height Decrease"
+    Wiki="Determines the amount of gain applied when the ground height decreases." />
+    
+    <footRaisedGain
+    AltName="Gain on Foot Raise"
+    Wiki="Determines the amount of gain applied when a foot is raised." />
+    
+    <footPlantedGain
+    AltName="Gain on Foot Plant"
+    Wiki="Determines the amount of gain applied when a foot is planted to the ground." />
+    
+    <footLockingGain
+    AltName="Gain on Foot Lock Toggle"
+    Wiki="Determines the amount of gain applied when a foot is locked or unlocked." />
+    
+    <ankleRotationGain
+    AltName="Gain on Ankle Rotation"
+    Wiki="Determines the amount of gain applied when an ankle is rotating." />
+    
+    <twistKneeAxisType
+    AltName="Twist Knee Axis Type"
+    Wiki="Axial direction that ignores rotation of the knee joint for twisting." 
+    Enum="IK_KNEE_AXIS_TYPE" />
+    
+    <footPlacementOn
+    AltName="Use Foot Placement"
+    Wiki="If ON, foot placement is active."
+    IsBool="" />
+    
+    <isSlopeSlideOffset
+    AltName="Apply Slope Adjustment Offset"
+    Wiki="If ON, apply slope offset adjustment when sliding down a slope."
+    IsBool="" />
+    
+    <pad2
+    AltName=""
+    Padding="" />
+    
+    <pad3
+    AltName=""
+    Padding="" />
+    
+    <forwardUndulationRate
+    AltName="Slope: Forward Lean Ratio"
+    Wiki="Specifies the amount of front/back lean against the slope when the slope is tilted." />
+    
+    <sideUndulationRate
+    AltName="Slope: Side Lean Ratio"
+    Wiki="Specifies the amount of right/left lean against the slope when the slope is tilted." />
+    
+    <undulationGain
+    AltName="Slope: Gain"
+    Wiki="The gain value used for tilting the slope when the slope is tilted." />
+    
+    <pad4
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="IK_KNEE_AXIS_TYPE" type="u8">
+        <Option Value="0" Name="+ X" />
+        <Option Value="1" Name="+ Y" />
+        <Option Value="2" Name="+ Z" />
+        <Option Value="3" Name="- X" />
+        <Option Value="4" Name="- Y" />
+        <Option Value="5" Name="- Z" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

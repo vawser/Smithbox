@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for message boxes."/>
+  
+  <Field>
+    <msgCategory
+    AltName="Category Type"
+    Wiki="The message category this message box uses."
+    Enum="MSGBOX_MSG_CATE" />
+    
+    <requestPause
+    AltName="Request Pause"
+    Wiki="If ON, this message box will request a pause."
+    IsBool="" />
+    
+    <pad0
+    Padding="" />
+  
+    <singleActivityCtrl 
+    AltName="Singleplayer: Control Type" 
+    Wiki="The control type to use for this message box."
+    Enum="MSGBOX_AUTONAVI_CTRL_TYPE" />
+    
+    <pad1
+    Padding="" />
+  
+    <multiActivityCtrl 
+    AltName="Multiplayer: Control Type" 
+    Wiki="The control type to use for this message box."
+    Enum="MSGBOX_AUTONAVI_CTRL_TYPE" />
+    
+    <pad2
+    Padding="" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="MSGBOX_MSG_CATE" type="s16">
+      <Option Value="203" Name="System" />
+      <Option Value="204" Name="Dialog" />
+    </Enum>
+    <Enum Name="MSGBOX_AUTONAVI_CTRL_TYPE" type="s8">
+      <Option Value="0" Name="Continue" />
+      <Option Value="1" Name="Suspend" />
+      <Option Value="2" Name="Yes to Continue" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

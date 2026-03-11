@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to look-at cameras for heads."/>
+  
+  <Field>
+    <lookAtPerf
+    AltName="Turning Performance"
+    Wiki="The interpolation performance when LookAt is enabled or disabled. In % per second." />
+    
+    <lookAtRateV
+    AltName="Vertical Correction %"
+    Wiki="The vertical correction rate to apply to the target angle." />
+    
+    <lookAtRateH
+    AltName="Horizontal Correction %"
+    Wiki="The horizontal correction rate to apply to the target angle." />
+    
+    <minAngDegV
+    AltName="Minimum Vertical Angle"
+    Wiki="The minimum LookAt angle on the vertical axis." />
+    
+    <maxAngDegV
+    AltName="Maximum Vertical Angle"
+    Wiki="The maximum LookAt angle on the vertical axis." />
+    
+    <minAngDegH
+    AltName="Minimum Horizontal Angle"
+    Wiki="The minimum LookAt angle on the horizontal axis." />
+    
+    <maxAngDegH
+    AltName="Maximum Horizontal Angle"
+    Wiki="The maximum LookAt angle on the horizontal axis." />
+    
+    <reserved4
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

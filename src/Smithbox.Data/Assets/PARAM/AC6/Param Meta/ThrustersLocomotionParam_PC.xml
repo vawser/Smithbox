@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki=""/>
+  
+  <Field>
+    <RotationBoneName AltName="Rotation Joint Name" Wiki="The name of the joint that is rotated within the part." />
+    <AttachDummyID AltName="Attachment Dummy Polygon ID" Wiki="Thruster/parts connection dummy poly ID" />
+    <LocomotionRefDummyID AltName="Locomotion Dummy Polygon ID" Wiki="Dummy Polygon ID referenced by Locomotion" />
+    
+    <main_TurnMoveDirLimitX AltName="[Main] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <main_TurnMoveDirLimitY AltName="[Main] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <main_TurnMoveDirType AltName="[Main] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <main_pad Padding="" />
+    <main_pad1 Padding="" />
+    
+    <subFront_TurnMoveDirLimitX AltName="[Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <subFront_TurnMoveDirLimitY AltName="[Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <subFront_TurnMoveDirType AltName="[Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subFront_pad Padding="" />
+    <subFront_pad1 Padding="" />
+    
+    <subBack_TurnMoveDirLimitX AltName="[Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <subBack_TurnMoveDirLimitY AltName="[Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <subBack_TurnMoveDirType AltName="[Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subBack_pad Padding="" />
+    <subBack_pad1 Padding="" />
+    
+    <subLeft_TurnMoveDirLimitX AltName="[Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <subLeft_TurnMoveDirLimitY AltName="[Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <subLeft_TurnMoveDirType AltName="[Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subLeft_pad Padding="" />
+    <subLeft_pad1 Padding="" />
+    
+    <subRight_TurnMoveDirLimitX AltName="[Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <subRight_TurnMoveDirLimitY AltName="[Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <subRight_TurnMoveDirType AltName="[Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <subRight_pad Padding="" />
+    <subRight_pad1 Padding="" />
+    
+    <qbFront_TurnMoveDirLimitX AltName="[Quick Boost: Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <qbFront_TurnMoveDirLimitY AltName="[Quick Boost: Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <qbFront_TurnMoveDirType AltName="[Quick Boost: Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbFront_pad Padding="" />
+    <qbFront_pad1 Padding="" />
+    
+    <qbBack_TurnMoveDirLimitX AltName="[Quick Boost: Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <qbBack_TurnMoveDirLimitY AltName="[Quick Boost: Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <qbBack_TurnMoveDirType AltName="[Quick Boost: Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbBack_pad Padding="" />
+    <qbBack_pad1 Padding="" />
+    
+    <qbLeft_TurnMoveDirLimitX AltName="[Quick Boost: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <qbLeft_TurnMoveDirLimitY AltName="[Quick Boost: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <qbLeft_TurnMoveDirType AltName="[Quick Boost: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbLeft_pad Padding="" />
+    <qbLeft_pad1 Padding="" />
+    
+    <qbRight_TurnMoveDirLimitX AltName="[Quick Boost: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <qbRight_TurnMoveDirLimitY AltName="[Quick Boost: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <qbRight_TurnMoveDirType AltName="[Quick Boost: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <qbRight_pad Padding="" />
+    <qbRight_pad1 Padding="" />
+    
+    <lift_TurnMoveDirLimitX AltName="[Lift] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <lift_TurnMoveDirLimitY AltName="[Lift] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <lift_TurnMoveDirType AltName="[Lift] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <lift_pad Padding="" />
+    <lift_pad1 Padding="" />
+    
+    <tankFront_TurnMoveDirLimitX AltName="[Tank Drift: Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankFront_TurnMoveDirLimitY AltName="[Tank Drift: Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankFront_TurnMoveDirType AltName="[Tank Drift: Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankFront_pad Padding="" />
+    <tankFront_pad1 Padding="" />
+    
+    <tankBack_TurnMoveDirLimitX AltName="[Tank Drift: Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankBack_TurnMoveDirLimitY AltName="[Tank Drift: Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankBack_TurnMoveDirType AltName="[Tank Drift: Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankBack_pad Padding="" />
+    <tankBack_pad1 Padding="" />
+    
+    <tankDriftLeft_TurnMoveDirLimitX AltName="[Tank Drift: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankDriftLeft_TurnMoveDirLimitY AltName="[Tank Drift: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankDriftLeft_TurnMoveDirType AltName="[Tank Drift: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankDriftLeft_pad Padding="" />
+    <tankDriftLeft_pad1 Padding="" />
+    
+    <tankDriftRight_TurnMoveDirLimitX AltName="[Tank Drift: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankDriftRight_TurnMoveDirLimitY AltName="[Tank Drift: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankDriftRight_TurnMoveDirType AltName="[Tank Drift: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankDriftRight_pad Padding="" />
+    <tankDriftRight_pad1 Padding="" />
+    
+    <quickTurnLeft_TurnMoveDirLimitX AltName="[Quick Turn: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <quickTurnLeft_TurnMoveDirLimitY AltName="[Quick Turn: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <quickTurnLeft_TurnMoveDirType AltName="[Quick Turn: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <quickTurnLeft_pad Padding="" />
+    <quickTurnLeft_pad1 Padding="" />
+    
+    <quickTurnRight_TurnMoveDirLimitX AltName="[Quick Turn: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <quickTurnRight_TurnMoveDirLimitY AltName="[Quick Turn: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <quickTurnRight_TurnMoveDirType AltName="[Quick Turn: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <quickTurnRight_pad Padding="" />
+    <quickTurnRight_pad1 Padding="" />
+    
+    <assaultBoost_TurnMoveDirLimitX AltName="[Assault Boost] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <assaultBoost_TurnMoveDirLimitY AltName="[Assault Boost] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <assaultBoost_TurnMoveDirType AltName="[Assault Boost] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <assaultBoost_pad Padding="" />
+    <assaultBoost_pad1 Padding="" />
+    
+    <hoveringStart_TurnMoveDirLimitX AltName="[Hover: Start] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringStart_TurnMoveDirLimitY AltName="[Hover: Start] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringStart_TurnMoveDirType AltName="[Hover: Start] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringStart_pad Padding="" />
+    <hoveringStart_pad1 Padding="" />
+    
+    <hoveringStay_TurnMoveDirLimitX AltName="[Hover: Idle] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringStay_TurnMoveDirLimitY AltName="[Hover: Idle] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringStay_TurnMoveDirType AltName="[Hover: Idle] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringStay_pad Padding="" />
+    <hoveringStay_pad1 Padding="" />
+    
+    <hoveringFront_TurnMoveDirLimitX AltName="[Hover: Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringFront_TurnMoveDirLimitY AltName="[Hover: Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringFront_TurnMoveDirType AltName="[Hover: Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringFront_pad Padding="" />
+    <hoveringFront_pad1 Padding="" />
+    
+    <hoveringBack_TurnMoveDirLimitX AltName="[Hover: Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringBack_TurnMoveDirLimitY AltName="[Hover: Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringBack_TurnMoveDirType AltName="[Hover: Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringBack_pad Padding="" />
+    <hoveringBack_pad1 Padding="" />
+    
+    <hoveringLeft_TurnMoveDirLimitX AltName="[Hover: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringLeft_TurnMoveDirLimitY AltName="[Hover: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringLeft_TurnMoveDirType AltName="[Hover: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringLeft_pad Padding="" />
+    <hoveringLeft_pad1 Padding="" />
+    
+    <hoveringRight_TurnMoveDirLimitX AltName="[Hover: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hoveringRight_TurnMoveDirLimitY AltName="[Hover: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hoveringRight_TurnMoveDirType AltName="[Hover: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hoveringRight_pad Padding="" />
+    <hoveringRight_pad1 Padding="" />
+    
+    <turnLeft_TurnMoveDirLimitX AltName="[Turn: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <turnLeft_TurnMoveDirLimitY AltName="[Turn: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <turnLeft_TurnMoveDirType AltName="[Turn: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <turnLeft_pad Padding="" />
+    <turnLeft_pad1 Padding="" />
+    
+    <turnRight_TurnMoveDirLimitX AltName="[Turn: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <turnRight_TurnMoveDirLimitY AltName="[Turn: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <turnRight_TurnMoveDirType AltName="[Turn: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <turnRight_pad Padding="" />
+    <turnRight_pad1 Padding="" />
+    
+    <mainStart_TurnMoveDirLimitX AltName="[Main: Start] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <mainStart_TurnMoveDirLimitY AltName="[Main: Start] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <mainStart_TurnMoveDirType AltName="[Main: Start] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <mainStart_pad Padding="" />
+    <mainStart_pad1 Padding="" />
+    
+    <assaultBoostFinish_TurnMoveDirLimitX AltName="[Assault Boost Finish] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <assaultBoostFinish_TurnMoveDirLimitY AltName="[Assault Boost Finish] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <assaultBoostFinish_TurnMoveDirType AltName="[Assault Boost Finish] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <assaultBoostFinish_pad Padding="" />
+    <assaultBoostFinish_pad1 Padding="" />
+    
+    <falling_TurnMoveDirLimitX AltName="[falling] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <falling_TurnMoveDirLimitY AltName="[falling] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <falling_TurnMoveDirType AltName="[falling] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <falling_pad Padding="" />
+    <falling_pad1 Padding="" />
+    
+    <boostExhaustFront_TurnMoveDirLimitX AltName="[Boost Exhaust: Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <boostExhaustFront_TurnMoveDirLimitY AltName="[Boost Exhaust: Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <boostExhaustFront_TurnMoveDirType AltName="[Boost Exhaust: Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <boostExhaustFront_pad Padding="" />
+    <boostExhaustFront_pad1 Padding="" />
+    
+    <boostExhaustBack_TurnMoveDirLimitX AltName="[Boost Exhaust: Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <boostExhaustBack_TurnMoveDirLimitY AltName="[Boost Exhaust: Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <boostExhaustBack_TurnMoveDirType AltName="[Boost Exhaust: Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <boostExhaustBack_pad Padding="" />
+    <boostExhaustBack_pad1 Padding="" />
+    
+    <boostExhaustLeft_TurnMoveDirLimitX AltName="[Boost Exhaust: Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <boostExhaustLeft_TurnMoveDirLimitY AltName="[Boost Exhaust: Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <boostExhaustLeft_TurnMoveDirType AltName="[Boost Exhaust: Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <boostExhaustLeft_pad Padding="" />
+    <boostExhaustLeft_pad1 Padding="" />
+    
+    <boostExhaustRight_TurnMoveDirLimitX AltName="[Boost Exhaust: Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <boostExhaustRight_TurnMoveDirLimitY AltName="[Boost Exhaust: Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <boostExhaustRight_TurnMoveDirType AltName="[Boost Exhaust: Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <boostExhaustRight_pad Padding="" />
+    <boostExhaustRight_pad1 Padding="" />
+    
+    <boostExhaustFalling_TurnMoveDirLimitX AltName="[Boost Exhaust: Falling] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <boostExhaustFalling_TurnMoveDirLimitY AltName="[Boost Exhaust: Falling] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <boostExhaustFalling_TurnMoveDirType AltName="[Boost Exhaust: Falling] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <boostExhaustFalling_pad Padding="" />
+    <boostExhaustFalling_pad1 Padding="" />
+    
+    <brakeFront_TurnMoveDirLimitX AltName="[Brake - Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <brakeFront_TurnMoveDirLimitY AltName="[Brake - Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <brakeFront_TurnMoveDirType AltName="[Brake - Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeFront_pad Padding="" />
+    <brakeFront_pad1 Padding="" />
+    
+    <brakeBack_TurnMoveDirLimitX AltName="[Brake - Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <brakeBack_TurnMoveDirLimitY AltName="[Brake - Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <brakeBack_TurnMoveDirType AltName="[Brake - Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeBack_pad Padding="" />
+    <brakeBack_pad1 Padding="" />
+    
+    <brakeLeft_TurnMoveDirLimitX AltName="[Brake - Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <brakeLeft_TurnMoveDirLimitY AltName="[Brake - Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <brakeLeft_TurnMoveDirType AltName="[Brake - Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeLeft_pad Padding="" />
+    <brakeLeft_pad1 Padding="" />
+    
+    <brakeRight_TurnMoveDirLimitX AltName="[Brake - Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <brakeRight_TurnMoveDirLimitY AltName="[Brake - Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <brakeRight_TurnMoveDirType AltName="[Brake - Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeRight_pad Padding="" />
+    <brakeRight_pad1 Padding="" />
+    
+    <brakeFalling_TurnMoveDirLimitX AltName="[Brake - Falling] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <brakeFalling_TurnMoveDirLimitY AltName="[Brake - Falling] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <brakeFalling_TurnMoveDirType AltName="[Brake - Falling] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <brakeFalling_pad Padding="" />
+    <brakeFalling_pad1 Padding="" />
+    
+    <assaultBoostLoop_TurnMoveDirLimitX AltName="[Assault Boost Loop] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <assaultBoostLoop_TurnMoveDirLimitY AltName="[Assault Boost Loop] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <assaultBoostLoop_TurnMoveDirType AltName="[Assault Boost Loop] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <assaultBoostLoop_pad Padding="" />
+    <assaultBoostLoop_pad1 Padding="" />
+    
+    <hover2LegsWalkFront_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkFront_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkFront_TurnMoveDirType AltName="[Tetrapod: Walk - Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkFront_pad Padding="" />
+    <hover2LegsWalkFront_pad1 Padding="" />
+    
+    <hover2LegsWalkBack_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkBack_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkBack_TurnMoveDirType AltName="[Tetrapod: Walk - Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkBack_pad Padding="" />
+    <hover2LegsWalkBack_pad1 Padding="" />
+    
+    <hover2LegsWalkLeft_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkLeft_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkLeft_TurnMoveDirType AltName="[Tetrapod: Walk - Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkLeft_pad Padding="" />
+    <hover2LegsWalkLeft_pad1 Padding="" />
+    
+    <hover2LegsWalkRight_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkRight_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkRight_TurnMoveDirType AltName="[Tetrapod: Walk - Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkRight_pad Padding="" />
+    <hover2LegsWalkRight_pad1 Padding="" />
+    
+    <hover2LegsWalkLeftTurn_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Left Turn] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkLeftTurn_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Left Turn] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkLeftTurn_TurnMoveDirType AltName="[Tetrapod: Walk - Left Turn] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkLeftTurn_pad Padding="" />
+    <hover2LegsWalkLeftTurn_pad1 Padding="" />
+    
+    <hover2LegsWalkRightTurn_TurnMoveDirLimitX AltName="[Tetrapod: Walk - Right Turn] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsWalkRightTurn_TurnMoveDirLimitY AltName="[Tetrapod: Walk - Right Turn] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsWalkRightTurn_TurnMoveDirType AltName="[Tetrapod: Walk - Right Turn] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsWalkRightTurn_pad Padding="" />
+    <hover2LegsWalkRightTurn_pad1 Padding="" />
+    
+    <hover2LegsRunFront_TurnMoveDirLimitX AltName="[Tetrapod: Run - Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunFront_TurnMoveDirLimitY AltName="[Tetrapod: Run - Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunFront_TurnMoveDirType AltName="[Tetrapod: Run - Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunFront_pad Padding="" />
+    <hover2LegsRunFront_pad1 Padding="" />
+    
+    <hover2LegsRunBack_TurnMoveDirLimitX AltName="[Tetrapod: Run - Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunBack_TurnMoveDirLimitY AltName="[Tetrapod: Run - Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunBack_TurnMoveDirType AltName="[Tetrapod: Run - Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunBack_pad Padding="" />
+    <hover2LegsRunBack_pad1 Padding="" />
+    
+    <hover2LegsRunLeft_TurnMoveDirLimitX AltName="[Tetrapod: Run - Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunLeft_TurnMoveDirLimitY AltName="[Tetrapod: Run - Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunLeft_TurnMoveDirType AltName="[Tetrapod: Run - Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunLeft_pad Padding="" />
+    <hover2LegsRunLeft_pad1 Padding="" />
+    
+    <hover2LegsRunRight_TurnMoveDirLimitX AltName="[Tetrapod: Run - Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunRight_TurnMoveDirLimitY AltName="[Tetrapod: Run - Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunRight_TurnMoveDirType AltName="[Tetrapod: Run - Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunRight_pad Padding="" />
+    <hover2LegsRunRight_pad1 Padding="" />
+    
+    <hover2LegsRunLeftTurn_TurnMoveDirLimitX AltName="[Tetrapod: Run - Left Turn] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunLeftTurn_TurnMoveDirLimitY AltName="[Tetrapod: Run - Left Turn] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunLeftTurn_TurnMoveDirType AltName="[Tetrapod: Run - Left Turn] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunLeftTurn_pad Padding="" />
+    <hover2LegsRunLeftTurn_pad1 Padding="" />
+    
+    <hover2LegsRunRightTurn_TurnMoveDirLimitX AltName="[Tetrapod: Run - Right Turn] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hover2LegsRunRightTurn_TurnMoveDirLimitY AltName="[Tetrapod: Run - Right Turn] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hover2LegsRunRightTurn_TurnMoveDirType AltName="[Tetrapod: Run - Right Turn] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hover2LegsRunRightTurn_pad Padding="" />
+    <hover2LegsRunRightTurn_pad1 Padding="" />
+    
+    <tankQbFront_TurnMoveDirLimitX AltName="[Tank: Quick Boost - Forward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankQbFront_TurnMoveDirLimitY AltName="[Tank: Quick Boost - Forward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankQbFront_TurnMoveDirType AltName="[Tank: Quick Boost - Forward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankQbFront_pad Padding="" />
+    <tankQbFront_pad1 Padding="" />
+    
+    <tankQbBack_TurnMoveDirLimitX AltName="[Tank: Quick Boost - Backward] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankQbBack_TurnMoveDirLimitY AltName="[Tank: Quick Boost - Backward] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankQbBack_TurnMoveDirType AltName="[Tank: Quick Boost - Backward] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankQbBack_pad Padding="" />
+    <tankQbBack_pad1 Padding="" />
+    
+    <tankQbLeft_TurnMoveDirLimitX AltName="[Tank: Quick Boost - Left] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankQbLeft_TurnMoveDirLimitY AltName="[Tank: Quick Boost - Left] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankQbLeft_TurnMoveDirType AltName="[Tank: Quick Boost - Left] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankQbLeft_pad Padding="" />
+    <tankQbLeft_pad1 Padding="" />
+    
+    <tankQbRight_TurnMoveDirLimitX AltName="[Tank: Quick Boost - Right] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <tankQbRight_TurnMoveDirLimitY AltName="[Tank: Quick Boost - Right] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <tankQbRight_TurnMoveDirType AltName="[Tank: Quick Boost - Right] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <tankQbRight_pad Padding="" />
+    <tankQbRight_pad1 Padding="" />
+    
+    <hovertTankGround_TurnMoveDirLimitX AltName="[Tank: Hover - Ground] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hovertTankGround_TurnMoveDirLimitY AltName="[Tank: Hover - Ground] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hovertTankGround_TurnMoveDirType AltName="[Tank: Hover - Ground] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hovertTankGround_pad Padding="" />
+    <hovertTankGround_pad1 Padding="" />
+    
+    <hovertTankGroundWater_TurnMoveDirLimitX AltName="[Tank: Hover - Water] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hovertTankGroundWater_TurnMoveDirLimitY AltName="[Tank: Hover - Water] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hovertTankGroundWater_TurnMoveDirType AltName="[Tank: Hover - Water] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hovertTankGroundWater_pad Padding="" />
+    <hovertTankGroundWater_pad1 Padding="" />
+    
+    <hovertTankGroundWaterShallow_TurnMoveDirLimitX AltName="[Tank: Hover - Shallow Water] Correction Limit Angle: X" Wiki="Maximum angle (X) when correcting in the direction of movement." />
+    <hovertTankGroundWaterShallow_TurnMoveDirLimitY AltName="[Tank: Hover - Shallow Water] Correction Limit Angle: Y" Wiki="Maximum angle (Y) when correcting in the direction of movement." />
+    <hovertTankGroundWaterShallow_TurnMoveDirType AltName="[Tank: Hover - Shallow Water] Movement Correction Type" Wiki="If you want the booster to point to the right when the character moves to the left, set it to the opposite direction." Enum="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" />
+    <hovertTankGroundWaterShallow_pad Padding="" />
+    <hovertTankGroundWaterShallow_pad1 Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="THRUSTERS_TURN_MOVE_DIRECTION_TYPE" type="u8">
+        <Option Value="3" Name="No Correction" />
+        <Option Value="0" Name="Direction of Movement" />
+        <Option Value="1" Name="Backward Movement" />
+    </Enum> 
+  </Enums>
+</PARAMMETA>

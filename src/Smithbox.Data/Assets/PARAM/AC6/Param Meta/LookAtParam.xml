@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to look-at cameras."/>
+  
+  <Field>
+    <strCtrlBoneName 
+    AltName="Control Bone Name" 
+    Wiki="Bone name to apply to." />
+    
+    <bRotEnableX
+    AltName="Enable Rotation on X-Axis"
+    Wiki="If ON, rotation of the X-axis is enabled for the look-at camera."
+    IsBool="" />
+    
+    <bRotEnableY
+    AltName="Enable Rotation on Y-Axis"
+    Wiki="If ON, rotation of the Y-axis is enabled for the look-at camera."
+    IsBool="" />
+    
+    <bRotInverse
+    AltName="Flip Rotation"
+    Wiki="If ON, the rotation start position is flipped by 180 degrees."
+    IsBool="" />
+    
+    <bDirPosShootOffsetEnable
+    AltName="Adjust Look-At Direction with Muzzle Position"
+    Wiki="If ON, the look-at direction is corrected by the muzzle position."
+    IsBool="" />
+    
+    <upLimitAngleDeg
+    AltName="Upwards Limit Angle"
+    Wiki="The upwards limit angle for the look-at camera. In degrees." />
+    
+    <downLimitAngleDeg
+    AltName="Downwards Limit Angle"
+    Wiki="The downwards limit angle for the look-at camera. In degrees." />
+    
+    <maxRotSpeedDegPerSecX
+    AltName="Maximum Rotation Speed per Second (X-Axis)"
+    Wiki="The maximum rotation velocity to apply per second on the X-axis. In degrees." />
+    
+    <turnAccelDPSS_X
+    AltName="Angular Acceleration (X-Axis)"
+    Wiki="The angular acceleration on the X-axis to apply. In degrees per second ^ 2." />
+    
+    <offsetBaseDmyPolyId
+    AltName="Offset Reference Dummy Polgon ID"
+    Wiki="The dummy polygon ID to use when correcting the Look-At direction. Applies for the discrepency between the rotation axis and the muzzle position. (-1 is used for the weapon shoot dummy polygon)." />
+    
+    <leftLimitAngleDeg
+    AltName="Left Limit Angle" 
+    Wiki="The leftward limit angle for the look-at camera. In degrees." />
+    
+    <rightLimitAngleDeg
+    AltName="Right Limit Angle" 
+    Wiki="The rightward limit angle for the look-at camera. In degrees." />
+    
+    <maxRotSpeedDegPerSecY
+    AltName="Maximum Rotation Speed per Second (Y-Axis)"
+    Wiki="The maximum rotation velocity to apply per second on the Y-axis. In degrees." />
+    
+    <turnAccelDPSS_Y
+    AltName="Angular Acceleration (Y-Axis)"
+    Wiki="The angular acceleration on the Y-axis to apply. In degrees per second ^ 2." />
+    
+    <lookAheadSecond_Y
+    AltName="LookAt Height Peek Duration"
+    Wiki="The minimum duration to look ahead for the height target view position. In seconds." 
+    Obsolete="" />
+    
+    <basePosOffsetY
+    AltName="Reference Position Height Offset"
+    Wiki="The reference position to use when calculating the direction for a location shifted by this value on the Y-axis from the rotation axis." />
+    
+    <predictionShootObserveTime
+    AltName="Target Prediction: Speed Observation Time"
+    Wiki="The duration for which a target is observed for, over the specified velocity, for target prediction." 
+    Obsolete="" />
+    
+    <predictionBulletId
+    AltName="Target Prediction: Bullet ID"
+    Wiki="The bullet ID used for target predicition." 
+    Refs="Bullet"
+    Obsolete="" />
+    
+    <predictionMaxTime
+    AltName="Target Prediction: Maximum Duration"
+    Wiki="The maximum duration later that a target position can be predicted for." 
+    Obsolete="" />
+    
+    <predictionWepSlotIndex
+    AltName="Target Prediction: Weapon Slot Number"
+    Wiki="The weapone equipment slot number to use for the target predicition (attack action)." />
+    
+    <bFollowOrbitMode
+    AltName="Orbit Root Bone"
+    Wiki="If ON, the control mode for orbiting comes from the root bone of the character." 
+    IsBool="" />
+    
+    <pad01
+    AltName=""
+    Padding="" />
+    
+    <fadeOutTime
+    AltName="Fade-Out Duration"
+    Wiki="The fade out duration if Look-At is disabled." />
+    
+    <deflectType
+    AltName="Deflect Type"
+    Wiki="The deflect type to use." 
+    Enum="BULLET_DEFLECT_TYPE" />
+    
+    <bLookAtPosFollowTargetMode
+    AltName="Follow Look-At Position"
+    Wiki="If ON, the Look-At target position is followed after velocity and acceleration." 
+    IsBool="" />
+    
+    <bWorldFixRotX
+    AltName="Fix the X-Axis Rotation relative to World"
+    Wiki="If ON, the X-axis rotation for Look-At is fixed relative to the World." 
+    IsBool="" />
+    
+    <bWorldFixRotY
+    AltName="Fix the Y-Axis Rotation relative to World"
+    Wiki="If ON, the Y-axis rotation for Look-At is fixed relative to the World." 
+    IsBool="" />
+    
+    <worldFixRotOffsetAngleDegX
+    AltName="World Fix: Fixed Rotation Offset (X-Axis)"
+    Wiki="The fixed offset angle to use for the world fix on the X-axis. In degrees." />
+    
+    <worldFixRotOffsetAngleDegY
+    AltName="World Fix: Fixed Rotation Offset (Y-Axis)"
+    Wiki="The fixed offset angle to use for the world fix on the Y-axis. In degrees." />
+    
+    <lookAtPosFollowTarget_BaseDmyId
+    AltName="Track Target Position: Base Dummy Polygon ID"
+    Wiki="The reference dummy polygon ID to use for the track target position mode." />
+    
+    <lookAtPosFollowTarget_AcellMPSS
+    AltName="Track Target Position: Acceleration"
+    Wiki="The acceleration towards the target in track target position mode. In metres per second ^ 2." />
+    
+    <lookAtPosFollowTarget_BrakeMPSS
+    AltName="Track Target Position: Deceleration"
+    Wiki="The deceleration in directions other than the target in track target position mode. In metres per second ^ 2." />
+    
+    <lookAtPosFollowTarget_MaxSpeedKMH
+    AltName="Track Target Position: Maximum Velocity"
+    Wiki="The maximum velocity in track target position mode. In kilometres per hour." />
+    
+    <rotRate_X
+    AltName="Rotation %: X-Axis"
+    Wiki="The rotation rate to apply to X-axis rotation. 1 is the target direction, cumulative total from the parent joint." />
+    
+    <rotRate_Y
+    AltName="Rotation %: Y-Axis"
+    Wiki="The rotation rate to apply to Y-axis rotation. 1 is the target direction, cumulative total from the parent joint." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="BULLET_DEFLECT_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Simple" />
+        <Option Value="2" Name="Detailed" />
+    </Enum> 
+    
+  </Enums>
+</PARAMMETA>

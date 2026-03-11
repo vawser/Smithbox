@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <shieldGuardBaseDmyId AltName="Guard Base Dummy Poly ID" Wiki="Dummy Poly ID used as the direction reference (-1 is Master)" />
+	<shieldGuardIsPosMaster AltName="Guard Detect Position Master Override" Wiki="Whether to detect if the position is the character's Master position, rather than the dummy poly position." IsBool="" />
+	<shieldGuardDirAngDegH AltName="Horizontal Guard Angle" Wiki="In degrees." />
+	<shieldGuardDirAngDegV AltName="Vertical Guard Angle" Wiki="In degrees." />
+	<shieldGuardRangeAngDegH AltName="Horizontal Guard Range" Wiki="In degrees." />
+	<shieldGuardRangeAngDegV AltName="Vertical Guard Range" Wiki="In degrees." />
+	<pa1GuardBaseDmyId AltName="Pulse Armor Guard Base Dummy Poly ID" Wiki="Dummy poly ID used for Pulse Armor." />
+	<pa1GuardIsPosMaster AltName="Pulse Armor Detect Position Master Override" Wiki="Whether to detect if the position is the character's Master position, rather than the dummy poly position." IsBool="" />
+	<pa1GuardDirAngDegH AltName="Horizontal Pulse Armor Angle" Wiki="In degrees." />
+	<pa1GuardDirAngDegV AltName="Vertical Pulse Armor Angle" Wiki="In degrees." />
+	<pa1GuardRangeAngDegH AltName="Horizontal Pulse Armor Range" Wiki="In degrees." />
+	<pa1GuardRangeAngDegV AltName="Vertical Pulse Armor Range" Wiki="In degrees." />
+	<pa2GuardBaseDmyId AltName="Pulse Armor Guard Base Dummy Poly ID" Wiki="Dummy poly ID used for Pulse Armor." />
+	<pa2GuardIsPosMaster AltName="Pulse Armor Detect Position Master Override" Wiki="Whether to detect if the position is the character's Master position, rather than the dummy poly position." IsBool="" />
+	<pa2GuardDirAngDegH AltName="Horizontal Pulse Armor Angle" Wiki="In degrees." />
+	<pa2GuardDirAngDegV AltName="Vertical Pulse Armor Angle" Wiki="In degrees." />
+	<pa2GuardRangeAngDegH AltName="Horizontal Pulse Armor Range" Wiki="In degrees." />
+	<pa2GuardRangeAngDegV AltName="Vertical Pulse Armor Range" Wiki="In degrees." />
+	<paReuseEnableThreshold AltName="Pulse Armor Recovery Guard Value" Wiki="Specifies when PA can be used again after a guard break." />
+  </Field>
+  <Self Wiki="Defines certain shield or PA-related values for players and NPCs." />
+</PARAMMETA>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used for grass LOD ranges." />
+  
+  <Field>
+    <LOD0_range 
+    AltName="LOD 0: Switch Distance" 
+    Wiki="The distance at which to switch drawing method for LOD0 cluster type." />
+    
+    <LOD0_play 
+    AltName="LOD 0: Fade Start" 
+    Wiki="The distance at which to start fading LOD0 cluster type." />
+    
+    <LOD1_range 
+    AltName="LOD 1: Switch Distance" 
+    Wiki="The distance at which to switch drawing method for LOD1 cluster type." />
+    
+    <LOD1_play 
+    AltName="LOD 1: Fade Start" 
+    Wiki="The distance at which to start fading LOD1 cluster type." />
+    
+    <LOD2_range 
+    AltName="LOD 2: Switch Distance" 
+    Wiki="The distance at which to switch drawing method for LOD2 cluster type." />
+    
+    <LOD2_play 
+    AltName="LOD 2: Fade Start" 
+    Wiki="The distance at which to start fading LOD2 cluster type." />
+  </Field>
+</PARAMMETA>

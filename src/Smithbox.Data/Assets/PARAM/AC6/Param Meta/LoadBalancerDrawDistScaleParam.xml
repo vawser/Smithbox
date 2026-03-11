@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the draw distance scale configuration for the FPS load balancer."/>
+  
+  <Field>
+    <Lv00
+    AltName="Draw Distance Scale: Level 00"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv01
+    AltName="Draw Distance Scale: Level 01"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv02
+    AltName="Draw Distance Scale: Level 02"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv03
+    AltName="Draw Distance Scale: Level 03"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv04
+    AltName="Draw Distance Scale: Level 04"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv05
+    AltName="Draw Distance Scale: Level 05"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv06
+    AltName="Draw Distance Scale: Level 06"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv07
+    AltName="Draw Distance Scale: Level 07"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv08
+    AltName="Draw Distance Scale: Level 08"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv09
+    AltName="Draw Distance Scale: Level 09"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv10
+    AltName="Draw Distance Scale: Level 10"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv11
+    AltName="Draw Distance Scale: Level 11"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv12
+    AltName="Draw Distance Scale: Level 12"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv13
+    AltName="Draw Distance Scale: Level 13"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv14
+    AltName="Draw Distance Scale: Level 14"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv15
+    AltName="Draw Distance Scale: Level 15"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv16
+    AltName="Draw Distance Scale: Level 16"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv17
+    AltName="Draw Distance Scale: Level 17"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv18
+    AltName="Draw Distance Scale: Level 18"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv19
+    AltName="Draw Distance Scale: Level 19"
+    Wiki="The draw distance scale for the specified level." />
+    
+    <Lv20
+    AltName="Draw Distance Scale: Level 20"
+    Wiki="The draw distance scale for the specified level." />
+  
+    <reserve
+    AltName=""
+    Padding="" />
+  </Field>
+  
+</PARAMMETA>

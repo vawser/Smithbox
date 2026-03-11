@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the shot spread for a bullet." />
+  
+  <Field>
+    <disableParam_NT AltName="Disable Param: Network Test Version" Wiki="Exclude from the NT version or mark the ones to be excluded." IsBool="" />
+    <disableParam_Product AltName="Disable Param: Release Version" Wiki="Exclude from the product version or mark the items to be excluded." IsBool="" />
+    
+    <disableParamReserve1 Padding="" />
+    <disableParamReserve2 Padding="" />
+    
+    <coordErrorType AltName="Coordinate Error Direction" Wiki="" Enum="BULLET_SHOTGUN_COORD_ERROR_TYPE" />
+    
+    <reserve Padding="" />
+    
+    <coordErrorDist AltName="Coordinate Error Amount" Wiki="In metres." />
+    
+    <pos0_bulletPosX AltName="Bullet Position: X [0]" Wiki="" />
+    <pos0_bulletPosY AltName="Bullet Position: Y [0]" Wiki="" />
+    <pos0_bulletPosZ AltName="Bullet Position: Z [0]" Wiki="" />
+    
+    <pos1_bulletPosX AltName="Bullet Position: X [1]" Wiki="" />
+    <pos1_bulletPosY AltName="Bullet Position: Y [1]" Wiki="" />
+    <pos1_bulletPosZ AltName="Bullet Position: Z [1]" Wiki="" />
+    
+    <pos2_bulletPosX AltName="Bullet Position: X [2]" Wiki="" />
+    <pos2_bulletPosY AltName="Bullet Position: Y [2]" Wiki="" />
+    <pos2_bulletPosZ AltName="Bullet Position: Z [2]" Wiki="" />
+    
+    <pos3_bulletPosX AltName="Bullet Position: X [3]" Wiki="" />
+    <pos3_bulletPosY AltName="Bullet Position: Y [3]" Wiki="" />
+    <pos3_bulletPosZ AltName="Bullet Position: Z [3]" Wiki="" />
+    
+    <pos4_bulletPosX AltName="Bullet Position: X [4]" Wiki="" />
+    <pos4_bulletPosY AltName="Bullet Position: Y [4]" Wiki="" />
+    <pos4_bulletPosZ AltName="Bullet Position: Z [4]" Wiki="" />
+    
+    <pos5_bulletPosX AltName="Bullet Position: X [5]" Wiki="" />
+    <pos5_bulletPosY AltName="Bullet Position: Y [5]" Wiki="" />
+    <pos5_bulletPosZ AltName="Bullet Position: Z [5]" Wiki="" />
+    
+    <pos6_bulletPosX AltName="Bullet Position: X [6]" Wiki="" />
+    <pos6_bulletPosY AltName="Bullet Position: Y [6]" Wiki="" />
+    <pos6_bulletPosZ AltName="Bullet Position: Z [6]" Wiki="" />
+    
+    <pos7_bulletPosX AltName="Bullet Position: X [7]" Wiki="" />
+    <pos7_bulletPosY AltName="Bullet Position: Y [7]" Wiki="" />
+    <pos7_bulletPosZ AltName="Bullet Position: Z [7]" Wiki="" />
+    
+    <pos8_bulletPosX AltName="Bullet Position: X [8]" Wiki="" />
+    <pos8_bulletPosY AltName="Bullet Position: Y [8]" Wiki="" />
+    <pos8_bulletPosZ AltName="Bullet Position: Z [8]" Wiki="" />
+    
+    <pos9_bulletPosX AltName="Bullet Position: X [9]" Wiki="" />
+    <pos9_bulletPosY AltName="Bullet Position: Y [9]" Wiki="" />
+    <pos9_bulletPosZ AltName="Bullet Position: Z [9]" Wiki="" />
+    
+    <pos10_bulletPosX AltName="Bullet Position: X [10]" Wiki="" />
+    <pos10_bulletPosY AltName="Bullet Position: Y [10]" Wiki="" />
+    <pos10_bulletPosZ AltName="Bullet Position: Z [10]" Wiki="" />
+    
+    <pos11_bulletPosX AltName="Bullet Position: X [11]" Wiki="" />
+    <pos11_bulletPosY AltName="Bullet Position: Y [11]" Wiki="" />
+    <pos11_bulletPosZ AltName="Bullet Position: Z [11]" Wiki="" />
+    
+    <pos12_bulletPosX AltName="Bullet Position: X [12]" Wiki="" />
+    <pos12_bulletPosY AltName="Bullet Position: Y [12]" Wiki="" />
+    <pos12_bulletPosZ AltName="Bullet Position: Z [12]" Wiki="" />
+    
+    <pos13_bulletPosX AltName="Bullet Position: X [13]" Wiki="" />
+    <pos13_bulletPosY AltName="Bullet Position: Y [13]" Wiki="" />
+    <pos13_bulletPosZ AltName="Bullet Position: Z [13]" Wiki="" />
+    
+    <pos14_bulletPosX AltName="Bullet Position: X [14]" Wiki="" />
+    <pos14_bulletPosY AltName="Bullet Position: Y [14]" Wiki="" />
+    <pos14_bulletPosZ AltName="Bullet Position: Z [14]" Wiki="" />
+    
+    <pos15_bulletPosX AltName="Bullet Position: X [15]" Wiki="" />
+    <pos15_bulletPosY AltName="Bullet Position: Y [15]" Wiki="" />
+    <pos15_bulletPosZ AltName="Bullet Position: Z [15]" Wiki="" />
+    
+    <pos16_bulletPosX AltName="Bullet Position: X [16]" Wiki="" />
+    <pos16_bulletPosY AltName="Bullet Position: Y [16]" Wiki="" />
+    <pos16_bulletPosZ AltName="Bullet Position: Z [16]" Wiki="" />
+    
+    <pos17_bulletPosX AltName="Bullet Position: X [17]" Wiki="" />
+    <pos17_bulletPosY AltName="Bullet Position: Y [17]" Wiki="" />
+    <pos17_bulletPosZ AltName="Bullet Position: Z [17]" Wiki="" />
+    
+    <pos18_bulletPosX AltName="Bullet Position: X [18]" Wiki="" />
+    <pos18_bulletPosY AltName="Bullet Position: Y [18]" Wiki="" />
+    <pos18_bulletPosZ AltName="Bullet Position: Z [18]" Wiki="" />
+    
+    <pos19_bulletPosX AltName="Bullet Position: X [19]" Wiki="" />
+    <pos19_bulletPosY AltName="Bullet Position: Y [19]" Wiki="" />
+    <pos19_bulletPosZ AltName="Bullet Position: Z [19]" Wiki="" />
+    
+    <pos20_bulletPosX AltName="Bullet Position: X [20]" Wiki="" />
+    <pos20_bulletPosY AltName="Bullet Position: Y [20]" Wiki="" />
+    <pos20_bulletPosZ AltName="Bullet Position: Z [20]" Wiki="" />
+    
+    <pos21_bulletPosX AltName="Bullet Position: X [21]" Wiki="" />
+    <pos21_bulletPosY AltName="Bullet Position: Y [21]" Wiki="" />
+    <pos21_bulletPosZ AltName="Bullet Position: Z [21]" Wiki="" />
+    
+    <pos22_bulletPosX AltName="Bullet Position: X [22]" Wiki="" />
+    <pos22_bulletPosY AltName="Bullet Position: Y [22]" Wiki="" />
+    <pos22_bulletPosZ AltName="Bullet Position: Z [22]" Wiki="" />
+    
+    <pos23_bulletPosX AltName="Bullet Position: X [23]" Wiki="" />
+    <pos23_bulletPosY AltName="Bullet Position: Y [23]" Wiki="" />
+    <pos23_bulletPosZ AltName="Bullet Position: Z [23]" Wiki="" />
+    
+    <pos24_bulletPosX AltName="Bullet Position: X [24]" Wiki="" />
+    <pos24_bulletPosY AltName="Bullet Position: Y [24]" Wiki="" />
+    <pos24_bulletPosZ AltName="Bullet Position: Z [24]" Wiki="" />
+    
+    <pos25_bulletPosX AltName="Bullet Position: X [25]" Wiki="" />
+    <pos25_bulletPosY AltName="Bullet Position: Y [25]" Wiki="" />
+    <pos25_bulletPosZ AltName="Bullet Position: Z [25]" Wiki="" />
+    
+    <pos26_bulletPosX AltName="Bullet Position: X [26]" Wiki="" />
+    <pos26_bulletPosY AltName="Bullet Position: Y [26]" Wiki="" />
+    <pos26_bulletPosZ AltName="Bullet Position: Z [26]" Wiki="" />
+    
+    <pos27_bulletPosX AltName="Bullet Position: X [27]" Wiki="" />
+    <pos27_bulletPosY AltName="Bullet Position: Y [27]" Wiki="" />
+    <pos27_bulletPosZ AltName="Bullet Position: Z [27]" Wiki="" />
+    
+    <pos28_bulletPosX AltName="Bullet Position: X [28]" Wiki="" />
+    <pos28_bulletPosY AltName="Bullet Position: Y [28]" Wiki="" />
+    <pos28_bulletPosZ AltName="Bullet Position: Z [28]" Wiki="" />
+    
+    <pos29_bulletPosX AltName="Bullet Position: X [29]" Wiki="" />
+    <pos29_bulletPosY AltName="Bullet Position: Y [29]" Wiki="" />
+    <pos29_bulletPosZ AltName="Bullet Position: Z [29]" Wiki="" />
+    
+    <pos30_bulletPosX AltName="Bullet Position: X [30]" Wiki="" />
+    <pos30_bulletPosY AltName="Bullet Position: Y [30]" Wiki="" />
+    <pos30_bulletPosZ AltName="Bullet Position: Z [30]" Wiki="" />
+    
+    <pos31_bulletPosX AltName="Bullet Position: X [31]" Wiki="" />
+    <pos31_bulletPosY AltName="Bullet Position: Y [31]" Wiki="" />
+    <pos31_bulletPosZ AltName="Bullet Position: Z [31]" Wiki="" />
+    
+    <pos32_bulletPosX AltName="Bullet Position: X [32]" Wiki="" />
+    <pos32_bulletPosY AltName="Bullet Position: Y [32]" Wiki="" />
+    <pos32_bulletPosZ AltName="Bullet Position: Z [32]" Wiki="" />
+    
+    <pos33_bulletPosX AltName="Bullet Position: X [33]" Wiki="" />
+    <pos33_bulletPosY AltName="Bullet Position: Y [33]" Wiki="" />
+    <pos33_bulletPosZ AltName="Bullet Position: Z [33]" Wiki="" />
+    
+    <pos34_bulletPosX AltName="Bullet Position: X [34]" Wiki="" />
+    <pos34_bulletPosY AltName="Bullet Position: Y [34]" Wiki="" />
+    <pos34_bulletPosZ AltName="Bullet Position: Z [34]" Wiki="" />
+    
+    <pos35_bulletPosX AltName="Bullet Position: X [35]" Wiki="" />
+    <pos35_bulletPosY AltName="Bullet Position: Y [35]" Wiki="" />
+    <pos35_bulletPosZ AltName="Bullet Position: Z [35]" Wiki="" />
+  </Field>
+</PARAMMETA>

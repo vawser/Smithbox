@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the damage level thresholds.\nThis is linked to Attitude Stability." />
+  <Field>
+    <threshold_00
+    AltName="Damage Level Threshold: 0"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad0_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_01
+    AltName="Damage Level Threshold: 1"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad1_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_002
+    AltName="Damage Level Threshold: 2"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad2_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_03
+    AltName="Damage Level Threshold: 3"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad3_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_04
+    AltName="Damage Level Threshold: 4"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad4_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_05
+    AltName="Damage Level Threshold: 5"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad5_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_06
+    AltName="Damage Level Threshold: 6"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad6_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_07
+    AltName="Damage Level Threshold: 1"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad7_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_08
+    AltName="Damage Level Threshold: 8"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad8_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_09
+    AltName="Damage Level Threshold: 9"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad9_2
+    AltName=""
+    Padding="" />
+    
+    <threshold_10
+    AltName="Damage Level Threshold: 10"
+    Wiki="Amount of impact damage that will advance to the next threshold." />
+    
+    <pad10_2
+    AltName=""
+    Padding="" />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

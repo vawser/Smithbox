@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <UnkInt0x00 Padding="" />
+    
+    <atkRate_Kinetic AltName="Damage %: Kinetic" Wiki="Physical attack power correction value" />
+    <atkRate_Energy AltName="Damage %: Energy" Wiki="Magic attack power correction value" />
+    <atkRate_Explosive AltName="Damage %: Explosive" Wiki="Fire attack power correction value" />
+    <atkRate_Coral AltName="Damage %: Coral" Wiki="Correction value of electric shock attack power" />
+    <atkRate_Stamina AltName="Damage %: Stamina" Wiki="Stamina attack power correction value" />
+    <atkRate_Poise AltName="Damage %: Poise" Wiki="Super Armor Weapon Attack Color Correction Value" />
+    <poiseDurabilityRate AltName="Poise Durability" Wiki="SA endurance correction value" />
+    <correctStrengthRate AltName="Correction %: STR" Wiki="Correction value of muscle strength correction" />
+    <correctAgilityRate AltName="Correction %: DEX" Wiki="Correction value of agility correction" />
+    <correctMagicRate AltName="Correction %: INT" Wiki="Correction value of magic power correction" />
+    <correctFaithRate AltName="Correction %: FTH" Wiki="Correction value of faith correction" />
+    <guardCutRate_Kinetic AltName="Guard Absorption %: Kinetic" Wiki="Correction value of physical attack cut rate when guarding" />
+    <guardCutRate_Energy AltName="Guard Absorption %: Energy" Wiki="Correction value of magic attack cut rate when guarding" />
+    <guardCutRate_Explosive AltName="Guard Absorption %: Explosive" Wiki="Correction value of flame attack cut rate when guarding" />
+    <guardCutRate_Coral AltName="Guard Absorption %: Coral" Wiki="Correction value of electric shock attack cut rate when guarding" />
+    <guardResistRate_AcsAnomaly AltName="Guard Absorption %: ACS Anomaly" Wiki="Correction value of poison attack cut rate when guarding" />
+    <guardResistRate_ElecDischarge AltName="Guard Absorption %: Electric Discharge" Wiki="Correction value of plague attack cut rate when guarding" />
+    <guardResistRate_Plasma AltName="Guard Absorption %: Plasma" Wiki="Correction value for bleeding attack cut rate when guarding" />
+    <guardResistRate_ElecDischargeType2 AltName="Guard Absorption %: Electric Discharge (Type 2)" Wiki="Correction value of curse attack cut rate when guarding" />
+    <guardDefRate_Stamina AltName="Guard Absorption %: Stability" Wiki="Correction value of stamina defense power when guarding" />
+    <spEffectId1 AltName="Behavior SpEffect [1] Offset" Wiki="Addition correction value for special effect ID1" />
+    <spEffectId2 AltName="Behavior SpEffect [2] Offset" Wiki="Addition correction value for special effect ID2" />
+    <spEffectId3 AltName="Behavior SpEffect [3] Offset" Wiki="Addition correction value for special effect ID3" />
+    <residentSpEffectId1 AltName="Passive SpEffect [1] Offset" Wiki="Addition correction value for resident special effect ID1" />
+    <residentSpEffectId2 AltName="Passive SpEffect [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
+    <residentSpEffectId3 AltName="Passive SpEffect [3] Offset" Wiki="Addition correction value for resident special effect ID3" />
+    <materialSetId AltName="Reinforcement Material Set Offset" Wiki="Addition correction value of material parameter ID" />
+    <maxReinforceLevel AltName="Max Reinforcement Level" Wiki="Level value for maximum enhanced weapon level" />
+    <atkRate_Unknown AltName="Damage %: Unknown" Wiki="Dark attack power correction value" />
+    <guardCutRate_Unknown AltName="Guard Absorption %: Unknown" Wiki="Correction value of darkness attack cut rate when guarding" />
+    <correctLuckRate AltName="Correction %: LCK" Wiki="Correction value of luck correction" />
+    <guardResistRate_Uranium AltName="Guard Absorption %: Uranium" Wiki="Correction value of cold air attack cut rate when guarding" />
+    <reinforcePriceRate AltName="Reinforce Price Rate" Wiki="Correction value to multiply the enhancement price of the weapon parameter" />
+    <baseChangePriceRate AltName="Base Change Price Rate" Wiki="Correction value to multiply the evolution price of the weapon parameter" />
+    
+    <endPadding Padding="" />
+  </Field>
+  <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" />
+</PARAMMETA>

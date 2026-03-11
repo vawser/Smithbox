@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the target rate for a jiggle bone."/>
+  
+  <Field>
+    <strTargetBoneName 
+    AltName="Target Bone Name" 
+    Wiki="The bone name to target." />
+    
+    <selfRotRateX
+    AltName="Rotation %: X-Axis"
+    Wiki="The rotation rate on the X-axis for this bone." />
+    
+    <selfRotRateY
+    AltName="Rotation %: Y-Axis"
+    Wiki="The rotation rate on the Y-axis for this bone." />
+    
+    <selfRotRateZ
+    AltName="Rotation %: Z-Axis"
+    Wiki="The rotation rate on the Z-axis for this bone." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

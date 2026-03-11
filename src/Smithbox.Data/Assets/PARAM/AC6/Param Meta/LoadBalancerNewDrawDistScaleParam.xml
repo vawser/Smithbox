@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the draw distance scale configuration for the FPS load balancer."/>
+  
+  <Field>
+    <DrawDist_LvBegin
+    AltName="Draw Distance: Start"
+    Wiki="The start activation level for the draw distance scaling." />
+    
+    <DrawDist_LvEnd
+    AltName="Draw Distance: End"
+    Wiki="The end activation level for the draw distance scaling." />
+    
+    <reserve0
+    AltName=""
+    Padding="" />
+    
+    <DrawDist_ScaleBegin
+    AltName="Scale: Start"
+    Wiki="The start draw distance scale." />
+    
+    <DrawDist_ScaleEnd
+    AltName="Scale: End"
+    Wiki="The end draw distance scale." />
+    
+    <ShadwDrawDist_LvBegin
+    AltName="Draw Distance: Start (Shadow)"
+    Wiki="The start activation level for the draw distance scaling of shadows." />
+    
+    <ShadwDrawDist_LvEnd
+    AltName="Draw Distance: End (Shadow)"
+    Wiki="The end activation level for the draw distance scaling of shadows." />
+    
+    <reserve1
+    AltName=""
+    Padding="" />
+    
+    <ShadwDrawDist_ScaleBegin
+    AltName="Scale: Start (Shadow)"
+    Wiki="The start draw distance scale for shadows." />
+    
+    <ShadwDrawDist_ScaleEnd
+    AltName="Scale: End (Shadow)"
+    Wiki="The end draw distance scale for shadows." />
+    
+    <reserve2
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

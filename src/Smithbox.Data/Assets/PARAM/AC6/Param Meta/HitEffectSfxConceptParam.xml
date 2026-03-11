@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the hit effect particles based on the incoming hit." />
+  
+  <Field>
+    <atkIron_1 
+    AltName="1: Kinetic" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkIron_2 
+    AltName="2: Kinetic" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkFire_1 
+    AltName="1: Flame" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkFire_2 
+    AltName="2: Flame" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkStun_1 
+    AltName="1: Stun" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkStun_2 
+    AltName="2: Stun" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkEmp_1 
+    AltName="1: EMP" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkEmp_2 
+    AltName="2: EMP" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkIce_1 
+    AltName="1: Ice" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkIce_2 
+    AltName="2: Ice" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkEnergy_Green_1 
+    AltName="1: Energy (Green)" 
+    Wiki="The hit SFX for this slot. Blue for plasma, pulse, laser and barrier." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkEnergy_Green_2 
+    AltName="2: Energy (Green)" 
+    Wiki="The hit SFX for this slot. Blue for plasma, pulse, laser and barrier." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkNone_1 
+    AltName="1: None" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkNone_2 
+    AltName="2: None" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy1_1 
+    AltName="1: Dummy Polygon 1" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy1_2 
+    AltName="2: Dummy Polygon 1" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy2_1 
+    AltName="1: Dummy Polygon 2" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy2_2 
+    AltName="2: Dummy Polygon 2" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy3_1 
+    AltName="1: Dummy Polygon 3" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy3_2 
+    AltName="2: Dummy Polygon 3" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy4_1 
+    AltName="1: Dummy Polygon 4" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkDmy4_2
+    AltName="2: Dummy Polygon 4" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkMelange_1 
+    AltName="1: Fabric" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkMelange_2
+    AltName="2: Fabric" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkPulse_1 
+    AltName="1: Pulse" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkPulse_2
+    AltName="2: Pulse" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkLaser_1 
+    AltName="1: Laser" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkLaser_2
+    AltName="2: Laser" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkPlusma_1 
+    AltName="1: Plasma" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkPlusma_2
+    AltName="2: Plasma" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkAssaultArmor_1 
+    AltName="1: Assault Armor" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <atkAssaultArmor_2
+    AltName="2: Assault Armor" 
+    Wiki="The hit SFX for this slot." 
+    Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="HIT_EFFECT_SFX_CONCEPT_TYPE" type="s16">
+        <Option Value="-2" Name="For Concept" />
+        <Option Value="-1" Name="For Concept" />
+        <Option Value="0" Name="None" />
+        <Option Value="10" Name="Kinetic: Landing" />
+        <Option Value="20" Name="Kinetic: Kinetic Shield Hit" />
+        <Option Value="30" Name="Kinetic: Energy Shield Hit" />
+        <Option Value="70" Name="Energy (Green): Landing" />
+        <Option Value="80" Name="Energy (Green): Kinetic Shield Hit" />
+        <Option Value="90" Name="Energy (Green): Energy Shield Hit" />
+        <Option Value="130" Name="Coral: Landing" />
+        <Option Value="140" Name="Coral: Kinetic Shield Hit" />
+        <Option Value="150" Name="Coral: Energy Shield Hit" />
+        <Option Value="160" Name="Barrier: Impact" />
+        <Option Value="170" Name="Flame: Impact" />
+        <Option Value="180" Name="Stun: Impact" />
+        <Option Value="190" Name="Assault Armor: Impact" />
+        <Option Value="200" Name="Pulse: Landing" />
+        <Option Value="210" Name="Pulse: Kinetic Shield Hit" />
+        <Option Value="220" Name="Pulse: Energy Shield Hit" />
+        <Option Value="230" Name="Laser: Landing" />
+        <Option Value="240" Name="Laser: Kinetic Shield Hit" />
+        <Option Value="250" Name="Laser: Energy Shield Hit" />
+        <Option Value="260" Name="Plasma: Landing" />
+        <Option Value="270" Name="Plasma: Kinetic Shield Hit" />
+        <Option Value="280" Name="Plasma: Energy Shield Hit" />
+        <Option Value="300" Name="Smoke" />
+        <Option Value="310" Name="Smoke and Debris" />
+        <Option Value="320" Name="Stone" />
+        <Option Value="330" Name="Earth" />
+        <Option Value="340" Name="Wood" />
+        <Option Value="350" Name="Sand" />
+        <Option Value="360" Name="Flame" />
+        <Option Value="370" Name="Ice" />
+        <Option Value="380" Name="Snow" />
+        <Option Value="390" Name="Electricity" />
+        <Option Value="400" Name="Glass" />
+        <Option Value="410" Name="Water (Shallow)" />
+        <Option Value="420" Name="Water (Deep)" />
+        <Option Value="430" Name="Swamp (Shallow)" />
+        <Option Value="440" Name="Swamp (Deep)" />
+        <Option Value="450" Name="Flesh" />
+        <Option Value="460" Name="Cloth" />
+        <Option Value="470" Name="Rubber" />
+        <Option Value="480" Name="Kinetic: Pulse Armor Hit" />
+        <Option Value="490" Name="Pulse: Pulse Armor Hit" />
+        <Option Value="500" Name="Laser: Pulse Armor Hit" />
+        <Option Value="510" Name="Plasma: Pulse Armor Hit" />
+        <Option Value="520" Name="Energy (Green): Pulse Armor Hit" />
+        <Option Value="530" Name="Coral: Pulse Armor Hit" />
+        <Option Value="540" Name="Energy Shield: Initial Guard Hit" />
+        <Option Value="550" Name="Coral Shield: Initial Guard Hit" />
+        <Option Value="560" Name="Gene Normal" />
+        <Option Value="570" Name="Gene Coral" />
+        <Option Value="580" Name="Stun: Shield" />
+        <Option Value="590" Name="Kinetic: Coral Shield Hit" />
+        <Option Value="600" Name="Pulse: Coral Shield Hit" />
+        <Option Value="610" Name="Energy (Green): Coral Shield Hit" />
+        <Option Value="620" Name="Coral: Coral Shield Hit" />
+        <Option Value="630" Name="Kinetic: Pulse Armor - Enemy (Large): White Hit Ripple" />
+        <Option Value="640" Name="Pulse: Pulse Armor - Enemy (Large): White Hit Ripple" />
+        <Option Value="650" Name="Energy (Green): Pulse Armor - Enemy (Large): White Hit Ripple" />
+        <Option Value="660" Name="Coral: Pulse Armor - Enemy (Large): White Hit Ripple" />
+        <Option Value="670" Name="Kinetic: Pulse Armor - Enemy (Large): Coral Hit Ripple" />
+        <Option Value="680" Name="Pulse: Pulse Armor - Enemy (Large): Coral Hit Ripple" />
+        <Option Value="690" Name="Energy (Green): Pulse Armor - Enemy (Large): Coral Hit Ripple" />
+        <Option Value="700" Name="Coral: Pulse Armor - Enemy (Large): Coral Hit Ripple" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

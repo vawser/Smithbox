@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each shader quality level." />
+  
+  <Field>
+    <sssEnabled 
+    AltName="Enable Subsurface Scattering" 
+    Wiki="If ON, enable subsurface scattering via shaders." 
+    IsBool="" />
+    
+    <tessellationEnabled 
+    AltName="Enable Tessellation" 
+    Wiki="If ON, enable texture tessellation via shaders." 
+    IsBool="" />
+    
+    <highPrecisionNormalEnabled 
+    AltName="Enable High Precision Normals" 
+    Wiki="If ON, high precision normal maps are used within the graphics buffer." 
+    IsBool="" />
+    
+    <pad1 
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

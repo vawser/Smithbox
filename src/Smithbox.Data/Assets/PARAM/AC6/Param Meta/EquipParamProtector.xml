@@ -1,0 +1,1911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of equipment."  />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this part in the menu." />
+    
+    <wanderingEquipId 
+    AltName="Wandering Equip ID" 
+    Wiki="Replacement equipment ID for wandering ghosts." 
+    Obsolete="" />
+    
+    <vagrantItemLotId
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1 No vagrant 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <fixPrice 
+    AltName="Repair Value" 
+    Wiki="The price required to repair this part." />
+    
+    <basicPrice 
+    AltName="Base Value" 
+    Wiki="The base price for this part." />
+    
+    <sellValue 
+    AltName="Sell Value" 
+    Wiki="The sell value for this part." />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]." />
+    
+    <residentSpEffectId 
+    AltName="Resident SpEffect ID: 1" 
+    Wiki="A SpEffect applied when this part is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectId2 
+    AltName="Resident SpEffect ID: 2" 
+    Wiki="A SpEffect applied when this part is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectId3 
+    AltName="Resident SpEffect ID: 3" 
+    Wiki="A SpEffect applied when this part is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <materialSetId 
+    AltName="Upgrade Material ID" 
+    Wiki="The material requirements for improving this part." 
+    Refs="EquipMtrlSetParam" />
+    
+    <partsDamageRate
+    AltName="Part Damage %" 
+    Wiki="The damage correction to apply to this part when hit." />
+    
+    <corectSARecover 
+    AltName="Poise Recovery Correction" 
+    Wiki="The poise recovery correction value." />
+    
+    <originEquipPro 
+    AltName="Source ID: +0" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro1
+    AltName="Source ID: +1" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro2
+    AltName="Source ID: +2" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro3
+    AltName="Source ID: +3" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro4
+    AltName="Source ID: +4" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro5
+    AltName="Source ID: +5" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro6
+    AltName="Source ID: +6" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro7
+    AltName="Source ID: +7" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro8
+    AltName="Source ID: +8" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro9
+    AltName="Source ID: +9" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro10
+    AltName="Source ID: +10" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro11
+    AltName="Source ID: +11" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro12
+    AltName="Source ID: +12" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro13
+    AltName="Source ID: +13" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro14
+    AltName="Source ID: +14" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipPro15
+    AltName="Source ID: +15" 
+    Wiki="The source ID when this part is reinforced to this level." 
+    Refs="EquipParamProtector" 
+    DeepCopyTarget="Source" />
+    
+    <faceScaleM_ScaleX 
+    AltName="Male Face Scale: X" 
+    Wiki="The male face scaling factor for the X-axis." />
+    
+    <faceScaleM_ScaleZ 
+    AltName="Male Face Scale: Z" 
+    Wiki="The male face scaling factor for the Z-axis." />
+    
+    <faceScaleM_MaxX 
+    AltName="Male Face Max Scale: X" 
+    Wiki="The maximum male face scaling factor for the X-axis." />
+    
+    <faceScaleM_MaxZ 
+    AltName="Male Face Max Scale: Z" 
+    Wiki="The maximum male face scaling factor for the Z-axis." />
+    
+    <faceScaleF_ScaleX 
+    AltName="Female Face Scale: X" 
+    Wiki="The female face scaling factor for the X-axis." />
+    
+    <faceScaleF_ScaleZ 
+    AltName="Female Face Scale: Z" 
+    Wiki="The female face scaling factor for the Z-axis." />
+    
+    <faceScaleF_MaxX 
+    AltName="Female Face Max Scale: X" 
+    Wiki="The maximum female face scaling factor for the X-axis." />
+    
+    <faceScaleF_MaxZ 
+    AltName="Female Face Max Scale: Z" 
+    Wiki="The maximum female face scaling factor for the Z-axis." />
+    
+    <qwcId 
+    AltName="QWC ID" 
+    Wiki="QWC parameter ID" 
+    Obsolete="" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="The model ID to use for this part. Also determines the menu preview icon." 
+    IconConfig="Armor" />
+    
+    <iconIdM 
+    AltName="Male: Icon ID " 
+    Wiki="The icon ID to use for the male gender version." 
+    Obsolete="" />
+    
+    <iconIdF 
+    AltName="Female: Icon ID " 
+    Wiki="The icon ID to use for the male gender version." 
+    Obsolete="" />
+    
+    <knockBack 
+    AltName="Knockback" 
+    Wiki="The knockback reduction value for this part." />
+    
+    <knockbackBounceRate 
+    AltName="Knockback Repulsion %" 
+    Wiki="The knockback repulsion value for this part." />
+    
+    <durability 
+    AltName="Durability" 
+    Wiki="The initial durability of this part." />
+    
+    <durabilityMax 
+    AltName="Max Durability" 
+    Wiki="The maximum durability of this part." />
+    
+    <saDurability 
+    AltName="Poise Durability" 
+    Wiki="The poise durability of this part." />
+    
+    <defFlickPower 
+    AltName="Repulsion Defense" 
+    Wiki="The weapon repulsion defense of this part." />
+    
+    <defensePhysics 
+    AltName="Defence: Kinetic" 
+    Wiki="The flat defense value of this part for the specified type." />
+    
+    <defenseMagic 
+    AltName="Defence: Energy" 
+    Wiki="The flat defense value of this part for the specified type." />
+    
+    <defenseFire 
+    AltName="Defence: Explosive" 
+    Wiki="The flat defense value of this part for the specified type." />
+    
+    <defenseThunder 
+    AltName="Defence: Coral" 
+    Wiki="The flat defense value of this part for the specified type." />
+    
+    <defenseSlash 
+    AltName="Defence: Slash" 
+    Wiki="The flat defense value of this part for the specified type." 
+    Obsolete="" />
+    
+    <defenseBlow 
+    AltName="Defence: Strike" 
+    Wiki="The flat defense value of this part for the specified type." 
+    Obsolete="" />
+    
+    <defenseThrust  
+    AltName="Defence: Thrust" 
+    Wiki="The flat defense value of this part for the specified type." 
+    Obsolete="" />
+    
+    <resistBurn 
+    AltName="Status Resist: ACS Anomaly" 
+    Wiki="The flat defense value of this part for the specified resistance type." />
+    
+    <resistStun 
+    AltName="Status Resist: Electric Discharge" 
+    Wiki="The flat defense value of this part for the specified resistance type." />
+    
+    <resistHighPlasma 
+    AltName="Status Resist: Plasma" 
+    Wiki="The flat defense value of this part for the specified resistance type." />
+    
+    <resistCurse 
+    AltName="Status Resist: Curse" 
+    Wiki="The flat defense value of this part for the specified resistance type."
+    Obsolete="" />
+    
+    <reinforceTypeId 
+    AltName="Reinforcement Type ID"
+    Wiki="The reinforcement progression to use for this part." 
+    Refs="ReinforceParamProtector"/>
+    
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this part is associated with, if any." />
+    
+    <shopLv 
+    AltName="Shop Level" 
+    Wiki="Level that can be sold at the store" 
+    Obsolete="" />
+    
+    <knockbackParamId 
+    AltName="Knockback Parameter ID" 
+    Wiki="The knockback parameters to use for this part." 
+    Refs="KnockBackParam" />
+    
+    <flickDamageCutRate 
+    AltName="Repulsion Damage Absorption %" 
+    Wiki="The absorption rate to use when calculating the repulsion damage this part incurs." />
+    
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="The equipment model category used by this part." 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender" 
+    Wiki="Gender of equipment model" 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <protectorCategory 
+    AltName="Equipment Category" 
+    Wiki="The equipment category for this part." 
+    Enum="PROTECTOR_CATEGORY" />
+    
+    <protectorSubType
+    AltName="Equipment Sub-Category"
+    Wiki="The equipment sub-category for this part."
+    Enum="PROTECTOR_SUB_TYPE" />
+    
+    <assembleMenuCategory
+    AltName="Assembly Menu Category"
+    Wiki="The assembly menu category for this part."
+    Enum="ASSEMBLE_MENU_CATEGORY_PROTECTER" />
+    
+    <partsDmgType 
+    AltName="Parts Damage Type" 
+    Wiki="The type of attack that applies parts damage." 
+    Enum="ATK_PARAM_PARTSDMGTYPE" />
+    
+    <legTypeModelId 
+    AltName="Legs: Model ID" 
+    Wiki="Determines the legs type and behavior, such as reverse joints, tetrapod, and tank legs." 
+    Enum="LEGS_TYPE" />
+    
+    <isDeposit 
+    AltName="Can Deposit" 
+    Wiki="If ON, this item can be deposited into the repository."
+    IsBool="" />
+    
+    <headEquip 
+    AltName="Is Head Equipment" 
+    Wiki="If ON, is considered a HEAD part." 
+    IsBool="" />
+    
+    <bodyEquip 
+    AltName="Is Core Equipment" 
+    Wiki="If ON, is considered a CORe part." 
+    IsBool="" />
+    
+    <armEquip 
+    AltName="Is Arm Equipment" 
+    Wiki="If ON, is considered a ARM part." 
+    IsBool="" />
+    
+    <legEquip 
+    AltName="Is Legs Equipment" 
+    Wiki="If ON, is considered a LEGS part." 
+    IsBool="" />
+    
+    <useFaceScale 
+    AltName="Use Facescale" 
+    Wiki="If ON, this part applies face scaling."
+    IsBool="" />
+    
+    <invisibleFlag00
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag01
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag02
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag03
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag04
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag05
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag06
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag07
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag08
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag09
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag10
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag11
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag12
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag13
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag14
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag15
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag16
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag17
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag18
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag19
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag20
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag21
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag22
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag23
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag24
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag25
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag26
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag27
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag28
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag29
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag30
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag31
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag32
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag33
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag34
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag35
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag36
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag37
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag38
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag39
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag40
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag41
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag42
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag43
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag44
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag45
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag46
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag47
+    AltName=""
+    Padding="" />
+    
+    <pad12
+    AltName=""
+    Padding="" />
+    
+    <isDiscard 
+    AltName="Can Discard" 
+    Wiki="If ON, this item can be discarded."
+    IsBool="" />
+    
+    <isDrop 
+    AltName="Can be Dropped" 
+    Wiki="If ON, this item can be dropped." 
+    IsBool="" />
+    
+    <disableMultiDropShare 
+    AltName="Is Drop Disabled in Multiplayer" 
+    Wiki="If ON, this item cannot be dropped in a multiplayer session." 
+    IsBool="" />
+    
+    <simpleModelForDlc 
+    AltName="Simple Model for DLC" 
+    Wiki="If ON, there is a simple model for DLC." 
+    IsBool="" />
+    
+    <pad
+    AltName=""
+    Padding="" />
+    
+    <neutralDamageCutRate 
+    AltName="Absorption %: Kinetic" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." />
+    
+    <slashDamageCutRate 
+    AltName="Absorption %: Slash" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." 
+    Obsolete="" />
+    
+    <blowDamageCutRate 
+    AltName="Absorption %: Strike" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." 
+    Obsolete="" />
+    
+    <thrustDamageCutRate 
+    AltName="Absorption %: Thrust" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." 
+    Obsolete="" />
+    
+    <magicDamageCutRate 
+    AltName="Absorption %: Energy" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." />
+    
+    <fireDamageCutRate 
+    AltName="Absorption %: Explosive" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." />
+    
+    <thunderDamageCutRate 
+    AltName="Absorption %: Coral" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." />
+    
+    <defenseMaterialSfx1 
+    AltName="Defence Presentation: Particle [1]" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defenseMaterialSfx_Weak1 
+    AltName="Defence Presentation: Particle [1] (on Weak Point Damage)" 
+    Wiki="The particles used when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defenseMaterial1 
+    AltName="Defence Presentation: Sound [1]" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <defenseMaterial_Weak1 
+    AltName="Defence Presentation: Sound [1] (on Weak Point Damage)" 
+    Wiki="The sound used when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <defenseMaterialSfx2 
+    AltName="Defence Presentation: Particle [2]" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defenseMaterialSfx_Weak2 
+    AltName="Defence Presentation: Particle [2] (on Weak Point Damage)" 
+    Wiki="The particles used when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defenseMaterial2 
+    AltName="Defence Presentation: Sound [2]" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <defenseMaterial_Weak2 
+    AltName="Defence Presentation: Sound [2] (on Weak Point Damage)" 
+    Wiki="The sound used when when weak point is damaged." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <autoFootEffectDecalId 
+    AltName="Footstep Decal ID" 
+    Wiki="The foot effect decal ID. Floor material is also considered. Only used if 'protectorCategory' is set to LEGS." 
+    Refs="DecalParam" />
+    
+    <toughnessDamageCutRate 
+    AltName="Toughness Absorption %" 
+    Wiki="The toughness absorption to apply when this part is equipped." />
+    
+    <toughnessRecoverCorrection 
+    AltName="Toughness Recovery Correction" 
+    Wiki="The toughness recovery correction to apply when this part is equipped." />
+    
+    <darkDamageCutRate 
+    AltName="Absorption %: Dark" 
+    Wiki="The absorption to apply to damage of the specified type when this part is equipped." 
+    Obsolete="" />
+    
+    <defenseDark 
+    AltName="Defence: Dark"
+    Wiki="The flat defense value of this part for the specified type." 
+    Obsolete="" />
+    
+    <invisibleFlag48
+    AltName=""
+    Padding="" />
+   
+    <invisibleFlag49
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag50
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag51
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag52
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag53
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag54
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag55
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag56
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag57
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag58
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag59
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag60
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag61
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag62
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag63
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag64
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag65
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag66
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag67
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag68
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag69
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag70
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag71
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag72
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag73
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag74
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag75
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag76
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag77
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag78
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag79
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag80
+    AltName=""
+    Padding="" />
+    
+    <padbit
+    AltName=""
+    Padding="" />
+    
+    <pad05
+    AltName=""
+    Padding="" />
+    
+    <upperArmParamId 
+    AltName="Upper Arm Control ID" 
+    Wiki="The adjustment parameters to apply to the upper arm." />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+    
+    <resistDepletedUraniumToxic 
+    AltName="Status Resist: Depleted Uranium" 
+    Wiki="The flat defense value of this part for the specified resistance type." />
+    
+    <invisibleFlag_SexVer00 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer01 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer02 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer03 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer04 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer05 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer06 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer07 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer08 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer09 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer10 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer11 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer12 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer13 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer14 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer15 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer16 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer17 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer18 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer19 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer20 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer21 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer22 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer23 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer24 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer25 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer26 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer27 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer28 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer29 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer30 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer31 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer32 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer33 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer34 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer35 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer36 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer37 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer38 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer39 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer40 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer41 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer42 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer43 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer44 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer45 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer46 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer47 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer48 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer49 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer50 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer51 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer52 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer53 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer54 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer55 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer56 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer57 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer58 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer59 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer60 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer61 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer62 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer63 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer64 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer65 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer66 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer67 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer68 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer69 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer70 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer71
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer72
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer73
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer74
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer75
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer76
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer77
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer78
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer79
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer80
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer81
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer82
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer83
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer84
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer85
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer86
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer87
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer88
+    AltName=""
+    Padding="" />
+    >
+    <invisibleFlag_SexVer89
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer90
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer91
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer92
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer93
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer94 
+    AltName=""
+    Padding="" />
+    
+    <invisibleFlag_SexVer95
+    AltName=""
+    Padding="" />
+    
+    <retargetModelId
+    AltName="Retarget Model ID (for Legs only)"
+    Wiki="Legs only - Character ID to be retargeted (ID of c0XXX)" />
+    
+    <legTypeLockCamIdOffset 
+    AltName="Lock Camera Param ID (for Legs only)" 
+    Wiki="Legs only - Lock camera ID offset." 
+    Refs="LockCamParam" />
+    
+    <consumeEN 
+    AltName="Part: Energy Consumption" 
+    Wiki="The energy consumption of this part." />
+    
+    <ap 
+    AltName="Part: AP" 
+    Wiki="The armor points of this part." />
+    
+    <categoryNameTextID 
+    AltName="Category Name ID" 
+    Wiki="The category name text ID to use for this part."
+    FmgRef="Modern_Menu_Text" />
+    
+    <defensePhysicsForMenu
+    AltName="Menu Display: Kinetic Defense"
+    Wiki="The kinetic defense value for display in the menu only." />
+    
+    <defenseMagicForMenu
+    AltName="Menu Display: Energy Defense"
+    Wiki="The energy defense value for display in the menu only." />
+    
+    <lookAtParamId
+    AltName="LookAt ID"
+    Wiki="The LookAt parameter to use for this part." 
+    Refs="LookAtParam" />
+    
+    <lookAtDirType
+    AltName="LookAt Direction Type"
+    Wiki="The direction type to use when applying the LookAt."
+    Enum="LOOK_AT_DIR_TYPE" />
+    
+    <leftWeaponHangerType
+    AltName="Left Weapon Hanger Type"
+    Wiki="The type of weapon used in the left-weapon hanger."
+    Enum="WEAPON_HANGER_TYPE" />
+    
+    <rightWeaponHangerType
+    AltName="Right Weapon Hanger Type"
+    Wiki="The type of weapon used in the right-weapon hanger."
+    Enum="WEAPON_HANGER_TYPE" />
+    
+    <legAnimCategoryOffset 
+    AltName="Legs Animation Category Offset" 
+    Wiki="The animatio ID offset used for overriding animations for legs parts.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations." />
+    
+    <SADurabilityRecoveryBase
+    AltName="Poise Durability Recovery"
+    Wiki="The base recovery rate for poise durability with this part. In points per second." />
+    
+    <energyMax
+    AltName="Energy Capacity"
+    Wiki="The energy capacity of this booster." />
+    
+    <energyRecoveryPerSec
+    AltName="Energy Output"
+    Wiki="The energy recovery rate. In points per second." />
+    
+    <energyRecoveryDelayTimeSec
+    AltName="Energy Output Delay"
+    Wiki="The delay before energy recovery starts. In seconds." />
+    
+    <thrustersParamIDForPC 
+    AltName="Thruster Param ID (Player only)" 
+    Wiki="The thurster paramters to use when this part is equipped. Only affects players."
+    Refs="ThrustersParam_PC" />
+    
+    <saDamageCutRate
+    AltName="Poise Damage Absorption %"
+    Wiki="The poise damage absorption rate when this part is equipped." />
+    
+    <wepParamId AltName="Weapon Param ID: Right" 
+    Wiki="Used to define weapon parameters for equipments parts that require it: Head parts for scanning, Core Expansion parts for their effects."
+    Refs="EquipParamWeapon" />
+    
+    <headLookAtParamId
+    AltName="LookAt ID: Head"
+    Wiki="The LookAt parameter to use for this part. Only for head parts." 
+    Refs="LookAtParam" />
+    
+    <autoFootEffectSfxId
+    AltName="Foot Effect Particle ID (for Legs)"
+    Wiki="The foot effect SFX ID to use for legs parts. Player only." 
+    ParticleAlias="" />
+    
+    <autoFootEffectGlideSfxId
+    AltName="Foot Glide Effect Particle ID (for Legs)"
+    Wiki="The foot effect SFX ID to use for legs parts when gliding. Player only." 
+    ParticleAlias="" />
+    
+    <wepParamId2 AltName="Weapon Param ID: Left" 
+    Wiki="Used to define weapon parameters for equipments parts that require it: Head parts for scanning, Core Expansion parts for their effects."
+    Refs="EquipParamWeapon" />
+    
+    <landBrakeScale
+    AltName="Ground Horizontal Brake % (for Legs)"
+    Wiki="The multiplier to apply to the ground braking velocity if this part is equipped." />
+    
+    <groundQbAddSpeedKMH
+    AltName="Ground Quick Boost: Initial Velocity Addition (for Legs)"
+    Wiki="The additional initial velocity added during a ground quick boost if this part is equipped. In kilometres per hour." />
+    
+    <shootMotionPerf 
+    AltName="Firearm Specialization" 
+    Wiki="Affects the shooting performance curve if this part is equipped." />
+    
+    <stability 
+    AltName="Attitude Stability" 
+    Wiki="The attitude stability adjustment if this part is equipped." />
+    
+    <energyRecoveryDelayTimeForEmptySec
+    AltName="Energy Recovery Delay (when Empty)"
+    Wiki="The duration to wait for energy recovery (when energy is empty)." />
+    
+    <recoilCtrl 
+    AltName="Recoil Control (for Arms)" 
+    Wiki="The correction value used for shooting blur if this part is equipped. Affects arms parts only." />
+    
+    <energyDrain_FourLegFlyMove 
+    AltName="Tetrapod: Hover Energy Consumption (for Legs)" 
+    Wiki="The energy consumption whilst hovering, if this part is a tetrapod legs part. In points per second." />
+    
+    <hoveringQbAddSpeedKMH
+    AltName="Tetrapod: Hover Quick Boost: Initial Velocity Addition (for Legs)"
+    Wiki="The additional initial velocity added during a ground quick boost if this part is equipped, and it is a tetrapod legs parts. In kilometres per hour." />
+    
+    <pad07
+    AltName=""
+    Padding="" />
+    
+    <Maker 
+    AltName="Corporation Texture ID" 
+    Wiki="The coporation logo to show for this part."
+    Enum="EQUIP_MAKER_TYPE" 
+    IconConfig="Logo" />
+    
+    <menuManageCategory 
+    AltName="Menu Management Category" 
+    Wiki="The equipment menu category this part appears in."
+    Refs="EquipmentMenuManageCategoryParam" />
+    
+    <menu_HelpMovieID 
+    AltName="Demonstration Video ID" 
+    Wiki="Refers to the bink video filename in Game/movie/" 
+    MovieAlias="" />
+    
+    <pad09
+    AltName=""
+    Padding="" />
+    
+    <legs_shootRecoilRate_Ground 
+    AltName="Recoil Knockback %: Ground (for Legs)" 
+    Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
+    
+    <legs_shootRecoilRate_Fly 
+    AltName="Recoil Knockback %: Aerial (for Legs)" 
+    Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon in the air."/>
+    
+    <DecalCamDistOffset
+    AltName="Decal Placement: Camera Offset Distance"
+    Wiki="The camera offset to use when placing a decal." />
+    
+    <armMaxWeight 
+    AltName="Load Limit (for Arms)" 
+    Wiki="The maximum weight (from weapon parts) that arms can handle before being overloaded." />
+    
+    <AppropriateType_Energy
+    AltName="Energy Specialization (for Arms)"
+    Wiki="The multiplier applied to energy damage with this part equipped." />
+    
+    <AppropriateType_Melee
+    AltName="Melee Specialization (for Arms)"
+    Wiki="The multiplier applied to melee damage with this part equipped." />
+    
+    <legs_payload 
+    AltName="Load Limit (for Legs)" 
+    Wiki="The maximum weight that legs can handle before being overloaded." />
+    
+    <legs_boosterId 
+    AltName="Built-in Booster ID (for Legs)" 
+    Wiki="The booster parameters to use when this Legs part is equipped instead of those from a dedicated booster part."
+    Refs="EquipParamBooster" />
+    
+    <legs_MovementParamId 
+    AltName="Movement Control ID (for Legs)" 
+    Wiki="The movement control parameters used for this Legs part." 
+    Refs="MovementAcTypeParam" />
+    
+    <legs_TurnParamId 
+    AltName="Rotation Control ID (for Legs)" 
+    Wiki="The rotation control parameters used for this Legs part."
+    Refs="ChrActTurnParam" />
+    
+    <wallJump_MaxAlt
+    AltName="Wall Jump: Maximum Altitude (for Legs)"
+    Wiki="The maximum altitude you can reach after a wall jump. In metres." />
+    
+    <wallJump_DrainEn
+    AltName="Wall Jump: Energy Consumption (for Legs)"
+    Wiki="The energy consumption cost after performing a wall jump. In points." />
+    
+    <wallJump_MiddleAngDegH
+    AltName="Wall Jump: Intermediate Horizontal Angle (for Legs)"
+    Wiki="The intermediate horizontal angle of the wall jump. In degrees." />
+    
+    <wallJump_MaxAngDegH
+    AltName="Wall Jump: Maximum Horizontal Angle (for Legs)"
+    Wiki="The maximum horizontal angle of the wall jump. In degrees." />
+    
+    <legs_reserved
+    AltName=""
+    Padding="" />
+    
+    <ProCutRate_Phys 
+    AltName="Absorption %: Kinetic" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Mag 
+    AltName="Absorption %: Energy" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Fire 
+    AltName="Absorption %: Explosive" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Thunder 
+    AltName="Absorption %: Coral" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Dark 
+    AltName="Absorption %: Dark" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." 
+    Obsolete="" />
+    
+    <ProCutRate_Burn 
+    AltName="Absorption %: ACS Anomaly" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Stun 
+    AltName="Absorption %: Electric Discharge" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_HighPlasma 
+    AltName="Absorption %: Plasma" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Curse 
+    AltName="Absorption %: Curse" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." 
+    Obsolete="" />
+    
+    <ProCutRate_Sa 
+    AltName="Absorption %: Poise" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_Stamina 
+    AltName="Absorption %: Stamina" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <ProCutRate_DepletedUraniumToxic 
+    AltName="Absorption %: Depleted Uranium" 
+    Wiki="This value is the absorption of the specified type for this part. The player's total absorption for the specified type is the sum of all parts." />
+    
+    <jumpSpecifyAlt_QbGoalAlt
+    AltName="Jump: Quick Boost: Target Altitude (for Legs)"
+    Wiki="The target altitude after using a quick boost jump. In metres." />
+    
+    <jumpSpecifyAlt_PrevSpeedRateH
+    AltName="Jump: Horizontal Speed Transfer % (for Legs)"
+    Wiki="The percentage of horizontal speed that is inherited after a jump. In metres." />
+    
+    <jumpSpecifyAlt_GoalAlt
+    AltName="Jump: Target Altitude (for Legs)"
+    Wiki="The target altitude after a jump. In metres." />
+    
+    <jumpSpecifyAlt_GravityScale
+    AltName="Jump: Gravity % (for Legs)"
+    Wiki="The gravity percentage to use during a jump." />
+    
+    <jumpSpecifyAlt_HorizontalMaxSpeedKMPH
+    AltName="Jump: Maximum Horizontal Speed (for Legs)"
+    Wiki="The maximum horizontal speed after a jump. In kilometres per hour." />
+    
+    <jumpSpecifyAlt_HorizontalMaxAccelMPSS
+    AltName="Jump: Horizontal Acceleration (for Legs)"
+    Wiki="The horizontal acceleration after a jump. In metres per second ^ 2." />
+    
+    <jumpSpecifyAlt_MiddleInputAngDeg
+    AltName="Jump: Diagonal Input: Intermediate Angle (for Legs)"
+    Wiki="The intermediate climb angle according to the input at the start of the jump. In degrees." />
+    
+    <jumpSpecifyAlt_MaxInputAngDeg
+    AltName="Jump: Diagonal Input: Maximum Angle (for Legs)"
+    Wiki="The maximum climb angle according to the input at the start of the jump. In degrees." />
+    
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3 (Attitude Stability)"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f15
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <computed_f16
+    AltName="Menu Display - Value 16"
+    Wiki="Value for menu display only." />
+    
+    <computed_f17
+    AltName="Menu Display - Value 17"
+    Wiki="Value for menu display only." />
+    
+    <computed_f18
+    AltName="Menu Display - Value 18"
+    Wiki="Value for menu display only." />
+    
+    <computed_f19
+    AltName="Menu Display - Value 19"
+    Wiki="Value for menu display only." />
+    
+    <computed_f20
+    AltName="Menu Display - Value 20"
+    Wiki="Value for menu display only." />
+    
+    <computed_f21
+    AltName="Menu Display - Value 21"
+    Wiki="Value for menu display only." />
+    
+    <computed_f22
+    AltName="Menu Display - Value 22"
+    Wiki="Value for menu display only." />
+    
+    <computed_f23
+    AltName="Menu Display - Value 23"
+    Wiki="Value for menu display only." />
+    
+    <computed_f24
+    AltName="Menu Display - Value 24"
+    Wiki="Value for menu display only." />
+    
+    <computed_f25
+    AltName="Menu Display - Value 25"
+    Wiki="Value for menu display only." />
+    
+    <computed_f26
+    AltName="Menu Display - Value 26"
+    Wiki="Value for menu display only." />
+    
+    <computed_f27
+    AltName="Menu Display - Value 27"
+    Wiki="Value for menu display only." />
+    
+    <computed_f28
+    AltName="Menu Display - Value 28"
+    Wiki="Value for menu display only." />
+    
+    <computed_f29
+    AltName="Menu Display - Value 29"
+    Wiki="Value for menu display only." />
+    
+    <computed_f30
+    AltName="Menu Display - Value 30"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 31"
+    Wiki="Value for menu display only." />
+    
+    <pad11
+    AltName=""
+    Padding="" />
+    
+    <scanAngle 
+    AltName="Scan: Angle" 
+    Wiki="The angle to use when scanning. In degrees." />
+    
+    <scanDist 
+    AltName="Scan: Distance" 
+    Wiki="The distance to use when scanning. In metres." />
+    
+    <scanTime 
+    AltName="Scan: Duration" 
+    Wiki="The duration of a scan. In seconds." />
+    
+    <scanType
+    AltName="Scan: Target Update Type"
+    Wiki="The update behavior type when scanning." 
+    Enum="SCAN_TARGET_UPDATE_TYPE" />
+    
+    <pad13
+    AltName=""
+    Padding="" />
+    
+    <isHeavyWeightAddAnim
+    AltName="Is Subject to Weight Class Animation Change (for Arms and Legs)"
+    Wiki="Is an additive animation change applied based on the weight class of the character."
+    IsBool="" />
+    
+    <unk343_1
+    AltName="Unknown Field"
+    Wiki="" 
+    IsBool=""/>
+    
+    <pad13_1
+    AltName=""
+    Padding="" />
+    
+    <coreTypeWepAnimOffset
+    AltName="Weapon Animation Offset ID"
+    Wiki="The animation offset to apply to weapons when the part is equipped. (ID of a0X0_000000)" />
+    
+    <pad14
+    AltName=""
+    Padding="" />
+    
+    <walkAnimSpeedRate
+    AltName="Walk Animation Playback Speed (for Legs)"
+    Wiki="The multiplier to use when playing the walk animation if this part is equipped." />
+    
+    <runAnimSpeedRate
+    AltName="Run Animation Playback Speed (for Legs)"
+    Wiki="The multiplier to use when playing the run animation if this part is equipped." />
+    
+    <legTypeSeId
+    AltName="Sound ID (for Legs)"
+    Wiki="The sound ID to use for Legs parts." />
+    
+    <hoverWalkBoostEndSpeedKMH
+    AltName="Hover Walk Boost: Terminal Speed"
+    Wiki="The terminal speed when hover walk boosting. In kilometres per hour." />
+    
+    <hoverRunBoostEndSpeedKMH
+    AltName="Hover Run Boost: Terminal Speed"
+    Wiki="The terminal speed when hover run boosting. In kilometres per hour." />
+    
+    <backunitAjustHeight
+    AltName="Back Weapon Height Adjustment"
+    Wiki="The height adjustment to apply for the back weapons if this part is equipped. In metres." />
+    
+    <cutsceneCamOffset
+    AltName="Cutscene Camera Offset"
+    Wiki="The offset to apply to the camera position when in cutscenes for this part." />
+    
+    <refId
+    AltName="Inherited Part ID"
+    Wiki="If not set to -1, then this part will use the parameters of the specified part." 
+    Refs="EquipParamProtector" />
+    
+    <quickBoosterOutputCorrRate 
+    AltName="Boost Efficiency Adjustment" 
+    Wiki="A multiplier applied to the energy consumption of quick boost if this part is equipped." />
+    
+    <generatorOutputCorrRate 
+    AltName="Generator Output Adjustment" 
+    Wiki="A multiplier applied to the energy output from a generator if this part is equipped." />
+    
+    <generatorCoolPerf 
+    AltName="Generator Supply Adjustment" 
+    Wiki="A multiplier applied to the energy supply delay after actions if this part is equipped." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Overseer" />
+        <Option Value="2" Name="Rubicon Research Institute" />
+        <Option Value="3" Name="PCA" />
+        <Option Value="4" Name="ALLMIND" />
+        <Option Value="5" Name="Rubiconist" />
+        <Option Value="6" Name="RaD" />
+        <Option Value="7" Name="Arquebus" />
+        <Option Value="8" Name="Schneider" />
+        <Option Value="9" Name="VCPL" />
+        <Option Value="10" Name="Vesper" />
+        <Option Value="11" Name="Balam" />
+        <Option Value="12" Name="Dafeng" />
+        <Option Value="13" Name="Redgun" />
+        <Option Value="14" Name="Unused - 協商" />
+        <Option Value="15" Name="BAWS" />
+        <Option Value="16" Name="Furlong" />
+        <Option Value="17" Name="Takigawa Harmonics" />
+        <Option Value="18" Name="Melinite" />
+        <Option Value="19" Name="Elcano" />
+        <Option Value="20" Name="Arquebus ADD" />
+        <Option Value="102" Name="Unused - RRI(旧)" />
+        <Option Value="104" Name="Unused - オルマイ(本性)" />
+    </Enum>
+    <Enum Name = "LEGS_TYPE"> 
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Bipedal" />
+      <Option Value="100" Name="Tetrapod" />
+      <Option Value="200" Name="Reverse Joint" />
+      <Option Value="300" Name="Tank 1" />
+      <Option Value="301" Name="Tank 2" />
+      <Option Value="302" Name="Tank 3" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
+    </Enum>
+    <Enum Name="PROTECTOR_CATEGORY" type="u8">
+        <Option Value="0" Name="Head" />
+        <Option Value="1" Name="Core" />
+        <Option Value="2" Name="Arms" />
+        <Option Value="3" Name="Legs" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Main Booster" />
+        <Option Value="6" Name="Secondary Booster" />
+        <Option Value="7" Name="Gimmick: Head" />
+        <Option Value="8" Name="Gimmick: Core" />
+        <Option Value="9" Name="Gimmick: Legs" />
+        <Option Value="10" Name="Gimmick: Left Weapon" />
+        <Option Value="11" Name="Gimmick: Right Weapon" />
+    </Enum>
+    <Enum Name="PROTECTOR_SUB_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Propeller" />
+        <Option Value="2" Name="Jump Transformation" />
+    </Enum>
+    <Enum Name="ASSEMBLE_MENU_CATEGORY_PROTECTER" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="HEAD" />
+        <Option Value="2" Name="CORE" />
+        <Option Value="3" Name="ARM" />
+        <Option Value="4" Name="LEGS" />
+    </Enum>
+    <Enum Name="ATK_PARAM_PARTSDMGTYPE" type="u8">
+        <Option Value="0" Name="Projectiles Only" />
+        <Option Value="1" Name="All" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Body: Cloth" />
+        <Option Value="107" Name="Shield: Plamsa" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Shield: Energy - Initial Guard" />
+        <Option Value="107" Name="Shield: Coral - Initial; Guard" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEAPON_HANGER_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Single" />
+        <Option Value="2" Name="Double" />
+    </Enum>
+    <Enum Name="SCAN_TARGET_UPDATE_TYPE" type="u8">
+        <Option Value="0" Name="Constantly Updated" />
+        <Option Value="1" Name="Only at Moment of Use" />
+    </Enum>
+    
+  </Enums>
+</PARAMMETA>

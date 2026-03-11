@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to knockback."/>
+  
+  <Field>
+    <damage_No
+    AltName="None: Knockback %"
+    Wiki="The knockback multiplier to apply when the none damage animation is applied." />
+    
+    <damage_Min
+    AltName="Minimal: Knockback %"
+    Wiki="The knockback multiplier to apply when the minimal damage animation is applied." />
+    
+    <damage_S
+    AltName="Small: Knockback %"
+    Wiki="The knockback multiplier to apply when the small damage animation is applied." />
+    
+    <damage_M
+    AltName="Medium: Knockback %"
+    Wiki="The knockback multiplier to apply when the medium damage animation is applied." />
+    
+    <damage_L
+    AltName="Large: Knockback %"
+    Wiki="The knockback multiplier to apply when the large damage animation is applied." />
+    
+    <damage_Blow
+    AltName="Blow-off: Knockback %"
+    Wiki="The knockback multiplier to apply when the blow-off damage animation is applied." />
+    
+    <guard_Min
+    AltName="Guard - None: Knockback %"
+    Wiki="The knockback multiplier to apply when the none damage animation is applied when guarding." />
+    
+    <guard_S
+    AltName="Guard - Small: Knockback %"
+    Wiki="The knockback multiplier to apply when the small damage animation is applied when guarding." />
+    
+    <guard_M
+    AltName="Guard - Medium: Knockback %"
+    Wiki="The knockback multiplier to apply when the medium damage animation is applied when guarding." />
+    
+    <guard_L
+    AltName="Guard - Large: Knockback %"
+    Wiki="The knockback multiplier to apply when the large damage animation is applied when guarding." />
+    
+    <trunk_Brake
+    AltName="Trunk Break: Knockback %"
+    Wiki="The knockback multiplier to apply when the AC trunk is broken." />
+    
+    <guard_Brake
+    AltName="Guard - Trunk Break: Knockback %"
+    Wiki="The knockback multiplier to apply when the AC trunk is broken when guarding." />
+    
+    <dl1_Rate
+    AltName="Damage Level 1: Knockback %"
+    Wiki="The knockback multiplier to apply when at damage level 1." />
+    
+    <dl2_Rate
+    AltName="Damage Level 2: Knockback %"
+    Wiki="The knockback multiplier to apply when at damage level 2." />
+    
+    <dl1_Blade_Rate
+    AltName="Melee - Damage Level 1: Knockback %"
+    Wiki="The knockback multiplier to apply when at damage level 1, when using a melee blade." />
+    
+    <dl2_Blade_Rate
+    AltName="Melee - Damage Level 2: Knockback %"
+    Wiki="The knockback multiplier to apply when at damage level 2, when using a melee blade." />
+    
+    <pad
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

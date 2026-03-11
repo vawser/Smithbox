@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of material parameters." />
+  
+  <Field>
+    <paramName 
+    AltName="Material Param Name" 
+    Wiki="Set the parameter name of the material. Up to 31 characters." />
+    
+    <materialId 
+    AltName="Material ID" 
+    Wiki="The material expansion paramter ID to use for NPCs. -1 for all materials." />
+    
+    <materialParamValue0 
+    AltName="Material Param Value: R" 
+    Wiki="The material parameter value used for the red component of a color." />
+    
+    <materialParamValue1 
+    AltName="Material Param Value: G" 
+    Wiki="The material parameter value used for the green component of a color." />
+    
+    <materialParamValue2 
+    AltName="Material Param Value: B" 
+    Wiki="The material parameter value used for the blue component of a color." />
+    
+    <materialParamValue3 
+    AltName="Material Param Value: Alpha" 
+    Wiki="The material parameter value used for the alpha component of a color." />
+    
+    <materialParamValue4 
+    AltName="Material Param Value: Intensity" 
+    Wiki="The material parameter value used for intensity." />
+    
+    <pad 
+    AltName="" 
+    Padding=""/>
+    
+  </Field>
+</PARAMMETA>

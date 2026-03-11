@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <canAutoNavigation
+    AltName="Use Automatic Navigation"
+    Wiki="If ON, use automatic navigation."
+    IsBool="" />
+    
+    <canSystemErrorHandling
+    AltName="Use System Error Handling"
+    Wiki="If ON, use system error handling."
+    IsBool="" />
+    
+    <requestPause
+    AltName="Allow Pause"
+    Wiki="If ON, allow pause."
+    IsBool="" />
+    
+    <reserved
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines various parameters for character models." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <modelMemoryType 
+    AltName="Model Memory Type" 
+    Wiki="Memory type used by model." 
+    Enum="CHR_MEMORY_TYPE" />
+    
+    <texMemoryType 
+    AltName="Texture Memory Type" 
+    Wiki="Memory type used by model textures." 
+    Enum="CHR_MEMORY_TYPE" />
+    
+    <cameraDitherFadeId 
+    AltName="Camera Dither Fade ID" 
+    Wiki="Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)" 
+    Refs="CameraFadeParam" />
+    
+    <isNoRayTracing
+    AltName="No Raytracing"
+    Wiki="If OFF, then character model will be included in raytracing scene. If ON, then character is skipped."
+    IsBool="" />
+    
+    <rayTracingCullingMode 
+    AltName="Raytracing Culling Mode" 
+    Wiki="Culling mode applied when drawing raytracing. If it is set to 'Auto', it will be the default value set in the program." 
+    Enum="ASSET_RAY_TRACING_CULLING_TYPE_ENUM" />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="CHR_MEMORY_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Dummy" />
+        <Option Value="2" Name="Small" />
+        <Option Value="3" Name="Medium" />
+        <Option Value="4" Name="Large" />
+        <Option Value="5" Name="Giant" />
+        <Option Value="6" Name="Massive" />
+        <Option Value="7" Name="Non-Standard" />
+    </Enum>
+    <Enum Name="ASSET_RAY_TRACING_CULLING_TYPE_ENUM" type="s8">
+        <Option Value="0" Name="Auto" />
+        <Option Value="1" Name="Table" />
+        <Option Value="2" Name="Back" />
+        <Option Value="3" Name="Double-sided" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

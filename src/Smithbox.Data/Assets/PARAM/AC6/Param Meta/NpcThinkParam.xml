@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Unk0x00 Padding="" />
+    <logicId AltName="Logic ID" Wiki="Set the ID of the logic created by the script." />
+    <battleGoalID AltName="Battle Goal ID" Wiki="Battle goal ID" />
+    <searchEye_dist AltName="Vision - Distance" Wiki="Search range by visual search." />
+    <searchEye_angY AltName="Vision - Width" Wiki="Search range by visual search." />
+    <scriptType AltName="Script Type" Wiki="Script type information to interpret" Enum="NPC_THINK_AI_SCRIPT_TYPE" />
+    <goalAction_CannotGetTarget AltName="Cannot Recapture Enemy: Goal Action" Wiki="Goal action when the target becomes unrecapturable" Enum="NPC_THINK_GOAL_ACTION" />
+	<coverActionReleaseDist AltName="Cover Action Release Distance" Wiki="In meters." />
+    <searchTargetLv1ForgetTime AltName="Search Forget Time - Level 1" Wiki="Search enemy Lv1 Target Time to forget." />
+    <searchTargetLv2ForgetTime AltName="Search Forget Time - Level 2" Wiki="Search enemy Lv2 time to forget the target." />
+    <BackHomeLife_OnHitEneWal AltName="Back Home Time on Touching Enemy Wall" Wiki="The life of the BackToHome goal when it touches an enemy wall that blocks the block" />
+    <SightTargetForgetTime AltName="Vision - Search Forget Time" Wiki="Time to forget the visual target." />
+    <idAttackCannotMove AltName="Blocked Movement - Anim ID" Wiki="An action that automatically takes place when a destructible object stops it." />
+    <ear_dist AltName="Listen - Distance" Wiki="Hearing search range ..." />
+    <callHelp_ActionAnimId AltName="Call Help - Action Animation ID" Wiki="Animation ID (EzStateAnimID) when responding" />
+    <callHelp_CallActionId AltName="Call Help - Call Action ID" Wiki="Action ID (EzStateAnimID) when calling a friend" />
+    <eye_dist AltName="Vision - Distance" Wiki="Visual search range." />
+    <isGuard_Act AltName="Use Guard during Action" Wiki="Whether to guard against actions (assumed when returning home, looking toward the target)" IsBool="" />
+    <ear_soundcut_dist AltName="Listen - Sound Cutoff Distance" Wiki="The distance to reduce the size of the sound source. You will not hear any sound below this distance." />
+    <nose_dist AltName="Sense - Distance" Wiki="Search range by smell." />
+    <maxBackhomeDist AltName="Retreat Home - Max Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <backhomeDist AltName="Retreat Home - Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <backhomeBattleDist AltName="Retreat Home - Battle Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <nonBattleActLife AltName="Non-Battle Act Duration when in Combat" Wiki="COMMON_SetBattleActLogic argument" />
+    <BackHome_LookTargetTime AltName="Retreat Home - Look for Target Time" Wiki="When returning home: Time to look at the target [sec]" />
+    <BackHome_LookTargetDist AltName="Retreat Home - Look for Target Distance" Wiki="When returning home: Distance to see the target [m]" />
+    <SoundTargetForgetTime AltName="Listen - Search Forget Time" Wiki="Time to forget the sound target." />
+    <BattleStartDist AltName="Battle - Start Distance" Wiki="" />
+    <callHelp_MyPeerId AltName="Call Help - My Peer ID" Wiki="My fellow group ID" />
+    <callHelp_CallPeerId AltName="Call Help - Call Peer ID" Wiki="Companion group ID to call a companion" />
+    <targetSys_DmgEffectRate AltName="Target System - Damage Effect Rate" Wiki="Damage impact rate acquisition (target system evaluation information)" />
+    <TeamAttackEffectivity AltName="Team Attack Effectivity" Wiki="A value for determining the number of simultaneous attacks in a team. Increasing the value reduces the number of people who can participate in the attack at the same time." />
+    <eye_angX AltName="Vision - Height Angle" Wiki="Visual search range." />
+    <eye_angY AltName="Vision - Width Angle" Wiki="Visual search range." />
+	<BackHome_GuardActId AltName="Guard action ID when returning home" Wiki="Action number to perform when looking at the target when returning home (intended for use in guarding, 0 disables)" />
+    <disableDark AltName="Disable Darkness Modifier to Distance" Wiki="Whether the alert vision_distance and battle start distance are not affected by the darkness" IsBool="" />
+    <caravanRole AltName="Caravan Role" Wiki="Role in the caravan" Enum="NPC_THINK_CARAVAN_ROLE" />
+    <callHelp_CallValidMinDistTarget AltName="Call Help - Valid Target Min Distance" Wiki="If it is closer than this value, you cannot call a friend." />
+    <callHelp_CallValidRange AltName="Call Help - Valid Target Range" Wiki="Do not call if the companion is farther than this value." />
+    <callHelp_ForgetTimeByArrival AltName="Call Help - Forget Time by Arrival" Wiki="Time to respond" />
+    <callHelp_MinWaitTime AltName="Call Help - Min Wait Time" Wiki="Minimum time for the first wait goal of the response goal [101 => 10.1sec]" />
+    <callHelp_MaxWaitTime AltName="Call Help - Max Wait Time" Wiki="Maximum time for the first waiting goal of the response goal [101 => 10.1sec]" />
+    <goalAction_ToCaution AltName="Goal Action - To Caution (Sound)" Wiki="Goal action: Target becomes alert due to normal sound detection" Enum="NPC_THINK_GOAL_ACTION" />
+    <ear_listenLevel AltName="Listen - Listen Level" Wiki="How good your ears are" />
+    <callHelp_ReplyBehaviorType AltName="Call Help - Reply Behavior Type" Wiki="Action type to target position after response" Enum="NPC_THINK_REPLY_BEHAVIOR_TYPE" />
+    <disablePathMove AltName="Disable Path Move" Wiki="Whether to move directly without following the path even if a path move command comes" IsBool="" />
+    <skipArrivalVisibleCheck AltName="Skip Arrival Visibility Check" Wiki="Do you want to skip the arrival judgment by the line of sight? When set to On, arrival judgment is performed even if the line of sight does not pass." IsBool="" />
+    <thinkAttr_doAdmirer AltName="Think Attribute - Do Admirer" Wiki="Thinking attribute: When turned on, it plays a role of surrounding." IsBool="" />
+    <enableNaviFlg_Edge AltName="Navigation - Edge" Wiki="Can you pass through the node cliff? (def: 1)" IsBool="" />
+    <enableNaviFlg_LargeSpace AltName="Navigation - Large Space" Wiki="Can you pass through the node wide? (def: 1)" IsBool="" />
+    <enableNaviFlg_Ladder AltName="Navigation - Ladder" Wiki="Can you pass through the node ladder? (def: 0)" IsBool="" />
+    <enableNaviFlg_Hole AltName="Navigation - Hole" Wiki="Can you go through the node hole? (def: 0)" IsBool="" />
+    <enableNaviFlg_Door AltName="Navigation - Door" Wiki="Can you pass through the node door? (def: 0)" IsBool="" />
+    <enableNaviFlg_InSideWall AltName="Navigation - Ignore Navmesh Wall" Wiki="Can you pass through the node in the wall? (def: 0)" IsBool="" />
+    <enableNaviFlg_Lava AltName="Navigation - Lava" Wiki="Can you pass through the node lava? (def: 0)" IsBool="" />
+    <enableNaviFlg_Edge_Ordinary AltName="Navigation - Cliff Edge" Wiki="Can you pass the node cliff under normal / alert conditions? (def: 1)" IsBool="" />
+    <searchThreshold_Lv0toLv1 AltName="Search Threshold - Level 0 to Level 1" Wiki="Search enemy Lv0  Lv1 threshold" />
+    <searchThreshold_Lv1toLv2 AltName="Search Threshold - Level 1 to Level 2" Wiki="Search enemy Lv1  Lv2 threshold" />
+    <platoonReplyTime AltName="Platoon - Reply Time" Wiki="Platoon reaction delay time [sec]" />
+    <platoonReplyAddRandomTime AltName="Platoon - Reply Add Random Time" Wiki="Platoon reaction additional random time [sec]" />
+    <searchEye_angX AltName="Vision - Search Height Angle" Wiki="Searching enemy vision_angle (height) [deg]" />
+    <isUpdateBattleSight AltName="Update Battle Vision" Wiki="Do you want to overwrite the battle view?" IsBool="" />
+    <battleEye_updateDist AltName="Battle Vision - Overwrite Distance" Wiki="Battle Vision_Overwrite Distance [m]" />
+    <battleEye_updateAngX AltName="Battle Vision - Overwrite Height Angle" Wiki="Battle Vision_Overwrite Angle (Height) [deg]" />
+	<goalAction_ToSearchLv1 AltName="Goal Action - Search Level 1" Wiki="Goal action when target has reached search level 1" Enum="NPC_THINK_GOAL_ACTION" />
+	<goalAction_ToSearchLv2 AltName="Goal Action - Search Level 1" Wiki="Goal action when target has reached search level 1" Enum="NPC_THINK_GOAL_ACTION" />
+	<cameraEmuLookHalfAngleH AltName="Virtual Camera Horizontal Field of View" Wiki="In degrees." />
+	<cameraEmuLookHalfAngleV AltName="Virtual Camera Vertical Field of View" Wiki="In degrees." />
+	<isCameraEmuLockAt AltName="Virtual Camera Follows Target" Wiki="Whether the virtual camera should point in the direction of the target." IsBool="" />
+	<initialHitResponseType AltName="Reaction When Hit While Unspotted" Wiki="How the NPC reacts to being hit w/o having spotted the player." Enum="NPC_THINK_INITIAL_HIT_RESPONSE_TYPE" />
+	<fixedCannonReleaseDistByDist AltName="Turret Mode Release Distance" Wiki="In meters." />
+	<searchTargetDamageForgetTime AltName="Target Forget Time After Damage" Wiki="In seconds." />
+	<keepTargetRaycastDist AltName="Raycast Distance for Target Keeping" Wiki="In meters." />
+	<isUseBoostRiseMove AltName="Use Boost Increase" Wiki="Whether to use boost rising operation instead of system movement when jumping." IsBool="" />
+	<doUseSharedTarget AltName="Accept Target Sharing" Wiki="Does this target accept shared target warnings from other entities?" IsBool="" />
+	<eye_BackOffsetDist AltName="Visual Generation Distance" Wiki="The viering angle starts at this distance behind the center of the character. In meters." />
+	<eye_BeginDist AltName="Visual Cut Distance" Wiki="This distance is not recognized from the viewing angle position. In meters." />
+	<actTypeOnFailedPath AltName="Action Type When Pathfinding Fails" Wiki="The default action to take when the end point of an alternative path is reached or when a path search fails." Enum="NPC_THINK_ACTTYPE_ON_FAILEDPATH" />
+	<pathFindCostParamId AltName="Path search cost parameter ID" Wiki="Determines pathfinding costs." Refs="PathFindCostParam" />
+	<actTypeOnNonBtlFailedPath AltName="Action Type When Pathfinding Fails (Non-Combat)" Wiki="When there is no target, this is the action to take after changing the current location to the nest." Enum="NPC_THINK_ACTTYPE_ON_NONBTL_FAILEDPATH" />
+	<isBuddyAI AltName="Is Buddy AI" Wiki="Thoughts for a buddy? (Unused)" IsBool="" />
+	<goalAction_ToCaution AltName="Goal Action - Alert/Normal Sound" Wiki="Goal action: Target becomes alert due to normal sound detection." Enum="NPC_THINK_GOAL_ACTION" />
+	<goalAction_ToCautionImportant AltName="Goal Action - Alert/Critical Sound" Wiki="Goal action: Target becomes alert due to detection of significant sound." Enum="NPC_THINK_GOAL_ACTION" />
+	<enableJumpMove AltName="Allow Jumps While Moving" Wiki="Allows jumping during movement." IsBool="" />
+	<disableLocalSteering AltName="Disable Local Steering" Wiki="(Unused) Do you want to turn off local steering, which is the behavior of trying to move while avoiding other characters?" IsBool="" />
+	<goalAction_ToCautionThreat AltName="Goal Action - Alert State/Threat Sound" Wiki="Goal action: Target becomes alert due to detecting a threat sound" Enum="NPC_THINK_GOAL_ACTION" />
+	<goalAction_MaxBackHomeAction AltName="Goal Action - Returning Home" Wiki="Goal action: Entered a state where you'll go home no matter what." Enum="NPC_THINK_GOAL_ACTION" />
+	<MemoryTargetForgetTime AltName="Memory target forget time" Wiki="Time to forget memory target. In seconds." />
+	<goalAction_BackHomeAction AltName="Goal Action - Return home while fighting" Wiki="Goal action: Entered the state of returning home while fighting" Enum="NPC_THINK_GOAL_ACTION" />
+	<isSearchEnableReycast AltName="Spotlight coverage" Wiki="Whether enemy search visibility occlusion (raycast) is enabled." IsBool="" />
+	<isAlwaysEyeSightFromDmyPoly AltName="Always Align Vision To Dummy Poly" Wiki="Whether to always use dummy poly as the standard for visibility (Dmy ID: 250" IsBool="" />
+	<shareTargetType AltName="Share Target Type" Wiki="Sets the type of target to share to." Enum="NPC_THINK_SHARE_TARGET_TYPE" />
+	<goalAction_ToFind AltName="Goal Action - Discovered State" Wiki="Goal action: Target is discovered." Enum="NPC_THINK_GOAL_ACTION" />
+	<goalAction_ToSearch AltName="Goal Action - Searching State" Wiki="Goal action: Searching for enemy." Enum="NPC_THINK_GOAL_ACTION" />
+	<goalAction_ToDisappear AltName="Goal Action - Memory Target State" Wiki="Goal Action: Memory Target State." Enum="NPC_THINK_GOAL_ACTION" />
+	<changeStateAction_ToNormal AltName="Goal Action - Start Normal State" Wiki="Action when transitioning to normal state." Enum="NPC_THINK_CHANGE_STATE_ACTION" />
+	<GoalActionID AltName="Goal Action - ID" Wiki="ID for general AI behavior outside of combat (only valid when the script type is Operation)." />
+	<commonAttack_Dist AltName="General Attack - Distance" Wiki="In meters." />
+	<coverActionAttackDist AltName="Cover Attack - Distance" Wiki="In meters." />
+	<shareTargetRecognitionLag AltName="Shared Target Recognition Delay" Wiki="Delay time between receiving a shared target and recognizing it. in seconds." />
+	<keepSharingTargetAfterDiedTime AltName="Shared Target Time After Death" Wiki="The time, in seconds, that target sharing processing will continue after the character dies after reaching maximum range. If set to 0, sharing will stop immediately after death even if the maximum range is not reached." />
+	<radar_power AltName="Radar Performance" Wiki="A performance value that compares the target's stealth performance to determine whether it can be detected by radar." />
+	<commonAttack_WeaponPlace AltName="General Attack - Equipment Part" Wiki="General attack equipment location setting, depending on the number of AI_WEAPON_PLACE_, -1 if none" />
+	<shareSearchPointTargetDist AltName="Target Share Distance" Wiki="(Unused) The distance at which characters' searchability values are shared. In meters." />
+	<shareCombatPointTargetDist AltName="Engagement Share Distance" Wiki="(Unused) The distance at which characters share their engagement values. In meters." />
+	<shareSearchPointRate AltName="Target Share Percentage" Wiki="The percentage of characters who share their targets." />
+	<shareCombatPointRate AltName="Engagement Share Percentage" Wiki="The percentage of characters who share their engagements." />
+	<radar_dist AltName="Vision - Radar" Wiki="Radar search range. Radar detects through any object." />
+	<eye_VerticalMax AltName="Vision - Upper Altitude Limit" Wiki="Upper limit of visual perception altitude. In meters." />
+	<eye_VerticalMin AltName="Vision - Lower Altitude Limit" Wiki="Lower limit of visual perception altitude. In meters." />
+	<searchEye_VerticalMax AltName="Vision - Search Upper Altitude Limit" Wiki="Enemy visual recognition upper limit altitude. In meters." />
+	<searchEye_VerticalMin AltName="Vision - Search Lower Altitude Limit" Wiki="Enemy visual recognition lower limit altitude. In meters." />
+	<fixedCannonReleaseDistByHit AltName="Fixed Turret Mode - Disable Distance When Hit" Wiki="Distance to disable fixed gun turret when hit. In meters." />
+	<shareSearchTargetDist AltName="Search Target Share Distance" Wiki="Distance at which search targets are shared." />
+	<shareAttackTargetDist AltName="Attack Target Share Distance" Wiki="Distance at which attack targets are shared." />
+	<shareSearchTargetSpeed AltName="Search Target Share Speed" Wiki="The upper limit for the ''distance for sharing search targets.'' The initial value is 0m, and the shared range expands over time. -1 is an invalid value, and immediately shares within the maximum range." />
+	<shareAttackTargetSpeed AltName="Attack Target Share Speed" Wiki="The upper limit for the ''distance for sharing attack targets.'' The initial value is 0m, and the shared range expands over time. -1 is an invalid value, and immediately shares within the maximum range." />
+	
+	
+	
+	
+	
+	
+	
+	
+ </Field>
+    <Enums>
+    <Enum Name="NPC_THINK_AI_SCRIPT_TYPE" type="s8">
+        <Option Value="0" Name="Operation" />
+        <Option Value="1" Name="Goal" />
+		<Option Value="2" Name="Behavior" />
+    </Enum>
+	<Enum Name="NPC_THINK_GOAL_ACTION" type="s8">
+        <Option Value="0" Name="Do nothing" />
+        <Option Value="1" Name="Turn toward target" />
+		<Option Value="2" Name="Walk toward target" />
+		<Option Value="3" Name="Run toward target" />
+		<Option Value="4" Name="Set arbitrary goal" />
+		<Option Value="5" Name="Move away from target" />
+		<Option Value="6" Name="Test wandering" />
+		<Option Value="7" Name="Raise shield and walk toward target" />
+		<Option Value="8" Name="Route movement" />
+		<Option Value="9" Name="Wander around vicinity" />
+		<Option Value="10" Name="Route movement (boost)" />
+		<Option Value="90" Name="Return to base (look at target)" />
+		<Option Value="91" Name="Return to base (look at home position)" />
+	</Enum>
+	<Enum Name="NPC_THINK_INITIAL_HIT_RESPONSE_TYPE" type="s8">
+        <Option Value="0" Name="Unknown" />
+        <Option Value="1" Name="Unknown" />
+		<Option Value="2" Name="Unknown" />
+	</Enum>
+	<Enum Name="NPC_THINK_ACTTYPE_ON_FAILEDPATH" type="s8">
+        <Option Value="0" Name="Do nothing (move straight ahead)" />
+        <Option Value="1" Name="Stand by (fixed position)" />
+		<Option Value="2" Name="Stand by (change position periodically)" />
+		<Option Value="3" Name="Wander" />
+		<Option Value="4" Name="Return to home point" />
+	</Enum>
+	<Enum Name="NPC_THINK_ACTTYPE_ON_NONBTL_FAILEDPATH" type="s8">
+        <Option Value="0" Name="Stand by" />
+        <Option Value="1" Name="Wander" />
+	</Enum>
+	<Enum Name="NPC_THINK_SHARE_TARGET_TYPE" type="s8">
+        <Option Value="0" Name="Unknown" />
+        <Option Value="1" Name="Unknown" />
+		<Option Value="2" Name="Unknown" />
+		<Option Value="3" Name="Unknown" />
+	</Enum>
+  </Enums>
+  <Self />
+</PARAMMETA>

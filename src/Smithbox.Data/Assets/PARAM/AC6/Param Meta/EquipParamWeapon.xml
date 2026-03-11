@@ -1,0 +1,3253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of weapons."  />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <behaviorVariationId 
+    AltName="Behavior Variation ID" 
+    Wiki="Used to determine the action parameters to use for this weapon's attacks." 
+    VRef="BehaviorVariation" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="The ordering ID used to sort this equipment in the menu." />
+    
+    <wanderingEquipId 
+    AltName="Wandering Equip ID" 
+    Wiki="Replacement part ID for wandering ghosts." 
+    Obsolete="" />
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]." />
+    
+    <weaponWeightRate 
+    AltName="Equipment Weight Ratio" 
+    Wiki="Equipment weight ratio" 
+    Obsolete="" />
+    
+    <fixPrice 
+    AltName="Repair Value" 
+    Wiki="The price required to repair this equipment. Repair cost is calculated using this and durabilityMax" />
+    
+    <reinforcePrice 
+    AltName="Reinforcement Value" 
+    Wiki="The reinforcement price for this equipment." />
+    
+    <sellValue 
+    AltName="Sell Value" 
+    Wiki="The sell value for this equipment." />
+    
+    <correctStrength 
+    AltName="Correction: STR" 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
+    Obsolete="" />
+    
+    <correctAgility 
+    AltName="Correction: DEX" 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
+    Obsolete="" />
+    
+    <correctMagic 
+    AltName="Correction: INT" 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
+    Obsolete="" />
+    
+    <correctFaith 
+    AltName="Correction: FTH" 
+    Wiki="The multiplier to the damage corrected by this specified stat." 
+    Obsolete="" />
+    
+    <physGuardCutRate 
+    AltName="Guard Absorption %: Kinetic" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <magGuardCutRate 
+    AltName="Guard Absorption %: Energy" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <fireGuardCutRate 
+    AltName="Guard Absorption %: Explosive" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <thunGuardCutRate 
+    AltName="Guard Absorption %: Coral" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <spEffectBehaviorId0 
+    AltName="SpEffect on Hit: 1" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectBehaviorId1
+    AltName="SpEffect on Hit: 2" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectBehaviorId2 
+    AltName="SpEffect on Hit: 3" 
+    Wiki="A SpEffect to apply to the victim when this weapon hits." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectId 
+    AltName="Resident SpEffect: 1" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectId1
+    AltName="Resident SpEffect: 2" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <residentSpEffectId2
+    AltName="Resident SpEffect: 3" 
+    Wiki="A SpEffect to apply to the wielder of this weapon." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <materialSetId 
+    AltName="Upgrade Material ID" 
+    Wiki="The material requirements for improving this equipment." 
+    Refs="EquipMtrlSetParam" />
+    
+    <originEquipWep 
+    AltName="Source ID: +0" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep1
+    AltName="Source ID: +1" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep2
+    AltName="Source ID: +2" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep3
+    AltName="Source ID: +3" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep4
+    AltName="Source ID: +4" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep5
+    AltName="Source ID: +5" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep6
+    AltName="Source ID: +6" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep7
+    AltName="Source ID: +7" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep8
+    AltName="Source ID: +8" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep9
+    AltName="Source ID: +9" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep10
+    AltName="Source ID: +10" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep11
+    AltName="Source ID: +11" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep12
+    AltName="Source ID: +12" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep13
+    AltName="Source ID: +13" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep14
+    AltName="Source ID: +14" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <originEquipWep15
+    AltName="Source ID: +15" 
+    Wiki="The source ID when this equipment is reinforced to this level." 
+    Refs="EquipParamWeapon" 
+    DeepCopyTarget="Source" />
+    
+    <weakA_DamageRate
+    AltName="Damage Adjustment %: Type A"
+    Wiki="Damage multiplier applied to targets that are classified as Type A." />
+    
+    <weakB_DamageRate
+    AltName="Damage Adjustment %: Type B"
+    Wiki="Damage multiplier applied to targets that are classified as Type B." />
+    
+    <weakC_DamageRate
+    AltName="Damage Adjustment %: Type C"
+    Wiki="Damage multiplier applied to targets that are classified as Type C." />
+    
+    <weakD_DamageRate
+    AltName="Damage Adjustment %: Type D"
+    Wiki="Damage multiplier applied to targets that are classified as Type D." />
+    
+    <vagrantItemLotId
+    AltName="Vagrant Item Lot ID" 
+    Wiki="-1 No vagrant 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantBonusEneDropItemLotId 
+    AltName="Vagrant Enemy Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <vagrantItemEneDropItemLotId 
+    AltName="Vagrant Bonus Item Lot ID" 
+    Wiki="-1 No drop 0 No lottery 1  With lottery" 
+    Obsolete="" />
+    
+    <equipModelId 
+    AltName="Model ID" 
+    Wiki="The model ID to use for this equipment. Also determines the menu preview icon." 
+    IconConfig="Weapon" />
+    
+    <iconId 
+    AltName="Icon ID " 
+    Wiki="The icon ID to use for this equipment." 
+    Obsolete="" />
+    
+    <durability 
+    AltName="Durability" 
+    Wiki="The initial durability of this equipment." 
+    Obsolete="" />
+    
+    <durabilityMax 
+    AltName="Max Durability" 
+    Wiki="The maximum durability of this equipment." 
+    Obsolete="" />
+    
+    <attackThrowEscape 
+    AltName="Damage: Throw Attack" 
+    Wiki="The base damage for throw attack power" 
+    Obsolete="" />
+    
+    <parryDamageLife 
+    AltName="Parry Damage Duration" 
+    Wiki="The duration of parry damage. It is capped by the duration set in the TAE. In frames." 
+    Obsolete="" />
+    
+    <attackBasePhysics 
+    AltName="Damage: Kinetic" 
+    Wiki="The base Kinetic attack power." />
+    
+    <attackBaseMagic 
+    AltName="Damage: Energy" 
+    Wiki="The base Energy attack power." />
+    
+    <attackBaseFire 
+    AltName="Damage: Explosive" 
+    Wiki="The base Explosive attack power." />
+    
+    <attackBaseThunder 
+    AltName="Damage: Coral" 
+    Wiki="The base Coral attack power." />
+    
+    <attackBaseStamina 
+    AltName="Damage: Stamina" 
+    Wiki="The base stamina attack power." />
+    
+    <saWeaponDamage 
+    AltName="Damage: Poise" 
+    Wiki="The base poise attack power." />
+    
+    <saDurability 
+    AltName="Poise" 
+    Wiki="The additional poise to apply when using this weapon during attack animations." />
+    
+    <horizontalGuardAngle 
+    AltName="Horizontal Guard Angle" 
+    Wiki="Defense generation range angle when guarding with a weapon (horizontal direction). In degrees." />
+    
+    <staminaGuardDef 
+    AltName="Guard Stability" 
+    Wiki="Defense power against stamina drain from enemy attacks when guarding correctly." />
+    
+    <reinforceTypeId 
+    AltName="Reinforcement Type ID"
+    Wiki="The reinforcement progression to use for this equipment." 
+    Refs="ReinforceParamProtector"/>
+    
+    <trophySGradeId 
+    AltName="Achievement ID" 
+    Wiki="The achievement ID this equipment is associated with, if any." />
+    
+    <trophySeqId 
+    AltName="Sequential Achievement ID" 
+    Wiki="The sequential achievement ID this equipment is associated with, if any." />
+    
+    <throwAtkRate 
+    AltName="Critical Hit Multiplier" 
+    Wiki="The multiplier to apply to critical hits." 
+    Obsolete="" />
+    
+    <bowDistRate 
+    AltName="Increased Attentuation Range for Ammunition" 
+    Wiki="Increase the attentuation range of ammunition by the specified multiplier."
+    Obsolete="" />
+    
+    <equipModelCategory 
+    AltName="Model Category" 
+    Wiki="The equipment model category used by this equipment." 
+    Enum="EQUIP_MODEL_CATEGORY" />
+    
+    <equipModelGender 
+    AltName="Model Gender Category"
+    Wiki="The equipment gender category used by this equipment." 
+    Enum="EQUIP_MODEL_GENDER" />
+    
+    <weaponCategory 
+    AltName="Weapon Category" 
+    Wiki="The weapon category of this equipment." 
+    Enum="WEAPON_CATEGORY" />
+    
+    <wepmotionCategory 
+    AltName="Weapon Animation Set" 
+    Wiki="The weapon animation category. Determines the base animation set the weapon uses." 
+    Enum="WEPMOTION_CATEGORY" 
+    Obsolete="" />
+    
+    <guardmotionCategory 
+    AltName="Guard Animation Set" 
+    Wiki="The weapon animation category used when guarding. Determines the animation set to overlap when guarding."
+    Enum="GUARDMOTION_CATEGORY" 
+    Obsolete="" />
+    
+    <atkMaterial 
+    AltName="Attack Presentation: Material" 
+    Wiki="Specify the particles and sounds to apply to the victim at the time of attack." 
+    Enum="WEP_MATERIAL_ATK" />
+    
+    <defSeMaterial1 
+    AltName="Defense Presentation: Sound" 
+    Wiki="Specify the sounds to apply when guarding against an attack." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <correctType_Physics 
+    AltName="Damage Correction Graph: Kinetic" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <spAttribute 
+    AltName="Special Attribute" 
+    Wiki="Special attributes to set for attacks" 
+    Enum="ATKPARAM_SPATTR_TYPE" />
+    
+    <spAtkcategory 
+    AltName="Weapon Override Animation Set" 
+    Wiki="The weapon override animation category. Determines the override animation set the weapon uses." 
+    Enum="TAE_MOTION_CATEGORIES"/>
+    
+    <wepmotionOneHandId 
+    AltName="Weapon Idle Animation Set: 1H" 
+    Wiki="The weapon idle animation category. Determines the idle animations used when held one-handed." />
+    
+    <wepmotionBothHandId 
+    AltName="Weapon Idle Animation Set: 2H" 
+    Wiki="The weapon idle animation category. Determines the idle animations used when held two-handed." />
+    
+    <properStrength 
+    AltName="Requirement: STR"
+    Wiki="The required level of the specified stat to properly wield this weapon." 
+    Obsolete="" />
+    
+    <properAgility 
+    AltName="Requirement: DEX"
+    Wiki="The required level of the specified stat to properly wield this weapon." 
+    Obsolete="" />
+    
+    <properMagic 
+    AltName="Requirement: INT"
+    Wiki="The required level of the specified stat to properly wield this weapon." 
+    Obsolete="" />
+    
+    <properFaith 
+    AltName="Requirement: FTH"
+    Wiki="The required level of the specified stat to properly wield this weapon." 
+    Obsolete="" />
+    
+    <overStrength 
+    AltName="STR over Start Value" 
+    Wiki="Strength over start value" 
+    Obsolete="" />
+    
+    <attackBaseParry 
+    AltName="Parry Attack" 
+    Wiki="The base parry attack damage value. Applied to the enemy parry defense value." 
+    Obsolete="" />
+    
+    <defenseBaseParry 
+    AltName="Parry Defense" 
+    Wiki="The base parry defense value. Compared against enemy parry attack value." 
+    Obsolete="" />
+    
+    <guardBaseRepel 
+    AltName="Base Repel: Defense" 
+    Wiki="The base repel value when guarding. Compared against enemy repel attack value." 
+    Obsolete="" />
+    
+    <attackBaseRepel 
+    AltName="Base Repel: Attack" 
+    Wiki="The base repel value when attacking. Compared against enemy repel defense value." 
+    Obsolete="" />
+    
+    <guardCutCancelRate 
+    AltName="Guard Absorption Invalidation" 
+    Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
+    
+    <guardLevel 
+    AltName="Guard Level" 
+    Wiki="When guarding, the guard animation offset to use when being attacked." />
+    
+    <slashGuardCutRate 
+    AltName="Guard Absorption %: Slash" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." 
+    Obsolete="" />
+    
+    <blowGuardCutRate
+    AltName="Guard Absorption %: Strike" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." 
+    Obsolete="" />
+    
+    <thrustGuardCutRate 
+    AltName="Guard Absorption %: Thrust" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." 
+    Obsolete="" />
+    
+    <burnGuardResist 
+    AltName="Guard Absorption %: ACS Anomaly" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <stunGuardResist 
+    AltName="Guard Absorption %: Electric Discharge" 
+    Wiki="The absorption to apply to damage of the specified type when guarding."  />
+    
+    <highPlasmaGuardResist 
+    AltName="Guard Absorption %: Plasma" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." />
+    
+    <curseGuardResist 
+    AltName="Guard Absorption %: Curse" 
+    Wiki="The absorption to apply to damage of the specified type when guarding." 
+    Obsolete="" />
+    
+    <isDurabilityDivergence 
+    AltName="Is Animation Changed by Durability" 
+    Wiki="The offset to apply to the animation set based on durability."
+    Enum="DURABILITY_DIVERGENCE_CATEGORY" 
+    Obsolete="" />
+    
+    <rightHandEquipable 
+    AltName="Equipped in Front Right Slot" 
+    Wiki="If ON, this equipment can be equipped in the front right slot."
+    IsBool="" />
+    
+    <leftHandEquipable 
+    AltName="Equipped in Front Left Slot" 
+    Wiki="If ON, this equipment can be equipped in the front left slot."
+    IsBool="" />
+    
+    <bothHandEquipable 
+    AltName="Equipped in either Front Slot" 
+    Wiki="If ON, this equipment can be equipped in either front slot."
+    IsBool="" 
+    Obsolete="" />
+    
+    <rightBackEquipable 
+    AltName="Equipped in Back Right Slot" 
+    Wiki="If ON, this equipment can be equipped in the back right slot."
+    IsBool="" />
+    
+    <leftBackEquipable 
+    AltName="Equipped in Back Left Slot" 
+    Wiki="If ON, this equipment can be equipped in the back left slot."
+    IsBool="" />
+    
+    <enableGuard 
+    AltName="Enables Guard" 
+    Wiki="If ON, this weapon will guard with L1 when equipped with left hand." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <enableParry 
+    AltName="Enables Parry" 
+    Wiki="If ON, this weapon will arry with L2 when equipped with left hand." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <enableMagic 
+    AltName="Enables Magic" 
+    Wiki="If ON, this weapon will cast magic when attacking." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <enableSorcery 
+    AltName="Enables Sorcery" 
+    Wiki="If ON, this weapon will cast sorcery when attacking." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <enableMiracle 
+    AltName="Enables Miracles" 
+    Wiki="If ON, this weapon will cast miracles when attacking." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <enableVowMagic 
+    AltName="Enables Vow Magic" 
+    Wiki="If ON, this weapon will cast vow magic when attacking." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isNormalAttackType 
+    AltName="Menu Display: Normal" 
+    Wiki="The attack type for menu display." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isBlowAttackType 
+    AltName="Menu Display: Strike" 
+    Wiki="The attack type for menu display." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isSlashAttackType 
+    AltName="Menu Display: Slash" 
+    Wiki="The attack type for menu display." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isThrustAttackType 
+    AltName="Menu Display: Thrust" 
+    Wiki="The attack type for menu display." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isEnhance 
+    AltName="Is Buffable" 
+    Wiki="If ON, this weapon be buffed via a tool or spell." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isHeroPointCorrect 
+    AltName="Apply Humanity Correction" 
+    Wiki="If ON, applies attack correction based on humanity." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isCustom 
+    AltName="Is Reinforcable" 
+    Wiki="If ON, this weapon can be reinforced via the reinforcement mechanic." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <disableBaseChangeReset 
+    AltName="Disable Weapon Job Change" 
+    Wiki="If ON, prevents the weapon from being changed fundamentally via the ascension mechanic or infusion mechanic." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <disableRepair 
+    AltName="Disable Repair" 
+    Wiki="If ON, this weapon cannot be repaired." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isDarkHand 
+    AltName="Is Dark Hand" 
+    Wiki="If ON, this weapon is considered a 'Dark Hand'." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <simpleModelForDlc 
+    AltName="Is Simple Model for DLC" 
+    Wiki="If ON, this weapon uses a simple model for the DLC." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <lanternWep 
+    AltName="Is Light Source" 
+    Wiki="If ON, this weapon is considered a light source." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isVersusGhostWep 
+    AltName="Is Anti-Ghost Weapon" 
+    Wiki="If ON, this weapon can hit 'Ghost' characters." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <baseChangeCategory 
+    AltName="Job Category" 
+    Wiki="The weapon job category (e.g. ascension or infusion). Used to display the attribute icon." 
+    Enum="WEP_BASE_CHANGE_CATEGORY" 
+    Obsolete="" />
+    
+    <isDragonSlayer 
+    AltName="Is Dragon-Hunter Weapon" 
+    Wiki="If ON, is considered a 'dragon-hunter' weapon." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isDeposit 
+    AltName="Can Deposit" 
+    Wiki="If ON, this item can be deposited into the repository."
+    IsBool="" 
+    Obsolete="" />
+    
+    <disableMultiDropShare 
+    AltName="Is Drop Disabled in Multiplayer" 
+    Wiki="If ON, this item cannot be dropped in a multiplayer session." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isDiscard 
+    AltName="Can Discard" 
+    Wiki="If ON, this item can be discarded."
+    IsBool="" 
+    Obsolete="" />
+    
+    <isDrop 
+    AltName="Can be Dropped" 
+    Wiki="If ON, this item can be dropped." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isMissileLockNoRayCast
+    AltName="Can Lock-on through Cover (Missiles only)"
+    Wiki="If ON, and this weapon is a missle weapon, then lock-on will work through walls." />
+    
+    <isPurgeEnable
+    AltName="Is Purgable"
+    Wiki="If ON, this weapon can be 'purged', e.g. dropped and no longer usable for the rest of the mission." 
+    IsBool="" />
+    
+    <extensionEquipable
+    AltName="Equipped in Core Expansion Slot"
+    Wiki="If ON, this equipment can be equipped in the core expansion slot."
+    IsBool="" />
+    
+    <pad1
+    AltName=""
+    Padding="" />
+    
+    <defSfxMaterial1 
+    AltName="Defence Presentation: Particles" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <wepCollidableType0 
+    AltName="Weapon Collidable Type: 1" 
+    Wiki="The collidable type for this weapon."
+    Enum="WEP_COLLIDABLE_TYPE" 
+    Obsolete="" />
+    
+    <wepCollidableType1 
+    AltName="Weapon Collidable Type: 1" 
+    Wiki="The collidable type for this weapon."
+    Enum="WEP_COLLIDABLE_TYPE" 
+    Obsolete="" />
+    
+    <wepCollidableType2
+    AltName=""
+    Padding="" />
+    
+    <wepCollidableType3
+    AltName=""
+    Padding="" />
+    
+    <traceSfxId0 
+    AltName="[0] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead0 
+    AltName="[0] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail0 
+    AltName="[0] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId1 
+    AltName="[1] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead1 
+    AltName="[1] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail0 
+    AltName="[1] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId2 
+    AltName="[2] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead0 
+    AltName="[2] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail0 
+    AltName="[2] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId3
+    AltName="[3] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead3
+    AltName="[3] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail3 
+    AltName="[3] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId4 
+    AltName="[4] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead4
+    AltName="[4] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail4
+    AltName="[4] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId5 
+    AltName="[5] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead5
+    AltName="[5] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail5
+    AltName="[5] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId6 
+    AltName="[6] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead6
+    AltName="[6] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail6
+    AltName="[6] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceSfxId7 
+    AltName="[7] Attack Trail: Particle ID" 
+    Wiki="Particle to display for the attack trail (-1 invalid)" 
+    ParticleAlias="" 
+    Obsolete="" />
+    
+    <traceDmyIdHead7 
+    AltName="[7] Attack Trail: Root Dummy Polygon" 
+    Wiki="The dummy polygon that points to the root of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <traceDmyIdTail7
+    AltName="[7] Attack Trail: Tip Dummy Polygon" 
+    Wiki="The dummy polygon that points to the tip of the attack trail capsule (-1 invalid)" 
+    Obsolete="" />
+    
+    <defSfxMaterial2 
+    AltName="Defence Presentation: Particles (Disabled)" 
+    Wiki="The particles used when guarding." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <defSeMaterial2 
+    AltName="Defence Presentation: Sound (Disabled)" 
+    Wiki="The sound used when guarding." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <absorpParamId 
+    AltName="Weapon Sheath Position ID" 
+    Wiki="The weapon sheath position ID. This value determines the position where the weapon is attached. -1 is the default position." 
+    Refs="WepAbsorpPosParam" />
+    
+    <toughnessCorrectRate 
+    AltName="Toughness Correction" 
+    Wiki="The multiplier to apply to the current toughness when this weapon is used." 
+    Obsolete="" />
+    
+    <isValidTough_ProtSADmg 
+    AltName="Is Toughness Perfomed if Poise is Initial Value" 
+    Wiki="If ON, the toughness calculation is performed even if the current armor poise is the initial value." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isDualBlade 
+    AltName="Is Dual Weapon" 
+    Wiki="If ON, this weapon is considered a 'duel blade'." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isAutoEquip 
+    AltName="Is Weapon Automatically-Equipped" 
+    Wiki="If ON, this weapon is automatically equipped. Only valid for arrows and bolts. Requires the slot to be empty to equip." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isEnableEmergencyStep 
+    AltName="Is Quickstep Weapon" 
+    Wiki="If ON, this weapon is handled as a quickstep weapon in the behavior scripts." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <invisibleOnRemo
+    AltName="Is Hidden in Cutscenes" 
+    Wiki="If ON, this weapon is hidden during cutscenes." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <guardBreakAtk_IgnoreProtect
+    AltName="Ignore Defense after Guard Break"
+    Wiki="If ON, this weapon ignores defense after an enemy's guard break." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <pad4 
+    AltName="" 
+    Padding=""/>
+    
+    <correctType_Magic 
+    AltName="Damage Correction Graph: Energy" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <correctType_Fire 
+    AltName="Damage Correction Graph: Explosive" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <correctType_Thunder 
+    AltName="Damage Correction Graph: Coral" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <weakE_DamageRate
+    AltName="Damage Adjustment %: Type E"
+    Wiki="Damage multiplier applied to targets that are classified as Type E." />
+    
+    <weakF_DamageRate
+    AltName="Damage Adjustment %: Type F"
+    Wiki="Damage multiplier applied to targets that are classified as Type F." />
+    
+    <darkGuardCutRate 
+    AltName="Guard Absorption %: Dark" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." 
+    Obsolete="" />
+    
+    <attackBaseDark 
+    AltName="Damage: Dark" 
+    Wiki="The base Dark attack power." 
+    Obsolete="" />
+    
+    <correctType_Dark 
+    AltName="Damage Correction Graph: Dark" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <correctType_Burn 
+    AltName="Damage Correction Graph: ACS Anomaly" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <swordArtsId 
+    AltName="Sword Arts ID" 
+    Wiki="The Swords Arts ID to use for this weapon." 
+    Obsolete="" />
+    
+    <correctType_HighPlasma 
+    AltName="Damage Correction Graph: Plasma" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <properLuck 
+    AltName="Requirement: LCK"
+    Wiki="The required level of the specified stat to properly wield this weapon." 
+    Obsolete="" />
+    
+    <pad5
+    AltName=""
+    Padding="" />
+    
+    <autoReplenishType 
+    AltName="Automatic Replenishment Type" 
+    Wiki="The type of automatic replenishment available, and whether it is enabled or disabled by default." 
+    Enum="AUTO_REPLENISH_TYPE" 
+    Obsolete="" />
+    
+    <swordArtsParamId 
+    AltName="Sword Arts ID" 
+    Wiki="The Swords Arts ID to use for this weapon." 
+    Obsolete="" />
+    
+    <correctLuck 
+    AltName="Damage Correction Graph: Luck" 
+    Wiki="Determine the calculcation correction graph to use when correcting this specified type of damage." 
+    Refs="CalcCorrectGraph" 
+    Obsolete="" />
+    
+    <arrowBoltEquipId 
+    AltName="Quiver: Ammunition ID" 
+    Wiki="The weapon ID of the ammunition display model." 
+    Obsolete="" />
+    
+    <DerivationLevelType 
+    AltName="Derivation Level Type" 
+    Wiki="How to handle the reinforcement level when reducing or changing weapons." 
+    Enum="WEAPON_DERIVATION_LEVEL_TYPE" 
+    Obsolete="" />
+    
+    <enchantSfxSize 
+    AltName="Enchantment Particle Size" 
+    Wiki="ID offset to enchantment SFX ID" 
+    Enum="WEP_ENCHANT_SFX_SIZE" />
+    
+    <wepTypeForText
+    AltName="Menu Display: Weapon Type" 
+    Wiki="The weapon type to display in the menu." 
+    Obsolete="" />
+    
+    <physGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Kinetic (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <magGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Energy (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <fireGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Explosive (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <thunGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Coral (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <darkGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Dark (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." 
+    Obsolete="" />
+    
+    <burnGuardResist_StaminaShort 
+    AltName="Guard Absorption %: ACS Anomaly (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <stunGuardResist_StaminaShort 
+    AltName="Guard Absorption %: Electric Discharge (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <highPlasmaGuardResist_StaminaShort 
+    AltName="Guard Absorption %: Plasma (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <curseGuardResist_StaminaShort 
+    AltName="Guard Absorption %: Curse (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." 
+    Obsolete="" />
+    
+    <saGuardCutRate 
+    AltName="Guard Absorption %: Poise" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <saGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Poise (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <staminaGuardCutRate 
+    AltName="Guard Absorption %: Stamina" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <staminaGuardCutRate_StaminaShort 
+    AltName="Guard Absorption %: Stamina (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <depletedUraniumToxicGuardResist_StaminaShort 
+    AltName="Guard Absorption %: Depleted Uranium (no Stamina)" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <depletedUraniumToxicGuardResist 
+    AltName="Guard Absorption %: Depleted Uranium" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with no stamina." />
+    
+    <shoulderEquipType
+    AltName="Shoulder Slot Equip Type"
+    Wiki="The equip type for a shoulder slot weapon."
+    Enum="SHOULDER_EQUIP_TYPE" />
+    
+    <staminaMax
+    AltName="Guard: Stamina Capacity"
+    Wiki="The stamina capacity of this booster." />
+    
+    <staminaRecoverPerSec
+    AltName="Guard: Stamina Recovery"
+    Wiki="The stamina recovery rate. In points per second." />
+    
+    <recoverStaminaDelayTimeSec
+    AltName="Guard: Stamina Recovery Delay"
+    Wiki="The delay before stamina recovery starts. In seconds." />
+    
+    <guardBreakSelfAtk_AtkId
+    AltName="Guard Break: Attack ID"
+    Wiki="The attack ID To use during a self-induced guard break." />
+    
+    <breakThrowTypeId
+    AltName="Guard Break: Throw Type ID"
+    Wiki="The throw type ID to use after a guard break. -1 disables, enemy ignores this." />
+    
+    <stealthThrowTypeId
+    AltName="Stealth: Throw Type ID"
+    Wiki="The throw type ID to use after a stealth attack. -1 disables, enemy ignores this." />
+    
+    <thrustersParamIDForPC
+    AltName="Thruster Configuration Offset (for Player)"
+    Wiki="For player, specify the ID of the thruster parameter (0 means no thruster)."
+    Refs="ThrusterParam_PC" />
+    
+    <pad4_2
+    AltName=""
+    Padding="" />
+    
+    <residentSfxId_1 
+    AltName="Weapon Particle: 1" 
+    Wiki="The SFX ID to apply to this weapon."
+    ParticleAlias="" />
+    
+    <residentSfxId_2
+    AltName="Weapon Particle: 2" 
+    Wiki="The SFX ID to apply to this weapon."
+    ParticleAlias="" />
+    
+    <residentSfxId_3 
+    AltName="Weapon Particle: 3" 
+    Wiki="The SFX ID to apply to this weapon."
+    ParticleAlias="" />
+    
+    <residentSfxId_4
+    AltName="Weapon Particle: 4" 
+    Wiki="The SFX ID to apply to this weapon."
+    ParticleAlias="" />
+    
+    <residentSfx_DmyId_1 
+    AltName="Weapon Particle: Dummy Polygon 1" 
+    Wiki="The dummy polygon that particle 1 spawns from." />
+    
+    <residentSfx_DmyId_2
+    AltName="Weapon Particle: Dummy Polygon 2" 
+    Wiki="The dummy polygon that particle 2 spawns from." />
+    
+    <residentSfx_DmyId_3
+    AltName="Weapon Particle: Dummy Polygon 3" 
+    Wiki="The dummy polygon that particle 3 spawns from." />
+    
+    <residentSfx_DmyId_4
+    AltName="Weapon Particle: Dummy Polygon 4" 
+    Wiki="The dummy polygon that particle 4 spawns from." />
+    
+    <staminaConsumptionRate
+    AltName="Stamina Consumption %" 
+    Wiki="The multiplier to apply to stamina consumption for attacks from this weapon." />
+    
+    <vsPlayerDmgCorrectRate_Physics 
+    AltName="Attack Correction: Kinetic (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Kinetic attack power." />
+    
+    <vsPlayerDmgCorrectRate_Magic 
+    AltName="Attack Correction: Energy (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Energy attack power." />
+    
+    <vsPlayerDmgCorrectRate_Fire 
+    AltName="Attack Correction: Explosive (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Explosive attack power." />
+    
+    <vsPlayerDmgCorrectRate_Thunder 
+    AltName="Attack Correction: Coral (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Coral attack power." />
+    
+    <vsPlayerDmgCorrectRate_Dark 
+    AltName="Attack Correction: Dark (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Dark attack power." 
+    Obsolete="" />
+    
+    <vsPlayerDmgCorrectRate_Burn 
+    AltName="Attack Correction: ACS Anomaly (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base ACS anomaly attack power." />
+    
+    <vsPlayerDmgCorrectRate_HighPlasma 
+    AltName="Attack Correction: Plasma (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Plasma attack power." />
+    
+    <vsPlayerDmgCorrectRate_DepletedUraniumToxic 
+    AltName="Attack Correction: Depleted Uranium (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Depleted Uranium attack power." />
+    
+    <attainmentWepStatusStr 
+    AltName="Special Heavy Attack: STR Requirement" 
+    Wiki="The STR requirement to change the heavy attack into a special heavy attack with this weapon." 
+    Obsolete="" />
+    
+    <attainmentWepStatusDex 
+    AltName="Special Heavy Attack: DEX Requirement" 
+    Wiki="The STR requirement to change the heavy attack into a special heavy attack with this weapon." 
+    Obsolete="" />
+    
+    <attainmentWepStatusMag 
+    AltName="Special Heavy Attack: INT Requirement" 
+    Wiki="The STR requirement to change the heavy attack into a special heavy attack with this weapon." 
+    Obsolete="" />
+    
+    <attainmentWepStatusFai 
+    AltName="Special Heavy Attack: FTH Requirement" 
+    Wiki="The STR requirement to change the heavy attack into a special heavy attack with this weapon." 
+    Obsolete="" />
+    
+    <attainmentWepStatusLuc 
+    AltName="Special Heavy Attack: LCK Requirement" 
+    Wiki="The STR requirement to change the heavy attack into a special heavy attack with this weapon." 
+    Obsolete="" />
+    
+    <attackElementCorrectId 
+    AltName="Attack Attribute Correction ID" 
+    Wiki="The attack attribute correction parameters to use when correcting this weapon's damage." 
+    Refs="AttackElementCorrectParam" 
+    Obsolete="" />
+    
+    <saleValue
+    AltName="Sale Value"
+    Wiki="Price the item is on sale for." />
+    
+    <reinforceShopCategory 
+    AltName="Reinforcement Menu Type" 
+    Wiki="The reinforcement menu category this weapon uses." 
+    Enum="REINFORCE_SHOP_CATEGORY" 
+    Obsolete="" />
+    
+    <maxArrowQuantity 
+    AltName="Ammunition: Maximum Held" 
+    Wiki="The maximum number of this weapon (ammunition) that can be held." 
+    Obsolete="" />
+    
+    <residentSfx_1_IsVisibleForHang 
+    AltName="Hide when Sheathed: Weapon Particle 1" 
+    Wiki="If ON, then weapon particle 1 is hidden if the weapon is Sheathed." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <residentSfx_2_IsVisibleForHang 
+    AltName="Hide when Sheathed: Weapon Particle 2" 
+    Wiki="If ON, then weapon particle 2 is hidden if the weapon is Sheathed." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <residentSfx_3_IsVisibleForHang 
+    AltName="Hide when Sheathed: Weapon Particle 3" 
+    Wiki="If ON, then weapon particle 3 is hidden if the weapon is Sheathed." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <residentSfx_4_IsVisibleForHang 
+    AltName="Hide when Sheathed: Weapon Particle 4" 
+    Wiki="If ON, then weapon particle 4 is hidden if the weapon is Sheathed." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isSoulParamIdChange_model0 
+    AltName="Apply Weapon Particle Parameters: 1" 
+    Wiki="Whether the particle paramters for weapon 1 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isSoulParamIdChange_model1 
+    AltName="Apply Weapon Particle Parameters: 2" 
+    Wiki="Whether the particle paramters for weapon 2 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isSoulParamIdChange_model2 
+    AltName="Apply Weapon Particle Parameters: 3" 
+    Wiki="Whether the particle paramters for weapon 3 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <isSoulParamIdChange_model3
+    AltName="Apply Weapon Particle Parameters: 4" 
+    Wiki="Whether the particle paramters for weapon 4 are applied. Typically this is the 'soul param id' and 'invisible weapon' paramters." 
+    IsBool="" 
+    Obsolete="" />
+    
+    <wepSeIdOffset 
+    AltName="Weapon Sound ID Offset" 
+    Wiki="The sound offset ID to apply when this weapon is equipped." 
+    Obsolete="" />
+    
+    <baseChangePrice 
+    AltName="Job Change Price" 
+    Wiki="The price to change the base weapon (e.g. ascension or infusion)." 
+    Obsolete="" />
+    
+    <levelSyncCorrectId
+    AltName="Level Sync Correction ID"
+    Wiki="The correction ID to use for level syncing." 
+    Obsolete="" />
+    
+    <atkStateId
+    AltName="Attack State ID"
+    Wiki="The attack state ID for this weapon." />
+    
+    <pad4_5
+    AltName=""
+    Padding="" />
+    
+    <bulletNum 
+    AltName="Ammunition: Magazine Rounds" 
+    Wiki="Number of rounds loaded per magazine." />
+    
+    <magazineReload_InactiveSpeedScale
+    AltName="Ammunition: Magazine Reload Speed %"
+    Wiki="The magazine reload speed during storage." />
+    
+    <vsPlayerImpactCorrectRate 
+    AltName="Attack Correction: Impact (for PVP)" 
+    Wiki="Player vs. player only. Multiplier to the base Impact attack power." />
+    
+    <pad4_4
+    AltName=""
+    Padding="" />
+    
+    <connectPartsSlotIndex
+    AltName="Connected Part Slot Index"
+    Wiki="Part number that works with this equipment when it is an enemy" />
+    
+    <isTaeShootTimingOnly
+    AltName="Only Fire Bullet via TAE Request"
+    Wiki="The bullet is actually fired only when a shooting request comes from TAE." 
+    IsBool="" />
+    
+    <verticalGuardAngle
+    AltName="Vertical Guard Angle"
+    Wiki="Defense generation range angle when guarding with a weapon (vertical direction). In degrees." />
+    
+    <pad4_6
+    AltName=""
+    Padding="" />
+    
+    <postureBothHandAnimeId
+    AltName="Posture Additive Animation ID: Two-Hand"
+    Wiki="The additive animation ID applied to the current animation when this weapon is two-handed." 
+    Obsolete="" />
+    
+    <postureRightHandAnimeId
+    AltName="Posture Additive Animation ID: Right-Hand"
+    Wiki="The additive animation ID applied to the current animation when this weapon is right-handed." />
+    
+    <postureLeftHandAnimeId
+    AltName="Posture Additive Animation ID: Left-Hand"
+    Wiki="The additive animation ID applied to the current animation when this weapon is left-handed." />
+    
+    <changeWepParamId
+    AltName="Change Weapon ID"
+    Wiki="The weapon ID to use when changing weapons whilst this weapon is the primary." />
+    
+    <lookAtParamId
+    AltName="LookAt ID"
+    Wiki="The LookAt param ID to use."
+    Refs="LookAtParam,LookAtParam_Npc" />
+    
+    <pad4_7
+    AltName=""
+    Padding="" />
+    
+    <sfxIdAtBreak_0
+    AltName="Particle ID: 1 (when Destroyed)"
+    Wiki="The SFX ID to play when the weapon is destroyed."
+    ParticleAlias="" />
+    
+    <sfxIdAtBreak_1
+    AltName="Particle ID: 2 (when Destroyed)"
+    Wiki="The SFX ID to play when the weapon is destroyed."
+    ParticleAlias="" />
+    
+    <sfxIdAtBreak_2
+    AltName="Particle ID: 3 (when Destroyed)"
+    Wiki="The SFX ID to play when the weapon is destroyed."
+    ParticleAlias="" />
+    
+    <padding3
+    AltName=""
+    Padding="" />
+    
+    <sfxIdAtBreak_DmypolyId_0
+    AltName="Particle 1: Dummy Polygon (when Destroyed)"
+    Wiki="The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated." />
+    
+    <sfxIdAtBreak_DmypolyId_1
+    AltName="Particle 2: Dummy Polygon (when Destroyed)"
+    Wiki="The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated." />
+    
+    <sfxIdAtBreak_DmypolyId_2
+    AltName="Particle 3: Dummy Polygon (when Destroyed)"
+    Wiki="The dummy polygon ID that generates the particle upon the weapon being destoryed. -1 means no particle is generated." />
+    
+    <padding4
+    AltName=""
+    Padding="" />
+    
+    <lookAtDirType 
+    AltName="LookAt Direction Type"
+    Wiki="Direction to point with LookAt"
+    Enum="LOOK_AT_DIR_TYPE" />
+    
+    <bulletShootDirType
+    AltName="Bullet Shoot Direction Type"
+    Wiki="The direction to fire bullets in"
+    Enum="BULLET_SHOOT_DIR_TYPE" />
+    
+    <behaviorJudgeId
+    AltName="Default Behavior Judgement ID"
+    Wiki="ChrBehavior control program: If 'Use behavior judgment ID' is not checked for shooting, shoot using the set behavior judgment ID" />
+    
+    <pad9
+    AltName=""
+    Padding="" />
+    
+    <totalBulletNum 
+    AltName="Ammunition: Total Rounds" 
+    Wiki="Total number of rounds that can be fired. -1 means infinite." />
+    
+    <shieldParamId
+    AltName="Shield ID"
+    Wiki="The shield param ID to use when guarding with this weapon. -1 means the weapon's guard parameters are used." 
+    Refs="ShieldParam" />
+    
+    <lockRange
+    AltName="Lock Distance"
+    Wiki="The lock distance of the weapon. In metres." />
+    
+    <meleeAbility
+    AltName="Melee Specialization"
+    Wiki="Determines the amount of angular velocity correction." />
+    
+    <lockSightHeightScale
+    AltName="Lock Vertical %"
+    Wiki="The vertical scale of the lock-on." />
+    
+    <lockSightWidthScale
+    AltName="Lock Width %"
+    Wiki="The width scale of the lock-on." />
+    
+    <lockTimeSec
+    AltName="Lock Time"
+    Wiki="The time to lock-on. In seconds." />
+    
+    <bladeHomingParamId
+    AltName="Blade Homing ID"
+    Wiki="The blade homing parameters to use for this weapon."
+    Refs="BladeHomingParam" />
+    
+    <assembleMenuCategory
+    AltName="Assembly Menu Category"
+    Wiki="The assembly menu category for this equipment."
+    Enum="ASSEMBLE_MENU_CATEGORY_WEAPON" />
+    
+    <weaponPoseTypeR
+    AltName="Weapon Hold Type: Right"
+    Wiki="The weapon hold type in the right-hand." 
+    Enum="WEAPON_RIGHT_POSE_TYPE" />
+    
+    <weaponPoseTypeL
+    AltName="Weapon Hold Type: Left"
+    Wiki="The weapon hold type in the left-hand." 
+    Enum="WEAPON_LEFT_POSE_TYPE" />
+    
+    <equipPanelIconID
+    AltName="HUD Icon ID"
+    Wiki="The icon ID for the the weapon panel GUI." 
+    Enum="FE_EQUIPPANEL_ICON_ID" />
+    
+    <consumeEN 
+    AltName="Weapon: Energy Consumption" 
+    Wiki="The energy consumption of this weapon." />
+    
+    <categoryNameTextID 
+    AltName="Category Name ID" 
+    Wiki="The text that appears for this category." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <pairEquipWep
+    AltName="Pair-equipped Weapon ID"
+    Wiki="The weapon ID to use if two of these weapons are equipped." 
+    Refs="EquipParamWeapon_PC" />
+    
+    <operationPartsId
+    AltName="Operation Permission Type ID"
+    Wiki="The operation permissions for this weapon." />
+    
+    <bulletCost 
+    AltName="Weapon: Ammunition Cost" 
+    Wiki="Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses." />
+    
+    <depletedUraniumToxicPaGuardResistRate 
+    AltName="Pulse Armor - Guard Absorption %: Depleted Uranium" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <weaponAttachObjId
+    AltName="Weapon Attachment ID"
+    Wiki="The ID of the attachment joint to use for this weapon." />
+    
+    <pad10
+    AltName=""
+    Padding="" />
+    
+    <triggerActionType_00
+    AltName="Trigger Action Type [00]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_01
+    AltName="Trigger Action Type [01]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_02
+    AltName="Trigger Action Type [02]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_03
+    AltName="Trigger Action Type [03]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_04
+    AltName="Trigger Action Type [04]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_05
+    AltName="Trigger Action Type [05]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_06
+    AltName="Trigger Action Type [06]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_07
+    AltName="Trigger Action Type [07]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_08
+    AltName="Trigger Action Type [08]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_09
+    AltName="Trigger Action Type [09]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_10
+    AltName="Trigger Action Type [10]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_11
+    AltName="Trigger Action Type [11]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_12
+    AltName="Trigger Action Type [2]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_13
+    AltName="Trigger Action Type [13]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_14
+    AltName="Trigger Action Type [14]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_15
+    AltName="Trigger Action Type [15]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_16
+    AltName="Trigger Action Type [16]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_17
+    AltName="Trigger Action Type [17]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_18
+    AltName="Trigger Action Type [18]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_19
+    AltName="Trigger Action Type [19]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_20
+    AltName="Trigger Action Type [20]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_21
+    AltName="Trigger Action Type [21]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_22
+    AltName="Trigger Action Type [22]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_23
+    AltName="Trigger Action Type [23]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_24
+    AltName="Trigger Action Type [24]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_25
+    AltName="Trigger Action Type [25]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_26
+    AltName="Trigger Action Type [26]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_27
+    AltName="Trigger Action Type [27]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_28
+    AltName="Trigger Action Type [28]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_29
+    AltName="Trigger Action Type [29]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_30
+    AltName="Trigger Action Type [30]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <triggerActionType_31
+    AltName="Trigger Action Type [31]"
+    Wiki="ChrBehavior condition judgment type"
+    Enum="TRIGGER_ACTION_TYPE_TYPE" />
+    
+    <wepMotionCategoryIdSpecify
+    AltName="Weapon Animation Set"
+    Wiki="The weapon animation category. Determines the base animation set the weapon uses." 
+    Enum="TAE_MOTION_CATEGORIES" />
+    
+    <pad01
+    AltName=""
+    Padding="" />
+    
+    <pad6_3_bit
+    AltName=""
+    Padding="" />
+    
+    <pad6_4
+    AltName=""
+    Padding="" />
+    
+    <physicsPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Kinetic" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <magicPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Energy" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <firePaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Explosive" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <thunderPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Coral" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <darkPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Dark" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." 
+    Obsolete="" />
+    
+    <burnPaGuardResistRate 
+    AltName="Pulse Armor - Guard Absorption %: ACS Anomaly" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <stunPaGuardResistRate 
+    AltName="Pulse Armor - Guard Absorption %: Electric Discharge" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <highPlasmaPaGuardResistRate 
+    AltName="Pulse Armor - Guard Absorption %: Plasma" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <cursePaGuardResistRate 
+    AltName="Pulse Armor - Guard Absorption %: Curse" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." 
+    Obsolete="" />
+    
+    <saPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Poise" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <staminaPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Stamina" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <paPaGuardCutRate 
+    AltName="Pulse Armor - Guard Absorption %: Pulse" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding with pulse armor." />
+    
+    <paGuardBaseDmypolyId
+    AltName="Pulse Armor - Guard Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use when guarding for pulse armor." />
+    
+    <paGuardDirectionHorizontalDeg
+    AltName="Pulse Armor - Horizontal Direction" 
+    Wiki="The horziontal direction of pulse armor. In degrees." />
+    
+    <paGuardDirectionVerticalDeg
+    AltName="Pulse Armor - Vertical Direction" 
+    Wiki="The vertical direction of pulse armor. In degrees." />
+    
+    <paGuardRangeHorizontalDeg
+    AltName="Pulse Armor Guard - Horizontal Direction" 
+    Wiki="The horziontal direction of pulse armor, centered on the guard direction. In degrees." />
+    
+    <paGuardRangeVerticalDeg
+    AltName="Pulse Armor Guard - Vertical Direction" 
+    Wiki="The vertical direction of pulse armor, centered on the guard direction. In degrees." />
+    
+    <paTurnOnSfxId
+    AltName="Pulse Armor: Particle ID (Deployed)"
+    Wiki="The SFX ID to use for Pulse Armor when deployed." 
+    ParticleAlias="" />
+    
+    <paTurnOnSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Deployed)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when deployed." 
+    ParticleAlias="" />
+    
+    <paOnSfxId
+    AltName="Pulse Armor: Particle ID (Continuous)"
+    Wiki="The SFX ID to use for Pulse Armor when is active." 
+    ParticleAlias="" />
+    
+    <paOnSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Continuous)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when is active." 
+    ParticleAlias="" />
+    
+    <paTurnOffSfxId
+    AltName="Pulse Armor: Particle ID (Removed)"
+    Wiki="The SFX ID to use for Pulse Armor when is removed." 
+    ParticleAlias="" />
+    
+    <paTurnOffSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Removed)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when is removed." 
+    ParticleAlias="" />
+    
+    <paBreakdownSfxId
+    AltName="Pulse Armor: Particle ID (Weakened)"
+    Wiki="The SFX ID to use for Pulse Armor when is being destroyed." 
+    ParticleAlias="" />
+    
+    <paBreakdownSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Weakened)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when is being destroyed." 
+    ParticleAlias="" />
+    
+    <paBrokenSfxId
+    AltName="Pulse Armor: Particle ID (Broken)"
+    Wiki="The SFX ID to use for Pulse Armor when is destroyed." 
+    ParticleAlias="" />
+    
+    <paBrokenSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Broken)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when is destroyed." 
+    ParticleAlias="" />
+    
+    <paRecoverSfxId
+    AltName="Pulse Armor: Particle ID (Healing)"
+    Wiki="The SFX ID to use for Pulse Armor when is healing." 
+    ParticleAlias="" />
+    
+    <paRecoverSfxDmypoly
+    AltName="Pulse Armor: Dummy Polygon ID (Healing)"
+    Wiki="The dummy polygon ID to use for the particle for the Pulse Armor when is healing." 
+    ParticleAlias="" />
+    
+    <paDefSeMaterial 
+    AltName="Pulse Armor - Defense Presentation: Sound" 
+    Wiki="Used for sounds when guarding with pulse armor." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <paDefSfxMaterial 
+    AltName="Pulse Armor - Defence Presentation: Particles" 
+    Wiki="The particles used when guarding with pulse armor." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <guardBaseDmypolyId
+    AltName="Guard Direction: Dummy Polygon ID"
+    Wiki="The dummy polygon ID used to determine the guard direction reference. -1 is the master position." />
+    
+    <pad6_1
+    AltName=""
+    Padding="" />
+    
+    <isHandEquipForcePurgeEnable
+    AltName="Allow Forced Weapon Purge via TAE"
+    Wiki="If ON, allowed forcef weapon purge for current weapon via TAE."
+    IsBool="" />
+    
+    <pad6_5_bit
+    AltName=""
+    Padding="" />
+    
+    <pad6_6
+    AltName=""
+    Padding="" />
+    
+    <guardDirectionHorizontalDeg
+    AltName="Guard Direction: Horizontal Angle"
+    Wiki="The horizontal angle of the guard action for this weapon. In degrees." />
+    
+    <guardDirectionVerticalDeg
+    AltName="Guard Direction: Vertical Angle"
+    Wiki="The vertical angle of the guard action for this weapon. In degrees." />
+    
+    <guardRangeHorizontalDeg
+    AltName="Guard Range: Horizontal Angle"
+    Wiki="The horizontal range of the guard action for this weapon. Range centered on the guard direction. In degrees." />
+    
+    <guardRangeVerticalDeg
+    AltName="Guard Range: Vertical Angle"
+    Wiki="The vertical range of the guard action for this weapon. Range centered on the guard direction. In degrees." />
+    
+    <pad05
+    AltName=""
+    Padding="" />
+    
+    <attackActionParamId 
+    AltName="Attack Action ID" 
+    Wiki="The attack action parameters this weapon uses." 
+    Refs="AttackActionParam_PC" />
+    
+    <magazineReloadTimeSec 
+    AltName="Ammunition: Magazine Reload Time" 
+    Wiki="The duration for a complete reload of a magazine. In seconds." />
+    
+    <chargeEndTimeSec 
+    AltName="Duration for Full Charge (Level 1) from None" 
+    Wiki="The time it takes for the weapon's charge gauge to go from 0 to MAX. If it is 0, the charge gauge will reach MAX the moment the charge gauge starts increasing. In seconds" />
+    
+    <chargeReleaseStartTimeSec
+    AltName="Charge Decay Delay"
+    Wiki="The amount of time it takes from not being charged until the charge starts to decrease. -1 means it will not start decreasing no matter how long it takes. In seconds." />
+    
+    <chargeReleaseEndTimeSec
+    AltName="Duration for No Charge from Full"
+    Wiki="The time it takes for the weapon's charge gauge to go from MAX to 0. If it is 0, the charge gauge will become 0 the moment the charge gauge starts decreasing. In seconds." />
+    
+    <physicalShield_HP
+    AltName="Shield: HP"
+    Wiki="The HP value of the shield." />
+    
+    <physicalShield_GuardBaseDmypoly
+    AltName="Shield: Base Guard Dummy Polygon ID"
+    Wiki="The base dummy polygon ID to use when guarding." />
+    
+    <physicalShield_NeutralDamageCutRate
+    AltName="Shield Absorption %: Kinetic"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <physicalShield_SlashDamageCutRate
+    AltName="Shield Absorption %: Slash"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_BlowDamageCutRate
+    AltName="Shield Absorption %: Strike"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_ThrustDamageCutRate
+    AltName="Shield Absorption %: Thrust"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_MagicDamageCutRate
+    AltName="Shield Absorption %: Energy"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <physicalShield_FireDamageCutRate
+    AltName="Shield Absorption %: Explosive"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <physicalShield_ThunderDamageCutRate
+    AltName="Shield Absorption %: Coral"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <physicalShield_DarkDamageCutRate
+    AltName="Shield Absorption %: Dark"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_BurnGuardResist
+    AltName="Shield Resist: ACS Anomaly"
+    Wiki="The resistance value to use against incoming status damage of the specified type." />
+    
+    <physicalShield_StunGuardResist
+    AltName="Shield Resist: Electric Discharge"
+    Wiki="The resistance value to use against incoming status damage of the specified type." />
+    
+    <physicalShield_HighPlasmaGuardResist
+    AltName="Shield Resist: Plasma"
+    Wiki="The resistance value to use against incoming status damage of the specified type." />
+    
+    <physicalShield_CurseGuardResist
+    AltName="Shield Resist: Curse"
+    Wiki="The resistance value to use against incoming status damage of the specified type." />
+    Obsolete="" />
+    
+    <physicalShield_DepletedUraniumToxicGuardResist
+    AltName="Shield Resist: Depleted Uranium"
+    Wiki="The resistance value to use against incoming status damage of the specified type." />
+    
+    <pad15_1
+    AltName=""
+    Padding="" />
+    
+    <physicalShield_IsWeakA
+    AltName="Shield: Is Type A"
+    Wiki="If ON, the shield is classified as 'Type A' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <physicalShield_IsWeakB
+    AltName="Shield: Is Type B"
+    Wiki="If ON, the shield is classified as 'Type B' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <physicalShield_IsWeakC
+    AltName="Shield: Is Type C"
+    Wiki="If ON, the shield is classified as 'Type C' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <physicalShield_IsWeakD
+    AltName="Shield: Is Type D"
+    Wiki="If ON, the shield is classified as 'Type D' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <physicalShield_IsWeakE
+    AltName="Shield: Is Type E"
+    Wiki="If ON, the shield is classified as 'Type E' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <physicalShield_IsWeakF
+    AltName="Shield: Is Type F"
+    Wiki="If ON, the shield is classified as 'Type F' with regards to the damage adjustment modifiers." 
+    IsBool="" />
+    
+    <pad15
+    AltName=""
+    Padding="" />
+    
+    <physicalShield_DefPhys
+    AltName="Shield Defense: Kinetic"
+    Wiki="The flat value used to reduce incoming damage of the specified type." />
+    
+    <physicalShield_DefSlash
+    AltName="Shield Defense: Slash"
+    Wiki="The flat value used to reduce incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_DefBlow
+    AltName="Shield Defense: Strike"
+    Wiki="The flat value used to reduce incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_DefThrust
+    AltName="Shield Defense: Thrust"
+    Wiki="The flat value used to reduce incoming damage of the specified type." 
+    Obsolete="" />
+    
+    <physicalShield_DefMagic
+    AltName="Shield Defense: Energy"
+    Wiki="The flat value used to reduce incoming damage of the specified type." />
+    
+    <physicalShield_DefFire
+    AltName="Shield Defense: Explosive"
+    Wiki="The flat value used to reduce incoming damage of the specified type." />
+    
+    <physicalShield_DefThunder
+    AltName="Shield Defense: Coral"
+    Wiki="The flat value used to reduce incoming damage of the specified type." />
+    
+    <physicalShield_DefDark
+    AltName="Shield Defense: Dark"
+    Wiki="The flat value used to reduce incoming damage of the specified type."
+    Obsolete="" />
+    
+    <physicalShield_DirectionHorizontalDeg
+    AltName="Shield Guard Direction: Horizontal Angle"
+    Wiki="The horizontal angle of the guard action for this shield. In degrees." />
+    
+    <physicalShield_DirectionVerticalDeg
+    AltName="Shield Guard Direction: Vertical Angle"
+    Wiki="The vertical angle of the guard action for this shield. In degrees." />
+    
+    <physicalShield_RangeHorizontalDeg
+    AltName="Shield Guard Range: Horizontal Angle"
+    Wiki="The horizontal range of the guard action for this shield. Range centered on the guard direction. In degrees." />
+    
+    <physicalShield_RangeVerticalDeg
+    AltName="Shield Guard Range: Vertical Angle"
+    Wiki="The vertical range of the guard action for this shield. Range centered on the guard direction. In degrees." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+    <bulletReload_Direct_ReloadSpeedUPS
+    AltName="Direct Reload: Reload Speed"
+    Wiki="In shots per second. Only applies if the reload type is Direct Reload." />
+    
+    <bulletReload_Direct_ShootAfterDelay
+    AltName="Direct Reload: Post-Fire Delay"
+    Wiki="The delay after firing before you can reload. In seconds. Only applies if the reload type is Direct Reload." />
+    
+    <bulletReload_Direct_EmptyDelay
+    AltName="Direct Reload: Post-Reload Delay"
+    Wiki="The delay after reloading before you can fire again. In seconds. Only applies if the reload type is Direct Reload." />
+    
+    <pad_05_1
+    AltName=""
+    Padding="" />
+    
+    <appropriateType_Melee 
+    AltName="Specialization Type: Melee" IsBool="" 
+    Wiki="If ON, then weappon damage benefits from Melee Specialization modifiers." />
+    
+    <appropriateType_Energy 
+    AltName="Specialization Type: Energy" IsBool="" 
+    Wiki="If ON, then weappon damage benefits from Energy Specialization modifiers." />
+    
+    <pad_05_2
+    AltName=""
+    Padding="" />
+    
+    <chargeLv2EndTimeSec 
+    AltName="Duration for Full Charge (Level 2) from None" 
+    Wiki="The time it takes for the weapon's charge gauge to go from 0 to MAX. If it is 0, the charge gauge will reach MAX the moment the charge gauge starts increasing. In seconds" />
+    
+    <pad_05_3
+    AltName=""
+    Padding="" />
+    
+    <Maker 
+    AltName="Corporation Texture ID" 
+    Wiki="The maker icon to use for this weapon."
+    Enum="EQUIP_MAKER_TYPE" 
+    IconConfig="Logo" />
+    
+    <menuManageCategory 
+    AltName="Equipment Menu Category" 
+    Wiki="The category within the Equipment Menu this weapon appears in." 
+    Refs="EquipmentMenuManageCategoryParam" />
+    
+    <justGuardKeepTimeSec 
+    AltName="Initial Guard: Duration" 
+    Wiki="The duration of the Initial Guard damage mitigation window." />
+    
+    <justGuardReloadTimeSec
+    AltName="Initial Guard: Reactivation Time"
+    Wiki="The time after an Initial Guard when it can be used again. In seconds." />
+    
+    <justGuardImpactCutRatePercent
+    AltName="Initial Guard Absorption %: Impact"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <guardOpenStartSfxId 
+    AltName="Guard - Start: Particle ID"
+    Wiki="The SFX ID to use for the particle that is used for the starting of the Guard action." 
+    ParticleAlias="" />
+    
+    <guardOpenStartSfxDmyId 
+    AltName="Guard - Start: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is used for the starting of the Guard action." />
+    
+    <guardOpenStaySfxDmyId 
+    AltName="Guard - Persistent: Particle ID"
+    Wiki="The SFX ID to use for the particle that is used for the persistent Guard action." 
+    ParticleAlias="" />
+    
+    <guardOpenStaySfxId 
+    AltName="Guard - Persistent: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is used for the persistent Guard action." />
+    
+    <guardOpenEndSfxId 
+    AltName="Guard - End: Particle ID"
+    Wiki="The SFX ID to use for the particle that is used for the ending of the Guard action." 
+    ParticleAlias="" />
+    
+    <guardOpenEndSfxDmyId 
+    AltName="Guard - End: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is used for the ending of the Guard action." />
+    
+    <guardInitOpenStartSfxId 
+    AltName="Initial Guard - Start: Particle ID"
+    Wiki="The SFX ID to use for the particle that is used for the starting of the Guard action." 
+    ParticleAlias="" />
+    
+    <guardInitOpenStartDmyId 
+    AltName="Initial Guard - Start: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is used for the starting of the Guard action." />
+    
+    <guardInitOpenStaySfxId 
+    AltName="Initial Guard - Persistent: Particle ID"
+    Wiki="The SFX ID to use for the particle that is used for the persistent Guard action." 
+    ParticleAlias="" />
+    
+    <guardInitOpenStayDmyId 
+    AltName="Initial Guard - Persistent: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the particle that is used for the persistent Guard action." />
+    
+    <impactPaGuardCutRate
+    AltName="Pulse Armor Guard Absorption %"
+    Wiki="The absorption multiplier to apply to incoming damage of the specified type." />
+    
+    <justGuardCondTiming
+    AltName="Initial Guard Condition Timing"
+    Wiki="During a Guard action, what timing is used for the Initial Guard window." 
+    Enum="EQUIP_JUST_GUARD_TIMING_TYPE" />
+    
+    <pad04_5
+    AltName=""
+    Padding="" />
+    
+    <paGaugeMax
+    AltName="Pulse Armor: Gauge Maximum"
+    Wiki="The maximum value for the gauge. In points." />
+    
+    <paRecoverGaugePoint
+    AltName="Pulse Armor: Gauge Recovery Value"
+    Wiki="The value at which Pulse Armor can be used again after it has collapsed." />
+    
+    <paGaugeRecoverPerSec
+    AltName="Pulse Armor: Gauge Recovery Rate"
+    Wiki="The number of gauge points restored every second." />
+    
+    <paEmerGaugeRecoverPointPerSec
+    AltName="Terminal Armor: Gauge Recovery Rate"
+    Wiki="The number of gauge points restored every second for Terminal Armor." />
+    
+    <paGaugeRecoverDelayTimeSec
+    AltName="Pulse Armor: Gauge Recovery Delay"
+    Wiki="The delay after gauge decreases after which gauge recovery begins. In seconds." />
+    
+    <paGaugeRecoverEmerDelayTimeSec
+    AltName="Terminal Armor: Gauge Recovery Delay"
+    Wiki="The delay after gauge decreases after which gauge recovery begins. In seconds." />
+    
+    <consumeEN_Charging
+    AltName="Weapon: Energy Consumption (when Charging)"
+    Wiki="The energy consumption per second of this weapon when charging a shot." />
+    
+    <pad04_2
+    AltName=""
+    Padding="" />
+    
+    <scanAngle 
+    AltName="Scan: Angle" 
+    Wiki="The angle to use when scanning. In degrees." />
+    
+    <scanDist 
+    AltName="Scan: Distance" 
+    Wiki="The distance to use when scanning. In metres." />
+    
+    <scanTime 
+    AltName="Scan: Duration" 
+    Wiki="The duration of a scan. In seconds." />
+    
+    <scanType
+    AltName="Scan: Target Update Type"
+    Wiki="The update behavior type when scanning." 
+    Enum="SCAN_TARGET_UPDATE_TYPE" />
+    
+    <pad04_3
+    AltName=""
+    Padding="" />
+    
+    <waitTimeForShoot
+    AltName="Shoot Fire Delay"
+    Wiki="The delay before a shot is fired, in seconds. For behaviors, the value is multiplied by 1/30 and used as the number of seconds." />
+    
+    <waitTimeForChargeShoot
+    AltName="Shoot Fire Delay (when Charged)"
+    Wiki="The delay before a charged shot is fired, in seconds. For behaviors, the value is multiplied by 1/30 and used as the number of seconds." />
+    
+    <paOpen_PaDecayCutRate
+    AltName="Pulse Armor Deployment: Absorption %"
+    Wiki="The absorption rate to use upon the deployment of Pulse Armor." />
+    
+    <paOpen_PerfStayTimeSec
+    AltName="Pulse Armor Deployment: Stay Duration"
+    Wiki="The time to continue the deployment state after Pulse Armor usage. In seconds." />
+    
+    <paOpen_PerfRecastTimeSec
+    AltName="Pulse Armor Deployment: Recast Cooldown"
+    Wiki="The time to before Pulse Armor use can occur again after a deployment. In seconds." />
+    
+    <paOpen_PerfTimeSfxId
+    AltName="Pulse Armor Deployment - Stay: Particle ID"
+    Wiki="The SFX ID used during the Pulse Armor Deployment duration." 
+    ParticleAlias="" />
+    
+    <paOpen_PerfTimeSfxDmyId
+    AltName="Pulse Armor Deployment - Stay: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for displaying the SFX used for Pulse Armor Deployment." />
+    
+    <paOpen_PerfEndSfxId
+    AltName="Pulse Armor Deployment - End: Particle ID"
+    Wiki="The SFX ID used after the Pulse Armor Deployment duration." 
+    ParticleAlias="" />
+    
+    <paOpen_PerfEndSfxDmyId
+    AltName="Pulse Armor Deployment - End: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for displaying the SFX used after the Pulse Armor Deployment duration." />
+    
+    <paOpen_RecastSfxId
+    AltName="Pulse Armor Deployment - Recast: Particle ID"
+    Wiki="The SFX ID used for the Pulse Armor Deployment recast." 
+    ParticleAlias="" />
+    
+    <paOpen_RecastSfxDmyId
+    AltName="Pulse Armor Deployment - Recast: Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for the SFX used for the Pulse Armor Deployment recast." />
+
+    <pad04_4
+    AltName=""
+    Padding="" />
+    
+    <paGaugeOpenSubPointPerSec
+    AltName="Pulse Armor Deployment: Gauge Recovery Rate"
+    Wiki="The number of gauge points restored every second for Pulse Armor after deployment after reaching 0." />
+    
+    <pad06
+    AltName=""
+    Padding="" />
+    
+    <bulletReloadType
+    AltName="Bullet Reload Type"
+    Wiki="The type of bullet reloading this weapon uses."
+    Enum="BULLET_RELOAD_TYPE" />
+    
+    <guardImpactCutRatePercent
+    AltName="Guard Absorption %: Impact"
+    Wiki="The absorption to apply to damage of the specified type when this weapon is guarding." />
+    
+    <bPaOpenGaugeRecoverDelay
+    AltName="Apply Pulse Armor Gauge Recovery Delay after Deployment"
+    Wiki="If ON, then the gauge recovery delay is applied after pulse armor is deployed." 
+    IsBool="" />
+    
+    <pad07
+    AltName=""
+    Padding="" />
+    
+    <paOpenGaugeRecoverScale
+    AltName="Pulse Armor Deployment: Gauge Recovery Speed"
+    Wiki="The speed multiplier to apply to gauge recovery during pulse armor deployment." />
+    
+    <computed_f00
+    AltName="Menu Display - Value 0"
+    Wiki="Value for menu display only." />
+    
+    <computed_f01
+    AltName="Menu Display - Value 1"
+    Wiki="Value for menu display only." />
+    
+    <computed_f02
+    AltName="Menu Display - Value 2"
+    Wiki="Value for menu display only." />
+    
+    <computed_f03
+    AltName="Menu Display - Value 3"
+    Wiki="Value for menu display only." />
+    
+    <computed_f04
+    AltName="Menu Display - Value 4"
+    Wiki="Value for menu display only." />
+    
+    <computed_f05
+    AltName="Menu Display - Value 5"
+    Wiki="Value for menu display only." />
+    
+    <computed_f06
+    AltName="Menu Display - Value 6"
+    Wiki="Value for menu display only." />
+    
+    <computed_f07
+    AltName="Menu Display - Value 7"
+    Wiki="Value for menu display only." />
+    
+    <computed_f08
+    AltName="Menu Display - Value 8"
+    Wiki="Value for menu display only." />
+    
+    <computed_f09
+    AltName="Menu Display - Value 9"
+    Wiki="Value for menu display only." />
+    
+    <computed_f10
+    AltName="Menu Display - Value 10"
+    Wiki="Value for menu display only." />
+    
+    <computed_f11
+    AltName="Menu Display - Value 11"
+    Wiki="Value for menu display only." />
+    
+    <computed_f12
+    AltName="Menu Display - Value 12"
+    Wiki="Value for menu display only." />
+    
+    <computed_f13
+    AltName="Menu Display - Value 13"
+    Wiki="Value for menu display only." />
+    
+    <computed_f14
+    AltName="Menu Display - Value 14"
+    Wiki="Value for menu display only." />
+    
+    <computed_f15
+    AltName="Menu Display - Value 15"
+    Wiki="Value for menu display only." />
+    
+    <computed_f16
+    AltName="Menu Display - Value 16"
+    Wiki="Value for menu display only." />
+    
+    <computed_f17
+    AltName="Menu Display - Value 17"
+    Wiki="Value for menu display only." />
+    
+    <computed_f18
+    AltName="Menu Display - Value 18"
+    Wiki="Value for menu display only." />
+    
+    <computed_f19
+    AltName="Menu Display - Value 19"
+    Wiki="Value for menu display only." />
+    
+    <computed_f20
+    AltName="Menu Display - Value 20"
+    Wiki="Value for menu display only." />
+    
+    <computed_f21
+    AltName="Menu Display - Value 21"
+    Wiki="Value for menu display only." />
+    
+    <computed_f22
+    AltName="Menu Display - Value 22"
+    Wiki="Value for menu display only." />
+    
+    <computed_f23
+    AltName="Menu Display - Value 23"
+    Wiki="Value for menu display only." />
+    
+    <computed_f24
+    AltName="Menu Display - Value 24"
+    Wiki="Value for menu display only." />
+    
+    <computed_f25
+    AltName="Menu Display - Value 25"
+    Wiki="Value for menu display only." />
+    
+    <computed_f26
+    AltName="Menu Display - Value 26"
+    Wiki="Value for menu display only." />
+    
+    <computed_f27
+    AltName="Menu Display - Value 27"
+    Wiki="Value for menu display only." />
+    
+    <computed_f28
+    AltName="Menu Display - Value 28"
+    Wiki="Value for menu display only." />
+    
+    <computed_f29
+    AltName="Menu Display - Value 29"
+    Wiki="Value for menu display only." />
+    
+    <computed_f30
+    AltName="Menu Display - Value 30"
+    Wiki="Value for menu display only." />
+    
+    <computed_f_last
+    AltName="Menu Display - Value 31"
+    Wiki="Value for menu display only." />
+    
+    <HdPadRumble_Id
+    AltName="Vibration ID on Hand Switch"
+    Wiki="The virbration ID to play when switching weapon hand. Specified value is for the left, +1 to value for the right." 
+    Enum="EQUIP_HD_RUMBLE_TYPE" />
+    
+    <pad08
+    AltName=""
+    Padding="" />
+    
+    <physicalShield_guardImpactCutRatePercent 
+    AltName="Guard Absorption %: Impact" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Guard." />
+    
+    <physicalShield_justGuardImpactCutRatePercent 
+    AltName="Initial Guard Absorption %: Impact" 
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs an Initial Guard." />
+    
+    <physicalShield_justGuardKeepTimeSec
+    AltName="Initial Guard: Duration"
+    Wiki="The duration of the Initial Guard window. In seconds." />
+    
+    <physicalShield_justGuardReloadTimeSec
+    AltName="Initial Guard: Cooldown"
+    Wiki="The cooldown before the Initial Guard window is active again after usage. In seconds." />
+    
+    <shootRboundParamOffset
+    AltName="Recoil Parameter Offset"
+    Wiki="The ID offset value to use when referencing recoil parameters." />
+    
+    <pad09
+    AltName=""
+    Padding="" />
+    
+    <isNpacNoConsumeStorageBullet
+    AltName="Is Ammunition Consumed by NPC Usage"
+    Wiki="Prevent usage of ammunition if weapon is used by a NPC AC." 
+    IsBool="" />
+    
+    <isPulseSpAtkGuard
+    AltName="Is Guard affected by Pulse Attacks"
+    Wiki="Determines if guards from this weapon are affected by pulse attacks."
+    IsBool="" />
+    
+    <isHeavyWeightAddAnim
+    AltName="Apply Heavyweight Additive Animation"
+    Wiki="Is a heavyweight additive animation used for this weapon. Affects hand weapons only."
+    IsBool="" />
+    
+    <unk54c_3
+    AltName="Unknown: 54C_3"
+    Wiki="" 
+    IsBool="" />
+    
+    <pad25
+    AltName=""
+    Padding="" />
+    
+    <pad_26
+    AltName=""
+    Padding="" />
+    
+    <stayPa_Radius
+    AltName="Pulse Protection: Radius"
+    Wiki="The radius of the Pulse Protection bubble." />
+    
+    <stayPa_MaxHp
+    AltName="Pulse Protection: Max HP"
+    Wiki="The HP value of the Pulse Protection bubble." />
+    
+    <stayPa_AddHpPerSec
+    AltName="Pulse Protection: HP Recovery Speed"
+    Wiki="The recovery speed for the HP of the Pulse Protection bubble. In points per second." />
+    
+    <stayPa_DefMaterialSfx
+    AltName="Pulse Protection: Defence Presentation - Particles"
+    Wiki="The particles used for impacts upon the Pulse Protection bubble." 
+    Enum="WEP_MATERIAL_DEF_SFX" />
+    
+    <stayPa_DefMaterialSe 
+    AltName="Pulse Protection: Defence Presentation - Sound" 
+    Wiki="The sound used for impacts upon the Pulse Protection bubble." 
+    Enum="WEP_MATERIAL_DEF" />
+    
+    <stayPa_LaunchSfxId
+    AltName="Pulse Protection: Launch - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is deploying." />
+    
+    <stayPa_LaunchKeepSfxId
+    AltName="Pulse Protection: Persistent - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is deployed." />
+    
+    <stayPa_BreakSfxId
+    AltName="Pulse Protection: Collapsed - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is destroyed." />
+    
+    <stayPa_ReleaseSfxId
+    AltName="Pulse Protection: Cancelled - Particle ID"
+    Wiki="The SFX ID to use when the Pulse Protection bubble is cancelled." />
+    
+    <residualImpactSubRate_Guard
+    AltName="Guard Absorption %: Accumulative Impact"
+    Wiki="The multiplier to apply to damage of the specified type when guarding." />
+    
+    <backunitAjustHeight
+    AltName="Shoulder Weapon Height Adjustment"
+    Wiki="The amount of vertical adjustment to make for an equipped shoulder weapon." />
+    
+    <physJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Kinetic"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <magJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Energy"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <fireJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Explosive"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <thunJustGuardCutRate
+    AltName="Initial Guard - Absorption %: Coral"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <burnJustGuardResist
+    AltName="Initial Guard - Absorption %: ACS Anomaly"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <stunJustGuardResist
+    AltName="Initial Guard - Absorption %: Electric Discharge"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <highPlasmaJustGuardResist
+    AltName="Initial Guard - Absorption %: Plasma"
+    Wiki="The absorption to apply to damage of the specified type when this weapon performs a Initial Guard." />
+    
+    <pad_27
+    AltName=""
+    Padding="" />
+    
+    <heat_SubValuePerSec 
+    AltName="Heat Reduction Speed" 
+    Wiki="The speed at which heat buildup is reduced. In points per second." />
+    
+    <heat_OverHeatSubValueScalePercent 
+    AltName="Heat Reduction Rate after Overheating" 
+    Wiki="The percentage at which heat buildup is reduced if the weapon overheated." />
+    
+    <heat_ShootDelay 
+    AltName="Heat Reduction Delay after Shooting"
+    Wiki="The delay after shooting before weapon heat can start being reduced. In seconds." />
+    
+    <heat_OverHeatShootDelay 
+    AltName="Heat Reduction Delay after Shooting if Overheated"
+    Wiki="The delay after shooting before weapon heat can start being reduced. In seconds." />
+    
+    <heat_OverHeatEndPoint
+    AltName="Overheat Release Value"
+    Wiki="The heat value at which overheating is cancelled." />
+    
+    <refId 
+    AltName="Weapon Inheritance ID" 
+    Wiki="Inherits fields from referenced weapon if set." 
+    Refs="EquipParamWeapon" />
+    
+    <menu_SrcBehaviorId
+    AltName="Assembly Menu: Behavior Judgment ID"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <menu_SrcGenerationAtkPower
+    AltName="Assembly Menu: Attack Power"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkCountCondType
+    AltName="Assembly Menu: Attack Count Type"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationAtkCount
+    AltName="Assembly Menu: Attack Count"
+    Wiki="The source of the attack count stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationIntervalChild
+    AltName="Assembly Menu: Attack Interval"
+    Wiki="The source of the attack interval stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SfxFakeShootCount
+    AltName="Assembly Menu: Fake Shot Count in Attack Particle"
+    Wiki="The number of 'fake' shots used in the particle that represents the attack." />
+    
+    <menu_SrcGenerationDirectHit
+    AltName="Assembly Menu: Direct Hit Correction"
+    Wiki="The source of the direct hit correction stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationImpact
+    AltName="Assembly Menu: Impact"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact
+    AltName="Assembly Menu: Accumulative Impact"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationPaInterference
+    AltName="Assembly Menu: Pulse Armor Interference"
+    Wiki="The source of the pulse armor interference stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationHoming
+    AltName="Assembly Menu: Homing Strength"
+    Wiki="The source of the homing strength stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationExplosion
+    AltName="Assembly Menu: Blast Radius"
+    Wiki="The source of the blast radius stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRicocheted
+    AltName="Assembly Menu: Ricochet Distance"
+    Wiki="The source of the ricochet distance stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRange
+    AltName="Assembly Menu: Range Limit"
+    Wiki="The source of the range limit stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_ShowConsumeBullet
+    AltName="Assembly Menu: Display Ammunition Consumption"
+    Wiki="If ON, the ammunition consumption per shot is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat
+    AltName="Assembly Menu: Display Heat Addition"
+    Wiki="If ON, the heat addition per shot is displayed."
+    IsBool="" />
+    
+    <menu_AtkContTimeType
+    AltName="Assembly Menu: Attack Duration Type"
+    Wiki="The source for the attack duration type used for this weapon's statistics."
+    Enum="EQUIP_ATK_CONT_TIME_TYPE" />
+    
+    <menu_SrcGenerationAtkContTime
+    AltName="Assembly Menu: Attack Duration"
+    Wiki="The source of the attack duration stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_MeleeComboCount
+    AltName="Assembly Menu: Melee Combo Count"
+    Wiki="The source of the number of attacks in a melee combo used for this weapon's statistics." />
+    
+    <menu_AtkPowerCondType
+    AltName="Assembly Menu: Attack Power Judgement Type"
+    Wiki="The source for the attack power judgement type used for this weapon's statistics."
+    Enum="EQUIP_ATK_POWER_COND_TYPE" />
+    
+    <menu_SrcBehaviorId_Charge
+    AltName="Assembly Menu: Behavior Judgment ID (Charged)"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <menu_SrcGenerationAtkPower_Charge
+    AltName="Assembly Menu: Attack Power (Charged)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkCountCondType_Charge
+    AltName="Assembly Menu: Attack Count Type (Charged)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationAtkCount_Charge
+    AltName="Assembly Menu: Attack Count (Charged)"
+    Wiki="The source of the attack count stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType_Charge
+    AltName="Assembly Menu: Attack Power Judgement Type (Charged)"
+    Wiki="The source for the attack power judgement type used for this weapon's statistics."
+    Enum="EQUIP_ATK_POWER_COND_TYPE" />
+    
+    <menu_SfxFakeShootCount_Charge
+    AltName="Assembly Menu: Fake Shot Count in Attack Particle (Charged)"
+    Wiki="The number of 'fake' shots used in the particle that represents the attack." />
+    
+    <menu_SrcGenerationDirectHit_Charge
+    AltName="Assembly Menu: Direct Hit Correction (Charged)"
+    Wiki="The source of the direct hit correction stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationImpact_Charge
+    AltName="Assembly Menu: Impact (Charged)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact_Charge
+    AltName="Assembly Menu: Accumulative Impact (Charged)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationPaInterference_Charge
+    AltName="Assembly Menu: Pulse Armor Interference (Charged)"
+    Wiki="The source of the pulse armor interference stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationHoming_Charge
+    AltName="Assembly Menu: Homing Strength (Charged)"
+    Wiki="The source of the homing strength stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationExplosion_Charge
+    AltName="Assembly Menu: Blast Radius (Charged)"
+    Wiki="The source of the blast radius stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRicocheted_Charge
+    AltName="Assembly Menu: Ricochet Distance (Charged)"
+    Wiki="The source of the ricochet distance stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationRange_Charge
+    AltName="Assembly Menu: Range Limit (Charged)"
+    Wiki="The source of the range limit stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_ShowConsumeBullet_Charge
+    AltName="Assembly Menu: Display Ammunition Consumption (Charged)"
+    Wiki="If ON, the ammunition consumption per shot is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat_Charge
+    AltName="Assembly Menu: Display Heat Addition (Charged)"
+    Wiki="If ON, the heat addition per shot is displayed."
+    IsBool="" />
+    
+    <menu_AtkContTimeType_Charge
+    AltName="Assembly Menu: Attack Duration Type (Charged)"
+    Wiki="The source for the attack duration type used for this weapon's statistics."
+    Enum="EQUIP_ATK_CONT_TIME_TYPE" />
+    
+    <menu_SrcGenerationAtkContTime_Charge
+    AltName="Assembly Menu: Attack Duration (Charged)"
+    Wiki="The source of the attack duration stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcChargeTime
+    AltName="Assembly Menu: Charge Time"
+    Wiki="The source of the charge time stat used for this weapon's statistics."
+    Enum="EQUIP_CHARGE_TIME_SRC_TYPE" />
+    
+    <pad_31
+    AltName=""
+    Padding="" />
+    
+    <menu_SrcBehaviorId_Melee
+    AltName="Assembly Menu: Behavior Judgment ID (Melee)"
+    Wiki="The behavior judgment ID to use melee attack for this weapon's statistics." />
+    
+    <menu_ShowConsumeBullet_Melee
+    AltName="Assembly Menu: Display Ammunition Consumption (Melee)"
+    Wiki="If ON, the ammunition consumption per melee attack is displayed."
+    IsBool="" />
+    
+    <menu_ShowAddHeat_Melee
+    AltName="Assembly Menu: Display Heat Addition (Melee)"
+    Wiki="If ON, the heat addition per melee attack is displayed."
+    IsBool="" />
+    
+    <menu_HelpMovieID 
+    AltName="Assembly Menu: Demostration Video ID" 
+    Wiki="Refers to the bink video filename in /Game/movie/" 
+    MovieAlias="" />
+    
+    <isMakeCollisionPa
+    AltName="Pulse Armor: Generate Sphere Collision"
+    Wiki="If ON, the pulse armor sphere will generate collision."
+    IsBool="" />
+    
+    <menu_IntervalMulAtkPower
+    AltName="Assembly Menu: Is Attack Power Multiplied by Interval Count"
+    Wiki="If ON, the attack power stat is multiplied by the bullet interval count."
+    IsBool="" />
+    
+    <menu_KrswShoot
+    AltName="Assembly Menu: Is 2nd stage shot for KARASAWA"
+    Wiki="If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+    IsBool="" />
+    
+    <menu_KrswShoot_Charge
+    AltName="Assembly Menu: Is 2nd stage shot for KARASAWA (Charged)"
+    Wiki="If ON, this weapon is 2nd stage shot for the KARASAWA weapon."
+    IsBool="" />
+    
+    <pad32
+    AltName=""
+    Padding="" />
+    
+    <pad_33
+    AltName=""
+    Padding="" />
+    
+    <menu_AtkPowSfxFakeShootCount
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <makeCollisionPaBaesDmypolyId
+    AltName="Pulse Armor: Collision - Base Dummy Polygon ID"
+    Wiki="The dummy polygon ID to use for generating the Pulse Armor spherical collision. -1 is master position." />
+    
+    <makeCollisionPaOpenInitRadius
+    AltName="Pulse Armor: Collision - Initial Radius"
+    Wiki="The initial radius of the spherical collision upon generation." />
+    
+    <MakeCollisionPaOpenRadius
+    AltName="Pulse Armor: Collision - Final Radius"
+    Wiki="The final radius of the spherical collision after expansion." />
+    
+    <menu_AtkPowSfxFakeShootCount_Charge
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (Charged)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcGenerationAtkPower2
+    AltName="Assembly Menu: Attack Power (2nd Stage KARASAWA)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType2
+    AltName="Assembly Menu: Attack Count Type (2nd Stage KARASAWA)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationImpact2
+    AltName="Assembly Menu: Impact (2nd Stage KARASAWA)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact2
+    AltName="Assembly Menu: Accumulative Impact (2nd Stage KARASAWA)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowSfxFakeShootCount2
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (2nd Stage KARASAWA)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcGenerationAtkPower_Charge2
+    AltName="Assembly Menu: Attack Power (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the attack power stat used for this weapon's statistics." 
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowerCondType_Charge2
+    AltName="Assembly Menu: Attack Count Type (Charged, 2nd Stage KARASAWA)"
+    Wiki="The type of determination used for attack count for this weapon's statistics."
+    Enum="EQUIP_ATK_COUNT_COND_TYPE" />
+    
+    <menu_SrcGenerationImpact_Charge2
+    AltName="Assembly Menu: Impact (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_SrcGenerationResidualImpact_Charge2
+    AltName="Assembly Menu: Accumulative Impact (Charged, 2nd Stage KARASAWA)"
+    Wiki="The source of the accumulative impact stat used for this weapon's statistics."
+    Enum="EQUIP_GENERATION_TYPE" />
+    
+    <menu_AtkPowSfxFakeShootCount_Charge2
+    AltName="Assembly Menu: Number of Fake Shots for Attack Power (Charged, 2nd Stage KARASAWA)"
+    Wiki="The number of fake shots used in the SFX to apply to attack power stat." />
+    
+    <menu_SrcBehaviorId2_StrongMelee
+    AltName="Assembly Menu: Behavior Judgment ID (Melee Heavy Attack)"
+    Wiki="The behavior judgment ID to use for this weapon's statistics." />
+    
+    <pad_end02
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Single Attack" />
+      <Option Value="2" Name="Continuous Attack" />
+      <Option Value="3" Name="Guard" />
+      <Option Value="4" Name="Melee Attack" />
+      <Option Value="5" Name="Charge Melee Attack" />
+      <Option Value="6" Name="Charge Shoot Attack" />
+      <Option Value="7" Name="Fast Single Attack" />
+    </Enum>  
+    <Enum Name="WEAPON_CATEGORY" type="u8">
+        <Option Value="0" Name="Dagger" />
+        <Option Value="1" Name="Straight Sword" />
+        <Option Value="2" Name="Thrusting Sword" />
+        <Option Value="3" Name="Curved Sword" />
+        <Option Value="4" Name="Axe" />
+        <Option Value="5" Name="Hammer" />
+        <Option Value="6" Name="Spear" />
+        <Option Value="7" Name="Halberd" />
+        <Option Value="8" Name="Spell Tool" />
+        <Option Value="9" Name="Fist" />
+        <Option Value="10" Name="Bow" />
+        <Option Value="11" Name="Crossbow" />
+        <Option Value="12" Name="Shield" />
+        <Option Value="13" Name="Arrow" />
+        <Option Value="14" Name="Bolt" />
+        <Option Value="15" Name="Rifle" />
+        <Option Value="16" Name="Shotgun" />
+        <Option Value="17" Name="Machine Gun" />
+        <Option Value="18" Name="Bazooka" />
+        <Option Value="19" Name="Handgun" />
+        <Option Value="20" Name="Suna" />
+        <Option Value="21" Name="Cannon" />
+        <Option Value="22" Name="Missile" />
+        <Option Value="23" Name="Bayonet" />
+        <Option Value="24" Name="Laser Rifle" />
+        <Option Value="25" Name="Laser Cannon" />
+        <Option Value="26" Name="Rocket" />
+        <Option Value="255" Name="Disabled" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Arms" />
+        <Option Value="2" Name="Body" />
+        <Option Value="3" Name="Face" />
+        <Option Value="4" Name="Hair" />
+        <Option Value="5" Name="Head" />
+        <Option Value="6" Name="Legs" />
+        <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER" type="u8">
+        <Option Value="0" Name="Unisex (A)" />
+        <Option Value="1" Name="Male only (M)" />
+        <Option Value="2" Name="Female only (F)" />
+        <Option Value="3" Name="Male and Female" />
+        <Option Value="4" Name="Unisex (M)" />
+        <Option Value="5" Name="Enemy only (E)" />
+    </Enum>
+    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Overseer" />
+        <Option Value="2" Name="Rubicon Research Institute" />
+        <Option Value="3" Name="PCA" />
+        <Option Value="4" Name="ALLMIND" />
+        <Option Value="5" Name="Rubiconist" />
+        <Option Value="6" Name="RaD" />
+        <Option Value="7" Name="Arquebus" />
+        <Option Value="8" Name="Schneider" />
+        <Option Value="9" Name="VCPL" />
+        <Option Value="10" Name="Vesper" />
+        <Option Value="11" Name="Balam" />
+        <Option Value="12" Name="Dafeng" />
+        <Option Value="13" Name="Redgun" />
+        <Option Value="14" Name="Unused - 協商" />
+        <Option Value="15" Name="BAWS" />
+        <Option Value="16" Name="Furlong" />
+        <Option Value="17" Name="Takigawa Harmonics" />
+        <Option Value="18" Name="Melinite" />
+        <Option Value="19" Name="Elcano" />
+        <Option Value="20" Name="Arquebus ADD" />
+        <Option Value="102" Name="Unused - RRI(旧)" />
+        <Option Value="104" Name="Unused - オルマイ(本性)" />
+    </Enum>
+    <Enum Name="MENU_CHARGE_STATE_CATEGORY" type="s16">
+        <Option Value="0" Name="Base Charge" />
+        <Option Value="100" Name="Full Charge" />
+        <Option Value="110" Name="Full Charge (Two-Stage)" />
+    </Enum>
+    <Enum Name="TAE_MOTION_CATEGORIES" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="200" Name="BURST RIFLE / LINEAR RIFLE" />
+        <Option Value="201" Name="BURST ASSAULT RIFLE / ASSAULT RIFLE / HEAVY MACHINE GUN" />
+        <Option Value="202" Name="BURST MACHINE GUN / MACHINE GUN" />
+        <Option Value="203" Name="GATLING GUN" />
+        <Option Value="204" Name="BAZOOKA" />
+        <Option Value="205" Name="SHOTGUN" />
+        <Option Value="206" Name="GRENADE LAUNCHER" />
+        <Option Value="207" Name="NEEDLE GUN / BURST HANDGUN / BOMB LAUNCHER / STUN GUN" />
+        <Option Value="208" Name="HANDGUN" />
+        <Option Value="209" Name="MISSILE LAUNCHER / SIEGE MISSILE LAUNCHER" />
+        <Option Value="210" Name="SPLIT MISSILE LAUNCHER / PULSE MISSILE LAUNCHER" />
+        <Option Value="211" Name="LASER HANDGUN / CORAL RIFLE / LASER RIFLE / MULTI ENERGY RIFLE" />
+        <Option Value="212" Name="PLASMA RIFLE / CORAL RIFLE" />
+        <Option Value="213" Name="PULSE GUN" />
+        <Option Value="214" Name="FLAMETHROWER" />
+        <Option Value="215" Name="LASER SHOTGUN" />
+        <Option Value="250" Name="LIGHT WAVE BLADE / CORAL OSCILLATOR" />
+        <Option Value="251" Name="CORAL OSCILLATOR" />
+        <Option Value="252" Name="PLASMA THROWER" />
+        <Option Value="253" Name="PILE BUNKER" />
+        <Option Value="254" Name="PULSE BLADE" />
+        <Option Value="255" Name="LASER BLADE" />
+        <Option Value="256" Name="LASER SLICER" />
+        <Option Value="257" Name="LASER DAGGER" />
+        <Option Value="258" Name="LASER LANCE" />
+        <Option Value="259" Name="CHAINSAW" />
+        <Option Value="260" Name="STUN BATON" />
+        <Option Value="261" Name="EXPLOSIVE THROWER" />
+        <Option Value="262" Name="FISTS" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_ATK" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="1" Name="Kinetic" />
+      <Option Value="2" Name="Energy" />
+      <Option Value="3" Name="Explosive" />
+      <Option Value="4" Name="Ice" />
+      <Option Value="5" Name="Green" />
+      <Option Value="6" Name="None" />
+      <Option Value="7" Name="Dmy1" />
+      <Option Value="8" Name="Dmy2" />
+      <Option Value="9" Name="Dmy3" />
+      <Option Value="10" Name="Dmy4" />
+      <Option Value="11" Name="Coral" />
+      <Option Value="12" Name="Assault Armor" />
+      <Option Value="20" Name="Pulse" />
+      <Option Value="21" Name="Laser" />
+      <Option Value="22" Name="Plasma" />
+      <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Body: Cloth" />
+        <Option Value="107" Name="Shield: Plamsa" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+        <Option Value="0" Name="Do not overwrite" />
+        <Option Value="1" Name="None" />
+        <Option Value="2" Name="Flame" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Egg" />
+        <Option Value="6" Name="Electric Shock" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystallization" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="DURABILITY_DIVERGENCE_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Right-hand only" />
+        <Option Value="2" Name="Left-hand only" />
+        <Option Value="3" Name="Two-hand only" />
+        <Option Value="4" Name="Right and two-hand" />
+        <Option Value="5" Name="Right-hand and left-hand" />
+        <Option Value="6" Name="Left-hand and two-hand" />
+        <Option Value="7" Name="Right-hand, left-hand and two-hand" />
+    </Enum>
+    <Enum Name="WEP_BASE_CHANGE_CATEGORY" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="STR Correction" />
+        <Option Value="2" Name="DEX Correction" />
+        <Option Value="3" Name="STR/DEX Correction" />
+        <Option Value="4" Name="Magic + INT Correction" />
+        <Option Value="5" Name="MP Recovery" />
+        <Option Value="6" Name="Flame" />
+        <Option Value="7" Name="Flame + INT/FTH Correction" />
+        <Option Value="8" Name="Lighting + FTH Correction" />
+        <Option Value="9" Name="Dark" />
+        <Option Value="10" Name="Dark + INT/FTH Correction" />
+        <Option Value="11" Name="Poison" />
+        <Option Value="12" Name="Blood" />
+        <Option Value="13" Name="Performance enhancement + Correction Loss" />
+        <Option Value="14" Name="Holy + Regeneration" />
+        <Option Value="15" Name="Performance Weakening + HP Drain when Death" />
+        <Option Value="16" Name="Special" />
+    </Enum>
+    <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="100" Name="Shield: Kinetic" />
+        <Option Value="101" Name="Shield: Strong Kinetic" />
+        <Option Value="102" Name="Shield: Energy" />
+        <Option Value="103" Name="Body: Kinetic" />
+        <Option Value="104" Name="Body: Strong Kinetic" />
+        <Option Value="105" Name="Body: Flesh" />
+        <Option Value="106" Name="Shield: Energy - Initial Guard" />
+        <Option Value="107" Name="Shield: Coral - Initial; Guard" />
+        <Option Value="108" Name="Pulse Armor: Large Energy - White Hit Ripple" />
+        <Option Value="109" Name="Generator: Normal" />
+        <Option Value="110" Name="Generator: Coral" />
+        <Option Value="111" Name="Pulse Armor: Extra-Large Enemy - Coral Hit Ripple" />
+        <Option Value="112" Name="Shield: Coral" />
+        <Option Value="254" Name="Reserve 3" />
+        <Option Value="255" Name="Material 1" />
+    </Enum>
+    <Enum Name="WEP_COLLIDABLE_TYPE" type="u8">
+        <Option Value="0" Name="Disabled" />
+        <Option Value="1" Name="Enabled" />
+        <Option Value="2" Name="Only during Weapon Sheathing" />
+    </Enum>
+    <Enum Name="AUTO_REPLENISH_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Allow Automatic Replenishment: Default to Disabled" />
+        <Option Value="2" Name="Allow Automatic Replenishment: Default to Enabled" />
+    </Enum>
+    <Enum Name="WEAPON_DERIVATION_LEVEL_TYPE" type="u8">
+        <Option Value="0" Name="Basic" />
+        <Option Value="1" Name="Special" />
+    </Enum>
+    <Enum Name="WEP_ENCHANT_SFX_SIZE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Small" />
+        <Option Value="2" Name="Medium" />
+        <Option Value="3" Name="Large" />
+        <Option Value="4" Name="Special" />
+        <Option Value="5" Name="Preliminary Slot 1" />
+        <Option Value="6" Name="Preliminary Slot 2" />
+        <Option Value="7" Name="Preliminary Slot 3" />
+        <Option Value="8" Name="Preliminary Slot 4" />
+        <Option Value="9" Name="Preliminary Slot 5" />
+    </Enum>
+    <Enum Name="SHOULDER_EQUIP_TYPE" type="u8">
+        <Option Value="0" Name="Always Expanded" />
+        <Option Value="1" Name="Stored in Shoulder Bay" />
+    </Enum>
+    <Enum Name="REINFORCE_SHOP_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Weapon" />
+        <Option Value="2" Name="Sorcery" />
+        <Option Value="3" Name="Miracle" />
+        <Option Value="4" Name="Pyromancy" />
+    </Enum>
+    <Enum Name="LOOK_AT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Target" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Camera" />
+    </Enum>  
+    <Enum Name="BULLET_SHOOT_DIR_TYPE" type="u8">
+      <Option Value="0" Name="Dummy Polygon" />
+      <Option Value="1" Name="Top" />
+      <Option Value="2" Name="Dummy Polygon (Ignore Target)" />
+    </Enum>  
+    <Enum Name="ASSEMBLE_MENU_CATEGORY_WEAPON" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="ARM UNIT" />
+        <Option Value="2" Name="BLADE" />
+        <Option Value="3" Name="SHIELD" />
+        <Option Value="4" Name="LEFT BACK UNIT" />
+        <Option Value="5" Name="RIGHT BACK UNIT" />
+        <Option Value="6" Name="CORE EXPANSION" />
+        <Option Value="7" Name="ASSAULT DRIVE" />
+    </Enum>
+    <Enum Name="WEAPON_RIGHT_POSE_TYPE" type="u8">
+      <Option Value="0" Name="Single/Double" />
+      <Option Value="1" Name="Single Trigger only" />
+      <Option Value="2" Name="Double Trigger only" />
+    </Enum>  
+    <Enum Name="WEAPON_LEFT_POSE_TYPE" type="u8">
+      <Option Value="0" Name="Built-in" />
+      <Option Value="1" Name="Double Trigger only" />
+    </Enum>  
+    <Enum Name="FE_EQUIPPANEL_ICON_ID" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Handgun" />
+        <Option Value="2" Name="Shotgun" />
+        <Option Value="3" Name="Rifle" />
+        <Option Value="4" Name="Bazooka" />
+        <Option Value="5" Name="Sniper Rifle" />
+        <Option Value="6" Name="Hand Missile" />
+        <Option Value="7" Name="Melee Weapon" />
+        <Option Value="8" Name="Shield" />
+        <Option Value="9" Name="Missile" />
+        <Option Value="10" Name="Cannon" />
+        <Option Value="11" Name="Grenade" />
+        <Option Value="12" Name="Smoke Grenade" />
+        <Option Value="13" Name="Flare" />
+        <Option Value="14" Name="Other" />
+    </Enum>
+    <Enum Name="EQUIP_JUST_GUARD_TIMING_TYPE" type="u8">
+        <Option Value="0" Name="Before the Initial Guard threshold" />
+        <Option Value="1" Name="After the Initial Guard threshold" />
+    </Enum>
+    <Enum Name="SCAN_TARGET_UPDATE_TYPE" type="u8">
+        <Option Value="0" Name="Constantly Updated" />
+        <Option Value="1" Name="Only at Moment of Use" />
+    </Enum>
+    <Enum Name="BULLET_RELOAD_TYPE" type="u8">
+        <Option Value="0" Name="Cartridge" />
+        <Option Value="1" Name="Direct Loading" />
+    </Enum>
+    <Enum Name="EQUIP_HD_RUMBLE_TYPE" type="u8">
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+    </Enum>
+    <Enum Name="EQUIP_GENERATION_TYPE" type="u8">
+        <Option Value="0" Name="Parent" />
+        <Option Value="1" Name="Child" />
+        <Option Value="2" Name="Secondary Child" />
+        <Option Value="3" Name="Tertiary Child" />
+        <Option Value="4" Name="Previous Generation" />
+        <Option Value="255" Name="None" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_COUNT_COND_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Number of Simultaneous Shots" />
+        <Option Value="2" Name="Number of Consecutive Shots" />
+        <Option Value="3" Name="Number of Locks" />
+        <Option Value="4" Name="Maximum number of bullets generated at specified interval" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_CONT_TIME_TYPE" type="u8">
+        <Option Value="0" Name="Slip" />
+        <Option Value="1" Name="Irradiation" />
+    </Enum>
+    <Enum Name="EQUIP_ATK_POWER_COND_TYPE" type="u8">
+        <Option Value="0" Name="Attack Power only" />
+        <Option Value="1" Name="Attack Power * Number of Simultaneous Shots" />
+        <Option Value="2" Name="Attack Power * Max Number of Multi-Stage Hits" />
+        <Option Value="3" Name="Attack Power * Number of Simultaneous Shots * Max Number of Multi-Stage Hits" />
+    </Enum>
+    <Enum Name="EQUIP_CHARGE_TIME_SRC_TYPE" type="u8">
+        <Option Value="0" Name="1st Stage" />
+        <Option Value="1" Name="2nd Stage" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

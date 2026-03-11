@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for mini-areas. Never used."/>
+  
+  <Field>
+    <areaName
+    AltName="Area Name ID"
+    Wiki="Text ID of the name assigned to this mini-area." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <openEventFlag
+    AltName="Availability Event Flag ID"
+    Wiki="The event flag ID associated with the availability status of this mini-area." 
+    FlagAlias="" />
+    
+    <warningLineStartDisplayDistance
+    AltName="Warning Line: Display Distance Start"
+    Wiki="The distance from the area boundary to start displaying the area boundary warning line. (-1 means no warning line is displayed). In metres." />
+    
+    <warningLineDisplayDistance
+    AltName="Warning Line: Display Distance"
+    Wiki="The distance from the area boundary to display the area boundary warning line at. (-1 means no warning line is displayed). In metres." />
+    
+    <pad_end
+    Padding="" />
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the ground attach adjustment for a jiggle bone."/>
+  
+  <Field>
+    <rotRate
+    AltName="Rotation %"
+    Wiki="The rotation rate when the jiggler bone is attached to the ground." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

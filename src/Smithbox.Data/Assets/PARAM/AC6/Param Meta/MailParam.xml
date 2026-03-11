@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used to display Archive and Mail messages in-game." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding="" />
+  
+    <senderTextID 
+    AltName="Sender Name: Text ID" 
+    Wiki="Found in FMG Entries in Menu Text" />
+    
+    <reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <backImageID 
+    AltName="Background Image ID" 
+    Wiki="The image ID to use for the background." />
+    
+    <attachedFile_reserved 
+    AltName="" 
+    Padding="" />
+    
+    <attachedFile_type 
+    AltName="Attachment Category"
+    Wiki="The attachment type to use for the 'attached file' element." 
+    Enum="MAIL_ATTACHED_FILE_TYPE" />
+    
+    <attachedFile_ID 
+    AltName="Attachment ID" 
+    Wiki="The attachment ID to use for the 'attached file' element data." />
+  
+    <page0_textID 
+    AltName="Page 1: Text ID" 
+    Wiki="The text ID to use for the page 1 text element." 
+    Separator="" />
+    
+    <page0_imageID 
+    AltName="Page 1: Image ID" 
+    Wiki="The image ID to use for the page 1 image element." />
+    
+    <page0_layout 
+    AltName="Page 1: Layout" 
+    Wiki="The position of the page 1 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page0_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page0_blockEffect_0 
+    AltName="Page 1: Block Load ID 1" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_blockEffect_1 
+    AltName="Page 1: Block Load ID 2" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_blockEffect_2 
+    AltName="Page 1: Block Load ID 3" 
+    Wiki="The block load effect to use for page 1." />
+    
+    <page0_reserved2 
+    AltName="" 
+    Padding="" />
+  
+    <page1_textID 
+    AltName="Page 2: Text ID" 
+    Wiki="The text ID to use for the page 2 text element." 
+    Separator="" />
+    
+    <page1_imageID 
+    AltName="Page 2: Image ID" 
+    Wiki="The image ID to use for the page 2 image element." />
+    
+    <page1_layout 
+    AltName="Page 2: Layout" 
+    Wiki="The position of the page 2 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page1_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page1_blockEffect_0 
+    AltName="Page 2: Block Load ID 1" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_blockEffect_1 
+    AltName="Page 2: Block Load ID 2" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_blockEffect_2 
+    AltName="Page 2: Block Load ID 3" 
+    Wiki="The block load effect to use for page 2." />
+    
+    <page1_reserved2 
+    AltName="" 
+    Padding="" />
+    
+    <page2_textID 
+    AltName="Page 3: Text ID" 
+    Wiki="The text ID to use for the page 3 text element." 
+    Separator="" />
+    
+    <page2_imageID 
+    AltName="Page 3: Image ID" 
+    Wiki="The image ID to use for the page 3 image element." />
+    
+    <page2_layout 
+    AltName="Page 3: Layout" 
+    Wiki="The position of the page 3 elements." 
+    Enum="MAIL_LAYOUT_TYPE" />
+    
+    <page2_reserved1 
+    AltName="" 
+    Padding="" />
+    
+    <page2_blockEffect_0 
+    AltName="Page 3: Block Load ID 1" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_blockEffect_1 
+    AltName="Page 3: Block Load ID 2" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_blockEffect_2 
+    AltName="Page 3: Block Load ID 3" 
+    Wiki="The block load effect to use for page 3." />
+    
+    <page2_reserved2 
+    AltName="" 
+    Padding="" />
+    
+  </Field>
+  <Enums>
+    <Enum Name="MAIL_LAYOUT_TYPE" type="u8">
+        <Option Value="0" Name="Image Below" />
+        <Option Value="1" Name="Image Above" />
+    </Enum> 
+  </Enums>
+</PARAMMETA>

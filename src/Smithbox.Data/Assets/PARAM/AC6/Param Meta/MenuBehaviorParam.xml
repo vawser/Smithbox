@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration of buttons in the main menu." />
+  
+  <Field>
+    <tutorialID 
+    AltName="Tutorial ID" 
+    Wiki="The tutorial to show when this button is used."
+    Refs="TutorialParam" />
+    
+    <enableHelpMenu
+    AltName="Enable Help Menu"
+    Wiki="If ON, display the help menu prompt for this button." 
+    IsBool="" />
+    
+    <reserved 
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

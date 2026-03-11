@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating to look-at cameras for various joints."/>
+  
+  <Field>
+    <baseRate
+    AltName="Look-At %: Root"
+    Wiki="The look-at rate towards the Root joint." />
+    
+    <spineBoneRateXZ
+    AltName="Horizontal Look-At %: Hip"
+    Wiki="The horizontal look-at rate towards the Hip (spine) joint." />
+    
+    <clavicleBoneRateXZ
+    AltName="Horizontal Look-At %: Shoulder"
+    Wiki="The horizontal look-at rate towards the Shoulder (clavicle) joint." />
+    
+    <handBoneRateXZ
+    AltName="Horizontal Look-At %: Wrist"
+    Wiki="The horizontal look-at rate towards the Wrist (hand) joint." />
+    
+    <spineBoneRateY
+    AltName="Vertical Look-At %: Hip"
+    Wiki="The vertical look-at rate towards the Hip (spine) joint." />
+    
+    <clavicleBoneRateY
+    AltName="Vertical Look-At %: Shoulder"
+    Wiki="The vertical look-at rate towards the Shoulder (clavicle) joint." />
+    
+    <handBoneRateY
+    AltName="Vertical Look-At %: Wrist"
+    Wiki="The vertical look-at rate towards the Wrist (hand) joint." />
+    
+    <spineRotLeftMax
+    AltName="Limit Angle: Hip (Left)"
+    Wiki="The limit angle for the Hip (spine) joint when facing left." />
+    
+    <spineRotRightMax
+    AltName="Limit Angle: Hip (Right)"
+    Wiki="The limit angle for the Hip (spine) joint when facing right." />
+    
+    <spineRotUpMax
+    AltName="Limit Angle: Hip (Up)"
+    Wiki="The limit angle for the Hip (spine) joint when facing up." />
+    
+    <spineRotDownMax
+    AltName="Limit Angle: Hip (Down)"
+    Wiki="The limit angle for the Hip (spine) joint when facing down." />
+    
+    <spine1BoneRateXZ
+    AltName="Horizontal Look-At %: Lower Back"
+    Wiki="The horizontal look-at rate towards the Lower Back (SpineA) joint." />
+    
+    <spine1BoneRateY
+    AltName="Vertical Look-At %: Lower Back"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA) joint." />
+    
+    <flyRootRotUpMax
+    AltName="Aerial - Limit Angle: Root (Up)"
+    Wiki="The limit angle for the body whilst in flight when facing up." />
+    
+    <flyRootRotDownMax
+    AltName="Aerial - Limit Angle: Root (Down)"
+    Wiki="The limit angle for the body whilst in flight when facing down." />
+    
+    <flyRootBoneRateY
+    AltName="Aerial - Vertical Look-At %: Root"
+    Wiki="The vertical look-at rate towards the Root joint whilst in flight." />
+    
+    <flySpineBoneRateY
+    AltName="Aerial - Vertical Look-At %: Hip"
+    Wiki="The vertical look-at rate towards the Hip (spine) joint whilst in flight." />
+    
+    <flySpine1BoneRateY
+    AltName="Aerial - Vertical Look-At %: Lower Back"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA) joint whilst in flight." />
+    
+    <flyClavicleBoneRateY
+    AltName="Aerial - Vertical Look-At %: Shoulder"
+    Wiki="The vertical look-at rate towards the Shoulder (clavicle) joint whilst in flight." />
+    
+    <flyHandBoneRateY
+    AltName="Aerial - Vertical Look-At %: Wrist"
+    Wiki="The vertical look-at rate towards the Wrist (hand) joint whilst in flight." />
+    
+    <spineAexABoneRateXZ
+    AltName="Horizontal Look-At %: Lower Back [EX_A]"
+    Wiki="The horizontal look-at rate towards the Lower Back (SpineA_EX_A) joint." />
+    
+    <spineAexABoneRateY
+    AltName="Vertical Look-At %: Lower Back [EX_A]"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA_EX_A) joint." />
+    
+    <flySpineAexABoneRateY
+    AltName="Aerial - Vertical Look-At %: Lower Back [EX_A]"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA_EX_A) joint whilst in flight." />
+    
+    <spineAexBBoneRateXZ
+    AltName="Horizontal Look-At %: Lower Back [EX_B]"
+    Wiki="The horizontal look-at rate towards the Lower Back (SpineA_EX_B) joint." />
+    
+    <spineAexBBoneRateY
+    AltName="Vertical Look-At %: Lower Back [EX_B]"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA_EX_B) joint." />
+    
+    <flySpineAexBBoneRateY
+    AltName="Aerial - Vertical Look-At %: Lower Back [EX_B]"
+    Wiki="The vertical look-at rate towards the Lower Back (SpineA_EX_B) joint whilst in flight." />
+    
+    <pelvisBoneRateXZ
+    AltName="Horizontal Look-At %: Pelvis"
+    Wiki="The horizontal look-at rate towards the Pelvis joint." />
+    
+    <pelvisBoneRateY
+    AltName="Vertical Look-At %: Pelvis"
+    Wiki="The vertical look-at rate towards the Pelvis joint." />
+    
+    <flyPelvisBoneRateY
+    AltName="Aerial - Vertical Look-At %: Pelvis"
+    Wiki="The vertical look-at rate towards the Pelvis joint whilst in flight." />
+    
+    <spineBoneRateYD
+    AltName="Lower Vertical Look-At %: Hip"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <clavicleBoneRateYD
+    AltName="Lower Vertical Look-At %: Shoulder"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <handBoneRateYD
+    AltName="Lower Vertical Look-At %: Wrist"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <flyRootBoneRateYD
+    AltName="Aerial - Lower Vertical Look-At %: Root"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <flySpineBoneRateYD
+    AltName="Aerial - Lower Vertical Look-At %: Hip"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <flyClavicleBoneRateYD
+    AltName="Aerial - Lower Vertical Look-At %: Shoulder"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <flyHandBoneRateYD
+    AltName="Aerial - Lower Vertical Look-At %: WRist"
+    Wiki="The lower vertical look-at rate for this joint." />
+    
+    <priority
+    AltName="Priority"
+    Wiki="The priority of this row when specified by a TimeAct event." />
+    
+    <bParentRateTakeOver
+    AltName="Ignore Parent Joint for Look-At %"
+    Wiki="If ON, then the child joint (i.e. arm or shoulder) will still adhere to the look-at angle, even if the parent joint (i.e. hip) is not at the target angle yet." 
+    IsBool="" />
+    
+    <reserved1
+    AltName=""
+    Padding="" />
+    
+    <lookAtRotAngDegPerSecXZ
+    AltName="Maximum Horizontal Rotation: Shooting"
+    Wiki="The maximum horizontal angular velocity for all Look-Ats when shooting. In degrees per second." />
+    
+    <lookAtRotAngDegPerSecY
+    AltName="Maximum Vertical Rotation: Shooting"
+    Wiki="The maximum vertical angular velocity for all Look-Ats when shooting. In degrees per second." />
+    
+    <spineRotAngDegPerSecXZ
+    AltName="Maximum Horizontal Rotation: Hip"
+    Wiki="The maximum horizontal angular velocity for Look-ats for this specified joint. In degrees per second." />
+    
+    <spineRotAngDegPerSecY
+    AltName="Maximum Vertical Rotation: Hip"
+    Wiki="The maximum vertical angular velocity for Look-ats for this specified joint. In degrees per second." />
+    
+    <armRotAngDegPerSecXZ
+    AltName="Maximum Horizontal Rotation: Arm"
+    Wiki="The maximum horizontal angular velocity for Look-ats for this specified joint. In degrees per second." />
+    
+    <armRotAngDegPerSecY
+    AltName="Maximum Vertical Rotation: Arm"
+    Wiki="The maximum vertical angular velocity for Look-ats for this specified joint. In degrees per second." />
+    
+    <lookAtDisableRotAngDegPerSecXZ
+    AltName="Maximum Horizontal Rotation: Not Shooting"
+    Wiki="The maximum horizontal angular velocity for all Look-Ats when not shooting. In degrees per second." />
+    
+    <lookAtDisableRotAngDegPerSecY
+    AltName="Maximum Vertical Rotation: Not Shooting"
+    Wiki="The maximum vertical angular velocity for all Look-Ats when not shooting. In degrees per second." />
+    
+    <lookAtDisableRotTimeSec
+    AltName="Rotation Duration: Grounded"
+    Wiki="The duration before releasing the Look-At rotations. In seconds." />
+    
+    <lookAtDisableFlyRotTimeSec
+    AltName="Rotation Duration: Aerial"
+    Wiki="The duration before releasing the Look-At rotations. In seconds." />
+    
+    <changeParamIntpTimeSec
+    AltName="Interpolation Duration: Parameter Change"
+    Wiki="The duration of the interpolation for the Look-at direction after a Look-at is changed to another." />
+    
+    <switchTargetIntpTimeSec
+    AltName="Interpolation Duration: Target Switch"
+    Wiki="The duration of the interpolation for the Look-at direction after the target is switched." />
+    
+    <reserved4
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

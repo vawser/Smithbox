@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each shadow quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Shadows" 
+    Wiki="If ON, shadows are enabled." 
+    IsBool="" />
+    
+    <maxFilterLevel
+    AltName="Shadow Filter" 
+    Wiki="The shadow filter to use." 
+    Enum="GRAPHICS_CONFIG_GX_SHADOW_FILTER_LEVEL" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+    <textureSizeScaler 
+    AltName="Shadow Map: Resolution Scaler" 
+    Wiki="The resolution scaler to apply to shadow maps." />
+    
+    <textureSizeDivider 
+    AltName="Shadow Map: Resolution Divisor" 
+    Wiki="The resolution divisor to apply to shadow maps." />
+    
+    <textureMinSize 
+    AltName="Shadow Map: Minimum Resolution" 
+    Wiki="The minimum resolution for a shadow map." />
+    
+    <textureMaxSize 
+    AltName="Shadow Map: Maximum Resolution"
+    Wiki="The maximum resolution for a shadow map." />
+    
+    <blurCountBias 
+    AltName="Shadow Map: Blur Count Bias" 
+    Wiki="The shadow map blur count bias to apply (set count bias, unchanged at 0)." />
+  </Field>
+  
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_GX_SHADOW_FILTER_LEVEL" type="u8">
+        <Option Value="0" Name="Percentage Closer Filtering 4" />
+        <Option Value="1" Name="Percentage Closer Filtering 9" />
+        <Option Value="2" Name="SOFT" />
+    </Enum>
+  </Enums>
+  
+</PARAMMETA>

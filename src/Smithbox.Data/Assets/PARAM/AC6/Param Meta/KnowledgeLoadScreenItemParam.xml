@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines appearance of loading screens and the tips they show."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+     
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding=""/>
+    
+    <unlockFlagId
+    AltName="Appearance Flag ID"
+    Wiki="The event flag ID that causes this loading screen to appear. -1 means it will always appear. Removal flag will override this."
+    FlagAlias="" />
+    
+    <invalidFlagId
+    AltName="Removal Flag ID"
+    Wiki="The event flag ID that causes this loading screen to disappear. -1 means it will never appear."
+    FlagAlias="" />
+    
+    <msgId
+    AltName="Hint Text ID"
+    Wiki="The FMG ID to use for the displayed hint text (both title and description. -1 means none." 
+    FmgRef="Loading_Title" />
+    
+    <reserve_last
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

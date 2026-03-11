@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <boneName AltName="Joint Name" Wiki="Specifies the affected joint name." />
+	<partsWeight AltName="Part Weight" Wiki="Override value for ragdoll weight physics behavior. -1 disables override. 0 causes the object to be treated as a rigid body." />
+	<bodySfxDmyId AltName="Body SFX Dummy Poly ID" Wiki="Specifies the dummy poly for SFX playback when broken. -1 uses the origin." />
+	<partsSfxDmyId AltName="Part SFX Dummy Poly ID" Wiki="Specifies the dummy poly for SFX playback when broken. -1 uses the origin." />
+	<bodySfxId AltName="Body SFX ID" Wiki="Specifies the SFX to use for the body when broken." ParticleAlias="" />
+	<partsSfxId AltName="Part SFX ID" Wiki="Specifies the SFX to use for the part when broken." ParticleAlias="" />
+	<baseSpeedWhenBreak AltName="Base Speed At Break" Wiki="The base initial speed used to move the weapon away from the target at the moment of detachment, in m/s. Note that this speed is independent of weight." />
+	<partsAnimeType AltName="Part Break Animation Type" Wiki="How to animate the detached parts." Enum="PARTS_BREAK_BROKEN_PARTS_ANIME_TYPE" />
+	<partsExplosionSfxDmyId AltName="Part Explosion SFX Dummy Poly ID" Wiki="Part dummy poly for explosion SFX playback. -1 uses the origin." />
+	<bodyExplosionSfxDmyId AltName="Body Explosion SFX Dummy Poly ID" Wiki="Body dummy poly for explosion SFX playback. -1 uses the origin." />
+	<partsExplosionSfxId AltName="Part Explosion SFX ID" Wiki="Specifies the SFX to use for the part explosion." ParticleAlias="" />
+	<bodyExplosionSfxId AltName="Body Explosion SFX ID" Wiki="Specifies the SFX to use for the body explosion." ParticleAlias="" />
+  </Field>
+  <Enums>
+    <Enum Name="PARTS_BREAK_BROKEN_PARTS_ANIME_TYPE" type="u8">
+        <Option Value="0" Name="Fixed in destruction pose" />
+        <Option Value="1" Name="Continues playback as-is" />
+		<Option Value="2" Name="Instantly becomes ragdoll" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines the behavior of broken parts." />
+</PARAMMETA>

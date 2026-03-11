@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+   <Enums>
+    <Enum Name="WEP_HANG_POS_TYPE" type="u8">
+        <Option Value="0" Name="Back" />
+        <Option Value="1" Name="Left hip" />
+        <Option Value="2" Name="Right Hip" />
+        <Option Value="3" Name="Left shoulder" />
+        <Option Value="4" Name="Right shoulder" />
+    </Enum>
+    <Enum Name="WEP_INVISIBLE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Sheath" />
+        <Option Value="2" Name="Two Swords Left Hand" />
+    </Enum>
+    <Enum Name="WEP_DISP_POS_TYPE" type="u8">
+        <Option Value="0" Name="Right hand" />
+        <Option Value="1" Name="Left hand" />
+        <Option Value="2" Name="Other" />
+    </Enum>
+  </Enums>
+  <Field>
+    <hangPosType AltName="Sheath Position Type" Wiki="The animation at the time of weapon sheathing changes depending on this value" Enum="WEP_HANG_POS_TYPE" />
+    <isSkeletonBind AltName="Is Skeleton Bind" Wiki="Do you want to combine skeletons?" IsBool="" />
+    <pad0 Padding=""/>
+    
+    <weaponDummyPoly_Right_1 AltName="Right Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Left_1 AltName="Left Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Both_1 AltName="Both Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding a right-handed weapon with both hands." />
+    <weaponDummyPoly_LeftHang_1 AltName="Left Sheath - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding a weapon in the left hand and sheathing the weapon." />
+    <weaponDummyPoly_RightHang_1 AltName="Right Sheath - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding a weapon in the right hand and sheathing the weapon." />
+    
+    <weaponDummyPoly_Right_2 AltName="Right Hand - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Left_2 AltName="Left Hand - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Both_2 AltName="Both Hand - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding a right-handed weapon with both hands." />
+    <weaponDummyPoly_LeftHang_2 AltName="Left Sheath - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding a weapon in the left hand and sheathing the weapon." />
+    <weaponDummyPoly_RightHang_2 AltName="Right Sheath - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding a weapon in the right hand and sheathing the weapon." />
+    
+    <weaponDummyPoly_Right_3 AltName="Right Hand - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Left_3 AltName="Left Hand - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Both_3 AltName="Both Hand - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding a right-handed weapon with both hands." />
+    <weaponDummyPoly_LeftHang_3 AltName="Left Sheath - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding a weapon in the left hand and sheathing the weapon." />
+    <weaponDummyPoly_RightHang_3 AltName="Right Sheath - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding a weapon in the right hand and sheathing the weapon." />
+    
+    <weaponDummyPoly_Right_4 AltName="Right Hand - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Left_4 AltName="Left Hand - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_Both_4 AltName="Both Hand - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding a right-handed weapon with both hands." />
+    <weaponDummyPoly_LeftHang_4 AltName="Left Sheath - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding a weapon in the left hand and sheathing the weapon." />
+    <weaponDummyPoly_RightHang_4 AltName="Right Sheath - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding a weapon in the right hand and sheathing the weapon." />
+    
+    <wepInvisibleType_0 AltName="Hidden Type - Model [1]" Wiki="Hidden type of Model 1. When hiding a weapon with TAE, erase the one that matches this" Enum="WEP_INVISIBLE_TYPE" />
+    <wepInvisibleType_1 AltName="Hidden Type - Model [2]" Wiki="Hidden type of model 2. When hiding a weapon with TAE, erase the one that matches this" Enum="WEP_INVISIBLE_TYPE" />
+    <wepInvisibleType_2 AltName="Hidden Type - Model [3]" Wiki="Hidden type of model 3. When hiding a weapon with TAE, erase the one that matches this" Enum="WEP_INVISIBLE_TYPE" />
+    <wepInvisibleType_3 AltName="Hidden Type - Model [4]" Wiki="Model 4 hidden type. When hiding a weapon with TAE, erase the one that matches this" Enum="WEP_INVISIBLE_TYPE" />
+    
+    <weaponDummyPoly_LeftBoth_0 AltName="Left Both-Hand - Dummy Poly - Model [1]" Wiki="Model 1 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_LeftBoth_1 AltName="Left Both-Hand - Dummy Poly - Model [2]" Wiki="Model 2 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_LeftBoth_2 AltName="Left Both-Hand - Dummy Poly - Model [3]" Wiki="Model 3 dummy polygon when holding the weapon in one hand." />
+    <weaponDummyPoly_LeftBoth_3 AltName="Left Both-Hand - Dummy Poly - Model [4]" Wiki="Model 4 dummy polygon when holding the weapon in one hand." />
+    
+    <displayPos_Right_0 AltName="Display Position - Right Hand - Model [1]" Wiki="Model 1 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_Left_0 AltName="Display Position - Left Hand - Model [1]" Wiki="Model 1 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightBoth_0 AltName="Display Position - Right Both-Hand - Model [1]" Wiki="Model 1 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftBoth_0 AltName="Display Position - Left Both-Hand - Model [1]" Wiki="Model 1 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightHang_0 AltName="Display Position - Right Sheath - Model [1]" Wiki="Model 1 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftHang_0 AltName="Display Position - Left Sheath - Model [1]" Wiki="Model 1 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    
+    <displayPos_Right_1 AltName="Display Position - Right Hand - Model [2]" Wiki="Model 2 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_Left_1 AltName="Display Position - Left Hand - Model [2]" Wiki="Model 2 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightBoth_1 AltName="Display Position - Right Both-Hand - Model [2]" Wiki="Model 2 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftBoth_1 AltName="Display Position - Left Both-Hand - Model [2]" Wiki="Model 2 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightHang_1 AltName="Display Position - Right Sheath - Model [2]" Wiki="Model 2 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftHang_1 AltName="Display Position - Left Sheath - Model [2]" Wiki="Model 2 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    
+    <displayPos_Right_2 AltName="Display Position - Right Hand - Model [3]" Wiki="Model 3 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_Left_2 AltName="Display Position - Left Hand - Model [3]" Wiki="Model 3 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightBoth_2 AltName="Display Position - Right Both-Hand - Model [3]" Wiki="Model 3 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftBoth_2 AltName="Display Position - Left Both-Hand - Model [3]" Wiki="Model 3 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightHang_2 AltName="Display Position - Right Sheath - Model [3]" Wiki="Model 3 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftHang_2 AltName="Display Position - Left Sheath - Model [3]" Wiki="Model 3 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    
+    <displayPos_Right_3 AltName="Display Position - Right Hand - Model [4]" Wiki="Model 4 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_Left_3 AltName="Display Position - Left Hand - Model [4]" Wiki="Model 4 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightBoth_3 AltName="Display Position - Right Both-Hand - Model [4]" Wiki="Model 4 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftBoth_3 AltName="Display Position - Left Both-Hand - Model [4]" Wiki="Model 4 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_RightHang_3 AltName="Display Position - Right Sheath - Model [4]" Wiki="Model 4 Right-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+    <displayPos_LeftHang_3 AltName="Display Position - Left Sheath - Model [4]" Wiki="Model 4 Left-hand display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
+  </Field>
+  <Self />
+</PARAMMETA>

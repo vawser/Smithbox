@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the movement parameters based on AC type."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <pad5
+    Padding="" />
+    
+    <jumpHorizontalMaxSpeedKMPH
+    AltName="Jump: Maximum Horizontal Speed"
+    Wiki="The maximum horizontal speed when performing a jump. In kilometres per hour." />
+    
+    <jumpHorizontalAccelMPSS
+    AltName="Jump: Horizontal Acceleration"
+    Wiki="The horizontal acceleration when performing a jump. In kilometres per hour ^ 2." />
+    
+    <jumpUpperMaxSpeedKMPH
+    AltName="Jump: Maximum Vertical Speed"
+    Wiki="The maximum vertical speed when performing a jump. In kilometres per hour." />
+    
+    <jumpUpperAccelMPSS
+    AltName="Jump: Vertical Acceleration"
+    Wiki="The vertical acceleration when performing a jump. In kilometres per hour ^ 2." />
+    
+    <pad6
+    Padding="" />
+    
+    <quickBoostMaxSpeedKMPH
+    AltName="Quick Boost: Maximum Speed"
+    Wiki="The maximum speed when performing a quick boost. In kilometres per hour." />
+    
+    <quickBoostAccelMPSS
+    AltName="Quick Boost: Acceleration"
+    Wiki="The acceleration when performing a quick boost. In kilometres per hour ^ 2." />
+    
+    <landingHorizontalBrakeUseSlowKMH
+    AltName="Ground Brake: Minimum Speed Trigger"
+    Wiki="If the current speed is below the specified speed, low-speed ground braking is activated. In kilometres per hour." />
+    
+    <landingHorizontalBrakeUseFastKMH
+    AltName="Ground Brake: Maximum Speed Trigger"
+    Wiki="If the current speed is above the specified speed, high-speed ground braking is activated. In kilometres per hour." />
+    
+    <landingHorizontalSlowBrakeMPSS
+    AltName="Ground Brake: Deceleration (Low-Speed)"
+    Wiki="The amount of deceleration to apply during a low-speed ground brake. In kilometres per hour ^ 2." />
+    
+    <landingHorizontalFastBrakeMPSS
+    AltName="Ground Brake: Deceleration (High-Speed)"
+    Wiki="The amount of deceleration to apply during a high-speed ground brake. In kilometres per hour ^ 2." />
+    
+    <flyHorizontalBrakeMPSS
+    AltName="Air Brake: Horizontal Deceleration"
+    Wiki="The amount of deceleration to apply during a forced air brake after the maximum horizontal speed has been exceeded. In kilometres per hour ^ 2." />
+    
+    <flyUpBrakeMPSS
+    AltName="Air Brake: Vertical Deceleration"
+    Wiki="The amount of deceleration to apply during a forced air brake after the maximum vertical speed has been exceeded. In kilometres per hour ^ 2." />
+    
+    <quickBoostUpperMaxSpeedKMPH
+    AltName="Quick Boost: Maximum Speed Increase"
+    Wiki="The increase to apply to maximum speed during a quick boost. In kilometres per hour." />
+    
+    <quickBoostUpperAccelMPSS
+    AltName="Quick Boost: Vertical Acceleration"
+    Wiki="The amount of vertical acceleration to apply during a quick boost. In kilometres per hour ^ 2." />
+    
+    <pad7
+    Padding="" />
+    
+    <quickBoostAccelTimeSec
+    AltName="Quick Boost: Acceleration Duration"
+    Wiki="The duration of the acceleration during a quick boost. In seconds." />
+    
+    <movementToAnimMoveBrakeMPSS
+    AltName="Movement to Animation Brake: Deceleration"
+    Wiki="The amount of deceleration to apply after a movement to animation transition. In kilometres per hour ^ 2." />
+    
+    <guardBrakeRateAtBoost
+    AltName="Brake Magnification: Guard from Boost"
+    Wiki="The amount of brake magnification if transitioning to guard animation after boost." />
+    
+    <guardBrakeRateAtQuickBoost
+    AltName="Brake Magnification: Guard from Quick Boost"
+    Wiki="The amount of brake magnification if transitioning to guard animation after quick boost." />
+    
+    <guardBrakeRateAtNormalBrake
+    AltName="Brake Magnification: Guard from Brake"
+    Wiki="The amount of brake magnification if transitioning to guard animation after brake." />
+    
+    <pad4
+    Padding="" />
+    
+    <boostMoveSwitchBackGroundBrakeMPSS
+    AltName="Switch to Ground Boost Brake: Deceleration"
+    Wiki="The amount of acceleration to apply after switching back to ground boost. In kilometres per hour ^ 2." />
+    
+    <boostMoveSwitchBackFlyBrakeMPSS
+    AltName="Switch to Air Boost Brake: Deceleration"
+    Wiki="The amount of acceleration to apply after switching back to air boost. In kilometres per hour ^ 2." />
+    
+    <boostMoveSubGroundAccelMPSS
+    AltName="Ground Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of ground boost movement. In kilometres per hour ^ 2." />
+    
+    <boostMoveSubFlyAccelMPSS
+    AltName="Air Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of air boost movement. In kilometres per hour ^ 2." />
+    
+    <assaultBoostSubAccelMPSS
+    AltName="Assault Boost Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of assault boost movement. In kilometres per hour ^ 2." />
+ 
+    <bladeHomingSubAccelMPSS
+    AltName="Blade Homing Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of blade homing movement. In kilometres per hour ^ 2." />
+    
+    <pad9
+    Padding="" />
+    
+    <minStiffSpeedKMPH
+    AltName="Minimum Landing Stiffness Speed"
+    Wiki="The minimum recovery time is used when landing at speeds below this speed. In kilometres per hour." />
+    
+    <minStiffTimeSec
+    AltName="Minimum Landing Stiffness Time"
+    Wiki="The minimum stiffness duration. In seconds." />
+    
+    <maxStiffSpeedKMPH
+    AltName="Maximum Landing Stiffness Speed"
+    Wiki="The maximum recovery time is used when landing at speeds above this speed. In kilometres per hour." />
+    
+    <maxStiffTimeSec
+    AltName="Maximum Landing Stiffness Time"
+    Wiki="The maximum stiffness duration. In seconds." />
+    
+    <realVelocityFeedBackRate
+    AltName="Velocity Feedback %"
+    Wiki="The percentage of velocity that reflects actual movement. Smaller values feel heavier." />
+    
+    <tankTurnOffset_CenterOffset
+    AltName="Tank Rotation: Pivot Center Offset"
+    Wiki="The tank pivot offset. Front is positive values, back is negative values." />
+    
+    <tankTurnOffset_MaxFwdOffset
+    AltName="Tank Rotation: Maximum Forward Offset"
+    Wiki="The tank pivot offset to apply when travelling forward at maximum forward speed." />
+    
+    <tankTurnOffset_MaxBackOffset
+    AltName="Tank Rotation: Maximum Backward Offset"
+    Wiki="The tank pivot offset to apply when travelling backward at maximum backward speed." />
+    
+    <tankTurnOffset_MaxFwdOffsetSpeedKMH
+    AltName="Tank Rotation: Maximum Forward Speed"
+    Wiki="The maximum speed forward at which the maximum forward offset is applied. In kilometres per hour." />
+    
+    <tankTurnOffset_MaxBackOffsetSpeedKMH
+    AltName="Tank Rotation: Maximum Backward Speed"
+    Wiki="The maximum speed backward at which the maximum backward offset is applied. In kilometres per hour." />
+    
+    <tankTurnOffset_MaxMoveDirFwdDirErrAngDeg
+    AltName="Tank Rotation: Maximum Deviation Angle"
+    Wiki="The maximum deviation angle between movement direction and speed direction. In degrees." />
+    
+    <assaultBoostSideAvoidSubAccelMPSS
+    AltName="Assault Boost: Evasion Direction Correction Acceleration"
+    Wiki="The amount of acceleration for correcting the direction of lateral evasion movement durinbg an assault boost. In kilometres per hour ^ 2." />
+    
+    <quickBoostAddSpeedToBoostMaxSpeedKMPH
+    AltName="Quick Boost: Maximum Speed Addition"
+    Wiki="The maximum amount of speed added during a dash boost to the quick boost speed. In kilometres per hour." />
+    
+    <quickTurn_MaxTurnAngleDeg
+    AltName="Quick Turn: Maximum Turning Angle"
+    Wiki="The maximum turning angle during a quick turn. In degrees." />
+    
+    <pad1
+    Padding="" />
+    
+    <quickTurn_MaxTurnTimeSec
+    AltName="Quick Turn: Maximum Turning Time"
+    Wiki="The maximum duration for a quick turn. In seconds." />
+    
+    <roundDashMaxSpeedKMPH
+    AltName="Dash: Maximum Speed"
+    Wiki="The maximum dash speed. In kilometres per hour." />
+    
+    <pad3
+    Padding="" />
+    
+    <roundDashAccelMPSS
+    AltName="Dash: Turn Acceleration"
+    Wiki="The turn acceleration during a dash. In metres per second ^ 2." />
+    
+    <roundDashBrakeMPSS
+    AltName="Dash: "
+    Wiki="" />
+    
+    <bladeBrakeFromBoostMPSS
+    AltName=""
+    Wiki="" />
+    
+    <bladeBrakeFromQuickBoostMPSS
+    AltName=""
+    Wiki="" />
+    
+    <roundDashFallAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <cunterBoostBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <cunterBoostBrakeMaxTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <flyBoostBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <flyBoostBrakeMaxTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <uTurnBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperQuickBoostMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <upperQuickBoostAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperQuickBoostHorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <upperQuickBoostHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <fallQuickBoostAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <fallQuickBoostHorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <fallQuickBoostHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <bladeHomingHorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <bladeHomingHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <slidingMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <slidingBoostAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <bladeHomingLandBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <bladeHomingFlyBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <damageBrake_BeginBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <damageBrake_PeakBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <damageBrake_BeginToPeakTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <wireMoveMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <wireMoveAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <damageBrake_TimerResetDelayTime
+    AltName=""
+    Wiki="" />
+    
+    <flyDownBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <pad2
+    Padding="" />
+    
+    <landDeadBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <flyDeadBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <BladeHomingAccelTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <jumpHorizontalMaxSpeedFromVehicleKMPH
+    AltName=""
+    Wiki="" />
+    
+    <jumpHorizontalAccelFromVehicleMPSS
+    AltName=""
+    Wiki="" />
+    
+    <jumpUpperMaxSpeedFromVehicleKMPH
+    AltName=""
+    Wiki="" />
+    
+    <jumpUpperAccelFromVehicleMPSS
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpMaxSpeedKMPH_H
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpAccelMPSS_H
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpAccelTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpAddUpMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpAddUpAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <stealthDashBoostMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <stealthDashBoostStartAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <stealthDashBoostMaxAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <stealthDashBoostBeginAccelTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <stealthDashBoostBeginToMaxAccelTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectUpMinDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectUpMaxDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectDownMinDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectDownMaxDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectUpMaxAccelRate
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectUpMaxSpeedRate
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectDownMaxAccelRate
+    AltName=""
+    Wiki="" />
+    
+    <slopeEffectDownMaxSpeedRate
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpMaxSpeedKMPH_V
+    AltName=""
+    Wiki="" />
+    
+    <wallJumpAccelMPSS_V
+    AltName=""
+    Wiki="" />
+    
+    <minAnimMoveAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <SlowBrakeAnimKMPH
+    AltName=""
+    Wiki="" />
+    
+    <jumpHorizontalMinSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <jumpUpperMinSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <propellerFlyBoostHorizontalMinSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <propellerFlyBoostHorizontalMaxSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <freeFallMaxHorizontalSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <freeFallMaxHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <quickBoostAccelAnimTimeFrame
+    AltName=""
+    Wiki="" />
+    
+    <quickBoostSpeedKeepTimeFrame
+    AltName=""
+    Wiki="" />
+    
+    <quickBoostMaxSpeedForAnimKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostHorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostUpperMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostUpperAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostUpperBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostUpperMoveHorizontalSpeedRate
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostUpperMoveHorizontalBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnMaxSpeedRate
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnMaxAngle
+    AltName=""
+    Wiki="" />
+    
+    <tankLandBoostMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandBoostAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandBoostBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxSpeed_MinAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxSpeed_MaxAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxAccel_MinAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxAccel_MaxAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxSpeedMinAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxSpeedMaxAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxAccelMinAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveMaxAccelMaxAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveDecayRate_MinAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveDecayRate_MaxAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveAccelRate_MinAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveAccelRate_MaxAng
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveDecayMinAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveDecayMaxAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveAccelMinAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveAccelMaxAngDeg
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveSideMoveSpeed
+    AltName=""
+    Wiki="" />
+    
+    <slopeSlideMoveSideMoveAccel
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpHorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpHorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpUpperMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpUpperAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpUpperBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperJumpHorizontalInitSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDashMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDashAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDashBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftBrake_ToMaxTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftBrake_MinMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftBrake_MaxMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostAutosightingUpperMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostAutosightingUpperAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostAutosightingUpBtnUpperMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostAutosightingUpBtnUpperAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostDownMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <hyperBoostDownAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <boostToWalkRunBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2HorizontalMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2HorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2UpMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2UpAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2DownMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2DownAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostV2UpMaxAlt
+    AltName=""
+    Wiki="" />
+    
+    <pad_2
+    Padding="" />
+    
+    <boostStartAccel_GroundCondSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <boostStartAccel_GroundAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <boostStartAccel_FlyCondSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <boostStartAccel_FlyAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <blowDeadBrake_BeginBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <blowDeadBrake_PeakBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <blowDeadBrake_BeginToPeakTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <blowDeadBrake_TimerResetDelayTime
+    AltName=""
+    Wiki="" />
+    
+    <pad_3
+    Padding="" />
+    
+    <upperBoostChangePerfStartAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <upperBoostChangePerfMaxAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <pad_4
+    Padding="" />
+    
+    <tankLandOutDirBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandRunOutDirBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDashOutDirBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandSwitchBackMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandSwitchBackAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandSwitchBackBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandSwitchBackOutDirBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandDriftOutDirBrakeMPSS
+    AltName=""
+    Wiki="" />
+    
+    <pad_5
+    Padding="" />
+    
+    <fourLegFlyMove_UpperMaxSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_DownMaxSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_HorizontalMaxSpeedKMH
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_HorizontalAccelMPSS
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_StartCondSpeedH
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_StartAccelH
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_SwtichBackBrake
+    AltName=""
+    Wiki="" />
+    
+    <fourLegFlyMove_SubAccel
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeBoostMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeDashMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeDriftMaxSpeedKMPH
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnSpeedDPS
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeStartTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <tankLandTurnBrakeEndTimeSec
+    AltName=""
+    Wiki="" />
+    
+    <pad_end
+    Padding="" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the adjustments to apply to client players during a multiplayer session." />
+  
+  <DisplayNames>
+    <NameEntry 
+    Param="MultiPlayCorrectionParam" 
+    Name="Multiplayer Corrections" />
+  </DisplayNames>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param - Product" 
+    Wiki="Parameters marked with  are excluded in the Product version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <client1SpEffectId 
+    AltName="Client - SpEffect ID: 1" 
+    Wiki="An effect to apply to a friendly client." 
+    Refs="SpEffectParam" />
+    
+    <client2SpEffectId 
+    AltName="Client - SpEffect ID: 2" 
+    Wiki="An effect to apply to a friendly client." 
+    Refs="SpEffectParam" />
+    
+    <client3SpEffectId 
+    AltName="Client - SpEffect ID: 3" 
+    Wiki="An effect to apply to a friendly client." 
+    Refs="SpEffectParam" />
+    
+    <bOverrideSpEffect 
+    AltName="Adjust SpEffects on Client Count Change" 
+    Wiki="If ON, when the number of clients changes, re-assess the SpEffect applications." 
+    IsBool="" />
+    
+    <pad3 
+    Padding="" />
+  </Field>
+  
+</PARAMMETA>

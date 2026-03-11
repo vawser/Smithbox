@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for player state reactions."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <playEventFlagId0
+    AltName="0: Playback Condition Flag ID"
+    Wiki="The playback condition flag for this reaction."
+    FlagAlias="" />
+    
+    <talkParamId0 
+    AltName="0: Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <playEventFlagId1
+    AltName="1: Playback Condition Flag ID"
+    Wiki="The playback condition flag for this reaction."
+    FlagAlias="" />
+    
+    <talkParamId1
+    AltName="1: Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <playEventFlagId2
+    AltName="2: Playback Condition Flag ID"
+    Wiki="The playback condition flag for this reaction."
+    FlagAlias="" />
+    
+    <talkParamId2 
+    AltName="2: Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <playEventFlagId3
+    AltName="3: Playback Condition Flag ID"
+    Wiki="The playback condition flag for this reaction."
+    FlagAlias="" />
+    
+    <talkParamId3
+    AltName="3: Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <playEventFlagId4
+    AltName="4: Playback Condition Flag ID"
+    Wiki="The playback condition flag for this reaction."
+    FlagAlias="" />
+    
+    <talkParamId4
+    AltName="4: Talk Param ID" 
+    Wiki="The conversation parameter ID to use." 
+    Refs="TalkParam" />
+    
+    <priority
+    AltName="Priority"
+    Wiki="The priority of this reaction." />
+    
+    <dispLimitNum
+    AltName="Reaction Limit"
+    Wiki="The maximum number of instances of this reaction." />
+    
+    <dispCoolTime
+    AltName="Minimum Reaction Interval"
+    Wiki="The minimum amount of time that must pass between repeats of this reaction. In seconds." />
+    
+    <answerCategoryOffsetId
+    AltName="Reaction Category Offset ID"
+    Wiki="The offset ID to apply for this reaction. -1 means no interaction" />
+    
+    <pad
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

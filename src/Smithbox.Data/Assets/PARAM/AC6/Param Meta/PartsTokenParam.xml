@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PARTS_TOKEN_GRADE_TYPE" type="s8">
+        <Option Value="0" Name="Bronze" />
+        <Option Value="1" Name="Silver" />
+        <Option Value="2" Name="Gold" />
+        <Option Value="3" Name="Platinum" />
+    </Enum> 
+    <Enum Name="PARTS_TOKEN_USAGE_TYPE" type="s8">
+        <Option Value="0" Name="Obtainable in any playthrough" />
+        <Option Value="1" Name="Obtainable in NG0 playthrough" />
+        <Option Value="2" Name="Obtainable in NG+ playthrough" />
+    </Enum> 
+  </Enums>
+  <Field>
+    <pad1 Padding=""/>
+	<point AltName="Loghunt Points" Wiki="Points awarded to your mercenary rank (loghunt)" />
+    <grade AltName="Grade" Wiki="Menu display category." Enum="PARTS_TOKEN_GRADE_TYPE" />
+    <usage AltName="Acquisition Type" Wiki="Acquisition type of the part." Enum="PARTS_TOKEN_USAGE_TYPE" />
+    <pad2 Padding=""/>
+    <pad3 Padding=""/>
+    <pad4 Padding=""/>
+  </Field>
+  <Self Wiki="Determines the configuration of a combat log dropped by an enemy. Linked via the PartTokenParamID field within an Enemy part in a MSB." />
+</PARAMMETA>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the particles used for various thruster emissions." />
+  <Field>
+    <sfxId0 
+    AltName="0: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId1
+    AltName="1: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId2 
+    AltName="2: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId3 
+    AltName="3: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId4 
+    AltName="4: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId5 
+    AltName="5: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId6 
+    AltName="6: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+    
+    <sfxId7 
+    AltName="7: SFX ID" 
+    Wiki="The SFX ID to use for this color type."
+    ParticleAlias="" />
+  </Field>
+</PARAMMETA>

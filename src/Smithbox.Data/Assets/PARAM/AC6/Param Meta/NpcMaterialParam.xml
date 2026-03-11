@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+<Self Wiki="Defines the colors and materials used by some characters" />
+  <Field>
+    <Unk0x00 Padding="" />
+    <materialParamId AltName="Material Ex Param ID" Wiki="Defines which surface and materials these colors apply to" Refs="MaterialExParam"/>
+    <Param0 AltName="Color: Red" Wiki="Red" />
+    <Param1 AltName="Color: Green" Wiki="Green" />
+    <Param2 AltName="Color: Blue" Wiki="Blue" />
+    <Param3 AltName="Color: Alpha" Wiki="Opacity" />
+	<materialId AltName="Material ID" Wiki="The material ID to be used (the ID set in the matxml) - Use -1 for all materials." />
+  </Field>
+    <ColorEdit>
+    <ColorEditor 
+    Name="Color" 
+    Fields="Param0,Param1,Param2" 
+    PlacedField="materialId" />
+  </ColorEdit>
+</PARAMMETA>

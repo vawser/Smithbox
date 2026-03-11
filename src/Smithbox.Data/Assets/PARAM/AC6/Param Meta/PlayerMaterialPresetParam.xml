@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Shininess AltName="Luster" Wiki="Intensity of the reflection" />
+    <Metalness AltName="Metallic" Wiki="Intensity of the metallic factor" />
+    <Glow AltName="Glow Level" Wiki="Even for the glossiness parameter, make sure to set the glow level to 1. Otherwise, the image will be completely black." />
+	<TexIdLayer0 AltName="Layer 1 Material" Wiki="6-digit texture ID (AEGXXX_YYY) for layer 1" />
+	<TexIdLayer1 AltName="Layer 2 Material" Wiki="6-digit texture ID (AEGXXX_YYY) for layer 2" />
+	<TexIdLayer2 AltName="Layer 3 Material" Wiki="6-digit texture ID (AEGXXX_YYY) for layer 3" />
+	<MaterialTex_Albedo AltName="Albedo Texture" Wiki="Reference ID for material replacement in coloring" />
+	<MaterialTex_Normal_Shininess AltName="Normal/Shininess Texture" Wiki="Reference ID for material replacement in coloring" />
+	<pad_end padding="" />
+  </Field>
+  <Self Wiki="Defines the Material options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Material.dds and SB_Material.layout\n\nRow ID + 210900 links the Preset to the FMG name it uses in the menu."/>
+</PARAMMETA>

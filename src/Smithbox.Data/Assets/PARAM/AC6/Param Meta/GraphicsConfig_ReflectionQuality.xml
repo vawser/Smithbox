@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters of each reflection quality level." />
+  
+  <Field>
+    <enabled 
+    AltName="Enable Reflections" 
+    Wiki="If ON, reflections are enabled." 
+    IsBool="" />
+    
+    <localLightEnabled 
+    AltName="Enable Local Light Reflections" 
+    Wiki="If ON, reflections from the player's local light are enabled." 
+    IsBool="" />
+    
+    <localLightForceEnabled 
+    AltName="Force Local Light Reflections" 
+    Wiki="If ON, reflections from the player's local light are forcefully enabled." 
+    IsBool="" />
+    
+    <pad1 
+    AltName="" 
+    Padding="" />
+    
+    <resolutionDivider 
+    AltName="Resolution Scale" 
+    Wiki="The resolution scale to use for reflections." />
+    
+    <ssrEnabled 
+    AltName="Enable Screen-space Reflections" 
+    Wiki="If ON, screen-space reflections are enabled." 
+    IsBool="" />
+    
+    <ssrGaussianBlurEnabled 
+    AltName="Enable Screen-space Gaussian Blur" 
+    Wiki="If ON, screen-space gaussian blur is enabled." 
+    IsBool="" />
+    
+    <pad2 
+    AltName="" 
+    Padding=""/>
+    
+    <ssrDepthRejectThresholdScale 
+    AltName="Screen-space Reflection: Depth Rejection Threshold" 
+    Wiki="The depth rejection threshold scale to use for screen-space reflections." />
+    
+    <ssrRayTraceStepScale 
+    AltName="Screen-space Reflection: Raytracing Step Scale" 
+    Wiki="The raytracing step scale to use with the Screen-space Reflection parameter." />
+    
+    <ssrFadeToViewerBias 
+    AltName="Screen-space Reflection: Fade Angle Bias" 
+    Wiki="The screen-space reflection angle bias to apply when fading a reflection. Smaller values result in higher quality." />
+    
+    <ssrFresnelRejectBias 
+    AltName="Screen-space Reflection: Fresnel Rejection Bias" 
+    Wiki="The screen-space reflection fresnel rejection bias to apply to a reflection. Smaller values result in higher quality." />
+  </Field>
+</PARAMMETA>

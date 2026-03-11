@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines parameters relating to the rendering of parts within menus." />
+  
+  <Field>
+    <initModelDegX
+    AltName="Initial Angle of the Model: X"
+    Wiki="The initial angle (on the x-axis) of the model." />
+    
+    <initModelDegY
+    AltName="Initial Angle of the Model: Y"
+    Wiki="The initial angle (on the y-axis) of the model." />
+  </Field>
+</PARAMMETA>

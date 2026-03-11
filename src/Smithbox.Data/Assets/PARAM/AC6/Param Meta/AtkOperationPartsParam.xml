@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the operation state of various joints. For players." />
+  
+  <Field>
+    <parts0 
+    AltName="Operation: Lower Body" 
+    IsBool="" />
+    
+    <parts1 
+    AltName="Operation: Right Arm" 
+    IsBool="" />
+    
+    <parts2
+    AltName="Operation: Left Arm" 
+    IsBool="" />
+    
+    <parts3
+    AltName="Operation: Right Shoulder" 
+    IsBool="" />
+    
+    <parts4
+    AltName="Operation: Left Shoulder" 
+    IsBool="" />
+    
+    <parts5
+    AltName="Operation: Right Arm - Stance" 
+    IsBool="" />
+    
+    <parts6
+    AltName="Operation: Left Arm - Stance" 
+    IsBool="" />
+    
+    <parts7
+    AltName="Operation: Upper Body" 
+    IsBool="" />
+    
+    <parts8
+    AltName="Operation: Guard" 
+    IsBool="" />
+    
+    <parts9
+    AltName="Operation: Assault Boost" 
+    IsBool="" />
+    
+    <parts10
+    AltName="Operation: Right Shoulder - Stance" 
+    IsBool="" />
+    
+    <parts11 
+    AltName="Operation: Left Shoulder - Stance" 
+    IsBool="" />
+    
+    <parts12 
+    AltName="Operation: Right Hand - Reload" 
+    IsBool="" />
+    
+    <parts13 
+    AltName="Operation: Left Hand - Reload" 
+    IsBool="" />
+    
+    <parts14 
+    AltName="Operation: Right Shoulder - Simultaneous Shoot" 
+    Wiki="For movement cancellation"
+    IsBool="" />
+    
+    <parts15 
+    AltName="Operation: Left Shoulder - Simultaneous Shoot" 
+    Wiki="For movement cancellation"
+    IsBool="" />
+    
+    <parts16
+    AltName="Operation: Part 16" 
+    IsBool="" />
+    
+    <parts17 
+    AltName="Operation: Part 17" 
+    IsBool="" />
+    
+    <parts18 
+    AltName="Operation: Part 18" 
+    IsBool="" />
+    
+    <parts19 
+    AltName="Operation: Part 19" 
+    IsBool="" />
+    
+    <parts20 
+    AltName="Operation: Part 20" 
+    IsBool="" />
+    
+    <parts21 
+    AltName="Operation: Part 21" 
+    IsBool="" />
+    
+    <parts22 
+    AltName="Operation: Part 22" 
+    IsBool="" />
+    
+    <parts23
+    AltName="Operation: Part 23" 
+    IsBool="" />
+    
+    <parts24 
+    AltName="Operation: Part 24" 
+    IsBool="" />
+    
+    <parts25 
+    AltName="Operation: Part 25" 
+    IsBool="" />
+    
+    <parts26 
+    AltName="Operation: Part 26" 
+    IsBool="" />
+    
+    <parts27
+    AltName="Operation: Part 27" 
+    IsBool="" />
+    
+    <parts28 
+    AltName="Operation: Part 28" 
+    IsBool="" />
+    
+    <parts29 
+    AltName="Operation: Part 29" 
+    IsBool="" />
+    
+    <parts30
+    AltName="Operation: Part 30" 
+    IsBool="" />
+    
+    <parts31 
+    AltName="Operation: Part 31" 
+    IsBool="" />
+    
+    <dummy2 
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

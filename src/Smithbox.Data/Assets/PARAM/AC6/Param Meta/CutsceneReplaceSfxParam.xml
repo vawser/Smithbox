@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines particle replacement parameters for a cutscene." />
+  
+  <Field>
+    <sfxId 
+    AltName="SFX ID" 
+    Wiki="ID of SFX to be replaced during cutscene"
+    ParticleAlias="" />
+  </Field>
+</PARAMMETA>

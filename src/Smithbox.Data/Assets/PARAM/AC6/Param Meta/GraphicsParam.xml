@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters used for various graphical settings." />
+  
+  <Field>
+    <HitBulletDecalOffset_HitIns
+    AltName="Decal Generation Position Offset on Bullet Hit"
+    Wiki="The offset to apply to the position of a generated decal that occurs upon a bullet hit (by this value in its normal direction)." />
+    
+    <TorchEmissiveIntensity
+    AltName="Torch: Emissive Strength"
+    Wiki="The maximum emissive strength of the torch light. This value is obtained by multiplying the specified frame." />
+    
+    <TorchEmissiveFadeFrame
+    AltName="Torch: Emissive Strength Fade Frame"
+    Wiki="The fade time when the torch's emissive strength is changed. 60 frames equals 1 second." />
+    
+    <pad_01
+    AltName=""
+    Padding="" />
+    
+    <CharaWetDecalFadeRange
+    AltName="Decal Fade Distance after Character is Wet"
+    Wiki="The distance at which a decal is faded after a character is made wet." />
+    
+    <pad_04
+    AltName=""
+    Padding="" />
+    
+    <pad_05
+    AltName=""
+    Padding="" />
+    
+    <pad_06
+    AltName=""
+    Padding="" />
+    
+    <pad_02
+    AltName=""
+    Padding="" />
+    
+    <BulletMultiFrameHitSfxIntervalTimeSec
+    AltName="Multi-Hit Bullet: Particle Interval"
+    Wiki="The interval between each hit SFX if a bullet its in multiple stages. In seconds." />
+    
+    <PaintDecalFadeOutTimeSec
+    AltName="Decal Paint Fade Out Duration"
+    Wiki="The fade out duration for decals after they have been painted." />
+    
+    <pad_03
+    AltName=""
+    Padding="" />
+    
+    <GrassLod_0_0
+    AltName="Grass LOD 0: 0 -> 0"
+    Wiki="The grass generator LOD settings from level 0 to 0." />
+    
+    <GrassLod_0_1
+    AltName="Grass LOD 0: 0 -> 1"
+    Wiki="The grass generator LOD settings from level 0 to 1." />
+    
+    <GrassLod_0_2
+    AltName="Grass LOD 0: 1 -> 2"
+    Wiki="The grass generator LOD settings from level 1 to 2." />
+    
+    <GrassLod_0_3
+    AltName="Grass LOD 0: 2 -> 3"
+    Wiki="The grass generator LOD settings from level 2 to 3." />
+    
+    <pad_100
+    AltName=""
+    Padding="" />
+    
+    <GrassLod_1_0
+    AltName="Grass LOD 1: 0 -> 0"
+    Wiki="The grass generator LOD settings from level 0 to 0." />
+    
+    <GrassLod_1_1
+    AltName="Grass LOD 1: 0 -> 1"
+    Wiki="The grass generator LOD settings from level 0 to 1." />
+    
+    <GrassLod_1_2
+    AltName="Grass LOD 1: 1 -> 2"
+    Wiki="The grass generator LOD settings from level 1 to 2." />
+    
+    <GrassLod_1_3
+    AltName="Grass LOD 1: 2 -> 3"
+    Wiki="The grass generator LOD settings from level 2 to 3." />
+    
+    <pad_101
+    AltName=""
+    Padding="" />
+    
+    <GrassLod_2_0
+    AltName="Grass LOD 2: 0 -> 0"
+    Wiki="The grass generator LOD settings from level 0 to 0." />
+    
+    <GrassLod_2_1
+    AltName="Grass LOD 2: 0 -> 1"
+    Wiki="The grass generator LOD settings from level 0 to 1." />
+    
+    <GrassLod_2_2
+    AltName="Grass LOD 2: 1 -> 2"
+    Wiki="The grass generator LOD settings from level 1 to 2." />
+    
+    <GrassLod_2_3
+    AltName="Grass LOD 2: 2 -> 3"
+    Wiki="The grass generator LOD settings from level 2 to 3." />
+    
+    <pad_102
+    AltName=""
+    Padding="" />
+    
+    <SubWindow_Width
+    AltName="Sub-window Frame: Width"
+    Wiki="The width of the sub-window. In pixels." />
+    
+    <SubWindow_Height
+    AltName="Sub-window Frame: Height"
+    Wiki="The height of the sub-window. In pixels." />
+    
+    <pad_103
+    AltName=""
+    Padding="" />
+    
+    <MenuBackBoke_FadeInTime
+    AltName="Menu Blur: Fade-in Duration"
+    Wiki="The fade in duration for the menu background blur. In seconds." />
+    
+    <MenuBackBoke_FadeOutTime
+    AltName="Menu Blur: Fade-out Duration"
+    Wiki="The fade out duration for the menu background blur. In seconds." />
+    
+    <pad_104
+    AltName=""
+    Padding="" />
+    
+    <ZoomBlur_ThresholdSpeedKmH
+    AltName="Zoom Blur: Threshold Speed"
+    Wiki="The threshold speed at which zoom blur occurs during boost movement. In kilometres per hour." />
+    
+    <ZoomBlur_InterpolationTime
+    AltName="Zoom Blur: Interpolation Time"
+    Wiki="The time until the zoom blur reaches its maximum value." />
+    
+    <ZoomBlur_Pow
+    AltName="Zoom Blur: Strength"
+    Wiki="The strength of the zoom blur." />
+    
+    <ZoomBlur_CenterOffset
+    AltName="Zoom Blur: Centre Offset"
+    Wiki="The centre offset to apply to the zoom blur. Used to avoid blurring around the character." />
+    
+    <ZoomBlur_Contrast
+    AltName="Zoom Blur: Contrast"
+    Wiki="The contrast value to apply to the zoom blur." />
+    
+    <ZoomBlur_UVOffsetUp
+    AltName="Zoom Blur: UV Value (Top of Screen)"
+    Wiki="The UV value to apply during zoom blur at the top of the screen." />
+    
+    <ZoomBlur_UVOffsetDown
+    AltName="Zoom Blur: UV Value (Bottom of Screen)"
+    Wiki="The UV value to apply during zoom blur at the bottom of the screen." />
+    
+    <HitInsDamageNearSfxNumMax
+    AltName="Hit Particle Generation Limit"
+    Wiki="The maximum number of particles that can be generated by hit SFX. In metres." />
+    
+    <HitInsDamageNearSfxDist
+    AltName="Hit Particle Limit Distance"
+    Wiki="The maximum distance at which hit SFX will occur. In metres." />
+    
+    <ShadowFixedFov
+    AltName="Shadow: Fixed Angle of View"
+    Wiki="The fixed angle of view to use for shadow rendering: used to resolve an issue where the shadow sometimes stretches like a line when the player moves repeatedly." />
+    
+    <pad_999
+    AltName=""
+    Padding="" />
+  </Field>
+  
+</PARAMMETA>

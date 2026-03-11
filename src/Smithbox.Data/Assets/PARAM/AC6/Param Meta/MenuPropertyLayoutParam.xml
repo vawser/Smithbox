@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines layout parameters relating to menu elements." />
+  
+  <Field>
+    <LayoutPath 
+    AltName="Layout Path" 
+    Wiki="The layout path for this element." />
+    
+    <PropertyID 
+    AltName="Menu Property ID" 
+    Wiki="The menu property to link to this element." 
+    Refs="MenuPropertySpecParam" />
+    
+    <CaptionTextID 
+    AltName="Caption Text ID" 
+    Wiki="If a valid text ID is set, this will be displayed in preference to the property name." 
+    FmgRef="Modern_Menu_Text"/>
+    
+    <HelpTextID
+    AltName="Help Text ID" 
+    Wiki="Only if this is a valid text ID will it be selectable in the field help." 
+    FmgRef="Modern_Menu_Text"/>
+    
+    <DisplayCondition
+    AltName="Display Conditions"
+    Wiki="The display conditions for this element."
+    Enum="MENU_PROPERTY_DISPLAY_CONDITION_TYPE" />
+    
+    <reserved 
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="MENU_PROPERTY_DISPLAY_CONDITION_TYPE" type="u16">
+      <Option Value="0" Name="None" />
+      <Option Value="1023" Name="Booster only" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Alpha AltName="Alpha" Wiki="Zoom blur strength" />
+	<FixCenter AltName="Fixed Center" Wiki="Is the blur applied to the center of the screen rather than the center of the character?" IsBool="" />
+	<reserve padding="" />
+	<reserve0 padding="" />
+	<Offset AltName="Blur Offset" Wiki="Zoom blur offset" />
+	<CenterThin AltName="Center Thinning Value" Wiki="-1 leave the center unblurred, 1 blurs the center as well" />
+	<reserve1 padding="" />
+  </Field>
+  <Self Wiki="Defines how zooming in blurs the screen peripheral." />
+</PARAMMETA>

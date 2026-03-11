@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configurations for vertical ascent points in missions."/>
+  
+  <Field>
+    <jumpSpecifyAlt_GoalAlt
+    AltName="Goal Altitude"
+    Wiki="The target altitude the vertical ascent platform will aim for when you jump. In metres." />
+    
+    <jumpSpecifyAlt_GravityScale
+    AltName="Gravity %"
+    Wiki="The gravity percentage to apply during the vertical ascent jump." />
+    
+    <jumpSpecifyAlt_PrevSpeedRateH
+    AltName="Previous Horizontal Speed %"
+    Wiki="The percentage of horizontal speed to retain upon triggering the vertical ascent." />
+    
+    <jumpSpecifyAlt_HorizontalMaxSpeedKMPH
+    AltName="Maximum Horizontal Speed"
+    Wiki="The maximum horizontal speed that is retained upon triggering the vertical ascent. In kilometres per hour." />
+    
+    <jumpSpecifyAlt_HorizontalMaxAccelMPSS
+    AltName="Horizontal Acceleration"
+    Wiki="The horizontal acceleration to apply to the user upon triggering the vertical ascent. In metres per second ^ 2." />
+    
+    <jumpSpecifyAlt_MiddleInputAngDeg
+    AltName="Jump Angle based on Input"
+    Wiki="The jump angle that is used upon triggering the vertical ascent, based on the current input upon triggering it." />
+    
+    <jumpSpecifyAlt_MaxInputAngDeg
+    AltName="Maximum Jump Angle based on Input"
+    Wiki="The maximum jump angle that is used upon triggering the vertical ascent, based on the current input upon triggering it." />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+  </Field>
+</PARAMMETA>

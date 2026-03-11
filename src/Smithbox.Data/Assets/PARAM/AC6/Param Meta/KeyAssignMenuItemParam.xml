@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters relating the display of key assignments. Obsolete?"/>
+  
+  <Field>
+    <textID
+    AltName="Text ID"
+    Wiki="If defined, this points to the one-line help text ID. If not, then the category name ID is used instead. If not specified, it is not displayed in the key configuration menu." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <key
+    AltName="Key"
+    Wiki="The user input key to be assigned. If not specified, it will be treated as a category display item." 
+    Enum="CS_UI_KEY" />
+  
+    <enableUnassign
+    AltName="Allow Unassignment"
+    Wiki="If ON, then this key can be unassigned."
+    IsBool="" />
+    
+    <enablePadConfig
+    AltName="Allow Pad Configuration"
+    Wiki="If ON, then this key can be assigned to controller inputs."
+    IsBool="" />
+    
+    <enableMouseConfig
+    AltName="Allow Mouse Configuration"
+    Wiki="If ON, then this key can be assigned to mouse inputs."
+    IsBool="" />
+    
+    <group
+    AltName="Key Group"
+    Wiki="The group used for determining duplicate assignments. Keys cannot be duplicated in the same group" 
+    Enum="CS_KEY_ASSIGN_GROUP" />
+    
+    <mappingTextID
+    AltName="Mapping Text ID"
+    Wiki="The item name to display in the operation list. 0 means it is not displayed." 
+    FmgRef="Modern_Menu_Text" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="CS_UI_KEY" type="s32">
+        <Option Value="-1" Name="None" />
+        <Option Value="0" Name="Running (Previous)" />
+        <Option Value="1" Name="Running (After)" />
+        <Option Value="2" Name="Running (Left)" />
+        <Option Value="3" Name="Running (Right)" />
+        <Option Value="4" Name="Jump" />
+        <Option Value="5" Name="Camera (Top)" />
+        <Option Value="6" Name="Camera (Bottom)" />
+        <Option Value="7" Name="Camera (Left)" />
+        <Option Value="8" Name="Camera (Right)" />
+        <Option Value="9" Name="Lock-on / Camera Reset" />
+        <Option Value="10" Name="Stealth" />
+        <Option Value="11" Name="Switch: Tool" />
+        <Option Value="12" Name="Switch: Right Weapon" />
+        <Option Value="13" Name="Switch: Left Weapon" />
+        <Option Value="14" Name="Use: Right Weapon" />
+        <Option Value="15" Name="Quick-boost" />
+        <Option Value="16" Name="Use: Left Weapon" />
+        <Option Value="17" Name="Boost" />
+        <Option Value="18" Name="Use: Item" />
+        <Option Value="20" Name="Auxiliary Menu" />
+        <Option Value="21" Name="Open Menu" />
+        <Option Value="22" Name="Move Cursor (Up)" />
+        <Option Value="23" Name="Move Cursor (Down)" />
+        <Option Value="24" Name="Move Cursor (Left)" />
+        <Option Value="25" Name="Move Cursor (Right)" />
+        <Option Value="26" Name="Decision" />
+        <Option Value="27" Name="Cancel" />
+        <Option Value="28" Name="Menu: RU" />
+        <Option Value="29" Name="Menu: RL" />
+        <Option Value="30" Name="Menu: L1" />
+        <Option Value="31" Name="Menu: R1" />
+        <Option Value="32" Name="Menu: L2" />
+        <Option Value="33" Name="Menu: R2" />
+        <Option Value="34" Name="Menu: L3" />
+        <Option Value="35" Name="Menu: R3" />
+        <Option Value="36" Name="Menu: BACK" />
+        <Option Value="37" Name="Menu: Scroll (Top)" />
+        <Option Value="38" Name="Menu: Scroll (Down)" />
+        <Option Value="39" Name="Menu: Conversation Response (Left)" />
+        <Option Value="40" Name="Menu: Conversation Response (Right)" />
+        <Option Value="41" Name="Menu: Left Stick (Up)" />
+        <Option Value="42" Name="Menu: Left Stick (Down)" />
+        <Option Value="43" Name="Menu: Left Stick (Left)" />
+        <Option Value="44" Name="Menu: Left Stick (Right)" />
+        <Option Value="45" Name="Menu: Right Stick (Up)" />
+        <Option Value="46" Name="Menu: Right Stick (Down)" />
+        <Option Value="47" Name="Menu: Right Stick (Left)" />
+        <Option Value="48" Name="Menu: Right Stick (Right)" />
+        <Option Value="66" Name="Player: Action" />
+        <Option Value="67" Name="Player: Shift Operation" />
+        <Option Value="68" Name="Player: Precision Shooting Stance" />
+        <Option Value="69" Name="Text Input: Confirm" />
+        <Option Value="70" Name="Text Input: Cancel" />
+        <Option Value="76" Name="Player: Use Left-back Weapon" />
+        <Option Value="77" Name="Player: Use Right-back Weapon" />
+        <Option Value="78" Name="Conversation Forwarding" />
+        <Option Value="79" Name="Player: Use Core Expansion" />
+        <Option Value="80" Name="Player: Use Assault Boost" />
+        <Option Value="81" Name="Menu: Shift Operation (Left)" />
+        <Option Value="82" Name="Menu: Shift Operation (Right)" />
+        <Option Value="83" Name="Player: Purge Weapon" />
+        <Option Value="1000" Name="Core Expansion: Menu Display" />
+        <Option Value="1001" Name="Key Icons for Player Movement" />
+        <Option Value="1002" Name="Key Icons for Camera Operation" />
+    </Enum> 
+    <Enum Name="CS_KEY_ASSIGN_GROUP" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="In-game UI" />
+    </Enum> 
+    
+  </Enums>
+  
+</PARAMMETA>

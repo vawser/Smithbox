@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the display parameters to use for interface dialogue elements." />
+  
+  <Field>
+    <DialogGroup
+    AltName="Dialogue Group"
+    Wiki="The dialogue control group this element belongs to." />
+    
+    <DisplayTime
+    AltName="Display Time"
+    Wiki="The time to display this element. 0 means unlimited. In seconds." />
+    
+    <BaseRect_left
+    AltName="Base Position: Left"
+    Wiki="The x-coordinate of the base element position. Left (0) to Right (100)." />
+    
+    <BaseRect_top
+    AltName="Base Position: Top"
+    Wiki="The y-coordinate of the base element position. Top (0) to Bottom (100)." />
+    
+    <BaseRect_w
+    AltName="Base Width"
+    Wiki="The base width of the element. None (0) to Entire Screen (100)." />
+    
+    <BaseRect_h
+    AltName="Base Height"
+    Wiki="The base height of the element. None (0) to Entire Screen (100)." />
+    
+    <BaseColor_r
+    AltName="Base Color: R"
+    Wiki="The red component for the RGBA color for the element." />
+    
+    <BaseColor_g
+    AltName="Base Color: G"
+    Wiki="The green component for the RGBA color for the element." />
+    
+    <BaseColor_b
+    AltName="Base Color: B"
+    Wiki="The blue component for the RGBA color for the element." />
+    
+    <BaseColor_a
+    AltName="Base Color: Alpha"
+    Wiki="The alpha component for the RGBA color for the element. Transparent (0) to Opaque (255)" />
+    
+    <FontColor_r
+    AltName="Font Color: R"
+    Wiki="The red component for the RGBA color for the text used in the element." />
+    
+    <FontColor_g
+    AltName="Font Color: G"
+    Wiki="The green component for the RGBA color for the text used in the element." />
+    
+    <FontColor_b
+    AltName="Font Color: B"
+    Wiki="The blue component for the RGBA color for the text used in the element." />
+    
+    <FontColor_a
+    AltName="Font Color: Alpha"
+    Wiki="The alpha component for the RGBA color for the text used in the element. Transparent (0) to Opaque (255)" />
+    
+    <FontScale
+    AltName="Font Size"
+    Wiki="The magnification to apply to the font display size." />
+    
+    <reserve
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  <ColorEdit>
+    <ColorEditor 
+    Name="Base Color" 
+    Fields="BaseColor_r,BaseColor_g,BaseColor_b" 
+    PlacedField="BaseColor_b" />
+    
+    <ColorEditor 
+    Name="Font Color" 
+    Fields="FontColor_r,FontColor_g,FontColor_b" 
+    PlacedField="FontColor_b" />
+  </ColorEdit>
+</PARAMMETA>

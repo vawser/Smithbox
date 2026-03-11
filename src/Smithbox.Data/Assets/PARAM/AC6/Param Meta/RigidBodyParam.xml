@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <mass AltName="Mass" Wiki="Mass of the rigid body." />
+	<friction AltName="Friction Coefficient" Wiki="Friction coefficient of the rigid body surface." />
+	<restitution AltName="Restitution Coefficient" Wiki="Elastic modulus of the rigid body." />
+	<maxLinearSpeed AltName="Maximum Speed" Wiki="Maxmum linear speed allowed for rigid bodies, in m/s." />
+	<maxAngularSpeed AltName="Maximum Angular Velocity" Wiki="Maximul angular speed allowed for rigid bodies, in degrees/frame." />
+	<linearDampening AltName="Veocity Dampening" Wiki="Linear dampening applied to rigid bodies." />
+	<angularDampening AltName="Angular Velocity Dampening" Wiki="Angular rotation dampening applied to rigid bodies. Units are inverse seconds." />
+	<gravityFactor AltName="Gravity" Wiki="The gravity factor to apply to the rigid body." />
+	<softContactForceFactor AltName="Soft Contact" Wiki="The soft contact factor to apply to the rigid body." />
+	<softContactDampFactor AltName="Soft Contact Dampening" Wiki="The soft contact dampening factor to apply to the rigid body." />
+	<softContactSeperationVelocity AltName="Soft Contact Separation Velocity" Wiki="Soft contact push-off velocity." />
+	<softContactForceFactorSoft AltName="Soft Contact Force (Soft)" Wiki="Soft contact force. Soft." />
+	<softContactDampFactorSoft AltName="Soft Contact Dampening (Soft)" Wiki="Soft contact dampening. Soft." />
+	<softContactDeparationVelocitySoft AltName="Soft Contact Separation Velocity (Hard)" Wiki="Soft contact push-off velocity. Soft." />
+	<softContactForceFactorHard AltName="Soft Contact Force (Hard)" Wiki="Soft contact force. Hard." />
+	<softContactDampFactorHard AltName="Soft Contact Dampening (Hard)" Wiki="Soft contact dampening. Hard." />
+	<softContactDeparationVelocityHard AltName="Soft Contact Separation Velocity (Hard)" Wiki="Soft contact push-off velocity. Hard." />
+  </Field>
+  <Self Wiki="Determines parameters related to the rigid body." />
+</PARAMMETA>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the damage level after each conversion threshold is exceeded.\nThis is linked to Attitude Stability." />
+  
+  <Field>
+    <damageLevel_00 
+    AltName="Initial Damage Level" 
+    Wiki="Initial damage level." 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad0_1
+    AltName=""
+    Padding="" />
+    
+    <pad0_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_01
+    AltName="Damage Level after Threshold 0 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad1_1
+    AltName=""
+    Padding="" />
+    
+    <pad1_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_02
+    AltName="Damage Level after Threshold 1 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad2_1
+    AltName=""
+    Padding="" />
+    
+    <pad2_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_03
+    AltName="Damage Level after Threshold 2 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad3_1
+    AltName=""
+    Padding="" />
+    
+    <pad3_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_04
+    AltName="Damage Level after Threshold 3 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad4_1
+    AltName=""
+    Padding="" />
+    
+    <pad4_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_05
+    AltName="Damage Level after Threshold 4 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad5_1
+    AltName=""
+    Padding="" />
+    
+    <pad5_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_06
+    AltName="Damage Level after Threshold 5 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad6_1
+    AltName=""
+    Padding="" />
+    
+    <pad6_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_07
+    AltName="Damage Level after Threshold 6 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad7_1
+    AltName=""
+    Padding="" />
+    
+    <pad7_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_08
+    AltName="Damage Level after Threshold 7 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad8_1
+    AltName=""
+    Padding="" />
+    
+    <pad8_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_09
+    AltName="Damage Level after Threshold 8 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad9_1
+    AltName=""
+    Padding="" />
+    
+    <pad9_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_10
+    AltName="Damage Level after Threshold 9 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad10_1
+    AltName=""
+    Padding="" />
+    
+    <pad10_2
+    AltName=""
+    Padding="" />
+    
+    <damageLevel_11
+    AltName="Damage Level after Threshold 10 is Exceeded"
+    Wiki="Damage level when previous impact damage threshold is exceeded" 
+    Enum="DAMAGE_LEVEL" />
+    
+    <pad11_1
+    AltName=""
+    Padding="" />
+    
+    <pad_end
+    AltName=""
+    Padding="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="DAMAGE_LEVEL" type="s8">
+        <Option Value="0" Name="NONE" />
+        <Option Value="1" Name="SMALL" />
+        <Option Value="2" Name="MIDDLE" />
+        <Option Value="3" Name="LARGE" />
+        <Option Value="4" Name="EX LARGE" />
+        <Option Value="5" Name="PUSH" />
+        <Option Value="6" Name="FLING" />
+        <Option Value="7" Name="SMALL_BLOW" />
+        <Option Value="8" Name="MINIMUM" />
+        <Option Value="9" Name="UPPER" />
+        <Option Value="10" Name="EX_BLAST" />
+        <Option Value="11" Name="BREATH" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

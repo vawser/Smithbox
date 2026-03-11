@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters that relate to map info defaults." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding="" />
+    
+    <MapAiSightType
+    AltName="Shadow Sight Type"
+    Wiki="The AI sight visibility type to use for this map when in shadows." 
+    Enum="MAP_AI_SIGHT_TYPE" />
+    
+    <SoundIndoorType
+    AltName="Indoor Sound Type"
+    Wiki="The indoor sound type to apply in the map GD settings for 'indoor'." 
+    Enum="SOUND_INDOOR_TYPE" />
+    
+    <ReverbDefaultType
+    AltName="Default Reverb Type"
+    Wiki="The default reverb sewttings to use for this map." 
+    Enum="SOUND_MAP_DEFAULT_REVERB_TYPE" />
+    
+    <Reserve0
+    AltName=""
+    Padding="" />
+    
+    <MapAdditionalSoundBankId
+    AltName="Additional Sound Bank ID"
+    Wiki="A sound bank ID to use as an additional sound bank. -1 for none." />
+    
+    <OverrideGIResolution_XSS
+    AltName="Override Global Illumination Settings: XSS"
+    Wiki="The global illumination settings to override with for this map if running on the Xbox Series S (XSS)." 
+    Enum="MAP_GI_RESOLUTION_OVERRIDE_TYPE" />
+    
+    <OverrideGIResolution_XSX
+    AltName="Override Global Illumination Settings: XSX"
+    Wiki="The global illumination settings to override with for this map if running on the Xbox Series X (XSX)." 
+    Enum="MAP_GI_RESOLUTION_OVERRIDE_TYPE" />
+    
+    <Reserve1
+    AltName=""
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="MAP_AI_SIGHT_TYPE" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Bright" />
+        <Option Value="2" Name="Darkness" />
+        <Option Value="3" Name="Total Darkness" />
+    </Enum> 
+    <Enum Name="SOUND_INDOOR_TYPE" type="u8">
+        <Option Value="0" Name="Indoor: Half" />
+        <Option Value="1" Name="Indoor: All" />
+    </Enum> 
+    <Enum Name="SOUND_MAP_DEFAULT_REVERB_TYPE" type="s8">
+        <Option Value="-1" Name="Auto" />
+        <Option Value="0" Name="No Reverb" />
+        <Option Value="1" Name="Small Reverb (A)" />
+        <Option Value="2" Name="Small Reverb (B)" />
+        <Option Value="3" Name="Medium Reverb (A)" />
+        <Option Value="4" Name="Medium Reverb (B)" />
+        <Option Value="5" Name="Large Reverb (A)" />
+        <Option Value="6" Name="Large Reverb (B)" />
+        <Option Value="7" Name="Massive Reverb (A)" />
+        <Option Value="8" Name="Massive Reverb (B)" />
+    </Enum>
+    <Enum Name="MAP_GI_RESOLUTION_OVERRIDE_TYPE" type="s8">
+        <Option Value="-1" Name="No override" />
+        <Option Value="0" Name="Middle" />
+        <Option Value="1" Name="Low" />
+        <Option Value="2" Name="High" />
+    </Enum> 
+  </Enums>
+</PARAMMETA>

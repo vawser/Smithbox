@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the parameters for interactive smoke." />
+  
+  <Field>
+    <emitNum
+    AltName="Particle Generation Count"
+    Wiki="The touchable smoke SFX count to generate." />
+    
+    <lifeTime
+    AltName="Duration"
+    Wiki="The duration of the touchable smoke. In seconds." />
+    
+    <radius
+    AltName="Radius"
+    Wiki="The radius of the touchable smoke. In metres." />
+    
+    <addSfxTime
+    AltName="Interaction Time"
+    Wiki="The time for the touchable smoke to interact with other entities (e.g. create more smoke). In seconds." />
+    
+    <offsetRandomRange
+    AltName="Maximum Distance from Impact for Generation" 
+    Wiki="The maximum distance from the point of impact to generate SFX." />
+    
+    <sfxId
+    AltName="Smoke Particle ID"
+    Wiki="The SFX ID to use for the smoke that appears at the impact point." 
+    ParticleAlias="" />
+    
+    <addMainSfxId
+    AltName="Smoke Particle ID: On Touch"
+    Wiki="The SFX ID to use for the smoke that sticks when touching the main smoke SFX." />
+    
+    <addSubSfxId
+    AltName="Smoke Particle ID: On Touch (Parts)" 
+    Wiki="The SFX ID to use for the smoke that sticks when touching the main smoke SFX (randomly generated from parts)" />
+    
+    <tailPadding
+    AltName=""
+    Padding="" />
+    
+  </Field>
+</PARAMMETA>

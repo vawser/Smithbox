@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the configuration for missions."/>
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param: Network Test Version" 
+    Wiki="Exclude from the NT version or mark the ones to be excluded." 
+    IsBool="" />
+    
+    <disableParam_Product 
+    AltName="Disable Param: Release Version" 
+    Wiki="Exclude from the product version or mark the items to be excluded." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName=""
+    Padding="" />
+    
+    <disableParamReserve2 
+    AltName=""
+    Padding="" />
+    
+    <mstID 
+    AltName="Mission Map ID" 
+    Wiki="The overlay map that contains this mission's specific MSB configuration. Represents the YY_ZZ parts in the following MSB template: mXX_YY_ZZ_AA" />
+    
+    <systemAnswerMsgOffsetId
+    AltName="Interaction Message Mission Offset ID"
+    Wiki="" />
+    
+    <placementMapUid 
+    AltName="Location Map ID" 
+    Wiki="The base map that the overlay map takes place on." />
+    
+    <subMapId
+    AltName="Sub Map ID"
+    Wiki="Use the map for planning placement assets with the last two digits of the placement destination MapUid offset." />
+    
+    <timeZone
+    AltName="Time of Day"
+    Wiki="The time of day at the start of the mission."
+    Enum="TIME_ZONE_TYPE" />
+    
+    <weatherType
+    AltName="Weather"
+    Wiki="The weather at the start of the mission"
+    Enum="WEATHER_TYPE" />
+    
+    <pad01
+    Padding="" />
+    
+    <missionType 
+    AltName="Mission Type" 
+    Wiki="The type of mission this is."
+    Enum ="MISSION_TYPE" />
+    
+    <missionAltType 
+    AltName="Playthrough Appearance Type" 
+    Wiki="Determine whether to appear during initial playthrough or subsequent playthroughs." 
+    Enum ="MISSION_ALT_TYPE" />
+    
+    <pad1
+    Padding="" />
+    
+    <missionInfoTextID
+    AltName="Mission Text ID"
+    Wiki="The text ID to use for the mission name, summary, objective and location name. If 0, the row ID is used."
+    FmgRef="Mission_Name,Mission_Overview,Mission_Objective,Mission_Location_Name" />
+    
+    <activateDistXZ
+    AltName="Activation Distance: X/Z"
+    Wiki="The activation distance (on the x/z-axis) of mission placement items." />
+    
+    <sortieCutsceneIdx 
+    AltName="Briefing Scene Index" 
+    Wiki="The garage cutscene to use for the mission briefing scene."  /> 
+    
+    <returnCutsceneIdx 
+    AltName="Completion Scene Index" 
+    Wiki="The garage cutscene to use for the mission completion scene." /> 
+    
+    <cutsceneTalkOffsetId
+    AltName="Scene Conversation ID"
+    Wiki="The conversation ID to use for general cutscenes. It is an offset, replacing the xxxx section in the following template: 5xxxx0000" />
+    
+    <clientNameID
+    AltName="Client Name ID"
+    Wiki="The name of the client (company) that is asking for the mission." 
+    FmgRef="Title_Characters" />
+    
+    <briefingID
+    AltName="Briefing Movie ID"
+    Wiki="The movie ID to use for the briefing movie." 
+    MovieAlias="" />
+    
+    <baseReward 
+    AltName="COAM Reward" 
+    Wiki="Amount of COAM given upon successful completion of the mission." />
+    
+    <mailID_0
+    AltName="0: Mail"
+    Wiki="The mission mail parameter ID for slot 0." 
+    Refs="MailParam" />
+    
+    <mailID_1
+    AltName="1: Mail"
+    Wiki="The mission mail parameter ID for slot 0." 
+    Refs="MailParam" />
+    
+    <mailID_2
+    AltName="2: Mail"
+    Wiki="The mission mail parameter ID for slot 0." 
+    Refs="MailParam" />
+    
+    <mailID_3
+    AltName="3: Mail"
+    Wiki="The mission mail parameter ID for slot 0." 
+    Refs="MailParam" />
+    
+    <mailID_4
+    AltName="4: Mail"
+    Wiki="The mission mail parameter ID for slot 0." 
+    Refs="MailParam" />
+    
+    <icon_0
+    AltName="0: Mission Icon"
+    Wiki="The first icon displayed in the menu for this mission." 
+    Enum="MISSION_ICON_TYPE" />
+    
+    <icon_1
+    AltName="1: Mission Icon"
+    Wiki="The second icon displayed in the menu for this mission." 
+    Enum="MISSION_ICON_TYPE" />
+    
+    <chater 
+    AltName="Chapter Group" 
+    Wiki="The chapter this mission belongs to. If the final mission of a chapter is cleared, all missions within the same chapter will be invalidated." />
+    
+    <isChapterLast
+    AltName="Is Final Chapter"
+    Wiki="If ON, this mission is the final mission within its chapter group."
+    IsBool="" />
+    
+    <isTrophyTarget
+    AltName="Is Achievement Mission"
+    Wiki="If ON, this mission is part of the missions counted in the 'All Missions Cleared' achievement."
+    IsBool="" />
+    
+    <reserved4
+    Padding="" />
+    
+    <bulletCost_rate 
+    AltName="Ammunition Cost Multiplier" 
+    Wiki="Multiplier to the cost of ammunition taken after mission completion." />
+    
+    <bulletCost_limit 
+    AltName="Ammunition Cost Maximum" 
+    Wiki="Cap to the cost of ammunition taken after mission completion." />
+    
+    <repairCost_coefficient 
+    AltName="Repair Cost Multiplier" 
+    Wiki="Multiplier to the cost of repair taken after mission completion." />
+    
+    <repairCost_limit 
+    AltName="Repair Cost Maximum" 
+    Wiki="Cap to the cost of repair taken after mission completion." />
+    
+    <SpecialReward0_TextID 
+    AltName="0: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward0_UnitPrice 
+    AltName="0: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward1_TextID 
+    AltName="1: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward1_UnitPrice 
+    AltName="1: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward2_TextID 
+    AltName="2: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward2_UnitPrice 
+    AltName="2: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward3_TextID 
+    AltName="3: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward3_UnitPrice 
+    AltName="3: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward4_TextID 
+    AltName="4: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward4_UnitPrice 
+    AltName="4: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <loadingScreenImageID
+    AltName="Loading Screen ID"
+    Wiki="The image ID of the loading screen used for the mission. If 0, use the default loading screen." />
+    
+    <loadingScreenTextID
+    AltName="Loading Screen Text ID"
+    Wiki="The text ID for the loading screen text used for the mission. If 0, use the default loading screen." 
+    FmgRef="Event_Text" />
+    
+    <calcScoreCoef_damage 
+    AltName="Damage Score Multiplier" 
+    Wiki="Multiplier to the score based on damage." />
+    
+    <calcScoreCoef_bulletCost 
+    AltName="Ammunition Score Multiplier" 
+    Wiki="Multiplier to the score based on ammunition consumption." />
+    
+    <calcScoreCoef_enemyBonus 
+    AltName="Points Score Multiplier" 
+    Wiki="Multiplier to the score based on points." />
+    
+    <calcScoreCoef_clearTime 
+    AltName="Time Score Multiplier"
+    Wiki="Multiplier to the score based on time." />
+    
+    <activateDistY
+    AltName="Activation Distance: Y"
+    Wiki="The activation distance (on the y-axis) of mission placement items." />
+    
+    <maxClearTime 
+    AltName="Time Score Maximum" 
+    Wiki="The time in seconds at which the time score multiplier applied in full. -1 means there is no limit." />
+    
+    <calcRankThreshold_RankS 
+    AltName="Score for S Rank" 
+    Wiki="If the score is less than this value, then rank S." />
+    
+    <calcRankThreshold_RankA 
+    AltName="Score for A Rank" 
+    Wiki="If the score is less than this value, then rank A." />
+    
+    <calcRankThreshold_RankB 
+    AltName="Score for B Rank" 
+    Wiki="If the score is less than this value, then rank B." />
+    
+    <calcRankThreshold_RankC 
+    AltName="Score for C Rank" 
+    Wiki="If the score is less than this value, then rank C." />
+    
+    <SpecialReward5_TextID 
+    AltName="5: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward5_UnitPrice 
+    AltName="5: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward6_TextID 
+    AltName="6: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward6_UnitPrice 
+    AltName="6: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted." />
+    
+    <SpecialReward7_TextID 
+    AltName="7: Mission Event - Text ID" 
+    Wiki="The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X" 
+    FmgRef="Event_Text" />
+    
+    <SpecialReward7_UnitPrice 
+    AltName="7: Mission Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing mission event. If negative, the reward amount is subtracted." />
+    
+    <pad6
+    Padding="" />
+    
+    <EnemyDestroyReward0_TextID 
+    AltName="0: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward0_UnitPrice 
+    AltName="0: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward1_TextID 
+    AltName="1: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward1_UnitPrice 
+    AltName="1: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward2_TextID 
+    AltName="2: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward2_UnitPrice 
+    AltName="2: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward3_TextID 
+    AltName="3: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward3_UnitPrice 
+    AltName="3: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward4_TextID 
+    AltName="4: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward4_UnitPrice 
+    AltName="4: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward5_TextID 
+    AltName="5: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward5_UnitPrice 
+    AltName="5: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward6_TextID 
+    AltName="6: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward6_UnitPrice 
+    AltName="6: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <EnemyDestroyReward7_TextID 
+    AltName="7: Enemy Destruction Event - Text ID" 
+    Wiki="The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission." 
+    FmgRef="Event_Text" />
+    
+    <EnemyDestroyReward7_UnitPrice 
+    AltName="7: Enemy Destruction Event - Reward" 
+    Wiki="Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted." />
+    
+    <exclusiveGroup
+    AltName="Exclusive Group"
+    Wiki="Missions within the same exclusive group will be invalidated when the mission is cleared." />
+    
+    <pad7
+    Padding="" />
+    
+    <sortID
+    AltName="Sort ID"
+    Wiki="The sorting order for this mission in the menu." />
+    
+    <assemID 
+    AltName="Forced Loadout ID" 
+    Wiki="The forced loadout to apply to the player when they start this mission."
+    Refs="CharaInitParam" />
+    
+    <arenaMissionLineEntityId
+    AltName="Arena: Boundary Collision Entity ID"
+    Wiki="The entity ID of the collision to enable during an Arena mission to form the map boundary." />
+    
+    <ResultMovie0_movieID
+    AltName="0: Post-Results - Movie ID"
+    Wiki="The movie ID to use after the results screen." 
+    MovieAlias="" />
+    
+    <ResultMovie0_eventFlagID
+    AltName="0: Post-Results - Playback Flag ID"
+    Wiki="The event flag that determines movie playback. If 0, always play." 
+    FlagAlias="" />
+    
+    <ResultMovie1_movieID
+    AltName="1: Post-Results - Movie ID"
+    Wiki="The movie ID to use after the results screen." 
+    MovieAlias="" />
+    
+    <ResultMovie1_eventFlagID
+    AltName="0: Post-Results - Playback Flag ID"
+    Wiki="The event flag that determines movie playback. If 0, always play." 
+    FlagAlias="" />
+    
+    <arenaMissionFallDeadHitEntityId
+    AltName="Arena: Kill Collision Entity ID"
+    Wiki="The entity ID of the collision to enable during an Arena mission to form the kill boundary." />
+    
+    <acNameID
+    AltName="Sortie: AC Name ID"
+    Wiki="The text ID of the AC to display on the Sortie screen." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <fallDeadHeight
+    AltName="Forced Fall Death Height"
+    Wiki="The height at which death will occur dued to forced fall." />
+    
+    <WorldMapImageID
+    AltName="Mission Selection: Map Image ID"
+    Wiki="The image ID of the world map image displayed on the mission selection screen." />
+    
+    <MapInfoImageID
+    AltName="Mission Selection: Supplementary Image ID"
+    Wiki="The image ID of the supplementary image displayed on the mission selection screen." />
+    
+    <preLoadChrTexId
+    AltName="Preloaded Character ID"
+    Wiki="The character ID to load at the start of the mission for its textures. Used when memory fragmentation occurs with dynamic character loading." />
+    
+    <updateGeomLimitNum
+    AltName="Asset Update Limit"
+    Wiki="The update limit for assets per frame." />
+    
+    <hiHitLimitRange
+    AltName="High Collision Distance"
+    Wiki="The distance at which high collision is activated. In metres." />
+    
+    <hiLoadMaxNum
+    AltName="High Collision Activation Update Limit"
+    Wiki="The update limit for activating high collision each frame. -1 defaults to 70." />
+    
+    <activateDistXZ_forXb1
+    AltName="Activation Distance: X/Z (XB1)"
+    Wiki="The activation distance (on the x/z-axis) of mission placement items." />
+    
+    <activateDistY_forXb1
+    AltName="Activation Distance: Y (XB1)"
+    Wiki="The activation distance (on the y-axis) of mission placement items." />
+    
+    <pad8
+    Padding="" />
+  </Field>
+  <Enums>
+    <Enum Name="MISSION_TYPE" type="s8">
+      <Option Value="0" Name="Story" />
+      <Option Value="1" Name="Free Exploration" />
+      <Option Value="2" Name="AC TEST" />
+      <Option Value="3" Name="Training" />
+    </Enum>
+    <Enum Name="MISSION_ALT_TYPE" type="u8">
+      <Option Value="0" Name="Original" />
+      <Option Value="1" Name="Alternate" />
+    </Enum>
+    <Enum Name="TIME_ZONE_TYPE" type="s8">
+      <Option Value="0" Name="Morning" />
+      <Option Value="1" Name="Day A" />
+      <Option Value="2" Name="Day B" />
+      <Option Value="3" Name="Evening" />
+      <Option Value="4" Name="Night" />
+      <Option Value="5" Name="Midnight A" />
+      <Option Value="6" Name="Midnight B" />
+      <Option Value="-1" Name="Invalid" />
+    </Enum>
+    <Enum Name="WEATHER_TYPE" type="s16">
+      <Option Value="0" Name="Sunny" />
+      <Option Value="1" Name="Rain" />
+      <Option Value="2" Name="Storm (Weak)" />
+      <Option Value="3" Name="Storm (Strong)" />
+      <Option Value="4" Name="Geyser" />
+      <Option Value="5" Name="Geyser (Small and Large)" />
+      <Option Value="-1" Name="Disabled" />
+      <Option Value="-2" Name="All Weather" />
+    </Enum>
+    <Enum Name="MISSION_ICON_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Final Chapter" />
+      <Option Value="2" Name="Story Progression" />
+    </Enum>
+  </Enums>
+</PARAMMETA>
