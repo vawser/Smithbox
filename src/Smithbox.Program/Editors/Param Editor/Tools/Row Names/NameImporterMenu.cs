@@ -24,37 +24,16 @@ public static class NameImporterMenu
 
         if (ImGui.BeginMenu("Import"))
         {
-            if (ImGui.BeginMenu("Community Names"))
+            foreach(var language in paramData.RowImportLanguages.Options)
             {
-                if (ImGui.MenuItem($"Selected Param"))
-                {
-                    RowNameHelper.ImportRowNamesForParam(
-                        curProject,
-                        curProject.Handler.ParamData.PrimaryBank,
-                        ParamRowNameImportType.Community,
-                        activeView.Selection.GetActiveParam());
-                }
-                if (ImGui.MenuItem($"All"))
-                {
-                    RowNameHelper.ImportRowNames(
-                        curProject,
-                        curProject.Handler.ParamData.PrimaryBank,
-                        ParamRowNameImportType.Community);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ParamUtils.HasDeveloperRowNames(curProject))
-            {
-                if (ImGui.BeginMenu("Developer Names"))
+                if (ImGui.BeginMenu($"{language.Name} Names##{language.Folder}import"))
                 {
                     if (ImGui.MenuItem($"Selected Param"))
                     {
                         RowNameHelper.ImportRowNamesForParam(
                             curProject,
                             curProject.Handler.ParamData.PrimaryBank,
-                            ParamRowNameImportType.Developer,
+                            language.Folder,
                             activeView.Selection.GetActiveParam());
                     }
                     if (ImGui.MenuItem($"All"))
@@ -62,8 +41,9 @@ public static class NameImporterMenu
                         RowNameHelper.ImportRowNames(
                             curProject,
                             curProject.Handler.ParamData.PrimaryBank,
-                            ParamRowNameImportType.Developer);
+                            language.Folder);
                     }
+
                     ImGui.EndMenu();
                 }
             }
@@ -145,7 +125,7 @@ public static class NameImporterMenu
                     RowNameHelper.ImportRowNamesForParam(
                         project,
                         project.Handler.ParamData.PrimaryBank,
-                        ParamRowNameImportType.External,
+                        "External",
                         activeView.Selection.GetActiveParam(),
                         FilePath);
                 }
@@ -154,7 +134,7 @@ public static class NameImporterMenu
                     RowNameHelper.ImportRowNames(
                         project,
                         project.Handler.ParamData.PrimaryBank,
-                        ParamRowNameImportType.External,
+                        "External",
                         FilePath);
                 }
             }

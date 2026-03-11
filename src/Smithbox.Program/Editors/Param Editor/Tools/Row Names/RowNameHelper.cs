@@ -17,9 +17,9 @@ namespace StudioCore.Editors.ParamEditor;
 public static class RowNameHelper
 {
     #region Row Name Import
-    public static async void ImportRowNames(ProjectEntry project, ParamBank bank, ParamRowNameImportType sourceType, string filepath = "")
+    public static async void ImportRowNames(ProjectEntry project, ParamBank bank, string language, string filepath = "")
     {
-        Task<bool> importRowNameTask = ImportRowNamesTask(project, bank, sourceType, filepath, "");
+        Task<bool> importRowNameTask = ImportRowNamesTask(project, bank, language, filepath, "");
         bool rowNamesImported = await importRowNameTask;
 
         if (rowNamesImported)
@@ -32,9 +32,10 @@ public static class RowNameHelper
         }
     }
 
-    public static async void ImportRowNamesForParam(ProjectEntry project, ParamBank bank, ParamRowNameImportType sourceType, string targetParam = "", string filepath = "")
+
+    public static async void ImportRowNamesForParam(ProjectEntry project, ParamBank bank, string language, string targetParam = "", string filepath = "")
     {
-        Task<bool> importRowNameTask = ImportRowNamesTask(project, bank, sourceType, filepath, targetParam);
+        Task<bool> importRowNameTask = ImportRowNamesTask(project, bank, language, filepath, targetParam);
         bool rowNamesImported = await importRowNameTask;
 
         if (rowNamesImported)
@@ -47,27 +48,22 @@ public static class RowNameHelper
         }
     }
 
-    public static async Task<bool> ImportRowNamesTask(ProjectEntry project, ParamBank bank, ParamRowNameImportType sourceType, string filepath = "", string targetParam = "")
+    public static async Task<bool> ImportRowNamesTask(ProjectEntry project, ParamBank bank, string language, string filepath = "", string targetParam = "")
     {
         await Task.Yield();
 
         var sourceDirectory = filepath;
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(project)}";
 
-        switch (sourceType)
-        {
-            case ParamRowNameImportType.Community:
-                sourceDirectory = Path.Combine(folder, "Community Row Names");
-                break;
-            case ParamRowNameImportType.Developer:
-                sourceDirectory = Path.Combine(folder, "Developer Row Names");
-                break;
-        }
+        sourceDirectory = Path.Combine(folder, "Param Row Names", language);
 
-        // For user-explicit imports
-        if (filepath != "")
+        if (language == "External")
         {
-            sourceDirectory = filepath;
+            // For user-explicit imports
+            if (filepath != "")
+            {
+                sourceDirectory = filepath;
+            }
         }
 
         if (!Directory.Exists(sourceDirectory))

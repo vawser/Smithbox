@@ -1,0 +1,269 @@
+{
+  "Name": "ItemTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weapon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Shield"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Armor"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Armor (Unremovable)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Ring"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Spell"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Ammunition"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Crushing Animation (Lifegems)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Pray Animation"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Pray Animation (Loop)"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Darksign"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Black Separation Crystal "
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Eat Animation"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Eat Animation (Cast Restoration)"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Eat Animation (Dried Root)"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Eat Animation (Fast)"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Drink Animation"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Drink Animation (Stop)"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Estus Flask"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Silky Stone"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Soul"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Transformation (Dragon Stone)"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Dragon Breath"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Weapon Resin/Ooze"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Scattering Animation (Repair Powder, Carvings)"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Placing Item (Prism Stone)"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Writing Animation (Soapstone)"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Throw Animation (Light)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Throw Animation (Heavy)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Arrow"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Greatarrow"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Bolt"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Reinforcement Material"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Petrified Something/Egg"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Soul Vessel"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Champion's Tablet"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Bone of Order"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Gesture"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Key Item"
+      ]
+    }
+  ]
+}

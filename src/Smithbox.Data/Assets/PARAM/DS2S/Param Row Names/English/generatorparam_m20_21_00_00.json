@@ -1,0 +1,629 @@
+{
+  "Name": "generatorparam_m20_21_00_00",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "[GEN:1] Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[GEN:40] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[GEN:41] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[GEN:60] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[GEN:61] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[GEN:205] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "[GEN:235] Nashandra (human)"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "[GEN:305] Imprisoned Milfanito"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "[GEN:306] Imprisoned Milfanito"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[GEN:400] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "[GEN:670] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 671,
+      "Entries": [
+        "[GEN:671] Nameless Usurper"
+      ]
+    },
+    {
+      "ID": 676,
+      "Entries": [
+        "[GEN:676] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 677,
+      "Entries": [
+        "[GEN:677] Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 678,
+      "Entries": [
+        "[GEN:678] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 679,
+      "Entries": [
+        "[GEN:679] Ashen Knight Boyd"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "[GEN:680] Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 681,
+      "Entries": [
+        "[GEN:681] Pilgrim Bellclaire"
+      ]
+    },
+    {
+      "ID": 682,
+      "Entries": [
+        "[GEN:682] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 683,
+      "Entries": [
+        "[GEN:683] Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "[GEN:825] Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 859,
+      "Entries": [
+        "[GEN:859] Nashandra"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "[GEN:860] Throne Defender"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "[GEN:862] Throne Watcher"
+      ]
+    },
+    {
+      "ID": 863,
+      "Entries": [
+        "[GEN:863] Twin Dragonrider"
+      ]
+    },
+    {
+      "ID": 864,
+      "Entries": [
+        "[GEN:864] Twin Dragonrider"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[GEN:910] Aldia- Scholar of the First Sin (boss)"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "[GEN:917] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 968,
+      "Entries": [
+        "[GEN:968] Forlorn"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Primal Knight"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Primal Knight"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[GEN:1020] Drakekeeper Knight Phantom"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[GEN:1030] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "[GEN:1031] Royal Soldier"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[GEN:1050] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[GEN:1051] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "[GEN:1052] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "[GEN:1053] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[GEN:1070] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "[GEN:1071] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1073,
+      "Entries": [
+        "[GEN:1073] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[GEN:1090] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "[GEN:1091] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "[GEN:1092] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1098,
+      "Entries": [
+        "[GEN:1098] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[GEN:1220] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "[GEN:1221] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1222,
+      "Entries": [
+        "[GEN:1222] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[GEN:1230] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1296,
+      "Entries": [
+        "[GEN:1296] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "[GEN:1302] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "[GEN:1306] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "[GEN:1307] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "[GEN:1308] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[GEN:1310] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "[GEN:1312] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "[GEN:1313] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1316,
+      "Entries": [
+        "[GEN:1316] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        "[GEN:1317] Stone Soldier"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[GEN:1320] Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "[GEN:1325] Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[GEN:1330] Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 1335,
+      "Entries": [
+        "[GEN:1335] Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "[GEN:1340] Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[GEN:1420] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "[GEN:1430] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1431,
+      "Entries": [
+        "[GEN:1431] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[GEN:1510] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "[GEN:1550] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "[GEN:1560] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "[GEN:1561] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "[GEN:1570] Syan Knight"
+      ]
+    },
+    {
+      "ID": 1591,
+      "Entries": [
+        "[GEN:1591] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "[GEN:1610] Royal Swordsman"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "[GEN:1703] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[GEN:3010] Stone Knight"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Stone Knight"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] Stone Knight"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[GEN:3040] Stone Knight"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Washing Pole Phantom"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Looking Glass Phantom (Faraam)"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[GEN:5001] Looking Glass Phantom (Knight)"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] The Pursuer"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[GEN:8010] The Pursuer"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[GEN:9010] Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "[GEN:9031] Old Knight"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "[GEN:9032] Old Knight"
+      ]
+    },
+    {
+      "ID": 9033,
+      "Entries": [
+        "[GEN:9033] Old Knight"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "[GEN:9040] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "[GEN:9050] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "[GEN:9051] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "[GEN:9060] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "[GEN:9061] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "[GEN:9080] Manikin"
+      ]
+    },
+    {
+      "ID": 9081,
+      "Entries": [
+        "[GEN:9081] Manikin"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "[GEN:9200] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "[GEN:9201] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "[GEN:9202] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "[GEN:9300] Mimic"
+      ]
+    },
+    {
+      "ID": 9953,
+      "Entries": [
+        "[GEN:9953] Royal Swordsman"
+      ]
+    }
+  ]
+}

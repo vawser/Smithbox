@@ -1,0 +1,12 @@
+{
+  "Options": [
+        {
+          "Name": "English",
+          "Folder": "English"
+        },
+        {
+          "Name": "Japanese",
+          "Folder": "Japanese"
+        }
+    ]
+}

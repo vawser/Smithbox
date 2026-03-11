@@ -502,7 +502,8 @@ public class ParamTableWindow
 
         if (writeDir == "")
         {
-            targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
+            var lang = CFG.Current.ParamEditor_Import_Language;
+            targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Param Table Names", lang);
         }
 
         if (!Directory.Exists(targetDir))

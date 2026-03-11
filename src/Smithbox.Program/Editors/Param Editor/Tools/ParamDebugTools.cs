@@ -31,7 +31,12 @@ public static class ParamDebugTools
         {
             var dir = Path.Combine(ProjectFolder,
                 "src", "Smithbox.Data", "Assets", "PARAM",
-                ProjectUtils.GetGameDirectory(project), "Community Table Names");
+                ProjectUtils.GetGameDirectory(project), "Param Table Names", "English");
+
+            if(!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
 
             activeView.ParamTableWindow.WriteTableGroupNames(dir);
 
@@ -50,7 +55,12 @@ public static class ParamDebugTools
         {
             var dir = Path.Combine(ProjectFolder,
                 "src", "Smithbox.Data", "Assets", "PARAM",
-                ProjectUtils.GetGameDirectory(project), "Community Row Names");
+                ProjectUtils.GetGameDirectory(project), "Param Row Names", "English");
+
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
 
             var curParam = activeView.Selection.GetActiveParam();
 

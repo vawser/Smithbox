@@ -1,0 +1,53 @@
+{
+  "Name": "FootEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "無"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "極小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "特大"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "特特大"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "特特特大"
+      ]
+    }
+  ]
+}

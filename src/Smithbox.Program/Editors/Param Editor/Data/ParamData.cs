@@ -31,6 +31,8 @@ public class ParamData : IDisposable
     public ParamAnnotationLanguages ParamAnnotationLanguages = new();
     public ParamAnnotations ParamAnnotations = new();
 
+    public ParamImportLanguages RowImportLanguages = new();
+
     // Base meta data
     public ParamTypeInfo ParamTypeInfo;
     public TableParams TableParamList;
@@ -110,6 +112,19 @@ public class ParamData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Param Editor] Setup the PARAM enums.");
+        }
+
+        // Secondary Language Options
+        Task<bool> secondaryLanguageOptionsTask = SetupSecondaryLanguageOptions();
+        bool secondaryLanguageOptionsTaskResult = await secondaryLanguageOptionsTask;
+
+        if (!secondaryLanguageOptionsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM language options.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM language options.");
         }
 
         // Graph Annotations
@@ -623,6 +638,41 @@ public class ParamData : IDisposable
         return true;
     }
 
+    public async Task<bool> SetupSecondaryLanguageOptions()
+    {
+        await Task.Yield();
+
+        // Row Names
+        RowImportLanguages = new();
+
+        // Build the language list first
+        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Row Import Languages.json");
+
+        if (Path.Exists(sourcefile))
+        {
+            var file = File.ReadAllText(sourcefile);
+            try
+            {
+                RowImportLanguages = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamImportLanguages);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param import languages: {file}", LogPriority.High, e);
+            }
+        }
+        else
+        {
+            // Default to English if the file is missing
+            var english = new ParamImportLanguageEntry();
+            english.Name = "English";
+            english.Folder = "English";
+
+            RowImportLanguages.Options.Add(english);
+        }
+
+        return true;
+    }
+
     public async Task<bool> SetupParamEnums()
     {
         await Task.Yield();
@@ -1083,7 +1133,8 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
+        var lang = CFG.Current.ParamEditor_Import_Language;
+        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Table Names", lang);
 
         if (!Directory.Exists(srcDir))
         {
@@ -1118,7 +1169,7 @@ public class ParamData : IDisposable
         }
 
         // Project Store
-        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Param Table Names", lang);
 
         var projStore = new TableGroupNameStore();
         projStore.Groups = new();

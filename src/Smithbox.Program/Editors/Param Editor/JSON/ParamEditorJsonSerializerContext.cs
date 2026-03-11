@@ -58,6 +58,10 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(RowNameEntry))]
 [JsonSerializable(typeof(RowNameEntryLegacy))]
 
+// Row Name Languages
+[JsonSerializable(typeof(ParamImportLanguages))]
+[JsonSerializable(typeof(ParamImportLanguageEntry))]
+
 // Param Upgrader Instructions
 [JsonSerializable(typeof(ParamUpgraderInfo))]
 [JsonSerializable(typeof(OldRegulationEntry))]

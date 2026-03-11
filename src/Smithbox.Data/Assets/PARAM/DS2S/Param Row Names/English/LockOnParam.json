@@ -1,0 +1,407 @@
+{
+  "Name": "LockOnParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Lock-on -- ロックオン"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Base - Very Short -- ベース-極短"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Base - Short -- ベース-短"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Base - Medium -- ベース-中"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Base - Large -- ベース-長"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Base - Very Large -- ベース-極長"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Base value -- ベース値"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "Previous version -- 旧バージョン"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "Light and dark Lv. 0 -- 明暗Ｌｖ．０"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "Light and dark Lv. 1 -- 明暗Ｌｖ．１"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "Light and dark Lv. 2 -- 明暗Ｌｖ．２"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "Light and dark Lv. 3 -- 明暗Ｌｖ．３"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "Light and dark Lv. 4 -- 明暗Ｌｖ．４"
+      ]
+    },
+    {
+      "ID": 9960,
+      "Entries": [
+        "For bosses -- ボス用"
+      ]
+    },
+    {
+      "ID": 9961,
+      "Entries": [
+        "For bosses - Lost Sinner - 0 lights -- ボス用-忘れられた罪人-ライト０個"
+      ]
+    },
+    {
+      "ID": 9962,
+      "Entries": [
+        "For bosses - Lost Sinner - 1 light -- ボス用-忘れられた罪人-ライト１個"
+      ]
+    },
+    {
+      "ID": 9963,
+      "Entries": [
+        "For Bosses - Ancient Dragon -- ボス用-古龍"
+      ]
+    },
+    {
+      "ID": 9964,
+      "Entries": [
+        "For Bosses - Wyvern -- ボス用-ワイバーン"
+      ]
+    },
+    {
+      "ID": 9965,
+      "Entries": [
+        "For bosses - Super Extra Large -- ボス用-超特大"
+      ]
+    },
+    {
+      "ID": 9966,
+      "Entries": [
+        "For the Boss - Looking Glass Knight -- ボス用-鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 9967,
+      "Entries": [
+        "For Bosses - Darklurker -- ボス用-アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 9968,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Prowling Magus & Congregation"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Lords"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "Royal Rat Authority"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Royal Rat Vanguard"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Smelter Demon - Old Iron King DLC"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "The Last Giant"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "Dragonrider & Dragonrider"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Belfry Gargoyles"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Ruin Sentinels"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne Watcher & Throne Defender"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Velstadt, the Royal Aegis"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Mytha, the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Vendrick"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Demon of Song"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "The Lost Sinner - 0 Lights"
+      ]
+    },
+    {
+      "ID": 626001,
+      "Entries": [
+        "The Lost Sinner - 1 Light"
+      ]
+    },
+    {
+      "ID": 626002,
+      "Entries": [
+        "The Lost Sinner - 2 Lights"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Lud, the King's Pet & Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 679100,
+      "Entries": [
+        "Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana, the Squalid Queen"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 691000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        "Aldia, Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "Afflicted Graverobber, Ancient Soldier Varg & Cerah, the Old Explorer"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

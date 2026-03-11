@@ -1,0 +1,5921 @@
+{
+  "Name": "EnemyDefaultLogicParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Goblin (Test) -- ゴブリン（テスト）"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Goblin (Test 2) -- ゴブリン（テスト2）"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Goblin (Official Test) -- ゴブリン（正式テスト）"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Cobold (Test) -- コボルト（テスト）"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "Auger (Test) -- オーガ（テスト）"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Auger (test for actual use) -- オーガ(実機用テスト)"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Demon Soldier (Captain) (Test for actual aircraft) -- デーモン兵士(隊長)(実機用テスト)"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Demon soldier (test for actual use) -- デーモン兵士(実機用テスト)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Salamander (tentative) -- サラマンダー（仮）"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Yadokari Castle (tentative) -- ヤドカリ城（仮）"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "White Phantom Test -- 白ファントムテスト"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Player character for proto version -- プロト版用プレイヤーキャラクタ"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Proto version enemy character -- プロト版用敵キャラクタ"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "New player character for proto version -- プロト版用新プレイヤーキャラクタ"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "New enemy character for proto version -- プロト版用新敵キャラクタ"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Flamto -- フラムト"
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        "Flamto (no environmental map) -- フラムト(環境マップ無し)"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Giant Boss Test (Morinaga) -- 巨大ボステスト（森永）"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Giant Lower Soldier (Test) -- 巨人下級兵士（テスト）"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "Ueda Test (Goblin) Yoshida Param Adjustment Version -- 上田テスト（ゴブリン）吉田Param調整版"
+      ]
+    },
+    {
+      "ID": 9112,
+      "Entries": [
+        "Ueda Test (Goblin) -- 上田テスト（ゴブリン）"
+      ]
+    },
+    {
+      "ID": 9113,
+      "Entries": [
+        "Ueda Test (Goblin: Floating) -- 上田テスト（ゴブリン：浮遊）"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Captain of the Giant SS (Morinaga Test) -- 巨人親衛隊長（森永テスト）"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Okawachi Test -- 大河内テスト"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "For NPC testing -- NPCテスト用"
+      ]
+    },
+    {
+      "ID": 9160,
+      "Entries": [
+        "Imazu Test -- 今津テスト"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "For barrett bullet test -- バレット弾きテスト用"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Character for new bone structure -- 新ボーン構造用キャラ"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "GgD - Dead: Traveler's Clothing ♂ -- GGD用-亡者：旅人の服♂"
+      ]
+    },
+    {
+      "ID": 9333,
+      "Entries": [
+        "Ohki NPC Test 1 -- 大木ＮＰＣテスト1"
+      ]
+    },
+    {
+      "ID": 9334,
+      "Entries": [
+        "Ohki NPC Test 2 -- 大木ＮＰＣテスト2"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Oil Wet Test - Kingdom Soldier (Dead): Bow -- 油濡れテスト-王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Dark Spirit Double Sword Man -- 闇霊ダブルソードマン"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Red Spirit Level 0 -- 赤霊レベル０"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "Red Spirit Level 1 -- 赤霊レベル１"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Red Spirit Level 2 -- 赤霊レベル２"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "Red Spirit Level 3 -- 赤霊レベル３"
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        "Blue Spirit Level 0 -- 青霊レベル０"
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        "Blue Spirit Level 1 -- 青霊レベル１"
+      ]
+    },
+    {
+      "ID": 9603,
+      "Entries": [
+        "Blue Spirit Level 2 -- 青霊レベル２"
+      ]
+    },
+    {
+      "ID": 9604,
+      "Entries": [
+        "Blue Spirit Level 3 -- 青霊レベル３"
+      ]
+    },
+    {
+      "ID": 9605,
+      "Entries": [
+        "Small White Phantom -- 小白ファントム"
+      ]
+    },
+    {
+      "ID": 9606,
+      "Entries": [
+        "White Phantom -- 白ファントム"
+      ]
+    },
+    {
+      "ID": 9607,
+      "Entries": [
+        "Small Gold Phantom -- 小金ファントム"
+      ]
+    },
+    {
+      "ID": 9608,
+      "Entries": [
+        "Gold Phantom -- 金ファントム"
+      ]
+    },
+    {
+      "ID": 9609,
+      "Entries": [
+        "Dragon Spirit Phantom -- 竜霊ファントム"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "Abyss Phantom -- 深淵ファントム"
+      ]
+    },
+    {
+      "ID": 9611,
+      "Entries": [
+        "Usually Phantom Phantom -- 通常幻影ファントム"
+      ]
+    },
+    {
+      "ID": 9612,
+      "Entries": [
+        "Bonfire Phantom Phantom -- 篝火幻影ファントム"
+      ]
+    },
+    {
+      "ID": 9613,
+      "Entries": [
+        "Tomb Phantom -- 墓霊ファントム"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Phantom - Naked (Man) -- 幻影-裸（男）"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Phantom - Clothes (Man) -- 幻影-服（男）"
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        "Phantom - Light Clothing (Male) -- 幻影-軽装（男）"
+      ]
+    },
+    {
+      "ID": 9703,
+      "Entries": [
+        "Phantom - Heavy Wear (Male) -- 幻影-重装（男）"
+      ]
+    },
+    {
+      "ID": 9704,
+      "Entries": [
+        "Phantom - Naked (Female) -- 幻影-裸（女）"
+      ]
+    },
+    {
+      "ID": 9705,
+      "Entries": [
+        "Phantom - Clothes (Woman) -- 幻影-服（女）"
+      ]
+    },
+    {
+      "ID": 9706,
+      "Entries": [
+        "Phantom - Light Clothing (Female) -- 幻影-軽装（女）"
+      ]
+    },
+    {
+      "ID": 9707,
+      "Entries": [
+        "Phantom - Heavy Clothing (Female) -- 幻影-重装（女）"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "For test characters -- テストキャラクター用"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Goblin :Bare hands: Gaping Cave -- ゴブリン（生者）：素手：隙間の洞"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Goblin :Bare hands: Forest of Shadows: Soul Black -- ゴブリン（生者）：素手：虚ろの影の森：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Goblin (Live): Bare Hands: Gap's Cave: Soul Black -- ゴブリン（生者）：素手：隙間の洞：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Goblin :Sword: Cave of Gaps -- ゴブリン（生者）：剣：隙間の洞"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Goblin (Live): Sling: Gap ing sinus -- ゴブリン（生者）：スリング：隙間の洞"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Cobold: Gap Cave -- コボルト：隙間の洞"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "Kobold: Anne Deal's House -- コボルト：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Two-Handed Sword: Soul Black -- 王国兵士（亡者）：両手剣：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 102050,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Bare Hands: Two-Handed Sword -- 王国兵士（亡者）：素手：両手剣"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Kingdom Soldier (Alive): Spear: Medium Shield -- 王国兵士（生者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "Kingdom Soldier (Living): Two-Handed Sword: Bow -- 王国兵士（生者）：両手剣：弓"
+      ]
+    },
+    {
+      "ID": 102130,
+      "Entries": [
+        "Kingdom Soldier (Born): Dying -- 王国兵士（生者）：瀕死"
+      ]
+    },
+    {
+      "ID": 102140,
+      "Entries": [
+        "Kingdom Soldier (Live): Bow -- 王国兵士（生者）：弓"
+      ]
+    },
+    {
+      "ID": 102150,
+      "Entries": [
+        "Kingdom Soldier (Live): Torch -- 王国兵士（生者）：松明"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Lower Soldier (Deceased): Bare hands: The Bastion of Resistance (modern) -- 下級兵士（亡者）：素手：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "Lower-class soldier (deceased): Bare hands: Underground port -- 下級兵士（亡者）：素手：地下の港"
+      ]
+    },
+    {
+      "ID": 103002,
+      "Entries": [
+        "Lower-class soldier (deceased): Bare hands: Fairy's side -- 下級兵士（亡者）：素手：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "Lower Soldier (Deceased): Dagger: Fort of Resistance (Modern) -- 下級兵士（亡者）：短剣：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 103011,
+      "Entries": [
+        "Lower Soldier (deceased): Dagger: Underground port -- 下級兵士（亡者）：短剣：地下の港"
+      ]
+    },
+    {
+      "ID": 103012,
+      "Entries": [
+        "Lower Soldier (Deceased): Dagger: Fairy's Side -- 下級兵士（亡者）：短剣：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 103019,
+      "Entries": [
+        "Lower Soldier (Deceased): Dagger: Soul Black -- 下級兵士（亡者）：短剣：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 103020,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed sword: Small shield: Fort of resistance (modern) -- 下級兵士（亡者）：片手剣：小盾：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 103021,
+      "Entries": [
+        "Lower Soldier (Deceased): One Hand Sword: Small Shield: Underground Port -- 下級兵士（亡者）：片手剣：小盾：地下の港"
+      ]
+    },
+    {
+      "ID": 103022,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed sword: Small shield: Hidden Port -- 下級兵士（亡者）：片手剣：小盾：隠れ港"
+      ]
+    },
+    {
+      "ID": 103030,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed axe: Fort of resistance (modern) -- 下級兵士（亡者）：片手斧：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 103031,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed axe: Underground port -- 下級兵士（亡者）：片手斧：地下の港"
+      ]
+    },
+    {
+      "ID": 103032,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed axe: Fairy's side -- 下級兵士（亡者）：片手斧：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 103040,
+      "Entries": [
+        "Lower Soldier (Deceased): Two-Handed Bow: Fort of Resistance (Modern) -- 下級兵士（亡者）：両手弓：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 103041,
+      "Entries": [
+        "Lower Soldier (Deceased): Two-Handed Bow: Underground Port -- 下級兵士（亡者）：両手弓：地下の港"
+      ]
+    },
+    {
+      "ID": 103050,
+      "Entries": [
+        "Lower Soldier (Deceased): Bow: Fire and Arrow -- 下級兵士（亡者）：両手弓：火矢"
+      ]
+    },
+    {
+      "ID": 103051,
+      "Entries": [
+        "Lower Soldier (Deceased): Bow: Fire and Arrow: Hidden Port -- 下級兵士（亡者）：両手弓：火矢：隠れ港"
+      ]
+    },
+    {
+      "ID": 103100,
+      "Entries": [
+        "Lower Soldier (Raw): Dagger -- 下級兵士（生者）：短剣"
+      ]
+    },
+    {
+      "ID": 103110,
+      "Entries": [
+        "Lower Soldier (Raw): One-handed sword -- 下級兵士（生者）：片手剣"
+      ]
+    },
+    {
+      "ID": 103111,
+      "Entries": [
+        "Lower Soldier (Raw Man): One Hand Sword: The Memory of the Giant -- 下級兵士（生者）：片手剣：巨人の記憶"
+      ]
+    },
+    {
+      "ID": 103120,
+      "Entries": [
+        "Lower Soldier (Live): One-handed axe -- 下級兵士（生者）：片手斧"
+      ]
+    },
+    {
+      "ID": 103121,
+      "Entries": [
+        "Lower Soldier (Raw): One Hand Axe: The Memory of the Giant -- 下級兵士（生者）：片手斧：巨人の記憶"
+      ]
+    },
+    {
+      "ID": 103130,
+      "Entries": [
+        "Lower soldier (raw): Bow -- 下級兵士（生者）：弓"
+      ]
+    },
+    {
+      "ID": 103131,
+      "Entries": [
+        "Lower Soldier (Raw): Bow: Memories of giants -- 下級兵士（生者）：弓：巨人の記憶"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "Fairy Shrine Maiden: Bare Hands -- 妖精の巫女：素手"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "Fairy Shrine Maiden: Cane -- 妖精の巫女：杖"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_No Mask -- ダークプリースト（亡者）：色①_仮面無し"
+      ]
+    },
+    {
+      "ID": 106001,
+      "Entries": [
+        "Dark Priest (Dead): Color (1)_Maskless Against GerdrazaCobos -- ダークプリースト（亡者）：色①_仮面無し  ジェルドラザコボス戦"
+      ]
+    },
+    {
+      "ID": 106009,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_No Mask:Soul Black: Kiseki Street Gerdra -- ダークプリースト（亡者）：色①_仮面無し：ソウルブラック：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 106010,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_No Mask: Shield -- ダークプリースト（亡者）：色①_仮面無し：盾"
+      ]
+    },
+    {
+      "ID": 106020,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_Mask -- ダークプリースト（亡者）：色①_仮面有り"
+      ]
+    },
+    {
+      "ID": 106021,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_Masked: Tomb of Immortality -- ダークプリースト（亡者）：色①_仮面有り：不死廟"
+      ]
+    },
+    {
+      "ID": 106030,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_Masked: Shield -- ダークプリースト（亡者）：色①_仮面有り：盾"
+      ]
+    },
+    {
+      "ID": 106200,
+      "Entries": [
+        "Dark Priest (Deceased): Color (3) _ Head C -- ダークプリースト（亡者）：色③_頭部Ｃ"
+      ]
+    },
+    {
+      "ID": 106210,
+      "Entries": [
+        "Dark Priest (Deceased): Color (3) _ Head C: Shield -- ダークプリースト（亡者）：色③_頭部Ｃ：盾"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Parasite Spider (Parasitic) -- パラサイトスパイダー（寄生）"
+      ]
+    },
+    {
+      "ID": 107001,
+      "Entries": [
+        "Parasite Spider (Parasitic): Poison: Kiseki Town Gerdra -- パラサイトスパイダー（寄生）：毒：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "Rogue :Dagger x 2: Hunting Forest -- ローグ（亡者）：短剣×２：狩猟の森"
+      ]
+    },
+    {
+      "ID": 108001,
+      "Entries": [
+        "Rogue: Dagger x 2: Castle in Ruins -- ローグ（亡者）：短剣×２：廃墟の城"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "Rogue (deceased): One hand mallet × 2: Hunting Forest -- ローグ（亡者）：片手槌×２：狩猟の森"
+      ]
+    },
+    {
+      "ID": 108011,
+      "Entries": [
+        "Rogue (deceased): One hand mallet × 2: Castle in ruins -- ローグ（亡者）：片手槌×２：廃墟の城"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "Rogue (Deceased): Two Bows x 2: Hunting Forest -- ローグ（亡者）：両手弓×２：狩猟の森"
+      ]
+    },
+    {
+      "ID": 108021,
+      "Entries": [
+        "Rogue :Two Bows x 2: Castle in Ruins -- ローグ（亡者）：両手弓×２：廃墟の城"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Sailor (deceased): One-handed sword; small shield: underground port -- 水兵（亡者）：片手剣；小盾：地下の港"
+      ]
+    },
+    {
+      "ID": 113001,
+      "Entries": [
+        "Sailor (deceased): One-handed sword; small shield: Dsuke village -- 水兵（亡者）：片手剣；小盾：Dすけ村"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Sailor (deceased): Song sword x 2: Underground port -- 水兵（亡者）：曲剣×２：地下の港"
+      ]
+    },
+    {
+      "ID": 113011,
+      "Entries": [
+        "Sailor (deceased): Song sword × 2:D Suke mura -- 水兵（亡者）：曲剣×２：Dすけ村"
+      ]
+    },
+    {
+      "ID": 113020,
+      "Entries": [
+        "Sailor (deceased): Two-handed bow: underground port -- 水兵（亡者）：両手弓：地下の港"
+      ]
+    },
+    {
+      "ID": 113021,
+      "Entries": [
+        "Sailor (deceased): Two-handed bow: D-Suke-mura -- 水兵（亡者）：両手弓：Dすけ村"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Bare hands: Maduro (modern) -- 亡者：旅人の服♂：素手：マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 115001,
+      "Entries": [
+        "Dead: Traveler's Clothes ♂: Bare Hands: The Edge of the Fairy -- 亡者：旅人の服♂：素手：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 115002,
+      "Entries": [
+        "Dead: Traveler's Clothes ♂: Bare Hands: The Castle of Ruins -- 亡者：旅人の服♂：素手：廃墟の城"
+      ]
+    },
+    {
+      "ID": 115003,
+      "Entries": [
+        "Dead: Traveler's Clothing ♂: Bare Hands: Torture -- 亡者：旅人の服♂：素手：拷問場"
+      ]
+    },
+    {
+      "ID": 115004,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Bare Hands: The Home of the Dragon -- 亡者：旅人の服♂：素手：龍の住処"
+      ]
+    },
+    {
+      "ID": 115005,
+      "Entries": [
+        "Dead: Traveler's Clothing ♂: Bare Hands: The City of Spiders -- 亡者：旅人の服♂：素手：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 115006,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Bare Hands: Gap's Cave -- 亡者：旅人の服♂：素手：隙間の洞"
+      ]
+    },
+    {
+      "ID": 115010,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Dagger: Maduro (Modern) -- 亡者：旅人の服♂：短剣：マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 115011,
+      "Entries": [
+        "The Dead: The Traveler's Clothing ♂: Dagger: The Castle of Ruins -- 亡者：旅人の服♂：短剣：廃墟の城"
+      ]
+    },
+    {
+      "ID": 115012,
+      "Entries": [
+        "Dead: Traveller's Clothing ♂: Dagger: Torture -- 亡者：旅人の服♂：短剣：拷問場"
+      ]
+    },
+    {
+      "ID": 115013,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Dagger: The Home of the Dragon -- 亡者：旅人の服♂：短剣：龍の住処"
+      ]
+    },
+    {
+      "ID": 115014,
+      "Entries": [
+        "The Dead: Traveler's Clothes ♂: Dagger: The City of Spiders -- 亡者：旅人の服♂：短剣：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 115015,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Dagger: Cave -- 亡者：旅人の服♂：短剣：隙間の洞"
+      ]
+    },
+    {
+      "ID": 115019,
+      "Entries": [
+        "Deceased: Traveler's Clothing ♂: Dagger: The Dragon's Home: Soul Black -- 亡者：旅人の服♂：短剣：龍の住処：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Statue: Pawn: Spear: Shield -- スタチュー：ポーン：槍：盾"
+      ]
+    },
+    {
+      "ID": 117010,
+      "Entries": [
+        "Statue: Pawn: Spear -- スタチュー：ポーン：槍"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (1): Head A: Hunting Forest -- ダークウィザード（亡者）：色①：頭部A：狩猟の森"
+      ]
+    },
+    {
+      "ID": 118001,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (1): Head A: Death penalty -- ダークウィザード（亡者）：色①：頭部A：不死刑場"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (2): Head A -- ダークウィザード（亡者）：色②：頭部A"
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (2): Head B: Castle Town of Fog (Modern) -- ダークウィザード（亡者）：色②：頭部B：霧の城下町（現代）"
+      ]
+    },
+    {
+      "ID": 118111,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (2): Head B: Dragon's Shrine -- ダークウィザード（亡者）：色②：頭部B：龍の祠祭場"
+      ]
+    },
+    {
+      "ID": 118112,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (2): Head B: Institute of Dragons -- ダークウィザード（亡者）：色②：頭部B：龍の研究所"
+      ]
+    },
+    {
+      "ID": 118200,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (3): Head B -- ダークウィザード（亡者）：色③：頭部B"
+      ]
+    },
+    {
+      "ID": 118201,
+      "Entries": [
+        "Dark Wizard (Deceased): Color (3): Head B: Kiseki Street Gerdra -- ダークウィザード（亡者）：色③：頭部B：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Lion Black Mage (Born) -- 獅子黒魔道士（生者）"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Bare Hands -- 巨人下級兵士（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Bare hands: Flying and appearing -- 巨人下級兵士（巨人）：素手：飛んできて登場"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Two-Handed Club -- 巨人下級兵士（巨人）：両手棍棒"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "Giant Lower Soldier Poison (Giant): Bare Hands -- 巨人下級兵士 毒（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 121030,
+      "Entries": [
+        "Giant Lower Soldier Fire (Giant): Bare Hands -- 巨人下級兵士 火（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Bernice Knight: Two-Handed Sword -- バーニスの騎士：両手剣"
+      ]
+    },
+    {
+      "ID": 122010,
+      "Entries": [
+        "Bernice Knight: Assault Spear -- バーニスの騎士：突撃槍"
+      ]
+    },
+    {
+      "ID": 122020,
+      "Entries": [
+        "Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌"
+      ]
+    },
+    {
+      "ID": 122030,
+      "Entries": [
+        "Bernice Knight: Crossbow -- バーニスの騎士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 122100,
+      "Entries": [
+        "Knight of Bernice: Color (2): Two-Handed Sword -- バーニスの騎士：色②：両手剣"
+      ]
+    },
+    {
+      "ID": 122110,
+      "Entries": [
+        "Knight of Bernice: Color (2): Assault Spear -- バーニスの騎士：色②：突撃槍"
+      ]
+    },
+    {
+      "ID": 122120,
+      "Entries": [
+        "Knight of Bernice: Color (2): One Hand Mallet -- バーニスの騎士：色②：片手槌"
+      ]
+    },
+    {
+      "ID": 122130,
+      "Entries": [
+        "Bernice Knight: Color (2): Crossbow -- バーニスの騎士：色②：クロスボウ"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Deformed Shadow (Born): Mask A:2 Swordnails -- 異形の影（生者）：仮面A：２刀爪"
+      ]
+    },
+    {
+      "ID": 123002,
+      "Entries": [
+        "The Shadow of the Metamorphosis (Born): Mask A:2 Swordclaw: Hidden Port -- 異形の影（生者）：仮面A：２刀爪：隠れ港"
+      ]
+    },
+    {
+      "ID": 123010,
+      "Entries": [
+        "Deformed Shadow (Born): Mask A: Dagger: Stabbing Sword -- 異形の影（生者）：仮面A：短剣：刺突剣"
+      ]
+    },
+    {
+      "ID": 123020,
+      "Entries": [
+        "Deformed Shadow (Born): Mask B:2 Swordnails -- 異形の影（生者）：仮面B：２刀爪"
+      ]
+    },
+    {
+      "ID": 123022,
+      "Entries": [
+        "The Shadow of the Metamorphosis (Born): Mask B:2 Swordclaw: Hidden Port -- 異形の影（生者）：仮面B：２刀爪：隠れ港"
+      ]
+    },
+    {
+      "ID": 123030,
+      "Entries": [
+        "Deformed Shadow (Born): Mask B: Dagger: Stabbing Sword -- 異形の影（生者）：仮面B：短剣：刺突剣"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Assassin (Born): Mask A:2 Swordnails -- 暗殺者（生者）：仮面A：２刀爪"
+      ]
+    },
+    {
+      "ID": 124010,
+      "Entries": [
+        "Assassin (Born): Mask A: Dagger -- 暗殺者（生者）：仮面A：短剣"
+      ]
+    },
+    {
+      "ID": 124020,
+      "Entries": [
+        "Assassin (Born): Mask A: Song Sword -- 暗殺者（生者）：仮面A：曲剣"
+      ]
+    },
+    {
+      "ID": 124030,
+      "Entries": [
+        "Assassin (Born): Mask A: Bow -- 暗殺者（生者）：仮面A：弓"
+      ]
+    },
+    {
+      "ID": 124040,
+      "Entries": [
+        "Assassin (Born): Mask B:2 Swordnails -- 暗殺者（生者）：仮面B：２刀爪"
+      ]
+    },
+    {
+      "ID": 124050,
+      "Entries": [
+        "Assassin (Born): Mask B: Dagger -- 暗殺者（生者）：仮面B：短剣"
+      ]
+    },
+    {
+      "ID": 124060,
+      "Entries": [
+        "Assassin (Born): Mask B: Song Sword -- 暗殺者（生者）：仮面B：曲剣"
+      ]
+    },
+    {
+      "ID": 124070,
+      "Entries": [
+        "Assassin (Born): Mask B: Bow -- 暗殺者（生者）：仮面B：弓"
+      ]
+    },
+    {
+      "ID": 124100,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A:2 Swords: Castle of Ruins -- 暗殺者（生者）：色②：仮面Ａ：２刀爪：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124101,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A:2 Swords: Torture Pit -- 暗殺者（生者）：色②：仮面Ａ：２刀爪：拷問場"
+      ]
+    },
+    {
+      "ID": 124110,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Dagger: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：短剣：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124111,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Dagger: Torture Site -- 暗殺者（生者）：色②：仮面A：短剣：拷問場"
+      ]
+    },
+    {
+      "ID": 124120,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Song Sword: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：曲剣：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124121,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Song Sword: Torture Site -- 暗殺者（生者）：色②：仮面A：曲剣：拷問場"
+      ]
+    },
+    {
+      "ID": 124130,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Bow: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：弓：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124131,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask A: Bow: Torture Place -- 暗殺者（生者）：色②：仮面A：弓：拷問場"
+      ]
+    },
+    {
+      "ID": 124140,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B:2 Swords: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：２刀爪：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124141,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B:2 Swords: Torture Ground -- 暗殺者（生者）：色②：仮面B：２刀爪：拷問場"
+      ]
+    },
+    {
+      "ID": 124150,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Dagger: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：短剣：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124151,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Dagger: Torture Site -- 暗殺者（生者）：色②：仮面B：短剣：拷問場"
+      ]
+    },
+    {
+      "ID": 124160,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Song Sword: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：曲剣：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124161,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Song Sword: Torture Site -- 暗殺者（生者）：色②：仮面B：曲剣：拷問場"
+      ]
+    },
+    {
+      "ID": 124170,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Bow: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：弓：廃墟の城"
+      ]
+    },
+    {
+      "ID": 124171,
+      "Entries": [
+        "Assassin (Born): Color (2): Mask B: Bow: Torture Place -- 暗殺者（生者）：色②：仮面B：弓：拷問場"
+      ]
+    },
+    {
+      "ID": 125001,
+      "Entries": [
+        "Undead Citizen: Poison: Scum Bottom -- アンデッド市民：毒：クズ底"
+      ]
+    },
+    {
+      "ID": 125004,
+      "Entries": [
+        "Undead Citizen: Explosion: Saint's Tomb -- アンデッド市民：爆発：聖人墓所"
+      ]
+    },
+    {
+      "ID": 125009,
+      "Entries": [
+        "Undead Citizens: Explosion: Soul Black: Prison of Oblivion -- アンデッド市民：爆発：ソウルブラック：忘却の牢"
+      ]
+    },
+    {
+      "ID": 125010,
+      "Entries": [
+        "Undead Citizen: Explosion: Trap After Boss -- アンデッド市民：爆発：ボス後トラップ"
+      ]
+    },
+    {
+      "ID": 125011,
+      "Entries": [
+        "Undead Citizens: Normal: Prison of Oblivion -- アンデッド市民：ノーマル：忘却の牢"
+      ]
+    },
+    {
+      "ID": 125012,
+      "Entries": [
+        "Undead Citizen: Normal: Prison of Oblivion (Tower of Sinners) -- アンデッド市民：ノーマル：忘却の牢（罪人の塔）"
+      ]
+    },
+    {
+      "ID": 125013,
+      "Entries": [
+        "Undead Citizen: Normal: Kuzbottom -- アンデッド市民：ノーマル：クズ底"
+      ]
+    },
+    {
+      "ID": 125014,
+      "Entries": [
+        "Undead Citizen: Acid: The Nest of The Guarded Dragon -- アンデッド市民：酸：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 125015,
+      "Entries": [
+        "Undead Citizens: Petrified: Prisons of Oblivion -- アンデッド市民：石化：忘却の牢"
+      ]
+    },
+    {
+      "ID": 125016,
+      "Entries": [
+        "Undead Citizen: Explosion: Soul Black: Kuz Bottom -- アンデッド市民：爆発：ソウルブラック：クズ底"
+      ]
+    },
+    {
+      "ID": 125017,
+      "Entries": [
+        "Undead Citizens: Petrified: Prison of Oblivion (Tower of Sinners) -- アンデッド市民：石化：忘却の牢（罪人の塔）"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "Dead Workers (Dead): Bare Hands: Hunting Forest -- 死者の労働者（亡者）：素手：狩猟の森"
+      ]
+    },
+    {
+      "ID": 127001,
+      "Entries": [
+        "Dead Workers (Dead): Bare Hands: The Tomb of Immortality -- 死者の労働者（亡者）：素手：不死廟"
+      ]
+    },
+    {
+      "ID": 127002,
+      "Entries": [
+        "Dead Workers (Dead): Bare hands: Gerdraza Kobos -- 死者の労働者（亡者）：素手：ジェルドラザコボス戦"
+      ]
+    },
+    {
+      "ID": 127003,
+      "Entries": [
+        "Dead Workers (Dead): Bare Hands: Valley of The Reservoir -- 死者の労働者（亡者）：素手：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 127004,
+      "Entries": [
+        "Dead Workers (Dead): Bare hands: The Tomb of the Saints -- 死者の労働者（亡者）：素手：聖人墓所"
+      ]
+    },
+    {
+      "ID": 127005,
+      "Entries": [
+        "The Worker of the Dead :Bare hands: The Old Dark Hole -- 死者の労働者（亡者）：素手：古き闇の穴"
+      ]
+    },
+    {
+      "ID": 127010,
+      "Entries": [
+        "Dead Workers (Dead): Torch: Hunting Forest -- 死者の労働者（亡者）：松明：狩猟の森"
+      ]
+    },
+    {
+      "ID": 127011,
+      "Entries": [
+        "Dead Workers (Dead): Torch: The Tomb of Immortality -- 死者の労働者（亡者）：松明：不死廟"
+      ]
+    },
+    {
+      "ID": 127020,
+      "Entries": [
+        "Dead Workers (Dead): Broken Sword: Hunting Forest -- 死者の労働者（亡者）：折れた直剣：狩猟の森"
+      ]
+    },
+    {
+      "ID": 127030,
+      "Entries": [
+        "Dead Workers (Dead): Bare Hands (Equipment 4): Valley of The Reservoir -- 死者の労働者（亡者）：素手（装備4）：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Cane: Old Dark Hole -- 森の番人：色①：杖：古き闇の穴"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Bell: The Old Dark Hole -- 森の番人：色①：ベル：古き闇の穴"
+      ]
+    },
+    {
+      "ID": 129020,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Bell: Wand -- 森の番人：色①：ベル：杖"
+      ]
+    },
+    {
+      "ID": 129030,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Bare Hands: Bell -- 森の番人：色①：素手：ベル"
+      ]
+    },
+    {
+      "ID": 129040,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Cane: Bell -- 森の番人：色①：杖：ベル"
+      ]
+    },
+    {
+      "ID": 129050,
+      "Entries": [
+        "The Keeper of the Forest: Color (1): Bell: Bell -- 森の番人：色①：ベル：ベル"
+      ]
+    },
+    {
+      "ID": 129100,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Bare Hands: Wand -- 森の番人：色②：素手：杖"
+      ]
+    },
+    {
+      "ID": 129110,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Cane: Wand -- 森の番人：色②：杖：杖"
+      ]
+    },
+    {
+      "ID": 129120,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Bell: Wand -- 森の番人：色②：ベル：杖"
+      ]
+    },
+    {
+      "ID": 129130,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Bare Hands: Bell -- 森の番人：色②：素手：ベル"
+      ]
+    },
+    {
+      "ID": 129140,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Cane: Bell -- 森の番人：色②：杖：ベル"
+      ]
+    },
+    {
+      "ID": 129150,
+      "Entries": [
+        "The Keeper of the Forest: Color (2): Bell: Bell -- 森の番人：色②：ベル：ベル"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Cleric: War -- クレリック：戦鎚"
+      ]
+    },
+    {
+      "ID": 131010,
+      "Entries": [
+        "Cleric: Bell -- クレリック：ベル"
+      ]
+    },
+    {
+      "ID": 131020,
+      "Entries": [
+        "Cleric: Cane -- クレリック：杖"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Skeleton: 2 Swords: Hunting Forest *Immortality -- スケルトン：２刀流：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132001,
+      "Entries": [
+        "Skeleton: 2 Swords: Hunting Forest *Death -- スケルトン：２刀流：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132002,
+      "Entries": [
+        "Skeleton: 2 Swords: Immortal Temple *Immortal -- スケルトン：２刀流：不死廟\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132003,
+      "Entries": [
+        "Skeleton: 2 Swords: Reservoir Valley *Death -- スケルトン：２刀流：溜まりの谷\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132010,
+      "Entries": [
+        "Skeleton: One-handed sword: Hunting Forest ※Immortality -- スケルトン：片手曲剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132011,
+      "Entries": [
+        "Skeleton: One-handed bent sword: Hunting Forest * Death -- スケルトン：片手曲剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132012,
+      "Entries": [
+        "Skeleton: One-handed sword: Immortal Temple of Immortality *Immortal -- スケルトン：片手曲剣：不死廟\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132013,
+      "Entries": [
+        "Skeleton: One-handed sword: Maduro * Dead -- スケルトン：片手曲剣：マデューラ\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132020,
+      "Entries": [
+        "Skeleton: One-handed stabbing: Hunting Forest *Immortality -- スケルトン：片手刺突：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132021,
+      "Entries": [
+        "Skeleton: One-handed stabbing: Hunting Forest * Dead -- スケルトン：片手刺突：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132022,
+      "Entries": [
+        "Skeleton: One-handed stabbing: Hunting forest ※ dead- skeleton aristocratic war version -- スケルトン：片手刺突：狩猟の森\u3000※死亡する・スケルトン貴族戦版"
+      ]
+    },
+    {
+      "ID": 132023,
+      "Entries": [
+        "Skeleton: One-handed stabbing: Immortal Temple of Immortality -- スケルトン：片手刺突：不死廟\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132030,
+      "Entries": [
+        "Skeleton: Bow: Hunting Forest *Immortality -- スケルトン：弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132031,
+      "Entries": [
+        "Skeleton: Bow: Hunting Forest * Death -- スケルトン：弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 132032,
+      "Entries": [
+        "Skeleton: Bow: Mausoleum of Immortality *Immortal -- スケルトン：弓：不死霊廟\u3000※不死"
+      ]
+    },
+    {
+      "ID": 132090,
+      "Entries": [
+        "Skeleton: For cut scenes -- スケルトン：カットシーン用"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Wheel Skeleton: Bare Hands: Hunting Forest -- 車輪スケルトン：素手：狩猟の森"
+      ]
+    },
+    {
+      "ID": 133001,
+      "Entries": [
+        "Wheel skeleton: bare hands: hunting forest- skeleton aristocratic war version -- 車輪スケルトン：素手：狩猟の森・スケルトン貴族戦版"
+      ]
+    },
+    {
+      "ID": 133010,
+      "Entries": [
+        "Wheel Skeleton: Song Sword: Hunting Forest -- 車輪スケルトン：曲剣：狩猟の森"
+      ]
+    },
+    {
+      "ID": 133020,
+      "Entries": [
+        "Wheel Skeleton: The Great Sword: Hunting Forest -- 車輪スケルトン：大曲剣：狩猟の森"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Dwarf -- ドワーフ"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Heavy Dwarf: Two-Handed Axe x 2: Head A -- 重ドワーフ：両手斧×２：頭部A"
+      ]
+    },
+    {
+      "ID": 135010,
+      "Entries": [
+        "Heavy Dwarf: Two-handed mallet: Head A -- 重ドワーフ：両手槌：頭部A"
+      ]
+    },
+    {
+      "ID": 135020,
+      "Entries": [
+        "Heavy Dwarf: Bow: Head A -- 重ドワーフ：弓：頭部A"
+      ]
+    },
+    {
+      "ID": 135030,
+      "Entries": [
+        "Heavy Dwarf: Two-Handed Axe x 2: Head B -- 重ドワーフ：両手斧×２：頭部B"
+      ]
+    },
+    {
+      "ID": 135040,
+      "Entries": [
+        "Heavy Dwarf: Two Hands Mallet: Head B -- 重ドワーフ：両手槌：頭部B"
+      ]
+    },
+    {
+      "ID": 135050,
+      "Entries": [
+        "Heavy Dwarf: Bow: Head B -- 重ドワーフ：弓：頭部B"
+      ]
+    },
+    {
+      "ID": 136000,
+      "Entries": [
+        "Dark Reith (deceased): The Great Sword of Both Hands: The Castle Town of Fog (past) -- ダークレイス(亡者)：両手大剣：霧の城下町（過去）"
+      ]
+    },
+    {
+      "ID": 136001,
+      "Entries": [
+        "Dark Reis (Deceased): Two-Handed Sword: Submerged Castle (Full) -- ダークレイス(亡者)：両手大剣：水没城（全貌）"
+      ]
+    },
+    {
+      "ID": 136020,
+      "Entries": [
+        "Dark Reith (Dead) -- ダークレイス(亡者)"
+      ]
+    },
+    {
+      "ID": 137000,
+      "Entries": [
+        "Necromancer (Immortal): Bare Hands -- ネクロマンサー（イモータル）：素手"
+      ]
+    },
+    {
+      "ID": 137010,
+      "Entries": [
+        "Necromancer (Immortal): Shield: Wand -- ネクロマンサー（イモータル）：盾：杖"
+      ]
+    },
+    {
+      "ID": 137020,
+      "Entries": [
+        "Necromancer (Immortal): Cane -- ネクロマンサー（イモータル）：杖"
+      ]
+    },
+    {
+      "ID": 137021,
+      "Entries": [
+        "Necromancer (Immortal): Shield: Cane: Boss: Kiseki Street Gerdra -- ネクロマンサー（イモータル）：盾：杖：ボス戦用：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 137022,
+      "Entries": [
+        "Necromancer (Immortal): Shield: Cane: Altar of Amana -- ネクロマンサー（イモータル）：盾：杖：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 138000,
+      "Entries": [
+        "Tortureman: Torture Instruments -- 拷問人：拷問器具"
+      ]
+    },
+    {
+      "ID": 138001,
+      "Entries": [
+        "Tortureman: Torture Instruments: Soul Black -- 拷問人：拷問器具：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 138010,
+      "Entries": [
+        "Tortureman: Whip -- 拷問人：鞭"
+      ]
+    },
+    {
+      "ID": 138011,
+      "Entries": [
+        "Tortureman: Whip: Soul Black -- 拷問人：鞭：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Man-made Immortal: Sickle: Hunting Forest -- 人造不死人：鎌：狩猟の森"
+      ]
+    },
+    {
+      "ID": 139001,
+      "Entries": [
+        "Man-made Immortal: Sickle: Valley of The Reservoir -- 人造不死人：鎌：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 139008,
+      "Entries": [
+        "Man-made Immortals: Sickle: Soul Black: Hunting Forest -- 人造不死人：鎌：ソウルブラック：狩猟の森"
+      ]
+    },
+    {
+      "ID": 139009,
+      "Entries": [
+        "Man-made Immortal: Sickle: Soul Black -- 人造不死人：鎌：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 139010,
+      "Entries": [
+        "Man-made Immortal: Bare Hands: Hunting Forest -- 人造不死人：素手：狩猟の森"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Belka's Crow -- ベルカの鴉人"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Reinforced Immortals: Anne Deal's House -- 強化不死人：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 141002,
+      "Entries": [
+        "Strengthening Immortals: Prison of Oblivion -- 強化不死人：忘却の牢"
+      ]
+    },
+    {
+      "ID": 146000,
+      "Entries": [
+        "The Dead: The Clothes of the Wealthy ♂: Dagger: The City of Spiders -- 亡者：富裕層の服♂：短剣：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 146001,
+      "Entries": [
+        "The Dead: The Clothes of the Wealthy ♂: Dagger: Underground Harbor -- 亡者：富裕層の服♂：短剣：地下の港"
+      ]
+    },
+    {
+      "ID": 146010,
+      "Entries": [
+        "The Dead: The Clothes of the Wealthy♂: Stabbing Sword: The City of Spiders -- 亡者：富裕層の服♂：刺突剣：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 146011,
+      "Entries": [
+        "Deceased: ♂ the Clothes of the Wealthy: Stabbing: Underground Harbor -- 亡者：富裕層の服♂：刺突剣：地下の港"
+      ]
+    },
+    {
+      "ID": 146020,
+      "Entries": [
+        "Deceased: Clothes of the Wealthy ♂: Daggers & Torches: The City of Spiders -- 亡者：富裕層の服♂：短剣＆松明：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 147000,
+      "Entries": [
+        "Deceased: Sick ♂: The Living House of the Dragon (Modern) -- 亡者：病人の服♂：龍の住処（現代）"
+      ]
+    },
+    {
+      "ID": 147001,
+      "Entries": [
+        "Deceased: Sick ♂: Altar of Amana -- 亡者：病人の服♂：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 147002,
+      "Entries": [
+        "Dead: Sick ♂: The Fairy's Edge -- 亡者：病人の服♂：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 147003,
+      "Entries": [
+        "Dead: ♂ sick man's clothes: a castle in ruins -- 亡者：病人の服♂：廃墟の城"
+      ]
+    },
+    {
+      "ID": 147004,
+      "Entries": [
+        "Dead: Sick ♂: Gerdraza Kobos -- 亡者：病人の服♂：ジェルドラザコボス戦"
+      ]
+    },
+    {
+      "ID": 148000,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 1: Volcanic Steel Mill -- 亡者：農民の服♂：両手槌：頭パーツ１：火山の製鉄所"
+      ]
+    },
+    {
+      "ID": 148001,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 1: Coal Mine Village -- 亡者：農民の服♂：両手槌：頭パーツ１：炭鉱の村"
+      ]
+    },
+    {
+      "ID": 148010,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 2: Volcanic Steel Mill -- 亡者：農民の服♂：両手槌：頭パーツ２：火山の製鉄所"
+      ]
+    },
+    {
+      "ID": 148011,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 2: Coal Mine Village -- 亡者：農民の服♂：両手槌：頭パーツ２：炭鉱の村"
+      ]
+    },
+    {
+      "ID": 148020,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two-Handed Sickle: Head Part 1: Volcano Steel Mill -- 亡者：農民の服♂：両手鎌：頭パーツ１：火山の製鉄所"
+      ]
+    },
+    {
+      "ID": 148021,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Two-Handed Sickle: Head Part 1: Coal Mine Village -- 亡者：農民の服♂：両手鎌：頭パーツ１：炭鉱の村"
+      ]
+    },
+    {
+      "ID": 148030,
+      "Entries": [
+        "Deceased: Farmer's Clothing ♂: Two-Handed Sickle: Head Part 2: Volcano Steel Mill -- 亡者：農民の服♂：両手鎌：頭パーツ２：火山の製鉄所"
+      ]
+    },
+    {
+      "ID": 148031,
+      "Entries": [
+        "Deceased: Farmer's Clothing ♂: Two-Handed Sickle: Head Part 2: Coal Mine Village -- 亡者：農民の服♂：両手鎌：頭パーツ２：炭鉱の村"
+      ]
+    },
+    {
+      "ID": 148040,
+      "Entries": [
+        "Deceased: Farmer's Clothes ♂: Torch: Head Part 1: Kiseki Street Gerdra -- 亡者：農民の服♂：松明：頭パーツ１：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 148041,
+      "Entries": [
+        "Deceased: Farmer's Clothing ♂: Torch: Head Part 2: Kiseki Street Gerdra -- 亡者：農民の服♂：松明：頭パーツ２：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "Deceased: Steel mill staff_Apron: Mingiron Castle -- 亡者：製鉄所員_エプロン有り：熔鉄城"
+      ]
+    },
+    {
+      "ID": 149010,
+      "Entries": [
+        "Deceased: Steelmill man _ No apron: Molten Castle -- 亡者：製鉄所員_エプロン無し：熔鉄城"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Statue: Night -- スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Kingdom Soldier Heavy Warrior: Color (1): Two-Handed Mallet: Molten Castle -- 王国兵重戦士：色①：両手戦槌：熔鉄城"
+      ]
+    },
+    {
+      "ID": 151009,
+      "Entries": [
+        "Kingdom Soldier Heavy Warrior: Color (1): Two-Handed Mallet: Molten Castle: Soul Black -- 王国兵重戦士：色①：両手戦槌：熔鉄城：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 151200,
+      "Entries": [
+        "Kingdom Soldier Warrior: Color (3): Two-Handed Battle Hammer: The Forest of Decayed Giants -- 王国兵重戦士：色③：両手戦槌：朽ちた巨人の森"
+      ]
+    },
+    {
+      "ID": 151208,
+      "Entries": [
+        "Kingdom Soldier Warrior: Color (3): Two-Handed Mallet: Soul Black: Kiseki-gai Gerdra -- 王国兵重戦士：色③：両手戦槌：ソウルブラック：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 151209,
+      "Entries": [
+        "Kingdom Soldier Warrior: Color (3): Two-Handed Mallet: Soul Black: The Forest of Decaying Giants -- 王国兵重戦士：色③：両手戦槌：ソウルブラック：朽ちた巨人の森"
+      ]
+    },
+    {
+      "ID": 151210,
+      "Entries": [
+        "Royal Warrior: Color (3): One-handed club -- 王国兵重戦士：色③：片手棍棒"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Kingdom Soldier Warrior: Two-Handed Sword -- 王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 152001,
+      "Entries": [
+        "Kingdom Soldier Warrior: Two-Handed Sword: Infinite Springing Spirit -- 王国兵戦士：両手剣：無限湧き霊体"
+      ]
+    },
+    {
+      "ID": 152002,
+      "Entries": [
+        "Kingdom Soldier Warrior: Two-Handed Sword: Prison of Oblivion -- 王国兵戦士：両手剣：忘却の牢"
+      ]
+    },
+    {
+      "ID": 152010,
+      "Entries": [
+        "Kingdom Warrior: Crossbow -- 王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 152011,
+      "Entries": [
+        "Kingdom Soldier Warrior: Crossbow: Prison of Oblivion -- 王国兵戦士：クロスボウ：忘却の牢"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Royal Guard: Axe Spear -- 王国兵護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 153002,
+      "Entries": [
+        "Royal Guard: Axe Spear: Altar of Amana -- 王国兵護衛兵：斧槍：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 153003,
+      "Entries": [
+        "Royal Guard: Axe Spear: Immortal Mausoleum -- 王国兵護衛兵：斧槍：不死廟"
+      ]
+    },
+    {
+      "ID": 153010,
+      "Entries": [
+        "Royal Guard: Oversized Sword -- 王国兵護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 153012,
+      "Entries": [
+        "Royal Guard: Oversized Sword: Altar of Amana -- 王国兵護衛兵：特大剣：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 153013,
+      "Entries": [
+        "Royal Guard: Extra Large Sword: Tomb of Immortality -- 王国兵護衛兵：特大剣：不死廟"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Aristocracy: Axe Spear: Hunting Forest -- スケルトン貴族：斧槍：狩猟の森"
+      ]
+    },
+    {
+      "ID": 154010,
+      "Entries": [
+        "Skeleton Aristocracy: Sickle: Hunting Forest -- スケルトン貴族：鎌：狩猟の森"
+      ]
+    },
+    {
+      "ID": 154020,
+      "Entries": [
+        "Skeleton Aristocracy: Wand: Hunting Forest -- スケルトン貴族：杖：狩猟の森"
+      ]
+    },
+    {
+      "ID": 155000,
+      "Entries": [
+        "Lizard Man -- トカゲ人"
+      ]
+    },
+    {
+      "ID": 156000,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Swords x 2: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 156001,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Curved Sword x 2: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 156010,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Swords & Shields Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 156011,
+      "Entries": [
+        "Helmet Skeleton Without Armor : Helmet : Swords & Shields - Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 156020,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 156021,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 156030,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 156031,
+      "Entries": [
+        "Helmet Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157000,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Curved Sword x 2: Hunting Forest ※ Immortality -- 鎧スケルトン：鎧なし：頭装備なし：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157001,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：バンダナ：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157002,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157003,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Song Sword x 2: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157004,
+      "Entries": [
+        "Armor Skeleton: Armor: Head Less Equipped: Curved Sword x 2: Hunting Forest ※Immortality -- 鎧スケルトン：鎧あり：頭装備なし：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157005,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：バンダナ：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157006,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Swords x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157007,
+      "Entries": [
+        "Armor Skeleton: Armor: Crown: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157010,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157011,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Song Sword & Shield: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：バンダナ：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157012,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Song Sword & Shield : Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157013,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157014,
+      "Entries": [
+        "Armor Skeleton se armor: Head less equipped: Song sword & shield: Hunting forest ※ Immortality -- 鎧スケルトン：鎧あり：頭装備なし：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157015,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Song Sword & Shield: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：バンダナ：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157016,
+      "Entries": [
+        "Armor Skeleton S.A.M.E.D.A.Â-No-Swords-Swords-Shield-Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157017,
+      "Entries": [
+        "Armor Skeleton: Armor: Crown: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：曲剣＆盾：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157020,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157021,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：バンダナ：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157022,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157023,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157024,
+      "Entries": [
+        "Armor Skeleton: Armor: Head Less Equipped: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：頭装備なし：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157025,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：バンダナ：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157026,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157027,
+      "Entries": [
+        "Armor Skeleton: Armor: With Armor: Crown: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：刺突剣：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157030,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157031,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：バンダナ：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157032,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：兜：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157033,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157034,
+      "Entries": [
+        "Armor Skeleton: Armor: Head less equipped: two-handed bow: hunting forest ※ immortality -- 鎧スケルトン：鎧あり：頭装備なし：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157035,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：バンダナ：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157036,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：兜：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157037,
+      "Entries": [
+        "Armor Skeleton: Armor With: Crown: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：両手弓：狩猟の森\u3000※不死"
+      ]
+    },
+    {
+      "ID": 157050,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157051,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157052,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Curved Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157053,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157054,
+      "Entries": [
+        "Armor Skeleton: Armor: Head Equipped: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157055,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157056,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Swords x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157057,
+      "Entries": [
+        "Armor Skeleton: Armor: Crown: Curved Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157058,
+      "Entries": [
+        "Armor Skeleton: Armor: With Armor: Crown: Curved Sword × 2: Hunting Forest ※ Dead Skeleton Aristocratic War Edition -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森\u3000※死亡する・スケルトン貴族戦版"
+      ]
+    },
+    {
+      "ID": 157060,
+      "Entries": [
+        "Armor Skeleton : No Armor : Head Equipped : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157061,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157062,
+      "Entries": [
+        "Armor Skeleton : No Armor : Helmet : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157063,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157064,
+      "Entries": [
+        "Armor Skeleton S.A.M.A.Â Head Equipped : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157065,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157066,
+      "Entries": [
+        "Armor Skeleton With Armor : Helmet : Swords & Shields - Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157067,
+      "Entries": [
+        "Armor Skeleton: Armor: Crown: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：曲剣＆盾：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157068,
+      "Entries": [
+        "Armor Skeleton S.A.M.A.N.Â-Swords-Swords-Shield-Hunting Forest *Dead Skeleton Aristocratic War Edition -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森\u3000※死亡する・スケルトン貴族戦版"
+      ]
+    },
+    {
+      "ID": 157070,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157071,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157072,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157073,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157074,
+      "Entries": [
+        "Armor Skeleton: Armor: Head Less Equipped: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157075,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157076,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157077,
+      "Entries": [
+        "Armor Skeleton: Armor: With Armor: Crown: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：刺突剣：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157080,
+      "Entries": [
+        "Armor Skeleton: No Armor: Head Equipment: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157081,
+      "Entries": [
+        "Armor Skeleton: No Armor: Bandana: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157082,
+      "Entries": [
+        "Armor Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157083,
+      "Entries": [
+        "Armor Skeleton: No Armor: Crown: Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157084,
+      "Entries": [
+        "Armor Skeleton: Armor: Head equipped: Two-handed bow: Hunting forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157085,
+      "Entries": [
+        "Armor Skeleton: Armor: Bandana: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157086,
+      "Entries": [
+        "Armor Skeleton: Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 157087,
+      "Entries": [
+        "Armor Skeleton: Armor With: Crown: Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：両手弓：狩猟の森\u3000※死亡する"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Slave Beasts: Volcanic Steel Works: With Melted Iron Vases -- 奴隷獣：火山の製鉄所：溶鉄壺有り"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "Slave Beasts: Volcanic Steel Works: No Melted Iron Vase -- 奴隷獣：火山の製鉄所：溶鉄壺無し"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Slave Beast: Piglet Madura (also used in The Kiseki Town Gerdra) -- 奴隷獣：子豚マデューラ（輝石街ジェルドラ兼用）"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Slave Beast (Wild) -- 奴隷獣（野生）"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Slave Beast (Wild): For The Gerdra- A Ieishi Street -- 奴隷獣（野生）：輝石街ジェルドラ兼用"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Parasite Spider: Kiseki Street Gerdra -- パラサイトスパイダー：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "Parasite Spider: Poison: Kiseki Street Gerdra -- パラサイトスパイダー：毒：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 203002,
+      "Entries": [
+        "Parasite Spider: Boss For War: Kiseki Street Gerdra -- パラサイトスパイダー：ボス戦用：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 203009,
+      "Entries": [
+        "Parasite Spider: Soul Black: Kiseki Street Gerdra -- パラサイトスパイダー：ソウルブラック：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Great Moss -- グレートモス"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Poison Horn: Poison: Fairy's Side -- 毒角虫：毒：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 205001,
+      "Entries": [
+        "Poison Horn: Poison: The City of Spiders -- 毒角虫：毒：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 205009,
+      "Entries": [
+        "Poison Horn: Poison: The City of Spiders: Soul Black -- 毒角虫：毒：蜘蛛の街：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 205100,
+      "Entries": [
+        "Poison Hornworm: Acid: Kiseki Town Gerdra -- 毒角虫：酸：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 205102,
+      "Entries": [
+        "Poison Hornworm: Acid: Altar of Amana -- 毒角虫：酸：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Needle maggots -- 針ウジ虫"
+      ]
+    },
+    {
+      "ID": 206100,
+      "Entries": [
+        "Needle maggots: different colors -- 針ウジ虫：色違い"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Hunting Dogs: Color (1) -- 狩猟犬：色①"
+      ]
+    },
+    {
+      "ID": 209002,
+      "Entries": [
+        "Hunting Dog: Color (1): Scum Bottom -- 狩猟犬：色①：クズ底"
+      ]
+    },
+    {
+      "ID": 209100,
+      "Entries": [
+        "Hunting Dogs: Color (2) -- 狩猟犬：色②"
+      ]
+    },
+    {
+      "ID": 209200,
+      "Entries": [
+        "Hunting Dogs: Color (3) -- 狩猟犬：色③"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Basilisk: Color (1): Forest of Shadows -- バジリスク：色①：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Basilisk: Color (1): Scum Bottom -- バジリスク：色①：クズ底"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Basilisk: Color (1): Anne Deal's House -- バジリスク：色①：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "Basilisk: Color (1): The Tomb of the Saints -- バジリスク：色①：聖人墓所"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Basilisk: Eyeball Crush: Kiseki Street Gerdra -- バジリスク：目玉潰れ：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "Basilrisk: Color (2) -- バジリスク：色②"
+      ]
+    },
+    {
+      "ID": 210200,
+      "Entries": [
+        "Basilrisk: Color (3) -- バジリスク：色③"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Wyvern -- ワイバーン"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "Wyburn: The Nest of The Guard Dragon (1) -- ワイバーン：守り竜の巣①"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "Wyburn: The Nest of The Guard Dragon (2) -- ワイバーン：守り竜の巣②"
+      ]
+    },
+    {
+      "ID": 212003,
+      "Entries": [
+        "Wyburn: The Nest of The Guard Dragon (3) -- ワイバーン：守り竜の巣③"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Stone Defense: A Bastion of Resistance (Modern) -- 石守：抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 213001,
+      "Entries": [
+        "Stone Defense: The Edge of the Fairy -- 石守：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 213002,
+      "Entries": [
+        "Ishimori: The City of Spiders -- 石守：蜘蛛の街"
+      ]
+    },
+    {
+      "ID": 213003,
+      "Entries": [
+        "Stone Defense: A Coal Mine Village -- 石守：炭鉱の村"
+      ]
+    },
+    {
+      "ID": 213004,
+      "Entries": [
+        "Ishimori: Iwamine Castle -- 石守：岩峰城"
+      ]
+    },
+    {
+      "ID": 213005,
+      "Entries": [
+        "Ishimori: Living Forest (past) -- 石守：生きている森（過去）"
+      ]
+    },
+    {
+      "ID": 213006,
+      "Entries": [
+        "Ishimori: Submerged Castle: Half -Body (Past) -- 石守：水没城：半身（過去）"
+      ]
+    },
+    {
+      "ID": 213007,
+      "Entries": [
+        "Stone Mori: Dragon's Shrine -- 石守：龍の祠祭場"
+      ]
+    },
+    {
+      "ID": 213008,
+      "Entries": [
+        "Ishimori: DSuke village -- 石守：Dすけ村"
+      ]
+    },
+    {
+      "ID": 213009,
+      "Entries": [
+        "Stone Defense: Submerged Castle: Full Water -- 石守：水没城：満水"
+      ]
+    },
+    {
+      "ID": 213010,
+      "Entries": [
+        "Ishimori: Dragon Research Institute -- 石守：龍の研究所"
+      ]
+    },
+    {
+      "ID": 213100,
+      "Entries": [
+        "Stone Defense: Explosion -- 石守：爆発"
+      ]
+    },
+    {
+      "ID": 213101,
+      "Entries": [
+        "Stone Defense: Explosion: The Old Dark Hole -- 石守：爆発：古き闇の穴"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Fang Beast -- 牙獣"
+      ]
+    },
+    {
+      "ID": 214100,
+      "Entries": [
+        "Fang Beast (2) -- 牙獣②"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Door possessed: Iwamine Castle -- 扉憑き：岩峰城"
+      ]
+    },
+    {
+      "ID": 216001,
+      "Entries": [
+        "Door possession: Submerged Castle: Half-body (past) -- 扉憑き：水没城：半身（過去）"
+      ]
+    },
+    {
+      "ID": 216002,
+      "Entries": [
+        "Door Possessed: Dragon's Shrine -- 扉憑き：龍の祠祭場"
+      ]
+    },
+    {
+      "ID": 216003,
+      "Entries": [
+        "Door possessed: Submerged Castle: Full -- 扉憑き：水没城：全貌"
+      ]
+    },
+    {
+      "ID": 216004,
+      "Entries": [
+        "Door Possessed: Submerged Castle: Dragon's Institute -- 扉憑き：水没城：龍の研究所"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "A hermit in the dark -- 闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Humanity (enemy): Large -- 人間性（敵）：大"
+      ]
+    },
+    {
+      "ID": 218100,
+      "Entries": [
+        "Humanity (enemy): Medium -- 人間性（敵）：中"
+      ]
+    },
+    {
+      "ID": 218200,
+      "Entries": [
+        "Humanity (enemy): Small: Submerged: Half-body (past) -- 人間性（敵）：小：水没場：半身（過去）"
+      ]
+    },
+    {
+      "ID": 218201,
+      "Entries": [
+        "Humanity (enemy): Small: Submerged: Full -- 人間性（敵）：小：水没場：全貌"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "Bay Grant Hawk -- ベイグラント鷹"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Giant VenomOus Worm: Acid: Valley of Reservoirs -- 巨大毒角虫：酸：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 220002,
+      "Entries": [
+        "Giant VenomOus Worm: Acid: Altar of Amana -- 巨大毒角虫：酸：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Giant Basilisk: Color (2): Anne Deal's House -- 巨大バジリスク：色②：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 222001,
+      "Entries": [
+        "Giant Basilisk: Color (2): Living Forest (Second Half) -- 巨大バジリスク：色②：生きている森（後半）"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Corpse Asse Rat: Color (1) -- 死体あさりネズミ：色①"
+      ]
+    },
+    {
+      "ID": 223100,
+      "Entries": [
+        "Corpse Asse Rat: Color (2) -- 死体あさりネズミ：色②"
+      ]
+    },
+    {
+      "ID": 223200,
+      "Entries": [
+        "Corpse Asse Rat: Color (3) -- 死体あさりネズミ：色③"
+      ]
+    },
+    {
+      "ID": 223300,
+      "Entries": [
+        "Corpse Asse Rat: Color (4) -- 死体あさりネズミ：色④"
+      ]
+    },
+    {
+      "ID": 224000,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 225000,
+      "Entries": [
+        "Light Worm -- 光虫"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Dog Rat -- 犬ネズミ"
+      ]
+    },
+    {
+      "ID": 226001,
+      "Entries": [
+        "Dog Rat: Boss War: Saint's Tomb -- 犬ネズミ：ボス戦用：聖人墓所"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Dog Mouse: Color (2) -- 犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 226200,
+      "Entries": [
+        "The King of Rats -- ネズミの王"
+      ]
+    },
+    {
+      "ID": 226201,
+      "Entries": [
+        "Rat King: Ghosts: Generic -- ネズミの王：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 226202,
+      "Entries": [
+        "King of Rats: The Tomb of the Saints -- ネズミの王：聖人墓所"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "Stray dog -- 野犬"
+      ]
+    },
+    {
+      "ID": 227001,
+      "Entries": [
+        "Stray Dog: Hidden Port -- 野犬：隠れ港"
+      ]
+    },
+    {
+      "ID": 227009,
+      "Entries": [
+        "Wild Dog: Soul Black: Prison of Oblivion -- 野犬：ソウルブラック：忘却の牢"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Auger :Color (1): Fossil Forest -- オーガ（生者）：色①：化石の森"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Auger: Color (1): Fairy's Side -- オーガ（生者）：色①：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "Auger : Color (1): Anne Deal's House -- オーガ（生者）：色①：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Auger: Color (2) -- オーガ（生者）：色②"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Wandering Knight (Dead): Head A -- 彷徨える騎士（亡者）：頭部A"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Wandering Knight (Dead): One Hand Sword: The Forest of Decaying Giants -- 彷徨える騎士（亡者）：片手剣：朽ちた巨人の森"
+      ]
+    },
+    {
+      "ID": 301003,
+      "Entries": [
+        "Wandering Knight (Dead): One Hand Sword: The Shadow of the Imaginary Forest -- 彷徨える騎士（亡者）：片手剣：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Wandering Knight (Dead): Spear A: Prison of Oblivion -- 彷徨える騎士（亡者）：槍A：忘却の牢"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Wandering Knight (Dead): Spear A: Forest of Hunting -- 彷徨える騎士（亡者）：槍A：狩猟の森"
+      ]
+    },
+    {
+      "ID": 301020,
+      "Entries": [
+        "Wandering Knight (Dead): Spear B: The Nest of the Guarded Dragon -- 彷徨える騎士（亡者）：槍B：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 301030,
+      "Entries": [
+        "Wandering Knight (Dead): Spear C: Altar of Amana -- 彷徨える騎士（亡者）：槍C：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 301031,
+      "Entries": [
+        "Wandering Knight (Dead): Head D: The Last Dungeon -- 彷徨える騎士（亡者）：頭部D：ラストダンジョン"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed sickle: Castle in ruins -- 獄吏（亡者）：色①：両手鎌：廃墟の城"
+      ]
+    },
+    {
+      "ID": 302001,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed sickle: Iwamine Castle -- 獄吏（亡者）：色①：両手鎌：岩峰城"
+      ]
+    },
+    {
+      "ID": 302009,
+      "Entries": [
+        "Prison Man (Deceased): Two-Handed Sickle: Prison of Oblivion: Soul Black -- 獄吏（亡者）：両手鎌：忘却の牢：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed long axe: Castle in ruins -- 獄吏（亡者）：色①：両手長斧：廃墟の城"
+      ]
+    },
+    {
+      "ID": 302011,
+      "Entries": [
+        "Prison man (deceased): Color (1) Two-handed long axe: Iwamine Castle -- 獄吏（亡者）：色①：両手長斧：岩峰城"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed hammer: castle in ruins -- 獄吏（亡者）：色①：両手戦槌：廃墟の城"
+      ]
+    },
+    {
+      "ID": 302021,
+      "Entries": [
+        "Prison man (deceased): Color (1) Two-handed hammer: Iwamine Castle -- 獄吏（亡者）：色①：両手戦槌：岩峰城"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "Prison man (deceased): Color (2): Two-handed sickle -- 獄吏（亡者）：色②：両手鎌"
+      ]
+    },
+    {
+      "ID": 302110,
+      "Entries": [
+        "Prison man (deceased): Color (2): Two-handed long axe -- 獄吏（亡者）：色②：両手長斧"
+      ]
+    },
+    {
+      "ID": 302120,
+      "Entries": [
+        "Prison man (deceased): Color (2): Two hands war mallet -- 獄吏（亡者）：色②：両手戦槌"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Double-sided warrior: snake head -- 両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 303301,
+      "Entries": [
+        "Two-sided warrior: Snake head: Forest of shadows in the shadows of the emptiness -- 両面戦士：ヘビ頭：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Banshee (Dead): Scary Face -- バンシー（亡者）：怖い顔"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Banshee (Deceased): Beautiful Face -- バンシー（亡者）：美女顔"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Damon Knight (Dead) -- デーモンナイト（亡者）"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "Damon Knight (Dead): Ignition -- デーモンナイト（亡者）：点火"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Damon Armor (Dead): Sword: Molten Castle -- デーモン鎧（亡者）：刀：熔鉄城"
+      ]
+    },
+    {
+      "ID": 306001,
+      "Entries": [
+        "Damon Armor (Dead): Sword: Molten Castle: Full-body flame -- デーモン鎧（亡者）：刀：熔鉄城：全身炎"
+      ]
+    },
+    {
+      "ID": 306007,
+      "Entries": [
+        "Alonne Captain"
+      ]
+    },
+    {
+      "ID": 306008,
+      "Entries": [
+        "Damon Armor (Deceased): Sword: Molten Castle: Full-Body Flame Soul Black -- デーモン鎧（亡者）：刀：熔鉄城：全身炎ソウルブラック"
+      ]
+    },
+    {
+      "ID": 306009,
+      "Entries": [
+        "Damon Armor (Dead): Sword: Molten Castle: Soul Black -- デーモン鎧（亡者）：刀：熔鉄城：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 306010,
+      "Entries": [
+        "Damon Armor (Dead): Bow: Molten Castle -- デーモン鎧（亡者）：弓：熔鉄城"
+      ]
+    },
+    {
+      "ID": 306011,
+      "Entries": [
+        "Damon Armor (Dead): Bow: King's Castle Drangreig -- デーモン鎧（亡者）：弓：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Durahan (deceased) -- デュラハン（亡者）"
+      ]
+    },
+    {
+      "ID": 307001,
+      "Entries": [
+        "Durahan (deceased): Two-swords style: Kiseki-cho Gerdra -- デュラハン（亡者）：二刀流：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Durahan (Raw) -- デュラハン（生者）"
+      ]
+    },
+    {
+      "ID": 307101,
+      "Entries": [
+        "Durahan (Born): Ghost: The Forest of Shadows -- デュラハン（生者）：幽霊：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 307107,
+      "Entries": [
+        "Vengarl"
+      ]
+    },
+    {
+      "ID": 307108,
+      "Entries": [
+        "Durahan (Born): White Spirit: The Nest of the Guarded Dragon -- デュラハン（生者）：白霊：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 307109,
+      "Entries": [
+        "Durahan (born): White Spirit: King's Castle Drangreig -- デュラハン（生者）：白霊：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 307110,
+      "Entries": [
+        "Durahan (born): Head only: Forest of shadows of emptiness -- デュラハン（生者）：頭だけ：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Lion Warrior -- 獅子戦士"
+      ]
+    },
+    {
+      "ID": 308100,
+      "Entries": [
+        "Lion Warrior (2) -- 獅子戦士②"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2 Swords -- 巨人上級兵士（巨人）：２刀流"
+      ]
+    },
+    {
+      "ID": 309001,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2 Swords: Kuzbottom -- 巨人上級兵士（巨人）：２刀流：クズ底"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "New Giant Senior Soldier (Deceased) -- 新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309601,
+      "Entries": [
+        "New Giant Senior Soldier (for Debugging) -- 新・巨人上級兵士（デバッグ用）"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "New Giant Senior Soldier (Live) -- 新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Cavalry: Cavalry Soldiers -- 騎人兵：騎乗兵士"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle: Robe: The Nest of the Guarded Dragon -- イモータル上級兵士（イモータル）：鎌：ローブ：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 312001,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle: Robe: Immortal Mausoleum -- イモータル上級兵士（イモータル）：鎌：ローブ：不死廟"
+      ]
+    },
+    {
+      "ID": 312010,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Robe -- イモータル上級兵士（イモータル）：槍：ローブ"
+      ]
+    },
+    {
+      "ID": 312011,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Robe: Valley of The Reservoir -- イモータル上級兵士（イモータル）：槍：ローブ：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 312020,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle: Armor -- イモータル上級兵士（イモータル）：鎌：鎧"
+      ]
+    },
+    {
+      "ID": 312021,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle: Armor: The Immortal Mausoleum -- イモータル上級兵士（イモータル）：鎌：鎧：不死廟"
+      ]
+    },
+    {
+      "ID": 312030,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Armor -- イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 312031,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Armor: Valley of The Reservoir -- イモータル上級兵士（イモータル）：槍：鎧：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 312032,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Armor: Immortal Mausoleum -- イモータル上級兵士（イモータル）：槍：鎧：不死廟"
+      ]
+    },
+    {
+      "ID": 312040,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle: Naked -- イモータル上級兵士（イモータル）：鎌：裸"
+      ]
+    },
+    {
+      "ID": 312050,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear: Naked -- イモータル上級兵士（イモータル）：槍：裸"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Falcon Warrior Swords - Shield : No Hawk -- 鷹匠戦士：直剣＆盾：鷹なし"
+      ]
+    },
+    {
+      "ID": 313010,
+      "Entries": [
+        "Falcon Warrior Sashimi Sword Shield: No Hawk -- 鷹匠戦士：刺剣＆盾：鷹なし"
+      ]
+    },
+    {
+      "ID": 313020,
+      "Entries": [
+        "Takataku Warrior: Sashimi Sword -- 鷹匠戦士：刺剣＆鷹"
+      ]
+    },
+    {
+      "ID": 313021,
+      "Entries": [
+        "Takataku Warrior Sashimi & Hawk: Gap's Cave (Lap 2) -- 鷹匠戦士：刺剣＆鷹：隙間の洞（２周目）"
+      ]
+    },
+    {
+      "ID": 313030,
+      "Entries": [
+        "Falcon Warrior: Bow: No Hawk -- 鷹匠戦士：弓：鷹なし"
+      ]
+    },
+    {
+      "ID": 313031,
+      "Entries": [
+        "Falcon Warrior: Bow: No Hawk: Gap Cave (Lap 2) -- 鷹匠戦士：弓：鷹なし：隙間の洞（２周目）"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Elephant Man (Dead): Spear Axe -- 象人（亡者）：槍斧"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Elephant (Born) -- 象人（生者）"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "Captured Magician (Raw) -- 捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 316001,
+      "Entries": [
+        "Captured Magician (Live Man): Valley of The Reservoir -- 捕らわれた魔導士（生者）：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Dragon Professor -- 龍の教授"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Bay Grant: No luggage -- ベイグラント:荷物なし"
+      ]
+    },
+    {
+      "ID": 318010,
+      "Entries": [
+        "Bay Grant: Luggage available -- ベイグラント:荷物あり"
+      ]
+    },
+    {
+      "ID": 318020,
+      "Entries": [
+        "Bay Grant: Luggage available -- ベイグラント:荷物あり"
+      ]
+    },
+    {
+      "ID": 318030,
+      "Entries": [
+        "Bay Grant (for debugging: Enhanced LV1) -- ベイグラント（デバッグ用：強化LV1）"
+      ]
+    },
+    {
+      "ID": 318040,
+      "Entries": [
+        "Bay Grant (for debugging: Enhanced LV2) -- ベイグラント（デバッグ用：強化LV2）"
+      ]
+    },
+    {
+      "ID": 319000,
+      "Entries": [
+        "Damon Armor (Deceased): Mass Production: Sword: Molten Castle -- デーモン鎧（亡者）：量産型：刀：熔鉄城"
+      ]
+    },
+    {
+      "ID": 319008,
+      "Entries": [
+        "Alonne Knight"
+      ]
+    },
+    {
+      "ID": 319009,
+      "Entries": [
+        "Damon Armor (Deceased): Mass Production: Sword: Molten Castle: Soul Black -- デーモン鎧（亡者）：量産型：刀：熔鉄城：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 319010,
+      "Entries": [
+        "Damon Armor (Deceased): Mass Production Type: Bow: Molten Iron Castle -- デーモン鎧（亡者）：量産型：弓：熔鉄城"
+      ]
+    },
+    {
+      "ID": 319011,
+      "Entries": [
+        "Alonne Knight"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "[]-Mimic: Wood -- ν－ミミック：木"
+      ]
+    },
+    {
+      "ID": 321001,
+      "Entries": [
+        "[] Mimick: Wood: Scum Bottom -- ν－ミミック：木：クズ底"
+      ]
+    },
+    {
+      "ID": 321002,
+      "Entries": [
+        "η-mimic: Tree: Altar of Amana -- ν－ミミック：木：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 321003,
+      "Entries": [
+        "[] Mimic: Tree: Valley of The Reservoir -- ν－ミミック：木：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 321004,
+      "Entries": [
+        "η-mimic: Wood: The door way of Faros -- ν－ミミック：木：ファロスの扉道"
+      ]
+    },
+    {
+      "ID": 321010,
+      "Entries": [
+        "[]-Mimic: Iron -- ν－ミミック：鉄"
+      ]
+    },
+    {
+      "ID": 321011,
+      "Entries": [
+        "[]-Mimic:Iron:Molten Iron Castle -- ν－ミミック：鉄：熔鉄城"
+      ]
+    },
+    {
+      "ID": 321012,
+      "Entries": [
+        "[]-Mimic: Iron: The Tomb of Immortality -- ν－ミミック：鉄：不死廟"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Gargoyle -- ガーゴイル"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Warrior in the Mirror -- 鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 325010,
+      "Entries": [
+        "Warrior in the Mirror: King's Castle D'Angreig -- 鏡の中の戦士：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Butcher -- ブッチャー"
+      ]
+    },
+    {
+      "ID": 326010,
+      "Entries": [
+        "Butcher (for debugging) -- ブッチャー（デバッグ用）"
+      ]
+    },
+    {
+      "ID": 327000,
+      "Entries": [
+        "Bone Dragon -- 骨ドラゴン"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Ancient Warriors: Two-Handed Sword & Medium Shield: Heide Great Fire Tower -- 古代の戦士：両手剣＆中盾：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Ancient Warriors: Oversized Sword: Heide Great Fire Tower -- 古代の戦士：特大剣：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330019,
+      "Entries": [
+        "Ancient Warriors: Oversized Sword: Strong: Heide Great Fire Tower -- 古代の戦士：特大剣：強い：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330020,
+      "Entries": [
+        "Ancient Warriors: Axe Spears & Great Shields: Heide Great Fire Tower -- 古代の戦士：斧槍＆大盾：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330030,
+      "Entries": [
+        "Ancient Warrior: Two-Handed Long Axe: Heide Great Fire Tower -- 古代の戦士：両手長斧：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330040,
+      "Entries": [
+        "Ancient Warriors: Two-Handed Mallet: Heide Great Fire Tower -- 古代の戦士：両手槌：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 330049,
+      "Entries": [
+        "Ancient Warriors: Two-Handed Mallet: Strong: Heide Great Fire Tower -- 古代の戦士：両手槌：強い：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Demon Heavy Soldier: Two-Handed Sword & Medium Shield -- デーモン重兵士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 331002,
+      "Entries": [
+        "Demon Heavy Soldier: Two-Handed Sword & Medium Shield: The Nest of The Guard Dragon -- デーモン重兵士：両手剣＆中盾：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 331010,
+      "Entries": [
+        "Damon Heavy Soldier: Oversized Sword -- デーモン重兵士：特大剣"
+      ]
+    },
+    {
+      "ID": 331011,
+      "Entries": [
+        "Demon Heavy Soldier: Oversized Sword: The Nest of the Guarddragon -- デーモン重兵士：特大剣：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 331020,
+      "Entries": [
+        "Damon Heavy Soldier: Two-Handed Ax -- デーモン重兵士：両手長斧"
+      ]
+    },
+    {
+      "ID": 331021,
+      "Entries": [
+        "Demon Heavy Soldier: Two-Handed Long Axe: The Nest of the Guard Dragon -- デーモン重兵士：両手長斧：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 331030,
+      "Entries": [
+        "Damon Heavy Soldier: Mallet -- デーモン重兵士：両手槌"
+      ]
+    },
+    {
+      "ID": 331031,
+      "Entries": [
+        "Demon Heavy Soldier: Two-Handed Mallet: The Nest of the Guard Dragon -- デーモン重兵士：両手槌：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 331040,
+      "Entries": [
+        "Damon Heavy Soldier: One Hand Mallet -- デーモン重兵士：片手槌"
+      ]
+    },
+    {
+      "ID": 331041,
+      "Entries": [
+        "Demon Heavy Soldier: One Hand Mallet: The Nest of the Guard Dragon -- デーモン重兵士：片手槌：守り竜の巣"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Queen Knight A -- 王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 332010,
+      "Entries": [
+        "Queen Knight A (for debugging) -- 王妃の騎士A（デバッグ用）"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Queen Knight B -- 王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Queen Knight C -- 王妃の騎士C"
+      ]
+    },
+    {
+      "ID": 337000,
+      "Entries": [
+        "Amazing Dead: Bare Hands -- すごい亡者：素手"
+      ]
+    },
+    {
+      "ID": 337001,
+      "Entries": [
+        "Amazing Dead: Bare Hands: Valley of The Reservoir -- すごい亡者：素手：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 337002,
+      "Entries": [
+        "Amazing Dead: Bare Hands: Scum Bottom -- すごい亡者：素手：クズ底"
+      ]
+    },
+    {
+      "ID": 337003,
+      "Entries": [
+        "Amazing Dead: Bare hands: The Tomb of the Saints -- すごい亡者：素手：聖人墓所"
+      ]
+    },
+    {
+      "ID": 337010,
+      "Entries": [
+        "Amazing Dead: Torchi -- すごい亡者：松明"
+      ]
+    },
+    {
+      "ID": 337011,
+      "Entries": [
+        "Amazing Dead: Torch: Scum Bottom -- すごい亡者：松明：クズ底"
+      ]
+    },
+    {
+      "ID": 337020,
+      "Entries": [
+        "Amazing Dead: Sword -- すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 337022,
+      "Entries": [
+        "Amazing Dead: Sword: Scum Bottom -- すごい亡者：剣：クズ底"
+      ]
+    },
+    {
+      "ID": 337023,
+      "Entries": [
+        "Great Dead: Sword: The Tomb of the Saints -- すごい亡者：剣：聖人墓所"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Javazahat -- ジャバザハット"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Naga -- ナーガ"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Manscorpion ♂ -- マンスコーピオン♂"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "Manscorpion ♂: Ghosts: The Shadow of the Hollow -- マンスコーピオン♂：幽霊：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 502009,
+      "Entries": [
+        "Manscorpion ♂: The White Spirit: The Forest of Shadows of The Shadows -- マンスコーピオン♂：白霊：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Manscorpion ♀ -- マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 503010,
+      "Entries": [
+        "Manscorpion ♀ (for debugging) -- マンスコーピオン♀（デバッグ用）"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Mirror Night -- ミラーナイト"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Agaduran Stand -- アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 506101,
+      "Entries": [
+        "Agaduran Stand (Alter): The Old Dark Hole -- アガドゥランのスタンド（分身）：古き闇の穴"
+      ]
+    },
+    {
+      "ID": 506200,
+      "Entries": [
+        "Wormhole -- ワームホール"
+      ]
+    },
+    {
+      "ID": 506500,
+      "Entries": [
+        "Grave guard -- 墓守"
+      ]
+    },
+    {
+      "ID": 506501,
+      "Entries": [
+        "Tomb Guard: Ghosts: General -- 墓守：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 506509,
+      "Entries": [
+        "Tomb Guard: White Spirit -- 墓守：白霊"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "Rich -- リッチ"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "Wraith -- レイス"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Dark Bishop: Masked: The Tomb of Immortality -- ダークビショップ：仮面有り：不死廟"
+      ]
+    },
+    {
+      "ID": 509009,
+      "Entries": [
+        "Dark Bishop: Masked: Tomb of Immortality: Soul Black -- ダークビショップ：仮面有り：不死廟：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Phantom Knight -- ファントムナイト（霊体）"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Phantom Mage (Spirit) -- ファントムメイジ（霊体）"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "King Van Clad (past) -- ヴァンクラッド王（過去）"
+      ]
+    },
+    {
+      "ID": 514000,
+      "Entries": [
+        "King Van Clad (Hyundai) -- ヴァンクラッド王（現代）"
+      ]
+    },
+    {
+      "ID": 514500,
+      "Entries": [
+        "Van Clad King (modern) for in-game -- ヴァンクラッド王（現代）＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Old King -- 年老いた王"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Old Dragon: 2nd -- 古の龍：２回目"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Salamander -- サラマンダー"
+      ]
+    },
+    {
+      "ID": 601020,
+      "Entries": [
+        "Salamander (after petrification) -- サラマンダー（石化後）"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 602020,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル（顔出し）"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Spider Queen -- 蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "Spider Queen (Cliff) -- 蜘蛛の女王（崖）"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Molten iron daemon -- 熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 608000,
+      "Entries": [
+        "Corrosive insects (outer shell) -- 腐食虫（外殻）"
+      ]
+    },
+    {
+      "ID": 609000,
+      "Entries": [
+        "Leader of the Giants SS -- 巨人族親衛隊長"
+      ]
+    },
+    {
+      "ID": 609010,
+      "Entries": [
+        "Leader of the Giants SS (after petrification) -- 巨人族親衛隊長（石化後）"
+      ]
+    },
+    {
+      "ID": 609100,
+      "Entries": [
+        "Leader of the Giant SS (Phantom) -- 巨人族親衛隊長（幻影）"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only -- 重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 611010,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only (Black): Bow: King's Castle DranGreig -- 重騎馬兵：兵士のみ（黒）：弓：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 611500,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only (Red): King's Castle D'Angreig -- 重騎馬兵：兵士のみ（赤）：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 611510,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only (Red): Heide Great Fire Tower -- 重騎馬兵：兵士のみ（赤）：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Silver Chariot: Horse Only (for Deback) -- シルバーチャリオット：馬のみ（デバック用）"
+      ]
+    },
+    {
+      "ID": 619110,
+      "Entries": [
+        "Silver Chariots: Coalescence -- シルバーチャリオット：合体"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Bodhidharma -- 達磨"
+      ]
+    },
+    {
+      "ID": 622000,
+      "Entries": [
+        "Corrosive insects (main body) -- 腐食虫（本体）"
+      ]
+    },
+    {
+      "ID": 623000,
+      "Entries": [
+        "Corrosive insects (children) -- 腐食虫（子）"
+      ]
+    },
+    {
+      "ID": 624000,
+      "Entries": [
+        "Giant King *Death -- 巨人王\u3000※没"
+      ]
+    },
+    {
+      "ID": 624500,
+      "Entries": [
+        "Giant King -- 巨人王"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Ornstein -- オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Forgotten Sinner -- 忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Queen's armor -- 王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 628000,
+      "Entries": [
+        "Giant Rat -- 巨大ネズミ"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Iron Warrior"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 653010,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 653020,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 653030,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 654000,
+      "Entries": [
+        "Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 656000,
+      "Entries": [
+        "Possessed Armor"
+      ]
+    },
+    {
+      "ID": 657000,
+      "Entries": [
+        "Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 659000,
+      "Entries": [
+        "Rampart Golem"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Crystal Golem"
+      ]
+    },
+    {
+      "ID": 661000,
+      "Entries": [
+        "Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 662000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 663000,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 663010,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 665000,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 665001,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 665010,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 665011,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 666000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666010,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666020,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666030,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666040,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666050,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666060,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666070,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 666080,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        "Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 671100,
+      "Entries": [
+        "Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 672000,
+      "Entries": [
+        "Rotten Vermin"
+      ]
+    },
+    {
+      "ID": 674000,
+      "Entries": [
+        "Pagan Tree"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 677000,
+      "Entries": [
+        "Retainer Sorcerer"
+      ]
+    },
+    {
+      "ID": 677010,
+      "Entries": [
+        "Retainer Sorcerer"
+      ]
+    },
+    {
+      "ID": 678000,
+      "Entries": [
+        "Ice Golem"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 683000,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 685000,
+      "Entries": [
+        "Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 686000,
+      "Entries": [
+        "Small Undead Boar (Elana)"
+      ]
+    },
+    {
+      "ID": 687000,
+      "Entries": [
+        "Velstadt (Elana)"
+      ]
+    },
+    {
+      "ID": 688000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 688010,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 688020,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 688030,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689010,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689020,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689030,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        "Aldia, Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 694000,
+      "Entries": [
+        "Forlorn"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Dragon's Shrine Maiden for Cut Scene -- 龍の巫女＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Dragon's Shrine Maiden for In-Game -- 龍の巫女＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 700501,
+      "Entries": [
+        "Dragon's Shrine Maiden for In Game: Ghosts: Generic -- 龍の巫女＿インゲーム用：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 700502,
+      "Entries": [
+        "Dragon's Shrine Maiden for In Game: King's Castle D'Angreig -- 龍の巫女＿インゲーム用：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 700503,
+      "Entries": [
+        "Dragon's Shrine Maiden for In-Game: The Immortal Mausoleum -- 龍の巫女＿インゲーム用：不死廟"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Dragon Shrine Maiden (Child) _ For Cut Scene -- 龍の巫女（子供）＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 701500,
+      "Entries": [
+        "Dragon Shrine Maiden (Child) For In-Game -- 龍の巫女（子供）＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Queen (Modern) -- 王妃（現代）"
+      ]
+    },
+    {
+      "ID": 703000,
+      "Entries": [
+        "Queen (past) for cut scenes -- 王妃（過去）＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 703500,
+      "Entries": [
+        "Queen (past)_for in-game -- 王妃（過去）＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 703600,
+      "Entries": [
+        "New Queen -- 新王妃"
+      ]
+    },
+    {
+      "ID": 704000,
+      "Entries": [
+        "Ladder shop_for cut scene -- 梯子屋＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 704500,
+      "Entries": [
+        "Ladder shop_in for games -- 梯子屋＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 704501,
+      "Entries": [
+        "Ladder Shop for In Game: Ghosts: Generic -- 梯子屋＿インゲーム用：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 704510,
+      "Entries": [
+        "Ladder shop_for the cut scene: The Valley of the Reservoir -- 梯子屋＿カットシーン用：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 705000,
+      "Entries": [
+        "For retired fire-proof woman 1_ cut scene -- 退役の火防女１＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 705100,
+      "Entries": [
+        "Retired Fire Protection Woman 2 -- 退役の火防女２"
+      ]
+    },
+    {
+      "ID": 705300,
+      "Entries": [
+        "Retired Fire Protection Woman 3 -- 退役の火防女３"
+      ]
+    },
+    {
+      "ID": 705500,
+      "Entries": [
+        "Retired Fire Protection Woman 1_For In-Game -- 退役の火防女１＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 705501,
+      "Entries": [
+        "Retired Fire Protection Woman 1_In For Game: Ghosts: Generic -- 退役の火防女１＿インゲーム用：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 705600,
+      "Entries": [
+        "Retired Fire Protection Woman 2_In For Game -- 退役の火防女２＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 705601,
+      "Entries": [
+        "Retired Fire Protection Woman 2_In For Game: Ghosts: Generic -- 退役の火防女２＿インゲーム用：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 705800,
+      "Entries": [
+        "Retired Fire Protection Woman 3_In For Game -- 退役の火防女３＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 705801,
+      "Entries": [
+        "Retired Fire Protection Woman 3_In For Game: Ghosts: Generic -- 退役の火防女３＿インゲーム用：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 721000,
+      "Entries": [
+        "Kingdom Army Master (Modern) -- 王国軍師（現代）"
+      ]
+    },
+    {
+      "ID": 721100,
+      "Entries": [
+        "Kingdom Army Master (Past) -- 王国軍師（過去）"
+      ]
+    },
+    {
+      "ID": 722000,
+      "Entries": [
+        "tick researchers -- 刻の研究者"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Housekeeper -- 家政婦"
+      ]
+    },
+    {
+      "ID": 723001,
+      "Entries": [
+        "Housekeeper: Ghost: Generic -- 家政婦：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 723010,
+      "Entries": [
+        "For the housekeeper_cut scene: gap cave -- 家政婦_カットシーン用：隙間の洞"
+      ]
+    },
+    {
+      "ID": 724000,
+      "Entries": [
+        "Captain of the SS -- 親衛隊長"
+      ]
+    },
+    {
+      "ID": 724001,
+      "Entries": [
+        "SS Captain: Ghosts: General -- 親衛隊長：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 724002,
+      "Entries": [
+        "SS Leader: White Spirit -- 親衛隊長：白霊"
+      ]
+    },
+    {
+      "ID": 725000,
+      "Entries": [
+        "Dragon's Shrine Festival Grandal -- 竜の祠祭\u3000グランダル"
+      ]
+    },
+    {
+      "ID": 726000,
+      "Entries": [
+        "Dwarf Gabalance: Gaping Cave -- ドワーフ・ガバランス：隙間の洞"
+      ]
+    },
+    {
+      "ID": 726001,
+      "Entries": [
+        "Dwarf Gabalance: Ghosts: Generic -- ドワーフ・ガバランス：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 726002,
+      "Entries": [
+        "Dwarf Gabalance: Valley of The Reservoir -- ドワーフ・ガバランス：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 726003,
+      "Entries": [
+        "Dwarf Gabalance: Hidden Port -- ドワーフ・ガバランス：隠れ港"
+      ]
+    },
+    {
+      "ID": 726004,
+      "Entries": [
+        "Dwarf Gabalance: The Door way of Faros -- ドワーフ・ガバランス：ファロスの扉道"
+      ]
+    },
+    {
+      "ID": 726005,
+      "Entries": [
+        "Dwarf Gabalance: The Bottom of The Scum -- ドワーフ・ガバランス：クズ底"
+      ]
+    },
+    {
+      "ID": 726006,
+      "Entries": [
+        "Dwarf Gabalance: Altar of Amana -- ドワーフ・ガバランス：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "I 1_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕１_特大剣"
+      ]
+    },
+    {
+      "ID": 730001,
+      "Entries": [
+        "Under Mirror Night 1_Oversized Sword: Anne Deal's House -- ミラーナイトの下僕１_特大剣：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 730010,
+      "Entries": [
+        "I under the mirror night 1_two-handed long axe -- ミラーナイトの下僕１_両手長斧"
+      ]
+    },
+    {
+      "ID": 730020,
+      "Entries": [
+        "I 1_One Hand Sword Under Mirror Night -- ミラーナイトの下僕１_片手剣"
+      ]
+    },
+    {
+      "ID": 731000,
+      "Entries": [
+        "I 2_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕２_特大剣"
+      ]
+    },
+    {
+      "ID": 731010,
+      "Entries": [
+        "I 2_Two-Handed Axe Under Mirror Night -- ミラーナイトの下僕２_両手長斧"
+      ]
+    },
+    {
+      "ID": 731011,
+      "Entries": [
+        "Mirror Night Under Me 2_Two-Handed Ax: Anne Deal's House -- ミラーナイトの下僕２_両手長斧：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 731020,
+      "Entries": [
+        "I 2_One Hand Sword Under Mirror Night -- ミラーナイトの下僕２_片手剣"
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "Sorcerer Sinner 1 -- 呪術師の罪人１"
+      ]
+    },
+    {
+      "ID": 733000,
+      "Entries": [
+        "Sorcerer Sinner 2 -- 呪術師の罪人２"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "The person who is the person who is stamped -- 刻印の在りし者"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "A broken-hearted blue warrior -- 心折れた青教戦士"
+      ]
+    },
+    {
+      "ID": 741001,
+      "Entries": [
+        "Heartbroken Blue Warrior: Ghosts: General -- 心折れた青教戦士：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Wandering Warrior One Hand Axe -- 放浪の戦士 片手斧"
+      ]
+    },
+    {
+      "ID": 742001,
+      "Entries": [
+        "Wandering Warrior: Ghosts: Generic -- 放浪の戦士：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 742002,
+      "Entries": [
+        "Wandering Warrior One Hand Axe: The Forest of Shadows of The Shadows -- 放浪の戦士 片手斧：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 742003,
+      "Entries": [
+        "Wandering Warrior One Hand Axe: Hunting Forest -- 放浪の戦士 片手斧：狩猟の森"
+      ]
+    },
+    {
+      "ID": 742010,
+      "Entries": [
+        "Wandering Warrior: The Great Sword -- 放浪の戦士：大剣"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Tsukiko Ya: The Decaying Giant Forest -- 月光爺：朽ちた巨人の森"
+      ]
+    },
+    {
+      "ID": 743001,
+      "Entries": [
+        "Moonlight: Ghosts: General Purpose -- 月光爺：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 743002,
+      "Entries": [
+        "Tsukiko:The Forest of The Shadow of The Void -- 月光爺：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 743003,
+      "Entries": [
+        "Tsukiko Grandfather: King's Castle Drangreig -- 月光爺：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 743004,
+      "Entries": [
+        "Tsukiko Grandfather: The Memory of the Giant -- 月光爺：巨人の記憶"
+      ]
+    },
+    {
+      "ID": 743007,
+      "Entries": [
+        "Tsukiko Ya: White Spirit: For Rasbos -- 月光爺：白霊：ラスボス用"
+      ]
+    },
+    {
+      "ID": 743008,
+      "Entries": [
+        "Tsukiko Grandfather: The White Spirit: The Memory of the Giant -- 月光爺：白霊：巨人の記憶"
+      ]
+    },
+    {
+      "ID": 743009,
+      "Entries": [
+        "Tsukiko Ya: White Spirit: Kiseki-gai Gerdra -- 月光爺：白霊：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 744000,
+      "Entries": [
+        "Patch: The Decaying Giant Forest -- パッチ：朽ちた巨人の森"
+      ]
+    },
+    {
+      "ID": 744001,
+      "Entries": [
+        "Patch: Ghosts: Generic -- パッチ：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 744002,
+      "Entries": [
+        "Patch: Kiseki Street Gerdra -- パッチ：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 744003,
+      "Entries": [
+        "Patch: Valley of The Reservoir -- パッチ：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 744009,
+      "Entries": [
+        "Patch: White Spirit -- パッチ：白霊"
+      ]
+    },
+    {
+      "ID": 746000,
+      "Entries": [
+        "Chasing Warriors: The Castle of Ruins -- 追跡する戦士：廃墟の城"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Map: The Decaying Giant Forest (also for Maduro) -- 地図書き：朽ちた巨人の森（マデューラ兼用）"
+      ]
+    },
+    {
+      "ID": 751001,
+      "Entries": [
+        "Atlas: Ghosts: General -- 地図書き：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "The Lady Knight Akertilla: The House of Anne Deal -- 女騎士アーケルティーラ：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 752001,
+      "Entries": [
+        "Female Knight Akertilla: Ghosts: Generic -- 女騎士アーケルティーラ：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 752002,
+      "Entries": [
+        "Female Knight Akertilla: Prison of Oblivion -- 女騎士アーケルティーラ：忘却の牢"
+      ]
+    },
+    {
+      "ID": 752003,
+      "Entries": [
+        "Female Knight Akertilla: Valley of The Reservoir -- 女騎士アーケルティーラ：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 752004,
+      "Entries": [
+        "Female Knight Akertilla: Hidden Port -- 女騎士アーケルティーラ：隠れ港"
+      ]
+    },
+    {
+      "ID": 752005,
+      "Entries": [
+        "Female Knight Akertilla: Kuzbottom -- 女騎士アーケルティーラ：クズ底"
+      ]
+    },
+    {
+      "ID": 752006,
+      "Entries": [
+        "Female Knight Akertilla: White Spirit: Kuzbottom -- 女騎士アーケルティーラ：白霊：クズ底"
+      ]
+    },
+    {
+      "ID": 752007,
+      "Entries": [
+        "Female Knight Akertilla: White Spirit: Molten Iron Castle -- 女騎士アーケルティーラ：白霊：熔鉄城"
+      ]
+    },
+    {
+      "ID": 752008,
+      "Entries": [
+        "Female Knight Akertilla: White Spirit: Hidden Port -- 女騎士アーケルティーラ：白霊：隠れ港"
+      ]
+    },
+    {
+      "ID": 752009,
+      "Entries": [
+        "Female Knight Akertilla: The White Spirit: The Prison of Oblivion -- 女騎士アーケルティーラ：白霊：忘却の牢"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Bell Guard: Prison of Oblivion -- 鐘守：忘却の牢"
+      ]
+    },
+    {
+      "ID": 753001,
+      "Entries": [
+        "Bell Guard: Ghosts: General Purpose -- 鐘守：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 753002,
+      "Entries": [
+        "Bell Guard: Molten Iron Castle -- 鐘守：熔鉄城"
+      ]
+    },
+    {
+      "ID": 753003,
+      "Entries": [
+        "Bell Guard: Zako: Prison of Oblivion -- 鐘守：ザコ：忘却の牢"
+      ]
+    },
+    {
+      "ID": 753004,
+      "Entries": [
+        "Bell Guard: Zako: Molten Iron Castle -- 鐘守：ザコ：熔鉄城"
+      ]
+    },
+    {
+      "ID": 753008,
+      "Entries": [
+        "Bell Guard: Dark Spirit: Molten Castle -- 鐘守：闇霊：熔鉄城"
+      ]
+    },
+    {
+      "ID": 753009,
+      "Entries": [
+        "Bell Guard: Dark Spirit: Prison of Oblivion -- 鐘守：闇霊：忘却の牢"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "Yorozu Babaa -- よろずババア"
+      ]
+    },
+    {
+      "ID": 754001,
+      "Entries": [
+        "Yorozu Babaa: Ghosts -- よろずババア：幽霊"
+      ]
+    },
+    {
+      "ID": 755000,
+      "Entries": [
+        "Stalker Warrior -- ストーカー戦士"
+      ]
+    },
+    {
+      "ID": 755010,
+      "Entries": [
+        "Stalker Warrior_ With Both Hands -- ストーカー戦士_両手持ち"
+      ]
+    },
+    {
+      "ID": 755020,
+      "Entries": [
+        "Stalker Warrior_2 Sword -- ストーカー戦士_２刀"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Girl 1 of the Bard  -- 吟遊詩人の少女１"
+      ]
+    },
+    {
+      "ID": 760001,
+      "Entries": [
+        "Bard Girl 1: Ghosts: General -- 吟遊詩人の少女１：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 760100,
+      "Entries": [
+        "Girl 2 of the Bard -- 吟遊詩人の少女２"
+      ]
+    },
+    {
+      "ID": 760101,
+      "Entries": [
+        "The Girl of the Bard 2: Ghosts: General -- 吟遊詩人の少女２：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "Captive Girl: King's Castle D'Angreig -- 虜囚の少女：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 760201,
+      "Entries": [
+        "Captive Girl: Ghosts: General -- 虜囚の少女：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 760300,
+      "Entries": [
+        "Banshee Bluff 2 -- バンシーのブラフ２"
+      ]
+    },
+    {
+      "ID": 760400,
+      "Entries": [
+        "Banshee Bluff 3 -- バンシーのブラフ３"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "Armor shop: Madura (hyundai) -- 防具屋：マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 761001,
+      "Entries": [
+        "Armor Shop: Ghosts: Generic -- 防具屋：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 761010,
+      "Entries": [
+        "Armor shop: Fairy's side -- 防具屋：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Material shop: Reservoir Valley (also for Maduro) -- 素材屋：溜まりの谷（マデューラ兼用）"
+      ]
+    },
+    {
+      "ID": 762001,
+      "Entries": [
+        "Material Shop: Ghosts: Generic -- 素材屋：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "Sorcerer: The Shadow of the Imaginary Forest (also for Maduro) -- 呪術屋：虚ろの影の森（マデューラ兼用）"
+      ]
+    },
+    {
+      "ID": 763001,
+      "Entries": [
+        "Sorcerer: Ghosts: Generic -- 呪術屋：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 763010,
+      "Entries": [
+        "Bookstore (Spider Town) -- 本屋（蜘蛛の街）"
+      ]
+    },
+    {
+      "ID": 764000,
+      "Entries": [
+        "Weapon Blacksmith 1: Tonkachi & Fire Scissors -- 武器鍛冶屋１：トンカチ&火鋏"
+      ]
+    },
+    {
+      "ID": 764001,
+      "Entries": [
+        "Weapon Blacksmith 1: Ghosts: Generic -- 武器鍛冶屋１：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 764010,
+      "Entries": [
+        "Weapon Blacksmith 1: Otsuchi -- 武器鍛冶屋１：大槌"
+      ]
+    },
+    {
+      "ID": 764300,
+      "Entries": [
+        "Armor Blacksmith 1: Prison of Oblivion -- 防具鍛冶屋１：忘却の牢"
+      ]
+    },
+    {
+      "ID": 764309,
+      "Entries": [
+        "Armor Blacksmith 1: Ghosts: General Purpose -- 防具鍛冶屋１：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 764310,
+      "Entries": [
+        "Armor Blacksmith 1: Castle in ruins -- 防具鍛冶屋１：廃墟の城"
+      ]
+    },
+    {
+      "ID": 765000,
+      "Entries": [
+        "a tool shop -- 道具屋"
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        "Sorcerer: Hidden Port (maduro) -- 魔術師：隠れ港（マデューラ兼用）"
+      ]
+    },
+    {
+      "ID": 766001,
+      "Entries": [
+        "Magician: Ghost: Generic -- 魔術師：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 766010,
+      "Entries": [
+        "Spell shop 1&4 (Fort of Resistance: Modern) -- スペル屋１＆４（抵抗の砦：現代）"
+      ]
+    },
+    {
+      "ID": 767000,
+      "Entries": [
+        "Spell Shop 2 & 3 (Hyundai) -- スペル屋２＆３（現代）"
+      ]
+    },
+    {
+      "ID": 768000,
+      "Entries": [
+        "Spell Mania: Prison of Oblivion -- スペルマニア：忘却の牢"
+      ]
+    },
+    {
+      "ID": 768001,
+      "Entries": [
+        "Spell Mania: Ghosts: Generic -- スペルマニア：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 769000,
+      "Entries": [
+        "The Miracle Man Leash: The Heide Great Fire Tower (also for Maduro) -- 奇跡の人リーシュ：ハイデ大火塔（マデューラ兼用）"
+      ]
+    },
+    {
+      "ID": 769001,
+      "Entries": [
+        "Miracle Man Leash: Ghosts: Generic -- 奇跡の人リーシュ：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Dark Man: Cane: Hunting Forest -- 闇術屋：杖：狩猟の森"
+      ]
+    },
+    {
+      "ID": 770001,
+      "Entries": [
+        "Dark Man: Ghosts: General -- 闇術屋：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 770010,
+      "Entries": [
+        "Dark Man: Swords -- 闇術屋：刺剣"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "Enclosed who: -- 封じられた人："
+      ]
+    },
+    {
+      "ID": 771001,
+      "Entries": [
+        "Enclosed: Ghosts -- 封じられた人：幽霊"
+      ]
+    },
+    {
+      "ID": 771004,
+      "Entries": [
+        "Enclosed Man: Dark Spirit: Castle of the King D'Angreig -- 封じられた人：闇霊：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 771005,
+      "Entries": [
+        "Enclosed Man: Dark Spirit: Scum Bottom -- 封じられた人：闇霊：クズ底"
+      ]
+    },
+    {
+      "ID": 771006,
+      "Entries": [
+        "Enclosed Man: Dark Spirit: The Forest of Shadows of The Shadows -- 封じられた人：闇霊：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 771007,
+      "Entries": [
+        "The Enclosed Man: The Dark Spirit: The House of Anne Deal -- 封じられた人：闇霊：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 771009,
+      "Entries": [
+        "Enclosed Man: Dark Spirit: Jedra- Kiseki Street -- 封じられた人：闇霊：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Risa: Ming-iron castle -- 珍品屋：熔鉄城"
+      ]
+    },
+    {
+      "ID": 772001,
+      "Entries": [
+        "Curiosity: Ghosts: General -- 珍品屋：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 776000,
+      "Entries": [
+        "Top Weapon: Bird Goal: Kiseki Street Gerdra -- 上位武器屋：バードゴール：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 776001,
+      "Entries": [
+        "Top Weapon: Bird Goal: Ghosts: Generic -- 上位武器屋：バードゴール：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 776002,
+      "Entries": [
+        "Top Weapons Store: Bird Goal: Forest of Shadows -- 上位武器屋：バードゴール：虚ろの影の森"
+      ]
+    },
+    {
+      "ID": 777000,
+      "Entries": [
+        "Cat: Madura (Hyundai) -- 猫：マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 778000,
+      "Entries": [
+        "Yorozuya (Modern) -- よろず屋（現代）"
+      ]
+    },
+    {
+      "ID": 780000,
+      "Entries": [
+        "Material shop (modern) -- 素材屋（現代）"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Black Phantom Shop -- 黒ファントム屋"
+      ]
+    },
+    {
+      "ID": 783001,
+      "Entries": [
+        "Black Phantom Shop: Ghost -- 黒ファントム屋：幽霊"
+      ]
+    },
+    {
+      "ID": 783100,
+      "Entries": [
+        "Blue Phantom Shop -- 青ファントム屋"
+      ]
+    },
+    {
+      "ID": 784000,
+      "Entries": [
+        "The Teacher of The Sin: Gerdra- Kiishi Street -- 免罪の教戒師：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 784001,
+      "Entries": [
+        "The Sin-Sin Teacher: Ghosts: General -- 免罪の教戒師：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 785000,
+      "Entries": [
+        "Guardian Knight: Two-Handed Ax & Medium Shield -- 守護の騎士：両手長斧＆中盾"
+      ]
+    },
+    {
+      "ID": 785001,
+      "Entries": [
+        "Guardian Knight: Ghosts: Generic -- 守護の騎士：幽霊：汎用"
+      ]
+    },
+    {
+      "ID": 785010,
+      "Entries": [
+        "Guardian Knight: Two-Handed Axe & Bell -- 守護の騎士：両手長斧＆ベル"
+      ]
+    },
+    {
+      "ID": 786000,
+      "Entries": [
+        "Glitter Girl -- キラキラ娘"
+      ]
+    },
+    {
+      "ID": 787000,
+      "Entries": [
+        "The Fairy of the Dungeon of The Moment -- 刻のダンジョンの妖精"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Current player (for poly play) -- 現在のプレイヤー（ポリ劇用）"
+      ]
+    },
+    {
+      "ID": 800100,
+      "Entries": [
+        "Future Player (for Poly Play) -- 未来のプレイヤー（ポリ劇用）"
+      ]
+    },
+    {
+      "ID": 800300,
+      "Entries": [
+        "Player (Phantom) -- プレイヤー（幻影）"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "NPC for Multi: Swordsman (Man): Red Phantom: Hunting Forest -- マルチ用NPC：剣士（男）：赤ファントム：狩猟の森"
+      ]
+    },
+    {
+      "ID": 810001,
+      "Entries": [
+        "NPC for Multi: Swordsman (Man): White Spirit: Valley of The Reservoir -- マルチ用NPC：剣士（男）：白霊：溜まりの谷"
+      ]
+    },
+    {
+      "ID": 810002,
+      "Entries": [
+        "NPC for Multi: Swordsman (Male): Bell Guard Area -- マルチ用NPC：剣士（男）：鐘守エリア"
+      ]
+    },
+    {
+      "ID": 810003,
+      "Entries": [
+        "NPC for Multi: Swordsman (Male): White Spirit: Heide Great Fire Tower -- マルチ用NPC：剣士（男）：白霊：ハイデ大火塔"
+      ]
+    },
+    {
+      "ID": 810005,
+      "Entries": [
+        "Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "NPC for Multi: Archer (Man) -- マルチ用NPC：弓兵（男）"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "NPC for Multi: Sage (Female) -- マルチ用NPC：賢者（女）"
+      ]
+    },
+    {
+      "ID": 812001,
+      "Entries": [
+        "NPC for Multi: Sage (Female): White Spirit: Kiseki Street Gerdra -- マルチ用NPC：賢者（女）：白霊：輝石街ジェルドラ"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "NPC for Multi: Lancer (Female) -- マルチ用NPC：ランサー（女）"
+      ]
+    },
+    {
+      "ID": 814000,
+      "Entries": [
+        "NPC for Multi: Flesh-breaking (Female): White Spirit -- マルチ用NPC：肉断ち（女）：白霊"
+      ]
+    },
+    {
+      "ID": 814008,
+      "Entries": [
+        "NPC for Multi: Breaking Flesh (Female): Dark Spirit: Castle of The King D'Angreig -- マルチ用NPC：肉断ち（女）：闇霊：王城ドラングレイグ"
+      ]
+    },
+    {
+      "ID": 814009,
+      "Entries": [
+        "NPC for Multi: Breaking Meat (Female): Dark Spirit: Scum Bottom -- マルチ用NPC：肉断ち（女）：闇霊：クズ底"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "NPC for Multi: Spearman (Man) -- マルチ用NPC：槍兵（男）"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "NPC for Multi: Reaper (Woman): Dark Spirit: Hunting Forest -- マルチ用NPC：死神（女）：闇霊：狩猟の森"
+      ]
+    },
+    {
+      "ID": 821001,
+      "Entries": [
+        "NPC for Multi: The God of Death (Woman): Dark Spirit: Anne Deal's House -- マルチ用NPC：死神（女）：闇霊：アン・ディールの館"
+      ]
+    },
+    {
+      "ID": 822000,
+      "Entries": [
+        "NPC for Multi: The Magician (Man): Dark Spirit: The Door way of Faros -- マルチ用NPC：魔導士（男）：闇霊：ファロスの扉道"
+      ]
+    },
+    {
+      "ID": 822001,
+      "Entries": [
+        "NPC for Multi: Magician (Male): Ashes: Saint's Tomb -- マルチ用NPC：魔導士（男）：灰霊：聖人墓所"
+      ]
+    },
+    {
+      "ID": 822002,
+      "Entries": [
+        "NPC for Multi: Magician (Male): Dark Spirit: Tomb of Immortality -- マルチ用NPC：魔導士（男）：闇霊：不死廟"
+      ]
+    },
+    {
+      "ID": 822003,
+      "Entries": [
+        "NPC for Multi: The Magician (Man): Dark Spirit: Altar of Amana -- マルチ用NPC：魔導士（男）：闇霊：アマナの祭壇"
+      ]
+    },
+    {
+      "ID": 823000,
+      "Entries": [
+        "NPC for Multi: Koryu Swordsman (Man) -- マルチ用NPC：古龍剣士（男）"
+      ]
+    },
+    {
+      "ID": 824000,
+      "Entries": [
+        "NPC for Multi: The Older Brother of a Female Swordsman -- マルチ用NPC：女剣士の兄"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "Saint's Tomb: Abandoned Saint -- 聖人墓所：捨てられた聖女"
+      ]
+    },
+    {
+      "ID": 831100,
+      "Entries": [
+        "Saint's Tomb: Knight of the Saint -- 聖人墓所：聖女の騎士"
+      ]
+    },
+    {
+      "ID": 832000,
+      "Entries": [
+        "Old Dark Hole: Abyss 1: Sniper -- 古き闇の穴：深淵霊１：スナイパー"
+      ]
+    },
+    {
+      "ID": 832100,
+      "Entries": [
+        "The Old Dark Hole: The Abyss 2: Axeman -- 古き闇の穴：深淵霊２：アックスマン"
+      ]
+    },
+    {
+      "ID": 832200,
+      "Entries": [
+        "The Old Dark Hole: The Abyss 3: Huang Yi -- 古き闇の穴：深淵霊３：黄衣夫"
+      ]
+    },
+    {
+      "ID": 832300,
+      "Entries": [
+        "The Old Dark Hole: The Abyss 4: Huang Yi Wife -- 古き闇の穴：深淵霊４：黄衣妻"
+      ]
+    },
+    {
+      "ID": 832400,
+      "Entries": [
+        "The Old Dark Hole: The Abyss 5: Traveler -- 古き闇の穴：深淵霊５：旅人"
+      ]
+    },
+    {
+      "ID": 832500,
+      "Entries": [
+        "Old Dark Hole: Abyss 6: Knight -- 古き闇の穴：深淵霊６：騎士"
+      ]
+    },
+    {
+      "ID": 832600,
+      "Entries": [
+        "Old Dark Hole: Abyss 7: Heavy Warrior -- 古き闇の穴：深淵霊７：重戦士"
+      ]
+    },
+    {
+      "ID": 832700,
+      "Entries": [
+        "Old Dark Hole: Abyss 8: Queen -- 古き闇の穴：深淵霊８：女王様"
+      ]
+    },
+    {
+      "ID": 833000,
+      "Entries": [
+        "Amana's Shrine: Cannibal -- アマナの祠：人食い番長"
+      ]
+    },
+    {
+      "ID": 834000,
+      "Entries": [
+        "Prison of Oblivion: Sorcerer -- 忘却の牢：呪術師"
+      ]
+    },
+    {
+      "ID": 834100,
+      "Entries": [
+        "Prison of Oblivion: The Dark Knight -- 忘却の牢：闇騎士"
+      ]
+    },
+    {
+      "ID": 835000,
+      "Entries": [
+        "Ritual: Dragon Knight: Two-Sword Style -- 祭祀：竜騎士：二刀流"
+      ]
+    },
+    {
+      "ID": 835001,
+      "Entries": [
+        "Anne Deal's House: The Charm of Painting (Woman) -- アン・ディールの館：絵画守（女）"
+      ]
+    },
+    {
+      "ID": 835100,
+      "Entries": [
+        "Ritual: Dragon Knight: One-handed sword -- 祭祀：竜騎士：片手剣"
+      ]
+    },
+    {
+      "ID": 835200,
+      "Entries": [
+        "Ritual: Dragon Knight: One Hand Mallet -- 祭祀：竜騎士：片手槌"
+      ]
+    },
+    {
+      "ID": 836000,
+      "Entries": [
+        "Molten Castle: Samurai Saucer -- 熔鉄城：侍ソーサラー"
+      ]
+    },
+    {
+      "ID": 836100,
+      "Entries": [
+        "Ming-iron castle:Bell Guard 1: -- 熔鉄城：鐘守１："
+      ]
+    },
+    {
+      "ID": 836200,
+      "Entries": [
+        "Ming-iron castle:Bell Guard 2: -- 熔鉄城：鐘守２："
+      ]
+    },
+    {
+      "ID": 836300,
+      "Entries": [
+        "Ming-iron castle:Bell Guard 3: -- 熔鉄城：鐘守３："
+      ]
+    },
+    {
+      "ID": 836400,
+      "Entries": [
+        "Molten Iron Castle: Light Heavy Soldiers -- 熔鉄城：軽快重兵士"
+      ]
+    },
+    {
+      "ID": 837000,
+      "Entries": [
+        "Gap cave: second lap hunting -- 隙間の洞：２周目狩り"
+      ]
+    },
+    {
+      "ID": 837100,
+      "Entries": [
+        "Creus sinus: proximity -- 隙間の洞：近接"
+      ]
+    },
+    {
+      "ID": 837200,
+      "Entries": [
+        "Gap Sinus: Shooting -- 隙間の洞：射撃"
+      ]
+    },
+    {
+      "ID": 837400,
+      "Entries": [
+        "Player Character - Start Sequence"
+      ]
+    },
+    {
+      "ID": 838000,
+      "Entries": [
+        "Forest of Shadows: Phantom Enemy 1 -- 虚ろの影の森：幻影敵１"
+      ]
+    },
+    {
+      "ID": 838100,
+      "Entries": [
+        "Forest of Shadows: Phantom Enemy 2 -- 虚ろの影の森：幻影敵２"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Dummy NPC for the winner's contract -- 覇者の契約用ダミーNPC"
+      ]
+    },
+    {
+      "ID": 841000,
+      "Entries": [
+        "Dummy NPC for solar contract -- 太陽の契約用ダミーNPC"
+      ]
+    },
+    {
+      "ID": 842000,
+      "Entries": [
+        "Decaying Giant Forest: In Front of the King's Door: Week 2 Red Spirit 1 -- 朽ちた巨人の森：王の扉前：２週目赤霊１"
+      ]
+    },
+    {
+      "ID": 843000,
+      "Entries": [
+        "Decaying Giant Forest: In Front of the King's Door: Week 2 Red Spirit 2 -- 朽ちた巨人の森：王の扉前：２週目赤霊２"
+      ]
+    },
+    {
+      "ID": 844000,
+      "Entries": [
+        "Decayed Giant Forest: Ground Cracking Square: Week 2 Red Spirit 3 -- 朽ちた巨人の森：地割れ広場：２週目赤霊３"
+      ]
+    },
+    {
+      "ID": 845000,
+      "Entries": [
+        "Decaying Giant Forest: The Second Week Dark Spirit -- 朽ちた巨人の森：２週目闇霊"
+      ]
+    },
+    {
+      "ID": 846000,
+      "Entries": [
+        "Kiseki-gai Gerdra: The Dark Spirit -- 輝石街ジェルドラ：闇霊"
+      ]
+    },
+    {
+      "ID": 847000,
+      "Entries": [
+        "Heide Great Fire Tower: Week 2 Dark Spirit 1 -- ハイデ大火塔：２週目闇霊１"
+      ]
+    },
+    {
+      "ID": 847100,
+      "Entries": [
+        "Heide Great Fire Tower: Week 2 Dark Spirit 2 -- ハイデ大火塔：２週目闇霊２"
+      ]
+    },
+    {
+      "ID": 848000,
+      "Entries": [
+        "Tomb of Immortality: Week 2 Dark Spirit 1 -- 不死廟：２週目闇霊１"
+      ]
+    },
+    {
+      "ID": 848100,
+      "Entries": [
+        "Tomb of Immortality: Dark Spirit 2 (Ghost) -- 不死廟：闇霊２（亡霊）"
+      ]
+    },
+    {
+      "ID": 849000,
+      "Entries": [
+        "King's Castle D'Angheig: Dark Spirit 1 (Ghost) -- 王城ドラングレイグ：闇霊１（亡霊）"
+      ]
+    },
+    {
+      "ID": 849100,
+      "Entries": [
+        "King's Castle D'Angheig: The Dark Spirit 2 -- 王城ドラングレイグ：闇霊２"
+      ]
+    },
+    {
+      "ID": 849200,
+      "Entries": [
+        "King's Castle D'Angheig: The Dark Spirit 3 -- 王城ドラングレイグ：闇霊３"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Anne Deal's House: The Second Week Of Dark Spirits -- アン・ディールの館：２週目闇霊"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "Valley of The Reservoir: The Dark Spirit -- 溜まりの谷：闇霊"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "Hunting Forest: Red Spirit Level 3 -- 狩猟の森：赤霊レベル３"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "King's Castle D'Angheig: Two-Sword Avelin -- 王城ドラングレイグ：二刀流アヴェリン"
+      ]
+    },
+    {
+      "ID": 853100,
+      "Entries": [
+        "King's Castle Drunegreig: Leroy -- 王城ドラングレイグ：リロイ"
+      ]
+    },
+    {
+      "ID": 853200,
+      "Entries": [
+        "King's Castle D'Angheig: Week 2: Dark Spirit 1 -- 王城ドラングレイグ：２週目：闇霊１"
+      ]
+    },
+    {
+      "ID": 853300,
+      "Entries": [
+        "King's Castle D'Angheig: Week 2: Dark Spirits 2 -- 王城ドラングレイグ：２週目：闇霊２"
+      ]
+    },
+    {
+      "ID": 853400,
+      "Entries": [
+        "King's Castle D'Angheig: Week 2: Dark Spirit 3 -- 王城ドラングレイグ：２週目：闇霊３"
+      ]
+    },
+    {
+      "ID": 853500,
+      "Entries": [
+        "King's Castle D'Angheig: The Dark Spirit Key -- 王城ドラングレイグ：闇霊鍵番"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "Hidden Port: Dark Spirit (Darth Mall) -- 隠れ港：闇霊（ダースモール）"
+      ]
+    },
+    {
+      "ID": 860000,
+      "Entries": [
+        "Rockshield Baldyr"
+      ]
+    },
+    {
+      "ID": 861000,
+      "Entries": [
+        "Jester Thomas"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        "Rhoy the Explorer"
+      ]
+    },
+    {
+      "ID": 862001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 863000,
+      "Entries": [
+        "Stewart the Explorer"
+      ]
+    },
+    {
+      "ID": 864000,
+      "Entries": [
+        "Courh the Explorer"
+      ]
+    },
+    {
+      "ID": 865000,
+      "Entries": [
+        "Abbess Feeva"
+      ]
+    },
+    {
+      "ID": 865001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 866000,
+      "Entries": [
+        "Ruined Aflis"
+      ]
+    },
+    {
+      "ID": 867000,
+      "Entries": [
+        "Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 867001,
+      "Entries": [
+        "Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 867100,
+      "Entries": [
+        "Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 868000,
+      "Entries": [
+        "Transcendent Edde"
+      ]
+    },
+    {
+      "ID": 869000,
+      "Entries": [
+        "Rapacious Andrei"
+      ]
+    },
+    {
+      "ID": 870000,
+      "Entries": [
+        "Quicksword Rachel"
+      ]
+    },
+    {
+      "ID": 871000,
+      "Entries": [
+        "Maldron the Assassin"
+      ]
+    },
+    {
+      "ID": 871100,
+      "Entries": [
+        "Teeth-chattering Dan"
+      ]
+    },
+    {
+      "ID": 872000,
+      "Entries": [
+        "Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 873000,
+      "Entries": [
+        "Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 874000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 875000,
+      "Entries": [
+        "Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 876000,
+      "Entries": [
+        "Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 877000,
+      "Entries": [
+        "Castaway Witch Donna"
+      ]
+    },
+    {
+      "ID": 878000,
+      "Entries": [
+        "Hexer Nicholai"
+      ]
+    },
+    {
+      "ID": 879000,
+      "Entries": [
+        "Holy Knight Aurheim"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 881000,
+      "Entries": [
+        "Prowlers"
+      ]
+    },
+    {
+      "ID": 882000,
+      "Entries": [
+        "Prowlers"
+      ]
+    },
+    {
+      "ID": 884000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 884001,
+      "Entries": [
+        "Twiggy Shei"
+      ]
+    },
+    {
+      "ID": 885000,
+      "Entries": [
+        "Unknown Phantom"
+      ]
+    },
+    {
+      "ID": 885100,
+      "Entries": [
+        "Unknown Phantom"
+      ]
+    },
+    {
+      "ID": 886000,
+      "Entries": [
+        "Insolent Knight"
+      ]
+    },
+    {
+      "ID": 887000,
+      "Entries": [
+        "Gutter Denizen"
+      ]
+    },
+    {
+      "ID": 888000,
+      "Entries": [
+        "Butcher Phantom"
+      ]
+    },
+    {
+      "ID": 891000,
+      "Entries": [
+        "Sellsword Luet"
+      ]
+    },
+    {
+      "ID": 891500,
+      "Entries": [
+        "Devotee Scarlett"
+      ]
+    },
+    {
+      "ID": 892000,
+      "Entries": [
+        "Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 892500,
+      "Entries": [
+        "Bashful Ray"
+      ]
+    },
+    {
+      "ID": 893000,
+      "Entries": [
+        "Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 896000,
+      "Entries": [
+        "Woodland Child Victor"
+      ]
+    },
+    {
+      "ID": 896500,
+      "Entries": [
+        "Woodland Child Gully"
+      ]
+    },
+    {
+      "ID": 897000,
+      "Entries": [
+        "Fencer Sharron"
+      ]
+    },
+    {
+      "ID": 897500,
+      "Entries": [
+        "Armorer Dennis"
+      ]
+    },
+    {
+      "ID": 898000,
+      "Entries": [
+        "Oliver the Collector"
+      ]
+    }
+  ]
+}

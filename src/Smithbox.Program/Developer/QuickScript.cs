@@ -52,27 +52,10 @@ public class QuickScript
         {
             var meta = entry.Value;
 
-            var xml = SerializeToXml(meta);
+            var outputPath = Path.Combine(outputFolder, $"{meta.Name}");
 
-            var outputPath = Path.Combine(outputFolder, $"{meta.Name}.json");
-
-            File.WriteAllText(outputPath, xml);
+            meta._xml.Save(outputPath);
         }
-    }
-    public static string SerializeToXml(object input)
-    {
-        XmlSerializer ser = new XmlSerializer(input.GetType(), "");
-        string result = string.Empty;
-
-        using (MemoryStream memStm = new MemoryStream())
-        {
-            ser.Serialize(memStm, input);
-
-            memStm.Position = 0;
-            result = new StreamReader(memStm).ReadToEnd();
-        }
-
-        return result;
     }
 
     //public static void ConvertParamEnums(ProjectEntry curProject)

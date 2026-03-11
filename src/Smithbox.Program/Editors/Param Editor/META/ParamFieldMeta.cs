@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 using static SoapstoneLib.SoulsKey;
 
 namespace StudioCore.Editors.ParamEditor;
 
 public class ParamFieldMeta
 {
+    [XmlIgnore]
     private ParamMeta MetaParent;
 
     public ParamFieldMeta(ParamMeta parent, PARAMDEF.Field field)
@@ -31,6 +33,8 @@ public class ParamFieldMeta
         MovieAliasEnum_ConditionalField = "";
         MovieAliasEnum_ConditionalValue = "";
     }
+
+    public ParamFieldMeta() { }
 
     public ParamFieldMeta(ParamMeta parent, XmlNode fieldMeta, PARAMDEF.Field field)
     {
@@ -237,6 +241,9 @@ public class ParamFieldMeta
             RefGroup = tRefGroup.InnerText;
         }
     }
+
+    public string AltName { get; set; }
+    public string Wiki { get; set; }
 
     /// <summary>
     /// Determines whether this field points to a NR tile MSB

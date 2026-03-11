@@ -55,12 +55,49 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Import_Language()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Row Import Language",
+            Description = "Determines the language used for community row imports.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                var languages = curProject.Handler.ParamData.RowImportLanguages;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Import_Language))
+                {
+                    foreach (var entry in languages.Options)
+                    {
+                        if (ImGui.Selectable(entry.Name))
+                        {
+                            CFG.Current.ParamEditor_Import_Language = entry.Name;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
 
     public static PreferenceItem ParamEditor_Enable_Compact_Mode()
     {
         return new PreferenceItem
         {
-            OrderID =1,
+            OrderID = 2,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 

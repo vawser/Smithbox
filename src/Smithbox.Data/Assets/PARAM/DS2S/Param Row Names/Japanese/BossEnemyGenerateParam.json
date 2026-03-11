@@ -1,0 +1,23 @@
+{
+  "Name": "BossEnemyGenerateParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "【ミラーナイト】"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "【アガドゥランの分身】"
+      ]
+    }
+  ]
+}
