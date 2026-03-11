@@ -378,24 +378,24 @@
     Wiki="The amount of rotation speed reduction that occurs when lower body damage occurs." />
 
     <ragdollMassFactor
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Mass %"
+    Wiki="The mass multiplier to apply to the character's ragdoll." />
 
     <ragdollFrictionFactor
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Friction %"
+    Wiki="The friction coefficient multiplier to apply to the character's ragdoll." />
 
     <ragdollRestitutionFactor
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Restitution %"
+    Wiki="The restitution coefficient multiplier to apply to the character's ragdoll." />
 
     <ragdollMaxLinearVelocityFactor
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Maximum Speed %"
+    Wiki="The maximum speed multiplier to apply to the character's ragdoll." />
 
     <ragdollMaxAngularVelocityFactor
-    AltName=""
-    Wiki="" />
+    AltName="Ragdoll Maximum Angular Velocity %"
+    Wiki="The maximum angular velocity multiplier to apply to the character's ragdoll." />
 
     <ragdollGravityFactorMin
     AltName=""

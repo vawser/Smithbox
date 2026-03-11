@@ -1,0 +1,10 @@
+{
+  "DisplayName": "Unused",
+  "Params": [
+    "CameraAreaParam",
+    "CameraBattleParam",
+    "CameraControlParam",
+    "CameraElasticParam",
+    "PlayerReinforceParam"
+  ]
+}

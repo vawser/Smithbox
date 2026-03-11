@@ -120,6 +120,34 @@ public class ParamListWindow
 
         UIHelper.Tooltip($"Toggle the display of the Table Group window.\nCurrent Mode: {tableGroupWindowVis}");
 
+        // Toggle Param Community Names
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Book}##paramCommunityNamesToggle"))
+        {
+            CFG.Current.ParamEditor_Param_List_Display_Community_Names = !CFG.Current.ParamEditor_Param_List_Display_Community_Names;
+        }
+
+        var paramCommunityNamesVis = "Source";
+        if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
+            paramCommunityNamesVis = "Community";
+
+        UIHelper.Tooltip($"Toggle the display of community names for params.\nCurrent Mode: {paramCommunityNamesVis}");
+
+        // Toggle Param Categories
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Cubes}##paramCategoriesToggle"))
+        {
+            CFG.Current.ParamEditor_Param_List_Display_Categories = !CFG.Current.ParamEditor_Param_List_Display_Categories;
+        }
+
+        var paramCategoriesVis = "Hidden";
+        if (CFG.Current.ParamEditor_Param_List_Display_Categories)
+            paramCategoriesVis = "Displayed";
+
+        UIHelper.Tooltip($"Toggle the display of param categories.\nCurrent Mode: {paramCategoriesVis}");
+
         ImGui.Separator();
     }
 

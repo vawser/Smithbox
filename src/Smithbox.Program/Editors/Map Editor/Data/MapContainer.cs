@@ -297,6 +297,127 @@ public class MapContainer : ObjectContainer
         MapOffsetNode.AddChild(nvaParent);
 
         // Navmesh Info
+        foreach (var curNavmesh in nva.NavmeshInfoEntries)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            var navid = $@"n{curNavmesh.ModelID:D6}";
+            var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
+
+            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
+
+            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Face Data
+        foreach (var curEntry in nva.FaceDataEntries)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Node Bank Data
+        foreach (var curEntry in nva.NodeBankEntries)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Connectors
+        foreach (var curEntry in nva.ConnectorEntries)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Level Connectors
+        foreach (var curEntry in nva.LevelConnectorEntries)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        if (nva.Version == NVA.NVAVersion.EldenRing)
+        {
+            // Section 10
+            foreach (var curEntry in nva.Section10Entries)
+            {
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+
+            // Section 11
+            foreach (var curEntry in nva.Section11Entries)
+            {
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+
+            // Section 13
+            foreach (var curEntry in nva.Section13Entries)
+            {
+                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+        }
+
+        NavmeshParent = nvaParent;
+    }
+
+    // ER specific
+    public void LoadHavokNVA(string mapName, NVA_ER nva)
+    {
+        var nvaParent = new MsbEntity(View.Universe, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(nvaParent);
+
+        // Navmesh Info
         foreach (var curNavmesh in nva.Navmeshes)
         {
             var newEntity = new MsbEntity(View.Universe, this, curNavmesh, MsbEntityType.Navmesh);
@@ -371,40 +492,37 @@ public class MapContainer : ObjectContainer
             nvaParent.AddChild(newEntity);
         }
 
-        if (nva.Version == NVA.NVAVersion.EldenRing)
+        // Section 10
+        foreach (var curEntry in nva.Entries10)
         {
-            // Section 10
-            foreach (var curEntry in nva.Entries10)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
-                newEntity.SupportsName = false;
+            newEntity.SupportsName = false;
 
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
 
-            // Section 11
-            foreach (var curEntry in nva.Entries11)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+        // Section 11
+        foreach (var curEntry in nva.Entries11)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
-                newEntity.SupportsName = false;
+            newEntity.SupportsName = false;
 
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
 
-            // Section 13
-            foreach (var curEntry in nva.Entries13)
-            {
-                var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
+        // Section 13
+        foreach (var curEntry in nva.Entries13)
+        {
+            var newEntity = new MsbEntity(View.Universe, this, curEntry, MsbEntityType.Navmesh);
 
-                newEntity.SupportsName = false;
+            newEntity.SupportsName = false;
 
-                Objects.Add(newEntity);
-                nvaParent.AddChild(newEntity);
-            }
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
         }
 
         NavmeshParent = nvaParent;

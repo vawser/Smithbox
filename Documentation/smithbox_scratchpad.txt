@@ -2,9 +2,6 @@
 # TODO 
 #---------------------
 
-- Map Editor
- - Add DS2 BTAB and BTPB support
- 
 - Param Editor
  - Fix the FMG ref finder (the finder is inconsistent)
 
