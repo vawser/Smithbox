@@ -1,0 +1,208 @@
+{
+  "Name": "CharaInitParam",
+  "UngroupedAtBottom": false,
+  "Groups": [
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equip_Wep_Right",
+        "equip_Subwep_Right",
+        "equip_Wep_Body_GenId",
+        "equip_Wep_Left",
+        "equip_Subwep_Left",
+        "SecondaryItem_01"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equip_Arrow",
+        "equip_SubArrow",
+        "equip_Bolt",
+        "equip_SubBolt",
+        "arrowNum",
+        "subArrowNum",
+        "boltNum",
+        "subBoltNum"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equip_Helm",
+        "equip_Armer",
+        "equip_Gaunt",
+        "equip_Leg"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "soulLvl",
+        "baseVit",
+        "baseWil",
+        "baseEnd",
+        "baseDurability",
+        "baseStr",
+        "baseDex",
+        "baseMag",
+        "baseFai",
+        "baseLuc",
+        "baseHeroPoint",
+        "soul",
+        "secondaryItemNum_07",
+        "secondaryItemNum_08"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equip_Accessory1",
+        "equip_Accessory2",
+        "equip_Accessory3",
+        "equip_Accessory4",
+        "equip_Accessory5"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equip_Spell_01",
+        "equip_Spell_02",
+        "equip_Spell_03",
+        "equip_Spell_04",
+        "equip_Spell_05",
+        "equip_Spell_06",
+        "equip_Spell_07"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "Item_01",
+        "Item_02",
+        "Item_03",
+        "Item_04",
+        "Item_05",
+        "Item_06",
+        "Item_07",
+        "Item_08",
+        "Item_09",
+        "Item_10",
+        "SecondaryItem_02",
+        "itemNum_01",
+        "itemNum_02",
+        "itemNum_03",
+        "itemNum_04",
+        "itemNum_05",
+        "itemNum_06",
+        "itemNum_07",
+        "itemNum_08",
+        "itemNum_09",
+        "itemNum_10"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "SecondaryItem_03",
+        "SecondaryItem_04",
+        "SecondaryItem_05",
+        "SecondaryItem_06",
+        "SecondaryItem_07",
+        "SecondaryItem_08",
+        "secondaryItemNum_01",
+        "secondaryItemNum_02",
+        "secondaryItemNum_03",
+        "secondaryItemNum_04",
+        "secondaryItemNum_04",
+        "secondaryItemNum_05",
+        "secondaryItemNum_06"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "gestureid0",
+        "gestureid1",
+        "gestureid2",
+        "gestureid3",
+        "gestureid4",
+        "gestureid5",
+        "gestureid6"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "npcPlayerFaceGenId",
+        "npcPlayerThinkId",
+        "npcPlayerType",
+        "npcPlayerDrawType",
+        "NpcPlayerSex",
+        "vowType",
+        "VoiceType"
+      ]
+    }
+  ]
+}

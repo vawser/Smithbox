@@ -2,6 +2,9 @@
 # TODO 
 #---------------------
 
+- Keybinds:
+ - Add option to set key to Unknown (button like the reset button)
+
 - Param Editor
  - Fix the FMG ref finder (the finder is inconsistent)
 
