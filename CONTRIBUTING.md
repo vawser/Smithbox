@@ -132,10 +132,11 @@ Enum metadata supports multiple languages too. You can open a enum JSON and add 
 The language string needs to be the same as the string you defined for the Name property in the *Annotation Languages.json* file.
 
 ### Param Categories
-The same applies for Param Categories.
+The same applies for Param Categories, except they are in the *Param Categories* folder.
 
 ### Field Layouts
-The same applies for Param Categories.
+The same applies for Field Lyaouts, except they are in the *Field Layouts* folder.
+
 
 
 
