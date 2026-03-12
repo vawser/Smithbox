@@ -1,43 +1,45 @@
 {
-  "Name": "BehaviorParam",
+  "Name": "ShopLineupParam",
   "Groups": [
     {
-      "Key": "Variation",
+      "Key": "Item",
       "Names": [
         {
           "Language": "English",
-          "Name": "Variation"
+          "Name": "Item"
         }
       ],
       "Fields": [
-        "variationId",
-        "behaviorJudgeId"
+        "equipId",
+        "equipType",
+        "mtrlId"
       ]
     },
     {
-      "Key": "Category",
+      "Key": "Inventory",
       "Names": [
         {
           "Language": "English",
-          "Name": "Category"
+          "Name": "Inventory"
         }
       ],
       "Fields": [
-        "category",
-        "ezStateBehaviorType_old"
+        "sellQuantity",
+        "setNum"
       ]
     },
     {
-      "Key": "Reference",
+      "Key": "Cost",
       "Names": [
         {
           "Language": "English",
-          "Name": "Reference"
+          "Name": "Cost"
         }
       ],
       "Fields": [
-        "refId",
-        "refType"
+        "value",
+        "value_Add",
+        "value_Magnification"
       ]
     }
   ]

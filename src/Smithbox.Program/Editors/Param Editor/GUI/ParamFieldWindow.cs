@@ -25,6 +25,7 @@ public class ParamFieldWindow
 
     private Dictionary<string, PropertyInfo[]> _propCache = new();
 
+
     public ParamFieldWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
@@ -605,7 +606,7 @@ public class ParamFieldWindow
         var groupedFieldNames = new HashSet<string>(
             groupsDef.Groups.SelectMany(g => g.Fields.Select(f => f)));
 
-        if(!groupsDef.UngroupedAtBottom)
+        if(CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Top)
         {
             DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
         }
@@ -621,8 +622,12 @@ public class ParamFieldWindow
 
             if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
             {
+                var name = group.GetName();
+                if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    name = "";
+
                 bool open = ImGui.CollapsingHeader(
-                    $"{group.GetName()}##grp_{activeParam}_{group.Key}",
+                    $"{name}##grp_{activeParam}_{group.Key}",
                     ImGuiTreeNodeFlags.DefaultOpen);
 
                 if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Key}", columnCount))
@@ -638,7 +643,10 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
             {
-                UIHelper.SimpleHeader($"{group.GetName()}", "");
+                if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                {
+                    UIHelper.SimpleHeader($"{group.GetName()}", "");
+                }
 
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_{group.Key}", columnCount))
                 {
@@ -649,6 +657,11 @@ public class ParamFieldWindow
                     }
 
                     ImGui.EndTable();
+                }
+
+                if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                {
+                    ImGui.Separator();
                 }
             }
             else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
@@ -668,7 +681,7 @@ public class ParamFieldWindow
             }
         }
 
-        if (groupsDef.UngroupedAtBottom)
+        if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Bottom)
         {
             DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
         }

@@ -1,0 +1,346 @@
+{
+  "Name": "EquipParamProtector",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "iconIdM",
+        "iconIdF",
+        "sellValue",
+        "saleValue",
+        "basicPrice",
+        "fixPrice",
+        "weight",
+        "durability",
+        "durabilityMax"
+      ]
+    },
+    {
+      "Key": "Reinforcement",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Reinforcement"
+        }
+      ],
+      "Fields": [
+        "materialSetId",
+        "reinforceTypeId",
+        "originEquipPro1",
+        "originEquipPro2",
+        "originEquipPro3",
+        "originEquipPro4",
+        "originEquipPro5",
+        "originEquipPro6",
+        "originEquipPro7",
+        "originEquipPro8",
+        "originEquipPro9",
+        "originEquipPro10",
+        "originEquipPro11",
+        "originEquipPro12",
+        "originEquipPro13",
+        "originEquipPro14",
+        "originEquipPro15",
+        "originEquipPro16"
+      ]
+    },
+    {
+      "Key": "Poise",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Poise"
+        }
+      ],
+      "Fields": [
+        "toughnessDamageCutRate",
+        "saDurability",
+        "partsDamageRate",
+        "correctSARecover",
+        "defFlickPower",
+        "FlickDamageCutRate"
+      ]
+    },
+    {
+      "Key": "Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Absorption"
+        }
+      ],
+      "Fields": [
+        "PhysDamageCutRate",
+        "SlashDamageCutRate",
+        "StrikeDamageCutRate",
+        "ThrustDamageCutRate",
+        "MagicDamageCutRate",
+        "FireDamageCutRate",
+        "ThunderDamageCutRate",
+        "DarkDamageCutRate"
+      ]
+    },
+    {
+      "Key": "Defence",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Defence"
+        }
+      ],
+      "Fields": [
+        "defensePhys",
+        "defenseMagic",
+        "defenseFire",
+        "defenseThunder",
+        "defenseDark",
+        "defenseSlash",
+        "defenseBlow",
+        "defenseThrust"
+      ]
+    },
+    {
+      "Key": "Resistance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Resistance"
+        }
+      ],
+      "Fields": [
+        "resistPoison",
+        "resistToxic",
+        "resistBlood",
+        "resistCurse",
+        "resistFrost",
+        "Poise"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "residentSpEffectId",
+        "residentSpEffectId2",
+        "residentSpEffectId3"
+      ]
+    },
+    {
+      "Key": "Model",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Model"
+        }
+      ],
+      "Fields": [
+        "equipModelId",
+        "postureControlId",
+        "protectorCategory",
+        "protectorCategoryId",
+        "wanderingEquipId",
+        "equipModelCategory",
+        "equipModelGender",
+        "simpleModelForDlc1",
+        "simpleModelForDlc2",
+        "headEquip",
+        "bodyEquip",
+        "armEquip",
+        "legEquip"
+      ]
+    },
+    {
+      "Key": "Toggles",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Toggles"
+        }
+      ],
+      "Fields": [
+        "isDeposit",
+        "disableMultiDropShare",
+        "isGuestDrop0",
+        "isGuestDrop1"
+      ]
+    },
+    {
+      "Key": "Hit Material",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit Material"
+        }
+      ],
+      "Fields": [
+        "defenseMaterial",
+        "defenseMaterialSfx",
+        "defenseMaterial_Weak",
+        "defenseMaterialSfx_Weak",
+        "defenseMaterialSfx1",
+        "defenseMaterialSfx_Weak1",
+        "defenseMaterial1",
+        "defenseMaterial_Weak1",
+        "defenseMaterialSfx2",
+        "defenseMaterialSfx_Weak2",
+        "footMaterialSe",
+        "defenseMaterial_Weak2",
+        "autoFootEffectDecalBaseId1"
+      ]
+    },
+    {
+      "Key": "Face",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Face"
+        }
+      ],
+      "Fields": [
+        "useFaceScale",
+        "faceScaleM_ScaleX",
+        "faceScaleM_ScaleZ",
+        "faceScaleM_MaxX",
+        "faceScaleM_MaxZ",
+        "faceScaleF_ScaleX",
+        "faceScaleF_ScaleZ",
+        "faceScaleF_MaxX",
+        "faceScaleF_MaxZ"
+      ]
+    },
+    {
+      "Key": "Log",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Log"
+        }
+      ],
+      "Fields": [
+        "showLogCondType",
+        "showDialogCondType"
+      ]
+    },
+    {
+      "Key": "Model Masks",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Model Masks"
+        }
+      ],
+      "Fields": [
+        "Mask00",
+        "Mask01",
+        "Mask02",
+        "Mask03",
+        "Mask04",
+        "Mask05",
+        "Mask06",
+        "Mask07",
+        "Mask08",
+        "Mask09",
+        "Mask10",
+        "Mask11",
+        "Mask12",
+        "Mask13",
+        "Mask14",
+        "Mask15",
+        "Mask16",
+        "Mask17",
+        "Mask18",
+        "Mask19",
+        "Mask20",
+        "Mask21",
+        "Mask22",
+        "Mask23",
+        "Mask24",
+        "Mask25",
+        "Mask26",
+        "Mask27",
+        "Mask28",
+        "Mask29",
+        "Mask30",
+        "Mask31",
+        "Mask32",
+        "Mask33",
+        "Mask34",
+        "Mask35",
+        "Mask36",
+        "Mask37",
+        "Mask38",
+        "Mask39",
+        "Mask40",
+        "Mask41",
+        "Mask42",
+        "Mask43",
+        "Mask44",
+        "Mask45",
+        "Mask46",
+        "Mask47",
+        "Mask48",
+        "Mask49",
+        "Mask50",
+        "Mask51",
+        "Mask52",
+        "Mask53",
+        "Mask54",
+        "Mask55",
+        "Mask56",
+        "Mask57",
+        "Mask58",
+        "Mask59",
+        "Mask60",
+        "Mask61",
+        "Mask62",
+        "Mask63",
+        "Mask64",
+        "Mask65",
+        "Mask66",
+        "Mask67",
+        "Mask68",
+        "Mask69",
+        "Mask70",
+        "Mask71",
+        "Mask72",
+        "Mask73",
+        "Mask74",
+        "Mask75",
+        "Mask76",
+        "Mask77",
+        "Mask78",
+        "Mask79",
+        "Mask80",
+        "Mask81",
+        "Mask82",
+        "Mask83",
+        "Mask84",
+        "Mask85",
+        "Mask86",
+        "Mask87",
+        "Mask88",
+        "Mask89",
+        "Mask90",
+        "Mask91",
+        "Mask92",
+        "Mask93",
+        "Mask94",
+        "Mask95",
+        "Mask96",
+        "Mask97"
+      ]
+    }
+  ]
+}

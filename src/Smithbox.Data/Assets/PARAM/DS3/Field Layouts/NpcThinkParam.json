@@ -1,0 +1,208 @@
+{
+  "Name": "NpcThinkParam",
+  "UngroupedAtBottom": true,
+  "Groups": [
+    {
+      "Key": "Logic",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Logic"
+        }
+      ],
+      "Fields": [
+        "logicId",
+        "battleGoalID",
+        "TeamAttackEffectivity"
+      ]
+    },
+    {
+      "Key": "Battle Distance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Battle Distance"
+        }
+      ],
+      "Fields": [
+        "BattleStartDist",
+        "nonBattleActLife"
+      ]
+    },
+    {
+      "Key": "Smell",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Smell"
+        }
+      ],
+      "Fields": [
+        "nose_dist",
+        "MemoryTargetForgetTime"
+      ]
+    },
+    {
+      "Key": "Sight",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sight"
+        }
+      ],
+      "Fields": [
+        "eye_dist",
+        "eye_angX",
+        "eye_angY",
+        "SightTargetForgetTime",
+        "searchEye_angX",
+        "eye_BeginDist",
+        "eye_BackOffsetDist"
+      ]
+    },
+    {
+      "Key": "Listen",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Listen"
+        }
+      ],
+      "Fields": [
+        "ear_dist",
+        "ear_soundcut_dist",
+        "SoundTargetForgetTime",
+        "ear_listenLevel"
+      ]
+    },
+    {
+      "Key": "Attack Types",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Attack Types"
+        }
+      ],
+      "Fields": [
+        "idAttackCannotMove",
+        "shiftAnimeId_RangedAttack",
+        "rangedAttackId",
+        "targetSys_DmgEffectRate",
+        "actTypeOnFailedPath",
+        "actTypeOnNonBtlFailedPath"
+      ]
+    },
+    {
+      "Key": "Toggles",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Toggles"
+        }
+      ],
+      "Fields": [
+        "disablePathMove",
+        "skipArrivalVisibleCheck",
+        "thinkAttr_doAdmirer",
+        "disableDark",
+        "isGuard_Act",
+        "disableLocalSteering"
+      ]
+    },
+    {
+      "Key": "Navigation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Navigation"
+        }
+      ],
+      "Fields": [
+        "enableNaviFlg_Edge",
+        "enableNaviFlg_LargeSpace",
+        "enableNaviFlg_Ladder",
+        "enableNaviFlg_Hole",
+        "enableNaviFlg_Door",
+        "enableNaviFlg_InSideWall",
+        "enableNaviFlg_EdgeOrdinary",
+        "enableNaviFlg_reserve0"
+      ]
+    },
+    {
+      "Key": "Retreat",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Retreat"
+        }
+      ],
+      "Fields": [
+        "maxBackhomeDist",
+        "backhomeDist",
+        "backhomeBattleDist",
+        "BackHome_LookTargetTime",
+        "BackHome_LookTargetDist",
+        "BackHomeLife_OnHitEneWal",
+        "backToHomeStuckAct"
+      ]
+    },
+    {
+      "Key": "Battle Sight",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Battle Sight"
+        }
+      ],
+      "Fields": [
+        "isUpdateBattleSight",
+        "battleEye_updateDist",
+        "battleEye_updateAngX",
+        "battleEye_updateAngY"
+      ]
+    },
+    {
+      "Key": "Goal",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Goal"
+        }
+      ],
+      "Fields": [
+        "goalAction_ToCaution",
+        "goalAction_ToCautionImportant",
+        "goalAction_ToDisappear",
+        "goalAction_ToSearchLv1",
+        "goalAction_ToSearchLv2",
+        "searchThreshold_Lv0toLv1",
+        "searchThreshold_Lv1toLv2",
+        "changeStateAction_ToNormal"
+      ]
+    },
+    {
+      "Key": "Platoon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Platoon"
+        }
+      ],
+      "Fields": [
+        "platoonReplyTime",
+        "platoonReplyAddRandomTime",
+        "caravanRole",
+        "callHelp_ActionAnimId",
+        "callHelp_CallActionId",
+        "callHelp_MyPeerId",
+        "callHelp_CallPeerId",
+        "callHelp_CallValidMinDistTarget",
+        "callHelp_CallValidRange",
+        "callHelp_ForgetTimeByArrival",
+        "callHelp_MinWaitTime",
+        "callHelp_MaxWaitTime",
+        "callHelp_ReplyBehaviorType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "Name": "Magic",
+  "Groups": [
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "iconId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "slotLength",
+        "analogDexterityMin",
+        "analogDexterityMax",
+        "ezStateBehaviorType",
+        "refType",
+        "hasSpEffectType",
+        "spEffectCategory"
+      ]
+    },
+    {
+      "Key": "Requirements",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Requirements"
+        }
+      ],
+      "Fields": [
+        "requirementIntellect",
+        "requirementFaith",
+        "requirementLuck"
+      ]
+    },
+    {
+      "Key": "References",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "References"
+        }
+      ],
+      "Fields": [
+        "refCategory1",
+        "refCategory2",
+        "refCategory3",
+        "refCategory4",
+        "refId1",
+        "refId2",
+        "refId3",
+        "refId4"
+      ]
+    },
+    {
+      "Key": "FP Cost",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "FP Cost"
+        }
+      ],
+      "Fields": [
+        "refIdFpCost1",
+        "refIdFpCost2",
+        "refIdFpCost3",
+        "refIdFpCost4"
+      ]
+    },
+    {
+      "Key": "Stamina Cost",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stamina Cost"
+        }
+      ],
+      "Fields": [
+        "refIdSpCost1",
+        "refIdSpCost2",
+        "refIdSpCost3",
+        "refIdSpCost4"
+      ]
+    },
+    {
+      "Key": "Visual Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visual Effects"
+        }
+      ],
+      "Fields": [
+        "CastSfx1",
+        "CastSfx2",
+        "CastSfx3"
+      ]
+    },
+    {
+      "Key": "Replacement",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Replacement"
+        }
+      ],
+      "Fields": [
+        "ReplacementStatusType",
+        "ReplacementStatus1",
+        "ReplacementStatus2",
+        "ReplacementStatus3",
+        "ReplacementStatus4",
+        "magicId0",
+        "magicId1",
+        "magicId2",
+        "magicId3"
+      ]
+    },
+    {
+      "Key": "Usage Limits",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Usage Limits"
+        }
+      ],
+      "Fields": [
+        "enable_live",
+        "enable_gray",
+        "enable_white",
+        "enable_black",
+        "disable_offline"
+      ]
+    },
+    {
+      "Key": "Covenant Limitations",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Covenant Limitations"
+        }
+      ],
+      "Fields": [
+        "vowType1",
+        "vowType2",
+        "vowType3",
+        "vowType4",
+        "vowType5",
+        "vowType6",
+        "vowType7",
+        "vowType8",
+        "vowType9",
+        "vowType10",
+        "vowType11",
+        "vowType12",
+        "vowType13",
+        "vowType14",
+        "vowType15"
+      ]
+    }
+  ]
+}

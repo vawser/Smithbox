@@ -16,3 +16,10 @@ public enum FieldLayoutMode
     [Display(Name = "Separator")]
     Separator
 }
+public enum FieldLayoutUnsortedPlacement
+{
+    [Display(Name = "Top")]
+    Top,
+    [Display(Name = "Bottom")]
+    Bottom
+}

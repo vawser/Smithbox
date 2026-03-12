@@ -1,0 +1,163 @@
+{
+  "Name": "ItemLotParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "Lot 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 1"
+        }
+      ],
+      "Fields": [
+        "item_lot_0",
+        "amount_lot_0",
+        "chance_lot_0",
+        "infinite_lot_0",
+        "reinforcement_lot_0",
+        "infusion_lot_0"
+      ]
+    },
+    {
+      "Key": "Lot 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 2"
+        }
+      ],
+      "Fields": [
+        "item_lot_1",
+        "amount_lot_1",
+        "chance_lot_1",
+        "infinite_lot_1",
+        "reinforcement_lot_1",
+        "infusion_lot_1"
+      ]
+    },
+    {
+      "Key": "Lot 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 3"
+        }
+      ],
+      "Fields": [
+        "item_lot_2",
+        "amount_lot_2",
+        "chance_lot_2",
+        "infinite_lot_2",
+        "reinforcement_lot_2",
+        "infusion_lot_2"
+      ]
+    },
+    {
+      "Key": "Lot 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 4"
+        }
+      ],
+      "Fields": [
+        "item_lot_3",
+        "amount_lot_3",
+        "chance_lot_3",
+        "infinite_lot_3",
+        "reinforcement_lot_3",
+        "infusion_lot_3"
+      ]
+    },
+    {
+      "Key": "Lot 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 5"
+        }
+      ],
+      "Fields": [
+        "item_lot_4",
+        "amount_lot_4",
+        "chance_lot_4",
+        "infinite_lot_4",
+        "reinforcement_lot_4",
+        "infusion_lot_4"
+      ]
+    },
+    {
+      "Key": "Lot 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 6"
+        }
+      ],
+      "Fields": [
+        "item_lot_5",
+        "amount_lot_5",
+        "chance_lot_5",
+        "infinite_lot_5",
+        "reinforcement_lot_5",
+        "infusion_lot_5"
+      ]
+    },
+    {
+      "Key": "Lot 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 7"
+        }
+      ],
+      "Fields": [
+        "item_lot_6",
+        "amount_lot_6",
+        "chance_lot_6",
+        "infinite_lot_6",
+        "reinforcement_lot_6",
+        "infusion_lot_6"
+      ]
+    },
+    {
+      "Key": "Lot 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 8"
+        }
+      ],
+      "Fields": [
+        "item_lot_7",
+        "amount_lot_7",
+        "chance_lot_7",
+        "infinite_lot_7",
+        "reinforcement_lot_7",
+        "infusion_lot_7"
+      ]
+    },
+    {
+      "Key": "Lot 9",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 9"
+        }
+      ],
+      "Fields": [
+        "item_lot_8",
+        "amount_lot_8",
+        "chance_lot_8",
+        "infinite_lot_8",
+        "reinforcement_lot_8",
+        "infusion_lot_8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "Name": "ItemParam",
+  "Groups": [
+    {
+      "Key": "General",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "General"
+        }
+      ],
+      "Fields": [
+        "icon_id",
+        "sort_id",
+        "base_price",
+        "sell_price",
+        "max_held_count",
+        "animation_speed"
+      ]
+    },
+    {
+      "Key": "Item Usage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item Usage"
+        }
+      ],
+      "Fields": [
+        "item_type_id",
+        "item_usage_id",
+        "item_category_type",
+        "item_additional_type",
+        "ng_behavior_type"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "speffect_context",
+        "speffect_id",
+        "item_sp_effect_type",
+        "item_speffect_application_type"
+      ]
+    },
+    {
+      "Key": "Cast SFX",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cast SFX"
+        }
+      ],
+      "Fields": [
+        "sfx_on_use_1",
+        "sfx_on_use_2",
+        "sfx_on_use_3"
+      ]
+    },
+    {
+      "Key": "Item Reference",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item Reference"
+        }
+      ],
+      "Fields": [
+        "weapon_id",
+        "armor_id",
+        "ammo_id",
+        "ring_id",
+        "spell_id",
+        "gesture_id"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "Name": "EquipParamAccessory",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "iconId",
+        "accessoryCategory",
+        "accessoryGroup",
+        "vowId",
+        "weight"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "sellValue",
+        "saleValue",
+        "basicPrice"
+      ]
+    },
+    {
+      "Key": "Effect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Effect"
+        }
+      ],
+      "Fields": [
+        "refCategory",
+        "refId",
+        "residentSpEffectId1",
+        "residentSpEffectId2",
+        "residentSpEffectId3",
+        "residentSpEffectId4",
+        "behaviorId",
+        "spEffectCategory"
+      ]
+    },
+    {
+      "Key": "Toggles",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Toggles"
+        }
+      ],
+      "Fields": [
+        "isDrop",
+        "IsDiscard",
+        "IsDeposit",
+        "disableMultiDropShare",
+        "IsEquipOutBrake"
+      ]
+    }
+  ]
+}

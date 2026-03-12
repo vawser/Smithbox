@@ -1,0 +1,176 @@
+{
+  "Name": "EquipParamGoods",
+  "Groups": [
+    {
+      "Key": "Common",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "iconId",
+        "shopId",
+        "sellValue",
+        "basicPrice",
+        "maxNum",
+        "maxRepNum",
+        "weight"
+      ]
+    },
+    {
+      "Key": "Consumption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Consumption"
+        }
+      ],
+      "Fields": [
+        "consumeMP",
+        "consumeHeroPoint"
+      ]
+    },
+    {
+      "Key": "SFX",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SFX"
+        }
+      ],
+      "Fields": [
+        "castSfxId",
+        "fireSfxId",
+        "effectSfxId",
+        "sfxVariationId"
+      ]
+    },
+    {
+      "Key": "Effect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Effect"
+        }
+      ],
+      "Fields": [
+        "refCategory",
+        "refId_default",
+        "refId_1",
+        "refVirtualWepId",
+        "useLimitCategory2"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "goodsType",
+        "replaceItemId",
+        "appearanceReplaceItemId",
+        "spEffectCategory",
+        "goodsUseAnim",
+        "opmeMenuType",
+        "useLimitCategory",
+        "replaceCategory",
+        "suppleType",
+        "autoReplenishType",
+        "invadeType",
+        "behaviorId",
+        "syncNumVaryId",
+        "yesNoDialogMessageId"
+      ]
+    },
+    {
+      "Key": "Toggles",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Toggles"
+        }
+      ],
+      "Fields": [
+        "isEquip",
+        "isDrop",
+        "isDiscard",
+        "isDeposit",
+        "isFixItem",
+        "isConsume",
+        "isAutoEquip",
+        "isEstablishment",
+        "isOnlyOne",
+        "isSuppleItem",
+        "isFullSuppleItem",
+        "isAshenEstusFlask",
+        "isEnhance",
+        "isEnableFastUseItem",
+        "isBonfireWarpItem",
+        "isShieldEnchant",
+        "isWarpProhibited",
+        "enable_ActiveEmber",
+        "enable_Ladder",
+        "isUseMultiPlayPreparation",
+        "canMultiUse",
+        "isUseMultiPenaltyOnly",
+        "isDisableHand",
+        "isRemoveItem_forGameClear",
+        "isApplySpecialEffect"
+      ]
+    },
+    {
+      "Key": "Covenant Limitations",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Covenant Limitations"
+        }
+      ],
+      "Fields": [
+        "vowType0",
+        "vowType1",
+        "vowType2",
+        "vowType3",
+        "vowType4",
+        "vowType5",
+        "vowType6",
+        "vowType7",
+        "vowType8",
+        "vowType9",
+        "vowType10",
+        "vowType11",
+        "vowType12",
+        "vowType13",
+        "vowType14",
+        "vowType15"
+      ]
+    },
+    {
+      "Key": "Usage Limitations",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Usage Limitations"
+        }
+      ],
+      "Fields": [
+        "enable_live",
+        "enable_gray",
+        "enable_white",
+        "enable_black",
+        "enable_multi",
+        "disable_offline",
+        "disableUseAtColiseum",
+        "disableUseAtOutofColiseum",
+        "disableMutliDropShare"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "Name": "ReinforceParamProtector",
+  "Groups": [
+    {
+      "Key": "Defence",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Defence"
+        }
+      ],
+      "Fields": [
+        "physicDefRate",
+        "magicDefRate",
+        "fireDefRate",
+        "thunderDefRate",
+        "darkDefRate",
+        "slashDefRate",
+        "blowDefRate",
+        "thrustDefRate"
+      ]
+    },
+    {
+      "Key": "Resistance",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Resistance"
+        }
+      ],
+      "Fields": [
+        "resistPoisonRate",
+        "resistToxicRate",
+        "resistBloodRate",
+        "resistFrost",
+        "resistCurseRate"
+      ]
+    }
+  ]
+}

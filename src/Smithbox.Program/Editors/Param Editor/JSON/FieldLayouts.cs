@@ -15,7 +15,6 @@ public class FieldLayouts
 public class FieldLayout
 {
     public string Name { get; set; }
-    public bool UngroupedAtBottom { get; set; }
 
     public List<FieldLayoutEntry> Groups { get; set; } = new();
 }

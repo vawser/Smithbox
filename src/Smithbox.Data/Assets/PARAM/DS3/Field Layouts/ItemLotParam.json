@@ -1,20 +1,18 @@
 {
-  "Name": "ItemLotParam",
+  "Name": "EquipParamWeapon",
   "Groups": [
     {
-      "Key": "General",
+      "Key": "Common",
       "Names": [
         {
           "Language": "English",
-          "Name": "General"
+          "Name": "Common"
         }
       ],
       "Fields": [
-        "lotItem_Rarity",
         "getItemFlagId",
-        "GameClearOffset",
-        "canExecByFriendlyGhost",
-        "canExecByHostileGhost"
+        "LotItemRarity",
+        "ClearCount"
       ]
     },
     {
@@ -26,16 +24,16 @@
         }
       ],
       "Fields": [
-        "lotItemId01",
-        "lotItemCategory01",
-        "lotItemNum01",
-        "lotItemBasePoint01",
-        "enableLuck01",
-        "getItemFlagId01"
+        "ItemLotId1",
+        "LotItemCategory01",
+        "LotItemBasePoint01",
+        "GetItemFlagId01",
+        "LotItemNum1",
+        "EnableLuck01"
       ]
     },
     {
-      "Key": "Lot 2",
+      "Key": "Lot 1",
       "Names": [
         {
           "Language": "English",
@@ -43,12 +41,12 @@
         }
       ],
       "Fields": [
-        "lotItemId02",
-        "lotItemCategory02",
-        "lotItemNum02",
-        "lotItemBasePoint02",
-        "enableLuck02",
-        "getItemFlagId02"
+        "ItemLotId2",
+        "LotItemCategory02",
+        "LotItemBasePoint02",
+        "GetItemFlagId02",
+        "LotItemNum2",
+        "EnableLuck02"
       ]
     },
     {
@@ -60,12 +58,12 @@
         }
       ],
       "Fields": [
-        "lotItemId03",
-        "lotItemCategory03",
-        "lotItemNum03",
-        "lotItemBasePoint03",
-        "enableLuck03",
-        "getItemFlagId03"
+        "ItemLotId3",
+        "LotItemCategory03",
+        "LotItemBasePoint03",
+        "GetItemFlagId03",
+        "LotItemNum3",
+        "EnableLuck03"
       ]
     },
     {
@@ -77,12 +75,12 @@
         }
       ],
       "Fields": [
-        "lotItemId04",
-        "lotItemCategory04",
-        "lotItemNum04",
-        "lotItemBasePoint04",
-        "enableLuck04",
-        "getItemFlagId04"
+        "ItemLotId4",
+        "LotItemCategory04",
+        "LotItemBasePoint04",
+        "GetItemFlagId04",
+        "LotItemNum4",
+        "EnableLuck04"
       ]
     },
     {
@@ -94,12 +92,12 @@
         }
       ],
       "Fields": [
-        "lotItemId05",
-        "lotItemCategory05",
-        "lotItemNum05",
-        "lotItemBasePoint05",
-        "enableLuck05",
-        "getItemFlagId05"
+        "ItemLotId5",
+        "LotItemCategory05",
+        "LotItemBasePoint05",
+        "GetItemFlagId05",
+        "LotItemNum5",
+        "EnableLuck05"
       ]
     },
     {
@@ -111,12 +109,12 @@
         }
       ],
       "Fields": [
-        "lotItemId06",
-        "lotItemCategory06",
-        "lotItemNum06",
-        "lotItemBasePoint06",
-        "enableLuck06",
-        "getItemFlagId06"
+        "ItemLotId6",
+        "LotItemCategory06",
+        "LotItemBasePoint06",
+        "GetItemFlagId06",
+        "LotItemNum6",
+        "EnableLuck06"
       ]
     },
     {
@@ -128,12 +126,12 @@
         }
       ],
       "Fields": [
-        "lotItemId07",
-        "lotItemCategory07",
-        "lotItemNum07",
-        "lotItemBasePoint07",
-        "enableLuck07",
-        "getItemFlagId07"
+        "ItemLotId7",
+        "LotItemCategory07",
+        "LotItemBasePoint07",
+        "GetItemFlagId07",
+        "LotItemNum7",
+        "EnableLuck07"
       ]
     },
     {
@@ -145,20 +143,20 @@
         }
       ],
       "Fields": [
-        "lotItemId08",
-        "lotItemCategory08",
-        "lotItemNum08",
-        "lotItemBasePoint08",
-        "enableLuck08",
-        "getItemFlagId08"
+        "ItemLotId8",
+        "LotItemCategory08",
+        "LotItemBasePoint08",
+        "GetItemFlagId08",
+        "LotItemNum8",
+        "EnableLuck08"
       ]
     },
     {
-      "Key": "Cumultative",
+      "Key": "Cumulative",
       "Names": [
         {
           "Language": "English",
-          "Name": "Cumultative"
+          "Name": "Cumulative"
         }
       ],
       "Fields": [
@@ -171,7 +169,7 @@
         "cumulateLotPoint05",
         "cumulateLotPoint06",
         "cumulateLotPoint07",
-        "cumulateLotPoint08",
+        "cumulateLotPoint07",
         "cumulateReset01",
         "cumulateReset02",
         "cumulateReset03",

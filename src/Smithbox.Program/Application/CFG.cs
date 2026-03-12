@@ -587,7 +587,9 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
     public bool ParamEditor_Field_List_GroupReference_DisplayCommunityName = true;
     public bool ParamEditor_Field_List_Enable_Field_Layouts = true;
+    public bool ParamEditor_Field_List_Enable_Field_Layout_Category_Names = true;
     public FieldLayoutMode ParamEditor_Field_List_Enable_Field_Layout_Type = FieldLayoutMode.Collapsible;
+    public FieldLayoutUnsortedPlacement ParamEditor_Field_List_Unsorted_Field_Placement = FieldLayoutUnsortedPlacement.Bottom;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 
