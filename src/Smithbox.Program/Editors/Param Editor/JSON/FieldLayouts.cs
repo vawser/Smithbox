@@ -17,6 +17,9 @@ public class FieldLayout
     public string Name { get; set; }
 
     public List<FieldLayoutEntry> Groups { get; set; } = new();
+
+    // For DS2 only
+    public ChanceLotEntry TotalChanceLot { get; set; } = null;
 }
 
 public class FieldLayoutEntry
@@ -52,5 +55,9 @@ public class FieldLayoutNameEntry
 public class ChanceLotEntry
 {
     public string TargetField { get; set; }
+    public List<string> ChanceSet { get; set; }
+}
+public class TotalChanceLotEntry
+{
     public List<string> ChanceSet { get; set; }
 }

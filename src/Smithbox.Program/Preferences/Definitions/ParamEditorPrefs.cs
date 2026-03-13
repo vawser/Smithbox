@@ -1242,12 +1242,30 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Enable Chance Hints",
+            Description = "If enabled, the chance percentages for item lots will be displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints);
+            }
+        };
+    }
 
     public static PreferenceItem ParamEditor_Field_List_Enable_Field_Group_Type()
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 3,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
             InlineName = false,
@@ -1279,7 +1297,7 @@ public class ParamEditorPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 4,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
             InlineName = false,

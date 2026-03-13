@@ -586,8 +586,10 @@ public class CFG
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
     public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
     public bool ParamEditor_Field_List_GroupReference_DisplayCommunityName = true;
+
     public bool ParamEditor_Field_List_Enable_Field_Layouts = true;
     public bool ParamEditor_Field_List_Enable_Field_Layout_Category_Names = true;
+    public bool ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints = true;
     public FieldLayoutMode ParamEditor_Field_List_Enable_Field_Layout_Type = FieldLayoutMode.Collapsible;
     public FieldLayoutUnsortedPlacement ParamEditor_Field_List_Unsorted_Field_Placement = FieldLayoutUnsortedPlacement.Bottom;
 

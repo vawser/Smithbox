@@ -277,6 +277,18 @@ public class ParamFieldWindow
             ImGui.EndTable();
         }
 
+        bool useLayout = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
+                         && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
+
+        var groupsDef = useLayout
+            ? Project.Handler.ParamData.FieldLayouts.Entries.FirstOrDefault(e => e.Name == meta.FieldLayout)
+            : null;
+
+        if(useLayout && groupsDef.TotalChanceLot != null)
+        {
+            DisplayTotalChance(curRow, groupsDef);
+        }
+
         // Main Fields (by group)
         ImGui.BeginChild("GroupedFields");
 
@@ -706,6 +718,9 @@ public class ParamFieldWindow
 
     private void DisplayChance(Param.Row row, FieldLayoutEntry layout)
     {
+        if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
+            return;
+
         var chanceLot = layout.ChanceLot;
 
         float curChance = 0;
@@ -749,6 +764,44 @@ public class ParamFieldWindow
         var chance = Math.Round((curChance / totalChance) * 100, 2);
 
         ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot has a {chance}%% chance to occur.");
+    }
+
+    private void DisplayTotalChance(Param.Row row, FieldLayout layout)
+    {
+        if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
+            return;
+
+        var chanceLot = layout.TotalChanceLot;
+
+        float totalChance = 0;
+
+        foreach (var field in row.Columns)
+        {
+            var fieldName = field.Def.InternalName;
+
+            if (chanceLot.ChanceSet.Contains(fieldName))
+            {
+                var val = field.GetValue(row);
+
+                float intVal = 0;
+                var success = float.TryParse($"{val}", out intVal);
+                if (success)
+                {
+                    totalChance = totalChance + intVal;
+                }
+            }
+        }
+
+        if (totalChance == 0)
+        {
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will never occur.");
+            return;
+        }
+
+        if (totalChance > 100)
+            totalChance = 100;
+
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop has a {totalChance}%% chance to occur.");
     }
 
     private void RenderField(ParamMeta meta, ParamAnnotationEntry annotations, 

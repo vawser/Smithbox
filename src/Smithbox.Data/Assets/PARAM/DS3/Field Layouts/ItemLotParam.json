@@ -1,5 +1,5 @@
 {
-  "Name": "EquipParamWeapon",
+  "Name": "ItemLotParam",
   "Groups": [
     {
       "Key": "Common",
@@ -273,7 +273,7 @@
         "cumulateLotPoint05",
         "cumulateLotPoint06",
         "cumulateLotPoint07",
-        "cumulateLotPoint07",
+        "cumulateLotPoint08",
         "cumulateReset01",
         "cumulateReset02",
         "cumulateReset03",
