@@ -1,0 +1,37 @@
+{
+  "Name": "GameAreaParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "bonusSoul_single",
+        "bonusSoul_multi",
+        "bonusSkillPoint"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "soloBreakInPoint_Max",
+        "soloBreakInPoint_Min"
+      ]
+    }
+  ]
+}

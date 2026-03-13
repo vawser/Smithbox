@@ -408,9 +408,11 @@ public class ParamRowWindow
 
         if (ParentView.ParamTableWindow.IsInTableGroupMode(activeParam))
         {
-            if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.None)
+            if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
             {
-                label = $@"{Utils.ImGuiEscape(r.Name)}";
+                // Ignore the option if the Name is empty
+                if(r.Name != "")
+                    label = $@"{Utils.ImGuiEscape(r.Name)}";
             }
         }
 

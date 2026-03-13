@@ -1,0 +1,89 @@
+{
+  "Name": "RoleParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectID0",
+        "spEffectID1",
+        "spEffectID2",
+        "spEffectID3",
+        "spEffectID4",
+        "spEffectID5",
+        "spEffectID6",
+        "spEffectID7",
+        "spEffectID8",
+        "spEffectID9"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectID_vowRank0",
+        "spEffectID_vowRank1",
+        "spEffectID_vowRank2",
+        "spEffectID_vowRank3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "phantomParamId",
+        "phantomParamId_vowRank1",
+        "phantomParamId_vowRank2",
+        "phantomParamId_vowRank3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "teamType",
+        "teamTypeByGiantNut",
+        "roleNameId",
+        "roleNameColor",
+        "voiceChatGroup"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "itemlotParamId"
+      ]
+    }
+  ]
+}

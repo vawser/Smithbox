@@ -1,0 +1,259 @@
+{
+  "Name": "NpcThinkParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "logicId",
+        "battleGoalID",
+        "TeamAttackEffectivity"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "idAttackCannotMove"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "maxBackhomeDist",
+        "backhomeDist",
+        "backhomeBattleDist",
+        "nonBattleActLife",
+        "BackHome_LookTargetDist",
+        "BackHome_LookTargetTime",
+        "BackHomeLife_OnHitEneWal",
+        "BackHome_GuardActId",
+        "BattleStartDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "corpse_eye_dist_rate",
+        "CorpseTargetForgetTime"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "ear_dist",
+        "ear_soundcut_dist",
+        "SoundTargetForgetTime"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "nose_dist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "IndicationTargetForgetTime",
+        "IndicationTargetIncrementPoint",
+        "aroundTargetIncrementPoint",
+        "SightTargetForgetTime",
+        "MemoryTargetForgetTime",
+        "changeStateAction_ToNormal"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "eye_dist_normal",
+        "eye_ang_upper_normal",
+        "eye_ang_bottom_normal",
+        "eye_ang_left_normal",
+        "eye_ang_right_normal",
+        "eye_BackOffsetDist_normal",
+        "eye_BeginDist_normal"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "eye_dist_around",
+        "eye_ang_upper_around",
+        "eye_ang_bottom_around",
+        "eye_ang_left_around",
+        "eye_ang_right_around",
+        "eye_BackOffsetDist_around",
+        "eye_BeginDist_around"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "eye_dist_perceive",
+        "eye_ang_upper_perceive",
+        "eye_ang_bottom_perceive",
+        "eye_ang_left_perceive",
+        "eye_ang_right_perceive",
+        "eye_BackOffsetDist_perceive",
+        "eye_BeginDist_perceive"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "ignoreStealthTime"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "goalAction_ToCaution",
+        "goalAction_ToCautionCorpseTarget",
+        "goalAction_ToCautionImportant",
+        "goalAction_ToCautionIndicationTarget",
+        "goalAction_ToDisappear",
+        "goalAction_ToFind"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "actTypeOnFailedPath",
+        "actTypeOnNonBtlFailedPath"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "disableDark",
+        "disableLocalSteering",
+        "disablePathMove",
+        "skipArrivalVisibleCheck",
+        "skipRaycastWhenAroundSearch",
+        "thinkAttr_doAdmirer",
+        "useWanderedOffPathInterrupt"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enableNaviFlg_Door",
+        "enableNaviFlg_Edge",
+        "enableNaviFlg_Edge_Ordinary",
+        "enableNaviFlg_Hole",
+        "enableNaviFlg_InSideWall",
+        "enableNaviFlg_Jump",
+        "enableNaviFlg_LargeSpace",
+        "enableNaviFlg_Ladder",
+        "enableNaviFlg_Underfloor"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "platoonReplyTime",
+        "platoonReplyAddRandomTime"
+      ]
+    }
+  ]
+}

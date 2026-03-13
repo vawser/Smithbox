@@ -1,0 +1,670 @@
+{
+  "Name": "CameraSetParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId0",
+        "camParamId0",
+        "beginTime0",
+        "endTime0"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId1",
+        "camParamId1",
+        "beginTime1",
+        "endTime1"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId2",
+        "camParamId2",
+        "beginTime2",
+        "endTime2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId3",
+        "camParamId3",
+        "beginTime3",
+        "endTime3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId4",
+        "camParamId4",
+        "beginTime4",
+        "endTime4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId5",
+        "camParamId5",
+        "beginTime5",
+        "endTime5"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId6",
+        "camParamId6",
+        "beginTime6",
+        "endTime6"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId7",
+        "camParamId7",
+        "beginTime7",
+        "endTime7"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId8",
+        "camParamId8",
+        "beginTime8",
+        "endTime8"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId9",
+        "camParamId9",
+        "beginTime9",
+        "endTime9"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId10",
+        "camParamId10",
+        "beginTime10",
+        "endTime10"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId11",
+        "camParamId11",
+        "beginTime11",
+        "endTime11"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId12",
+        "camParamId12",
+        "beginTime12",
+        "endTime12"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId13",
+        "camParamId13",
+        "beginTime13",
+        "endTime13"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId14",
+        "camParamId14",
+        "beginTime14",
+        "endTime14"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId15",
+        "camParamId15",
+        "beginTime15",
+        "endTime15"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId16",
+        "camParamId16",
+        "beginTime16",
+        "endTime16"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId17",
+        "camParamId17",
+        "beginTime17",
+        "endTime17"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId18",
+        "camParamId18",
+        "beginTime18",
+        "endTime18"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId19",
+        "camParamId19",
+        "beginTime19",
+        "endTime19"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId20",
+        "camParamId20",
+        "beginTime20",
+        "endTime20"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId21",
+        "camParamId21",
+        "beginTime21",
+        "endTime21"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId22",
+        "camParamId22",
+        "beginTime22",
+        "endTime22"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId23",
+        "camParamId23",
+        "beginTime23",
+        "endTime23"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId24",
+        "camParamId24",
+        "beginTime24",
+        "endTime24"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId25",
+        "camParamId25",
+        "beginTime25",
+        "endTime25"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId26",
+        "camParamId26",
+        "beginTime26",
+        "endTime26"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId27",
+        "camParamId27",
+        "beginTime27",
+        "endTime27"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId28",
+        "camParamId28",
+        "beginTime28",
+        "endTime28"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId29",
+        "camParamId29",
+        "beginTime29",
+        "endTime29"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId30",
+        "camParamId30",
+        "beginTime30",
+        "endTime30"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId31",
+        "camParamId31",
+        "beginTime31",
+        "endTime31"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId32",
+        "camParamId32",
+        "beginTime32",
+        "endTime32"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId33",
+        "camParamId33",
+        "beginTime33",
+        "endTime33"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId34",
+        "camParamId34",
+        "beginTime34",
+        "endTime34"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId35",
+        "camParamId35",
+        "beginTime35",
+        "endTime35"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId36",
+        "camParamId36",
+        "beginTime36",
+        "endTime36"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId37",
+        "camParamId37",
+        "beginTime37",
+        "endTime37"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId38",
+        "camParamId38",
+        "beginTime38",
+        "endTime38"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId39",
+        "camParamId39",
+        "beginTime39",
+        "endTime39"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId40",
+        "camParamId40",
+        "beginTime40",
+        "endTime40"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId41",
+        "camParamId41",
+        "beginTime41",
+        "endTime41"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId42",
+        "camParamId42",
+        "beginTime42",
+        "endTime42"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockParamId43",
+        "camParamId43",
+        "beginTime43",
+        "endTime43"
+      ]
+    }
+  ]
+}

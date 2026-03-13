@@ -1,0 +1,177 @@
+{
+  "Name": "ItemLotParam",
+  "Groups": [
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "getItemFlagId",
+        "lotItem_Rarity",
+        "isProgressOffset",
+        "GameClearOffset"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId01",
+        "lotItemBasePoint01",
+        "lotItemNum01",
+        "lotItemCategory01",
+        "enableLuck01"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId02",
+        "lotItemBasePoint02",
+        "lotItemNum02",
+        "lotItemCategory02",
+        "enableLuck02"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId03",
+        "lotItemBasePoint03",
+        "lotItemNum03",
+        "lotItemCategory03",
+        "enableLuck03"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId04",
+        "lotItemBasePoint04",
+        "lotItemNum04",
+        "lotItemCategory04",
+        "enableLuck04"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId05",
+        "lotItemBasePoint05",
+        "lotItemNum05",
+        "lotItemCategory05",
+        "enableLuck05"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId06",
+        "lotItemBasePoint06",
+        "lotItemNum06",
+        "lotItemCategory06",
+        "enableLuck06"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId07",
+        "lotItemBasePoint07",
+        "lotItemNum07",
+        "lotItemCategory07",
+        "enableLuck07"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lotItemId08",
+        "lotItemBasePoint08",
+        "lotItemNum08",
+        "lotItemCategory08",
+        "enableLuck08"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "cumulateNumFlagId",
+        "cumulateNumMax",
+        "cumulateLotPoint01",
+        "cumulateLotPoint02",
+        "cumulateLotPoint03",
+        "cumulateLotPoint04",
+        "cumulateLotPoint05",
+        "cumulateLotPoint06",
+        "cumulateLotPoint07",
+        "cumulateLotPoint08",
+        "cumulateReset01",
+        "cumulateReset02",
+        "cumulateReset03",
+        "cumulateReset04",
+        "cumulateReset05",
+        "cumulateReset06",
+        "cumulateReset07",
+        "cumulateReset08"
+      ]
+    }
+  ]
+}
