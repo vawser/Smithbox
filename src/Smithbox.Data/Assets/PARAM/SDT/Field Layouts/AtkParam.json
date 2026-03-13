@@ -2,11 +2,6 @@
   "Name": "AtkParam",
   "Groups": [
     {
-      "Key": null,
-      "Names": [],
-      "Fields": null
-    },
-    {
       "Key": "TODO",
       "Names": [
         {
