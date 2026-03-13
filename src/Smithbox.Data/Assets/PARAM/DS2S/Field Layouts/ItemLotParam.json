@@ -2,11 +2,6 @@
   "Name": "ItemLotParam",
   "Groups": [
     {
-      "Key": null,
-      "Names": [],
-      "Fields": null
-    },
-    {
       "Key": "Lot 1",
       "Names": [
         {

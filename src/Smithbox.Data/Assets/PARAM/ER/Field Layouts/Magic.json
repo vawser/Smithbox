@@ -1,0 +1,378 @@
+{
+  "Name": "Magic",
+  "Groups": [
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "sortGroupId",
+        "iconId",
+        "spEffectCategory",
+        "refType",
+        "toughnessCorrectRate"
+      ]
+    },
+    {
+      "Key": "Menu",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Menu"
+        }
+      ],
+      "Fields": [
+        "sortId",
+        "yesNoDialogMessageId",
+        "opmeMenuType"
+      ]
+    },
+    {
+      "Key": "AI",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "AI"
+        }
+      ],
+      "Fields": [
+        "aiNotifyType",
+        "aiUseJudgeId"
+      ]
+    },
+    {
+      "Key": "Conditional Category",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Conditional Category"
+        }
+      ],
+      "Fields": [
+        "subCategory1",
+        "subCategory2"
+      ]
+    },
+    {
+      "Key": "Usage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Usage"
+        }
+      ],
+      "Fields": [
+        "atkParamId",
+        "mp",
+        "stamina",
+        "mp_charge",
+        "stamina_charge",
+        "consumeSA",
+        "consumeLoopMP_forMenu"
+      ]
+    },
+    {
+      "Key": "Behavior",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Behavior"
+        }
+      ],
+      "Fields": [
+        "behaviorId",
+        "mtrlItemId",
+        "overDexterity",
+        "ezStateBehaviorType",
+        "limitCancelSpEffectId",
+        "useLimitCategory",
+        "createLimitGroupId"
+      ]
+    },
+    {
+      "Key": "Limits",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Limits"
+        }
+      ],
+      "Fields": [
+        "maxQuantity",
+        "slotLength"
+      ]
+    },
+    {
+      "Key": "Requirements",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Requirements"
+        }
+      ],
+      "Fields": [
+        "requirementIntellect",
+        "requirementFaith",
+        "requirementLuck"
+      ]
+    },
+    {
+      "Key": "Cast Speed",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cast Speed"
+        }
+      ],
+      "Fields": [
+        "analogDexterityMin",
+        "analogDexterityMax"
+      ]
+    },
+    {
+      "Key": "Slot 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 1"
+        }
+      ],
+      "Fields": [
+        "refId1",
+        "refCategory1",
+        "consumeType1"
+      ]
+    },
+    {
+      "Key": "Slot 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 2"
+        }
+      ],
+      "Fields": [
+        "refId2",
+        "refCategory2",
+        "consumeType2"
+      ]
+    },
+    {
+      "Key": "Slot 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 3"
+        }
+      ],
+      "Fields": [
+        "refId3",
+        "refCategory3",
+        "consumeType3"
+      ]
+    },
+    {
+      "Key": "Slot 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 4"
+        }
+      ],
+      "Fields": [
+        "refId4",
+        "refCategory4",
+        "consumeType4"
+      ]
+    },
+    {
+      "Key": "Slot 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 5"
+        }
+      ],
+      "Fields": [
+        "refId5",
+        "refCategory5",
+        "consumeType5"
+      ]
+    },
+    {
+      "Key": "Slot 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 6"
+        }
+      ],
+      "Fields": [
+        "refId6",
+        "refCategory6",
+        "consumeType6"
+      ]
+    },
+    {
+      "Key": "Slot 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 7"
+        }
+      ],
+      "Fields": [
+        "refId7",
+        "refCategory7",
+        "consumeType7"
+      ]
+    },
+    {
+      "Key": "Slot 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 8"
+        }
+      ],
+      "Fields": [
+        "refId8",
+        "refCategory8",
+        "consumeType8"
+      ]
+    },
+    {
+      "Key": "Slot 9",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 9"
+        }
+      ],
+      "Fields": [
+        "refId9",
+        "refCategory9",
+        "consumeType9"
+      ]
+    },
+    {
+      "Key": "Slot 10",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Slot 10"
+        }
+      ],
+      "Fields": [
+        "refId10",
+        "refCategory10",
+        "consumeType10"
+      ]
+    },
+    {
+      "Key": "Vow",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Vow"
+        }
+      ],
+      "Fields": [
+        "vowType0",
+        "vowType1",
+        "vowType2",
+        "vowType3",
+        "vowType4",
+        "vowType5",
+        "vowType6",
+        "vowType7",
+        "vowType8",
+        "vowType9",
+        "vowType10",
+        "vowType11",
+        "vowType12",
+        "vowType13",
+        "vowType14",
+        "vowType15"
+      ]
+    },
+    {
+      "Key": "Usage Criteria",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Usage Criteria"
+        }
+      ],
+      "Fields": [
+        "enable_multi",
+        "enable_multi_only",
+        "enable_live",
+        "enable_gray",
+        "enable_white",
+        "enable_black",
+        "disableOffline"
+      ]
+    },
+    {
+      "Key": "Usage States",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isEnchant",
+        "isShieldEnchant",
+        "castResonanceMagic",
+        "isValidTough_ProtSADmg",
+        "isWarpMagic",
+        "disableRiding",
+        "isUseNoAttackRegion"
+      ]
+    },
+    {
+      "Key": "Cast SFX",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cast SFX"
+        }
+      ],
+      "Fields": [
+        "castSfxId",
+        "fireSfxId",
+        "effectSfxId"
+      ]
+    },
+    {
+      "Key": "Replace Magic",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Replace Magic"
+        }
+      ],
+      "Fields": [
+        "replaceMagicId",
+        "hasSpEffectType",
+        "replaceCategory",
+        "ReplacementStatusType",
+        "ReplacementStatus1",
+        "ReplacementStatus2",
+        "ReplacementStatus3",
+        "ReplacementStatus4",
+        "ReplacementMagic1",
+        "ReplacementMagic2",
+        "ReplacementMagic3",
+        "ReplacementMagic4"
+      ]
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "Name": "SpellParam",
   "Groups": [
     {
-      "Key": "References",
+      "Key": "Reference List",
       "Names": [
         {
           "Language": "English",
-          "Name": "References"
+          "Name": "Reference List"
         }
       ],
       "Fields": [

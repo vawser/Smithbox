@@ -47,11 +47,11 @@
       ]
     },
     {
-      "Key": "References",
+      "Key": "Reference List",
       "Names": [
         {
           "Language": "English",
-          "Name": "References"
+          "Name": "Reference List"
         }
       ],
       "Fields": [
@@ -130,11 +130,11 @@
       ]
     },
     {
-      "Key": "Usage Limits",
+      "Key": "Usage Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Usage Limits"
+          "Name": "Usage Options"
         }
       ],
       "Fields": [
@@ -146,11 +146,11 @@
       ]
     },
     {
-      "Key": "Covenant Limitations",
+      "Key": "Covenant Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Covenant Limitations"
+          "Name": "Covenant Options"
         }
       ],
       "Fields": [

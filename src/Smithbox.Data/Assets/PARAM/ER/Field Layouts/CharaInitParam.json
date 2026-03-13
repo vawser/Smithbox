@@ -12,9 +12,10 @@
       "Fields": [
         "equip_Wep_Right",
         "equip_Subwep_Right",
-        "equip_Wep_Body_GenId",
+        "equip_Subwep_Right3",
         "equip_Wep_Left",
-        "equip_Subwep_Left"
+        "equip_Subwep_Left",
+        "equip_Subwep_Left3"
       ]
     },
     {
@@ -60,7 +61,7 @@
         }
       ],
       "Fields": [
-        "soulLvl",
+        "soulLv",
         "baseVit",
         "baseWil",
         "baseEnd",
@@ -154,17 +155,13 @@
         "SecondaryItem_04",
         "SecondaryItem_05",
         "SecondaryItem_06",
-        "SecondaryItem_07",
-        "SecondaryItem_08",
         "secondaryItemNum_01",
         "secondaryItemNum_02",
         "secondaryItemNum_03",
         "secondaryItemNum_04",
         "secondaryItemNum_04",
         "secondaryItemNum_05",
-        "secondaryItemNum_06",
-        "secondaryItemNum_07",
-        "secondaryItemNum_08"
+        "secondaryItemNum_06"
       ]
     },
     {

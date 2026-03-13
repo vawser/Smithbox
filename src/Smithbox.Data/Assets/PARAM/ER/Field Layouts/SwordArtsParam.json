@@ -1,5 +1,5 @@
 {
-  "Name": "EquipParamAccessory",
+  "Name": "SwordArtsParam",
   "Groups": [
     {
       "Key": "Presentation",
@@ -10,8 +10,9 @@
         }
       ],
       "Fields": [
-        "sortId",
-        "iconId"
+        "textId",
+        "iconId",
+        "shieldIconType"
       ]
     },
     {
@@ -23,59 +24,55 @@
         }
       ],
       "Fields": [
-        "accessoryCategory",
-        "accessoryGroup",
-        "vowId",
-        "weight"
+        "swordArtsTypeNew",
+        "artsSpeedType",
+        "refStatus",
+        "aiUsageId"
       ]
     },
     {
-      "Key": "Price",
+      "Key": "FP Consumption",
       "Names": [
         {
           "Language": "English",
-          "Name": "Price"
+          "Name": "FP Consumption"
         }
       ],
       "Fields": [
-        "sellValue",
-        "saleValue",
-        "basicPrice"
+        "useMagicPoint_L1",
+        "useMagicPoint_L2",
+        "useMagicPoint_R1",
+        "useMagicPoint_R2"
       ]
     },
     {
-      "Key": "Effect",
+      "Key": "Arts Points",
       "Names": [
         {
           "Language": "English",
-          "Name": "Effect"
+          "Name": "Arts Points"
         }
       ],
       "Fields": [
-        "refCategory",
-        "refId",
-        "residentSpEffectId1",
-        "residentSpEffectId2",
-        "residentSpEffectId3",
-        "residentSpEffectId4",
-        "behaviorId",
-        "spEffectCategory"
+        "usePoint_L1",
+        "usePoint_L2",
+        "usePoint_R1",
+        "usePoint_R2"
       ]
     },
     {
-      "Key": "Toggles",
+      "Key": "Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Toggles"
+          "Name": "Options"
         }
       ],
       "Fields": [
-        "isDrop",
-        "IsDiscard",
-        "IsDeposit",
-        "disableMultiDropShare",
-        "IsEquipOutBrake"
+        "isRefRightArts",
+        "isGrayoutLeftHand",
+        "isGrayoutRightHand",
+        "isGrayoutBothHand"
       ]
     }
   ]

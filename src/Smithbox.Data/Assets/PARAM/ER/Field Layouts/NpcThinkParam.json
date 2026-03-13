@@ -1,6 +1,5 @@
 {
   "Name": "NpcThinkParam",
-  "UngroupedAtBottom": true,
   "Groups": [
     {
       "Key": "Parameters",
@@ -15,11 +14,12 @@
         "battleGoalID",
         "TeamAttackEffectivity",
         "idAttackCannotMove",
-        "shiftAnimeId_RangedAttack",
-        "rangedAttackId",
         "targetSys_DmgEffectRate",
         "actTypeOnFailedPath",
-        "actTypeOnNonBtlFailedPath"
+        "actTypeOnNonBtlFailedPath",
+        "spEffectId_RangedAttack",
+        "shiftAnimeId_RangedAttack",
+        "rangedAttackId"
       ]
     },
     {
@@ -27,7 +27,7 @@
       "Names": [
         {
           "Language": "English",
-          "Name": "Battle Parameters"
+          "Name": "TODO"
         }
       ],
       "Fields": [
@@ -36,30 +36,34 @@
       ]
     },
     {
-      "Key": "Smell",
+      "Key": "Smell Parameters",
       "Names": [
         {
           "Language": "English",
-          "Name": "Smell"
+          "Name": "Smell Parameters"
         }
       ],
       "Fields": [
         "nose_dist",
-        "MemoryTargetForgetTime"
+        "MemoryTargetForgetTime",
+        "searchTargetLv1ForgetTime",
+        "searchTargetLv2ForgetTime"
       ]
     },
     {
-      "Key": "Sight",
+      "Key": "Sight Parameters",
       "Names": [
         {
           "Language": "English",
-          "Name": "Sight"
+          "Name": "Sight Parameters"
         }
       ],
       "Fields": [
         "eye_dist",
         "eye_angX",
         "eye_angY",
+        "searchEye_dist",
+        "searchEye_angY",
         "SightTargetForgetTime",
         "searchEye_angX",
         "eye_BeginDist",
@@ -67,11 +71,11 @@
       ]
     },
     {
-      "Key": "Listen",
+      "Key": "Listen Parameters",
       "Names": [
         {
           "Language": "English",
-          "Name": "Listen"
+          "Name": "Listen Parameters"
         }
       ],
       "Fields": [
@@ -96,17 +100,19 @@
         "disableDark",
         "isGuard_Act",
         "disableLocalSteering",
+        "isNoAvoidHugeEnemy",
+        "targetAILockDmyPoly",
         "isBuddyAI",
         "enableJumpMove",
         "enableJumpMove_onBattle"
       ]
     },
     {
-      "Key": "Navigation",
+      "Key": "Navigation Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Navigation"
+          "Name": "TODO"
         }
       ],
       "Fields": [
@@ -117,7 +123,8 @@
         "enableNaviFlg_Door",
         "enableNaviFlg_InSideWall",
         "enableNaviFlg_EdgeOrdinary",
-        "enableNaviFlg_reserve0"
+        "enableNaviFlg_Lava",
+        "enableNaviFlg_Edge_Ordinary"
       ]
     },
     {
@@ -196,6 +203,42 @@
         "callHelp_MinWaitTime",
         "callHelp_MaxWaitTime",
         "callHelp_ReplyBehaviorType"
+      ]
+    },
+    {
+      "Key": "Weapon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weapon"
+        }
+      ],
+      "Fields": [
+        "enableWeaponOnOff",
+        "weaponOffSpecialEffectId",
+        "weaponOffAnimId",
+        "weaponOnSpecialEffectId",
+        "weaponOnAnimId",
+        "surpriseAnimId"
+      ]
+    },
+    {
+      "Key": "Sound",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sound"
+        }
+      ],
+      "Fields": [
+        "soundBehaviorId01",
+        "soundBehaviorId02",
+        "soundBehaviorId03",
+        "soundBehaviorId04",
+        "soundBehaviorId05",
+        "soundBehaviorId06",
+        "soundBehaviorId07",
+        "soundBehaviorId08"
       ]
     }
   ]

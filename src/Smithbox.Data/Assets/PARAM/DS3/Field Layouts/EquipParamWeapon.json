@@ -22,11 +22,11 @@
       ]
     },
     {
-      "Key": "Weapon Parameters",
+      "Key": "Parameters",
       "Names": [
         {
           "Language": "English",
-          "Name": "Weapon Parameters"
+          "Name": "Parameters"
         }
       ],
       "Fields": [
@@ -148,11 +148,11 @@
       ]
     },
     {
-      "Key": "Correction Parameters",
+      "Key": "Correction Curve Parameters",
       "Names": [
         {
           "Language": "English",
-          "Name": "Correction Parameters"
+          "Name": "Correction Curve Parameters"
         }
       ],
       "Fields": [
@@ -277,7 +277,7 @@
       ]
     },
     {
-      "Key": "Guard Parameters",
+      "Key": "Guard Curve Parameters",
       "Names": [
         {
           "Language": "English",
@@ -299,11 +299,11 @@
       ]
     },
     {
-      "Key": "Common Toggles",
+      "Key": "Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Toggles"
+          "Name": "Options"
         }
       ],
       "Fields": [
@@ -324,11 +324,11 @@
       ]
     },
     {
-      "Key": "Equipment Toggles",
+      "Key": "Equipment Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Equipment Toggles"
+          "Name": "Equipment Options"
         }
       ],
       "Fields": [
@@ -357,11 +357,11 @@
       ]
     },
     {
-      "Key": "Attack Types",
+      "Key": "Display Types",
       "Names": [
         {
           "Language": "English",
-          "Name": "Attack Types"
+          "Name": "Display Types"
         }
       ],
       "Fields": [

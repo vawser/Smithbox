@@ -27,7 +27,8 @@
         "materialSetId",
         "maxReinforceLevel",
         "reinforcePriceRate",
-        "baseChangePriceRate"
+        "baseChangePriceRate",
+        "enableGemRank"
       ]
     },
     {
@@ -39,6 +40,7 @@
         }
       ],
       "Fields": [
+        "baseAtkRate",
         "physicsAtkRate",
         "magicAtkRate",
         "fireAtkRate",
@@ -76,8 +78,7 @@
         "fireGuardCutRate",
         "thunderGuardCutRate",
         "darkGuardCutRate",
-        "freezeGuardDefRate",
-        "staminaGuardResistRate"
+        "staminaGuardDefRate"
       ]
     },
     {
@@ -90,10 +91,12 @@
       ],
       "Fields": [
         "poisonGuardResistRate",
-        "toxicGuardResistRate",
-        "bleedGuardResistRate",
+        "diseaseGuardResistRate",
+        "bloodGuardResistRate",
         "curseGuardResistRate",
-        "StabilityCutRate"
+        "freezeGuardDefRate",
+        "sleepGuardDefRate",
+        "madnessGuardDefRate"
       ]
     }
   ]

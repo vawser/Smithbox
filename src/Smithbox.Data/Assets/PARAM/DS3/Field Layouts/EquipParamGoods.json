@@ -2,22 +2,44 @@
   "Name": "EquipParamGoods",
   "Groups": [
     {
-      "Key": "Common",
+      "Key": "Presentation",
       "Names": [
         {
           "Language": "English",
-          "Name": "Common"
+          "Name": "Presentation"
         }
       ],
       "Fields": [
         "sortId",
-        "iconId",
+        "iconId"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
         "shopId",
-        "sellValue",
-        "basicPrice",
         "maxNum",
         "maxRepNum",
         "weight"
+      ]
+    },
+    {
+      "Key": "Price",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Price"
+        }
+      ],
+      "Fields": [
+        "sellValue",
+        "basicPrice"
       ]
     },
     {
@@ -90,11 +112,11 @@
       ]
     },
     {
-      "Key": "Toggles",
+      "Key": "Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Toggles"
+          "Name": "Options"
         }
       ],
       "Fields": [
@@ -126,11 +148,11 @@
       ]
     },
     {
-      "Key": "Covenant Limitations",
+      "Key": "Covenant Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Covenant Limitations"
+          "Name": "Covenant Options"
         }
       ],
       "Fields": [
@@ -153,11 +175,11 @@
       ]
     },
     {
-      "Key": "Usage Limitations",
+      "Key": "Usage Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Usage Limitations"
+          "Name": "Usage Options"
         }
       ],
       "Fields": [

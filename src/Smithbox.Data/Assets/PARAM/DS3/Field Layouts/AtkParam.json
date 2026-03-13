@@ -2,6 +2,29 @@
   "Name": "AtkParam",
   "Groups": [
     {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "damageLevel",
+        "mapHitType",
+        "AtkAttribute",
+        "spAttribute",
+        "atkType",
+        "HitSourceType",
+        "ThrowFlag",
+        "dmgLevel_vsPlayer",
+        "throwDamageAttribute",
+        "atkElementCorrectId",
+        "knockbackDist",
+        "hitStopTime"
+      ]
+    },
+    {
       "Key": "Correction",
       "Names": [
         {
@@ -55,27 +78,6 @@
         "spEffect2",
         "spEffect3",
         "spEffect4"
-      ]
-    },
-    {
-      "Key": "Attributes",
-      "Names": [
-        {
-          "Language": "English",
-          "Name": "Attributes"
-        }
-      ],
-      "Fields": [
-        "damageLevel",
-        "mapHitType",
-        "AtkAttribute",
-        "spAttribute",
-        "atkType",
-        "HitSourceType",
-        "ThrowFlag",
-        "dmgLevel_vsPlayer",
-        "throwDamageAttribute",
-        "atkElementCorrectId"
       ]
     },
     {
@@ -179,7 +181,8 @@
         "traceDmyIdHead7",
         "traceDmyIdTail7"
       ]
-    },{
+    },
+    {
       "Key": "Hit 0",
       "Names": [
         {

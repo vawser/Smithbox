@@ -2,11 +2,11 @@
   "Name": "ItemParam",
   "Groups": [
     {
-      "Key": "General",
+      "Key": "Common",
       "Names": [
         {
           "Language": "English",
-          "Name": "General"
+          "Name": "Common"
         }
       ],
       "Fields": [
@@ -64,11 +64,11 @@
       ]
     },
     {
-      "Key": "Item Reference",
+      "Key": "Reference List",
       "Names": [
         {
           "Language": "English",
-          "Name": "Item Reference"
+          "Name": "Reference List"
         }
       ],
       "Fields": [

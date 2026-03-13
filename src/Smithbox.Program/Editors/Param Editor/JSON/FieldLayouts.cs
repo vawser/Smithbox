@@ -25,6 +25,8 @@ public class FieldLayoutEntry
     public List<FieldLayoutNameEntry> Names { get; set; } = new();
     public List<string> Fields { get; set; }
 
+    public ChanceLotEntry ChanceLot { get; set; } = null;
+
     public string GetName()
     {
         var curLang = CFG.Current.ParamEditor_Annotation_Language;
@@ -44,4 +46,11 @@ public class FieldLayoutNameEntry
 {
     public string Language { get; set; }
     public string Name { get; set; }
+}
+
+// Special roll chance stuff
+public class ChanceLotEntry
+{
+    public string TargetField { get; set; }
+    public List<string> ChanceSet { get; set; }
 }

@@ -30,7 +30,20 @@
         "GetItemFlagId01",
         "LotItemNum1",
         "EnableLuck01"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint01",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 1",
@@ -47,7 +60,20 @@
         "GetItemFlagId02",
         "LotItemNum2",
         "EnableLuck02"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint02",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 3",
@@ -64,7 +90,20 @@
         "GetItemFlagId03",
         "LotItemNum3",
         "EnableLuck03"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint03",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 4",
@@ -81,7 +120,20 @@
         "GetItemFlagId04",
         "LotItemNum4",
         "EnableLuck04"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint04",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 5",
@@ -98,7 +150,20 @@
         "GetItemFlagId05",
         "LotItemNum5",
         "EnableLuck05"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint05",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 6",
@@ -115,7 +180,20 @@
         "GetItemFlagId06",
         "LotItemNum6",
         "EnableLuck06"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint06",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 7",
@@ -132,7 +210,20 @@
         "GetItemFlagId07",
         "LotItemNum7",
         "EnableLuck07"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint07",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 8",
@@ -149,7 +240,20 @@
         "GetItemFlagId08",
         "LotItemNum8",
         "EnableLuck08"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "LotItemBasePoint08",
+          "ChanceSet": [
+            "LotItemBasePoint01",
+            "LotItemBasePoint02",
+            "LotItemBasePoint03",
+            "LotItemBasePoint04",
+            "LotItemBasePoint05",
+            "LotItemBasePoint06",
+            "LotItemBasePoint07",
+            "LotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Cumulative",

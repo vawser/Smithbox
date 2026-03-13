@@ -41,22 +41,27 @@
         "saveCategory",
         "atkAttribute",
         "spAttribute",
+        "spAttributeVariationValue",
         "wepParamChange",
         "moveType",
         "throwCondition",
         "deleteCriteriaDamage",
-        "fakeDexterity_castSpeed",
+        "dexterityCancelSystemOnlyAddDexterity",
         "consumeStaminaRate",
+        "guardStaminaMult",
         "changeSuperArmorPoint",
         "bowDistRate",
         "changeMagicSlot",
         "heroPointDamage",
         "addDeceasedLv",
         "value_Magnification",
-        "itemDropRate"
+        "itemDropRate",
         "soulRate",
         "soul",
-        "haveSoulRate"
+        "haveSoulRate",
+        "applyPartsGroup",
+        "wetConditionDepth",
+        "changeTeamType"
       ]
     },
     {
@@ -70,8 +75,8 @@
       "Fields": [
         "behaviorId",
         "dmypolyId",
-        "behaviorJudgeId_add0",
-        "behaviorJudgeId_add1"
+        "addBehaviorJudgeId_condition",
+        "addBehaviorJudgeId_add"
       ]
     },
     {
@@ -91,7 +96,10 @@
         "applyIdOnGetSoul",
         "effectTargetOpposeTarget",
         "effectTargetFriendlyTarget",
-        "effectTargetSelfTarget"
+        "effectTargetSelfTarget",
+        "effectTargetPcHorse",
+        "effectTargetPcDeceased",
+        "spiritDeathSpEffectId"
       ]
     },
     {
@@ -113,6 +121,20 @@
         "effectTargetWhiteGhost",
         "effectTargetBlackGhost",
         "effectTargetAttacker"
+      ]
+    },
+    {
+      "Key": "Categories",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Categories"
+        }
+      ],
+      "Fields": [
+        "magicSubCategoryChange1",
+        "magicSubCategoryChange2",
+        "magicSubCategoryChange3"
       ]
     },
     {
@@ -182,6 +204,7 @@
         "equipWeightChangeRate",
         "hpRecoverRate",
         "bCurrHPIndependeMaxHP",
+        "isDestinedDeathHpMult",
         "changeHpRate",
         "changeHpPoint",
         "changeMpRate",
@@ -261,15 +284,16 @@
         "slashAttackPowerRate",
         "blowAttackPowerRate",
         "thrustAttackPowerRate",
-        "neutralAttackPowerRate"
+        "neutralAttackPowerRate",
+        "saAttackPowerRate"
       ]
     },
     {
-      "Key": "Power Multiplier",
+      "Key": "Power %",
       "Names": [
         {
           "Language": "English",
-          "Name": "Power Multiplier"
+          "Name": "Power %"
         }
       ],
       "Fields": [
@@ -281,7 +305,8 @@
         "slashAttackPower",
         "blowAttackPower",
         "thrustAttackPower",
-        "neutralAttackPower"
+        "neutralAttackPower",
+        "changeSaPoint"
       ]
     },
     {
@@ -343,10 +368,9 @@
       "Fields": [
         "bAdjustStrengthAblity",
         "bAdjustAgilityAblity",
-        "bAdjustMagicAbility",
-        "bAdjustFaithAbility",
-        "isUseAtkParamAtkPowerCorrect",
-        "isHollowingCorrection"
+        "bAdjustMagicAblity",
+        "bAdjustFaithAblity",
+        "isUseAtkParamAtkPowerCorrect"
       ]
     },
     {
@@ -354,14 +378,13 @@
       "Names": [
         {
           "Language": "English",
-          "Name": "Affect Spell Options"
+          "Name": "Affect Options"
         }
       ],
       "Fields": [
         "magParamChange",
         "miracleParamChange",
-        "affectPyromancy",
-        "chargeAttackParamChange",
+        "shamanParamChange",
         "throwAttackParamChange"
       ]
     },
@@ -465,7 +488,9 @@
         "diseaseAttackPower",
         "bloodAttackPower",
         "curseAttackPower",
-        "freezeAttackPower"
+        "freezeAttackPower",
+        "sleepAttackPower",
+        "madnessAttackPower"
       ]
     },
     {
@@ -481,7 +506,9 @@
         "registDiseaseChangeRate",
         "registBloodChangeRate",
         "registCurseChangeRate",
-        "registFreezeChangeRate"
+        "registFreezeChangeRate",
+        "registSleepChangeRate",
+        "registMadnessChangeRate"
       ]
     },
     {
@@ -497,20 +524,31 @@
         "changeDiseaseResistPoint",
         "changeBloodResistPoint",
         "changeCurseResistPoint",
-        "changeFreezeResistPoint"
+        "changeFreezeResistPoint",
+        "changeSleepResistPoint",
+        "changeMadnessResistPoint"
       ]
     },
     {
-      "Key": "Aux Correction",
+      "Key": "Aux Damage Correction",
       "Names": [
         {
           "Language": "English",
-          "Name": "Aux Correction"
+          "Name": "Aux Damage Correction"
         }
       ],
       "Fields": [
+        "poisonDefDamageRate",
+        "diseaseDefDamageRate",
+        "bloodDefDamageRate",
+        "curseDefDamageRate",
+        "freezeDefDamageRate",
+        "sleepDefDamageRate",
+        "madnessDefDamageRate",
         "bloodDamageRate",
-        "freezeDamageRate"
+        "freezeDamageRate",
+        "sleepDamageRate",
+        "madnessDamageRate"
       ]
     },
     {
@@ -527,7 +565,9 @@
         "disableDisease",
         "disableBlood",
         "disableCurse",
-        "disableFreeze"
+        "disableFreeze",
+        "disableSleep",
+        "disableMadness"
       ]
     },
     {
@@ -535,28 +575,41 @@
       "Names": [
         {
           "Language": "English",
-          "Name": "TODO"
+          "Name": "Guard"
         }
       ],
       "Fields": [
         "guardStaminaCutRate",
+        "atkFlickPower",
         "defFlickPower",
         "flickDamageCutRate",
         "guardDefFlickPowerRate"
       ]
     },
     {
-      "Key": "Durability",
+      "Key": "Poise",
       "Names": [
         {
           "Language": "English",
-          "Name": "Durability"
+          "Name": "Poise"
         }
       ],
       "Fields": [
-        "insideDurability",
-        "maxDurability",
-        "corrosionIgnore"
+        "changeSuperArmorPoint",
+        "changeSaRecoveryVelocity"
+      ]
+    },
+    {
+      "Key": "Rally",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Rally"
+        }
+      ],
+      "Fields": [
+        "regainGaugeDamage",
+        "regainRate"
       ]
     },
     {
@@ -571,7 +624,22 @@
         "artsConsumptionRate",
         "magicConsumptionRate",
         "shamanConsumptionRate",
-        "miracleConsumptionRate"
+        "miracleConsumptionRate",
+        "goodsConsumptionRate"
+      ]
+    },
+    {
+      "Key": "Durability",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Durability"
+        }
+      ],
+      "Fields": [
+        "insideDurability",
+        "maxDurability",
+        "corrosionIgnore"
       ]
     },
     {
@@ -602,18 +670,31 @@
       "Fields": [
         "targetPriority",
         "teamOffenseEffectivity",
+        "overwrite_maxBackhomeDist",
+        "overwrite_backhomeDist",
+        "overwrite_backhomeBattleDist",
+        "overwrite_BackHome_LookTargetDist",
         "eye_angX",
         "eye_angY",
         "eyeAngleUpper_around",
         "eyeAngleUpper_bottom",
         "sightSearchEnemyRate",
-        "hearingSearchEnemyRate",
         "sightSearchRate",
+        "addAwarePointCorrectValue_forMe",
+        "addAwarePointCorrectValue_forTarget",
+        "sightSearchEnemyAdd",
+        "sightSearchAdd",
+        "sightSearchCutIgnore",
+        "hearingSearchEnemyRate",
+        "hearingAiSoundLevel",
+        "hearingSearchAdd",
+        "hearingSearchEnemyAdd",
+        "hearingSearchRate",
+        "hearingSearchCutIgnore",
         "AppearAiSoundId",
         "antiDarkSightRadius",
         "antiDarkSightDmypolyId",
-        "sightSearchCutIgnore",
-        "hearingSearchCutIgnore"
+        "isStopSearchedNotify"
       ]
     },
     {
@@ -670,6 +751,7 @@
         }
       ],
       "Fields": [
+        "isExtendSpEffectLife",
         "enableLifeTime",
         "extendLifeRate",
         "contractLifeRate",
@@ -686,7 +768,9 @@
         }
       ],
       "Fields": [
+        "dontDeleteOnDead",
         "ignoreNoDamage",
+        "dispIconNonactive",
         "useSpEffectEffect",
         "bGameClearBonus",
         "clearSoul",
@@ -694,10 +778,16 @@
         "antiMagicIgnore",
         "grabityIgnore",
         "hasTarget",
+        "clearTarget",
         "replanningOnFire",
         "eraseOnBonfireRecover",
         "affectedByDurationContraction",
-        "isDisableNetSync"
+        "isDisableNetSync",
+        "isCheckAboveShadowTest",
+        "isContractSpEffectLife",
+        "isWaitModeDelete",
+        "isIgnoreNoDamage",
+        "isHpBurnEffect"
       ]
     },
     {
@@ -712,7 +802,9 @@
         "enableCharm",
         "fakeTargetIgnore",
         "fakeTargetIgnoreUndead",
-        "fakeTargetIgnoreAnimal"
+        "fakeTargetIgnoreAnimal",
+        "fakeTargetIgnoreAjin",
+        "fakeTargetIgnoreMirageArts"
       ]
     },
     {
@@ -727,6 +819,7 @@
         "requestSOS",
         "requestBlackSOS",
         "requestForceJoinBlackSOS",
+        "requestForceJoinBlackSOS_B",
         "requestKickSession",
         "requestLeaveSession",
         "requestNpcInveda",

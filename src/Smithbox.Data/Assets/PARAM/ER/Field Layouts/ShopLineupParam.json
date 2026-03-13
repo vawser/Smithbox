@@ -12,6 +12,7 @@
       "Fields": [
         "equipId",
         "equipType",
+        "costType",
         "mtrlId"
       ]
     },
@@ -42,6 +43,19 @@
         "value",
         "value_Add",
         "value_Magnification"
+      ]
+    },
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "iconId",
+        "nameMsgId"
       ]
     }
   ]

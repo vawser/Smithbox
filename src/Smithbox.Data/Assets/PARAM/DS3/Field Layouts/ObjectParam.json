@@ -59,11 +59,11 @@
       ]
     },
     {
-      "Key": "Toggles",
+      "Key": "Options",
       "Names": [
         {
           "Language": "English",
-          "Name": "Toggles"
+          "Name": "Options"
         }
       ],
       "Fields": [

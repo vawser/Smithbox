@@ -1,6 +1,5 @@
 {
   "Name": "NpcParam",
-  "UngroupedAtBottom": true,
   "Groups": [
     {
       "Key": "AI",
@@ -25,10 +24,11 @@
       ],
       "Fields": [
         "nameId",
+        "faceIconId",
         "hp",
         "mp",
         "stamina",
-        "staminaRecoverBaseVal",
+        "staminaRecoverBaseVel",
         "getSoul"
       ]
     },
@@ -41,12 +41,8 @@
         }
       ],
       "Fields": [
-        "ItemLotId1",
-        "ItemLotId2",
-        "ItemLotId3",
-        "ItemLotId4",
-        "ItemLotId5",
-        "ItemLotId6",
+        "itemLotId_enemy",
+        "itemLotId_map",
         "dropType"
       ]
     },
@@ -59,14 +55,14 @@
         }
       ],
       "Fields": [
-        "regainRate_PhysNeutral",
-        "regainRate_PhysSlash",
-        "regainRate_PhysBlow",
-        "regainRate_PhysThrust",
-        "regainRate_Magic",
-        "regainRate_Fire",
-        "regainRate_Thunder",
-        "regainRate_Dark"
+        "neutralDamageCutRate",
+        "slashDamageCutRate",
+        "blowDamageCutRate",
+        "thrustDamageCutRate",
+        "magicDamageCutRate",
+        "fireDamageCutRate",
+        "thunderDamageCutRate",
+        "darkDamageCutRate"
       ]
     },
     {
@@ -78,14 +74,14 @@
         }
       ],
       "Fields": [
-        "defPhys",
-        "defSlash",
-        "defBlow",
-        "defThrust",
-        "defMag",
-        "defFire",
-        "defThunder",
-        "defDark"
+        "def_phys",
+        "def_slash",
+        "def_blow",
+        "def_thrust",
+        "def_mag",
+        "def_fire",
+        "def_thunder",
+        "def_dark"
       ]
     },
     {
@@ -97,11 +93,31 @@
         }
       ],
       "Fields": [
-        "resistPoison",
-        "resistToxic",
-        "resistBlood",
-        "resistCurse",
-        "resistFrost"
+        "resist_poison",
+        "resist_desease",
+        "resist_blood",
+        "resist_curse",
+        "resist_freeze",
+        "resist_sleep",
+        "resist_madness"
+      ]
+    },
+    {
+      "Key": "Resistance Correction Curve",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Resistance Correction Curve"
+        }
+      ],
+      "Fields": [
+        "resistCorrectId_poison",
+        "resistCorrectId_disease",
+        "resistCorrectId_blood",
+        "resistCorrectId_curse",
+        "resistCorrectId_freeze",
+        "resistCorrectId_sleep",
+        "resistCorrectId_madness"
       ]
     },
     {
@@ -129,6 +145,7 @@
         }
       ],
       "Fields": [
+        "saGuardCutRate",
         "physGuardCutRate",
         "slashGuardCutRate",
         "blowGuardCutRate",
@@ -149,10 +166,12 @@
       ],
       "Fields": [
         "poisonGuardResist",
-        "toxicGuardResist",
+        "diseaseGuardResist",
         "bloodGuardResist",
         "curseGuardResist",
-        "freezeGuardResist"
+        "freezeGuardResist",
+        "sleepGuardResist",
+        "madnessGuardResist"
       ]
     },
     {
@@ -166,9 +185,10 @@
       "Fields": [
         "toughness",
         "toughnessRecoverCorrection",
+        "saRecoveryRate",
         "superArmorDurability",
-        "SuperArmorRecoverCorrection",
-        "SuperArmorBrakeKnockbackDist"
+        "superArmorRecoverCorrection",
+        "superArmorBrakeKnockbackDist"
       ]
     },
     {
@@ -194,7 +214,7 @@
       ],
       "Fields": [
         "parryAttack",
-        "parryDefense"
+        "parryDefence"
       ]
     },
     {
@@ -245,40 +265,38 @@
       ],
       "Fields": [
         "GameClearSpEffectID",
-        "spEffectId0",
-        "spEffectId1",
-        "spEffectId2",
-        "spEffectId3",
-        "spEffectId4",
-        "spEffectId5",
-        "spEffectId6",
-        "spEffectId7",
-        "spEffectId8",
-        "spEffectId9",
-        "spEffectId10",
-        "spEffectId11",
-        "spEffectId12",
-        "spEffectId13",
-        "spEffectId14",
-        "spEffectId15",
-        "spEffectId16",
-        "spEffectId17",
-        "spEffectId18",
-        "spEffectId19",
-        "spEffectId20",
-        "spEffectId21",
-        "spEffectId22",
-        "spEffectId23",
-        "spEffectId24",
-        "spEffectId25",
-        "spEffectId26",
-        "spEffectId27",
-        "spEffectId28",
-        "spEffectId29",
-        "spEffectId30",
-        "spEffectId31",
-        "spEffectId30",
-        "spEffectId31"
+        "spEffectID0",
+        "spEffectID1",
+        "spEffectID2",
+        "spEffectID3",
+        "spEffectID4",
+        "spEffectID5",
+        "spEffectID6",
+        "spEffectID7",
+        "spEffectID8",
+        "spEffectID9",
+        "spEffectID10",
+        "spEffectID11",
+        "spEffectID12",
+        "spEffectID13",
+        "spEffectID14",
+        "spEffectID15",
+        "spEffectID16",
+        "spEffectID17",
+        "spEffectID18",
+        "spEffectID19",
+        "spEffectID20",
+        "spEffectID21",
+        "spEffectID22",
+        "spEffectID23",
+        "spEffectID24",
+        "spEffectID25",
+        "spEffectID26",
+        "spEffectID27",
+        "spEffectID28",
+        "spEffectID29",
+        "spEffectID30",
+        "spEffectID31"
       ]
     },
     {
@@ -313,7 +331,30 @@
         "npcType",
         "drawType",
         "moveType",
-        "defaultLodParamId"
+        "vowType",
+        "defaultLodParamId",
+        "roleNameId",
+        "multiPlayCorrectionParamId",
+        "itemSearchRadius",
+        "loadAssetId"
+      ]
+    },
+    {
+      "Key": "Threat",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Threat"
+        }
+      ],
+      "Fields": [
+        "threatLv",
+        "enableSoundObjDist",
+        "chrActivateConditionParamId",
+        "updateActivatePriolity",
+        "deactivateDist",
+        "deactiveMoveSpeed",
+        "deactiveMoveDist"
       ]
     },
     {
@@ -325,16 +366,23 @@
         }
       ],
       "Fields": [
-        "lockCamParamId",
+        "lockCameraParamId",
         "lockDist",
+        "lockScoreOffset",
         "pushOutCamRegionRadius",
         "disableLockOnAng",
+        "overlapCameraDmypolyId",
         "lockGazePoint0",
         "lockGazePoint1",
         "lockGazePoint2",
         "lockGazePoint3",
         "lockGazePoint4",
-        "lockGazePoint5"
+        "lockGazePoint5",
+        "lockGazePoint6",
+        "lockGazePoint7",
+        "enableAILockDmyPoly_212",
+        "enableAILockDmyPoly_213",
+        "enableAILockDmyPoly_214"
       ]
     },
     {
@@ -348,13 +396,63 @@
       "Fields": [
         "chrHitHeight",
         "chrHitRadius",
+        "hitYOffset",
         "hitHeight",
         "hitRadius",
         "hitOffset",
         "turnVellocity",
-        "weight",
         "hitStopType",
-        "specialTurnType"
+        "specialTurnType",
+        "chrHitGroupAndNavimesh",
+        "chrNavimeshFlag_Alive",
+        "chrNavimeshFlag_Dead",
+        "weight",
+        "npcPlayerWeightType",
+        "clothOffLodLevel",
+        "clothUpdateOffset",
+        "footIkErrorOnGain",
+        "footIkErrorOffGain",
+        "footIkErrorHeightLimit",
+        "maxAnklePitchAngle",
+        "maxAnkleRollAngle",
+        "paintRenderTargetSize"
+      ]
+    },
+    {
+      "Key": "Wheel Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Wheel Parameters"
+        }
+      ],
+      "Fields": [
+        "wheelRotType",
+        "wheelRotRadius"
+      ]
+    },
+    {
+      "Key": "Animation Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Animation Parameters"
+        }
+      ],
+      "Fields": [
+        "animIdOffset",
+        "animIdOffset2",
+        "networkWarpDist",
+        "maxUndurationAng",
+        "specialTurnDistanceThreshold",
+        "isUnduration",
+        "isUseFootIKNormalByUnduration",
+        "forwardUndulationLimit",
+        "sideUndulationLimit",
+        "undulationCorrectGain",
+        "isEnableStepDispInterpolate",
+        "stepDispInterpolateTime",
+        "stepDispInterpolateTriggerValue"
       ]
     },
     {
@@ -368,12 +466,11 @@
       "Fields": [
         "disableRespawn",
         "disableInitializeDead",
-        "UseRagdollCamHit",
+        "useRagdollCamHit",
         "disableClothRigidHit",
         "UseRagdoll",
         "isGhost",
         "isNoDamageMotion",
-        "isUnduration",
         "isChangeWanderGhost",
         "isEnableNeckTurn",
         "isMoveAnimWait",
@@ -387,90 +484,57 @@
         "isCalculatePvPDamage",
         "isHostSyncChr",
         "isSkipWeakDamageAnim",
-        "Unk6",
-        "Unk7"
+        "useUndulationAddAnimFB",
+        "isRideAtkTarget",
+        "isStealthTarget",
+        "isKeepHitOnRide",
+        "isSpCollide",
+        "attachHitInitializeDead",
+        "excludeGroupRewardCheck"
       ]
     },
     {
-      "Key": "Animation Parameters",
+      "Key": "Retarget",
       "Names": [
         {
           "Language": "English",
-          "Name": "Animation Parameters"
+          "Name": "Retarget"
         }
       ],
       "Fields": [
-        "animidOffset",
-        "animIdOffset2",
-        "networkWarpDisp",
-        "maxUndurationAng",
-        "itemSearchRadius",
-        "specialTurnDistanceThreshold"
+        "RetargetReferenceChrId",
+        "retargetMoveRate"
       ]
     },
     {
-      "Key": "Phantom",
+      "Key": "Sound",
       "Names": [
         {
           "Language": "English",
-          "Name": "Phantom"
+          "Name": "Sound"
         }
       ],
       "Fields": [
-        "PhantomParamId",
-        "WanderGhostPhantomId",
-        "ghostModelId",
-        "roleNameId"
+        "SoundAddBankId",
+        "SoundBankId"
       ]
     },
     {
-      "Key": "Hit Material",
+      "Key": "Visual Effects",
       "Names": [
         {
           "Language": "English",
-          "Name": "Hit Material"
+          "Name": "Visual Effects"
         }
       ],
       "Fields": [
-        "material",
-        "materialSfx",
-        "subMaterial",
-        "subMaterialSfx",
-        "material_Weak",
-        "materialSfx_Weak",
-        "subMaterial_weak",
-        "subMaterialSfx_weak"
-      ]
-    },
-    {
-      "Key": "SFX",
-      "Names": [
-        {
-          "Language": "English",
-          "Name": "SFX"
-        }
-      ],
-      "Fields": [
+        "SfxResBankId",
         "burnsfxType",
         "sfxSize",
         "autoFootEffectSfxId",
-        "autoFootEffectDecalBaseId1"
-      ]
-    },
-    {
-      "Key": "Cloth",
-      "Names": [
-        {
-          "Language": "English",
-          "Name": "Cloth"
-        }
-      ],
-      "Fields": [
-        "clothOffLodLevel",
-        "clothUpdateOffset",
-        "npcPlayerWeightType",
-        "maxAnklePitchAngle",
-        "paintRenderTargetSize"
+        "autoFootEffectDecalBaseId1",
+        "autoFootEffectDecalBaseId2",
+        "autoFootEffectDecalBaseId3"
       ]
     },
     {
@@ -484,8 +548,60 @@
       "Fields": [
         "normalChangeModelId",
         "normalChangeAnimChrId",
-        "normalChangeResourceId",
+        "normalChangeResouceId",
         "normalChangeTexChrId"
+      ]
+    },
+    {
+      "Key": "Phantom",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Phantom"
+        }
+      ],
+      "Fields": [
+        "phantomShaderId",
+        "WanderGhostPhantomId",
+        "ghostModelId"
+      ]
+    },
+    {
+      "Key": "Material Override",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Material Override"
+        }
+      ],
+      "Fields": [
+        "residentMaterialExParamId00",
+        "residentMaterialExParamId01",
+        "residentMaterialExParamId02",
+        "residentMaterialExParamId03",
+        "residentMaterialExParamId04"
+      ]
+    },
+    {
+      "Key": "Hit Material",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit Material"
+        }
+      ],
+      "Fields": [
+        "materialVariationValue",
+        "materialVariationValue_Weak",
+        "materialSe_Weak1",
+        "materialSfx_Weak1",
+        "burnSfxType",
+        "materialSe1",
+        "materialSfx1",
+        "materialSe_Weak2",
+        "materialSfx_Weak2",
+        "materialSe2",
+        "materialSfx2"
       ]
     },
     {
@@ -529,6 +645,29 @@
         "modelDispMask29",
         "modelDispMask30",
         "modelDispMask31"
+      ]
+    },
+    {
+      "Key": "Controller Actions",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Controller Actions"
+        }
+      ],
+      "Fields": [
+        "dbgBehaviorR1",
+        "dbgBehaviorL1",
+        "dbgBehaviorR2",
+        "dbgBehaviorL2",
+        "dbgBehaviorRL",
+        "dbgBehaviorRR",
+        "dbgBehaviorRD",
+        "dbgBehaviorRU",
+        "dbgBehaviorLL",
+        "dbgBehaviorLR",
+        "dbgBehaviorLD",
+        "dbgBehaviorLU"
       ]
     }
   ]
