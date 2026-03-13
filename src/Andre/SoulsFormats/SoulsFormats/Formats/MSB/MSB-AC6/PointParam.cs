@@ -676,7 +676,6 @@ namespace SoulsFormats
                 br.AssertInt32((int)Type);
                 TypeIndex = br.ReadInt32();
                 MSB.ShapeType shapeType = br.ReadEnum32<MSB.ShapeType>();
-                Shape = MSB.Shape.Create(shapeType);
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
                 Unk2C = br.ReadInt32();
@@ -691,6 +690,8 @@ namespace SoulsFormats
                 CommonOffset = br.ReadInt64();
                 TypeOffset = br.ReadInt64();
                 Struct98Offset = br.ReadInt64();
+
+                Shape = MSB.Shape.Create(shapeType);
 
                 // Name
                 Name = br.GetUTF16(start + NameOffset);
@@ -799,7 +800,7 @@ namespace SoulsFormats
                 bw.WriteInt16s(ChildListIndices);
                 bw.Pad(8);
 
-                if (Shape.HasShapeData && FormOffset != 0L)
+                if (Shape.HasShapeData)
                 {
                     bw.FillInt64("FormOffset", bw.Position - start);
                     Shape.WriteShapeData(bw);
