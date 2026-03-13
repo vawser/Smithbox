@@ -211,7 +211,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Untextured_Model_Brightness);
+                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Flat_Model_Brightness);
             }
         };
     }
@@ -232,7 +232,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Untextured_Model_Saturation);
+                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Flat_Model_Saturation);
             }
         };
     }

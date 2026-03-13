@@ -38,8 +38,8 @@ public static class PreferencesUtil
     {
         CFG.Current.Viewport_Enable_Model_Masks = CFG.Default.Viewport_Enable_Model_Masks;
         CFG.Current.Viewport_Enable_LOD_Facesets = CFG.Default.Viewport_Enable_LOD_Facesets;
-        CFG.Current.Viewport_Untextured_Model_Brightness = CFG.Default.Viewport_Untextured_Model_Brightness;
-        CFG.Current.Viewport_Untextured_Model_Saturation = CFG.Default.Viewport_Untextured_Model_Saturation;
+        CFG.Current.Viewport_Flat_Model_Brightness = CFG.Default.Viewport_Flat_Model_Brightness;
+        CFG.Current.Viewport_Flat_Model_Saturation = CFG.Default.Viewport_Flat_Model_Saturation;
     }
     public static void ResetViewportSelectionCFG()
     {

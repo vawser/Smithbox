@@ -16,7 +16,7 @@
  - Add support for DS2 flt files
  
  
-- Finish converting the AlternativeOrders into Field Layouts
+- Finish converting the SDT AlternativeOrders into Field Layouts
 - Add in all the new DS2 defs
 - Add in blank DS2 metas for the new defs
 - Add in black DS2 annotations for the new defs

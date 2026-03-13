@@ -159,8 +159,8 @@ public class SceneRenderPipeline
             SceneParams.CursorPosition[0] = cursorx;
             SceneParams.CursorPosition[1] = cursory;
 
-            SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Untextured_Model_Brightness;
-            SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Untextured_Model_Saturation;
+            SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Flat_Model_Brightness;
+            SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Flat_Model_Saturation;
             SceneParams.SelectionColor = selectionColor;
             SceneParams.OutlineColor = outlineColor;
 

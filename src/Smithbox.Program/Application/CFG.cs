@@ -1032,8 +1032,8 @@ public class CFG
 
     public Vector3 Viewport_Bg_Color = new(0.1f, 0.1f, 0.1f);
 
-    public float Viewport_Untextured_Model_Brightness = 1.0f;
-    public float Viewport_Untextured_Model_Saturation = 0.5f;
+    public float Viewport_Flat_Model_Brightness = 1.0f;
+    public float Viewport_Flat_Model_Saturation = 0.5f;
 
     public bool Viewport_Enable_Selection_Outline = false;
     public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
