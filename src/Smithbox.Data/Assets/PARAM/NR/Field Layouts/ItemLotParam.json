@@ -32,7 +32,20 @@
         "lotItemBasePoint01",
         "enableLuck01",
         "getItemFlagId01"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint01",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 2",
@@ -49,7 +62,20 @@
         "lotItemBasePoint02",
         "enableLuck02",
         "getItemFlagId02"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint02",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 3",
@@ -66,7 +92,20 @@
         "lotItemBasePoint03",
         "enableLuck03",
         "getItemFlagId03"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint03",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 4",
@@ -83,7 +122,20 @@
         "lotItemBasePoint04",
         "enableLuck04",
         "getItemFlagId04"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint04",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 5",
@@ -100,7 +152,20 @@
         "lotItemBasePoint05",
         "enableLuck05",
         "getItemFlagId05"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint05",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 6",
@@ -117,7 +182,20 @@
         "lotItemBasePoint06",
         "enableLuck06",
         "getItemFlagId06"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint06",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 7",
@@ -134,7 +212,20 @@
         "lotItemBasePoint07",
         "enableLuck07",
         "getItemFlagId07"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint07",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Lot 8",
@@ -151,7 +242,20 @@
         "lotItemBasePoint08",
         "enableLuck08",
         "getItemFlagId08"
-      ]
+      ],
+      "ChanceLot": {
+          "TargetField": "lotItemBasePoint08",
+          "ChanceSet": [
+            "lotItemBasePoint01",
+            "lotItemBasePoint02",
+            "lotItemBasePoint03",
+            "lotItemBasePoint04",
+            "lotItemBasePoint05",
+            "lotItemBasePoint06",
+            "lotItemBasePoint07",
+            "lotItemBasePoint08"
+         ]
+      }
     },
     {
       "Key": "Cumultative",
