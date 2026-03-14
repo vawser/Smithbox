@@ -1,0 +1,493 @@
+{
+  "Param": "EQUIP_PARAM_BOOSTER_ST",
+  "Type": "EQUIP_PARAM_BOOSTER_ST",
+  "Name": "EQUIP_PARAM_BOOSTER_ST",
+  "Description": "Determines the parameters of booster parts.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The menu icon texture ID."
+    },
+    {
+      "Field": "modelId",
+      "Name": "Model ID",
+      "Description": "The model ID for this part. Also determines the menu preview icon."
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "7 digits is the limit for s32 as the reinforcement level is taken into account in the program"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight of the part."
+    },
+    {
+      "Field": "energyMax",
+      "Name": "Energy Capacity",
+      "Description": "The energy capacity of this booster."
+    },
+    {
+      "Field": "energyRecoveryPerSec",
+      "Name": "Energy Output",
+      "Description": "The energy recovery rate. In points per second."
+    },
+    {
+      "Field": "consumeEN",
+      "Name": "Energy Consumption",
+      "Description": "The consumption rate of energy. In points per second."
+    },
+    {
+      "Field": "energyRecoveryDelayTimeSec",
+      "Name": "Energy Output Delay",
+      "Description": "The delay before energy recovery starts. In seconds."
+    },
+    {
+      "Field": "f00_dashBoostMaxSpeedKMPH",
+      "Name": "Ground Boost: Maximum Speed",
+      "Description": "Maximum speed for ground boost. In kilometres per hour."
+    },
+    {
+      "Field": "f01_dashBoostStartAccelMPSS",
+      "Name": "Ground Boost: Start Acceleration",
+      "Description": "Starting acceleration for ground boost. In metres per second ^ 2."
+    },
+    {
+      "Field": "f02_dashBoostMaxAccelMPSS",
+      "Name": "Ground Boost: Maximum Acceleration",
+      "Description": "Maximum acceleration for ground boost. In metres per second ^ 2."
+    },
+    {
+      "Field": "f03_dashBoostBeginAccelTimeSec",
+      "Name": "Ground Boost: Start Acceleration Duration",
+      "Description": "Start acceleration duration for ground boost. In seconds."
+    },
+    {
+      "Field": "f04_dashBoostBeginToMaxAccelTimeSec",
+      "Name": "Ground Boost: Start to Maximum Acceleration Duration",
+      "Description": "Time from acceleration at start of ground boost to maximum acceleration. In seconds."
+    },
+    {
+      "Field": "f05_consumeEN_boostMove",
+      "Name": "Ground Boost: Energy Consumption",
+      "Description": "The energy consumption for ground boost. Point per second."
+    },
+    {
+      "Field": "f06_flyBoostHorizontalMaxSpeedKMPH",
+      "Name": "Aerial Boost: Maximum Horizontal Speed",
+      "Description": "Maximum horizontal speed for aerial boost. In kilometres per hour."
+    },
+    {
+      "Field": "f07_flyBoostHorizontalStartAccelMPSS",
+      "Name": "Aerial Boost: Horizontal Start Acceleration",
+      "Description": "Starting horizontal acceleration for aerial boost. In metres per second ^ 2."
+    },
+    {
+      "Field": "f08_flyBoostHorizontalMaxAccelMPSS",
+      "Name": "Aerial Boost: Horizontal Maximum Acceleration",
+      "Description": "Maximum horizontal acceleration for aerial boost. In metres per second ^ 2."
+    },
+    {
+      "Field": "f09_flyBoostHorizontalBeginAccelTimeSec",
+      "Name": "Aerial Boost: Start Horizontal Acceleration Duration",
+      "Description": "Start horizontal acceleration duration for aerial boost. In seconds."
+    },
+    {
+      "Field": "f10_flyBoostHorizontalBeginToMaxAccelTimeSec",
+      "Name": "Aerial Boost: Start to Maximum Acceleration Duration",
+      "Description": "Time from acceleration at start of aerial boost to maximum acceleration. In seconds."
+    },
+    {
+      "Field": "f11_consumeEN_boostMoveAir",
+      "Name": "Aerial Boost: Energy Consumption",
+      "Description": "The energy consumption for aerial boost. Point per second."
+    },
+    {
+      "Field": "consumeEN_BoostUp",
+      "Name": "Vertical Boost: Energy Consumption",
+      "Description": "The energy consumption for vertical boost. Point per second."
+    },
+    {
+      "Field": "consumeFixedEN_QB",
+      "Name": "Quick Boost: Energy Consumption",
+      "Description": "The energy consumption for quick boost."
+    },
+    {
+      "Field": "QB_EndSpeedKMH",
+      "Name": "Quick Boost: Terminal Speed",
+      "Description": "Terminal speed during quick boost. In kilometres per hour."
+    },
+    {
+      "Field": "QB_AccelTimeF30",
+      "Name": "Quick Boost: Acceleration Duration",
+      "Description": "The duration for quick boost acceleration. 1 / 30 seconds."
+    },
+    {
+      "Field": "dashBoost_EndSpeedKMH",
+      "Name": "Ground Boost: Terminal Speed",
+      "Description": "Terminal speed during ground boost. In kilometres per hour."
+    },
+    {
+      "Field": "flyBoost_EndSpeedKMH",
+      "Name": "Aerial Boost: Terminal Speed",
+      "Description": "Terminal speed during aerial boost. In kilometres per hour."
+    },
+    {
+      "Field": "QB_StartAddSpeedKMH",
+      "Name": "Quick Boost: Initial Speed",
+      "Description": "Additional initial velocity for quick boost. In kilometres per hour."
+    },
+    {
+      "Field": "flyBoostUpperAccelMPSS",
+      "Name": "Vertical Aerial Boost: Acceleration",
+      "Description": "Vertical aerial boost acceleration. In metres per second ^ 2."
+    },
+    {
+      "Field": "flyBoostUpperMaxSpeedKMH",
+      "Name": "Vertical Aerial Boost: Maximum Speed",
+      "Description": "Vertical aerial boost maximum speed. In kilometres per hour."
+    },
+    {
+      "Field": "flyBoostUpperJumpAccelMPSS",
+      "Name": "Vertical Aerial Boost: Start Acceleration on Jump",
+      "Description": "Vertical aerial boost acceleration on jump. In metres per second ^ 2."
+    },
+    {
+      "Field": "flyBoostUpperJumpEN",
+      "Name": "Vertical Aerial Boost: Energy Consumption on Jump",
+      "Description": "Vertical aerial boost energy consumption on jump."
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Price to sell the item for."
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Sale Value",
+      "Description": "Price the item is on sale for."
+    },
+    {
+      "Field": "QB_ReloadTimeSec",
+      "Name": "Quick Boost: Reload Time",
+      "Description": "Duration between quick boosts. In seconds."
+    },
+    {
+      "Field": "flyBoostDownMaxSpeedKMH",
+      "Name": "Aerial Boost: Maximum Descent Speed",
+      "Description": "The maximum descent speed during an aerial boost. In kilometres per hour."
+    },
+    {
+      "Field": "flyBoostUpperJumpDownMaxSpeedKMH",
+      "Name": "Aerial Boost: Maximum Descent Speed on Jump",
+      "Description": "The maximum descent speed during an aerial boost after jump input. In kilometres per hour."
+    },
+    {
+      "Field": "energyRecoveryDelayTimeForEmptySec",
+      "Name": "Energy Recovery Delay (when Empty)",
+      "Description": "The duration to wait for energy recovery (when energy is empty)."
+    },
+    {
+      "Field": "thrustersParamIDForPC",
+      "Name": "Thruster Configuration Offset (for Player)",
+      "Description": "For player, specify the ID of the thruster parameter (0 means no thruster)."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "computed_f00",
+      "Name": "Menu Display - Value 0",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f01",
+      "Name": "Menu Display - Value 1",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f02",
+      "Name": "Menu Display - Value 2",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f03",
+      "Name": "Menu Display - Value 3",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f04",
+      "Name": "Menu Display - Value 4",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f05",
+      "Name": "Menu Display - Value 5",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f06",
+      "Name": "Menu Display - Value 6",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f07",
+      "Name": "Menu Display - Value 7",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f08",
+      "Name": "Menu Display - Value 8",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f09",
+      "Name": "Menu Display - Value 9",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f10",
+      "Name": "Menu Display - Value 10",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f11",
+      "Name": "Menu Display - Value 11",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f12",
+      "Name": "Menu Display - Value 12",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f13",
+      "Name": "Menu Display - Value 13",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f14",
+      "Name": "Menu Display - Value 14",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "computed_f_last",
+      "Name": "Menu Display - Value 15",
+      "Description": "Value for menu display only."
+    },
+    {
+      "Field": "upperBoostMaxSpeedKMPH",
+      "Name": "Vertical Boost: Maximum Ascent Speed",
+      "Description": "The maximum ascent speed during a vertical boost. In kilometres per hour."
+    },
+    {
+      "Field": "upperBoostStartAccelMPSS",
+      "Name": "Vertical Boost: Start Acceleration",
+      "Description": "Vertical boost start acceleration. In metres per second ^ 2."
+    },
+    {
+      "Field": "upperBoostMaxAccelMPSS",
+      "Name": "Vertical Boost: Maximum Acceleration",
+      "Description": "Vertical boost max acceleration. In metres per second ^ 2."
+    },
+    {
+      "Field": "upperBoostBeginAccelTimeSec",
+      "Name": "Vertical Boost: Start Acceleration Duration",
+      "Description": "Duration of vertical boost start acceleration. In seconds."
+    },
+    {
+      "Field": "upperBoostBeginToMaxAccelTimeSec",
+      "Name": "Vertical Boost: Start to Maximum Acceleration Duration",
+      "Description": "Duration from start to maximum acceleration. In seconds."
+    },
+    {
+      "Field": "upperBoostHorizontalMaxSpeedKMPH",
+      "Name": "Vertical Boost: Maximum Horizontal Speed",
+      "Description": "Maximum horizontal speed for the vertical boost. In kilometres per hour."
+    },
+    {
+      "Field": "upperBoostHorizontalAccelMPSS",
+      "Name": "Vertical Boost: Horizontal Acceleration",
+      "Description": "Horizontal acceleration for the vertical boost. In metres per second ^ 2."
+    },
+    {
+      "Field": "upperBoostDownMaxSpeedKMPH",
+      "Name": "Vertical Boost: Maximum Descent Speed",
+      "Description": "Maximum descent speed for the vertical boost. In kilometres per hour."
+    },
+    {
+      "Field": "assaultBoost_InitSpeedKMH",
+      "Name": "Assault Boost: Initial Speed",
+      "Description": "Initial speed of assault boost. In kilometres per hour."
+    },
+    {
+      "Field": "assaultBoost_EndSpeedKMH",
+      "Name": "Assault Boost: Terminal Speed",
+      "Description": "Terminal speed of assault boost. In kilometres per hour."
+    },
+    {
+      "Field": "assaultBoost_MinAccelTimeF30",
+      "Name": "Assault Boost: Minimum Acceleration Time",
+      "Description": "Minimum acceleration time for the assault boost. In seconds. 1 / 30 seconds"
+    },
+    {
+      "Field": "assaultBoost_DrainEnStartTimeF32",
+      "Name": "Assault Boost: Continuous Energy Consumption Start Time",
+      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+    },
+    {
+      "Field": "assaultBoost_ReloadTimeSec",
+      "Name": "Assault Boost: Reload Time",
+      "Description": "Duration between uses of assault boost. In seconds."
+    },
+    {
+      "Field": "assaultBoost_OneShotDrainEnPoint",
+      "Name": "Assault Boost: Initial Energy Consumption",
+      "Description": "Energy consumption for initial assault boost."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_DrainEnPointPerSec",
+      "Name": "Assault Boost: Continuous Energy Consumpion",
+      "Description": "Energy consumption for assault boost per tick. In seconds."
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Maker",
+      "Name": "Corporation Texture ID",
+      "Description": "The maker icon to use for this booster."
+    },
+    {
+      "Field": "bladeHoming_InitSpeedKMH",
+      "Name": "Blade Homing: Initial Speed",
+      "Description": "Initial speed of blade attack homing. In kilometres per hour."
+    },
+    {
+      "Field": "bladeHoming_EndSpeedKMH",
+      "Name": "Blade Homing: Terminal Speed",
+      "Description": "Terminal speed of blade attack homing. In kilometres per hour."
+    },
+    {
+      "Field": "bladeHoming_MinAccelTimeF30",
+      "Name": "Blade Homing: Maximum Acceleration Time",
+      "Description": "Maximum acceleration time for blade attack homing. 1 / 30 seconds."
+    },
+    {
+      "Field": "bladeHoming_DrainEnStartTimeF32",
+      "Name": "Blade Homing: Continuous Energy Consumption Start Time",
+      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+    },
+    {
+      "Field": "bladeHoming_OneShotDrainEnPoint",
+      "Name": "Blade Homing: Initial Energy Consumption",
+      "Description": "Energy consumption for initial blade homing attack."
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bladeHoming_DrainEnPointPerSec",
+      "Name": "Blade Homing: Continuous Energy Consumpion",
+      "Description": "Energy consumption for blade homing attack per tick. In seconds."
+    },
+    {
+      "Field": "flyBoostUpperJumpMaxAccelMPSS",
+      "Name": "Aerial Boost: Maximum Acceleration after Jump",
+      "Description": "Maximum acceleration during aerial boost after jump. In metres per second ^ 2."
+    },
+    {
+      "Field": "flyBoostUpperJumpBeginAccelTimeSec",
+      "Name": "Aerial Boost: Start Acceleration Duration after Jump",
+      "Description": "Start acceleration duration during aerial boost after jump. In seconds."
+    },
+    {
+      "Field": "flyBoostUpperJumpBeginToMaxAccelTimeSec",
+      "Name": "Aerial Boost: Start to Maximum Acceleration Duration after Jump",
+      "Description": "Start acceleration to maximum acceleration duration during aerial boost after jump. In seconds."
+    },
+    {
+      "Field": "QB_RegWeight",
+      "Name": "Quick Boost: Weight Performance",
+      "Description": "Weight performance during quick boost."
+    },
+    {
+      "Field": "refId",
+      "Name": "Inherited Booster ID",
+      "Description": "Booster ID to inherit parameters from."
+    },
+    {
+      "Field": "assaultBoostSideAvoid_InitSpeedKMH",
+      "Name": "Assault Boost Dodge: Initial Speed",
+      "Description": "Initial speed of assault boost dodge. In kilometres per hour."
+    },
+    {
+      "Field": "assaultBoostSideAvoid_EndSpeedKMH",
+      "Name": "Assault Boost Dodge: Terminal Speed",
+      "Description": "Terminal speed of assault boost dodge. In kilometres per hour."
+    },
+    {
+      "Field": "assaultBoostSideAvoid_MinAccelTimeF30",
+      "Name": "Assault Boost Dodge: Minimum Acceleration Time",
+      "Description": "Minimum acceleration time for the assault boost dodge. In seconds. 1 / 30 seconds"
+    },
+    {
+      "Field": "assaultBoostSideAvoid_DrainEnStartTimeF32",
+      "Name": "Assault Boost Dodge: Continuous Energy Consumption Start Time",
+      "Description": "Time before continuous energy consumption starts. 1 / 30 seconds."
+    },
+    {
+      "Field": "assaultBoostSideAvoid_OneShotDrainEnPoint",
+      "Name": "Assault Boost Dodge: Initial Energy Consumption",
+      "Description": "Energy consumption for initial assault boost dodge."
+    },
+    {
+      "Field": "pad_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostSideAvoid_DrainEnPointPerSec",
+      "Name": "Assault Boost Dodge: Continuous Energy Consumpion",
+      "Description": "Energy consumption for assault boost dodge per tick. In seconds."
+    },
+    {
+      "Field": "pad_end2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

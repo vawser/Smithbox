@@ -1,0 +1,613 @@
+{
+  "Param": "DEFAULT_KEY_ASSIGN",
+  "Type": "DEFAULT_KEY_ASSIGN",
+  "Name": "DEFAULT_KEY_ASSIGN",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "priority0",
+      "Name": "Pad 0",
+      "Description": "Lower suppression pad 0"
+    },
+    {
+      "Field": "priority1",
+      "Name": "For GUI framework",
+      "Description": "Pad for lower suppression GUI framework"
+    },
+    {
+      "Field": "priority2",
+      "Name": "Pad 2",
+      "Description": "Lower suppression pad 2"
+    },
+    {
+      "Field": "priority3",
+      "Name": "Debug menu mode switching",
+      "Description": "Lower suppression debug menu mode switching pad"
+    },
+    {
+      "Field": "priority4",
+      "Name": "Pad 4",
+      "Description": "Lower suppression pad 4"
+    },
+    {
+      "Field": "priority5",
+      "Name": "Pad debug menu",
+      "Description": "Lower suppression pad Debug menu pad"
+    },
+    {
+      "Field": "priority6",
+      "Name": "Pad 6",
+      "Description": "Lower suppression pad 6"
+    },
+    {
+      "Field": "priority7",
+      "Name": "Pad 7",
+      "Description": "Lower suppression pad 7"
+    },
+    {
+      "Field": "priority8",
+      "Name": "Pad 8",
+      "Description": "Lower suppression pad 8"
+    },
+    {
+      "Field": "priority9",
+      "Name": "Pad 9",
+      "Description": "Lower suppression pad 9"
+    },
+    {
+      "Field": "priority10",
+      "Name": "Pad 10",
+      "Description": "Lower suppression pad 10"
+    },
+    {
+      "Field": "priority11",
+      "Name": "Pad 11",
+      "Description": "Lower suppression pad 11"
+    },
+    {
+      "Field": "priority12",
+      "Name": "Pad 12",
+      "Description": "Lower suppression pad 12"
+    },
+    {
+      "Field": "priority13",
+      "Name": "Pad 13",
+      "Description": "Lower suppression pad 13"
+    },
+    {
+      "Field": "priority14",
+      "Name": "Pad 14",
+      "Description": "Lower suppression pad 14"
+    },
+    {
+      "Field": "priority15",
+      "Name": "Pad 15",
+      "Description": "Lower suppression pad 15"
+    },
+    {
+      "Field": "priority16",
+      "Name": "Pad 16",
+      "Description": "Lower suppression pad 16"
+    },
+    {
+      "Field": "priority17",
+      "Name": "Pad 17",
+      "Description": "Lower suppression pad 17"
+    },
+    {
+      "Field": "priority18",
+      "Name": "Pad 18",
+      "Description": "Lower suppression pad 18"
+    },
+    {
+      "Field": "priority19",
+      "Name": "Pad 19",
+      "Description": "Lower suppression pad 19"
+    },
+    {
+      "Field": "priority20",
+      "Name": "Pad 20",
+      "Description": "Lower suppression pad 20"
+    },
+    {
+      "Field": "priority21",
+      "Name": "Pad 21",
+      "Description": "Lower suppression pad 21"
+    },
+    {
+      "Field": "priority22",
+      "Name": "Pad 22",
+      "Description": "Lower suppression pad 22"
+    },
+    {
+      "Field": "priority23",
+      "Name": "Pad 23",
+      "Description": "Lower suppression pad 23"
+    },
+    {
+      "Field": "priority24",
+      "Name": "Pad 24",
+      "Description": "Lower suppression pad 24"
+    },
+    {
+      "Field": "priority25",
+      "Name": "Pad 25",
+      "Description": "Lower suppression pad 25"
+    },
+    {
+      "Field": "priority26",
+      "Name": "Pad 26",
+      "Description": "Lower suppression pad 26"
+    },
+    {
+      "Field": "priority27",
+      "Name": "Pad 27",
+      "Description": "Lower suppression pad 27"
+    },
+    {
+      "Field": "priority28",
+      "Name": "Pad 28",
+      "Description": "Lower suppression pad 28"
+    },
+    {
+      "Field": "priority29",
+      "Name": "Pad 29",
+      "Description": "Lower suppression pad 29"
+    },
+    {
+      "Field": "priority30",
+      "Name": "Pad 30",
+      "Description": "Lower suppression pad 30"
+    },
+    {
+      "Field": "priority31",
+      "Name": "Pad 31",
+      "Description": "Lower suppression pad 31"
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "phyisicalKey_0",
+      "Name": "Pad physical key",
+      "Description": "Pad physical key"
+    },
+    {
+      "Field": "traitsType_0",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_0",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_0",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_0",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_0",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_0",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_0",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_0",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_0",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_0",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_1",
+      "Name": "Pad physical key",
+      "Description": "Pad physical key"
+    },
+    {
+      "Field": "traitsType_1",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_1",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_1",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_1",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_1",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_1",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_1",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_1",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_1",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_1",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_2",
+      "Name": "Pad physical key",
+      "Description": "Pad physical key"
+    },
+    {
+      "Field": "traitsType_2",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_2",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_2",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_2",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_2",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_2",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_2",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_2",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_2",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_2",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_3",
+      "Name": "Pad physical key",
+      "Description": "Pad physical key"
+    },
+    {
+      "Field": "traitsType_3",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_3",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_3",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_3",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_3",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_3",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_3",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_3",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_3",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_3",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_4",
+      "Name": "PC physical key",
+      "Description": "PC physical key"
+    },
+    {
+      "Field": "traitsType_4",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_4",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_4",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_4",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_4",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_4",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_4",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_4",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_4",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_4",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_5",
+      "Name": "PC physical key",
+      "Description": "PC physical key"
+    },
+    {
+      "Field": "traitsType_5",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_5",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_5",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_5",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_5",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_5",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_5",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_5",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_5",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_5",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_6",
+      "Name": "PC physical key",
+      "Description": "PC physical key"
+    },
+    {
+      "Field": "traitsType_6",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_6",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_6",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_6",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_6",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_6",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_6",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_6",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_6",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_6",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    },
+    {
+      "Field": "phyisicalKey_7",
+      "Name": "PC physical key",
+      "Description": "PC physical key"
+    },
+    {
+      "Field": "traitsType_7",
+      "Name": "How to be pushed",
+      "Description": "How to be pushed"
+    },
+    {
+      "Field": "a2dOperator_7",
+      "Name": "Analog-to-digital conversion method",
+      "Description": "Analog-to-digital conversion method"
+    },
+    {
+      "Field": "applyTarget_7",
+      "Name": "Applicable target",
+      "Description": "Reflection target"
+    },
+    {
+      "Field": "isAnalog_7",
+      "Name": "Digital / analog",
+      "Description": "Digital or analog"
+    },
+    {
+      "Field": "enableWin64_7",
+      "Name": "Win64",
+      "Description": "Will it be used in Win64?"
+    },
+    {
+      "Field": "enablePS4_7",
+      "Name": "PS4",
+      "Description": "Will it be used on PS4"
+    },
+    {
+      "Field": "enableXboxOne_7",
+      "Name": "Xbox One",
+      "Description": "Will it be used on Xbox One"
+    },
+    {
+      "Field": "time1_7",
+      "Name": "time",
+      "Description": "time"
+    },
+    {
+      "Field": "time2_7",
+      "Name": "Interval time for repeat",
+      "Description": "Interval time for repeat"
+    },
+    {
+      "Field": "a2dThreshold_7",
+      "Name": "Analog-to-digital conversion threshold",
+      "Description": "Analog-to-digital conversion threshold"
+    }
+  ]
+}

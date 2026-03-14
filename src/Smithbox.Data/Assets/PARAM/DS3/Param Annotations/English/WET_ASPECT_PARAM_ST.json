@@ -1,0 +1,73 @@
+{
+  "Param": "WET_ASPECT_PARAM_ST",
+  "Type": "WET_ASPECT_PARAM_ST",
+  "Name": "WET_ASPECT_PARAM_ST",
+  "Description": "Character Wetness Color",
+  "Fields": [
+    {
+      "Field": "baseColorR",
+      "Name": "Base Color: R",
+      "Description": "Base color color R."
+    },
+    {
+      "Field": "baseColorG",
+      "Name": "Base Color: G",
+      "Description": "Base color color G."
+    },
+    {
+      "Field": "baseColorB",
+      "Name": "Base Color: B",
+      "Description": "Base color color B."
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseColorA",
+      "Name": "Base Color: Alpha",
+      "Description": "Base color override rate."
+    },
+    {
+      "Field": "metallic",
+      "Name": "Metallic: R",
+      "Description": "It's metallic."
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "Metallic: G",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "Metallic: B",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "metallicRate",
+      "Name": "Metallic Override Rate",
+      "Description": "Metallic override rate."
+    },
+    {
+      "Field": "shininessRate",
+      "Name": "Shininess Override Rate",
+      "Description": "Shininess override rate."
+    },
+    {
+      "Field": "shininess",
+      "Name": "Shininess",
+      "Description": "Shininess."
+    },
+    {
+      "Field": "reserve_4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "CHR_MODEL_PARAM_ST",
+  "Type": "CHR_MODEL_PARAM_ST",
+  "Name": "CHR_MODEL_PARAM_ST",
+  "Description": "Determines various parameters for character models.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modelMemoryType",
+      "Name": "Model Memory Type",
+      "Description": "Memory type used by model."
+    },
+    {
+      "Field": "texMemoryType",
+      "Name": "Texture Memory Type",
+      "Description": "Memory type used by model textures."
+    },
+    {
+      "Field": "cameraDitherFadeId",
+      "Name": "Camera Dither Fade ID",
+      "Description": "Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)"
+    },
+    {
+      "Field": "isNoRayTracing",
+      "Name": "No Raytracing",
+      "Description": "If OFF, then character model will be included in raytracing scene. If ON, then character is skipped."
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "Raytracing Culling Mode",
+      "Description": "Culling mode applied when drawing raytracing. If it is set to 'Auto', it will be the default value set in the program."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

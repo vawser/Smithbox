@@ -1,0 +1,53 @@
+{
+  "Param": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Type": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Name": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Description": "Determines the parameters relating the display of key assignments.",
+  "Fields": [
+    {
+      "Field": "textID",
+      "Name": "Text ID",
+      "Description": "If defined, this points to the one-line help text ID. If not, then the category name ID is used instead."
+    },
+    {
+      "Field": "key",
+      "Name": "Key",
+      "Description": "The user input key to be assigned. If not specified, it will be treated as a category display item."
+    },
+    {
+      "Field": "enableUnassign",
+      "Name": "Allow Unassignment",
+      "Description": "If ON, then this key can be unassigned."
+    },
+    {
+      "Field": "enablePadConfig",
+      "Name": "Allow Pad Configuration",
+      "Description": "If ON, then this key can be assigned to controller inputs."
+    },
+    {
+      "Field": "enableMouseConfig",
+      "Name": "Allow Mouse Configuration",
+      "Description": "If ON, then this key can be assigned to mouse inputs."
+    },
+    {
+      "Field": "group",
+      "Name": "Key Group",
+      "Description": "The group used for determining duplicate assignments. Keys cannot be duplicated in the same group"
+    },
+    {
+      "Field": "mappingTextID",
+      "Name": "Mapping Text ID",
+      "Description": "The item name to display in the operation list. 0 means it is not displayed."
+    },
+    {
+      "Field": "enableDispConfigMenu",
+      "Name": "Display in Configuration Menu",
+      "Description": "If ON, then this key is displayed in the key configuration menu."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

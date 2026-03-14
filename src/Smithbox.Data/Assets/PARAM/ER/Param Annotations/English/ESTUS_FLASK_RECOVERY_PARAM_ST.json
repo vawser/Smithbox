@@ -1,0 +1,113 @@
+{
+  "Param": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Type": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Name": "ESTUS_FLASK_RECOVERY_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "Host",
+      "Description": "Number of host est recovery"
+    },
+    {
+      "Field": "invadeOrb_None",
+      "Name": "Invasion Orb - None",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Umbasa",
+      "Name": "Invasion Orb - Gold",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Berserker",
+      "Name": "Invasion Orb - Berserker",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeOrb_Sinners",
+      "Name": "Invasion Orb - Sinner",
+      "Description": "The number of est recovery of the power of the orb whose invasion route is"
+    },
+    {
+      "Field": "invadeSign_None",
+      "Name": "Invasion Sign - None",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Umbasa",
+      "Name": "Invasion Sign - Gold",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Berserker",
+      "Name": "Invasion Sign - Berserker",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeSign_Sinners",
+      "Name": "Invasion Sign - Sinner",
+      "Description": "The number of est recovery of the power whose invasion route is a sign"
+    },
+    {
+      "Field": "invadeRing_Sinners",
+      "Name": "Invasion Ring - Sinner",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "invadeRing_Rosalia",
+      "Name": "Invasion Ring - Rosalia",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "invadeRing_Forest",
+      "Name": "Invasion Ring - Forest",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "coopSign_None",
+      "Name": "Coop Sign - None",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Umbasa",
+      "Name": "Coop Sign - Gold",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Berserker",
+      "Name": "Coop Sign - Berserker",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopSign_Sinners",
+      "Name": "Coop Sign - Sinner",
+      "Description": "The number of est recovery of the power whose cooperation route is a sign"
+    },
+    {
+      "Field": "coopRing_RedHunter",
+      "Name": "Coop Sign - Red Hunter",
+      "Description": "Cooperation route is the number of est recovery of the power of the ring"
+    },
+    {
+      "Field": "invadeRing_Anor",
+      "Name": "Invasion Ring - Darkmoon Blade",
+      "Description": "The number of est recovery of the power of the ring whose invasion route is"
+    },
+    {
+      "Field": "paramReplaceRate",
+      "Name": "Replacement Rate",
+      "Description": "Recovery number Parameter replacement rate"
+    },
+    {
+      "Field": "paramReplaceId",
+      "Name": "Replace ID",
+      "Description": "Recovery number Parameter replacement destination ID"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

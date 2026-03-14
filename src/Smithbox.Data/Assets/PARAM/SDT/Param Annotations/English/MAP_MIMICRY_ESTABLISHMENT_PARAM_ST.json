@@ -1,0 +1,73 @@
+{
+  "Param": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Type": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Name": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "mimicryEstablishment0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEstablishment1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEstablishment2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryBeginSfxId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicrySfxId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEndSfxId0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryBeginSfxId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicrySfxId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEndSfxId1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryBeginSfxId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicrySfxId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEndSfxId2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

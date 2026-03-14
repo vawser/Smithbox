@@ -1,0 +1,28 @@
+{
+  "Param": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Name": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Description": "Defines the cooldown times for summon signs. Unused in AC6.",
+  "Fields": [
+    {
+      "Field": "limitationTime_Normal",
+      "Name": "Limitation Time - Normal",
+      "Description": "Time limit [sec] (normal, dry fingerless)"
+    },
+    {
+      "Field": "limitationTime_NormalDriedFinger",
+      "Name": "Limitation Time - Normal (Dried Finger)",
+      "Description": "Time limit [sec] (normal / dry finger)"
+    },
+    {
+      "Field": "limitationTime_Guardian",
+      "Name": "Limitation Time - Guardian",
+      "Description": "Time limit [sec] (Map guardian, dry fingerless)"
+    },
+    {
+      "Field": "limitationTime_GuardianDriedFinger",
+      "Name": "Limitation Time - Guardian (Dried Finger)",
+      "Description": "Time limit [sec] (Map guardian / dry finger)"
+    }
+  ]
+}

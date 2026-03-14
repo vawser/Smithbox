@@ -1,0 +1,1313 @@
+{
+  "Param": "EQUIP_PARAM_PROTECTOR_ST",
+  "Type": "EQUIP_PARAM_PROTECTOR_ST",
+  "Name": "EQUIP_PARAM_PROTECTOR_ST",
+  "Description": "Armor",
+  "Fields": [
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)"
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "Wandering Equip ID",
+      "Description": "Replacement equipment ID for wandering ghosts."
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant Itemlot ID",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantBonuseneDropItemLotId",
+      "Name": "Vagrant Bonus Drop Itemlot ID",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Vagrant Enemy Drop Itemlot ID",
+      "Description": ""
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "Repair Price",
+      "Description": "Basic repair price"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Basic Price",
+      "Description": "Basic price"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]."
+    },
+    {
+      "Field": "residentSpEffectId",
+      "Name": "Resident SpEffect ID 1",
+      "Description": "Resident special effect ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Resident SpEffect ID 2",
+      "Description": "Resident special effect ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Resident SpEffect ID 3",
+      "Description": "Resident special effect ID3"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Upgrade Material ID",
+      "Description": "Material parameter ID required for weapon enhancement"
+    },
+    {
+      "Field": "partsDamageRate",
+      "Name": "Weak Parts Damage %",
+      "Description": "Part damage rate"
+    },
+    {
+      "Field": "correctSARecover",
+      "Name": "Poise Recovery Correction",
+      "Description": "Value added to poise recovery time (so negative values are better)."
+    },
+    {
+      "Field": "originEquipPro1",
+      "Name": "Origin Armor +0",
+      "Description": "Strengthening of this armor Original armor ID"
+    },
+    {
+      "Field": "originEquipPro2",
+      "Name": "Origin Armor +1",
+      "Description": "Strengthening this armor Original armor ID1"
+    },
+    {
+      "Field": "originEquipPro3",
+      "Name": "Origin Armor +2",
+      "Description": "Strengthening this armor Original armor ID2"
+    },
+    {
+      "Field": "originEquipPro4",
+      "Name": "Origin Armor +3",
+      "Description": "Strengthening this armor Original armor ID3"
+    },
+    {
+      "Field": "originEquipPro5",
+      "Name": "Origin Armor +4",
+      "Description": "Strengthening this armor Original armor ID4"
+    },
+    {
+      "Field": "originEquipPro6",
+      "Name": "Origin Armor +5",
+      "Description": "Strengthening this armor Original armor ID5"
+    },
+    {
+      "Field": "originEquipPro7",
+      "Name": "Origin Armor +6",
+      "Description": "Strengthening this armor Original armor ID6"
+    },
+    {
+      "Field": "originEquipPro8",
+      "Name": "Origin Armor +7",
+      "Description": "Strengthening this armor Original armor ID7"
+    },
+    {
+      "Field": "originEquipPro9",
+      "Name": "Origin Armor +8",
+      "Description": "Strengthening this armor Original armor ID8"
+    },
+    {
+      "Field": "originEquipPro10",
+      "Name": "Origin Armor +9",
+      "Description": "Strengthening this armor Original armor ID9"
+    },
+    {
+      "Field": "originEquipPro11",
+      "Name": "Origin Armor +10",
+      "Description": "Strengthening this armor Original armor ID10"
+    },
+    {
+      "Field": "originEquipPro12",
+      "Name": "Origin Armor +11",
+      "Description": "Strengthening this armor Original armor ID11"
+    },
+    {
+      "Field": "originEquipPro13",
+      "Name": "Origin Armor +12",
+      "Description": "Strengthening this armor Original armor ID12"
+    },
+    {
+      "Field": "originEquipPro14",
+      "Name": "Origin Armor +13",
+      "Description": "Strengthening this armor Original armor ID13"
+    },
+    {
+      "Field": "originEquipPro15",
+      "Name": "Origin Armor +14",
+      "Description": "Strengthening this armor Original armor ID14"
+    },
+    {
+      "Field": "originEquipPro16",
+      "Name": "Origin Armor +15",
+      "Description": "Strengthening this armor Original armor ID15"
+    },
+    {
+      "Field": "faceScaleM_ScaleX",
+      "Name": "Facescale - Male - Scale X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_ScaleZ",
+      "Name": "Facescale - Male - Scale Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxX",
+      "Name": "Facescale - Male - Max X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxZ",
+      "Name": "Facescale - Male - Max Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleX",
+      "Name": "Facescale - Female - Scale X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleZ",
+      "Name": "Facescale - Female - Scale Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxX",
+      "Name": "Facescale - Female - Max X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxZ",
+      "Name": "Facescale - Female - Max Z",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWC ID",
+      "Description": "QWC parameter ID"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Equip Model ID",
+      "Description": "Equipment model number."
+    },
+    {
+      "Field": "iconIdM",
+      "Name": "Icon ID - Male",
+      "Description": "Men's menu icon ID."
+    },
+    {
+      "Field": "iconIdF",
+      "Name": "Icon ID - Female",
+      "Description": "Women's menu icon ID."
+    },
+    {
+      "Field": "Knockback",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "KnockbackBounceRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "Initial durability."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "Max Durability",
+      "Description": "New durability."
+    },
+    {
+      "Field": "saDurability",
+      "Name": "Poise Durability",
+      "Description": "DS1 Poise. Requires SpEffect with state info 120 such as 6300.\nCan be displayed."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Defence Flick Power",
+      "Description": "Determines capability to passively deflect incoming attacks similar to guarding.\nValue given is modified depending on slot.\nHead: Value / 3.65\nBody: Value / 2.7\nArms: Value / 3.35\nLegs: Value / 3.35"
+    },
+    {
+      "Field": "defensePhys",
+      "Name": "Defense - Physical",
+      "Description": "Affects all 4 physical types."
+    },
+    {
+      "Field": "defenseMagic",
+      "Name": "Defense - Magic",
+      "Description": ""
+    },
+    {
+      "Field": "defenseFire",
+      "Name": "Defense - Fire",
+      "Description": ""
+    },
+    {
+      "Field": "defenseThunder",
+      "Name": "Defense - Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "Defense - Slash",
+      "Description": "Does nothing, but value can be displayed."
+    },
+    {
+      "Field": "defenseBlow",
+      "Name": "Defense - Strike",
+      "Description": "Does nothing, but value can be displayed."
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "Defense - Thrust",
+      "Description": "Does nothing, but value can be displayed."
+    },
+    {
+      "Field": "resistPoison",
+      "Name": "Resist - Poison",
+      "Description": ""
+    },
+    {
+      "Field": "resistToxic",
+      "Name": "Resist - Toxic",
+      "Description": "Not displayed. Assumed to be same as poison resistance."
+    },
+    {
+      "Field": "resistBlood",
+      "Name": "Resist - Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "resistCurse",
+      "Name": "Resist - Curse",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceTypeId",
+      "Name": "Reinforce Type ID",
+      "Description": "Enhanced type ID"
+    },
+    {
+      "Field": "compTrophySedId",
+      "Name": "Achievement ID",
+      "Description": ""
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": ""
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "Knockback Param ID",
+      "Description": "ID of the parameter used for knockback"
+    },
+    {
+      "Field": "FlickDamageCutRate",
+      "Name": "Flick Damage %",
+      "Description": "Determines percentage of damage reduced when an attack is deflected by flick.\nValue given is modified depending on slot.\nHead: Value / 3.65\nBody: Value / 2.7\nArms: Value / 3.35\nLegs: Value / 3.35"
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Equip Model Category",
+      "Description": "Equipment model type."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Equip Model Gender",
+      "Description": "Gender of equipment model."
+    },
+    {
+      "Field": "protectorCategory",
+      "Name": "Armor Category",
+      "Description": "Armor category."
+    },
+    {
+      "Field": "defenseMaterial",
+      "Name": "Hit Sound FX",
+      "Description": "Type of sound effect generated when this armor is hit."
+    },
+    {
+      "Field": "defenseMaterialSfx",
+      "Name": "Hit Visual FX",
+      "Description": "Type of visual effect generated when this armor is hit."
+    },
+    {
+      "Field": "partsDmgType",
+      "Name": "Parts Damage Type",
+      "Description": "Set the attack type to judge the part damage"
+    },
+    {
+      "Field": "defenseMaterial_Weak",
+      "Name": "Weak Spot Hit Sound FX",
+      "Description": ""
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak",
+      "Name": "Weak Spot Hit Visual FX",
+      "Description": ""
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Can Deposit",
+      "Description": "Can you leave it in the warehouse?"
+    },
+    {
+      "Field": "headEquip",
+      "Name": "Is Head Equipment",
+      "Description": "Is it head equipment?"
+    },
+    {
+      "Field": "bodyEquip",
+      "Name": "Is Body Equipment",
+      "Description": "Is it torso equipment?"
+    },
+    {
+      "Field": "armEquip",
+      "Name": "Is Arm Equipment",
+      "Description": "Is it arm equipment?"
+    },
+    {
+      "Field": "legEquip",
+      "Name": "Is Leg Equipment",
+      "Description": "Is it leg equipment?"
+    },
+    {
+      "Field": "useFaceScale",
+      "Name": "Use Facescale",
+      "Description": "Whether to use a face scale"
+    },
+    {
+      "Field": "InvisibleFlag00",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag02",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag07",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag25",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag26",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag27",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag28",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag29",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag30",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag31",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag32",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag33",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag34",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag35",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag36",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag37",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag38",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag39",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag40",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag41",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "InvisibleFlag47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Disable Multiplayer Sharing",
+      "Description": "Prevents item from appearing to other players when dropped."
+    },
+    {
+      "Field": "simpleModelForDlc1",
+      "Name": "Simple Model for DLC1",
+      "Description": "Is there a simple model for DLC?"
+    },
+    {
+      "Field": "isGuestDrop0",
+      "Name": "Can Discard",
+      "Description": ""
+    },
+    {
+      "Field": "isGuestDrop1",
+      "Name": "Can Drop",
+      "Description": ""
+    },
+    {
+      "Field": "showLogCondType",
+      "Name": "Item Acquisition Log Condition Type",
+      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+    },
+    {
+      "Field": "showDialogCondType",
+      "Name": "Item Acquisition Dialog Condition Type ",
+      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+    },
+    {
+      "Field": "Unk2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unk5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PhysDamageCutRate",
+      "Name": "Absorption - Physical",
+      "Description": ""
+    },
+    {
+      "Field": "SlashDamageCutRate",
+      "Name": "Absorption - Slash",
+      "Description": ""
+    },
+    {
+      "Field": "StrikeDamageCutRate",
+      "Name": "Absorption - Strike",
+      "Description": ""
+    },
+    {
+      "Field": "ThrustDamageCutRate",
+      "Name": "Absorption - Thrust",
+      "Description": ""
+    },
+    {
+      "Field": "MagicDamageCutRate",
+      "Name": "Absorption - Magic",
+      "Description": ""
+    },
+    {
+      "Field": "FireDamageCutRate",
+      "Name": "Absorption - Fire",
+      "Description": ""
+    },
+    {
+      "Field": "ThunderDamageCutRate",
+      "Name": "Absorption - Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "defenseMaterialSfx1",
+      "Name": "Defence Material SFX 1",
+      "Description": "For SFX when moving / defending. 1"
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak1",
+      "Name": "Defence Material SFX - Weakness 1",
+      "Description": "For SFX when weak points are damaged 1"
+    },
+    {
+      "Field": "defenseMaterial1",
+      "Name": "Defence Material - SE 1",
+      "Description": "For SE when moving / defending. 1"
+    },
+    {
+      "Field": "defenseMaterial_Weak1",
+      "Name": "Defence Material SE - Weakness 1",
+      "Description": "For SE when weak points are damaged 1"
+    },
+    {
+      "Field": "defenseMaterialSfx2",
+      "Name": "Defence Material SFX 2",
+      "Description": "For SFX when moving / defending. 2"
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak2",
+      "Name": "Defence Material SFX - Weakness 2",
+      "Description": "2 for SFX when weak points are damaged"
+    },
+    {
+      "Field": "footMaterialSe",
+      "Name": "Foot Material SE",
+      "Description": "Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to."
+    },
+    {
+      "Field": "defenseMaterial_Weak2",
+      "Name": "Defence Material SE - Weakness 2",
+      "Description": "2 for SE when weak points are damaged"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId1",
+      "Name": "Auto Foot Effect Decal Base ID",
+      "Description": "Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs."
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "Toughness Absorption",
+      "Description": "Toughness version cut rate"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DarkDamageCutRate",
+      "Name": "Absorption - Dark",
+      "Description": ""
+    },
+    {
+      "Field": "defenseDark",
+      "Name": "Defense - Dark",
+      "Description": ""
+    },
+    {
+      "Field": "Unk6",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "Unk7",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "Unk8",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "postureControlId",
+      "Name": "Posture Control ID",
+      "Description": "Attitude control ID (torso)"
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Shop Price",
+      "Description": ""
+    },
+    {
+      "Field": "resistFrost",
+      "Name": "Resist - Frost",
+      "Description": ""
+    },
+    {
+      "Field": "Mask00",
+      "Name": "Mask 00 - Upper Face",
+      "Description": ""
+    },
+    {
+      "Field": "Mask01",
+      "Name": "Mask 01 - Lower Face",
+      "Description": ""
+    },
+    {
+      "Field": "Mask02",
+      "Name": "Mask 02 - Jaw/Beard",
+      "Description": ""
+    },
+    {
+      "Field": "Mask03",
+      "Name": "Mask 03 - Head/Back of head",
+      "Description": ""
+    },
+    {
+      "Field": "Mask04",
+      "Name": "Mask 04 - Upper Neck",
+      "Description": ""
+    },
+    {
+      "Field": "Mask05",
+      "Name": "Mask 05 - Lower Neck",
+      "Description": ""
+    },
+    {
+      "Field": "Mask06",
+      "Name": "Mask 06 - Chest",
+      "Description": ""
+    },
+    {
+      "Field": "Mask07",
+      "Name": "Mask 07 - Chest Strap",
+      "Description": ""
+    },
+    {
+      "Field": "Mask08",
+      "Name": "Mask 08 - Shoulders",
+      "Description": ""
+    },
+    {
+      "Field": "Mask09",
+      "Name": "Mask 09 - Elbows",
+      "Description": ""
+    },
+    {
+      "Field": "Mask10",
+      "Name": "Mask 10 - Wrists",
+      "Description": ""
+    },
+    {
+      "Field": "Mask11",
+      "Name": "Mask 11 - Hands",
+      "Description": ""
+    },
+    {
+      "Field": "Mask12",
+      "Name": "Mask 12 - Waist",
+      "Description": ""
+    },
+    {
+      "Field": "Mask13",
+      "Name": "Mask 13 - Pants",
+      "Description": ""
+    },
+    {
+      "Field": "Mask14",
+      "Name": "Mask 14 - Calves",
+      "Description": ""
+    },
+    {
+      "Field": "Mask15",
+      "Name": "Mask 15 - Shins",
+      "Description": ""
+    },
+    {
+      "Field": "Mask16",
+      "Name": "Mask 16 - Feet",
+      "Description": ""
+    },
+    {
+      "Field": "Mask17",
+      "Name": "Mask 17 - Bra",
+      "Description": ""
+    },
+    {
+      "Field": "Mask18",
+      "Name": "Mask 18 - Pants Knot",
+      "Description": ""
+    },
+    {
+      "Field": "Mask19",
+      "Name": "Mask 19 - Pants Belt",
+      "Description": ""
+    },
+    {
+      "Field": "Mask20",
+      "Name": "Mask 20 - Gauntlet Short",
+      "Description": ""
+    },
+    {
+      "Field": "Mask21",
+      "Name": "Mask 21 - Gauntlet Long",
+      "Description": ""
+    },
+    {
+      "Field": "Mask22",
+      "Name": "Mask 22",
+      "Description": ""
+    },
+    {
+      "Field": "Mask23",
+      "Name": "Mask 23",
+      "Description": ""
+    },
+    {
+      "Field": "Mask24",
+      "Name": "Mask 24",
+      "Description": ""
+    },
+    {
+      "Field": "Mask25",
+      "Name": "Mask 25 - Gauntlet Sleeve Short",
+      "Description": ""
+    },
+    {
+      "Field": "Mask26",
+      "Name": "Mask 26 - Gauntlet Sleeve Long",
+      "Description": ""
+    },
+    {
+      "Field": "Mask27",
+      "Name": "Mask 27 - Armor Sleeve Short",
+      "Description": ""
+    },
+    {
+      "Field": "Mask28",
+      "Name": "Mask 28 - Armor Sleeve Long",
+      "Description": ""
+    },
+    {
+      "Field": "Mask29",
+      "Name": "Mask 29",
+      "Description": ""
+    },
+    {
+      "Field": "Mask30",
+      "Name": "Mask 30 - Armor Neck Compressed",
+      "Description": ""
+    },
+    {
+      "Field": "Mask31",
+      "Name": "Mask 31 - Armor Neck Normal",
+      "Description": ""
+    },
+    {
+      "Field": "Mask32",
+      "Name": "Mask 32 - Armor Scarf Small",
+      "Description": ""
+    },
+    {
+      "Field": "Mask33",
+      "Name": "Mask 33 - Armor Scarf Normal",
+      "Description": ""
+    },
+    {
+      "Field": "Mask34",
+      "Name": "Mask 34 - Armor Lowered Hood",
+      "Description": ""
+    },
+    {
+      "Field": "Mask35",
+      "Name": "Mask 35 - Armor Raised Hood",
+      "Description": ""
+    },
+    {
+      "Field": "Mask36",
+      "Name": "Mask 36",
+      "Description": ""
+    },
+    {
+      "Field": "Mask37",
+      "Name": "Mask 37",
+      "Description": ""
+    },
+    {
+      "Field": "Mask38",
+      "Name": "Mask 38",
+      "Description": ""
+    },
+    {
+      "Field": "Mask39",
+      "Name": "Mask 39",
+      "Description": ""
+    },
+    {
+      "Field": "Mask40",
+      "Name": "Mask 40",
+      "Description": ""
+    },
+    {
+      "Field": "Mask41",
+      "Name": "Mask 41 - Head Cowl Tucked In",
+      "Description": ""
+    },
+    {
+      "Field": "Mask42",
+      "Name": "Mask 42 - Cowl while Naked",
+      "Description": ""
+    },
+    {
+      "Field": "Mask43",
+      "Name": "Mask 43 - Cowl with Armor",
+      "Description": ""
+    },
+    {
+      "Field": "Mask44",
+      "Name": "Mask 44",
+      "Description": ""
+    },
+    {
+      "Field": "Mask45",
+      "Name": "Mask 45",
+      "Description": ""
+    },
+    {
+      "Field": "Mask46",
+      "Name": "Mask 46",
+      "Description": ""
+    },
+    {
+      "Field": "Mask47",
+      "Name": "Mask 47",
+      "Description": ""
+    },
+    {
+      "Field": "Mask48",
+      "Name": "Mask 48",
+      "Description": ""
+    },
+    {
+      "Field": "Mask49",
+      "Name": "Mask 49",
+      "Description": ""
+    },
+    {
+      "Field": "Mask50",
+      "Name": "Mask 50",
+      "Description": ""
+    },
+    {
+      "Field": "Mask51",
+      "Name": "Mask 51 - Small Legs",
+      "Description": ""
+    },
+    {
+      "Field": "Mask52",
+      "Name": "Mask 52 - Normal Legs",
+      "Description": ""
+    },
+    {
+      "Field": "Mask53",
+      "Name": "Mask 53",
+      "Description": ""
+    },
+    {
+      "Field": "Mask54",
+      "Name": "Mask 54 - Skirt Top Small",
+      "Description": ""
+    },
+    {
+      "Field": "Mask55",
+      "Name": "Mask 55 - Skirt Top Normal",
+      "Description": ""
+    },
+    {
+      "Field": "Mask56",
+      "Name": "Mask 56 - Leg Armor",
+      "Description": ""
+    },
+    {
+      "Field": "Mask57",
+      "Name": "Mask 57 - Small Skirt",
+      "Description": ""
+    },
+    {
+      "Field": "Mask58",
+      "Name": "Mask 58 - Normal Skirt",
+      "Description": ""
+    },
+    {
+      "Field": "Mask59",
+      "Name": "Mask 59",
+      "Description": ""
+    },
+    {
+      "Field": "Mask60",
+      "Name": "Mask 60 - Hair Scalp",
+      "Description": ""
+    },
+    {
+      "Field": "Mask61",
+      "Name": "Mask 61 - Hair Back (In)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask62",
+      "Name": "Mask 62 - Hair Back (Out)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask63",
+      "Name": "Mask 63 - Hair Top (In)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask64",
+      "Name": "Mask 64 - Hair Top (Out)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask65",
+      "Name": "Mask 65 - Hair Front (In)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask66",
+      "Name": "Mask 66 - Hair Front (Out)",
+      "Description": ""
+    },
+    {
+      "Field": "Mask67",
+      "Name": "Mask 67 - Hair Sides",
+      "Description": ""
+    },
+    {
+      "Field": "Mask68",
+      "Name": "Mask 68 - Hair Back",
+      "Description": ""
+    },
+    {
+      "Field": "Mask69",
+      "Name": "Mask 69 - Hair Ponytail",
+      "Description": ""
+    },
+    {
+      "Field": "Mask70",
+      "Name": "Mask 70",
+      "Description": ""
+    },
+    {
+      "Field": "Mask71",
+      "Name": "Mask 71",
+      "Description": ""
+    },
+    {
+      "Field": "Mask72",
+      "Name": "Mask 72",
+      "Description": ""
+    },
+    {
+      "Field": "Mask73",
+      "Name": "Mask 73",
+      "Description": ""
+    },
+    {
+      "Field": "Mask74",
+      "Name": "Mask 74",
+      "Description": ""
+    },
+    {
+      "Field": "Mask75",
+      "Name": "Mask 75",
+      "Description": ""
+    },
+    {
+      "Field": "Mask76",
+      "Name": "Mask 76",
+      "Description": ""
+    },
+    {
+      "Field": "Mask77",
+      "Name": "Mask 77",
+      "Description": ""
+    },
+    {
+      "Field": "Mask78",
+      "Name": "Mask 78 - Back of Torso",
+      "Description": ""
+    },
+    {
+      "Field": "Mask79",
+      "Name": "Mask 79 - Push Up Breasts",
+      "Description": ""
+    },
+    {
+      "Field": "Mask80",
+      "Name": "Mask 80",
+      "Description": ""
+    },
+    {
+      "Field": "Mask81",
+      "Name": "Mask 81",
+      "Description": ""
+    },
+    {
+      "Field": "Mask82",
+      "Name": "Mask 82",
+      "Description": ""
+    },
+    {
+      "Field": "Mask83",
+      "Name": "Mask 83",
+      "Description": ""
+    },
+    {
+      "Field": "Mask84",
+      "Name": "Mask 84",
+      "Description": ""
+    },
+    {
+      "Field": "Mask85",
+      "Name": "Mask 85",
+      "Description": ""
+    },
+    {
+      "Field": "Mask86",
+      "Name": "Mask 86",
+      "Description": ""
+    },
+    {
+      "Field": "Mask87",
+      "Name": "Mask 87",
+      "Description": ""
+    },
+    {
+      "Field": "Mask88",
+      "Name": "Mask 88",
+      "Description": ""
+    },
+    {
+      "Field": "Mask89",
+      "Name": "Mask 89",
+      "Description": ""
+    },
+    {
+      "Field": "Mask90",
+      "Name": "Mask 90",
+      "Description": ""
+    },
+    {
+      "Field": "Mask91",
+      "Name": "Mask 91",
+      "Description": ""
+    },
+    {
+      "Field": "Mask92",
+      "Name": "Mask 92",
+      "Description": ""
+    },
+    {
+      "Field": "Mask93",
+      "Name": "Mask 93",
+      "Description": ""
+    },
+    {
+      "Field": "Mask94",
+      "Name": "Mask 94",
+      "Description": ""
+    },
+    {
+      "Field": "Mask95",
+      "Name": "Mask 95",
+      "Description": ""
+    },
+    {
+      "Field": "Mask96",
+      "Name": "Mask 96",
+      "Description": ""
+    },
+    {
+      "Field": "Mask97",
+      "Name": "Mask 97",
+      "Description": ""
+    }
+  ]
+}

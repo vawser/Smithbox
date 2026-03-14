@@ -1,0 +1,113 @@
+{
+  "Param": "UPPER_ARM_PARAM_ST",
+  "Type": "UPPER_ARM_PARAM_ST",
+  "Name": "UPPER_ARM_PARAM_ST",
+  "Description": "Chestpiece Arm Position Correction",
+  "Fields": [
+    {
+      "Field": "ArmZ0",
+      "Name": "a00 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY0",
+      "Name": "a00 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ1",
+      "Name": "a02 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY1",
+      "Name": "a02 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ2",
+      "Name": "a03 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY2",
+      "Name": "a03 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ3",
+      "Name": "a10 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY3",
+      "Name": "a10 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ4",
+      "Name": "a11 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY4",
+      "Name": "a11 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ5",
+      "Name": "a12 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY5",
+      "Name": "a12 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ6",
+      "Name": "a13 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY6",
+      "Name": "a13 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ7",
+      "Name": "a14 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY7",
+      "Name": "a14 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ8",
+      "Name": "a15 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY8",
+      "Name": "a15 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmZ9",
+      "Name": "a16 - Arm Out Angle",
+      "Description": ""
+    },
+    {
+      "Field": "ArmXY9",
+      "Name": "a16 - Arm Forward Angle",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "Param": "ENV_OBJ_LOT_PARAM_ST",
+  "Type": "ENV_OBJ_LOT_PARAM_ST",
+  "Name": "ENV_OBJ_LOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AssetId_0",
+      "Name": "Asset ID [0]",
+      "Description": "AssetId_0 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_1",
+      "Name": "Asset ID [1]",
+      "Description": "AssetId_1 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_2",
+      "Name": "Asset ID [2]",
+      "Description": "AssetId_2 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_3",
+      "Name": "Asset ID [3]",
+      "Description": "AssetId_3 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_4",
+      "Name": "Asset ID [4]",
+      "Description": "AssetId_4 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_5",
+      "Name": "Asset ID [5]",
+      "Description": "AssetId_5 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_6",
+      "Name": "Asset ID [6]",
+      "Description": "AssetId_6 (-1 Ignore)"
+    },
+    {
+      "Field": "AssetId_7",
+      "Name": "Asset ID [7]",
+      "Description": "AssetId_7 (-1 Ignore)"
+    },
+    {
+      "Field": "CreateWeight_0",
+      "Name": "Create Weight [0]",
+      "Description": "Appearance ratio point (weight) _0 0 is ignored"
+    },
+    {
+      "Field": "CreateWeight_1",
+      "Name": "Create Weight [1]",
+      "Description": "Appearance ratio point (weight) _1"
+    },
+    {
+      "Field": "CreateWeight_2",
+      "Name": "Create Weight [2]",
+      "Description": "Appearance ratio point (weight) _2"
+    },
+    {
+      "Field": "CreateWeight_3",
+      "Name": "Create Weight [3]",
+      "Description": "Appearance ratio point (weight) _3"
+    },
+    {
+      "Field": "CreateWeight_4",
+      "Name": "Create Weight [4]",
+      "Description": "Appearance ratio point (weight) _4"
+    },
+    {
+      "Field": "CreateWeight_5",
+      "Name": "Create Weight [5]",
+      "Description": "Appearance ratio point (weight) _5"
+    },
+    {
+      "Field": "CreateWeight_6",
+      "Name": "Create Weight [6]",
+      "Description": "Appearance ratio point (weight) _6"
+    },
+    {
+      "Field": "CreateWeight_7",
+      "Name": "Create Weight [7]",
+      "Description": "Appearance ratio point (weight) _7"
+    },
+    {
+      "Field": "Reserve_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

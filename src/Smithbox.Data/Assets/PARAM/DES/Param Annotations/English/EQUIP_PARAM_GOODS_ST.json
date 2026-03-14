@@ -1,0 +1,183 @@
+{
+  "Param": "EQUIP_PARAM_GOODS_ST",
+  "Type": "EQUIP_PARAM_GOODS_ST",
+  "Name": "EQUIP_PARAM_GOODS_ST",
+  "Description": "Determines the parameters of goods.",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon ID used for this item."
+    },
+    {
+      "Field": "goodsType",
+      "Name": "Goods Type",
+      "Description": "The type of item."
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight. In kilograms."
+    },
+    {
+      "Field": "modelId",
+      "Name": "Model ID",
+      "Description": "Model ID used for this item."
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Price",
+      "Description": "Soul cost of reinforcement. See ShopLineupParam for shop prices."
+    },
+    {
+      "Field": "goodsCategory",
+      "Name": "Item Category",
+      "Description": "Category for this item."
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "goodsUseAnim",
+      "Name": "Item Use Animation",
+      "Description": "Set the animation to play when using the item."
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Behavior action ID applied when item is used."
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Enable as Host Player",
+      "Description": "If ON, this item is usable if the user is a host player."
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Enable as Gray Phantom",
+      "Description": "If ON, this item is usable if the user is a gray phantom player."
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Enable as White Phantom",
+      "Description": "If ON, this item is usable if the user is a white phantom player."
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Enable as Black Phantom",
+      "Description": "If ON, this item is usable if the user is a black phantom player."
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "Enable in Multiplayer",
+      "Description": "If ON, this item is usable in a multiplayer session."
+    },
+    {
+      "Field": "disable_offline",
+      "Name": "Enable only in Multiplayer",
+      "Description": "If ON, this item is only usable if in a multiplayer session."
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEquip",
+      "Name": "Is Equippable",
+      "Description": "If ON, this item can be equipped."
+    },
+    {
+      "Field": "isConsume",
+      "Name": "Is Consumed",
+      "Description": "If ON, this item can be consumed. This will remove one instance of the item upon consumption."
+    },
+    {
+      "Field": "isAutoEquip",
+      "Name": "Is Automatically Equipped",
+      "Description": "If ON, this item is automaticlly equipped when picked up."
+    },
+    {
+      "Field": "isEstablishment",
+      "Name": "Is Guidance Item",
+      "Description": "If ON, this item is a stationary item."
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can Drop",
+      "Description": "If ON, this item can be dropped."
+    },
+    {
+      "Field": "isDisableHand",
+      "Name": "Disable if Right Hand is Empty",
+      "Description": "If ON, this item cannot be used when the right-handed weapon is empty."
+    },
+    {
+      "Field": "pad_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Determines ordering in menu."
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "pad_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The world tendency ID to use for this item."
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "Is Enhancement Source",
+      "Description": "If ON, this item is used to apply an 'enhancement' to equipment or self."
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "Interaction Menu Type",
+      "Description": "Menu type that opens when using an item."
+    },
+    {
+      "Field": "pad_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Message Text ID",
+      "Description": "Message ID used when displaying the YesNo dialog."
+    }
+  ]
+}

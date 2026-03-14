@@ -1,0 +1,108 @@
+{
+  "Param": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Type": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Name": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "weatherSunny",
+      "Name": "Appear during Weather: Sunny",
+      "Description": "Will it appear when the weather is sunny?"
+    },
+    {
+      "Field": "weatherClearSky",
+      "Name": "Appear during Weather: Clear Sky",
+      "Description": "Will it appear when the weather is clear?"
+    },
+    {
+      "Field": "weatherWeakCloudy",
+      "Name": "Appear during Weather: Light Cloud",
+      "Description": "Will it appear when the weather is lightly cloudy?"
+    },
+    {
+      "Field": "weatherCloudy",
+      "Name": "Appear during Weather: Cloud",
+      "Description": "Will it appear when the weather is cloudy?"
+    },
+    {
+      "Field": "weatherRain",
+      "Name": "Appear during Weather: Rain",
+      "Description": "Will it appear when the weather is rainy?"
+    },
+    {
+      "Field": "weatherHeavyRain",
+      "Name": "Appear during Weather: Heavy Rain",
+      "Description": "Will it appear when the weather is heavy rain?"
+    },
+    {
+      "Field": "weatherStorm",
+      "Name": "Appear during Weather: Storm",
+      "Description": "Will it appear when the weather is stormy?"
+    },
+    {
+      "Field": "weatherStormForBattle",
+      "Name": "Appear during Weather: Storm for Battle",
+      "Description": "Will it appear when the weather is storm (for combat with the descendants of the guardian)?"
+    },
+    {
+      "Field": "weatherSnow",
+      "Name": "Appear during Weather: Snow",
+      "Description": "Will it appear when the weather is snow?"
+    },
+    {
+      "Field": "weatherHeavySnow",
+      "Name": "Appear during Weather: Heavy Snow",
+      "Description": "Will it appear when the weather is heavy snow?"
+    },
+    {
+      "Field": "weatherFog",
+      "Name": "Appear during Weather: Fog",
+      "Description": "Will it appear when the weather is fog?"
+    },
+    {
+      "Field": "weatherHeavyFog",
+      "Name": "Appear during Weather: Heavy Fog",
+      "Description": "Will it appear when the weather is dense fog?"
+    },
+    {
+      "Field": "weatherHeavyFogRain",
+      "Name": "Appear during Weather: Heavy Fog and Rain",
+      "Description": "Does it appear when the weather is dense fog (rain)?"
+    },
+    {
+      "Field": "weatherSandStorm",
+      "Name": "Appear during Weather: Sandstorm",
+      "Description": "Will it appear when the weather is a sandstorm?"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "timeStartHour",
+      "Name": "Time: Start Hour",
+      "Description": "Appearance start in game time_hour"
+    },
+    {
+      "Field": "timeStartMin",
+      "Name": "Time: Start Minute",
+      "Description": "Appearance start in-game time_minutes"
+    },
+    {
+      "Field": "timeEndHour",
+      "Name": "Time: End Hour",
+      "Description": "Appearance end in game time_hour"
+    },
+    {
+      "Field": "timeEndMin",
+      "Name": "Time: End Minute",
+      "Description": "End of appearance In-game time_minutes"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

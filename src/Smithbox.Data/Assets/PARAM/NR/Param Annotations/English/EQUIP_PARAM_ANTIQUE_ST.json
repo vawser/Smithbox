@@ -1,0 +1,108 @@
+{
+  "Param": "EQUIP_PARAM_ANTIQUE_ST",
+  "Type": "EQUIP_PARAM_ANTIQUE_ST",
+  "Name": "EQUIP_PARAM_ANTIQUE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "relicColor",
+      "Name": "Relic Color",
+      "Description": "The color this relic slots into."
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "Sort Group ID",
+      "Description": ""
+    },
+    {
+      "Field": "isSalable",
+      "Name": "Is Salable",
+      "Description": "Determines if item can be sold"
+    },
+    {
+      "Field": "isDeepRelic",
+      "Name": "Is Depths Relic",
+      "Description": "Determines if relic goes in standard or depths slots"
+    },
+    {
+      "Field": "colorIcon",
+      "Name": "Use Color Icon",
+      "Description": "Displays the relic's color as an icon if true"
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId_unk",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_1",
+      "Name": "Attached Effect Table: 1",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_2",
+      "Name": "Attached Effect Table: 2",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "attachEffectTableId_3",
+      "Name": "Attached Effect Table: 3",
+      "Description": "The attached effect table to use."
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon for relic"
+    },
+    {
+      "Field": "attachEffectTableId_curse1",
+      "Name": "Attached Effect Table: Curse 1",
+      "Description": "The attached effect table to use for a cursed effect."
+    },
+    {
+      "Field": "attachEffectTableId_curse2",
+      "Name": "Attached Effect Table: Curse 2",
+      "Description": "The attached effect table to use for a cursed effect."
+    },
+    {
+      "Field": "attachEffectTableId_curse3",
+      "Name": "Attached Effect Table: Curse 3",
+      "Description": "The attached effect table to use for a cursed effect."
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

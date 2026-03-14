@@ -1,0 +1,63 @@
+{
+  "Param": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Type": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Name": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "horizontalVelocityScale",
+      "Name": "Horizontal Velocity Scale",
+      "Description": "The percentage of the current horizontal velocity that should be retained. 1.0 means current velocity remains as is."
+    },
+    {
+      "Field": "verticalVelocityScale",
+      "Name": "Vertical Velocity Scale",
+      "Description": "The percentage of the current vertical velocity that should be retained. 1.0 means current velocity remains as is."
+    },
+    {
+      "Field": "horizontalVelocityChange",
+      "Name": "Horizontal Velocity Change",
+      "Description": "The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Horizontal Velocity Scale. In metres per second."
+    },
+    {
+      "Field": "verticalVelocityChange",
+      "Name": "Vertical Velocity Change",
+      "Description": "The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Vertical Velocity Scale. In metres per second."
+    },
+    {
+      "Field": "horizontalVelocityAngle",
+      "Name": "Horizontal Velocity Change Direction",
+      "Description": "The velocity change direction for Horizontal Velocity Change when the front of the character is 0 degrees."
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fallControlParamId",
+      "Name": "Fall Control ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

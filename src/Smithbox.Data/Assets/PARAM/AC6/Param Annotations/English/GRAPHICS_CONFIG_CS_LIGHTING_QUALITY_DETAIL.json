@@ -1,0 +1,33 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_LIGHTING_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_LIGHTING_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_LIGHTING_QUALITY_DETAIL",
+  "Description": "Determines the parameters of each lighting quality level.",
+  "Fields": [
+    {
+      "Field": "localLightDistFactor",
+      "Name": "Local Light: Distance Factor",
+      "Description": "The player local light's effective distance coefficient (smaller, it disappears at a short distance)"
+    },
+    {
+      "Field": "localLightShadowEnabled",
+      "Name": "Local Light: Enable Shadows",
+      "Description": "If ON, the player local light can create shadows."
+    },
+    {
+      "Field": "forwardPassLightingEnabled",
+      "Name": "Local Light: Enable Forward Pass Lighting",
+      "Description": "If ON, forward pass lighting is used. this means each object is drawn one by one. Whereas deferred rendering means all information for each object is rendered into multiple buffers first."
+    },
+    {
+      "Field": "localLightShadowSpecLevelMax",
+      "Name": "Local Light: Shadow Specular Level",
+      "Description": "The local light's maximum shadow specular level. The larger the value, the more light sources will be shadowed."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

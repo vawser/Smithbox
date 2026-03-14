@@ -1,0 +1,68 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "All Npc Dialogue Data",
+  "Fields": [
+    {
+      "Field": "msgId",
+      "Name": "Male - Message ID",
+      "Description": "PC Gender is Male: Specify Message-> Menu"
+    },
+    {
+      "Field": "voiceId",
+      "Name": "Male - Voice ID",
+      "Description": "PC Gender is Male: Specify Voice-> Sound"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "Motion Trigger - SpEffect ID [0]",
+      "Description": "Specify special effects-> Character"
+    },
+    {
+      "Field": "motionId0",
+      "Name": "Motion ID [0]",
+      "Description": "Specify motion-> Character"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Motion Trigger - SpEffect ID [1]",
+      "Description": "Specify special effects-> Character"
+    },
+    {
+      "Field": "motionId1",
+      "Name": "Motion ID [1]",
+      "Description": "Specify motion-> Character"
+    },
+    {
+      "Field": "returnPos",
+      "Name": "Return Position",
+      "Description": "Relative position of returning conversation-> Conversation"
+    },
+    {
+      "Field": "reactionId",
+      "Name": "Reaction ID",
+      "Description": "Conversation specification when returning-> Conversation"
+    },
+    {
+      "Field": "eventId",
+      "Name": "Event ID",
+      "Description": "Event ID-> Event"
+    },
+    {
+      "Field": "msgId_female",
+      "Name": "Female - Message ID",
+      "Description": "PC Gender is Female: Specify Message-> Menu"
+    },
+    {
+      "Field": "voiceId_female",
+      "Name": "Female - Voice ID",
+      "Description": "PC Gender is Female: Specify Voice-> Sound"
+    },
+    {
+      "Field": "talkDuration",
+      "Name": "Talk Duration",
+      "Description": ""
+    }
+  ]
+}

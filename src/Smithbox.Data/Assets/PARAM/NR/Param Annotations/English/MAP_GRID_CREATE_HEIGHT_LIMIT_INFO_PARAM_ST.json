@@ -1,0 +1,23 @@
+{
+  "Param": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Name": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "GridEnableCreateHeightMin",
+      "Name": "Min Height - Grid Creation (LOD2)",
+      "Description": "Minimum height that can be built in the grid [m]. (LOD 2 units)"
+    },
+    {
+      "Field": "GridEnableCreateHeightMax",
+      "Name": "Max Height - Grid Creation (LOD2)",
+      "Description": "Maximum height that can be constructed in the grid [m]. (LOD 2 units)"
+    },
+    {
+      "Field": "Reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

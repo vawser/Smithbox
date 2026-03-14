@@ -1,0 +1,38 @@
+{
+  "Param": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Type": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Name": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "element1",
+      "Name": "Element: 1",
+      "Description": "The first element required for this spell."
+    },
+    {
+      "Field": "element2",
+      "Name": "Element: 2",
+      "Description": "The second element required for this spell."
+    },
+    {
+      "Field": "element3",
+      "Name": "Element: 3",
+      "Description": "The third element required for this spell."
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "magicId",
+      "Name": "Magic ID",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

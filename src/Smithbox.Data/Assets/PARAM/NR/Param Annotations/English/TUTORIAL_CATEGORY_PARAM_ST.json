@@ -1,0 +1,23 @@
+{
+  "Param": "TUTORIAL_CATEGORY_PARAM_ST",
+  "Type": "TUTORIAL_CATEGORY_PARAM_ST",
+  "Name": "TUTORIAL_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "categoryTextId",
+      "Name": "Category Text ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

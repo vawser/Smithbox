@@ -1,0 +1,28 @@
+{
+  "Param": "TEXT_EMBED_IMAGE_PARAM_ST",
+  "Type": "TEXT_EMBED_IMAGE_PARAM_ST",
+  "Name": "TEXT_EMBED_IMAGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1a",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

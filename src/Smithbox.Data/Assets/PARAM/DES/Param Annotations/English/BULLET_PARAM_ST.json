@@ -1,0 +1,273 @@
+{
+  "Param": "BULLET_PARAM_ST",
+  "Type": "BULLET_PARAM_ST",
+  "Name": "BULLET_PARAM_ST",
+  "Description": "Determines the parameters of projectiles.",
+  "Fields": [
+    {
+      "Field": "atkId_Bullet",
+      "Name": "Attack ID",
+      "Description": "Set the attack parameters that are applied when this bullet impacts a victim."
+    },
+    {
+      "Field": "sfxId_Bullet",
+      "Name": "Particle ID: Projectile",
+      "Description": "SFX ID before acceleration. If the SFX ID after acceleration is -1, this SFX will continue to fly even after acceleration."
+    },
+    {
+      "Field": "sfxId_Hit",
+      "Name": "Particle ID: Impact",
+      "Description": "Impact SFX ID. -1 means it does not occur."
+    },
+    {
+      "Field": "EmittePosType",
+      "Name": "Emitter Position Type",
+      "Description": "Where projectile appears when created."
+    },
+    {
+      "Field": "FollowType",
+      "Name": "Follow Type",
+      "Description": "Affects projectile position and behavior."
+    },
+    {
+      "Field": "isAttackSFX",
+      "Name": "Persistent Hit Particles",
+      "Description": "If ON, the projectile SFX will remain stuck in the victim it it collides."
+    },
+    {
+      "Field": "isEndlessHit",
+      "Name": "Allow Continuous Hit",
+      "Description": "If ON, the projectile will hit continously upon impact."
+    },
+    {
+      "Field": "life",
+      "Name": "Duration",
+      "Description": "Time for projectile to exist in flight (-1 is infinite). In seconds."
+    },
+    {
+      "Field": "dist",
+      "Name": "Attenuation Range",
+      "Description": "If the bullet flight distance exceeds this value, the attenuation set by other parameters will be applied."
+    },
+    {
+      "Field": "numShoot",
+      "Name": "Number of Shots",
+      "Description": "The number of projectiles produced per emitter interval."
+    },
+    {
+      "Field": "shootInterval",
+      "Name": "Shoot Interval",
+      "Description": "The interval at which the projectile is emitted. Applied when generated via the TAE Bullet Behavior event. In seconds."
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "Horizontal Firing Angle",
+      "Description": "Specify the horizontal angle at which the projectile should be fired, offset from the emitter origin. In degrees."
+    },
+    {
+      "Field": "shootAngleInterval",
+      "Name": "Horizontal Firing Angle Interval",
+      "Description": "When firing multiple projectiles, specify the horizontal angle interval at which to fire (Y-axis). In degrees."
+    },
+    {
+      "Field": "gravityInRange",
+      "Name": "Gravity: In Range",
+      "Description": "Gravity applied downward within range. In metres per second ^ 2."
+    },
+    {
+      "Field": "gravityOutRange",
+      "Name": "Gravity: Out of Range",
+      "Description": "Gravity applied downward outside of range. In metres per second ^ 2."
+    },
+    {
+      "Field": "damageDamp",
+      "Name": "Damage Falloff %: Physical",
+      "Description": "After passing attenuation distance, Physical damage falls off by this % every second."
+    },
+    {
+      "Field": "spelDamageDamp",
+      "Name": "Damage Falloff %: Magic",
+      "Description": "After passing attenuation distance, Magic damage falls off by this % every second."
+    },
+    {
+      "Field": "fireDamageDamp",
+      "Name": "Damage Falloff %: Fire",
+      "Description": "After passing attenuation distance, Fire damage falls off by this % every second."
+    },
+    {
+      "Field": "staminaDamp",
+      "Name": "Damage Falloff %: Stamina",
+      "Description": "After passing attenuation distance, Stamina damage falls off by this % every second."
+    },
+    {
+      "Field": "knockbackDamp",
+      "Name": "Damage Falloff %: Knockback",
+      "Description": "After passing attenuation distance, knockback falls off by this % every second."
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "Vertical Firing Angle",
+      "Description": "Specify the vertical angle of the projectile that should be fired. Positive values angle upwards, negative values angle downwards. In degrees."
+    },
+    {
+      "Field": "lockShootLimitAng",
+      "Name": "Maximum Tracking Angle",
+      "Description": "The maximum angle the bullet's initial direction can change to face towards player locked-on target or AI focused enemy. In degrees."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hormingStopRange",
+      "Name": "Homing Stop Range",
+      "Description": "The distance at which the bullet homing will stop being applied."
+    },
+    {
+      "Field": "initVellocity",
+      "Name": "Initial Velocity",
+      "Description": "Initial speed of projectile."
+    },
+    {
+      "Field": "accelInRange",
+      "Name": "Acceleration: In Range",
+      "Description": "Acceleration whilst projectile is within distance threshold. In metres per second ^ 2."
+    },
+    {
+      "Field": "accelOutRange",
+      "Name": "Acceleration: Out of Range",
+      "Description": "Acceleration whilst projectile is beyond the distance threshold. In metres per second ^ 2."
+    },
+    {
+      "Field": "maxVellocity",
+      "Name": "Maximum Velocity",
+      "Description": "The maximum speed of the bullet. In metres per second."
+    },
+    {
+      "Field": "minVellocity",
+      "Name": "Minimum Velocity",
+      "Description": "The minimum speed of the bullet. In metres per second."
+    },
+    {
+      "Field": "accelTime",
+      "Name": "Acceleration Start Delay",
+      "Description": "The delay before the projectile will start accelerating. In seconds."
+    },
+    {
+      "Field": "homingAngle",
+      "Name": "Homing Strength",
+      "Description": "The amount of tracking correction made each second, affecting the speed the projectile faces the victim. In degrees per second."
+    },
+    {
+      "Field": "homingBeginDist",
+      "Name": "Homing Start Distance",
+      "Description": "The distance at which projectile homing will start to be applied."
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "Hit Radius: Initial",
+      "Description": "The initial radius of the hitbox."
+    },
+    {
+      "Field": "hitRadiusMax",
+      "Name": "Hit Radius: Maximum",
+      "Description": "The maximum radius of the hitbox, the duration for the hitbox to change from initial to max radius is determined by spreadTime. (If -1, radius is same as initial hitbox radius)."
+    },
+    {
+      "Field": "spreadTime",
+      "Name": "Hit Radius: Spread Time",
+      "Description": "The amount of time  takes for hitbox radius to grow from initial value to max value. If 0, only the initial radius is used. In seconds."
+    },
+    {
+      "Field": "expDelay",
+      "Name": "Hit Radius: Expansion Delay",
+      "Description": "The duration from the projectile landing to the start of hit radius expansion (if 0, it expands immediately)."
+    },
+    {
+      "Field": "isPenetrate",
+      "Name": "Penetrate Map",
+      "Description": "If ON, allows a projectile to pierce through enemies and objects. Also potentially allows hitting the same enemy multiple times using dmgHitRecordLifetime. See isPenetrateMap to ignore map."
+    },
+    {
+      "Field": "Material_AttackType",
+      "Name": "Attack Presentation Type",
+      "Description": "Specify the particles and sounds to apply for the attack against the victim."
+    },
+    {
+      "Field": "Material_AttackMaterial",
+      "Name": "Attack Presentation: Material",
+      "Description": "Specify the particles and sounds to apply for the attack against the victim."
+    },
+    {
+      "Field": "Material_Size",
+      "Name": "Attack Presentation: Size",
+      "Description": "Specify the size of the particles to apply for the attack against the victim."
+    },
+    {
+      "Field": "isPenetrateMap",
+      "Name": "Penetrate Map",
+      "Description": "If ON, the projectile will pass through collision and map pieces."
+    },
+    {
+      "Field": "isHitBothTeam",
+      "Name": "Hit Both Teams",
+      "Description": "If ON, the projectile will collide with both victim and owner team types."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hormingOffsetRange",
+      "Name": "Homing Correction Offset",
+      "Description": "If set to 0, the projectile will track with perfect accuracy. Otherwise, the target location is offset by this amount in the direction to victim is moving."
+    },
+    {
+      "Field": "spEffectIDForShooter",
+      "Name": "Shooter SpEffect ID",
+      "Description": "The SpEffect applied to owner of bullet upon being emitted."
+    },
+    {
+      "Field": "autoSearchNPCThinkID",
+      "Name": "Funnel Think ID",
+      "Description": "The think parameters used by the funnel to search for the target (e.g. soulmass)."
+    },
+    {
+      "Field": "HitBulletID",
+      "Name": "Hit Bullet ID",
+      "Description": "The bullet to generate when the projectile expires, or conditionally according to some launchConditionType values."
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "Target SpEffect ID: 0",
+      "Description": "The SpEffect to apply when the projectile hits target."
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Target SpEffect ID: 1",
+      "Description": "SpEffect to apply when the projectile hits target."
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "Target SpEffect ID: 2",
+      "Description": "SpEffect to apply when the projectile hits target."
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "Target SpEffect ID: 3",
+      "Description": "SpEffect to apply when the projectile hits target."
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "Target SpEffect ID: 4",
+      "Description": "SpEffect to apply when the projectile hits target."
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

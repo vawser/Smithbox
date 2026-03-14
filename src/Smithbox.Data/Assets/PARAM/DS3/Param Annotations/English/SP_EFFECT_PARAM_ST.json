@@ -1,0 +1,1618 @@
+{
+  "Param": "SP_EFFECT_PARAM_ST",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SP_EFFECT_PARAM_ST",
+  "Description": "Defines various effects that can be applied to the player and to enemies.\nCan define passive, activated, single-use and repeated or continuous application effects with indefinite duration.\nSuccessful application may depend on spCategory or invocationConditions.",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon ID (When -1, no icon is required)"
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "Trigger at HP Below %",
+      "Description": "Set what percentage of maxHP the remaining HP will be activated"
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "Duration",
+      "Description": "Change duration / -1 for permanent / 0 for one moment only"
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "Trigger Interval",
+      "Description": "Set how many seconds it occurs"
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "Max HP %",
+      "Description": "Correct the maximum HP"
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "Max FP %",
+      "Description": "Correct the maximum MP"
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "Max Stamina %",
+      "Description": "Correct the maximum SP"
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "Absorption %: Slash",
+      "Description": "Slash damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "Absorption %: Strike",
+      "Description": "Batter damage ratio: The calculated damage is corrected by XX times. 1 is normal."
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "Absorption %: Thrust",
+      "Description": "Puncture damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "Absorption %: Standard",
+      "Description": "Non-attribute damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "Absorption %: Magic",
+      "Description": "Magic damage multiplier: The calculated damage is corrected by XX times. 1 is normal."
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "Absorption %: Fire",
+      "Description": "Flame damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "Absorption %: Lightning",
+      "Description": "Electric shock damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "Attack %: Physical",
+      "Description": "Physical damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "Attack %: Magic",
+      "Description": "Magic damage multiplier: The calculated damage is corrected by XX times. 1 is normal."
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "Attack %: Fire",
+      "Description": "Flame damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "thunderAttackRate",
+      "Name": "Attack %: Lightning",
+      "Description": "Electric shock damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "Power %: Physical",
+      "Description": "Multiply the physical attack power by the set value"
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "Power %: Magic",
+      "Description": "Multiply the magic attack power by the set value"
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "Power %: Fire",
+      "Description": "Multiply the fire attack power by the set value"
+    },
+    {
+      "Field": "thunderAttackPowerRate",
+      "Name": "Power %: Lightning",
+      "Description": "Multiply the electric shock attack power by the set value"
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "Damage +: Physical",
+      "Description": "Add or subtract the value set for physical attack power"
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "Damage +: Magic",
+      "Description": "Add or subtract the value set for the magic attack power"
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "Damage +: Fire",
+      "Description": "Add or subtract the value set for the flame attack power"
+    },
+    {
+      "Field": "thunderAttackPower",
+      "Name": "Damage +: Lighting",
+      "Description": "Add or subtract the value set for the electric shock attack power"
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "Defence %: Physical",
+      "Description": "Multiply the set value for physical defense"
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "Defence %: Magic",
+      "Description": "Multiply the value set for magic defense"
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "Defence %: Fire",
+      "Description": "Multiply the fire defense by the set value"
+    },
+    {
+      "Field": "thunderDiffenceRate",
+      "Name": "Defence %: Lightning",
+      "Description": "Multiply the value set for the electric shock defense"
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "Defence +: Physical",
+      "Description": "Add or subtract the value set for physical defense"
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "Defence +: Magic",
+      "Description": "Add or subtract the value set for magic defense"
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "Defence +: Fire",
+      "Description": "Add or subtract the value set for the fire defense"
+    },
+    {
+      "Field": "thunderDiffence",
+      "Name": "Defence +: Lightning",
+      "Description": "Add or subtract the value set for the electric shock defense"
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "No Guard Damage %",
+      "Description": "Replace the damage ratio at the time of the gap with the set value (set on the damage side)"
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "Vital Spot Change %",
+      "Description": "Replaces the damage calculation of the sweet spot with the specified value (key point damage correction) -Invalid at 1.0"
+    },
+    {
+      "Field": "normalSpotChangeRate",
+      "Name": "Normal Hit Change %",
+      "Description": "Replaces normal hit damage calculation with the specified number -Invalid at 1.0"
+    },
+    {
+      "Field": "lookAtTargetPosOffset",
+      "Name": "Look-At Target Position Offset",
+      "Description": "Offset the target position when the enemy looks at. Set to crouch or mount on the side to be seen"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Specified -1 when dealing damage using action ID from special effects\nNPC Behavior - Requires State Info 142\nPlayer Behavior - Requires State Info 275\nBullet Behavior - Requires State Info 33"
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "Current HP %",
+      "Description": "Set what percentage of the maximum HP to subtract (or add) with one activation"
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "Current HP +",
+      "Description": "Set how many points to subtract (or add) with one activation"
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "Current FP %",
+      "Description": "Set what percentage of the maximum MP to subtract (or add) with one activation"
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "Current FP +",
+      "Description": "Set how many points to subtract (or add) with one activation"
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "FP Recovery Speed",
+      "Description": "Change the recovery speed. Add or subtract to the standard recovery speed and initial recovery speed of the recovery formula."
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "Current Stamina %",
+      "Description": "Set what percentage of the maximum stamina to subtract (or add) with one activation"
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "Current Stamina +",
+      "Description": "Set how many points to subtract (or add) with one activation"
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "Stamina Recovery Speed",
+      "Description": "Change the recovery speed. Add or subtract to the standard recovery speed and initial recovery speed of the recovery formula."
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "Magic Effect Time Change",
+      "Description": "Add / subtract the time set for the effect duration only for magic that has the effect duration set to 0.1 seconds or more."
+    },
+    {
+      "Field": "insideDurability",
+      "Name": "Current Durability +",
+      "Description": "Add or subtract the numerical value to the internal wear degree"
+    },
+    {
+      "Field": "maxDurability",
+      "Name": "Max Durability",
+      "Description": "Add the set value to the maximum value of the internal wear degree of durability."
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "Attack %: Stamina",
+      "Description": "Multiply the stamina attack power by a factor (1.0 1 times 0.5 half)"
+    },
+    {
+      "Field": "poizonAttackPower",
+      "Name": "Aux Inflict +: Poison",
+      "Description": "A value to be added to the target's [poison resistance value] when it hits\nRequires State Info 2"
+    },
+    {
+      "Field": "diseaseAttackPower",
+      "Name": "Aux Inflict +: Toxic",
+      "Description": "Numerical value to be added to the target [Plague resistance value] when hit\nRequires State Info 5"
+    },
+    {
+      "Field": "bloodAttackPower",
+      "Name": "Aux Inflict +: Bleed",
+      "Description": "A value to be added to the target's [bleeding resistance value] when it hits\nRequires State Info 6"
+    },
+    {
+      "Field": "curseAttackPower",
+      "Name": "Aux Inflict +: Curse",
+      "Description": "A number to be added to the target [curse resistance value] when hit\nRequires State Info 116"
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "Fall Damage %",
+      "Description": "Multiply the damage calculation when falling"
+    },
+    {
+      "Field": "soulRate",
+      "Name": "Soul Gain %",
+      "Description": "The amount of soul acquired when defeating an enemy is added by the specified multiple.\nRequires State Info 76"
+    },
+    {
+      "Field": "equipWeightChangeRate",
+      "Name": "Max Equip Load %",
+      "Description": "Multiply the maximum equipment weight by the set magnification"
+    },
+    {
+      "Field": "allItemWeightChangeRate",
+      "Name": "Item Weight %",
+      "Description": "Multiply the maximum weight you have by the set magnification"
+    },
+    {
+      "Field": "soul",
+      "Name": "Soul Gain +",
+      "Description": "Add the set value to the possessed soul"
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "Anim ID Offset",
+      "Description": "Anime ID offset (invalid-1)"
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "Soul Possession Amount %",
+      "Description": "For enemy lap effect. It is applied when the soul goes out from the set character."
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "Target Priority",
+      "Description": "Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)."
+    },
+    {
+      "Field": "sightSearchEnemyRate",
+      "Name": "Enemy Vision Adjustment",
+      "Description": "Correct the ease of finding by a magnification"
+    },
+    {
+      "Field": "hearingSearchEnemyRate",
+      "Name": "Enemy Listen Adjustment",
+      "Description": "Correct the loudness of the AI sound emitted by the magnification"
+    },
+    {
+      "Field": "grabityRate",
+      "Name": "Gravity %",
+      "Description": "Gravity rate"
+    },
+    {
+      "Field": "registPoizonChangeRate",
+      "Name": "Aux Resist %: Poison",
+      "Description": "Multiply the poison resistance value by the set multiplier"
+    },
+    {
+      "Field": "registDiseaseChangeRate",
+      "Name": "Aux Resist %: Toxic",
+      "Description": "Multiply the plague resistance value by the set magnification"
+    },
+    {
+      "Field": "registBloodChangeRate",
+      "Name": "Aux Resist %: Bleed",
+      "Description": "Multiply the bleeding resistance value by the set magnification"
+    },
+    {
+      "Field": "registCurseChangeRate",
+      "Name": "Aux Resist %: Curse",
+      "Description": "Multiply the spell resistance value by the set multiplier"
+    },
+    {
+      "Field": "soulStealRate",
+      "Name": "Soul Steal %",
+      "Description": "Defense against HP robbed by NPCs in Soul Steel"
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "Effect Duration %",
+      "Description": ""
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "HP Recovery Effectiveness %",
+      "Description": "It doesn't work when HP decreases."
+    },
+    {
+      "Field": "replaceSpEffectId",
+      "Name": "Chain SpEffect ID",
+      "Description": "Special effect ID added at the end of life (-1 is ignored)"
+    },
+    {
+      "Field": "cycleOccurrenceSpEffectId",
+      "Name": "Cycle SpEffect ID",
+      "Description": "Special effect ID that occurs in each activation cycle (-1 is ignored)"
+    },
+    {
+      "Field": "atkOccurrenceSpEffectId",
+      "Name": "Attack SpEffect ID",
+      "Description": "Special effect ID that occurs when hitting an attack (-1 is ignored)"
+    },
+    {
+      "Field": "guardDefFlickPowerRate",
+      "Name": "Guard Defense - Weapon Repel Power %",
+      "Description": "Repellent defense correction value when guarding"
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "Guard Stability %",
+      "Description": "Stamina cut rate correction value when guarding"
+    },
+    {
+      "Field": "rayCastPassedTime",
+      "Name": "Raycast Passed Time",
+      "Description": "Passing the line of sight: Activation time [ms] (for evil eye)"
+    },
+    {
+      "Field": "changeSuperArmorPoint",
+      "Name": "Poise",
+      "Description": "Value to add to the super armor value"
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "Bow Distance %",
+      "Description": "Correction value added to the flight distance correction of the weapon"
+    },
+    {
+      "Field": "spCategory",
+      "Name": "Effect Category",
+      "Description": "Categories that determine behavior such as overwriting special effects"
+    },
+    {
+      "Field": "categoryPriority",
+      "Name": "Category Priority",
+      "Description": "Priority within the same category (lower one has priority)"
+    },
+    {
+      "Field": "saveCategory",
+      "Name": "Save Category",
+      "Description": "Category to save special effects"
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "Magic Attunement Slot",
+      "Description": "You can increase the specified number of magic registration slots"
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "Miracle Attunement Slot",
+      "Description": "You can increase the specified number of trajectory registration frames."
+    },
+    {
+      "Field": "heroPointDamage",
+      "Name": "Humanity Damage",
+      "Description": "Damage value given to human nature value"
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Weapon Repel Defence +",
+      "Description": "Set a value that overwrites the repelling defense"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Weapon Repel Absorption %",
+      "Description": "Set a value that overwrites the damage attenuation rate at the time of repelling"
+    },
+    {
+      "Field": "bloodDamageRate",
+      "Name": "Damage Correction %: Bleed",
+      "Description": "Point damage of state change type [bleeding], correction value used only when% damage"
+    },
+    {
+      "Field": "dmgLv_None",
+      "Name": "Damage Level: No Impact",
+      "Description": "Specify the type to replace the damage Lv0"
+    },
+    {
+      "Field": "dmgLv_S",
+      "Name": "Damage Level: Small Impact",
+      "Description": "Specify the type to replace the damage Lv1"
+    },
+    {
+      "Field": "dmgLv_M",
+      "Name": "Damage Level: Medium Impact",
+      "Description": "Specify the type to replace the damage Lv2"
+    },
+    {
+      "Field": "dmgLv_L",
+      "Name": "Damage Level: Large Impact",
+      "Description": "Specify the type to replace the damage Lv3"
+    },
+    {
+      "Field": "dmgLv_BlowM",
+      "Name": "Damage Level: Medium Blow",
+      "Description": "Specify the type to replace the damage Lv4"
+    },
+    {
+      "Field": "dmgLv_Push",
+      "Name": "Damage Level: Push",
+      "Description": "Specify the type to replace the damage Lv5"
+    },
+    {
+      "Field": "dmgLv_Strike",
+      "Name": "Damage Level: Strike",
+      "Description": "Specify the type to replace the damage Lv6"
+    },
+    {
+      "Field": "dmgLv_BlowS",
+      "Name": "Damage Level: Small Blow",
+      "Description": "Specify the type to replace the damage Lv7"
+    },
+    {
+      "Field": "dmgLv_Min",
+      "Name": "Damage Level: Minimal",
+      "Description": "Specify the type to replace the damage Lv8"
+    },
+    {
+      "Field": "dmgLv_Uppercut",
+      "Name": "Damage Level: Uppercut",
+      "Description": "Specify the type to replace the damage Lv9"
+    },
+    {
+      "Field": "dmgLv_BlowLL",
+      "Name": "Damage Level: Blow Backward",
+      "Description": "Specify the type to replace the damage Lv10"
+    },
+    {
+      "Field": "dmgLv_Breath",
+      "Name": "Damage Level: Breath",
+      "Description": "Specify the type to replace the damage Lv11"
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Physical attributes to set for special effects"
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "SpEffect Attribute",
+      "Description": "Special attributes to set for special effects"
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "State Info",
+      "Description": "State change judgment flag"
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "Weapon Parameter Change",
+      "Description": "Specify which weapon is effective. If there is no limit, all attacks and defenses including enemies are targeted"
+    },
+    {
+      "Field": "moveType",
+      "Name": "Move Type",
+      "Description": "Movement type. Change the movement speed."
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "Effect Duration Multiplier - State Info",
+      "Description": ""
+    },
+    {
+      "Field": "throwCondition",
+      "Name": "Throw Trigger",
+      "Description": "Throwing conditions. Affects the throwing mask."
+    },
+    {
+      "Field": "addBehaviorJudgeId_condition",
+      "Name": "Add Behavior Judge ID - Trigger",
+      "Description": "Condition value to add a value to the action judgment ID (Def: -1)"
+    },
+    {
+      "Field": "freezeDamageRate",
+      "Name": "Damage Correction %: Frostbite",
+      "Description": "Correction value used only for point damage and% damage of state change type [cold air]"
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "Target Self",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "Target Friend",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "Target Enemy",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "Target Player",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "Target AI",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "Target Live",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "Target Ghost",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetWhiteGhost",
+      "Name": "Target White Phantom",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetBlackGhost",
+      "Name": "Target Black Phantom",
+      "Description": ""
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "Target Attacker",
+      "Description": "Apply special effects to attackers after damage (cannot enter defenders)"
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "Display Icon when Inactive",
+      "Description": "The icon is displayed even in the state of waiting for activation."
+    },
+    {
+      "Field": "useSpEffectEffect",
+      "Name": "Use SpEffect Effect",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustMagicAbility",
+      "Name": "Use Intelligence Correction",
+      "Description": "Do you want to correct the magic power?"
+    },
+    {
+      "Field": "bAdjustFaithAbility",
+      "Name": "Use Faith Correction",
+      "Description": "Do you correct your faith?"
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "Enable for Game Clear",
+      "Description": "Whether it is for the game clear lap bonus."
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "Affects Sorcery",
+      "Description": "Set whether or not it is effective against magic"
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "Affects Incantation",
+      "Description": "Set whether or not it is effective against miracles"
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "Clear Held Souls",
+      "Description": "Possession soul becomes 0."
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "Request: Friendly Phantom Summon",
+      "Description": "If checked, issue an SOS sign request when activated"
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "Request: Hostile Phantom Summon",
+      "Description": "If checked, issue a black SOS sign request when activated"
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "Request: Invasion",
+      "Description": "If checked, issue an intrusion_A request when activated"
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "Request: Kick",
+      "Description": "If checked, a kick request will be issued at the time of activation."
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "Request: Return to Own World",
+      "Description": "If checked, an exit request will be issued at the time of activation."
+    },
+    {
+      "Field": "requestNpcInveda",
+      "Name": "Request: NPC Invasion",
+      "Description": "If checked, an intrusion request to the NPC will be issued at the time of activation."
+    },
+    {
+      "Field": "noDead",
+      "Name": "Is No Dead",
+      "Description": "Whether you can be corpse. With this check, you will not be dead"
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "Current HP independent Max HP",
+      "Description": "Does HP now affect even if the maximum HP increases or decreases?"
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "Ignore Durability Loss",
+      "Description": "[State change type] ignores [Durability] decrease due to [Corrosion]"
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "Ignore Vision Reductions",
+      "Description": "Ignore visual search invalidity"
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "Ignore Listen Reductions",
+      "Description": "Ignore auditory search invalidity"
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "Ignore Anti-Magic Effect",
+      "Description": "You can use magic even in the anti-magic range"
+    },
+    {
+      "Field": "fakeTargetIgnore",
+      "Name": "Ignore Fake Targets",
+      "Description": "Don't get caught in the fake target that occurred"
+    },
+    {
+      "Field": "fakeTargetIgnoreUndead",
+      "Name": "Ignore Fake Human Targets",
+      "Description": "You will not be caught by the fake target of the human system that occurred"
+    },
+    {
+      "Field": "fakeTargetIgnoreAnimal",
+      "Name": "Ignore Fake Animal Targets",
+      "Description": "You will not be caught by the fake target of the beast system that occurred"
+    },
+    {
+      "Field": "grabityIgnore",
+      "Name": "Ignore Gravity Change",
+      "Description": "Gravity effect disabled"
+    },
+    {
+      "Field": "disablePoison",
+      "Name": "Disable Poison",
+      "Description": "If this effect is applied, it will not be poisoned."
+    },
+    {
+      "Field": "disableDisease",
+      "Name": "Disable Toxic",
+      "Description": "If this effect is applied, you will not get plague"
+    },
+    {
+      "Field": "disableBlood",
+      "Name": "Disable Bleed",
+      "Description": "With this effect, you won't get bleeding"
+    },
+    {
+      "Field": "disableCurse",
+      "Name": "Disable Curse",
+      "Description": "With this effect, you won't be cursed"
+    },
+    {
+      "Field": "enableCharm",
+      "Name": "Enable Charm",
+      "Description": "If this effect is applied, you will be fascinated."
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "Enable Lifetime",
+      "Description": "Will the life be extended when the flag is set by TAE?"
+    },
+    {
+      "Field": "hasTarget",
+      "Name": "Has Target",
+      "Description": "Do you know the enemy? : [Activation condition] (for evil eye users)"
+    },
+    {
+      "Field": "replanningOnFire",
+      "Name": "Cancel on Fire Damage",
+      "Description": "Whether to replan at the time of activation"
+    },
+    {
+      "Field": "eraseOnBonfireRecover",
+      "Name": "Erase on Bonfire Rest",
+      "Description": "Will it be extinguished by bonfire recovery?"
+    },
+    {
+      "Field": "requestLeaveColiseumSession",
+      "Name": "Request: Leave Arena",
+      "Description": "If checked, a request to leave the arena will be issued at the time of activation."
+    },
+    {
+      "Field": "bAdjustStrengthAblity",
+      "Name": "Use Strength Correction",
+      "Description": "Do you want to correct your strength?"
+    },
+    {
+      "Field": "bAdjustAgilityAblity",
+      "Name": "Use Dexterity Correction",
+      "Description": "Do you want to correct your workmanship?"
+    },
+    {
+      "Field": "chargeAttackParamChange",
+      "Name": "Charge Attack Change",
+      "Description": "Set whether or not it is effective against throwing attacks"
+    },
+    {
+      "Field": "throwAttackParamChange",
+      "Name": "Throw Attack Change",
+      "Description": ""
+    },
+    {
+      "Field": "vowType0",
+      "Name": "Trigger for Vow Type [0]",
+      "Description": "Pledge 0"
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Trigger for Vow Type [1]",
+      "Description": "Pledge 1"
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Trigger for Vow Type [2]",
+      "Description": "Pledge 2"
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Trigger for Vow Type [3]",
+      "Description": "Pledge 3"
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Trigger for Vow Type [4]",
+      "Description": "Pledge 4"
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Trigger for Vow Type [5]",
+      "Description": "Pledge 5"
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Trigger for Vow Type [6]",
+      "Description": "Pledge 6"
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Trigger for Vow Type [7]",
+      "Description": "Pledge 7"
+    },
+    {
+      "Field": "vowType8",
+      "Name": "Trigger for Vow Type [8]",
+      "Description": "Pledge 8"
+    },
+    {
+      "Field": "vowType9",
+      "Name": "Trigger for Vow Type [9]",
+      "Description": "Pledge 9"
+    },
+    {
+      "Field": "vowType10",
+      "Name": "Trigger for Vow Type [10]",
+      "Description": "Pledge 10"
+    },
+    {
+      "Field": "vowType11",
+      "Name": "Trigger for Vow Type [11]",
+      "Description": "Pledge 11"
+    },
+    {
+      "Field": "vowType12",
+      "Name": "Trigger for Vow Type [12]",
+      "Description": "Pledge 12"
+    },
+    {
+      "Field": "vowType13",
+      "Name": "Trigger for Vow Type [13]",
+      "Description": "Pledge 13"
+    },
+    {
+      "Field": "vowType14",
+      "Name": "Trigger for Vow Type [14]",
+      "Description": "Pledge 14"
+    },
+    {
+      "Field": "vowType15",
+      "Name": "Trigger for Vow Type [15]",
+      "Description": "Pledge 15"
+    },
+    {
+      "Field": "repAtkDmgLv",
+      "Name": "Change Attacker Damage Level",
+      "Description": "The damage level of the attacking side changes to this value"
+    },
+    {
+      "Field": "sightSearchRate",
+      "Name": "AI Vision Correction",
+      "Description": "Correct the ease of finding with a magnification\r\nRequires State Info 267"
+    },
+    {
+      "Field": "effectTargetOpposeTarget",
+      "Name": "Trigger for Opponent",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetFriendlyTarget",
+      "Name": "Trigger for Friendly",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetSelfTarget",
+      "Name": "Trigger for Self",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetPcHorse",
+      "Name": "Trigger for Horse",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "effectTargetPcDeceased",
+      "Name": "Trigger for Dead Player",
+      "Description": "Only the target for which this judgment is checked is effective, the default is "
+    },
+    {
+      "Field": "isContractSpEffectLife",
+      "Name": "Can Duration be Reduced",
+      "Description": "Whether it will be shortened when the life shortening effect is applied"
+    },
+    {
+      "Field": "isWaitModeDelete",
+      "Name": "Delete in Wait Mode",
+      "Description": "Do you want to delete it the moment you are in a waiting state?"
+    },
+    {
+      "Field": "isIgnoreNoDamage",
+      "Name": "Apply through No Damage",
+      "Description": "Whether to apply the damage from this special effect even in the invincible state only when the state change type Apply the activation function even when invincible is applied."
+    },
+    {
+      "Field": "changeTeamType",
+      "Name": "Team Type",
+      "Description": "Overwrites the specified team type\r\nRequires State Info 132"
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "Bullet Behavior ID - DmyPoly ID",
+      "Description": "Damipoli ID. Damipoli ID range is 0 to 999.1000, 10000 is the category number."
+    },
+    {
+      "Field": "vfxId",
+      "Name": "Effect VFX [0]",
+      "Description": "Special effect VfxId (-1 disabled)"
+    },
+    {
+      "Field": "accumuOverFireId",
+      "Name": "Accumulator - Over Value - SpEffect ID",
+      "Description": "Special effect Id activated at the upper limit of the spirit ball"
+    },
+    {
+      "Field": "accumuOverVal",
+      "Name": "Accumulator - Over Value",
+      "Description": "Genkitama upper limit"
+    },
+    {
+      "Field": "accumuUnderFireId",
+      "Name": "Accumulator - Under Value - SpEffect ID",
+      "Description": "Special effect Id activated at the lower limit of the spirit ball"
+    },
+    {
+      "Field": "accumuUnderVal",
+      "Name": "Accumulator - Under Value",
+      "Description": "Genkitama lower limit"
+    },
+    {
+      "Field": "accumuVal",
+      "Name": "Accumulator - Increment Value",
+      "Description": "Genkitama accumulation value"
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "Vision - Overwrite Height Angle",
+      "Description": "Override the findability angle x"
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "Vision - Overwrite Width Angle",
+      "Description": "Override the findability angle y"
+    },
+    {
+      "Field": "addDeceasedLv",
+      "Name": "Add Hollowing Level",
+      "Description": "Add this value to the degree of death"
+    },
+    {
+      "Field": "unknown",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "vfxId1",
+      "Name": "Effect VFX [1]",
+      "Description": "Special effect VfxId1 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId2",
+      "Name": "Effect VFX [2]",
+      "Description": "Special effect VfxId2 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId3",
+      "Name": "Effect VFX [3]",
+      "Description": "Special effect VfxId3 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId4",
+      "Name": "Effect VFX [4]",
+      "Description": "Special effect VfxId4 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId5",
+      "Name": "Effect VFX [5]",
+      "Description": "Special effect VfxId5 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId6",
+      "Name": "Effect VFX [6]",
+      "Description": "Special effect VfxId6 (-1 invalid)"
+    },
+    {
+      "Field": "vfxId7",
+      "Name": "Effect VFX [7]",
+      "Description": "Special effect VfxId7 (-1 invalid)"
+    },
+    {
+      "Field": "freezeAttackPower",
+      "Name": "Aux Inflict +: Frostbite",
+      "Description": "Numerical value to be added to the target [Cold air resistance value] when hit\r\nRequires State Info 260"
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "Generated AI Sound ID",
+      "Description": "Generates AI sound parameters with set values"
+    },
+    {
+      "Field": "addFootEffectSfxId",
+      "Name": "Automatic Foot Effect - SFX ID Offset",
+      "Description": "The identifier of the foot effect that is additionally generated during special effects. XYYZZZ ZZZ"
+    },
+    {
+      "Field": "unknown2",
+      "Name": "Unknown 2",
+      "Description": ""
+    },
+    {
+      "Field": "teamOffenseEffectivity",
+      "Name": "Team Attack Effectivity",
+      "Description": "Overwrite and change the target [Team Attack Influence] value. Do not change the default value (-1)."
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "Absorption %: Toughness",
+      "Description": "Toughness version cut rate"
+    },
+    {
+      "Field": "weakDmgRateA",
+      "Name": "Damage Multiplier %: Type A (Demon)",
+      "Description": "Special Attack A Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "weakDmgRateB",
+      "Name": "Damage Multiplier %: Type B (Undead)",
+      "Description": "Special attack B Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "weakDmgRateC",
+      "Name": "Damage Multiplier %: Type C (Hollow)",
+      "Description": "Special attack C Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "weakDmgRateD",
+      "Name": "Damage Multiplier %: Type D (Abyssal)",
+      "Description": "Special attack D Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "weakDmgRateE",
+      "Name": "Damage Multiplier %: Type E",
+      "Description": "Special attack E Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "weakDmgRateF",
+      "Name": "Damage Multiplier %: Type F",
+      "Description": "Special attack F Damage multiplier is corrected. 1 is normal."
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "Absorption %: Dark",
+      "Description": "Dark damage multiplier: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "darkDiffenceRate",
+      "Name": "Defence %: Dark",
+      "Description": "Multiply the darkness defense by the set value"
+    },
+    {
+      "Field": "darkDiffence",
+      "Name": "Defence +: Dark",
+      "Description": "Add or subtract the value set for darkness defense"
+    },
+    {
+      "Field": "darkAttackRate",
+      "Name": "Attack %: Dark",
+      "Description": "Dark damage multiplier: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "darkAttackPowerRate",
+      "Name": "Power %: Dark",
+      "Description": "Multiply the dark attack power by the set value"
+    },
+    {
+      "Field": "darkAttackPower",
+      "Name": "Damage +: Dark",
+      "Description": "Add or subtract the value set for the dark attack power"
+    },
+    {
+      "Field": "antiDarkSightRadius",
+      "Name": "Full View in Darkness - Radius",
+      "Description": "Radius of full view of darkness [m]. If you are within this distance, you will be able to see at normal distance even in the dark."
+    },
+    {
+      "Field": "antiDarkSightDmypolyId",
+      "Name": "Full View in Darkness - Dummy Poly ID",
+      "Description": "Damipoli ID (-1: Master) with full view of darkness. Create a full view area around this Damipoli"
+    },
+    {
+      "Field": "conditionHpRate",
+      "Name": "Trigger on HP Above %",
+      "Description": "Activates only when you have HP above the specified value"
+    },
+    {
+      "Field": "consumeStaminaRate",
+      "Name": "Weapon Stamina Consumption %",
+      "Description": "Multiply by multiplying the consumption stamina value of the behavior parameter"
+    },
+    {
+      "Field": "itemDropRate",
+      "Name": "Item Discovery %",
+      "Description": "The set value is added to [Item Drop Correction]\r\nRequires State Info 66"
+    },
+    {
+      "Field": "unknown3",
+      "Name": "Unknown 3",
+      "Description": ""
+    },
+    {
+      "Field": "changePoisonResistPoint",
+      "Name": "Aux Resist +: Poison",
+      "Description": "Increase or decrease the state resistance value"
+    },
+    {
+      "Field": "changeDiseaseResistPoint",
+      "Name": "Aux Resist +: Toxic",
+      "Description": "Increase or decrease the state resistance value"
+    },
+    {
+      "Field": "changeBloodResistPoint",
+      "Name": "Aux Resist +: Bleed",
+      "Description": "Increase or decrease the state resistance value"
+    },
+    {
+      "Field": "changeCurseResistPoint",
+      "Name": "Aux Resist +: Curse",
+      "Description": "Increase or decrease the state resistance value"
+    },
+    {
+      "Field": "changeFreezeResistPoint",
+      "Name": "Aux Resist +: Frostbite",
+      "Description": "Increase or decrease the state resistance value"
+    },
+    {
+      "Field": "slashAttackRate",
+      "Name": "Attack %: Slash",
+      "Description": "Slash damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "blowAttackRate",
+      "Name": "Attack %: Strike",
+      "Description": "Batter damage ratio: The calculated damage is corrected by XX times. 1 is normal."
+    },
+    {
+      "Field": "thrustAttackRate",
+      "Name": "Attack %: Thrust",
+      "Description": "Puncture damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "neutralAttackRate",
+      "Name": "Attack %: Standard",
+      "Description": "Non-attribute damage ratio: Correct the calculated damage by XX times. 1 is normal."
+    },
+    {
+      "Field": "slashAttackPowerRate",
+      "Name": "Power %: Slash",
+      "Description": "Multiply the slashing attack power by the set value"
+    },
+    {
+      "Field": "blowAttackPowerRate",
+      "Name": "Power %: Strike",
+      "Description": "Multiply the hit attack power by the set value"
+    },
+    {
+      "Field": "thrustAttackPowerRate",
+      "Name": "Power %: Thrust",
+      "Description": "Multiply the piercing attack power by the set value"
+    },
+    {
+      "Field": "neutralAttackPowerRate",
+      "Name": "Power %: Standard",
+      "Description": "Multiply the non-attribute attack power by the set value"
+    },
+    {
+      "Field": "slashAttackPower",
+      "Name": "Damage +: Slash",
+      "Description": "Add or subtract the value set for the slashing attack power"
+    },
+    {
+      "Field": "blowAttackPower",
+      "Name": "Damage +: Strike",
+      "Description": "Add or subtract the value set for the batter attack power"
+    },
+    {
+      "Field": "thrustAttackPower",
+      "Name": "Damage +: Thrust",
+      "Description": "Add or subtract the value set for the piercing attack power"
+    },
+    {
+      "Field": "neutralAttackPower",
+      "Name": "Damage +: Standard",
+      "Description": "Add or subtract the value set for non-attribute attack power"
+    },
+    {
+      "Field": "changeStrengthPoint",
+      "Name": "Correction +: STR",
+      "Description": "Add or subtract the correction value of the weapon"
+    },
+    {
+      "Field": "changeAgilityPoint",
+      "Name": "Correction +: DEX",
+      "Description": "Add or subtract the correction value of the weapon"
+    },
+    {
+      "Field": "changeMagicPoint",
+      "Name": "Correction +: INT",
+      "Description": "Add or subtract the correction value of the weapon"
+    },
+    {
+      "Field": "changeFaithPoint",
+      "Name": "Correction +: FTH",
+      "Description": "Add or subtract the correction value of the weapon"
+    },
+    {
+      "Field": "changeLuckPoint",
+      "Name": "Correction +: LCK",
+      "Description": "Add or subtract the correction value of the weapon"
+    },
+    {
+      "Field": "recoverArtsPoint_Str",
+      "Name": "Weapon Art Restore: STR",
+      "Description": "Arts Point Restores strength"
+    },
+    {
+      "Field": "recoverArtsPoint_Dex",
+      "Name": "Weapon Art Restore: DEX",
+      "Description": "Restores arts point workmanship"
+    },
+    {
+      "Field": "recoverArtsPoint_Magic",
+      "Name": "Weapon Art Restore: INT",
+      "Description": "Restores arts point magic"
+    },
+    {
+      "Field": "recoverArtsPoint_Miracle",
+      "Name": "Weapon Art Restore: FTH",
+      "Description": "Recover arts point miracles"
+    },
+    {
+      "Field": "wetConditionDepth",
+      "Name": "Wet Condition Depth",
+      "Description": "TimeAct Determines whether special effects are applied in combination with at what water level you get wet"
+    },
+    {
+      "Field": "disableFreeze",
+      "Name": "Disable Frostbite",
+      "Description": "When this effect is applied, it will not be cold"
+    },
+    {
+      "Field": "isUseStatusAilmentAtkPowerCorrect",
+      "Name": "Use Status Ailment Attack Power Correction",
+      "Description": "If , the abnormal state attack power multiplier correction of the attack para is applied."
+    },
+    {
+      "Field": "isUseAtkParamAtkPowerCorrect",
+      "Name": "Use AtkParam Attack Power Correction",
+      "Description": "If , the attack power multiplier correction of the attack para is applied."
+    },
+    {
+      "Field": "isHollowingCorrection",
+      "Name": "Scale with Hollowing Level",
+      "Description": ""
+    },
+    {
+      "Field": "affectedByDurationContraction",
+      "Name": "Affected by Contract SpEffect Duration",
+      "Description": ""
+    },
+    {
+      "Field": "waitForTriggerStateInfo",
+      "Name": "Wait for Trigger State Info",
+      "Description": "Requires trigger State Info.\nDeletes SpEffect if trigger state info isn't active instead of delaying activation."
+    },
+    {
+      "Field": "ignoreNoDamage",
+      "Name": "Ignore Invincibility",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableNetSync",
+      "Name": "Do not Sync in Multiplayer",
+      "Description": "Do not synchronize with the net. It does not mean that you will be able to call it locally, but simply do not send it online. For example, a remote character does not activate locally, so nothing happens in that case."
+    },
+    {
+      "Field": "eyeAngleUpper_around",
+      "Name": "Eye Angle Upper - Around",
+      "Description": ""
+    },
+    {
+      "Field": "eyeAngleUpper_bottom",
+      "Name": "Eye Angle Upper - Bottom",
+      "Description": ""
+    },
+    {
+      "Field": "saReceiveDamageRate",
+      "Name": "Absorption %: Poise Damage",
+      "Description": "Multiplier for SA damage"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Physics",
+      "Name": "PVP Absorption %: Physical",
+      "Description": "Damage correction for the damage value received from the player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Magic",
+      "Name": "PVP Absorption %: Magic",
+      "Description": "Damage correction for the damage value received from the player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Fire",
+      "Name": "PVP Absorption %: Fire",
+      "Description": "Damage correction for the damage value received from the player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Thunder",
+      "Name": "PVP Absorption %: Lightning",
+      "Description": "Damage correction for the damage value received from the player."
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Dark",
+      "Name": "PVP Absorption %: Dark",
+      "Description": "Damage correction for the damage value received from the player."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Physics",
+      "Name": "Absorption %: Physical",
+      "Description": "Damage correction for the damage value received from the enemy."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Magic",
+      "Name": "Absorption %: Magic",
+      "Description": "Damage correction for the damage value received from the enemy."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Fire",
+      "Name": "Absorption %: Fire",
+      "Description": "Damage correction for the damage value received from the enemy."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Thunder",
+      "Name": "Absorption %: Lightning",
+      "Description": "Damage correction for the damage value received from the enemy."
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Dark",
+      "Name": "Absorption %: Dark",
+      "Description": "Damage correction for the damage value received from the enemy."
+    },
+    {
+      "Field": "defObjDmgCorrectRate",
+      "Name": "Absorption %: Object",
+      "Description": "Damage correction for the damage value received from OBJ."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Physics",
+      "Name": "Player Damage %: Physical",
+      "Description": "Damage correction for the damage value given to the player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Magic",
+      "Name": "Player Damage %: Magic",
+      "Description": "Damage correction for the damage value given to the player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Fire",
+      "Name": "Player Damage %: Fire",
+      "Description": "Damage correction for the damage value given to the player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Thunder",
+      "Name": "Player Damage %: Lightning",
+      "Description": "Damage correction for the damage value given to the player."
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Dark",
+      "Name": "Player Damage %: Dark",
+      "Description": "Damage correction for the damage value given to the player."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Physics",
+      "Name": "Enemy Damage %: Physical",
+      "Description": "Damage correction for the damage value given to the enemy."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Magic",
+      "Name": "Enemy Damage %: Magic",
+      "Description": "Damage correction for the damage value given to the enemy."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Fire",
+      "Name": "Enemy Damage %: Fire",
+      "Description": "Damage correction for the damage value given to the enemy."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Thunder",
+      "Name": "Enemy Damage %: Lightning",
+      "Description": "Damage correction for the damage value given to the enemy."
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Dark",
+      "Name": "Enemy Damage %: Dark",
+      "Description": "Damage correction for the damage value given to the enemy."
+    },
+    {
+      "Field": "registFreezeChangeRate",
+      "Name": "Aux Resist %: Frostbite",
+      "Description": "Multiply the cold resistance value by the set magnification"
+    },
+    {
+      "Field": "invocationConditionsStateChange1",
+      "Name": "Trigger on State Info [1]",
+      "Description": "Trigger condition state change type 1"
+    },
+    {
+      "Field": "invocationConditionsStateChange2",
+      "Name": "Trigger on State Info [2]",
+      "Description": "Trigger condition state change type 2"
+    },
+    {
+      "Field": "invocationConditionsStateChange3",
+      "Name": "Trigger on State Info [3]",
+      "Description": "Trigger condition state change type 3"
+    },
+    {
+      "Field": "affectPyromancy",
+      "Name": "Affects Pyromancy",
+      "Description": ""
+    },
+    {
+      "Field": "fakeDexterity_castSpeed",
+      "Name": "Cast Speed",
+      "Description": "Add this value when calculating the end timing of the TAE flag of Skill Cancel."
+    },
+    {
+      "Field": "value_Magnification",
+      "Name": "Sale Price Correction %",
+      "Description": "Sales price correction: Magnification"
+    },
+    {
+      "Field": "artsConsumptionRate",
+      "Name": "Skill FP Consumption %",
+      "Description": "Arts MP consumption multiplier [%]"
+    },
+    {
+      "Field": "magicConsumptionRate",
+      "Name": "Sorcery FP Consumption %",
+      "Description": "Magic consumption MP multiplier [%]"
+    },
+    {
+      "Field": "shamanConsumptionRate",
+      "Name": "Pyromancy FP Consumption %",
+      "Description": "Magic consumption MP multiplier [%]"
+    },
+    {
+      "Field": "miracleConsumptionRate",
+      "Name": "Incantation FP Consumption %",
+      "Description": "Miracle consumption MP magnification [%]"
+    },
+    {
+      "Field": "changeHpEstusFlaskRate",
+      "Name": "HP Flask - HP Restore %",
+      "Description": "Set what percentage of the maximum HP to add (or subtract) with one activation"
+    },
+    {
+      "Field": "changeHpEstusFlaskPoint",
+      "Name": "HP Flask - HP Restore +",
+      "Description": "Set how many points to add (or subtract) with one activation"
+    },
+    {
+      "Field": "changeMpEstusFlaskRate",
+      "Name": "FP Flask - FP Restore %",
+      "Description": "Set what percentage of the maximum MP to add (or subtract) with one activation"
+    },
+    {
+      "Field": "changeMpEstusFlaskPoint",
+      "Name": "FP Flask - FP Restore +",
+      "Description": "Set how many points to add (or subtract) with one activation"
+    },
+    {
+      "Field": "changeHpEstusFlaskCorrectRate",
+      "Name": "HP Flask - HP Restore Correction",
+      "Description": "Correct the damage amount of the HP Est bottle"
+    },
+    {
+      "Field": "changeMpEstusFlaskCorrectRate",
+      "Name": "FP Flask - HP Restore Correction",
+      "Description": "Correct the damage amount of MP Est Bottle"
+    },
+    {
+      "Field": "applyIdOnGetSoul",
+      "Name": "Kill SpEffect ID",
+      "Description": "When the special effect of the state change type HP drain is enabled, when the enemy is defeated, the special effect ID set in the HP drain activation special effect of the same special effect is called (0: ignore)."
+    },
+    {
+      "Field": "extendLifeRate",
+      "Name": "Extend SpEffect Duration %",
+      "Description": "Extension coefficient of state change type life extension"
+    },
+    {
+      "Field": "contractLifeRate",
+      "Name": "Contract SpEffect Duration %",
+      "Description": "Shortening coefficient of state change type life shortening"
+    },
+    {
+      "Field": "behaviorJudgeId_add0",
+      "Name": "Behavior Judge ID - Add 0",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorJudgeId_add1",
+      "Name": "Behavior Judge ID - Add 1",
+      "Description": ""
+    },
+    {
+      "Field": "effectEndDeleteDecalGroupId",
+      "Name": "Decal Deletion Group ID",
+      "Description": "When the special effect disappears (lifetime / overwritten / erased ... etc.), the paint decal is deleted if the special effect of the same group ID is not applied."
+    },
+    {
+      "Field": "defObjectAttackPowerRate",
+      "Name": "Absorption %: Object Damage",
+      "Description": "Corrects the attack power against the damage received from OBJ. (Not damage compensation)"
+    },
+    {
+      "Field": "addLifeForceStatus",
+      "Name": "Vigor",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addWillpowerStatus",
+      "Name": "Mind",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addEndureStatus",
+      "Name": "Endurance",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addVitalityStatus",
+      "Name": "Vitality",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addStrengthStatus",
+      "Name": "Strength",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addDexterityStatus",
+      "Name": "Dexterity",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addMagicStatus",
+      "Name": "Intelligence",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addFaithStatus",
+      "Name": "Faith",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "addLuckStatus",
+      "Name": "Luck",
+      "Description": "Add value to growth status"
+    },
+    {
+      "Field": "deleteCriteriaDamage",
+      "Name": "Delete Criteria Damage",
+      "Description": "Reason for damage under the condition to remove special effects"
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

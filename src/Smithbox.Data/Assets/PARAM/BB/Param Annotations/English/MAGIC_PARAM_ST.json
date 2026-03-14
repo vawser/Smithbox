@@ -1,0 +1,283 @@
+{
+  "Param": "MAGIC_PARAM_ST",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "MAGIC_PARAM_ST",
+  "Description": "Spell data",
+  "Fields": [
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Dialog Message ID",
+      "Description": "Message ID of Yes / No dialog issued when using magic"
+    },
+    {
+      "Field": "limitCancelSpEffectId",
+      "Name": "Ignore Usage Restriction - SpEffect ID",
+      "Description": "Usage restrictions can be ignored when the specified special effect ID is activated"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sort ID (-1: Do not collect)"
+    },
+    {
+      "Field": "refId",
+      "Name": "Reference ID",
+      "Description": ""
+    },
+    {
+      "Field": "mp",
+      "Name": "FP Consumption",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "Stamina Consumption",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Set the action ID"
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "Material Item ID",
+      "Description": "Item ID required for purchase"
+    },
+    {
+      "Field": "replaceMagicId",
+      "Name": "Replace Magic ID",
+      "Description": "Greys out icon when set to 1 and Disabled by State Info has a value. Needs further testing."
+    },
+    {
+      "Field": "maxQuantity",
+      "Name": "Number of Uses",
+      "Description": ""
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "Humanity Cost",
+      "Description": ""
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "Dexterity over Start Value",
+      "Description": "Skill over start value"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX Variation ID",
+      "Description": ""
+    },
+    {
+      "Field": "slotLength",
+      "Name": "Slot Usage",
+      "Description": ""
+    },
+    {
+      "Field": "requirementIntellect",
+      "Name": "Requirement: Bloodtinge",
+      "Description": "Can't be equipped without more PC intelligence"
+    },
+    {
+      "Field": "requirementFaith",
+      "Name": "Requirement: Arcane",
+      "Description": "It cannot be equipped without the power of the PC any more."
+    },
+    {
+      "Field": "analogDexiterityMin",
+      "Name": "Casting Speed - Skill Start Range",
+      "Description": "Motion cancel analog: Minimum skill value"
+    },
+    {
+      "Field": "analogDexiterityMax",
+      "Name": "Casting Speed - Skill End Range",
+      "Description": "Motion cancel analog: Maximum skill value"
+    },
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "Magic School Type",
+      "Description": "Used for sorting> For menu"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Reference Category",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+    },
+    {
+      "Field": "refType",
+      "Name": "Motion Category",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "Open Menu Type",
+      "Description": "Menu type to be displayed when using magic"
+    },
+    {
+      "Field": "hasSpEffectType",
+      "Name": "Disabled by State Info",
+      "Description": "Prevents casting when State Info is active. Set replaceMagicId to 1 to make icon grey out."
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "Replace Category",
+      "Description": ""
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "Use Limit Category",
+      "Description": ""
+    },
+    {
+      "Field": "vowType0",
+      "Name": "Vow Type 0",
+      "Description": ""
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Vow Type 1",
+      "Description": ""
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Vow Type 2",
+      "Description": ""
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Vow Type 3",
+      "Description": ""
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Vow Type 4",
+      "Description": ""
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Vow Type 5",
+      "Description": ""
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Vow Type 6",
+      "Description": ""
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Vow Type 7",
+      "Description": ""
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "Enable in Multiplayer",
+      "Description": ""
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "Enable in Multiplayer Only",
+      "Description": ""
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "Is Enchantment",
+      "Description": ""
+    },
+    {
+      "Field": "isShieldEnchant",
+      "Name": "Is Shield Enchantment",
+      "Description": ""
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Enable Live",
+      "Description": "Can surviving characters be used?"
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Enable Gray",
+      "Description": "Can gray characters be used?"
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Enable White",
+      "Description": "Can white ghost characters be used?"
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Enable Black",
+      "Description": "Can black ghost characters be used?"
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "Disable Offline",
+      "Description": ""
+    },
+    {
+      "Field": "castResonanceMagic",
+      "Name": "Cast Resonance Magic",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "Vow Type 9",
+      "Description": ""
+    },
+    {
+      "Field": "vowType9",
+      "Name": "Vow Type 10",
+      "Description": ""
+    },
+    {
+      "Field": "vowType10",
+      "Name": "Vow Type 11",
+      "Description": ""
+    },
+    {
+      "Field": "vowType11",
+      "Name": "Vow Type 12",
+      "Description": ""
+    },
+    {
+      "Field": "vowType12",
+      "Name": "Vow Type 13",
+      "Description": ""
+    },
+    {
+      "Field": "vowType13",
+      "Name": "Vow Type 14",
+      "Description": ""
+    },
+    {
+      "Field": "vowType14",
+      "Name": "Vow Type 15",
+      "Description": ""
+    },
+    {
+      "Field": "vowType15",
+      "Name": "Vow Type 16",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "Param": "NETWORK_MSG_PARAM_ST",
+  "Type": "NETWORK_MSG_PARAM_ST",
+  "Name": "NETWORK_MSG_PARAM_ST",
+  "Description": "Network Messages",
+  "Fields": [
+    {
+      "Field": "MsgType0",
+      "Name": "Priority",
+      "Description": ""
+    },
+    {
+      "Field": "MsgType2",
+      "Name": "Force Play",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId0",
+      "Name": "White Phantom",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId1",
+      "Name": "White Phantom (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId2",
+      "Name": "White Phantom (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId3",
+      "Name": "White Phantom (Sinner Hero)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId4",
+      "Name": "Dark Spirit Summon",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId5",
+      "Name": "Dark Spirit Summon (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId6",
+      "Name": "Dark Spirit Summon (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId7",
+      "Name": "Dark Spirit Invader",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId8",
+      "Name": "Dark Spirit Invader (Warrior of Sunlight)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId9",
+      "Name": "Dark Spirit Invader (Mound-makers)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId10",
+      "Name": "Covenant Invader (Spears of the Church)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId11",
+      "Name": "Covenant Summon (Blade of the Darkmoon)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId12",
+      "Name": "Covenant Invader (Boss Defender)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId13",
+      "Name": "Covenant Invader (Watchdogs of Farron)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId14",
+      "Name": "Covenant Invader (Aldrich Faithful)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId15",
+      "Name": "Dark Spirit Summon (Rosaria's Fingers)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId16",
+      "Name": "Dark Spirit Invader (Rosaria's Fingers)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId17",
+      "Name": "Covenant Summon (Blue Sentinels)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId18",
+      "Name": "NPC 1 (Sirris vs Creighton)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId19",
+      "Name": "NPC 2 (Sirris vs Hodrick)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId20",
+      "Name": "NPC 3 (Player vs Leonhard)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId21",
+      "Name": "NPC 4 (Anri vs Aldrich)",
+      "Description": ""
+    },
+    {
+      "Field": "MsgId22",
+      "Name": "Arena",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

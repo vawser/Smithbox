@@ -1,0 +1,93 @@
+{
+  "Param": "FOOT_IK_PARAM_ST",
+  "Type": "FOOT_IK_PARAM_ST",
+  "Name": "FOOT_IK_PARAM_ST",
+  "Description": "Determines to Havok parameters to use for foot inverse kinematics (IK).",
+  "Fields": [
+    {
+      "Field": "onOffHokanTime",
+      "Name": "Interpolation Time on IK Toggle",
+      "Description": "Determines the interpolation time when IK is toggled on and off."
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "Gain on IK Toggle",
+      "Description": "Determines the amount of gain applied when IK is toggled on and off."
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "Gain on Ground Height Increase",
+      "Description": "Determines the amount of gain applied when the ground height increases."
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "Gain on Ground Height Decrease",
+      "Description": "Determines the amount of gain applied when the ground height decreases."
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "Gain on Foot Raise",
+      "Description": "Determines the amount of gain applied when a foot is raised."
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "Gain on Foot Plant",
+      "Description": "Determines the amount of gain applied when a foot is planted to the ground."
+    },
+    {
+      "Field": "footLockingGain",
+      "Name": "Gain on Foot Lock Toggle",
+      "Description": "Determines the amount of gain applied when a foot is locked or unlocked."
+    },
+    {
+      "Field": "ankleRotationGain",
+      "Name": "Gain on Ankle Rotation",
+      "Description": "Determines the amount of gain applied when an ankle is rotating."
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "Twist Knee Axis Type",
+      "Description": "Axial direction that ignores rotation of the knee joint for twisting."
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "Use Foot Placement",
+      "Description": "If ON, foot placement is active."
+    },
+    {
+      "Field": "isSlopeSlideOffset",
+      "Name": "Apply Slope Adjustment Offset",
+      "Description": "If ON, apply slope offset adjustment when sliding down a slope."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forwardUndulationRate",
+      "Name": "Slope: Forward Lean Ratio",
+      "Description": "Specifies the amount of front/back lean against the slope when the slope is tilted."
+    },
+    {
+      "Field": "sideUndulationRate",
+      "Name": "Slope: Side Lean Ratio",
+      "Description": "Specifies the amount of right/left lean against the slope when the slope is tilted."
+    },
+    {
+      "Field": "undulationGain",
+      "Name": "Slope: Gain",
+      "Description": "The gain value used for tilting the slope when the slope is tilted."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

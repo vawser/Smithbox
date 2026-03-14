@@ -1,0 +1,18 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_DECAL_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_DECAL_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_DECAL_QUALITY_DETAIL",
+  "Description": "Determines the parameters of each decal quality level.",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "Enable Decals",
+      "Description": "If ON, decals are displayed."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

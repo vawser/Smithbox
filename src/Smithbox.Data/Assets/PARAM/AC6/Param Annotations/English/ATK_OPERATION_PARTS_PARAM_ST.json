@@ -1,0 +1,173 @@
+{
+  "Param": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Type": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Name": "ATK_OPERATION_PARTS_PARAM_ST",
+  "Description": "Determines the operation state of various joints. For players.",
+  "Fields": [
+    {
+      "Field": "parts0",
+      "Name": "Operation: Lower Body",
+      "Description": ""
+    },
+    {
+      "Field": "parts1",
+      "Name": "Operation: Right Arm",
+      "Description": ""
+    },
+    {
+      "Field": "parts2",
+      "Name": "Operation: Left Arm",
+      "Description": ""
+    },
+    {
+      "Field": "parts3",
+      "Name": "Operation: Right Shoulder",
+      "Description": ""
+    },
+    {
+      "Field": "parts4",
+      "Name": "Operation: Left Shoulder",
+      "Description": ""
+    },
+    {
+      "Field": "parts5",
+      "Name": "Operation: Right Arm - Stance",
+      "Description": ""
+    },
+    {
+      "Field": "parts6",
+      "Name": "Operation: Left Arm - Stance",
+      "Description": ""
+    },
+    {
+      "Field": "parts7",
+      "Name": "Operation: Upper Body",
+      "Description": ""
+    },
+    {
+      "Field": "parts8",
+      "Name": "Operation: Guard",
+      "Description": ""
+    },
+    {
+      "Field": "parts9",
+      "Name": "Operation: Assault Boost",
+      "Description": ""
+    },
+    {
+      "Field": "parts10",
+      "Name": "Operation: Right Shoulder - Stance",
+      "Description": ""
+    },
+    {
+      "Field": "parts11",
+      "Name": "Operation: Left Shoulder - Stance",
+      "Description": ""
+    },
+    {
+      "Field": "parts12",
+      "Name": "Operation: Right Hand - Reload",
+      "Description": ""
+    },
+    {
+      "Field": "parts13",
+      "Name": "Operation: Left Hand - Reload",
+      "Description": ""
+    },
+    {
+      "Field": "parts14",
+      "Name": "Operation: Right Shoulder - Simultaneous Shoot",
+      "Description": "For movement cancellation"
+    },
+    {
+      "Field": "parts15",
+      "Name": "Operation: Left Shoulder - Simultaneous Shoot",
+      "Description": "For movement cancellation"
+    },
+    {
+      "Field": "parts16",
+      "Name": "Operation: Part 16",
+      "Description": ""
+    },
+    {
+      "Field": "parts17",
+      "Name": "Operation: Part 17",
+      "Description": ""
+    },
+    {
+      "Field": "parts18",
+      "Name": "Operation: Part 18",
+      "Description": ""
+    },
+    {
+      "Field": "parts19",
+      "Name": "Operation: Part 19",
+      "Description": ""
+    },
+    {
+      "Field": "parts20",
+      "Name": "Operation: Part 20",
+      "Description": ""
+    },
+    {
+      "Field": "parts21",
+      "Name": "Operation: Part 21",
+      "Description": ""
+    },
+    {
+      "Field": "parts22",
+      "Name": "Operation: Part 22",
+      "Description": ""
+    },
+    {
+      "Field": "parts23",
+      "Name": "Operation: Part 23",
+      "Description": ""
+    },
+    {
+      "Field": "parts24",
+      "Name": "Operation: Part 24",
+      "Description": ""
+    },
+    {
+      "Field": "parts25",
+      "Name": "Operation: Part 25",
+      "Description": ""
+    },
+    {
+      "Field": "parts26",
+      "Name": "Operation: Part 26",
+      "Description": ""
+    },
+    {
+      "Field": "parts27",
+      "Name": "Operation: Part 27",
+      "Description": ""
+    },
+    {
+      "Field": "parts28",
+      "Name": "Operation: Part 28",
+      "Description": ""
+    },
+    {
+      "Field": "parts29",
+      "Name": "Operation: Part 29",
+      "Description": ""
+    },
+    {
+      "Field": "parts30",
+      "Name": "Operation: Part 30",
+      "Description": ""
+    },
+    {
+      "Field": "parts31",
+      "Name": "Operation: Part 31",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

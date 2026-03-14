@@ -1,0 +1,68 @@
+{
+  "Param": "SOUND_CUTSCENE_PARAM_ST",
+  "Type": "SOUND_CUTSCENE_PARAM_ST",
+  "Name": "SOUND_CUTSCENE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReverbType",
+      "Name": "Reverb Type",
+      "Description": "Specifies the reverb type to apply during the cutscene"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "BgmBehaviorTypeOnStart",
+      "Name": "BGM Behavior Type On Start",
+      "Description": "Specifies normal BGM behavior at the start of cutscenes"
+    },
+    {
+      "Field": "OneShotBgmBehaviorOnStart",
+      "Name": "One-shot BGM Behavior Type On Start",
+      "Description": "Specifies the one-shot BGM behavior at the start of the cutscene"
+    },
+    {
+      "Field": "PostPlaySeId",
+      "Name": "Post Play SE ID",
+      "Description": "SEID (category: p) specification to post at the end of the cutscene (-1: do not post)"
+    },
+    {
+      "Field": "PostPlaySeIdForSkip",
+      "Name": "Post Play SE ID for Skip",
+      "Description": "SEID_ for skipping to post at the end of the cutscene (category: p) specified (-1: not posted)"
+    },
+    {
+      "Field": "EnterMapMuteStopTimeOnDrawCutscene",
+      "Name": "Enter Map Mute Stop Time on Draw Cutscene",
+      "Description": "Cutscene drawing time to unmute immediately after entering [seconds] (less than 0: not canceled in drawing time)"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved_old",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

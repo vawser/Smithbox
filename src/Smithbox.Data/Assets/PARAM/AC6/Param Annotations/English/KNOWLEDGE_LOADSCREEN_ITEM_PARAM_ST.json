@@ -1,0 +1,43 @@
+{
+  "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Description": "Determines appearance of loading screens and the tips they show.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unlockFlagId",
+      "Name": "Appearance Flag ID",
+      "Description": "The event flag ID that causes this loading screen to appear. -1 means it will always appear. Removal flag will override this."
+    },
+    {
+      "Field": "invalidFlagId",
+      "Name": "Removal Flag ID",
+      "Description": "The event flag ID that causes this loading screen to disappear. -1 means it will never appear."
+    },
+    {
+      "Field": "msgId",
+      "Name": "Hint Text ID",
+      "Description": "The FMG ID to use for the displayed hint text (both title and description. -1 means none."
+    },
+    {
+      "Field": "reserve_last",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

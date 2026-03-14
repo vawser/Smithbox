@@ -1,0 +1,173 @@
+{
+  "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Description": "Determines the hit effect particles based on the incoming hit.",
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "1: Kinetic",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "2: Kinetic",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkFire_1",
+      "Name": "1: Flame",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkFire_2",
+      "Name": "2: Flame",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkStun_1",
+      "Name": "1: Stun",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkStun_2",
+      "Name": "2: Stun",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkEmp_1",
+      "Name": "1: EMP",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkEmp_2",
+      "Name": "2: EMP",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkIce_1",
+      "Name": "1: Ice",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkIce_2",
+      "Name": "2: Ice",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkEnergy_Green_1",
+      "Name": "1: Energy (Green)",
+      "Description": "The hit SFX for this slot. Blue for plasma, pulse, laser and barrier."
+    },
+    {
+      "Field": "atkEnergy_Green_2",
+      "Name": "2: Energy (Green)",
+      "Description": "The hit SFX for this slot. Blue for plasma, pulse, laser and barrier."
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "1: None",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "2: None",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy1_1",
+      "Name": "1: Dummy Polygon 1",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy1_2",
+      "Name": "2: Dummy Polygon 1",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy2_1",
+      "Name": "1: Dummy Polygon 2",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy2_2",
+      "Name": "2: Dummy Polygon 2",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy3_1",
+      "Name": "1: Dummy Polygon 3",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy3_2",
+      "Name": "2: Dummy Polygon 3",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy4_1",
+      "Name": "1: Dummy Polygon 4",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkDmy4_2",
+      "Name": "2: Dummy Polygon 4",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkMelange_1",
+      "Name": "1: Fabric",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkMelange_2",
+      "Name": "2: Fabric",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkPulse_1",
+      "Name": "1: Pulse",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkPulse_2",
+      "Name": "2: Pulse",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkLaser_1",
+      "Name": "1: Laser",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkLaser_2",
+      "Name": "2: Laser",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkPlusma_1",
+      "Name": "1: Plasma",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkPlusma_2",
+      "Name": "2: Plasma",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkAssaultArmor_1",
+      "Name": "1: Assault Armor",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "atkAssaultArmor_2",
+      "Name": "2: Assault Armor",
+      "Description": "The hit SFX for this slot."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

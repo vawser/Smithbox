@@ -1,0 +1,458 @@
+{
+  "Param": "ATK_PARAM_ST",
+  "Type": "ATK_PARAM_ST",
+  "Name": "ATK_PARAM_ST",
+  "Description": "Character attack data",
+  "Fields": [
+    {
+      "Field": "hit0_Radius",
+      "Name": "Hit 0: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "hit1_Radius",
+      "Name": "Hit 1: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "hit2_Radius",
+      "Name": "Hit 2: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "hit3_Radius",
+      "Name": "Hit 3: Radius",
+      "Description": "Radius of sphere/capsule hitbox."
+    },
+    {
+      "Field": "knockbackDist",
+      "Name": "Knockback Distance",
+      "Description": "Knockback distance of attack."
+    },
+    {
+      "Field": "hitStopTime",
+      "Name": "Hit Stop Time",
+      "Description": "Duration of the 'hit' flag on the target."
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "Target SpEffect [0]",
+      "Description": "Special effect applied to target on hit"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Target SpEffect [1]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "Target SpEffect [2]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "Target SpEffect [3]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "Target SpEffect [4]",
+      "Description": "Special effect applied to target on hit."
+    },
+    {
+      "Field": "hit0_DmyPoly1",
+      "Name": "Hit 0: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "hit1_DmyPoly1",
+      "Name": "Hit 1: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "hit2_DmyPoly1",
+      "Name": "Hit 2: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "hit3_DmyPoly1",
+      "Name": "Hit 3: Dummy Poly [1]",
+      "Description": "Model point at origin of hitbox if the Hitbox End Model Point is not -1.\nThe hitbox will be a capsule with hemispherical caps positioned at these origins (with a joining cylinder)."
+    },
+    {
+      "Field": "hit0_DmyPoly2",
+      "Name": "Hit 0: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "hit1_DmyPoly2",
+      "Name": "Hit 1: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "hit2_DmyPoly2",
+      "Name": "Hit 2: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "hit3_DmyPoly2",
+      "Name": "Hit 3: Dummy Poly [2]",
+      "Description": "Model point at end of capsule hitbox. If this is -1, the hitbox will be a sphere placed at Hitbox Start Model Point."
+    },
+    {
+      "Field": "blowingCorrection",
+      "Name": "Attack Correction: Blowing",
+      "Description": "Correction value when blowing off"
+    },
+    {
+      "Field": "atkPhysCorrection",
+      "Name": "Attack Correction: Physical",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate physical attack damage."
+    },
+    {
+      "Field": "atkMagCorrection",
+      "Name": "Attack Correction: Magic",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate magic attack damage."
+    },
+    {
+      "Field": "atkFireCorrection",
+      "Name": "Attack Correction: Fire",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate fire attack damage."
+    },
+    {
+      "Field": "atkThunCorrection",
+      "Name": "Attack Correction: Lightning",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate lightning attack damage."
+    },
+    {
+      "Field": "atkStamCorrection",
+      "Name": "Attack Correction: Stamina",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character attack power to calculate stamina attack damage."
+    },
+    {
+      "Field": "guardAtkRateCorrection",
+      "Name": "Attack Correction: Flick Attack",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to character flick attack power."
+    },
+    {
+      "Field": "guardBreakCorrection",
+      "Name": "Guard Correction: Guard Flick",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to guard flick power.\nPC only."
+    },
+    {
+      "Field": "atkThrowEscapeCorrection",
+      "Name": "Attack Correction: Throw Escape",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to weapon attacks during throws."
+    },
+    {
+      "Field": "atkSuperArmorCorrection",
+      "Name": "Attack Correction: Poise",
+      "Description": "Multiplier (as percentage from 0 upwards) applied to damage to target poise."
+    },
+    {
+      "Field": "atkPhys",
+      "Name": "Damage: Physical",
+      "Description": "Absolute physical attack power of attack."
+    },
+    {
+      "Field": "atkMag",
+      "Name": "Damage: Magic",
+      "Description": "Absolute magic attack power of attack."
+    },
+    {
+      "Field": "atkFire",
+      "Name": "Damage: Fire",
+      "Description": "Absolute fire attack power of attack."
+    },
+    {
+      "Field": "atkThun",
+      "Name": "Damage: Lightning",
+      "Description": "Absolute lightning attack power of attack."
+    },
+    {
+      "Field": "atkStam",
+      "Name": "Damage: Stamina",
+      "Description": "Absolute stamina attack power of attack."
+    },
+    {
+      "Field": "guardAtkRate",
+      "Name": "Damage: Flick Attack",
+      "Description": "Absolute flick attack power of attack."
+    },
+    {
+      "Field": "guardBreakRate",
+      "Name": "Guard: Guard Flick",
+      "Description": "Absolute guard flick power of guard.\nNPC only."
+    },
+    {
+      "Field": "atkSuperArmor",
+      "Name": "Damage: Poise",
+      "Description": "Absolute poise attack power of attack."
+    },
+    {
+      "Field": "atkThrowEscape",
+      "Name": "Damage: Throw Escape",
+      "Description": "Absolute attack power of attack during throw."
+    },
+    {
+      "Field": "atkObj",
+      "Name": "Damage: Object",
+      "Description": "Amount of damage dealt to objects by this attack."
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "Guard Correction: Stability",
+      "Description": "Percentage multiplier applied to stability of guard."
+    },
+    {
+      "Field": "guardRate",
+      "Name": "Guard Correction: Absorption",
+      "Description": "Percentage multiplier applied to damage absorptions of guard."
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "Throw Type ID",
+      "Description": "Throw to trigger when attack hits. For some reason, throws are triggered using this ID, which is a field within each Throw table entry rather than the ID of the Throw table entry itself."
+    },
+    {
+      "Field": "hit0_hitType",
+      "Name": "Hit 0: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "hit1_hitType",
+      "Name": "Hit 1: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "hit2_hitType",
+      "Name": "Hit 2: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "hit3_hitType",
+      "Name": "Hit 3: Hit Type",
+      "Description": "Type of hit applied by hitbox."
+    },
+    {
+      "Field": "hti0_Priority",
+      "Name": "Hit 0: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hti1_Priority",
+      "Name": "Hit 1: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hti2_Priority",
+      "Name": "Hit 2: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "hti3_Priority",
+      "Name": "Hit 3: Priority",
+      "Description": "Priority of hitbox. If two hits occur simultaneously, only the highest priority hit occurs."
+    },
+    {
+      "Field": "dmgLevel",
+      "Name": "Damage Level",
+      "Description": "Impact level of attack, which determines how the target reacts to it (e.g. knocked backward, launched into the air, etc.).\nCertain special effects on the target (e.g. Iron Flesh) may re-map this impact level to a different one."
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "Map Hit Type",
+      "Description": "Determines how this attack interacts with the map."
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "Guard Absorption Bypass Rate",
+      "Description": "Percentage of target's current guard rate to bypass.\nGuard bypass starts at 255 for 1 percent bypass to 156 for 100 percent bypass.\n(Needs testing) Values of 1 to 100 will increase guarding effectiveness."
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Type of physical damage done by attack."
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Type of elemental damage done by attack."
+    },
+    {
+      "Field": "atkType",
+      "Name": "Attack Type",
+      "Description": "Determines the sounds and visual effects generated by the attack itself (before hit)."
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Material",
+      "Description": "Determines the sounds and visual effects generated when the attack hits. A value of 255 uses the weapon default."
+    },
+    {
+      "Field": "atkSize",
+      "Name": "Attack SE/FX Size",
+      "Description": "Size of sounds and visual effects."
+    },
+    {
+      "Field": "defMaterial",
+      "Name": "Defence SE Material",
+      "Description": "Determines the sound effects used when guarding. Usually 255 for Player Attacks and 0 (if not a block) or 50 (if blocking) for Non-Player Attacks."
+    },
+    {
+      "Field": "defSfxMaterial",
+      "Name": "Defence FX Material",
+      "Description": "Determines the visual effects used when guarding. Usually 255 for Player Attacks and 0 (if not a block) or 50 (if blocking) for Non-Player Attacks."
+    },
+    {
+      "Field": "hitSourceType",
+      "Name": "Hit Source Type",
+      "Description": "Specify where you get the model point for attack. Set to 1 for parries, ripostes, and basic body attacks (falling, rolling, etc.), and zero otherwise. Use that pattern."
+    },
+    {
+      "Field": "throwFlag",
+      "Name": "Throw Flag",
+      "Description": "Determines how this attack relates to throws: not at all, a throw trigger, or a throw damage parameter."
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "Disable Guard",
+      "Description": "If True, this attack cannot be blocked (e.g. throws)."
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "Disable Stamina Attack",
+      "Description": "If True, this attack will deal no stamina damage, regardless of its stamina attack power."
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "Disable Hit SpEffect",
+      "Description": "If True, this attack will trigger no special effects on the target."
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "Disable Missed Attack Notification For AI",
+      "Description": "If True, the character's AI will not be informed when this attack misses. Enabled for basic body attacks (falling, rolling, ladder punches, etc.) that are generally not considered to be serious attacks."
+    },
+    {
+      "Field": "repeatHitSfx",
+      "Name": "Repeat Hit Sound FX",
+      "Description": "If True, sound effects will supposedly be repeated as long as the attack continuously hits a wall."
+    },
+    {
+      "Field": "isArrowAtk",
+      "Name": "Is Arrow Attack: Can Headshot",
+      "Description": "Flags if this attack can land headshots. Frequently flagged for physical projectiles (knives/arrows/bolts)."
+    },
+    {
+      "Field": "isGhostAtk",
+      "Name": "Is Attack By Ghost",
+      "Description": "Flags if this is an attack of a ghost, which presumably disables wall collision, etc."
+    },
+    {
+      "Field": "isDisableNoDamage",
+      "Name": "Ignore Invincibility Frames",
+      "Description": "If True, this attack will ignore invincibility frames from rolling or backstepping (but not other sources of invincibility such as TAE or events)."
+    },
+    {
+      "Field": "atkPow_forSfxSe",
+      "Name": "Attack Power for SFX Effect",
+      "Description": ""
+    },
+    {
+      "Field": "atkDir_forSfxSe",
+      "Name": "Attack Direction for SFX Effect",
+      "Description": ""
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "Oppose Target",
+      "Description": "Attack can hit enemy targets"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "Friendly Target",
+      "Description": "Attack can hit friendly targets"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "Self Target",
+      "Description": "Attack can hit self"
+    },
+    {
+      "Field": "isChargeAtk",
+      "Name": "Is Charge Attack",
+      "Description": ""
+    },
+    {
+      "Field": "isShareHitList",
+      "Name": "Is Hit List Shared",
+      "Description": ""
+    },
+    {
+      "Field": "isCheckObjPenetration",
+      "Name": "Is Object Penetration Checked",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "regainableSlotId",
+      "Name": "Same Attack Judgment ID",
+      "Description": "Same attack judgment ID"
+    },
+    {
+      "Field": "deathcauseId",
+      "Name": "Death Cause ID",
+      "Description": ""
+    },
+    {
+      "Field": "decalId1",
+      "Name": "Decal ID [1]",
+      "Description": "Decal ID 1 (directly specified)"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "Decal ID [2]",
+      "Description": "Decal ID 2 (directly specified)"
+    },
+    {
+      "Field": "appearAiSoundId",
+      "Name": "Appear AI Sound ID",
+      "Description": "ID of AI sound generated when an attack occurs"
+    },
+    {
+      "Field": "hitAiSoundId",
+      "Name": "Hit AI Sound ID",
+      "Description": "ID of AI sound generated at the time of hit"
+    },
+    {
+      "Field": "wepRegainHpScale",
+      "Name": "Rally HP Correction",
+      "Description": "Weapon regain amount correction value"
+    },
+    {
+      "Field": "atkRegainHp",
+      "Name": "Rally HP Gain",
+      "Description": "Weapon regain amount"
+    },
+    {
+      "Field": "regainableTimeScale",
+      "Name": "Rally Duration",
+      "Description": "Regain possible time correction magnification"
+    },
+    {
+      "Field": "regainableHpRateScale",
+      "Name": "Rally Duration Correction",
+      "Description": "Regain possibility correction magnification"
+    }
+  ]
+}

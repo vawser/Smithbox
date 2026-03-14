@@ -1,0 +1,168 @@
+{
+  "Param": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Type": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Name": "ASSET_MATERIAL_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "SFX ID [00]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "SFX ID [01]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "SFX ID [02]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "SFX ID [03]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "SFX ID [04]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "SFX ID [05]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "SFX ID [06]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "SFX ID [07]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "SFX ID [08]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "SFX ID [09]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "SFX ID [10]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "SFX ID [11]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "SFX ID [12]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "SFX ID [13]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "SFX ID [14]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "SFX ID [15]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "SFX ID [16]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "SFX ID [17]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "SFX ID [18]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "SFX ID [19]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "SFX ID [20]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "SFX ID [21]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "SFX ID [22]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "SFX ID [23]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "SFX ID [24]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "SFX ID [25]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "SFX ID [26]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "SFX ID [27]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "SFX ID [28]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "SFX ID [29]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "SFX ID [30]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    },
+    {
+      "Field": "sfxId_31",
+      "Name": "SFX ID [31]",
+      "Description": "SFX identifier corresponding to the asset parameter SFX identifier after destruction"
+    }
+  ]
+}

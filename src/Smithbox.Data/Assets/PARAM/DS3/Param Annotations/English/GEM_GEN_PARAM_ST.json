@@ -1,0 +1,193 @@
+{
+  "Param": "GEM_GEN_PARAM_ST",
+  "Type": "GEM_GEN_PARAM_ST",
+  "Name": "GEM_GEN_PARAM_ST",
+  "Description": "Unused",
+  "Fields": [
+    {
+      "Field": "isUnique",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "0x04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemNameIdOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableSlotRateModify",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateA",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateC",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateE",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotTypeRateF",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemRankDoping",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParamType_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gemeffectGenParam_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "manifestRate_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "negativizeRate_5",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

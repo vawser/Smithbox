@@ -1,0 +1,203 @@
+{
+  "Param": "ACTIONBUTTON_PARAM_ST",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ACTIONBUTTON_PARAM_ST",
+  "Description": "Determines the parameters used for interactable prompts.",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "Region Type",
+      "Description": "Range shape (cylinder, prism, capsule)"
+    },
+    {
+      "Field": "padding1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "Dummy Poly [1]",
+      "Description": "Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygib or -1 is entered, the center coordinates will be the reference."
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "Dummy Poly [2]",
+      "Description": "Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons"
+    },
+    {
+      "Field": "radius",
+      "Name": "Radius",
+      "Description": "Radius (cylinder / capsule)"
+    },
+    {
+      "Field": "angle",
+      "Name": "Angle",
+      "Description": "Angle (cylinder)"
+    },
+    {
+      "Field": "depth",
+      "Name": "Depth",
+      "Description": "Depth (prism)"
+    },
+    {
+      "Field": "width",
+      "Name": "Width",
+      "Description": "Width (prism)"
+    },
+    {
+      "Field": "height",
+      "Name": "Height",
+      "Description": "Height (cylinder / prism)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "Bottom Height Offset",
+      "Description": "How much to raise or lower the Y coordinate of the bottom (cylinder / prism)"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "Angle Difference Check Type",
+      "Description": "Angle difference judgment type (cylinder / prism)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "Allowable Angle Difference",
+      "Description": "Allowable angle difference (cylinder / prism)"
+    },
+    {
+      "Field": "padding3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "Textbox Type",
+      "Description": "Text box type"
+    },
+    {
+      "Field": "raycastType",
+      "Name": "Occlusion Judgment Type",
+      "Description": ""
+    },
+    {
+      "Field": "actionGroupId",
+      "Name": "Action Group ID",
+      "Description": "Which action group does this action button belong to. For example, you may be able to use X action whilst hanging, but you cannot use Y action."
+    },
+    {
+      "Field": "execButtonTriangle",
+      "Name": "Executed via Triangle Button",
+      "Description": ""
+    },
+    {
+      "Field": "isInvalidForRide",
+      "Name": "Is Invalid when Riding",
+      "Description": "If enabled, this action will not appear whilst in the 'riding' state."
+    },
+    {
+      "Field": "isGrayoutForRide",
+      "Name": "Is Grayed Out when Riding",
+      "Description": "If enabled, this action will be grayed out whilst in the 'riding' state."
+    },
+    {
+      "Field": "drawLine",
+      "Name": "Display Line",
+      "Description": "If enabled, a line will appear from the icon to the ground."
+    },
+    {
+      "Field": "padding4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "The FMG Entry ID to display."
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "Invalid Event Flag",
+      "Description": "If the event flag is ON, then this action will not appear."
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "Grayout Event Flag",
+      "Description": "If the event flag is ON, then this action will be grayed out."
+    },
+    {
+      "Field": "priority",
+      "Name": "Display Priority",
+      "Description": "Priority when displaying multiple actions, 0 is highest priority."
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "Execution Invalid Time",
+      "Description": "Invalid time after execution (-infinite by value)"
+    },
+    {
+      "Field": "execButtonCircle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sameCategoryActionDisplay",
+      "Name": "Same Category Action Display",
+      "Description": "Whether or not action buttons with the same category specified in the program are displayed on top of each other."
+    },
+    {
+      "Field": "effectDispDist",
+      "Name": "Effect Display Distance",
+      "Description": "Range effect viewing distance, -1 means no range effect."
+    },
+    {
+      "Field": "execButtonHoldSec",
+      "Name": "Execution Button Hold Time",
+      "Description": "When the judgment is active, if the press key is pressed for the stated number of seconds, it is considered to have been pressed. If it is 0, it is not judged to be pressed and held."
+    },
+    {
+      "Field": "iconID",
+      "Name": "Icon ID",
+      "Description": "The icon to display for the action in the world."
+    },
+    {
+      "Field": "pointRadius",
+      "Name": "Point Radius",
+      "Description": "Radius (point display range is cylindrical). -1 refers to the number of actionable ranges."
+    },
+    {
+      "Field": "pointHeight",
+      "Name": "Point Height",
+      "Description": "Height (point display range is cylindrical). -1 refers to the number of the actionable range"
+    },
+    {
+      "Field": "pointBaseHeightOffset",
+      "Name": "Point Base Height Offset",
+      "Description": "How much to raise or lower the Y coordinate of the bottom."
+    },
+    {
+      "Field": "iconOffsetX",
+      "Name": "Icon Offset: X",
+      "Description": "The offset to apply to the icon in the world along the x-axis. Positive is right, negative is left."
+    },
+    {
+      "Field": "iconOffsetY",
+      "Name": "Icon Offset: Y",
+      "Description": "The offset to apply to the icon in the world along the y-axis. Positive is above, negative is below."
+    },
+    {
+      "Field": "iconOffsetZ",
+      "Name": "Icon Offset: Z",
+      "Description": "The offset to apply to the icon in the world along the z-axis. Positive is forward, negative is backward."
+    },
+    {
+      "Field": "doneFlag",
+      "Name": "Done Flag",
+      "Description": "The event flag to apply upon execution. -1 means no flag is set."
+    }
+  ]
+}

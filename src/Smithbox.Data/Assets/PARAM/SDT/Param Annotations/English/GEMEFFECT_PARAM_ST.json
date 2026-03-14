@@ -1,0 +1,48 @@
+{
+  "Param": "GEMEFFECT_PARAM_ST",
+  "Type": "GEMEFFECT_PARAM_ST",
+  "Name": "GEMEFFECT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "speffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "categoryId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "effectRank",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rankMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rankMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equipCost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "removeCost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "prefixNameId",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

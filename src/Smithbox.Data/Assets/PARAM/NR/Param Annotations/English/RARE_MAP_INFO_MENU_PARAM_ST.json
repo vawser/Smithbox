@@ -1,0 +1,33 @@
+{
+  "Param": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Type": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Name": "RARE_MAP_INFO_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nameId",
+      "Name": "Map Name",
+      "Description": "The name of this map variant."
+    },
+    {
+      "Field": "mapFlag",
+      "Name": "Map Flag",
+      "Description": "The event flag associated with this map variant."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "Param": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Type": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Name": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "Disable Param - Debug",
+      "Description": "Parameters marked with a circle are excluded from all packages (because they are for debugging)."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "texName_00",
+      "Name": "Texture DisplayName [00]",
+      "Description": "Texture DisplayName [00]"
+    },
+    {
+      "Field": "texName_01",
+      "Name": "Texture DisplayName [01]",
+      "Description": "Texture DisplayName [01]"
+    },
+    {
+      "Field": "texName_02",
+      "Name": "Texture DisplayName [02]",
+      "Description": "Texture DisplayName [02]"
+    },
+    {
+      "Field": "texName_03",
+      "Name": "Texture DisplayName [03]",
+      "Description": "Texture DisplayName [03]"
+    },
+    {
+      "Field": "texName_04",
+      "Name": "Texture DisplayName [04]",
+      "Description": "Texture DisplayName [04]"
+    },
+    {
+      "Field": "texName_05",
+      "Name": "Texture DisplayName [05]",
+      "Description": "Texture DisplayName [05]"
+    },
+    {
+      "Field": "texName_06",
+      "Name": "Texture DisplayName [06]",
+      "Description": "Texture DisplayName [06]"
+    },
+    {
+      "Field": "texName_07",
+      "Name": "Texture DisplayName [07]",
+      "Description": "Texture DisplayName [07]"
+    },
+    {
+      "Field": "texName_08",
+      "Name": "Texture DisplayName [08]",
+      "Description": "Texture DisplayName [08]"
+    },
+    {
+      "Field": "texName_09",
+      "Name": "Texture DisplayName [09]",
+      "Description": "Texture DisplayName [09]"
+    },
+    {
+      "Field": "texName_10",
+      "Name": "Texture DisplayName [10]",
+      "Description": "Texture DisplayName [10]"
+    },
+    {
+      "Field": "texName_11",
+      "Name": "Texture DisplayName [11]",
+      "Description": "Texture DisplayName [11]"
+    },
+    {
+      "Field": "texName_12",
+      "Name": "Texture DisplayName [12]",
+      "Description": "Texture DisplayName [12]"
+    },
+    {
+      "Field": "texName_13",
+      "Name": "Texture DisplayName [13]",
+      "Description": "Texture DisplayName [13]"
+    },
+    {
+      "Field": "texName_14",
+      "Name": "Texture DisplayName [14]",
+      "Description": "Texture DisplayName [14]"
+    },
+    {
+      "Field": "texName_15",
+      "Name": "Texture DisplayName [15]",
+      "Description": "Texture DisplayName [15]"
+    }
+  ]
+}

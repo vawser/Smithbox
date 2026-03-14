@@ -1,0 +1,388 @@
+{
+  "Param": "SP_EFFECT_VFX_PARAM_ST",
+  "Type": "SP_EFFECT_VFX_PARAM_ST",
+  "Name": "SP_EFFECT_VFX_PARAM_ST",
+  "Description": "VFX settings used for SpEffects",
+  "Fields": [
+    {
+      "Field": "midstSfxId",
+      "Name": "",
+      "Description": "Visual effect spawned over the course of the SpEffects duration"
+    },
+    {
+      "Field": "midstSeId",
+      "Name": "",
+      "Description": "Sound effect spawned over the course of the SpEffects duration"
+    },
+    {
+      "Field": "initSfxId",
+      "Name": "",
+      "Description": "Visual effect spawned when the SpEffect is applied"
+    },
+    {
+      "Field": "initSeId",
+      "Name": "",
+      "Description": "Sound effect spawned when the SpEffect is applied"
+    },
+    {
+      "Field": "finishSfxId",
+      "Name": "",
+      "Description": "Visual effect spawned when the SpEffects duration has elapsed"
+    },
+    {
+      "Field": "finishSeId",
+      "Name": "",
+      "Description": "Sound effect spawned when the SpEffects duration has elapsed"
+    },
+    {
+      "Field": "camouflageBeginDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camouflageEndDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "transformProtectorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "midstDmyId",
+      "Name": "",
+      "Description": "Dummpoly the midst visual and sound effects are spawned from"
+    },
+    {
+      "Field": "initDmyId",
+      "Name": "",
+      "Description": "Dumypoly the init visual and sound effects are spawned from"
+    },
+    {
+      "Field": "finishDmyId",
+      "Name": "",
+      "Description": "Dummypoly the finish visual and sound effects are spawned from"
+    },
+    {
+      "Field": "effectType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soulParamIdForWepEnchant",
+      "Name": "",
+      "Description": "Soul param ID for weapon enchantment. Changes the applied phantom param."
+    },
+    {
+      "Field": "playCategory",
+      "Name": "",
+      "Description": "Stacking behavior for SpEffectVfxParam entries, if one has the same category they can't play at the same time"
+    },
+    {
+      "Field": "playPriority",
+      "Name": "",
+      "Description": "Stacking Priority for SpEffectVfxParam, if the VfxParam has a higher priority it will play over and remove the effects of the one with a lower priority"
+    },
+    {
+      "Field": "existEffectForLarge",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "existEffectForSoul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "effectInvisibleAtCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleAtFriendCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addMapAreaBlockOffset",
+      "Name": "",
+      "Description": "Migrated (add map number to SfxID → SfxID offset type)"
+    },
+    {
+      "Field": "halfCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isFullBodyTransformProtectorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isInvisibleWeapon",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isSilence",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isMidstFullbody",
+      "Name": "",
+      "Description": "Do you use full body dummy poly for equipping SFX during the effect? At 1, play SFX from torso: 190, head: 191, hands: 192, legs: 193"
+    },
+    {
+      "Field": "isInitFullbody",
+      "Name": "",
+      "Description": "Do you use full body dummy poly for equipping SFX during the effect? At 1, play SFX from torso: 190, head: 191, hands: 192, legs: 193"
+    },
+    {
+      "Field": "isFinishFullbody",
+      "Name": "",
+      "Description": "Do you use full body dummy poly for equipping SFX during the effect? At 1, play SFX from torso: 190, head: 191, hands: 192, legs: 193"
+    },
+    {
+      "Field": "isVisibleDeadChr",
+      "Name": "",
+      "Description": "When enabled, Vfx is displayed when the character is dead"
+    },
+    {
+      "Field": "isUseOffsetEnchantSfxSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decalId1",
+      "Name": "",
+      "Description": "Applies Decal entry"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "",
+      "Description": "Applies Decal entry"
+    },
+    {
+      "Field": "footEffectPriority",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footEffectOffset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "traceSfxIdOffsetType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "forceDeceasedType",
+      "Name": "",
+      "Description": "A function that allows you to force the appearance of a character to be a living person or a dead person."
+    },
+    {
+      "Field": "enchantStartDmyId_0",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_0",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_1",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_1",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_2",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_2",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_3",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_3",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_4",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_4",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_5",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_5",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_6",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_6",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "enchantStartDmyId_7",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the root when enchanting"
+    },
+    {
+      "Field": "enchantEndDmyId_7",
+      "Name": "",
+      "Description": "Dummypoly ID generated at the tip of the sword when enchanted. If you specify -1, it will automatically print out sequential numbers."
+    },
+    {
+      "Field": "SfxIdOffsetType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamOverwriteType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camouflageMinAlpha",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "staminaFeExpressionType",
+      "Name": "",
+      "Description": "Applies effect to the posture bar on screen"
+    },
+    {
+      "Field": "phantomParamOverwriteId",
+      "Name": "",
+      "Description": "Applies PhantomParam entry"
+    },
+    {
+      "Field": "emissiveIntensity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveFadeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footDecalMaterialOffsetOverwriteId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cinderIntensityScale",
+      "Name": "",
+      "Description": "Rewrite the material's CinderIntensityScale."
+    },
+    {
+      "Field": "ninsatuVisible",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ninsatuDmyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSfxMaterialOffsetOverwriteId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "footSeMaterialOffsetOverwriteId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamInitValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamTargetValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "materialParamFadeTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutRateCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInRateCamouflage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Type": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Name": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "a000_rightElbowIO",
+      "Name": "[a000] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a000_leftElbowIO",
+      "Name": "[a000] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a000_bothLegsIO",
+      "Name": "[a000] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a002_rightElbowIO",
+      "Name": "[a002] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a002_leftElbowIO",
+      "Name": "[a002] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a002_bothLegsIO",
+      "Name": "[a002] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a003_rightElbowIO",
+      "Name": "[a003] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a003_leftElbowIO",
+      "Name": "[a003] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a003_bothLegsIO",
+      "Name": "[a003] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a010_rightElbowIO",
+      "Name": "[a010] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a010_leftElbowIO",
+      "Name": "[a010] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a010_bothLegsIO",
+      "Name": "[a010] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a012_rightElbowIO",
+      "Name": "[a012] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a012_leftElbowIO",
+      "Name": "[a012] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a012_bothLegsIO",
+      "Name": "[a012] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a013_rightElbowIO",
+      "Name": "[a013] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a013_leftElbowIO",
+      "Name": "[a013] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a013_bothLegsIO",
+      "Name": "[a013] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a014_rightElbowIO",
+      "Name": "[a014] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a014_leftElbowIO",
+      "Name": "[a014] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a014_bothLegsIO",
+      "Name": "[a014] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a015_rightElbowIO",
+      "Name": "[a015] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a015_leftElbowIO",
+      "Name": "[a015] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a015_bothLegsIO",
+      "Name": "[a015] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "a016_rightElbowIO",
+      "Name": "[a016] Right Elbow - Inside/Outside",
+      "Description": "Right elbow _ inside and outside"
+    },
+    {
+      "Field": "a016_leftElbowIO",
+      "Name": "[a016] Left Elbow - Inside/Outside",
+      "Description": "Left elbow_inside and outside"
+    },
+    {
+      "Field": "a016_bothLegsIO",
+      "Name": "[a016] Both Legs - Inside/Outside",
+      "Description": "Both feet _ inside and outside"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

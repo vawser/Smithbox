@@ -1,0 +1,393 @@
+{
+  "Param": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Type": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Name": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Description": "Governs which damage types scale with which stats. Includes correction values.",
+  "Fields": [
+    {
+      "Field": "isStrengthCorrect_byPhysics",
+      "Name": "Physical Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byPhysics",
+      "Name": "Physical Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byPhysics",
+      "Name": "Physical Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byPhysics",
+      "Name": "Physical Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byPhysics",
+      "Name": "Physical Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byMagic",
+      "Name": "Magic Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byMagic",
+      "Name": "Magic Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byMagic",
+      "Name": "Magic Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byMagic",
+      "Name": "Magic Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byMagic",
+      "Name": "Magic Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byFire",
+      "Name": "Fire Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byFire",
+      "Name": "Fire Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byFire",
+      "Name": "Fire Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byFire",
+      "Name": "Fire Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byFire",
+      "Name": "Fire Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byThunder",
+      "Name": "Lightning Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byThunder",
+      "Name": "Lightning Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byThunder",
+      "Name": "Lightning Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byThunder",
+      "Name": "Lightning Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byThunder",
+      "Name": "Lightning Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byDark",
+      "Name": "Holy Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byDark",
+      "Name": "Holy Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byDark",
+      "Name": "Holy Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byDark",
+      "Name": "Holy Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byDark",
+      "Name": "Holy Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byPhysics",
+      "Name": "Physical Replacement Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byPhysics",
+      "Name": "Physical Replacement Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byPhysics",
+      "Name": "Physical Replacement Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byPhysics",
+      "Name": "Physical Replacement Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byPhysics",
+      "Name": "Physical Replacement Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byMagic",
+      "Name": "Magic Replacement Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byMagic",
+      "Name": "Magic Replacement Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byMagic",
+      "Name": "Magic Replacement Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byMagic",
+      "Name": "Magic Replacement Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byMagic",
+      "Name": "Magic Replacement Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byFire",
+      "Name": "Fire Replacement Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byFire",
+      "Name": "Fire Replacement Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byFire",
+      "Name": "Fire Replacement Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byFire",
+      "Name": "Fire Replacement Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byFire",
+      "Name": "Fire Replacement Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byThunder",
+      "Name": "Lightning Replacement Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byThunder",
+      "Name": "Lightning Replacement Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byThunder",
+      "Name": "Lightning Replacement Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byThunder",
+      "Name": "Lightning Replacement Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byThunder",
+      "Name": "Lightning Replacement Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byDark",
+      "Name": "Holy Replacement Correction: STR",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byDark",
+      "Name": "Holy Replacement Correction: DEX",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byDark",
+      "Name": "Holy Replacement Correction: INT",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byDark",
+      "Name": "Holy Replacement Correction: FTH",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byDark",
+      "Name": "Holy Replacement Correction: ARC",
+      "Description": ""
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byPhysics",
+      "Name": "Physical Correction Ratio: STR",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byPhysics",
+      "Name": "Physical Correction Ratio: DEX",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byPhysics",
+      "Name": "Physical Correction Ratio: INT",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byPhysics",
+      "Name": "Physical Correction Ratio: FTH",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byPhysics",
+      "Name": "Physical Correction Ratio: ARC",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byMagic",
+      "Name": "Magic Correction Ratio: STR",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byMagic",
+      "Name": "Magic Correction Ratio: DEX",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byMagic",
+      "Name": "Magic Correction Ratio: INT",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byMagic",
+      "Name": "Magic Correction Ratio: FTH",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byMagic",
+      "Name": "Magic Correction Ratio: ARC",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byFire",
+      "Name": "Fire Correction Ratio: STR",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byFire",
+      "Name": "Fire Correction Ratio: DEX",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byFire",
+      "Name": "Fire Correction Ratio: INT",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byFire",
+      "Name": "Fire Correction Ratio: FTH",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byFire",
+      "Name": "Fire Correction Ratio: ARC",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byThunder",
+      "Name": "Lightning Correction Ratio: STR",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byThunder",
+      "Name": "Lightning Correction Ratio: DEX",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byThunder",
+      "Name": "Lightning Correction Ratio: INT",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byThunder",
+      "Name": "Lightning Correction Ratio: FTH",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byThunder",
+      "Name": "Lightning Correction Ratio: ARC",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byDark",
+      "Name": "Holy Correction Ratio: STR",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byDark",
+      "Name": "Holy Correction Ratio: DEX",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byDark",
+      "Name": "Holy Correction Ratio: INT",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byDark",
+      "Name": "Holy Correction Ratio: FTH",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byDark",
+      "Name": "Holy Correction Ratio: ARC",
+      "Description": "The rate of influence of the correction factor."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

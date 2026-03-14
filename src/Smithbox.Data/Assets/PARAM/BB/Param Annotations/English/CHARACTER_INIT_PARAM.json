@@ -1,0 +1,583 @@
+{
+  "Param": "CHARACTER_INIT_PARAM",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CHARACTER_INIT_PARAM",
+  "Description": "Player NPC data",
+  "Fields": [
+    {
+      "Field": "baseRec_mp",
+      "Name": "Base FP Recovery",
+      "Description": ""
+    },
+    {
+      "Field": "baseRec_sp",
+      "Name": "Base SP Recovery",
+      "Description": ""
+    },
+    {
+      "Field": "red_Falldam",
+      "Name": "Fall Damage Dampen",
+      "Description": ""
+    },
+    {
+      "Field": "soul",
+      "Name": "Starting Soul Count",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Right",
+      "Name": "Right Weapon 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right",
+      "Name": "Right Weapon 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Left",
+      "Name": "Left Weapon 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Left",
+      "Name": "Left Weapon 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "Equipped Head",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "Equipped Body",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "Equipped Arms",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "Equipped Legs",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "Arrow Slot 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "Bolt Slot 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "Arrow Slot 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "Bolt Slot 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "Ring Slot 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "Ring Slot 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "Ring Slot 3",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "Ring Slot 4",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Accessory05",
+      "Name": "Covenant Slot",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_01",
+      "Name": "Equipped Skill 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_02",
+      "Name": "Equipped Skill 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Skill_03",
+      "Name": "Equipped Skill 3",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "Spell 1",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "Spell 2",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "Spell 3",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "Spell 4",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "Spell 5",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "Spell 6",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "Spell 7",
+      "Description": ""
+    },
+    {
+      "Field": "item_01",
+      "Name": "Item 1",
+      "Description": ""
+    },
+    {
+      "Field": "item_02",
+      "Name": "Item 2",
+      "Description": ""
+    },
+    {
+      "Field": "item_03",
+      "Name": "Item 3",
+      "Description": ""
+    },
+    {
+      "Field": "item_04",
+      "Name": "Item 4",
+      "Description": ""
+    },
+    {
+      "Field": "item_05",
+      "Name": "Item 5",
+      "Description": ""
+    },
+    {
+      "Field": "item_06",
+      "Name": "Item 6",
+      "Description": ""
+    },
+    {
+      "Field": "item_07",
+      "Name": "Item 7",
+      "Description": ""
+    },
+    {
+      "Field": "item_08",
+      "Name": "Item 8",
+      "Description": ""
+    },
+    {
+      "Field": "item_09",
+      "Name": "Item 9",
+      "Description": ""
+    },
+    {
+      "Field": "item_10",
+      "Name": "Item 10",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerFaceGenId",
+      "Name": "Face Param ID",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerThinkId",
+      "Name": "NPC Player - Think ID",
+      "Description": ""
+    },
+    {
+      "Field": "baseHp",
+      "Name": "Base HP",
+      "Description": ""
+    },
+    {
+      "Field": "baseMp",
+      "Name": "Base FP",
+      "Description": ""
+    },
+    {
+      "Field": "baseSp",
+      "Name": "Base Stamina",
+      "Description": ""
+    },
+    {
+      "Field": "arrowNum",
+      "Name": "Slot 1 Arrow Amount",
+      "Description": ""
+    },
+    {
+      "Field": "boltNum",
+      "Name": "Slot 1 Bolt Amount",
+      "Description": ""
+    },
+    {
+      "Field": "subArrowNum",
+      "Name": "Slot 2 Arrow Amount",
+      "Description": ""
+    },
+    {
+      "Field": "subBoltNum",
+      "Name": "Slot 2 Bolt Amount",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_sb",
+      "Name": "Trend Coefficient - Sword-Bow axis",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_mw",
+      "Name": "Trend Coefficient - Mace-Wand axis",
+      "Description": ""
+    },
+    {
+      "Field": "QWC_cd",
+      "Name": "Basic QWC value",
+      "Description": ""
+    },
+    {
+      "Field": "soulLv",
+      "Name": "Soul Level",
+      "Description": "Character's Starting Soul Level"
+    },
+    {
+      "Field": "baseVit",
+      "Name": "Vigor",
+      "Description": "Character's Starting Vigor Level"
+    },
+    {
+      "Field": "baseWil",
+      "Name": "Attunement",
+      "Description": "Character's Starting Attunement Level"
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "Endurance",
+      "Description": "Character's Starting Endurance Level"
+    },
+    {
+      "Field": "baseStr",
+      "Name": "Strength",
+      "Description": "Character's Starting Strength Level"
+    },
+    {
+      "Field": "baseDex",
+      "Name": "Dexterity",
+      "Description": "Character's Starting Dexterity Level"
+    },
+    {
+      "Field": "baseMag",
+      "Name": "Intelligence",
+      "Description": "Character's Starting Intelligence Level"
+    },
+    {
+      "Field": "baseFai",
+      "Name": "Faith",
+      "Description": "Character's Starting Faith Level"
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "Luck",
+      "Description": "Character's Starting Luck Level"
+    },
+    {
+      "Field": "baseHeroPoint",
+      "Name": "Humanity",
+      "Description": "Unused in vanilla, but still functional"
+    },
+    {
+      "Field": "baseDurability",
+      "Name": "Durability",
+      "Description": "Character's Starting Durability Level"
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "Item 1 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "Item 2 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "Item 3 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "Item 4 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "Item 5 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "Item 6 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "Item 7 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "Item 8 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "Item 9 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "Item 10 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleHead",
+      "Name": "Head Body Scale",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "Breast Body Scale",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "Abdomen Body Scale",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleArm",
+      "Name": "Arm Body Scale",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLeg",
+      "Name": "Leg Body Scale",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId0",
+      "Name": "Gesture ID 0",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId1",
+      "Name": "Gesture ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId2",
+      "Name": "Gesture ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId3",
+      "Name": "Gesture ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId4",
+      "Name": "Gesture ID 4",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId5",
+      "Name": "Gesture ID 5",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId6",
+      "Name": "Gesture ID 6",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerType",
+      "Name": "NPC Player - Type",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerDrawType",
+      "Name": "NPC Player - Draw Type",
+      "Description": ""
+    },
+    {
+      "Field": "npcPlayerSex",
+      "Name": "NPC Gender",
+      "Description": ""
+    },
+    {
+      "Field": "vowType",
+      "Name": "Covenant Type",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "voiceType",
+      "Name": "Voice Type",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Right_GenId",
+      "Name": "Right Weapon 1 Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right_GenId",
+      "Name": "Right Weapon 2 Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Left_GenId",
+      "Name": "Left Weapon 1 Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Left_GenId",
+      "Name": "Left Weapon 2 Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Helm_GenId",
+      "Name": "Equipped Head Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Armer_GenId",
+      "Name": "Equipped Body Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Gaunt_GenId",
+      "Name": "Equipped Arms Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Leg_GenId",
+      "Name": "Equipped Legs Gen ID",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Wep_Body_GenId",
+      "Name": "Right Weapon 3",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_01",
+      "Name": "Pouch Item 1",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_02",
+      "Name": "Pouch Item 2",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_03",
+      "Name": "Pouch Item 1",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_04",
+      "Name": "Pouch Item 2",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_05",
+      "Name": "Pouch Item 3",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_06",
+      "Name": "Pouch Item 4",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_01",
+      "Name": "Pouch Item 1 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_02",
+      "Name": "Pouch Item 2 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_03",
+      "Name": "Pouch Item 3 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_04",
+      "Name": "Pouch Item 4 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_05",
+      "Name": "Pouch Item 5 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItemNum_06",
+      "Name": "Pouch Item 6 Amount",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Param": "ITEMLOT_LVDEP_PARAM_ST",
+  "Type": "ITEMLOT_LVDEP_PARAM_ST",
+  "Name": "ITEMLOT_LVDEP_PARAM_ST",
+  "Description": "Item Lots - Level-dependant Configuration",
+  "Fields": [
+    {
+      "Field": "itemCategory",
+      "Name": "Item Category",
+      "Description": ""
+    },
+    {
+      "Field": "itemId",
+      "Name": "Item ID",
+      "Description": ""
+    }
+  ]
+}

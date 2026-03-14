@@ -1,0 +1,33 @@
+{
+  "Param": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Type": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Name": "MULTI_PLAY_CORRECTION_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "client1SpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "client2SpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "client3SpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bOverrideSpEffect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

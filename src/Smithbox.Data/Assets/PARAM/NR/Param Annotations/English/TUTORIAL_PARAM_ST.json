@@ -1,0 +1,103 @@
+{
+  "Param": "TUTORIAL_PARAM_ST",
+  "Type": "TUTORIAL_PARAM_ST",
+  "Name": "TUTORIAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "menuType",
+      "Name": "Menu Type",
+      "Description": "Specifies the type of tutorial menu to display"
+    },
+    {
+      "Field": "triggerType",
+      "Name": "Trigger Type",
+      "Description": "Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu."
+    },
+    {
+      "Field": "repeatType",
+      "Name": "Repeat Type",
+      "Description": "Number of times a tutorial can be displayed"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "imageId",
+      "Name": "Image ID",
+      "Description": "Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unlockEventFlagId",
+      "Name": "Unlock Event Flag ID",
+      "Description": "Event flag ID for display permission (default: 0). It will not be displayed until this flag is set. Specify 0 if you always want to allow"
+    },
+    {
+      "Field": "textId",
+      "Name": "Text ID",
+      "Description": "ID of the text to be displayed in the tutorial [TutorialText.xlsm]. This text ID is used for both Title and Body"
+    },
+    {
+      "Field": "displayMinTime",
+      "Name": "Display Minimum Time",
+      "Description": "Shortest display guaranteed time [seconds]. Even if it is closed due to an event etc., it will be closed after displaying at least this time. It's only for toast, so it's ignored in modals"
+    },
+    {
+      "Field": "displayTime",
+      "Name": "Display Time",
+      "Description": "Display time [seconds]. It will close automatically after this time has passed since the toast was displayed. It's only for toast, so it's ignored in modals"
+    },
+    {
+      "Field": "tutorialCategoryId",
+      "Name": "Tutorial Category ID",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

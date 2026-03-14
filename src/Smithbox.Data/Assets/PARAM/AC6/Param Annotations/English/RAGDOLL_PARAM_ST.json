@@ -1,0 +1,63 @@
+{
+  "Param": "RAGDOLL_PARAM_ST",
+  "Type": "RAGDOLL_PARAM_ST",
+  "Name": "RAGDOLL_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "hierarchyGain",
+      "Name": "Hierarchy Gain",
+      "Description": ""
+    },
+    {
+      "Field": "velocityDamping",
+      "Name": "Velocity Damping",
+      "Description": ""
+    },
+    {
+      "Field": "accelGain",
+      "Name": "Acceleration Gain",
+      "Description": ""
+    },
+    {
+      "Field": "velocityGain",
+      "Name": "Velocity Gain",
+      "Description": ""
+    },
+    {
+      "Field": "positionGain",
+      "Name": "Position Gain",
+      "Description": ""
+    },
+    {
+      "Field": "maxLinerVelocity",
+      "Name": "Max Linear Velocity",
+      "Description": ""
+    },
+    {
+      "Field": "maxAngularVelocity",
+      "Name": "Max Angular Velocity",
+      "Description": ""
+    },
+    {
+      "Field": "snapGain",
+      "Name": "Snap Gain",
+      "Description": ""
+    },
+    {
+      "Field": "enable",
+      "Name": "Enable",
+      "Description": ""
+    },
+    {
+      "Field": "partsHitMaskNo",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

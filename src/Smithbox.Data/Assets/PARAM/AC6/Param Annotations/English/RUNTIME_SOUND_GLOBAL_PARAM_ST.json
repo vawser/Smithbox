@@ -1,0 +1,53 @@
+{
+  "Param": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
+  "Type": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
+  "Name": "RUNTIME_SOUND_GLOBAL_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ParamType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RTPC_ID",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RTPC_MinValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RTPC_MaxValue",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

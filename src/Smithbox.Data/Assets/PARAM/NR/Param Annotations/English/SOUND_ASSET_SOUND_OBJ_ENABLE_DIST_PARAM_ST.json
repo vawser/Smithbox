@@ -1,0 +1,13 @@
+{
+  "Param": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Type": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Name": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SoundObjEnableDist",
+      "Name": "Sound Object - Enable Distance",
+      "Description": "Asset sound sound source effective distance [m] (less than 0: invalid)"
+    }
+  ]
+}

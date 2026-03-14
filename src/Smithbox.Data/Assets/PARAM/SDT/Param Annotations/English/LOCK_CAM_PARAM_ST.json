@@ -1,0 +1,103 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "Camera orientation when locked onto enemies",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "camFovY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forPD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeMaxHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeMinHeight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeAngRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeMaxRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeMaxRadius_forD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "closeMaxRadius_forPD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletMaxRadius",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletMaxRadius_forD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletMaxRadius_forPD",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletAngRange",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

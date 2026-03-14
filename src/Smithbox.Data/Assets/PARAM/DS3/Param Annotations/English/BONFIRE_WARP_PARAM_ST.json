@@ -1,0 +1,63 @@
+{
+  "Param": "BONFIRE_WARP_PARAM_ST",
+  "Type": "BONFIRE_WARP_PARAM_ST",
+  "Name": "BONFIRE_WARP_PARAM_ST",
+  "Description": "Bonfire configuration",
+  "Fields": [
+    {
+      "Field": "eventflagId",
+      "Name": "Event Flag ID",
+      "Description": "Used in RegisterBonfire command in EMEVD."
+    },
+    {
+      "Field": "bonfireEntityId",
+      "Name": "Bonfire Entity ID",
+      "Description": "Used in RegisterBonfire command in EMEVD."
+    },
+    {
+      "Field": "BonfireNameId",
+      "Name": "Bonfire Name ID",
+      "Description": "Stored in Modern_MenuText."
+    },
+    {
+      "Field": "DescriptionTextId",
+      "Name": "Description ID",
+      "Description": "Unused.\nPresumably stored in Modern_MenuText."
+    },
+    {
+      "Field": "PictureId",
+      "Name": "Picture ID",
+      "Description": "Stored in menu/mapimage."
+    },
+    {
+      "Field": "ListId",
+      "Name": "List ID",
+      "Description": "Determines which warp group bonfire appears in."
+    },
+    {
+      "Field": "IsDisableQuickwarp",
+      "Name": "Is Home Bonfire",
+      "Description": "Seems to enable bonfire level display at menu."
+    },
+    {
+      "Field": "CeremonyId",
+      "Name": "Ceremony ID",
+      "Description": "Forces map into ceremony if value is not -1."
+    },
+    {
+      "Field": "onlineAreaId",
+      "Name": "Play Region ID",
+      "Description": "For displaying online activity embers."
+    },
+    {
+      "Field": "onlineAreaId2",
+      "Name": "Secondary Play Region ID",
+      "Description": "For displaying online activity embers."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

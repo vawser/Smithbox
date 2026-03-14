@@ -1,0 +1,208 @@
+{
+  "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Description": "Related to Hit Sound Effects",
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "Iron [1]",
+      "Description": "Iron: Concept 1"
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "Iron [2]",
+      "Description": "Iron: Concept 2"
+    },
+    {
+      "Field": "atkLeather_1",
+      "Name": "Leather [1]",
+      "Description": "Leather: Concept 1"
+    },
+    {
+      "Field": "atkLeather_2",
+      "Name": "Leather [2]",
+      "Description": "Leather: Concept 2"
+    },
+    {
+      "Field": "atkWood_1",
+      "Name": "Wood [1]",
+      "Description": "Wooden: Concept 1"
+    },
+    {
+      "Field": "atkWood_2",
+      "Name": "Wood [2]",
+      "Description": "Wooden: Concept 2"
+    },
+    {
+      "Field": "atkBody_1",
+      "Name": "Flesh [1]",
+      "Description": "Meat: Concept 1"
+    },
+    {
+      "Field": "atkBody_2",
+      "Name": "Flesh [2]",
+      "Description": "Meat: Concept 2"
+    },
+    {
+      "Field": "atkStone_1",
+      "Name": "Stone [1]",
+      "Description": "Corrosion: Concept 1"
+    },
+    {
+      "Field": "atkStone_2",
+      "Name": "Stone [2]",
+      "Description": "Corrosion: Concept 2"
+    },
+    {
+      "Field": "unknown_x14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_x16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "None [1]",
+      "Description": "None: Concept 1"
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "None [2]",
+      "Description": "None: Concept 2"
+    },
+    {
+      "Field": "Unknown0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown16",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown17",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown19",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown20",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown21",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown22",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown23",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown24",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Unknown25",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

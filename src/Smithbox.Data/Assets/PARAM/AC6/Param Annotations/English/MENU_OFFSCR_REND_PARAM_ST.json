@@ -1,0 +1,123 @@
+{
+  "Param": "MENU_OFFSCR_REND_PARAM_ST",
+  "Type": "MENU_OFFSCR_REND_PARAM_ST",
+  "Name": "MENU_OFFSCR_REND_PARAM_ST",
+  "Description": "Determines the configuration of the camera when viewing menu elements.",
+  "Fields": [
+    {
+      "Field": "camAtPosX",
+      "Name": "Gaze Point: X",
+      "Description": "The camera gaze point's position on the x-axis."
+    },
+    {
+      "Field": "camAtPosY",
+      "Name": "Gaze Point: Y",
+      "Description": "The camera gaze point's position on the y-axis."
+    },
+    {
+      "Field": "camAtPosZ",
+      "Name": "Gaze Point: Z",
+      "Description": "The camera gaze point's position on the z-axis."
+    },
+    {
+      "Field": "camDist",
+      "Name": "Distance",
+      "Description": "The distance the camera is from the player entity. In metres."
+    },
+    {
+      "Field": "camRotX",
+      "Name": "Rotation: X",
+      "Description": "The camera's rotation on the x-axis."
+    },
+    {
+      "Field": "camRotY",
+      "Name": "Rotation: Y",
+      "Description": "The camera's rotation on the y-axis."
+    },
+    {
+      "Field": "camFov",
+      "Name": "Field of View",
+      "Description": "The field of view of the camera."
+    },
+    {
+      "Field": "camDistMin",
+      "Name": "Minimum Distance",
+      "Description": "The minimum distance for the camera to be placed at. In metres."
+    },
+    {
+      "Field": "camDistMax",
+      "Name": "Maximum Distance",
+      "Description": "The maximum distance for the camera to be placed at. In metres."
+    },
+    {
+      "Field": "camRotXMin",
+      "Name": "Minimum Rotation: X",
+      "Description": "The minimum angle for the camera's rotation on the x-axis."
+    },
+    {
+      "Field": "camRotXMax",
+      "Name": "Maximum Rotation: X",
+      "Description": "The maximum angle for the camera's rotation on the x-axis."
+    },
+    {
+      "Field": "GparamID",
+      "Name": "GParam ID",
+      "Description": "The gparam ID to use for this camera."
+    },
+    {
+      "Field": "camOffsetX",
+      "Name": "Offset: X",
+      "Description": "The offset rate for the camera on the x-axis (0.5 will shift half the screen). In metres."
+    },
+    {
+      "Field": "camOffsetY",
+      "Name": "Offset: Y",
+      "Description": "The offset rate for the camera on the y-axis (0.5 will shift half the screen). In metres."
+    },
+    {
+      "Field": "camOffsetZ",
+      "Name": "Offset: Z",
+      "Description": "The offset rate for the camera on the z-axis. In metres."
+    },
+    {
+      "Field": "camRefDmyPolyId",
+      "Name": "Referenced Dummy Polygon ID",
+      "Description": "If set to a valid ID, the dummy polygon ID will be used to calculate the gaze point and rotation."
+    },
+    {
+      "Field": "boosterModelLookAt",
+      "Name": "Set Gaze Point to Booster",
+      "Description": "If ON, then the camera's gaze point is fixed to the position of the Booster model."
+    },
+    {
+      "Field": "HandHightRef",
+      "Name": "Use Hand Height for Gaze Point",
+      "Description": "If ON, hand height is used instead of core height for the gaze point."
+    },
+    {
+      "Field": "padbit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapIconRefDmyPolyId",
+      "Name": "Mission Location Icon: Dummy Polygon ID",
+      "Description": "The dummy polygon ID that is used to place the mission location display icon."
+    },
+    {
+      "Field": "legType4LegRefParamId",
+      "Name": "Reference ID for Bipedal",
+      "Description": "The MenuOffscrRendParam row to use if the player is using Bipedal legs."
+    },
+    {
+      "Field": "legTypeTankRefParamId",
+      "Name": "Reference ID for Treads",
+      "Description": "The MenuOffscrRendParam row to use if the player is using Treads (tank legs)."
+    }
+  ]
+}
