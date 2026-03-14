@@ -1,47 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the damage growth of characters across each journey." Row0Dummy="" />
-  <Field>
-    <ng0_damage_mult AltName="NG+0 - Damage %"/>
-    <ng0_stamina_damage_mult AltName="NG+0 - Stamina Damage %"/>
-    <ng0_posture_damage_mult AltName="NG+0 - Posture Damage %"/>
-    <ng1_damage_mult AltName="NG+1 - Damage %"/>
-    <ng1_stamina_damage_mult AltName="NG+1 - Stamina Damage %"/>
-    <ng1_posture_damage_mult AltName="NG+1 - Posture Damage %"/>
-    <ng2_damage_mult AltName="NG+2 - Damage %"/>
-    <ng2_stamina_damage_mult AltName="NG+2 - Stamina Damage %"/>
-    <ng2_posture_damage_mult AltName="NG+2 - Posture Damage %"/>
-    <ng3_damage_mult AltName="NG+3 - Damage %"/>
-    <ng3_stamina_damage_mult AltName="NG+3 - Stamina Damage %"/>
-    <ng3_posture_damage_mult AltName="NG+3 - Posture Damage %"/>
-    <ng4_damage_mult AltName="NG+4 - Damage %"/>
-    <ng4_stamina_damage_mult AltName="NG+4 - Stamina Damage %"/>
-    <ng4_posture_damage_mult AltName="NG+4 - Posture Damage %"/>
-    <ng5_damage_mult AltName="NG+5 - Damage %"/>
-    <ng5_stamina_damage_mult AltName="NG+5 - Stamina Damage %"/>
-    <ng5_posture_damage_mult AltName="NG+5 - Posture Damage %"/>
-    <ng6_damage_mult AltName="NG+6 - Damage %"/>
-    <ng6_stamina_damage_mult AltName="NG+6 - Stamina Damage %"/>
-    <ng6_posture_damage_mult AltName="NG+6 - Posture Damage %"/>
-    <ng7_damage_mult AltName="NG+7 - Damage %"/>
-    <ng7_stamina_damage_mult AltName="NG+7 - Stamina Damage %"/>
-    <ng7_posture_damage_mult AltName="NG+7 - Posture Damage %"/>
-    <ng0_stamina_damage_taken_mult AltName="NG+0 - Incoming Stamina Damage %"/>
-    <ng0_posture_damage_taken_mult AltName="NG+0 - Incoming Posture Damage %"/>
-    <ng1_stamina_damage_taken_mult AltName="NG+1 - Incoming Stamina Damage %"/>
-    <ng1_posture_damage_taken_mult AltName="NG+1 - Incoming Posture Damage %"/>
-    <ng2_stamina_damage_taken_mult AltName="NG+2 - Incoming Stamina Damage %"/>
-    <ng2_posture_damage_taken_mult AltName="NG+2 - Incoming Posture Damage %"/>
-    <ng3_stamina_damage_taken_mult AltName="NG+3 - Incoming Stamina Damage %"/>
-    <ng3_posture_damage_taken_mult AltName="NG+3 - Incoming Posture Damage %"/>
-    <ng4_stamina_damage_taken_mult AltName="NG+4 - Incoming Stamina Damage %"/>
-    <ng4_posture_damage_taken_mult AltName="NG+4 - Incoming Posture Damage %"/>
-    <ng5_stamina_damage_taken_mult AltName="NG+5 - Incoming Stamina Damage %"/>
-    <ng5_posture_damage_taken_mult AltName="NG+5 - Incoming Posture Damage %"/>
-    <ng6_stamina_damage_taken_mult AltName="NG+6 - Incoming Stamina Damage %"/>
-    <ng6_posture_damage_taken_mult AltName="NG+6 - Incoming Posture Damage %"/>
-    <ng7_stamina_damage_taken_mult AltName="NG+7 - Incoming Stamina Damage %"/>
-    <ng7_posture_damage_taken_mult AltName="NG+7 - Incoming Posture Damage %"/>
-    
-  </Field>
+    <Field>
+        <round1DamagePercent />
+        <round1StaminaDamagePercent />
+        <round1StunDamagePercent />
+        <round2DamagePercent />
+        <round2StaminaDamagePercent />
+        <round2StunDamagePercent />
+        <round3DamagePercent />
+        <round3StaminaDamagePercent />
+        <round3StunDamagePercent />
+        <round4DamagePercent />
+        <round4StaminaDamagePercent />
+        <round4StunDamagePercent />
+        <round5DamagePercent />
+        <round5StaminaDamagePercent />
+        <round5StunDamagePercent />
+        <round6DamagePercent />
+        <round6StaminaDamagePercent />
+        <round6StunDamagePercent />
+        <round7DamagePercent />
+        <round7StaminaDamagePercent />
+        <round7StunDamagePercent />
+        <round8DamagePercent />
+        <round8StaminaDamagePercent />
+        <round8StunDamagePercent />
+        <round1StaminaDamageTakenPercent />
+        <round1StunDamageTakenPercent />
+        <round2StaminaDamageTakenPercent />
+        <round2StunDamageTakenPercent />
+        <round3StaminaDamageTakenPercent />
+        <round3StunDamageTakenPercent />
+        <round4StaminaDamageTakenPercent />
+        <round4StunDamageTakenPercent />
+        <round5StaminaDamageTakenPercent />
+        <round5StunDamageTakenPercent />
+        <round6StaminaDamageTakenPercent />
+        <round6StunDamageTakenPercent />
+        <round7StaminaDamageTakenPercent />
+        <round7StunDamageTakenPercent />
+        <round8StaminaDamageTakenPercent />
+        <round8StunDamageTakenPercent />
+    </Field>
 </PARAMMETA>

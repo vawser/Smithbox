@@ -1,457 +1,453 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to combo behavior." Row0Dummy="" />
-  <Enums>
-	<Enum Name="DamageActionFlag" type="u8">
-		<Option Value="0" Name="Normal" />
-		<Option Value="1" Name="Super Armor" />
-		<Option Value="2" Name="Ultra Armor" />
-		<Option Value="3" Name="Invincible" />
-		<Option Value="4" Name="Unknown" />
-		<Option Value="5" Name="Unknown" />
-	</Enum>
-  </Enums>
-  <Field>
-    <group_1_ai_action_id AltName="[1] AI Action ID"/>
-    <group_1_unk01 AltName="[1] Unk01"/>
-    <group_1_unk02 AltName="[1] Unk02"/>
-    <group_1_unk03 AltName="[1] Unk03"/>
-    <group_1_unk04 AltName="[1] Unk04"/>
-    <group_1_enemy_damage_id_0 AltName="[1] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_1 AltName="[1] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_2 AltName="[1] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_damage_id_3 AltName="[1] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_1_enemy_bullet_id_0 AltName="[1] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_enemy_bullet_id_1 AltName="[1] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_enemy_bullet_id_2 AltName="[1] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_enemy_bullet_id_3 AltName="[1] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_1_unk08 AltName="[1] Unk08"/>
-    <group_1_unk09 AltName="[1] Unk09"/>
-    <group_1_unk10 AltName="[1] Unk10"/>
-    <group_1_unk11 AltName="[1] Unk11"/>
-    <group_1_damage_action_flag_0 AltName="[1] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_1_damage_action_flag_1 AltName="[1] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_1_damage_action_flag_2 AltName="[1] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_1_damage_action_flag_3 AltName="[1] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_1_enemy_attackmove_id_0 AltName="[1] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_1_enemy_attackmove_id_1 AltName="[1] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_1_enemy_attackmove_id_2 AltName="[1] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_1_enemy_attackmove_id_3 AltName="[1] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_1_unk20 AltName="[1] Unk20"/>
-    <group_1_unk21 AltName="[1] Unk21"/>
-    <group_1_unk22 AltName="[1] Unk22"/>
-    <group_1_unk23 AltName="[1] Unk23"/>
-    <group_1_unk24 AltName="[1] Unk24"/>
-    <group_1_unk25 AltName="[1] Unk25"/>
-    <group_1_unk26 AltName="[1] Unk26"/>
-    <group_1_unk27 AltName="[1] Unk27"/>
-    <group_1_enemy_damage_id_0_startup_speed AltName="[1] Enemy Damage ID 0 - Startup Speed"/>
-    <group_1_enemy_damage_id_0_to_1_speed AltName="[1] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_1_enemy_damage_id_1_to_2_speed AltName="[1] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_1_enemy_damage_id_2_to_3_speed AltName="[1] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_1_enemy_damage_id_0_combo_end_recovery_speed AltName="[1] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_1_enemy_damage_id_1_combo_end_recovery_speed AltName="[1] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_1_enemy_damage_id_2_combo_end_recovery_speed AltName="[1] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_1_enemy_damage_id_3_combo_end_recovery_speed AltName="[1] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_1_unk28 AltName="[1] Unk28"/>
-    <group_1_unk29 AltName="[1] Unk29"/>
-    <group_1_unk30 AltName="[1] Unk30"/>
-    <group_1_unk31 AltName="[1] Unk31"/>
-    <group_1_unk32 AltName="[1] Unk32"/>
-    <group_1_unk33 AltName="[1] Unk33"/>
-    <group_1_unk34 AltName="[1] Unk34"/>
-    <group_1_unk35 AltName="[1] Unk35"/>
-    <group_1_unk36 AltName="[1] Unk36"/>
-    <group_1_unk37 AltName="[1] Unk37"/>
-    <group_1_unk38 AltName="[1] Unk38"/>
-    <group_1_unk39 AltName="[1] Unk39"/>
-    <group_1_unk40 AltName="[1] Unk40"/>
-    <group_1_unk41 AltName="[1] Unk41"/>
-    <group_1_unk42 AltName="[1] Unk42"/>
-    <group_1_unk43 AltName="[1] Unk43"/>
-    <group_1_unk44 AltName="[1] Unk44"/>
-    <group_1_unk45 AltName="[1] Unk45"/>
-    <group_1_combo_cooldown_time AltName="[1] Combo Cooldown Time"/>
-    <group_1_unk47 AltName="[1] Unk47"/>
-    <group_1_unk48 AltName="[1] Unk48"/>
-    <group_1_unk49 AltName="[1] Unk49"/>
-    <group_2_ai_action_id AltName="[2] AI Action ID"/>
-    <group_2_unk01 AltName="[2] Unk01"/>
-    <group_2_unk02 AltName="[2] Unk02"/>
-    <group_2_unk03 AltName="[2] Unk03"/>
-    <group_2_unk04 AltName="[2] Unk04"/>
-    <group_2_enemy_damage_id_0 AltName="[2] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_1 AltName="[2] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_2 AltName="[2] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_damage_id_3 AltName="[2] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_2_enemy_bullet_id_0 AltName="[2] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_enemy_bullet_id_1 AltName="[2] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_enemy_bullet_id_2 AltName="[2] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_enemy_bullet_id_3 AltName="[2] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_2_unk08 AltName="[2] Unk08"/>
-    <group_2_unk09 AltName="[2] Unk09"/>
-    <group_2_unk10 AltName="[2] Unk10"/>
-    <group_2_unk11 AltName="[2] Unk11"/>
-    <group_2_damage_action_flag_0 AltName="[2] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_2_damage_action_flag_1 AltName="[2] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_2_damage_action_flag_2 AltName="[2] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_2_damage_action_flag_3 AltName="[2] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_2_enemy_attackmove_id_0 AltName="[2] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_2_enemy_attackmove_id_1 AltName="[2] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_2_enemy_attackmove_id_2 AltName="[2] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_2_enemy_attackmove_id_3 AltName="[2] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_2_unk20 AltName="[2] Unk20"/>
-    <group_2_unk21 AltName="[2] Unk21"/>
-    <group_2_unk22 AltName="[2] Unk22"/>
-    <group_2_unk23 AltName="[2] Unk23"/>
-    <group_2_unk24 AltName="[2] Unk24"/>
-    <group_2_unk25 AltName="[2] Unk25"/>
-    <group_2_unk26 AltName="[2] Unk26"/>
-    <group_2_unk27 AltName="[2] Unk27"/>
-    <group_2_enemy_damage_id_0_startup_speed AltName="[2] Enemy Damage ID 0 - Startup Speed"/>
-    <group_2_enemy_damage_id_0_to_1_speed AltName="[2] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_2_enemy_damage_id_1_to_2_speed AltName="[2] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_2_enemy_damage_id_2_to_3_speed AltName="[2] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_2_enemy_damage_id_0_combo_end_recovery_speed AltName="[2] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_2_enemy_damage_id_1_combo_end_recovery_speed AltName="[2] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_2_enemy_damage_id_2_combo_end_recovery_speed AltName="[2] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_2_enemy_damage_id_3_combo_end_recovery_speed AltName="[2] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_2_unk28 AltName="[2] Unk28"/>
-    <group_2_unk29 AltName="[2] Unk29"/>
-    <group_2_unk30 AltName="[2] Unk30"/>
-    <group_2_unk31 AltName="[2] Unk31"/>
-    <group_2_unk32 AltName="[2] Unk32"/>
-    <group_2_unk33 AltName="[2] Unk33"/>
-    <group_2_unk34 AltName="[2] Unk34"/>
-    <group_2_unk35 AltName="[2] Unk35"/>
-    <group_2_unk36 AltName="[2] Unk36"/>
-    <group_2_unk37 AltName="[2] Unk37"/>
-    <group_2_unk38 AltName="[2] Unk38"/>
-    <group_2_unk39 AltName="[2] Unk39"/>
-    <group_2_unk40 AltName="[2] Unk40"/>
-    <group_2_unk41 AltName="[2] Unk41"/>
-    <group_2_unk42 AltName="[2] Unk42"/>
-    <group_2_unk43 AltName="[2] Unk43"/>
-    <group_2_unk44 AltName="[2] Unk44"/>
-    <group_2_unk45 AltName="[2] Unk45"/>
-    <group_2_combo_cooldown_time AltName="[2] Combo Cooldown Time"/>
-    <group_2_unk47 AltName="[2] Unk47"/>
-    <group_2_unk48 AltName="[2] Unk48"/>
-    <group_2_unk49 AltName="[2] Unk49"/>
-    <group_3_ai_action_id AltName="[3] AI Action ID"/>
-    <group_3_unk01 AltName="[3] Unk01"/>
-    <group_3_unk02 AltName="[3] Unk02"/>
-    <group_3_unk03 AltName="[3] Unk03"/>
-    <group_3_unk04 AltName="[3] Unk04"/>
-    <group_3_enemy_damage_id_0 AltName="[3] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_1 AltName="[3] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_2 AltName="[3] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_damage_id_3 AltName="[3] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_3_enemy_bullet_id_0 AltName="[3] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_enemy_bullet_id_1 AltName="[3] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_enemy_bullet_id_2 AltName="[3] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_enemy_bullet_id_3 AltName="[3] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_3_unk08 AltName="[3] Unk08"/>
-    <group_3_unk09 AltName="[3] Unk09"/>
-    <group_3_unk10 AltName="[3] Unk10"/>
-    <group_3_unk11 AltName="[3] Unk11"/>
-    <group_3_damage_action_flag_0 AltName="[3] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_3_damage_action_flag_1 AltName="[3] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_3_damage_action_flag_2 AltName="[3] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_3_damage_action_flag_3 AltName="[3] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_3_enemy_attackmove_id_0 AltName="[3] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_3_enemy_attackmove_id_1 AltName="[3] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_3_enemy_attackmove_id_2 AltName="[3] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_3_enemy_attackmove_id_3 AltName="[3] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_3_unk20 AltName="[3] Unk20"/>
-    <group_3_unk21 AltName="[3] Unk21"/>
-    <group_3_unk22 AltName="[3] Unk22"/>
-    <group_3_unk23 AltName="[3] Unk23"/>
-    <group_3_unk24 AltName="[3] Unk24"/>
-    <group_3_unk25 AltName="[3] Unk25"/>
-    <group_3_unk26 AltName="[3] Unk26"/>
-    <group_3_unk27 AltName="[3] Unk27"/>
-    <group_3_enemy_damage_id_0_startup_speed AltName="[3] Enemy Damage ID 0 - Startup Speed"/>
-    <group_3_enemy_damage_id_0_to_1_speed AltName="[3] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_3_enemy_damage_id_1_to_2_speed AltName="[3] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_3_enemy_damage_id_2_to_3_speed AltName="[3] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_3_enemy_damage_id_0_combo_end_recovery_speed AltName="[3] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_3_enemy_damage_id_1_combo_end_recovery_speed AltName="[3] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_3_enemy_damage_id_2_combo_end_recovery_speed AltName="[3] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_3_enemy_damage_id_3_combo_end_recovery_speed AltName="[3] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_3_unk28 AltName="[3] Unk28"/>
-    <group_3_unk29 AltName="[3] Unk29"/>
-    <group_3_unk30 AltName="[3] Unk30"/>
-    <group_3_unk31 AltName="[3] Unk31"/>
-    <group_3_unk32 AltName="[3] Unk32"/>
-    <group_3_unk33 AltName="[3] Unk33"/>
-    <group_3_unk34 AltName="[3] Unk34"/>
-    <group_3_unk35 AltName="[3] Unk35"/>
-    <group_3_unk36 AltName="[3] Unk36"/>
-    <group_3_unk37 AltName="[3] Unk37"/>
-    <group_3_unk38 AltName="[3] Unk38"/>
-    <group_3_unk39 AltName="[3] Unk39"/>
-    <group_3_unk40 AltName="[3] Unk40"/>
-    <group_3_unk41 AltName="[3] Unk41"/>
-    <group_3_unk42 AltName="[3] Unk42"/>
-    <group_3_unk43 AltName="[3] Unk43"/>
-    <group_3_unk44 AltName="[3] Unk44"/>
-    <group_3_unk45 AltName="[3] Unk45"/>
-    <group_3_combo_cooldown_time AltName="[3] Combo Cooldown Time"/>
-    <group_3_unk47 AltName="[3] Unk47"/>
-    <group_3_unk48 AltName="[3] Unk48"/>
-    <group_3_unk49 AltName="[3] Unk49"/>
-    <group_4_ai_action_id AltName="[4] AI Action ID"/>
-    <group_4_unk01 AltName="[4] Unk01"/>
-    <group_4_unk02 AltName="[4] Unk02"/>
-    <group_4_unk03 AltName="[4] Unk03"/>
-    <group_4_unk04 AltName="[4] Unk04"/>
-    <group_4_enemy_damage_id_0 AltName="[4] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_1 AltName="[4] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_2 AltName="[4] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_damage_id_3 AltName="[4] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_4_enemy_bullet_id_0 AltName="[4] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_enemy_bullet_id_1 AltName="[4] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_enemy_bullet_id_2 AltName="[4] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_enemy_bullet_id_3 AltName="[4] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_4_unk08 AltName="[4] Unk08"/>
-    <group_4_unk09 AltName="[4] Unk09"/>
-    <group_4_unk10 AltName="[4] Unk10"/>
-    <group_4_unk11 AltName="[4] Unk11"/>
-    <group_4_damage_action_flag_0 AltName="[4] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_4_damage_action_flag_1 AltName="[4] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_4_damage_action_flag_2 AltName="[4] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_4_damage_action_flag_3 AltName="[4] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_4_enemy_attackmove_id_0 AltName="[4] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_4_enemy_attackmove_id_1 AltName="[4] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_4_enemy_attackmove_id_2 AltName="[4] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_4_enemy_attackmove_id_3 AltName="[4] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_4_unk20 AltName="[4] Unk20"/>
-    <group_4_unk21 AltName="[4] Unk21"/>
-    <group_4_unk22 AltName="[4] Unk22"/>
-    <group_4_unk23 AltName="[4] Unk23"/>
-    <group_4_unk24 AltName="[4] Unk24"/>
-    <group_4_unk25 AltName="[4] Unk25"/>
-    <group_4_unk26 AltName="[4] Unk26"/>
-    <group_4_unk27 AltName="[4] Unk27"/>
-    <group_4_enemy_damage_id_0_startup_speed AltName="[4] Enemy Damage ID 0 - Startup Speed"/>
-    <group_4_enemy_damage_id_0_to_1_speed AltName="[4] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_4_enemy_damage_id_1_to_2_speed AltName="[4] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_4_enemy_damage_id_2_to_3_speed AltName="[4] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_4_enemy_damage_id_0_combo_end_recovery_speed AltName="[4] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_4_enemy_damage_id_1_combo_end_recovery_speed AltName="[4] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_4_enemy_damage_id_2_combo_end_recovery_speed AltName="[4] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_4_enemy_damage_id_3_combo_end_recovery_speed AltName="[4] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_4_unk28 AltName="[4] Unk28"/>
-    <group_4_unk29 AltName="[4] Unk29"/>
-    <group_4_unk30 AltName="[4] Unk30"/>
-    <group_4_unk31 AltName="[4] Unk31"/>
-    <group_4_unk32 AltName="[4] Unk32"/>
-    <group_4_unk33 AltName="[4] Unk33"/>
-    <group_4_unk34 AltName="[4] Unk34"/>
-    <group_4_unk35 AltName="[4] Unk35"/>
-    <group_4_unk36 AltName="[4] Unk36"/>
-    <group_4_unk37 AltName="[4] Unk37"/>
-    <group_4_unk38 AltName="[4] Unk38"/>
-    <group_4_unk39 AltName="[4] Unk39"/>
-    <group_4_unk40 AltName="[4] Unk40"/>
-    <group_4_unk41 AltName="[4] Unk41"/>
-    <group_4_unk42 AltName="[4] Unk42"/>
-    <group_4_unk43 AltName="[4] Unk43"/>
-    <group_4_unk44 AltName="[4] Unk44"/>
-    <group_4_unk45 AltName="[4] Unk45"/>
-    <group_4_combo_cooldown_time AltName="[4] Combo Cooldown Time"/>
-    <group_4_unk47 AltName="[4] Unk47"/>
-    <group_4_unk48 AltName="[4] Unk48"/>
-    <group_4_unk49 AltName="[4] Unk49"/>
-    <group_5_ai_action_id AltName="[5] AI Action ID"/>
-    <group_5_unk01 AltName="[5] Unk01"/>
-    <group_5_unk02 AltName="[5] Unk02"/>
-    <group_5_unk03 AltName="[5] Unk03"/>
-    <group_5_unk04 AltName="[5] Unk04"/>
-    <group_5_enemy_damage_id_0 AltName="[5] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_1 AltName="[5] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_2 AltName="[5] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_damage_id_3 AltName="[5] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_5_enemy_bullet_id_0 AltName="[5] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_enemy_bullet_id_1 AltName="[5] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_enemy_bullet_id_2 AltName="[5] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_enemy_bullet_id_3 AltName="[5] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_5_unk08 AltName="[5] Unk08"/>
-    <group_5_unk09 AltName="[5] Unk09"/>
-    <group_5_unk10 AltName="[5] Unk10"/>
-    <group_5_unk11 AltName="[5] Unk11"/>
-    <group_5_damage_action_flag_0 AltName="[5] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_5_damage_action_flag_1 AltName="[5] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_5_damage_action_flag_2 AltName="[5] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_5_damage_action_flag_3 AltName="[5] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_5_enemy_attackmove_id_0 AltName="[5] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_5_enemy_attackmove_id_1 AltName="[5] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_5_enemy_attackmove_id_2 AltName="[5] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_5_enemy_attackmove_id_3 AltName="[5] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_5_unk20 AltName="[5] Unk20"/>
-    <group_5_unk21 AltName="[5] Unk21"/>
-    <group_5_unk22 AltName="[5] Unk22"/>
-    <group_5_unk23 AltName="[5] Unk23"/>
-    <group_5_unk24 AltName="[5] Unk24"/>
-    <group_5_unk25 AltName="[5] Unk25"/>
-    <group_5_unk26 AltName="[5] Unk26"/>
-    <group_5_unk27 AltName="[5] Unk27"/>
-    <group_5_enemy_damage_id_0_startup_speed AltName="[5] Enemy Damage ID 0 - Startup Speed"/>
-    <group_5_enemy_damage_id_0_to_1_speed AltName="[5] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_5_enemy_damage_id_1_to_2_speed AltName="[5] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_5_enemy_damage_id_2_to_3_speed AltName="[5] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_5_enemy_damage_id_0_combo_end_recovery_speed AltName="[5] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_5_enemy_damage_id_1_combo_end_recovery_speed AltName="[5] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_5_enemy_damage_id_2_combo_end_recovery_speed AltName="[5] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_5_enemy_damage_id_3_combo_end_recovery_speed AltName="[5] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_5_unk28 AltName="[5] Unk28"/>
-    <group_5_unk29 AltName="[5] Unk29"/>
-    <group_5_unk30 AltName="[5] Unk30"/>
-    <group_5_unk31 AltName="[5] Unk31"/>
-    <group_5_unk32 AltName="[5] Unk32"/>
-    <group_5_unk33 AltName="[5] Unk33"/>
-    <group_5_unk34 AltName="[5] Unk34"/>
-    <group_5_unk35 AltName="[5] Unk35"/>
-    <group_5_unk36 AltName="[5] Unk36"/>
-    <group_5_unk37 AltName="[5] Unk37"/>
-    <group_5_unk38 AltName="[5] Unk38"/>
-    <group_5_unk39 AltName="[5] Unk39"/>
-    <group_5_unk40 AltName="[5] Unk40"/>
-    <group_5_unk41 AltName="[5] Unk41"/>
-    <group_5_unk42 AltName="[5] Unk42"/>
-    <group_5_unk43 AltName="[5] Unk43"/>
-    <group_5_unk44 AltName="[5] Unk44"/>
-    <group_5_unk45 AltName="[5] Unk45"/>
-    <group_5_combo_cooldown_time AltName="[5] Combo Cooldown Time"/>
-    <group_5_unk47 AltName="[5] Unk47"/>
-    <group_5_unk48 AltName="[5] Unk48"/>
-    <group_5_unk49 AltName="[5] Unk49"/>
-    <group_6_ai_action_id AltName="[6] AI Action ID"/>
-    <group_6_unk01 AltName="[6] Unk01"/>
-    <group_6_unk02 AltName="[6] Unk02"/>
-    <group_6_unk03 AltName="[6] Unk03"/>
-    <group_6_unk04 AltName="[6] Unk04"/>
-    <group_6_enemy_damage_id_0 AltName="[6] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_1 AltName="[6] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_2 AltName="[6] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_damage_id_3 AltName="[6] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_6_enemy_bullet_id_0 AltName="[6] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_enemy_bullet_id_1 AltName="[6] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_enemy_bullet_id_2 AltName="[6] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_enemy_bullet_id_3 AltName="[6] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_6_unk08 AltName="[6] Unk08"/>
-    <group_6_unk09 AltName="[6] Unk09"/>
-    <group_6_unk10 AltName="[6] Unk10"/>
-    <group_6_unk11 AltName="[6] Unk11"/>
-    <group_6_damage_action_flag_0 AltName="[6] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_6_damage_action_flag_1 AltName="[6] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_6_damage_action_flag_2 AltName="[6] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_6_damage_action_flag_3 AltName="[6] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_6_enemy_attackmove_id_0 AltName="[6] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_6_enemy_attackmove_id_1 AltName="[6] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_6_enemy_attackmove_id_2 AltName="[6] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_6_enemy_attackmove_id_3 AltName="[6] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_6_unk20 AltName="[6] Unk20"/>
-    <group_6_unk21 AltName="[6] Unk21"/>
-    <group_6_unk22 AltName="[6] Unk22"/>
-    <group_6_unk23 AltName="[6] Unk23"/>
-    <group_6_unk24 AltName="[6] Unk24"/>
-    <group_6_unk25 AltName="[6] Unk25"/>
-    <group_6_unk26 AltName="[6] Unk26"/>
-    <group_6_unk27 AltName="[6] Unk27"/>
-    <group_6_enemy_damage_id_0_startup_speed AltName="[6] Enemy Damage ID 0 - Startup Speed"/>
-    <group_6_enemy_damage_id_0_to_1_speed AltName="[6] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_6_enemy_damage_id_1_to_2_speed AltName="[6] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_6_enemy_damage_id_2_to_3_speed AltName="[6] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_6_enemy_damage_id_0_combo_end_recovery_speed AltName="[6] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_6_enemy_damage_id_1_combo_end_recovery_speed AltName="[6] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_6_enemy_damage_id_2_combo_end_recovery_speed AltName="[6] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_6_enemy_damage_id_3_combo_end_recovery_speed AltName="[6] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_6_unk28 AltName="[6] Unk28"/>
-    <group_6_unk29 AltName="[6] Unk29"/>
-    <group_6_unk30 AltName="[6] Unk30"/>
-    <group_6_unk31 AltName="[6] Unk31"/>
-    <group_6_unk32 AltName="[6] Unk32"/>
-    <group_6_unk33 AltName="[6] Unk33"/>
-    <group_6_unk34 AltName="[6] Unk34"/>
-    <group_6_unk35 AltName="[6] Unk35"/>
-    <group_6_unk36 AltName="[6] Unk36"/>
-    <group_6_unk37 AltName="[6] Unk37"/>
-    <group_6_unk38 AltName="[6] Unk38"/>
-    <group_6_unk39 AltName="[6] Unk39"/>
-    <group_6_unk40 AltName="[6] Unk40"/>
-    <group_6_unk41 AltName="[6] Unk41"/>
-    <group_6_unk42 AltName="[6] Unk42"/>
-    <group_6_unk43 AltName="[6] Unk43"/>
-    <group_6_unk44 AltName="[6] Unk44"/>
-    <group_6_unk45 AltName="[6] Unk45"/>
-    <group_6_combo_cooldown_time AltName="[6] Combo Cooldown Time"/>
-    <group_6_unk47 AltName="[6] Unk47"/>
-    <group_6_unk48 AltName="[6] Unk48"/>
-    <group_6_unk49 AltName="[6] Unk49"/>
-    <group_7_ai_action_id AltName="[7] AI Action ID"/>
-    <group_7_unk01 AltName="[7] Unk01"/>
-    <group_7_unk02 AltName="[7] Unk02"/>
-    <group_7_unk03 AltName="[7] Unk03"/>
-    <group_7_unk04 AltName="[7] Unk04"/>
-    <group_7_enemy_damage_id_0 AltName="[7] Enemy Damage ID 0" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_1 AltName="[7] Enemy Damage ID 1" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_2 AltName="[7] Enemy Damage ID 2" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_damage_id_3 AltName="[7] Enemy Damage ID 3" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
-    <group_7_enemy_bullet_id_0 AltName="[7] Enemy Bullet ID 0" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_enemy_bullet_id_1 AltName="[7] Enemy Bullet ID 1" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_enemy_bullet_id_2 AltName="[7] Enemy Bullet ID 2" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_enemy_bullet_id_3 AltName="[7] Enemy Bullet ID 3" Refs="EnemyBulletParam,PlayerBulletParam,SystemBulletParam"/>
-    <group_7_unk08 AltName="[7] Unk08"/>
-    <group_7_unk09 AltName="[7] Unk09"/>
-    <group_7_unk10 AltName="[7] Unk10"/>
-    <group_7_unk11 AltName="[7] Unk11"/>
-    <group_7_damage_action_flag_0 AltName="[7] Damage Action Flag 0" Enum="DamageActionFlag" />
-    <group_7_damage_action_flag_1 AltName="[7] Damage Action Flag 1" Enum="DamageActionFlag" />
-    <group_7_damage_action_flag_2 AltName="[7] Damage Action Flag 2" Enum="DamageActionFlag" />
-    <group_7_damage_action_flag_3 AltName="[7] Damage Action Flag 3" Enum="DamageActionFlag" />
-    <group_7_enemy_attackmove_id_0 AltName="[7] Enemy Attack Move ID 0" Refs="EnemyAttackMoveParam"/>
-    <group_7_enemy_attackmove_id_1 AltName="[7] Enemy Attack Move ID 1" Refs="EnemyAttackMoveParam"/>
-    <group_7_enemy_attackmove_id_2 AltName="[7] Enemy Attack Move ID 2" Refs="EnemyAttackMoveParam"/>
-    <group_7_enemy_attackmove_id_3 AltName="[7] Enemy Attack Move ID 3" Refs="EnemyAttackMoveParam"/>
-    <group_7_unk20 AltName="[7] Unk20"/>
-    <group_7_unk21 AltName="[7] Unk21"/>
-    <group_7_unk22 AltName="[7] Unk22"/>
-    <group_7_unk23 AltName="[7] Unk23"/>
-    <group_7_unk24 AltName="[7] Unk24"/>
-    <group_7_unk25 AltName="[7] Unk25"/>
-    <group_7_unk26 AltName="[7] Unk26"/>
-    <group_7_unk27 AltName="[7] Unk27"/>
-    <group_7_enemy_damage_id_0_startup_speed AltName="[7] Enemy Damage ID 0 - Startup Speed"/>
-    <group_7_enemy_damage_id_0_to_1_speed AltName="[7] Enemy Damage ID 0 to 1 Startup Speed"/>
-    <group_7_enemy_damage_id_1_to_2_speed AltName="[7] Enemy Damage ID 1 to 2 Startup Speed"/>
-    <group_7_enemy_damage_id_2_to_3_speed AltName="[7] Enemy Damage ID 2 to 3 Startup Speed"/>
-    <group_7_enemy_damage_id_0_combo_end_recovery_speed AltName="[7] Enemy Damage ID 0 - Combo End Recovery Speed"/>
-    <group_7_enemy_damage_id_1_combo_end_recovery_speed AltName="[7] Enemy Damage ID 1 - Combo End Recovery Speed"/>
-    <group_7_enemy_damage_id_2_combo_end_recovery_speed AltName="[7] Enemy Damage ID 2 - Combo End Recovery Speed"/>
-    <group_7_enemy_damage_id_3_combo_end_recovery_speed AltName="[7] Enemy Damage ID 3 - Combo End Recovery Speed"/>
-    <group_7_unk28 AltName="[7] Unk28"/>
-    <group_7_unk29 AltName="[7] Unk29"/>
-    <group_7_unk30 AltName="[7] Unk30"/>
-    <group_7_unk31 AltName="[7] Unk31"/>
-    <group_7_unk32 AltName="[7] Unk32"/>
-    <group_7_unk33 AltName="[7] Unk33"/>
-    <group_7_unk34 AltName="[7] Unk34"/>
-    <group_7_unk35 AltName="[7] Unk35"/>
-    <group_7_unk36 AltName="[7] Unk36"/>
-    <group_7_unk37 AltName="[7] Unk37"/>
-    <group_7_unk38 AltName="[7] Unk38"/>
-    <group_7_unk39 AltName="[7] Unk39"/>
-    <group_7_unk40 AltName="[7] Unk40"/>
-    <group_7_unk41 AltName="[7] Unk41"/>
-    <group_7_unk42 AltName="[7] Unk42"/>
-    <group_7_unk43 AltName="[7] Unk43"/>
-    <group_7_unk44 AltName="[7] Unk44"/>
-    <group_7_unk45 AltName="[7] Unk45"/>
-    <group_7_combo_cooldown_time AltName="[7] Combo Cooldown Time"/>
-    <group_7_unk47 AltName="[7] Unk47"/>
-    <group_7_unk48 AltName="[7] Unk48"/>
-    <group_7_unk49 AltName="[7] Unk49"/>
-  </Field>
+    <Field>
+        <combo0AttackMotionId />
+        <combo0ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo0ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo0ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo0BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo0AttackId01 />
+        <combo0AttackId02 />
+        <combo0AttackId03 />
+        <combo0AttackId04 />
+        <combo0BulletId01 />
+        <combo0BulletId02 />
+        <combo0BulletId03 />
+        <combo0BulletId04 />
+        <combo0ShtoStanceTime01 />
+        <combo0ShtoStanceTime02 />
+        <combo0ShtoStanceTime03 />
+        <combo0ShtoStanceTime04 />
+        <combo0NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo0NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo0NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo0NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo0AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo0AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo0AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo0AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo0AttackHomingCancel01  IsBool=""/>
+        <combo0AttackHomingCancel02  IsBool=""/>
+        <combo0AttackHomingCancel03  IsBool=""/>
+        <combo0AttackHomingCancel04  IsBool=""/>
+        <combo0AttackRange01 />
+        <combo0AttackRange02 />
+        <combo0AttackRange03 />
+        <combo0AttackRange04 />
+        <fCombo0AttackBackSwingSpeed01 />
+        <fCombo0AttackBackSwingSpeed02 />
+        <fCombo0AttackBackSwingSpeed03 />
+        <fCombo0AttackBackSwingSpeed04 />
+        <fCombo0AttackFollowSwingSpeed01 />
+        <fCombo0AttackFollowSwingSpeed02 />
+        <fCombo0AttackFollowSwingSpeed03 />
+        <fCombo0AttackFollowSwingSpeed04 />
+        <fCombo0EstimateFutureTime01 />
+        <fCombo0EstimateFutureTime02 />
+        <fCombo0EstimateFutureTime03 />
+        <fCombo0EstimateFutureTime04 />
+        <combo0AttackAngle01 />
+        <combo0AttackAngle02 />
+        <combo0AttackAngle03 />
+        <combo0AttackAngle04 />
+        <fCombo0AttackRotateHigh01 />
+        <fCombo0AttackRotateHigh02 />
+        <fCombo0AttackRotateHigh03 />
+        <fCombo0AttackRotateHigh04 />
+        <fCombo0AttackRotateLow01 />
+        <fCombo0AttackRotateLow02 />
+        <fCombo0AttackRotateLow03 />
+        <fCombo0AttackRotateLow04 />
+        <combo0AttackHand01 />
+        <combo0AttackHand02 />
+        <combo0AttackHand03 />
+        <combo0AttackHand04 />
+        <combo0AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo0Reload />
+        <pad00 />
+        <combo1AttackMotionId />
+        <combo1ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo1ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo1ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo1BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo1AttackId01 />
+        <combo1AttackId02 />
+        <combo1AttackId03 />
+        <combo1AttackId04 />
+        <combo1BulletId01 />
+        <combo1BulletId02 />
+        <combo1BulletId03 />
+        <combo1BulletId04 />
+        <combo1ShtoStanceTime01 />
+        <combo1ShtoStanceTime02 />
+        <combo1ShtoStanceTime03 />
+        <combo1ShtoStanceTime04 />
+        <combo1NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo1NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo1NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo1NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo1AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo1AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo1AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo1AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo1AttackHomingCancel01  IsBool=""/>
+        <combo1AttackHomingCancel02  IsBool=""/>
+        <combo1AttackHomingCancel03  IsBool=""/>
+        <combo1AttackHomingCancel04  IsBool=""/>
+        <combo1AttackRange01 />
+        <combo1AttackRange02 />
+        <combo1AttackRange03 />
+        <combo1AttackRange04 />
+        <fCombo1AttackBackSwingSpeed01 />
+        <fCombo1AttackBackSwingSpeed02 />
+        <fCombo1AttackBackSwingSpeed03 />
+        <fCombo1AttackBackSwingSpeed04 />
+        <fCombo1AttackFollowSwingSpeed01 />
+        <fCombo1AttackFollowSwingSpeed02 />
+        <fCombo1AttackFollowSwingSpeed03 />
+        <fCombo1AttackFollowSwingSpeed04 />
+        <fCombo1EstimateFutureTime01 />
+        <fCombo1EstimateFutureTime02 />
+        <fCombo1EstimateFutureTime03 />
+        <fCombo1EstimateFutureTime04 />
+        <combo1AttackAngle01 />
+        <combo1AttackAngle02 />
+        <combo1AttackAngle03 />
+        <combo1AttackAngle04 />
+        <fCombo1AttackRotateHigh01 />
+        <fCombo1AttackRotateHigh02 />
+        <fCombo1AttackRotateHigh03 />
+        <fCombo1AttackRotateHigh04 />
+        <fCombo1AttackRotateLow01 />
+        <fCombo1AttackRotateLow02 />
+        <fCombo1AttackRotateLow03 />
+        <fCombo1AttackRotateLow04 />
+        <combo1AttackHand01 />
+        <combo1AttackHand02 />
+        <combo1AttackHand03 />
+        <combo1AttackHand04 />
+        <combo1AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo1Reload />
+        <pad01 />
+        <combo2AttackMotionId />
+        <combo2ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo2ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo2ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo2BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo2AttackId01 />
+        <combo2AttackId02 />
+        <combo2AttackId03 />
+        <combo2AttackId04 />
+        <combo2BulletId01 />
+        <combo2BulletId02 />
+        <combo2BulletId03 />
+        <combo2BulletId04 />
+        <combo2ShtoStanceTime01 />
+        <combo2ShtoStanceTime02 />
+        <combo2ShtoStanceTime03 />
+        <combo2ShtoStanceTime04 />
+        <combo2NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo2NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo2NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo2NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo2AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo2AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo2AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo2AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo2AttackHomingCancel01  IsBool=""/>
+        <combo2AttackHomingCancel02  IsBool=""/>
+        <combo2AttackHomingCancel03  IsBool=""/>
+        <combo2AttackHomingCancel04  IsBool=""/>
+        <combo2AttackRange01 />
+        <combo2AttackRange02 />
+        <combo2AttackRange03 />
+        <combo2AttackRange04 />
+        <fCombo2AttackBackSwingSpeed01 />
+        <fCombo2AttackBackSwingSpeed02 />
+        <fCombo2AttackBackSwingSpeed03 />
+        <fCombo2AttackBackSwingSpeed04 />
+        <fCombo2AttackFollowSwingSpeed01 />
+        <fCombo2AttackFollowSwingSpeed02 />
+        <fCombo2AttackFollowSwingSpeed03 />
+        <fCombo2AttackFollowSwingSpeed04 />
+        <fCombo2EstimateFutureTime01 />
+        <fCombo2EstimateFutureTime02 />
+        <fCombo2EstimateFutureTime03 />
+        <fCombo2EstimateFutureTime04 />
+        <combo2AttackAngle01 />
+        <combo2AttackAngle02 />
+        <combo2AttackAngle03 />
+        <combo2AttackAngle04 />
+        <fCombo2AttackRotateHigh01 />
+        <fCombo2AttackRotateHigh02 />
+        <fCombo2AttackRotateHigh03 />
+        <fCombo2AttackRotateHigh04 />
+        <fCombo2AttackRotateLow01 />
+        <fCombo2AttackRotateLow02 />
+        <fCombo2AttackRotateLow03 />
+        <fCombo2AttackRotateLow04 />
+        <combo2AttackHand01 />
+        <combo2AttackHand02 />
+        <combo2AttackHand03 />
+        <combo2AttackHand04 />
+        <combo2AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo2Reload />
+        <pad02 />
+        <combo3AttackMotionId />
+        <combo3ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo3ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo3ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo3BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo3AttackId01 />
+        <combo3AttackId02 />
+        <combo3AttackId03 />
+        <combo3AttackId04 />
+        <combo3BulletId01 />
+        <combo3BulletId02 />
+        <combo3BulletId03 />
+        <combo3BulletId04 />
+        <combo3ShtoStanceTime01 />
+        <combo3ShtoStanceTime02 />
+        <combo3ShtoStanceTime03 />
+        <combo3ShtoStanceTime04 />
+        <combo3NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo3NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo3NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo3NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo3AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo3AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo3AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo3AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo3AttackHomingCancel01  IsBool=""/>
+        <combo3AttackHomingCancel02  IsBool=""/>
+        <combo3AttackHomingCancel03  IsBool=""/>
+        <combo3AttackHomingCancel04  IsBool=""/>
+        <combo3AttackRange01 />
+        <combo3AttackRange02 />
+        <combo3AttackRange03 />
+        <combo3AttackRange04 />
+        <fCombo3AttackBackSwingSpeed01 />
+        <fCombo3AttackBackSwingSpeed02 />
+        <fCombo3AttackBackSwingSpeed03 />
+        <fCombo3AttackBackSwingSpeed04 />
+        <fCombo3AttackFollowSwingSpeed01 />
+        <fCombo3AttackFollowSwingSpeed02 />
+        <fCombo3AttackFollowSwingSpeed03 />
+        <fCombo3AttackFollowSwingSpeed04 />
+        <fCombo3EstimateFutureTime01 />
+        <fCombo3EstimateFutureTime02 />
+        <fCombo3EstimateFutureTime03 />
+        <fCombo3EstimateFutureTime04 />
+        <combo3AttackAngle01 />
+        <combo3AttackAngle02 />
+        <combo3AttackAngle03 />
+        <combo3AttackAngle04 />
+        <fCombo3AttackRotateHigh01 />
+        <fCombo3AttackRotateHigh02 />
+        <fCombo3AttackRotateHigh03 />
+        <fCombo3AttackRotateHigh04 />
+        <fCombo3AttackRotateLow01 />
+        <fCombo3AttackRotateLow02 />
+        <fCombo3AttackRotateLow03 />
+        <fCombo3AttackRotateLow04 />
+        <combo3AttackHand01 />
+        <combo3AttackHand02 />
+        <combo3AttackHand03 />
+        <combo3AttackHand04 />
+        <combo3AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo3Reload />
+        <pad03 />
+        <combo4AttackMotionId />
+        <combo4ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo4ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo4ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo4BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo4AttackId01 />
+        <combo4AttackId02 />
+        <combo4AttackId03 />
+        <combo4AttackId04 />
+        <combo4BulletId01 />
+        <combo4BulletId02 />
+        <combo4BulletId03 />
+        <combo4BulletId04 />
+        <combo4ShtoStanceTime01 />
+        <combo4ShtoStanceTime02 />
+        <combo4ShtoStanceTime03 />
+        <combo4ShtoStanceTime04 />
+        <combo4NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo4NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo4NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo4NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo4AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo4AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo4AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo4AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo4AttackHomingCancel01  IsBool=""/>
+        <combo4AttackHomingCancel02  IsBool=""/>
+        <combo4AttackHomingCancel03  IsBool=""/>
+        <combo4AttackHomingCancel04  IsBool=""/>
+        <combo4AttackRange01 />
+        <combo4AttackRange02 />
+        <combo4AttackRange03 />
+        <combo4AttackRange04 />
+        <fCombo4AttackBackSwingSpeed01 />
+        <fCombo4AttackBackSwingSpeed02 />
+        <fCombo4AttackBackSwingSpeed03 />
+        <fCombo4AttackBackSwingSpeed04 />
+        <fCombo4AttackFollowSwingSpeed01 />
+        <fCombo4AttackFollowSwingSpeed02 />
+        <fCombo4AttackFollowSwingSpeed03 />
+        <fCombo4AttackFollowSwingSpeed04 />
+        <fCombo4EstimateFutureTime01 />
+        <fCombo4EstimateFutureTime02 />
+        <fCombo4EstimateFutureTime03 />
+        <fCombo4EstimateFutureTime04 />
+        <combo4AttackAngle01 />
+        <combo4AttackAngle02 />
+        <combo4AttackAngle03 />
+        <combo4AttackAngle04 />
+        <fCombo4AttackRotateHigh01 />
+        <fCombo4AttackRotateHigh02 />
+        <fCombo4AttackRotateHigh03 />
+        <fCombo4AttackRotateHigh04 />
+        <fCombo4AttackRotateLow01 />
+        <fCombo4AttackRotateLow02 />
+        <fCombo4AttackRotateLow03 />
+        <fCombo4AttackRotateLow04 />
+        <combo4AttackHand01 />
+        <combo4AttackHand02 />
+        <combo4AttackHand03 />
+        <combo4AttackHand04 />
+        <combo4AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo4Reload />
+        <pad04 />
+        <combo5AttackMotionId />
+        <combo5ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo5ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo5ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo5BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo5AttackId01 />
+        <combo5AttackId02 />
+        <combo5AttackId03 />
+        <combo5AttackId04 />
+        <combo5BulletId01 />
+        <combo5BulletId02 />
+        <combo5BulletId03 />
+        <combo5BulletId04 />
+        <combo5ShtoStanceTime01 />
+        <combo5ShtoStanceTime02 />
+        <combo5ShtoStanceTime03 />
+        <combo5ShtoStanceTime04 />
+        <combo5NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo5NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo5NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo5NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo5AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo5AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo5AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo5AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo5AttackHomingCancel01  IsBool=""/>
+        <combo5AttackHomingCancel02  IsBool=""/>
+        <combo5AttackHomingCancel03  IsBool=""/>
+        <combo5AttackHomingCancel04  IsBool=""/>
+        <combo5AttackRange01 />
+        <combo5AttackRange02 />
+        <combo5AttackRange03 />
+        <combo5AttackRange04 />
+        <fCombo5AttackBackSwingSpeed01 />
+        <fCombo5AttackBackSwingSpeed02 />
+        <fCombo5AttackBackSwingSpeed03 />
+        <fCombo5AttackBackSwingSpeed04 />
+        <fCombo5AttackFollowSwingSpeed01 />
+        <fCombo5AttackFollowSwingSpeed02 />
+        <fCombo5AttackFollowSwingSpeed03 />
+        <fCombo5AttackFollowSwingSpeed04 />
+        <fCombo5EstimateFutureTime01 />
+        <fCombo5EstimateFutureTime02 />
+        <fCombo5EstimateFutureTime03 />
+        <fCombo5EstimateFutureTime04 />
+        <combo5AttackAngle01 />
+        <combo5AttackAngle02 />
+        <combo5AttackAngle03 />
+        <combo5AttackAngle04 />
+        <fCombo5AttackRotateHigh01 />
+        <fCombo5AttackRotateHigh02 />
+        <fCombo5AttackRotateHigh03 />
+        <fCombo5AttackRotateHigh04 />
+        <fCombo5AttackRotateLow01 />
+        <fCombo5AttackRotateLow02 />
+        <fCombo5AttackRotateLow03 />
+        <fCombo5AttackRotateLow04 />
+        <combo5AttackHand01 />
+        <combo5AttackHand02 />
+        <combo5AttackHand03 />
+        <combo5AttackHand04 />
+        <combo5AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo5Reload />
+        <pad05 />
+        <combo6AttackMotionId />
+        <combo6ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
+        <combo6ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
+        <combo6ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
+        <combo6BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
+        <combo6AttackId01 />
+        <combo6AttackId02 />
+        <combo6AttackId03 />
+        <combo6AttackId04 />
+        <combo6BulletId01 />
+        <combo6BulletId02 />
+        <combo6BulletId03 />
+        <combo6BulletId04 />
+        <combo6ShtoStanceTime01 />
+        <combo6ShtoStanceTime02 />
+        <combo6ShtoStanceTime03 />
+        <combo6ShtoStanceTime04 />
+        <combo6NonInterruptibleType01  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo6NonInterruptibleType02  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo6NonInterruptibleType03  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo6NonInterruptibleType04  Enum="NON_INTERRUPTIBLE_TYPE"/>
+        <combo6AttackMoveId01  Refs="EnemyAttackMoveParam"/>
+        <combo6AttackMoveId02  Refs="EnemyAttackMoveParam"/>
+        <combo6AttackMoveId03  Refs="EnemyAttackMoveParam"/>
+        <combo6AttackMoveId04  Refs="EnemyAttackMoveParam"/>
+        <combo6AttackHomingCancel01  IsBool=""/>
+        <combo6AttackHomingCancel02  IsBool=""/>
+        <combo6AttackHomingCancel03  IsBool=""/>
+        <combo6AttackHomingCancel04  IsBool=""/>
+        <combo6AttackRange01 />
+        <combo6AttackRange02 />
+        <combo6AttackRange03 />
+        <combo6AttackRange04 />
+        <fCombo6AttackBackSwingSpeed01 />
+        <fCombo6AttackBackSwingSpeed02 />
+        <fCombo6AttackBackSwingSpeed03 />
+        <fCombo6AttackBackSwingSpeed04 />
+        <fCombo6AttackFollowSwingSpeed01 />
+        <fCombo6AttackFollowSwingSpeed02 />
+        <fCombo6AttackFollowSwingSpeed03 />
+        <fCombo6AttackFollowSwingSpeed04 />
+        <fCombo6EstimateFutureTime01 />
+        <fCombo6EstimateFutureTime02 />
+        <fCombo6EstimateFutureTime03 />
+        <fCombo6EstimateFutureTime04 />
+        <combo6AttackAngle01 />
+        <combo6AttackAngle02 />
+        <combo6AttackAngle03 />
+        <combo6AttackAngle04 />
+        <fCombo6AttackRotateHigh01 />
+        <fCombo6AttackRotateHigh02 />
+        <fCombo6AttackRotateHigh03 />
+        <fCombo6AttackRotateHigh04 />
+        <fCombo6AttackRotateLow01 />
+        <fCombo6AttackRotateLow02 />
+        <fCombo6AttackRotateLow03 />
+        <fCombo6AttackRotateLow04 />
+        <combo6AttackHand01 />
+        <combo6AttackHand02 />
+        <combo6AttackHand03 />
+        <combo6AttackHand04 />
+        <combo6AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo6Reload />
+        <pad06 />
+    </Field>
 </PARAMMETA>

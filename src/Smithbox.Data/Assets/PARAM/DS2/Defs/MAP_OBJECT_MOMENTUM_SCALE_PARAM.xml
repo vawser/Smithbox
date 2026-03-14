@@ -1,26 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MAP_OBJECT_MOMENTUM_SCALE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 Unk0C" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk14" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk1C" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk2C" />
-    <Field Def="f32 Unk30" />
-    <Field Def="f32 Unk34" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk3C" />
-  </Fields>
+    <ParamType>MAP_OBJECT_MOMENTUM_SCALE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 noneObj0 = 1">
+            <DisplayName>《無》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 superSmallObj0 = 1">
+            <DisplayName>《極小》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 smallObj0 = 1">
+            <DisplayName>《小》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 normalObj0 = 1">
+            <DisplayName>《中》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 largeObj0 = 1">
+            <DisplayName>《大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 superLargeObj0 = 1">
+            <DisplayName>《特大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 hyperLargeObj0 = 1">
+            <DisplayName>《超特大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 infiniteObj0 = 1">
+            <DisplayName>《∞》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 noneObj1 = 1">
+            <DisplayName>《無》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 superSmallObj1 = 1">
+            <DisplayName>《極小》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 smallObj1 = 1">
+            <DisplayName>《小》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 normalObj1 = 1">
+            <DisplayName>《中》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 largeObj1 = 1">
+            <DisplayName>《大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 superLargeObj1 = 1">
+            <DisplayName>《特大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 hyperLargeObj1 = 1">
+            <DisplayName>《超特大》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 infiniteObj1 = 1">
+            <DisplayName>《∞》</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>16</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -1,0 +1,29 @@
+{
+  "Key": "DOOR_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DOOR_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both doors"
+        }
+      ]
+    }
+  ]
+}

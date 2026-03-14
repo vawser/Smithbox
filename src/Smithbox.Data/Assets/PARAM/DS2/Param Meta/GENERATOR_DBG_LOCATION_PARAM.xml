@@ -1,6 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <radius />
+        <height />
+        <colorR />
+        <colorG />
+        <colorB />
+        <aReserved1 />
+    </Field>
 </PARAMMETA>

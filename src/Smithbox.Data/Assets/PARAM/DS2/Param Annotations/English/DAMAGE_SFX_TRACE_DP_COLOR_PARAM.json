@@ -1,0 +1,28 @@
+{
+  "Param": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
+  "Type": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
+  "Name": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "colorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

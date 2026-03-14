@@ -52,7 +52,7 @@
         <gravitySpeedMax />
         <flyCtrlValue />
         <lockPointType />
-        <lockDummy />
+        <lockDummy IsPadding="" />
         <lockCameraCategory />
         <lockDisableRadius />
         <lockDisableHeight />
@@ -71,7 +71,7 @@
         <parryBreakDefenselessTime />
         <parryBreakShorteningTime />
         <guardBreakStabEnable />
-        <pad0 />
+        <pad0 IsPadding="" />
         <downAttackLength />
         <backStabSideAngle />
         <backStabUpSideAngle />
@@ -86,7 +86,7 @@
         <guardBreakStabHeight />
         <guardBreakStabLength />
         <lowerEnable />
-        <pad1 />
+        <pad1 IsPadding="" />
         <lowerDmgBendingValue />
         <lowerDmgBendingStartTime />
         <lowerDmgBendingEndTime />
@@ -116,7 +116,7 @@
         <attackPushBackRate />
         <parryRotationSpeed />
         <BreathDamageEnable />
-        <dummy1 />
+        <dummy1 IsPadding="" />
         <hitLowerBodyHeight />
         <hitFrontAngle />
         <attackMoveSpeed />
@@ -131,7 +131,7 @@
         <fLookAtRotationSideSpeedMax />
         <fLookAtRotationUpperSpeedMax />
         <isLookAtDummyPolyBasePos />
-        <lookAtDummy />
+        <lookAtDummy IsPadding="" />
         <fShootingLookAtRotationLeftMax />
         <fShootingLookAtRotationRightMax />
         <fShootingLookAtRotationUpperMax />
@@ -163,7 +163,7 @@
         <footSoundLevelNormal />
         <footSoundLevelLarge />
         <footSoundLevelSuperLarge />
-        <footSoundDummy />
+        <footSoundDummy IsPadding="" />
         <single1HandNormal />
         <single1HandStrong />
         <single2HandedNormal />
@@ -173,7 +173,7 @@
         <dual2HandedNormal />
         <dual2HandedStrong />
         <bladePartsDamage />
-        <partsDummy />
+        <partsDummy IsPadding="" />
         <damageAdjustPartsRateSuperSmall />
         <damageAdjustPartsRateSmall />
         <damageAdjustPartsRateNormal />
@@ -248,7 +248,7 @@
         <takeWaterHeightLow />
         <takeWaterHeightMiddle />
         <takeWaterType />
-        <takeWaterDummy />
+        <takeWaterDummy IsPadding="" />
         <bulletDamageRatePhysical />
         <bulletDamageRateMagic />
         <bulletDamageRateMiracle />

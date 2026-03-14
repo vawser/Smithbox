@@ -1,0 +1,13 @@
+{
+  "Param": "EVENT_COMMON_PARAM_ST",
+  "Type": "EVENT_COMMON_PARAM_ST",
+  "Name": "EVENT_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "パラメータ値",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "Param": "DAMAGE_EFFECT_SFX_PARAM",
+  "Type": "DAMAGE_EFFECT_SFX_PARAM",
+  "Name": "DAMAGE_EFFECT_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxIdSmall0",
+      "Name": "SfxID：小",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdNormal0",
+      "Name": "SfxID：中",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdLarge0",
+      "Name": "SfxID：大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSuperLarge0",
+      "Name": "SfxID：特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdHyperLarge0",
+      "Name": "SfxID：特特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSmall1",
+      "Name": "SfxID：小",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdNormal1",
+      "Name": "SfxID：中",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdLarge1",
+      "Name": "SfxID：大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSuperLarge1",
+      "Name": "SfxID：特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdHyperLarge1",
+      "Name": "SfxID：特特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSmall2",
+      "Name": "SfxID：小",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdNormal2",
+      "Name": "SfxID：中",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdLarge2",
+      "Name": "SfxID：大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSuperLarge2",
+      "Name": "SfxID：特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdHyperLarge2",
+      "Name": "SfxID：特特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSmall3",
+      "Name": "SfxID：小",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdNormal3",
+      "Name": "SfxID：中",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdLarge3",
+      "Name": "SfxID：大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSuperLarge3",
+      "Name": "SfxID：特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdHyperLarge3",
+      "Name": "SfxID：特特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSmall4",
+      "Name": "SfxID：本体小",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdNormal4",
+      "Name": "SfxID：本体中",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdLarge4",
+      "Name": "SfxID：本体大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdSuperLarge4",
+      "Name": "SfxID：本体特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdHyperLarge4",
+      "Name": "SfxID：本体特特大",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdCritical",
+      "Name": "SfxID：クリティカル",
+      "Description": ""
+    },
+    {
+      "Field": "isTrace",
+      "Name": "追従フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelSmall",
+      "Name": "音大きさ：小",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelNormal",
+      "Name": "音大きさ：中",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelLarge",
+      "Name": "音大きさ：大",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelSuperLarge",
+      "Name": "音大きさ：特大",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelHyperLarge",
+      "Name": "音大きさ：特特大",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelBody",
+      "Name": "音大きさ：本体",
+      "Description": ""
+    },
+    {
+      "Field": "soundLevelCritical",
+      "Name": "音大きさ：クリティカル",
+      "Description": ""
+    },
+    {
+      "Field": "spatterId",
+      "Name": "血しぶきID",
+      "Description": ""
+    }
+  ]
+}

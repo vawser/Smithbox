@@ -1,0 +1,47 @@
+{
+  "Key": "OBJ_EVENT_TRIGGER_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_EVENT_TRIGGER_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Key guide"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destruction"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage"
+        }
+      ]
+    }
+  ]
+}

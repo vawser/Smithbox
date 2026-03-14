@@ -1,6 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to damage window categories." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <cloth  IsBool=""/>
+        <model  IsBool=""/>
+        <obj  IsBool=""/>
+        <sfx  IsBool=""/>
+        <dmgSfx  IsBool=""/>
+        <eraseSfx  IsBool=""/>
+        <dummy0 />
+        <fadeInTime />
+        <fadeOutTime />
+    </Field>
 </PARAMMETA>

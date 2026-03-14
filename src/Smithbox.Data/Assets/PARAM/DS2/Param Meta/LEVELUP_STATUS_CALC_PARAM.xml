@@ -1,6 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to level-up status calculation." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <maxHp  IsBool=""/>
+        <maxStamina  IsBool=""/>
+        <maxLoadWeight  IsBool=""/>
+        <spellSlotCount  IsBool=""/>
+        <spellChantingSpeed  IsBool=""/>
+        <powerPhysicalByStrength  IsBool=""/>
+        <powerPhysicalByDexterity  IsBool=""/>
+        <powerMagic  IsBool=""/>
+        <powerFire  IsBool=""/>
+        <powerThunder  IsBool=""/>
+        <powerDark  IsBool=""/>
+        <powerPoison  IsBool=""/>
+        <powerBleed  IsBool=""/>
+        <defense  IsBool=""/>
+        <resistanceMagic  IsBool=""/>
+        <resistanceFire  IsBool=""/>
+        <resistanceThunder  IsBool=""/>
+        <resistanceDark  IsBool=""/>
+        <resistancePoison  IsBool=""/>
+        <resistanceBleed  IsBool=""/>
+        <resistancePetrify  IsBool=""/>
+        <resistanceCurse  IsBool=""/>
+        <actionSpeed  IsBool=""/>
+        <fortitude  IsBool=""/>
+        <primaryLeftHand  IsBool=""/>
+        <secondaryLeftHand  IsBool=""/>
+        <thirdlyLeftHand  IsBool=""/>
+        <primaryRightHand  IsBool=""/>
+        <secondaryRightHand  IsBool=""/>
+        <thirdlyRightHan  IsBool=""/>
+        <defenseStrike  IsBool=""/>
+        <defenseSlash  IsBool=""/>
+        <defenseThrust  IsBool=""/>
+        <defensePoise  IsBool=""/>
+        <dummy00 />
+        <dummy01 />
+    </Field>
 </PARAMMETA>

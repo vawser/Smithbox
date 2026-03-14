@@ -1,0 +1,58 @@
+{
+  "Param": "PLAY_AREA_PARAM",
+  "Type": "PLAY_AREA_PARAM",
+  "Name": "PLAY_AREA_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "multiPlayZoneId",
+      "Name": "マルチプレイ区間ID",
+      "Description": ""
+    },
+    {
+      "Field": "coopBlueDisableDistance",
+      "Name": "救援青霊侵入不可能距離",
+      "Description": ""
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "その他霊侵入不可能距離",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayType",
+      "Name": "領域タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "enableSearchBellGuard",
+      "Name": "鐘守検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableSearchCoopBlue",
+      "Name": "救援青霊検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableSearchVsBlue",
+      "Name": "報復青霊検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableSearchAbyss",
+      "Name": "深淵霊検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableBossCheck",
+      "Name": "エリアボス判定有効",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

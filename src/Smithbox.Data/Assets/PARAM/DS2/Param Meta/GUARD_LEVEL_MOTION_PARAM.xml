@@ -1,6 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to guarding and knockback." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <superSmallGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <smallGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <mediumGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <largeGuardLvel  Enum="GUARD_MOTION_TYPE"/>
+        <superLargeGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <ultraLargeGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <flipGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+    </Field>
 </PARAMMETA>

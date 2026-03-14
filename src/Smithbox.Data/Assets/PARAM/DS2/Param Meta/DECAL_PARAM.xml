@@ -1,6 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to decals." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <width />
+        <height />
+        <depth />
+        <texId />
+        <bumpTexId />
+        <colorR />
+        <colorG />
+        <colorB />
+        <colorA />
+        <invisibleDeleteTime />
+        <parallaxScale />
+        <lightId />
+        <flipType  Enum="DECAL_FLIP_TYPE"/>
+        <rotateType  Enum="DECAL_ROTATE_TYPE"/>
+        <aReserved />
+    </Field>
 </PARAMMETA>

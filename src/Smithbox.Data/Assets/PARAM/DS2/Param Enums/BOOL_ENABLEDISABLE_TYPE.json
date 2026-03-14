@@ -1,0 +1,29 @@
+{
+  "Key": "BOOL_ENABLEDISABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BOOL_ENABLEDISABLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disable"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enable"
+        }
+      ]
+    }
+  ]
+}

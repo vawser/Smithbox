@@ -1,109 +1,604 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>DAMAGE_ADJUST_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 Unk0C" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk14" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk1C" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk2C" />
-    <Field Def="f32 Unk30" />
-    <Field Def="f32 Unk34" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk3C" />
-    <Field Def="f32 Unk40" />
-    <Field Def="f32 Unk44" />
-    <Field Def="f32 Unk48" />
-    <Field Def="f32 Unk4C" />
-    <Field Def="f32 Unk50" />
-    <Field Def="f32 Unk54" />
-    <Field Def="f32 Unk58" />
-    <Field Def="f32 Unk5C" />
-    <Field Def="f32 Unk60" />
-    <Field Def="f32 Unk64" />
-    <Field Def="f32 Unk68" />
-    <Field Def="f32 Unk6C" />
-    <Field Def="f32 Unk70" />
-    <Field Def="f32 Unk74" />
-    <Field Def="f32 Unk78" />
-    <Field Def="f32 Unk7C" />
-    <Field Def="f32 Unk80" />
-    <Field Def="f32 Unk84" />
-    <Field Def="f32 Unk88" />
-    <Field Def="f32 Unk8C" />
-    <Field Def="f32 Unk90" />
-    <Field Def="f32 Unk94" />
-    <Field Def="f32 Unk98" />
-    <Field Def="f32 Unk9C" />
-    <Field Def="f32 UnkA0" />
-    <Field Def="f32 UnkA4" />
-    <Field Def="f32 UnkA8" />
-    <Field Def="f32 UnkAC" />
-    <Field Def="f32 UnkB0" />
-    <Field Def="f32 UnkB4" />
-    <Field Def="f32 UnkB8" />
-    <Field Def="f32 UnkBC" />
-    <Field Def="f32 UnkC0" />
-    <Field Def="f32 UnkC4" />
-    <Field Def="f32 UnkC8" />
-    <Field Def="f32 UnkCC" />
-    <Field Def="f32 UnkD0" />
-    <Field Def="f32 UnkD4" />
-    <Field Def="f32 UnkD8" />
-    <Field Def="f32 UnkDC" />
-    <Field Def="f32 UnkE0" />
-    <Field Def="f32 UnkE4" />
-    <Field Def="f32 UnkE8" />
-    <Field Def="f32 UnkEC" />
-    <Field Def="f32 UnkF0" />
-    <Field Def="f32 UnkF4" />
-    <Field Def="f32 UnkF8" />
-    <Field Def="f32 UnkFC" />
-    <Field Def="f32 Unk100" />
-    <Field Def="f32 Unk104" />
-    <Field Def="f32 Unk108" />
-    <Field Def="f32 Unk10C" />
-    <Field Def="f32 Unk110" />
-    <Field Def="f32 physical_attack_rating_mult_pve" />
-    <Field Def="f32 Unk118" />
-    <Field Def="f32 Unk11C" />
-    <Field Def="f32 Unk120" />
-    <Field Def="f32 Unk124" />
-    <Field Def="f32 Unk128" />
-    <Field Def="f32 Unk12C" />
-    <Field Def="f32 Unk130" />
-    <Field Def="f32 Unk134" />
-    <Field Def="f32 Unk138" />
-    <Field Def="f32 Unk13C" />
-    <Field Def="f32 Unk140" />
-    <Field Def="f32 player_damage_mult_coc" />
-    <Field Def="f32 enemy_damage_mult_coc" />
-    <Field Def="f32 physical_absorption_mult_pve" />
-    <Field Def="f32 Unk150" />
-    <Field Def="f32 Unk154" />
-    <Field Def="f32 physical_attack_rating_mult_pvp" />
-    <Field Def="f32 physical_absorption_mult_pvp" />
-    <Field Def="f32 magic_absorption_mult_pvp" />
-    <Field Def="f32 lightning_absorption_mult_pvp" />
-    <Field Def="f32 fire_absorption_mult_pvp" />
-    <Field Def="f32 dark_absorption_mult_pvp" />
-    <Field Def="f32 Unk170" />
-    <Field Def="f32 Unk174" />
-    <Field Def="f32 Unk178" />
-    <Field Def="f32 Unk17C" />
-    <Field Def="f32 Unk180" />
-    <Field Def="f32 Unk184" />
-    <Field Def="f32 Unk188" />
-  </Fields>
+    <ParamType>DAMAGE_ADJUST_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 pcFallAtkAdjustLightWeight = 1">
+            <DisplayName>プレイヤー 落下攻撃 ウェイト補正倍率 小</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 pcFallAtkAdjustMiddleWeight = 1">
+            <DisplayName>プレイヤー 落下攻撃 ウェイト補正倍率 中</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 pcFallAtkAdjustHeavyWeight = 1">
+            <DisplayName>プレイヤー 落下攻撃 ウェイト補正倍率 大</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 pcKillStaminaAdjust = 1">
+            <DisplayName>プレイヤー スタミナ奪取量調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 pcSpecialMoveKillStaminaAdjust = 1">
+            <DisplayName>プレイヤー 特殊移動 スタミナ奪取量 調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 pcLackOfStatAdjust = 1">
+            <DisplayName>プレイヤー ステータス不足補正倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 pcFluctuationAdjustMin = 1">
+            <DisplayName>プレイヤー 揺らぎ補正倍率 最小</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 pcFluctuationAdjustMax = 1">
+            <DisplayName>プレイヤー 揺らぎ補正倍率 最大</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustVeryEasy = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Very Easy</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustEasy = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Easy</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustNormal = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Normal</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustHard = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Hard</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustVeryHard = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Very Hard</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 pcDifficultyAdjustHell = 1">
+            <DisplayName>プレイヤー 難易度補正倍率 Hell</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateWeapon = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 武器</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateHead = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 頭防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateBody = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 胴防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateArm = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 腕防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateReg = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 足防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateRing = 1">
+            <DisplayName>プレイヤー耐久削り値 補正倍率 指輪</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardWeapon = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 武器</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardHead = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 頭防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardBody = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 胴防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardArm = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 腕防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardReg = 1">
+            <DisplayName>プレイヤー 耐久削り値 補正倍率 足防具</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 pcDurabilityRateGuardRing = 1">
+            <DisplayName>プレイヤー耐久削り値 補正倍率 指輪</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust01 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust02 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust03 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust04 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust05 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="f32 pcCoorpAdjust06 = 1">
+            <DisplayName>プレイヤー 協力プレイ補正倍率6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="f32 pcInvasionAdjust01 = 1">
+            <DisplayName>プレイヤー 敵対プレイ補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="f32 pcInvasionAdjust02 = 1">
+            <DisplayName>プレイヤー 敵対プレイ補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="f32 pcInvasionAdjust03 = 1">
+            <DisplayName>プレイヤー 敵対プレイ補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust01 = 1">
+            <DisplayName>プレイヤー 周回補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust02 = 1">
+            <DisplayName>プレイヤー 周回補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust03 = 1">
+            <DisplayName>プレイヤー 周回補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust04 = 1">
+            <DisplayName>プレイヤー 周回補正倍率4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust05 = 1">
+            <DisplayName>プレイヤー 周回補正倍率5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust06 = 1">
+            <DisplayName>プレイヤー 周回補正倍率6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust07 = 1">
+            <DisplayName>プレイヤー 周回補正倍率7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="f32 pcGameCycleAdjust08 = 1">
+            <DisplayName>プレイヤー 周回補正倍率8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="f32 ecFluctuationAdjustMin = 1">
+            <DisplayName>エネミー 揺らぎ補正倍率 最小</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="f32 ecFluctuationAdjustMax = 1">
+            <DisplayName>エネミー 揺らぎ補正倍率 最大</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustVeryEasy = 1">
+            <DisplayName>エネミー 難易度補正倍率 Very Easy</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustEasy = 1">
+            <DisplayName>エネミー 難易度補正倍率 Easy</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustNormal = 1">
+            <DisplayName>エネミー 難易度補正倍率 Normal</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustHard = 1">
+            <DisplayName>エネミー 難易度補正倍率 Hard</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustVeryHard = 1">
+            <DisplayName>エネミー 難易度補正倍率 Very Hard</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 ecDifficultyAdjustHell = 1">
+            <DisplayName>エネミー 難易度補正倍率 Hell</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust01 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust02 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust03 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust04 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust05 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="f32 ecCoorpAdjust06 = 1">
+            <DisplayName>エネミー 協力プレイ補正倍率6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="f32 ecInvasionAdjust01 = 1">
+            <DisplayName>エネミー 敵対プレイ補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="f32 ecInvasionAdjust02 = 1">
+            <DisplayName>エネミー 敵対プレイ補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="f32 ecInvasionAdjust03 = 1">
+            <DisplayName>エネミー 敵対プレイ補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust01 = 1">
+            <DisplayName>エネミー 周回補正倍率1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust02 = 1">
+            <DisplayName>エネミー 周回補正倍率2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust03 = 1">
+            <DisplayName>エネミー 周回補正倍率3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust04 = 1">
+            <DisplayName>エネミー 周回補正倍率4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>64</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust05 = 1">
+            <DisplayName>エネミー 周回補正倍率5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>65</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust06 = 1">
+            <DisplayName>エネミー 周回補正倍率6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>66</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust07 = 1">
+            <DisplayName>エネミー 周回補正倍率7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>67</SortID>
+        </Field>
+        <Field Def="f32 ecGameCycleAdjust08 = 1">
+            <DisplayName>エネミー 周回補正倍率8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>68</SortID>
+        </Field>
+        <Field Def="f32 ecNtVerAdjust = 1">
+            <DisplayName>NT版フィナーレイベント用攻撃力倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>69</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustNormalMul01 = 1">
+            <DisplayName>物理属性調整 乗算倍率 初周</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustMagic = 1">
+            <DisplayName>魔力属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustThunder = 1">
+            <DisplayName>雷属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustFire = 1">
+            <DisplayName>炎属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustDark = 1">
+            <DisplayName>闇属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustPoison = 1">
+            <DisplayName>毒属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustBleed = 1">
+            <DisplayName>出血属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustWeaponBreak = 1">
+            <DisplayName>武器破壊属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustCurse = 1">
+            <DisplayName>呪い属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustBurning = 1">
+            <DisplayName>燃焼属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustDeadlyPoison = 1">
+            <DisplayName>猛毒属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustPetrified = 1">
+            <DisplayName>石化属性調整倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 vowStrongAtkAdjustRate = 1">
+            <DisplayName>誓約[強者] 与ダメージ倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="f32 vowStrongDefAdjustRate = 1">
+            <DisplayName>誓約[強者] 被ダメージ倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustNormalDiv01 = 1">
+            <DisplayName>物理属性調整　除算倍率 初周</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustNormalMul02 = 1">
+            <DisplayName>物理属性調整 乗算倍率 周回</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="f32 attributeAdjustNormalDiv02 = 1">
+            <DisplayName>物理属性調整 除算倍率 周回</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>103</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustNormalMul = 1">
+            <DisplayName>Player physical attribute adjustment multiplication factor</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustNormalDiv = 1">
+            <DisplayName>Player physical attribute adjustment division magnification</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>301</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustMagic = 1">
+            <DisplayName>Player magic attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>302</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustThunder = 1">
+            <DisplayName>Player thunder attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>303</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustFire = 1">
+            <DisplayName>Player fire attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>304</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustDark = 1">
+            <DisplayName>Player dark attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>305</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustPoison = 1">
+            <DisplayName>Player poison attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>306</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustBleed = 1">
+            <DisplayName>Player bleeding attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>307</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustWeaponBreak = 1">
+            <DisplayName>Player weapon break attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>308</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustCurse = 1">
+            <DisplayName>Player curse attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>309</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustBurning = 1">
+            <DisplayName>Player burning attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>310</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustDeadlyPoison = 1">
+            <DisplayName>Player deadly poison attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>311</SortID>
+        </Field>
+        <Field Def="f32 pcAttributeAdjustPetrified = 1">
+            <DisplayName>Player petrified attribute adjustment magnification</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>312</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

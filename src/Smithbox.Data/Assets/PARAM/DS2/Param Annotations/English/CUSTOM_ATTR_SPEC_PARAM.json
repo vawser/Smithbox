@@ -1,0 +1,63 @@
+{
+  "Param": "CUSTOM_ATTR_SPEC_PARAM",
+  "Type": "CUSTOM_ATTR_SPEC_PARAM",
+  "Name": "CUSTOM_ATTR_SPEC_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "physical",
+      "Name": "物理",
+      "Description": ""
+    },
+    {
+      "Field": "fire",
+      "Name": "炎",
+      "Description": ""
+    },
+    {
+      "Field": "magic",
+      "Name": "魔法",
+      "Description": ""
+    },
+    {
+      "Field": "thunder",
+      "Name": "雷",
+      "Description": ""
+    },
+    {
+      "Field": "dark",
+      "Name": "闇",
+      "Description": ""
+    },
+    {
+      "Field": "poison",
+      "Name": "毒",
+      "Description": ""
+    },
+    {
+      "Field": "bleed",
+      "Name": "出血",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByCrude",
+      "Name": "物理(粗製)",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchanted",
+      "Name": "物理(魔力)",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByAbyss",
+      "Name": "物理(深淵)",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

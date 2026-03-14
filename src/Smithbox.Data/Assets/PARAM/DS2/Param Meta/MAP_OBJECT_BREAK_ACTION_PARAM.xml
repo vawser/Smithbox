@@ -1,6 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to breakable map objects." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <sideWalk  IsBool=""/>
+        <walk  IsBool=""/>
+        <dash  IsBool=""/>
+        <rolling  IsBool=""/>
+        <jump  IsBool=""/>
+        <fall  IsBool=""/>
+        <damaged  IsBool=""/>
+        <attack  IsBool=""/>
+        <fall_attack  IsBool=""/>
+        <dummy />
+    </Field>
 </PARAMMETA>

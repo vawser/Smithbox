@@ -1,15 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>FE_WEAPON_THRESHOLD_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 scaling_display_S" />
-    <Field Def="f32 scaling_display_A" />
-    <Field Def="f32 scaling_display_B" />
-    <Field Def="f32 scaling_display_C" />
-    <Field Def="f32 scaling_display_D" />
-  </Fields>
+    <ParamType>FE_WEAPON_THRESHOLD_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 thresholdA = 2">
+            <DisplayName>A以上評価の閾値</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 thresholdB = 1.6">
+            <DisplayName>B以上評価の閾値</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 thresholdC = 1.2">
+            <DisplayName>C以上評価の閾値</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 thresholdD = 0.8">
+            <DisplayName>D以上評価の閾値</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 thresholdE = 0.4">
+            <DisplayName>E以上評価の閾値</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>5</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

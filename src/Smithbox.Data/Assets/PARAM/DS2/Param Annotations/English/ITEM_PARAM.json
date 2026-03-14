@@ -1,0 +1,163 @@
+{
+  "Param": "ITEM_PARAM",
+  "Type": "ITEM_PARAM",
+  "Name": "ITEM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイテムアイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "specialEffectId",
+      "Name": "特殊効果ID",
+      "Description": ""
+    },
+    {
+      "Field": "startSfxId",
+      "Name": "アイテム開始SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "actionSfxId",
+      "Name": "アイテム発動SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "effectSfxId",
+      "Name": "アイテム効果SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "weaponParamId",
+      "Name": "武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "armorParamId",
+      "Name": "防具ID",
+      "Description": ""
+    },
+    {
+      "Field": "arrowParamId",
+      "Name": "矢ID",
+      "Description": ""
+    },
+    {
+      "Field": "ringParamId",
+      "Name": "指輪ID",
+      "Description": ""
+    },
+    {
+      "Field": "spellParamId",
+      "Name": "スペルID",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId",
+      "Name": "ジェスチャーID",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "デフォルトソートID",
+      "Description": ""
+    },
+    {
+      "Field": "price",
+      "Name": "販売ベース価格",
+      "Description": ""
+    },
+    {
+      "Field": "salePrice",
+      "Name": "売却ベース価格",
+      "Description": ""
+    },
+    {
+      "Field": "motionSpeedRate",
+      "Name": "アイテム使用モーション速度倍率(倍単位)",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "重量(kg単位)",
+      "Description": ""
+    },
+    {
+      "Field": "itemTypeParamId",
+      "Name": "アイテムタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "itemUsageParamId",
+      "Name": "使用方法",
+      "Description": ""
+    },
+    {
+      "Field": "getFrag",
+      "Name": "入手フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "maxNum",
+      "Name": "１スロットストック個数",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectTargetRegion",
+      "Name": "特殊効果管理カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectDuplication",
+      "Name": "特殊効果の重複判定",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectSfxPriority",
+      "Name": "効果SFXの優先度",
+      "Description": ""
+    },
+    {
+      "Field": "menuIconCategory",
+      "Name": "メニュー用アイコンカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "enchantType",
+      "Name": "エンチャントの許可",
+      "Description": ""
+    },
+    {
+      "Field": "completeTrophy",
+      "Name": "収集トロフィーの種類",
+      "Description": ""
+    },
+    {
+      "Field": "isOnlyOne",
+      "Name": "１セーブ１個のみ",
+      "Description": ""
+    },
+    {
+      "Field": "isOnlyOneUtilGameClear",
+      "Name": "1周回1個のみ",
+      "Description": ""
+    },
+    {
+      "Field": "isTakeOver",
+      "Name": "周回時に所持状態を引き継ぐか？",
+      "Description": ""
+    },
+    {
+      "Field": "canGet_WhenGetAllItem",
+      "Name": "デバッグ用全アイテム入手で入手可能か？",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

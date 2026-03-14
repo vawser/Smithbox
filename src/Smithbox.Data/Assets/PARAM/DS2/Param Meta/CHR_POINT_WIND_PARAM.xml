@@ -1,6 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to wind and its effect on cloth." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <priority />
+        <radius />
+        <minSpeed />
+        <maxSpeed />
+        <frequency />
+        <gainStartDistance />
+        <fadeInTime />
+    </Field>
 </PARAMMETA>

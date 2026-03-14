@@ -1,6 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to character growth." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <soulLevelMax />
+        <growthPointsPerLevelUp />
+        <dummy />
+        <enemyOverKillSoulRate />
+        <enemyFinishSoulRate />
+        <enemyVeryEasySoulRate />
+        <enemyEasySoulRate />
+        <enemyNormalSoulRate />
+        <enemyHardSoulRate />
+        <enemyVeryHardSoulRate />
+        <enemyHellSoulRate />
+        <enemyCoop1SoulRate />
+        <enemyCoop2SoulRate />
+        <enemyCoop3SoulRate />
+        <enemyCoop4SoulRate />
+        <enemyCoop5SoulRate />
+        <enemyCoop6SoulRate />
+        <enemyLap1SoulRate />
+        <enemyLap2SoulRate />
+        <enemyLap3SoulRate />
+        <enemyLap4SoulRate />
+        <enemyLap5SoulRate />
+        <enemyLap6SoulRate />
+        <enemyLap7SoulRate />
+        <enemyLap8SoulRate />
+        <enemyLap9SoulRate />
+        <enemyLap10SoulRate />
+        <enemyLevelMinSoulRate />
+        <enemyLevelMaxSoulRate />
+        <enemyHostBlackSoulRate />
+        <enemyHostRedSoulRate />
+        <enemyWhiteBlackSoulRate />
+        <enemyWhiteRedSoulRate />
+        <enemyBlueBlackSoulRate />
+        <enemyBlueRedSoulRate />
+        <enemyBlackHostSoulRate />
+        <enemyBlackWhiteSoulRate />
+        <enemyBlackBlueSoulRate />
+        <enemyRedHostSoulRate />
+        <enemyRedWhiteSoulRate />
+        <enemyRedBlueSoulRate />
+    </Field>
 </PARAMMETA>

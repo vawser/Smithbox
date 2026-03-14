@@ -1,9 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to enemy attack moves." Row0Dummy="" />
-  <Field>
-    <attack_move_speed AltName="Speed"/>
-    <attack_move_turn_rate_1 AltName="Turn Rate [1]"/>
-    <attack_move_turn_rate_2 AltName="Turn Rate [2]"/>
-  </Field>
+    <Field>
+        <fAttackDashAcceleration />
+        <fAttackDashSpeed />
+        <fAttackDashRotationLowSpeed />
+        <fAttackDashRotationHighSpeed />
+        <fAttackDashRotSpeedMinBorder />
+        <fAttackDashRotSpeedMaxBorder />
+        <fAttackDashRange />
+        <fAttackBackSwingSpeed />
+        <fAttackFollowSwingSpeed />
+        <fAttackSecondRotationRate />
+        <fAttackTimeOut />
+        <fAttackEstimateFutureTime />
+        <fShotMoveSpeedRate />
+        <rotationOffsetDummyPoly />
+        <attackDashFailedCancel  IsBool=""/>
+        <disableCollisionCheck  IsBool=""/>
+        <dummy1 />
+    </Field>
 </PARAMMETA>

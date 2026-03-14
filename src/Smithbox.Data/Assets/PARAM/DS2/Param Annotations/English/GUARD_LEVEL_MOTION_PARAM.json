@@ -1,0 +1,43 @@
+{
+  "Param": "GUARD_LEVEL_MOTION_PARAM",
+  "Type": "GUARD_LEVEL_MOTION_PARAM",
+  "Name": "GUARD_LEVEL_MOTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "superSmallGuardLevel",
+      "Name": "極小",
+      "Description": ""
+    },
+    {
+      "Field": "smallGuardLevel",
+      "Name": "小",
+      "Description": ""
+    },
+    {
+      "Field": "mediumGuardLevel",
+      "Name": "中",
+      "Description": ""
+    },
+    {
+      "Field": "largeGuardLvel",
+      "Name": "大",
+      "Description": ""
+    },
+    {
+      "Field": "superLargeGuardLevel",
+      "Name": "特大",
+      "Description": ""
+    },
+    {
+      "Field": "ultraLargeGuardLevel",
+      "Name": "特特大",
+      "Description": ""
+    },
+    {
+      "Field": "flipGuardLevel",
+      "Name": "弾き",
+      "Description": ""
+    }
+  ]
+}

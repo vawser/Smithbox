@@ -1,23 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>FE_HP_ST_GUAGE_SETTING_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 damage_threshold_major_damage_player" />
-    <Field Def="f32 damage_threshold_major_damage_enemy" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="f32 player_bar_hp_min_length" />
-    <Field Def="f32 player_bar_stamina_min_length" />
-    <Field Def="f32 player_bar_hp_max_length" />
-    <Field Def="f32 player_bar_stamina_max_length" />
-  </Fields>
+    <ParamType>FE_HP_ST_GUAGE_SETTING_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 HpGainPar = 0.01">
+            <DisplayName>体力減少速度</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 StGainPar = 0.01">
+            <DisplayName>スタミナ減少速度</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 HpGainAnimLimit = 0.05">
+            <DisplayName>体力減少演出開始閾値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 StGainAnimLimit = 0.05">
+            <DisplayName>スタミナ減少演出開始閾値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 HpGainDelay = 4">
+            <DisplayName>体力減少演出開始遅延時間</DisplayName>
+            <Maximum>300</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 StGainDelay = 4">
+            <DisplayName>スタミナ減少演出開始遅延時間</DisplayName>
+            <Maximum>300</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 EnemyHpGainPar = 0.01">
+            <DisplayName>敵体力減少速度</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 EnemyHpGainAnimLimit = 0.05">
+            <DisplayName>敵体力減少演出開始閾値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.001</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 EnemyHpGainDelay = 4">
+            <DisplayName>敵体力減少演出開始遅延時間</DisplayName>
+            <Maximum>300</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 HpMinSize = 0.4">
+            <DisplayName>最小ステータス時の体力ゲージの長さ</DisplayName>
+            <Minimum>0.1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 StMinSize = 0.4">
+            <DisplayName>最小ステータス時のスタミナゲージの長さ</DisplayName>
+            <Minimum>0.1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 HpMaxSize = 0.4">
+            <DisplayName>最大ステータス時の体力ゲージの長さ体力</DisplayName>
+            <Minimum>0.1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 StMaxSize = 0.4">
+            <DisplayName>最大ステータス時のスタミナゲージの長さスタミナ</DisplayName>
+            <Minimum>0.1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>13</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -1,0 +1,47 @@
+{
+  "Key": "KEY_GUIDE_SHAPE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "KEY_GUIDE_SHAPE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cylinder"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Box"
+        }
+      ]
+    }
+  ]
+}

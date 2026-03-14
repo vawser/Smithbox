@@ -1,0 +1,20 @@
+{
+  "Key": "FORCE_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FORCE_ACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy"
+        }
+      ]
+    }
+  ]
+}

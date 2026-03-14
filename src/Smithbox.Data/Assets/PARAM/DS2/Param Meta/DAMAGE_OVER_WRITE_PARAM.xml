@@ -1,6 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related damage overwrite." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <damageOverWriteNoMotion />
+        <damageOverWriteSmall />
+        <damageOverWriteSmallKnockBack />
+        <damageOverWriteLargeKnockBack />
+        <damageOverWriteLarge />
+        <damageOverWriteBlow />
+        <damageOverWriteUpper />
+        <damageOverWriteBreath />
+        <damageOverWriteStumble />
+        <damageOverWriteBreakDown />
+        <damageOverWriteAerialDown />
+        <damageOverWriteDown />
+        <damageOverWriteDownAttack />
+        <damageOverWriteLadder />
+        <damageOverWriteRope />
+        <damageOverWriteParryBreak />
+        <damageOverWriteGuardBreak />
+        <damageOverWriteStun />
+        <damageOverWriteBleeding />
+        <damageOverWriteGrab />
+        <damageOverWriteHeadShot />
+        <damageOverWriteFallSmall />
+        <damageOverWriteFallLarge />
+        <damageOverWriteAerialSmall />
+        <damageOverWriteAerialLarge />
+        <damageOverWriteGroundJumpAttack />
+        <damageOverWriteAerialJumpAttack />
+    </Field>
 </PARAMMETA>

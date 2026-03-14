@@ -1,0 +1,23 @@
+{
+  "Key": "Brume Tower",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Brume Tower"
+      }
+  ],
+  "Params": [
+    "demopointlight_scn503610",
+    "eventlocation_m50_36_00_00",
+    "eventparam_m50_36_00_00",
+    "generatorlocation_m50_36_00_00",
+    "generatorparam_m50_36_00_00",
+    "generatorregistparam_m50_36_00_00",
+    "hitgroupparam_m50_36_00_00",
+    "intrudepointparam_m50_36_00_00",
+    "mapobjectinstanceparam_m50_36_00_00",
+    "maptargetdirparam_m50_36_00_00",
+    "npctalkparam_m50_36_00_00",
+    "treasureboxparam_m50_36_00_00"
+  ]
+}

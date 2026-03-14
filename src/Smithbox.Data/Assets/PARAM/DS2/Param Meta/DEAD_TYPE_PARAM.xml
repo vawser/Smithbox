@@ -1,8 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to what occurs upon enemy death." Row0Dummy="" />
-  <Field>
-    <bullet_emitted_on_death AltName="Bullet Emitted on Death" Refs="SystemBulletParam" />
-    <chr_full_body_sfx AltName="SFX Applied on Death" Refs="ChrFullBodySfxParam" />
-  </Field>
+    <Field>
+        <deadChrDeleteTime />
+        <deadLockOffTime />
+        <deadItemDropTime />
+        <deadHitDisableTime />
+        <deadSoulDropTime />
+        <deadSfxTime />
+        <deadSfxType  Refs="ChrFullBodySfxParam"/>
+        <deadFadeDelay />
+        <deadFadeTime />
+        <deadSeId />
+        <deadCullingFilterId />
+        <deadDisableParts  Enum="CHR_PARTS_CATEGORY_TYPE"/>
+        <deadIsNoConstraint  IsBool=""/>
+        <deadIsChrSe />
+        <deadSoulBulletId />
+    </Field>
 </PARAMMETA>

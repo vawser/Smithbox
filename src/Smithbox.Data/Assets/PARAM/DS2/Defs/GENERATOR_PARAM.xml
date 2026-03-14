@@ -1,95 +1,403 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>GENERATOR_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 SpawnLimit" />
-    <Field Def="u8 SpawnLimitGameClear" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 AggroGroup" />
-    <Field Def="u32 DeathEventID" >
-      <Description>Used in ESD. Determines if Death state is active.</Description>
-    </Field>
-    <Field Def="u32 GeneratorRegistParam" >
-      <Description>Determines which registration to use.</Description>
-    </Field>
-    <Field Def="u8 Unk0C" />
-    <Field Def="u8 Unk0D" />
-    <Field Def="u8 Unk0E" />
-    <Field Def="u8 Unk0F" />
-    <Field Def="u32 AppearanceEventID" >
-      <Description>Used in ESD. 1 through to 7 are used to determine NG+ appearance.</Description>
-    </Field>
-    <Field Def="u32 PreviousHostileEventID1" >
-      <Description>Used in ESD. Determines if Previous Hostile state is active.</Description>
-    </Field>
-    <Field Def="u32 PreviousHostileEventID2" >
-      <Description>Used in ESD. Determines if Previous Hostile state is active.</Description>
-    </Field>
-    <Field Def="u32 Unk1C" />
-    <Field Def="u32 Unk20" />
-    <Field Def="u32 Unk24" />
-    <Field Def="u32 Unk28" />
-    <Field Def="u32 LocationEventID1" />
-    <Field Def="u32 LocationEventID2" />
-    <Field Def="u32 LocationEventID3" />
-    <Field Def="u32 LocationEventID4" />
-    <Field Def="u32 LocationEventID5" />
-    <Field Def="u32 Unk40" />
-    <Field Def="u32 Unk44" />
-    <Field Def="u8 Unk48_0:1" />
-    <Field Def="u8 Unk48_1:1" />
-    <Field Def="u8 Unk48_2:1" />
-    <Field Def="u8 Unk48_3:1" />
-    <Field Def="u8 Unk48_4:1" />
-    <Field Def="u8 Unk48_5:1" />
-    <Field Def="u8 Unk48_6:1" />
-    <Field Def="u8 Unk48_7:1" />
-    <Field Def="u8 Unk49" />
-    <Field Def="u16 MapObjectBonfireID" />
-    <Field Def="f32 LeashDistance" />
-    <Field Def="u32 LocationEventID6" />
-    <Field Def="u32 LocationEventID7" />
-    <Field Def="u32 AIThinkID" >
-      <Description>Determines AI used by enemy.</Description>
-    </Field>
-    <Field Def="u32 ActivationEventID1" >
-      <Description>Used in ESD. Determines if Activation state is active.</Description>
-    </Field>
-    <Field Def="u32 ActivationEventID2" >
-      <Description>Used in ESD. Determines if Activation state is active.</Description>
-    </Field>
-    <Field Def="u32 HostileEventID1" >
-      <Description>Used in ESD. Determines if Hostile state is active.</Description>
-    </Field>
-    <Field Def="u32 HostileEventID2" >
-      <Description>Used in ESD. Determines if Hostile state is active.</Description>
-    </Field>
-    <Field Def="u16 Unk6C" />
-    <Field Def="u16 Unk71" />
-    <Field Def="u32 LocationEventID8" />
-    <Field Def="u32 LocationEventID9" />
-    <Field Def="u32 Unk78" />
-    <Field Def="u32 Unk7C" />
-    <Field Def="f32 Unk80" />
-    <Field Def="u8 Unk84" />
-    <Field Def="u8 ModelMask" />
-    <Field Def="u8 Unk86" />
-    <Field Def="u8 Unk87" />
-    <Field Def="u32 ItemLotID1" >
-      <Description>Adds itemlot to drop when this enemy is killed.</Description>
-    </Field>
-    <Field Def="u32 ItemLotID2" >
-      <Description>Adds itemlot to drop when this enemy is killed. Overkill version.</Description>
-    </Field>
-    <Field Def="u32 GraveEventID" >
-      <Description>Used in ESD. Determines if Gravestone state is active.</Description>
-    </Field>
-    <Field Def="f32 Unk94" />
-    <Field Def="u32 Unk98" />
-    <Field Def="u32 Unk9C" />
-  </Fields>
+    <ParamType>GENERATOR_PARAM</ParamType>
+    <DataVersion>16</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 maxRespawnNum">
+            <DisplayName>リスポーン上限数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 maxRespawnNum2ndOver">
+            <DisplayName>2週目以降リスポーン上限数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u8 eventGroupId">
+            <DisplayName>イベントグループID</DisplayName>
+            <Maximum>63</Maximum>
+            <Increment>1</Increment>
+            <SortID>150</SortID>
+        </Field>
+        <Field Def="u8 logicGroupId">
+            <DisplayName>ロジックグループID</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u32 respawnDisableFlag">
+            <DisplayName>再稼動禁止フラグID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s32 GeneratorRegistParam">
+            <DisplayName>登録エネミー名称</DisplayName>
+            <Enum>GENERATOR_REGIST_OBJECT</Enum>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u8 startConditionJudgeType">
+            <DisplayName>稼働開始条件判定</DisplayName>
+            <Enum>GENERATOR_JUDGE_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="u8 startConditionCondition1">
+            <DisplayName>稼動開始条件1</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="u8 startConditionCondition2">
+            <DisplayName>稼動開始条件2</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>720</SortID>
+        </Field>
+        <Field Def="u8 startConditionCondition3">
+            <DisplayName>稼動開始条件3</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>740</SortID>
+        </Field>
+        <Field Def="s32 startConditionParam1">
+            <DisplayName>稼動開始条件Param1</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>710</SortID>
+        </Field>
+        <Field Def="s32 startConditionParam2">
+            <DisplayName>稼動開始条件Param2</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>730</SortID>
+        </Field>
+        <Field Def="s32 startConditionParam3">
+            <DisplayName>稼動開始条件Param3</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>750</SortID>
+        </Field>
+        <Field Def="u8 stopConditionJudgeType">
+            <DisplayName>停止条件判定</DisplayName>
+            <Enum>GENERATOR_JUDGE_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 stopConditionCondition1">
+            <DisplayName>停止条件1</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1100</SortID>
+        </Field>
+        <Field Def="u8 stopConditionCondition2">
+            <DisplayName>停止条件2</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1120</SortID>
+        </Field>
+        <Field Def="u8 stopConditionCondition3">
+            <DisplayName>停止条件3</DisplayName>
+            <Enum>GENERATOR_EVAL_ENUM</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1140</SortID>
+        </Field>
+        <Field Def="s32 stopConditionParam1">
+            <DisplayName>停止条件Param1</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1110</SortID>
+        </Field>
+        <Field Def="s32 stopConditionParam2">
+            <DisplayName>停止条件Param2</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1130</SortID>
+        </Field>
+        <Field Def="s32 stopConditionParam3">
+            <DisplayName>停止条件Param3</DisplayName>
+            <Minimum>-1e+09</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1150</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId1">
+            <DisplayName>ロジック移動領域1</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3000</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId2">
+            <DisplayName>ロジック移動領域2</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3010</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId3">
+            <DisplayName>ロジック移動領域3</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3020</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId4">
+            <DisplayName>ロジック移動領域4</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3030</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId5">
+            <DisplayName>ロジック移動領域5</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3040</SortID>
+        </Field>
+        <Field Def="u32 logicMoveZoneId6">
+            <DisplayName>ロジック移動領域6</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3050</SortID>
+        </Field>
+        <Field Def="f32 infinityGenerateTime">
+            <DisplayName>無限生成間隔</DisplayName>
+            <Maximum>3600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>430</SortID>
+        </Field>
+        <Field Def="u8 infinityGenerate:1">
+            <DisplayName>無限生成</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>420</SortID>
+        </Field>
+        <Field Def="u8 drawGroupDeleteDisable:1">
+            <DisplayName>描画グループ削除無効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="u8 bossBattleStopDisable:1">
+            <DisplayName>ボス戦中非停止</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="u8 hpGaugeDisable:1">
+            <DisplayName>HPゲージ非表示</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>145</SortID>
+        </Field>
+        <Field Def="u8 resetPosition:1">
+            <DisplayName>見えなくなったら位置リセット</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>140</SortID>
+        </Field>
+        <Field Def="u8 generateOverDeleteDisable:1">
+            <DisplayName>上限オーバー削除無効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 invincibleWithoutBossBattle:1">
+            <DisplayName>ボス戦以外無敵</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>135</SortID>
+        </Field>
+        <Field Def="u8 netUpdatePriority">
+            <DisplayName>マルチプレイ時更新優先度</DisplayName>
+            <Maximum>255</Maximum>
+            <SortID>7000</SortID>
+        </Field>
+        <Field Def="u16 bonfireId">
+            <DisplayName>篝火ID</DisplayName>
+            <Maximum>65535</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 returnDistance">
+            <DisplayName>帰還距離</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5000</SortID>
+        </Field>
+        <Field Def="u32 logicNaviPoint1">
+            <DisplayName>ロジックナビポイント1</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4000</SortID>
+        </Field>
+        <Field Def="u32 logicNaviPoint2">
+            <DisplayName>ロジックナビポイント2</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4010</SortID>
+        </Field>
+        <Field Def="s32 bootLowStateId">
+            <DisplayName>下位ロジック起動ステートID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2900</SortID>
+        </Field>
+        <Field Def="u32 logicEventFlag1">
+            <DisplayName>イベントフラグ1</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6000</SortID>
+        </Field>
+        <Field Def="u32 logicEventFlag2">
+            <DisplayName>イベントフラグ2</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6010</SortID>
+        </Field>
+        <Field Def="u32 logicEventFlag3">
+            <DisplayName>イベントフラグ3</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6020</SortID>
+        </Field>
+        <Field Def="u32 logicEventFlag4">
+            <DisplayName>イベントフラグ4</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6030</SortID>
+        </Field>
+        <Field Def="f32 logicStartInterval">
+            <DisplayName>動き出し間隔[秒]</DisplayName>
+            <Maximum>30</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2910</SortID>
+        </Field>
+        <Field Def="u32 returnPointId1">
+            <DisplayName>帰還領域1</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4500</SortID>
+        </Field>
+        <Field Def="u32 returnPointId2">
+            <DisplayName>帰還領域2</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4510</SortID>
+        </Field>
+        <Field Def="u32 returnPointId3">
+            <DisplayName>帰還領域3</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4520</SortID>
+        </Field>
+        <Field Def="u8 logicAreaEventValue1">
+            <DisplayName>イベントエリア変数1</DisplayName>
+            <Maximum>63</Maximum>
+            <Increment>1</Increment>
+            <SortID>6100</SortID>
+        </Field>
+        <Field Def="u8 logicAreaEventValue2">
+            <DisplayName>イベントエリア変数2</DisplayName>
+            <Maximum>63</Maximum>
+            <Increment>1</Increment>
+            <SortID>6110</SortID>
+        </Field>
+        <Field Def="u8 logicGlobalEventValue1">
+            <DisplayName>イベントグローバル変数1</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6200</SortID>
+        </Field>
+        <Field Def="u8 logicGlobalEventValue2">
+            <DisplayName>イベントグローバル変数2</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6210</SortID>
+        </Field>
+        <Field Def="f32 decLimitTime">
+            <DisplayName>マルチプレイ制限時間減少量</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>3600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10000</SortID>
+        </Field>
+        <Field Def="u8 spGenerateType">
+            <DisplayName>特殊生成タイプ</DisplayName>
+            <Enum>GENERATOR_SP_GENERATE_TYPE</Enum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s8 instanceColor">
+            <DisplayName>カラー</DisplayName>
+            <Maximum>15</Maximum>
+            <Increment>1</Increment>
+            <SortID>350</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[2]">
+            <DisplayName>予約</DisplayName>
+            <SortID>12002</SortID>
+        </Field>
+        <Field Def="u32 itemId">
+            <DisplayName>初週アイテム抽選ID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11000</SortID>
+        </Field>
+        <Field Def="u32 itemId2ndOver">
+            <DisplayName>2週目以降アイテム抽選ID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11010</SortID>
+        </Field>
+        <Field Def="u32 endEventId">
+            <DisplayName>毎生成時の終了必須イベントID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>590</SortID>
+        </Field>
+        <Field Def="f32 aiReturnStandbyRange">
+            <DisplayName>AI帰還準備距離[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12000</SortID>
+        </Field>
+        <Field Def="u8 aiReturnType">
+            <DisplayName>AI帰還方法</DisplayName>
+            <Enum>GENERATOR_AIRETURN_TYPE</Enum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>12001</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved2[7]">
+            <DisplayName>予約</DisplayName>
+            <SortID>12003</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

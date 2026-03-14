@@ -1,6 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to armor masks and which areas they hide." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <CullingFlagTarget00  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget01  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget02  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget03  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget04  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget05  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget06  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget07  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget08  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget09  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget10  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget11  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget12  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget13  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget14  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget15  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget16  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget17  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget18  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget19  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget20  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget21  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget22  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget23  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget24  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget25  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget26  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget27  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget28  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget29  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget30  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget31  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget32  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget33  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget34  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget35  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget36  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget37  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget38  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget39  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget40  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget41  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget42  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget43  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget44  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget45  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget46  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget47  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget48  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget49  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget50  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget51  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget52  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget53  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget54  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget55  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget56  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget57  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget58  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget59  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget60  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget61  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget62  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+        <CullingFlagTarget63  Enum="EQUIP_CULLING_GROUP_SET_TARGET"/>
+    </Field>
 </PARAMMETA>

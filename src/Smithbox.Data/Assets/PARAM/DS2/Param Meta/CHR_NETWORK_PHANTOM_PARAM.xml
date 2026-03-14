@@ -1,19 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters for multiplayer phantoms." Row0Dummy="" />
-  <Field>
-    <chr_phantom_param_id AltName="Phantom Color ID" Refs="ChrPhantomParam"/>
-    <chr_full_body_sfx_id_0 AltName="Full Body SFX ID - 0" Refs="ChrFullBodySfxParam"/>
-    <chr_full_body_sfx_id_1 AltName="Full Body SFX ID - 1" Refs="ChrFullBodySfxParam"/>
-    <chr_full_body_sfx_id_2 AltName="Full Body SFX ID - 2" Refs="ChrFullBodySfxParam"/>
-    <chr_full_body_sfx_id_3 AltName="Full Body SFX ID - 3" Refs="ChrFullBodySfxParam"/>
-    <chr_full_body_sfx_id_4 AltName="Full Body SFX ID - 4" Refs="ChrFullBodySfxParam"/>
-    <chr_physics_texture_id AltName="Physics Texture ID" Refs="PhysicsTextureParam0"/>
-    <dead_type_id AltName="Dead Type ID" Refs="DeadTypeParam"/>
-    <allotted_time AltName="Allotted Time"/>
-    <message_box_id AltName="Message Box ID" />
-    <rank_1_color AltName="Rank 1 Color" />
-    <rank_2_color AltName="Rank 2 Color" />
-    <rank_3_color AltName="Rank 3 Color" />
-  </Field>
+    <Field>
+        <level0ShaderType  Enum="CHR_VISUAL_TYPE"/>
+        <level0FullBodySfx  Refs="ChrFullBodySfxParam"/>
+        <level1FullBodySfx  Refs="ChrFullBodySfxParam"/>
+        <level2FullBodySfx  Refs="ChrFullBodySfxParam"/>
+        <level3FullBodySfx  Refs="ChrFullBodySfxParam"/>
+        <entryMotionType  Enum="PLAYER_MULTI_ENTRY_MOTION"/>
+        <speedDownHpMinRate />
+        <speedDownHpMaxRate />
+        <speedDownRate />
+        <entrySfxId />
+        <entryFullBodySfx />
+        <deadType  Refs="DeadTypeParam"/>
+        <limitTime />
+        <returnWaitTime />
+        <respawnPosTypeSuccess  Enum="MULT_END_RESPAWN_POS_TYPE"/>
+        <respawnPosTypeFaild  Enum="MULT_END_RESPAWN_POS_TYPE"/>
+        <respawnPosTypeDead  Enum="MULT_END_RESPAWN_POS_TYPE"/>
+        <pad1 />
+        <respawnConditionTypeSuccess  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
+        <respawnConditionTypeFaild  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
+        <respawnConditionTypeDead  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
+        <pad2 />
+        <voiceChatType />
+        <hostReturnWarpEnable  IsBool=""/>
+        <ownerReturnWarpEnable  IsBool=""/>
+        <handicapEnable  IsBool=""/>
+        <maxHpRate />
+        <summonEnable  IsBool=""/>
+        <summonSupportEnable  IsBool=""/>
+        <isEnableBossSoul  IsBool=""/>
+        <isEnableEnemySoul  IsBool=""/>
+        <isEnableNpcSoul  IsBool=""/>
+        <isEnableHostSoul  IsBool=""/>
+        <isEnableNetPhantomSoul  IsBool=""/>
+        <healItemUsageType  Enum="HEAL_ITEM_USAGE_TYPE"/>
+        <getSoulRate />
+        <fadeOutTimeStep1 />
+        <fadeOutTimeStep2 />
+        <level1ShaderType  Enum="CHR_VISUAL_TYPE"/>
+        <level2ShaderType  Enum="CHR_VISUAL_TYPE"/>
+        <level3ShaderType  Enum="CHR_VISUAL_TYPE"/>
+        <getBossSoulRate />
+    </Field>
 </PARAMMETA>

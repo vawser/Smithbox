@@ -1,0 +1,29 @@
+{
+  "Key": "GENERATOR_AIRETURN_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_AIRETURN_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walk back"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dash back"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_EMIT_ENTITY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_EMIT_ENTITY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "User"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent Bullet"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to door map objects." Row0Dummy="" />
-  <Field>
-   <is_twin_door AltName="Is Twin Door" IsBool="" />
-   <key_guide_id_when_closed AltName="Key Guide ID when Closed" Refs="KeyGuideParam" />
-   <key_guide_id_when_open AltName="Key Guide ID when Open" Refs="KeyGuideParam" />
-  </Field>
+    <Field>
+        <doorType  Enum="DOOR_TYPE_ENUM"/>
+        <aReserved />
+        <openKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
+        <closeKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
+    </Field>
 </PARAMMETA>

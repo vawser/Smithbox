@@ -1,0 +1,48 @@
+{
+  "Param": "PHYSICS_TEXTURE_PARAM",
+  "Type": "PHYSICS_TEXTURE_PARAM",
+  "Name": "PHYSICS_TEXTURE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "layerType",
+      "Name": "レイヤータイプ",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー0",
+      "Description": ""
+    },
+    {
+      "Field": "refractiveReal",
+      "Name": "屈折率",
+      "Description": ""
+    },
+    {
+      "Field": "refractiveImag",
+      "Name": "屈折率の虚数部",
+      "Description": ""
+    },
+    {
+      "Field": "fresnel",
+      "Name": "垂直反射率",
+      "Description": ""
+    },
+    {
+      "Field": "fresnelInt",
+      "Name": "垂直反射率(255基準)",
+      "Description": ""
+    },
+    {
+      "Field": "roughness",
+      "Name": "滑らかさ",
+      "Description": ""
+    },
+    {
+      "Field": "roughnessInt",
+      "Name": "滑らかさ(255基準)",
+      "Description": ""
+    }
+  ]
+}

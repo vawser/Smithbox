@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_EQUIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_EQUIP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Specification of each equipment"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Integral molding"
+        }
+      ]
+    }
+  ]
+}

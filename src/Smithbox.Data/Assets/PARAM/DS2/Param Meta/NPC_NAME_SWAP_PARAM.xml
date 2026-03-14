@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to NPC name swap." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <changeNameFlagId  Enum="EVENT_FLAG_GLOBAL_TALK"/>
+        <beforeNameTextId />
+    </Field>
 </PARAMMETA>

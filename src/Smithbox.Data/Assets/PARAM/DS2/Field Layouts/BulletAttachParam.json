@@ -1,0 +1,102 @@
+{
+      "Name": "BulletAttachParam",
+      "UngroupedAtBottom": true,
+      "Groups": [
+        {
+          "Key": "Part 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 1"
+              }
+          ],
+          "Fields": [
+            "part1DummyPolyId",
+            "part1OffsetPosX",
+            "part1OffsetPosY",
+            "part1OffsetPosZ",
+            "part1OffsetAccuracyPosX",
+            "part1OffsetAccuracyPosY",
+            "part1OffsetAccuracyPosZ",
+            "part1OffsetRotX",
+            "part1OffsetRotY",
+            "part1OffsetRotZ",
+            "part1OffsetAccuracyRotX",
+            "part1OffsetAccuracyRotY",
+            "part1OffsetAccuracyRotZ"
+          ]
+        },
+        {
+          "Key": "Part 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 2"
+              }
+          ],
+          "Fields": [
+            "part2DummyPolyId",
+            "part2OffsetPosX",
+            "part2OffsetPosY",
+            "part2OffsetPosZ",
+            "part2OffsetAccuracyPosX",
+            "part2OffsetAccuracyPosY",
+            "part2OffsetAccuracyPosZ",
+            "part2OffsetRotX",
+            "part2OffsetRotY",
+            "part2OffsetRotZ",
+            "part2OffsetAccuracyRotX",
+            "part2OffsetAccuracyRotY",
+            "part2OffsetAccuracyRotZ"
+          ]
+        },
+        {
+          "Key": "Part 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 3"
+              }
+          ],
+          "Fields": [
+            "part3DummyPolyId",
+            "part3OffsetPosX",
+            "part3OffsetPosY",
+            "part3OffsetPosZ",
+            "part3OffsetAccuracyPosX",
+            "part3OffsetAccuracyPosY",
+            "part3OffsetAccuracyPosZ",
+            "part3OffsetRotX",
+            "part3OffsetRotY",
+            "part3OffsetRotZ",
+            "part3OffsetAccuracyRotX",
+            "part3OffsetAccuracyRotY",
+            "part3OffsetAccuracyRotZ"
+          ]
+        },
+        {
+          "Key": "Part 4",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Part 4"
+              }
+          ],
+          "Fields": [
+            "part4DummyPolyId",
+            "part4OffsetPosX",
+            "part4OffsetPosY",
+            "part4OffsetPosZ",
+            "part4OffsetAccuracyPosX",
+            "part4OffsetAccuracyPosY",
+            "part4OffsetAccuracyPosZ",
+            "part4OffsetRotX",
+            "part4OffsetRotY",
+            "part4OffsetRotZ",
+            "part4OffsetAccuracyRotX",
+            "part4OffsetAccuracyRotY",
+            "part4OffsetAccuracyRotZ"
+          ]
+        }
+      ]
+    }

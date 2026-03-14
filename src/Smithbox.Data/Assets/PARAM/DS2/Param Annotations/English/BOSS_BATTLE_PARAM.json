@@ -1,0 +1,128 @@
+{
+  "Param": "BOSS_BATTLE_PARAM",
+  "Type": "BOSS_BATTLE_PARAM",
+  "Name": "BOSS_BATTLE_PARAM",
+  "Description": "Defines parameters for boss battles.",
+  "Fields": [
+    {
+      "Field": "soulValue",
+      "Name": "Souls",
+      "Description": "The souls given upon this boss's defeat."
+    },
+    {
+      "Field": "soulBulletId",
+      "Name": "Soul Bullet ID",
+      "Description": "The bullet triggers upon this boss's defeat."
+    },
+    {
+      "Field": "itemLotId",
+      "Name": "Item Lot ID",
+      "Description": "The item lot given upon this boss's defeat."
+    },
+    {
+      "Field": "itemLotIdMultiPlay",
+      "Name": "Item Lot ID: Multiplayer",
+      "Description": "The item lot given upon this boss's defeat when in multiplayer."
+    },
+    {
+      "Field": "killedEventId",
+      "Name": "Defeated Event Flag ID",
+      "Description": "The event flag set upon this boss's defeat every time."
+    },
+    {
+      "Field": "onceKilledEventId",
+      "Name": "First Defeat Event Flag ID",
+      "Description": "The event flag set upon this boss's defeat for the first time. Never unset."
+    },
+    {
+      "Field": "bonfireEventValueId",
+      "Name": "Bonfire Event Value ID",
+      "Description": "The event value associated with the bonfire linked to this boss."
+    },
+    {
+      "Field": "cameraParamId",
+      "Name": "Camera ID",
+      "Description": "The camera parameters to use when facing this boss."
+    },
+    {
+      "Field": "lockParamId",
+      "Name": "Lock-On ID",
+      "Description": "The lock-on parameters to use when facing this boss."
+    },
+    {
+      "Field": "hpDispType1",
+      "Name": "HP Display Type: 1",
+      "Description": "The HP display type for slot 1."
+    },
+    {
+      "Field": "hpDispType2",
+      "Name": "HP Display Type: 2",
+      "Description": "The HP display type for slot 2."
+    },
+    {
+      "Field": "hpDispType3",
+      "Name": "HP Display Type: 3",
+      "Description": "The HP display type for slot 3."
+    },
+    {
+      "Field": "killFeType",
+      "Name": "Kill Effect Type",
+      "Description": "The kill effect that occurs on the boss defeat."
+    },
+    {
+      "Field": "genEventGroupId1",
+      "Name": "Generator Event Group ID: 1",
+      "Description": "The generator event group for slot 1."
+    },
+    {
+      "Field": "genEventGroupId2",
+      "Name": "Generator Event Group ID: 2",
+      "Description": "The generator event group for slot 2."
+    },
+    {
+      "Field": "genEventGroupId3",
+      "Name": "Generator Event Group ID: 3",
+      "Description": "The generator event group for slot 3."
+    },
+    {
+      "Field": "roundSoulDropCategory",
+      "Name": "Soul Drop Category",
+      "Description": "The soul drop category for this boss."
+    },
+    {
+      "Field": "bossNameTextId1",
+      "Name": "Boss Name Text: 1",
+      "Description": "The boss name text for slot 1."
+    },
+    {
+      "Field": "bossNameTextId2",
+      "Name": "Boss Name Text: 2",
+      "Description": "The boss name text for slot 2."
+    },
+    {
+      "Field": "bossNameTextId3",
+      "Name": "Boss Name Text: 3",
+      "Description": "The boss name text for slot 3."
+    },
+    {
+      "Field": "feDispWaitTime",
+      "Name": "Kill Effect Delay Time",
+      "Description": "The duration before the kill effect occurs upon boss defeat."
+    },
+    {
+      "Field": "bonfireId",
+      "Name": "Bonfire ID",
+      "Description": "The bonfire parameters associated with this boss."
+    },
+    {
+      "Field": "aReserved3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "Multiplayer Time Limit Reduction",
+      "Description": "The amount of time limit reduction that occurs in multiplayer upon boss defeat."
+    }
+  ]
+}

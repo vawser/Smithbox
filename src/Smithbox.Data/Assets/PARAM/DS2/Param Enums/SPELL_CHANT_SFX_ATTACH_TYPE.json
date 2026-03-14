@@ -1,0 +1,29 @@
+{
+  "Key": "SPELL_CHANT_SFX_ATTACH_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_CHANT_SFX_ATTACH_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character body"
+        }
+      ]
+    }
+  ]
+}

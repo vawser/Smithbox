@@ -1,0 +1,146 @@
+{
+  "Key": "EVENT_FLAG_GLOBAL_LOGIC",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GLOBAL_LOGIC"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "300001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic1"
+        }
+      ]
+    },
+    {
+      "Key": "300002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic2"
+        }
+      ]
+    },
+    {
+      "Key": "300003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic3"
+        }
+      ]
+    },
+    {
+      "Key": "300004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic4"
+        }
+      ]
+    },
+    {
+      "Key": "300005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Logic5"
+        }
+      ]
+    },
+    {
+      "Key": "300100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Return the behavior of senior giant soldiers to normal after the door is destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "300101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Kingdom Soldiers_Lower soldiers become hostile"
+        }
+      ]
+    },
+    {
+      "Key": "300102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Executed an attack to destroy the gate of a trapped senior giant soldier"
+        }
+      ]
+    },
+    {
+      "Key": "300103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_A senior Titan soldier throws away the soldier he is holding"
+        }
+      ]
+    },
+    {
+      "Key": "300104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Continuous Falling of Giant Soldiers Event Executed Judgment"
+        }
+      ]
+    },
+    {
+      "Key": "300105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Low-class Titan soldiers carry out a wall-destroying attack"
+        }
+      ]
+    },
+    {
+      "Key": "300107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Citadel of Resistance_Past_Rumbling preparation soldiers release preparations"
+        }
+      ]
+    },
+    {
+      "Key": "300108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fortress of Resistance_Past_Rumbling preparation soldiers set trap"
+        }
+      ]
+    },
+    {
+      "Key": "300109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Citadel of Resistance_Past_Rolling has already been rolled"
+        }
+      ]
+    }
+  ]
+}

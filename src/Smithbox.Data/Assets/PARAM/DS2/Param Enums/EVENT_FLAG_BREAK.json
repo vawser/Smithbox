@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_FLAG_BREAK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_BREAK"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "99040001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destroyed petrified BOSS Salamander《ID:99040001》"
+        }
+      ]
+    }
+  ]
+}

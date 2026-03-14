@@ -1,18 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>PAD_RUMBLE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="f32 Unk07" />
-  </Fields>
+    <ParamType>PAD_RUMBLE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="f32 largeMotorPower = 0.5">
+            <DisplayName>大モーターの強さ</DisplayName>
+            <Description>大モーターの強さ</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="f32 largeStartScale = 1">
+            <DisplayName>大モーターの初期最大スケール</DisplayName>
+            <Description>大モーターの初期最大スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1100</SortID>
+        </Field>
+        <Field Def="f32 largeMiddleScale = 1">
+            <DisplayName>大モーターの中間点スケール</DisplayName>
+            <Description>大モーターのB-Spline中間点スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1200</SortID>
+        </Field>
+        <Field Def="f32 largeLastScale = 1">
+            <DisplayName>大モーターの終点最大スケール</DisplayName>
+            <Description>大モーターの終点最大スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1300</SortID>
+        </Field>
+        <Field Def="f32 smallMotorPower = 0.5">
+            <DisplayName>小モーターの強さ</DisplayName>
+            <Description>小モーターの強さ</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="f32 smallStartScale = 1">
+            <DisplayName>小モーターの初期最大スケール</DisplayName>
+            <Description>小モーターの初期最大スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2100</SortID>
+        </Field>
+        <Field Def="f32 smallMiddleScale = 1">
+            <DisplayName>小モーターの中間点スケール</DisplayName>
+            <Description>小モーターのB-Spline中間点スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2200</SortID>
+        </Field>
+        <Field Def="f32 smallLastScale = 1">
+            <DisplayName>小モーターの終点最大スケール</DisplayName>
+            <Description>小モーターの終点最大スケール</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2300</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

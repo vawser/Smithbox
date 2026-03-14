@@ -1,0 +1,29 @@
+{
+  "Key": "EVENT_RES_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_RES_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "MAP"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC"
+        }
+      ]
+    }
+  ]
+}

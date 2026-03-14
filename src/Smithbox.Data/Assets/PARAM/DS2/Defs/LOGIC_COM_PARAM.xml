@@ -1,63 +1,325 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>LOGIC_COM_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 sight_distance" />
-    <Field Def="f32 detect_distance" />
-    <Field Def="f32 vision_cone_horizontal_angle" />
-    <Field Def="f32 vision_cone_vertical_angle" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk1C" />
-    <Field Def="f32 Unk20" />
-    <Field Def="s32 Unk24" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk2C" />
-    <Field Def="u8 Unk30" />
-    <Field Def="u8 Unk31" />
-    <Field Def="u8 Unk32" />
-    <Field Def="u8 Unk33" />
-    <Field Def="u8 Unk34" />
-    <Field Def="u8 Unk35" />
-    <Field Def="u8 Unk36" />
-    <Field Def="u8 Unk37" />
-    <Field Def="u8 Unk38" />
-    <Field Def="u8 Unk39" />
-    <Field Def="u8 Unk3A" />
-    <Field Def="u8 Unk3B" />
-    <Field Def="u8 Unk3C" />
-    <Field Def="u8 Unk3D" />
-    <Field Def="u8 Unk3E" />
-    <Field Def="u8 Unk3F" />
-    <Field Def="u8 Unk40" />
-    <Field Def="u8 Unk41" />
-    <Field Def="u8 Unk42" />
-    <Field Def="u8 Unk43" />
-    <Field Def="f32 Unk44" />
-    <Field Def="f32 Unk48" />
-    <Field Def="f32 Unk4C" />
-    <Field Def="f32 Unk50" />
-    <Field Def="f32 Unk54" />
-    <Field Def="f32 Unk58" />
-    <Field Def="u8 Unk5C" />
-    <Field Def="u8 Unk5D" />
-    <Field Def="u8 Unk5E" />
-    <Field Def="u8 Unk5F" />
-    <Field Def="f32 Unk60" />
-    <Field Def="u8 Unk64" />
-    <Field Def="u8 Unk65" />
-    <Field Def="u8 Unk66" />
-    <Field Def="u8 Unk67" />
-    <Field Def="s32 Unk68" />
-    <Field Def="f32 Unk6C" />
-    <Field Def="f32 Unk70" />
-    <Field Def="f32 Unk74" />
-    <Field Def="f32 Unk78" />
-    <Field Def="f32 Unk7C" />
-  </Fields>
+    <ParamType>LOGIC_COM_PARAM</ParamType>
+    <DataVersion>14</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 id = 9,990">
+            <DisplayName>LogicID</DisplayName>
+            <EditFlags>Lock</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 viewingDistanceMax = 30">
+            <DisplayName>視界距離最大</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 viewingDistanceMin = 20">
+            <DisplayName>視界距離最小</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 viewingBackDistance = 5">
+            <DisplayName>後方視界距離</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="angle32 viewingAngleLR = 90">
+            <DisplayName>視界左右角度</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="angle32 viewingAngleUD = 45">
+            <DisplayName>視界上下角度</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 nightBlindRate = 70">
+            <DisplayName>暗闇倍率</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 chaseDistance = 20">
+            <DisplayName>追尾距離</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 hearingDistance = 1">
+            <DisplayName>音認識範囲倍率</DisplayName>
+            <Maximum>5</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u32 hearingSensitivity = 2">
+            <DisplayName>音認識感度</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 obstacleTime = 0.5">
+            <DisplayName>障害判定時間</DisplayName>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 obstacleRate = 0.2">
+            <DisplayName>障害判定速度</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u8 platoonWeight">
+            <DisplayName>小隊内重み</DisplayName>
+            <Enum>LOGIC_WEIGHT_IN_PLATOON_TYPE</Enum>
+            <Maximum>6</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 platoonPriority">
+            <DisplayName>小隊内優先度</DisplayName>
+            <Enum>LOGIC_PRIORITY_IN_PLATOON_TYPE</Enum>
+            <Maximum>4</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u8 viewingBrightnessType">
+            <DisplayName>明るさによる変化</DisplayName>
+            <Enum>LOGIC_EYESIGHT_BASE_TYPE</Enum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 useDoor">
+            <DisplayName>ドアを使用するか</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 useLadder">
+            <DisplayName>はしごを使用するか</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 useRope">
+            <DisplayName>ロープを使用するか</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 upperRunNum">
+            <DisplayName>上位ロジック多重起動数</DisplayName>
+            <Maximum>8</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 damageAfterActionPriority">
+            <DisplayName>ダメージ後優先行動指定</DisplayName>
+            <Enum>LOGIC_ACTION_PRIORITY_TYPE</Enum>
+            <Maximum>8</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 roundLv2 = 1">
+            <DisplayName>LV2になる周回数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 roundLv3 = 2">
+            <DisplayName>LV3になる周回数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 roundLv4 = 3">
+            <DisplayName>LV4になる周回数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 roundLv5 = 4">
+            <DisplayName>LV5になる周回数</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 distanceCheckType">
+            <DisplayName>攻撃時距離測定精度</DisplayName>
+            <Enum>LOGIC_DISTANCE_CHECK_TYPE</Enum>
+            <Maximum>4</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u8 itemPursuitTable">
+            <DisplayName>アイテム追撃テーブル</DisplayName>
+            <Enum>LOGIC_PROBABILITY_TABLE_TYPE</Enum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="u8 itemPursuitActionNo">
+            <DisplayName>アイテム追撃行動</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="u8 guardBreakPursuitTable">
+            <DisplayName>ガード崩れ追撃テーブル</DisplayName>
+            <Enum>LOGIC_PROBABILITY_TABLE_TYPE</Enum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>111</SortID>
+        </Field>
+        <Field Def="u8 guardPursuitActionNo">
+            <DisplayName>ガード崩れ追撃行動</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>112</SortID>
+        </Field>
+        <Field Def="u8 backAttackTable">
+            <DisplayName>背後攻撃テーブル</DisplayName>
+            <Enum>LOGIC_PROBABILITY_TABLE_TYPE</Enum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>121</SortID>
+        </Field>
+        <Field Def="u8 backAttackActionNo">
+            <DisplayName>背後攻撃行動</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>122</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[1]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>193</SortID>
+        </Field>
+        <Field Def="f32 itemPursuitDistance = 2">
+            <DisplayName>アイテム追撃距離</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>103</SortID>
+        </Field>
+        <Field Def="f32 guardPursuitDistance = 2">
+            <DisplayName>ガード崩れ追撃距離</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>113</SortID>
+        </Field>
+        <Field Def="f32 backAttackDistance = 2">
+            <DisplayName>背後攻撃距離距離</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>123</SortID>
+        </Field>
+        <Field Def="f32 noLOSForgetTime">
+            <DisplayName>遮蔽されて忘れるまでの時間[s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="f32 genReturnDist">
+            <DisplayName>帰還時後退距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>140</SortID>
+        </Field>
+        <Field Def="f32 genReturnTime">
+            <DisplayName>帰還時後退時間[s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>141</SortID>
+        </Field>
+        <Field Def="u8 healProbabilityTable">
+            <DisplayName>回復テーブル</DisplayName>
+            <Enum>LOGIC_PROBABILITY_TABLE_TYPE</Enum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>125</SortID>
+        </Field>
+        <Field Def="u8 healActionNo">
+            <DisplayName>回復行動</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>126</SortID>
+        </Field>
+        <Field Def="u8 healHpPerc">
+            <DisplayName>回復行動をする残ＨＰ[％]</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>127</SortID>
+        </Field>
+        <Field Def="u8 dodgeActionType">
+            <DisplayName>使用可能な回避行動タイプ</DisplayName>
+            <Enum>LOGIC_USEABLE_DODGE_TYPE</Enum>
+            <Maximum>3</Maximum>
+            <Increment>1</Increment>
+            <SortID>150</SortID>
+        </Field>
+        <Field Def="f32 autoBreakPower = 0.3">
+            <DisplayName>自動ブレーキ強度</DisplayName>
+            <Maximum>3</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>160</SortID>
+        </Field>
+        <Field Def="u8 returnSoundCheck">
+            <DisplayName>帰還時音チェック</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>142</SortID>
+        </Field>
+        <Field Def="u8 bTargetHighPos">
+            <DisplayName>近接攻撃が届かないロック位置も狙う</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>180</SortID>
+        </Field>
+        <Field Def="u8 itemAlluringSkullType">
+            <DisplayName>誘い骸骨タイプ</DisplayName>
+            <Enum>LOGIC_DECOY_ENABLE_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="u8 spellNostalgiaType">
+            <DisplayName>望郷タイプ</DisplayName>
+            <Enum>LOGIC_DECOY_ENABLE_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>191</SortID>
+        </Field>
+        <Field Def="u8 bLongAiCandidate">
+            <DisplayName>長距離でもAI権を要求するか</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>192</SortID>
+        </Field>
+        <Field Def="dummy8 pad00[23]">
+            <DisplayName>予約</DisplayName>
+            <SortID>194</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

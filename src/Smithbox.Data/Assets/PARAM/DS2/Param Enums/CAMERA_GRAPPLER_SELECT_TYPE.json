@@ -1,0 +1,29 @@
+{
+  "Key": "CAMERA_GRAPPLER_SELECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_GRAPPLER_SELECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "x Shaped Branch"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "+ Shaped Branch"
+        }
+      ]
+    }
+  ]
+}

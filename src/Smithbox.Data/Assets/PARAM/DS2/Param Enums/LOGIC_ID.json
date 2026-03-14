@@ -1,0 +1,4691 @@
+{
+  "Key": "LOGIC_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
+    },
+    {
+      "Key": "9500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009500 For avoidance test"
+        }
+      ]
+    },
+    {
+      "Key": "9501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009501 For lock movement confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "9502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009502 For moving area test"
+        }
+      ]
+    },
+    {
+      "Key": "9503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009503 For varistor testing"
+        }
+      ]
+    },
+    {
+      "Key": "9504",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009504 I am for ○○Chinese test"
+        }
+      ]
+    },
+    {
+      "Key": "9505",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009505 For throwing test"
+        }
+      ]
+    },
+    {
+      "Key": "9506",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009506 For target state acquisition test"
+        }
+      ]
+    },
+    {
+      "Key": "9507",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009507 For startup state exit test"
+        }
+      ]
+    },
+    {
+      "Key": "9508",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009508 For testing the use of dummy objects"
+        }
+      ]
+    },
+    {
+      "Key": "9509",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009509 For sound reaction test"
+        }
+      ]
+    },
+    {
+      "Key": "9510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009510 For Barrett reaction test"
+        }
+      ]
+    },
+    {
+      "Key": "9511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009511 For click movement test"
+        }
+      ]
+    },
+    {
+      "Key": "9512",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009512 For group testing"
+        }
+      ]
+    },
+    {
+      "Key": "9513",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009513 For parallel movement test"
+        }
+      ]
+    },
+    {
+      "Key": "9514",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009514 For last sighting test"
+        }
+      ]
+    },
+    {
+      "Key": "9515",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009515 For general purpose object testing"
+        }
+      ]
+    },
+    {
+      "Key": "9516",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009516 For item testing"
+        }
+      ]
+    },
+    {
+      "Key": "9517",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009517 For upper multiple startup test"
+        }
+      ]
+    },
+    {
+      "Key": "9518",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009518 For movement speed test"
+        }
+      ]
+    },
+    {
+      "Key": "9519",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009519 For parry test"
+        }
+      ]
+    },
+    {
+      "Key": "9520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009520 For attack turning test"
+        }
+      ]
+    },
+    {
+      "Key": "9521",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009521 For combo cancellation test"
+        }
+      ]
+    },
+    {
+      "Key": "9522",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009522 For network confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "9523",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009523 For checking movement parameters"
+        }
+      ]
+    },
+    {
+      "Key": "9524",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009524 Brake test"
+        }
+      ]
+    },
+    {
+      "Key": "9525",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009525 Navi mesh test"
+        }
+      ]
+    },
+    {
+      "Key": "9526",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009526 Enemy search target test"
+        }
+      ]
+    },
+    {
+      "Key": "9527",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009527 Part damage test"
+        }
+      ]
+    },
+    {
+      "Key": "9528",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009528 White Spirit NPC Test"
+        }
+      ]
+    },
+    {
+      "Key": "9550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009550 For planning: Lock movement (normal)"
+        }
+      ]
+    },
+    {
+      "Key": "9551",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009551 For planning: Lock movement (large size)"
+        }
+      ]
+    },
+    {
+      "Key": "9552",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009552 For planning: Attack cancellation"
+        }
+      ]
+    },
+    {
+      "Key": "9553",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009553 For planning: avoidance cancellation"
+        }
+      ]
+    },
+    {
+      "Key": "9554",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009554 For planning: Cancellation of movement"
+        }
+      ]
+    },
+    {
+      "Key": "9555",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009555 For planning: Damage stiffness adjustment"
+        }
+      ]
+    },
+    {
+      "Key": "9556",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009556 For planning: Step cancellation"
+        }
+      ]
+    },
+    {
+      "Key": "9580",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009580 Miyanami test 0"
+        }
+      ]
+    },
+    {
+      "Key": "9581",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009581 Miyanami test 1"
+        }
+      ]
+    },
+    {
+      "Key": "9582",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009582 Miyanami test 2"
+        }
+      ]
+    },
+    {
+      "Key": "9583",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009583 Miyanami test 3"
+        }
+      ]
+    },
+    {
+      "Key": "9584",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009584 Miyanami test 4"
+        }
+      ]
+    },
+    {
+      "Key": "9585",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009585 Miyanami test 5"
+        }
+      ]
+    },
+    {
+      "Key": "9586",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009586 Miyanami test 6"
+        }
+      ]
+    },
+    {
+      "Key": "9587",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009587 Miyanami test 7"
+        }
+      ]
+    },
+    {
+      "Key": "9588",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009588 Miyanami test 8"
+        }
+      ]
+    },
+    {
+      "Key": "9589",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009589 Miyanami test 9"
+        }
+      ]
+    },
+    {
+      "Key": "9590",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009590 Watanabe (Kyo) Test 0"
+        }
+      ]
+    },
+    {
+      "Key": "9591",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009591 Watanabe (Kyo) Test 1"
+        }
+      ]
+    },
+    {
+      "Key": "9592",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009592 Watanabe (Kyo) Test 2"
+        }
+      ]
+    },
+    {
+      "Key": "9593",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009593 Watanabe (Kyo) Test 3"
+        }
+      ]
+    },
+    {
+      "Key": "9594",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009594 Watanabe (Kyo) Test 4"
+        }
+      ]
+    },
+    {
+      "Key": "9595",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009595 Watanabe (Kyo) Test 5"
+        }
+      ]
+    },
+    {
+      "Key": "9596",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009596 Watanabe (Kyo) Test 6"
+        }
+      ]
+    },
+    {
+      "Key": "9597",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009597 Watanabe (Kyo) Test 7"
+        }
+      ]
+    },
+    {
+      "Key": "9598",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009598 Watanabe (Kyo) Test 8"
+        }
+      ]
+    },
+    {
+      "Key": "9599",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009599 Watanabe (Kyo) Test 9"
+        }
+      ]
+    },
+    {
+      "Key": "9900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009900 Upper rank: Giant lower class soldier_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009901 Upper rank: Giant Lower rank soldier: Rocketman_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009902 Upper rank: Giant Lower class soldier: Destroy the wall"
+        }
+      ]
+    },
+    {
+      "Key": "9909",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009909 Constant damage test"
+        }
+      ]
+    },
+    {
+      "Key": "9911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009911 Uchikawa test"
+        }
+      ]
+    },
+    {
+      "Key": "9912",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009912 Long distance (magic) test"
+        }
+      ]
+    },
+    {
+      "Key": "9913",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009913 Fukuda test"
+        }
+      ]
+    },
+    {
+      "Key": "9914",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009914 Upper: Upper test_Kurita"
+        }
+      ]
+    },
+    {
+      "Key": "9915",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009915 Lower level: Lower level test_Kurita"
+        }
+      ]
+    },
+    {
+      "Key": "9916",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009916 Top boss test"
+        }
+      ]
+    },
+    {
+      "Key": "9917",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009917 Lower boss test"
+        }
+      ]
+    },
+    {
+      "Key": "9918",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009918 Hashimoto test"
+        }
+      ]
+    },
+    {
+      "Key": "9919",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009919 Wakasa test"
+        }
+      ]
+    },
+    {
+      "Key": "9920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009920 Top: Slave beast test (torch escape)"
+        }
+      ]
+    },
+    {
+      "Key": "9921",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009921 Lower level: Slave beast test (torch escape)"
+        }
+      ]
+    },
+    {
+      "Key": "9922",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009922 Kurita test"
+        }
+      ]
+    },
+    {
+      "Key": "9923",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009923 Equipment switching"
+        }
+      ]
+    },
+    {
+      "Key": "9924",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009924 Damipoly Test"
+        }
+      ]
+    },
+    {
+      "Key": "9925",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009925 Fujita test"
+        }
+      ]
+    },
+    {
+      "Key": "9926",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009926 Itagaki test"
+        }
+      ]
+    },
+    {
+      "Key": "9927",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009927 Resident SFX test"
+        }
+      ]
+    },
+    {
+      "Key": "9931",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009931 Navigation mesh movement (OBJ operation)"
+        }
+      ]
+    },
+    {
+      "Key": "9935",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009935 Jump attack test"
+        }
+      ]
+    },
+    {
+      "Key": "9936",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009936 Top: General purpose test"
+        }
+      ]
+    },
+    {
+      "Key": "9938",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009938 Possession item judgment test"
+        }
+      ]
+    },
+    {
+      "Key": "9940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009940 People recognition test: enemy side"
+        }
+      ]
+    },
+    {
+      "Key": "9941",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009941 Number of people recognition test: Ally side"
+        }
+      ]
+    },
+    {
+      "Key": "9942",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009942 Player faction individual identification test"
+        }
+      ]
+    },
+    {
+      "Key": "9945",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009945 Upper: For temporary enemies"
+        }
+      ]
+    },
+    {
+      "Key": "9946",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009946 Lower level: For temporary enemies"
+        }
+      ]
+    },
+    {
+      "Key": "9947",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009947 Top: Multiplayer test"
+        }
+      ]
+    },
+    {
+      "Key": "9948",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009948 Lower: Multiplayer test"
+        }
+      ]
+    },
+    {
+      "Key": "9949",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009949 Upper: Enemy group settings"
+        }
+      ]
+    },
+    {
+      "Key": "9950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009950 Lower: Enemy group settings"
+        }
+      ]
+    },
+    {
+      "Key": "9951",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009951 Lock-on impossible test"
+        }
+      ]
+    },
+    {
+      "Key": "9952",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009952 Upper: For NPC test"
+        }
+      ]
+    },
+    {
+      "Key": "9953",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009953 Lower: For NPC test"
+        }
+      ]
+    },
+    {
+      "Key": "9954",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009954 Damage test"
+        }
+      ]
+    },
+    {
+      "Key": "9955",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009955 Navigation mesh to clicked point"
+        }
+      ]
+    },
+    {
+      "Key": "9956",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009956 Navimesh movement of Navigraph test route"
+        }
+      ]
+    },
+    {
+      "Key": "9958",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009958 Lower level: Sound reaction navigation mesh: Test"
+        }
+      ]
+    },
+    {
+      "Key": "9959",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009959 Top: Movement navigation_goal angle acquisition test"
+        }
+      ]
+    },
+    {
+      "Key": "9960",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009960 Lower level: Movement navigation_goal angle acquisition test"
+        }
+      ]
+    },
+    {
+      "Key": "9961",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009961 Upper level: For checking movement parameters"
+        }
+      ]
+    },
+    {
+      "Key": "9962",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009962 Lower: For checking movement parameters"
+        }
+      ]
+    },
+    {
+      "Key": "9963",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009963 Top: Fairy Hotori Temporary Logic"
+        }
+      ]
+    },
+    {
+      "Key": "9964",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009964 Lower level: Fairy Hotori Temporary Logic"
+        }
+      ]
+    },
+    {
+      "Key": "9965",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009965 Upper: For enemy gallery"
+        }
+      ]
+    },
+    {
+      "Key": "9966",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009966 Lower: For enemy gallery"
+        }
+      ]
+    },
+    {
+      "Key": "9967",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009967 Kataoka test"
+        }
+      ]
+    },
+    {
+      "Key": "9968",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009968 Fujishima test"
+        }
+      ]
+    },
+    {
+      "Key": "9969",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009969 Yamazaki test"
+        }
+      ]
+    },
+    {
+      "Key": "9972",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009972 Logic for upper level improvement"
+        }
+      ]
+    },
+    {
+      "Key": "9973",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009973 Top: Tobita Test: Titan Guard Captain"
+        }
+      ]
+    },
+    {
+      "Key": "9974",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009974 Lower level: Tobita Test: Titan Guard Captain"
+        }
+      ]
+    },
+    {
+      "Key": "9975",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009975 Upper: For eight volumes test"
+        }
+      ]
+    },
+    {
+      "Key": "9976",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009976 Lower: For eight volumes test"
+        }
+      ]
+    },
+    {
+      "Key": "9977",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009977 Upper: For Tobita test"
+        }
+      ]
+    },
+    {
+      "Key": "9978",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009978 Lower: For Tobita test"
+        }
+      ]
+    },
+    {
+      "Key": "9979",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009979 Upper level: Yoshida test: Debug"
+        }
+      ]
+    },
+    {
+      "Key": "9980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009980 Upper rank: For Yoshida: Giant lower class soldier"
+        }
+      ]
+    },
+    {
+      "Key": "9981",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009981 Lower level: For Yoshida: Giant lower class soldier"
+        }
+      ]
+    },
+    {
+      "Key": "9982",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009982 Upper: For Yoshida test"
+        }
+      ]
+    },
+    {
+      "Key": "9983",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009983 Lower: For Yoshida test"
+        }
+      ]
+    },
+    {
+      "Key": "9984",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009984 For Yabuki"
+        }
+      ]
+    },
+    {
+      "Key": "9985",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009985 For checking logic operation"
+        }
+      ]
+    },
+    {
+      "Key": "9986",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009986 Navimesh test_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9987",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009987 Titan Junior Soldier Test_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9988",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009988 Giant Guard Captain Test_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9989",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009989 BOSS test_Shibu"
+        }
+      ]
+    },
+    {
+      "Key": "9990",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009990 Shibuya-san test use"
+        }
+      ]
+    },
+    {
+      "Key": "9991",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009991 For attack test"
+        }
+      ]
+    },
+    {
+      "Key": "9992",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009992 For 50M range tracking test"
+        }
+      ]
+    },
+    {
+      "Key": "9993",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009993 For path route test"
+        }
+      ]
+    },
+    {
+      "Key": "9994",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009994 For dead soldier test"
+        }
+      ]
+    },
+    {
+      "Key": "9995",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009995 Route search test 1"
+        }
+      ]
+    },
+    {
+      "Key": "9996",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009996 Route search test 2"
+        }
+      ]
+    },
+    {
+      "Key": "9997",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009997 Route search test 3"
+        }
+      ]
+    },
+    {
+      "Key": "9998",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009998 Large tree test 1"
+        }
+      ]
+    },
+    {
+      "Key": "9999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "009999 Large tree test 2"
+        }
+      ]
+    },
+    {
+      "Key": "100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "100000 Lower: Goblin (living)"
+        }
+      ]
+    },
+    {
+      "Key": "100010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "100010 Top: Goblin (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "101000 Lower: Kobold (living)"
+        }
+      ]
+    },
+    {
+      "Key": "101010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "101010 Upper level: Kobold (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102000 Lower level: Kingdom soldier (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "102010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102010 Upper level: Kingdom soldier (deceased): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "102020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102020 High rank: Kingdom soldier (dead): General purpose (for FC)"
+        }
+      ]
+    },
+    {
+      "Key": "102053",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102053 Top: Kingdom soldier (dead): Corpse mimicry"
+        }
+      ]
+    },
+    {
+      "Key": "102100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102100 Lower level: Kingdom soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "102110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102110 Upper level: Kingdom soldier (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "102120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102120 Top: Kingdom Soldier (Living): Marathon"
+        }
+      ]
+    },
+    {
+      "Key": "102121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102121 Top: Kingdom Soldier (Living): Marathon 2"
+        }
+      ]
+    },
+    {
+      "Key": "102131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102131 High rank: Kingdom soldier (living): Ballista"
+        }
+      ]
+    },
+    {
+      "Key": "102132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102132 High rank: Kingdom soldier (living): Ballista"
+        }
+      ]
+    },
+    {
+      "Key": "102141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "102141 Top: Kingdom soldier (living): Molotov cocktail"
+        }
+      ]
+    },
+    {
+      "Key": "103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "103000 Lower: Lower rank soldier (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "103010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "103010 Upper rank: Lower rank soldier (deceased): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "103100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "103100 Lower level: Junior soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "103110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "103110_Upper: Junior soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "105000 Lower level: Fairy shrine maiden (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "105010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "105010 Top: Fairy Priestess (Dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "105020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "105020 Top: Fairy Priestess (Dead): Bonfire Trap"
+        }
+      ]
+    },
+    {
+      "Key": "105030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "105030 Top: Fairy Priestess (Dead): Ambush"
+        }
+      ]
+    },
+    {
+      "Key": "106000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "106000 Lower level: Dark Priest (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "106010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "106010 Top: Dark Priest (Dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "107000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "107000 Lower level: Parasite spider (parasitic): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "107010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "107010 Top: Parasite spider (parasitic): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "108000 Lower level: Rogue (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "108010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "108010 Top: Rogue (Dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "108020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "108020 Upper level: Rogue (dead): General purpose (for FC)"
+        }
+      ]
+    },
+    {
+      "Key": "113000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "113000 Lower level: Sailor (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "113010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "113010 Upper level: Sailor (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "113020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "113020 Upper level: Sailor (dead): General purpose (for FC)"
+        }
+      ]
+    },
+    {
+      "Key": "115000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "115000 Lower level: Dead_Traveler's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "115010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "115010 Top: Dead_Traveler's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "117000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "117000 Lower: Statue: Bone"
+        }
+      ]
+    },
+    {
+      "Key": "117010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "117010 Upper level: Statue: Pawn: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "118000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "118000 Lower: Dark Wizard (Dead)"
+        }
+      ]
+    },
+    {
+      "Key": "118010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "118010 Top: Dark Wizard: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "119000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "119000 Lower: Lion Black Mage (Living)"
+        }
+      ]
+    },
+    {
+      "Key": "119010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "119010 Top: Lion Black Mage (Living): General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "121000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "121000 Lower level: Giant lower class soldier"
+        }
+      ]
+    },
+    {
+      "Key": "121010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "121010 Upper rank: Giant Lower rank soldier: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "122000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "122000 Lower: Bernice's Knight: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "123000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "123000 Lower level: Strange shadow (living)"
+        }
+      ]
+    },
+    {
+      "Key": "123010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "123010 Upper level: Strange shadow (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "124000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "124000 Lower level: Assassin (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "124010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "124010 Top: Assassin (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "125000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125000 Lower level: Undead citizen: Normal"
+        }
+      ]
+    },
+    {
+      "Key": "125001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125001 Subordinate: Undead Citizen: Poison"
+        }
+      ]
+    },
+    {
+      "Key": "125002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125002 Lower level: Undead citizen: Petrified"
+        }
+      ]
+    },
+    {
+      "Key": "125003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125003 Subordinate: Undead Citizen: Acid"
+        }
+      ]
+    },
+    {
+      "Key": "125004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125004 Subordinate: Undead Citizen: Explosion"
+        }
+      ]
+    },
+    {
+      "Key": "125010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "125010 Top: Undead Citizen"
+        }
+      ]
+    },
+    {
+      "Key": "127000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "127000 Lower level: Dead worker (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "127010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "127010 Upper level: Dead worker (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "127090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "127090_Top: Dead Workers (Dead): For Jabba the Hutt Battle"
+        }
+      ]
+    },
+    {
+      "Key": "127091",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "127091_Top: Dead Worker (Dead): Geldra_For Zakovos battle"
+        }
+      ]
+    },
+    {
+      "Key": "129000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "129000 Lower level: Forest guard"
+        }
+      ]
+    },
+    {
+      "Key": "129010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "129010 Top: Forest Keeper: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "131000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "131000 Lower level: Cleric (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "131010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "131010 Upper level: Cleric (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "132000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "132000 Lower: Skeleton: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "132010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "132010 Upper: Skeleton: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "132100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "132100 Upper: Skeleton: For boss"
+        }
+      ]
+    },
+    {
+      "Key": "133000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "133000 Lower: Wheel skeleton"
+        }
+      ]
+    },
+    {
+      "Key": "133010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "133010_Top: Wheel skeleton: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "133100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "133100_Upper: Wheel skeleton: For boss"
+        }
+      ]
+    },
+    {
+      "Key": "134000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "134000 Lower: Dwarf (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "134010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "134010_Top: Dwarf: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "135000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "135000 Lower level: Heavy dwarf (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "135010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "135010_Top: Heavy Dwarf: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "137000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "137000 Lower: Necromancer (Immortal)"
+        }
+      ]
+    },
+    {
+      "Key": "137010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "137010 Top: Necromancer (Immortal)"
+        }
+      ]
+    },
+    {
+      "Key": "138000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "138000 Lower level: Torturer"
+        }
+      ]
+    },
+    {
+      "Key": "138010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "138010 Top: Torturer: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "139000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "139000 Lower level: Artificial immortal (immortal)"
+        }
+      ]
+    },
+    {
+      "Key": "139010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "139010_Top: Artificial immortal (immortal): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "140000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "140000 Lower level: Raven of Belka"
+        }
+      ]
+    },
+    {
+      "Key": "140010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "140010_Top: Berkan Raven: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "141000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "141000 Lower level: Enhanced immortal: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "141010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "141010 Upper level: Enhanced immortal: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "146000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "146000 Lower level: Dead_Wealthy people's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "146010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "146010 Top: Dead_Wealthy people's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "147000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "147000 Lower level: Dead_Sick person's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "147010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "147010 Top: Dead_Sick people's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "147090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "147090_Top: Dead_Sick Man's Clothes: Geldra_For Zakovos Battle"
+        }
+      ]
+    },
+    {
+      "Key": "148000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "148000 Lower level: Dead_Farmer's clothes: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "148010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "148010_Top: Dead: Peasant's Clothes: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "149000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "149000 Lower level: Dead_Steelworks worker: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "149010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "149010_Top: Deceased: Steelworks worker: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "150000 Lower: Statue: Knight"
+        }
+      ]
+    },
+    {
+      "Key": "150010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "150010_Top: Statue: Knight: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "151000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "151000 Lower level: Kingdom heavy soldier (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "151010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "151010 Upper level: Kingdom heavy soldier (deceased): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "152000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "152000 Lower: Royal Soldier Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "152010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "152010 Top: Royal Soldier Warrior: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "153000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "153000 Lower: Kingdom Guard"
+        }
+      ]
+    },
+    {
+      "Key": "153010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "153010 Top: Kingdom Guard"
+        }
+      ]
+    },
+    {
+      "Key": "154000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "154000 Lower: Skeleton Noble"
+        }
+      ]
+    },
+    {
+      "Key": "154010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "154010 Top: Skeleton Noble"
+        }
+      ]
+    },
+    {
+      "Key": "155000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "155000 Lower level: Lizard people"
+        }
+      ]
+    },
+    {
+      "Key": "155010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "155010 Top: Lizard person: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "155030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "155030 Top: Lizard person: Sound reaction"
+        }
+      ]
+    },
+    {
+      "Key": "156000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "156000 Lower: Helmet Skeleton"
+        }
+      ]
+    },
+    {
+      "Key": "156010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "156010 Upper level: Helmet skeleton: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "157000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "157000 Lower: Armor Skeleton"
+        }
+      ]
+    },
+    {
+      "Key": "157010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "157010 Top: Armor Skeleton: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "157100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "157100 Upper level: Armor skeleton: For bosses"
+        }
+      ]
+    },
+    {
+      "Key": "201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "201000 Lower level: Slave beast (with molten iron pot)"
+        }
+      ]
+    },
+    {
+      "Key": "201010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "201010 Top: Slave beast (with molten iron pot): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "201100 Lower level: Slave beast/pig"
+        }
+      ]
+    },
+    {
+      "Key": "201110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "201110 Top: Slave beast/pig: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "202000 Lower level: Slave beast (no molten iron pot): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "202010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "202010 Top: Slave beast (no molten iron pot): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "203000 Lower level: Parasite spider: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "203010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "203010 Top: Parasite Spider: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "204000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "204000 Lower: Great Moss: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "204010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "204010 Top: Great Moss: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "205000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "205000 Lower level: Poison hornworm: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "205010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "205010 Top: Poison hornworm: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "206000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "206000 Lower level: Needle maggot"
+        }
+      ]
+    },
+    {
+      "Key": "206010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "206010 Top: Needle maggot"
+        }
+      ]
+    },
+    {
+      "Key": "209000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "209000 Lower level: Hunting dog"
+        }
+      ]
+    },
+    {
+      "Key": "209010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "209010_Top: Hunting dog: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "210000 Lower: Basilisk"
+        }
+      ]
+    },
+    {
+      "Key": "210010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "210010 Upper level: Basilisk: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "210020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "210020 Top: Basilisk: No eyeball"
+        }
+      ]
+    },
+    {
+      "Key": "212000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "212000 Lower: Wyvern"
+        }
+      ]
+    },
+    {
+      "Key": "212010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "212010_Top: Wyvern: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "212020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "212020_Top: Wyvern: For regular warfare"
+        }
+      ]
+    },
+    {
+      "Key": "213000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "213000 Lower level: Stone guardian"
+        }
+      ]
+    },
+    {
+      "Key": "213010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "213010 Upper level: Stone guardian: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "213100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "213100 Lower: Stone Guardian: Explosion"
+        }
+      ]
+    },
+    {
+      "Key": "213110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "213110 Upper level: Stone guardian: Explosion: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "214000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "214000 Lower level: Fanged beast"
+        }
+      ]
+    },
+    {
+      "Key": "214010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "214010_Top: Fanged beast: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "216000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "216000_lower: door possession"
+        }
+      ]
+    },
+    {
+      "Key": "216010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "216010_Top: Door possession: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "217000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "217000 Lower level: Hidden in the darkness"
+        }
+      ]
+    },
+    {
+      "Key": "217010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "217010_Top: Hidden in the Dark: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "218000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "218000 Lower: Humanity (Large)"
+        }
+      ]
+    },
+    {
+      "Key": "218100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "218100 Lower level: Humanity (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "218200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "218200 Lower level: Humanity (small)"
+        }
+      ]
+    },
+    {
+      "Key": "219000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "219000 Lower: Vagrant Hawk"
+        }
+      ]
+    },
+    {
+      "Key": "219010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "219010 Top: Vagrant Hawk"
+        }
+      ]
+    },
+    {
+      "Key": "220000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "220000 Lower level: Giant poisonous hornworm: Acid"
+        }
+      ]
+    },
+    {
+      "Key": "220010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "220010_Top: Giant poisonous hornworm: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "222000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "222000 Lower: Giant Basilisk"
+        }
+      ]
+    },
+    {
+      "Key": "222010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "222010_Top: Giant Basilisk: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "223000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "223000 Lower level: Corpse scavenging rat"
+        }
+      ]
+    },
+    {
+      "Key": "223010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "223010 Top: Corpse scavenging rat: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "224000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "224000 Lower: Coal tar"
+        }
+      ]
+    },
+    {
+      "Key": "224010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "224010 Upper: Coal tar: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "225000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "225000 Lower level: Light insect"
+        }
+      ]
+    },
+    {
+      "Key": "225090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "225090 Top: Light insect: Test"
+        }
+      ]
+    },
+    {
+      "Key": "226000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226000 Lower: dog rat"
+        }
+      ]
+    },
+    {
+      "Key": "226010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226010 Top: Dog and Rat: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "226020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226020 Top: Dog and Rat: For Boss"
+        }
+      ]
+    },
+    {
+      "Key": "226030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226030 Top: Dog and Rat: For the boss's entourage"
+        }
+      ]
+    },
+    {
+      "Key": "226500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "226500 Lower: Mouse King"
+        }
+      ]
+    },
+    {
+      "Key": "227000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "227000 Lower: Wild dog"
+        }
+      ]
+    },
+    {
+      "Key": "227010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "227010 Top: Wild dog: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "300000 Lower: Auger: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "300010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "300010 Upper: Auger: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "300030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "300030 Upper level: Ogre (living): Auditory response"
+        }
+      ]
+    },
+    {
+      "Key": "300080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "300080 Top: Ogre (Living): Dragon Research Institute Event"
+        }
+      ]
+    },
+    {
+      "Key": "301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "301000 Lower: Wandering Knight"
+        }
+      ]
+    },
+    {
+      "Key": "301010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "301010 Top: Wandering Knight: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "302000 Lower level: Prisoner (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "302010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "302010 Top: Prisoner (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "303300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "303300 Lower level: Double-sided warrior: Snake head"
+        }
+      ]
+    },
+    {
+      "Key": "303310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "303310 Top: Double-sided warrior: Snake head"
+        }
+      ]
+    },
+    {
+      "Key": "303320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "303320 Top: Double-sided Warrior: Snake Head: Regular War"
+        }
+      ]
+    },
+    {
+      "Key": "304000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "304000 Lower: Banshee (Dead)"
+        }
+      ]
+    },
+    {
+      "Key": "304010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "304010 Top: Banshee (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "305000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "305000 Lower: Demon Knight"
+        }
+      ]
+    },
+    {
+      "Key": "305010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "305010_Top: Demon Knight"
+        }
+      ]
+    },
+    {
+      "Key": "306000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "306000 Lower level: Demon armor (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "306010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "306010 Top: Demon Armor (Dead): General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "307000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "307000 Lower: Dullahan (Dead)"
+        }
+      ]
+    },
+    {
+      "Key": "307010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "307010_Top: Dullahan (Dead)"
+        }
+      ]
+    },
+    {
+      "Key": "307100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "307100 Lower level: Dullahan (living)"
+        }
+      ]
+    },
+    {
+      "Key": "307110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "307110_Top: Dullahan (living)"
+        }
+      ]
+    },
+    {
+      "Key": "308000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "308000 Lower: Lion Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "308010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "308010_Top: Lion Warrior: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "309000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309000 Lower level: Titan senior soldier"
+        }
+      ]
+    },
+    {
+      "Key": "309010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309010 High rank: Giant senior soldier: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "309600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309610 Lower: New Titan Senior Soldier (Deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "309610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309610 High rank: New giant senior soldier (deceased)"
+        }
+      ]
+    },
+    {
+      "Key": "309700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309700 Lower: New Titan Senior Soldier (Living)"
+        }
+      ]
+    },
+    {
+      "Key": "309710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "309710 High rank: New Titan senior soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "311000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "311000 Lower level: Cavalry soldier: Mounted soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "311010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "311010 Upper rank: Cavalry soldier: Mounted soldier (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "312000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "312000 Lower: Immortal Senior Soldier (Immortal)"
+        }
+      ]
+    },
+    {
+      "Key": "312010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "312010_Upper: Immortal Advanced Soldier (Immortal): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "313000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "313000 Lower: Falconer Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "313010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "313010 Top: Falconer Warrior: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "314000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "314000 Lower level: Elephant (dead)"
+        }
+      ]
+    },
+    {
+      "Key": "314010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "314010 Upper: Elephant (dead): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "315000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "315000 Lower level: Elephant (living)"
+        }
+      ]
+    },
+    {
+      "Key": "315010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "315010 Upper: Elephant (living): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "316000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "316000 Lower level: Captured mage (living)"
+        }
+      ]
+    },
+    {
+      "Key": "316010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "316010_Top: Captured Mage (Living): General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "317000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "317000 Lower: Dragon Professor"
+        }
+      ]
+    },
+    {
+      "Key": "317010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "317010 Top: Dragon Professor: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "318000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "318000 Lower: Vagrant (Seoul)"
+        }
+      ]
+    },
+    {
+      "Key": "318010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "318010_Top: Vagrant (Soul): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "319000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "319000 Lower level: Demon armor (mass production type)"
+        }
+      ]
+    },
+    {
+      "Key": "319010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "319010 Upper rank: Demon armor (mass production type): General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "321000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "321000 Lower: ν-mimic"
+        }
+      ]
+    },
+    {
+      "Key": "321010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "321010_Top: ν Mimic: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "324000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "324000 Lower: Gargoyle"
+        }
+      ]
+    },
+    {
+      "Key": "324010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "324010_Top: Gargoyle: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "325000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "325000 Lower: Warrior in the Mirror"
+        }
+      ]
+    },
+    {
+      "Key": "325010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "325010_Top: Warrior in the Mirror: General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "325020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "325020_Top: Warrior in the Mirror: For regular warfare"
+        }
+      ]
+    },
+    {
+      "Key": "326000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "326000 Lower: Butcher"
+        }
+      ]
+    },
+    {
+      "Key": "326010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "326010 Top: Butcher"
+        }
+      ]
+    },
+    {
+      "Key": "330000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "330000 Lower: Ancient Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "330010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "330010 Subordinate: Ancient Warrior: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "331000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "331000 Lower level: Demon heavy soldier"
+        }
+      ]
+    },
+    {
+      "Key": "331010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "331010 Top: Demon Heavy Soldier: General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "332000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "332000 Lower: Queen's Knight A"
+        }
+      ]
+    },
+    {
+      "Key": "332010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "332010 Top: Queen's Knight A"
+        }
+      ]
+    },
+    {
+      "Key": "333000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "333000 Lower: Queen's Knight B"
+        }
+      ]
+    },
+    {
+      "Key": "333010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "333010 Top: Queen's Knight B"
+        }
+      ]
+    },
+    {
+      "Key": "334000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "334000 Lower: Queen's Knight C"
+        }
+      ]
+    },
+    {
+      "Key": "334010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "334010 Top: Queen's Knight C"
+        }
+      ]
+    },
+    {
+      "Key": "335000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "335000 Lower: Raw Knight"
+        }
+      ]
+    },
+    {
+      "Key": "336000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "336000 Lower: Knight of Death"
+        }
+      ]
+    },
+    {
+      "Key": "337000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "337000 Lower: Amazing dead"
+        }
+      ]
+    },
+    {
+      "Key": "501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "501000_lower: Naga"
+        }
+      ]
+    },
+    {
+      "Key": "501010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "501010_Top: Naga"
+        }
+      ]
+    },
+    {
+      "Key": "502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "502000 Lower level: Man Scorpion (male)"
+        }
+      ]
+    },
+    {
+      "Key": "502010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "502010 Top: Man Scorpion (Male)"
+        }
+      ]
+    },
+    {
+      "Key": "503000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "503000 Lower: Man Scorpion♀"
+        }
+      ]
+    },
+    {
+      "Key": "503010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "503010 Top: Man Scorpion♀"
+        }
+      ]
+    },
+    {
+      "Key": "504000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "504000 Lower: Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "504010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "504010 Top: Mirror Knight"
+        }
+      ]
+    },
+    {
+      "Key": "506000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506000 Lower: Grave Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "506010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506010 Top: Grave Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "506100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506100 Lower: Grave Keeper's Stand"
+        }
+      ]
+    },
+    {
+      "Key": "506110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506110 Top: Grave Keeper's Stand"
+        }
+      ]
+    },
+    {
+      "Key": "506200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506200 Lower: Wormhole"
+        }
+      ]
+    },
+    {
+      "Key": "506210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "506210 Top: Wormhole"
+        }
+      ]
+    },
+    {
+      "Key": "507000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "507000 Lower: Rich"
+        }
+      ]
+    },
+    {
+      "Key": "507010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "507010 Top: Rich"
+        }
+      ]
+    },
+    {
+      "Key": "508000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "508000 Lower: Wraith"
+        }
+      ]
+    },
+    {
+      "Key": "508010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "508010 Top: Wraith"
+        }
+      ]
+    },
+    {
+      "Key": "509000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "509000 Lower: Dark Bishop"
+        }
+      ]
+    },
+    {
+      "Key": "509010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "509010 Top: Dark Bishop"
+        }
+      ]
+    },
+    {
+      "Key": "511000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "511000 Lower level: Phantom Knight (spiritual body)"
+        }
+      ]
+    },
+    {
+      "Key": "511010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "511010 Top: Phantom Knight (Spiritual Body)"
+        }
+      ]
+    },
+    {
+      "Key": "512000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "512000 Lower level: Phantom Mage (spiritual body)"
+        }
+      ]
+    },
+    {
+      "Key": "512010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "512010 Top: Phantom Mage (Spiritual)"
+        }
+      ]
+    },
+    {
+      "Key": "514000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "514000 Lower: Old King"
+        }
+      ]
+    },
+    {
+      "Key": "514010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "514010 Top: Old King"
+        }
+      ]
+    },
+    {
+      "Key": "600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "600000 Lower: Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "600010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "600010 Top: Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "601000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "601000 Lower: Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "601010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "601010 Top: Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "602000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "602000 Lower level: Beautiful voice frog"
+        }
+      ]
+    },
+    {
+      "Key": "602010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "602010 Top: Beautiful voice frog"
+        }
+      ]
+    },
+    {
+      "Key": "603000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "603000 Lower: Spider Queen"
+        }
+      ]
+    },
+    {
+      "Key": "603010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "603010 Top: Spider Queen: Boss Room"
+        }
+      ]
+    },
+    {
+      "Key": "603020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "603020 Top: Spider Queen: First Encounter Event"
+        }
+      ]
+    },
+    {
+      "Key": "607000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "607000_lower: Molten Iron Demon"
+        }
+      ]
+    },
+    {
+      "Key": "607010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "607010_Top: Molten Iron Demon"
+        }
+      ]
+    },
+    {
+      "Key": "611000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "611000 Lower level: Heavy cavalry: Walking"
+        }
+      ]
+    },
+    {
+      "Key": "611010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "611010 High level: Heavy cavalry: Walking"
+        }
+      ]
+    },
+    {
+      "Key": "619100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "619100_Lower: Silver Chariot"
+        }
+      ]
+    },
+    {
+      "Key": "619110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "619110_Top: Silver Chariot"
+        }
+      ]
+    },
+    {
+      "Key": "625000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "625000_lower: Ornstein"
+        }
+      ]
+    },
+    {
+      "Key": "625010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "625010_Top: Ornstein"
+        }
+      ]
+    },
+    {
+      "Key": "626000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "626000_Lower: Forgotten Sinner"
+        }
+      ]
+    },
+    {
+      "Key": "626010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "626010_Top: Forgotten Sinner"
+        }
+      ]
+    },
+    {
+      "Key": "627000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "627000_lower: Queen's armor form"
+        }
+      ]
+    },
+    {
+      "Key": "627010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "627010_Top: Queen's armor form"
+        }
+      ]
+    },
+    {
+      "Key": "628000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "628000 Lower: Giant Rat"
+        }
+      ]
+    },
+    {
+      "Key": "628010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "628010 Top: Giant Rat"
+        }
+      ]
+    },
+    {
+      "Key": "690000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "690000 Upper: NPC general purpose"
+        }
+      ]
+    },
+    {
+      "Key": "700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "700000 Lower: Shrine Maiden"
+        }
+      ]
+    },
+    {
+      "Key": "700010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "700010 Top: Shrine Maiden"
+        }
+      ]
+    },
+    {
+      "Key": "701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "701000 Lower level: Shrine maiden (child)"
+        }
+      ]
+    },
+    {
+      "Key": "701010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "701010 Top: Shrine Maiden (Child)"
+        }
+      ]
+    },
+    {
+      "Key": "702000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "702000 Lower level: Queen (corpse)"
+        }
+      ]
+    },
+    {
+      "Key": "702010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "702010 Top: Queen (corpse)"
+        }
+      ]
+    },
+    {
+      "Key": "703000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "703000 Lower level: Queen"
+        }
+      ]
+    },
+    {
+      "Key": "703010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "703010 Top: Queen"
+        }
+      ]
+    },
+    {
+      "Key": "704000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "704000 Lower level: Ladder shop"
+        }
+      ]
+    },
+    {
+      "Key": "704010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "704010 Top: Ladder shop"
+        }
+      ]
+    },
+    {
+      "Key": "705000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705000 Lower level: Retired fire protection woman 1"
+        }
+      ]
+    },
+    {
+      "Key": "705010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705010 Top: Retired fire protection woman 1"
+        }
+      ]
+    },
+    {
+      "Key": "705100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705100 Lower level: Retired fire protection woman 2"
+        }
+      ]
+    },
+    {
+      "Key": "705110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705110 Top: Retired fire protection woman 2"
+        }
+      ]
+    },
+    {
+      "Key": "705300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705300 Lower level: Retired fire protection woman 3"
+        }
+      ]
+    },
+    {
+      "Key": "705310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "705310 Top: Retired fire protection woman 3"
+        }
+      ]
+    },
+    {
+      "Key": "721100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "721100 Lower level: Spirit of the Prime Minister"
+        }
+      ]
+    },
+    {
+      "Key": "721110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "721110 Top: Spirit of the Prime Minister"
+        }
+      ]
+    },
+    {
+      "Key": "723000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "723000 Lower level: Fire protection woman housekeeper"
+        }
+      ]
+    },
+    {
+      "Key": "723010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "723010 Top: Fire protection woman housekeeper"
+        }
+      ]
+    },
+    {
+      "Key": "724000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "724000 Lower level: Kingdom captain"
+        }
+      ]
+    },
+    {
+      "Key": "724010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "724010 High rank: Kingdom Captain"
+        }
+      ]
+    },
+    {
+      "Key": "724020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "724020 Top: Kingdom Captain: White Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "725000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "725000 Lower: Pilgrim of the Abyss"
+        }
+      ]
+    },
+    {
+      "Key": "725010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "725010 Top: Pilgrim of the Abyss"
+        }
+      ]
+    },
+    {
+      "Key": "726000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "726000 Lower: Dwarf"
+        }
+      ]
+    },
+    {
+      "Key": "726010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "726010 Upper: Dwarf"
+        }
+      ]
+    },
+    {
+      "Key": "729000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "729000 Lower level: Loyal dog"
+        }
+      ]
+    },
+    {
+      "Key": "729010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "729010 Top: Loyal dog"
+        }
+      ]
+    },
+    {
+      "Key": "730000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "730000 Lower level: Mirror Knight's servant"
+        }
+      ]
+    },
+    {
+      "Key": "730010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "730010 Top: Mirror Knight's Servant"
+        }
+      ]
+    },
+    {
+      "Key": "730020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "730020 Top: Mirror Knight's Servant (Hunting Forest)"
+        }
+      ]
+    },
+    {
+      "Key": "730030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "730030 Top: Mirror Knight's servant (Andir's mansion)"
+        }
+      ]
+    },
+    {
+      "Key": "741000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "741000 Lower: Broken Blue Sect Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "741010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "741010 Top: Broken Blue Sect Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "742000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "742000 Lower: Wandering Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "742010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "742010 Top: Wandering Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "743000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "743000 Lower level: Gekkoji"
+        }
+      ]
+    },
+    {
+      "Key": "743010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "743010 Top: Gekkoji"
+        }
+      ]
+    },
+    {
+      "Key": "744000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "744000 Lower: Patch"
+        }
+      ]
+    },
+    {
+      "Key": "744010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "744010 Top: Patch"
+        }
+      ]
+    },
+    {
+      "Key": "751000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "751000 Lower: Map drawing"
+        }
+      ]
+    },
+    {
+      "Key": "751010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "751010 Top: Map drawing"
+        }
+      ]
+    },
+    {
+      "Key": "752000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "752000 Lower level: Female knight"
+        }
+      ]
+    },
+    {
+      "Key": "752010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "752010 Top: Female Knight"
+        }
+      ]
+    },
+    {
+      "Key": "753000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "753000 Lower level: Bell Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "753010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "753010 Top: Bell Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "754000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "754000 Lower level: Yorozu hag"
+        }
+      ]
+    },
+    {
+      "Key": "754010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "754010 Top: Yorozu old hag"
+        }
+      ]
+    },
+    {
+      "Key": "760000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760000 Lower: Bard Girl 1"
+        }
+      ]
+    },
+    {
+      "Key": "760010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760010 Top: Bard Girl 1"
+        }
+      ]
+    },
+    {
+      "Key": "760100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760100 Lower: Bard Girl 2"
+        }
+      ]
+    },
+    {
+      "Key": "760110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760110 Top: Bard Girl 2"
+        }
+      ]
+    },
+    {
+      "Key": "760200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760200 Lower level: Prisoner girl"
+        }
+      ]
+    },
+    {
+      "Key": "760210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "760210 Top: Prisoner Girl"
+        }
+      ]
+    },
+    {
+      "Key": "761000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "761000 Lower level: Armor shop"
+        }
+      ]
+    },
+    {
+      "Key": "761010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "761010 Top: Armor shop"
+        }
+      ]
+    },
+    {
+      "Key": "762000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "762000 Lower level: Material shop"
+        }
+      ]
+    },
+    {
+      "Key": "762010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "762010 Top: Material shop"
+        }
+      ]
+    },
+    {
+      "Key": "763000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "763000 Lower level: Magic shop"
+        }
+      ]
+    },
+    {
+      "Key": "763010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "763010 Top: Magic shop"
+        }
+      ]
+    },
+    {
+      "Key": "764000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "764000 Lower level: Blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "764010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "764010 Top: Blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "764300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "764300 Lower level: EX blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "764310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "764310 Top: EX blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "766000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "766000 Lower level: Magician"
+        }
+      ]
+    },
+    {
+      "Key": "766010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "766010 Top: Magician"
+        }
+      ]
+    },
+    {
+      "Key": "768000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "768000 Lower level: Spellmania"
+        }
+      ]
+    },
+    {
+      "Key": "768010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "768010 Top: Spellmania"
+        }
+      ]
+    },
+    {
+      "Key": "769000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "769000 Lower: Miracle Man"
+        }
+      ]
+    },
+    {
+      "Key": "769010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "769010 Top: Miracle Man"
+        }
+      ]
+    },
+    {
+      "Key": "770000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "770000 Lower level: Dark magician"
+        }
+      ]
+    },
+    {
+      "Key": "770010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "770010 Top: Dark Magician"
+        }
+      ]
+    },
+    {
+      "Key": "771000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "771000 Lower level: Sealed person"
+        }
+      ]
+    },
+    {
+      "Key": "771010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "771010 Top: Contained person"
+        }
+      ]
+    },
+    {
+      "Key": "772000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "772000 Lower level: Curious item shop"
+        }
+      ]
+    },
+    {
+      "Key": "772010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "772010 Top: Curious item shop"
+        }
+      ]
+    },
+    {
+      "Key": "776000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "776000 Lower: Upper weapon shop (when working)"
+        }
+      ]
+    },
+    {
+      "Key": "776010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "776010 Top: Top weapon shop (when working)"
+        }
+      ]
+    },
+    {
+      "Key": "777000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "777000 Lower: Cat"
+        }
+      ]
+    },
+    {
+      "Key": "777010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "777010 Top: Cat"
+        }
+      ]
+    },
+    {
+      "Key": "783000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "783000 Lower level: Black Phantom shop"
+        }
+      ]
+    },
+    {
+      "Key": "783010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "783010 Top: Black Phantom Shop"
+        }
+      ]
+    },
+    {
+      "Key": "784000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "784000 Lower level: Chaplain of Absolution"
+        }
+      ]
+    },
+    {
+      "Key": "784010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "784010 Top: Chaplain of Absolution"
+        }
+      ]
+    },
+    {
+      "Key": "785000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "785000 Lower: Guardian Knight"
+        }
+      ]
+    },
+    {
+      "Key": "785010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "785010 Top: Guardian Knight"
+        }
+      ]
+    },
+    {
+      "Key": "786000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "786000 Lower level: Sparkling girl"
+        }
+      ]
+    },
+    {
+      "Key": "786010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "786010 Top: Kirakira Musume"
+        }
+      ]
+    },
+    {
+      "Key": "810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "810000 Lower level: White spirit general purpose"
+        }
+      ]
+    },
+    {
+      "Key": "810010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "810010 Top: White Spirit General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "820000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "820000 Lower level: Dark spirit general purpose"
+        }
+      ]
+    },
+    {
+      "Key": "820010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "820010 Top: Dark spirit general purpose"
+        }
+      ]
+    },
+    {
+      "Key": "832000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "832000 Lower level: Abyssal spirit"
+        }
+      ]
+    },
+    {
+      "Key": "836000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "836000 Lower level: Samurai Sorcerer"
+        }
+      ]
+    },
+    {
+      "Key": "836400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "836400 Lower level: Light and heavy warrior"
+        }
+      ]
+    },
+    {
+      "Key": "837100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "837100 Lower: Tutorial"
+        }
+      ]
+    },
+    {
+      "Key": "837110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "837110 Top: Tutorial (short field of view)"
+        }
+      ]
+    },
+    {
+      "Key": "837120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "837120 Top: Tutorial (long field of view)"
+        }
+      ]
+    },
+    {
+      "Key": "838000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "838000 Lower level: Phantom enemy"
+        }
+      ]
+    },
+    {
+      "Key": "900010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "900010 Top: Sniper general purpose"
+        }
+      ]
+    }
+  ]
+}

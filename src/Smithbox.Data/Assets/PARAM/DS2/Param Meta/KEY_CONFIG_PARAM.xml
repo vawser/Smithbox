@@ -1,6 +1,80 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to object action configuration." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <moveAdvance  Enum="INPUT_KEY_TYPE"/>
+        <moveAdvanceAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <moveRecession  Enum="INPUT_KEY_TYPE"/>
+        <moveRecessionAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <moveRight  Enum="INPUT_KEY_TYPE"/>
+        <moveRightAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <moveLeft  Enum="INPUT_KEY_TYPE"/>
+        <moveLeftAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <parallelMoveAdvance  Enum="INPUT_KEY_TYPE"/>
+        <dashMoveAdvance  Enum="INPUT_KEY_TYPE"/>
+        <cameraUp />
+        <cameraUpAdd />
+        <cameraDown />
+        <cameraDownAdd />
+        <cameraRight />
+        <cameraRightAdd />
+        <cameraLeft />
+        <cameraLeftAdd />
+        <lockonAndReset  Enum="INPUT_KEY_TYPE"/>
+        <lockonAndResetAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <changeSelectMagic  Enum="INPUT_KEY_TYPE"/>
+        <changeSelectMagicAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <changeSelectItem  Enum="INPUT_KEY_TYPE"/>
+        <changeSelectItemAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <changeSelectRWeapon  Enum="INPUT_KEY_TYPE"/>
+        <changeSelectRWeaponAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <changeSelectLWeapon  Enum="INPUT_KEY_TYPE"/>
+        <changeSelectLWeaponAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <weakAttackRight  Enum="INPUT_KEY_TYPE"/>
+        <weakAttackRightAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <strongAttackRight  Enum="INPUT_KEY_TYPE"/>
+        <strongAttackRightAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <weakAttackLeft  Enum="INPUT_KEY_TYPE"/>
+        <weakAttackLeftAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <strongAttackLeft  Enum="INPUT_KEY_TYPE"/>
+        <strongAttackLeftAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <useItem  Enum="INPUT_KEY_TYPE"/>
+        <useItemAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <operation  Enum="INPUT_KEY_TYPE"/>
+        <operationAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <switchingTwoHandsRight  Enum="INPUT_KEY_TYPE"/>
+        <switchingTwoHandsRightAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <showMenu  Enum="INPUT_KEY_TYPE"/>
+        <showMenuAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <selectUp  Enum="INPUT_KEY_TYPE"/>
+        <selectUpAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <selectDown  Enum="INPUT_KEY_TYPE"/>
+        <selectDownAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <selectRight  Enum="INPUT_KEY_TYPE"/>
+        <selectRightAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <selectLeft  Enum="INPUT_KEY_TYPE"/>
+        <selectLeftAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <select  Enum="INPUT_KEY_TYPE"/>
+        <selectAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <cancel  Enum="INPUT_KEY_TYPE"/>
+        <cancelAdd  Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk58 Enum="INPUT_KEY_TYPE"/>
+        <unk59 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk60 Enum="INPUT_KEY_TYPE"/>
+        <unk61 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk62 Enum="INPUT_KEY_TYPE"/>
+        <unk63 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk64 Enum="INPUT_KEY_TYPE"/>
+        <unk65 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk66 Enum="INPUT_KEY_TYPE"/>
+        <unk67 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk68 Enum="INPUT_KEY_TYPE"/>
+        <unk69 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk70 Enum="INPUT_KEY_TYPE"/>
+        <unk71 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk72 Enum="INPUT_KEY_TYPE"/>
+        <unk73 Enum="INPUT_ADD_KEY_TYPE"/>
+        <unk74 Enum="INPUT_KEY_TYPE"/>
+        <unk75 Enum="INPUT_ADD_KEY_TYPE"/>
+        <padding />
+    </Field>
 </PARAMMETA>

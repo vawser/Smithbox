@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>FE_TIME_SETTING_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 time_duration" />
-  </Fields>
+    <ParamType>FE_TIME_SETTING_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 Time">
+            <DisplayName>時間</DisplayName>
+            <Maximum>3600</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

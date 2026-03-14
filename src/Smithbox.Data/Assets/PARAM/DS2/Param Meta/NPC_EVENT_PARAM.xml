@@ -1,12 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related NPC events and conversations." Row0Dummy="" />
-  <Field>
-    <shopLineupStartRow AltName="Shop Lineup - Start Row ID" Refs="ShopLineupParam" />
-    <shopLineupEndRow AltName="Shop Lineup - End Row ID" Refs="ShopLineupParam" />
-    <displayItemTextId AltName="NPC Menu - Item Text ID" Wiki="The text ID for 'Offer X' option within the menu." Refs="ItemParam" />
-    <shopLineupParamId AltName="Unknown Shop Lineup ID" Refs="ShopLineupParam" />
-    <npcMenu_NameID AltName="NPC Menu - Name Text ID" Wiki="The text ID for the NPC's name within the menu." FmgRef="npcmenu" />
-    
-  </Field>
+    <Field>
+        <bShop  IsBool=""/>
+        <bPointReplace  IsBool=""/>
+        <bRepair  IsBool=""/>
+        <bFortify  IsBool=""/>
+        <bPledge  IsBool=""/>
+        <bVotive  IsBool=""/>
+        <bUptrade  IsBool=""/>
+        <bBarter  IsBool=""/>
+        <bDecriminalize  IsBool=""/>
+        <bContractKickout  IsBool=""/>
+        <bGesture  IsBool=""/>
+        <bLadder  IsBool=""/>
+        <bRootChange  IsBool=""/>
+        <bPresent  IsBool=""/>
+        <bPledgeView  IsBool=""/>
+        <pledgeType  Enum="VOW_TYPES"/>
+        <bTalk  IsBool=""/>
+        <bEstusFlaskFortify  IsBool=""/>
+        <bLevelUp  IsBool=""/>
+        <bAttributeFortify  IsBool=""/>
+        <bPresentArmor  IsBool=""/>
+        <bPyromancyFortify  IsBool=""/>
+        <bSpellDecrementState  IsBool=""/>
+        <reserved />
+        <shopIdBegin />
+        <shopIdEnd />
+        <fortifyTyoe />
+        <votiveItemId />
+        <barterParamBeginId />
+        <gestureId />
+        <npcId />
+        <aReserved />
+        <eventValueChangeType  Enum="NPC_EVENT_CHANGE_VALUE_TYPE"/>
+        <eventValueId  Enum="EVENT_VALUE_global"/>
+        <pluralSelectIdBegin />
+        <pluralSelectIdEnd />
+        <barterParamEndId />
+    </Field>
 </PARAMMETA>

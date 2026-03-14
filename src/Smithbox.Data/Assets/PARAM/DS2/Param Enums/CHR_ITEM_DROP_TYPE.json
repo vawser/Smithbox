@@ -1,0 +1,20 @@
+{
+  "Key": "CHR_ITEM_DROP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_ITEM_DROP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy"
+        }
+      ]
+    }
+  ]
+}

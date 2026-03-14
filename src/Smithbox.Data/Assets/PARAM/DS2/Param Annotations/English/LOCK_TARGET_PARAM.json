@@ -1,0 +1,18 @@
+{
+  "Param": "LOCK_TARGET_PARAM",
+  "Type": "LOCK_TARGET_PARAM",
+  "Name": "LOCK_TARGET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lockOnRangeMaxRate",
+      "Name": "ロックオン最大範囲倍率[%]",
+      "Description": ""
+    },
+    {
+      "Field": "lockOnRangeRate",
+      "Name": "ロックオン範囲倍率[%]",
+      "Description": ""
+    }
+  ]
+}

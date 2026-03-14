@@ -1,0 +1,38 @@
+{
+  "Key": "GENERATOR_REGIST_ENEMY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_REGIST_ENEMY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test enemy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>ONLINE_EVENT_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 Unk0C" />
-  </Fields>
+    <ParamType>ONLINE_EVENT_PARAM</ParamType>
+    <DataVersion>4</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 newMoon">
+            <DisplayName>新月イベント開催中か</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 multiPlayEvent">
+            <DisplayName>マルチプレイイベント開催中か</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u16 itemPresentEventId = 1">
+            <DisplayName>アイテム配布宝箱イベント世代ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>65535</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[12]">
+            <DisplayName>ダミー</DisplayName>
+            <Maximum>1</Maximum>
+            <SortID>5</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -1,52 +1,199 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used for player and humanoid character movement." Row0Dummy="" />
-  <Field>
-    <walk_acceleration AltName="Walk Acceleration"/>
-    <auto_walk_speed AltName="Auto-Walk Speed Trigger"/>
-    <walk_speed AltName="Walk Speed"/>
-    <walk_deceleration AltName="Walk Deceleration"/>
-    <slow_walk_turn_rate AltName="Slow Walk Turn Rate"/>
-    <walk_turn_rate AltName="Walk Turn Rate"/>
-    <dash_speed AltName="Dash Speed"/>
-    <auto_dash_speed AltName="Auto-Dash Speed Trigger"/>
-    <dash_max_speed AltName="Dash Max Speed"/>
-    <dash_deceleration AltName="Dash Deceleration"/>
-    <Unk12 Wiki="Running Turning Related"/>
-    <Unk13 Wiki="Running Turning Related"/>
-    <lock_on_walk_acceleration AltName="Lock-on - Walk Acceleration"/>
-    <lock_on_auto_walk_speed AltName="Lock-on - Auto-Walk Speed Trigger"/>
-    <lock_on_walk_speed AltName="Lock-on - Walk Speed"/>
-    <lock_on_walk_deceleration AltName="Lock-on - Walk Deceleration"/>
-    <lock_on_walk_turn_rate AltName="Lock-on - Walk Turn Rate"/>
-    <lock_on_run_speed AltName="Lock-on - Run Speed"/>
-    <lock_on_auto_dash_speed AltName="Lock-on - Auto-Dash Speed Trigger"/>
-    <lock_on_dash_max_speed AltName="Lock-on - Dash Max Speed"/>
-    <lock_on_dash_deceleration AltName="Lock-on - Dash Deceleration"/>
-    <Unk27 Wiki="Locked-on Running Attack Aiming Related"/>
-    <Unk28 Wiki="Locked-on Running Attack Aiming Related"/>
-    <Unk29 Wiki="Turning Rate While Attacking Related"/>
-    <Unk30 Wiki="Turning Rate While Attacking Related"/>
-    <backstep_speed AltName="Backstep Speed"/>
-    <backstep_distance AltName="Backstep Distance"/>
-    <fat_backstep_distance AltName="Fat Backstep Distance"/>
-    <roll_speed AltName="Roll Speed"/>
-    <jump_height AltName="Jump Height"/>
-    <jump_length_min AltName="Jump Length - Min"/>
-    <jump_length_max AltName="Jump Length - Max"/>
-    <jump_gravity_min AltName="Jump Gravity - Min"/>
-    <jump_gravity_max AltName="Jump Gravity - Max"/>
-    <fall_death_timer AltName="Fall Death Timer"/>
-    <escape_min_height AltName="Escape Minimum Height"/>
-    <fall_min_vertical_speed AltName="Fall State - Minimum Vertical Speed"/>
-    <fall_distance_breakpoint_1 AltName="Fall Distance - Breakpoint 1"/>
-    <fall_distance_breakpoint_2 AltName="Fall Distance - Breakpoint 2"/>
-    <fall_distance_breakpoint_3 AltName="Fall Distance - Breakpoint 3"/>
-    <fall_distance_max AltName="Fall Distance - Max"/>
-    <ladder_climb_speed AltName="Ladder Climbing Speed"/>
-    <ladder_fast_climb_speed AltName="Ladder Fast Climbing Speed"/>
-    <ladder_slide_speed AltName="Ladder Sliding Speed"/>
-    <Unk107 Wiki="Ladder Grab Speed Related"/>
-    <Unk108 Wiki="Ladder Grab Speed Related"/>
-  </Field>
+    <Field>
+        <fParallelWalkAccelerationMax />
+        <fParallelWalkSpeedMin />
+        <fParallelWalkSpeedMax />
+        <fParallelWalkDeceleration />
+        <fParallelWalkBackAngleMax />
+        <fParallelWalkBackSpeedRateMax />
+        <fWalkAccelerationMax />
+        <fWalkSpeedMin />
+        <fWalkSpeedMax />
+        <fWalkDeceleration />
+        <fWalkRotationAcceleration />
+        <fWalkRotationSpeedOnLowSpeed />
+        <fWalkRotationSpeedOnHighSpeed />
+        <fWalkRotSpeedMinBorder />
+        <fWalkRotSpeedMaxBorder />
+        <fDashStartSpeed />
+        <fDashAcceleration />
+        <fDashSpeedMin />
+        <fDashSpeedMax />
+        <fDashDeceleration />
+        <fDashRotationAcceleration />
+        <fDashRotationSpeedMin />
+        <fDashRotationSpeedMax />
+        <fDashRotSpeedMinBorder />
+        <fDashRotSpeedMaxBorder />
+        <fLockOnWalkAccelerationMax />
+        <fLockOnWalkSpeedMin />
+        <fLockOnWalkSpeedMax />
+        <fLockOnWalkDeceleration />
+        <fLockOnWalkRotationAcceleration />
+        <fLockOnWalkRotationSpeedMax />
+        <fLockOnWalkAngleMax />
+        <fLockOnWalkBackMoveSpeedRateMax />
+        <fLockOnDashStartSpeed />
+        <fLockOnDashAcceleration />
+        <fLockOnDashSpeedMin />
+        <fLockOnDashSpeedMax />
+        <fLockOnDashDeceleration />
+        <fLockOnDashRotationAcceleration />
+        <fLockOnDashRotationSpeedMin />
+        <fLockOnDashRotationSpeedMax />
+        <fLockOnDashRotSpeedMinBorder />
+        <fLockOnDashRotSpeedMaxBorder />
+        <fRotationValueMin />
+        <fRotationValueMax />
+        <attackAutoPivotRotationSpeed />
+        <attackAutoPivotLimitAngle />
+        <attackManualPivotRotationSpeed />
+        <attackManualPivotLimitAngle />
+        <attackMoveAcceleration />
+        <attackMoveMaxSpeed />
+        <attackMoveDeceleration />
+        <attackMoveRotationSpeed />
+        <rangedManualPivotRotationSpeed />
+        <rangedAutoPivotRotationSpeed />
+        <shootStanceAnimSpeedScaleMin />
+        <shootStanceAnimSpeedScaleMax />
+        <spellChantingAnimSpeedScaleMin />
+        <spellChantingAnimSpeedScaleMax />
+        <afterAttackAcceleration />
+        <afterAttackMaxSpeed />
+        <afterAttackDeceleration />
+        <afterAttackRotationSpeed />
+        <qtRearEnableMasterRotate  IsBool=""/>
+        <qtFrontEnableMasterRotate  IsBool=""/>
+        <quickTurnPad />
+        <quickTurnRotateSpeed />
+        <stepDist />
+        <stepStaminaEmptyDist />
+        <stepRotationSpeed />
+        <rollingDist />
+        <rollingStaminaEmptyDist />
+        <rollingRotationSpeed />
+        <damageRotationSpeed />
+        <jumpVerticalSpeed />
+        <standJumpVerticalSpeed />
+        <jumpRollLandingHeightMax />
+        <jumpForwardSpeedMin />
+        <jumpForwardSpeedMax />
+        <standJumpForwardSpeedMin />
+        <standJumpForwardSpeedMax />
+        <jumpGravityFactorMin />
+        <jumpGravityFactorMax />
+        <standJumpGravityFactorMin />
+        <standJumpGravityFactorMax />
+        <fallingInertiaStopSpeed />
+        <fallingDeadTimer />
+        <landingRollingHeight />
+        <landingRollingSpeed />
+        <landingJumpRollingHeight />
+        <landingJumpRollingSpeed />
+        <landingStandingRate />
+        <landingStandingCrouchRateMin />
+        <jumpCrouchRateMin />
+        <dodgeCrouchRateMin />
+        <dodgeWaitCrouchRateMin />
+        <stepCrouchRateMin />
+        <stepWaitCrouchRateMin />
+        <landingCrouchRateMin />
+        <landingCrouchRateMax />
+        <landingCrouchReturnTimeMin />
+        <landingCrouchReturnTimeMax />
+        <jumpCrouchReturnTimeMin />
+        <jumpCrouchReturnTimeMax />
+        <rollingCrouchReturnTimeMin />
+        <rollingCrouchReturnTimeMax />
+        <rollingWaitCrouchReturnTimeMin />
+        <rollingWaitCrouchReturnTimeMax />
+        <stepCrouchReturnTimeMin />
+        <stepCrouchReturnTimeMax />
+        <stepWaitCrouchReturnTimeMin />
+        <stepWaitCrouchReturnTimeMax />
+        <landingWalkinvalidTimeMin />
+        <landingWalkinvalidTimeMax />
+        <landingWalkinvalidFallDistMin />
+        <landingWalkinvalidFallDistMax />
+        <landingWalkMoveSpeedFallDistMin />
+        <landingWalkMoveSpeedFallDistMax />
+        <landingWalkMoveSpeedMin />
+        <landingWalkMoveSpeedMax />
+        <landingWalkMoveAcceralationMin />
+        <landingWalkMoveAcceralationMax />
+        <landingMoveStopAcceralationMin />
+        <landingMoveStopAcceralationMax />
+        <landingWalkRotationSpeedMin />
+        <landingWalkRotationSpeedMax />
+        <fallingDistNone />
+        <fallingDistSafety />
+        <fallingDistNormal />
+        <fallingDistDanger />
+        <fallingDistDead />
+        <stepUpFeasibleAngleMax />
+        <stepUpFeasibleHeightMin />
+        <stepUpFeasibleHeightMax />
+        <stepUpLightAnimSpeedScale />
+        <stepUpHeavyAnimSpeedScale />
+        <climbStepFeasibleAngleMax />
+        <climbStepFeasibleHeightMin />
+        <climbStepFeasibleHeightMax />
+        <climbStepLightAnimSpeedScale />
+        <climbStepHeavyAnimSpeedScale />
+        <ladderStartStep />
+        <ladderNormalMoveAnimRate />
+        <ladderDashMoveAnimRate />
+        <ladderGetOffMoveAnimRate />
+        <posFixMoveSpeed />
+        <posFixMoveAngulerSpeed />
+        <posFixRotationValueMax />
+        <jumpAttackVerticalSpeed />
+        <jumpAttackSideDistMin />
+        <jumpAttackSideDistMax />
+        <jumpAttackSideSpeedMin />
+        <jumpAttackSideSpeedMax />
+        <jumpFallAttackVerticalSpeed />
+        <jumpFallAttackSideDistMin />
+        <jumpFallAttackSideDistMax />
+        <jumpFallAttackSideSpeedMin />
+        <jumpFallAttackSideSpeedMax />
+        <fParallelWalkSlopeAngMin />
+        <fParallelWalkSlopeAngMax />
+        <fParallelWalkSlopeSpeedRateMax />
+        <fParallelWalkSlopeRotRateMax />
+        <fWalkSlopeAngMin />
+        <fWalkSlopeAngMax />
+        <fWalkSlopeSpeedRateMax />
+        <fWalkSlopeRotRateMax />
+        <fDashSlopeAngMin />
+        <fDashSlopeAngMax />
+        <fDashSlopeSpeedRateMax />
+        <fDashSlopeRotRateMax />
+        <fLockOnWalkSlopeAngMin />
+        <fLockOnWalkSlopeAngMax />
+        <fLockOnWalkSlopeSpeedRateMax />
+        <fLockOnWalkSlopeRotRateMax />
+        <fLockOnDashSlopeAngMin />
+        <fLockOnDashSlopeAngMax />
+        <fLockOnDashSlopeSpeedRateMax />
+        <fLockOnDashSlopeRotRateMax />
+        <fDyingMoveAcceralation />
+        <fDyingMoveSpeed />
+        <fDyingMoveDeceleration />
+        <fDyingMoveRotationSpeed />
+        <fFloatingUpMoveAcceleration />
+        <fFloatingUpMoveSpeedMax />
+        <fFloatingUpMoveDeceleration />
+        <fFloatingDownMoveAcceleration />
+        <fFloatingDownMoveSpeedMax />
+        <fFloatingDownMoveDeceleration />
+        <landingSfxHeight />
+        <landingSfxId />
+        <landingRagdollSfxId />
+        <fMaterialMoveInfluenceRate />
+        <fMaterialTurnInfluenceRate />
+        <dummy />
+    </Field>
 </PARAMMETA>

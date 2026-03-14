@@ -1,33 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>PLAYER_LIGHT_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 offset_x" />
-    <Field Def="f32 offset_y" />
-    <Field Def="f32 offset_z" />
-    <Field Def="u8 diffuse_color_r" />
-    <Field Def="u8 diffuse_color_g" />
-    <Field Def="u8 diffuse_color_b" />
-    <Field Def="u8 diffuse_color_a" />
-    <Field Def="u8 specular_color_r" />
-    <Field Def="u8 specular_color_g" />
-    <Field Def="u8 specular_color_b" />
-    <Field Def="u8 specular_color_a" />
-    <Field Def="s16 diffuse_color_intensity" />
-    <Field Def="s16 specular_color_intensity" />
-    <Field Def="f32 light_radius" />
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 shadow_strength" />
-    <Field Def="s16 Unk01" />
-    <Field Def="s16 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="u32 can_cast_shadows" />
-  </Fields>
+    <ParamType>PLAYER_LIGHT_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 offsetX">
+            <DisplayName>位置X</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Minimum>-999</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 offsetY">
+            <DisplayName>位置Y</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Minimum>-999</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 offsetZ">
+            <DisplayName>位置Z</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Minimum>-999</Minimum>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 diffuseR">
+            <DisplayName>デフューズR</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 diffuseG">
+            <DisplayName>デフューズG</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 diffuseB">
+            <DisplayName>デフューズB</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[1]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 specularR">
+            <DisplayName>スペキュラR</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 specularG">
+            <DisplayName>スペキュラG</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 specularB">
+            <DisplayName>スペキュラB</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1[1]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u16 diffuseA">
+            <DisplayName>デフューズA</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>4095</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u16 specularA">
+            <DisplayName>スペキュラA</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>4095</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 radius">
+            <DisplayName>ライトの半径</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 priority">
+            <DisplayName>優先度</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 depthShadow">
+            <DisplayName>影の濃さ</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u16 blinkTimeMax">
+            <DisplayName>明滅の時間(最大)</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u16 blinkTimeMin">
+            <DisplayName>明滅の時間(最小)</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 blinkPower">
+            <DisplayName>明滅の強さ</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 windDepthShadow">
+            <DisplayName>影響後の影の濃さ</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u16 windBlinkTimeMax">
+            <DisplayName>影響後の明滅の時間(最大)</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u16 windBlinkTimeMin">
+            <DisplayName>影響後の明滅の時間(最小)</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 windBlinkPower">
+            <DisplayName>影響後の明滅の強さ</DisplayName>
+            <DisplayFormat>%.1f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 enableShadow">
+            <DisplayName>影を落とす</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 enableWind">
+            <DisplayName>風の影響を受ける</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="dummy8 dummy3[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>23</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

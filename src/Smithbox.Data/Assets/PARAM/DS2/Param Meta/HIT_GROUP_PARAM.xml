@@ -1,124 +1,73 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self 
-  Wiki=""
-  Row0Dummy="" />
-  
-  <DisplayNames>
-    <NameEntry 
-    Param="hitgroupparam_m10_02_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_04_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_10_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_14_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_15_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_16_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_17_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_18_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_19_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_23_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_25_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_27_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_29_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_30_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_31_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_32_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_33_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m10_34_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m20_10_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m20_11_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m20_21_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m20_24_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m20_26_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m40_03_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m50_35_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m50_36_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m50_37_00_00" 
-    Name="Hit Groups" />
-    
-    <NameEntry 
-    Param="hitgroupparam_m50_38_00_00" 
-    Name="Hit Groups" />
-    
-  </DisplayNames>
-  
-  <Field>
-  </Field>
+    <Field>
+        <gameBright0  Enum="HIT_GAME_BRIGHT_TYPE_ENUM"/>
+        <gameBright1  Enum="HIT_GAME_BRIGHT_TYPE_ENUM"/>
+        <generateMaxNum />
+        <aReserved />
+        <groundMaterial240_0 />
+        <groundMaterial240_1 />
+        <groundMaterial240_2 />
+        <groundMaterial240_3 />
+        <groundMaterial241_0 />
+        <groundMaterial241_1 />
+        <groundMaterial241_2 />
+        <groundMaterial241_3 />
+        <groundMaterial242_0 />
+        <groundMaterial242_1 />
+        <groundMaterial242_2 />
+        <groundMaterial242_3 />
+        <groundMaterial243_0 />
+        <groundMaterial243_1 />
+        <groundMaterial243_2 />
+        <groundMaterial243_3 />
+        <groundMaterial244_0 />
+        <groundMaterial244_1 />
+        <groundMaterial244_2 />
+        <groundMaterial244_3 />
+        <groundMaterial245_0 />
+        <groundMaterial245_1 />
+        <groundMaterial245_2 />
+        <groundMaterial245_3 />
+        <groundMaterial246_0 />
+        <groundMaterial246_1 />
+        <groundMaterial246_2 />
+        <groundMaterial246_3 />
+        <groundMaterial247_0 />
+        <groundMaterial247_1 />
+        <groundMaterial247_2 />
+        <groundMaterial247_3 />
+        <groundMaterial248_0 />
+        <groundMaterial248_1 />
+        <groundMaterial248_2 />
+        <groundMaterial248_3 />
+        <groundMaterial249_0 />
+        <groundMaterial249_1 />
+        <groundMaterial249_2 />
+        <groundMaterial249_3 />
+        <groundMaterial250_0 />
+        <groundMaterial250_1 />
+        <groundMaterial250_2 />
+        <groundMaterial250_3 />
+        <groundMaterial251_0 />
+        <groundMaterial251_1 />
+        <groundMaterial251_2 />
+        <groundMaterial251_3 />
+        <groundMaterial252_0 />
+        <groundMaterial252_1 />
+        <groundMaterial252_2 />
+        <groundMaterial252_3 />
+        <groundMaterial253_0 />
+        <groundMaterial253_1 />
+        <groundMaterial253_2 />
+        <groundMaterial253_3 />
+        <groundMaterial254_0 />
+        <groundMaterial254_1 />
+        <groundMaterial254_2 />
+        <groundMaterial254_3 />
+        <groundMaterial255_0 />
+        <groundMaterial255_1 />
+        <groundMaterial255_2 />
+        <groundMaterial255_3 />
+    </Field>
 </PARAMMETA>

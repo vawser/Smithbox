@@ -1,0 +1,380 @@
+{
+  "Key": "ITEM_TYPE_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_TYPE_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "盾"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor - No movement"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quiver"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recovery"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prayer (loop)"
+        }
+      ]
+    },
+    {
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark ring"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Crystal of Farewell"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Eat"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drink (stop)"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Est bottle"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Humanity"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hanging stone"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transformation"
+        }
+      ]
+    },
+    {
+      "Key": "570",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's breath"
+        }
+      ]
+    },
+    {
+      "Key": "580",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon's roar"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Paint"
+        }
+      ]
+    },
+    {
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scatter"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Put"
+        }
+      ]
+    },
+    {
+      "Key": "850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Write a signature"
+        }
+      ]
+    },
+    {
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (light)"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Throw (heavy)"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "矢"
+        }
+      ]
+    },
+    {
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oya"
+        }
+      ]
+    },
+    {
+      "Key": "1160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ore"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torch"
+        }
+      ]
+    },
+    {
+      "Key": "1350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flintstone"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prize exchange"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Give to someone"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong list"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Theory of lines"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gesture"
+        }
+      ]
+    },
+    {
+      "Key": "9000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valuables"
+        }
+      ]
+    }
+  ]
+}

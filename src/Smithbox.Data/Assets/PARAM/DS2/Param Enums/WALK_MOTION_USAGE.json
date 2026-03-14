@@ -1,0 +1,38 @@
+{
+  "Key": "WALK_MOTION_USAGE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WALK_MOTION_USAGE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stand-by"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Foot reverse standby"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Move"
+        }
+      ]
+    }
+  ]
+}

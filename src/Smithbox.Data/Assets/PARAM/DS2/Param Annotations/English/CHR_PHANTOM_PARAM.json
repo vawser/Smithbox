@@ -1,0 +1,138 @@
+{
+  "Param": "CHR_PHANTOM_PARAM",
+  "Type": "CHR_PHANTOM_PARAM",
+  "Name": "CHR_PHANTOM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "edgeColorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "edgeColorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "frontColorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "diffMulColorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "specMulColorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "lightColorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "blendRate",
+      "Name": "ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "alpha",
+      "Name": "α",
+      "Description": ""
+    },
+    {
+      "Field": "blendType",
+      "Name": "α種類",
+      "Description": ""
+    },
+    {
+      "Field": "isEdgeSubtract",
+      "Name": "エッジ色減算を行うか",
+      "Description": ""
+    },
+    {
+      "Field": "isFrontSubtract",
+      "Name": "正面色減算を行うか",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "(予約領域)",
+      "Description": ""
+    }
+  ]
+}

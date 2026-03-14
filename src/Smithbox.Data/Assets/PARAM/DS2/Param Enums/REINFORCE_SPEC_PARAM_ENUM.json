@@ -1,0 +1,65 @@
+{
+  "Key": "REINFORCE_SPEC_PARAM_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "REINFORCE_SPEC_PARAM_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced specification test"
+        }
+      ]
+    },
+    {
+      "Key": "100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword"
+        }
+      ]
+    },
+    {
+      "Key": "100300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "100400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword"
+        }
+      ]
+    },
+    {
+      "Key": "100500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test moonlight sword"
+        }
+      ]
+    }
+  ]
+}

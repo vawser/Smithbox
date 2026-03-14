@@ -1,0 +1,83 @@
+{
+  "Param": "MAP_OBJECT_BONFIRE_PARAM",
+  "Type": "MAP_OBJECT_BONFIRE_PARAM",
+  "Name": "MAP_OBJECT_BONFIRE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mapId",
+      "Name": "配置マップID",
+      "Description": ""
+    },
+    {
+      "Field": "menuAreaID",
+      "Name": "メニュー用エリアID",
+      "Description": ""
+    },
+    {
+      "Field": "enemyDisableDistance",
+      "Name": "敵接近時使用禁止距離",
+      "Description": ""
+    },
+    {
+      "Field": "enemyDisableHeight",
+      "Name": "敵接近時使用禁止高さ",
+      "Description": ""
+    },
+    {
+      "Field": "eventCameraIdBegin",
+      "Name": "イベントカメラ開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "eventCameraIdEnd",
+      "Name": "イベントカメラ終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "マルチプレイ制限時間減少量",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayAreaid",
+      "Name": "マルチプレイ区間ID",
+      "Description": ""
+    },
+    {
+      "Field": "isUseReGenerateItem",
+      "Name": "再生の種火くべる可能",
+      "Description": ""
+    },
+    {
+      "Field": "isUseDisableNetworkItem",
+      "Name": "人間の像くべる可能",
+      "Description": ""
+    },
+    {
+      "Field": "isUseLevelUpEstusFlaskItem",
+      "Name": "エスト瓶強化くべる可能",
+      "Description": ""
+    },
+    {
+      "Field": "menuSortID",
+      "Name": "メニューソート用ID",
+      "Description": ""
+    },
+    {
+      "Field": "rootFlagId",
+      "Name": "再生の種火使用可能フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "bossKillCountValId",
+      "Name": "ボスを殺した回数カウント用変数ID",
+      "Description": ""
+    },
+    {
+      "Field": "bossKillCountValId2",
+      "Name": "ボスを殺した回数カウント用変数ID2",
+      "Description": ""
+    }
+  ]
+}

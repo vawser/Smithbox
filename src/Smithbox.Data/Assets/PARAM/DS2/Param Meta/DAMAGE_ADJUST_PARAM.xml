@@ -1,16 +1,104 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to damage." Row0Dummy="" />
-  <Field>
-    <physical_attack_rating_mult_pve AltName="PVE Attack Rating %: Physical"/>
-    <player_damage_mult_coc AltName="Player Damage % - Company of Champions"/>
-    <enemy_damage_mult_coc AltName="Enemy Damage % - Company of Champions"/>
-    <physical_absorption_mult_pve AltName="PVE Absorption %: Physical"/>
-    <physical_attack_rating_mult_pvp AltName="PVP Attack Rating %: Physical"/>
-    <physical_absorption_mult_pvp AltName="PVP Absorption %: Physical"/>
-    <magic_absorption_mult_pvp AltName="PVP Absorption %: Magic"/>
-    <lightning_absorption_mult_pvp AltName="PVP Absorption %: Lightning"/>
-    <fire_absorption_mult_pvp AltName="PVP Absorption %: Fire"/>
-    <dark_absorption_mult_pvp AltName="PVP Absorption %: Dark"/>
-  </Field>
+    <Field>
+        <pcFallAtkAdjustLightWeight />
+        <pcFallAtkAdjustMiddleWeight />
+        <pcFallAtkAdjustHeavyWeight />
+        <pcKillStaminaAdjust />
+        <pcSpecialMoveKillStaminaAdjust />
+        <pcLackOfStatAdjust />
+        <pcFluctuationAdjustMin />
+        <pcFluctuationAdjustMax />
+        <pcDifficultyAdjustVeryEasy />
+        <pcDifficultyAdjustEasy />
+        <pcDifficultyAdjustNormal />
+        <pcDifficultyAdjustHard />
+        <pcDifficultyAdjustVeryHard />
+        <pcDifficultyAdjustHell />
+        <pcDurabilityRateWeapon />
+        <pcDurabilityRateHead />
+        <pcDurabilityRateBody />
+        <pcDurabilityRateArm />
+        <pcDurabilityRateReg />
+        <pcDurabilityRateRing />
+        <pcDurabilityRateGuardWeapon />
+        <pcDurabilityRateGuardHead />
+        <pcDurabilityRateGuardBody />
+        <pcDurabilityRateGuardArm />
+        <pcDurabilityRateGuardReg />
+        <pcDurabilityRateGuardRing />
+        <pcCoorpAdjust01 />
+        <pcCoorpAdjust02 />
+        <pcCoorpAdjust03 />
+        <pcCoorpAdjust04 />
+        <pcCoorpAdjust05 />
+        <pcCoorpAdjust06 />
+        <pcInvasionAdjust01 />
+        <pcInvasionAdjust02 />
+        <pcInvasionAdjust03 />
+        <pcGameCycleAdjust01 />
+        <pcGameCycleAdjust02 />
+        <pcGameCycleAdjust03 />
+        <pcGameCycleAdjust04 />
+        <pcGameCycleAdjust05 />
+        <pcGameCycleAdjust06 />
+        <pcGameCycleAdjust07 />
+        <pcGameCycleAdjust08 />
+        <ecFluctuationAdjustMin />
+        <ecFluctuationAdjustMax />
+        <ecDifficultyAdjustVeryEasy />
+        <ecDifficultyAdjustEasy />
+        <ecDifficultyAdjustNormal />
+        <ecDifficultyAdjustHard />
+        <ecDifficultyAdjustVeryHard />
+        <ecDifficultyAdjustHell />
+        <ecCoorpAdjust01 />
+        <ecCoorpAdjust02 />
+        <ecCoorpAdjust03 />
+        <ecCoorpAdjust04 />
+        <ecCoorpAdjust05 />
+        <ecCoorpAdjust06 />
+        <ecInvasionAdjust01 />
+        <ecInvasionAdjust02 />
+        <ecInvasionAdjust03 />
+        <ecGameCycleAdjust01 />
+        <ecGameCycleAdjust02 />
+        <ecGameCycleAdjust03 />
+        <ecGameCycleAdjust04 />
+        <ecGameCycleAdjust05 />
+        <ecGameCycleAdjust06 />
+        <ecGameCycleAdjust07 />
+        <ecGameCycleAdjust08 />
+        <ecNtVerAdjust />
+        <attributeAdjustNormalMul01 />
+        <attributeAdjustMagic />
+        <attributeAdjustThunder />
+        <attributeAdjustFire />
+        <attributeAdjustDark />
+        <attributeAdjustPoison />
+        <attributeAdjustBleed />
+        <attributeAdjustWeaponBreak />
+        <attributeAdjustCurse />
+        <attributeAdjustBurning />
+        <attributeAdjustDeadlyPoison />
+        <attributeAdjustPetrified />
+        <vowStrongAtkAdjustRate />
+        <vowStrongDefAdjustRate />
+        <attributeAdjustNormalDiv01 />
+        <attributeAdjustNormalMul02 />
+        <attributeAdjustNormalDiv02 />
+        <pcAttributeAdjustNormalMul />
+        <pcAttributeAdjustNormalDiv />
+        <pcAttributeAdjustMagic />
+        <pcAttributeAdjustThunder />
+        <pcAttributeAdjustFire />
+        <pcAttributeAdjustDark />
+        <pcAttributeAdjustPoison />
+        <pcAttributeAdjustBleed />
+        <pcAttributeAdjustWeaponBreak />
+        <pcAttributeAdjustCurse />
+        <pcAttributeAdjustBurning />
+        <pcAttributeAdjustDeadlyPoison />
+        <pcAttributeAdjustPetrified />
+    </Field>
 </PARAMMETA>

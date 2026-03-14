@@ -1,0 +1,83 @@
+{
+  "Param": "DEAD_TYPE_PARAM",
+  "Type": "DEAD_TYPE_PARAM",
+  "Name": "DEAD_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "deadChrDeleteTime",
+      "Name": "死亡時モデル削除時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadLockOffTime",
+      "Name": "死亡時ロックオン解除 開始時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadItemDropTime",
+      "Name": "死亡時アイテムドロップ時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadHitDisableTime",
+      "Name": "死亡時ヒット削除時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadSoulDropTime",
+      "Name": "死亡時ソウルドロップ 開始時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadSfxTime",
+      "Name": "死亡時SFX 開始時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadSfxType",
+      "Name": "死亡時SFXタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "deadFadeDelay",
+      "Name": "死亡時フェード開始時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadFadeTime",
+      "Name": "死亡時フェード時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "deadSeId",
+      "Name": "死亡時サウンドID",
+      "Description": ""
+    },
+    {
+      "Field": "deadCullingFilterId",
+      "Name": "死亡時非表示カリングID",
+      "Description": ""
+    },
+    {
+      "Field": "deadDisableParts",
+      "Name": "死亡時無効部位",
+      "Description": ""
+    },
+    {
+      "Field": "deadIsNoConstraint",
+      "Name": "バラバラ死亡",
+      "Description": ""
+    },
+    {
+      "Field": "deadIsChrSe",
+      "Name": "死亡時キャラSE",
+      "Description": ""
+    },
+    {
+      "Field": "deadSoulBulletId",
+      "Name": "死亡時ソウル弾ID",
+      "Description": ""
+    }
+  ]
+}

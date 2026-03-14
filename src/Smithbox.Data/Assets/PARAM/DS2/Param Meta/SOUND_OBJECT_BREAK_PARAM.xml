@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters relating to the sound of destructible objects." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <type  Enum="SOUND_OBJECT_BREAK_TYPE"/>
+        <aReserved />
+    </Field>
 </PARAMMETA>

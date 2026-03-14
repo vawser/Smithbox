@@ -1,10 +1,54 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the logic used by enemy AI." Row0Dummy="" />
-  <Field>
-    <sight_distance AltName="Sight Distance"/>
-    <detect_distance AltName="Detection Distance"/>
-    <vision_cone_horizontal_angle AltName="Vision Cone - Horizontal Angle"/>
-    <vision_cone_vertical_angle AltName="Vision Cone - Vertical Angle"/>
-  </Field>
+    <Field>
+        <id />
+        <viewingDistanceMax />
+        <viewingDistanceMin />
+        <viewingBackDistance />
+        <viewingAngleLR />
+        <viewingAngleUD />
+        <nightBlindRate />
+        <chaseDistance />
+        <hearingDistance />
+        <hearingSensitivity />
+        <obstacleTime />
+        <obstacleRate />
+        <platoonWeight  Enum="LOGIC_WEIGHT_IN_PLATOON_TYPE"/>
+        <platoonPriority  Enum="LOGIC_PRIORITY_IN_PLATOON_TYPE"/>
+        <viewingBrightnessType  Enum="LOGIC_EYESIGHT_BASE_TYPE"/>
+        <useDoor />
+        <useLadder />
+        <useRope />
+        <upperRunNum />
+        <damageAfterActionPriority  Enum="LOGIC_ACTION_PRIORITY_TYPE"/>
+        <roundLv2 />
+        <roundLv3 />
+        <roundLv4 />
+        <roundLv5 />
+        <distanceCheckType  Enum="LOGIC_DISTANCE_CHECK_TYPE"/>
+        <itemPursuitTable  Enum="LOGIC_PROBABILITY_TABLE_TYPE"/>
+        <itemPursuitActionNo />
+        <guardBreakPursuitTable  Enum="LOGIC_PROBABILITY_TABLE_TYPE"/>
+        <guardPursuitActionNo />
+        <backAttackTable  Enum="LOGIC_PROBABILITY_TABLE_TYPE"/>
+        <backAttackActionNo />
+        <dummy />
+        <itemPursuitDistance />
+        <guardPursuitDistance />
+        <backAttackDistance />
+        <noLOSForgetTime />
+        <genReturnDist />
+        <genReturnTime />
+        <healProbabilityTable  Enum="LOGIC_PROBABILITY_TABLE_TYPE"/>
+        <healActionNo />
+        <healHpPerc />
+        <dodgeActionType  Enum="LOGIC_USEABLE_DODGE_TYPE"/>
+        <autoBreakPower />
+        <returnSoundCheck />
+        <bTargetHighPos  IsBool=""/>
+        <itemAlluringSkullType  Enum="LOGIC_DECOY_ENABLE_TYPE"/>
+        <spellNostalgiaType  Enum="LOGIC_DECOY_ENABLE_TYPE"/>
+        <bLongAiCandidate  IsBool=""/>
+        <pad00 />
+    </Field>
 </PARAMMETA>

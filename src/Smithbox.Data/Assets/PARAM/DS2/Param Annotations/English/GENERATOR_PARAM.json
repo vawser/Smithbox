@@ -1,0 +1,318 @@
+{
+  "Param": "GENERATOR_PARAM",
+  "Type": "GENERATOR_PARAM",
+  "Name": "GENERATOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "maxRespawnNum",
+      "Name": "リスポーン上限数",
+      "Description": ""
+    },
+    {
+      "Field": "maxRespawnNum2ndOver",
+      "Name": "2週目以降リスポーン上限数",
+      "Description": ""
+    },
+    {
+      "Field": "eventGroupId",
+      "Name": "イベントグループID",
+      "Description": ""
+    },
+    {
+      "Field": "logicGroupId",
+      "Name": "ロジックグループID",
+      "Description": ""
+    },
+    {
+      "Field": "respawnDisableFlag",
+      "Name": "再稼動禁止フラグID",
+      "Description": ""
+    },
+    {
+      "Field": "GeneratorRegistParam",
+      "Name": "登録エネミー名称",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionJudgeType",
+      "Name": "稼働開始条件判定",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionCondition1",
+      "Name": "稼動開始条件1",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionCondition2",
+      "Name": "稼動開始条件2",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionCondition3",
+      "Name": "稼動開始条件3",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionParam1",
+      "Name": "稼動開始条件Param1",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionParam2",
+      "Name": "稼動開始条件Param2",
+      "Description": ""
+    },
+    {
+      "Field": "startConditionParam3",
+      "Name": "稼動開始条件Param3",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionJudgeType",
+      "Name": "停止条件判定",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionCondition1",
+      "Name": "停止条件1",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionCondition2",
+      "Name": "停止条件2",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionCondition3",
+      "Name": "停止条件3",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionParam1",
+      "Name": "停止条件Param1",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionParam2",
+      "Name": "停止条件Param2",
+      "Description": ""
+    },
+    {
+      "Field": "stopConditionParam3",
+      "Name": "停止条件Param3",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId1",
+      "Name": "ロジック移動領域1",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId2",
+      "Name": "ロジック移動領域2",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId3",
+      "Name": "ロジック移動領域3",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId4",
+      "Name": "ロジック移動領域4",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId5",
+      "Name": "ロジック移動領域5",
+      "Description": ""
+    },
+    {
+      "Field": "logicMoveZoneId6",
+      "Name": "ロジック移動領域6",
+      "Description": ""
+    },
+    {
+      "Field": "infinityGenerateTime",
+      "Name": "無限生成間隔",
+      "Description": ""
+    },
+    {
+      "Field": "infinityGenerate",
+      "Name": "無限生成",
+      "Description": ""
+    },
+    {
+      "Field": "drawGroupDeleteDisable",
+      "Name": "描画グループ削除無効",
+      "Description": ""
+    },
+    {
+      "Field": "bossBattleStopDisable",
+      "Name": "ボス戦中非停止",
+      "Description": ""
+    },
+    {
+      "Field": "hpGaugeDisable",
+      "Name": "HPゲージ非表示",
+      "Description": ""
+    },
+    {
+      "Field": "resetPosition",
+      "Name": "見えなくなったら位置リセット",
+      "Description": ""
+    },
+    {
+      "Field": "generateOverDeleteDisable",
+      "Name": "上限オーバー削除無効",
+      "Description": ""
+    },
+    {
+      "Field": "invincibleWithoutBossBattle",
+      "Name": "ボス戦以外無敵",
+      "Description": ""
+    },
+    {
+      "Field": "netUpdatePriority",
+      "Name": "マルチプレイ時更新優先度",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireId",
+      "Name": "篝火ID",
+      "Description": ""
+    },
+    {
+      "Field": "returnDistance",
+      "Name": "帰還距離",
+      "Description": ""
+    },
+    {
+      "Field": "logicNaviPoint1",
+      "Name": "ロジックナビポイント1",
+      "Description": ""
+    },
+    {
+      "Field": "logicNaviPoint2",
+      "Name": "ロジックナビポイント2",
+      "Description": ""
+    },
+    {
+      "Field": "bootLowStateId",
+      "Name": "下位ロジック起動ステートID",
+      "Description": ""
+    },
+    {
+      "Field": "logicEventFlag1",
+      "Name": "イベントフラグ1",
+      "Description": ""
+    },
+    {
+      "Field": "logicEventFlag2",
+      "Name": "イベントフラグ2",
+      "Description": ""
+    },
+    {
+      "Field": "logicEventFlag3",
+      "Name": "イベントフラグ3",
+      "Description": ""
+    },
+    {
+      "Field": "logicEventFlag4",
+      "Name": "イベントフラグ4",
+      "Description": ""
+    },
+    {
+      "Field": "logicStartInterval",
+      "Name": "動き出し間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "returnPointId1",
+      "Name": "帰還領域1",
+      "Description": ""
+    },
+    {
+      "Field": "returnPointId2",
+      "Name": "帰還領域2",
+      "Description": ""
+    },
+    {
+      "Field": "returnPointId3",
+      "Name": "帰還領域3",
+      "Description": ""
+    },
+    {
+      "Field": "logicAreaEventValue1",
+      "Name": "イベントエリア変数1",
+      "Description": ""
+    },
+    {
+      "Field": "logicAreaEventValue2",
+      "Name": "イベントエリア変数2",
+      "Description": ""
+    },
+    {
+      "Field": "logicGlobalEventValue1",
+      "Name": "イベントグローバル変数1",
+      "Description": ""
+    },
+    {
+      "Field": "logicGlobalEventValue2",
+      "Name": "イベントグローバル変数2",
+      "Description": ""
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "マルチプレイ制限時間減少量",
+      "Description": ""
+    },
+    {
+      "Field": "spGenerateType",
+      "Name": "特殊生成タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "instanceColor",
+      "Name": "カラー",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "itemId",
+      "Name": "初週アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId2ndOver",
+      "Name": "2週目以降アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "endEventId",
+      "Name": "毎生成時の終了必須イベントID",
+      "Description": ""
+    },
+    {
+      "Field": "aiReturnStandbyRange",
+      "Name": "AI帰還準備距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "aiReturnType",
+      "Name": "AI帰還方法",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved2",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

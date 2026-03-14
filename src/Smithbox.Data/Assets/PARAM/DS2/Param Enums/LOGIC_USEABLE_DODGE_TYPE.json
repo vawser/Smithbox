@@ -1,0 +1,47 @@
+{
+  "Key": "LOGIC_USEABLE_DODGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_USEABLE_DODGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Step"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rolling"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both"
+        }
+      ]
+    }
+  ]
+}

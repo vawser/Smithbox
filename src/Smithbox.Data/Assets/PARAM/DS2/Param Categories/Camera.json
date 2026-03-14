@@ -1,0 +1,22 @@
+{
+  "Key": "Camera",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Camera"
+      }
+  ],
+  "Params": [
+    "CameraActionParam",
+    "CameraEventParam",
+    "CameraExFollowImpactParam",
+    "CameraExFollowParam",
+    "CameraFreeParam",
+    "CameraGrapperParam",
+    "CameraMenuParam",
+    "CameraNoiseParam",
+    "CameraNormalParam",
+    "CameraSubjectiveParam",
+    "CameraGrapplerParam"
+  ]
+}

@@ -1,6 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related model link LOD type." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <LodTypeParam_Lv1 />
+        <LodTypeParam_Lv2 />
+        <LodTypeParam_Lv3 />
+        <LodTypeParam_Lv4 />
+        <DrawDist />
+        <ShadowCastDist />
+        <BlurDist />
+        <pading />
+    </Field>
 </PARAMMETA>

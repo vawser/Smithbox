@@ -1,7 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used for fully body visual effects."  Row0Dummy="" />
-  <Field>
-    <sfx_id AltName= "SFX ID" Wiki="Corresponds to the numeric ID used in the title of the .FFX file." />
-  </Field>
+    <Field>
+        <sfxId />
+        <dirType  Enum="CHR_FULLBODY_SFX_DIR_TYPE"/>
+        <traceType  Enum="CHR_FULLBODY_SFX_TRACE_TYPE"/>
+        <dummy0 />
+        <isDisableHead  IsBool=""/>
+        <isDisableBody  IsBool=""/>
+        <isDisableRArm  IsBool=""/>
+        <isDisableLArm  IsBool=""/>
+        <isDisableRHand  IsBool=""/>
+        <isDisableLHand  IsBool=""/>
+        <isDisableRLeg  IsBool=""/>
+        <isDisableLLeg  IsBool=""/>
+        <dummy1 />
+        <time />
+        <seId />
+    </Field>
 </PARAMMETA>

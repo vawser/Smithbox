@@ -1,9 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used by player and humanoid characters for equip weapons." Row0Dummy="" />
-  <Field>
-    <chr_id AltName="Chr ID"/>
-    <weapon_ffx_id Wiki="Weapon Visual Effect Related"/>
-    <unk_ffx Wiki="Body Visual Effect Related"/>
-  </Field>
+    <Field>
+        <behaviorId />
+        <cullingId00 />
+        <cullingId01 />
+        <reserved00 />
+        <durability />
+        <material  Enum="MATERIAL_TYPE_ENUM"/>
+        <rightBrokenSfxId />
+        <leftBrokenSfxId />
+        <rightBrokenDummyPolyId />
+        <leftBrokenDummyPolyId />
+        <emissiveType  Enum="CHR_EMISSIVE_TYPE"/>
+        <reserved01 />
+        <brokenSoundType  Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE"/>
+        <residentSfxId00 />
+        <residentSfxId01 />
+        <residentSfxId02 />
+        <residentSfxId03 />
+        <residentSfxAttachType00  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType01  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType02  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxAttachType03  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
+        <residentSfxDummyPolyId00 />
+        <residentSfxDummyPolyId01 />
+        <residentSfxDummyPolyId02 />
+        <residentSfxDummyPolyId03 />
+        <residentSfxDummyPolyIdEnd00 />
+        <residentSfxDummyPolyIdEnd01 />
+        <residentSfxDummyPolyIdEnd02 />
+        <residentSfxDummyPolyIdEnd03 />
+        <residentSfxIdInterval00 />
+        <residentSfxIdInterval01 />
+        <residentSfxIdInterval02 />
+        <residentSfxIdInterval03 />
+        <residentSfxSetType00  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType01  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType02  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxSetType03  Enum="CHR_RESIDENT_SFX_SET_TYPE"/>
+        <residentSfxEndType00  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType01  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType02  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+        <residentSfxEndType03  Enum="CHR_RESIDENT_SFX_END_TYPE"/>
+    </Field>
 </PARAMMETA>

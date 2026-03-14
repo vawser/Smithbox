@@ -1,6 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the character face editor." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <minValue />
+        <maxValue />
+        <faceParamType />
+        <faceParamCategory  Enum="CHR_EDIT_FACE_PARAM_CATEGORY"/>
+        <montageUsed />
+        <menuReverse />
+        <dummy />
+    </Field>
 </PARAMMETA>

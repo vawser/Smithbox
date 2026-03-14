@@ -1,6 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to damage based on weapon type." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <phantomRate />
+        <freshRate />
+        <hardRate />
+        <veryHardRate />
+        <giantRate />
+    </Field>
 </PARAMMETA>

@@ -1,0 +1,47 @@
+{
+  "Key": "GENERATOR_LOCATION_SETTING_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_LOCATION_SETTING_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Above ground"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceiling"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OBJ master position"
+        }
+      ]
+    }
+  ]
+}

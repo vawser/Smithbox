@@ -1,6 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to soul absorption in multiplayer." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <none />
+        <white />
+        <smallWhite />
+        <gold />
+        <smallGold />
+        <coopBlue />
+        <versusBlue />
+        <signBlack />
+        <intrudeBlack />
+        <signRed />
+        <intrudeRed />
+        <bellGuard />
+        <ratKing />
+        <dragon />
+        <mirrorKnight />
+        <abyss />
+        <duelBlue />
+        <duelRed />
+    </Field>
 </PARAMMETA>

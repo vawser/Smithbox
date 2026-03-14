@@ -1,0 +1,65 @@
+{
+  "Key": "OBJ_WHITE_DOOR_CATEGORY_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_WHITE_DOOR_CATEGORY_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "End of multiplayer section"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss room"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss room exit"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Host goal point"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse King Ashrei goal point"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scenario white door"
+        }
+      ]
+    }
+  ]
+}

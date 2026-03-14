@@ -1,6 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to texture." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <layerType  Enum="PXT_LAYER_TYPE"/>
+        <dummy0 />
+        <refractiveReal />
+        <refractiveImag />
+        <fresnel />
+        <fresnelInt />
+        <roughness />
+        <roughnessInt />
+    </Field>
 </PARAMMETA>

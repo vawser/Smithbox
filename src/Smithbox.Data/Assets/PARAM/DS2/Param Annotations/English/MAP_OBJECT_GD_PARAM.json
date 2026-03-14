@@ -1,0 +1,198 @@
+{
+  "Param": "MAP_OBJECT_GD_PARAM",
+  "Type": "MAP_OBJECT_GD_PARAM",
+  "Name": "MAP_OBJECT_GD_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "animId",
+      "Name": "アニメID",
+      "Description": ""
+    },
+    {
+      "Field": "initialFrameHead",
+      "Name": "【開始】初期フレーム",
+      "Description": ""
+    },
+    {
+      "Field": "initialFrameTail",
+      "Name": "【終了】初期フレーム",
+      "Description": ""
+    },
+    {
+      "Field": "isLoopAnim",
+      "Name": "ループ再生するか",
+      "Description": ""
+    },
+    {
+      "Field": "isBreakable",
+      "Name": "破壊可能か",
+      "Description": ""
+    },
+    {
+      "Field": "isPrefab",
+      "Name": "プレハブか",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "cameraHit",
+      "Name": "カメラ当たり時挙動",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveScale0",
+      "Name": "エミッシブスケール0",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveScale1",
+      "Name": "エミッシブスケール1",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId0",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId1",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId2",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId3",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId4",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxId5",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxIdBreak0",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint0",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint1",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint2",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint3",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint4",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPoint5",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxPointBreak0",
+      "Name": "発生地点",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId0",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId1",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId2",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId3",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId4",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyId5",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfxDmyPolyIdBreak0",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow0",
+      "Name": "追従する",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow1",
+      "Name": "追従する",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow2",
+      "Name": "追従する",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow3",
+      "Name": "追従する",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow4",
+      "Name": "追従する",
+      "Description": ""
+    },
+    {
+      "Field": "doesFollow5",
+      "Name": "追従する",
+      "Description": ""
+    }
+  ]
+}

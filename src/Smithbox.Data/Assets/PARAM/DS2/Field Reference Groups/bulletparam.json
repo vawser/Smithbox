@@ -1,0 +1,17 @@
+{
+  "Name": "bulletparam",
+  "Instances": [
+    {
+      "DisplayName": "Player Bullet",
+      "Param": "BulletParam"
+    },
+    {
+      "DisplayName": "Enemy Bullet",
+      "Param": "EnemyBulletParam"
+    },
+    {
+      "DisplayName": "System Bullet",
+      "Param": "SystemBulletParam"
+    }
+  ]
+}

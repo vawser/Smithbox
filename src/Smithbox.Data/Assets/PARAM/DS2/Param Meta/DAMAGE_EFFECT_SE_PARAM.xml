@@ -1,6 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to damage effect sounds." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <materialNone  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialMetal  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialHeavyMetal  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialWood  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialWater  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialSwamp  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialLumber  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialMeat  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialDeadMeat  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialInsect  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialGiant  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialBone  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialCopper  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialEnergy  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialFire  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialThunder  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialDark  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialMagicalPower  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialStone  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialDirt  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialCarpet  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialGrass  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialBallast  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialCloth  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialSand  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialAsh  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialPoisonSwamp  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialOil  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialCoalTar  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialLava  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialThread  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialCrystal  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialSoul  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <materialFrog  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial0  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial1  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial2  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial3  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial4  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial5  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial6  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial7  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <unkMaterial8  Enum="DAMAGE_EFFECT_MATERIAL"/>
+        <dummy />
+    </Field>
 </PARAMMETA>

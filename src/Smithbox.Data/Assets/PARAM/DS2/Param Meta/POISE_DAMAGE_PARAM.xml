@@ -1,6 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to poise damage." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <damageMinimum />
+        <damageSmall />
+        <damageMiddle />
+        <damageHeavy />
+        <damageSuperHeavy />
+        <addValueMinimum />
+        <addValueSmall />
+        <addValueMiddle />
+        <addValueHeavy />
+        <addValueSuperHeavy />
+    </Field>
 </PARAMMETA>

@@ -1,0 +1,56 @@
+{
+  "Key": "WALK_ATTACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WALK_ATTACK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 1"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 2"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 3"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 4"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Walking attack 5"
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>BOSS_PARTS_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 body_hit_sfx" />
-    <Field Def="s32 Unk08" />
-  </Fields>
+    <ParamType>BOSS_PARTS_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 hpCategory">
+            <DisplayName>ＨＰ部位番号</DisplayName>
+            <Enum>BOSS_PARTS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s8 damageAnimId = -1">
+            <DisplayName>ダメージアニメ番号</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="dummy8 reserved[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="s32 material">
+            <DisplayName>材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s32 deffence">
+            <DisplayName>防御力</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

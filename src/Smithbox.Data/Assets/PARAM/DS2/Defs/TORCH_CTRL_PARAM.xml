@@ -1,13 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>TORCH_CTRL_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 Unk01" />
-    <Field Def="f32 torch_duration" />
-  </Fields>
+    <ParamType>TORCH_CTRL_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="s32 sfxId = -1">
+            <DisplayName>SFXID</DisplayName>
+            <Description>SFXID</Description>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="s32 lightId = -1">
+            <DisplayName>光源ID</DisplayName>
+            <Description>光源ID</Description>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 life">
+            <DisplayName>寿命[秒]</DisplayName>
+            <Description>寿命[秒]</Description>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100000</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

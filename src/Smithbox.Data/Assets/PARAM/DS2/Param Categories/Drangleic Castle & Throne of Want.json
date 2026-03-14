@@ -1,0 +1,30 @@
+{
+  "Key": "Drangleic Castle & Throne of Want",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Drangleic Castle & Throne of Want"
+      }
+  ],
+  "Params": [
+    "demopointlight_scn202110",
+    "demopointlight_scn202120",
+    "demopointlight_scn202130",
+    "demopointlight_scn202150",
+    "demospotlight_scn202110",
+    "demospotlight_scn202120",
+    "demospotlight_scn202130",
+    "demospotlight_scn202150",
+    "eventlocation_m20_21_00_00",
+    "eventparam_m20_21_00_00",
+    "generatorlocation_m20_21_00_00",
+    "generatorparam_m20_21_00_00",
+    "generatorregistparam_m20_21_00_00",
+    "hitgroupparam_m20_21_00_00",
+    "intrudepointparam_m20_21_00_00",
+    "mapobjectinstanceparam_m20_21_00_00",
+    "maptargetdirparam_m20_21_00_00",
+    "npctalkparam_m20_21_00_00",
+    "treasureboxparam_m20_21_00_00"
+  ]
+}

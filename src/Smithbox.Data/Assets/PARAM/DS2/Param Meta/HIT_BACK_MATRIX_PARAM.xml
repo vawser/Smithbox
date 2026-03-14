@@ -1,6 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to the hitback matrix." Row0Dummy="" />
-  <Field>
-  </Field>
+    <Field>
+        <noneSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <superSmallSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <smallSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <normalSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <largeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <superLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <hyperLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <ultraLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+    </Field>
 </PARAMMETA>

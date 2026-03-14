@@ -1,19 +1,150 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to armor and armor masks." Row0Dummy="" />
-  <Field>
-    <armor_id AltName="Armor ID" Refs="ArmorParam"/>
-    <male_mask_1 AltName="Male - Unknown Mask 1"/>
-    <male_mask_2 AltName="Male - Head Piece Mask 1"/>
-    <male_mask_3 AltName="Male - Head Piece Mask 2"/>
-    <male_mask_4 AltName="Male - Unknown Mask 2"/>
-    <male_mask_5 AltName="Male - Head Piece Mask 3"/>
-    <male_mask_6 AltName="Male - Head Piece Mask 4"/>
-    <female_mask_1 AltName="Female - Unknown Mask 1"/>
-    <female_mask_2 AltName="Female - Head Piece Mask 1"/>
-    <female_mask_3 AltName="Female - Head Piece Mask 2"/>
-    <female_mask_4 AltName="Female - Unknown Mask 2"/>
-    <female_mask_5 AltName="Female - Head Piece Mask 3"/>
-    <female_mask_6 AltName="Female - Head Piece Mask 4"/>
-  </Field>
+    <Field>
+        <interfereId0 />
+        <cullingPriorityNeck0 />
+        <cullingPriorityElbowRight0 />
+        <cullingValueElbowRight0 />
+        <cullingPriorityElbowLeft0 />
+        <cullingValueElbowLeft0 />
+        <cullingPriorityWaist0 />
+        <cullingValueWaist0 />
+        <clothCtrlType0  Enum="EQUIP_CLOTH_CTRL_TYPE"/>
+        <cullingGroup00_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup01_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup02_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup03_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup04_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup05_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup06_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup07_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup08_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup09_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup10_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup11_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup12_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup13_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup14_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup15_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup16_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup17_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup18_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup19_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup20_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup21_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup22_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup23_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup24_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup25_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup26_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup27_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup28_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup29_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup30_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup31_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup32_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup33_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup34_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup35_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup36_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup37_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup38_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup39_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup40_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup41_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup42_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup43_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup44_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup45_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup46_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup47_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup48_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup49_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup50_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup51_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup52_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup53_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup54_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup55_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup56_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup57_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup58_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup59_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup60_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup61_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup62_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup63_0  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingPriorityNeck1 />
+        <cullingPriorityElbowRight1 />
+        <cullingValueElbowRight1 />
+        <cullingPriorityElbowLeft1 />
+        <cullingValueElbowLeft1 />
+        <cullingPriorityWaist1 />
+        <cullingValueWaist1 />
+        <clothCtrlType1  Enum="EQUIP_CLOTH_CTRL_TYPE"/>
+        <cullingGroup00_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup01_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup02_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup03_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup04_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup05_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup06_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup07_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup08_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup09_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup10_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup11_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup12_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup13_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup14_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup15_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup16_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup17_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup18_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup19_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup20_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup21_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup22_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup23_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup24_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup25_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup26_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup27_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup28_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup29_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup30_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup31_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup32_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup33_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup34_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup35_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup36_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup37_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup38_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup39_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup40_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup41_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup42_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup43_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup44_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup45_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup46_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup47_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup48_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup49_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup50_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup51_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup52_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup53_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup54_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup55_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup56_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup57_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup58_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup59_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup60_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup61_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup62_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+        <cullingGroup63_1  Enum="EQUIP_CULLING_GROUP_CTRL"/>
+    </Field>
 </PARAMMETA>

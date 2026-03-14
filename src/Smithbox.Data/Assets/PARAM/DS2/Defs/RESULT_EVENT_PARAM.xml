@@ -1,19 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>RESULT_EVENT_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 Unk00" />
-    <Field Def="u8 Unk01" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 Unk03" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 itemlot_id_1" />
-    <Field Def="s32 itemlot_id_2" />
-    <Field Def="s32 Unk07" />
-    <Field Def="s32 Unk08" />
-  </Fields>
+    <ParamType>RESULT_EVENT_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 feType">
+            <DisplayName>演出タイプ</DisplayName>
+            <Enum>RESULT_EVENT_FE_TYPE_ENUM</Enum>
+            <Maximum>9</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 msgType">
+            <DisplayName>メッセージタイプ</DisplayName>
+            <Enum>RESULT_EVENT_MSG_TYPE_ENUM</Enum>
+            <Maximum>3</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s8 vowContribute">
+            <DisplayName>誓約貢献増減値</DisplayName>
+            <Minimum>-128</Minimum>
+            <Maximum>127</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u8 endType">
+            <DisplayName>終了タイプ</DisplayName>
+            <Enum>RESULT_EVENT_END_TYPE_ENUM</Enum>
+            <Maximum>3</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u32 msgId">
+            <DisplayName>メッセージId</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u32 rewardItemId01">
+            <DisplayName>勝利報酬アイテム抽選ID</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u32 exRewardItemId01">
+            <DisplayName>運営イベント追加報酬アイテム抽選ID</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[8]">
+            <DisplayName>予約</DisplayName>
+            <SortID>999</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -1,0 +1,213 @@
+{
+  "Param": "CHR_GROWTH_PARAM",
+  "Type": "CHR_GROWTH_PARAM",
+  "Name": "CHR_GROWTH_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soulLevelMax",
+      "Name": "最大ソウルレベル",
+      "Description": ""
+    },
+    {
+      "Field": "growthPointsPerLevelUp",
+      "Name": "獲得成長ポイント",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "enemyOverKillSoulRate",
+      "Name": "エネミーソウル オーバーキル補正倍率",
+      "Description": ""
+    },
+    {
+      "Field": "enemyFinishSoulRate",
+      "Name": "エネミーソウル フィニッシュ補正倍率",
+      "Description": ""
+    },
+    {
+      "Field": "enemyVeryEasySoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Very Easy",
+      "Description": ""
+    },
+    {
+      "Field": "enemyEasySoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Easy",
+      "Description": ""
+    },
+    {
+      "Field": "enemyNormalSoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Normal",
+      "Description": ""
+    },
+    {
+      "Field": "enemyHardSoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Hard",
+      "Description": ""
+    },
+    {
+      "Field": "enemyVeryHardSoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Very Hard",
+      "Description": ""
+    },
+    {
+      "Field": "enemyHellSoulRate",
+      "Name": "エネミーソウル 難易度補正倍率 Hell",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop1SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正１",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop2SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正２",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop3SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正３",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop4SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正４",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop5SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正５",
+      "Description": ""
+    },
+    {
+      "Field": "enemyCoop6SoulRate",
+      "Name": "エネミーソウル 協力プレイ補正６",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap1SoulRate",
+      "Name": "エネミーソウル 周回補正倍率１",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap2SoulRate",
+      "Name": "エネミーソウル 周回補正倍率２",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap3SoulRate",
+      "Name": "エネミーソウル 周回補正倍率３",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap4SoulRate",
+      "Name": "エネミーソウル 周回補正倍率４",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap5SoulRate",
+      "Name": "エネミーソウル 周回補正倍率５",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap6SoulRate",
+      "Name": "エネミーソウル 周回補正倍率６",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap7SoulRate",
+      "Name": "エネミーソウル 周回補正倍率７",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap8SoulRate",
+      "Name": "エネミーソウル 周回補正倍率８",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap9SoulRate",
+      "Name": "エネミーソウル 周回補正倍率９",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLap10SoulRate",
+      "Name": "エネミーソウル 周回補正倍率１０",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLevelMinSoulRate",
+      "Name": "エネミーソウル レベル補正倍率 最小値",
+      "Description": ""
+    },
+    {
+      "Field": "enemyLevelMaxSoulRate",
+      "Name": "エネミーソウル レベル補正倍率 最大値",
+      "Description": ""
+    },
+    {
+      "Field": "enemyHostBlackSoulRate",
+      "Name": "エネミーソウル ホスト-黒撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyHostRedSoulRate",
+      "Name": "エネミーソウル ホスト-黒撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyWhiteBlackSoulRate",
+      "Name": "エネミーソウル 白-黒撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyWhiteRedSoulRate",
+      "Name": "エネミーソウル 白-赤撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyBlueBlackSoulRate",
+      "Name": "エネミーソウル 青-黒撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyBlueRedSoulRate",
+      "Name": "エネミーソウル 青-赤撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyBlackHostSoulRate",
+      "Name": "エネミーソウル 黒-ホスト撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyBlackWhiteSoulRate",
+      "Name": "エネミーソウル 黒-白撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyBlackBlueSoulRate",
+      "Name": "エネミーソウル 黒-青撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyRedHostSoulRate",
+      "Name": "エネミーソウル 赤-ホスト撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyRedWhiteSoulRate",
+      "Name": "エネミーソウル 赤-白撃破",
+      "Description": ""
+    },
+    {
+      "Field": "enemyRedBlueSoulRate",
+      "Name": "エネミーソウル 赤-青撃破",
+      "Description": ""
+    }
+  ]
+}
