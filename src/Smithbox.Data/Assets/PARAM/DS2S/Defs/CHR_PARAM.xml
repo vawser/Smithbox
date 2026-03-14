@@ -1,123 +1,866 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>CHR_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 chr_id" />
-    <Field Def="s32 behavior_param_id" />
-    <Field Def="s32 common_param_id" />
-    <Field Def="s32 move_param_id" />
-    <Field Def="s32 npc_player_status_param_id" />
-    <Field Def="u8 prevent_resting_related" />
-    <Field Def="u8 Unk00_2" />
-    <Field Def="u16 Unk01" />
-    <Field Def="s32 Unk02" />
-    <Field Def="s32 body_hit_sfx1" />
-    <Field Def="s32 chr_phantom_param_id" />
-    <Field Def="u8 Unk04" />
-    <Field Def="u8 spawn_limit" />
-    <Field Def="u8 can_revive_related" />
-    <Field Def="u8 Unk06" />
-    <Field Def="s32 stat_hp" />
-    <Field Def="f32 stat_stamina" />
-    <Field Def="f32 stat_stamina_regen" />
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
-    <Field Def="u8 Unk09" />
-    <Field Def="u8 Unk10" />
-    <Field Def="u8 Unk11" />
-    <Field Def="u8 Unk12" />
-    <Field Def="u8 Unk13" />
-    <Field Def="u8 Unk14" />
-    <Field Def="f32 Unk15" />
-    <Field Def="s32 logic_com_id" />
-    <Field Def="s32 dead_type_id" />
-    <Field Def="s32 Unk16" />
-    <Field Def="s32 equip_weapon_id_0" />
-    <Field Def="s32 equip_weapon_id_1" />
-    <Field Def="s32 equip_weapon_id_2" />
-    <Field Def="s32 equip_weapon_id_3" />
-    <Field Def="s32 equip_weapon_id_4" />
-    <Field Def="s32 equip_weapon_id_5" />
-    <Field Def="s8 Unk17_1" />
-    <Field Def="s8 Unk17_2" />
-    <Field Def="s8 Unk17_3" />
-    <Field Def="s8 Unk17_4" />
-    <Field Def="s8 Unk18" />
-    <Field Def="s8 chr_round_damage_param_id" />
-    <Field Def="s8 shield_block_level" />
-    <Field Def="s8 Unk19" />
-    <Field Def="s32 Unk20" />
-    <Field Def="s32 shield_hit_sfx" />
-    <Field Def="s32 shield_stability" />
-    <Field Def="s32 shield_absorption_physical" />
-    <Field Def="s32 shield_absorption_magic" />
-    <Field Def="s32 shield_absorption_lightning" />
-    <Field Def="s32 shield_absorption_fire" />
-    <Field Def="s32 shield_absorption_dark" />
-    <Field Def="s32 shield_absorption_poison" />
-    <Field Def="s32 shield_absorption_bleed" />
-    <Field Def="s32 Unk22" />
-    <Field Def="s32 Unk23" />
-    <Field Def="s32 defence_physical" />
-    <Field Def="s32 defence_magic" />
-    <Field Def="s32 defence_lightning" />
-    <Field Def="s32 defence_fire" />
-    <Field Def="s32 defence_dark" />
-    <Field Def="s32 defence_poison" />
-    <Field Def="s32 defence_bleed" />
-    <Field Def="s32 defence_curse" />
-    <Field Def="s32 defence_petrify" />
-    <Field Def="s32 body_hit_sfx2" />
-    <Field Def="s32 Unk25" />
-    <Field Def="s32 Unk26" />
-    <Field Def="s32 Unk27" />
-    <Field Def="s32 souls_held" />
-    <Field Def="s32 Unk28" />
-    <Field Def="f32 base_damage_mult" />
-    <Field Def="f32 vs_player_damage_mult" />
-    <Field Def="f32 vs_enemy_damage_mult" />
-    <Field Def="f32 vs_npc_damage_mult" />
-    <Field Def="f32 unknown_damage_mult" />
-    <Field Def="s32 Unk32" />
-    <Field Def="s32 Unk33" />
-    <Field Def="s32 Unk34" />
-    <Field Def="s32 Unk35" />
-    <Field Def="f32 stat_posture" />
-    <Field Def="f32 stat_posture_regen" />
-    <Field Def="f32 Unk36" />
-    <Field Def="f32 Unk37" />
-    <Field Def="f32 chr_fade_in_on_spawn" />
-    <Field Def="s32 chr_full_body_sfx_param_id" />
-    <Field Def="f32 Unk39" />
-    <Field Def="f32 stat_poise" />
-    <Field Def="f32 stat_poise_regen" />
-    <Field Def="s32 Unk40" />
-    <Field Def="s32 Unk41" />
-    <Field Def="f32 Unk42" />
-    <Field Def="f32 coop_time_reduction" />
-    <Field Def="u8 Unk44" />
-    <Field Def="u8 is_hollow" />
-    <Field Def="u8 Unk45" />
-    <Field Def="u8 chr_round_drop_soul_param_id" />
-    <Field Def="s32 death_itemlot_id" />
-    <Field Def="s32 overkill_death_itemlot_id" />
-    <Field Def="f32 Unk46" />
-    <Field Def="s32 stat_hp_ng1" />
-    <Field Def="s32 stat_hp_ng2" />
-    <Field Def="s32 stat_hp_ng3" />
-    <Field Def="s32 stat_hp_ng4" />
-    <Field Def="s32 stat_hp_ng5" />
-    <Field Def="s32 stat_hp_ng6" />
-    <Field Def="s32 stat_hp_ng7" />
-    <Field Def="s32 name_text_id" />
-    <Field Def="s8 drops_awestone" />
-    <Field Def="u8 Unk47" />
-    <Field Def="u8 Unk48" />
-    <Field Def="u8 Unk49" />
-    <Field Def="s32 speffect_id" />
-  </Fields>
+    <ParamType>CHR_PARAM</ParamType>
+    <DataVersion>51</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 modelId = 9,000">
+            <DisplayName>モデルID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s32 animId">
+            <DisplayName>アニメID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="s32 commonId">
+            <DisplayName>共通ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s32 moveId">
+            <DisplayName>移動ＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="s32 npcStatusId">
+            <DisplayName>NPCステータスＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="s32 groupType">
+            <DisplayName>所属設定</DisplayName>
+            <Enum>CHR_GROUP_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s32 categoryType">
+            <DisplayName>キャラクターカテゴリ</DisplayName>
+            <Enum>CHR_CATEGORY_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="u32 materialType">
+            <DisplayName>本体材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s32 visualType">
+            <DisplayName>見た目</DisplayName>
+            <Enum>CHR_VISUAL_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="u8 multiplayParamId">
+            <DisplayName>マルチプレイ補正ID</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1700</SortID>
+        </Field>
+        <Field Def="u8 respawnNum">
+            <DisplayName>リスポーン数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 isUndead">
+            <DisplayName>死亡しない</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="u8 isRunaway">
+            <DisplayName>落下死亡時に逃亡する</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="s32 hitPoint = 1">
+            <DisplayName>体力　1周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>140</SortID>
+        </Field>
+        <Field Def="f32 staminaPoint = 1">
+            <DisplayName>スタミナ値</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>150</SortID>
+        </Field>
+        <Field Def="f32 staminaRecoveryValue = 1">
+            <DisplayName>秒間スタミナ回復値 [point/s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>160</SortID>
+        </Field>
+        <Field Def="f32 staminaLoanMin">
+            <DisplayName>スタミナ 借金量 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-9999999</Minimum>
+            <Increment>1</Increment>
+            <SortID>170</SortID>
+        </Field>
+        <Field Def="f32 staminaLoanMax">
+            <DisplayName>スタミナ 借金量 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-9999999</Minimum>
+            <Increment>1</Increment>
+            <SortID>180</SortID>
+        </Field>
+        <Field Def="f32 staminaCostMoveBase = 1">
+            <DisplayName>スタミナ消費量 ベース値</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="u32 deadType">
+            <DisplayName>死亡タイプ１</DisplayName>
+            <Enum>DEAD_TYPE_PARAM_ID</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u32 deadType02">
+            <DisplayName>死亡タイプ２</DisplayName>
+            <Enum>DEAD_TYPE_PARAM_ID</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>210</SortID>
+        </Field>
+        <Field Def="s32 defaultEquipWeapon">
+            <DisplayName>初期装備</DisplayName>
+            <Enum>ENEMY_WEAPON_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>220</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId00">
+            <DisplayName>所持装備 装備１武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>230</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId01">
+            <DisplayName>所持装備 装備２武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>240</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId02">
+            <DisplayName>所持装備 装備３武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>250</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId03">
+            <DisplayName>所持装備 装備４武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>260</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId04">
+            <DisplayName>所持装備 装備５武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>270</SortID>
+        </Field>
+        <Field Def="s32 equipWeaponAId05">
+            <DisplayName>所持装備 装備６武器ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>280</SortID>
+        </Field>
+        <Field Def="s8 equipAccessory01 = -1">
+            <DisplayName>装飾品カリングID1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>290</SortID>
+        </Field>
+        <Field Def="s8 equipAccessory02 = -1">
+            <DisplayName>装飾品カリングID2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s8 equipAccessory03 = -1">
+            <DisplayName>装飾品カリングID3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>310</SortID>
+        </Field>
+        <Field Def="s8 equipAccessory04 = -1">
+            <DisplayName>装飾品カリングID4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>320</SortID>
+        </Field>
+        <Field Def="s8 equipAccessory05 = -1">
+            <DisplayName>装飾品カリングID5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>64</Maximum>
+            <Increment>1</Increment>
+            <SortID>330</SortID>
+        </Field>
+        <Field Def="u8 roundDamageCategory">
+            <DisplayName>周回ダメージ補正カテゴリ</DisplayName>
+            <Enum>CHR_ROUND_DAMAGE_CATEGORY</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1500</SortID>
+        </Field>
+        <Field Def="u8 guardPassiveLevelType">
+            <DisplayName>盾 ガードレベル</DisplayName>
+            <Enum>GUARD_PASSIVE_LEVEL_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>370</SortID>
+        </Field>
+        <Field Def="u8 parryType">
+            <DisplayName>盾 パリィ種類</DisplayName>
+            <Enum>PARRY_TYPES</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>380</SortID>
+        </Field>
+        <Field Def="u32 spellParrySfxId">
+            <DisplayName>盾 スペルパリィSFXID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>390</SortID>
+        </Field>
+        <Field Def="u32 shieldMaterialType">
+            <DisplayName>盾 盾材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>350</SortID>
+        </Field>
+        <Field Def="s32 shieldReceiveValue">
+            <DisplayName>盾 受け能力</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldDefenseValue">
+            <DisplayName>盾 防御力</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldMagicDefenseValue">
+            <DisplayName>盾 魔力耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldMiracleDefenseValue">
+            <DisplayName>盾 奇蹟耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldPyromancyDefenseValue">
+            <DisplayName>盾 呪術耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldDarkMagicDefenseValue">
+            <DisplayName>盾 闇術耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldPoisonDefenseValue">
+            <DisplayName>盾 毒耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldBleedingDefenseValue">
+            <DisplayName>盾 出血耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldDestructionDefenseValue">
+            <DisplayName>盾 武器破壊耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 shieldCurseDefenseValue">
+            <DisplayName>盾 呪い耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 armorDefenseValue">
+            <DisplayName>防具 防御力</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>490</SortID>
+        </Field>
+        <Field Def="s32 armorMagicDefenseValue">
+            <DisplayName>防具 魔力耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="s32 armorMiracleDefenseValue">
+            <DisplayName>防具 奇蹟耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>510</SortID>
+        </Field>
+        <Field Def="s32 armorPyromancyDefenseValue">
+            <DisplayName>防具 呪術耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>520</SortID>
+        </Field>
+        <Field Def="s32 armorDarkMagicDefenseValue">
+            <DisplayName>防具 闇術耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>530</SortID>
+        </Field>
+        <Field Def="s32 armorPoisonDefenseValue">
+            <DisplayName>防具 毒耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>540</SortID>
+        </Field>
+        <Field Def="s32 armorBleedingDefenseValue">
+            <DisplayName>防具 出血耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>550</SortID>
+        </Field>
+        <Field Def="s32 armorDestructionDefenseValue">
+            <DisplayName>防具 武器破壊耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>560</SortID>
+        </Field>
+        <Field Def="s32 armorCurseDefenseValue">
+            <DisplayName>防具 呪い耐性</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>570</SortID>
+        </Field>
+        <Field Def="u32 armorMaterialType">
+            <DisplayName>防具 材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>580</SortID>
+        </Field>
+        <Field Def="s32 armorToughValue">
+            <DisplayName>防具 強靱度</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>590</SortID>
+        </Field>
+        <Field Def="s32 armorStunBaseValue">
+            <DisplayName>防具 気絶基本ゲージ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10000</Maximum>
+            <Increment>1</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="f32 armorStunRecoveryRate">
+            <DisplayName>防具 気絶回復速度 [%/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>610</SortID>
+        </Field>
+        <Field Def="s32 dropSoulValue">
+            <DisplayName>入手ソウル量</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>620</SortID>
+        </Field>
+        <Field Def="s32 dropType">
+            <DisplayName>ドロップ抽選タイプ</DisplayName>
+            <Enum>CHR_ITEM_DROP_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>630</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustRate = 1">
+            <DisplayName>ダメージ倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>640</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustRatePlayer = 1">
+            <DisplayName>ダメージ倍率 プレイヤー</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>650</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustRateEnemy = 1">
+            <DisplayName>ダメージ倍率　エネミー</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>660</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustRateNeutral = 1">
+            <DisplayName>ダメージ倍率　中立</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>670</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustRateHitObj = 1">
+            <DisplayName>被ダメージ倍率　OBJ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>680</SortID>
+        </Field>
+        <Field Def="u32 residentDamageId1">
+            <DisplayName>常時ダメージＩＤ１</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>690</SortID>
+        </Field>
+        <Field Def="u32 residentDamageId2">
+            <DisplayName>常時ダメージＩＤ２</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="u32 residentDamageId3">
+            <DisplayName>常時ダメージＩＤ３</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>710</SortID>
+        </Field>
+        <Field Def="u8 stunDisableFlag = 1">
+            <DisplayName>気絶無効フラグ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>730</SortID>
+        </Field>
+        <Field Def="u8 isPartsGuardDamage">
+            <DisplayName>部位はじき：ダメージ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="u8 isPartsGuardBullet">
+            <DisplayName>部位はじき：バレット</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>810</SortID>
+        </Field>
+        <Field Def="u8 isPartsGuardSpellParry">
+            <DisplayName>部位はじき：スペルパリィ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>820</SortID>
+        </Field>
+        <Field Def="f32 stunMaxValue = 1">
+            <DisplayName>気絶値最大値</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>740</SortID>
+        </Field>
+        <Field Def="f32 stunRecoverValue = 1">
+            <DisplayName>気絶値回復速度[sec/point]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>750</SortID>
+        </Field>
+        <Field Def="f32 changeStunMaxValue = 1">
+            <DisplayName>[変更時]気絶値最大値</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>760</SortID>
+        </Field>
+        <Field Def="f32 changeStunRecoverValue = 1">
+            <DisplayName>[変更時]気絶値回復速度[sec/point]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>770</SortID>
+        </Field>
+        <Field Def="f32 fadeInTime">
+            <DisplayName>フェードイン時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>780</SortID>
+        </Field>
+        <Field Def="u32 generateSfx">
+            <DisplayName>生成時SFX</DisplayName>
+            <Enum>CHR_FULLBODY_SFX_PARAM_ENUM</Enum>
+            <SortID>790</SortID>
+        </Field>
+        <Field Def="f32 partsGuardSpellParryAngle">
+            <DisplayName>部位はじき：スペルパリィ有効角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>830</SortID>
+        </Field>
+        <Field Def="f32 poiseValue">
+            <DisplayName>強靭度ゲージ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>840</SortID>
+        </Field>
+        <Field Def="f32 poiseRecoveryValue">
+            <DisplayName>強靭度回復量[p/s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>850</SortID>
+        </Field>
+        <Field Def="f32 changePoiseValue">
+            <DisplayName>[変更時]強靭度ゲージ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>860</SortID>
+        </Field>
+        <Field Def="f32 changePoiseRecoveryValue">
+            <DisplayName>[変更時]強靭度回復量[p/s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>870</SortID>
+        </Field>
+        <Field Def="f32 overKillRate">
+            <DisplayName>オーバーキル HP割合</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>880</SortID>
+        </Field>
+        <Field Def="f32 decLimitTime">
+            <DisplayName>マルチプレイ制限時間減少量[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>890</SortID>
+        </Field>
+        <Field Def="u8 isDisallowMultiTarget">
+            <DisplayName>複数ロックオン無効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>900</SortID>
+        </Field>
+        <Field Def="u8 isHollow">
+            <DisplayName>亡者</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>81</SortID>
+        </Field>
+        <Field Def="u8 isClothHitMap">
+            <DisplayName>クロスがマップと当たる</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>720</SortID>
+        </Field>
+        <Field Def="u8 roundDropSoulCategory">
+            <DisplayName>周回獲得ソウル補正カテゴリ</DisplayName>
+            <Enum>CHR_ROUND_DROP_SOUL_CATEGORY</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1500</SortID>
+        </Field>
+        <Field Def="u32 itemLotId">
+            <DisplayName>初週アイテム抽選ID（ホスト）</DisplayName>
+            <Enum>ITEM_LOT_PARAM_CHR_ENUM</Enum>
+            <SortID>910</SortID>
+        </Field>
+        <Field Def="u32 itemLotIdForGuest">
+            <DisplayName>初週アイテム抽選ID（ゲスト）</DisplayName>
+            <Enum>ITEM_LOT_PARAM_CHR_ENUM</Enum>
+            <SortID>911</SortID>
+        </Field>
+        <Field Def="f32 guardDelay">
+            <DisplayName>ガード判定遅延時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>370</SortID>
+        </Field>
+        <Field Def="s32 hitPoint02 = 1">
+            <DisplayName>体力　2周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint03 = 1">
+            <DisplayName>体力　3周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint04 = 1">
+            <DisplayName>体力　4周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint05 = 1">
+            <DisplayName>体力　5周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint06 = 1">
+            <DisplayName>体力　6周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint07 = 1">
+            <DisplayName>体力　7周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="s32 hitPoint08 = 1">
+            <DisplayName>体力　8周目</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="u32 nameTextId">
+            <DisplayName>キャラ名テキストID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1800</SortID>
+        </Field>
+        <Field Def="u8 bStrongDrop">
+            <DisplayName>強者ドロップ</DisplayName>
+            <Enum>BOOL_YESNO_TYPE</Enum>
+            <SortID>635</SortID>
+        </Field>
+        <Field Def="u8 bThrowableByEnemy">
+            <DisplayName>敵に投げられるのが可能か</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>131</SortID>
+        </Field>
+        <Field Def="u8 bBulletAllDelete">
+            <DisplayName>弾全削除</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="dummy8 padding[1]">
+            <DisplayName>予約</DisplayName>
+            <SortID>9999</SortID>
+        </Field>
+        <Field Def="u32 effectID">
+            <DisplayName>SpEffectID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2100</SortID>
+        </Field>    
+    </Fields>
 </PARAMDEF>

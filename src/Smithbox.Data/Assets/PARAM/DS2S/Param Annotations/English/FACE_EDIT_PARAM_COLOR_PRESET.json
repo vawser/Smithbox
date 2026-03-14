@@ -1,0 +1,23 @@
+{
+  "Param": "FACE_EDIT_PARAM_COLOR_PRESET",
+  "Type": "FACE_EDIT_PARAM_COLOR_PRESET",
+  "Name": "FACE_EDIT_PARAM_COLOR_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "red",
+      "Name": "赤",
+      "Description": ""
+    },
+    {
+      "Field": "green",
+      "Name": "緑",
+      "Description": ""
+    },
+    {
+      "Field": "blue",
+      "Name": "青",
+      "Description": ""
+    }
+  ]
+}

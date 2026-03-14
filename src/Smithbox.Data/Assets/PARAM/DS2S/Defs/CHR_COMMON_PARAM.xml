@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>CHR_COMMON_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
+    <ParamType>CHR_COMMON_PARAM</ParamType>
+    <DataVersion>33</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
         <Field Def="s32 heightType">
             <DisplayName>身長</DisplayName>
             <Enum>CHR_HEIGHT_TYPE</Enum>

@@ -28,7 +28,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
             var metaDict = CurrentView.GetParamData().ParamMeta;
             pMeta = metaDict[row.Item2.Def];
 
-            pAnnotation = CurrentView.GetParamData().GetParamAnnotations(CurrentView.Selection.GetActiveParam());
+            pAnnotation = CurrentView.GetParamData().GetParamAnnotations(row.Item2.Def.ParamType);
 
             List<(ParamEditorPseudoColumn, Param.Column)> list = new();
             list.Add((ParamEditorPseudoColumn.ID, null));

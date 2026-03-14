@@ -26,7 +26,101 @@ public class QuickScript
 
     public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        GenerateFieldLayouts(curProject);
+        UpdateAnnotations(curProject);
+    }
+
+    public static void UpdateAnnotations(ProjectEntry curProject)
+    {
+        var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        var outputFolder = $@"C:\Users\benja\Programming\Reference\Annotations\{type}";
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        var paramData = curProject.Handler.ParamData;
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in paramData.PrimaryBank.Params)
+        {
+            var key = entry.Key;
+
+            var def = entry.Value.AppliedParamdef;
+            var meta = paramData.GetParamMeta(entry.Value.AppliedParamdef);
+
+            var annotationEntry = paramData.GetParamAnnotations(entry.Value.AppliedParamdef.ParamType);
+
+            annotationEntry.Param = entry.Value.AppliedParamdef.ParamType;
+            annotationEntry.Type = entry.Value.AppliedParamdef.ParamType;
+            annotationEntry.Name = entry.Value.AppliedParamdef.ParamType;
+
+            var outputPath = Path.Combine(outputFolder, $"{entry.Value.AppliedParamdef.ParamType}.json");
+
+            var jsonString = JsonSerializer.Serialize(annotationEntry, typeof(ParamAnnotationEntry), options);
+
+            File.WriteAllText(outputPath, jsonString);
+        }
+    }
+
+    public static void GenerateAnnotations(ProjectEntry curProject)
+    {
+        var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
+
+        var outputFolder = $@"C:\Users\benja\Programming\Reference\Annotations\{type}";
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Directory.CreateDirectory(outputFolder);
+        }
+
+        var paramData = curProject.Handler.ParamData;
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in paramData.PrimaryBank.Params)
+        {
+            var key = entry.Key;
+
+            var def = entry.Value.AppliedParamdef;
+            var meta = paramData.GetParamMeta(entry.Value.AppliedParamdef);
+
+            var outputPath = Path.Combine(outputFolder, $"{key}.json");
+
+            var annotationEntry = new ParamAnnotationEntry();
+
+            annotationEntry.Param = entry.Key;
+            annotationEntry.Type = def.ParamType;
+            annotationEntry.Name = entry.Key;
+            annotationEntry.Description = "";
+
+            foreach (var field in def.Fields)
+            {
+                var currentEntry = new ParamAnnotationFieldEntry();
+
+                currentEntry.Field = field.InternalName;
+                currentEntry.Name = field.DisplayName;
+                currentEntry.Description = "";
+
+                annotationEntry.Fields.Add(currentEntry);
+            }
+
+            var jsonString = JsonSerializer.Serialize(annotationEntry, typeof(ParamAnnotationEntry), options);
+
+            File.WriteAllText(outputPath, jsonString);
+        }
     }
 
     public static void GenerateFieldLayouts(ProjectEntry curProject)
@@ -34,7 +128,6 @@ public class QuickScript
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
-
 
         if (!Directory.Exists(outputFolder))
         {

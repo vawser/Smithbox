@@ -1,0 +1,23 @@
+{
+  "Param": "TORCH_CTRL_PARAM",
+  "Type": "TORCH_CTRL_PARAM",
+  "Name": "TORCH_CTRL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "lightId",
+      "Name": "光源ID",
+      "Description": ""
+    },
+    {
+      "Field": "life",
+      "Name": "寿命[秒]",
+      "Description": ""
+    }
+  ]
+}

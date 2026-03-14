@@ -1,0 +1,43 @@
+{
+  "Param": "FACE_EDIT_PARAM",
+  "Type": "FACE_EDIT_PARAM",
+  "Name": "FACE_EDIT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minValue",
+      "Name": "最低変動値",
+      "Description": ""
+    },
+    {
+      "Field": "maxValue",
+      "Name": "最大変動値",
+      "Description": ""
+    },
+    {
+      "Field": "faceParamType",
+      "Name": "FaceGenParam名",
+      "Description": ""
+    },
+    {
+      "Field": "faceParamCategory",
+      "Name": "カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "montageUsed",
+      "Name": "モンタージュ使用",
+      "Description": ""
+    },
+    {
+      "Field": "menuReverse",
+      "Name": "メニュー反転操作",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー\u3000",
+      "Description": ""
+    }
+  ]
+}

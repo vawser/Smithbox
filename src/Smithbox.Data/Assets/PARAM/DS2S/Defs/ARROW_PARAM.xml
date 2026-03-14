@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>ARROW_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
+    <ParamType>ARROW_PARAM</ParamType>
+    <DataVersion>6</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
         <Field Def="s32 sfxId = 1">
             <DisplayName>構え中表示弾SFXID</DisplayName>
             <DisplayFormat>%d</DisplayFormat>
@@ -174,7 +174,7 @@
             <Increment>1</Increment>
             <SortID>1202</SortID>
         </Field>
-        <Field Def="u16 menuFireAttack">
+        <Field Def="u16 menufireAttack">
             <DisplayName>炎攻撃力</DisplayName>
             <DisplayFormat>%d</DisplayFormat>
             <EditFlags>Wrap</EditFlags>

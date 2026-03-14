@@ -1,18 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>HIT_BACK_MATRIX_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 Unk01" />
-    <Field Def="s32 Unk02" />
-    <Field Def="s32 Unk03" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk05" />
-    <Field Def="s32 Unk06" />
-    <Field Def="s32 Unk07" />
-  </Fields>
+    <ParamType>HIT_BACK_MATRIX_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 noneSize">
+            <DisplayName>無</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u32 superSmallSize">
+            <DisplayName>極小</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u32 smallSize">
+            <DisplayName>小</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u32 normalSize">
+            <DisplayName>中</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u32 largeSize">
+            <DisplayName>大</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u32 superLargeSize">
+            <DisplayName>特大</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u32 hyperLargeSize">
+            <DisplayName>超特大</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u32 ultraLargeSize">
+            <DisplayName>超超特大</DisplayName>
+            <Enum>HIT_BACK_WEIGHT_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>31</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

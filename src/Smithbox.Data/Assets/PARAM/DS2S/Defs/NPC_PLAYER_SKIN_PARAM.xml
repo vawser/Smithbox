@@ -1,23 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>NPC_PLAYER_SKIN_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="u8 Unk01a" />
-    <Field Def="u8 Unk01b" />
-    <Field Def="u8 Unk01c" />
-    <Field Def="u8 Unk01d" />
-    <Field Def="u8 Unk02a" />
-    <Field Def="u8 Unk02b" />
-    <Field Def="u8 Unk02c" />
-    <Field Def="u8 Unk02d" />
-    <Field Def="u8 Unk03a" />
-    <Field Def="u8 Unk03b" />
-    <Field Def="u8 Unk03c" />
-    <Field Def="u8 Unk03d" />
-  </Fields>
+    <ParamType>NPC_PLAYER_SKIN_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 skinNo = 1">
+            <DisplayName>肌番号</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>2</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[3]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 skinR">
+            <DisplayName>肌R</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 skinG">
+            <DisplayName>肌G</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 skinB">
+            <DisplayName>肌B</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>4</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

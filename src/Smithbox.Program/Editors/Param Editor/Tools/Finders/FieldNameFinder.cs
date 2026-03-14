@@ -221,7 +221,7 @@ public class FieldNameFinder
 
             var def = p.Value.AppliedParamdef;
             var meta = Editor.Project.Handler.ParamData.GetParamMeta(def);
-            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Key);
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(def.ParamType);
 
             foreach (var field in def.Fields)
             {

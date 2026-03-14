@@ -168,7 +168,7 @@ public class ParamListWindow
                     if (p != null)
                     {
                         var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
+                        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.AppliedParamdef.ParamType);
 
                         var Wiki = annotations?.Description;
                         if (Wiki != null)
@@ -335,7 +335,7 @@ public class ParamListWindow
             if (p != null)
             {
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
+                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.AppliedParamdef.ParamType);
 
                 var Wiki = annotations?.Description;
                 if (Wiki != null)

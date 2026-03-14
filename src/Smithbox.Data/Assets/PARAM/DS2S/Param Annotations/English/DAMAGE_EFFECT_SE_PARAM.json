@@ -1,0 +1,228 @@
+{
+  "Param": "DAMAGE_EFFECT_SE_PARAM",
+  "Type": "DAMAGE_EFFECT_SE_PARAM",
+  "Name": "DAMAGE_EFFECT_SE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "materialNone",
+      "Name": "なし",
+      "Description": ""
+    },
+    {
+      "Field": "materialMetal",
+      "Name": "鉄",
+      "Description": ""
+    },
+    {
+      "Field": "materialHeavyMetal",
+      "Name": "重鉄",
+      "Description": ""
+    },
+    {
+      "Field": "materialWood",
+      "Name": "木",
+      "Description": ""
+    },
+    {
+      "Field": "materialWater",
+      "Name": "水",
+      "Description": ""
+    },
+    {
+      "Field": "materialSwamp",
+      "Name": "沼",
+      "Description": ""
+    },
+    {
+      "Field": "materialLumber",
+      "Name": "木材",
+      "Description": ""
+    },
+    {
+      "Field": "materialMeat",
+      "Name": "生者肉",
+      "Description": ""
+    },
+    {
+      "Field": "materialDeadMeat",
+      "Name": "亡者肉",
+      "Description": ""
+    },
+    {
+      "Field": "materialInsect",
+      "Name": "虫",
+      "Description": ""
+    },
+    {
+      "Field": "materialGiant",
+      "Name": "巨人",
+      "Description": ""
+    },
+    {
+      "Field": "materialBone",
+      "Name": "骨",
+      "Description": ""
+    },
+    {
+      "Field": "materialCopper",
+      "Name": "銅",
+      "Description": ""
+    },
+    {
+      "Field": "materialEnergy",
+      "Name": "エネルギー",
+      "Description": ""
+    },
+    {
+      "Field": "materialFire",
+      "Name": "炎",
+      "Description": ""
+    },
+    {
+      "Field": "materialThunder",
+      "Name": "雷",
+      "Description": ""
+    },
+    {
+      "Field": "materialDark",
+      "Name": "闇",
+      "Description": ""
+    },
+    {
+      "Field": "materialMagicalPower",
+      "Name": "魔力",
+      "Description": ""
+    },
+    {
+      "Field": "materialStone",
+      "Name": "石",
+      "Description": ""
+    },
+    {
+      "Field": "materialDirt",
+      "Name": "土",
+      "Description": ""
+    },
+    {
+      "Field": "materialCarpet",
+      "Name": "カーペット",
+      "Description": ""
+    },
+    {
+      "Field": "materialGrass",
+      "Name": "草",
+      "Description": ""
+    },
+    {
+      "Field": "materialBallast",
+      "Name": "砂利",
+      "Description": ""
+    },
+    {
+      "Field": "materialCloth",
+      "Name": "布",
+      "Description": ""
+    },
+    {
+      "Field": "materialSand",
+      "Name": "砂",
+      "Description": ""
+    },
+    {
+      "Field": "materialAsh",
+      "Name": "灰",
+      "Description": ""
+    },
+    {
+      "Field": "materialPoisonSwamp",
+      "Name": "毒沼",
+      "Description": ""
+    },
+    {
+      "Field": "materialOil",
+      "Name": "油",
+      "Description": ""
+    },
+    {
+      "Field": "materialCoalTar",
+      "Name": "コールタール",
+      "Description": ""
+    },
+    {
+      "Field": "materialLava",
+      "Name": "溶岩",
+      "Description": ""
+    },
+    {
+      "Field": "materialThread",
+      "Name": "蜘蛛の糸",
+      "Description": ""
+    },
+    {
+      "Field": "materialCrystal",
+      "Name": "硫黄結晶",
+      "Description": ""
+    },
+    {
+      "Field": "materialSoul",
+      "Name": "ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "materialFrog",
+      "Name": "美声カエル",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial0",
+      "Name": "美声カエル",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial1",
+      "Name": "美声カエル [1]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial2",
+      "Name": "美声カエル [2]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial3",
+      "Name": "美声カエル [3]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial4",
+      "Name": "美声カエル [4]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial5",
+      "Name": "美声カエル [5]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial6",
+      "Name": "美声カエル [6]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial7",
+      "Name": "美声カエル [7]",
+      "Description": ""
+    },
+    {
+      "Field": "unkMaterial8",
+      "Name": "美声カエル [8]",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

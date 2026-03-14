@@ -64,7 +64,7 @@ public class ParamRowWindow
                 var curParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[activeParam];
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(curParam.AppliedParamdef);
 
-                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(activeParam);
+                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(curParam.AppliedParamdef.ParamType);
 
                 var pinnedRowList = Editor.Project.Descriptor.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();

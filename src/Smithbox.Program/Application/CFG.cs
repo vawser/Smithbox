@@ -381,6 +381,9 @@ public class CFG
     public int Toolbar_EntityGroupID = 0;
     public string Toolbar_EntityGroup_Attribute = "";
 
+    // Param Properties
+    public bool MapEditor_Field_List_Display_Padding = false;
+
     // Windows
     public bool Interface_MapEditor_Viewport_Grid = true;
     public bool Interface_MapEditor_MapList = true;

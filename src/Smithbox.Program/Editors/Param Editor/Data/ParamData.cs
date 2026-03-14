@@ -489,7 +489,7 @@ public class ParamData : IDisposable
         }
     }
 
-    public ParamAnnotationEntry GetParamAnnotations(string paramName)
+    public ParamAnnotationEntry GetParamAnnotations(string paramType)
     {
         var curLangString = CFG.Current.ParamEditor_Annotation_Language;
         var curLang = ParamAnnotationLanguages.Languages.FirstOrDefault(e => e.Name == curLangString);
@@ -498,7 +498,7 @@ public class ParamData : IDisposable
             return null;
 
         var curAnnotations = ParamAnnotations.Entries[curLang];
-        var curParam = curAnnotations.Params.FirstOrDefault(e => e.Param == paramName);
+        var curParam = curAnnotations.Params.FirstOrDefault(e => e.Type == paramType);
 
         if(curParam == null)
             return null;

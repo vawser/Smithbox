@@ -248,7 +248,7 @@ public class FieldValueFinder
             }
 
             var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.Value.AppliedParamdef);
-            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Key);
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Value.AppliedParamdef.ParamType);
 
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {

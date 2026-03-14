@@ -1,0 +1,33 @@
+{
+  "Param": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Type": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Name": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bodyScaleHead",
+      "Name": "頭",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "胸",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "腹",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleArm",
+      "Name": "腕",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLeg",
+      "Name": "足",
+      "Description": ""
+    }
+  ]
+}

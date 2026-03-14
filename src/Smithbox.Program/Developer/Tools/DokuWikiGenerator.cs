@@ -40,7 +40,7 @@ public static class DokuWikiGenerator
 
         foreach(var param in curProject.Handler.ParamData.PrimaryBank.Params)
         {
-            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Key);
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Value.AppliedParamdef.ParamType);
 
             var sanitizedWiki = $"{annotations.Description}".Replace("\n", ", ").Replace("|", "-");
 
@@ -215,7 +215,7 @@ public static class DokuWikiGenerator
                 }
             }
 
-            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(targetParamDef.AppliedParamdef.ParamType);
             var sanitizedWiki = $"{annotations.Description}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
 
             var colString = "";

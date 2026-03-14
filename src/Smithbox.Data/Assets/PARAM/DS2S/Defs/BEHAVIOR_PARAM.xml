@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>BEHAVIOR_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
+    <ParamType>BEHAVIOR_PARAM</ParamType>
+    <DataVersion>13</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
         <Field Def="s32 action0DamageId00 = -1">
             <DisplayName>《行動0 ダメージID_1》</DisplayName>
             <DisplayFormat>%d</DisplayFormat>

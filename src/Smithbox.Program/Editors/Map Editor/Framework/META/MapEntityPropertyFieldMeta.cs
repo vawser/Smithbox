@@ -28,7 +28,7 @@ public class MapEntityPropertyFieldMeta
 
     public List<string> MapRef { get; set; } = new List<string>();
 
-    public MapParamEnum EnumType { get; set; }
+    public string EnumType { get; set; }
 
     public string AltName { get; set; } = string.Empty;
 
@@ -99,7 +99,7 @@ public class MapEntityPropertyFieldMeta
         XmlAttribute tEnum = entry.Attributes["Enum"];
         if (tEnum != null)
         {
-            EnumType = parent.EnumList.GetValueOrDefault(tEnum.InnerText, null);
+            EnumType = tEnum.InnerText;
         }
 
         // MapRef

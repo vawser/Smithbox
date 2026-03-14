@@ -1,120 +1,596 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>PLAYER_COMMON_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 roll_input_wait_time" />
-    <Field Def="f32 sprint_stamina_drain_time" />
-    <Field Def="f32 out_of_stamina_state_time" />
-    <Field Def="f32 Unk14" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 min_speed_for_jump" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk2C" />
-    <Field Def="f32 Unk30" />
-    <Field Def="f32 Unk34" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk3C" />
-    <Field Def="f32 Unk40" />
-    <Field Def="f32 Unk44" />
-    <Field Def="f32 Unk48" />
-    <Field Def="f32 Unk4C" />
-    <Field Def="f32 Unk50" />
-    <Field Def="f32 Unk54" />
-    <Field Def="f32 Unk58" />
-    <Field Def="f32 Unk5C" />
-    <Field Def="f32 Unk60" />
-    <Field Def="f32 Unk64" />
-    <Field Def="f32 Unk68" />
-    <Field Def="s32 Unk6C" />
-    <Field Def="f32 Unk70" />
-    <Field Def="f32 Unk74" />
-    <Field Def="f32 Unk78" />
-    <Field Def="f32 Unk7C" />
-    <Field Def="f32 Unk80" />
-    <Field Def="f32 Unk84" />
-    <Field Def="f32 Unk88" />
-    <Field Def="f32 Unk8C" />
-    <Field Def="f32 Unk90" />
-    <Field Def="f32 Unk94" />
-    <Field Def="f32 Unk98" />
-    <Field Def="f32 Unk9C" />
-    <Field Def="f32 UnkA0" />
-    <Field Def="f32 UnkA4" />
-    <Field Def="f32 UnkA8" />
-    <Field Def="f32 UnkAC" />
-    <Field Def="f32 UnkB0" />
-    <Field Def="f32 UnkB4" />
-    <Field Def="f32 UnkB8" />
-    <Field Def="f32 UnkBC" />
-    <Field Def="f32 UnkC0" />
-    <Field Def="f32 UnkC4" />
-    <Field Def="s32 UnkC8" />
-    <Field Def="s32 UnkCC" />
-    <Field Def="f32 UnkD0" />
-    <Field Def="f32 UnkD4" />
-    <Field Def="f32 UnkD8" />
-    <Field Def="f32 UnkDC" />
-    <Field Def="f32 UnkE0" />
-    <Field Def="f32 UnkE4" />
-    <Field Def="f32 UnkE8" />
-    <Field Def="f32 UnkEC" />
-    <Field Def="f32 UnkF0" />
-    <Field Def="f32 UnkF4" />
-    <Field Def="f32 UnkF8" />
-    <Field Def="f32 UnkFC" />
-    <Field Def="f32 Unk100" />
-    <Field Def="f32 Unk104" />
-    <Field Def="f32 Unk108" />
-    <Field Def="f32 Unk10C" />
-    <Field Def="f32 item_discovery_mult_ng0" />
-    <Field Def="f32 item_discovery_mult_ng1" />
-    <Field Def="f32 item_discovery_mult_ng2" />
-    <Field Def="f32 item_discovery_mult_ng3" />
-    <Field Def="f32 item_discovery_mult_ng4" />
-    <Field Def="f32 item_discovery_mult_ng5" />
-    <Field Def="f32 item_discovery_mult_ng6" />
-    <Field Def="f32 item_discovery_mult_ng7" />
-    <Field Def="f32 Unk130" />
-    <Field Def="f32 Unk134" />
-    <Field Def="f32 Unk138" />
-    <Field Def="f32 shield_letter_scaling_S_guard_mult" />
-    <Field Def="f32 shield_letter_scaling_A_guard_mult" />
-    <Field Def="f32 shield_letter_scaling_B_guard_mult" />
-    <Field Def="f32 shield_letter_scaling_C_guard_mult" />
-    <Field Def="f32 shield_letter_scaling_D_guard_mult" />
-    <Field Def="f32 shield_letter_scaling_E_guard_mult" />
-    <Field Def="f32 chr_hit_durability_drain" />
-    <Field Def="f32 map_hit_durability_drain" />
-    <Field Def="f32 spell_use_durability_drain" />
-    <Field Def="f32 move_bullet_durability_drain" />
-    <Field Def="f32 Unk164" />
-    <Field Def="f32 Unk168" />
-    <Field Def="f32 Unk16C" />
-    <Field Def="f32 Unk170" />
-    <Field Def="f32 Unk174" />
-    <Field Def="f32 Unk178" />
-    <Field Def="s32 Unk17C" />
-    <Field Def="f32 pvp_backstab_damage_mult" />
-    <Field Def="f32 pvp_riposte_damage_mult" />
-    <Field Def="f32 pvp_guardbreak_damage_mult" />
-    <Field Def="f32 Unk18C" />
-    <Field Def="f32 Unk190" />
-    <Field Def="f32 Unk194" />
-    <Field Def="f32 Unk198" />
-    <Field Def="f32 Unk19C" />
-    <Field Def="f32 Unk1A0" />
-    <Field Def="f32 Unk1A4" />
-    <Field Def="f32 Unk1A8" />
-    <Field Def="f32 Unk1AC" />
-    <Field Def="f32 Unk1B0" />
-    <Field Def="f32 Unk1B4" />
-  </Fields>
+    <ParamType>PLAYER_COMMON_PARAM</ParamType>
+    <DataVersion>27</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 parallelWalkMaxInput = 50">
+            <DisplayName>平行移動 入力感度 最大 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 parallelWalkKeepInputTime">
+            <DisplayName>平行移動 発生入力時間 [sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 dodgeInputTime">
+            <DisplayName>回避 入力判定時間[sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 keepDashFinishStateTime">
+            <DisplayName>ダッシュ 継続時間 [sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 dashIntervalTime">
+            <DisplayName>ダッシュ インターバル [sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 keepDashEndMoveMaxInput">
+            <DisplayName>ダッシュ終了移動 入力感度 最大 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 keepDashEndMoveStateTime">
+            <DisplayName>ダッシュ終了移動 継続時間 [sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 jumpTriggerMinSpeed">
+            <DisplayName>ジャンプ可能速度 [m/sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 standJumpTriggerMaxSpeed">
+            <DisplayName>スタンドジャンプ可能速度 [m/sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="angle32 turnTriggerMinAngleIdleAndWalk">
+            <DisplayName>待機＆歩き急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="angle32 turnTriggerMinAngleJog">
+            <DisplayName>走り急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="angle32 turnTriggerMinAngleDash">
+            <DisplayName>ダッシュ急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 turnWalkSpeedPercentage">
+            <DisplayName>待機＆歩き急旋回 速度割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="angle32 atkEndTurnTriggerMinAngleWalk">
+            <DisplayName>攻撃後歩き出し時 待機＆歩き急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="angle32 atkEndTurnTriggerMinAngleJog">
+            <DisplayName>攻撃後歩き出し時 走り急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="angle32 atkEndTurnTriggerMinAngleDash">
+            <DisplayName>攻撃後歩き出し時 ダッシュ急旋回 入力角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 atkEndTurnWalkSpeedPercentage">
+            <DisplayName>攻撃後歩き出し時 待機＆歩き急旋回 速度割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="angle32 ladderGraspAngleMax">
+            <DisplayName>はしご つかみ発生 左右角度 [deg]</DisplayName>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 ladderGraspHeightMax">
+            <DisplayName>はしご つかみ発生 上下高さ [m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="f32 ladderGraspInputTime">
+            <DisplayName>はしご つかみ発生 必要入力時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 ladderGraspTimeLimit">
+            <DisplayName>はしご つかみ発生 制限時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 ladderMoveInputTime">
+            <DisplayName>はしご 移動発生 必要入力時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="f32 ladderFallInputTime">
+            <DisplayName>はしご落下 入力判定時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="f32 nearDeathAnimMaxBlendHpRate">
+            <DisplayName>瀕死アニメ 最大ブレンド HP割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="f32 nearDeathAnimMinBlendHpRate">
+            <DisplayName>瀕死アニメ 最小ブレンド HP割合 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 precedingCmdKeepTime = 10">
+            <DisplayName>入力 保持時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 flickInputKeepTime = 10">
+            <DisplayName>弾き入力 保持時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u32 flickInputFrame = 5">
+            <DisplayName>弾き入力 弾き感知入力フレーム数</DisplayName>
+            <Maximum>16</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 flickInputPower = 0.6">
+            <DisplayName>弾き入力 弾き感知入力強度</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 flickNeutralKeepTime = 1">
+            <DisplayName>弾き入力 ニュートラル時間[sec]</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="angle32 flickAngleMax = 45">
+            <DisplayName>弾き入力 判定角度[deg]</DisplayName>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="f32 reviveInputTime = 10">
+            <DisplayName>蘇生確定入力時間 [sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="f32 twoHandedInputTime">
+            <DisplayName>両手持ち 入力判定時間 [sec]</DisplayName>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="f32 dashAttackTriggerMinSpeed">
+            <DisplayName>ダッシュ攻撃可能速度 [m/sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="f32 dashAttackMinSpeedAnimScale = 1">
+            <DisplayName>ダッシュ攻撃 最小速度 アニメ速度倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 dashAttackMaxSpeedAnimScale = 1">
+            <DisplayName>ダッシュ攻撃 最大速度 アニメ速度倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 autoPivotRotateNeutoralTime">
+            <DisplayName>向き変更旋回 ニュートラル時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 autoPivotInputTime">
+            <DisplayName>向き変更旋回 入力判定時間</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="f32 dashBlendWeightMax">
+            <DisplayName>ダッシュブレンド最大値</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="f32 dashBlendInSpeed">
+            <DisplayName>ダッシュブレンド入り速度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 dashBlendOutSpeed">
+            <DisplayName>ダッシュブレンド戻り速度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="f32 dashBlendInWalkSpeed">
+            <DisplayName>ダッシュブレンド入り判定速度（通常） [m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="f32 dashBlendInLockOnWalkSpeed">
+            <DisplayName>ダッシュブレンド入り判定速度（ロック移動）[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="f32 quickStopSpeed">
+            <DisplayName>急停止判定速度[m/sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="f32 quickStopDelay">
+            <DisplayName>急停止判定時間[sec]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 equipDurabilityRateMin">
+            <DisplayName>装備耐久値 減少量 補正倍率 最小[倍]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 equipDurabilityRateMax">
+            <DisplayName>装備耐久値 減少量 補正倍率 最大[倍]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="f32 torchFireLowSwichHeight">
+            <DisplayName>松明 点火アニメ切替高さ[m]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="angle32 noTargetAttackMaxUpperAngle = 70">
+            <DisplayName>攻撃時上半身角度 上制限</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="angle32 noTargetAttackMaxLowerAngle = 70">
+            <DisplayName>攻撃時上半身角度 下制限</DisplayName>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u16 torchTimeFirst">
+            <DisplayName>松明加算時間 初回 [sec]</DisplayName>
+            <Maximum>3600</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u16 torchTimeAddition">
+            <DisplayName>松明加算時間 追加 [sec]</DisplayName>
+            <Maximum>3600</Maximum>
+            <Increment>1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="u32 torchMaxTime">
+            <DisplayName>松明の最大時間 [sec]</DisplayName>
+            <Maximum>359999</Maximum>
+            <Increment>1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="f32 darkAttackWeaponIntPercent">
+            <DisplayName>闇攻撃力反映割合 理力 武器 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="f32 darkAttackWeaponFaithPercent">
+            <DisplayName>闇攻撃力反映割合 信仰 武器 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="f32 darkAttackMagicIntPercent">
+            <DisplayName>闇攻撃力反映割合 理力 闇魔術 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="f32 darkAttackMagicFaithPercent">
+            <DisplayName>闇攻撃力反映割合 信仰 闇魔術 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="f32 darkAttackMiracleIntPercent">
+            <DisplayName>闇攻撃力反映割合 理力 闇奇蹟 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="f32 darkAttackMiracleFaithPercent">
+            <DisplayName>闇攻撃力反映割合 信仰 闇奇蹟 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="f32 darkResistIntPercent">
+            <DisplayName>闇抵抗反映割合 理力 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 darkResistFaithPercent">
+            <DisplayName>闇抵抗反映割合 信仰 [%]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationLeftMax">
+            <DisplayName>LookAt 旋回限界角度 左 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-180</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationRightMax">
+            <DisplayName>LookAt 旋回限界角度 右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationUpperMax">
+            <DisplayName>LookAt 旋回限界角度 上 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>64</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationLownerMax">
+            <DisplayName>LookAt 旋回限界角度 下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>65</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtVisibilitySideMax">
+            <DisplayName>LookAt 認識限界角度 左右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>66</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtVisibilityUpperMax">
+            <DisplayName>LookAt 認識限界角度 上下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>67</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationSideSpeedMax">
+            <DisplayName>LookAt 左右旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>68</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationUpperSpeedMax">
+            <DisplayName>LookAt 上下旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>69</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound1">
+            <DisplayName>アイテム抽選補正 １周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound2">
+            <DisplayName>アイテム抽選補正 ２周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>71</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound3">
+            <DisplayName>アイテム抽選補正 ３周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>72</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound4">
+            <DisplayName>アイテム抽選補正 ４周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>73</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound5">
+            <DisplayName>アイテム抽選補正 ５周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>74</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound6">
+            <DisplayName>アイテム抽選補正 ６周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>75</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound7">
+            <DisplayName>アイテム抽選補正 ７周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>76</SortID>
+        </Field>
+        <Field Def="f32 itemDropRevisedLotValueRound8">
+            <DisplayName>アイテム抽選補正 ８周目</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>77</SortID>
+        </Field>
+        <Field Def="f32 equipDurabilityCoverRate = 1">
+            <DisplayName>装備耐久値 肩代わり時 減少量 補正倍率 [倍]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>78</SortID>
+        </Field>
+        <Field Def="f32 wallHeight = 1">
+            <DisplayName>壁判定高さ[m]</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>79</SortID>
+        </Field>
+        <Field Def="f32 repairCostUpRate">
+            <DisplayName>装備修理コスト上昇倍率</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusS">
+            <DisplayName>盾カット率ボーナス倍率 S</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>81</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusA">
+            <DisplayName>盾カット率ボーナス倍率 A</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>82</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusB">
+            <DisplayName>盾カット率ボーナス倍率 B</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>83</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusC">
+            <DisplayName>盾カット率ボーナス倍率 C</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>84</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusD">
+            <DisplayName>盾カット率ボーナス倍率 D</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>85</SortID>
+        </Field>
+        <Field Def="f32 shieldCutBonusE">
+            <DisplayName>盾カット率ボーナス倍率 E</DisplayName>
+            <Maximum>0.02</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>86</SortID>
+        </Field>
+        <Field Def="f32 hitDurabilitySubValue">
+            <DisplayName>近接攻撃時武器耐久減少量</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>87</SortID>
+        </Field>
+        <Field Def="f32 guardDurabilitySubValue">
+            <DisplayName>ガード時武器耐久減少量</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>88</SortID>
+        </Field>
+        <Field Def="f32 shootDurabilitySubValue">
+            <DisplayName>射撃時武器耐久減少量</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>89</SortID>
+        </Field>
+        <Field Def="f32 meleeShootDurabilitySubValue">
+            <DisplayName>近接攻撃バレット発射時武器耐久減少量</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="f32 unk164" />
+        <Field Def="f32 unk168" />
+        <Field Def="f32 unk16C" />
+        <Field Def="f32 unk170" />
+        <Field Def="f32 unk174" />
+        <Field Def="f32 unk178" />
+        <Field Def="s32 unk17C" />
+        <Field Def="f32 pcBackstabDamageRate" />
+        <Field Def="f32 pcParryBreakStabDamageRate" />
+        <Field Def="f32 pcGuardBreakStabDamageRate" />
+        <Field Def="f32 Unk18C" />
+        <Field Def="f32 Unk190" />
+        <Field Def="f32 Unk194" />
+        <Field Def="f32 Unk198" />
+        <Field Def="f32 Unk19C" />
+        <Field Def="f32 Unk1A0" />
+        <Field Def="f32 Unk1A4" />
+        <Field Def="f32 Unk1A8" />
+        <Field Def="f32 Unk1AC" />
+        <Field Def="f32 Unk1B0" />
+        <Field Def="f32 Unk1B4" />
+    </Fields>
 </PARAMDEF>

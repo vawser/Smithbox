@@ -1,25 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MAP_OBJECT_INSTANCE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 param_id" />
-    <Field Def="s32 obj_bullet_1" />
-    <Field Def="s32 obj_bullet_2" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="s32 map_obj_instance_type_id" />
-    <Field Def="u16 Unk04" />
-    <Field Def="u8 Unk05" />
-    <Field Def="u8 Unk06" />
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
-    <Field Def="u8 default_state" />
-    <Field Def="u8 Unk09" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 itemlot_id" />
-  </Fields>
+    <ParamType>MAP_OBJECT_INSTANCE_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 objCtrlId">
+            <DisplayName>《OBJ制御ID》</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="u32 bulletId0">
+            <DisplayName>《バレットID スロット0》</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <SortID>1200</SortID>
+        </Field>
+        <Field Def="u32 damageId0">
+            <DisplayName>《ダメージID スロット0》</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <SortID>1210</SortID>
+        </Field>
+        <Field Def="f32 touchRegionScale = 1">
+            <DisplayName>《タッチ領域のスケール》</DisplayName>
+            <Maximum>10</Maximum>
+            <SortID>1240</SortID>
+        </Field>
+        <Field Def="f32 movableRange = -1">
+            <DisplayName>《移動可能距離》</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>1250</SortID>
+        </Field>
+        <Field Def="u32 objType">
+            <DisplayName>《OBJタイプ》</DisplayName>
+            <Enum>OBJ_TYPE_ENUM</Enum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u8 objCtrlType">
+            <DisplayName>《OBJ制御タイプ》</DisplayName>
+            <Enum>OBJ_CTRL_TYPE_ENUM</Enum>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="u8 objLabbel">
+            <DisplayName>《ラベル》</DisplayName>
+            <Enum>OBJ_LABBEL_ENUM</Enum>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="u8 usableWhite:1">
+            <DisplayName>《白霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1300</SortID>
+        </Field>
+        <Field Def="u8 usableSmallWhite:1">
+            <DisplayName>《半霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1301</SortID>
+        </Field>
+        <Field Def="u8 usableDragon:1">
+            <DisplayName>《竜霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1302</SortID>
+        </Field>
+        <Field Def="u8 usableCoopBlue:1">
+            <DisplayName>《救援青霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1303</SortID>
+        </Field>
+        <Field Def="u8 usableVersusBlue:1">
+            <DisplayName>《報復青霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1304</SortID>
+        </Field>
+        <Field Def="u8 usableBlack:1">
+            <DisplayName>《闇霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1305</SortID>
+        </Field>
+        <Field Def="u8 usableBellGuard:1">
+            <DisplayName>《鐘守灰霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1306</SortID>
+        </Field>
+        <Field Def="u8 usableRatKing:1">
+            <DisplayName>《ねずみの王灰霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1307</SortID>
+        </Field>
+        <Field Def="u8 usableMirrorKnight:1">
+            <DisplayName>《ミラーナイト霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1308</SortID>
+        </Field>
+        <Field Def="u8 usableNoneVow:1">
+            <DisplayName>《誓約なし使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1309</SortID>
+        </Field>
+        <Field Def="u8 usableSunlightVow:1">
+            <DisplayName>《太陽の戦士使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1310</SortID>
+        </Field>
+        <Field Def="u8 usableGuardianVow:1">
+            <DisplayName>《守護の騎士使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1311</SortID>
+        </Field>
+        <Field Def="u8 usableBloodVow:1">
+            <DisplayName>《血の闇霊使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1312</SortID>
+        </Field>
+        <Field Def="u8 usableBlueVow:1">
+            <DisplayName>《青教使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1313</SortID>
+        </Field>
+        <Field Def="u8 usableRatKingVow:1">
+            <DisplayName>《ねずみの王使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1314</SortID>
+        </Field>
+        <Field Def="u8 usableBellGuardVow:1">
+            <DisplayName>《鐘守使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1315</SortID>
+        </Field>
+        <Field Def="u8 usableDragonVow:1">
+            <DisplayName>《古竜への道使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1316</SortID>
+        </Field>
+        <Field Def="u8 usableStrongerVow:1">
+            <DisplayName>《強者使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1317</SortID>
+        </Field>
+        <Field Def="u8 usableAbyssVow:1">
+            <DisplayName>《深淵の巡礼使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1318</SortID>
+        </Field>
+        <Field Def="u8 usableEnemy:1">
+            <DisplayName>《敵使用可能》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>1420</SortID>
+        </Field>
+        <Field Def="u8 onlyEventCanBreak:1">
+            <DisplayName>《イベントでしか壊せない》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>1260</SortID>
+        </Field>
+        <Field Def="u8 useAltSfx:1">
+            <DisplayName>《SFX切り替え》</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1:2">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>2001</SortID>
+        </Field>
+        <Field Def="u8 breakObjMakeStateId">
+            <DisplayName>《ブレイクオブジェ生成ステート》</DisplayName>
+            <Maximum>255</Maximum>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="s8 resetType">
+            <DisplayName>リセットタイプ</DisplayName>
+            <Enum>OBJ_RESET_TYPE_ENUM</Enum>
+            <SortID>1500</SortID>
+        </Field>
+        <Field Def="u8 tmpBreakObjMakeStateId">
+            <DisplayName>《(にぎやかし)ブレイクオブジェ生成ステート》</DisplayName>
+            <Maximum>255</Maximum>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="s8 iblTextureId = -1">
+            <DisplayName>環境マップテクスチャID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="dummy8 dummy2[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>2002</SortID>
+        </Field>
+        <Field Def="u32 itemLotId">
+            <DisplayName>初週アイテム抽選ID</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>1510</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

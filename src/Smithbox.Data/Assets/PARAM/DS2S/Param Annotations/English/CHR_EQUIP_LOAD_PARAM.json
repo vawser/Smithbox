@@ -1,0 +1,33 @@
+{
+  "Param": "CHR_EQUIP_LOAD_PARAM",
+  "Type": "CHR_EQUIP_LOAD_PARAM",
+  "Name": "CHR_EQUIP_LOAD_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "valueOnLightLoad",
+      "Name": "軽量",
+      "Description": ""
+    },
+    {
+      "Field": "valueOnMiddleLoad",
+      "Name": "中量",
+      "Description": ""
+    },
+    {
+      "Field": "valueOnHeavyLoad",
+      "Name": "重量",
+      "Description": ""
+    },
+    {
+      "Field": "valueOnTooHeavyLoad",
+      "Name": "重量過多",
+      "Description": ""
+    },
+    {
+      "Field": "valueOnOverWeightLoad",
+      "Name": "それ以上",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "MAP_TARGET_DIRECTION_PARAM",
+  "Type": "MAP_TARGET_DIRECTION_PARAM",
+  "Name": "MAP_TARGET_DIRECTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "directionX",
+      "Name": "X",
+      "Description": ""
+    },
+    {
+      "Field": "directionY",
+      "Name": "Y",
+      "Description": ""
+    },
+    {
+      "Field": "directionZ",
+      "Name": "Z",
+      "Description": ""
+    },
+    {
+      "Field": "speedMin",
+      "Name": "最小",
+      "Description": ""
+    },
+    {
+      "Field": "speedMax",
+      "Name": "最大",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyMin",
+      "Name": "最小",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyMax",
+      "Name": "最大",
+      "Description": ""
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": ""
+    }
+  ]
+}

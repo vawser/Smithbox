@@ -1,15 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>ITEM_USAGE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="u8 usage" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 item_no_trade" />
-    <Field Def="u8 item_can_discard" />
-  </Fields>
+    <ParamType>ITEM_USAGE_PARAM</ParamType>
+    <DataVersion>8</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 eventFlag = -1">
+            <DisplayName>使用許可するイベントフラグ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 condition">
+            <DisplayName>指定状態のみ許可</DisplayName>
+            <Enum>ITEM_USE_PERMIT_TYPE_CONDITION</Enum>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 isAllowUseOnLadder:1">
+            <DisplayName>はしご中使用許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 isAllowMultipleUse:1">
+            <DisplayName>使用個数設定許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 isConsume:1">
+            <DisplayName>消耗品</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 isNormalConsumu:1">
+            <DisplayName>通常タイミングで消費する</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 permitOnlineSingle:1">
+            <DisplayName>オンラインシングルプレイ許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitOnlineMulti:1">
+            <DisplayName>マルチプレイ許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitOffline:1">
+            <DisplayName>オフライン許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitOnlineGuest:1">
+            <DisplayName>ゲスト時許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitBattlePhantom:1">
+            <DisplayName>決闘霊体時許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitLeave:1">
+            <DisplayName>破棄許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 permitDrop:1">
+            <DisplayName>譲渡許可</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 exEvalFuncID">
+            <DisplayName>拡張使用許可判定関数ID（仮）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>120</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

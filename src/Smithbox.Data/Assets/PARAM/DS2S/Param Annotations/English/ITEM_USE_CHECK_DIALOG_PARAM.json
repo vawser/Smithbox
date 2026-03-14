@@ -1,0 +1,48 @@
+{
+  "Param": "ITEM_USE_CHECK_DIALOG_PARAM",
+  "Type": "ITEM_USE_CHECK_DIALOG_PARAM",
+  "Name": "ITEM_USE_CHECK_DIALOG_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "checkType1",
+      "Name": "確認タイプ１",
+      "Description": ""
+    },
+    {
+      "Field": "checkType2",
+      "Name": "確認タイプ２",
+      "Description": ""
+    },
+    {
+      "Field": "checkType3",
+      "Name": "確認タイプ３",
+      "Description": ""
+    },
+    {
+      "Field": "checkType4",
+      "Name": "確認タイプ４",
+      "Description": ""
+    },
+    {
+      "Field": "displayTextId1",
+      "Name": "表示テキストID１",
+      "Description": ""
+    },
+    {
+      "Field": "displayTextId2",
+      "Name": "表示テキストID２",
+      "Description": ""
+    },
+    {
+      "Field": "displayTextId3",
+      "Name": "表示テキストID３",
+      "Description": ""
+    },
+    {
+      "Field": "displayTextId4",
+      "Name": "表示テキストID４",
+      "Description": ""
+    }
+  ]
+}

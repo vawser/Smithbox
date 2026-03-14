@@ -78,7 +78,7 @@ public class ParamFieldWindow
         Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView)
     {
         var meta = ParentView.GetParamData().GetParamMeta(curRow.Def);
-        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(activeParam);
+        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(curRow.Def.ParamType);
 
         var imguiId = 0;
         var showParamCompare = auxRows.Count > 0;

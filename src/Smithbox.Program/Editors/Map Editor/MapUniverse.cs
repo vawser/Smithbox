@@ -612,12 +612,12 @@ public class MapUniverse : IUniverse
                 map.AddObject(obj);
             }
 
-            var registid = (uint)row.GetCellHandleOrThrow("GeneratorRegistParam").Value;
+            var registid = (int)row.GetCellHandleOrThrow("GeneratorRegistParam").Value;
             if (registParams.ContainsKey(registid))
             {
                 Param.Row regist = registParams[registid];
                 var chrid = Project.Handler.ParamData.PrimaryBank.GetChrIDForEnemy(
-                    (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
+                    (int)regist.GetCellHandleOrThrow("EnemyId").Value);
                 if (chrid != null)
                 {
                     ResourceDescriptor asset = ModelLocator.GetChrModel(View.Project, $@"c{chrid}", $@"c{chrid}");

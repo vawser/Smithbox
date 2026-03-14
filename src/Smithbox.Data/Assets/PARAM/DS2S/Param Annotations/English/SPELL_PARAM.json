@@ -1,0 +1,443 @@
+{
+  "Param": "SPELL_PARAM",
+  "Type": "SPELL_PARAM",
+  "Name": "SPELL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "spellCategory",
+      "Name": "スペルカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "isDual2HandedSpellAllowed",
+      "Name": "二刀流両手スペル許可",
+      "Description": ""
+    },
+    {
+      "Field": "availableCondition",
+      "Name": "使用可能条件",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "intelligence",
+      "Name": "必要ステータス 理力",
+      "Description": ""
+    },
+    {
+      "Field": "faith",
+      "Name": "必要ステータス 信仰",
+      "Description": ""
+    },
+    {
+      "Field": "baseSpellBulletId",
+      "Name": "ベースバレットID",
+      "Description": ""
+    },
+    {
+      "Field": "baseSpellDamageId",
+      "Name": "ベースダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "single1HNormalChantTimeScale",
+      "Name": "詠唱時間 補正倍率 片手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HNormalHoldCastTime",
+      "Name": "発動時間 片手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HNormalAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 片手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "single1HNormalAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 片手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "single1HNormalStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 片手 弱 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HStrongChantTimeScale",
+      "Name": "詠唱時間 補正倍率 片手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HStrongHoldCastTime",
+      "Name": "発動時間 片手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single1HStrongAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 片手 強",
+      "Description": ""
+    },
+    {
+      "Field": "single1HStrongAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 片手 強",
+      "Description": ""
+    },
+    {
+      "Field": "single1HStrongStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 片手 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HNormalChantTimeScale",
+      "Name": "詠唱時間 補正倍率 両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HNormalHoldCastTime",
+      "Name": "発動時間 両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HNormalAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 両手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "single2HNormalAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 両手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "single2HNormalStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 両手 弱 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HStrongChantTimeScale",
+      "Name": "詠唱時間 補正倍率 両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HHoldCastTime",
+      "Name": "発動時間 両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "single2HAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 両手 強",
+      "Description": ""
+    },
+    {
+      "Field": "single2HAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 両手 強",
+      "Description": ""
+    },
+    {
+      "Field": "single2HStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 両手 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HNormalChantTimeScale",
+      "Name": "詠唱時間 補正倍率 二刀流片手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HNormalHoldCastTime",
+      "Name": "発動時間 二刀流片手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HNormalAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 二刀流片手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HNormalAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 二刀流片手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HNormalStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 二刀流片手 弱 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HStrongChantTimeScale",
+      "Name": "詠唱時間 補正倍率 二刀流片手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HStrongHoldCastTime",
+      "Name": "発動時間 二刀流片手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HStrongAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 二刀流片手 強",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HStrongAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 二刀流片手 強",
+      "Description": ""
+    },
+    {
+      "Field": "dual1HStrongStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 二刀流片手 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HNormalChantTimeScale",
+      "Name": "詠唱時間 補正倍率 二刀流両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HNormalHoldCastTime",
+      "Name": "発動時間 二刀流両手 弱 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HNormalAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 二刀流両手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HNormalAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 二刀流両手 弱",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HNormalStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 二刀流両手 弱 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HStrongChantTimeScale",
+      "Name": "詠唱時間 補正倍率 二刀流両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HStrongHoldCastTime",
+      "Name": "発動時間 二刀流両手 強 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HStrongAnimIdSpellChanting",
+      "Name": "アニメ設定 詠唱 二刀流両手 強",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HStrongAnimIdSpellCasting",
+      "Name": "アニメ設定 発動 二刀流両手 強",
+      "Description": ""
+    },
+    {
+      "Field": "dual2HStrongStaminaCostScale",
+      "Name": "スタミナ消費量 倍率 二刀流両手 強 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "lockonAvailableDistanceScale",
+      "Name": "ロックオン 攻撃有効距離 補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "canMove",
+      "Name": "移動許可フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "canWaitShoot",
+      "Name": "発射待ち許可フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "canPredictShot",
+      "Name": "予測射撃許可フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "se0Id",
+      "Name": "詠唱中SE0 ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx0Id",
+      "Name": "詠唱中SFX0 ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx0AttachTarget",
+      "Name": "詠唱中SFX0 アタッチ対象",
+      "Description": ""
+    },
+    {
+      "Field": "sfx0AttachDummyPolyIdRight",
+      "Name": "詠唱中SFX0 右装備 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx0AttachDummyPolyIdLeft",
+      "Name": "詠唱中SFX0 左装備 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx0DisableEraseFade",
+      "Name": "詠唱SFX0 即削除",
+      "Description": ""
+    },
+    {
+      "Field": "se1Id",
+      "Name": "詠唱中SE1 ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx1Id",
+      "Name": "詠唱中SFX1 ID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx1AttachTarget",
+      "Name": "詠唱中SFX1 アタッチ対象",
+      "Description": ""
+    },
+    {
+      "Field": "sfx1AttachDummyPolyIdRight",
+      "Name": "詠唱中SFX1 右装備 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx1AttachDummyPolyIdLeft",
+      "Name": "詠唱中SFX1 左装備 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "sfx1DisableEraseFade",
+      "Name": "詠唱SFX1 即削除",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateParallelWalk",
+      "Name": "スペル詠唱移動速度 減少割合 平行移動 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateWalk",
+      "Name": "スペル詠唱移動速度 減少割合 歩行 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "decreaseSpeedRateLockOnWalk",
+      "Name": "スペル詠唱移動速度 減少割合 ロックオン移動 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "startPlaySpeed",
+      "Name": "スペル開始部 アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "endPlaySpeed",
+      "Name": "スペル終了部 アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessPeriodScale",
+      "Name": "強靭度期間 倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "shootSeCategory",
+      "Name": "発射SE カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "equipSlotNum",
+      "Name": "装備に必要なスロット数",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv1",
+      "Name": "使用回数Lv1",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv2",
+      "Name": "使用回数Lv2",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv3",
+      "Name": "使用回数Lv3",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv4",
+      "Name": "使用回数Lv4",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv5",
+      "Name": "使用回数Lv5",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv6",
+      "Name": "使用回数Lv6",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv7",
+      "Name": "使用回数Lv7",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv8",
+      "Name": "使用回数Lv8",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv9",
+      "Name": "使用回数Lv9",
+      "Description": ""
+    },
+    {
+      "Field": "usageCountLv10",
+      "Name": "使用回数Lv10",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "soulConsumeParamId",
+      "Name": "ソウル消費ID",
+      "Description": ""
+    },
+    {
+      "Field": "baseLeftHandSpellBulletId",
+      "Name": "ベースバレットID(左手)",
+      "Description": ""
+    },
+    {
+      "Field": "baseLeftHandSpellDamageId",
+      "Name": "ベースダメージID(左手)",
+      "Description": ""
+    }
+  ]
+}

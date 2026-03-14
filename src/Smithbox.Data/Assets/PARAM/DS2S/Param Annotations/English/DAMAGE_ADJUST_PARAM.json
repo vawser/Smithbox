@@ -1,0 +1,503 @@
+{
+  "Param": "DAMAGE_ADJUST_PARAM",
+  "Type": "DAMAGE_ADJUST_PARAM",
+  "Name": "DAMAGE_ADJUST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcFallAtkAdjustLightWeight",
+      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 小",
+      "Description": ""
+    },
+    {
+      "Field": "pcFallAtkAdjustMiddleWeight",
+      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 中",
+      "Description": ""
+    },
+    {
+      "Field": "pcFallAtkAdjustHeavyWeight",
+      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 大",
+      "Description": ""
+    },
+    {
+      "Field": "pcKillStaminaAdjust",
+      "Name": "プレイヤー スタミナ奪取量調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "pcSpecialMoveKillStaminaAdjust",
+      "Name": "プレイヤー 特殊移動 スタミナ奪取量 調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "pcLackOfStatAdjust",
+      "Name": "プレイヤー ステータス不足補正倍率",
+      "Description": ""
+    },
+    {
+      "Field": "pcFluctuationAdjustMin",
+      "Name": "プレイヤー 揺らぎ補正倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "pcFluctuationAdjustMax",
+      "Name": "プレイヤー 揺らぎ補正倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustVeryEasy",
+      "Name": "プレイヤー 難易度補正倍率 Very Easy",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustEasy",
+      "Name": "プレイヤー 難易度補正倍率 Easy",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustNormal",
+      "Name": "プレイヤー 難易度補正倍率 Normal",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustHard",
+      "Name": "プレイヤー 難易度補正倍率 Hard",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustVeryHard",
+      "Name": "プレイヤー 難易度補正倍率 Very Hard",
+      "Description": ""
+    },
+    {
+      "Field": "pcDifficultyAdjustHell",
+      "Name": "プレイヤー 難易度補正倍率 Hell",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateWeapon",
+      "Name": "プレイヤー 耐久削り値 補正倍率 武器",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateHead",
+      "Name": "プレイヤー 耐久削り値 補正倍率 頭防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateBody",
+      "Name": "プレイヤー 耐久削り値 補正倍率 胴防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateArm",
+      "Name": "プレイヤー 耐久削り値 補正倍率 腕防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateReg",
+      "Name": "プレイヤー 耐久削り値 補正倍率 足防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateRing",
+      "Name": "プレイヤー耐久削り値 補正倍率 指輪",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardWeapon",
+      "Name": "プレイヤー 耐久削り値 補正倍率 武器",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardHead",
+      "Name": "プレイヤー 耐久削り値 補正倍率 頭防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardBody",
+      "Name": "プレイヤー 耐久削り値 補正倍率 胴防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardArm",
+      "Name": "プレイヤー 耐久削り値 補正倍率 腕防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardReg",
+      "Name": "プレイヤー 耐久削り値 補正倍率 足防具",
+      "Description": ""
+    },
+    {
+      "Field": "pcDurabilityRateGuardRing",
+      "Name": "プレイヤー耐久削り値 補正倍率 指輪",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust01",
+      "Name": "プレイヤー 協力プレイ補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust02",
+      "Name": "プレイヤー 協力プレイ補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust03",
+      "Name": "プレイヤー 協力プレイ補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust04",
+      "Name": "プレイヤー 協力プレイ補正倍率4",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust05",
+      "Name": "プレイヤー 協力プレイ補正倍率5",
+      "Description": ""
+    },
+    {
+      "Field": "pcCoorpAdjust06",
+      "Name": "プレイヤー 協力プレイ補正倍率6",
+      "Description": ""
+    },
+    {
+      "Field": "pcInvasionAdjust01",
+      "Name": "プレイヤー 敵対プレイ補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "pcInvasionAdjust02",
+      "Name": "プレイヤー 敵対プレイ補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "pcInvasionAdjust03",
+      "Name": "プレイヤー 敵対プレイ補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust01",
+      "Name": "プレイヤー 周回補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust02",
+      "Name": "プレイヤー 周回補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust03",
+      "Name": "プレイヤー 周回補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust04",
+      "Name": "プレイヤー 周回補正倍率4",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust05",
+      "Name": "プレイヤー 周回補正倍率5",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust06",
+      "Name": "プレイヤー 周回補正倍率6",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust07",
+      "Name": "プレイヤー 周回補正倍率7",
+      "Description": ""
+    },
+    {
+      "Field": "pcGameCycleAdjust08",
+      "Name": "プレイヤー 周回補正倍率8",
+      "Description": ""
+    },
+    {
+      "Field": "ecFluctuationAdjustMin",
+      "Name": "エネミー 揺らぎ補正倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "ecFluctuationAdjustMax",
+      "Name": "エネミー 揺らぎ補正倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustVeryEasy",
+      "Name": "エネミー 難易度補正倍率 Very Easy",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustEasy",
+      "Name": "エネミー 難易度補正倍率 Easy",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustNormal",
+      "Name": "エネミー 難易度補正倍率 Normal",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustHard",
+      "Name": "エネミー 難易度補正倍率 Hard",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustVeryHard",
+      "Name": "エネミー 難易度補正倍率 Very Hard",
+      "Description": ""
+    },
+    {
+      "Field": "ecDifficultyAdjustHell",
+      "Name": "エネミー 難易度補正倍率 Hell",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust01",
+      "Name": "エネミー 協力プレイ補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust02",
+      "Name": "エネミー 協力プレイ補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust03",
+      "Name": "エネミー 協力プレイ補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust04",
+      "Name": "エネミー 協力プレイ補正倍率4",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust05",
+      "Name": "エネミー 協力プレイ補正倍率5",
+      "Description": ""
+    },
+    {
+      "Field": "ecCoorpAdjust06",
+      "Name": "エネミー 協力プレイ補正倍率6",
+      "Description": ""
+    },
+    {
+      "Field": "ecInvasionAdjust01",
+      "Name": "エネミー 敵対プレイ補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "ecInvasionAdjust02",
+      "Name": "エネミー 敵対プレイ補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "ecInvasionAdjust03",
+      "Name": "エネミー 敵対プレイ補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust01",
+      "Name": "エネミー 周回補正倍率1",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust02",
+      "Name": "エネミー 周回補正倍率2",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust03",
+      "Name": "エネミー 周回補正倍率3",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust04",
+      "Name": "エネミー 周回補正倍率4",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust05",
+      "Name": "エネミー 周回補正倍率5",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust06",
+      "Name": "エネミー 周回補正倍率6",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust07",
+      "Name": "エネミー 周回補正倍率7",
+      "Description": ""
+    },
+    {
+      "Field": "ecGameCycleAdjust08",
+      "Name": "エネミー 周回補正倍率8",
+      "Description": ""
+    },
+    {
+      "Field": "ecNtVerAdjust",
+      "Name": "NT版フィナーレイベント用攻撃力倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustNormalMul01",
+      "Name": "物理属性調整 乗算倍率 初周",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustMagic",
+      "Name": "魔力属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustThunder",
+      "Name": "雷属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustFire",
+      "Name": "炎属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustDark",
+      "Name": "闇属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustPoison",
+      "Name": "毒属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustBleed",
+      "Name": "出血属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustWeaponBreak",
+      "Name": "武器破壊属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustCurse",
+      "Name": "呪い属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustBurning",
+      "Name": "燃焼属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustDeadlyPoison",
+      "Name": "猛毒属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustPetrified",
+      "Name": "石化属性調整倍率",
+      "Description": ""
+    },
+    {
+      "Field": "vowStrongAtkAdjustRate",
+      "Name": "誓約[強者] 与ダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "vowStrongDefAdjustRate",
+      "Name": "誓約[強者] 被ダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustNormalDiv01",
+      "Name": "物理属性調整\u3000除算倍率 初周",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustNormalMul02",
+      "Name": "物理属性調整 乗算倍率 周回",
+      "Description": ""
+    },
+    {
+      "Field": "attributeAdjustNormalDiv02",
+      "Name": "物理属性調整 除算倍率 周回",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustNormalMul",
+      "Name": "Player physical attribute adjustment multiplication factor",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustNormalDiv",
+      "Name": "Player physical attribute adjustment division magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustMagic",
+      "Name": "Player magic attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustThunder",
+      "Name": "Player thunder attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustFire",
+      "Name": "Player fire attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustDark",
+      "Name": "Player dark attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustPoison",
+      "Name": "Player poison attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustBleed",
+      "Name": "Player bleeding attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustWeaponBreak",
+      "Name": "Player weapon break attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustCurse",
+      "Name": "Player curse attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustBurning",
+      "Name": "Player burning attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustDeadlyPoison",
+      "Name": "Player deadly poison attribute adjustment magnification",
+      "Description": ""
+    },
+    {
+      "Field": "pcAttributeAdjustPetrified",
+      "Name": "Player petrified attribute adjustment magnification",
+      "Description": ""
+    }
+  ]
+}

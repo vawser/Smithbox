@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMDEF XmlVersion="0">
+    <ParamType>PLAYER_MOVEMENT_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="f32 fParallelWalkDeceleration = 12">
+            <DisplayName>平行移動 停止加速度 [m/sec^2]</DisplayName>
+            <Description>平行移動中の停止加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkAccelerationMin = 12">
+            <DisplayName>平行移動 加速度 最小 [m/sec^2]</DisplayName>
+            <Description>平行移動中の最小加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkAccelerationMax = 12">
+            <DisplayName>平行移動 加速度 最大 [m/sec^2]</DisplayName>
+            <Description>平行移動中の最大加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSpeedMin = 2">
+            <DisplayName>平行移動 速度 最小 [m/sec]</DisplayName>
+            <Description>平行移動中の最小速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkSpeedMax = 3">
+            <DisplayName>平行移動 速度 最大 [m/sec]</DisplayName>
+            <Description>平行移動中の最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkBackAngleMax">
+            <DisplayName>平行移動 背面角度 [deg]</DisplayName>
+            <Description>背面入力と判定する角度上限[角度]</Description>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkBackSpeedRateMin">
+            <DisplayName>平行移動 背面減速割合 最小 [%]</DisplayName>
+            <Description>背面入力移動中の減速割合 最小[%]</Description>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkBackSpeedRateMax">
+            <DisplayName>平行移動 背面減速割合 最大 [%]</DisplayName>
+            <Description>背面入力移動中の減速割合 最大[%]</Description>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 fWalkDeceleration = 4">
+            <DisplayName>歩行 停止加速度 [m/sec^2]</DisplayName>
+            <Description>歩行中の停止加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 fWalkAccelerationMin = 12">
+            <DisplayName>歩行 加速度 最小 [m/sec^2]</DisplayName>
+            <Description>歩行中の最小加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 fWalkAccelerationMax = 12">
+            <DisplayName>歩行 加速度 最大 [m/sec^2]</DisplayName>
+            <Description>歩行中の最大加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 fWalkSpeedMin = 2">
+            <DisplayName>歩行 速度 最小 [m/sec]</DisplayName>
+            <Description>歩行中の最小速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 fWalkSpeedMax = 4">
+            <DisplayName>歩行 速度 最大 [m/sec]</DisplayName>
+            <Description>歩行中の最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationAcceleration = 180">
+            <DisplayName>歩行 角加速度 [deg/sec^2]</DisplayName>
+            <Description>歩行中の旋回加速度[deg/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSpeedMin = 180">
+            <DisplayName>歩行 角速度 最小 [deg/sec]</DisplayName>
+            <Description>歩行中の最小旋回速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSpeedOnLowSpeed = 180">
+            <DisplayName>歩行 目標角速度 低速時 [deg/sec]</DisplayName>
+            <Description>低速歩行中の目標旋回速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSpeedOnHighSpeed = 180">
+            <DisplayName>歩行 目標角速度 高速時 [deg/sec]</DisplayName>
+            <Description>高速歩行中の目標旋回速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="angle32 fWalkRotationSlowDownStartAngle = 90">
+            <DisplayName>歩行 旋回減速開始角度 [deg]</DisplayName>
+            <Description>歩行中の角速度の減速を開始する角度[degree] (目標角度がこの角度以下で0度に近づくほど減速が強くなる)</Description>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 fDashDeceleration = 15">
+            <DisplayName>ダッシュ 停止加速度 [m/sec^2]</DisplayName>
+            <Description>ダッシュ中の停止加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="f32 fDashAcceleration = 15">
+            <DisplayName>ダッシュ 加速度 [m/sec^2]</DisplayName>
+            <Description>ダッシュ中の加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 fDashSpeedMax = 15">
+            <DisplayName>ダッシュ 最大速度 [m/sec]</DisplayName>
+            <Description>ダッシュ中の最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationAcceleration = 180">
+            <DisplayName>ダッシュ 角加速度 [deg/sec^2]</DisplayName>
+            <Description>ダッシュ中の角加速度[deg/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationSpeedMin = 180">
+            <DisplayName>ダッシュ 角速度 最小 [deg/sec]</DisplayName>
+            <Description>ダッシュ中の最小角速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationSpeedMax = 180">
+            <DisplayName>ダッシュ 角速度 最大 [deg/sec]</DisplayName>
+            <Description>ダッシュ中の最大角速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="angle32 fDashRotationSlowDownStartAngle = 90">
+            <DisplayName>ダッシュ 旋回減速開始角度 [deg]</DisplayName>
+            <Description>ダッシュ中の角速度の減速を開始する角度[deg] (目標角度がこの角度以下で0度に近づくほど減速が強くなる)</Description>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkDeceleration = 12">
+            <DisplayName>ロックオン移動 停止加速度 [m/sec^2]</DisplayName>
+            <Description>ロックオン移動中の停止加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkAccelerationMin = 12">
+            <DisplayName>ロックオン移動 加速度 最小 [m/sec^2]</DisplayName>
+            <Description>ロックオン移動中の最小加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkAccelerationMax = 12">
+            <DisplayName>ロックオン移動 加速度 最大 [m/sec^2]</DisplayName>
+            <Description>ロックオン移動中の最大加速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSpeedMin = 2">
+            <DisplayName>ロックオン移動 歩き速度最小 [m/sec]</DisplayName>
+            <Description>ロックオン移動中の最小歩行速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkSpeedMax = 4">
+            <DisplayName>ロックオン移動 歩き速度最大 [m/sec]</DisplayName>
+            <Description>ロックオン移動中の最大歩行速度[m/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkRotationAcceleration = 180">
+            <DisplayName>ロックオン移動 旋回加速度 [deg/sec^2]</DisplayName>
+            <Description>ロックオン移動中の旋回加速度[deg/sec^2]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="angle32 fLockOnWalkRotationSpeedMax = 180">
+            <DisplayName>ロックオン移動 旋回最大速度 [deg/sec]</DisplayName>
+            <Description>ロックオン移動中の最大旋回速度[deg/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkAngleMax">
+            <DisplayName>ロックオン移動 背面角度 [deg]</DisplayName>
+            <Description>ロックオン中の背面入力と判定する角度上限[角度]</Description>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkBackMoveSpeedRateMin">
+            <DisplayName>ロックオン移動 背面減速割合 最小 [%]</DisplayName>
+            <Description>ロックオン中の背面入力移動中の減速割合 最小[%]</Description>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkBackMoveSpeedRateMax">
+            <DisplayName>ロックオン移動 背面減速割合 最大 [%]</DisplayName>
+            <Description>ロックオン中の背面入力移動中の減速割合 最大[%]</Description>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashUpperBodyCtrlMaxDist = 3">
+            <DisplayName>ロックオンダッシュ 上半身制御 最大距離 [m]</DisplayName>
+            <Description>ロックオンダッシュ中に上半身の振り向き制御を行う最大距離[m]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkToIdleSpeed = 3">
+            <DisplayName>停止 平行移動 発生速度 [m/sec]</DisplayName>
+            <Description>平行移動から停止に移ることが出来る最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 fParallelWalkToIdleNeutralTime = 0.2">
+            <DisplayName>停止 平行移動 ニュートラル時間 [sec]</DisplayName>
+            <Description>平行移動から停止に移るために移動スティックをニュートラルにし続けなければいけない時間[sec]</Description>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="f32 fWalkToIdleSpeed = 3">
+            <DisplayName>停止 歩行 発生速度 [m/sec]</DisplayName>
+            <Description>歩行から停止に移ることが出来る最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="f32 fWalkToIdleNeutralTime = 0.2">
+            <DisplayName>停止 歩行 ニュートラル時間 [sec]</DisplayName>
+            <Description>歩行から停止に移るために移動スティックをニュートラルにし続けなければいけない時間[sec]</Description>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 fDashToIdleSpeed = 3">
+            <DisplayName>停止 ダッシュ 発生速度 [m/sec]</DisplayName>
+            <Description>ダッシュから停止に移ることが出来る最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="f32 fDashToIdleNeutralTime = 0.2">
+            <DisplayName>停止 ダッシュ ニュートラル時間 [sec]</DisplayName>
+            <Description>ダッシュから停止に移るために移動スティックをニュートラルにし続けなければいけない時間[sec]</Description>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkToIdleSpeed = 3">
+            <DisplayName>停止 ロックオン移動 発生速度 [m/sec]</DisplayName>
+            <Description>ロックオン移動から停止に移ることが出来る最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="f32 fLockOnWalkToIdleNeutralTime = 0.2">
+            <DisplayName>停止 ロックオン移動 ニュートラル時間 [sec]</DisplayName>
+            <Description>ロックオン移動から停止に移るために移動スティックをニュートラルにし続けなければいけない時間[sec]</Description>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashToIdleSpeed = 3">
+            <DisplayName>停止 ロックオンダッシュ 発生速度 [m/sec]</DisplayName>
+            <Description>ロックオンダッシュから停止に移ることが出来る最大速度[m/sec]</Description>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 fLockOnDashToIdleNeutralTime = 0.2">
+            <DisplayName>停止 ロックオンダッシュ ニュートラル時間 [sec]</DisplayName>
+            <Description>ロックオンダッシュから停止に移るために移動スティックをニュートラルにし続けなければいけない時間[sec]</Description>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 fRotationValueMin">
+            <DisplayName>旋回 旋回量 最小 [deg]</DisplayName>
+            <Description>旋回量の最小値</Description>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="f32 fRotationValueMax">
+            <DisplayName>旋回 旋回量 最大 [deg]</DisplayName>
+            <Description>旋回量の最大値</Description>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>48</SortID>
+        </Field>
+    </Fields>
+</PARAMDEF>

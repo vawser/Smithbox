@@ -1,0 +1,48 @@
+{
+  "Param": "CHR_ROUND_DROP_SOUL_PARAM",
+  "Type": "CHR_ROUND_DROP_SOUL_PARAM",
+  "Name": "CHR_ROUND_DROP_SOUL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "roundSoulPercent01",
+      "Name": "周回獲得ソウル倍率 1周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent02",
+      "Name": "周回獲得ソウル倍率 2周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent03",
+      "Name": "周回獲得ソウル倍率 3周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent04",
+      "Name": "周回獲得ソウル倍率 4周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent05",
+      "Name": "周回獲得ソウル倍率 5周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent06",
+      "Name": "周回獲得ソウル倍率 6周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent07",
+      "Name": "周回獲得ソウル倍率 7周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulPercent08",
+      "Name": "周回獲得ソウル倍率 8周目 [%]",
+      "Description": ""
+    }
+  ]
+}

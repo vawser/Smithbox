@@ -2161,7 +2161,7 @@ public class ParamBank : IDisposable
     public string GetChrIDForEnemy(long enemyID)
     {
         Param.Row enemy = EnemyParam?[(int)enemyID];
-        return enemy != null ? $@"{enemy.GetCellHandleOrThrow("chr_id").Value:D4}" : null;
+        return enemy != null ? $@"{enemy.GetCellHandleOrThrow("modelId").Value:D4}" : null;
     }
 
     public string GetKeyForParam(Param param)

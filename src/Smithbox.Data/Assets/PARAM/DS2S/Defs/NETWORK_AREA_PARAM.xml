@@ -1,17 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>NETWORK_AREA_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 limitation_time_1" />
-    <Field Def="f32 limitation_time_2" />
-    <Field Def="f32 limitation_time_3" />
-    <Field Def="f32 Unk0C" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk14" />
-    <Field Def="s32 Unk18" />
-  </Fields>
+    <ParamType>NETWORK_AREA_PARAM</ParamType>
+    <DataVersion>4</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 cellSizeX = 30">
+            <DisplayName>セルサイズX</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>9999</Maximum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 cellSizeY = 8">
+            <DisplayName>セルサイズY</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>9999</Maximum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 cellSizeZ = 30">
+            <DisplayName>セルサイズZ</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>9999</Maximum>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 cellOffsetX">
+            <DisplayName>セルオフセットX</DisplayName>
+            <Maximum>9999</Maximum>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 cellOffsetY">
+            <DisplayName>セルオフセットY</DisplayName>
+            <Maximum>9999</Maximum>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 cellOffsetZ">
+            <DisplayName>セルオフセットZ</DisplayName>
+            <Maximum>9999</Maximum>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 enableBloodstain:1">
+            <DisplayName>血痕・死亡幻影有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 enableBloodMessage:1">
+            <DisplayName>血文字有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 enableGhost:1">
+            <DisplayName>幻影有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 enableMultiPlay:1">
+            <DisplayName>マルチプレイ有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 enableRingSearch:1">
+            <DisplayName>指輪検索有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 enableBreakInSearch:1">
+            <DisplayName>乱入検索有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <Maximum>1</Maximum>
+            <SortID>999</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

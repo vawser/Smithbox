@@ -1,0 +1,208 @@
+{
+  "Param": "CHR_ROUND_DAMAGE_PARAM",
+  "Type": "CHR_ROUND_DAMAGE_PARAM",
+  "Name": "CHR_ROUND_DAMAGE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "round1DamagePercent",
+      "Name": "周回ダメージ倍率 1周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round1StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 1周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round1StunDamagePercent",
+      "Name": "周回気絶値倍率 1周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round2DamagePercent",
+      "Name": "周回ダメージ倍率 2周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round2StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 2周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round2StunDamagePercent",
+      "Name": "周回気絶値倍率 2周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round3DamagePercent",
+      "Name": "周回ダメージ倍率 3周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round3StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 3周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round3StunDamagePercent",
+      "Name": "周回気絶値倍率 3周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round4DamagePercent",
+      "Name": "周回ダメージ倍率 4周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round4StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 4周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round4StunDamagePercent",
+      "Name": "周回気絶値倍率 4周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round5DamagePercent",
+      "Name": "周回ダメージ倍率 5周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round5StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 5周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round5StunDamagePercent",
+      "Name": "周回気絶値倍率 5周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round6DamagePercent",
+      "Name": "周回ダメージ倍率 6周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round6StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 6周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round6StunDamagePercent",
+      "Name": "周回気絶値倍率 6周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round7DamagePercent",
+      "Name": "周回ダメージ倍率 7周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round7StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 7周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round7StunDamagePercent",
+      "Name": "周回気絶値倍率 7周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round8DamagePercent",
+      "Name": "周回ダメージ倍率 8周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round8StaminaDamagePercent",
+      "Name": "周回スタミナ奪取量倍率 8周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round8StunDamagePercent",
+      "Name": "周回気絶値倍率 8周目 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "round1StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 1周目",
+      "Description": ""
+    },
+    {
+      "Field": "round1StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 1周目",
+      "Description": ""
+    },
+    {
+      "Field": "round2StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 2周目",
+      "Description": ""
+    },
+    {
+      "Field": "round2StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 2周目",
+      "Description": ""
+    },
+    {
+      "Field": "round3StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 3周目",
+      "Description": ""
+    },
+    {
+      "Field": "round3StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 3周目",
+      "Description": ""
+    },
+    {
+      "Field": "round4StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 4周目",
+      "Description": ""
+    },
+    {
+      "Field": "round4StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 4周目",
+      "Description": ""
+    },
+    {
+      "Field": "round5StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 5周目",
+      "Description": ""
+    },
+    {
+      "Field": "round5StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 5周目",
+      "Description": ""
+    },
+    {
+      "Field": "round6StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 6周目",
+      "Description": ""
+    },
+    {
+      "Field": "round6StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 6周目",
+      "Description": ""
+    },
+    {
+      "Field": "round7StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 7周目",
+      "Description": ""
+    },
+    {
+      "Field": "round7StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 7周目",
+      "Description": ""
+    },
+    {
+      "Field": "round8StaminaDamageTakenPercent",
+      "Name": "周回被ダメージ スタミナ奪取量倍率 8周目",
+      "Description": ""
+    },
+    {
+      "Field": "round8StunDamageTakenPercent",
+      "Name": "周回被ダメージ 気絶値倍率 8周目",
+      "Description": ""
+    }
+  ]
+}

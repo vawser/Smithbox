@@ -1,0 +1,73 @@
+{
+  "Param": "FE_HP_ST_GUAGE_SETTING_PARAM",
+  "Type": "FE_HP_ST_GUAGE_SETTING_PARAM",
+  "Name": "FE_HP_ST_GUAGE_SETTING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "HpGainPar",
+      "Name": "体力減少速度",
+      "Description": ""
+    },
+    {
+      "Field": "StGainPar",
+      "Name": "スタミナ減少速度",
+      "Description": ""
+    },
+    {
+      "Field": "HpGainAnimLimit",
+      "Name": "体力減少演出開始閾値",
+      "Description": ""
+    },
+    {
+      "Field": "StGainAnimLimit",
+      "Name": "スタミナ減少演出開始閾値",
+      "Description": ""
+    },
+    {
+      "Field": "HpGainDelay",
+      "Name": "体力減少演出開始遅延時間",
+      "Description": ""
+    },
+    {
+      "Field": "StGainDelay",
+      "Name": "スタミナ減少演出開始遅延時間",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyHpGainPar",
+      "Name": "敵体力減少速度",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyHpGainAnimLimit",
+      "Name": "敵体力減少演出開始閾値",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyHpGainDelay",
+      "Name": "敵体力減少演出開始遅延時間",
+      "Description": ""
+    },
+    {
+      "Field": "HpMinSize",
+      "Name": "最小ステータス時の体力ゲージの長さ",
+      "Description": ""
+    },
+    {
+      "Field": "StMinSize",
+      "Name": "最小ステータス時のスタミナゲージの長さ",
+      "Description": ""
+    },
+    {
+      "Field": "HpMaxSize",
+      "Name": "最大ステータス時の体力ゲージの長さ体力",
+      "Description": ""
+    },
+    {
+      "Field": "StMaxSize",
+      "Name": "最大ステータス時のスタミナゲージの長さスタミナ",
+      "Description": ""
+    }
+  ]
+}

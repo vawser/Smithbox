@@ -1,0 +1,968 @@
+{
+  "Param": "CHR_COLOR_PARAM",
+  "Type": "CHR_COLOR_PARAM",
+  "Name": "CHR_COLOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pattern0PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern0PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern1PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern2PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern3PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern4PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern5PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern6PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern7PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern8PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern9PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern10PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "partsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern11PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern12PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern13PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern14PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsR0",
+      "Name": "パーツ0_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsR1",
+      "Name": "パーツ1_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsR2",
+      "Name": "パーツ2_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsR3",
+      "Name": "パーツ3_色R",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsG0",
+      "Name": "パーツ0_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsG1",
+      "Name": "パーツ1_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsG2",
+      "Name": "パーツ2_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsG3",
+      "Name": "パーツ3_色G",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsB0",
+      "Name": "パーツ0_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsB1",
+      "Name": "パーツ1_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsB2",
+      "Name": "パーツ2_色B",
+      "Description": ""
+    },
+    {
+      "Field": "pattern15PartsB3",
+      "Name": "パーツ3_色B",
+      "Description": ""
+    }
+  ]
+}

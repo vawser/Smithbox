@@ -1,20 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>POISE_DAMAGE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 Unk01" />
-    <Field Def="s32 Unk02" />
-    <Field Def="s32 Unk03" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk05" />
-    <Field Def="s32 Unk06" />
-    <Field Def="s32 Unk07" />
-    <Field Def="s32 Unk08" />
-    <Field Def="s32 Unk09" />
-  </Fields>
+    <ParamType>POISE_DAMAGE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 damageMinimum">
+            <DisplayName>ダメージ削り値 発生ダメージ極小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 damageSmall">
+            <DisplayName>ダメージ削り値 発生ダメージ小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 damageMiddle">
+            <DisplayName>ダメージ削り値 発生ダメージ中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 damageHeavy">
+            <DisplayName>ダメージ削り値 発生ダメージ大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 damageSuperHeavy">
+            <DisplayName>ダメージ削り値 発生ダメージ特大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 addValueMinimum">
+            <DisplayName>ダメージ削り値 極小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 addValueSmall">
+            <DisplayName>ダメージ削り値 小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 addValueMiddle">
+            <DisplayName>ダメージ削り値 中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 addValueHeavy">
+            <DisplayName>ダメージ削り値 大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 addValueSuperHeavy">
+            <DisplayName>ダメージ削り値 特大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>9999</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

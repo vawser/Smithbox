@@ -114,7 +114,7 @@ public static class ParamDebugTools
 
         foreach (var param in curProject.Handler.ParamData.PrimaryBank.Params)
         {
-            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Key);
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Value.AppliedParamdef.ParamType);
 
             var sanitizedWiki = $"{annotations.Description}".Replace("\n", ", ").Replace("|", "-");
 
@@ -148,7 +148,7 @@ public static class ParamDebugTools
 
         var targetParamDef = curProject.Handler.ParamData.PrimaryBank.GetParamFromName(paramKey);
         var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(targetParamDef.AppliedParamdef);
-        var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(paramKey);
+        var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(targetParamDef.AppliedParamdef.ParamType);
 
         // Fields
         foreach (var field in targetParamDef.AppliedParamdef.Fields)

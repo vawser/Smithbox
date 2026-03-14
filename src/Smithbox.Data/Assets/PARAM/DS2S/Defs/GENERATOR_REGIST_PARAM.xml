@@ -1,20 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>GENERATOR_REGIST_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 EnemyParamID" />
-    <Field Def="s32 LogicParamID" >
-      <Description>Refers to LogicComParam</Description>
-    </Field>
-    <Field Def="s32 DefaultLogicParamID" >
-      <Description>Refers to EnemyDefaultLogicParam</Description>
-    </Field>
-    <Field Def="u16 SpawnState" />
-    <Field Def="u8 DrawGroup" />
-    <Field Def="u8 Unk0F" />
-  </Fields>
+    <ParamType>GENERATOR_REGIST_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 EnemyId">
+            <DisplayName>登録エネミー</DisplayName>
+            <Enum>ENEMY_LIST_ENUM</Enum>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>30000</SortID>
+        </Field>
+        <Field Def="s32 HighLogicId = -1">
+            <DisplayName>上位ロジックID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>40000</SortID>
+        </Field>
+        <Field Def="s32 LowLogicId = -1">
+            <DisplayName>下位ロジックID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>41000</SortID>
+        </Field>
+        <Field Def="u8 startUpStateType">
+            <DisplayName>起動ステートタイプ</DisplayName>
+            <Maximum>20</Maximum>
+            <Increment>1</Increment>
+            <SortID>50000</SortID>
+        </Field>
+        <Field Def="u8 bAnotherWorldGenerate:1">
+            <DisplayName>異次元空間生成</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>51000</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock1:1">
+            <DisplayName>メモリ1</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60000</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock2:1">
+            <DisplayName>メモリ2</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60001</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock3:1">
+            <DisplayName>メモリ3</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60002</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock4:1">
+            <DisplayName>メモリ4</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60003</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock5:1">
+            <DisplayName>メモリ5</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60004</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock6:1">
+            <DisplayName>メモリ6</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60005</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock7:1">
+            <DisplayName>メモリ7</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60006</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock8:1">
+            <DisplayName>メモリ8</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60007</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock9:1">
+            <DisplayName>メモリ9</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60008</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock10:1">
+            <DisplayName>メモリ10</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60009</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock11:1">
+            <DisplayName>メモリ11</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60010</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock12:1">
+            <DisplayName>メモリ12</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60011</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock13:1">
+            <DisplayName>メモリ13</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60012</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock14:1">
+            <DisplayName>メモリ14</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60013</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock15:1">
+            <DisplayName>メモリ15</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60014</SortID>
+        </Field>
+        <Field Def="u8 memoryBlock16:1">
+            <DisplayName>メモリ16</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>60015</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

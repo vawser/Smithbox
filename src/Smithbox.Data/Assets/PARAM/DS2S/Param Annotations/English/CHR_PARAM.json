@@ -1,0 +1,548 @@
+{
+  "Param": "CHR_PARAM",
+  "Type": "CHR_PARAM",
+  "Name": "CHR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": ""
+    },
+    {
+      "Field": "animId",
+      "Name": "アニメID",
+      "Description": ""
+    },
+    {
+      "Field": "commonId",
+      "Name": "共通ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "moveId",
+      "Name": "移動ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "npcStatusId",
+      "Name": "NPCステータスＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "groupType",
+      "Name": "所属設定",
+      "Description": ""
+    },
+    {
+      "Field": "categoryType",
+      "Name": "キャラクターカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "materialType",
+      "Name": "本体材質",
+      "Description": ""
+    },
+    {
+      "Field": "visualType",
+      "Name": "見た目",
+      "Description": ""
+    },
+    {
+      "Field": "multiplayParamId",
+      "Name": "マルチプレイ補正ID",
+      "Description": ""
+    },
+    {
+      "Field": "respawnNum",
+      "Name": "リスポーン数",
+      "Description": ""
+    },
+    {
+      "Field": "isUndead",
+      "Name": "死亡しない",
+      "Description": ""
+    },
+    {
+      "Field": "isRunaway",
+      "Name": "落下死亡時に逃亡する",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint",
+      "Name": "体力\u30001周目",
+      "Description": ""
+    },
+    {
+      "Field": "staminaPoint",
+      "Name": "スタミナ値",
+      "Description": ""
+    },
+    {
+      "Field": "staminaRecoveryValue",
+      "Name": "秒間スタミナ回復値 [point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "staminaLoanMin",
+      "Name": "スタミナ 借金量 最小",
+      "Description": ""
+    },
+    {
+      "Field": "staminaLoanMax",
+      "Name": "スタミナ 借金量 最大",
+      "Description": ""
+    },
+    {
+      "Field": "staminaCostMoveBase",
+      "Name": "スタミナ消費量 ベース値",
+      "Description": ""
+    },
+    {
+      "Field": "deadType",
+      "Name": "死亡タイプ１",
+      "Description": ""
+    },
+    {
+      "Field": "deadType02",
+      "Name": "死亡タイプ２",
+      "Description": ""
+    },
+    {
+      "Field": "defaultEquipWeapon",
+      "Name": "初期装備",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId00",
+      "Name": "所持装備 装備１武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId01",
+      "Name": "所持装備 装備２武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId02",
+      "Name": "所持装備 装備３武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId03",
+      "Name": "所持装備 装備４武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId04",
+      "Name": "所持装備 装備５武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipWeaponAId05",
+      "Name": "所持装備 装備６武器ID",
+      "Description": ""
+    },
+    {
+      "Field": "equipAccessory01",
+      "Name": "装飾品カリングID1",
+      "Description": ""
+    },
+    {
+      "Field": "equipAccessory02",
+      "Name": "装飾品カリングID2",
+      "Description": ""
+    },
+    {
+      "Field": "equipAccessory03",
+      "Name": "装飾品カリングID3",
+      "Description": ""
+    },
+    {
+      "Field": "equipAccessory04",
+      "Name": "装飾品カリングID4",
+      "Description": ""
+    },
+    {
+      "Field": "equipAccessory05",
+      "Name": "装飾品カリングID5",
+      "Description": ""
+    },
+    {
+      "Field": "roundDamageCategory",
+      "Name": "周回ダメージ補正カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "guardPassiveLevelType",
+      "Name": "盾 ガードレベル",
+      "Description": ""
+    },
+    {
+      "Field": "parryType",
+      "Name": "盾 パリィ種類",
+      "Description": ""
+    },
+    {
+      "Field": "spellParrySfxId",
+      "Name": "盾 スペルパリィSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "shieldMaterialType",
+      "Name": "盾 盾材質",
+      "Description": ""
+    },
+    {
+      "Field": "shieldReceiveValue",
+      "Name": "盾 受け能力",
+      "Description": ""
+    },
+    {
+      "Field": "shieldDefenseValue",
+      "Name": "盾 防御力",
+      "Description": ""
+    },
+    {
+      "Field": "shieldMagicDefenseValue",
+      "Name": "盾 魔力耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldMiracleDefenseValue",
+      "Name": "盾 奇蹟耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldPyromancyDefenseValue",
+      "Name": "盾 呪術耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldDarkMagicDefenseValue",
+      "Name": "盾 闇術耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldPoisonDefenseValue",
+      "Name": "盾 毒耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldBleedingDefenseValue",
+      "Name": "盾 出血耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldDestructionDefenseValue",
+      "Name": "盾 武器破壊耐性",
+      "Description": ""
+    },
+    {
+      "Field": "shieldCurseDefenseValue",
+      "Name": "盾 呪い耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorDefenseValue",
+      "Name": "防具 防御力",
+      "Description": ""
+    },
+    {
+      "Field": "armorMagicDefenseValue",
+      "Name": "防具 魔力耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorMiracleDefenseValue",
+      "Name": "防具 奇蹟耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorPyromancyDefenseValue",
+      "Name": "防具 呪術耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorDarkMagicDefenseValue",
+      "Name": "防具 闇術耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorPoisonDefenseValue",
+      "Name": "防具 毒耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorBleedingDefenseValue",
+      "Name": "防具 出血耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorDestructionDefenseValue",
+      "Name": "防具 武器破壊耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorCurseDefenseValue",
+      "Name": "防具 呪い耐性",
+      "Description": ""
+    },
+    {
+      "Field": "armorMaterialType",
+      "Name": "防具 材質",
+      "Description": ""
+    },
+    {
+      "Field": "armorToughValue",
+      "Name": "防具 強靱度",
+      "Description": ""
+    },
+    {
+      "Field": "armorStunBaseValue",
+      "Name": "防具 気絶基本ゲージ",
+      "Description": ""
+    },
+    {
+      "Field": "armorStunRecoveryRate",
+      "Name": "防具 気絶回復速度 [%/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "dropSoulValue",
+      "Name": "入手ソウル量",
+      "Description": ""
+    },
+    {
+      "Field": "dropType",
+      "Name": "ドロップ抽選タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustRate",
+      "Name": "ダメージ倍率",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustRatePlayer",
+      "Name": "ダメージ倍率 プレイヤー",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustRateEnemy",
+      "Name": "ダメージ倍率\u3000エネミー",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustRateNeutral",
+      "Name": "ダメージ倍率\u3000中立",
+      "Description": ""
+    },
+    {
+      "Field": "damageAdjustRateHitObj",
+      "Name": "被ダメージ倍率\u3000OBJ",
+      "Description": ""
+    },
+    {
+      "Field": "residentDamageId1",
+      "Name": "常時ダメージＩＤ１",
+      "Description": ""
+    },
+    {
+      "Field": "residentDamageId2",
+      "Name": "常時ダメージＩＤ２",
+      "Description": ""
+    },
+    {
+      "Field": "residentDamageId3",
+      "Name": "常時ダメージＩＤ３",
+      "Description": ""
+    },
+    {
+      "Field": "stunDisableFlag",
+      "Name": "気絶無効フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "isPartsGuardDamage",
+      "Name": "部位はじき：ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "isPartsGuardBullet",
+      "Name": "部位はじき：バレット",
+      "Description": ""
+    },
+    {
+      "Field": "isPartsGuardSpellParry",
+      "Name": "部位はじき：スペルパリィ",
+      "Description": ""
+    },
+    {
+      "Field": "stunMaxValue",
+      "Name": "気絶値最大値",
+      "Description": ""
+    },
+    {
+      "Field": "stunRecoverValue",
+      "Name": "気絶値回復速度[sec/point]",
+      "Description": ""
+    },
+    {
+      "Field": "changeStunMaxValue",
+      "Name": "[変更時]気絶値最大値",
+      "Description": ""
+    },
+    {
+      "Field": "changeStunRecoverValue",
+      "Name": "[変更時]気絶値回復速度[sec/point]",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInTime",
+      "Name": "フェードイン時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "generateSfx",
+      "Name": "生成時SFX",
+      "Description": ""
+    },
+    {
+      "Field": "partsGuardSpellParryAngle",
+      "Name": "部位はじき：スペルパリィ有効角度",
+      "Description": ""
+    },
+    {
+      "Field": "poiseValue",
+      "Name": "強靭度ゲージ",
+      "Description": ""
+    },
+    {
+      "Field": "poiseRecoveryValue",
+      "Name": "強靭度回復量[p/s]",
+      "Description": ""
+    },
+    {
+      "Field": "changePoiseValue",
+      "Name": "[変更時]強靭度ゲージ",
+      "Description": ""
+    },
+    {
+      "Field": "changePoiseRecoveryValue",
+      "Name": "[変更時]強靭度回復量[p/s]",
+      "Description": ""
+    },
+    {
+      "Field": "overKillRate",
+      "Name": "オーバーキル HP割合",
+      "Description": ""
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "マルチプレイ制限時間減少量[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "isDisallowMultiTarget",
+      "Name": "複数ロックオン無効",
+      "Description": ""
+    },
+    {
+      "Field": "isHollow",
+      "Name": "亡者",
+      "Description": ""
+    },
+    {
+      "Field": "isClothHitMap",
+      "Name": "クロスがマップと当たる",
+      "Description": ""
+    },
+    {
+      "Field": "roundDropSoulCategory",
+      "Name": "周回獲得ソウル補正カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId",
+      "Name": "初週アイテム抽選ID（ホスト）",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotIdForGuest",
+      "Name": "初週アイテム抽選ID（ゲスト）",
+      "Description": ""
+    },
+    {
+      "Field": "guardDelay",
+      "Name": "ガード判定遅延時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint02",
+      "Name": "体力\u30002周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint03",
+      "Name": "体力\u30003周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint04",
+      "Name": "体力\u30004周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint05",
+      "Name": "体力\u30005周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint06",
+      "Name": "体力\u30006周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint07",
+      "Name": "体力\u30007周目",
+      "Description": ""
+    },
+    {
+      "Field": "hitPoint08",
+      "Name": "体力\u30008周目",
+      "Description": ""
+    },
+    {
+      "Field": "nameTextId",
+      "Name": "キャラ名テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "bStrongDrop",
+      "Name": "強者ドロップ",
+      "Description": ""
+    },
+    {
+      "Field": "bThrowableByEnemy",
+      "Name": "敵に投げられるのが可能か",
+      "Description": ""
+    },
+    {
+      "Field": "bBulletAllDelete",
+      "Name": "弾全削除",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "effectID",
+      "Name": "SpEffectID",
+      "Description": ""
+    }
+  ]
+}

@@ -1,14 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>LACK_OF_STATS_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 lack_stats_min_penalty" />
-    <Field Def="f32 lack_stats_max_penalty" />
-    <Field Def="f32 lack_stamina_min_penalty" />
-    <Field Def="f32 lack_stamina_max_penalty" />
-  </Fields>
+    <ParamType>LACK_OF_STATS_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 minValueByStats">
+            <DisplayName>ST不足 最小値</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 maxValueByStats">
+            <DisplayName>ST不足 最大値</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 minValueByStamina">
+            <DisplayName>スタミナ不足 最小値</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 maxValueByStamina">
+            <DisplayName>スタミナ不足 最大値</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

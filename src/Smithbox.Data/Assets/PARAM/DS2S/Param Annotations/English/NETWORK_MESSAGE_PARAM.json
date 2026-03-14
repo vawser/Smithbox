@@ -1,0 +1,118 @@
+{
+  "Param": "NETWORK_MESSAGE_PARAM",
+  "Type": "NETWORK_MESSAGE_PARAM",
+  "Name": "NETWORK_MESSAGE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "ホスト",
+      "Description": ""
+    },
+    {
+      "Field": "white",
+      "Name": "白霊",
+      "Description": ""
+    },
+    {
+      "Field": "smallWhite",
+      "Name": "小白霊",
+      "Description": ""
+    },
+    {
+      "Field": "gold",
+      "Name": "金霊",
+      "Description": ""
+    },
+    {
+      "Field": "smallGold",
+      "Name": "小金霊",
+      "Description": ""
+    },
+    {
+      "Field": "coopBlue",
+      "Name": "救援青霊",
+      "Description": ""
+    },
+    {
+      "Field": "versusBlue",
+      "Name": "報復青霊",
+      "Description": ""
+    },
+    {
+      "Field": "blackSign",
+      "Name": "黒霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "blackIntrude",
+      "Name": "黒霊（乱入）",
+      "Description": ""
+    },
+    {
+      "Field": "redSign",
+      "Name": "赤霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "redIntrude",
+      "Name": "赤霊（乱入）",
+      "Description": ""
+    },
+    {
+      "Field": "bellGuard",
+      "Name": "鐘守灰霊",
+      "Description": ""
+    },
+    {
+      "Field": "ratKing",
+      "Name": "ねずみの王灰霊",
+      "Description": ""
+    },
+    {
+      "Field": "dragon",
+      "Name": "竜霊",
+      "Description": ""
+    },
+    {
+      "Field": "mirrorKnightSign",
+      "Name": "ミラーナイト霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "abyssSign",
+      "Name": "深淵霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "duelBlue",
+      "Name": "決闘青霊",
+      "Description": ""
+    },
+    {
+      "Field": "duelRed",
+      "Name": "決闘赤霊",
+      "Description": ""
+    },
+    {
+      "Field": "dummy01",
+      "Name": "徘徊幻影",
+      "Description": ""
+    },
+    {
+      "Field": "dummy02",
+      "Name": "篝火幻影",
+      "Description": ""
+    },
+    {
+      "Field": "mirrorKnightIntrude",
+      "Name": "ミラーナイト霊(乱入)",
+      "Description": ""
+    },
+    {
+      "Field": "abyssIntrude",
+      "Name": "深淵霊（乱入）",
+      "Description": ""
+    }
+  ]
+}

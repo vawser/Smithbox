@@ -1892,7 +1892,7 @@ public static class AC6_FieldOffsetHelper
 
             var targetMeta = curView.GetParamData().GetParamMeta(firstRow.Def);
 
-            var annotations = curView.Project.Handler.ParamData.GetParamAnnotations(paramString);
+            var annotations = curView.Project.Handler.ParamData.GetParamAnnotations(firstRow.Def.ParamType);
 
             foreach (var col in firstRow.Columns)
             {
