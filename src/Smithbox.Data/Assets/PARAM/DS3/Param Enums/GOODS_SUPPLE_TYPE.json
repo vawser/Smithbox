@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Estus Flask"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2 - Estus Flask"
+          "Text": "Ashen Estus Flask"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3 - Ashen Estus Flask"
+          "Text": "Unused"
         }
       ]
     }
