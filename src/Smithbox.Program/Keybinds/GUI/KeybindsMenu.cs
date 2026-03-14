@@ -226,6 +226,20 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
+                        UIHelper.Tooltip("Reset the binding to its default.");
+
+                        ImGui.SameLine();
+
+                        if (ImGui.Button($"{Icons.WindowClose}##clear_{action}", DPI.IconButtonSize))
+                        {
+                            for (int i = 0; i < bindings.Count; i++)
+                            {
+                                var defaultBinding = InputManager._defaultBindings.Entries[action][i];
+                                bindings[i] = defaultBinding.Clone();
+                                bindings[i].Key = Key.Unknown;
+                            }
+                        }
+                        UIHelper.Tooltip("Clear the binding.");
 
                         if (presentation.Item1 != null)
                         {
@@ -475,6 +489,20 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
+                        UIHelper.Tooltip("Reset the binding to its default.");
+
+                        ImGui.SameLine();
+
+                        if (ImGui.Button($"{Icons.WindowClose}##clear_{action}", DPI.IconButtonSize))
+                        {
+                            for (int i = 0; i < bindings.Count; i++)
+                            {
+                                var defaultBinding = InputManager._defaultMouseBindings.Entries[action][i];
+                                bindings[i] = defaultBinding.Clone();
+                                bindings[i].Key = MouseButton.None;
+                            }
+                        }
+                        UIHelper.Tooltip("Clear the binding.");
 
                         if (presentation.Item1 != null)
                         {
