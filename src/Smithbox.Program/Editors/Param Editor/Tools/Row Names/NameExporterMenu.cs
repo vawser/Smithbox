@@ -81,7 +81,7 @@ public static class NameExporterMenu
 
             if (Path.Exists(FilePath))
             {
-                if (IsSpecificParam)
+                if (!IsSpecificParam)
                 {
                     RowNameHelper.ExportRowNames(
                         project,
@@ -112,7 +112,7 @@ public static class NameExporterMenu
 
             if (Path.Exists(FilePath))
             {
-                if (IsSpecificParam)
+                if (!IsSpecificParam)
                 {
                     RowNameHelper.ExportRowNames(
                         project,
