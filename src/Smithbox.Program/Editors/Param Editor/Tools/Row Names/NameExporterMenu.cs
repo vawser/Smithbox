@@ -116,14 +116,14 @@ public static class NameExporterMenu
                 {
                     RowNameHelper.ExportRowNames(
                         project,
-                        ParamRowNameExportType.JSON,
+                        ParamRowNameExportType.Text,
                         FilePath);
                 }
                 else
                 {
                     RowNameHelper.ExportRowNames(
                         project,
-                        ParamRowNameExportType.JSON,
+                        ParamRowNameExportType.Text,
                         FilePath,
                         activeView.Selection.GetActiveParam());
                 }
