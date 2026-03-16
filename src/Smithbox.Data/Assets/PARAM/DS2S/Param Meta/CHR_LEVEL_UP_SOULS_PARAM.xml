@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <soulLevelThreshold />
-        <dummy />
+        <dummy Padding="" />
         <increasedSoulsFromThreshold />
         <necessarySouls />
     </Field>

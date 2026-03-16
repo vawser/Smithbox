@@ -6,23 +6,23 @@
   "Fields": [
     {
       "Field": "soulLevelThreshold",
-      "Name": "必要ソウル 閾レベル",
-      "Description": ""
+      "Name": "Soul Level Threshold",
+      "Description": "The required soul level threshold."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "increasedSoulsFromThreshold",
-      "Name": "必要ソウル 増加量",
-      "Description": ""
+      "Name": "Required Soul Increase",
+      "Description": "The amount of required souls that are added for each threshold."
     },
     {
       "Field": "necessarySouls",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Soul",
+      "Description": "The amount of required souls."
     }
   ]
 }

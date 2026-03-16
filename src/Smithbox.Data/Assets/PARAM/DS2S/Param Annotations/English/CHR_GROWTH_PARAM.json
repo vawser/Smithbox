@@ -6,208 +6,208 @@
   "Fields": [
     {
       "Field": "soulLevelMax",
-      "Name": "最大ソウルレベル",
-      "Description": ""
+      "Name": "Maximum Soul Level",
+      "Description": "The maximum soul level possible."
     },
     {
       "Field": "growthPointsPerLevelUp",
-      "Name": "獲得成長ポイント",
-      "Description": ""
+      "Name": "Growth Points per Level Up",
+      "Description": "The amount of growth points given per level up."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "enemyOverKillSoulRate",
-      "Name": "エネミーソウル オーバーキル補正倍率",
-      "Description": ""
+      "Name": "Enemy: Soul % - Overkill",
+      "Description": "The soul multiplier applied on enemy overkill."
     },
     {
       "Field": "enemyFinishSoulRate",
-      "Name": "エネミーソウル フィニッシュ補正倍率",
-      "Description": ""
+      "Name": "Enemy: Soul % - Finish",
+      "Description": "The soul multiplier applied on enemy finish."
     },
     {
       "Field": "enemyVeryEasySoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Very Easy",
-      "Description": ""
+      "Name": "Enemy: Soul % - Very Easy",
+      "Description": "The soul multiplier applied to enemies with the 'very easy' difficulty adjustment modifier."
     },
     {
       "Field": "enemyEasySoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Easy",
-      "Description": ""
+      "Name": "Enemy: Soul % - Easy",
+      "Description": "The soul multiplier applied to enemies with the 'easy' difficulty adjustment modifier."
     },
     {
       "Field": "enemyNormalSoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Normal",
-      "Description": ""
+      "Name": "Enemy: Soul % - Normal",
+      "Description": "The soul multiplier applied to enemies with the 'normal' difficulty adjustment modifier."
     },
     {
       "Field": "enemyHardSoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Hard",
-      "Description": ""
+      "Name": "Enemy: Soul % - Hard",
+      "Description": "The soul multiplier applied to enemies with the 'hard' difficulty adjustment modifier."
     },
     {
       "Field": "enemyVeryHardSoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Very Hard",
-      "Description": ""
+      "Name": "Enemy: Soul % - Very Hard",
+      "Description": "The soul multiplier applied to enemies with the 'very hard' difficulty adjustment modifier."
     },
     {
       "Field": "enemyHellSoulRate",
-      "Name": "エネミーソウル 難易度補正倍率 Hell",
-      "Description": ""
+      "Name": "Enemy: Soul % - Hell",
+      "Description": "The soul multiplier applied to enemies with the 'hell' modifier."
     },
     {
       "Field": "enemyCoop1SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正１",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 1",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 1' modifier."
     },
     {
       "Field": "enemyCoop2SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正２",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 2",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 2' modifier."
     },
     {
       "Field": "enemyCoop3SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正３",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 3",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 3' modifier."
     },
     {
       "Field": "enemyCoop4SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正４",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 4",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 4' modifier."
     },
     {
       "Field": "enemyCoop5SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正５",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 5",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 5' modifier."
     },
     {
       "Field": "enemyCoop6SoulRate",
-      "Name": "エネミーソウル 協力プレイ補正６",
-      "Description": ""
+      "Name": "Enemy: Soul % - Co-op 6",
+      "Description": "The soul multiplier applied to enemies with the 'Co-op 6' modifier."
     },
     {
       "Field": "enemyLap1SoulRate",
-      "Name": "エネミーソウル 周回補正倍率１",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 1",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 1' modifier."
     },
     {
       "Field": "enemyLap2SoulRate",
-      "Name": "エネミーソウル 周回補正倍率２",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 2",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 2' modifier."
     },
     {
       "Field": "enemyLap3SoulRate",
-      "Name": "エネミーソウル 周回補正倍率３",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 3",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 3' modifier."
     },
     {
       "Field": "enemyLap4SoulRate",
-      "Name": "エネミーソウル 周回補正倍率４",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 4",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 4' modifier."
     },
     {
       "Field": "enemyLap5SoulRate",
-      "Name": "エネミーソウル 周回補正倍率５",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 5",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 5' modifier."
     },
     {
       "Field": "enemyLap6SoulRate",
-      "Name": "エネミーソウル 周回補正倍率６",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 6",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 6' modifier."
     },
     {
       "Field": "enemyLap7SoulRate",
-      "Name": "エネミーソウル 周回補正倍率７",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 7",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 7' modifier."
     },
     {
       "Field": "enemyLap8SoulRate",
-      "Name": "エネミーソウル 周回補正倍率８",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 8",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 8' modifier."
     },
     {
       "Field": "enemyLap9SoulRate",
-      "Name": "エネミーソウル 周回補正倍率９",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 9",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 9' modifier."
     },
     {
       "Field": "enemyLap10SoulRate",
-      "Name": "エネミーソウル 周回補正倍率１０",
-      "Description": ""
+      "Name": "Enemy: Soul % - New Game 10",
+      "Description": "The soul multiplier applied to enemies with the 'New Game 10' modifier."
     },
     {
       "Field": "enemyLevelMinSoulRate",
-      "Name": "エネミーソウル レベル補正倍率 最小値",
-      "Description": ""
+      "Name": "Enemy: Minimum Soul %: Soul Level",
+      "Description": "The minimum soul multiplier applied to enemies based on soul level."
     },
     {
       "Field": "enemyLevelMaxSoulRate",
-      "Name": "エネミーソウル レベル補正倍率 最大値",
-      "Description": ""
+      "Name": "Enemy: Maximum Soul %: Soul Level",
+      "Description": "The maximum soul multiplier applied to enemies based on soul level."
     },
     {
       "Field": "enemyHostBlackSoulRate",
-      "Name": "エネミーソウル ホスト-黒撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a black tendency."
     },
     {
       "Field": "enemyHostRedSoulRate",
-      "Name": "エネミーソウル ホスト-黒撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a red tendency."
     },
     {
       "Field": "enemyWhiteBlackSoulRate",
-      "Name": "エネミーソウル 白-黒撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: White-Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-black tendency."
     },
     {
       "Field": "enemyWhiteRedSoulRate",
-      "Name": "エネミーソウル 白-赤撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: White-Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-red tendency."
     },
     {
       "Field": "enemyBlueBlackSoulRate",
-      "Name": "エネミーソウル 青-黒撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Blue-Black Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-black tendency."
     },
     {
       "Field": "enemyBlueRedSoulRate",
-      "Name": "エネミーソウル 青-赤撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Blue-Red Tendency",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-red tendency."
     },
     {
       "Field": "enemyBlackHostSoulRate",
-      "Name": "エネミーソウル 黒-ホスト撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a black tendency and the host is defeated."
     },
     {
       "Field": "enemyBlackWhiteSoulRate",
-      "Name": "エネミーソウル 黒-白撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: White-Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a white-black tendency and the host is defeated."
     },
     {
       "Field": "enemyBlackBlueSoulRate",
-      "Name": "エネミーソウル 黒-青撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Blue-Black - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a blue-black tendency and the host is defeated."
     },
     {
       "Field": "enemyRedHostSoulRate",
-      "Name": "エネミーソウル 赤-ホスト撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Red - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red tendency and the host is defeated."
     },
     {
       "Field": "enemyRedWhiteSoulRate",
-      "Name": "エネミーソウル 赤-白撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Red-White - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red-white tendency and the host is defeated."
     },
     {
       "Field": "enemyRedBlueSoulRate",
-      "Name": "エネミーソウル 赤-青撃破",
-      "Description": ""
+      "Name": "Enemy: Soul %: Red-Blue - Host Defeated",
+      "Description": "The soul multiplier applied to enemies if the host player has a red-blue tendency and the host is defeated."
     }
   ]
 }

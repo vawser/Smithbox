@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "frequency",
-      "Name": "速度",
-      "Description": ""
+      "Name": "Frequency",
+      "Description": "The frequency of the emissiveness."
     },
     {
       "Field": "min",
-      "Name": "最小値",
-      "Description": ""
+      "Name": "Minimum Value",
+      "Description": "The minimum value for the emissiveness."
     },
     {
       "Field": "max",
-      "Name": "最大値",
-      "Description": ""
+      "Name": "Maximum Value",
+      "Description": "The maximum value for the emissiveness."
     }
   ]
 }

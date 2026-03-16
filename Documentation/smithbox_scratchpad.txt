@@ -6,7 +6,7 @@
  - Fix the FMG ref finder (the finder is inconsistent)
  
 - Model Editor
- - Fix dummy movement
+ - Fix dummy gizmo movement
 
 - Material Editor:
  - Add MATBIN support back

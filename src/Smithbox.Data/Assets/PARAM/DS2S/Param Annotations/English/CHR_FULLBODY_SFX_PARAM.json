@@ -7,77 +7,77 @@
     {
       "Field": "sfxId",
       "Name": "SFX ID",
-      "Description": ""
+      "Description": "The SFX used for this entry."
     },
     {
       "Field": "dirType",
-      "Name": "生成方向",
-      "Description": ""
+      "Name": "Generation Direction",
+      "Description": "The direction in which the SFX is generated."
     },
     {
       "Field": "traceType",
-      "Name": "SFX方向を維持",
-      "Description": ""
+      "Name": "Maintain Direction",
+      "Description": "The direction that the SFX is maintained in."
     },
     {
       "Field": "dummy0",
-      "Name": "予備",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "isDisableHead",
-      "Name": "頭無効",
-      "Description": ""
+      "Name": "Disable Head",
+      "Description": "If enabled, disable occurrence on the head."
     },
     {
       "Field": "isDisableBody",
-      "Name": "体無効",
-      "Description": ""
+      "Name": "Disable Body",
+      "Description": "If enabled, disable occurrence on the body."
     },
     {
       "Field": "isDisableRArm",
-      "Name": "右腕無効",
-      "Description": ""
+      "Name": "Disable Right Arm",
+      "Description": "If enabled, disable occurrence on the right arm."
     },
     {
       "Field": "isDisableLArm",
-      "Name": "左腕無効",
-      "Description": ""
+      "Name": "Disable Left Arm",
+      "Description": "If enabled, disable occurrence on the left arm."
     },
     {
       "Field": "isDisableRHand",
-      "Name": "右手無効",
-      "Description": ""
+      "Name": "Disable Right Hand",
+      "Description": "If enabled, disable occurrence on the right hand."
     },
     {
       "Field": "isDisableLHand",
-      "Name": "左手無効",
-      "Description": ""
+      "Name": "Disable Left Hand",
+      "Description": "If enabled, disable occurrence on the left hand."
     },
     {
       "Field": "isDisableRLeg",
-      "Name": "右足無効",
-      "Description": ""
+      "Name": "Disable Right Leg",
+      "Description": "If enabled, disable occurrence on the right leg."
     },
     {
       "Field": "isDisableLLeg",
-      "Name": "左足無効",
-      "Description": ""
+      "Name": "Disable Left Leg",
+      "Description": "If enabled, disable occurrence on the left leg."
     },
     {
       "Field": "dummy1",
-      "Name": "予備",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "time",
-      "Name": "生成時間",
-      "Description": ""
+      "Name": "Generation Time",
+      "Description": "The time for the SFX generation."
     },
     {
       "Field": "seId",
-      "Name": "SE ID",
-      "Description": ""
+      "Name": "Sound ID",
+      "Description": "The sound ID to play when generating the SFX."
     }
   ]
 }

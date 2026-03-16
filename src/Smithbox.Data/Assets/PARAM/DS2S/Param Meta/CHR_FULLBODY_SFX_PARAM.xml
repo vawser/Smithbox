@@ -4,7 +4,7 @@
         <sfxId />
         <dirType  Enum="CHR_FULLBODY_SFX_DIR_TYPE"/>
         <traceType  Enum="CHR_FULLBODY_SFX_TRACE_TYPE"/>
-        <dummy0 />
+        <dummy0 Padding="" />
         <isDisableHead  IsBool=""/>
         <isDisableBody  IsBool=""/>
         <isDisableRArm  IsBool=""/>
@@ -13,8 +13,8 @@
         <isDisableLHand  IsBool=""/>
         <isDisableRLeg  IsBool=""/>
         <isDisableLLeg  IsBool=""/>
-        <dummy1 />
+        <dummy1 Padding=""  />
         <time />
-        <seId />
+        <seId SoundAlias="" />
     </Field>
 </PARAMMETA>

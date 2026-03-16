@@ -6,28 +6,28 @@
   "Fields": [
     {
       "Field": "bodyScaleHead",
-      "Name": "頭",
-      "Description": ""
+      "Name": "Body Scale: Head",
+      "Description": "The body scale to use for the head."
     },
     {
       "Field": "bodyScaleBreast",
-      "Name": "胸",
-      "Description": ""
+      "Name": "Body Scale: Chest",
+      "Description": "The body scale to use for the chest."
     },
     {
       "Field": "bodyScaleAbdomen",
-      "Name": "腹",
-      "Description": ""
+      "Name": "Body Scale: Torso",
+      "Description": "The body scale to use for the torso."
     },
     {
       "Field": "bodyScaleArm",
-      "Name": "腕",
-      "Description": ""
+      "Name": "Body Scale: Arms",
+      "Description": "The body scale to use for the arms."
     },
     {
       "Field": "bodyScaleLeg",
-      "Name": "足",
-      "Description": ""
+      "Name": "Body Scale: Legs",
+      "Description": "The body scale to use for the Legs."
     }
   ]
 }

@@ -2,647 +2,647 @@
   "Param": "CHR_CULLING_PARAM",
   "Type": "CHR_CULLING_PARAM",
   "Name": "CHR_CULLING_PARAM",
-  "Description": "",
+  "Description": "Handles the culling of model parts on characters.",
   "Fields": [
     {
       "Field": "pattern0CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern0CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 0: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern1CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 1: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern2CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 2: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern3CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 3: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern4CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 4: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern5CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 5: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern6CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 6: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern7CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 7: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern8CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern9CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 8: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern10CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 9: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern11CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 10: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern12CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 11: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern13CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 12: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern14CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 13: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern15CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 14: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId0",
-      "Name": "カリングID0",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 0",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId1",
-      "Name": "カリングID1",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 1",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId2",
-      "Name": "カリングID2",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 2",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId3",
-      "Name": "カリングID3",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 3",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId4",
-      "Name": "カリングID4",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 4",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId5",
-      "Name": "カリングID5",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 5",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId6",
-      "Name": "カリングID6",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 6",
+      "Description": "The culling ID to use for this pattern in this slot."
     },
     {
       "Field": "pattern16CullingId7",
-      "Name": "カリングID7",
-      "Description": ""
+      "Name": "Pattern 15: Culling ID 7",
+      "Description": "The culling ID to use for this pattern in this slot."
     }
   ]
 }

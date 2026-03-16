@@ -6,28 +6,28 @@
   "Fields": [
     {
       "Field": "valueOnLightLoad",
-      "Name": "軽量",
-      "Description": ""
+      "Name": "Value on Light Load",
+      "Description": "The value to apply for light load."
     },
     {
       "Field": "valueOnMiddleLoad",
-      "Name": "中量",
-      "Description": ""
+      "Name": "Value on Medium Load",
+      "Description": "The value to apply for medium load."
     },
     {
       "Field": "valueOnHeavyLoad",
-      "Name": "重量",
-      "Description": ""
+      "Name": "Value on Heavy Load",
+      "Description": "The value to apply for heavy load."
     },
     {
       "Field": "valueOnTooHeavyLoad",
-      "Name": "重量過多",
-      "Description": ""
+      "Name": "Value on Excessive Load",
+      "Description": "The value to apply for excessive load."
     },
     {
       "Field": "valueOnOverWeightLoad",
-      "Name": "それ以上",
-      "Description": ""
+      "Name": "Value on Overweight Load",
+      "Description": "The value to apply for overweight load."
     }
   ]
 }

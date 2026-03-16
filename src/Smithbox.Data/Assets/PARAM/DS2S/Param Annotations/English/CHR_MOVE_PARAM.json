@@ -6,18 +6,18 @@
   "Fields": [
     {
       "Field": "fParallelWalkAccelerationMax",
-      "Name": "平行移動 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Parallel Walk: Acceleration: Maximum",
+      "Description": "The maximum acceleration (in metres per second squared)."
     },
     {
       "Field": "fParallelWalkSpeedMin",
-      "Name": "平行移動 最低速度 [m/sec]",
-      "Description": ""
+      "Name": "Parallel Walk: Speed: Minimum",
+      "Description": "The minimum speed (in metres per second)."
     },
     {
       "Field": "fParallelWalkSpeedMax",
-      "Name": "平行移動 最高速度 [m/sec]",
-      "Description": ""
+      "Name": "Parallel Walk: Speed: Maximum",
+      "Description": "The maximum speed (in metres per second)."
     },
     {
       "Field": "fParallelWalkDeceleration",
