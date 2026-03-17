@@ -66,7 +66,7 @@
         <afterAttackRotationSpeed />
         <qtRearEnableMasterRotate  IsBool=""/>
         <qtFrontEnableMasterRotate  IsBool=""/>
-        <quickTurnPad />
+        <quickTurnPad Padding="" />
         <quickTurnRotateSpeed />
         <stepDist />
         <stepStaminaEmptyDist />

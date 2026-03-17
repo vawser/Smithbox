@@ -6,493 +6,493 @@
   "Fields": [
     {
       "Field": "fParallelWalkAccelerationMax",
-      "Name": "Parallel Walk: Acceleration: Maximum",
-      "Description": "The maximum acceleration (in metres per second squared)."
+      "Name": "Parallel Walk: Acceleration",
+      "Description": "The acceleration (in metres per second squared) for parallel walking."
     },
     {
       "Field": "fParallelWalkSpeedMin",
-      "Name": "Parallel Walk: Speed: Minimum",
-      "Description": "The minimum speed (in metres per second)."
+      "Name": "Parallel Walk: Minimum Speed",
+      "Description": "The minimum speed (in metres per second) for parallel walking."
     },
     {
       "Field": "fParallelWalkSpeedMax",
-      "Name": "Parallel Walk: Speed: Maximum",
-      "Description": "The maximum speed (in metres per second)."
+      "Name": "Parallel Walk: Maximum Speed",
+      "Description": "The maximum speed (in metres per second) for parallel walking."
     },
     {
       "Field": "fParallelWalkDeceleration",
-      "Name": "平行移動 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Parallel Walk: Deceleration",
+      "Description": "The deceleration (in metres per second squared) for parallel walking."
     },
     {
       "Field": "fParallelWalkBackAngleMax",
-      "Name": "平行移動 後退入力角度 [deg]",
-      "Description": ""
+      "Name": "Parallel Walk: Translation Input Angle",
+      "Description": "The translation input angle (in degrees) for parallel walking."
     },
     {
       "Field": "fParallelWalkBackSpeedRateMax",
-      "Name": "平行移動 速度低下割合 [%]",
-      "Description": ""
+      "Name": "Parallel Walk: Translation Velocity Reduction %",
+      "Description": "The rate of velocity reduction during input translation for parallel walking."
     },
     {
       "Field": "fWalkAccelerationMax",
-      "Name": "歩行 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Walk: Acceleration",
+      "Description": "The acceleration during a walk (in metres per second squared)."
     },
     {
       "Field": "fWalkSpeedMin",
-      "Name": "歩行 最低速度 [m/sec]",
-      "Description": ""
+      "Name": "Walk: Minimum Speed",
+      "Description": "The minimum speed for a walk (in metres per second)."
     },
     {
       "Field": "fWalkSpeedMax",
-      "Name": "歩行 最高速度 [m/sec]",
-      "Description": ""
+      "Name": "Walk: Maximum Speed",
+      "Description": "The maximum speed for a walk (in metres per second)."
     },
     {
       "Field": "fWalkDeceleration",
-      "Name": "歩行 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Walk: Deceleration",
+      "Description": "The deceleration during a walk (in metres per second squared)."
     },
     {
       "Field": "fWalkRotationAcceleration",
-      "Name": "歩行 旋回加速度 [deg/sec^2]",
-      "Description": ""
+      "Name": "Walk: Turn Acceleration",
+      "Description": "The acceleration during a walk when turning (in degrees per second squared) ."
     },
     {
       "Field": "fWalkRotationSpeedOnLowSpeed",
-      "Name": "歩行 低速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Walk: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a walk when slow turning."
     },
     {
       "Field": "fWalkRotationSpeedOnHighSpeed",
-      "Name": "歩行 高速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Walk: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a walk when fast turning."
     },
     {
       "Field": "fWalkRotSpeedMinBorder",
-      "Name": "歩行 低速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Walk: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a walk (in metres per second)."
     },
     {
       "Field": "fWalkRotSpeedMaxBorder",
-      "Name": "歩行 高速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Walk: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a walk (in metres per second)."
     },
     {
       "Field": "fDashStartSpeed",
-      "Name": "ダッシュ初速度[m/sec]",
-      "Description": ""
+      "Name": "Dash: Initial Speed",
+      "Description": "The initial speed during a dash (in metres per second)."
     },
     {
       "Field": "fDashAcceleration",
-      "Name": "ダッシュ 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Dash: Acceleration",
+      "Description": "The acceleration during a dash (in metres per second squared)."
     },
     {
       "Field": "fDashSpeedMin",
-      "Name": "ダッシュ 最低速度 [m/sec]",
-      "Description": ""
+      "Name": "Dash: Minimum Speed",
+      "Description": "The minimum speed during a dash (in metres per second)."
     },
     {
       "Field": "fDashSpeedMax",
-      "Name": "ダッシュ 最高速度 [m/sec]",
-      "Description": ""
+      "Name": "Dash: Maximum Speed",
+      "Description": "The maximum speed during a dash (in metres per second)."
     },
     {
       "Field": "fDashDeceleration",
-      "Name": "ダッシュ 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Dash: Deceleration",
+      "Description": "The deceleration during a dash (in metres per second squared)."
     },
     {
       "Field": "fDashRotationAcceleration",
-      "Name": "ダッシュ 旋回加速度 [deg/sec^2]",
-      "Description": ""
+      "Name": "Dash: Turn Acceleration",
+      "Description": "The acceleration during a dash when turning (in degrees per second squared) ."
     },
     {
       "Field": "fDashRotationSpeedMin",
-      "Name": "ダッシュ 低速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Dash: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a dash when slow turning."
     },
     {
       "Field": "fDashRotationSpeedMax",
-      "Name": "ダッシュ 高速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Dash: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a dash when fast turning."
     },
     {
       "Field": "fDashRotSpeedMinBorder",
-      "Name": "ダッシュ 低速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Dash: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a dash (in metres per second)."
     },
     {
       "Field": "fDashRotSpeedMaxBorder",
-      "Name": "ダッシュ 高速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Dash: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a dash (in metres per second)."
     },
     {
       "Field": "fLockOnWalkAccelerationMax",
-      "Name": "ロック移動 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Walk: Acceleration",
+      "Description": "The acceleration during a locked-on walk (in metres per second squared)."
     },
     {
       "Field": "fLockOnWalkSpeedMin",
-      "Name": "ロック移動 最低速度 [m/sec]",
-      "Description": ""
+      "Name": "Locked-on Walk: Minimum Speed",
+      "Description": "The minimum speed for a locked-on walk (in metres per second)."
     },
     {
       "Field": "fLockOnWalkSpeedMax",
-      "Name": "ロック移動 最高速度 [m/sec]",
-      "Description": ""
+      "Name": "Locked-on Walk: Maximum Speed",
+      "Description": "The maximum speed for a locked-on walk (in metres per second)."
     },
     {
       "Field": "fLockOnWalkDeceleration",
-      "Name": "ロック移動 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Walk: Deceleration",
+      "Description": "The deceleration during a locked-on walk (in metres per second squared)."
     },
     {
       "Field": "fLockOnWalkRotationAcceleration",
-      "Name": "ロック移動 旋回加速度 [deg/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Walk: Turn Acceleration",
+      "Description": "The acceleration during a locked-on walk when turning (in degrees per second squared) ."
     },
     {
       "Field": "fLockOnWalkRotationSpeedMax",
-      "Name": "ロック移動 旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Locked-on Walk: Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on walk when turning."
     },
     {
       "Field": "fLockOnWalkAngleMax",
-      "Name": "ロック移動 後退入力角度 [deg]",
-      "Description": ""
+      "Name": "Locked-on Walk: Backward Input Angle",
+      "Description": "The backward input angle (in degrees) during a locked-on walk."
     },
     {
       "Field": "fLockOnWalkBackMoveSpeedRateMax",
-      "Name": "ロック移動 速度低下割合 [%]",
-      "Description": ""
+      "Name": "Locked-on Walk: Speed Reduction %",
+      "Description": "The speed reduction rate during a locked-on walk."
     },
     {
       "Field": "fLockOnDashStartSpeed",
-      "Name": "ロックダッシュ 初速度[m/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Initial Speed",
+      "Description": "The initial speed during a locked-on dash (in metres per second)."
     },
     {
       "Field": "fLockOnDashAcceleration",
-      "Name": "ロックダッシュ 加速度[m/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Dash: Acceleration",
+      "Description": "The acceleration during a locked-on dash (in metres per second squared)."
     },
     {
       "Field": "fLockOnDashSpeedMin",
-      "Name": "ロックダッシュ 最低速度[m/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Minimum Speed",
+      "Description": "The minimum speed during a locked-on dash (in metres per second)."
     },
     {
       "Field": "fLockOnDashSpeedMax",
-      "Name": "ロックダッシュ 最高速度[m/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Maximum Speed",
+      "Description": "The maximum speed during a locked-on dash (in metres per second)."
     },
     {
       "Field": "fLockOnDashDeceleration",
-      "Name": "ロックダッシュ 減速度[m/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Dash: Deceleration",
+      "Description": "The deceleration during a locked-on dash (in metres per second squared)."
     },
     {
       "Field": "fLockOnDashRotationAcceleration",
-      "Name": "ロックダッシュ 旋回加速度[deg/sec^2]",
-      "Description": ""
+      "Name": "Locked-on Dash: Turn Acceleration",
+      "Description": "The acceleration during a locked-on dash when turning (in degrees per second squared) ."
     },
     {
       "Field": "fLockOnDashRotationSpeedMin",
-      "Name": "ロックダッシュ 低速旋回速度[deg/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on dash when slow turning."
     },
     {
       "Field": "fLockOnDashRotationSpeedMax",
-      "Name": "ロックダッシュ 高速旋回速度[deg/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on dash when fast turning."
     },
     {
       "Field": "fLockOnDashRotSpeedMinBorder",
-      "Name": "ロックダッシュ 低速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a locked-on dash (in metres per second)."
     },
     {
       "Field": "fLockOnDashRotSpeedMaxBorder",
-      "Name": "ロックダッシュ 高速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Locked-on Dash: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a locked-on dash (in metres per second)."
     },
     {
       "Field": "fRotationValueMin",
-      "Name": "旋回 旋回量 最小 [deg]",
-      "Description": ""
+      "Name": "Turn: Minimum Angle",
+      "Description": "The minimum angle to turn during a turning (in degrees)."
     },
     {
       "Field": "fRotationValueMax",
-      "Name": "旋回 旋回量 最大 [deg]",
-      "Description": ""
+      "Name": "Turn: Maximum Angle",
+      "Description": "The maximum angle to turn during a turning (in degrees)."
     },
     {
       "Field": "attackAutoPivotRotationSpeed",
-      "Name": "攻撃 旋回ホーミング 速度 [deg/sec]",
-      "Description": ""
+      "Name": "Attack: Auto-Pivot Turn Speed",
+      "Description": "The speed of the auto-pivot turn during an attack (in degrees per second)."
     },
     {
       "Field": "attackAutoPivotLimitAngle",
-      "Name": "攻撃 旋回ホーミング 限界角度 [deg]",
-      "Description": ""
+      "Name": "Attack: Auto-Pivot Turn Limit",
+      "Description": "Th angle limit for the auto-pivot turn during an attack (in degrees)."
     },
     {
       "Field": "attackManualPivotRotationSpeed",
-      "Name": "攻撃 任意旋回 速度 [deg/sec]",
-      "Description": ""
+      "Name": "Attack: Manual-Pivot Turn Speed",
+      "Description": "The speed of the manual-pivot turn during an attack (in degrees per second)."
     },
     {
       "Field": "attackManualPivotLimitAngle",
-      "Name": "攻撃 任意旋回 限界角度 [deg]",
-      "Description": ""
+      "Name": "Attack: Manual-Pivot Turn Limit",
+      "Description": "Th angle limit for the manual-pivot turn during an attack (in degrees)."
     },
     {
       "Field": "attackMoveAcceleration",
-      "Name": "攻撃 向き変更 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Attack Direction: Acceleration",
+      "Description": "The direction change acceleration during an attack (in metres per second squared)."
     },
     {
       "Field": "attackMoveMaxSpeed",
-      "Name": "攻撃 向き変更 最大速度 [m/sec]",
-      "Description": ""
+      "Name": "Attack Direction: Maximum Speed",
+      "Description": "The maximum speed of the direction change during an attack (in metres per second)."
     },
     {
       "Field": "attackMoveDeceleration",
-      "Name": "攻撃 向き変更 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Attack Direction: Deceleration",
+      "Description": "The direction change deceleration during an attack (in metres per second squared)."
     },
     {
       "Field": "attackMoveRotationSpeed",
-      "Name": "攻撃 向き変更 旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Attack Direction: Turn Speed",
+      "Description": "The turn speed of the direction change during an attack (in metres per second)."
     },
     {
       "Field": "rangedManualPivotRotationSpeed",
-      "Name": "その場旋回 速度 [deg/sec]",
-      "Description": ""
+      "Name": "Ranged Attack: Manual-Pivot Turn Speed",
+      "Description": "The turn speed of an attack when standing in place for a ranged attack (in degrees per second)."
     },
     {
       "Field": "rangedAutoPivotRotationSpeed",
-      "Name": "自動旋回 速度 [deg/sec]",
-      "Description": ""
+      "Name": "Ranged Attack: Auto-Pivot Turn Speed",
+      "Description": "The turn speed of an attack when standing in place for a ranged attack (in degrees per second)."
     },
     {
       "Field": "shootStanceAnimSpeedScaleMin",
-      "Name": "射撃構えアニメ速度 補正倍率 最小 [倍]",
-      "Description": ""
+      "Name": "Shoot Stance: Minimum Animation Speed %",
+      "Description": "The minimum animation speed rate during a shooting stance."
     },
     {
       "Field": "shootStanceAnimSpeedScaleMax",
-      "Name": "射撃構えアニメ速度 補正倍率 最大 [倍]",
-      "Description": ""
+      "Name": "Shoot Stance: Maximum Animation Speed %",
+      "Description": "The maximum animation speed rate during a shooting stance."
     },
     {
       "Field": "spellChantingAnimSpeedScaleMin",
-      "Name": "スペル詠唱アニメ速度 補正倍率 最小 [倍]",
-      "Description": ""
+      "Name": "Spell Cast Stance: Minimum Animation Speed %",
+      "Description": "The minimum animation speed rate during a spell cast stance."
     },
     {
       "Field": "spellChantingAnimSpeedScaleMax",
-      "Name": "スペル詠唱アニメ速度 補正倍率 最大 [倍]",
-      "Description": ""
+      "Name": "Spell Cast Stance: Maximum Animation Speed %",
+      "Description": "The maximum animation speed rate during a spell cast stance."
     },
     {
       "Field": "afterAttackAcceleration",
-      "Name": "攻撃後 歩き出し 加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Post-Attack: Walk Acceleration",
+      "Description": "The acceleration for a walk after an attack has occurred (in metres per second squared)."
     },
     {
       "Field": "afterAttackMaxSpeed",
-      "Name": "攻撃後 歩き出し 速度 最大 [m/sec]",
-      "Description": ""
+      "Name": "Post-Attack: Walk Speed",
+      "Description": "The speed for a walk after an attack has occurred (in metres per second)."
     },
     {
       "Field": "afterAttackDeceleration",
-      "Name": "攻撃後 歩き出し 減速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Post-Attack: Walk Deceleration",
+      "Description": "The deceleration for a walk after an attack has occurred (in metres per second squared)."
     },
     {
       "Field": "afterAttackRotationSpeed",
-      "Name": "攻撃後 歩き出し 旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Post-Attack: Turn Speed",
+      "Description": "The turn speed for a walk after an attack has occurred (in degrees per second)."
     },
     {
       "Field": "qtRearEnableMasterRotate",
-      "Name": "クイックターン 180度旋回マスター旋回許可",
-      "Description": ""
+      "Name": "Quick Turn: Enable Master Rotate for Back",
+      "Description": "If enabled, master rotate for the back is enabled during a quick turn."
     },
     {
       "Field": "qtFrontEnableMasterRotate",
-      "Name": "クイックターン 90度旋回マスター旋回許可",
-      "Description": ""
+      "Name": "Quick Turn: Enable Master Rotate for Front",
+      "Description": "If enabled, master rotate for the front is enabled during a quick turn."
     },
     {
       "Field": "quickTurnPad",
-      "Name": "パディング",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "quickTurnRotateSpeed",
-      "Name": "クイックターン 旋回速度[deg/s]",
-      "Description": ""
+      "Name": "Quick Turn: Turn Speed",
+      "Description": "The turning speed during a quick turn (in degrees per second)."
     },
     {
       "Field": "stepDist",
-      "Name": "回避 ステップ距離 [m]",
-      "Description": ""
+      "Name": "Evasion Backstep: Distance",
+      "Description": "The distance to apply (in metres) during an evasion backstep."
     },
     {
       "Field": "stepStaminaEmptyDist",
-      "Name": "回避 スタミナ切れステップ距離 [m]",
-      "Description": ""
+      "Name": "Evasion Backstep: Distance (Stamina Exhuasted)",
+      "Description": "The distance to apply (in metres) during an evasion backstep if stamina is empty."
     },
     {
       "Field": "stepRotationSpeed",
-      "Name": "回避 ステップ旋回速度[deg/s]",
-      "Description": ""
+      "Name": "Evasion Backstep: Turn Speed",
+      "Description": "The turn speed during an evasion backstep (in degrees per second)."
     },
     {
       "Field": "rollingDist",
-      "Name": "回避 ローリング距離 [m]",
-      "Description": ""
+      "Name": "Evasion Roll: Distance",
+      "Description": "The distance to apply (in metres) during an evasion roll."
     },
     {
       "Field": "rollingStaminaEmptyDist",
-      "Name": "回避 スタミナ切れローリング距離 [m]",
-      "Description": ""
+      "Name": "Evasion Roll: Distance (Stamina Exhuasted)",
+      "Description": "The distance to apply (in metres) during an evasion roll if stamina is empty."
     },
     {
       "Field": "rollingRotationSpeed",
-      "Name": "回避 ローリング旋回速度[deg/s]",
-      "Description": ""
+      "Name": "Evasion Backstep: Turn Speed",
+      "Description": "The turn speed during an evasion roll (in degrees per second)."
     },
     {
       "Field": "damageRotationSpeed",
-      "Name": "ダメージ方向 旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Damage Direction: Turn Speed",
+      "Description": "The turn speed during a directional damage blend (in degrees per second)."
     },
     {
       "Field": "jumpVerticalSpeed",
-      "Name": "ジャンプ 上昇速度 [m/sec]",
-      "Description": ""
+      "Name": "Moving Jump: Ascent Speed",
+      "Description": "The speed of ascent during a moving jump (in metres per second)."
     },
     {
       "Field": "standJumpVerticalSpeed",
-      "Name": "スタンドジャンプ 上昇速度 [m/sec]",
-      "Description": ""
+      "Name": "Standing Jump: Ascent Speed",
+      "Description": "The speed of ascent during a standing jump (in metres per second)."
     },
     {
       "Field": "jumpRollLandingHeightMax",
-      "Name": "ジャンプ 転がり着地高さ 最大 [m]",
-      "Description": ""
+      "Name": "Moving Jump: Roll Landing Height",
+      "Description": "The maximum height for a roll landing during a moving jump (in metres)."
     },
     {
       "Field": "jumpForwardSpeedMin",
-      "Name": "ジャンプ 前方速度 最小 [m/sec]",
-      "Description": ""
+      "Name": "Moving Jump: Minimum Forward Speed",
+      "Description": "The minimum forward speed for a moving jump (in metres per second)."
     },
     {
       "Field": "jumpForwardSpeedMax",
-      "Name": "ジャンプ 前方速度 最大 [m/sec]",
-      "Description": ""
+      "Name": "Moving Jump: Maximum Forward Speed",
+      "Description": "The maximum forward speed for a moving jump (in metres per second)."
     },
     {
       "Field": "standJumpForwardSpeedMin",
-      "Name": "スタンドジャンプ 前方速度 最小 [m/sec]",
-      "Description": ""
+      "Name": "Standing Jump: Minimum Forward Speed",
+      "Description": "The minimum forward speed for a standing jump (in metres per second)."
     },
     {
       "Field": "standJumpForwardSpeedMax",
-      "Name": "スタンドジャンプ 前方速度 最大 [m/sec]",
-      "Description": ""
+      "Name": "Standing Jump: Maximum Forward Speed",
+      "Description": "The maximum forward speed for a standing jump (in metres per second)."
     },
     {
       "Field": "jumpGravityFactorMin",
-      "Name": "ジャンプ 重力加速度倍率 最小",
-      "Description": ""
+      "Name": "Moving Jump: Minimum Gravity Acceleration %",
+      "Description": "The minimum acceleration rate for gravity applying to a moving jump."
     },
     {
       "Field": "jumpGravityFactorMax",
-      "Name": "ジャンプ 重力加速度倍率 最大",
-      "Description": ""
+      "Name": "Moving Jump: Maximum Gravity Acceleration %",
+      "Description": "The maximum acceleration rate for gravity applying to a moving jump."
     },
     {
       "Field": "standJumpGravityFactorMin",
-      "Name": "スタンドジャンプ 重力加速度倍率 最小",
-      "Description": ""
+      "Name": "Standing Jump: Minimum Gravity Acceleration %",
+      "Description": "The minimum acceleration rate for gravity applying to a standing jump."
     },
     {
       "Field": "standJumpGravityFactorMax",
-      "Name": "スタンドジャンプ 重力加速度倍率 最大",
-      "Description": ""
+      "Name": "Standing Jump: Maximum Gravity Acceleration %",
+      "Description": "The maximum acceleration rate for gravity applying to a standing jump."
     },
     {
       "Field": "fallingInertiaStopSpeed",
-      "Name": "落下 停止加速度[m/Sec]",
-      "Description": ""
+      "Name": "Fall: Stop Acceleration",
+      "Description": "The stopping acceleration applied during a fall (in metres per second)."
     },
     {
       "Field": "fallingDeadTimer",
-      "Name": "落下 死亡落下時間[Sec]",
-      "Description": ""
+      "Name": "Fall: Death Timer",
+      "Description": "The duration after which falling is an automatic death (in seconds)."
     },
     {
       "Field": "landingRollingHeight",
-      "Name": "落下 転がり着地高さ[m]",
-      "Description": ""
+      "Name": "Landing: Roll Height",
+      "Description": "The height at which a roll landing can occur when falling (in metres)."
     },
     {
       "Field": "landingRollingSpeed",
-      "Name": "落下 転がり着地速度[m/sec]",
-      "Description": ""
+      "Name": "Landing: Roll Speed",
+      "Description": "The speed of a roll landing that occurs when rolling (in metres per second)."
     },
     {
       "Field": "landingJumpRollingHeight",
-      "Name": "ジャンプ 転がり着地高さ[m]",
-      "Description": ""
+      "Name": "Landing: Jump Roll Height",
+      "Description": "The height at which a jump roll landing can occur when falling (in metres)."
     },
     {
       "Field": "landingJumpRollingSpeed",
-      "Name": "ジャンプ 転がり着地速度[m/sec]",
-      "Description": ""
+      "Name": "Landing: Jump Roll Speed",
+      "Description": "The speed of a jump roll landing that occurs when rolling (in metres per second)."
     },
     {
       "Field": "landingStandingRate",
-      "Name": "着地 屈伸着地[m/sec]",
-      "Description": ""
+      "Name": "Landing: Bend Rate",
+      "Description": "The bend rate (in metres per second) during a landing."
     },
     {
       "Field": "landingStandingCrouchRateMin",
-      "Name": "着地 屈伸着地 しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Landing: Bend Crouch Amount %",
+      "Description": "The bend crouch amount rate during a crouch landing."
     },
     {
       "Field": "jumpCrouchRateMin",
-      "Name": "ジャンプ着地 しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Landing: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a crouch landing."
     },
     {
       "Field": "dodgeCrouchRateMin",
-      "Name": "回避 しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Moving Evasion: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an moving evasion action."
     },
     {
       "Field": "dodgeWaitCrouchRateMin",
-      "Name": "回避 待機しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Standing Evasion: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an standing evasion action."
     },
     {
       "Field": "stepCrouchRateMin",
-      "Name": "ステップ しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Moving Backstep: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an moving backstep action."
     },
     {
       "Field": "stepWaitCrouchRateMin",
-      "Name": "ステップ 待機しゃがみ量 最小[%]",
-      "Description": ""
+      "Name": "Standing Backstep: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an standing backstep action."
     },
     {
       "Field": "landingCrouchRateMin",
