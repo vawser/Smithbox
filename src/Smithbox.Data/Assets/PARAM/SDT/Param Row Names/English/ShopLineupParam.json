@@ -4,355 +4,355 @@
     {
       "ID": 1,
       "Entries": [
-        "Don&#39;t erase -- 消すべからず"
+        "Don't remove"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+        "Spirit Emblem (Earlygame)"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+        "Spirit Emblem (Midgame)"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+        "Spirit Emblem (Lategame)"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        "Resource item A (white charge) -- リソースアイテムA（白形代）"
+        "Spirit Emblem (Endgame)"
       ]
     },
     {
       "ID": 1000000,
       "Entries": [
-        "Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ"
+        "Pot Noble Harunaga - Floating Passage Text"
       ]
     },
     {
       "ID": 1000001,
       "Entries": [
-        "[Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有"
+        "Pot Noble Harunaga - Withered Red Gourd"
       ]
     },
     {
       "ID": 1000002,
       "Entries": [
-        "Mask Fragment A -- お面の破片A"
+        "Pot Noble Harunaga - Mask Fragment: Right"
       ]
     },
     {
       "ID": 1000003,
       "Entries": [
-        "[Consumption] Elixir -- 【消費】エリクサー"
+        "Pot Noble Harunaga - Divine Grass"
       ]
     },
     {
       "ID": 1000004,
       "Entries": [
-        "[Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）"
+        "Pot Noble Harunaga - Red Lump (NG+ Only)"
       ]
     },
     {
       "ID": 1000005,
       "Entries": [
-        "Mask Fragment B -- お面の破片B"
+        "Pot Noble Koremori - Mask Fragment: Left"
       ]
     },
     {
       "ID": 1000006,
       "Entries": [
-        "Master -- 原盤"
+        "Pot Noble Koremori - Lapis Lazuli"
       ]
     },
     {
       "ID": 1000007,
       "Entries": [
-        "Dragon cough healing -- 竜咳治癒"
+        "Pot Noble Koremori - Dragon's Blood Droplet"
       ]
     },
     {
       "ID": 1100000,
       "Entries": [
-        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+        "Crow's Bed Memorial Mob - Robert's Firecrackers"
       ]
     },
     {
       "ID": 1100001,
       "Entries": [
-        "[Consumption] Regeneration -- 【消費】リジェネ"
+        "Crow's Bed Memorial Mob - Pellet"
       ]
     },
     {
       "ID": 1100002,
       "Entries": [
-        "[Consumption] Strengthening defense -- 【消費】防御強化"
+        "Crow's Bed Memorial Mob - Ungo's Sugar"
       ]
     },
     {
       "ID": 1100003,
       "Entries": [
-        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+        "Crow's Bed Memorial Mob - Antidote Powder"
       ]
     },
     {
       "ID": 1100004,
       "Entries": [
-        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+        "Crow's Bed Memorial Mob - Light Coin Purse"
       ]
     },
     {
       "ID": 1100005,
       "Entries": [
-        "[Consumption] Release illusion -- 【消費】幻術解除"
+        "Crow's Bed Memorial Mob - Snap Seed (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100006,
       "Entries": [
-        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+        "Crow's Bed Memorial Mob - Divine Confetti (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100007,
       "Entries": [
-        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+        "Crow's Bed Memorial Mob - Eel Liver (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100008,
       "Entries": [
-        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+        "Crow's Bed Memorial Mob - Scrap Iron (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100009,
       "Entries": [
-        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+        "Crow's Bed Memorial Mob - Black Gunpowder (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100050,
       "Entries": [
-        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+        "Crow's Bed Memorial Mob - Robert's Firecrackers (with Promissory Note)"
       ]
     },
     {
       "ID": 1100051,
       "Entries": [
-        "[Consumption] Regeneration -- 【消費】リジェネ"
+        "Crow's Bed Memorial Mob - Pellet (with Promissory Note)"
       ]
     },
     {
       "ID": 1100052,
       "Entries": [
-        "[Consumption] Strengthening defense -- 【消費】防御強化"
+        "Crow's Bed Memorial Mob - Ungo's Sugar (with Promissory Note)"
       ]
     },
     {
       "ID": 1100053,
       "Entries": [
-        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+        "Crow's Bed Memorial Mob - Antidote Powder (with Promissory Note)"
       ]
     },
     {
       "ID": 1100054,
       "Entries": [
-        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+        "Crow's Bed Memorial Mob - Light Coin Purse (with Promissory Note)"
       ]
     },
     {
       "ID": 1100055,
       "Entries": [
-        "[Consumption] Release illusion -- 【消費】幻術解除"
+        "Crow's Bed Memorial Mob - Snap Seed (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100056,
       "Entries": [
-        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+        "Crow's Bed Memorial Mob - Divine Confetti (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100057,
       "Entries": [
-        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+        "Crow's Bed Memorial Mob - Eel Liver (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100058,
       "Entries": [
-        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+        "Crow's Bed Memorial Mob - Scrap Iron (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100059,
       "Entries": [
-        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+        "Crow's Bed Memorial Mob - Black Gunpowder (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100100,
       "Entries": [
-        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+        "Battlefield Memorial Mob - Robert's Firecrackers"
       ]
     },
     {
       "ID": 1100101,
       "Entries": [
-        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+        "Battlefield Memorial Mob - Gourd Seed"
       ]
     },
     {
       "ID": 1100102,
       "Entries": [
-        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+        "Battlefield Memorial Mob - Antidote Powder"
       ]
     },
     {
       "ID": 1100103,
       "Entries": [
-        "[Consumption] Grip ash -- 【消費】握り灰"
+        "Battlefield Memorial Mob - Fistful of Ash"
       ]
     },
     {
       "ID": 1100104,
       "Entries": [
-        "Dragon cough healing -- 竜咳治癒"
+        "Battlefield Memorial Mob - Dragon's Blood Droplet"
       ]
     },
     {
       "ID": 1100105,
       "Entries": [
-        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+        "Battlefield Memorial Mob - Light Coin Purse"
       ]
     },
     {
       "ID": 1100106,
       "Entries": [
-        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+        "Battlefield Memorial Mob - Heavy Coin Purse"
       ]
     },
     {
       "ID": 1100107,
       "Entries": [
-        "[Consumption] Release illusion -- 【消費】幻術解除"
+        "Battlefield Memorial Mob - Snap Seed (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100108,
       "Entries": [
-        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+        "Battlefield Memorial Mob - Divine Confetti (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100109,
       "Entries": [
-        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+        "Battlefield Memorial Mob - Eel Liver (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100110,
       "Entries": [
-        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+        "Battlefield Memorial Mob - Scrap Iron (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100111,
       "Entries": [
-        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+        "Battlefield Memorial Mob - Black Gunpowder (with Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100112,
       "Entries": [
-        "Dragon cough healing refill -- 竜咳治癒おかわり"
+        "Battlefield Memorial Mob - Dragon's Blood Droplet"
       ]
     },
     {
       "ID": 1100150,
       "Entries": [
-        "Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹"
+        "Battlefield Memorial Mob - Robert's Firecrackers (with Promissory Note)"
       ]
     },
     {
       "ID": 1100151,
       "Entries": [
-        "Gourd possession upper limit UP -- ひょうたん所持上限UP"
+        "Battlefield Memorial Mob - Gourd Seed (with Promissory Note)"
       ]
     },
     {
       "ID": 1100152,
       "Entries": [
-        "[Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化"
+        "Battlefield Memorial Mob - Antidote Powder (with Promissory Note)"
       ]
     },
     {
       "ID": 1100153,
       "Entries": [
-        "[Consumption] Grip ash -- 【消費】握り灰"
+        "Battlefield Memorial Mob - Fistful of Ash (with Promissory Note)"
       ]
     },
     {
       "ID": 1100154,
       "Entries": [
-        "Dragon cough healing -- 竜咳治癒"
+        "Battlefield Memorial Mob - Dragon's Blood Droplet (with Promissory Note)"
       ]
     },
     {
       "ID": 1100155,
       "Entries": [
-        "[Consumption] Gold nugget_small -- 【消費】金塊_小"
+        "Battlefield Memorial Mob - Light Coin Purse (with Promissory Note)"
       ]
     },
     {
       "ID": 1100156,
       "Entries": [
-        "[Consumption] Gold nugget _ Medium -- 【消費】金塊_中"
+        "Battlefield Memorial Mob - Heavy Coin Purse (with Promissory Note)"
       ]
     },
     {
       "ID": 1100157,
       "Entries": [
-        "[Consumption] Release illusion -- 【消費】幻術解除"
+        "Battlefield Memorial Mob - Snap Seed (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100158,
       "Entries": [
-        "[Consumption] Strengthening anti-spirit -- 【消費】対霊強化"
+        "Battlefield Memorial Mob - Divine Confetti (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100159,
       "Entries": [
-        "[Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化"
+        "Battlefield Memorial Mob - Eel Liver (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100160,
       "Entries": [
-        "General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）"
+        "Battlefield Memorial Mob - Scrap Iron (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100161,
       "Entries": [
-        "General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）"
+        "Battlefield Memorial Mob - Black Gunpowder (with Promissory Note + Dragon's Tally Board)"
       ]
     },
     {
       "ID": 1100162,
       "Entries": [
-        "Dragon cough healing refill -- 竜咳治癒おかわり"
+        "Battlefield Memorial Mob - Dragon's Blood Droplet (with Promissory Note)"
       ]
     },
     {
