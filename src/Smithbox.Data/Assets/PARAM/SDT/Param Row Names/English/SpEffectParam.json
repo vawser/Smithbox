@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "for test -- テスト用"
+        ""
       ]
     },
     {
@@ -1534,667 +1534,667 @@
     {
       "ID": 3000,
       "Entries": [
-        "Est_Activate + &quot;Cure&quot; (Medium) + Effect: HP recovery -- エスト_発動 + 「治」（中） + 効果：HP回復"
+        "Healing Gourd"
       ]
     },
     {
       "ID": 3020,
       "Entries": [
-        "Regeneration_Activation + &quot;Continued (Small)&quot; -- リジェネ_発動 + 「続治（小）」"
+        "Pellet - VFX"
       ]
     },
     {
       "ID": 3021,
       "Entries": [
-        "Regen_Effect: HP Regen (Small) -- リジェネ_効果：HPリジェネ（小）"
+        "Pellet - Effect"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        "Elixir_Activation + &quot;Cure (Large)&quot; + Effect: HP / Core Recovery -- エリクサー_発動 + 「治（大）」 + 効果：HP/体幹回復"
+        "Divine Grass - Heal"
       ]
     },
     {
       "ID": 3041,
       "Entries": [
-        "Elixir_Effect: Abnormal condition recovery -- エリクサー_効果：状態異常回復"
+        "Divine Grass - All Status Cure"
       ]
     },
     {
       "ID": 3042,
       "Entries": [
-        "Elixir Effect: Restoration of virus resistance -- エリクサー_効果：病毒耐性回復"
+        "Divine Grass - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3043,
       "Entries": [
-        "Elixir _Effect: Eliminates poison slip damage -- エリクサー_効果：病毒スリップダメージ消去"
+        "Divine Grass"
       ]
     },
     {
       "ID": 3044,
       "Entries": [
-        "Elixir _ Effect: Restoration of resistance to fire -- エリクサー_効果：炎上耐性回復"
+        "Divine Grass - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3045,
       "Entries": [
-        "Elixir _Effect: Restores madness resistance -- エリクサー_効果：発狂耐性回復"
+        "Divine Grass - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3046,
       "Entries": [
-        "Elixir_ &quot;Healing (Large)&quot; -- エリクサー_「癒（大）」"
+        "Divine Grass"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Weird young water thrombus _ activation + &quot;red eye&quot; -- 変若水血栓_発動 + 「赤目」"
+        "Red Lump - VFX"
       ]
     },
     {
       "ID": 3051,
       "Entries": [
-        "Weird water thrombus_Effect: SA grant -- 変若水血栓_効果：SA付与"
+        "Red Lump - Effect"
       ]
     },
     {
       "ID": 3060,
       "Entries": [
-        "Ohagi_Activated + &quot;Continued&quot; (Large) -- おはぎ_発動 + 「続治」（大）"
+        "Sweet Rice Ball - VFX"
       ]
     },
     {
       "ID": 3061,
       "Entries": [
-        "Ohagi_Effect: HP Regeneration (Large) -- おはぎ_効果：HPリジェネ（大）"
+        "Sweet Rice Ball - Heal"
       ]
     },
     {
       "ID": 3062,
       "Entries": [
-        "Ohagi_Effect: Trunk regeneration (Large) -- おはぎ_効果：体幹リジェネ（大）"
+        "Sweet Rice Ball - Posture Recovery"
       ]
     },
     {
       "ID": 3063,
       "Entries": [
-        "Ohagi_ &quot;Sequel&quot; (Large) -- おはぎ_「続幹」（大）"
+        "Sweet Rice Ball"
       ]
     },
     {
       "ID": 3065,
       "Entries": [
-        "Ohagi (Sorry) _ Activated + &quot;Continued&quot; (Large) -- おはぎ（惜別）_発動 + 「続治」（大）"
+        "Sweet Rice Ball 2 - VFX"
       ]
     },
     {
       "ID": 3070,
       "Entries": [
-        "Persimmon _ activation + &quot;sequel&quot; (middle) -- 柿_発動 + 「続幹」（中）"
+        "Persimmon - VFX"
       ]
     },
     {
       "ID": 3071,
       "Entries": [
-        "Persimmon_Effect: Trunk regeneration (large) -- 柿_効果：体幹リジェネ（大）"
+        "Persimmon - Effect"
       ]
     },
     {
       "ID": 3075,
       "Entries": [
-        "Persimmon (lower man) _ activation + &quot;sequel&quot; (large) -- 柿（下男）_発動 + 「続幹」（大）"
+        "Taro Persimmon - VFX"
       ]
     },
     {
       "ID": 3076,
       "Entries": [
-        "Persimmon (lower man) _Effect: Trunk regeneration (large) -- 柿（下男）_効果：体幹リジェネ（大）"
+        "Taro Persimmon - Effect"
       ]
     },
     {
       "ID": 3080,
       "Entries": [
-        "Chigo rice _ activation + &quot;sequel (middle)&quot; -- 稚児米_発動 + 「続治（中）」"
+        "Rice - VFX"
       ]
     },
     {
       "ID": 3081,
       "Entries": [
-        "Chigo Rice_Effect: HP Regeneration (Medium) -- 稚児米_効果：HPリジェネ（中）"
+        "Rice - Effect"
       ]
     },
     {
       "ID": 3085,
       "Entries": [
-        "Chigo Rice_Sasameyuki_Activated + &quot;Continued (Middle)&quot; -- 稚児米_細雪_発動 + 「続治（中）」"
+        "Fine Snow - VFX"
       ]
     },
     {
       "ID": 3086,
       "Entries": [
-        "Chigo Rice_Sasameyuki_Effect: HP Regeneration (Medium +) -- 稚児米_細雪_効果：HPリジェネ（中 + ）"
+        "Fine Snow - Effect"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Disease recovery_Activation + &quot;Healing&quot; + Effect: State recovery -- 病毒回復_発動 + 「癒」 + 効果：状態回復"
+        "Antidote Powder - VFX"
       ]
     },
     {
       "ID": 3201,
       "Entries": [
-        "Disease recovery_Effect_Resistance recovery -- 病毒回復_効果_耐性回復"
+        "Antidote Powder - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3202,
       "Entries": [
-        "Disease recovery_Effect_Slip damage elimination -- 病毒回復_効果_スリップダメージ消去"
+        "Antidote Powder"
       ]
     },
     {
       "ID": 3203,
       "Entries": [
-        "Disease recovery_effect_resistance UP -- 病毒回復_効果_耐性UP"
+        "Antidote Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3204,
       "Entries": [
-        "Disease recovery_ &quot;poison resistance&quot; -- 病毒回復_「耐毒」"
+        "Antidote Powder"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "Flame recovery_Activation + &quot;Healing&quot; + Effect: State recovery -- 炎上回復_発動 + 「癒」 + 効果：状態回復"
+        "Dousing Powder - VFX"
       ]
     },
     {
       "ID": 3211,
       "Entries": [
-        "Flame Recovery_Effect: Resistance Recovery -- 炎上回復_効果：耐性回復"
+        "Dousing Powder - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3212,
       "Entries": [
-        "Flame recovery_Effect: Increased resistance -- 炎上回復_効果：耐性UP"
+        "Dousing Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3213,
       "Entries": [
-        "Flaming recovery_ &quot;flaming resistance&quot; -- 炎上回復_「耐炎」"
+        "Dousing Powder"
       ]
     },
     {
       "ID": 3214,
       "Entries": [
-        "Flame recovery_Effect: Resistance UP_Tokugawa -- 炎上回復_効果：耐性UP_徳川"
+        "Ministry Dousing Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        "Mad Recovery_Activation + &quot;Healing&quot; + Effect: State Recovery -- 発狂回復_発動 + 「癒」 + 効果：状態回復"
+        "Pacifying Agent - VFX"
       ]
     },
     {
       "ID": 3221,
       "Entries": [
-        "Madness Recovery_Effect: Resistance Recovery -- 発狂回復_効果：耐性回復"
+        "Pacifying Agent - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3222,
       "Entries": [
-        "Mad Recovery_Effect: Increased resistance -- 発狂回復_効果：耐性UP"
+        "Pacifying Agent - Resistance Boost"
       ]
     },
     {
       "ID": 3223,
       "Entries": [
-        "Mad recovery_ &quot;fear resistance&quot; -- 発狂回復_「耐怖」"
+        "Pacifying Agent"
       ]
     },
     {
       "ID": 3230,
       "Entries": [
-        "Lightning damage reduction_Activation + &quot;Lightning resistance&quot; -- 雷ダメージ軽減_発動 + 「耐雷」"
+        "Eel Liver - VFX"
       ]
     },
     {
       "ID": 3231,
       "Entries": [
-        "Lightning damage reduction_Resistance UP -- 雷ダメージ軽減_耐性UP"
+        "Eel Liver - Resistance Boost"
       ]
     },
     {
       "ID": 3240,
       "Entries": [
-        "Aging recovery_Activation + &quot;Rejuvenation&quot; + State recovery -- 老化回復_発動 + 「若返」 + 状態回復"
+        "Cure Enfeeble VFX"
       ]
     },
     {
       "ID": 3241,
       "Entries": [
-        "Recovery from aging_Recovery of resistance -- 老化回復_耐性回復"
+        "Enfeeble Buildup Removal"
       ]
     },
     {
       "ID": 3242,
       "Entries": [
-        "Aging recovery_tolerance UP -- 老化回復_耐性UP"
+        "Enfeebled Resistance Boost"
       ]
     },
     {
       "ID": 3290,
       "Entries": [
-        "suicide -- 自殺"
+        "Bite Down"
       ]
     },
     {
       "ID": 3291,
       "Entries": [
-        "The effect of remembering that it is a suicide death -- 自殺死亡であることを記憶する効果"
+        "Bite Down"
       ]
     },
     {
       "ID": 3292,
       "Entries": [
-        "Cancellation of recast after suicide resurrection -- 自殺復活後のリキャスト解除"
+        "Bite Down - Resurrection Allow"
       ]
     },
     {
       "ID": 3295,
       "Entries": [
-        "Suicide_infinity -- 自殺_無限"
+        "Hidden Tooth"
       ]
     },
     {
       "ID": 3300,
       "Entries": [
-        "Disease prevention_invocation + &quot;poison resistance&quot; -- 病毒予防_発動 + 「耐毒」"
+        "Green Mossy Gourd - VFX"
       ]
     },
     {
       "ID": 3301,
       "Entries": [
-        "Disease prevention_Effect: Restoration of resistance -- 病毒予防_効果：耐性回復"
+        "Green Mossy Gourd - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3302,
       "Entries": [
-        "Disease prevention_Effect: Increased resistance -- 病毒予防_効果：耐性UP"
+        "Green Mossy Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3310,
       "Entries": [
-        "Flame prevention_Activation + &quot;Flame resistance&quot; -- 炎上予防_発動 + 「耐炎」"
+        "Withered Red Gourd - VFX"
       ]
     },
     {
       "ID": 3311,
       "Entries": [
-        "Flame prevention_Effect: Restoration of resistance -- 炎上予防_効果：耐性回復"
+        "Withered Red Gourd - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3312,
       "Entries": [
-        "Flame prevention_Effect: Increased resistance -- 炎上予防_効果：耐性UP"
+        "Withered Red Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3320,
       "Entries": [
-        "Madness Prevention_Activation + &quot;Fear-Resistant&quot; -- 発狂予防_発動 + 「耐怖」"
+        "Mottled Purple Gourd - VFX"
       ]
     },
     {
       "ID": 3321,
       "Entries": [
-        "Madness Prevention_Effect: Restoration of resistance -- 発狂予防_効果：耐性回復"
+        "Mottled Purple Gourd - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3322,
       "Entries": [
-        "Madness Prevention_Effect: Increased resistance -- 発狂予防_効果：耐性UP"
+        "Mottled Purple Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3350,
       "Entries": [
-        "Attack enhancement (infinite / consumption of form) _ &quot;Attack&quot; -- 攻撃強化（無限/形代消費）_「阿攻」"
+        "Ako's Spiritfall - VFX"
       ]
     },
     {
       "ID": 3351,
       "Entries": [
-        "Attack enhancement (infinite / form cost consumption) _ effect -- 攻撃強化（無限/形代消費）_効果"
+        "Ako's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3360,
       "Entries": [
-        "Attack enhancement _ With disadvantages (infinite / consumption of form) _ &quot;Yaksha&quot; -- 攻撃強化_デメリット付き（無限/形代消費）_「夜叉戮」"
+        "Yashariku's Spiritfall - VFX"
       ]
     },
     {
       "ID": 3361,
       "Entries": [
-        "Attack enhancement_with disadvantages (infinite / consumption of form) _effect -- 攻撃強化_デメリット付き（無限/形代消費）_効果"
+        "Yashariku's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3370,
       "Entries": [
-        "Strengthening defense (infinite / consumption of form) _ &quot;Womanship&quot; -- 防御強化（無限/形代消費）_「吽護」"
+        "Ungo's Spiritfall - VFX"
       ]
     },
     {
       "ID": 3371,
       "Entries": [
-        "Strengthen defense (infinite / consumption cost) _effect_when hit directly -- 防御強化（無限/形代消費）_効果_直撃時"
+        "Ungo's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3372,
       "Entries": [
-        "Strengthen defense (infinite / consumption cost) _effect_when guarding -- 防御強化（無限/形代消費）_効果_ガード時"
+        "Ungo's Spiritfall - During Block"
       ]
     },
     {
       "ID": 3373,
       "Entries": [
-        "Strengthening defense (infinite / consumption of form) _effect_at the time of jasuga -- 防御強化（無限/形代消費）_効果_ジャスガ時"
+        "Ungo's Spiritfall - During Deflect"
       ]
     },
     {
       "ID": 3380,
       "Entries": [
-        "Strengthening the trunk (infinite / consumption of shape) _ &quot;Rigid trunk&quot; -- 体幹強化（無限/形代消費）_「剛幹」"
+        "Gokan's Spiritfall - VFX"
       ]
     },
     {
       "ID": 3381,
       "Entries": [
-        "Strengthening the trunk (infinite / consumption of shape) _effect_when hit directly -- 体幹強化（無限/形代消費）_効果_直撃時"
+        "Gokan's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3382,
       "Entries": [
-        "Strengthening the trunk (infinite / consumption of shape) _effect_when guarding -- 体幹強化（無限/形代消費）_効果_ガード時"
+        "Gokan's Spiritfall - During Block"
       ]
     },
     {
       "ID": 3383,
       "Entries": [
-        "Strengthening the trunk (infinite / consumption of shape) _effect_at the time of jasuga -- 体幹強化（無限/形代消費）_効果_ジャスガ時"
+        "Gokan's Spiritfall - During Deflect"
       ]
     },
     {
       "ID": 3390,
       "Entries": [
-        "Stealth enhancement (infinite / consumption of form) _ &quot;Tsukigaku&quot; -- ステルス強化（無限/形代消費）_「月隠」"
+        "Gachiin's Spiritfall - VFX"
       ]
     },
     {
       "ID": 3391,
       "Entries": [
-        "Stealth enhancement (infinite / shape cost consumption) _ effect -- ステルス強化（無限/形代消費）_効果"
+        "Gachiin Spiritfall - Effect"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Attack enhancement_ &quot;A attack&quot; -- 攻撃強化_「阿攻」"
+        "Ako's Sugar - VFX"
       ]
     },
     {
       "ID": 3401,
       "Entries": [
-        "Attack enhancement_effect -- 攻撃強化_効果"
+        "Ako's Sugar - Effect"
       ]
     },
     {
       "ID": 3410,
       "Entries": [
-        "Attack enhancement_with disadvantages_ &quot;Yaksha&quot; -- 攻撃強化_デメリット付き_「夜叉戮」"
+        "Yashariku's Sugar - VFX"
       ]
     },
     {
       "ID": 3411,
       "Entries": [
-        "Attack enhancement_with disadvantages_effect -- 攻撃強化_デメリット付き_効果"
+        "Yashariku's Sugar - Effect"
       ]
     },
     {
       "ID": 3420,
       "Entries": [
-        "Strengthening Defense_ &quot;Protection&quot; -- 防御強化_「吽護」"
+        "Ungo's Sugar - VFX"
       ]
     },
     {
       "ID": 3421,
       "Entries": [
-        "Strengthening defense_Effect_At the time of direct hit -- 防御強化_効果_直撃時"
+        "Ungo's Sugar - Effect"
       ]
     },
     {
       "ID": 3422,
       "Entries": [
-        "Defense enhancement_Effect_When guarding -- 防御強化_効果_ガード時"
+        "Ungo's Sugar - During Block"
       ]
     },
     {
       "ID": 3423,
       "Entries": [
-        "Strengthening Defense_Effect_At Jasuga -- 防御強化_効果_ジャスガ時"
+        "Ungo's Sugar - During Deflect"
       ]
     },
     {
       "ID": 3430,
       "Entries": [
-        "Strengthening the trunk_ &quot;Rigid trunk&quot; -- 体幹強化_「剛幹」"
+        "Gokan's Sugar - VFX"
       ]
     },
     {
       "ID": 3431,
       "Entries": [
-        "Trunk strengthening_Effect_At the time of direct hit -- 体幹強化_効果_直撃時"
+        "Gokan's Sugar - Effect"
       ]
     },
     {
       "ID": 3432,
       "Entries": [
-        "Trunk strengthening_Effect_When guarding -- 体幹強化_効果_ガード時"
+        "Gokan's Sugar - During Block"
       ]
     },
     {
       "ID": 3433,
       "Entries": [
-        "Strengthening the trunk_Effect_At the time of Jasuga -- 体幹強化_効果_ジャスガ時"
+        "Gokan's Sugar - During Deflect"
       ]
     },
     {
       "ID": 3440,
       "Entries": [
-        "Stealth enhancement_ &quot;Tsukigaku&quot; -- ステルス強化_「月隠」"
+        "Gachiin's Sugar - VFX"
       ]
     },
     {
       "ID": 3441,
       "Entries": [
-        "Stealth enhancement_effect -- ステルス強化_効果"
+        "Gachiin's Sugar - Effect"
       ]
     },
     {
       "ID": 3450,
       "Entries": [
-        "Anti-spirit strengthening_ &quot;payment&quot; -- 対霊強化_「払い」"
+        "Divine Confetti - VFX"
       ]
     },
     {
       "ID": 3451,
       "Entries": [
-        "Anti-spirit enhancement_effect: spirit enchantment -- 対霊強化_効果：霊エンチャ"
+        "Divine Confetti - Effect"
       ]
     },
     {
       "ID": 3452,
       "Entries": [
-        "Anti-spirit strengthening_effect: Anti-spirit guard strengthening -- 対霊強化_効果：対霊ガード強化"
+        "Divine Confetti - During Block"
       ]
     },
     {
       "ID": 3453,
       "Entries": [
-        "Anti-spirit strengthening_effect: Anti-spirit Jasuga strengthening -- 対霊強化_効果：対霊ジャスガ強化"
+        "Divine Confetti - During Deflect"
       ]
     },
     {
       "ID": 3454,
       "Entries": [
-        "Anti-spirit strengthening_effect: Reduces spirit damage -- 対霊強化_効果：霊ダメ軽減"
+        "Divine Confetti - Resistance Boost"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        "Pottery piece _ AI sound bullet firing that only you can hear -- 陶片_自分にだけ聞こえるAI音弾丸発射"
+        "Ceramic Shard"
       ]
     },
     {
       "ID": 3501,
       "Entries": [
-        "Pottery piece _ AI sound bullet firing that only you can hear (hanging) -- 陶片_自分にだけ聞こえるAI音弾丸発射（ぶら下がり）"
+        "Ceramic Shard - Ledge Hang"
       ]
     },
     {
       "ID": 3502,
       "Entries": [
-        "Pottery piece _ AI sound bullet firing that only you can hear (peeping _ left) -- 陶片_自分にだけ聞こえるAI音弾丸発射（覗き込み_左）"
+        "Ceramic Shard - Peeping Left"
       ]
     },
     {
       "ID": 3503,
       "Entries": [
-        "Pottery piece _ AI sound bullet firing that only you can hear (peeping _ right) -- 陶片_自分にだけ聞こえるAI音弾丸発射（覗き込み_右）"
+        "Ceramic Shard - Peeping Right"
       ]
     },
     {
       "ID": 3510,
       "Entries": [
-        "Grip Ash_Cool Time Activation Trigger -- 握り灰_クールタイム発動トリガー"
+        "Fistful of Ash"
       ]
     },
     {
       "ID": 3520,
       "Entries": [
-        "Aburatsubo (flaming resistance DOWN) -- 油壷（炎上耐性DOWN）"
+        "Oil"
       ]
     },
     {
       "ID": 3530,
       "Entries": [
-        "Invoking illusion -- 幻術発動"
+        "Invoking illusion"
       ]
     },
     {
       "ID": 3531,
       "Entries": [
-        "Release illusion -- 幻術解除"
+        "Release illusion"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "Money acquisition UP_VFX -- お金入手量UP_VFX"
+        "Mibu Balloon of Wealth - VFX"
       ]
     },
     {
       "ID": 3601,
       "Entries": [
-        "Money acquisition UP_effect -- お金入手量UP_効果"
+        "Mibu Balloon of Wealth - Effect"
       ]
     },
     {
       "ID": 3610,
       "Entries": [
-        "Resurrection right acquisition amount UP_VFX -- 復活権入手量UP_VFX"
+        "Mibu Balloon of Soul - VFX"
       ]
     },
     {
       "ID": 3611,
       "Entries": [
-        "Resurrection right acquisition amount UP_ effect -- 復活権入手量UP_効果"
+        "Mibu Balloon of Soul - Effect"
       ]
     },
     {
       "ID": 3620,
       "Entries": [
-        "Item drop rate UP_VFX -- アイテムドロップ率UP_VFX"
+        "Mibu Possession Balloon - VFX"
       ]
     },
     {
       "ID": 3621,
       "Entries": [
-        "Item drop rate UP_effect -- アイテムドロップ率UP_効果"
+        "Mibu Possession Balloon - Effect"
       ]
     },
     {
       "ID": 3630,
       "Entries": [
-        "Form cost drop rate UP_VFX -- 形代ドロップ率UP_VFX"
+        "Mibu Balloon of Spirit - VFX"
       ]
     },
     {
       "ID": 3631,
       "Entries": [
-        "Form cost drop rate UP_effect -- 形代ドロップ率UP_効果"
+        "Mibu Balloon of Spirit - Effect"
       ]
     },
     {
       "ID": 3640,
       "Entries": [
-        "White Rappa Water Balloon_Various UP_VFX -- 白らっぱ水風船_色々UP_VFX"
+        "Mibu Pilgrimage Balloon - VFX"
       ]
     },
     {
       "ID": 3641,
       "Entries": [
-        "White Rappa Water Balloon_Money Acquisition Amount UP_Effect -- 白らっぱ水風船_お金入手量UP_効果"
+        "Mibu Pilgrimage Balloon - Money"
       ]
     },
     {
       "ID": 3643,
       "Entries": [
-        "White Rappa Water Balloon_Resurrection Right Acquisition Amount UP_Effect -- 白らっぱ水風船_復活権入手量UP_効果"
+        "Mibu Pilgrimage Balloon - Resurrection"
       ]
     },
     {
       "ID": 3645,
       "Entries": [
-        "White Rappa Water Balloon_Item Drop Rate UP_Effect -- 白らっぱ水風船_アイテムドロップ率UP_効果"
+        "Mibu Pilgrimage Balloon - Items"
       ]
     },
     {
       "ID": 3647,
       "Entries": [
-        "White Rappa Water Balloon_Shape Drop Rate UP_Effect -- 白らっぱ水風船_形代ドロップ率UP_効果"
+        "Mibu Pilgrimage Balloon - Spirit Emblems"
       ]
     },
     {
@@ -5656,169 +5656,169 @@
     {
       "ID": 8610,
       "Entries": [
-        "Hard mode -- ハードモード"
+        "Charmless Effect on Player"
       ]
     },
     {
       "ID": 9000,
       "Entries": [
-        "Virus resistance scraping 00 [PC_self-poison] -- 病毒耐性削り00【PC_自病毒】"
+        "Contact Medicine"
       ]
     },
     {
       "ID": 9001,
       "Entries": [
-        "Disease resistance scraping 01 [PC_Blood smoke shinobi_Poison smoke] -- 病毒耐性削り01【PC_血煙忍殺_毒煙】"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 9002,
       "Entries": [
-        "Disease resistance scraping 02 [PC_Granting Shinobi_Poison Encha] -- 病毒耐性削り02【PC_付与忍殺_毒エンチャ】"
+        "Poison Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 9003,
       "Entries": [
-        "Disease resistance shaving 05 [PC_Kodachi 1_Shaving 12.5] -- 病毒耐性削り05【PC_小太刀1_削り12.5】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9004,
       "Entries": [
-        "Disease resistance shaving 06 [PC_Kodachi 2_Shaving 25] -- 病毒耐性削り06【PC_小太刀2_削り25】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9005,
       "Entries": [
-        "Disease resistance shaving 07 [PC_Kodachi 3_Shaving 50] -- 病毒耐性削り07【PC_小太刀3_削り50】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9006,
       "Entries": [
-        "Disease resistance shaving 05 [PC_Ruri Kodachi 1_Shaving 6.25] -- 病毒耐性削り05【PC_瑠璃小太刀1_削り6.25】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9007,
       "Entries": [
-        "Disease resistance shaving 06 [PC_Ruri Kodachi 2_Shaving 12.5] -- 病毒耐性削り06【PC_瑠璃小太刀2_削り12.5】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9008,
       "Entries": [
-        "Disease resistance shaving 07 [PC_Ruri Kodachi 3_Shaving 25] -- 病毒耐性削り07【PC_瑠璃小太刀3_削り25】"
+        "Sabimaru Poison"
       ]
     },
     {
       "ID": 9009,
       "Entries": [
-        "Disease resistance shaving 06 [PC_Ruri Kodachi 2_Shaving 25 Poison fog] -- 病毒耐性削り06【PC_瑠璃小太刀2_削り25\u3000毒霧】"
+        "Sabimaru Poison Mist"
       ]
     },
     {
       "ID": 9010,
       "Entries": [
-        "Disease resistance scraping 10 [enemy_sample] -- 病毒耐性削り10【敵_サンプル】"
+        "Enemy Poison (Sample)"
       ]
     },
     {
       "ID": 9011,
       "Entries": [
-        "Disease resistance scraping 11 [Gecko_poison fog] -- 病毒耐性削り11【ヤモリ_毒霧】"
+        "Gecko - Poison"
       ]
     },
     {
       "ID": 9012,
       "Entries": [
-        "Disease resistance scraping 12 [Shura Samurai_Poison fog] -- 病毒耐性削り12【修羅侍_毒霧】"
+        "Juzou - Poison Spit"
       ]
     },
     {
       "ID": 9013,
       "Entries": [
-        "Disease resistance scraping 13 [Shura Samurai_Poison Enchantment] -- 病毒耐性削り13【修羅侍_毒エンチャント】"
+        "Juzou - Poison Weapon Buff"
       ]
     },
     {
       "ID": 9014,
       "Entries": [
-        "Disease resistance scraping 14 [Rappa_poison bed] -- 病毒耐性削り14【らっぱ_毒床】"
+        "Senpou Assassin - Poison Spread"
       ]
     },
     {
       "ID": 9015,
       "Entries": [
-        "Poison resistance shaving 15 [Rappa_poison blowgun] -- 病毒耐性削り15【らっぱ_毒吹き矢】"
+        "Senpou Assassin - Poison Projectile"
       ]
     },
     {
       "ID": 9016,
       "Entries": [
-        "Disease resistance scraping 16 [Bandit_poison arrow] -- 病毒耐性削り16【野盗_毒矢】"
+        "Bandit - Poison Arrow"
       ]
     },
     {
       "ID": 9017,
       "Entries": [
-        "Disease resistance scraping 17 [Okina Dragon_coughing] -- 病毒耐性削り17【翁竜_咳き込み】"
+        "Old Dragon of the Tree - Poison Cough"
       ]
     },
     {
       "ID": 9018,
       "Entries": [
-        "Virus resistance scraping 18 [Kageshu_poison hand] -- 病毒耐性削り18【孤影衆_毒手】"
+        "Lone Shadow - Poison Hand"
       ]
     },
     {
       "ID": 9019,
       "Entries": [
-        "Disease resistance scraping 19 [Ninja army chief_poison bed] -- 病毒耐性削り19【忍軍の長_毒床】"
+        "Great Shinobi Owl - Poison Throw"
       ]
     },
     {
       "ID": 9020,
       "Entries": [
-        "Poison damage_against woman 00 [PC_kodachi poison] -- 病毒ダメージ_対女00【PC_小太刀毒】"
+        "Sabimaru Effect on Okami"
       ]
     },
     {
       "ID": 9040,
       "Entries": [
-        "Toxic damage 00 [PC_self-toxicity] -- 病毒ダメージ00【PC_自病毒】"
+        "Contact Medicine Poison"
       ]
     },
     {
       "ID": 9041,
       "Entries": [
-        "Disease Poison Damage 01 [PC_Ninjutsu Ninjutsu Poison] -- 病毒ダメージ01【PC_忍殺忍術毒】"
+        "Ninjutsu Poison DoT"
       ]
     },
     {
       "ID": 9043,
       "Entries": [
-        "Disease Poison Damage 05 [PC_Firecracker Poison] -- 病毒ダメージ05【PC_爆竹毒】"
+        "Poison Damage 05 [PC_Firecracker Poison]"
       ]
     },
     {
       "ID": 9045,
       "Entries": [
-        "Disease Poison Damage 05 [PC_Kodachi Poison] -- 病毒ダメージ05【PC_小太刀毒】"
+        "Sabimaru Poison DoT"
       ]
     },
     {
       "ID": 9049,
       "Entries": [
-        "Poison damage 09 [Map_Poison bed] -- 病毒ダメージ09【マップ_毒床】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 9050,
       "Entries": [
-        "Disease Poison Damage 10 [Enemy_General Poison] -- 病毒ダメージ10【敵_汎用毒】"
+        "General Enemy Poison DoT"
       ]
     },
     {
@@ -8476,19 +8476,19 @@
     {
       "ID": 106040,
       "Entries": [
-        "Red blood enchantment -- 赤血エンチャント"
+        "Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 106050,
       "Entries": [
-        "Poison Blood Enchantment -- 毒血エンチャント"
+        "Poison Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 106060,
       "Entries": [
-        "White-blooded enchantment -- 白血エンチャント"
+        "Lifesteal Bestowal Ninjutsu"
       ]
     },
     {
@@ -8794,19 +8794,19 @@
     {
       "ID": 107710,
       "Entries": [
-        "Prosthesis Ninja _ Enemy Turn _ Enemy Turn Reaction -- 義手忍具_敵回し_敵回されリアクション"
+        "Enemy turn AI sound bullet"
       ]
     },
     {
       "ID": 107711,
       "Entries": [
-        "Prosthesis Ninja _ Enemy Turn _ Enemy Turn Reaction _ Transparency -- 義手忍具_敵回し_敵回されリアクション_透明化"
+        "Enemy Turn Reaction Transparency"
       ]
     },
     {
       "ID": 107712,
       "Entries": [
-        "Prosthesis Ninja _ Enemy Turn _ Enemy Turn Reaction _ Short-term Blind -- 義手忍具_敵回し_敵回されリアクション_短期盲目"
+        "Enemy Turn Reaction Short-term Blind"
       ]
     },
     {
@@ -12208,7 +12208,7 @@
     {
       "ID": 220018,
       "Entries": [
-        "Enemy reaction playback_blurring (ash bag) -- 敵リアクション再生_めくらまし（灰袋）"
+        "Fistful of Ash - Enemy Stun"
       ]
     },
     {
@@ -12748,13 +12748,13 @@
     {
       "ID": 230620,
       "Entries": [
-        "Enemy Turn_Enemy Turn VFX_Orange_Playable -- 敵回し_敵回しVFX_橙_再生可能"
+        "Orange Wind VFX"
       ]
     },
     {
       "ID": 230625,
       "Entries": [
-        "Enemy turn _ Enemy turn VFX_ Gold _ Renewable -- 敵回し_敵回しVFX_金_再生可能"
+        "Gold Wind VFX"
       ]
     },
     {

@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Dummy bullet -- ダミー弾丸"
+        "Dummy bullet"
       ]
     },
     {
@@ -310,7 +310,7 @@
     {
       "ID": 3500,
       "Entries": [
-        "Piece of porcelain -- 陶片"
+        "Ceramic Shard"
       ]
     },
     {
@@ -322,13 +322,13 @@
     {
       "ID": 3520,
       "Entries": [
-        "Aburatsubo -- 油壷"
+        "Oil"
       ]
     },
     {
       "ID": 3530,
       "Entries": [
-        "Release illusion_Phantom drowning bullet -- 幻術解除_幻影かき消し弾丸"
+        "Snap Seed"
       ]
     },
     {
@@ -856,37 +856,37 @@
     {
       "ID": 5000152,
       "Entries": [
-        "Iron fan_throwing slash -- 鉄扇_放ち斬り"
+        "Projected Force - Umbrella"
       ]
     },
     {
       "ID": 5000153,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Red blood enchantment additional attack -- 鉄扇_放ち斬り_赤血エンチャント追加攻撃"
+        "Projected Force - Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 5000154,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Poison blood enchantment additional attack -- 鉄扇_放ち斬り_毒血エンチャント追加攻撃"
+        "Projected Force - Poison Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 5000155,
       "Entries": [
-        "Iron fan _ Unleashed slash _ White blood enchantment additional attack -- 鉄扇_放ち斬り_白血エンチャント追加攻撃"
+        "Projected Force - Lifesteal Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 5000156,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Orange style enchantment additional attack -- 鉄扇_放ち斬り_橙風エンチャント追加攻撃"
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Orange Wind Enchantment"
       ]
     },
     {
       "ID": 5000157,
       "Entries": [
-        "Iron fan _ Unleash slash _ Gold wind enchantment additional attack -- 鉄扇_放ち斬り_金風エンチャント追加攻撃"
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Gold Wind Enchantment "
       ]
     },
     {
@@ -922,19 +922,19 @@
     {
       "ID": 5000180,
       "Entries": [
-        "Right Hand Sword_Red Blood Enchantment Additional Attack -- 右手刀_赤血エンチャント追加攻撃"
+        "Bestowal Ninjutsu Blood"
       ]
     },
     {
       "ID": 5000181,
       "Entries": [
-        "Right-handed sword_poison blood enchantment additional attack -- 右手刀_毒血エンチャント追加攻撃"
+        "Bestowal Ninjutsu Poison"
       ]
     },
     {
       "ID": 5000182,
       "Entries": [
-        "Right-handed sword_white blood enchantment additional attack -- 右手刀_白血エンチャント追加攻撃"
+        "Bestowal Ninjutsu Lifesteal"
       ]
     },
     {
@@ -964,19 +964,19 @@
     {
       "ID": 5000190,
       "Entries": [
-        "Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）"
+        "Bestowal Ninjustu Blood - Thrust Attack"
       ]
     },
     {
       "ID": 5000191,
       "Entries": [
-        "Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）"
+        "Bestowal Ninjustu Poison - Thrust Attack"
       ]
     },
     {
       "ID": 5000192,
       "Entries": [
-        "Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）"
+        "Bestowal Ninjustu Lifesteal - Thrust Attack"
       ]
     },
     {
@@ -2332,19 +2332,19 @@
     {
       "ID": 7600200,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Iron fan bullet LV1 -- 鉄扇_放ち斬り_鉄扇弾丸LV1"
+        "Projected Force Projectile - Level 1"
       ]
     },
     {
       "ID": 7600210,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Iron fan bullet LV2 -- 鉄扇_放ち斬り_鉄扇弾丸LV2"
+        "Projected Force Projectile - Level 2"
       ]
     },
     {
       "ID": 7600220,
       "Entries": [
-        "Iron fan _ Unleashed slash _ Iron fan bullet LV3 -- 鉄扇_放ち斬り_鉄扇弾丸LV3"
+        "Projected Force Projectile - Level 3"
       ]
     },
     {
