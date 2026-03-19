@@ -430,799 +430,799 @@
     {
       "ID": 3020,
       "Entries": [
-        "Regeneration_Activation + &quot;Cure (Small)&quot; -- リジェネ_発動 + 「治（小）」"
+        "Pellet"
       ]
     },
     {
       "ID": 3021,
       "Entries": [
-        "Regen_Effect: HP Regen (Small) -- リジェネ_効果：HPリジェネ（小）"
+        "Pellet - Effect"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        "Elixir_Activation + &quot;Cure (Large)&quot; + Effect: HP / Core Recovery -- エリクサー_発動 + 「治（大）」 + 効果：HP/体幹回復"
+        "Divine Grass"
       ]
     },
     {
       "ID": 3041,
       "Entries": [
-        "Elixir_Effect: Abnormal condition recovery -- エリクサー_効果：状態異常回復"
+        "Divine Grass - All Status Cure"
       ]
     },
     {
       "ID": 3042,
       "Entries": [
-        "Elixir Effect: Restoration of virus resistance -- エリクサー_効果：病毒耐性回復"
+        "Divine Grass - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3043,
       "Entries": [
-        "Elixir _Effect: Eliminates poison slip damage -- エリクサー_効果：病毒スリップダメージ消去"
+        "Divine Grass"
       ]
     },
     {
       "ID": 3044,
       "Entries": [
-        "Elixir _ Effect: Restoration of resistance to fire -- エリクサー_効果：炎上耐性回復"
+        "Divine Grass - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3045,
       "Entries": [
-        "Elixir _Effect: Restores madness resistance -- エリクサー_効果：発狂耐性回復"
+        "Divine Grass - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3046,
       "Entries": [
-        "Elixir_ &quot;Healing (Large)&quot; -- エリクサー_「癒（大）」"
+        "Divine Grass"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Weird young water thrombus _ activation + &quot;red eye&quot; -- 変若水血栓_発動 + 「赤目」"
+        "Red Lump"
       ]
     },
     {
       "ID": 3051,
       "Entries": [
-        "Weird water thrombus_Effect: SA grant -- 変若水血栓_効果：SA付与"
+        "Red Lump - Effect"
       ]
     },
     {
       "ID": 3060,
       "Entries": [
-        "Ohagi_Activation + &quot;Cure (Large)&quot; -- おはぎ_発動 + 「治（大）」"
+        "Sweet Rice Ball"
       ]
     },
     {
       "ID": 3061,
       "Entries": [
-        "Ohagi_Effect: HP Regeneration (Large) -- おはぎ_効果：HPリジェネ（大）"
+        "Sweet Rice Ball - Heal"
       ]
     },
     {
       "ID": 3062,
       "Entries": [
-        "Ohagi_Effect: Strengthening the trunk (Large) -- おはぎ_効果：体幹強化（大）"
+        "Sweet Rice Ball - Posture Recovery"
       ]
     },
     {
       "ID": 3063,
       "Entries": [
-        "Ohagi_ &quot;Trunk (Large)&quot; -- おはぎ_「幹（大）」"
+        "Sweet Rice Ball"
       ]
     },
     {
       "ID": 3065,
       "Entries": [
-        "Ohagi (Sorry) _ Activate + &quot;Cure (Large)&quot; -- おはぎ（惜別）_発動 + 「治（大）」"
+        "Sweet Rice Ball 2"
       ]
     },
     {
       "ID": 3070,
       "Entries": [
-        "Persimmon _ activation + &quot;trunk (middle)&quot; -- 柿_発動 + 「幹（中）」"
+        "Persimmon"
       ]
     },
     {
       "ID": 3071,
       "Entries": [
-        "Persimmon_Effect: Strengthening the trunk (Large) -- 柿_効果：体幹強化（大）"
+        "Persimmon - Effect"
       ]
     },
     {
       "ID": 3075,
       "Entries": [
-        "Persimmon (lower man) _ activation + &quot;trunk (large)&quot; -- 柿（下男）_発動 + 「幹（大）」"
+        "Taro Persimmon"
       ]
     },
     {
       "ID": 3076,
       "Entries": [
-        "Persimmon (lower man) _Effect: Strengthening the trunk -- 柿（下男）_効果：体幹強化"
+        "Taro Persimmon - Effect"
       ]
     },
     {
       "ID": 3080,
       "Entries": [
-        "Chigo rice _ activation + &quot;cure (middle)&quot; -- 稚児米_発動 + 「治（中）」"
+        "Rice"
       ]
     },
     {
       "ID": 3081,
       "Entries": [
-        "Chigo Rice_Effect: HP Regeneration (Medium) -- 稚児米_効果：HPリジェネ（中）"
+        "Rice - Effect"
       ]
     },
     {
       "ID": 3085,
       "Entries": [
-        "Chigo rice (Sasameyuki) _ activation + &quot;Cure (Large)&quot; -- 稚児米（細雪）_発動 + 「治（大）」"
+        "Fine Snow"
       ]
     },
     {
       "ID": 3086,
       "Entries": [
-        "Chigo rice (Sasameyuki) _Effect: HP regen (Large) -- 稚児米（細雪）_効果：HPリジェネ（大）"
+        "Fine Snow - Effect"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Disease recovery_Activation + &quot;Healing&quot; + Effect: State recovery -- 病毒回復_発動 + 「癒」 + 効果：状態回復"
+        "Antidote Powder"
       ]
     },
     {
       "ID": 3201,
       "Entries": [
-        "Disease recovery_Effect: Resistance recovery -- 病毒回復_効果：耐性回復"
+        "Antidote Powder - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3202,
       "Entries": [
-        "Disease recovery_Effect: Dot damage elimination -- 病毒回復_効果：dotダメージ消去"
+        "Antitode Powder - Poison Cure"
       ]
     },
     {
       "ID": 3203,
       "Entries": [
-        "Disease recovery_Effect: Increased resistance -- 病毒回復_効果：耐性UP"
+        "Antidote Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3204,
       "Entries": [
-        "Disease recovery_ &quot;poison resistance&quot; -- 病毒回復_「耐毒」"
+        "Antidote Powder"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "Flame recovery_Activation + &quot;Healing&quot; + Effect: State recovery -- 炎上回復_発動 + 「癒」 + 効果：状態回復"
+        "Dousing Powder"
       ]
     },
     {
       "ID": 3211,
       "Entries": [
-        "Flame Recovery_Effect: Resistance Recovery -- 炎上回復_効果：耐性回復"
+        "Dousing Powder - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3212,
       "Entries": [
-        "Flame recovery_Effect: Increased resistance -- 炎上回復_効果：耐性UP"
+        "Dousing Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3213,
       "Entries": [
-        "Flaming recovery_ &quot;flaming resistance&quot; -- 炎上回復_「耐炎」"
+        "Dousing Powder"
       ]
     },
     {
       "ID": 3215,
       "Entries": [
-        "Flame recovery_Activation + &quot;Healing&quot; + Effect: State recovery_Tokugawa -- 炎上回復_発動 + 「癒」 + 効果：状態回復_徳川"
+        "Ministry Dousing Powder"
       ]
     },
     {
       "ID": 3216,
       "Entries": [
-        "Flame recovery_Effect: Resistance recovery_Tokugawa -- 炎上回復_効果：耐性回復_徳川"
+        "Ministry Dousing Powder - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3217,
       "Entries": [
-        "Flame recovery_Effect: Resistance UP_Tokugawa -- 炎上回復_効果：耐性UP_徳川"
+        "Ministry Dousing Powder - Resistance Boost"
       ]
     },
     {
       "ID": 3218,
       "Entries": [
-        "Flame recovery _ &quot;flaming resistance&quot; _ Tokugawa -- 炎上回復_「耐炎」_徳川"
+        "Dousing Powder"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        "Mad Recovery_Activation + &quot;Healing&quot; + Effect: State Recovery -- 発狂回復_発動 + 「癒」 + 効果：状態回復"
+        "Pacifying Agent"
       ]
     },
     {
       "ID": 3221,
       "Entries": [
-        "Madness Recovery_Effect: Resistance Recovery -- 発狂回復_効果：耐性回復"
+        "Pacifying Agent - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3222,
       "Entries": [
-        "Mad Recovery_Effect: Increased resistance -- 発狂回復_効果：耐性UP"
+        "Pacifying Agent - Resistance Boost"
       ]
     },
     {
       "ID": 3223,
       "Entries": [
-        "Mad recovery_ &quot;fear resistance&quot; -- 発狂回復_「耐怖」"
+        "Pacifying Agent"
       ]
     },
     {
       "ID": 3230,
       "Entries": [
-        "Electric shock delay _ activation + &quot;lightning resistance&quot; -- 感電遅延_発動 + 「耐雷」"
+        "Eel Liver"
       ]
     },
     {
       "ID": 3231,
       "Entries": [
-        "Electric shock delay_effect: Increased resistance -- 感電遅延_効果：耐性UP"
+        "Eel Liver - Resistance Boost"
       ]
     },
     {
       "ID": 3240,
       "Entries": [
-        "Aging recovery_state recovery -- 老化回復_状態回復"
+        "Cure Enfeeble"
       ]
     },
     {
       "ID": 3241,
       "Entries": [
-        "Recovery from aging_Recovery of resistance -- 老化回復_耐性回復"
+        "Enfeeble Buildup Removal"
       ]
     },
     {
       "ID": 3242,
       "Entries": [
-        "Aging recovery_tolerance UP -- 老化回復_耐性UP"
+        "Enfeebled Resistance Boost"
       ]
     },
     {
       "ID": 3250,
       "Entries": [
-        "Self-illness poison -- 自病毒"
+        "Contact Medicine"
       ]
     },
     {
       "ID": 3270,
       "Entries": [
-        "Spontaneous -- 自発狂"
+        "Spontaneous"
       ]
     },
     {
       "ID": 3300,
       "Entries": [
-        "Disease prevention_invocation + &quot;anti-poison&quot; -- 病毒予防_発動 + 「対毒」"
+        "Green Mossy Gourd"
       ]
     },
     {
       "ID": 3301,
       "Entries": [
-        "Disease prevention_Effect: Restoration of resistance -- 病毒予防_効果：耐性回復"
+        "Green Mossy Gourd - Remove Poison Buildup"
       ]
     },
     {
       "ID": 3302,
       "Entries": [
-        "Disease prevention_Effect: Increased resistance -- 病毒予防_効果：耐性UP"
+        "Green Mossy Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3310,
       "Entries": [
-        "Flame prevention_Activation + &quot;Anti-flame&quot; -- 炎上予防_発動 + 「対炎」"
+        "Withered Red Gourd"
       ]
     },
     {
       "ID": 3311,
       "Entries": [
-        "Flame prevention_Effect: Restoration of resistance -- 炎上予防_効果：耐性回復"
+        "Withered Red Gourd - Remove Burn Buildup"
       ]
     },
     {
       "ID": 3312,
       "Entries": [
-        "Flame prevention_Effect: Increased resistance -- 炎上予防_効果：耐性UP"
+        "Withered Red Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3320,
       "Entries": [
-        "Madness Prevention_Activation + &quot;Fear-Resistant&quot; -- 発狂予防_発動 + 「耐怖」"
+        "Mottled Purple Gourd"
       ]
     },
     {
       "ID": 3321,
       "Entries": [
-        "Madness Prevention_Effect_Resistance Recovery -- 発狂予防_効果_耐性回復"
+        "Mottled Purple Gourd - Remove Terror Buildup"
       ]
     },
     {
       "ID": 3322,
       "Entries": [
-        "Madness prevention_effect_resistance UP -- 発狂予防_効果_耐性UP"
+        "Mottled Purple Gourd - Resistance Boost"
       ]
     },
     {
       "ID": 3350,
       "Entries": [
-        "Attack enhancement (infinite / form cost consumption) _VFX -- 攻撃強化（無限/形代消費）_VFX"
+        "Ako's Spiritfall"
       ]
     },
     {
       "ID": 3351,
       "Entries": [
-        "Attack enhancement (infinite / form cost consumption) _ effect -- 攻撃強化（無限/形代消費）_効果"
+        "Ako's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3360,
       "Entries": [
-        "Attack enhancement (infinite / consumption of form) _with disadvantages_VFX -- 攻撃強化（無限/形代消費）_デメリット付き_VFX"
+        "Yashariku's Spiritfall"
       ]
     },
     {
       "ID": 3361,
       "Entries": [
-        "Attack enhancement (infinite / consumption of form) _with disadvantages_effect -- 攻撃強化（無限/形代消費）_デメリット付き_効果"
+        "Yashariku's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3370,
       "Entries": [
-        "Strengthen defense (infinite / consumption cost) _VFX -- 防御強化（無限/形代消費）_VFX"
+        "Ungo's Spiritfall"
       ]
     },
     {
       "ID": 3371,
       "Entries": [
-        "Strengthening defense (infinite / consumption of form) _ effect -- 防御強化（無限/形代消費）_効果"
+        "Ungo's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3380,
       "Entries": [
-        "Core strengthening (infinite / shape cost consumption) _VFX -- 体幹強化（無限/形代消費）_VFX"
+        "Gokan's Spiritfall"
       ]
     },
     {
       "ID": 3381,
       "Entries": [
-        "Trunk strengthening (infinite / shape cost consumption) _ effect -- 体幹強化（無限/形代消費）_効果"
+        "Gokan's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3390,
       "Entries": [
-        "Stealth enhancement (infinite / shape cost consumption) _VFX -- ステルス強化（無限/形代消費）_VFX"
+        "Gachiin's Spiritfall"
       ]
     },
     {
       "ID": 3391,
       "Entries": [
-        "Stealth enhancement (infinite / shape cost consumption) _ effect -- ステルス強化（無限/形代消費）_効果"
+        "Gachiin's Spiritfall - Effect"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Attack enhancement_VFX -- 攻撃強化_VFX"
+        "Ako's Sugar"
       ]
     },
     {
       "ID": 3401,
       "Entries": [
-        "Attack enhancement_effect -- 攻撃強化_効果"
+        "Ako's Sugar - Effect"
       ]
     },
     {
       "ID": 3410,
       "Entries": [
-        "Attack enhancement_with disadvantages_VFX -- 攻撃強化_デメリット付き_VFX"
+        "Yashariku's Sugar"
       ]
     },
     {
       "ID": 3411,
       "Entries": [
-        "Attack enhancement_with disadvantages_effect -- 攻撃強化_デメリット付き_効果"
+        "Yashariku's Sugar - Effect"
       ]
     },
     {
       "ID": 3420,
       "Entries": [
-        "Defense enhancement_VFX -- 防御強化_VFX"
+        "Ungo's Sugar"
       ]
     },
     {
       "ID": 3421,
       "Entries": [
-        "Defense enhancement_effect -- 防御強化_効果"
+        "Ungo's Sugar - Effect"
       ]
     },
     {
       "ID": 3430,
       "Entries": [
-        "Core strengthening_VFX -- 体幹強化_VFX"
+        "Gokan's Sugar"
       ]
     },
     {
       "ID": 3431,
       "Entries": [
-        "Core strengthening_effect -- 体幹強化_効果"
+        "Gokan's Sugar - Effect"
       ]
     },
     {
       "ID": 3440,
       "Entries": [
-        "Stealth enhancement_VFX -- ステルス強化_VFX"
+        "Gachiin's Sugar"
       ]
     },
     {
       "ID": 3441,
       "Entries": [
-        "Stealth enhancement_effect -- ステルス強化_効果"
+        "Gachiin's Sugar - Effect"
       ]
     },
     {
       "ID": 3450,
       "Entries": [
-        "Anti-spirit strengthening_VFX -- 対霊強化_VFX"
+        "Divine Confetti"
       ]
     },
     {
       "ID": 3451,
       "Entries": [
-        "Anti-spirit strengthening_effect -- 対霊強化_効果"
+        "Divine Confetti - Effect"
       ]
     },
     {
       "ID": 3490,
       "Entries": [
-        "Pottery piece_parent -- 陶片_親"
+        "Ceramic Shard"
       ]
     },
     {
       "ID": 3491,
       "Entries": [
-        "Pottery piece _ child -- 陶片_子"
+        "Ceramic Shard - Throw"
       ]
     },
     {
       "ID": 3492,
       "Entries": [
-        "Pottery piece_grandson -- 陶片_孫"
+        "Ceramic Shard - Hit"
       ]
     },
     {
       "ID": 3495,
       "Entries": [
-        "Pottery piece_parent_ hanging -- 陶片_親_ぶら下がり"
+        "Ceramic Shard - Ledge Hang"
       ]
     },
     {
       "ID": 3496,
       "Entries": [
-        "Pottery piece_child_ hanging -- 陶片_子_ぶら下がり"
+        "Ceramic Shard - Ledge Hang - Throw"
       ]
     },
     {
       "ID": 3497,
       "Entries": [
-        "Pottery piece _ grandson _ hanging -- 陶片_孫_ぶら下がり"
+        "Ceramic Shard - Ledge Hang - Hit"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        "Pottery piece_parent_peeping left -- 陶片_親_覗き込み左"
+        "Ceramic Shard - Peeping Left"
       ]
     },
     {
       "ID": 3501,
       "Entries": [
-        "Pottery piece _ child _ peeping left -- 陶片_子_覗き込み左"
+        "Ceramic Shard - Peeping Left - Throw"
       ]
     },
     {
       "ID": 3502,
       "Entries": [
-        "Pottery piece _ grandson _ peeping left -- 陶片_孫_覗き込み左"
+        "Ceramic Shard - Peeping Left - Hit"
       ]
     },
     {
       "ID": 3505,
       "Entries": [
-        "Pottery piece_parent_peeping right -- 陶片_親_覗き込み右"
+        "Ceramic Shard - Peeping Right"
       ]
     },
     {
       "ID": 3506,
       "Entries": [
-        "Pottery piece _ child _ peeping right -- 陶片_子_覗き込み右"
+        "Ceramic Shard - Peeping Right - Throw"
       ]
     },
     {
       "ID": 3507,
       "Entries": [
-        "Pottery piece _ grandson _ peeping right -- 陶片_孫_覗き込み右"
+        "Ceramic Shard - Peeping Right - Hit"
       ]
     },
     {
       "ID": 3510,
       "Entries": [
-        "Nigiri Ash_Parent -- にぎり灰_親"
+        "Fistful of Ash"
       ]
     },
     {
       "ID": 3511,
       "Entries": [
-        "Nigiri Ash_Child -- にぎり灰_子"
+        "Fistful of Ash - Throw"
       ]
     },
     {
       "ID": 3512,
       "Entries": [
-        "Nigiri Ash_Grandson -- にぎり灰_孫"
+        "Fistful of Ash - Hit"
       ]
     },
     {
       "ID": 3520,
       "Entries": [
-        "Aburatsubo_parent -- 油壷_親"
+        "Oil"
       ]
     },
     {
       "ID": 3521,
       "Entries": [
-        "Aburatsubo -- 油壷"
+        "Oil - Throw"
       ]
     },
     {
       "ID": 3530,
       "Entries": [
-        "Release illusion_Phantom drowning bullet -- 幻術解除_幻影かき消し弾丸"
+        "Snap Seed"
       ]
     },
     {
       "ID": 3580,
       "Entries": [
-        "Five-color rice -- 五色米"
+        "Five-color Rice"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "Money acquisition UP_VFX -- お金入手量UP_VFX"
+        "Mibu Balloon of Wealth"
       ]
     },
     {
       "ID": 3601,
       "Entries": [
-        "Money acquisition UP_effect -- お金入手量UP_効果"
+        "Mibu Balloon of Wealth - Effect"
       ]
     },
     {
       "ID": 3610,
       "Entries": [
-        "Resurrection right acquisition amount UP_VFX -- 復活権入手量UP_VFX"
+        "Mibu Balloon of Soul"
       ]
     },
     {
       "ID": 3611,
       "Entries": [
-        "Resurrection right acquisition amount UP_ effect -- 復活権入手量UP_効果"
+        "Mibu Balloon of Soul - Effect"
       ]
     },
     {
       "ID": 3620,
       "Entries": [
-        "Item drop rate UP_VFX -- アイテムドロップ率UP_VFX"
+        "Mibu Possession Balloon"
       ]
     },
     {
       "ID": 3621,
       "Entries": [
-        "Item drop rate UP_effect -- アイテムドロップ率UP_効果"
+        "Mibu Possession Balloon - Effect"
       ]
     },
     {
       "ID": 3630,
       "Entries": [
-        "Form cost drop rate UP_VFX -- 形代ドロップ率UP_VFX"
+        "Mibu Balloon of Spirit"
       ]
     },
     {
       "ID": 3631,
       "Entries": [
-        "Form cost drop rate UP_effect -- 形代ドロップ率UP_効果"
+        "Mibu Balloon of Spirit - Effect"
       ]
     },
     {
       "ID": 3640,
       "Entries": [
-        "White Rappa Water Balloon_Money Acquisition amount UP_VFX -- 白らっぱ水風船_お金入手量UP_VFX"
+        "Mibu Pilgrimage Balloon"
       ]
     },
     {
       "ID": 3641,
       "Entries": [
-        "White Rappa Water Balloon_Money Acquisition Amount UP_Effect -- 白らっぱ水風船_お金入手量UP_効果"
+        "Mibu Pilgrimage Balloon - Money"
       ]
     },
     {
       "ID": 3643,
       "Entries": [
-        "White Rappa Water Balloon_Resurrection Right Acquisition Amount UP_Effect -- 白らっぱ水風船_復活権入手量UP_効果"
+        "Mibu Pilgrimage Balloon - Resurrection"
       ]
     },
     {
       "ID": 3645,
       "Entries": [
-        "White Rappa Water Balloon_Item Drop Rate UP_Effect -- 白らっぱ水風船_アイテムドロップ率UP_効果"
+        "Mibu Pilgrimage Balloon - Items"
       ]
     },
     {
       "ID": 3647,
       "Entries": [
-        "White Rappa Water Balloon_Shape Drop Rate UP_Effect -- 白らっぱ水風船_形代ドロップ率UP_効果"
+        "Mibu Pilgrimage Balloon - Spirit Emblems"
       ]
     },
     {
       "ID": 9900,
       "Entries": [
-        "DL confirmation 00_ None -- DL確認00_なし"
+        "DL confirmation 00_ None"
       ]
     },
     {
       "ID": 9901,
       "Entries": [
-        "DL confirmation 01_small -- DL確認01_小"
+        "DL confirmation 01_small"
       ]
     },
     {
       "ID": 9902,
       "Entries": [
-        "DL confirmation 02_ Medium -- DL確認02_中"
+        "DL confirmation 02_ Medium"
       ]
     },
     {
       "ID": 9903,
       "Entries": [
-        "DL confirmation 03_large -- DL確認03_大"
+        "DL confirmation 03_large"
       ]
     },
     {
       "ID": 9904,
       "Entries": [
-        "DL confirmation 04_ Blow-off size -- DL確認04_吹っ飛び大"
+        "DL confirmation 04_ Blow-off size"
       ]
     },
     {
       "ID": 9905,
       "Entries": [
-        "DL confirmation 05_ press -- DL確認05_押し"
+        "DL confirmation 05_ press"
       ]
     },
     {
       "ID": 9906,
       "Entries": [
-        "DL confirmation 06_ slamming -- DL確認06_叩きつけ"
+        "DL confirmation 06_ slamming"
       ]
     },
     {
       "ID": 9907,
       "Entries": [
-        "DL confirmation 07_Blow-off small (PC kick only) -- DL確認07_吹っ飛び小（PC蹴り専用）"
+        "DL confirmation 07_Blow-off small (PC kick only)"
       ]
     },
     {
       "ID": 9908,
       "Entries": [
-        "DL confirmation 08_minimal addition -- DL確認08_極小加算"
+        "DL confirmation 08_minimal addition"
       ]
     },
     {
       "ID": 9909,
       "Entries": [
-        "DL confirmation 09_ lift up -- DL確認09_かち上げ"
+        "DL confirmation 09_ lift up"
       ]
     },
     {
       "ID": 9910,
       "Entries": [
-        "DL confirmation 10_ Blow-off oversized -- DL確認10_吹っ飛び特大"
+        "DL confirmation 10_ Blow-off oversized"
       ]
     },
     {
       "ID": 9911,
       "Entries": [
-        "DL confirmation 11_ breath (unused) -- DL確認11_ブレス（未使用）"
+        "DL confirmation 11_ breath (unused)"
       ]
     },
     {
       "ID": 9915,
       "Entries": [
-        "DL confirmation 20_break -- DL確認20_崩し"
+        "DL confirmation 20_break"
       ]
     },
     {
       "ID": 9920,
       "Entries": [
-        "DL confirmation 15_flame -- DL確認15_炎"
+        "DL confirmation 15_flame"
       ]
     },
     {
       "ID": 9930,
       "Entries": [
-        "AI sound confirmation_normal sound -- AI音確認_通常音"
+        "AI sound confirmation_normal sound"
       ]
     },
     {
       "ID": 9931,
       "Entries": [
-        "AI sound confirmation_important sound -- AI音確認_重要音"
+        "AI sound confirmation_important sound"
       ]
     },
     {
       "ID": 500052,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ slashing -- 義手忍具_鉄扇_放ち斬り"
+        "Projected Force - Umbrella"
       ]
     },
     {
       "ID": 500053,
       "Entries": [
-        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Red Blood Enchantment -- 義手忍具_鉄扇_放ち斬り_赤血エンチャント"
+        "Projected Force - Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 500054,
       "Entries": [
-        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Poison Blood Enchantment -- 義手忍具_鉄扇_放ち斬り_毒血エンチャント"
+        "Projected Force - Poison Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 500055,
       "Entries": [
-        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ White Blood Enchantment -- 義手忍具_鉄扇_放ち斬り_白血エンチャント"
+        "Projected Force - Lifesteal Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 500056,
       "Entries": [
-        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Orange Wind Enchantment -- 義手忍具_鉄扇_放ち斬り_橙風エンチャント"
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Orange Wind Enchantment "
       ]
     },
     {
       "ID": 500057,
       "Entries": [
-        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Gold Wind Enchantment -- 義手忍具_鉄扇_放ち斬り_金風エンチャント"
+        "Prosthetic Hand Ninja _ Iron Fan _ Unleashed Slash _ Gold Wind Enchantment "
       ]
     },
     {
