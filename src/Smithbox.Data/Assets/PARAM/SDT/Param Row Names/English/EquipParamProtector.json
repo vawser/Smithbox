@@ -104,12 +104,6 @@
       ]
     },
     {
-      "ID": 331000,
-      "Entries": [
-        "Another's Memory: Shura - Body - No Mortal Blade"
-      ]
-    },
-    {
       "ID": 302000,
       "Entries": [
         "Another's Memory: Shura - Prosthetic Arm"
@@ -125,6 +119,12 @@
       "ID": 304000,
       "Entries": [
         "Another's Memory: Shura - Hair"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Another's Memory: Shura - Body - No Mortal Blade"
       ]
     },
     {
@@ -190,49 +190,49 @@
     {
       "ID": 600000,
       "Entries": [
-        "Protagonist _ Head _ Ashina Ninja -- 主人公_頭_葦名忍者"
+        ""
       ]
     },
     {
       "ID": 641000,
       "Entries": [
-        "Protagonist _ torso _ reed name ninja -- 主人公_胴_葦名忍者"
+        ""
       ]
     },
     {
       "ID": 602000,
       "Entries": [
-        "Protagonist _ Arm _ Prosthetic Hand _ Ashina Ninja -- 主人公_腕_義手_葦名忍者"
+        ""
       ]
     },
     {
       "ID": 603000,
       "Entries": [
-        "Protagonist _ Legs _ Ashina Ninja -- 主人公_脚_葦名忍者"
+        ""
       ]
     },
     {
       "ID": 901000,
       "Entries": [
-        "Always dying _ torso -- 常に瀕死_胴"
+        ""
       ]
     },
     {
       "ID": 901100,
       "Entries": [
-        "Always Jasuga _ torso -- 常にジャスガ_胴"
+        ""
       ]
     },
     {
       "ID": 901200,
       "Entries": [
-        "Underwater cross confirmation _ torso -- 水中クロス確認_胴"
+        ""
       ]
     },
     {
       "ID": 901300,
       "Entries": [
-        "8 HP_ torso -- HP8個_胴"
+        ""
       ]
     }
   ]

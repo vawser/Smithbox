@@ -1582,19 +1582,19 @@
     {
       "ID": 3000,
       "Entries": [
-        "Est_ activation -- エスト_発動"
+        "Healing Gourd Activation"
       ]
     },
     {
       "ID": 3020,
       "Entries": [
-        "Regeneration_invocation -- リジェネ_発動"
+        "Pellet Activation"
       ]
     },
     {
       "ID": 3021,
       "Entries": [
-        "Regeneration_in effect -- リジェネ_効果中"
+        "Pellet In Effect"
       ]
     },
     {
@@ -1996,7 +1996,7 @@
     {
       "ID": 5020,
       "Entries": [
-        "Resurrection Technique_Resurrection Production (Blur) -- 復活の術_復活演出（ブラー）"
+        "Resurrection"
       ]
     },
     {
@@ -2134,7 +2134,7 @@
     {
       "ID": 8000,
       "Entries": [
-        "Costume_Shura_Flame -- コスチューム_修羅_炎"
+        "Shura Outfit Flame"
       ]
     },
     {
@@ -2320,325 +2320,325 @@
     {
       "ID": 40000,
       "Entries": [
-        "Toxic -- 病毒"
+        "Poison Green Cloud"
       ]
     },
     {
       "ID": 40010,
       "Entries": [
-        "On fire -- 炎上"
+        "Burning"
       ]
     },
     {
       "ID": 40020,
       "Entries": [
-        "craziness -- 発狂"
+        "Terror"
       ]
     },
     {
       "ID": 40040,
       "Entries": [
-        "Electric shock -- 感電"
+        "Shock"
       ]
     },
     {
       "ID": 40060,
       "Entries": [
-        "Aging -- 老化"
+        "Enfeebled"
       ]
     },
     {
       "ID": 40061,
       "Entries": [
-        "Deaging -- 老化解除"
+        "Cure Enfeebled"
       ]
     },
     {
       "ID": 40080,
       "Entries": [
-        "Hazardous substance firecracker debuff -- 有害物質爆竹デバフ"
+        "Purple Fume Spark Debuff"
       ]
     },
     {
       "ID": 40100,
       "Entries": [
-        "Recovery seal -- 回復封じ"
+        "Great Shinobi Owl - Healing Block"
       ]
     },
     {
       "ID": 48000,
       "Entries": [
-        "Kanji_ &quot;virus&quot; -- 漢字_「病毒」"
+        "Kanji - Poison"
       ]
     },
     {
       "ID": 48010,
       "Entries": [
-        "Kanji_ &quot;flaming&quot; -- 漢字_「炎上」"
+        "Kanji - Burn"
       ]
     },
     {
       "ID": 48020,
       "Entries": [
-        "Kanji_ &quot;scary&quot; -- 漢字_「怖気」"
+        "Kanji - Terror"
       ]
     },
     {
       "ID": 48040,
       "Entries": [
-        "Kanji_ &quot;Thunder Thunder&quot; -- 漢字_「打雷」"
+        "Kanji - Shock"
       ]
     },
     {
       "ID": 48060,
       "Entries": [
-        "Kanji_ &quot;Older&quot; -- 漢字_「年寄」"
+        "Kanji - Enfeebled"
       ]
     },
     {
       "ID": 48100,
       "Entries": [
-        "Kanji_ &quot;Danger&quot; -- 漢字_「危」"
+        "Kanji - Perilous Attack"
       ]
     },
     {
       "ID": 48200,
       "Entries": [
-        "Kanji_ &quot;regeneration&quot; -- 漢字_「回生」"
+        "Kanji - Resurrection"
       ]
     },
     {
       "ID": 48210,
       "Entries": [
-        "Kanji_ &quot;smoke&quot; -- 漢字_「煙」"
+        "Kanji - Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 48220,
       "Entries": [
-        "Kanji_ &quot;傀&quot; -- 漢字_「傀」"
+        "Kanji - Puppeteer Ninjutstu"
       ]
     },
     {
       "ID": 48230,
       "Entries": [
-        "Kanji_ &quot;Matoi&quot; -- 漢字_「纏」"
+        "Kanji - Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 48300,
       "Entries": [
-        "Kanji_ &quot;Osamu (Small)&quot; -- 漢字_「治（小）」"
+        ""
       ]
     },
     {
       "ID": 48301,
       "Entries": [
-        "Kanji_ &quot;Ji (Middle)&quot; -- 漢字_「治（中）」"
+        "Kanji - Healing Gourd"
       ]
     },
     {
       "ID": 48302,
       "Entries": [
-        "Kanji_ &quot;Ji (Large)&quot; -- 漢字_「治（大）」"
+        "Kanji - Divine Grass"
       ]
     },
     {
       "ID": 48303,
       "Entries": [
-        "Kanji_ &quot;Sequel (small)&quot; -- 漢字_「続治（小）」"
+        "Kanji - Pellet"
       ]
     },
     {
       "ID": 48304,
       "Entries": [
-        "Kanji_ &quot;Sequel (middle)&quot; -- 漢字_「続治（中）」"
+        "Kanji - Rice"
       ]
     },
     {
       "ID": 48305,
       "Entries": [
-        "Kanji_ &quot;Sequel (Large)&quot; -- 漢字_「続治（大）」"
+        "Kanji - Sweet Rice Ball"
       ]
     },
     {
       "ID": 48306,
       "Entries": [
-        "Kanji_ &quot;Sequel (middle)&quot; -- 漢字_「続幹（中）」"
+        "Kanji - Persimmon"
       ]
     },
     {
       "ID": 48307,
       "Entries": [
-        "Kanji_ &quot;Sequel (Large)&quot; -- 漢字_「続幹（大）」"
+        "Kanji - Sweet Rice Ball Posture"
       ]
     },
     {
       "ID": 48310,
       "Entries": [
-        "Kanji_ &quot;healing&quot; (virus recovery) -- 漢字_「癒」（病毒回復）"
+        "Kanji - Antidote Powder"
       ]
     },
     {
       "ID": 48311,
       "Entries": [
-        "Kanji_ &quot;healing&quot; (recovery from flames) -- 漢字_「癒」（炎上回復）"
+        "Kanji - Dousing Powder"
       ]
     },
     {
       "ID": 48312,
       "Entries": [
-        "Kanji_ &quot;healing&quot; (recovery from madness) -- 漢字_「癒」（発狂回復）"
+        "Kanji - Pacifying Agent"
       ]
     },
     {
       "ID": 48314,
       "Entries": [
-        "Kanji_ &quot;healing&quot; (recovery from all abnormal conditions) -- 漢字_「癒」（全状態異常回復）"
+        "Kanji - Divine Grass"
       ]
     },
     {
       "ID": 48315,
       "Entries": [
-        "Kanji_ &quot;poison resistance&quot; (virus prevention) -- 漢字_「耐毒」（病毒予防）"
+        "Kanji - Antidote Powder"
       ]
     },
     {
       "ID": 48316,
       "Entries": [
-        "Kanji_ &quot;flaming resistance&quot; (flaming prevention) -- 漢字_「耐炎」（炎上予防）"
+        "Kanji - Dousing Powder"
       ]
     },
     {
       "ID": 48317,
       "Entries": [
-        "Kanji_ &quot;Scary resistance&quot; (prevention of madness) -- 漢字_「耐怖」（発狂予防）"
+        "Kanji - Pacifying Agent"
       ]
     },
     {
       "ID": 48318,
       "Entries": [
-        "Kanji_ &quot;Lightning resistance&quot; (electric shock delay) -- 漢字_「耐雷」（感電遅延）"
+        "Kanji - Eel Liver"
       ]
     },
     {
       "ID": 48320,
       "Entries": [
-        "Kanji_ &quot;Attack&quot; (Attack enhancement_Infinity) -- 漢字_「阿攻」（攻撃強化_無限）"
+        "Kanji - Ako's Spiritfall"
       ]
     },
     {
       "ID": 48321,
       "Entries": [
-        "Kanji _ &quot;Yaksha 戮&quot; (with attack strengthening demerit _ infinity) -- 漢字_「夜叉戮」（攻撃強化デメリット付き_無限）"
+        "Kanji - Yashariku's Spiritfall"
       ]
     },
     {
       "ID": 48322,
       "Entries": [
-        "Kanji_ &quot;Wu&quot; (Strengthening Defense_Infinity) -- 漢字_「吽護」（防御強化_無限）"
+        "Kanji - Ungo's Spiritfall"
       ]
     },
     {
       "ID": 48323,
       "Entries": [
-        "Kanji_ &quot;Torso&quot; (Torso strengthening_Infinite) -- 漢字_「剛幹」（体幹強化_無限）"
+        "Kanji - Gokan's Spiritfall"
       ]
     },
     {
       "ID": 48324,
       "Entries": [
-        "Kanji_ &quot;Tsukigaku&quot; (Stealth enhancement_Infinite) -- 漢字_「月隠」（ステルス強化_無限）"
+        "Kanji - Gachiin's Spiritfall"
       ]
     },
     {
       "ID": 48325,
       "Entries": [
-        "Kanji_ &quot;A attack&quot; (strengthening attack) -- 漢字_「阿攻」（攻撃強化）"
+        "Kanji - Ako's Sugar"
       ]
     },
     {
       "ID": 48326,
       "Entries": [
-        "Kanji_ &quot;Yaksha&quot; (with demerit of strengthening attack) -- 漢字_「夜叉戮」（攻撃強化デメリット付き）"
+        "Kanji - Yashariku's Sugar"
       ]
     },
     {
       "ID": 48327,
       "Entries": [
-        "Kanji_ &quot;Wu&quot; (strengthening defense) -- 漢字_「吽護」（防御強化）"
+        "Kanji - Ungo's Sugar"
       ]
     },
     {
       "ID": 48328,
       "Entries": [
-        "Kanji_ &quot;Torso&quot; (strengthening the trunk) -- 漢字_「剛幹」（体幹強化）"
+        "Kanji - Gokan's Sugar"
       ]
     },
     {
       "ID": 48329,
       "Entries": [
-        "Kanji_ &quot;Tsukigaku&quot; (strengthening stealth) -- 漢字_「月隠」（ステルス強化）"
+        "Kanji - Gachiin's Sugar"
       ]
     },
     {
       "ID": 48330,
       "Entries": [
-        "Kanji_ &quot;Payment&quot; (strengthening spirits) -- 漢字_「払い」（対霊強化）"
+        "Kanji - Divine Confetti"
       ]
     },
     {
       "ID": 48331,
       "Entries": [
-        "Kanji_ &quot;Red Eye&quot; (Weird Young Water Thrombus) -- 漢字_「赤目」（変若水血栓）"
+        "Kanji - Red Lump"
       ]
     },
     {
       "ID": 48340,
       "Entries": [
-        "Kanji_ &quot;accompaniment&quot; -- 漢字_「御供」"
+        "Kanji - Ceremonial Tanto"
       ]
     },
     {
       "ID": 48341,
       "Entries": [
-        "Kanji_ &quot;No drug&quot; -- 漢字_「禁薬」"
+        "Kanji - Mibu Balloon of Wealth"
       ]
     },
     {
       "ID": 48350,
       "Entries": [
-        "Kanji_ &quot;Profit (increased amount of money)&quot; -- 漢字_「御利益（お金入手量UP）」"
+        "Kanji - Mibu Balloon of Wealth"
       ]
     },
     {
       "ID": 48351,
       "Entries": [
-        "Kanji_ &quot;Benefits (increased amount of resurrection rights)&quot; -- 漢字_「御利益（復活権入手量UP）」"
+        "Kanji - Mibu Balloon of Soul"
       ]
     },
     {
       "ID": 48352,
       "Entries": [
-        "Kanji_ &quot;Profit (Item drop rate UP)&quot; -- 漢字_「御利益（アイテムドロップ率UP）」"
+        "Kanji - Mibu Possession Balloon"
       ]
     },
     {
       "ID": 48353,
       "Entries": [
-        "Kanji_ &quot;Benefits (up the form cost drop rate)&quot; -- 漢字_「御利益（形代ドロップ率UP）」"
+        "Kanji - Mibu Balloon of Spirit"
       ]
     },
     {
       "ID": 48355,
       "Entries": [
-        "Kanji_ &quot;Benefits (White Rappa Water Balloons_Various UP)&quot; -- 漢字_「御利益（白らっぱ水風船_色々UP）」"
+        "Kanji - Mibu Pilgrimage Balloon"
       ]
     },
     {
       "ID": 48370,
       "Entries": [
-        "Kanji_ &quot;Rejuvenation&quot; (Aging release) -- 漢字_「若返」（老化解除）"
+        "Kanji - Cure Enfeebled"
       ]
     },
     {
