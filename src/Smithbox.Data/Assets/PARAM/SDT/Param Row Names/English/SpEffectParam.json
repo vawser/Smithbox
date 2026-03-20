@@ -1588,7 +1588,7 @@
     {
       "ID": 3046,
       "Entries": [
-        "Divine Grass"
+        "Divine Grass - VFX"
       ]
     },
     {
@@ -1708,7 +1708,7 @@
     {
       "ID": 3204,
       "Entries": [
-        "Antidote Powder"
+        "Antidote Powder - VFX"
       ]
     },
     {
@@ -1732,7 +1732,7 @@
     {
       "ID": 3213,
       "Entries": [
-        "Dousing Powder"
+        "Dousing Powder - VFX"
       ]
     },
     {
@@ -1762,7 +1762,7 @@
     {
       "ID": 3223,
       "Entries": [
-        "Pacifying Agent"
+        "Pacifying Agent - VFX"
       ]
     },
     {
@@ -2200,73 +2200,73 @@
     {
       "ID": 3700,
       "Entries": [
-        "Gold nugget_small -- 金塊_小"
+        "Light Coin Purse"
       ]
     },
     {
       "ID": 3704,
       "Entries": [
-        "Gold nugget _ medium -- 金塊_中"
+        "Heavy Coin Purse"
       ]
     },
     {
       "ID": 3708,
       "Entries": [
-        "Gold nugget _ large -- 金塊_大"
+        "Bulging Coin Purse"
       ]
     },
     {
       "ID": 3730,
       "Entries": [
-        "[Consumption] Bell Demon_Day -- 【消費】鐘鬼_昼"
+        "Bell Demon Use"
       ]
     },
     {
       "ID": 3731,
       "Entries": [
-        "[Consumption] Bell Demon_Evening -- 【消費】鐘鬼_夕"
+        "Bell Demon Use"
       ]
     },
     {
       "ID": 3732,
       "Entries": [
-        "[Consumption] Bell Demon_Night -- 【消費】鐘鬼_夜"
+        "Bell Demon Use"
       ]
     },
     {
       "ID": 3733,
       "Entries": [
-        "[Consumption] Bell Demon_Bell Evening -- 【消費】鐘鬼_鐘宵"
+        "Bell Demon Use"
       ]
     },
     {
       "ID": 3800,
       "Entries": [
-        "Form conversion (white) -- 形代変換（白）"
+        "Ceremonial Tanto"
       ]
     },
     {
       "ID": 3980,
       "Entries": [
-        "Buddha statue of return -- 帰還の仏像"
+        "Homeward Idol"
       ]
     },
     {
       "ID": 3990,
       "Entries": [
-        "Redo bell_fade out -- やりなおし鈴_フェードアウト"
+        "Illusive Hall Bell Fade Out"
       ]
     },
     {
       "ID": 3991,
       "Entries": [
-        "Redo bell_fade in -- やりなおし鈴_フェードイン"
+        "Illusive Hall Bell Fade In"
       ]
     },
     {
       "ID": 3999,
       "Entries": [
-        "Redo bell _ use prohibited -- やりなおし鈴_使用禁止"
+        "Illusive Hall Bell Use Prohibited"
       ]
     },
     {
@@ -2740,25 +2740,25 @@
     {
       "ID": 5220,
       "Entries": [
-        "Combat balance adjustment test_PC_ Trunk automatic recovery speed basic value -- 戦闘バランス調整テスト_PC_体幹自動回復速度基本値"
+        "Player Automatic Posture Recover Speed"
       ]
     },
     {
       "ID": 5221,
       "Entries": [
-        "Combat balance adjustment test_PC_HP 75% -50% core performance DOWN -- 戦闘バランス調整テスト_PC_HP75%～50%で体幹性能DOWN"
+        "Player Lowered Posture Recovery When HP at 75% - 50%"
       ]
     },
     {
       "ID": 5222,
       "Entries": [
-        "Combat balance adjustment test_PC_HP 50% -25% core performance DOWN -- 戦闘バランス調整テスト_PC_HP50%～25%で体幹性能DOWN"
+        "Player Lowered Posture Recovery When HP at 50% - 25%"
       ]
     },
     {
       "ID": 5223,
       "Entries": [
-        "Combat balance adjustment test_PC_HP 25% to 0% core performance DOWN -- 戦闘バランス調整テスト_PC_HP25%～0%で体幹性能DOWN"
+        "Player Lowered Posture Recovery When HP at 25% - 0%"
       ]
     },
     {
@@ -6130,7 +6130,7 @@
     {
       "ID": 9280,
       "Entries": [
-        "Fear_Resistance Shaving Permit -- 怖気_耐性削り許可"
+        "Fear Resistance Shaving Permit"
       ]
     },
     {
@@ -6322,7 +6322,7 @@
     {
       "ID": 9480,
       "Entries": [
-        "Electric shock_resistant scraping permission -- 感電_耐性削り許可"
+        "Allow Shock on Player When Touching Ground"
       ]
     },
     {
@@ -9400,25 +9400,25 @@
     {
       "ID": 110070,
       "Entries": [
-        "Resurrection Technique_When Using SFX &quot;Regeneration&quot; + Directed VFX -- 復活の術_使用時SFX「回生」 + 演出VFX"
+        "Resurrection VFX"
       ]
     },
     {
       "ID": 110080,
       "Entries": [
-        "Blood Smoke Shinobi _ When using SFX &quot;Smoke&quot; -- 血煙忍殺_使用時SFX「煙」"
+        "Bloodsmoke Ninjutsu - VFX"
       ]
     },
     {
       "ID": 110081,
       "Entries": [
-        "Puppet Shinobi _ When using SFX &quot;Puppet&quot; -- 傀儡忍殺_使用時SFX「傀」"
+        "Puppeteer Ninjutsu - VFX"
       ]
     },
     {
       "ID": 110082,
       "Entries": [
-        "Granted Shinobi _ When using SFX &quot;Matoi&quot; -- 付与忍殺_使用時SFX「纏」"
+        "Bestowal Ninjutsu - VFX"
       ]
     },
     {
@@ -10222,7 +10222,7 @@
     {
       "ID": 118600,
       "Entries": [
-        "Shura Costume_Flame SFX -- 修羅コスチューム_炎SFX"
+        "Shura Costume Flame SFX"
       ]
     },
     {
@@ -14218,7 +14218,7 @@
     {
       "ID": 900001,
       "Entries": [
-        "Just guard is always possible (playing defense + stamina cut rate UP) -- 常にジャストガード可能（弾き防御力 + スタミナカット率UP）"
+        "Player Always Deflects"
       ]
     },
     {
@@ -14248,7 +14248,7 @@
     {
       "ID": 900300,
       "Entries": [
-        "Don&#39;t lose soul even if you die -- 死んもソウルロストしない"
+        "Don't lose soul even if you die"
       ]
     },
     {
@@ -15574,7 +15574,7 @@
     {
       "ID": 3130060,
       "Entries": [
-        "[NTC] Japanese-style Innsmouth_Judgment that you are breathing energy -- 【NTC】和風インスマウス_自分が生気を吸っている判定"
+        "Japanese-style Innsmouth Judgment that you are breathing energy"
       ]
     },
     {
@@ -17038,7 +17038,7 @@
     {
       "ID": 3506090,
       "Entries": [
-        "[NTC] Ninja Army Chief_Recovery Seal_Effect -- 【NTC】忍軍の長_回復封じ_効果用"
+        "Great Shinobi Owl - Healing Block"
       ]
     },
     {

@@ -4,97 +4,97 @@
     {
       "ID": 0,
       "Entries": [
-        "1 lap -- 1周回"
+        "NG+0"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "2nd lap -- 2周目"
+        "NG+1"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "3rd lap -- 3周目"
+        "NG+2"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "4th lap -- 4周目"
+        "NG+3"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "5th lap -- 5周目"
+        "NG+4"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "6th lap -- 6周目"
+        "NG+5"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "7th lap -- 7周目"
+        "NG+6"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "8th lap -- 8周目"
+        "NG+7"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "1 lap (hard mode) -- 1周回（ハードモード）"
+        "NG+0 Charmless"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "2nd lap (hard mode) -- 2周目（ハードモード）"
+        "NG+1 Charmless"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "3rd lap (hard mode) -- 3周目（ハードモード）"
+        "NG+2 Charmless"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "4th lap (hard mode) -- 4周目（ハードモード）"
+        "NG+3 Charmless"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "5th lap (hard mode) -- 5周目（ハードモード）"
+        "NG+4 Charmless"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "6th lap (hard mode) -- 6周目（ハードモード）"
+        "NG+5 Charmless"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "7th lap (hard mode) -- 7周目（ハードモード）"
+        "NG+6 Charmless"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "8th lap (hard mode) -- 8周目（ハードモード）"
+        "NG+7 Charmless"
       ]
     }
   ]

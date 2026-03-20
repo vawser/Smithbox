@@ -316,7 +316,7 @@
     {
       "ID": 3511,
       "Entries": [
-        "Grip ash -- 握り灰"
+        "Fistful of Ash"
       ]
     },
     {
@@ -502,31 +502,31 @@
     {
       "ID": 5000010,
       "Entries": [
-        "Right hand sword_attack 1 -- 右手刀_攻撃1"
+        "Kusabimaru Light Attack 1"
       ]
     },
     {
       "ID": 5000011,
       "Entries": [
-        "Right hand sword_attack 2 -- 右手刀_攻撃2"
+        "Kusabimaru Light Attack 2"
       ]
     },
     {
       "ID": 5000012,
       "Entries": [
-        "Right hand sword_attack 3 -- 右手刀_攻撃3"
+        "Kusabimaru Light Attack 3"
       ]
     },
     {
       "ID": 5000013,
       "Entries": [
-        "Right hand sword_attack 4 -- 右手刀_攻撃4"
+        "Kusabimaru Light Attack 4"
       ]
     },
     {
       "ID": 5000014,
       "Entries": [
-        "Right hand sword_attack 5 -- 右手刀_攻撃5"
+        "Kusabimaru Light Attack 5"
       ]
     },
     {
@@ -610,127 +610,127 @@
     {
       "ID": 5000060,
       "Entries": [
-        "Right hand sword_Aerial attack 1 -- 右手刀_空中攻撃1"
+        "Jump Attack 1"
       ]
     },
     {
       "ID": 5000061,
       "Entries": [
-        "Right hand sword_Aerial attack 2 -- 右手刀_空中攻撃2"
+        "Jump Attack 2"
       ]
     },
     {
       "ID": 5000062,
       "Entries": [
-        "Right hand sword_Aerial attack 3 -- 右手刀_空中攻撃3"
+        "Jump Attack 3"
       ]
     },
     {
       "ID": 5000065,
       "Entries": [
-        "Right hand sword_wire attack 1 -- 右手刀_ワイヤー攻撃1"
+        "Grappling Hook Attack 1"
       ]
     },
     {
       "ID": 5000066,
       "Entries": [
-        "Right hand sword_wire attack 2 -- 右手刀_ワイヤー攻撃2"
+        "Grappling Hook Attack 2"
       ]
     },
     {
       "ID": 5000070,
       "Entries": [
-        "Right hand sword_dash attack -- 右手刀_ダッシュ攻撃"
+        "Kusabimaru Dash Attack"
       ]
     },
     {
       "ID": 5000075,
       "Entries": [
-        "Right hand sword_ crouching attack -- 右手刀_しゃがみ攻撃"
+        "Kusabimaru Crouch Attack"
       ]
     },
     {
       "ID": 5000076,
       "Entries": [
-        "Right hand sword_Crouching attack_Underfloor -- 右手刀_しゃがみ攻撃_床下"
+        "Kusabimaru Crouch Attack Under Floor"
       ]
     },
     {
       "ID": 5000080,
       "Entries": [
-        "Right hand sword _ hanging attack -- 右手刀_ぶら下がり攻撃"
+        "Kusabimaru Hanging Attack"
       ]
     },
     {
       "ID": 5000085,
       "Entries": [
-        "Right hand sword_aging attack -- 右手刀_老化攻撃"
+        "Kusabimaru Enfeebled Attack"
       ]
     },
     {
       "ID": 5000086,
       "Entries": [
-        "Right hand sword_water / underwater thrust 1 -- 右手刀_水上/水中突き1"
+        "Kusabimaru Underwater Thrust 1"
       ]
     },
     {
       "ID": 5000087,
       "Entries": [
-        "Right hand sword_water / underwater thrust 2 -- 右手刀_水上/水中突き2"
+        "Kusabimaru Underwater Thrust 2"
       ]
     },
     {
       "ID": 5000088,
       "Entries": [
-        "Right hand sword_water / underwater attack 1 -- 右手刀_水上/水中攻撃1"
+        "Kusabimaru Underwater Attack 1"
       ]
     },
     {
       "ID": 5000089,
       "Entries": [
-        "Right hand sword_water / underwater attack 2 -- 右手刀_水上/水中攻撃2"
+        "Kusabimaru Underwater Attack 2"
       ]
     },
     {
       "ID": 5000090,
       "Entries": [
-        "Right hand sword_guard -- 右手刀_ガード"
+        "Kusabimaru Guard"
       ]
     },
     {
       "ID": 5000100,
       "Entries": [
-        "Shuriken_Chasing Slash -- 手裏剣_追いかけ斬り"
+        "Chasing Slice - Shuriken"
       ]
     },
     {
       "ID": 5000105,
       "Entries": [
-        "Firecracker _ slip-through slash -- 爆竹_すり抜け斬り"
+        "Chasing Slice - Firecracker"
       ]
     },
     {
       "ID": 5000110,
       "Entries": [
-        "Ignition_Flame Slash -- 発火_炎まとい斬り"
+        "Living Force - Flame Vent"
       ]
     },
     {
       "ID": 5000115,
       "Entries": [
-        "Ax _ front slash _ sword -- 斧_前宙斬り_刀"
+        "Fang and Blade - Loaded Axe - Kusabimaru Part"
       ]
     },
     {
       "ID": 5000120,
       "Entries": [
-        "Transformation_ground appearance attack -- 変わり身_地上出現攻撃"
+        "Fang and Blade - Mist Raven - Ground attack"
       ]
     },
     {
       "ID": 5000121,
       "Entries": [
-        "Transformation_Aerial Appearance Attack -- 変わり身_空中出現攻撃"
+        "Fang and Blade - Mist Raven - Aerial attack"
       ]
     },
     {
@@ -856,7 +856,7 @@
     {
       "ID": 5000152,
       "Entries": [
-        "Projected Force - Umbrella"
+        "Projected Force - Loaded Umbrella"
       ]
     },
     {
@@ -892,31 +892,31 @@
     {
       "ID": 5000160,
       "Entries": [
-        "Enemy turning LV1 / 2_ Wind sword -- 敵回しLV1/2_風まとい斬り"
+        "Living Force - Divine Abduction"
       ]
     },
     {
       "ID": 5000161,
       "Entries": [
-        "Enemy turning LV3_ Wind slashing -- 敵回しLV3_風まとい斬り"
+        "Living Force - Golden Vortex"
       ]
     },
     {
       "ID": 5000165,
       "Entries": [
-        "Spear_Chasing Slash -- 槍_追いかけ斬り"
+        "Chasing Slice - Loaded Spear"
       ]
     },
     {
       "ID": 5000166,
       "Entries": [
-        "Spear_Pulling Slash -- 槍_引き寄せ斬り"
+        "Fang and Blade - Loaded Spear"
       ]
     },
     {
       "ID": 5000170,
       "Entries": [
-        "Finger whistle_sound feed slash -- 指笛_音送り斬り"
+        "Projected Force - Finger Whistle"
       ]
     },
     {
@@ -2332,19 +2332,19 @@
     {
       "ID": 7600200,
       "Entries": [
-        "Projected Force Projectile - Level 1"
+        "Projected Force - Loaded Umbrella - Projectile Level 1"
       ]
     },
     {
       "ID": 7600210,
       "Entries": [
-        "Projected Force Projectile - Level 2"
+        "Projected Force - Loaded Umbrella - Projectile Level 2"
       ]
     },
     {
       "ID": 7600220,
       "Entries": [
-        "Projected Force Projectile - Level 3"
+        "Projected Force - Loaded Umbrella - Projectile Level 3"
       ]
     },
     {
