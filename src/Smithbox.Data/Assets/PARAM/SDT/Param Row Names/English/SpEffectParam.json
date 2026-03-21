@@ -8428,25 +8428,25 @@
     {
       "ID": 106000,
       "Entries": [
-        "No enchantment -- 無エンチャント"
+        "No Active Sword Buff"
       ]
     },
     {
       "ID": 106020,
       "Entries": [
-        "Flame enchantment -- 炎エンチャント"
+        "Living Force Flame"
       ]
     },
     {
       "ID": 106021,
       "Entries": [
-        "Flame Enchantment_Call effect on hit -- 炎エンチャント_ヒット時効果呼び出し"
+        "Living Force Flame On Hit"
       ]
     },
     {
       "ID": 106025,
       "Entries": [
-        "Flame Enchantment_Anti-Flame Iron Fan Derived Attack -- 炎エンチャント_対炎鉄扇派生攻撃"
+        "Suzaku's Lotus Umbrella Weapon Effect"
       ]
     },
     {
@@ -8470,7 +8470,7 @@
     {
       "ID": 106035,
       "Entries": [
-        "Spirit Enchantment_Anti-Rei Iron Fan Derived Attack -- 霊エンチャント_対霊鉄扇派生攻撃"
+        "Phoenix's Lilac Umbrella Weapon Effect"
       ]
     },
     {
@@ -8494,25 +8494,25 @@
     {
       "ID": 106065,
       "Entries": [
-        "White Blood_HP Recovery_Encha Attack Hit -- 白血_HP回復_エンチャ攻撃ヒット時"
+        "Lifesteal Bestowal On Hit"
       ]
     },
     {
       "ID": 106066,
       "Entries": [
-        "White blood_HP recovery_When blood smoke hits -- 白血_HP回復_血煙ヒット時"
+        "Lifesteal Bloodsmoke"
       ]
     },
     {
       "ID": 106070,
       "Entries": [
-        "Orange-style enchantment -- 橙風エンチャント"
+        "Living Force Divine Abduction"
       ]
     },
     {
       "ID": 106080,
       "Entries": [
-        "Gold wind enchantment -- 金風エンチャント"
+        "Living Force Golden Vortex"
       ]
     },
     {
@@ -8548,7 +8548,7 @@
     {
       "ID": 106090,
       "Entries": [
-        "Erasing enchantments by slashing anti-flame iron fan / anti-spirit iron fan -- 対炎鉄扇/対霊鉄扇放ち斬りによるエンチャント消去"
+        "Phoenix/Suzaku Projected Force Remove Previous Weapon Buff"
       ]
     },
     {
@@ -9376,13 +9376,13 @@
     {
       "ID": 110040,
       "Entries": [
-        "Underwater judgment -- 水中判定"
+        "Underwater Check"
       ]
     },
     {
       "ID": 110041,
       "Entries": [
-        "Water judgment -- 水上判定"
+        "In Water Check"
       ]
     },
     {
@@ -10006,7 +10006,7 @@
     {
       "ID": 111000,
       "Entries": [
-        "Environment-dependent_white breath -- 環境依存_白い息"
+        "Player Mist Breath"
       ]
     },
     {
@@ -10720,199 +10720,199 @@
     {
       "ID": 150000,
       "Entries": [
-        "Covert A (make the sign smaller) -- 隠密A（気配を小さくする）"
+        "Suppress Presence"
       ]
     },
     {
       "ID": 150010,
       "Entries": [
-        "Covert B (makes the sound quieter) -- 隠密B（音を小さくする）"
+        "Suppress Sound"
       ]
     },
     {
       "ID": 150100,
       "Entries": [
-        "Good luck LV1 effect -- 幸運LV1効果"
+        "Virtuous Deed"
       ]
     },
     {
       "ID": 150101,
       "Entries": [
-        "Good luck LV2 effect -- 幸運LV2効果"
+        "Most Virtuous Deed"
       ]
     },
     {
       "ID": 150200,
       "Entries": [
-        "Knowledge of medicine LV1 effect -- 薬の知識LV1効果"
+        "Healing Items Potency Upgrade 1"
       ]
     },
     {
       "ID": 150201,
       "Entries": [
-        "Knowledge of medicine LV2 effect -- 薬の知識LV2効果"
+        "Healing Items Potency Upgrade 2"
       ]
     },
     {
       "ID": 150202,
       "Entries": [
-        "Knowledge of medicine LV3 effect -- 薬の知識LV3効果"
+        "Healing Items Potency Upgrade 3"
       ]
     },
     {
       "ID": 150203,
       "Entries": [
-        "Knowledge of medicine LV4 effect -- 薬の知識LV4効果"
+        "Healing Items Potency Upgrade 4"
       ]
     },
     {
       "ID": 150204,
       "Entries": [
-        "Knowledge of medicine LV5 effect -- 薬の知識LV5効果"
+        "Healing Items Potency Upgrade 5"
       ]
     },
     {
       "ID": 150210,
       "Entries": [
-        "For improving the knowledge effect of medicine -- 薬の知識効果レベルアップ用"
+        "For improving the knowledge effect of medicine"
       ]
     },
     {
       "ID": 150300,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _ permission -- 忍殺時HP回復（A）_許可"
+        "Breath of Life: Light"
       ]
     },
     {
       "ID": 150301,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _ effect -- 忍殺時HP回復（A）_効果"
+        "Breath of Life: Light - Heal"
       ]
     },
     {
       "ID": 150302,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _Effect_Recovery prohibited by stopping through -- 忍殺時HP回復（A）_効果_とどめスルーによる回復禁止"
+        "Breath of Life: Light Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150303,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _Effect_Releasing the recovery prohibition by stopping through -- 忍殺時HP回復（A）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Life: Light Effect Releasing the recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150310,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ permission -- 忍殺時HP回復（B）_許可"
+        "Breath of Life: Shadow"
       ]
     },
     {
       "ID": 150311,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect -- 忍殺時HP回復（B）_効果"
+        "Breath of Life: Shadow - Heal"
       ]
     },
     {
       "ID": 150312,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect _ recovery prohibited by stopping through -- 忍殺時HP回復（B）_効果_とどめスルーによる回復禁止"
+        "Breath of Life: Shadow effect recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150313,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect _ cancellation of recovery prohibition by stop through -- 忍殺時HP回復（B）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Life: Shadow effect cancellation of recovery prohibition by stop through"
       ]
     },
     {
       "ID": 150320,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _permit -- 忍殺時体幹回復（A）_許可"
+        "Breath of Nature: Light"
       ]
     },
     {
       "ID": 150321,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _Effect -- 忍殺時体幹回復（A）_効果"
+        "Breath of Nature: Light - Posture Recovery"
       ]
     },
     {
       "ID": 150322,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _Effect_Recovery prohibited by stopping through -- 忍殺時体幹回復（A）_効果_とどめスルーによる回復禁止"
+        "Breath of Nature: Light Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150323,
       "Entries": [
-        "Restoration of the trunk at the time of shinobi (A) _Effect_Removal of recovery prohibition by stopping through -- 忍殺時体幹回復（A）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Nature: Light Effect Removal of recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150330,
       "Entries": [
-        "Core recovery during shinobi (B) _permit -- 忍殺時体幹回復（B）_許可"
+        "Breath of Nature: Shadow"
       ]
     },
     {
       "ID": 150331,
       "Entries": [
-        "Core recovery at the time of shinobi (B) _ effect -- 忍殺時体幹回復（B）_効果"
+        "Breath of Nature: Shadow - Posture Recovery"
       ]
     },
     {
       "ID": 150332,
       "Entries": [
-        "Core recovery at the time of shinobi (B) _Effect_Recovery prohibited by stopping through -- 忍殺時体幹回復（B）_効果_とどめスルーによる回復禁止"
+        "Breath of Nature: Shadow Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150333,
       "Entries": [
-        "Restoration of the trunk at the time of shinobi (B) _Effect_Removal of recovery prohibition by stopping through -- 忍殺時体幹回復（B）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Nature: Shadow Effect Removal of recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150400,
       "Entries": [
-        "Parting trunk scraping UP -- 見切りの体幹削りUP"
+        "Shinobi Eyes"
       ]
     },
     {
       "ID": 150410,
       "Entries": [
-        "Jasuga&#39;s trunk shaving UP -- ジャスガの体幹削りUP"
+        "Ascending Carp"
       ]
     },
     {
       "ID": 150420,
       "Entries": [
-        "The guard&#39;s trunk is shaved and cut -- ガードの体幹削られカット"
+        "Flowing Water - During Block"
       ]
     },
     {
       "ID": 150421,
       "Entries": [
-        "Jasuga&#39;s trunk is shaved and cut -- ジャスガの体幹削られカット"
+        "Flowing Water - During Deflect"
       ]
     },
     {
       "ID": 150500,
       "Entries": [
-        "Jasuga rear sword attack trunk shaving UP_permission -- ジャスガ後刀攻撃体幹削りUP_許可"
+        "Descending Carp"
       ]
     },
     {
       "ID": 150501,
       "Entries": [
-        "Jasuga rear sword attack trunk shaving UP_ effect -- ジャスガ後刀攻撃体幹削りUP_効果"
+        "Descending Carp - Effect"
       ]
     },
     {
       "ID": 150600,
       "Entries": [
-        "Buff duration UP -- バフの効果時間UP"
+        "Devotion"
       ]
     },
     {
@@ -12148,13 +12148,13 @@
     {
       "ID": 211000,
       "Entries": [
-        "Dangerous enemy attack_VFX -- 敵の危険な攻撃_VFX"
+        "Perilous Attack VFX"
       ]
     },
     {
       "ID": 211001,
       "Entries": [
-        "Dangerous enemy attacks_VFX_ for huge enemies -- 敵の危険な攻撃_VFX_巨大敵用"
+        "Perilous Attack VFX - Big Enemy"
       ]
     },
     {
@@ -14212,7 +14212,7 @@
     {
       "ID": 900000,
       "Entries": [
-        "Dying damage screen effect -- 瀕死ダメージ中画面効果"
+        "Dying damage screen effect"
       ]
     },
     {
