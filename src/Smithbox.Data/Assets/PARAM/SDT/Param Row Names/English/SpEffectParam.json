@@ -5116,7 +5116,7 @@
     {
       "ID": 7902,
       "Entries": [
-        "Hard mode correction_Middle boss -- ハードモード補正_中ボス"
+        "Charmless Correction - Miniboss"
       ]
     },
     {
@@ -13396,79 +13396,79 @@
     {
       "ID": 300580,
       "Entries": [
-        "Core performance DOWN when HP is 80% or less -- HP80%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300581,
       "Entries": [
-        "Core performance DOWN when HP is 60% or less -- HP60%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300582,
       "Entries": [
-        "Core performance DOWN when HP is 40% or less -- HP40%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300590,
       "Entries": [
-        "Core performance DOWN at HP 64% or less -- HP64%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 64% HP"
       ]
     },
     {
       "ID": 300591,
       "Entries": [
-        "Core performance DOWN at HP 48% or less -- HP48%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 48% HP"
       ]
     },
     {
       "ID": 300592,
       "Entries": [
-        "Core performance DOWN when HP is 32% or less -- HP32%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 32% HP"
       ]
     },
     {
       "ID": 300600,
       "Entries": [
-        "Core performance DOWN when HP is 80% or less -- HP80%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300601,
       "Entries": [
-        "Core performance DOWN when HP is 60% or less -- HP60%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300602,
       "Entries": [
-        "Core performance DOWN when HP is 40% or less -- HP40%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300605,
       "Entries": [
-        "Core performance DOWN at HP 80% or less (for core elite) -- HP80%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300606,
       "Entries": [
-        "Core performance DOWN at HP 60% or less (for core elite) -- HP60%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300607,
       "Entries": [
-        "Core performance DOWN at HP 40% or less (for core elite) -- HP40%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300610,
       "Entries": [
-        "HP reset -- HPリセット"
+        "HP Reset"
       ]
     },
     {
