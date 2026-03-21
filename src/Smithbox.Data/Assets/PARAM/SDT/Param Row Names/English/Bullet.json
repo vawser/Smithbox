@@ -2650,55 +2650,55 @@
     {
       "ID": 1000200,
       "Entries": [
-        "Castle _ Gunpowder Box _ First Bullet -- 城下_火薬箱_初弾"
+        "Gunpowder Box Explosion"
       ]
     },
     {
       "ID": 1000201,
       "Entries": [
-        "Castle_Gunpowder Box_Explosion -- 城下_火薬箱_爆発"
+        "Gunpowder Box Explosion"
       ]
     },
     {
       "ID": 1000202,
       "Entries": [
-        "Castle _ Gunpowder Box _ Shock Wave -- 城下_火薬箱_衝撃波"
+        "Gunpowder Box Explosion"
       ]
     },
     {
       "ID": 1000203,
       "Entries": [
-        "Castle _ Gunpowder box _ Around a slight flame -- 城下_火薬箱_周囲微炎上"
+        "Gunpowder Box Explosion"
       ]
     },
     {
       "ID": 1001200,
       "Entries": [
-        "Hidden prison _ lightning strike _ sign -- 隠し牢_落雷_予兆"
+        "Ashina Outskirts Lightning Strikes (during Sword Saint fight)"
       ]
     },
     {
       "ID": 1001201,
       "Entries": [
-        "Hidden prison_lightning strike_attack -- 隠し牢_落雷_攻撃"
+        "Ashina Outskirts Lightning Strikes (during Sword Saint fight)"
       ]
     },
     {
       "ID": 1002500,
       "Entries": [
-        "Submerged city_lightning strike_predict -- 水没都_落雷_予兆"
+        "Fountainhead Palace Lightning Strike"
       ]
     },
     {
       "ID": 1002501,
       "Entries": [
-        "Submerged City_Lightning Strike_Attack -- 水没都_落雷_攻撃"
+        "Fountainhead Palace Lightning Strike"
       ]
     },
     {
       "ID": 2000000,
       "Entries": [
-        "Fire spread -- 延焼"
+        "Fire spread"
       ]
     },
     {
