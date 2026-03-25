@@ -444,9 +444,9 @@ public class ParamFieldWindow
                 CFG.Current.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor_Field_List_Display_Padding;
             }
 
-            var fieldPaddingMode = "Hidden";
+            var fieldPaddingMode = "Visible";
             if (!CFG.Current.ParamEditor_Field_List_Display_Padding)
-                fieldPaddingMode = "Visible";
+                fieldPaddingMode = "Hidden";
 
             UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
 
