@@ -1600,283 +1600,283 @@
     {
       "ID": 3040,
       "Entries": [
-        "Elixir_Activated -- エリクサー_発動"
+        "Divine Grass Activation"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Weird young water thrombus_ activation -- 変若水血栓_発動"
+        "Red Lump Activation"
       ]
     },
     {
       "ID": 3051,
       "Entries": [
-        "Weird water thrombus_in effect_aura -- 変若水血栓_効果中_オーラ"
+        "Red Lump Aura"
       ]
     },
     {
       "ID": 3052,
       "Entries": [
-        "Weird water thrombus_in effect_red eye -- 変若水血栓_効果中_赤目"
+        "Red Lump Eyes"
       ]
     },
     {
       "ID": 3060,
       "Entries": [
-        "Ohagi_ activation -- おはぎ_発動"
+        "Sweet Rice Ball Activation"
       ]
     },
     {
       "ID": 3061,
       "Entries": [
-        "Ohagi_in effect_HP regen -- おはぎ_効果中_HPリジェネ"
+        "Sweet Rice Ball Healing"
       ]
     },
     {
       "ID": 3062,
       "Entries": [
-        "Ohagi_in effect_core strengthening -- おはぎ_効果中_体幹強化"
+        "Sweet Rice Ball Posture Recovery"
       ]
     },
     {
       "ID": 3070,
       "Entries": [
-        "Persimmon_ activation -- 柿_発動"
+        "Persimmon Activation"
       ]
     },
     {
       "ID": 3071,
       "Entries": [
-        "Persimmon_in effect -- 柿_効果中"
+        "Persimmon Effect"
       ]
     },
     {
       "ID": 3075,
       "Entries": [
-        "Persimmon (lower man) _ activated -- 柿（下男）_発動"
+        "Taro Persimmon Activation"
       ]
     },
     {
       "ID": 3076,
       "Entries": [
-        "Persimmon (lower man) _ in effect -- 柿（下男）_効果中"
+        "Taro Persimmon Effect"
       ]
     },
     {
       "ID": 3080,
       "Entries": [
-        "Chigo rice _ activation -- 稚児米_発動"
+        "Rice Actiavtion"
       ]
     },
     {
       "ID": 3081,
       "Entries": [
-        "Chigo rice_in effect -- 稚児米_効果中"
+        "Rice Effect"
       ]
     },
     {
       "ID": 3085,
       "Entries": [
-        "Chigo rice (Sasameyuki) _ activated -- 稚児米（細雪）_発動"
+        "Fine Snow Activation"
       ]
     },
     {
       "ID": 3086,
       "Entries": [
-        "Chigo rice (Sasameyuki) _ effective -- 稚児米（細雪）_効果中"
+        "Fine Snow Effect"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Disease recovery_invocation -- 病毒回復_発動"
+        "Antidote Powder Activation"
       ]
     },
     {
       "ID": 3201,
       "Entries": [
-        "Disease recovery_in effect -- 病毒回復_効果中"
+        "Antidote Powder Effect"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "Fire recovery_Activation -- 炎上回復_発動"
+        "Dousing Powder Activation"
       ]
     },
     {
       "ID": 3211,
       "Entries": [
-        "Flaming recovery_in effect -- 炎上回復_効果中"
+        "Dousing Powder Effect"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        "Mad recovery_invocation -- 発狂回復_発動"
+        "Pacifying Agent Activation"
       ]
     },
     {
       "ID": 3221,
       "Entries": [
-        "Mad recovery_in effect -- 発狂回復_効果中"
+        "Pacifying Agent Effect"
       ]
     },
     {
       "ID": 3230,
       "Entries": [
-        "Electric shock resistance UP_ activation -- 感電耐性UP_発動"
+        "Eel Liver Activation"
       ]
     },
     {
       "ID": 3231,
       "Entries": [
-        "Electric shock resistance UP_in effect -- 感電耐性UP_効果中"
+        "Eel Liver Effect"
       ]
     },
     {
       "ID": 3240,
       "Entries": [
-        "Aging recovery_invocation -- 老化回復_発動"
+        "Enfeeblement Cure"
       ]
     },
     {
       "ID": 3300,
       "Entries": [
-        "Disease prevention -- 病毒予防"
+        "Green Mossy Gourd"
       ]
     },
     {
       "ID": 3301,
       "Entries": [
-        "Disease prevention_in effect -- 病毒予防_効果中"
+        "Green Mossy Gourd Effect"
       ]
     },
     {
       "ID": 3310,
       "Entries": [
-        "Flame prevention -- 炎上予防"
+        "Withered Red Gourd"
       ]
     },
     {
       "ID": 3311,
       "Entries": [
-        "Flame prevention_in effect -- 炎上予防_効果中"
+        "Withered Red Gourd Effect"
       ]
     },
     {
       "ID": 3320,
       "Entries": [
-        "Madness prevention -- 発狂予防"
+        "Mottled Purple Gourd"
       ]
     },
     {
       "ID": 3321,
       "Entries": [
-        "Madness prevention_in effect -- 発狂予防_効果中"
+        "Mottled Purple Gourd Effect"
       ]
     },
     {
       "ID": 3350,
       "Entries": [
-        "Attack enhancement (infinite / consumption of form) -- 攻撃強化（無限/形代消費）"
+        "Ako's Spiritfall"
       ]
     },
     {
       "ID": 3360,
       "Entries": [
-        "Attack enhancement_with disadvantages (infinite / consumption of form) -- 攻撃強化_デメリット付き（無限/形代消費）"
+        "Yashariku's Spiritfall"
       ]
     },
     {
       "ID": 3370,
       "Entries": [
-        "Strengthen defense (infinite / consumption of form) -- 防御強化（無限/形代消費）"
+        "Ungo's Spiritfall"
       ]
     },
     {
       "ID": 3380,
       "Entries": [
-        "Strengthening the core (infinite / consumption of shape) -- 体幹強化（無限/形代消費）"
+        "Gokan's Spiritfall"
       ]
     },
     {
       "ID": 3390,
       "Entries": [
-        "Stealth enhancement (infinite / shape cost consumption) -- ステルス強化（無限/形代消費）"
+        "Gachiin's Spiritfall"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Attack enhancement -- 攻撃強化"
+        "Ako's Sugar"
       ]
     },
     {
       "ID": 3410,
       "Entries": [
-        "Attack enhancement_with disadvantages -- 攻撃強化_デメリット付き"
+        "Yashariku's Sugar"
       ]
     },
     {
       "ID": 3420,
       "Entries": [
-        "Strengthen defense -- 防御強化"
+        "Ungo's Sugar"
       ]
     },
     {
       "ID": 3430,
       "Entries": [
-        "Strengthening the core -- 体幹強化"
+        "Gokan's Sugar"
       ]
     },
     {
       "ID": 3440,
       "Entries": [
-        "Stealth enhancement -- ステルス強化"
+        "Gachiin's Sugar"
       ]
     },
     {
       "ID": 3450,
       "Entries": [
-        "Anti-spirit strengthening -- 対霊強化"
+        "Divine Confetti"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "Increased amount of money obtained -- お金入手量UP"
+        "Mibu Balloon of Wealth"
       ]
     },
     {
       "ID": 3610,
       "Entries": [
-        "Resurrection right acquisition amount UP -- 復活権入手量UP"
+        "Mibu Balloon of Soul"
       ]
     },
     {
       "ID": 3620,
       "Entries": [
-        "Item drop rate UP -- アイテムドロップ率UP"
+        "Mibu Possession Balloon"
       ]
     },
     {
       "ID": 3630,
       "Entries": [
-        "Form cost drop rate UP -- 形代ドロップ率UP"
+        "Mibu Balloon of Spirit"
       ]
     },
     {
       "ID": 3640,
       "Entries": [
-        "White Rappa Water Balloon_Activated -- 白らっぱ水風船_発動"
+        "Mibu Pilgrimage Balloon Activaiton"
       ]
     },
     {
       "ID": 3800,
       "Entries": [
-        "Form conversion (white) -- 形代変換（白）"
+        "Ceremonial Tanto"
       ]
     },
     {
@@ -1888,31 +1888,31 @@
     {
       "ID": 4000,
       "Entries": [
-        "Environmental production: White breath -- 環境演出：白い息"
+        "Player White Mist Breath from Environment"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Environmental production: Underwater mouth foam -- 環境演出：水中の口泡"
+        "Underwater Mouth Effect"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Environmental production: Underwater body foam -- 環境演出：水中の体泡"
+        "Underwater Body Effect"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "Night eyes -- 夜目"
+        "Night Eye"
       ]
     },
     {
       "ID": 4200,
       "Entries": [
-        "Eavesdropping_tinnitus SE -- 盗み聞き_耳鳴りSE"
+        "Eavesdropping"
       ]
     },
     {
@@ -2026,7 +2026,7 @@
     {
       "ID": 6020,
       "Entries": [
-        "Flame enchantment -- 炎エンチャント"
+        "Flaming Weapon"
       ]
     },
     {
@@ -2044,37 +2044,37 @@
     {
       "ID": 6040,
       "Entries": [
-        "Red blood enchantment -- 赤血エンチャント"
+        "Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 6050,
       "Entries": [
-        "Poison Blood Enchantment -- 毒血エンチャント"
+        "Poison Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 6060,
       "Entries": [
-        "White-blooded enchantment -- 白血エンチャント"
+        "Lifesteal Bestowal Ninjutsu"
       ]
     },
     {
       "ID": 6065,
       "Entries": [
-        "White blood recovery -- 白血回復"
+        "Lifesteal Effect"
       ]
     },
     {
       "ID": 6070,
       "Entries": [
-        "Orange-style enchantment -- 橙風エンチャント"
+        "Orange Wind Weapon"
       ]
     },
     {
       "ID": 6080,
       "Entries": [
-        "Gold wind enchantment -- 金風エンチャント"
+        "Golden Wind Weapon"
       ]
     },
     {

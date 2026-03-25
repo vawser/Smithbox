@@ -4,85 +4,85 @@
     {
       "ID": 0,
       "Entries": [
-        "For players -- プレイヤー用"
+        "Player"
       ]
     },
     {
       "ID": 1000000,
       "Entries": [
-        "Enemy initial value -- エネミー初期値"
+        "Animal Enemy"
       ]
     },
     {
       "ID": 1000001,
       "Entries": [
-        "for test -- テスト用"
+        "Test"
       ]
     },
     {
       "ID": 1000100,
       "Entries": [
-        "Enemy_small fish -- エネミー_雑魚"
+        "Small Enemy"
       ]
     },
     {
       "ID": 1000200,
       "Entries": [
-        "Enemy_strong enemy -- エネミー_強敵"
+        "Strong Enemy"
       ]
     },
     {
       "ID": 1012000,
       "Entries": [
-        "Enemy_Battle Tutorial Ochimusha_Collapse Shinobi Killing Tutorial -- エネミー_戦闘チュートリアル落武者_崩し忍殺チュートリアル用"
+        "Enemy Tutorial"
       ]
     },
     {
       "ID": 1040000,
       "Entries": [
-        "Enemy _ Centipede University only -- エネミー_ムカデ大専用"
+        "Long-arm Centipede"
       ]
     },
     {
       "ID": 1060000,
       "Entries": [
-        "Enemy_Rotating Spearman Only -- エネミー_回転槍術師専用"
+        "Spear Adept"
       ]
     },
     {
       "ID": 1070000,
       "Entries": [
-        "Enemy_Shura Samurai -- エネミー_修羅侍"
+        "Taro Troop"
       ]
     },
     {
       "ID": 1130000,
       "Entries": [
-        "Enemy_Nanban Armor -- エネミー_南蛮甲冑"
+        "Armored Warrior"
       ]
     },
     {
       "ID": 5000000,
       "Entries": [
-        "Enemy _ Dedicated to the Haunting Monk -- エネミー_破戒僧専用"
+        "Boss"
       ]
     },
     {
       "ID": 5060000,
       "Entries": [
-        "Enemy_Ninja Army Chief -- エネミー_忍軍の長"
+        "Great Shinobi Owl"
       ]
     },
     {
       "ID": 5080000,
       "Entries": [
-        "Enemy_Cavalry Warrior Only -- エネミー_騎馬武者専用"
+        "Gyoubu Oniwa"
       ]
     },
     {
       "ID": 5100000,
       "Entries": [
-        "Enemy_Yasha Ape only -- エネミー_夜叉猿専用"
+        "Guardian Ape"
       ]
     }
   ]

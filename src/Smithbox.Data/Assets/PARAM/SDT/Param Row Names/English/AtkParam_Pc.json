@@ -484,19 +484,19 @@
     {
       "ID": 5000000,
       "Entries": [
-        "Right-handed sword_reservoir 1 -- 右手刀_溜め突き1"
+        "Kusabimaru Thrust 1"
       ]
     },
     {
       "ID": 5000001,
       "Entries": [
-        "Right-handed sword_reservoir 2 -- 右手刀_溜め突き2"
+        "Kusabimaru Thrust 2"
       ]
     },
     {
       "ID": 5000006,
       "Entries": [
-        "Right hand sword_reservoir 2_reverse foot -- 右手刀_溜め突き2_逆足"
+        "Kusabimaru Thrust"
       ]
     },
     {
@@ -532,79 +532,79 @@
     {
       "ID": 5000016,
       "Entries": [
-        "Right hand sword_attack 2_reverse foot -- 右手刀_攻撃2_逆足"
+        "Kusabimaru Light Attack"
       ]
     },
     {
       "ID": 5000020,
       "Entries": [
-        "Right hand sword _ Small jasuga received and then accumulated stab _ Left -- 右手刀_小ジャスガ受け後溜め突き_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000021,
       "Entries": [
-        "Right hand sword_Small jasuga received and then accumulated thrust_Right -- 右手刀_小ジャスガ受け後溜め突き_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000025,
       "Entries": [
-        "Right hand sword _ Middle jasuga receiver / After step stab _ Left -- 右手刀_中ジャスガ受け/ステップ後溜め突き_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000026,
       "Entries": [
-        "Right hand sword _ Middle jasuga receiving / After step stab _ Right -- 右手刀_中ジャスガ受け/ステップ後溜め突き_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000030,
       "Entries": [
-        "Right hand sword _ Attack after receiving small jasuga _ Left -- 右手刀_小ジャスガ受け後攻撃_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000031,
       "Entries": [
-        "Right hand sword _ Attack after receiving small jasuga _ Right -- 右手刀_小ジャスガ受け後攻撃_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000035,
       "Entries": [
-        "Right hand sword_Middle Jasuga receiving / Attack after step_Left -- 右手刀_中ジャスガ受け/ステップ後攻撃_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000036,
       "Entries": [
-        "Right hand sword_Medium Jasuga receiving / Attack after step_Right -- 右手刀_中ジャスガ受け/ステップ後攻撃_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000040,
       "Entries": [
-        "Right-handed sword_guard / Jasuga is flipped and then accumulated -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000041,
       "Entries": [
-        "Right hand sword _ guard / jasuga is flipped and then accumulated _ left -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000050,
       "Entries": [
-        "Right hand sword_guard / Jasuga attack after being hit_right -- 右手刀_ガード/ジャスガ弾かれ後攻撃_右"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
       "ID": 5000051,
       "Entries": [
-        "Right hand sword_guard / Jasuga attack after being hit_left -- 右手刀_ガード/ジャスガ弾かれ後攻撃_左"
+        "Kusabimaru Guard Attack"
       ]
     },
     {
@@ -940,13 +940,13 @@
     {
       "ID": 5000183,
       "Entries": [
-        "Right-handed sword_Weak thunder enchantment additional attack -- 右手刀_弱雷エンチャント追加攻撃"
+        "Non Divine Dragon Lightning Reversal"
       ]
     },
     {
       "ID": 5000184,
       "Entries": [
-        "Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸"
+        "Divine Dragon Lightning Reversal"
       ]
     },
     {
@@ -982,7 +982,7 @@
     {
       "ID": 5000193,
       "Entries": [
-        "Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）"
+        "Non Divine Dragon Lightning Reversal"
       ]
     },
     {

@@ -3988,451 +3988,451 @@
     {
       "ID": 7000,
       "Entries": [
-        "Growth Doping: Hidden Prison (Tutorial) _Default -- 成長ドーピング：隠し牢（チュートリアル）_デフォ"
+        "Area Scaling - Tutorial"
       ]
     },
     {
       "ID": 7010,
       "Entries": [
-        "Growth Doping: Castle_Morning -- 成長ドーピング：城下_朝"
+        "Area Scaling - Ashina Outskirts (Morning)"
       ]
     },
     {
       "ID": 7011,
       "Entries": [
-        "Growth Doping: Castle_Day -- 成長ドーピング：城下_昼"
+        "Area Scaling - Ashina Outskirts (Midday)"
       ]
     },
     {
       "ID": 7012,
       "Entries": [
-        "Growth Doping: Castle_Evening -- 成長ドーピング：城下_夕"
+        "Area Scaling - Ashina Outskirts (Evening)"
       ]
     },
     {
       "ID": 7013,
       "Entries": [
-        "Growth Doping: Castle_Night -- 成長ドーピング：城下_夜"
+        "Area Scaling - Ashina Outskirts (Night)"
       ]
     },
     {
       "ID": 7014,
       "Entries": [
-        "Growth Doping: Castle_Bell Evening -- 成長ドーピング：城下_鐘宵"
+        "Area Scaling - Ashina Outskirts (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7020,
       "Entries": [
-        "Growth Doping: First Half of Samurai Residence_Default -- 成長ドーピング：武家屋敷前半_デフォ"
+        "Area Scaling - Hirata Estate (First Half)"
       ]
     },
     {
       "ID": 7024,
       "Entries": [
-        "Growth Doping: First Half of Samurai Residence_Kaneyoi -- 成長ドーピング：武家屋敷前半_鐘宵"
+        "Area Scaling - Hirata Estate (First Half) (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7030,
       "Entries": [
-        "Growth Doping: Second Half of Samurai Residence_Morning -- 成長ドーピング：武家屋敷後半_朝"
+        "Area Scaling - Hirata Estate (Second Half) (Morning)"
       ]
     },
     {
       "ID": 7031,
       "Entries": [
-        "Growth Doping: Second Half of Samurai Residence_Lunch -- 成長ドーピング：武家屋敷後半_昼"
+        "Area Scaling - Hirata Estate (Second Half) (Midday)"
       ]
     },
     {
       "ID": 7032,
       "Entries": [
-        "Growth Doping: Second Half of Samurai Residence_Evening -- 成長ドーピング：武家屋敷後半_夕"
+        "Area Scaling - Hirata Estate (Second Half) (Evening)"
       ]
     },
     {
       "ID": 7033,
       "Entries": [
-        "Growth Doping: Second Half of Samurai Residence_Night -- 成長ドーピング：武家屋敷後半_夜"
+        "Area Scaling - Hirata Estate (Second Half) (Night)"
       ]
     },
     {
       "ID": 7034,
       "Entries": [
-        "Growth Doping: Second Half of Samurai Residence_Kaneyoi -- 成長ドーピング：武家屋敷後半_鐘宵"
+        "Area Scaling - Hirata Estate (Second Half) (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7040,
       "Entries": [
-        "Growth Doping: Honjo_Morning -- 成長ドーピング：本城_朝"
+        "Area Scaling - Ashina Castle (Morning)"
       ]
     },
     {
       "ID": 7041,
       "Entries": [
-        "Growth Doping: Honjo_Day -- 成長ドーピング：本城_昼"
+        "Area Scaling - Ashina Castle (Midday)"
       ]
     },
     {
       "ID": 7042,
       "Entries": [
-        "Growth Doping: Honjo_Evening -- 成長ドーピング：本城_夕"
+        "Area Scaling - Ashina Castle (Evening)"
       ]
     },
     {
       "ID": 7043,
       "Entries": [
-        "Growth Doping: Honjo_Night -- 成長ドーピング：本城_夜"
+        "Area Scaling - Ashina Castle (Night)"
       ]
     },
     {
       "ID": 7044,
       "Entries": [
-        "Growth Doping: Honjo_Kaneyoi -- 成長ドーピング：本城_鐘宵"
+        "Area Scaling - Ashina Castle (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7050,
       "Entries": [
-        "Growth Doping: Hidden Prison_Morning -- 成長ドーピング：隠し牢_朝"
+        "Area Scaling - Ashina Reservoir (Morning)"
       ]
     },
     {
       "ID": 7051,
       "Entries": [
-        "Growth Doping: Hidden Prison_Day -- 成長ドーピング：隠し牢_昼"
+        "Area Scaling - Ashina Reservoir (Midday)"
       ]
     },
     {
       "ID": 7052,
       "Entries": [
-        "Growth Doping: Hidden Prison_Evening -- 成長ドーピング：隠し牢_夕"
+        "Area Scaling - Ashina Reservoir (Evening)"
       ]
     },
     {
       "ID": 7053,
       "Entries": [
-        "Growth Doping: Hidden Prison_Night -- 成長ドーピング：隠し牢_夜"
+        "Area Scaling - Ashina Reservoir (Night)"
       ]
     },
     {
       "ID": 7054,
       "Entries": [
-        "Growth Doping: Hidden Prison_Bell Evening -- 成長ドーピング：隠し牢_鐘宵"
+        "Area Scaling - Ashina Reservoir (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7060,
       "Entries": [
-        "Growth Doping: Dungeon_Morning -- 成長ドーピング：地下牢_朝"
+        "Area Scaling - Abandoned Dungeon (Morning)"
       ]
     },
     {
       "ID": 7061,
       "Entries": [
-        "Growth Doping: Dungeon_Day -- 成長ドーピング：地下牢_昼"
+        "Area Scaling - Abandoned Dungeon (Midday)"
       ]
     },
     {
       "ID": 7062,
       "Entries": [
-        "Growth Doping: Dungeon_Evening -- 成長ドーピング：地下牢_夕"
+        "Area Scaling - Abandoned Dungeon (Evening)"
       ]
     },
     {
       "ID": 7063,
       "Entries": [
-        "Growth Doping: Dungeon_Night -- 成長ドーピング：地下牢_夜"
+        "Area Scaling - Abandoned Dungeon (Night)"
       ]
     },
     {
       "ID": 7064,
       "Entries": [
-        "Growth Doping: Dungeon_Bell Evening -- 成長ドーピング：地下牢_鐘宵"
+        "Area Scaling - Abandoned Dungeon (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7070,
       "Entries": [
-        "Growth Doping: Temple_Morning -- 成長ドーピング：寺_朝"
+        "Area Scaling - Senpou Temple (Morning)"
       ]
     },
     {
       "ID": 7071,
       "Entries": [
-        "Growth Doping: Temple_Day -- 成長ドーピング：寺_昼"
+        "Area Scaling - Senpou Temple (Midday)"
       ]
     },
     {
       "ID": 7072,
       "Entries": [
-        "Growth Doping: Temple_Evening -- 成長ドーピング：寺_夕"
+        "Area Scaling - Senpou Temple (Evening)"
       ]
     },
     {
       "ID": 7073,
       "Entries": [
-        "Growth Doping: Temple_Night -- 成長ドーピング：寺_夜"
+        "Area Scaling - Senpou Temple (Night)"
       ]
     },
     {
       "ID": 7074,
       "Entries": [
-        "Growth Doping: Temple_Bell Evening -- 成長ドーピング：寺_鐘宵"
+        "Area Scaling - Senpou Temple (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7080,
       "Entries": [
-        "Growth Doping: Valley_Morning -- 成長ドーピング：渓谷_朝"
+        "Area Scaling - Sunken Valley (Morning)"
       ]
     },
     {
       "ID": 7081,
       "Entries": [
-        "Growth Doping: Valley_Day -- 成長ドーピング：渓谷_昼"
+        "Area Scaling - Sunken Valley (Midday)"
       ]
     },
     {
       "ID": 7082,
       "Entries": [
-        "Growth Doping: Valley_Evening -- 成長ドーピング：渓谷_夕"
+        "Area Scaling - Sunken Valley (Evening)"
       ]
     },
     {
       "ID": 7083,
       "Entries": [
-        "Growth Doping: Valley_Night -- 成長ドーピング：渓谷_夜"
+        "Area Scaling - Sunken Valley (Night)"
       ]
     },
     {
       "ID": 7084,
       "Entries": [
-        "Growth Doping: Valley_Bell Evening -- 成長ドーピング：渓谷_鐘宵"
+        "Area Scaling - Sunken Valley (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7090,
       "Entries": [
-        "Growth Doping: Lower Valley_Morning -- 成長ドーピング：渓谷下層_朝"
+        "Area Scaling - Sunken Valley - Snake Cavern (Morning)"
       ]
     },
     {
       "ID": 7091,
       "Entries": [
-        "Growth Doping: Lower Valley_Day -- 成長ドーピング：渓谷下層_昼"
+        "Area Scaling - Sunken Valley - Snake Cavern (Midday)"
       ]
     },
     {
       "ID": 7092,
       "Entries": [
-        "Growth Doping: Lower Valley_Evening -- 成長ドーピング：渓谷下層_夕"
+        "Area Scaling - Sunken Valley - Snake Cavern (Evening)"
       ]
     },
     {
       "ID": 7093,
       "Entries": [
-        "Growth Doping: Lower Valley_Night -- 成長ドーピング：渓谷下層_夜"
+        "Area Scaling - Sunken Valley - Snake Cavern (Night)"
       ]
     },
     {
       "ID": 7094,
       "Entries": [
-        "Growth Doping: Lower Valley_Bell Evening -- 成長ドーピング：渓谷下層_鐘宵"
+        "Area Scaling - Sunken Valley - Snake Cavern (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7100,
       "Entries": [
-        "Growth Doping: Sick Village_Morning -- 成長ドーピング：病み村_朝"
+        "Area Scaling - Ashina Depths (Morning)"
       ]
     },
     {
       "ID": 7101,
       "Entries": [
-        "Growth Doping: Sick Village_Day -- 成長ドーピング：病み村_昼"
+        "Area Scaling - Ashina Depths (Midday)"
       ]
     },
     {
       "ID": 7102,
       "Entries": [
-        "Growth Doping: Sick Village_Evening -- 成長ドーピング：病み村_夕"
+        "Area Scaling - Ashina Depths (Evening)"
       ]
     },
     {
       "ID": 7103,
       "Entries": [
-        "Growth Doping: Sick Village_Night -- 成長ドーピング：病み村_夜"
+        "Area Scaling - Ashina Depths (Night)"
       ]
     },
     {
       "ID": 7104,
       "Entries": [
-        "Growth Doping: Sick Village_Bell Evening -- 成長ドーピング：病み村_鐘宵"
+        "Area Scaling - Ashina Depths (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7110,
       "Entries": [
-        "Growth Doping: Honjo (Ninja Army Invasion) _ Default -- 成長ドーピング：本城（忍軍襲来）_デフォ"
+        "Area Scaling - Ashina Castle (Overrun by Shinobi)"
       ]
     },
     {
       "ID": 7114,
       "Entries": [
-        "Growth Doping: Honjo (Ninja Army Invasion) _ Bell Evening -- 成長ドーピング：本城（忍軍襲来）_鐘宵"
+        "Area Scaling - Ashina Castle (Overrun by Shinobi) (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7120,
       "Entries": [
-        "Growth Doping: Samurai Residence (Truth Edition) _Default -- 成長ドーピング：武家屋敷（真相編）_デフォ"
+        "Area Scaling - Hirata Estate Revisited"
       ]
     },
     {
       "ID": 7124,
       "Entries": [
-        "Growth Doping: Samurai Residence (Truth Edition) _ Kaneyoi -- 成長ドーピング：武家屋敷（真相編）_鐘宵"
+        "Area Scaling - Hirata Estate Revisited (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7130,
       "Entries": [
-        "Growth Doping: Submerged City_Default -- 成長ドーピング：水没都_デフォ"
+        "Area Scaling - Fountainhead Palace"
       ]
     },
     {
       "ID": 7134,
       "Entries": [
-        "Growth Doping: Submerged City_Kaneyoi -- 成長ドーピング：水没都_鐘宵"
+        "Area Scaling - Fountainhead Palace (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7140,
       "Entries": [
-        "Growth Doping: Honjo (Tokugawa Invasion) _ Default -- 成長ドーピング：本城（徳川襲来）_デフォ"
+        "Area Scaling - Ashina Castle (Interior Ministry Invasion)"
       ]
     },
     {
       "ID": 7144,
       "Entries": [
-        "Growth Doping: Honjo (Tokugawa Invasion) _ Kaneyoi -- 成長ドーピング：本城（徳川襲来）_鐘宵"
+        "Area Scaling - Ashina Castle (Interior Ministry Invasion) (Demon Bell)"
       ]
     },
     {
       "ID": 7150,
       "Entries": [
-        "Growth Doping: Hidden Prison (Tokugawa Invasion) _ Default -- 成長ドーピング：隠し牢（徳川襲来）_デフォ"
+        "Area Scaling - Ashina Reservoir (Interior Ministry Invasion)"
       ]
     },
     {
       "ID": 7154,
       "Entries": [
-        "Growth Doping: Hidden Prison (Tokugawa Invasion) _ Bell Evening -- 成長ドーピング：隠し牢（徳川襲来）_鐘宵"
+        "Area Scaling - Ashina Reservoir (Interior Ministry Invasion) (Demon Bell)"
       ]
     },
     {
       "ID": 7160,
       "Entries": [
-        "Growth Doping: Castle (Tokugawa Invasion) _ Default -- 成長ドーピング：城下（徳川襲来）_デフォ"
+        "Area Scaling - Ashina Outskirts (Interior Ministry Invasion)"
       ]
     },
     {
       "ID": 7164,
       "Entries": [
-        "Growth Doping: Castle (Tokugawa Invasion) _ Bell Evening -- 成長ドーピング：城下（徳川襲来）_鐘宵"
+        "Area Scaling - Ashina Outskirts (Interior Ministry Invasion) (Demon Bell)"
       ]
     },
     {
       "ID": 7170,
       "Entries": [
-        "Growth Doping: End of Game_Default -- 成長ドーピング：ゲーム終了_デフォ"
+        "Area Scaling - Endgame"
       ]
     },
     {
       "ID": 7174,
       "Entries": [
-        "Growth Doping: Game End_Bell Evening -- 成長ドーピング：ゲーム終了_鐘宵"
+        "Area Scaling - Endgame (Demon Bell)"
       ]
     },
     {
       "ID": 7500,
       "Entries": [
-        "Orbital Doping 00: Hidden Prison (Tutorial) _Default -- 周回ドーピング00：隠し牢（チュートリアル）_デフォ"
+        "NG+ Scaling - Tutorial"
       ]
     },
     {
       "ID": 7510,
       "Entries": [
-        "Orbital Doping 00: Castle_Morning -- 周回ドーピング00：城下_朝"
+        "NG+ Scaling - Ashina Outskirts (Morning)"
       ]
     },
     {
       "ID": 7511,
       "Entries": [
-        "Orbital Doping 00: Castle_Day -- 周回ドーピング00：城下_昼"
+        "NG+ Scaling - Ashina Outskirts (Midday)"
       ]
     },
     {
       "ID": 7512,
       "Entries": [
-        "Orbital Doping 00: Castle_Evening -- 周回ドーピング00：城下_夕"
+        "NG+ Scaling - Ashina Outskirts (Evening)"
       ]
     },
     {
       "ID": 7513,
       "Entries": [
-        "Orbital Doping 00: Castle_Night -- 周回ドーピング00：城下_夜"
+        "NG+ Scaling - Ashina Outskirts (Night)"
       ]
     },
     {
       "ID": 7514,
       "Entries": [
-        "Orbital Doping 00: Castle_Bell Evening -- 周回ドーピング00：城下_鐘宵"
+        "NG+ Scaling - Ashina Outskirts (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7520,
       "Entries": [
-        "Orbital Doping 00: First Half of Samurai Residence_Default -- 周回ドーピング00：武家屋敷前半_デフォ"
+        "NG+ Scaling - Hirata Estate (First Half)"
       ]
     },
     {
       "ID": 7524,
       "Entries": [
-        "Orbital Doping 00: First Half of Samurai Residence_Kaneyoi -- 周回ドーピング00：武家屋敷前半_鐘宵"
+        "NG+ Scaling - Hirata Estate (First Half) (Night + Demon Bell)"
       ]
     },
     {
       "ID": 7530,
       "Entries": [
-        "Orbital Doping 00: Second Half of Samurai Residence_Morning -- 周回ドーピング00：武家屋敷後半_朝"
+        "NG+ Scaling - Hirata Estate (Second Half) (Morning)"
       ]
     },
     {
       "ID": 7531,
       "Entries": [
-        "Orbital doping 00: Samurai residence second half _ noon -- 周回ドーピング00：武家屋敷後半_昼"
+        "NG+ Scaling - Hirata Estate (Second Half) (Midday)"
       ]
     },
     {
       "ID": 7532,
       "Entries": [
-        "Orbital Doping 00: Second Half of Samurai Residence_Evening -- 周回ドーピング00：武家屋敷後半_夕"
+        "NG+ Scaling - Hirata Estate (Second Half) (Evening)"
       ]
     },
     {
       "ID": 7533,
       "Entries": [
-        "Orbital Doping 00: Second Half of Samurai Residence_Night -- 周回ドーピング00：武家屋敷後半_夜"
+        "NG+ Scaling - Hirata Estate (Second Half) (Night)"
       ]
     },
     {
       "ID": 7534,
       "Entries": [
-        "Orbital Doping 00: Second Half of Samurai Residence_Kaneyoi -- 周回ドーピング00：武家屋敷後半_鐘宵"
+        "NG+ Scaling - Hirata Estate (Second Half) (Night + Demon Bell)"
       ]
     },
     {
@@ -5104,25 +5104,25 @@
     {
       "ID": 7900,
       "Entries": [
-        "Hard mode correction_small fish -- ハードモード補正_雑魚"
+        "Charmless Correction - Small Enemy"
       ]
     },
     {
       "ID": 7901,
       "Entries": [
-        "Hard mode correction_strong fish -- ハードモード補正_強雑魚"
+        "Charmless Correction - Strong Enemy"
       ]
     },
     {
       "ID": 7902,
       "Entries": [
-        "Hard mode correction_Middle boss -- ハードモード補正_中ボス"
+        "Charmless Correction - Miniboss"
       ]
     },
     {
       "ID": 7903,
       "Entries": [
-        "Hard mode correction_boss -- ハードモード補正_ボス"
+        "Charmless Correction - Boss"
       ]
     },
     {
@@ -5224,7 +5224,7 @@
     {
       "ID": 7954,
       "Entries": [
-        "Orbital Doping 00: Single Rematch + Story Consecutive Battle _ Default -- 周回ドーピング00：単発再戦＋ストーリー連戦共用_デフォ"
+        "Boss Rematch Enemy Scaling"
       ]
     },
     {
@@ -6142,7 +6142,7 @@
     {
       "ID": 9400,
       "Entries": [
-        "Electric shock_Hit effect 00 [PC_Lightning return] -- 感電_ヒット時効果00【PC_弱雷返し】"
+        "Lightning Reversal"
       ]
     },
     {
@@ -6190,7 +6190,7 @@
     {
       "ID": 9420,
       "Entries": [
-        "Electric shock_resistant scraping 00 [PC_lightning return] -- 感電_耐性削り00【PC_弱雷返し】"
+        "Shock (Lightning Reversal)"
       ]
     },
     {
@@ -6244,13 +6244,13 @@
     {
       "ID": 9445,
       "Entries": [
-        "Electric shock_abnormal state icon display -- 感電_状態異常アイコン表示"
+        "Shock Icon"
       ]
     },
     {
       "ID": 9450,
       "Entries": [
-        "Electric shock_damage Behavior notification 00 [common to lightning] -- 感電_ダメージBehavior通知00【弱雷共通】"
+        "Shock"
       ]
     },
     {
@@ -8428,25 +8428,25 @@
     {
       "ID": 106000,
       "Entries": [
-        "No enchantment -- 無エンチャント"
+        "No Active Sword Buff"
       ]
     },
     {
       "ID": 106020,
       "Entries": [
-        "Flame enchantment -- 炎エンチャント"
+        "Living Force Flame"
       ]
     },
     {
       "ID": 106021,
       "Entries": [
-        "Flame Enchantment_Call effect on hit -- 炎エンチャント_ヒット時効果呼び出し"
+        "Living Force Flame On Hit"
       ]
     },
     {
       "ID": 106025,
       "Entries": [
-        "Flame Enchantment_Anti-Flame Iron Fan Derived Attack -- 炎エンチャント_対炎鉄扇派生攻撃"
+        "Suzaku's Lotus Umbrella Weapon Effect"
       ]
     },
     {
@@ -8470,7 +8470,7 @@
     {
       "ID": 106035,
       "Entries": [
-        "Spirit Enchantment_Anti-Rei Iron Fan Derived Attack -- 霊エンチャント_対霊鉄扇派生攻撃"
+        "Phoenix's Lilac Umbrella Weapon Effect"
       ]
     },
     {
@@ -8494,25 +8494,25 @@
     {
       "ID": 106065,
       "Entries": [
-        "White Blood_HP Recovery_Encha Attack Hit -- 白血_HP回復_エンチャ攻撃ヒット時"
+        "Lifesteal Bestowal On Hit"
       ]
     },
     {
       "ID": 106066,
       "Entries": [
-        "White blood_HP recovery_When blood smoke hits -- 白血_HP回復_血煙ヒット時"
+        "Lifesteal Bloodsmoke"
       ]
     },
     {
       "ID": 106070,
       "Entries": [
-        "Orange-style enchantment -- 橙風エンチャント"
+        "Living Force Divine Abduction"
       ]
     },
     {
       "ID": 106080,
       "Entries": [
-        "Gold wind enchantment -- 金風エンチャント"
+        "Living Force Golden Vortex"
       ]
     },
     {
@@ -8548,7 +8548,7 @@
     {
       "ID": 106090,
       "Entries": [
-        "Erasing enchantments by slashing anti-flame iron fan / anti-spirit iron fan -- 対炎鉄扇/対霊鉄扇放ち斬りによるエンチャント消去"
+        "Phoenix/Suzaku Projected Force Remove Previous Weapon Buff"
       ]
     },
     {
@@ -9376,13 +9376,13 @@
     {
       "ID": 110040,
       "Entries": [
-        "Underwater judgment -- 水中判定"
+        "Underwater Check"
       ]
     },
     {
       "ID": 110041,
       "Entries": [
-        "Water judgment -- 水上判定"
+        "In Water Check"
       ]
     },
     {
@@ -10006,7 +10006,7 @@
     {
       "ID": 111000,
       "Entries": [
-        "Environment-dependent_white breath -- 環境依存_白い息"
+        "Player Mist Breath"
       ]
     },
     {
@@ -10720,199 +10720,199 @@
     {
       "ID": 150000,
       "Entries": [
-        "Covert A (make the sign smaller) -- 隠密A（気配を小さくする）"
+        "Suppress Presence"
       ]
     },
     {
       "ID": 150010,
       "Entries": [
-        "Covert B (makes the sound quieter) -- 隠密B（音を小さくする）"
+        "Suppress Sound"
       ]
     },
     {
       "ID": 150100,
       "Entries": [
-        "Good luck LV1 effect -- 幸運LV1効果"
+        "Virtuous Deed"
       ]
     },
     {
       "ID": 150101,
       "Entries": [
-        "Good luck LV2 effect -- 幸運LV2効果"
+        "Most Virtuous Deed"
       ]
     },
     {
       "ID": 150200,
       "Entries": [
-        "Knowledge of medicine LV1 effect -- 薬の知識LV1効果"
+        "Healing Items Potency Upgrade 1"
       ]
     },
     {
       "ID": 150201,
       "Entries": [
-        "Knowledge of medicine LV2 effect -- 薬の知識LV2効果"
+        "Healing Items Potency Upgrade 2"
       ]
     },
     {
       "ID": 150202,
       "Entries": [
-        "Knowledge of medicine LV3 effect -- 薬の知識LV3効果"
+        "Healing Items Potency Upgrade 3"
       ]
     },
     {
       "ID": 150203,
       "Entries": [
-        "Knowledge of medicine LV4 effect -- 薬の知識LV4効果"
+        "Healing Items Potency Upgrade 4"
       ]
     },
     {
       "ID": 150204,
       "Entries": [
-        "Knowledge of medicine LV5 effect -- 薬の知識LV5効果"
+        "Healing Items Potency Upgrade 5"
       ]
     },
     {
       "ID": 150210,
       "Entries": [
-        "For improving the knowledge effect of medicine -- 薬の知識効果レベルアップ用"
+        "Healing Upgrade Accumulator"
       ]
     },
     {
       "ID": 150300,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _ permission -- 忍殺時HP回復（A）_許可"
+        "Breath of Life: Light"
       ]
     },
     {
       "ID": 150301,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _ effect -- 忍殺時HP回復（A）_効果"
+        "Breath of Life: Light - Heal"
       ]
     },
     {
       "ID": 150302,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _Effect_Recovery prohibited by stopping through -- 忍殺時HP回復（A）_効果_とどめスルーによる回復禁止"
+        "Breath of Life: Light Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150303,
       "Entries": [
-        "HP recovery at the time of shinobi (A) _Effect_Releasing the recovery prohibition by stopping through -- 忍殺時HP回復（A）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Life: Light Effect Releasing the recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150310,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ permission -- 忍殺時HP回復（B）_許可"
+        "Breath of Life: Shadow"
       ]
     },
     {
       "ID": 150311,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect -- 忍殺時HP回復（B）_効果"
+        "Breath of Life: Shadow - Heal"
       ]
     },
     {
       "ID": 150312,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect _ recovery prohibited by stopping through -- 忍殺時HP回復（B）_効果_とどめスルーによる回復禁止"
+        "Breath of Life: Shadow effect recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150313,
       "Entries": [
-        "HP recovery at the time of shinobi (B) _ effect _ cancellation of recovery prohibition by stop through -- 忍殺時HP回復（B）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Life: Shadow effect cancellation of recovery prohibition by stop through"
       ]
     },
     {
       "ID": 150320,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _permit -- 忍殺時体幹回復（A）_許可"
+        "Breath of Nature: Light"
       ]
     },
     {
       "ID": 150321,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _Effect -- 忍殺時体幹回復（A）_効果"
+        "Breath of Nature: Light - Posture Recovery"
       ]
     },
     {
       "ID": 150322,
       "Entries": [
-        "Core recovery at the time of shinobi (A) _Effect_Recovery prohibited by stopping through -- 忍殺時体幹回復（A）_効果_とどめスルーによる回復禁止"
+        "Breath of Nature: Light Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150323,
       "Entries": [
-        "Restoration of the trunk at the time of shinobi (A) _Effect_Removal of recovery prohibition by stopping through -- 忍殺時体幹回復（A）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Nature: Light Effect Removal of recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150330,
       "Entries": [
-        "Core recovery during shinobi (B) _permit -- 忍殺時体幹回復（B）_許可"
+        "Breath of Nature: Shadow"
       ]
     },
     {
       "ID": 150331,
       "Entries": [
-        "Core recovery at the time of shinobi (B) _ effect -- 忍殺時体幹回復（B）_効果"
+        "Breath of Nature: Shadow - Posture Recovery"
       ]
     },
     {
       "ID": 150332,
       "Entries": [
-        "Core recovery at the time of shinobi (B) _Effect_Recovery prohibited by stopping through -- 忍殺時体幹回復（B）_効果_とどめスルーによる回復禁止"
+        "Breath of Nature: Shadow Effect Recovery prohibited by stopping through"
       ]
     },
     {
       "ID": 150333,
       "Entries": [
-        "Restoration of the trunk at the time of shinobi (B) _Effect_Removal of recovery prohibition by stopping through -- 忍殺時体幹回復（B）_効果_とどめスルーによる回復禁止の解除"
+        "Breath of Nature: Shadow Effect Removal of recovery prohibition by stopping through"
       ]
     },
     {
       "ID": 150400,
       "Entries": [
-        "Parting trunk scraping UP -- 見切りの体幹削りUP"
+        "Shinobi Eyes"
       ]
     },
     {
       "ID": 150410,
       "Entries": [
-        "Jasuga&#39;s trunk shaving UP -- ジャスガの体幹削りUP"
+        "Ascending Carp"
       ]
     },
     {
       "ID": 150420,
       "Entries": [
-        "The guard&#39;s trunk is shaved and cut -- ガードの体幹削られカット"
+        "Flowing Water - During Block"
       ]
     },
     {
       "ID": 150421,
       "Entries": [
-        "Jasuga&#39;s trunk is shaved and cut -- ジャスガの体幹削られカット"
+        "Flowing Water - During Deflect"
       ]
     },
     {
       "ID": 150500,
       "Entries": [
-        "Jasuga rear sword attack trunk shaving UP_permission -- ジャスガ後刀攻撃体幹削りUP_許可"
+        "Descending Carp"
       ]
     },
     {
       "ID": 150501,
       "Entries": [
-        "Jasuga rear sword attack trunk shaving UP_ effect -- ジャスガ後刀攻撃体幹削りUP_効果"
+        "Descending Carp - Effect"
       ]
     },
     {
       "ID": 150600,
       "Entries": [
-        "Buff duration UP -- バフの効果時間UP"
+        "Devotion"
       ]
     },
     {
@@ -11656,25 +11656,25 @@
     {
       "ID": 200080,
       "Entries": [
-        "Body fluid type at the time of shinobi _ normal -- 忍殺時体液タイプ_通常"
+        "Blood Type During Deathblow - Normal"
       ]
     },
     {
       "ID": 200081,
       "Entries": [
-        "Body fluid type at the time of shinobi _ illusion -- 忍殺時体液タイプ_幻影"
+        "Blood Type During Deathblow - Illusion"
       ]
     },
     {
       "ID": 200082,
       "Entries": [
-        "Body fluid type at the time of shinobi _ poison -- 忍殺時体液タイプ_毒"
+        "Blood Type During Deathblow - Poison"
       ]
     },
     {
       "ID": 200083,
       "Entries": [
-        "Body fluid type at the time of shinobi _ spirit -- 忍殺時体液タイプ_霊"
+        "Blood Type During Deathblow - White Gecko"
       ]
     },
     {
@@ -12148,13 +12148,13 @@
     {
       "ID": 211000,
       "Entries": [
-        "Dangerous enemy attack_VFX -- 敵の危険な攻撃_VFX"
+        "Perilous Attack VFX"
       ]
     },
     {
       "ID": 211001,
       "Entries": [
-        "Dangerous enemy attacks_VFX_ for huge enemies -- 敵の危険な攻撃_VFX_巨大敵用"
+        "Perilous Attack VFX - Big Enemy"
       ]
     },
     {
@@ -13396,79 +13396,79 @@
     {
       "ID": 300580,
       "Entries": [
-        "Core performance DOWN when HP is 80% or less -- HP80%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300581,
       "Entries": [
-        "Core performance DOWN when HP is 60% or less -- HP60%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300582,
       "Entries": [
-        "Core performance DOWN when HP is 40% or less -- HP40%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300590,
       "Entries": [
-        "Core performance DOWN at HP 64% or less -- HP64%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 64% HP"
       ]
     },
     {
       "ID": 300591,
       "Entries": [
-        "Core performance DOWN at HP 48% or less -- HP48%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 48% HP"
       ]
     },
     {
       "ID": 300592,
       "Entries": [
-        "Core performance DOWN when HP is 32% or less -- HP32%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 32% HP"
       ]
     },
     {
       "ID": 300600,
       "Entries": [
-        "Core performance DOWN when HP is 80% or less -- HP80%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300601,
       "Entries": [
-        "Core performance DOWN when HP is 60% or less -- HP60%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300602,
       "Entries": [
-        "Core performance DOWN when HP is 40% or less -- HP40%以下で体幹性能DOWN"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300605,
       "Entries": [
-        "Core performance DOWN at HP 80% or less (for core elite) -- HP80%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 80% HP"
       ]
     },
     {
       "ID": 300606,
       "Entries": [
-        "Core performance DOWN at HP 60% or less (for core elite) -- HP60%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 60% HP"
       ]
     },
     {
       "ID": 300607,
       "Entries": [
-        "Core performance DOWN at HP 40% or less (for core elite) -- HP40%以下で体幹性能DOWN\u3000（体幹エリート用）"
+        "Lower Posture Recovery When Below 40% HP"
       ]
     },
     {
       "ID": 300610,
       "Entries": [
-        "HP reset -- HPリセット"
+        "HP Reset"
       ]
     },
     {
@@ -14212,7 +14212,7 @@
     {
       "ID": 900000,
       "Entries": [
-        "Dying damage screen effect -- 瀕死ダメージ中画面効果"
+        "Dying damage screen effect"
       ]
     },
     {

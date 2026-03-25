@@ -4,901 +4,901 @@
     {
       "ID": 0,
       "Entries": [
-        "Normal -- 通常"
+        "Normal"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Normal_narrow space -- 通常_狭所"
+        "Normal Narrow Space"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Normal_Indoor wide -- 通常_屋内広め"
+        "Normal Indoors Wide"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Normal_infinite wall jump -- 通常_無限壁ジャンプ"
+        "Normal"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Normal_Shinboku -- 通常_御神木上"
+        "Normal"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Normal _ litter -- 通常_輿"
+        "Normal"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Crouching -- しゃがみ"
+        "Crouching"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Crouching_narrow space -- しゃがみ_狭所"
+        "Crouching Narrow Space"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Crouching_Indoor spread -- しゃがみ_屋内広め"
+        "Crouching Indoors Wide"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Crouching_infinite wall jump -- しゃがみ_無限壁ジャンプ"
+        "Crouching"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Crouching _ Shinboku -- しゃがみ_御神木上"
+        "Crouching"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "With wall -- 壁張り付き"
+        "Hugging Wall"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "With wall _ narrow space -- 壁張り付き_狭所"
+        "Hugging Wall Narrow Space"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Wall-mounted _ indoor wide -- 壁張り付き_屋内広め"
+        "Hugging Wall Indoors Wide"
       ]
     },
     {
       "ID": 221,
       "Entries": [
-        "With wall _ in front of Shinboku -- 壁張り付き_御神木前"
+        "Hugging Wall"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Peeping _ left and right -- 覗き込み_左右"
+        "Peeping"
       ]
     },
     {
       "ID": 301,
       "Entries": [
-        "Peeping _ left and right _ narrow space -- 覗き込み_左右_狭所"
+        "Peeping Narrow Space"
       ]
     },
     {
       "ID": 302,
       "Entries": [
-        "Peeping _ left and right _ indoor wide -- 覗き込み_左右_屋内広め"
+        "Peeping Indoors Wide"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "Hanging -- ぶら下がり"
+        "Ledge Hanging"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "Hanging _ narrow space -- ぶら下がり_狭所"
+        "Ledge Hanging Narrow Space"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Hanging _ indoor wide -- ぶら下がり_屋内広め"
+        "Ledge Hanging Indoors Wide"
       ]
     },
     {
       "ID": 521,
       "Entries": [
-        "Hanging_Hidden Prison Bridge_Eavesdropping -- ぶら下がり_隠し牢の橋_盗み聞き"
+        "Ledge Hanging Ashina Reservoir Bridge Eavesdrop"
       ]
     },
     {
       "ID": 700,
       "Entries": [
-        "Waiting for resurrection -- 復活待機"
+        "Waiting for Resurrection"
       ]
     },
     {
       "ID": 701,
       "Entries": [
-        "Resurrection waiting _ narrow space -- 復活待機_狭所"
+        "Waiting for Resurrection Narrow Space"
       ]
     },
     {
       "ID": 702,
       "Entries": [
-        "Resurrection waiting _ indoor spread -- 復活待機_屋内広め"
+        "Waiting for Resurrection Indoors Wide"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "On the water -- 水上"
+        "On Water Surface"
       ]
     },
     {
       "ID": 2600,
       "Entries": [
-        "Water_wire injection -- 水上_ワイヤー射出"
+        "In water Grappling Hook Use"
       ]
     },
     {
       "ID": 2700,
       "Entries": [
-        "Water_waiting for resurrection -- 水上_復活待機"
+        "In Water waiting for Resurrection"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Underwater -- 水中"
+        "Underwater"
       ]
     },
     {
       "ID": 3020,
       "Entries": [
-        "Underwater_Nishikigoi -- 水中_錦鯉"
+        "Underwater Great Colored Carp"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Underwater_rise -- 水中_上昇"
+        "Underwater swim up"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        "Underwater_rise_nishikigoi -- 水中_上昇_錦鯉"
+        "Under water swim up Great Colored Carp"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Underwater_descent -- 水中_下降"
+        "Underwater swim down"
       ]
     },
     {
       "ID": 3420,
       "Entries": [
-        "Underwater_descent_nishikigoi -- 水中_下降_錦鯉"
+        "Underwater swim down Great Colored Carp"
       ]
     },
     {
       "ID": 3700,
       "Entries": [
-        "Underwater_waiting for resurrection -- 水中_復活待機"
+        "Underwater waiting for Resurrection"
       ]
     },
     {
       "ID": 3720,
       "Entries": [
-        "Underwater_Resurrection waiting_Nishikigoi -- 水中_復活待機_錦鯉"
+        "Underwater waiting for Resurrection Great Colored Carp"
       ]
     },
     {
       "ID": 4300,
       "Entries": [
-        "Water → Underwater -- 水上→水中"
+        "Resurface"
       ]
     },
     {
       "ID": 4400,
       "Entries": [
-        "Underwater → on the water -- 水中→水上"
+        "Dive"
       ]
     },
     {
       "ID": 5050,
       "Entries": [
-        "Nishikigoi -- 錦鯉"
+        "Great Colored Carp"
       ]
     },
     {
       "ID": 5055,
       "Entries": [
-        "Nishikigoi_Bridge event -- 錦鯉_橋イベント用"
+        "Great Colored Carp Bridge Smash"
       ]
     },
     {
       "ID": 5060,
       "Entries": [
-        "Ninja Army Chief -- 忍軍の長"
+        "Great Shinobi Owl"
       ]
     },
     {
       "ID": 5100,
       "Entries": [
-        "Yasha Ape _ pull a little -- 夜叉猿_ちょっと引く"
+        "Guardrian Ape"
       ]
     },
     {
       "ID": 5101,
       "Entries": [
-        "Yasha Ape_pull strongly -- 夜叉猿_強く引く"
+        "Guardrian Ape"
       ]
     },
     {
       "ID": 5102,
       "Entries": [
-        "Yasha Ape_for close quarters battle -- 夜叉猿_近接戦闘用"
+        "Guardrian Ape"
       ]
     },
     {
       "ID": 5110,
       "Entries": [
-        "Yasha Monkey (Map) -- 夜叉猿（マップ）"
+        "Guardrian Ape"
       ]
     },
     {
       "ID": 5200,
       "Entries": [
-        "Mermaid dragon (princess) -- 人魚竜(姫)"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 5201,
       "Entries": [
-        "Mermaid Dragon (Princess) _ Camera at the time of attack -- 人魚竜(姫)_攻撃時カメラ"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 5202,
       "Entries": [
-        "Mermaid Dragon (Princess) _ During Storm Jump -- 人魚竜(姫)_ストームジャンプ時"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 5203,
       "Entries": [
-        "Mermaid Dragon (Princess) _ When strongly charged -- 人魚竜(姫)_強帯電時"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "Female player -- 女奏者"
+        "O'Rin of the Water"
       ]
     },
     {
       "ID": 7020,
       "Entries": [
-        "Buddhist priest (demon) _normal -- 仏師（鬼）_通常"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 7021,
       "Entries": [
-        "Buddhist priest (demon) _proximity -- 仏師（鬼）_近接"
+        "Demon of Hatred Closeup"
       ]
     },
     {
       "ID": 7022,
       "Entries": [
-        "Buddhist priest (demon) _ when moving vertically -- 仏師（鬼）_縦に動く時"
+        "Demon of Hatred In Air"
       ]
     },
     {
       "ID": 59200,
       "Entries": [
-        "Temple look up allowed_default -- 寺見上げ許容_デフォルト"
+        "Temple look up allowed"
       ]
     },
     {
       "ID": 59201,
       "Entries": [
-        "Allowed to look up at the temple_hanging -- 寺見上げ許容_ぶら下がり"
+        "Allowed to look up at the temple hanging"
       ]
     },
     {
       "ID": 59210,
       "Entries": [
-        "Allowed overlooking the temple_default -- 寺見下ろし許容_デフォルト"
+        "Allowed overlooking the temple default"
       ]
     },
     {
       "ID": 5000000,
       "Entries": [
-        "Haunting Monk_Normal -- 破戒僧_通常"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 5000001,
       "Entries": [
-        "Haunting Monk_Normal_Crouching -- 破戒僧_通常_しゃがみ"
+        "Corrupted Monk Crouching"
       ]
     },
     {
       "ID": 5000007,
       "Entries": [
-        "Haunting Monk_Normal_Resurrection Waiting -- 破戒僧_通常_復活待機"
+        "Corrupted Monk Waiting For Resurrection"
       ]
     },
     {
       "ID": 5000100,
       "Entries": [
-        "Haunting Monk_On the Tree -- 破戒僧_木の上"
+        "Corrupted Monk While On Treebranch"
       ]
     },
     {
       "ID": 5000101,
       "Entries": [
-        "Haunting Monk_On the Tree_Crouching -- 破戒僧_木の上_しゃがみ"
+        "Corrupted Monk While On Treebranch Crouching"
       ]
     },
     {
       "ID": 5000107,
       "Entries": [
-        "Haunting Monk_On the Tree_Waiting for Resurrection -- 破戒僧_木の上_復活待機"
+        "Corrupted Monk While On Treebranch Waiting For Resurrection"
       ]
     },
     {
       "ID": 5050000,
       "Entries": [
-        "Nishikigoi -- 錦鯉"
+        "Great Colored Carp"
       ]
     },
     {
       "ID": 5050100,
       "Entries": [
-        "Nishikigoi_Bridge event -- 錦鯉_橋イベント用"
+        "Great Colored Carp - Brige Smash"
       ]
     },
     {
       "ID": 5050101,
       "Entries": [
-        "Nishikigoi_Bridge Event_Crouching -- 錦鯉_橋イベント用_しゃがみ"
+        "Great Colored Carp - Brige Smash Crouching"
       ]
     },
     {
       "ID": 5060000,
       "Entries": [
-        "Ninja Chief (Old) _Normal -- 忍軍の長(老)_通常"
+        "Great Shinobi Owl"
       ]
     },
     {
       "ID": 5060001,
       "Entries": [
-        "Ninja Chief (Old) _Normal_ Crouching -- 忍軍の長(老)_通常_しゃがみ"
+        "Great Shinobi Owl Crouching"
       ]
     },
     {
       "ID": 5060007,
       "Entries": [
-        "Ninja Army Chief (Old) _Normal_Resurrection Waiting -- 忍軍の長(老)_通常_復活待機"
+        "Great Shinobi Owl Waiting for Resurrection"
       ]
     },
     {
       "ID": 5061000,
       "Entries": [
-        "Ninja Chief (True) _Normal -- 忍軍の長(真)_通常"
+        "Owl (Father)"
       ]
     },
     {
       "ID": 5061001,
       "Entries": [
-        "Ninja Chief (True) _Normal_Crouching -- 忍軍の長(真)_通常_しゃがみ"
+        "Owl (Father) Crouching"
       ]
     },
     {
       "ID": 5061007,
       "Entries": [
-        "Ninja Army Chief (True) _Normal_Resurrection Waiting -- 忍軍の長(真)_通常_復活待機"
+        "Owl (Father) Waiting for Resurrection"
       ]
     },
     {
       "ID": 5080000,
       "Entries": [
-        "Cavalry Warrior_Normal -- 騎馬武者_通常"
+        "Gyoubu Oniwa"
       ]
     },
     {
       "ID": 5080001,
       "Entries": [
-        "Cavalry Warrior_Normal_Crouching -- 騎馬武者_通常_しゃがみ"
+        "Gyoubu Oniwa Crouching"
       ]
     },
     {
       "ID": 5080007,
       "Entries": [
-        "Cavalry Warrior_Normal_Resurrection Waiting -- 騎馬武者_通常_復活待機"
+        "Gyoubu Oniwa Waiting for Resurrection"
       ]
     },
     {
       "ID": 5080100,
       "Entries": [
-        "Cavalry warrior_look up -- 騎馬武者_見上げ"
+        "Gyoubu Oniwa Looking Up"
       ]
     },
     {
       "ID": 5080101,
       "Entries": [
-        "Cavalry warrior _ looking up _ crouching -- 騎馬武者_見上げ_しゃがみ"
+        "Gyoubu Oniwa Looking Up Crouching"
       ]
     },
     {
       "ID": 5080107,
       "Entries": [
-        "Cavalry warrior _ looking up _ waiting for resurrection -- 騎馬武者_見上げ_復活待機"
+        "Gyoubu Oniwa Looking Up Waiting for Resurrection"
       ]
     },
     {
       "ID": 5080200,
       "Entries": [
-        "Horse-riding warrior_close -- 騎馬武者_寄り"
+        "Gyoubu Oniwa Closeup"
       ]
     },
     {
       "ID": 5080201,
       "Entries": [
-        "Cavalry warrior _ leaning _ crouching -- 騎馬武者_寄り_しゃがみ"
+        "Gyoubu Oniwa Closeup Crouching"
       ]
     },
     {
       "ID": 5080207,
       "Entries": [
-        "Horse-riding warrior_close-up_waiting for resurrection -- 騎馬武者_寄り_復活待機"
+        "Gyoubu Oniwa Closeup Waiting for Resurrection"
       ]
     },
     {
       "ID": 5090000,
       "Entries": [
-        "Butterfly_normal -- お蝶_通常"
+        "Lady Butterfly"
       ]
     },
     {
       "ID": 5090001,
       "Entries": [
-        "Butterfly _ crouching -- お蝶_しゃがみ"
+        "Lady Butterfly Crouching"
       ]
     },
     {
       "ID": 5090007,
       "Entries": [
-        "Butterfly_waiting for resurrection -- お蝶_復活待機"
+        "Lady Butterfly Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100000,
       "Entries": [
-        "Yasha Ape_Normal -- 夜叉猿_通常"
+        "Guardian Ape"
       ]
     },
     {
       "ID": 5100001,
       "Entries": [
-        "Yasha Ape_Crouching -- 夜叉猿_しゃがみ"
+        "Guardian Ape Crouching"
       ]
     },
     {
       "ID": 5100007,
       "Entries": [
-        "Yasha Ape_Resurrection Waiting -- 夜叉猿_復活待機"
+        "Guardian Ape Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100010,
       "Entries": [
-        "Yasha Ape_Behavior that grows at close range -- 夜叉猿_近距離で伸び上がる行動"
+        "Guardian Ape Closeup"
       ]
     },
     {
       "ID": 5100011,
       "Entries": [
-        "Yasha Ape _ Behavior that grows up at a short distance _ Crouching -- 夜叉猿_近距離で伸び上がる行動_しゃがみ"
+        "Guardian Ape Closeup Crouching"
       ]
     },
     {
       "ID": 5100017,
       "Entries": [
-        "Yasha Ape _ Behavior that grows at a short distance _ Waiting for resurrection -- 夜叉猿_近距離で伸び上がる行動_復活待機"
+        "Guardian Ape Closeup Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100020,
       "Entries": [
-        "Yasha Ape_Jump Behavior_Normal -- 夜叉猿_ジャンプ行動_通常"
+        "Guardian Ape Jump"
       ]
     },
     {
       "ID": 5100021,
       "Entries": [
-        "Yasha Ape_Jumping Behavior_Crouching -- 夜叉猿_ジャンプ行動_しゃがみ"
+        "Guardian Ape Jump Crouching"
       ]
     },
     {
       "ID": 5100027,
       "Entries": [
-        "Yasha Ape_Jump Action_Resurrection Waiting -- 夜叉猿_ジャンプ行動_復活待機"
+        "Guardian Ape Jump Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100100,
       "Entries": [
-        "Yasha Ape_After the appearance of the bride monkey_Normal -- 夜叉猿_嫁猿登場後_通常"
+        "Guardian Ape After Bride Appears"
       ]
     },
     {
       "ID": 5100101,
       "Entries": [
-        "Yasha Ape_After the appearance of the bride monkey_Crouching -- 夜叉猿_嫁猿登場後_しゃがみ"
+        "Guardian Ape After Bride Appears Crouching"
       ]
     },
     {
       "ID": 5100107,
       "Entries": [
-        "Yasha Ape_After the appearance of the bride monkey_Waiting for resurrection -- 夜叉猿_嫁猿登場後_復活待機"
+        "Guardian Ape After Bride Appears Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100110,
       "Entries": [
-        "Yasha Ape_Behavior that grows at close range -- 夜叉猿_近距離で伸び上がる行動"
+        "Guardian Ape Closeup"
       ]
     },
     {
       "ID": 5100111,
       "Entries": [
-        "Yasha Ape _ Behavior that grows up at a short distance _ Crouching -- 夜叉猿_近距離で伸び上がる行動_しゃがみ"
+        "Guardian Ape Closeup Crouching"
       ]
     },
     {
       "ID": 5100117,
       "Entries": [
-        "Yasha Ape _ Behavior that grows at a short distance _ Waiting for resurrection -- 夜叉猿_近距離で伸び上がる行動_復活待機"
+        "Guardian Ape Closeup Waiting for Resurrection"
       ]
     },
     {
       "ID": 5100120,
       "Entries": [
-        "Yasha Ape_Jump Behavior_Normal -- 夜叉猿_ジャンプ行動_通常"
+        "Guardian Ape Jump"
       ]
     },
     {
       "ID": 5100121,
       "Entries": [
-        "Yasha Ape_Jumping Behavior_Crouching -- 夜叉猿_ジャンプ行動_しゃがみ"
+        "Guardian Ape Jump Crouching"
       ]
     },
     {
       "ID": 5100127,
       "Entries": [
-        "Yasha Ape_Jump Action_Resurrection Waiting -- 夜叉猿_ジャンプ行動_復活待機"
+        "Guardian Ape Jump Waiting for Resurrection"
       ]
     },
     {
       "ID": 5200000,
       "Entries": [
-        "Mermaid Dragon_Normal -- 人魚竜_通常"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 5200001,
       "Entries": [
-        "Mermaid Dragon_Normal_Crouching -- 人魚竜_通常_しゃがみ"
+        "Divine Dragon Crouching"
       ]
     },
     {
       "ID": 5200007,
       "Entries": [
-        "Mermaid Dragon_Normal_Resurrection Waiting -- 人魚竜_通常_復活待機"
+        "Divine Dragon Waiting for Resurrection"
       ]
     },
     {
       "ID": 5200100,
       "Entries": [
-        "Mermaid Dragon_Storm Jump Near the top -- 人魚竜_ストームジャンプ頂点付近"
+        "Divine Dragon Finale"
       ]
     },
     {
       "ID": 5200200,
       "Entries": [
-        "Mermaid Dragon_After Storm Jump -- 人魚竜_ストームジャンプ後中"
+        "Divine Dragon After Finale"
       ]
     },
     {
       "ID": 5200300,
       "Entries": [
-        "Mermaid Dragon_Thunderback Blows away_Pulls hard -- 人魚竜_雷返し吹き飛ばし中_強く引く"
+        "Divine Dragon Storm Blowback Attack"
       ]
     },
     {
       "ID": 5200310,
       "Entries": [
-        "Mermaid Dragon_Thunderback is being blown away -- 人魚竜_雷返し吹き飛ばし中"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 5300000,
       "Entries": [
-        "Okiryu_normal -- 翁竜_通常"
+        "Old Dragons of the Tree"
       ]
     },
     {
       "ID": 5300001,
       "Entries": [
-        "Old Dragon_Normal_Crouching -- 翁竜_通常_しゃがみ"
+        "Old Dragons of the Tree Crouching"
       ]
     },
     {
       "ID": 5300007,
       "Entries": [
-        "Okiryu_normal_waiting for resurrection -- 翁竜_通常_復活待機"
+        "Old Dragons of the Tree Waiting for Resurrection"
       ]
     },
     {
       "ID": 5300100,
       "Entries": [
-        "Okiryu_Tentacles are appearing -- 翁竜_触手登場中"
+        "Old Dragons of the Tree Branch Attack"
       ]
     },
     {
       "ID": 5300101,
       "Entries": [
-        "Okiryu_Tentacles are appearing_Crouching -- 翁竜_触手登場中_しゃがみ"
+        "Old Dragons of the Tree Branch Attack Crouching"
       ]
     },
     {
       "ID": 5300107,
       "Entries": [
-        "Okiryu_Tentacles are appearing_Waiting for resurrection -- 翁竜_触手登場中_復活待機"
+        "Old Dragons of the Tree Branch Attack Waiting for Resurrection"
       ]
     },
     {
       "ID": 5400000,
       "Entries": [
-        "Kensei_Honjo_Normal -- 剣聖_本城_通常"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 5400001,
       "Entries": [
-        "Kensei_Honjo_Normal_Crouching -- 剣聖_本城_通常_しゃがみ"
+        "Isshin Ashina Crouching"
       ]
     },
     {
       "ID": 5400007,
       "Entries": [
-        "Kensei_Honjo_Normal_Resurrection Waiting -- 剣聖_本城_通常_復活待機"
+        "Isshin Ashina Waiting for Resurrection"
       ]
     },
     {
       "ID": 5400500,
       "Entries": [
-        "Kensei_Hidden Prison_Normal -- 剣聖_隠し牢_通常"
+        "Isshin the Sword Saint"
       ]
     },
     {
       "ID": 5400501,
       "Entries": [
-        "Kensei_Hidden Prison_Normal_Crouching -- 剣聖_隠し牢_通常_しゃがみ"
+        "Isshin the Sword Saint Crouching"
       ]
     },
     {
       "ID": 5400507,
       "Entries": [
-        "Kensei_Hidden Prison_Normal_Resurrection Waiting -- 剣聖_隠し牢_通常_復活待機"
+        "Isshin the Sword Saint Waiting for Resurrection"
       ]
     },
     {
       "ID": 7000000,
       "Entries": [
-        "Female player_normal -- 女奏者_通常"
+        "O'Rin of the Water"
       ]
     },
     {
       "ID": 7000001,
       "Entries": [
-        "Female player_normal_ crouching -- 女奏者_通常_しゃがみ"
+        "O'Rin of the Water Crouching"
       ]
     },
     {
       "ID": 7000007,
       "Entries": [
-        "Female player_normal_waiting for resurrection -- 女奏者_通常_復活待機"
+        "O'Rin of the Water Waiting for Resurrection"
       ]
     },
     {
       "ID": 7020000,
       "Entries": [
-        "Buddhist demon _ normal -- 仏師鬼_通常"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 7020001,
       "Entries": [
-        "Buddhist demon _normal_ crouching -- 仏師鬼_通常_しゃがみ"
+        "Demon of Hatred Crouching"
       ]
     },
     {
       "ID": 7020007,
       "Entries": [
-        "Buddhist demon _ normal _ waiting for resurrection -- 仏師鬼_通常_復活待機"
+        "Demon of Hatred Waiting for Resurrection"
       ]
     },
     {
       "ID": 7020100,
       "Entries": [
-        "Buddhist demon _ jumping _ normal -- 仏師鬼_ジャンプ中_通常"
+        "Demon of Hatred Jumping"
       ]
     },
     {
       "ID": 7020101,
       "Entries": [
-        "Buddhist demon _ jumping _ crouching -- 仏師鬼_ジャンプ中_しゃがみ"
+        "Demon of Hatred Jumping Crouching"
       ]
     },
     {
       "ID": 7020107,
       "Entries": [
-        "Buddhist demon _ jumping _ waiting for resurrection -- 仏師鬼_ジャンプ中_復活待機"
+        "Demon of Hatred Jumping Waiting for Resurrection"
       ]
     },
     {
       "ID": 7020200,
       "Entries": [
-        "Buddhist demon _ jump lower attack -- 仏師鬼_ジャンプ下段攻撃中"
+        "Demon of Hatred Lower Jump"
       ]
     },
     {
       "ID": 7020201,
       "Entries": [
-        "Buddhist demon _ jumping lower attack _ crouching -- 仏師鬼_ジャンプ下段攻撃中_しゃがみ"
+        "Demon of Hatred Lower Jump Crouching"
       ]
     },
     {
       "ID": 7020207,
       "Entries": [
-        "Buddhist demon _ jump lower attack _ waiting for resurrection -- 仏師鬼_ジャンプ下段攻撃中_復活待機"
+        "Demon of Hatred Lower Jump Waiting for Resurrection"
       ]
     },
     {
       "ID": 7020300,
       "Entries": [
-        "Buddhist demon _ growing up -- 仏師鬼_伸び上がり中"
+        "Demon of Hatred Closeup"
       ]
     },
     {
       "ID": 7020301,
       "Entries": [
-        "Buddhist demon _ growing up _ crouching -- 仏師鬼_伸び上がり中_しゃがみ"
+        "Demon of Hatred Closeup Crouching"
       ]
     },
     {
       "ID": 7020307,
       "Entries": [
-        "Buddhist demon _ growing up _ waiting for resurrection -- 仏師鬼_伸び上がり中_復活待機"
+        "Demon of Hatred Closeup Waiting for Resurrection"
       ]
     },
     {
       "ID": 7100000,
       "Entries": [
-        "Rival_Honjo_Normal -- ライバル_本城_通常"
+        "Genichiro (Ashina Castle)"
       ]
     },
     {
       "ID": 7100001,
       "Entries": [
-        "Rival_Honjo_Normal_Crouching -- ライバル_本城_通常_しゃがみ"
+        "Genichiro (Ashina Castle) Crouching"
       ]
     },
     {
       "ID": 7100007,
       "Entries": [
-        "Rival_Honjo_Normal_Resurrection waiting -- ライバル_本城_通常_復活待機"
+        "Genichiro (Ashina Castle) Waiting for Resurrection"
       ]
     },
     {
       "ID": 7100100,
       "Entries": [
-        "Rival_Honjo_Bow 4 consecutive shots -- ライバル_本城_弓4連射"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot"
       ]
     },
     {
       "ID": 7100101,
       "Entries": [
-        "Rival _ Honjo _ Bow 4 barrage _ Crouching -- ライバル_本城_弓4連射_しゃがみ"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Crouching"
       ]
     },
     {
       "ID": 7100107,
       "Entries": [
-        "Rival_Honjo_Bow 4 barrage_Resurrection waiting -- ライバル_本城_弓4連射_復活待機"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Waiting for Resurrection"
       ]
     },
     {
       "ID": 7100500,
       "Entries": [
-        "Rival_Hidden Prison_Normal -- ライバル_隠し牢_通常"
+        "Genichiro (Ashina Reservoir)"
       ]
     },
     {
       "ID": 7100501,
       "Entries": [
-        "Rival_Hidden Prison_Normal_Crouching -- ライバル_隠し牢_通常_しゃがみ"
+        "Genichiro (Ashina Castle) Crouching"
       ]
     },
     {
       "ID": 7100507,
       "Entries": [
-        "Rival_Hidden Prison_Normal_Resurrection Waiting -- ライバル_隠し牢_通常_復活待機"
+        "Genichiro (Ashina Castle) Waiting for Resurrection"
       ]
     },
     {
       "ID": 7100600,
       "Entries": [
-        "Rival _ Hidden Prison _ Bow 4 Fire -- ライバル_隠し牢_弓4連射"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot"
       ]
     },
     {
       "ID": 7100601,
       "Entries": [
-        "Rival _ Hidden Prison _ Bow 4 Fire _ Crouching -- ライバル_隠し牢_弓4連射_しゃがみ"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Crouching"
       ]
     },
     {
       "ID": 7100607,
       "Entries": [
-        "Rival_Hidden Prison_Bow 4 Fires_Resurrection Wait -- ライバル_隠し牢_弓4連射_復活待機"
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Waiting for Resurrection"
       ]
     },
     {
       "ID": 7400000,
       "Entries": [
-        "Medical Holy Daughter_Normal -- 医聖の娘_通常"
+        "Emma, the Gentle Blade"
       ]
     },
     {
       "ID": 7400001,
       "Entries": [
-        "Medical Holy Daughter_Normal_Crouching -- 医聖の娘_通常_しゃがみ"
+        "Emma, the Gentle Blade Crouching"
       ]
     },
     {
       "ID": 7400007,
       "Entries": [
-        "Medical Holy Daughter_Normal_Resurrection Waiting -- 医聖の娘_通常_復活待機"
+        "Emma, the Gentle Blade Waiting for Resurrection"
       ]
     }
   ]
