@@ -580,6 +580,9 @@ public class FieldMetaContext
         if (DisplayFieldReferenceGroup)
             display = true;
 
+        if (DisplayAC6FieldOffsetData)
+            display = true;
+
         return display;
     }
 
