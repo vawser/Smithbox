@@ -6,33 +6,33 @@
   "Fields": [
     {
       "Field": "level0ShaderType",
-      "Name": "制約レベル０シェーダー設定",
-      "Description": ""
+      "Name": "Level 0: Shader Type",
+      "Description": "The shader type for constraint level 0."
     },
     {
       "Field": "level0FullBodySfx",
-      "Name": "制約レベル０ 適用全身SFX",
-      "Description": ""
+      "Name": "Level 0: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 0."
     },
     {
       "Field": "level1FullBodySfx",
-      "Name": "制約レベル１ 適用全身SFX",
-      "Description": ""
+      "Name": "Level 1: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 1."
     },
     {
       "Field": "level2FullBodySfx",
-      "Name": "制約レベル２ 適用全身SFX",
-      "Description": ""
+      "Name": "Level 2: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 2."
     },
     {
       "Field": "level3FullBodySfx",
-      "Name": "制約レベル３ 適用全身SFX",
-      "Description": ""
+      "Name": "Level 3: Full Body SFX",
+      "Description": "The full body sfx entry for constraint level 3."
     },
     {
       "Field": "entryMotionType",
-      "Name": "出現モーション",
-      "Description": ""
+      "Name": "Appearance Motion Type",
+      "Description": "The appearance motion type for this phantom."
     },
     {
       "Field": "speedDownHpMinRate",

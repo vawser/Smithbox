@@ -477,112 +477,112 @@
     {
       "Field": "dodgeCrouchRateMin",
       "Name": "Moving Evasion: Minimum Crouch Amount %",
-      "Description": "The minimum crouch amount rate during an moving evasion action."
+      "Description": "The minimum crouch amount rate during a moving evasion."
     },
     {
       "Field": "dodgeWaitCrouchRateMin",
       "Name": "Standing Evasion: Minimum Crouch Amount %",
-      "Description": "The minimum crouch amount rate during an standing evasion action."
+      "Description": "The minimum crouch amount rate during a standing evasion."
     },
     {
       "Field": "stepCrouchRateMin",
       "Name": "Moving Backstep: Minimum Crouch Amount %",
-      "Description": "The minimum crouch amount rate during an moving backstep action."
+      "Description": "The minimum crouch amount rate during a moving backstep."
     },
     {
       "Field": "stepWaitCrouchRateMin",
       "Name": "Standing Backstep: Minimum Crouch Amount %",
-      "Description": "The minimum crouch amount rate during an standing backstep action."
+      "Description": "The minimum crouch amount rate during a standing backstep."
     },
     {
       "Field": "landingCrouchRateMin",
-      "Name": "着地 屈伸着地倍率 最小[倍率]",
-      "Description": ""
+      "Name": "Landing: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an landing."
     },
     {
       "Field": "landingCrouchRateMax",
-      "Name": "着地 屈伸着地倍率 最大[倍率]",
-      "Description": ""
+      "Name": "Landing: Maximum Crouch Amount %",
+      "Description": "The maximum crouch amount rate during an landing."
     },
     {
       "Field": "landingCrouchReturnTimeMin",
-      "Name": "着地 しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Landing: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon landing (in seconds)."
     },
     {
       "Field": "landingCrouchReturnTimeMax",
-      "Name": "着地 しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Landing: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon landing (in seconds)."
     },
     {
       "Field": "jumpCrouchReturnTimeMin",
-      "Name": "ジャンプ着地 しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Jump Landing: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a jump landing (in seconds)."
     },
     {
       "Field": "jumpCrouchReturnTimeMax",
-      "Name": "ジャンプ着地 しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Jump Landing: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a jump landing (in seconds)."
     },
     {
       "Field": "rollingCrouchReturnTimeMin",
-      "Name": "ローリング しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Moving Roll: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a moving roll (in seconds)."
     },
     {
       "Field": "rollingCrouchReturnTimeMax",
-      "Name": "ローリング しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Moving Roll: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a moving roll (in seconds)."
     },
     {
       "Field": "rollingWaitCrouchReturnTimeMin",
-      "Name": "ローリング 待機しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Standing Roll: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a standing roll (in seconds)."
     },
     {
       "Field": "rollingWaitCrouchReturnTimeMax",
-      "Name": "ローリング 待機しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Standing Roll: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a standing roll (in seconds)."
     },
     {
       "Field": "stepCrouchReturnTimeMin",
-      "Name": "ステップ しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Moving Backstep: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a moving backstep (in seconds)."
     },
     {
       "Field": "stepCrouchReturnTimeMax",
-      "Name": "ステップ しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Moving Backstep: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a moving backstep (in seconds)."
     },
     {
       "Field": "stepWaitCrouchReturnTimeMin",
-      "Name": "ステップ 待機しゃがみ終了時間 最小[Sec]",
-      "Description": ""
+      "Name": "Standing Backstep: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a standing backstep (in seconds)."
     },
     {
       "Field": "stepWaitCrouchReturnTimeMax",
-      "Name": "ステップ 待機しゃがみ終了時間 最大[Sec]",
-      "Description": ""
+      "Name": "Standing Backstep: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a standing backstep (in seconds)."
     },
     {
       "Field": "landingWalkinvalidTimeMin",
-      "Name": "着地 遷移不可 時間 最小[Sec]",
-      "Description": ""
+      "Name": "Landing Walk: Minimum Invalid Time",
+      "Description": "The minimum duration after a landing before a walk can occur (in seconds)."
     },
     {
       "Field": "landingWalkinvalidTimeMax",
-      "Name": "着地 遷移不可 時間 最大[Sec]",
-      "Description": ""
+      "Name": "Landing Walk: Maximum Invalid Time",
+      "Description": "The maximum duration after a landing before a walk can occur (in seconds)."
     },
     {
       "Field": "landingWalkinvalidFallDistMin",
-      "Name": "着地 遷移不可 発生高度 最小[m]",
-      "Description": ""
+      "Name": "Landing Walk: Minimum Invalid Fall Distance",
+      "Description": "The minimum distance for the invalidation of a landing walk (in metres)."
     },
     {
       "Field": "landingWalkinvalidFallDistMax",
-      "Name": "着地 遷移不可 発生高度 最大[m]",
-      "Description": ""
+      "Name": "Landing Walk: Maximum Invalid Fall Distance",
+      "Description": "The maximum distance for the invalidation of a landing walk (in metres)."
     },
     {
       "Field": "landingWalkMoveSpeedFallDistMin",
