@@ -211,7 +211,14 @@ public class ParamFmgUtils
         }
         if (paramName == "Magic")
         {
-            return "Goods";
+            if (Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType == ProjectType.DES)
+            {
+                return "Magic";
+            }
+            else
+            {
+                return "Goods";
+            }
         }
         if (paramName == "EquipParamProtector")
         {
