@@ -1792,43 +1792,43 @@
     {
       "ID": 12000,
       "Entries": [
-        "Boss rematch mode_c7100_Genichiro / back_ban lifted -- ボス再戦モード_c7100_弦一郎・裏_解禁"
+        "Boss Rematch: Unlock Inner Genichiro"
       ]
     },
     {
       "ID": 12010,
       "Entries": [
-        "Boss rematch mode_c5060_father / back_ban lifted -- ボス再戦モード_c5060_義父・裏_解禁"
+        "Boss Rematch: Unlock Inner Father"
       ]
     },
     {
       "ID": 12020,
       "Entries": [
-        "Boss rematch mode_c5400_Isshin / Ura_Unveiled -- ボス再戦モード_c5400_一心・裏_解禁"
+        "Boss Rematch: Unlock Inner Isshin"
       ]
     },
     {
       "ID": 12500,
       "Entries": [
-        "Boss Rematch Mode_Tutorial Check_Item Reset -- ボス再戦モード_チュートリアルチェック_アイテムリセット"
+        "Boss Rematch: Death Check"
       ]
     },
     {
       "ID": 12600,
       "Entries": [
-        "Boss Rematch Mode_Reward Check_EX Genichiro -- ボス再戦モード_報酬チェック_EX弦一郎"
+        "Boss Rematch: Inner Genichiro Reward Check"
       ]
     },
     {
       "ID": 12610,
       "Entries": [
-        "Boss rematch mode_reward check_EX father-in-law -- ボス再戦モード_報酬チェック_EX義父"
+        "Boss Rematch: Inner Father Reward Check"
       ]
     },
     {
       "ID": 12620,
       "Entries": [
-        "Boss Rematch Mode_Reward Check_EX One Heart -- ボス再戦モード_報酬チェック_EX一心"
+        "Boss Rematch: Inner Isshin Reward Check"
       ]
     },
     {
