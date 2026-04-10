@@ -4,931 +4,931 @@
     {
       "ID": 0,
       "Entries": [
-        "for test -- テスト用"
+        ""
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "For doing nothing -- なにもしない用"
+        ""
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Non-touch data (recommended by copy / paste) -- あたりさわりのないデータ（コピペ元推奨）"
+        ""
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "For conversations that do nothing -- なにもしない会話用"
+        ""
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Anime check logic: Near -- アニメチェック用ロジック：近"
+        ""
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Anime check logic: Far -- アニメチェック用ロジック：遠"
+        ""
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Ishizaki test -- 石崎テスト"
+        ""
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "For automatic patrol (default) -- 自動巡回用(デフォルト)"
+        ""
       ]
     },
     {
       "ID": 540,
       "Entries": [
-        "For automatic patrol (running) -- 自動巡回用(走り)"
+        ""
       ]
     },
     {
       "ID": 541,
       "Entries": [
-        "For automatic patrol (walking) -- 自動巡回用(歩き)"
+        ""
       ]
     },
     {
       "ID": 542,
       "Entries": [
-        "For automatic patrol (super dash) -- 自動巡回用(スーパーダッシュ)"
+        ""
       ]
     },
     {
       "ID": 10001,
       "Entries": [
-        "For funnel -- ファンネル用"
+        ""
       ]
     },
     {
       "ID": 10000000,
       "Entries": [
-        "Group patrol dummy leader -- 集団巡回ダミーリーダー"
+        ""
       ]
     },
     {
       "ID": 10001000,
       "Entries": [
-        "Form _ bullet owner -- 形代_弾丸オーナー"
+        ""
       ]
     },
     {
       "ID": 10002080,
       "Entries": [
-        "General-purpose dummy character for conversation -- 会話用汎用ダミーキャラ"
+        ""
       ]
     },
     {
       "ID": 10003000,
       "Entries": [
-        "Dummy character for display that seems to find a big snake -- 大蛇見つかりそう表示用ダミーキャラ"
+        ""
       ]
     },
     {
       "ID": 10003001,
       "Entries": [
-        "Dummy character for display that seems to find a big snake _ Wide view around -- 大蛇見つかりそう表示用ダミーキャラ_周辺視界広いバージョン"
+        ""
       ]
     },
     {
       "ID": 10003002,
       "Entries": [
-        "Dummy character for display that seems to find a large snake _ Wide view of enemy search -- 大蛇見つかりそう表示用ダミーキャラ_索敵視界広いバージョン"
+        ""
       ]
     },
     {
       "ID": 10004000,
       "Entries": [
-        "Okiryu Dummy Leader -- 翁竜ダミーリーダー"
+        ""
       ]
     },
     {
       "ID": 10010000,
       "Entries": [
-        "Dummy character for demon Buddha -- 鬼仏用ダミーキャラ"
+        ""
       ]
     },
     {
       "ID": 10010010,
       "Entries": [
-        "Dummy character for camera inside / outside judgment -- カメラ内外判定用ダミーキャラ"
+        ""
       ]
     },
     {
       "ID": 10090000,
       "Entries": [
-        "Careless -- 軽率"
+        ""
       ]
     },
     {
       "ID": 10090001,
       "Entries": [
-        "Normal -- 通常"
+        ""
       ]
     },
     {
       "ID": 10090002,
       "Entries": [
-        "Big game -- 大物"
+        ""
       ]
     },
     {
       "ID": 10090003,
       "Entries": [
-        "Guardian -- 番人"
+        ""
       ]
     },
     {
       "ID": 10090004,
       "Entries": [
-        "ambush -- 待ち伏せ"
+        ""
       ]
     },
     {
       "ID": 10100000,
       "Entries": [
-        "Ochimusha Protomap One-handed sword -- 落武者\u3000プロトマップ\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100001,
       "Entries": [
-        "Ochimusha Protomap One-handed Sword Exclusive -- 落武者\u3000プロトマップ\u3000片手刀\u3000専守"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100002,
       "Entries": [
-        "Ochimusha Protomap One-handed sword open space Samurai general&#39;s companion -- 落武者\u3000プロトマップ\u3000片手刀\u3000広場\u3000侍大将のお供"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100003,
       "Entries": [
-        "Ochimusha Protomap One-handed sword for first battle -- 落武者\u3000プロトマップ\u3000片手刀\u3000初戦闘用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100004,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Do not go in the direction of sound -- 落武者\u3000プロトマップ\u3000片手刀\u3000音方向に行かない"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100005,
       "Entries": [
-        "Ochimusha Protomap One-handed Sword Stopper -- 落武者\u3000プロトマップ\u3000片手刀\u3000ストッパー"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100006,
       "Entries": [
-        "Ochimusha Protomap One-handed sword stopper Short field of view -- 落武者\u3000プロトマップ\u3000片手刀\u3000ストッパー\u3000短視界"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100007,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Stopper Position fixed -- 落武者\u3000プロトマップ\u3000片手刀\u3000ストッパー\u3000位置固定"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100008,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Suspension bridge collapse aim only -- 落武者\u3000プロトマップ\u3000片手刀\u3000吊橋崩落狙い専用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100009,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Narrow / short field of view: For Proto2 -- 落武者\u3000プロトマップ\u3000片手刀\u3000視界狭い/短い：プロト2用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100010,
       "Entries": [
-        "Ochimusha Protomap One-handed sword for steep slopes -- 落武者\u3000プロトマップ\u3000片手刀\u3000急な坂用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100011,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Samurai General Area_Monitor in front of stairs -- 落武者\u3000プロトマップ\u3000片手刀 侍大将エリア_階段前で監視"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100012,
       "Entries": [
-        "Ochimusha Protomap One-handed sword Near the start of the stone wall Surveillance -- 落武者\u3000プロトマップ\u3000片手刀 スタート付近石垣の上\u3000監視"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100020,
       "Entries": [
-        "Ochimusha E3 One-handed sword -- 落武者\u3000E3\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100021,
       "Entries": [
-        "Ochimusha E3 One-handed sword E3 Early return home -- 落武者\u3000E3\u3000片手刀\u3000Ｅ３帰巣早め"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100080,
       "Entries": [
-        "Ochimusha One-handed sword The voice of the end of the bridge [Conversation] -- 落武者\u3000片手刀\u3000橋にいる末期の声【会話】"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100100,
       "Entries": [
-        "Ochimusha Protomap Eight Phases -- 落武者\u3000プロトマップ\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100101,
       "Entries": [
-        "Ochimusha Protomap Eight Phases Long Visual -- 落武者\u3000プロトマップ\u3000八相\u3000視覚長め"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100102,
       "Entries": [
-        "Ochimusha Protomap Eight Phase Stopper -- 落武者\u3000プロトマップ\u3000八相\u3000ストッパー"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100103,
       "Entries": [
-        "Ochimusha Protomap Eight-Phase Stopper Short Field of View -- 落武者\u3000プロトマップ\u3000八相\u3000ストッパー\u3000短視界"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100104,
       "Entries": [
-        "Ochimusha Protomap Eight Phases Short visibility -- 落武者\u3000プロトマップ\u3000八相\u3000視界距離短い"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100105,
       "Entries": [
-        "Ochimusha Protomap Eight Phases Narrow / Short: For Proto2 -- 落武者\u3000プロトマップ\u3000八相\u3000視界狭い/短い：プロト2用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100106,
       "Entries": [
-        "Ochimusha Protomap Eight Phases For steep slopes -- 落武者\u3000プロトマップ\u3000八相\u3000急な坂用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100107,
       "Entries": [
-        "Ochimusha Protomap Yaso Hiroba Samurai General&#39;s companion -- 落武者\u3000プロトマップ\u3000八相\u3000広場\u3000侍大将のお供"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100108,
       "Entries": [
-        "Ochimusha Protomap Yaso Samurai General Area_Monitor in front of stairs -- 落武者\u3000プロトマップ\u3000八相 侍大将エリア_階段前で監視"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100121,
       "Entries": [
-        "Ochimusha Protomap Eighth Phase E3 Early Return to Home -- 落武者\u3000プロトマップ\u3000八相\u3000Ｅ３帰巣早め"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100200,
       "Entries": [
-        "Ochimusha Protomap Spear -- 落武者\u3000プロトマップ\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100201,
       "Entries": [
-        "Ochimusha Protomap Spear Narrow visual sense -- 落武者\u3000プロトマップ\u3000槍\u3000視覚幅狭い"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100202,
       "Entries": [
-        "Ochimusha Protomap Spear Exclusive -- 落武者\u3000プロトマップ\u3000槍\u3000専守"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100203,
       "Entries": [
-        "Ochimusha Protomap Spear Short visibility -- 落武者\u3000プロトマップ\u3000槍\u3000視界距離短い"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100204,
       "Entries": [
-        "Ochimusha Protomap Spear on the stone wall -- 落武者\u3000プロトマップ\u3000槍\u3000石垣の上"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100205,
       "Entries": [
-        "Ochimusha Protomap Spear For steep slopes -- 落武者\u3000プロトマップ\u3000槍\u3000急な坂用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100206,
       "Entries": [
-        "Ochimusha Protomap Spear Exclusive For steep slopes -- 落武者\u3000プロトマップ\u3000槍\u3000専守\u3000急な坂用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100207,
       "Entries": [
-        "Ochimusha Protomap Spear Start Ishigakigami -- 落武者\u3000プロトマップ\u3000槍 \u3000スタートの石垣上"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100220,
       "Entries": [
-        "Ochimusha E3 Spear -- 落武者\u3000E3\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100300,
       "Entries": [
-        "Ochimusha Protomap Matchlock -- 落武者\u3000プロトマップ\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100301,
       "Entries": [
-        "Ochimusha Protomap Matchlock Breakthrough Situation Steep Slope -- 落武者\u3000プロトマップ\u3000火縄銃\u3000突破シチュエーション\u3000急坂"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100302,
       "Entries": [
-        "Ochimusha Protomap Matchlock Ishigakigami -- 落武者\u3000プロトマップ\u3000火縄銃\u3000石垣上"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100303,
       "Entries": [
-        "Ochimusha Protomap Matchlock Gun in front of Yaguramon -- 落武者\u3000プロトマップ\u3000火縄銃\u3000櫓門前"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100304,
       "Entries": [
-        "Ochimusha Protomap Matchlock Fixed Battery -- 落武者\u3000プロトマップ\u3000火縄銃 固定砲台"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100305,
       "Entries": [
-        "Ochimusha Protomap Matchlock Fixed Battery -- 落武者\u3000プロトマップ\u3000火縄銃 固定砲台"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100306,
       "Entries": [
-        "Ochimusha Protomap Matchlock Yaguramon Surveillance Indoors -- 落武者\u3000プロトマップ\u3000火縄銃 櫓門監視\u3000屋内"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100307,
       "Entries": [
-        "Ochimusha Protomap Matchlock Matchlock Strong Gate -- 落武者\u3000プロトマップ\u3000火縄銃 強固な門前"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100308,
       "Entries": [
-        "Ochimusha Gray Box Map Matchlock Indoor -- 落武者\u3000グレイボックスマップ\u3000火縄銃 屋内用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100309,
       "Entries": [
-        "Ochimusha Gray Box Map Matchlock Outdoor _ Combat + Stealth Area -- 落武者\u3000グレイボックスマップ\u3000火縄銃 屋外用_戦闘＋ステルスエリア"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100310,
       "Entries": [
-        "Ochimusha E3 Matchlock Fixed Battery Koguchi -- 落武者\u3000E3\u3000火縄銃 固定砲台 虎口"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100312,
       "Entries": [
-        "Ochimusha Tokugawa invades Matchlock gun Hashigami -- 落武者\u3000徳川襲来\u3000火縄銃\u3000橋上"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100320,
       "Entries": [
-        "Ochimusha E3 Matchlock Fixed Battery -- 落武者\u3000E3\u3000火縄銃 固定砲台"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100330,
       "Entries": [
-        "Ochimusha Dungeon Matchlock -- 落武者\u3000地下牢\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10100390,
       "Entries": [
-        "Ochimusha Valley Test Map Matchlock -- 落武者\u3000渓谷テストマップ\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10101300,
       "Entries": [
-        "Ochimusha Honjo Matchlock Grand Staircase -- 落武者\u3000本城\u3000火縄銃\u3000大階段"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10101310,
       "Entries": [
-        "Ochimusha Honjo Matchlock Outer -- 落武者\u3000本城\u3000火縄銃\u3000外郭"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10102000,
       "Entries": [
-        "Ochimusha Honjo_When Tokugawa attacks_Large stairs One-handed sword -- 落武者\u3000本城_徳川襲来時_大階段\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10102100,
       "Entries": [
-        "Ochimusha Honjo_When Tokugawa attacks_Great stairs Eight phases -- 落武者\u3000本城_徳川襲来時_大階段\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10102200,
       "Entries": [
-        "Ochimusha Honjo_When Tokugawa attacks_Great staircase spear -- 落武者\u3000本城_徳川襲来時_大階段\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103000,
       "Entries": [
-        "Ochimusha Hidden Prison_Normal One-handed Sword -- 落武者\u3000隠し牢_平常時\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103001,
       "Entries": [
-        "Ochimusha Hidden Prison_Normal One-handed Sword -- 落武者\u3000隠し牢_平常時\u3000片手刀\u3000視界狭い"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103100,
       "Entries": [
-        "Ochimusha Hidden Prison_Normal Eight Phases -- 落武者\u3000隠し牢_平常時\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103101,
       "Entries": [
-        "Ochimusha Hidden Prison _ Normal Eight Phases Narrow visibility -- 落武者\u3000隠し牢_平常時\u3000八相\u3000\u3000 視界狭い"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103200,
       "Entries": [
-        "Ochimusha Hidden Prison_Normal Spear -- 落武者\u3000隠し牢_平常時\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103300,
       "Entries": [
-        "Ochimusha Hidden Prison_Normal Matchlock -- 落武者\u3000隠し牢_平常時\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103500,
       "Entries": [
-        "Ochimusha Hidden Prison _ During Tutorial Matchlock _ In front of the station -- 落武者\u3000隠し牢_チュートリアル時\u3000火縄銃_詰所前"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103510,
       "Entries": [
-        "Ochimusha Hidden Prison _ During Tutorial Matchlock _ On the Stairs -- 落武者\u3000隠し牢_チュートリアル時\u3000火縄銃_階段上"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10103520,
       "Entries": [
-        "Ochimusha Hidden Prison _ During Tutorial Matchlock _ In front of Tsukimi Tower -- 落武者\u3000隠し牢_チュートリアル時\u3000火縄銃_月見櫓前"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109000,
       "Entries": [
-        "Ochimusha sample one-handed sword -- 落武者\u3000サンプル\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109010,
       "Entries": [
-        "Ochimusha sample One-handed sword corpse discovery test -- 落武者\u3000サンプル\u3000片手刀\u3000死体発見テスト"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109011,
       "Entries": [
-        "Ochimusha sample One-handed sword corpse discovery test_for sign target discovery -- 落武者\u3000サンプル\u3000片手刀\u3000死体発見テスト_気配タゲ発見用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109100,
       "Entries": [
-        "Ochimusha sample eight phases -- 落武者\u3000サンプル\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109200,
       "Entries": [
-        "Ochimusha sample spear -- 落武者\u3000サンプル\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10109300,
       "Entries": [
-        "Ochimusha sample matchlock -- 落武者\u3000サンプル\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110000,
       "Entries": [
-        "Ochimusha Hidden Prison One-handed Sword -- 落武者\u3000隠し牢\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110001,
       "Entries": [
-        "Ochimusha Hidden Prison One-handed sword First approach and move sideways -- 落武者\u3000隠し牢\u3000片手刀\u3000初回近づいて横移動"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110002,
       "Entries": [
-        "Ochimusha Hidden Prison One-handed sword First jump slash → Move a little sideways -- 落武者\u3000隠し牢\u3000片手刀\u3000初回飛び掛かり斬り→ちょっと横移動"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110003,
       "Entries": [
-        "Ochimusha Hidden Prison One-handed sword for eavesdropping -- 落武者\u3000隠し牢\u3000片手刀\u3000盗み聞き用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110100,
       "Entries": [
-        "Ochimusha Hidden Prison Eight Phases -- 落武者\u3000隠し牢\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110101,
       "Entries": [
-        "Ochimusha Hidden Prison Eight Phases For Jasuga Tutorial -- 落武者\u3000隠し牢\u3000八相\u3000ジャスガチュートリアル用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110102,
       "Entries": [
-        "Ochimusha Hidden Prison Eighth Phase Early _ Gate Guard -- 落武者\u3000隠し牢\u3000八相\u3000初期_門前警備"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110103,
       "Entries": [
-        "Ochimusha Hidden Prison Eight Phases For Eavesdropping -- 落武者\u3000隠し牢\u3000八相\u3000盗み聞き用"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110500,
       "Entries": [
-        "Ochimusha Hidden Prison One-handed Sword Gate Guard -- 落武者\u3000隠し牢\u3000片手刀\u3000門前警備"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110501,
       "Entries": [
-        "Ochimusha Hidden Prison Behind the One-Handed Sword Gate -- 落武者\u3000隠し牢\u3000片手刀\u3000門の裏"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110600,
       "Entries": [
-        "Ochimusha Hidden Prison Eight-Phase Playing Tutorial -- 落武者\u3000隠し牢\u3000八相\u3000弾きチュートリアル"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110601,
       "Entries": [
-        "Ochimusha Hidden Prison Yasomon-mae Security First Run and Attack -- 落武者\u3000隠し牢\u3000八相\u3000門前警備\u3000初回走って攻撃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110602,
       "Entries": [
-        "Ochimusha Hidden Prison Behind the Hachisomon -- 落武者\u3000隠し牢\u3000八相\u3000門の裏"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10110603,
       "Entries": [
-        "Ochimusha Hidden Prison Yasomon-mae Security First Walk -- 落武者\u3000隠し牢\u3000八相\u3000門前警備\u3000初回歩く"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10119000,
       "Entries": [
-        "Ochimusha Tutorial Sample One-handed Sword -- 落武者\u3000チュートリアル\u3000サンプル\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10119100,
       "Entries": [
-        "Ochimusha Tutorial Sample Eight Phases -- 落武者\u3000チュートリアル\u3000サンプル\u3000八相"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10120000,
       "Entries": [
-        "Ochimusha Combat Tutorial One-handed Sword -- 落武者\u3000戦闘チュートリアル\u3000片手刀"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10120080,
       "Entries": [
-        "Ochimusha Combat Tutorial One-handed Sword [Conversation] -- 落武者\u3000戦闘チュートリアル\u3000片手刀【会話】"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10120200,
       "Entries": [
-        "Ochimusha Combat Tutorial Spear -- 落武者\u3000戦闘チュートリアル\u3000槍"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10120300,
       "Entries": [
-        "Ochimusha Combat Tutorial Matchlock -- 落武者\u3000戦闘チュートリアル\u3000火縄銃"
+        "Ashina Soldier"
       ]
     },
     {
       "ID": 10200000,
       "Entries": [
-        "Samurai General Protomap -- 侍大将\u3000プロトマップ"
+        "Samurai General"
       ]
     },
     {
       "ID": 10200001,
       "Entries": [
-        "Samurai General Protomap For Samurai General Square -- 侍大将\u3000プロトマップ 侍大将広場用"
+        "Samurai General"
       ]
     },
     {
       "ID": 10200010,
       "Entries": [
-        "Samurai General Protomap Strong -- 侍大将\u3000プロトマップ\u3000強"
+        "General Tenzen Yamauchi"
       ]
     },
     {
       "ID": 10200011,
       "Entries": [
-        "Samurai General E3 Strong -- 侍大将\u3000Ｅ３\u3000強"
+        "Samurai General"
       ]
     },
     {
       "ID": 10200020,
       "Entries": [
-        "Samurai General Castle Lower Lower Tutorial -- 侍大将\u3000城下\u3000下段チュートリアル用"
+        "General Naoromi Kawarada"
       ]
     },
     {
       "ID": 10201000,
       "Entries": [
-        "Samurai General Hidden Prison Tutorial_Initial Placement -- 侍大将\u3000隠し牢\u3000チュートリアル_初期配置"
+        "Leader Shigenori Yamauchi - Initial Placement"
       ]
     },
     {
       "ID": 10201010,
       "Entries": [
-        "Samurai General Hidden Prison Tutorial_After Moving_Before Battle -- 侍大将\u3000隠し牢\u3000チュートリアル_移動後_戦闘前"
+        "Leader Shigenori Yamauchi - Before Battle"
       ]
     },
     {
       "ID": 10201011,
       "Entries": [
-        "Samurai General Hidden Prison Tutorial_After Moving_After Combat Begins -- 侍大将\u3000隠し牢\u3000チュートリアル_移動後_戦闘開始後"
+        "Leader Shigenori Yamauchi - During Battle"
       ]
     },
     {
       "ID": 10201080,
       "Entries": [
-        "Fascinated Samurai Hidden Prison [Conversation] -- 魅了された侍 隠し牢【会話】"
+        "Jinzaemon (Conversation - Ashina Reservoir)"
       ]
     },
     {
       "ID": 10202080,
       "Entries": [
-        "Fascinated Samurai Sick Village_Entrance [Conversation] -- 魅了された侍 病み村_入り口【会話】"
+        "Jinzaemon (Conversation - Ashina Depths)"
       ]
     },
     {
       "ID": 10202081,
       "Entries": [
-        "Fascinated Samurai Sick Village_In front of the square [Conversation] -- 魅了された侍 病み村_広場前【会話】"
+        "Jinzaemon (Conversation - Mibu Village)"
       ]
     },
     {
       "ID": 10202082,
       "Entries": [
-        "Fascinated Samurai Dungeon [Conversation] -- 魅了された侍 地下牢【会話】"
+        "Jinzaemon (Conversation - Bottomless Hole)"
       ]
     },
     {
       "ID": 10203000,
       "Entries": [
-        "Samurai General Honjo Tsuyoshi -- 侍大将\u3000本城\u3000強"
+        "Samurai General"
       ]
     },
     {
       "ID": 10203100,
       "Entries": [
-        "Samurai General Honjo For the Great Stairs -- 侍大将\u3000本城\u3000大階段用"
+        "Generai Kuranosuke Matsumoto"
       ]
     },
     {
       "ID": 10203200,
       "Entries": [
-        "Samurai General Honjo Wider view -- 侍大将\u3000本城\u3000視界\u3000広め"
+        "Samurai General"
       ]
     },
     {
       "ID": 10203300,
       "Entries": [
-        "Samurai General Hidden Prison Wider field of view -- 侍大将\u3000隠し牢\u3000視界\u3000広め"
+        "Samurai General"
       ]
     },
     {
       "ID": 10204000,
       "Entries": [
-        "Samurai General Ashina Four Tenno -- 侍大将\u3000葦名四天王"
+        "Seven Ashina Spears - Shikibu Toshikatsu Yamauchi"
       ]
     },
     {
       "ID": 10204001,
       "Entries": [
-        "Samurai General Ashina Shitenno For Hidden Prison -- 侍大将\u3000葦名四天王\u3000隠し牢用"
+        "Seven Ashina Spears - Shume Masaji Oniwa"
       ]
     },
     {
       "ID": 10209010,
       "Entries": [
-        "Samurai General Sample Tutorial -- 侍大将\u3000サンプル\u3000チュートリアル"
+        "Samurai General"
       ]
     },
     {
       "ID": 10209020,
       "Entries": [
-        "Samurai General Sample Large Spear -- 侍大将\u3000サンプル\u3000大槍"
+        "Samurai General"
       ]
     },
     {
       "ID": 10209990,
       "Entries": [
-        "Samurai General for underwater test -- 侍大将\u3000水中テスト用"
+        "Samurai General"
       ]
     },
     {
       "ID": 10300000,
       "Entries": [
-        "Centipede small prototype map -- ムカデ小\u3000プロトマップ"
+        "Small Centipede"
       ]
     },
     {
       "ID": 10300001,
       "Entries": [
-        "Centipede small prototype map Long-distance type upper row -- ムカデ小\u3000プロトマップ\u3000遠距離型上段"
+        "Small Centipede"
       ]
     },
     {
       "ID": 10300002,
       "Entries": [
-        "Centipede small prototype map Long-distance type middle stage -- ムカデ小\u3000プロトマップ\u3000遠距離型中段"
+        "Small Centipede"
       ]
     },
     {
       "ID": 10300003,
       "Entries": [
-        "Centipede small prototype map Short-distance type -- ムカデ小\u3000プロトマップ\u3000近距離型"
+        "Small Centipede"
       ]
     },
     {
       "ID": 10301000,
       "Entries": [
-        "Centipede Kodera_Gomadou -- ムカデ小\u3000寺_護摩堂"
+        "Centipede"
       ]
     },
     {
       "ID": 10301001,
       "Entries": [
-        "Centipede Kodera_Gomado Long-distance type upper tier -- ムカデ小\u3000寺_護摩堂\u3000遠距離型上段"
+        "Centipede"
       ]
     },
     {
       "ID": 10309000,
       "Entries": [
-        "Centipede small sample -- ムカデ小\u3000サンプル"
+        "Centipede"
       ]
     },
     {
       "ID": 10400000,
       "Entries": [
-        "Centipede Large Protomap -- ムカデ大\u3000プロトマップ"
+        "Long-Arm Centipede (Both)"
       ]
     },
     {
       "ID": 10409000,
       "Entries": [
-        "Centipede large sample -- ムカデ大\u3000サンプル"
+        "Centipede"
       ]
     },
     {
       "ID": 10500000,
       "Entries": [
-        "Spear monk soldier -- 槍僧兵"
+        "Shinobi Hunter"
       ]
     },
     {
       "ID": 10500010,
       "Entries": [
-        "Spear Monk Soldier_Samurai Residence_Middle Boss -- 槍僧兵_武家屋敷_中ボス"
+        "Shinobi Hunter Enshin of Misen"
       ]
     },
     {
       "ID": 10502000,
       "Entries": [
-        "Spear Monk _E3 -- 槍僧兵_E3"
+        "Shinobi Hunter"
       ]
     },
     {
       "ID": 10509000,
       "Entries": [
-        "Spear monk sample -- 槍僧兵 サンプル"
+        "Shinobi Hunter"
       ]
     },
     {
       "ID": 10600000,
       "Entries": [
-        "Rotating Spearman Precincts ① -- 回転槍術師 境内①"
+        "Spear Adept"
       ]
     },
     {
       "ID": 10600001,
       "Entries": [
-        "Rotating Spearman Precincts ① Reinforcement -- 回転槍術師 境内①\u3000増援"
+        "Spear Adept"
       ]
     },
     {
       "ID": 10601000,
       "Entries": [
-        "Rotating Spearman Temple_Main Hall -- 回転槍術師\u3000寺_本堂"
+        "Spear Adept"
       ]
     },
     {
       "ID": 10601001,
       "Entries": [
-        "Rotating Spearman Temple_Main Hall Joined after -- 回転槍術師\u3000寺_本堂 後から合流"
+        "Spear Adept"
       ]
     },
     {
       "ID": 10609000,
       "Entries": [
-        "Rotating Spearman Sample -- 回転槍術師 サンプル"
+        "Spear Adept"
       ]
     },
     {
@@ -964,13 +964,13 @@
     {
       "ID": 10800000,
       "Entries": [
-        "Seven-sided warrior -- 七面武者"
+        "Shichimen Warrior"
       ]
     },
     {
       "ID": 10800001,
       "Entries": [
-        "Seven-sided warrior valley lower layer -- 七面武者\u3000渓谷下層"
+        "Shichimen Warrior - Ashina Depths"
       ]
     },
     {
@@ -1120,7 +1120,7 @@
     {
       "ID": 11300000,
       "Entries": [
-        "Nanban armor -- 南蛮甲冑"
+        "Armored Warrior - Senpou Temple"
       ]
     },
     {
@@ -1426,13 +1426,13 @@
     {
       "ID": 11900101,
       "Entries": [
-        "Valley enemy_strong enemy (female sniper) Lower layer -- 谷敵_強敵（女スナイパー）\u3000下層"
+        "Snake Eyes Shirahagi - Ashina Depths"
       ]
     },
     {
       "ID": 11900102,
       "Entries": [
-        "Valley enemy_strong enemy (female sniper) Upper layer_only for Nakasu -- 谷敵_強敵（女スナイパー）\u3000上層_中州専用"
+        "Snake Eyes Shurafuji - Sunken Valley"
       ]
     },
     {
@@ -2230,7 +2230,7 @@
     {
       "ID": 13500000,
       "Entries": [
-        "Neckless -- 首無し"
+        "Headless - Sunken Valley"
       ]
     },
     {
@@ -2338,109 +2338,109 @@
     {
       "ID": 13700000,
       "Entries": [
-        "Fire cow main castle -- 火牛\u3000本城"
+        "Blazing Bull"
       ]
     },
     {
       "ID": 13709000,
       "Entries": [
-        "Fire cow sample -- 火牛\u3000サンプル"
+        "Bull"
       ]
     },
     {
       "ID": 13800000,
       "Entries": [
-        "Fire Cow Innsmouth Submerged City -- 火牛インスマウス\u3000水没都"
+        "Sakura Bull of the Palace"
       ]
     },
     {
       "ID": 14000000,
       "Entries": [
-        "Swordsman protection type -- 剣客\u3000守りタイプ"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000010,
       "Entries": [
-        "Swordsman protection type for Tokugawa grand staircase -- 剣客\u3000守りタイプ\u3000徳川大階段用"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000020,
       "Entries": [
-        "Swordsman protection type narrow left and right field of view -- 剣客\u3000守りタイプ\u3000左右視界狭め"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000080,
       "Entries": [
-        "Swordsman Suzuba&#39;s son Castle [Conversation] -- 剣客\u3000鈴ばばあの息子\u3000城下【会話】"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000090,
       "Entries": [
-        "Swordsman Defensive Type Samurai Residence Co-op NPC -- 剣客\u3000守りタイプ\u3000武家屋敷\u3000共闘ＮＰＣ"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000100,
       "Entries": [
-        "Swordsman offensive type -- 剣客\u3000攻めタイプ"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000110,
       "Entries": [
-        "Swordsman offensive type for Tokugawa Grand Staircase -- 剣客\u3000攻めタイプ\u3000徳川大階段用"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000120,
       "Entries": [
-        "Swordsman offensive type narrow left and right field of view -- 剣客\u3000攻めタイプ\u3000左右視界狭め"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14000200,
       "Entries": [
-        "Swordsman Iai -- 剣客\u3000居合い"
+        "Ashina Elite - Ujinari Mizuo - Ashina Castle"
       ]
     },
     {
       "ID": 14000210,
       "Entries": [
-        "Swordsman Iai Honjo_Attic -- 剣客\u3000居合い\u3000本城_屋根裏部屋"
+        "Ashina Elite - Jinsuke Saze"
       ]
     },
     {
       "ID": 14001080,
       "Entries": [
-        "Swordsman Suzuba&#39;s son Samurai residence [Conversation] -- 剣客\u3000鈴ばばあの息子\u3000武家屋敷【会話】"
+        "Inosuke Nogami (Conversation)"
       ]
     },
     {
       "ID": 14001180,
       "Entries": [
-        "Sick village priest [conversation] -- 病み村神主【会話】"
+        "Mibu Village Priest (Conversation)"
       ]
     },
     {
       "ID": 14009000,
       "Entries": [
-        "Swordsman defensive type sample -- 剣客\u3000守りタイプ\u3000サンプル"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14009100,
       "Entries": [
-        "Swordsman offensive type sample -- 剣客\u3000攻めタイプ\u3000サンプル"
+        "Ashina Fencer"
       ]
     },
     {
       "ID": 14009200,
       "Entries": [
-        "Swordsman Iai sample -- 剣客\u3000居合い\u3000サンプル"
+        "Ashina Fencer"
       ]
     },
     {
@@ -2620,19 +2620,19 @@
     {
       "ID": 14701002,
       "Entries": [
-        "The boss in the main castle -- 孤影衆\u3000本城\u3000中ボス\u3000視界広め"
+        "Lone Shadow Masanaga the Spear-Bearer - Ashina Castle"
       ]
     },
     {
       "ID": 14701003,
       "Entries": [
-        "Kokageshu Honjo Attic Boss -- 孤影衆\u3000本城\u3000屋根裏中ボスのお付"
+        "Lone Shadow Vilehand's Friend"
       ]
     },
     {
       "ID": 14701004,
       "Entries": [
-        "Kokageshu Honjo Boss in the attic Wider view -- 孤影衆\u3000本城\u3000屋根裏中ボス\u3000視界広め"
+        "Lone Shadow Vilehand"
       ]
     },
     {
@@ -2662,7 +2662,7 @@
     {
       "ID": 14703000,
       "Entries": [
-        "Lonely crowd hidden prison boss widening the field of view -- 孤影衆\u3000隠し牢\u3000中ボス\u3000視界広め"
+        "Lone Shadow Longswordsman"
       ]
     },
     {
@@ -3544,7 +3544,7 @@
     {
       "ID": 50200010,
       "Entries": [
-        "Akaoni Castle_Middle Boss -- 赤鬼 城下_中ボス"
+        "Chained Orge - Ashina Outskirts"
       ]
     },
     {
@@ -3562,7 +3562,7 @@
     {
       "ID": 50201000,
       "Entries": [
-        "Akaoni Honjo Naka Boss -- 赤鬼\u3000本城\u3000中ボス"
+        "Chained Ogre - Ashina Castle"
       ]
     },
     {
@@ -3640,7 +3640,7 @@
     {
       "ID": 50601000,
       "Entries": [
-        "The Great Honjo of the Old and Ninja Army -- 老・忍軍の長\u3000本城"
+        "Great Shinobi Owl - Ashina Castle"
       ]
     },
     {
@@ -3700,25 +3700,25 @@
     {
       "ID": 51000000,
       "Entries": [
-        "Yasha Ape -- 夜叉猿"
+        "Guardian Ape - Sunken Valley"
       ]
     },
     {
       "ID": 51000010,
       "Entries": [
-        "Yasha Ape_Bride -- 夜叉猿_嫁"
+        "Guardian Ape Bride"
       ]
     },
     {
       "ID": 51000011,
       "Entries": [
-        "Yasha Monkey_Bride_Collaboration Test -- 夜叉猿_嫁_連携テスト"
+        "Guardian Ape Bride"
       ]
     },
     {
       "ID": 51000100,
       "Entries": [
-        "Yasha Ape_Neckless -- 夜叉猿_首無し"
+        "Headless Ape - Ashina Depths"
       ]
     },
     {
@@ -3820,25 +3820,25 @@
     {
       "ID": 54300000,
       "Entries": [
-        "Revived Kensei (bed) -- 蘇った剣聖（病床）"
+        "Isshin Ashina - Ashina Castle"
       ]
     },
     {
       "ID": 54300080,
       "Entries": [
-        "Revived Kensei (bed) _ Conversation [Honjo] -- 蘇った剣聖（病床）_会話【本城】"
+        "Isshin Ashina (Conversation - Isshin's Tower)"
       ]
     },
     {
       "ID": 54301080,
       "Entries": [
-        "Skill old man (Kensei sickbed) Castle [Conversation] -- スキル爺（病床剣聖）\u3000城下【会話】"
+        "Tengu (Conversation - Ashina Outskirts)"
       ]
     },
     {
       "ID": 54302080,
       "Entries": [
-        "Skill old man (Kensei sickbed) Honjo [Conversation] -- スキル爺（病床剣聖）\u3000本城【会話】"
+        "Tengu (Conversation - Great Serpent Shrine)"
       ]
     },
     {
@@ -3910,31 +3910,31 @@
     {
       "ID": 71000000,
       "Entries": [
-        "rival -- ライバル"
+        "Genichiro Ashina - Ashina Reservoir"
       ]
     },
     {
       "ID": 71030000,
       "Entries": [
-        "Rival (back) -- ライバル（裏）"
+        "Genichiro Ashina - Ashina Castle"
       ]
     },
     {
       "ID": 71100000,
       "Entries": [
-        "Rival (naked) -- ライバル(裸)"
+        "Genichiro, Way of Tomoe - Ashina Reservoir"
       ]
     },
     {
       "ID": 71130000,
       "Entries": [
-        "Rival (naked) (back) -- ライバル(裸)（裏）"
+        "Genichiro, Way of Tomoe - Ashina Castle"
       ]
     },
     {
       "ID": 72000000,
       "Entries": [
-        "Prince -- 皇子"
+        "Lord Kuro"
       ]
     },
     {
@@ -3958,7 +3958,7 @@
     {
       "ID": 72001080,
       "Entries": [
-        "Prince_Honjo_Meditation Room [Conversation] -- 皇子_本城_瞑想部屋【会話】"
+        "Lord Kuro (Conversation - Kuro's Room)"
       ]
     },
     {
@@ -3982,13 +3982,13 @@
     {
       "ID": 74000000,
       "Entries": [
-        "Medical Holy Daughter -- 医聖の娘"
+        "Emma, the Gentle Blade"
       ]
     },
     {
       "ID": 74000080,
       "Entries": [
-        "Daughter of Isei Honjo_Meditation Room [Conversation] -- 医聖の娘 本城_瞑想部屋【会話】"
+        "Emma (Conversation - Kuro's Room)"
       ]
     },
     {
@@ -4000,13 +4000,13 @@
     {
       "ID": 74000082,
       "Entries": [
-        "Daughter of Isei Honjo_When Tokugawa invades [Conversation] -- 医聖の娘 本城_徳川襲来時【会話】"
+        "Emma (Conversation - Central Forces Invasion)"
       ]
     },
     {
       "ID": 74000083,
       "Entries": [
-        "Daughter of Isei Honjo_Separation of Kensei [Conversation] -- 医聖の娘 本城_剣聖の離れ【会話】"
+        "Emma (Conversation - Isshin's Tower)"
       ]
     },
     {
