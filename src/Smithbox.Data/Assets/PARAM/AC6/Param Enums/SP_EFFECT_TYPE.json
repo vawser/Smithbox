@@ -26,6 +26,24 @@
       ]
     },
     {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Leech"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Corrosion"
+        }
+      ]
+    },
+    {
       "Key": "5",
       "Names": [
         {
@@ -44,11 +62,29 @@
       ]
     },
     {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy Adjustment: Ghost Camouflage"
+        }
+      ]
+    },
+    {
       "Key": "8",
       "Names": [
         {
           "Language": "English",
           "Text": "Enemy Adjustment: Sight Reduction"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gravity User"
         }
       ]
     },
@@ -89,6 +125,15 @@
       ]
     },
     {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soul Steal"
+        }
+      ]
+    },
+    {
       "Key": "15",
       "Names": [
         {
@@ -98,11 +143,29 @@
       ]
     },
     {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp"
+        }
+      ]
+    },
+    {
       "Key": "17",
       "Names": [
         {
           "Language": "English",
           "Text": "Revival"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dispel Black Phantom"
         }
       ]
     },
@@ -130,6 +193,15 @@
         {
           "Language": "English",
           "Text": "Disables Spell Usage"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whetstone Usage"
         }
       ]
     },
@@ -179,6 +251,15 @@
       ]
     },
     {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player: Auditory Hallucinations"
+        }
+      ]
+    },
+    {
       "Key": "39",
       "Names": [
         {
@@ -211,6 +292,33 @@
         {
           "Language": "English",
           "Text": "SFX: HP Recovery"
+        }
+      ]
+    },
+    {
+      "Key": "43",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forced Ghost Form: Stage 1"
+        }
+      ]
+    },
+    {
+      "Key": "44",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forced Ghost Form: Stage 2"
+        }
+      ]
+    },
+    {
+      "Key": "45",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forced Ghost Form: Stage 3"
         }
       ]
     },
@@ -269,6 +377,15 @@
       ]
     },
     {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy Adjustment: Ghost Camouflage (Weak)"
+        }
+      ]
+    },
+    {
       "Key": "54",
       "Names": [
         {
@@ -283,6 +400,15 @@
         {
           "Language": "English",
           "Text": "HostDeath"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yellow Robes"
         }
       ]
     },
@@ -346,6 +472,24 @@
         {
           "Language": "English",
           "Text": "Modify Item Discovery"
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "MP Regeneration"
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weak MP Regeneration"
         }
       ]
     },
@@ -530,6 +674,42 @@
       ]
     },
     {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Egg Implantation Standby"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Egg Implantation"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Egg-head Standby"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Egg Head"
+        }
+      ]
+    },
+    {
       "Key": "115",
       "Names": [
         {
@@ -544,6 +724,15 @@
         {
           "Language": "English",
           "Text": "Apply Status: Electric Discharge (Type 2)"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Petrification"
         }
       ]
     },
@@ -571,6 +760,15 @@
         {
           "Language": "English",
           "Text": "Damage Level Change"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Underwater Behavior"
         }
       ]
     },
@@ -836,6 +1034,15 @@
       ]
     },
     {
+      "Key": "156",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player: Immune to Durability Loss"
+        }
+      ]
+    },
+    {
       "Key": "157",
       "Names": [
         {
@@ -998,6 +1205,15 @@
       ]
     },
     {
+      "Key": "177",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aural Decoy (Beast)"
+        }
+      ]
+    },
+    {
       "Key": "179",
       "Names": [
         {
@@ -1048,6 +1264,33 @@
         {
           "Language": "English",
           "Text": "Hide Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "185",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nito Effect"
+        }
+      ]
+    },
+    {
+      "Key": "186",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flame Kick"
+        }
+      ]
+    },
+    {
+      "Key": "192",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Egghead_Stage 2"
         }
       ]
     },
@@ -1192,6 +1435,15 @@
         {
           "Language": "English",
           "Text": "DisableUseAtColiseum"
+        }
+      ]
+    },
+    {
+      "Key": "235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arena: No Death"
         }
       ]
     },
@@ -1817,6 +2069,15 @@
       ]
     },
     {
+      "Key": "1004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[FNR] Stealth (Weak)"
+        }
+      ]
+    },
+    {
       "Key": "1005",
       "Names": [
         {
@@ -1907,6 +2168,24 @@
       ]
     },
     {
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[FNR] Extra Bullet SFX Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "2020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[FNR] Bypass Camera Occlusion"
+        }
+      ]
+    },
+    {
       "Key": "2030",
       "Names": [
         {
@@ -1966,6 +2245,15 @@
         {
           "Language": "English",
           "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "59999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[FNR] Implementation Test Use"
         }
       ]
     }
