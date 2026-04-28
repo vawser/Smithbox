@@ -5,10 +5,6 @@
 - Param Editor
  - Fix the FMG ref finder (the finder is inconsistent)
  
-- Model Editor
- - Fix dummy gizmo movement
- - Fix submeshes
-
 - Material Editor:
  - Add MATBIN support back
  
