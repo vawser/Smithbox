@@ -6,64 +6,62 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
+public class EntityRemovalRecord
+{
+    public Entity Entity;
+
+    public ObjectContainer Container;
+    public int ContainerIndex;
+
+    public Entity Parent;
+    public int ParentIndex;
+
+    public bool HadRenderMesh;
+}
 public class DeleteModelObjectAction : ViewportAction
 {
-    private ModelEditorView View;
-    private ProjectEntry Project;
+    private readonly ModelEditorView View;
+    private readonly ProjectEntry Project;
 
-    private ModelContainer Container;
-    private List<ModelEntity> Deletables = new();
+    private List<Entity> Targets;
+    private readonly List<EntityRemovalRecord> Records = new();
 
-    private List<int> RemoveIndices = new();
-    private List<ObjectContainer> RemoveContainers = new();
-    private List<ModelEntity> RemoveParent = new();
-    private List<int> RemoveParentIndex = new();
+    private bool Captured = false;
 
-    public DeleteModelObjectAction(ModelEditorView view, ProjectEntry project, ModelContainer container, List<ModelEntity> objects)
+    public DeleteModelObjectAction(
+        ModelEditorView view,
+        ProjectEntry project,
+        IEnumerable<Entity> targets)
     {
         View = view;
         Project = project;
 
-        Container = container;
-
-        Deletables.AddRange(objects);
+        Targets = targets
+            .Where(t => !targets.Any(o => t != o && IsDescendantOf(t, o)))
+            .ToList();
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        foreach (ModelEntity obj in Deletables)
+        if (!Captured)
         {
-            if (Container != null)
+            CaptureState();
+            Captured = true;
+        }
+
+        foreach (var group in Records
+            .Where(r => r.Container != null)
+            .GroupBy(r => r.Container))
+        {
+            foreach (var r in group.OrderByDescending(x => x.ContainerIndex))
             {
-                RemoveContainers.Add(Container);
-                Container.HasUnsavedChanges = true;
-
-                RemoveIndices.Add(Container.Objects.IndexOf(obj));
-                Container.Objects.RemoveAt(RemoveIndices.Last());
-
-                if (obj.RenderSceneMesh != null)
-                {
-                    obj.RenderSceneMesh.AutoRegister = false;
-                    obj.RenderSceneMesh.UnregisterWithScene();
-                }
-
-                RemoveParent.Add((ModelEntity)obj.Parent);
-                if (obj.Parent != null)
-                {
-                    RemoveParentIndex.Add(obj.Parent.RemoveChild(obj));
-                }
-                else
-                {
-                    RemoveParentIndex.Add(-1);
-                }
+                Remove(r);
             }
-            else
-            {
-                RemoveContainers.Add(null);
-                RemoveIndices.Add(-1);
-                RemoveParent.Add(null);
-                RemoveParentIndex.Add(-1);
-            }
+        }
+
+        foreach (var r in Records.Where(r => r.Container == null))
+        {
+            Remove(r);
         }
 
         View.ViewportSelection.ClearSelection();
@@ -73,38 +71,112 @@ public class DeleteModelObjectAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        for (var i = 0; i < Deletables.Count(); i++)
+        foreach (var group in Records
+            .Where(r => r.Container != null)
+            .GroupBy(r => r.Container))
         {
-            if (RemoveContainers[i] == null || RemoveIndices[i] == -1)
+            foreach (var r in group.OrderBy(x => x.ContainerIndex))
             {
-                continue;
-            }
-
-            RemoveContainers[i].Objects.Insert(RemoveIndices[i], Deletables[i]);
-            if (Deletables[i].RenderSceneMesh != null)
-            {
-                Deletables[i].RenderSceneMesh.AutoRegister = true;
-                Deletables[i].RenderSceneMesh.Register();
-            }
-
-            if (RemoveParent[i] != null)
-            {
-                RemoveParent[i].AddChild(Deletables[i], RemoveParentIndex[i]);
+                Restore(r);
             }
         }
 
-        View.ViewportSelection.ClearSelection();
-
-        foreach (ModelEntity d in Deletables)
+        foreach (var r in Records.Where(r => r.Container == null))
         {
-            View.ViewportSelection.AddSelection(d);
+            Restore(r);
+        }
+
+        View.ViewportSelection.ClearSelection();
+        foreach (var r in Records)
+        {
+            View.ViewportSelection.AddSelection(r.Entity);
         }
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
+    private void CaptureState()
+    {
+        foreach (var e in Targets)
+        {
+            var record = new EntityRemovalRecord
+            {
+                Entity = e,
+                Container = e.Container,
+                ContainerIndex = e.Container?.Objects.IndexOf(e) ?? -1,
+                Parent = e.Parent,
+                ParentIndex = e.Parent != null ? e.Parent.Children.IndexOf(e) : -1,
+                HadRenderMesh = e.RenderSceneMesh != null
+            };
+
+            Records.Add(record);
+        }
+    }
+
+    private void Remove(EntityRemovalRecord r)
+    {
+        var e = r.Entity;
+
+        if (r.Parent != null)
+        {
+            r.Parent.Children.Remove(e);
+            e.Parent = null;
+        }
+
+        if (r.Container != null && r.ContainerIndex >= 0)
+        {
+            r.Container.HasUnsavedChanges = true;
+            r.Container.Objects.RemoveAt(r.ContainerIndex);
+        }
+
+        if (r.HadRenderMesh)
+        {
+            e.RenderSceneMesh.AutoRegister = false;
+            e.RenderSceneMesh.UnregisterWithScene();
+        }
+
+        e.InvalidateReferencingObjectsCache();
+    }
+
+    private void Restore(EntityRemovalRecord r)
+    {
+        var e = r.Entity;
+
+        if (r.Container != null && r.ContainerIndex >= 0)
+        {
+            r.Container.Objects.Insert(r.ContainerIndex, e);
+        }
+
+        if (r.Parent != null)
+        {
+            r.Parent.Children.Insert(r.ParentIndex, e);
+            e.Parent = r.Parent;
+        }
+
+        if (r.HadRenderMesh)
+        {
+            e.RenderSceneMesh.AutoRegister = true;
+            e.RenderSceneMesh.Register();
+        }
+
+        e.BuildReferenceMap();
+        e.UpdateRenderModel();
+    }
+
+    private bool IsDescendantOf(Entity child, Entity potentialParent)
+    {
+        var p = child.Parent;
+        while (p != null)
+        {
+            if (p == potentialParent)
+                return true;
+            p = p.Parent;
+        }
+        return false;
+    }
+
     public override string GetEditMessage()
     {
-        return "";
+        return $"Deleted {Records.Count} object(s)";
     }
 }

@@ -64,6 +64,7 @@ public class ModelCommandQueue
 
         curView.Selection.SelectedModelWrapper = firstEntry;
 
+        curView.ViewportActionManager.Clear();
         curView.ActionManager.Clear();
 
         firstEntry.Load();

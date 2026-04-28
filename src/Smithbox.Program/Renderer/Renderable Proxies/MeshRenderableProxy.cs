@@ -60,6 +60,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _placeholderType = placeholderType;
         _meshProvider.AddEventListener(this);
         _meshProvider.Acquire();
+
         if (autoregister)
         {
             ScheduleRenderableConstruction();
@@ -71,6 +72,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         this(clone._renderablesSet, clone._meshProvider, clone._placeholderType)
     {
         DrawFilter = clone._drawfilter;
+
+        if (clone._restrictToSingleSubmesh && clone._requestedSubmeshIndex.HasValue)
+        {
+            RequestSubmesh(clone._requestedSubmeshIndex.Value);
+        }
     }
 
     public IReadOnlyList<MeshRenderableProxy> Submeshes => _submeshes;

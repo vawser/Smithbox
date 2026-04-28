@@ -30,6 +30,9 @@ public class ModelContents : IActionEventHandler
     {
         View = view;
         Project = project;
+
+        view.ViewportActionManager.AddEventHandler(this);
+        view.ActionManager.AddEventHandler(this);
     }
 
     public void Display(float width, float height)

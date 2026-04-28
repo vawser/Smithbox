@@ -93,8 +93,6 @@ public class ModelEditorView
         ReorderAction = new ReorderAction(this, Project);
 
         ModelInsightHelper = new ModelInsightHelper(this, Project);
-
-        ActionManager.AddEventHandler(Contents);
     }
 
     public void Display(bool doFocus, bool isActiveView)

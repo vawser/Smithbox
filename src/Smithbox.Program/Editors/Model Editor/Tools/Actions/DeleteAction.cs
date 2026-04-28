@@ -81,7 +81,7 @@ public class DeleteAction
         {
             var selection = View.ViewportSelection.GetFilteredSelection<ModelEntity>().ToList();
 
-            var action = new DeleteModelObjectAction(View, Project, View.Selection.SelectedModelWrapper.Container, selection);
+            var action = new DeleteModelObjectAction(View, Project, selection);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

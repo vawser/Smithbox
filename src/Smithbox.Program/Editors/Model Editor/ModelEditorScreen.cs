@@ -139,27 +139,27 @@ public class ModelEditorScreen : EditorScreen
                 // Undo
                 if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)}  /  {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanUndo())
+                    if (activeView.ViewportActionManager.CanUndo())
                     {
-                        activeView.ActionManager.UndoAction();
+                        activeView.ViewportActionManager.UndoAction();
                     }
                 }
 
                 // Undo All
                 if (ImGui.MenuItem($"Undo All"))
                 {
-                    if (activeView.ActionManager.CanUndo())
+                    if (activeView.ViewportActionManager.CanUndo())
                     {
-                        activeView.ActionManager.UndoAllAction();
+                        activeView.ViewportActionManager.UndoAllAction();
                     }
                 }
 
                 // Redo
                 if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)}  /  {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
-                    if (activeView.ActionManager.CanRedo())
+                    if (activeView.ViewportActionManager.CanRedo())
                     {
-                        activeView.ActionManager.RedoAction();
+                        activeView.ViewportActionManager.RedoAction();
                     }
                 }
 
