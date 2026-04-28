@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -100,6 +101,25 @@ public class BoxSelection
     }
 
     private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
+    {
+        if(FocusManager.IsInMapEditor())
+        {
+            SelectOpaqueRenderables(start, end);
+        }
+        else if (FocusManager.IsInModelEditor())
+        {
+            if (InputManager.IsDown(KeybindID.ModelEditor_Select_Primitives_Only))
+            {
+                SelectOverlayRenderables(start, end);
+            }
+            else
+            {
+                SelectOpaqueRenderables(start, end);
+            }
+        }
+    }
+
+    private void SelectOpaqueRenderables(Vector2 start, Vector2 end)
     {
         Vector2 winPos = ImGui.GetWindowPos();
 
@@ -217,6 +237,73 @@ public class BoxSelection
         }
     }
 
+    private void SelectOverlayRenderables(Vector2 start, Vector2 end)
+    {
+        Vector2 winPos = ImGui.GetWindowPos();
+
+        float minX = MathF.Min(start.X, end.X) - winPos.X;
+        float minY = MathF.Min(start.Y, end.Y) - winPos.Y;
+        float maxX = MathF.Max(start.X, end.X) - winPos.X;
+        float maxY = MathF.Max(start.Y, end.Y) - winPos.Y;
+
+        bool shift = InputManager.HasShiftDown();
+        bool alt = InputManager.HasAltDown();
+
+        // Clear selection unless Shift (add) or Ctrl (toggle) is held
+        if (!shift && !alt)
+        {
+            Parent.ViewportSelection.ClearSelection();
+        }
+
+        List<WeakReference<ISelectable>> selectableObjects = new();
+
+        for (int i = 0; i < Parent.RenderScene.OverlayRenderables.cBounds.Length; i++)
+        {
+            VisibleValidComponent visibleValidComponent = Parent.RenderScene.OverlayRenderables.cVisible[i];
+
+            if (!visibleValidComponent._visible)
+                continue;
+
+            if (!visibleValidComponent._valid)
+                continue;
+
+            BoundingBox obj = Parent.RenderScene.OverlayRenderables.cBounds[i];
+            WeakReference<ISelectable> selectable = Parent.RenderScene.OverlayRenderables.cSelectables[i];
+
+            if (selectable == null)
+                continue;
+
+            // Check if object's screen-space bounding box intersects selection box
+            if (IsObjectInSelectionBox(obj, minX, minY, maxX, maxY))
+            {
+                ISelectable curEnt;
+                selectable.TryGetTarget(out curEnt);
+
+                var add = true;
+
+                if (curEnt is ModelEntity ent)
+                {
+                    if(ent.WrappedObject is FLVER2.Mesh)
+                    {
+                        add = false;
+                    }
+                }
+
+                if (add)
+                {
+                    selectableObjects.Add(selectable);
+                }
+            }
+        }
+
+        // Select all objects that intersect the box
+        // No distance-based filtering - if it's in the box, select it
+        foreach (WeakReference<ISelectable> obj in selectableObjects)
+        {
+            UpdateSelection(obj);
+        }
+    }
+
     /// <summary>
     /// Checks if an object's bounding box intersects with the selection box in screen space
     /// Works correctly for both perspective and orthographic projections
@@ -236,8 +323,7 @@ public class BoxSelection
             new Vector3(worldBounds.Max.X, worldBounds.Max.Y, worldBounds.Max.Z)
         };
 
-        // Track if any corner is in front of the camera
-        bool anyInFront = false;
+        int validCorners = 0;
 
         // Calculate screen-space bounding box
         float objMinX = float.MaxValue;
@@ -251,7 +337,7 @@ public class BoxSelection
 
             if (inFront)
             {
-                anyInFront = true;
+                validCorners++;
 
                 // Expand screen-space bounding box
                 objMinX = Math.Min(objMinX, screenPos.X);
@@ -262,7 +348,7 @@ public class BoxSelection
         }
 
         // If no corners are in front of camera, object is not selectable
-        if (!anyInFront)
+        if (validCorners < 3)
         {
             return false;
         }
@@ -276,6 +362,7 @@ public class BoxSelection
         // Check if screen-space bounding boxes intersect
         // This is an AABB intersection test
         bool intersects = !(objMaxX < minX || objMinX > maxX || objMaxY < minY || objMinY > maxY);
+        bool inside = objMinX >= minX && objMaxX <= maxX && objMinY >= minY && objMaxY <= maxY;
 
         return intersects;
     }
@@ -323,6 +410,14 @@ public class BoxSelection
 
             // Perspective divide
             Vector3 ndc = new(clip.X / clip.W, clip.Y / clip.W, clip.Z / clip.W);
+
+            if (ndc.X < -1f || ndc.X > 1f ||
+                ndc.Y < -1f || ndc.Y > 1f ||
+                ndc.Z < 0f || ndc.Z > 1f)
+            {
+                // Return position far off-screen
+                return new Vector2(-100000, -100000);
+            }
 
             return new Vector2(
                 (ndc.X + 1f) / 2f * Parent.Width,

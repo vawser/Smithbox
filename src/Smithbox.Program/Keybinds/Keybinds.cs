@@ -124,6 +124,7 @@ public enum KeybindID
     MapEditor_Deselect_All,
 
     // Model Editor
+    ModelEditor_Select_Primitives_Only,
 
     // Param Editor
     ParamEditor_Focus_Searchbar,
@@ -294,6 +295,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_Deselect_All, new() { Key = Key.Escape });
 
         // Model Editor
+        InputManager.Bind(KeybindID.ModelEditor_Select_Primitives_Only, new() { Key = Key.Z });
 
         // Param Editor
         InputManager.Bind(KeybindID.ParamEditor_Focus_Searchbar, new() { Key = Key.F, Ctrl = true });
@@ -764,6 +766,10 @@ public static class KeybindMetadata
         ) },
 
         // Model Editor
+        { KeybindID.ModelEditor_Select_Primitives_Only, (
+            "Primitive Selection Mode",
+            "When held, only dummies and nodes will be selected by a viewport click."
+        ) },
 
         // Param Editor
         { KeybindID.ParamEditor_Focus_Searchbar, (
@@ -984,6 +990,7 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_Deselect_All, InputCategory.MapEditor },
 
         // Model Editor
+        { KeybindID.ModelEditor_Select_Primitives_Only, InputCategory.ModelEditor },
 
         // Param Editor
         { KeybindID.ParamEditor_Focus_Searchbar, InputCategory.ParamEditor },

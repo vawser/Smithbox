@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.Common;
+﻿using SoulsFormats;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,14 @@ public class ClickSelection
 
         if (InputManager.IsMouseReleased(MousebindID.Viewport_Picking_Action))
         {
-            Parent.ViewPipeline.CreateAsyncPickingRequest();
+            if (InputManager.IsDown(KeybindID.ModelEditor_Select_Primitives_Only))
+            {
+                Parent.ViewPipeline.CreateAsyncPickingRequest(true);
+            }
+            else
+            {
+                Parent.ViewPipeline.CreateAsyncPickingRequest();
+            }
         }
 
         //if (InputManager.IsMousePressed(MouseButton.Left) && InputManager.IsKeyDown(Key.AltLeft))
