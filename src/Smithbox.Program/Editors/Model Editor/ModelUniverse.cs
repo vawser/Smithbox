@@ -121,10 +121,10 @@ public class ModelUniverse : IUniverse
             //    index++;
             //}
 
-            foreach (Entity obj in newContainer.Objects)
-            {
-                obj.UpdateRenderModel();
-            }
+            //foreach (Entity obj in newContainer.Objects)
+            //{
+            //    obj.UpdateRenderModel();
+            //}
         }
     }
 

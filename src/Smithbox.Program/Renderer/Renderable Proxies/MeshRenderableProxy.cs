@@ -9,6 +9,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
+using static SoapstoneLib.SoapstoneClient;
 
 namespace StudioCore.Renderer;
 
@@ -238,6 +239,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             {
                 needsPlaceholder = false;
             }
+        }
+
+        if (_restrictToSingleSubmesh)
+        {
+            ApplySubmeshSelection();
         }
 
         if (_meshProvider.HasMeshData())
@@ -771,4 +777,58 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         return renderable;
     }
 
+
+    private int? _requestedSubmeshIndex = null;
+    private bool _restrictToSingleSubmesh = false;
+
+    public void RequestSubmesh(int index)
+    {
+        _requestedSubmeshIndex = index;
+        _restrictToSingleSubmesh = true;
+
+        // If already loaded, apply immediately
+        if (_submeshes.Count > 0)
+        {
+            ApplySubmeshSelection();
+        }
+    }
+
+    private void ApplySubmeshSelection()
+    {
+        if (!_requestedSubmeshIndex.HasValue)
+            return;
+
+        int index = _requestedSubmeshIndex.Value;
+
+        if (index < 0 || index >= _submeshes.Count)
+            return;
+
+        var selected = _submeshes[index];
+
+        for (int i = _submeshes.Count - 1; i >= 0; i--)
+        {
+            if (i == index)
+                continue;
+
+            var sub = _submeshes[i];
+
+            sub.Unregister();
+
+            sub.Dispose();
+
+            // 3. Remove from list
+            _submeshes.RemoveAt(i);
+        }
+
+        _submeshes.Clear();
+        _submeshes.Add(selected);
+    }
+
+    public void Unregister()
+    {
+        foreach (var sub in _submeshes)
+        {
+            sub.Unregister();
+        }
+    }
 }

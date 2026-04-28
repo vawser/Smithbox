@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
+using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -16,6 +17,7 @@ public class ModelSelectionList
     public ProjectEntry Project;
 
     public bool ApplyAutoSelectPass = false;
+    public bool ApplyAutoLoadFirst = false;
 
     public ModelSelectionList(ModelEditorView view, ProjectEntry project)
     {
@@ -42,12 +44,12 @@ public class ModelSelectionList
         {
             if (ImGui.BeginMenu("Options"))
             {
-                if (ImGui.MenuItem("Auto-Select Single Entries"))
+                if (ImGui.MenuItem("Auto-Select First Entries"))
                 {
-                    CFG.Current.ModelEditor_AutoLoadSingles = !CFG.Current.ModelEditor_AutoLoadSingles;
+                    CFG.Current.ModelEditor_AutoLoadFirstEntry = !CFG.Current.ModelEditor_AutoLoadFirstEntry;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutoLoadSingles);
-                UIHelper.Tooltip($"If enabled, when the selection list is only one entry, it will be automatically selected and loaded.");
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutoLoadFirstEntry);
+                UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
 
                 ImGui.EndMenu();
             }
@@ -102,7 +104,29 @@ public class ModelSelectionList
             i++;
         }
 
-        if(ApplyAutoSelectPass)
+        if (ApplyAutoLoadFirst)
+        {
+            ApplyAutoLoadFirst = false;
+
+            if (CFG.Current.ModelEditor_AutoLoadFirstEntry)
+            {
+                var first = container.Models.First();
+
+                if (View.Selection.SelectedModelWrapper != null)
+                {
+                    View.Selection.SelectedModelWrapper.Unload();
+                }
+
+                View.Selection.SelectedModelWrapper = first;
+
+                View.ViewportActionManager.Clear();
+                View.ActionManager.Clear();
+
+                first.Load();
+            }
+        }
+
+        if (ApplyAutoSelectPass)
         {
             ApplyAutoSelectPass = false;
 

@@ -451,7 +451,7 @@ public class CFG
     /// Model Editor
     ///------------------------------------------------------------
     // General
-    public bool ModelEditor_AutoLoadSingles = true;
+    public bool ModelEditor_AutoLoadFirstEntry = true;
     public bool ModelEditor_IncludeAliasInSearch = true;
 
     public bool ModelEditor_ViewMeshes = true;

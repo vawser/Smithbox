@@ -7,6 +7,7 @@
  
 - Model Editor
  - Fix dummy gizmo movement
+ - Fix submeshes
 
 - Material Editor:
  - Add MATBIN support back

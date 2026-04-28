@@ -20,12 +20,6 @@ public class ModelEntity : Entity
     protected IUniverse Owner;
     public ModelEntityType Type { get; set; }
 
-    public ModelContainer ModelContainer
-    {
-        get => ModelContainer;
-        set => ModelContainer = value;
-    }
-
     public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node;
 
     public ModelEntity(IUniverse owner) : base(owner)

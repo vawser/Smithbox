@@ -233,6 +233,7 @@ public class ModelSourceList
                             entry.Value.PopulateModelList();
 
                             View.SelectionList.ApplyAutoSelectPass = true;
+                            View.SelectionList.ApplyAutoLoadFirst = true;
                         }
                     }
                 }
@@ -265,6 +266,7 @@ public class ModelSourceList
                     entry.Value.PopulateModelList();
 
                     View.SelectionList.ApplyAutoSelectPass = true;
+                    View.SelectionList.ApplyAutoLoadFirst = true;
                 }
             }
 
