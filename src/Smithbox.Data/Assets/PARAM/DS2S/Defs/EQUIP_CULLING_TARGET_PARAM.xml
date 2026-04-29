@@ -1,38 +1,458 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>EQUIP_CULLING_TARGET_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 Unk04" />
-    <Field Def="u8 Unk08a" />
-    <Field Def="u8 Unk08b" />
-    <Field Def="u8 Unk08c" />
-    <Field Def="u8 Unk08d" />
-    <Field Def="s32 Unk0C" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk14" />
-    <Field Def="s32 Unk18" />
-    <Field Def="u8 Unk1Ca" />
-    <Field Def="u8 Unk1Cb" />
-    <Field Def="u8 Unk1Cc" />
-    <Field Def="u8 Unk1Cd" />
-    <Field Def="u8 Unk20a" />
-    <Field Def="u8 Unk20b" />
-    <Field Def="u8 Unk20c" />
-    <Field Def="u8 Unk20d" />
-    <Field Def="s32 Unk24" />
-    <Field Def="s32 Unk28" />
-    <Field Def="s32 Unk2C" />
-    <Field Def="s32 Unk30" />
-    <Field Def="s32 Unk34" />
-    <Field Def="s32 Unk38" />
-    <Field Def="u8 Unk3Ca" />
-    <Field Def="u8 Unk3Cb" />
-    <Field Def="u8 Unk3Cc" />
-    <Field Def="u8 Unk3Cd" />
-  </Fields>
+    <ParamType>EQUIP_CULLING_TARGET_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 CullingFlagTarget00">
+            <DisplayName>ID00</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget01">
+            <DisplayName>ID01</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget02">
+            <DisplayName>ID02</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget03">
+            <DisplayName>ID03</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget04">
+            <DisplayName>ID04</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget05">
+            <DisplayName>ID05</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget06">
+            <DisplayName>ID06</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget07">
+            <DisplayName>ID07</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget08">
+            <DisplayName>ID08</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget09">
+            <DisplayName>ID09</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget10">
+            <DisplayName>ID10</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget11">
+            <DisplayName>ID11</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget12">
+            <DisplayName>ID12</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget13">
+            <DisplayName>ID13</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget14">
+            <DisplayName>ID14</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget15">
+            <DisplayName>ID15</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget16">
+            <DisplayName>ID16</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget17">
+            <DisplayName>ID17</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget18">
+            <DisplayName>ID18</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget19">
+            <DisplayName>ID19</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget20">
+            <DisplayName>ID20</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget21">
+            <DisplayName>ID21</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget22">
+            <DisplayName>ID22</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget23">
+            <DisplayName>ID23</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget24">
+            <DisplayName>ID24</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget25">
+            <DisplayName>ID25</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget26">
+            <DisplayName>ID26</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget27">
+            <DisplayName>ID27</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget28">
+            <DisplayName>ID28</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget29">
+            <DisplayName>ID29</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget30">
+            <DisplayName>ID30</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget31">
+            <DisplayName>ID31</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget32">
+            <DisplayName>ID32</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget33">
+            <DisplayName>ID33</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget34">
+            <DisplayName>ID34</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget35">
+            <DisplayName>ID35</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget36">
+            <DisplayName>ID36</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget37">
+            <DisplayName>ID37</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget38">
+            <DisplayName>ID38</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget39">
+            <DisplayName>ID39</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget40">
+            <DisplayName>ID40</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget41">
+            <DisplayName>ID41</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget42">
+            <DisplayName>ID42</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget43">
+            <DisplayName>ID43</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget44">
+            <DisplayName>ID44</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget45">
+            <DisplayName>ID45</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget46">
+            <DisplayName>ID46</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget47">
+            <DisplayName>ID47</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget48">
+            <DisplayName>ID48</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget49">
+            <DisplayName>ID49</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget50">
+            <DisplayName>ID50</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget51">
+            <DisplayName>ID51</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget52">
+            <DisplayName>ID52</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget53">
+            <DisplayName>ID53</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget54">
+            <DisplayName>ID54</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget55">
+            <DisplayName>ID55</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget56">
+            <DisplayName>ID56</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget57">
+            <DisplayName>ID57</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget58">
+            <DisplayName>ID58</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget59">
+            <DisplayName>ID59</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget60">
+            <DisplayName>ID60</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget61">
+            <DisplayName>ID61</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget62">
+            <DisplayName>ID62</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="u8 CullingFlagTarget63">
+            <DisplayName>ID63</DisplayName>
+            <Enum>EQUIP_CULLING_GROUP_SET_TARGET</Enum>
+            <Maximum>5</Maximum>
+            <Increment>1</Increment>
+            <SortID>64</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

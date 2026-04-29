@@ -1,0 +1,33 @@
+{
+  "Param": "DAMAGE_WEAPON_TYPE_PARAM",
+  "Type": "DAMAGE_WEAPON_TYPE_PARAM",
+  "Name": "DAMAGE_WEAPON_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "phantomRate",
+      "Name": "霊体",
+      "Description": ""
+    },
+    {
+      "Field": "freshRate",
+      "Name": "生・布",
+      "Description": ""
+    },
+    {
+      "Field": "hardRate",
+      "Name": "やや硬い",
+      "Description": ""
+    },
+    {
+      "Field": "veryHardRate",
+      "Name": "とても硬い",
+      "Description": ""
+    },
+    {
+      "Field": "giantRate",
+      "Name": "巨人・デーモン",
+      "Description": ""
+    }
+  ]
+}

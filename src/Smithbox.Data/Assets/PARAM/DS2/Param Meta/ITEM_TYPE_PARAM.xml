@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <itemIdWhenFailure />
+        <itemUseMaxSpeed />
+        <itemUseMaxSpeedChangeSec />
+        <itemUseMaxSpeedReturnSec />
+        <itemMotionType  Enum="PLAYER_ITEM_USE_MOTION"/>
+        <ladderItemMotionType  Enum="PLAYER_ITEM_USE_MOTION"/>
+        <itemCateType  Enum="ITEM_CATE_TYPE"/>
+        <itemMotionArmType  Enum="ITEM_MOTION_ARM_TYPE"/>
+        <itemModelType  Enum="ITEM_MODEL_TYPE"/>
+        <itemSpecialReset  IsBool=""/>
+        <canMoveRepository  IsBool=""/>
+    </Field>
+</PARAMMETA>

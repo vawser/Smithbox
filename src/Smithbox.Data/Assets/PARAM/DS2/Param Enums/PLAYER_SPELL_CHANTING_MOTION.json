@@ -1,0 +1,155 @@
+{
+  "Key": "PLAYER_SPELL_CHANTING_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_SPELL_CHANTING_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "38110010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Chanting_Standing_In front of chest"
+        }
+      ]
+    },
+    {
+      "Key": "38110610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Chanting_Standing_Hold it up"
+        }
+      ]
+    },
+    {
+      "Key": "38111010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_Chanting_Pushing forward_Standing"
+        }
+      ]
+    },
+    {
+      "Key": "38111110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Chanting_Standing_Lighting the fire in the palm"
+        }
+      ]
+    },
+    {
+      "Key": "38111510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Chanting_Standing_Raise your arms and light the fire"
+        }
+      ]
+    },
+    {
+      "Key": "38111610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Chanting_Standing_Standing in front"
+        }
+      ]
+    },
+    {
+      "Key": "38111810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magical Fire_Chanting_Standing_Raise your right arm"
+        }
+      ]
+    },
+    {
+      "Key": "38130010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Chanting_Standing_In front of chest_Both hands"
+        }
+      ]
+    },
+    {
+      "Key": "38150010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cane_Chanting_Standing_In front of chest_Two swords"
+        }
+      ]
+    },
+    {
+      "Key": "39110010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Standing_In front of chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Bending_In front of chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chant_Stand_Raise your right arm"
+        }
+      ]
+    },
+    {
+      "Key": "39110810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Standing_Cross in front of chest"
+        }
+      ]
+    },
+    {
+      "Key": "39110910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Standing_Circle in front of chest"
+        }
+      ]
+    },
+    {
+      "Key": "39130010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Standing_In front of chest_Both hands"
+        }
+      ]
+    },
+    {
+      "Key": "39150010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell_Chanting_Standing_In front of chest_Two swords"
+        }
+      ]
+    }
+  ]
+}

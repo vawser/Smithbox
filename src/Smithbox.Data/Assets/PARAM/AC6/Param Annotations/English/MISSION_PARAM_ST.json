@@ -1,0 +1,523 @@
+{
+  "Param": "MISSION_PARAM_ST",
+  "Type": "MISSION_PARAM_ST",
+  "Name": "MISSION_PARAM_ST",
+  "Description": "Determines the configuration for missions.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mstID",
+      "Name": "Mission Map ID",
+      "Description": "The overlay map that contains this mission's specific MSB configuration. Represents the YY_ZZ parts in the following MSB template: mXX_YY_ZZ_AA"
+    },
+    {
+      "Field": "systemAnswerMsgOffsetId",
+      "Name": "Interaction Message Mission Offset ID",
+      "Description": ""
+    },
+    {
+      "Field": "placementMapUid",
+      "Name": "Location Map ID",
+      "Description": "The base map that the overlay map takes place on."
+    },
+    {
+      "Field": "subMapId",
+      "Name": "Sub Map ID",
+      "Description": "Use the map for planning placement assets with the last two digits of the placement destination MapUid offset."
+    },
+    {
+      "Field": "timeZone",
+      "Name": "Time of Day",
+      "Description": "The time of day at the start of the mission."
+    },
+    {
+      "Field": "pad01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weatherType",
+      "Name": "Weather",
+      "Description": "The weather at the start of the mission"
+    },
+    {
+      "Field": "missionType",
+      "Name": "Mission Type",
+      "Description": "The type of mission this is."
+    },
+    {
+      "Field": "missionAltType",
+      "Name": "Playthrough Appearance Type",
+      "Description": "Determine whether to appear during initial playthrough or subsequent playthroughs."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "missionInfoTextID",
+      "Name": "Mission Text ID",
+      "Description": "The text ID to use for the mission name, summary, objective and location name. If 0, the row ID is used."
+    },
+    {
+      "Field": "activateDistXZ",
+      "Name": "Activation Distance: X/Z",
+      "Description": "The activation distance (on the x/z-axis) of mission placement items."
+    },
+    {
+      "Field": "sortieCutsceneIdx",
+      "Name": "Briefing Scene Index",
+      "Description": "The garage cutscene to use for the mission briefing scene."
+    },
+    {
+      "Field": "returnCutsceneIdx",
+      "Name": "Completion Scene Index",
+      "Description": "The garage cutscene to use for the mission completion scene."
+    },
+    {
+      "Field": "cutsceneTalkOffsetId",
+      "Name": "Scene Conversation ID",
+      "Description": "The conversation ID to use for general cutscenes. It is an offset, replacing the xxxx section in the following template: 5xxxx0000"
+    },
+    {
+      "Field": "clientNameID",
+      "Name": "Client Name ID",
+      "Description": "The name of the client (company) that is asking for the mission."
+    },
+    {
+      "Field": "briefingID",
+      "Name": "Briefing Movie ID",
+      "Description": "The movie ID to use for the briefing movie."
+    },
+    {
+      "Field": "baseReward",
+      "Name": "COAM Reward",
+      "Description": "Amount of COAM given upon successful completion of the mission."
+    },
+    {
+      "Field": "mailID_0",
+      "Name": "0: Mail",
+      "Description": "The mission mail parameter ID for slot 0."
+    },
+    {
+      "Field": "mailID_1",
+      "Name": "1: Mail",
+      "Description": "The mission mail parameter ID for slot 0."
+    },
+    {
+      "Field": "mailID_2",
+      "Name": "2: Mail",
+      "Description": "The mission mail parameter ID for slot 0."
+    },
+    {
+      "Field": "mailID_3",
+      "Name": "3: Mail",
+      "Description": "The mission mail parameter ID for slot 0."
+    },
+    {
+      "Field": "mailID_4",
+      "Name": "4: Mail",
+      "Description": "The mission mail parameter ID for slot 0."
+    },
+    {
+      "Field": "icon_0",
+      "Name": "0: Mission Icon",
+      "Description": "The first icon displayed in the menu for this mission."
+    },
+    {
+      "Field": "icon_1",
+      "Name": "1: Mission Icon",
+      "Description": "The second icon displayed in the menu for this mission."
+    },
+    {
+      "Field": "chater",
+      "Name": "Chapter Group",
+      "Description": "The chapter this mission belongs to. If the final mission of a chapter is cleared, all missions within the same chapter will be invalidated."
+    },
+    {
+      "Field": "isChapterLast",
+      "Name": "Is Final Chapter",
+      "Description": "If ON, this mission is the final mission within its chapter group."
+    },
+    {
+      "Field": "isTrophyTarget",
+      "Name": "Is Achievement Mission",
+      "Description": "If ON, this mission is part of the missions counted in the 'All Missions Cleared' achievement."
+    },
+    {
+      "Field": "reserved4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bulletCost_rate",
+      "Name": "Ammunition Cost Multiplier",
+      "Description": "Multiplier to the cost of ammunition taken after mission completion."
+    },
+    {
+      "Field": "bulletCost_limit",
+      "Name": "Ammunition Cost Maximum",
+      "Description": "Cap to the cost of ammunition taken after mission completion."
+    },
+    {
+      "Field": "repairCost_coefficient",
+      "Name": "Repair Cost Multiplier",
+      "Description": "Multiplier to the cost of repair taken after mission completion."
+    },
+    {
+      "Field": "repairCost_limit",
+      "Name": "Repair Cost Maximum",
+      "Description": "Cap to the cost of repair taken after mission completion."
+    },
+    {
+      "Field": "SpecialReward0_TextID",
+      "Name": "0: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward0_UnitPrice",
+      "Name": "0: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward1_TextID",
+      "Name": "1: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward1_UnitPrice",
+      "Name": "1: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward2_TextID",
+      "Name": "2: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward2_UnitPrice",
+      "Name": "2: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward3_TextID",
+      "Name": "3: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward3_UnitPrice",
+      "Name": "3: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward4_TextID",
+      "Name": "4: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward4_UnitPrice",
+      "Name": "4: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "loadingScreenImageID",
+      "Name": "Loading Screen ID",
+      "Description": "The image ID of the loading screen used for the mission. If 0, use the default loading screen."
+    },
+    {
+      "Field": "loadingScreenTextID",
+      "Name": "Loading Screen Text ID",
+      "Description": "The text ID for the loading screen text used for the mission. If 0, use the default loading screen."
+    },
+    {
+      "Field": "calcScoreCoef_damage",
+      "Name": "Damage Score Multiplier",
+      "Description": "Multiplier to the score based on damage."
+    },
+    {
+      "Field": "calcScoreCoef_bulletCost",
+      "Name": "Ammunition Score Multiplier",
+      "Description": "Multiplier to the score based on ammunition consumption."
+    },
+    {
+      "Field": "calcScoreCoef_enemyBonus",
+      "Name": "Points Score Multiplier",
+      "Description": "Multiplier to the score based on points."
+    },
+    {
+      "Field": "calcScoreCoef_clearTime",
+      "Name": "Time Score Multiplier",
+      "Description": "Multiplier to the score based on time."
+    },
+    {
+      "Field": "activateDistY",
+      "Name": "Activation Distance: Y",
+      "Description": "The activation distance (on the y-axis) of mission placement items."
+    },
+    {
+      "Field": "maxClearTime",
+      "Name": "Time Score Maximum",
+      "Description": "The time in seconds at which the time score multiplier applied in full. -1 means there is no limit."
+    },
+    {
+      "Field": "calcRankThreshold_RankS",
+      "Name": "Score for S Rank",
+      "Description": "If the score is less than this value, then rank S."
+    },
+    {
+      "Field": "calcRankThreshold_RankA",
+      "Name": "Score for A Rank",
+      "Description": "If the score is less than this value, then rank A."
+    },
+    {
+      "Field": "calcRankThreshold_RankB",
+      "Name": "Score for B Rank",
+      "Description": "If the score is less than this value, then rank B."
+    },
+    {
+      "Field": "calcRankThreshold_RankC",
+      "Name": "Score for C Rank",
+      "Description": "If the score is less than this value, then rank C."
+    },
+    {
+      "Field": "SpecialReward5_TextID",
+      "Name": "5: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward5_UnitPrice",
+      "Name": "5: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward6_TextID",
+      "Name": "6: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward6_UnitPrice",
+      "Name": "6: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "SpecialReward7_TextID",
+      "Name": "7: Mission Event - Text ID",
+      "Description": "The text ID used for a mission event in this slot. Mission events appear on the reward screen after the mission, e.g. Failed to Defend X"
+    },
+    {
+      "Field": "SpecialReward7_UnitPrice",
+      "Name": "7: Mission Event - Reward",
+      "Description": "Determines the amount of reward given upon completing mission event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDestroyReward0_TextID",
+      "Name": "0: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward0_UnitPrice",
+      "Name": "0: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward1_TextID",
+      "Name": "1: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward1_UnitPrice",
+      "Name": "1: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward2_TextID",
+      "Name": "2: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward2_UnitPrice",
+      "Name": "2: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward3_TextID",
+      "Name": "3: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward3_UnitPrice",
+      "Name": "3: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward4_TextID",
+      "Name": "4: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward4_UnitPrice",
+      "Name": "4: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward5_TextID",
+      "Name": "5: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward5_UnitPrice",
+      "Name": "5: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward6_TextID",
+      "Name": "6: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward6_UnitPrice",
+      "Name": "6: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "EnemyDestroyReward7_TextID",
+      "Name": "7: Enemy Destruction Event - Text ID",
+      "Description": "The text ID used for a enemy destruction event in this slot. Enemy Destruction events appear on the reward screen after the mission."
+    },
+    {
+      "Field": "EnemyDestroyReward7_UnitPrice",
+      "Name": "7: Enemy Destruction Event - Reward",
+      "Description": "Determines the amount of reward given upon completing the enemy destruction event. If negative, the reward amount is subtracted."
+    },
+    {
+      "Field": "exclusiveGroup",
+      "Name": "Exclusive Group",
+      "Description": "Missions within the same exclusive group will be invalidated when the mission is cleared."
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortID",
+      "Name": "Sort ID",
+      "Description": "The sorting order for this mission in the menu."
+    },
+    {
+      "Field": "assemID",
+      "Name": "Forced Loadout ID",
+      "Description": "The forced loadout to apply to the player when they start this mission."
+    },
+    {
+      "Field": "arenaMissionLineEntityId",
+      "Name": "Arena: Boundary Collision Entity ID",
+      "Description": "The entity ID of the collision to enable during an Arena mission to form the map boundary."
+    },
+    {
+      "Field": "ResultMovie0_movieID",
+      "Name": "0: Post-Results - Movie ID",
+      "Description": "The movie ID to use after the results screen."
+    },
+    {
+      "Field": "ResultMovie0_eventFlagID",
+      "Name": "0: Post-Results - Playback Flag ID",
+      "Description": "The event flag that determines movie playback. If 0, always play."
+    },
+    {
+      "Field": "ResultMovie1_movieID",
+      "Name": "1: Post-Results - Movie ID",
+      "Description": "The movie ID to use after the results screen."
+    },
+    {
+      "Field": "ResultMovie1_eventFlagID",
+      "Name": "0: Post-Results - Playback Flag ID",
+      "Description": "The event flag that determines movie playback. If 0, always play."
+    },
+    {
+      "Field": "arenaMissionFallDeadHitEntityId",
+      "Name": "Arena: Kill Collision Entity ID",
+      "Description": "The entity ID of the collision to enable during an Arena mission to form the kill boundary."
+    },
+    {
+      "Field": "acNameID",
+      "Name": "Sortie: AC Name ID",
+      "Description": "The text ID of the AC to display on the Sortie screen."
+    },
+    {
+      "Field": "fallDeadHeight",
+      "Name": "Forced Fall Death Height",
+      "Description": "The height at which death will occur dued to forced fall."
+    },
+    {
+      "Field": "WorldMapImageID",
+      "Name": "Mission Selection: Map Image ID",
+      "Description": "The image ID of the world map image displayed on the mission selection screen."
+    },
+    {
+      "Field": "MapInfoImageID",
+      "Name": "Mission Selection: Supplementary Image ID",
+      "Description": "The image ID of the supplementary image displayed on the mission selection screen."
+    },
+    {
+      "Field": "preLoadChrTexId",
+      "Name": "Preloaded Character ID",
+      "Description": "The character ID to load at the start of the mission for its textures. Used when memory fragmentation occurs with dynamic character loading."
+    },
+    {
+      "Field": "updateGeomLimitNum",
+      "Name": "Asset Update Limit",
+      "Description": "The update limit for assets per frame."
+    },
+    {
+      "Field": "hiHitLimitRange",
+      "Name": "High Collision Distance",
+      "Description": "The distance at which high collision is activated. In metres."
+    },
+    {
+      "Field": "hiLoadMaxNum",
+      "Name": "High Collision Activation Update Limit",
+      "Description": "The update limit for activating high collision each frame. -1 defaults to 70."
+    },
+    {
+      "Field": "activateDistXZ_forXb1",
+      "Name": "Activation Distance: X/Z (XB1)",
+      "Description": "The activation distance (on the x/z-axis) of mission placement items."
+    },
+    {
+      "Field": "activateDistY_forXb1",
+      "Name": "Activation Distance: Y (XB1)",
+      "Description": "The activation distance (on the y-axis) of mission placement items."
+    },
+    {
+      "Field": "pad8",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

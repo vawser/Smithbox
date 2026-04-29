@@ -1,0 +1,138 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "Determines the parameters of accessories.",
+  "Fields": [
+    {
+      "Field": "refId",
+      "Name": "Call ID",
+      "Description": "Reference ID to use for this accessory."
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "Particle Variation ID",
+      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Action ID (= Skill)"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Price",
+      "Description": "Soul cost of reinforcement. See ShopLineupParam for shop prices."
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "The price when this item is sold. Determines the souls received when feeding this weapon to Frampt"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering within the menu."
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The ID this item uses for world tendency."
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "Equipment model number"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "trophySeqId",
+      "Name": "Sequential Achievement ID",
+      "Description": "The sequential achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "Equipment model type"
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender",
+      "Description": "Gender of equipment model"
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "Accessory Type",
+      "Description": "Armor category"
+    },
+    {
+      "Field": "refCategory",
+      "Name": "Call ID Type",
+      "Description": "The ID category to use for the refId field."
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "The SpEffect category this spell belongs to"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "Good Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "Evil Vagrant: Item Lot ID",
+      "Description": "The item lot to use when this item is dropped and generates a vagrant."
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Is Depositable",
+      "Description": "Can be deposited in the repository."
+    },
+    {
+      "Field": "isEquipOutBrake",
+      "Name": "Destroy on Unequip",
+      "Description": "Is destroyed when unequipped."
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Block Drop in Multiplayer",
+      "Description": "Block the ability to drop in multiplayer sessions."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

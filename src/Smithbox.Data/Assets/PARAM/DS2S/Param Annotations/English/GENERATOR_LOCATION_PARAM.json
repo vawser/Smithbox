@@ -1,0 +1,43 @@
+{
+  "Param": "GENERATOR_LOCATION_PARAM",
+  "Type": "GENERATOR_LOCATION_PARAM",
+  "Name": "GENERATOR_LOCATION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "positionX",
+      "Name": "配置位置X",
+      "Description": ""
+    },
+    {
+      "Field": "positionY",
+      "Name": "配置位置Y",
+      "Description": ""
+    },
+    {
+      "Field": "positionZ",
+      "Name": "配置位置Z",
+      "Description": ""
+    },
+    {
+      "Field": "angleX",
+      "Name": "配置角度X",
+      "Description": ""
+    },
+    {
+      "Field": "angleY",
+      "Name": "配置角度Y",
+      "Description": ""
+    },
+    {
+      "Field": "angleZ",
+      "Name": "配置角度Z",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

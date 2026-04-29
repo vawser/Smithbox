@@ -1,0 +1,389 @@
+{
+  "Name": "LodParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default configuration -- デフォルト設定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 main -- L0メイン"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 main -- L1メイン"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Do not LOD -- LODしない"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Character_size small -- キャラ_サイズ小"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Character_size -- キャラ_サイズ中"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Character_size large -- キャラ_サイズ大"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Character_size oversized -- キャラ_サイズ特大"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Character_Big Snake -- キャラ_大蛇"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Character_Okinayu -- キャラ_翁竜"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Character_size small -- キャラ_サイズ小"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Character_size -- キャラ_サイズ中"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Character_size large -- キャラ_サイズ大"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Character_size oversized -- キャラ_サイズ特大"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Character_Big Snake -- キャラ_大蛇"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Character _ Medium _ For motion blur measures -- キャラ_サイズ中_モーションブラー対策用"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Map_minimal size -- Map_極小サイズ"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Map_ small size -- Map_小サイズ"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Map_ Medium size -- Map_中サイズ"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Map_Large size -- Map_大サイズ"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Map_ oversized -- Map_特大サイズ"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Obj_minimal size -- Obj_極小サイズ"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Obj_ small size -- Obj_小サイズ"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Obj_ medium size -- Obj_中サイズ"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Obj_ large size -- Obj_大サイズ"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Obj_ oversized -- Obj_特大サイズ"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Does not switch to LOW texture -- LOWテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Does not switch to LOD model &amp; does not switch to LOW texture -- LODモデルに切り替わらない & LOWテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 only (reflection scene default) -- L2のみ（反射シーンデフォルト）"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Does not switch to LOD model (for poly drama) -- LODモデルに切り替わらない（ポリ劇用）"
+      ]
+    }
+  ]
+}

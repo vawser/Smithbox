@@ -1,0 +1,47 @@
+{
+  "Name": "ChrWetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "水濡れ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "毒濡れ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "油濡れ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

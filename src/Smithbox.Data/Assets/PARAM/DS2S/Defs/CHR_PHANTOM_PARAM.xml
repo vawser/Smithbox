@@ -1,36 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>CHR_PHANTOM_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 phantom_color_1_r" />
-    <Field Def="u8 phantom_color_1_g" />
-    <Field Def="u8 phantom_color_1_b" />
-    <Field Def="u8 phantom_color_1_a" />
-    <Field Def="u8 phantom_color_2_r" />
-    <Field Def="u8 phantom_color_2_g" />
-    <Field Def="u8 phantom_color_2_b" />
-    <Field Def="u8 phantom_color_2_a" />
-    <Field Def="u8 phantom_color_3_r" />
-    <Field Def="u8 phantom_color_3_g" />
-    <Field Def="u8 phantom_color_3_b" />
-    <Field Def="u8 phantom_color_3_a" />
-    <Field Def="u8 phantom_color_4_r" />
-    <Field Def="u8 phantom_color_4_g" />
-    <Field Def="u8 phantom_color_4_b" />
-    <Field Def="u8 phantom_color_4_a" />
-    <Field Def="u8 phantom_color_5_r" />
-    <Field Def="u8 phantom_color_5_g" />
-    <Field Def="u8 phantom_color_5_b" />
-    <Field Def="u8 phantom_color_5_a" />
-    <Field Def="f32 phantom_fade_alpha_start" />
-    <Field Def="f32 phantom_fade_alpha_end" />
-    <Field Def="u8 Unk00" />
-    <Field Def="u8 Unk01" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 Unk03" />
-  </Fields>
+    <ParamType>CHR_PHANTOM_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 edgeColorR = 255">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 edgeColorG = 255">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 edgeColorB = 255">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 edgeColorA = 255">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 frontColorR">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 frontColorG">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 frontColorB">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 frontColorA">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 diffMulColorR = 255">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 diffMulColorG = 255">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 diffMulColorB = 255">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u8 diffMulColorA = 255">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u8 specMulColorR = 255">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 specMulColorG = 255">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u8 specMulColorB = 255">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 specMulColorA = 255">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u8 lightColorR">
+            <DisplayName>R</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 lightColorG">
+            <DisplayName>G</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 lightColorB">
+            <DisplayName>B</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 lightColorA">
+            <DisplayName>A</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 blendRate = 1">
+            <DisplayName>ブレンド率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 alpha = 1">
+            <DisplayName>α</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 blendType">
+            <DisplayName>α種類</DisplayName>
+            <Enum>CHR_PHANTOM_BLEND_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>4</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 isEdgeSubtract">
+            <DisplayName>エッジ色減算を行うか</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 isFrontSubtract">
+            <DisplayName>正面色減算を行うか</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[1]">
+            <DisplayName>(予約領域)</DisplayName>
+            <SortID>27</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

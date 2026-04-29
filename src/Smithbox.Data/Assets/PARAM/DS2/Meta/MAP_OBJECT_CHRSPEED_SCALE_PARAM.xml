@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to character speed on map objects." Row0Dummy="" />
-  <Field>
-    <object_chr_speed_scale AltName="Character Speed Scale" />
-  </Field>
-</PARAMMETA>

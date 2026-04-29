@@ -1,0 +1,34 @@
+{
+  "id": "103",
+  "name": "Hollow Infantry",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Kneeling"
+    },
+    {
+      "value": "3",
+      "name": "Prone"
+    },
+    {
+      "value": "4",
+      "name": "Lying Down"
+    },
+    {
+      "value": "15",
+      "name": "Lying Down (bugged)"
+    },
+    {
+      "value": "17",
+      "name": "Climbing Ladder"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "Key": "ATKPARAM_ATKATTR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_ATKATTR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strike"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pierce"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard"
+        }
+      ]
+    },
+    {
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EquipParamWeapon atkAttribute2 reference"
+        }
+      ]
+    },
+    {
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EquipParamWeapon atkAttribute reference"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    }
+  ]
+}

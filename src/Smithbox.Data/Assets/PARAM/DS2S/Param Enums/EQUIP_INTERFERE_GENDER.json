@@ -1,0 +1,38 @@
+{
+  "Key": "EQUIP_INTERFERE_GENDER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_INTERFERE_GENDER"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use men's version"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of settings"
+        }
+      ]
+    }
+  ]
+}

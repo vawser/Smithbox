@@ -1,0 +1,83 @@
+{
+  "Param": "DECAL_PARAM",
+  "Type": "DECAL_PARAM",
+  "Name": "DECAL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "width",
+      "Name": "X",
+      "Description": ""
+    },
+    {
+      "Field": "height",
+      "Name": "Y",
+      "Description": ""
+    },
+    {
+      "Field": "depth",
+      "Name": "Z",
+      "Description": ""
+    },
+    {
+      "Field": "texId",
+      "Name": "テクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "bumpTexId",
+      "Name": "バンプテクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "colorR",
+      "Name": "色R",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "色G",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "色B",
+      "Description": ""
+    },
+    {
+      "Field": "colorA",
+      "Name": "色A",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleDeleteTime",
+      "Name": "視野外での削除までの時間",
+      "Description": ""
+    },
+    {
+      "Field": "parallaxScale",
+      "Name": "視差マップスケール",
+      "Description": ""
+    },
+    {
+      "Field": "lightId",
+      "Name": "ライトID",
+      "Description": ""
+    },
+    {
+      "Field": "flipType",
+      "Name": "左右フリップ",
+      "Description": ""
+    },
+    {
+      "Field": "rotateType",
+      "Name": "回転",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

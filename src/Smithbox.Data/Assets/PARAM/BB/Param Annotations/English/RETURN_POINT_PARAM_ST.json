@@ -1,0 +1,43 @@
+{
+  "Param": "RETURN_POINT_PARAM_ST",
+  "Type": "RETURN_POINT_PARAM_ST",
+  "Name": "RETURN_POINT_PARAM_ST",
+  "Description": "Lamp (Bonfire) Parameters",
+  "Fields": [
+    {
+      "Field": "areaNo",
+      "Name": "Area",
+      "Description": ""
+    },
+    {
+      "Field": "blockNo",
+      "Name": "Block",
+      "Description": ""
+    },
+    {
+      "Field": "returnPointEntityId",
+      "Name": "Return Point Entity ID",
+      "Description": ""
+    },
+    {
+      "Field": "returnAnimId",
+      "Name": "Return Animation ID",
+      "Description": ""
+    },
+    {
+      "Field": "isRegistDeadReturn",
+      "Name": "Is Resurrection Location",
+      "Description": "Should it be registered as a resurrection location during warp or death?"
+    },
+    {
+      "Field": "warpChairNo",
+      "Name": "Warp Chair Identification Number",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

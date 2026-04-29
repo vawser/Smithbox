@@ -1,0 +1,47 @@
+{
+  "Key": "CAMERA_BASE_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CAMERA_BASE_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master position"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center of character"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character head"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Origin"
+        }
+      ]
+    }
+  ]
+}

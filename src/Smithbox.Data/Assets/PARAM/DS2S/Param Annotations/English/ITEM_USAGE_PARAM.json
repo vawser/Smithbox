@@ -1,0 +1,78 @@
+{
+  "Param": "ITEM_USAGE_PARAM",
+  "Type": "ITEM_USAGE_PARAM",
+  "Name": "ITEM_USAGE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "eventFlag",
+      "Name": "使用許可するイベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "condition",
+      "Name": "指定状態のみ許可",
+      "Description": ""
+    },
+    {
+      "Field": "isAllowUseOnLadder",
+      "Name": "はしご中使用許可",
+      "Description": ""
+    },
+    {
+      "Field": "isAllowMultipleUse",
+      "Name": "使用個数設定許可",
+      "Description": ""
+    },
+    {
+      "Field": "isConsume",
+      "Name": "消耗品",
+      "Description": ""
+    },
+    {
+      "Field": "isNormalConsumu",
+      "Name": "通常タイミングで消費する",
+      "Description": ""
+    },
+    {
+      "Field": "permitOnlineSingle",
+      "Name": "オンラインシングルプレイ許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitOnlineMulti",
+      "Name": "マルチプレイ許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitOffline",
+      "Name": "オフライン許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitOnlineGuest",
+      "Name": "ゲスト時許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitBattlePhantom",
+      "Name": "決闘霊体時許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitLeave",
+      "Name": "破棄許可",
+      "Description": ""
+    },
+    {
+      "Field": "permitDrop",
+      "Name": "譲渡許可",
+      "Description": ""
+    },
+    {
+      "Field": "exEvalFuncID",
+      "Name": "拡張使用許可判定関数ID（仮）",
+      "Description": ""
+    }
+  ]
+}

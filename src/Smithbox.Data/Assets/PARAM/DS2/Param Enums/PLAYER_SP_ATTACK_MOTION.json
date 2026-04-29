@@ -1,0 +1,308 @@
+{
+  "Key": "PLAYER_SP_ATTACK_MOTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_SP_ATTACK_MOTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "20010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed throw and grab (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "20010282",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed throw and grab (large)"
+        }
+      ]
+    },
+    {
+      "Key": "20010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "20010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "20010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fist_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "21010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "21010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "21010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dagger_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "25010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "25010330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed fall stab_Giant junior soldier"
+        }
+      ]
+    },
+    {
+      "Key": "25010331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed fall stab_Wyvern"
+        }
+      ]
+    },
+    {
+      "Key": "25010332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed fall stab_Titan senior soldier (giant)"
+        }
+      ]
+    },
+    {
+      "Key": "25010334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed fall stab_Elephant"
+        }
+      ]
+    },
+    {
+      "Key": "25010335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed fall stab_Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "25010336",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spear_One-handed Fall Stab_New Titan Advanced Soldier (Living)"
+        }
+      ]
+    },
+    {
+      "Key": "29010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "29010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "29010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed guard break stab"
+        }
+      ]
+    },
+    {
+      "Key": "29010330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed fall stab_giant junior soldier"
+        }
+      ]
+    },
+    {
+      "Key": "29010331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed fall stab_wyvern"
+        }
+      ]
+    },
+    {
+      "Key": "29010332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed fall stab_giant senior soldier (giant)"
+        }
+      ]
+    },
+    {
+      "Key": "29010334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_one-handed fall stab_elephant"
+        }
+      ]
+    },
+    {
+      "Key": "29010335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_One-handed fall stab_Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "29010336",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Straight sword_One-handed fall stab_New giant senior soldier (living)"
+        }
+      ]
+    },
+    {
+      "Key": "32010280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed throw and grab (medium)"
+        }
+      ]
+    },
+    {
+      "Key": "32010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "32010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "32010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed oversized sword_one-handed guard break stub"
+        }
+      ]
+    },
+    {
+      "Key": "36010300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed backstab"
+        }
+      ]
+    },
+    {
+      "Key": "36010310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed parry break stab"
+        }
+      ]
+    },
+    {
+      "Key": "36010320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Two-handed ax_one-handed guard break stab"
+        }
+      ]
+    }
+  ]
+}

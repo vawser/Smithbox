@@ -1,0 +1,33 @@
+{
+  "Param": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Type": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Name": "CHR_EDIT_PARAM_BODY_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bodyScaleHead",
+      "Name": "Body Scale: Head",
+      "Description": "The body scale to use for the head."
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "Body Scale: Chest",
+      "Description": "The body scale to use for the chest."
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "Body Scale: Torso",
+      "Description": "The body scale to use for the torso."
+    },
+    {
+      "Field": "bodyScaleArm",
+      "Name": "Body Scale: Arms",
+      "Description": "The body scale to use for the arms."
+    },
+    {
+      "Field": "bodyScaleLeg",
+      "Name": "Body Scale: Legs",
+      "Description": "The body scale to use for the Legs."
+    }
+  ]
+}

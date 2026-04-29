@@ -1,0 +1,1190 @@
+{
+  "Key": "CHARACTER_NAMES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHARACTER_NAMES"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Narrator"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Doctor"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "COM"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ayre - IB-07: SOL 644"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Handler Walter - IB-C03: HAL 826"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.IV Rusty - STEEL HAZE"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rusty - STEEL HAZE ORTUS"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raven - NIGHTFALL"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coldcall - DEADSLED"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King - ASTER CROWN"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Nosaac - BITTER PROMISE"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chartreuse - UMBER OX"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ALLMIND"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kate Markson - TRANSCRIBER"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sulla - ENTANGLE"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ALLMIND"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ALLMIND"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RaD"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "'Cinder' Carla - FULL COURSE"
+        }
+      ]
+    },
+    {
+      "Key": "320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "'Chatty' Stick - CIRCUS"
+        }
+      ]
+    },
+    {
+      "Key": "330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "'Honest' Brute - MILK TOOTH"
+        }
+      ]
+    },
+    {
+      "Key": "340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "'Invincible' Rummy - MAD STOMP"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rubicon Liberation Front"
+        }
+      ]
+    },
+    {
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Index Dunham - BURN PICKAXE"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Little Ziyi - YUE YU"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ring Freddie - CANDLE RING"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle Flatwell - TSUBASA"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thumb Dolmayan - ASTGHIK"
+        }
+      ]
+    },
+    {
+      "Key": "460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rokumonsen - SHINOBI"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Balam Industries"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G1 Michigan - LIGER TAIL"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G2 Nile - DEEP DOWN"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G5 Iguazu - HEAD BRINGER"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G4 Volta - CANNON HEAD"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G3 Wu Huahai - LI LONG"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G6 Red - HERMIT"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Corporation"
+        }
+      ]
+    },
+    {
+      "Key": "610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.I Freud - LOCKSMITH"
+        }
+      ]
+    },
+    {
+      "Key": "620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.II Snail - OPEN FAITH"
+        }
+      ]
+    },
+    {
+      "Key": "630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.III O'Keeffe - BARREN FLOWER"
+        }
+      ]
+    },
+    {
+      "Key": "640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.V Hawkins - RECONFIG"
+        }
+      ]
+    },
+    {
+      "Key": "650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.VI Maeterlinck - INFECTION"
+        }
+      ]
+    },
+    {
+      "Key": "660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.VII Swinburne - GUIDANCE"
+        }
+      ]
+    },
+    {
+      "Key": "670",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.VIII Pater - DUAL NATURE"
+        }
+      ]
+    },
+    {
+      "Key": "710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Integration Subject 51-001 K - MIND ALPHA"
+        }
+      ]
+    },
+    {
+      "Key": "720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-015 GA - INSTITUTE"
+        }
+      ]
+    },
+    {
+      "Key": "730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-014 BE - RUBICONIAN"
+        }
+      ]
+    },
+    {
+      "Key": "740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-013 BE - CORPORATION"
+        }
+      ]
+    },
+    {
+      "Key": "750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-016 GA - NIGHTFALL"
+        }
+      ]
+    },
+    {
+      "Key": "760",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-011 AL - TRAINER"
+        }
+      ]
+    },
+    {
+      "Key": "770",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Analysis Subject 51-012 AL - TESTER"
+        }
+      ]
+    },
+    {
+      "Key": "780",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Classified Subject 51-101 R - STEEL HAZE ORTUS"
+        }
+      ]
+    },
+    {
+      "Key": "790",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Classified Subject 51-201 W - IB-C03: HAL 826"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Integration Subject 51-002 K - MIND BETA"
+        }
+      ]
+    },
+    {
+      "Key": "810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ayre - ECHO"
+        }
+      ]
+    },
+    {
+      "Key": "820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Integration Subject 51-003 K - MIND GAMMA"
+        }
+      ]
+    },
+    {
+      "Key": "910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enforcement System - IA-C01: EPHEMERA"
+        }
+      ]
+    },
+    {
+      "Key": "920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dafeng Student Pilot - TESTER AC"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Officer"
+        }
+      ]
+    },
+    {
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Helicopter Pilot"
+        }
+      ]
+    },
+    {
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Mining Ship Captain"
+        }
+      ]
+    },
+    {
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Mining Ship Crew"
+        }
+      ]
+    },
+    {
+      "Key": "1060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Prisoner"
+        }
+      ]
+    },
+    {
+      "Key": "1070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Prisoner"
+        }
+      ]
+    },
+    {
+      "Key": "1080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Prisoner"
+        }
+      ]
+    },
+    {
+      "Key": "1090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF Ground Troops"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Balam MT Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Balam MT Squad Leader"
+        }
+      ]
+    },
+    {
+      "Key": "1150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dafeng MT Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dafeng MT Squad Leader"
+        }
+      ]
+    },
+    {
+      "Key": "1170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Balam Main Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Schneider MT Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Schneider MT Squad Leader"
+        }
+      ]
+    },
+    {
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.VIII Pater"
+        }
+      ]
+    },
+    {
+      "Key": "1260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.VI Pater"
+        }
+      ]
+    },
+    {
+      "Key": "1270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.V Pater"
+        }
+      ]
+    },
+    {
+      "Key": "1280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus MT Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus MT Squad Leader"
+        }
+      ]
+    },
+    {
+      "Key": "1310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Interceptor Crew"
+        }
+      ]
+    },
+    {
+      "Key": "1320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Interceptor Captain"
+        }
+      ]
+    },
+    {
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Ground Troops"
+        }
+      ]
+    },
+    {
+      "Key": "1340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Main Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Subject Guard"
+        }
+      ]
+    },
+    {
+      "Key": "1360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Inspector"
+        }
+      ]
+    },
+    {
+      "Key": "1370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Support Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Enforcement Squad Member"
+        }
+      ]
+    },
+    {
+      "Key": "1390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Outer Shell Security"
+        }
+      ]
+    },
+    {
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown Craft"
+        }
+      ]
+    },
+    {
+      "Key": "1510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junker Coyotes"
+        }
+      ]
+    },
+    {
+      "Key": "1610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "'Chatty' Stick"
+        }
+      ]
+    },
+    {
+      "Key": "1710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Xylem Control System"
+        }
+      ]
+    },
+    {
+      "Key": "1910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raven's Operator"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Planetary Closure Administration"
+        }
+      ]
+    },
+    {
+      "Key": "2010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AAP07: BALTEUS"
+        }
+      ]
+    },
+    {
+      "Key": "2020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.II Snail - AAP07A: ARQUEBUS BALTEUS"
+        }
+      ]
+    },
+    {
+      "Key": "2050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enforcement System - AAP03: ENFORCER"
+        }
+      ]
+    },
+    {
+      "Key": "2100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP Captain - AAS02: CATAPHRACT"
+        }
+      ]
+    },
+    {
+      "Key": "2110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA 2nd Lieutenant - AA22: HEAVY CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Chief Sergeant 1st Cls - AA18: LIGHT CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Chief Sergeant 2nd Cls - AA18: LIGHT CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Warrant Officer - AA22: HEAVY CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP 2nd Lieutenant - AAS03: EKDROMOI EP"
+        }
+      ]
+    },
+    {
+      "Key": "2160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP Chief Sergeant 1st Cls - AAS03: EKDROMOI PG"
+        }
+      ]
+    },
+    {
+      "Key": "2200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA Captain - AA22: HEAVY CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA 1st Lieutenant - AA18A: LIGHT CAVALRY HM"
+        }
+      ]
+    },
+    {
+      "Key": "2220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP 1st Lieutenant - AAS02: CATAPHRACT"
+        }
+      ]
+    },
+    {
+      "Key": "2230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP Warrant Officer - AAS03: EKDROMOI PG"
+        }
+      ]
+    },
+    {
+      "Key": "2240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PCA SP Chief Sergeant 2nd Cls - AAS03: EKDROMOI MG"
+        }
+      ]
+    },
+    {
+      "Key": "2250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V.III Pater - AA18A: LIGHT CAVALRY HM"
+        }
+      ]
+    },
+    {
+      "Key": "2260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arquebus Main Squad Member - AA22: HEAVY CAVALRY"
+        }
+      ]
+    },
+    {
+      "Key": "2300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AS07: HEAVY WARSHIP"
+        }
+      ]
+    },
+    {
+      "Key": "2350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AH12: HC HELICOPTER"
+        }
+      ]
+    },
+    {
+      "Key": "2360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AH12: HC HELICOPTER"
+        }
+      ]
+    },
+    {
+      "Key": "2400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AB08: NEPENTHES"
+        }
+      ]
+    },
+    {
+      "Key": "3050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HA-T-102 JUGGERNAUT"
+        }
+      ]
+    },
+    {
+      "Key": "4050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EC-0804 SMART CLEANER"
+        }
+      ]
+    },
+    {
+      "Key": "4060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EB-0309 STRIDER"
+        }
+      ]
+    },
+    {
+      "Key": "6050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "IA-02: ICE WORM"
+        }
+      ]
+    },
+    {
+      "Key": "6060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "IA-05: DESERT WEEVIL"
+        }
+      ]
+    },
+    {
+      "Key": "6070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "IB-01: CEL 240"
+        }
+      ]
+    },
+    {
+      "Key": "6080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "IA-13: SEA SPIDER"
+        }
+      ]
+    },
+    {
+      "Key": "7050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "12(34) GHOST"
+        }
+      ]
+    },
+    {
+      "Key": "8050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RLF HELICOPTER"
+        }
+      ]
+    },
+    {
+      "Key": "8100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RaD BREACH PROGRESS"
+        }
+      ]
+    },
+    {
+      "Key": "8200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RaD MAIN MISSILE"
+        }
+      ]
+    },
+    {
+      "Key": "8210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RaD SUB-MISSILE (RIGHT)"
+        }
+      ]
+    },
+    {
+      "Key": "8220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "RaD SUB-MISSILE (LEFT)"
+        }
+      ]
+    },
+    {
+      "Key": "8300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "XYLEM CONTROL TOWER"
+        }
+      ]
+    },
+    {
+      "Key": "8310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "XYLEM SHIELD"
+        }
+      ]
+    },
+    {
+      "Key": "8320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "XYLEM LOCKOUT PROGRESS"
+        }
+      ]
+    }
+  ]
+}

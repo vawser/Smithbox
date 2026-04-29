@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <host />
+        <white />
+        <smallWhite />
+        <gold />
+        <smallGold />
+        <coopBlue />
+        <versusBlue />
+        <blackSign />
+        <blackIntrude />
+        <redSign />
+        <redIntrude />
+        <bellGuard />
+        <ratKing />
+        <dragon />
+        <mirrorKnightSign />
+        <abyssSign />
+        <duelBlue />
+        <duelRed />
+        <dummy01 />
+        <dummy02 />
+        <mirrorKnightIntrude />
+        <abyssIntrude />
+    </Field>
+</PARAMMETA>

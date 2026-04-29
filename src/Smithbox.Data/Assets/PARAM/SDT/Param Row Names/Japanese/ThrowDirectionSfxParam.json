@@ -1,0 +1,329 @@
+{
+  "Name": "ThrowDirectionSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test -- テスト用"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[NTC] Weapon Iron -- 【NTC】武器鉄"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[NTC] Weapon iron for PC -- 【NTC】PC専用武器鉄"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[NTC] Weapon tree -- 【NTC】武器木"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[NTC] Weapon meat -- 【NTC】武器肉"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[NTC] Iron fan -- 【NTC】鉄扇"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[NTC] Shield tree -- 【NTC】盾木"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[NTC] Nanban Iron -- 【NTC】南蛮鉄"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[NTC] Insect -- 【NTC】虫"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor leather -- 鎧革"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[NTC] Meat -- 【NTC】肉"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Meat_weakness -- 肉_弱点"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[NTC] Underwater meat -- 【NTC】水中肉"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Heavy iron -- 重鉄"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "[NTC] Meat under armor -- 【NTC】鎧の下の肉"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "hair -- 毛"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (soft) -- 石（軟）"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "wing -- 羽"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Carrion -- 腐肉"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Dead spirit -- 死霊"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "crystal -- 結晶"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "liquid -- 液体"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "rock -- 岩"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield stone -- 盾石"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield heavy iron -- 盾重鉄"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[NTC] Grief (effective) -- 【NTC】怨霊（有効）"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[NTC] Grief (invalid) -- 【NTC】怨霊（無効）"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[NTC] Phantom (effective) -- 【NTC】幻影（有効）"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "[NTC] Phantom (invalid) -- 【NTC】幻影（無効）"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "[NTC] Poisonous meat -- 【NTC】毒肉"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "[NTC] White meat -- 【NTC】白肉"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Ghost Black (for guarding) -- ゴーストブラック(ガード時用)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Ghost Enemy White (for guarding) -- ゴースト敵ホワイト(ガード時用)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Ghost Enemy Black (for guarding) -- ゴースト敵ブラック(ガード時用)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "[NTC] None -- 【NTC】なし"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Eye light -- 眼光"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Eclipse -- 蝕"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Maggot -- 蛆"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Charcoal -- 炭"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Chainmail -- くさりかたびら"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body fluid -- 体液"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Meat (raw) -- 肉（生者）"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Meat (raw) _ weakness -- 肉（生者）_弱点"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Corrosion_weakness -- 蝕_弱点"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Spare 1 -- 予備１"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Spare 2 -- 予備２"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "Spare 3 -- 予備３"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Material 1 -- 材質１"
+      ]
+    }
+  ]
+}

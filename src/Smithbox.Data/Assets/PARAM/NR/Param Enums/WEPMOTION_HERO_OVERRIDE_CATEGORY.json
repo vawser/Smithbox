@@ -1,0 +1,128 @@
+{
+  "Key": "WEPMOTION_HERO_OVERRIDE_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEPMOTION_HERO_OVERRIDE_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wylder - Greatsword"
+        }
+      ]
+    },
+    {
+      "Key": "271",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian - Halberd"
+        }
+      ]
+    },
+    {
+      "Key": "272",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ironeye - Bow"
+        }
+      ]
+    },
+    {
+      "Key": "273",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Duchess - Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "274",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raider - Greataxe / Great Hammer / Colossal Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "275",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revenant - Cursed Claws"
+        }
+      ]
+    },
+    {
+      "Key": "276",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Recluse - Staff / Seal"
+        }
+      ]
+    },
+    {
+      "Key": "277",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor - Katana"
+        }
+      ]
+    },
+    {
+      "Key": "278",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Executor - Cursed Sword (Suncatcher)"
+        }
+      ]
+    },
+    {
+      "Key": "279",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar - Thrusting Sword"
+        }
+      ]
+    },
+    {
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undertaker - Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "281",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scholar - Frozen Needle"
+        }
+      ]
+    }
+  ]
+}

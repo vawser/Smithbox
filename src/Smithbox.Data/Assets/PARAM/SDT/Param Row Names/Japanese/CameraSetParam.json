@@ -1,0 +1,707 @@
+{
+  "Name": "CameraSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default_normal -- デフォルト_通常"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Default_narrow space -- デフォルト_狭所"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Default_Indoor wide -- デフォルト_屋内広め"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Default_up wire -- デフォルト_上りワイヤー"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Default_underfloor -- デフォルト_床下"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Default_infinite wall jump -- デフォルト_無限壁ジャンプ"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Default_Looking up / Looking down slope -- デフォルト_見上げ/見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "[M10_00_Samurai residence] Normal state (default) -- 【m10_00_武家屋敷】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "[M10_00_Samurai residence] Narrow space (default) -- 【m10_00_武家屋敷】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "[M10_00_Samurai residence] Wide indoor (default) -- 【m10_00_武家屋敷】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "[M10_00_Samurai residence] Up wire (default) -- 【m10_00_武家屋敷】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1000031,
+      "Entries": [
+        "[M10_00_Samurai residence] Narrow space (for stairs in front of the boss) -- 【m10_00_武家屋敷】狭所（ボス前階段専用）"
+      ]
+    },
+    {
+      "ID": 1000500,
+      "Entries": [
+        "[M10_00_Samurai residence] Butterfly_Normal -- 【m10_00_武家屋敷】お蝶_通常"
+      ]
+    },
+    {
+      "ID": 1000501,
+      "Entries": [
+        "[M10_00_Samurai residence] Butterfly_Attack that moves sharply from side to side -- 【m10_00_武家屋敷】お蝶_左右に鋭く動く攻撃"
+      ]
+    },
+    {
+      "ID": 1000510,
+      "Entries": [
+        "[M10_00_Samurai Residence] Chief of Ninja Army (True) _Normal -- 【m10_00_武家屋敷】忍軍の長(真)_通常"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "[M11_00_Castle] Normal state (default) -- 【m11_00_城下】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "[M11_00_ Castle] Narrow space (default) -- 【m11_00_城下】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1100002,
+      "Entries": [
+        "[M11_00_ Castle] Wide indoor (default) -- 【m11_00_城下】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1100003,
+      "Entries": [
+        "[M11_00_ Castle] Up wire (default) -- 【m11_00_城下】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "[M11_00_ Castle] With Shinboku front lining -- 【m11_00_城下】御神木前張り付き"
+      ]
+    },
+    {
+      "ID": 1100201,
+      "Entries": [
+        "[M11_00_ Castle] Infiltrate the litter -- 【m11_00_城下】輿に潜入"
+      ]
+    },
+    {
+      "ID": 1100500,
+      "Entries": [
+        "[M11_00_Castle] Horse-riding warrior_Normal -- 【m11_00_城下】騎馬武者_通常"
+      ]
+    },
+    {
+      "ID": 1100501,
+      "Entries": [
+        "[M11_00_Castle] Cavalry warrior_Look up -- 【m11_00_城下】騎馬武者_見上げ"
+      ]
+    },
+    {
+      "ID": 1100502,
+      "Entries": [
+        "[M11_00_Castle] Horse-riding warrior_close -- 【m11_00_城下】騎馬武者_寄り"
+      ]
+    },
+    {
+      "ID": 1100510,
+      "Entries": [
+        "[M11_00_Castle] Buddhist demon _Normal -- 【m11_00_城下】仏師鬼_通常"
+      ]
+    },
+    {
+      "ID": 1100511,
+      "Entries": [
+        "[M11_00_Castle] Buddhist demon_Jumping -- 【m11_00_城下】仏師鬼_ジャンプ中"
+      ]
+    },
+    {
+      "ID": 1100512,
+      "Entries": [
+        "[M11_00_Castle] Buddhist demon _Jump Lower attack -- 【m11_00_城下】仏師鬼_ジャンプ下段攻撃中"
+      ]
+    },
+    {
+      "ID": 1100513,
+      "Entries": [
+        "[M11_00_Castle] Buddhist demon _ Growing up -- 【m11_00_城下】仏師鬼_伸び上がり中"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "[M11_01_Honjo] Normal state (default) -- 【m11_01_本城】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1101001,
+      "Entries": [
+        "[M11_01_Honjo] Narrow space (default) -- 【m11_01_本城】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1101002,
+      "Entries": [
+        "[M11_01_Honjo] Wide indoor (default) -- 【m11_01_本城】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1101003,
+      "Entries": [
+        "[M11_01_Honjo] Up wire (default) -- 【m11_01_本城】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1101020,
+      "Entries": [
+        "[M11_01_Honjo] Looking up / looking down slope -- 【m11_01_本城】見上げ/見下ろし斜面"
+      ]
+    },
+    {
+      "ID": 1101500,
+      "Entries": [
+        "[M11_01_Honjo] Rival_Normal -- 【m11_01_本城】ライバル_通常"
+      ]
+    },
+    {
+      "ID": 1101501,
+      "Entries": [
+        "[M11_01_Honjo] Rival_Bow 4 consecutive shots -- 【m11_01_本城】ライバル_弓4連射"
+      ]
+    },
+    {
+      "ID": 1101510,
+      "Entries": [
+        "[M11_01_Honjo] Kensei_Normal -- 【m11_01_本城】剣聖_通常"
+      ]
+    },
+    {
+      "ID": 1101520,
+      "Entries": [
+        "[M11_01_Honjo] Chief of Ninja Army (Old) _Normal -- 【m11_01_本城】忍軍の長(老)_通常"
+      ]
+    },
+    {
+      "ID": 1101530,
+      "Entries": [
+        "[M11_01_Honjo] Isei&#39;s daughter_Normal -- 【m11_01_本城】医聖の娘_通常"
+      ]
+    },
+    {
+      "ID": 1102000,
+      "Entries": [
+        "[M11_02_Hidden prison] Normal state (default) -- 【m11_02_隠し牢】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1102001,
+      "Entries": [
+        "[M11_02_Hidden prison] Narrow space (default) -- 【m11_02_隠し牢】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1102002,
+      "Entries": [
+        "[M11_02_Hidden prison] Wide indoor (default) -- 【m11_02_隠し牢】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1102003,
+      "Entries": [
+        "[M11_02_Hidden prison] Up wire (default) -- 【m11_02_隠し牢】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1102300,
+      "Entries": [
+        "[M11_02_Hidden prison] Bridge_Hanging_Eavesdropping -- 【m11_02_隠し牢】橋_ぶら下がり_盗み聞き"
+      ]
+    },
+    {
+      "ID": 1102500,
+      "Entries": [
+        "[M11_02_hidden prison] Rival_normal -- 【m11_02_隠し牢】ライバル_通常"
+      ]
+    },
+    {
+      "ID": 1102501,
+      "Entries": [
+        "[M11_02_Hidden prison] Rival_Bow 4 consecutive shots -- 【m11_02_隠し牢】ライバル_弓4連射"
+      ]
+    },
+    {
+      "ID": 1102510,
+      "Entries": [
+        "[M11_02_Hidden Prison] Kensei_Normal -- 【m11_02_隠し牢】剣聖_通常"
+      ]
+    },
+    {
+      "ID": 1102900,
+      "Entries": [
+        "[M11_02_Hidden prison] Crouching with a low ceiling (test) -- 【m11_02_隠し牢】天井が低いしゃがみ状態（テスト）"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "[M13_00_Dungeon] Normal state (default) -- 【m13_00_地下牢】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1300001,
+      "Entries": [
+        "[M13_00_Dungeon] Narrow space (default) -- 【m13_00_地下牢】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1300002,
+      "Entries": [
+        "[M13_00_ Dungeon] Wide indoor (default) -- 【m13_00_地下牢】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1300003,
+      "Entries": [
+        "[M13_00_ Dungeon] Up wire (default) -- 【m13_00_地下牢】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "[M15_00_Sick Village] Normal state (default) -- 【m15_00_病み村】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1500001,
+      "Entries": [
+        "[M15_00_Sick Village] Narrow space (default) -- 【m15_00_病み村】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1500002,
+      "Entries": [
+        "[M15_00_Sick Village] Wide indoor (default) -- 【m15_00_病み村】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1500003,
+      "Entries": [
+        "[M15_00_Sick Village] Up wire (default) -- 【m15_00_病み村】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1500200,
+      "Entries": [
+        "[M15_00_Sick Village] Female player_Normal -- 【m15_00_病み村】女奏者_通常"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "[M17_00_ Valley] Normal state (default) -- 【m17_00_渓谷】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1700001,
+      "Entries": [
+        "[M17_00_ Valley] Narrow space (default) -- 【m17_00_渓谷】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1700002,
+      "Entries": [
+        "[M17_00_ Valley] Wide indoor (default) -- 【m17_00_渓谷】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1700003,
+      "Entries": [
+        "[M17_00_ Valley] Up wire (default) -- 【m17_00_渓谷】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 1700300,
+      "Entries": [
+        "[M17_00_ Valley] For boss area only (test) -- 【m17_00_渓谷】ボスエリア専用（テスト）"
+      ]
+    },
+    {
+      "ID": 1700350,
+      "Entries": [
+        "[M17_00_Valley] Dedicated to the large snake fall ninja area (test) -- 【m17_00_渓谷】大蛇落下忍殺エリア専用（テスト）"
+      ]
+    },
+    {
+      "ID": 1700500,
+      "Entries": [
+        "[M17_00_ Valley] Yasha Ape -- 【m17_00_渓谷】夜叉猿"
+      ]
+    },
+    {
+      "ID": 1700501,
+      "Entries": [
+        "[M17_00_Valley] Yasha Ape_Behavior that grows at a short distance -- 【m17_00_渓谷】夜叉猿_近距離で伸び上がる行動"
+      ]
+    },
+    {
+      "ID": 1700502,
+      "Entries": [
+        "[M17_00_Valley] Yasha Ape_Jump behavior -- 【m17_00_渓谷】夜叉猿_ジャンプ行動"
+      ]
+    },
+    {
+      "ID": 1700510,
+      "Entries": [
+        "[M17_00_Valley] Yasha Ape_After the appearance of the bride monkey -- 【m17_00_渓谷】夜叉猿_嫁猿登場後"
+      ]
+    },
+    {
+      "ID": 1700511,
+      "Entries": [
+        "[M17_00_Valley] Yasha Ape_After the appearance of the bride monkey_Behavior that grows at a short distance -- 【m17_00_渓谷】夜叉猿_嫁猿登場後_近距離で伸び上がる行動"
+      ]
+    },
+    {
+      "ID": 1700512,
+      "Entries": [
+        "[M17_00_Valley] Yasha Ape_After the appearance of the bride monkey_Jump behavior -- 【m17_00_渓谷】夜叉猿_嫁猿登場後_ジャンプ行動"
+      ]
+    },
+    {
+      "ID": 1700900,
+      "Entries": [
+        "[M17_00_ Valley] Crouching with a low ceiling (test) -- 【m17_00_渓谷】天井が低いしゃがみ状態（テスト）"
+      ]
+    },
+    {
+      "ID": 1700901,
+      "Entries": [
+        "[M17_00_ Valley] Climb the wall continuously (test) -- 【m17_00_渓谷】連続で壁を登る（テスト）"
+      ]
+    },
+    {
+      "ID": 1700902,
+      "Entries": [
+        "[M17_00_Valley] Normal state (default) _ Centipede size only -- 【m17_00_渓谷】通常状態（デフォルト）_ムカデ大専用"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "[M20_00_Temple] Normal state (default) -- 【m20_00_寺】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2000001,
+      "Entries": [
+        "[M20_00_Temple] Narrow space (default) -- 【m20_00_寺】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2000002,
+      "Entries": [
+        "[M20_00_Temple] Wide indoor (default) -- 【m20_00_寺】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2000003,
+      "Entries": [
+        "[M20_00_Temple] Up wire (default) -- 【m20_00_寺】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2000900,
+      "Entries": [
+        "[M20_00_Temple] Crouching with a low ceiling (test) -- 【m20_00_寺】天井が低いしゃがみ状態（テスト）"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "[M25_00_submerged city] Normal state (default) -- 【m25_00_水没都】通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2500001,
+      "Entries": [
+        "[M25_00_ Submerged City] Narrow space (default) -- 【m25_00_水没都】狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2500002,
+      "Entries": [
+        "[M25_00_ Submerged City] Wide indoor (default) -- 【m25_00_水没都】屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2500003,
+      "Entries": [
+        "[M25_00_submerged city] Up wire (default) -- 【m25_00_水没都】上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 2500010,
+      "Entries": [
+        "[M25_00_ Submerged City] Nishikigoi Battle Area -- 【m25_00_水没都】錦鯉戦闘エリア"
+      ]
+    },
+    {
+      "ID": 2500200,
+      "Entries": [
+        "[M25_00_ Submerged City] Nishikigoi -- 【m25_00_水没都】錦鯉"
+      ]
+    },
+    {
+      "ID": 2500210,
+      "Entries": [
+        "[M25_00_ Submerged City] Nishikigoi Bridge Event -- 【m25_00_水没都】錦鯉橋イベント"
+      ]
+    },
+    {
+      "ID": 2500500,
+      "Entries": [
+        "[M25_00_submerged city] Mermaid dragon_normal -- 【m25_00_水没都】人魚竜_通常"
+      ]
+    },
+    {
+      "ID": 2500501,
+      "Entries": [
+        "[M25_00_Submerged City] Mermaid Dragon_Storm Jump Near the top -- 【m25_00_水没都】人魚竜_ストームジャンプ頂点付近"
+      ]
+    },
+    {
+      "ID": 2500502,
+      "Entries": [
+        "[M25_00_Submerged City] Mermaid Dragon_After Storm Jump -- 【m25_00_水没都】人魚竜_ストームジャンプ後中"
+      ]
+    },
+    {
+      "ID": 2500503,
+      "Entries": [
+        "[M25_00_Submerged City] Mermaid Dragon_Thunderback Blowing away_Pulling strongly -- 【m25_00_水没都】人魚竜_雷返し吹き飛ばし中_強く引く"
+      ]
+    },
+    {
+      "ID": 2500504,
+      "Entries": [
+        "[M25_00_Submerged City] Mermaid Dragon_Thunderback Blow-off _ Pull to some extent -- 【m25_00_水没都】人魚竜_雷返し吹き飛ばし中_ある程度引く"
+      ]
+    },
+    {
+      "ID": 2500550,
+      "Entries": [
+        "[M25_00_Submerged City] Haunting Monk_Normal -- 【m25_00_水没都】破戒僧_通常"
+      ]
+    },
+    {
+      "ID": 2500551,
+      "Entries": [
+        "[M25_00_Submerged City] Haunting Monk_On the Tree -- 【m25_00_水没都】破戒僧_木の上"
+      ]
+    },
+    {
+      "ID": 2500600,
+      "Entries": [
+        "[M25_00_ Submerged City] Okiryu -- 【m25_00_水没都】翁竜"
+      ]
+    },
+    {
+      "ID": 2500610,
+      "Entries": [
+        "[M25_00_submerged city] Okiryu_tentacles are appearing -- 【m25_00_水没都】翁竜_触手登場中"
+      ]
+    },
+    {
+      "ID": 9620000,
+      "Entries": [
+        "Prototype map-normal state (default) -- プロトタイプマップ-通常状態（デフォルト)"
+      ]
+    },
+    {
+      "ID": 9620001,
+      "Entries": [
+        "Prototype map-narrow space (default) -- プロトタイプマップ-狭所（デフォルト）"
+      ]
+    },
+    {
+      "ID": 9620002,
+      "Entries": [
+        "Prototype Map-Wide Indoors (Default) -- プロトタイプマップ-屋内広め（デフォルト）"
+      ]
+    },
+    {
+      "ID": 9620003,
+      "Entries": [
+        "Prototype map-up wire (default) -- プロトタイプマップ-上りワイヤー（デフォルト）"
+      ]
+    },
+    {
+      "ID": 9620200,
+      "Entries": [
+        "Prototype map-over the shinboku -- プロトタイプマップ-御神木上空"
+      ]
+    },
+    {
+      "ID": 9620201,
+      "Entries": [
+        "Prototype map-invades the litter -- プロトタイプマップ-輿に侵入"
+      ]
+    },
+    {
+      "ID": 9620202,
+      "Entries": [
+        "Prototype map-pasted in front of Mikamiki -- プロトタイプマップ-御神木前貼り付き"
+      ]
+    },
+    {
+      "ID": 9620210,
+      "Entries": [
+        "Prototype map-straw doll -- プロトタイプマップ-藁人形"
+      ]
+    },
+    {
+      "ID": 9980000,
+      "Entries": [
+        "Test map 998 series_normal state -- テストマップ998系_通常状態"
+      ]
+    },
+    {
+      "ID": 9980010,
+      "Entries": [
+        "Test map 998 series_infinite wall jump -- テストマップ998系_無限壁ジャンプ"
+      ]
+    },
+    {
+      "ID": 9990000,
+      "Entries": [
+        "Test map 999 series_normal state -- テストマップ999系_通常状態"
+      ]
+    },
+    {
+      "ID": 9990001,
+      "Entries": [
+        "Test Map-Overwrite test from Map Studio -- テストマップ-マップスタジオからの上書きテスト"
+      ]
+    },
+    {
+      "ID": 9990002,
+      "Entries": [
+        "Test map-Overwrite test from event -- テストマップ-イベントからの上書きテスト"
+      ]
+    },
+    {
+      "ID": 9990011,
+      "Entries": [
+        "Caucasian slave_test -- 白人奴隷_テスト"
+      ]
+    },
+    {
+      "ID": 9990100,
+      "Entries": [
+        "Yasha Ape_Test_HU Before_HU Normal -- 夜叉猿_テスト_HU前_HU後通常"
+      ]
+    },
+    {
+      "ID": 9990101,
+      "Entries": [
+        "Yasha Ape_Test_HU For heavy attack in front -- 夜叉猿_テスト_HU前の強攻撃用"
+      ]
+    },
+    {
+      "ID": 9990102,
+      "Entries": [
+        "Yasha Ape_Test_HU Proximity after -- 夜叉猿_テスト_HU後近接"
+      ]
+    },
+    {
+      "ID": 9990170,
+      "Entries": [
+        "Test Map-Attic Test 1 -- テストマップ-渓谷蛇谷社の天井裏テスト1"
+      ]
+    },
+    {
+      "ID": 9990171,
+      "Entries": [
+        "Test Map-Attic Test 2 of Gorge Jayasha -- テストマップ-渓谷蛇谷社の天井裏テスト2"
+      ]
+    },
+    {
+      "ID": 9990200,
+      "Entries": [
+        "Test map-Temple_Looking up allowed -- テストマップ-寺_見上げ許容"
+      ]
+    },
+    {
+      "ID": 9990201,
+      "Entries": [
+        "Test Map-Temple_Overlooking Allowed -- テストマップ-寺_見下ろし許容"
+      ]
+    },
+    {
+      "ID": 9900500,
+      "Entries": [
+        "[Test map] Rival_Normal -- 【テストマップ】ライバル_通常"
+      ]
+    },
+    {
+      "ID": 9990501,
+      "Entries": [
+        "[Test map] Rival_bow 4 consecutive shots -- 【テストマップ】ライバル_弓4連射"
+      ]
+    },
+    {
+      "ID": 9990510,
+      "Entries": [
+        "[Test map] Horse-riding warrior_normal -- 【テストマップ】騎馬武者_通常"
+      ]
+    },
+    {
+      "ID": 9990511,
+      "Entries": [
+        "[Test map] Cavalry warrior_Look up -- 【テストマップ】騎馬武者_見上げ"
+      ]
+    }
+  ]
+}

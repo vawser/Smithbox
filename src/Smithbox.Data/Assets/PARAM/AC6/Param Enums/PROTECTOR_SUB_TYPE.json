@@ -1,0 +1,38 @@
+{
+  "Key": "PROTECTOR_SUB_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PROTECTOR_SUB_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Propeller"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump Transformation"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "137",
+  "name": "Prowling Magus",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

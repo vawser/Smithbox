@@ -1,0 +1,47 @@
+{
+  "Key": "GOODS_SUPPLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GOODS_SUPPLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Estus Flask"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ashen Estus Flask"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unused"
+        }
+      ]
+    }
+  ]
+}

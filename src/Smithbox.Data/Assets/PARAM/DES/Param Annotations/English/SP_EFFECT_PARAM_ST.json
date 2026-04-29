@@ -1,0 +1,538 @@
+{
+  "Param": "SP_EFFECT_PARAM_ST",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SP_EFFECT_PARAM_ST",
+  "Description": "Determines the parameters for special effects.",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "The icon id to display in the interface whilst the effect is active."
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "State Info",
+      "Description": "ID of hardcoded system to use for unique effects. Causes effects itself and is necessary for certain fields to work.\nAlso used for visual effects by referring to the ID of a SpEffectVfxParam to use if useSpEffectEffect is true."
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "Apply to Self",
+      "Description": "Will affect the effect's owner."
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "Apply to Friend",
+      "Description": "Will affect the effect's owner's allies."
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "Apply to Enemy",
+      "Description": "Will affect the effect's owner's enemies."
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "Apply to Player",
+      "Description": "Will affect the player."
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "Apply to Non-Player",
+      "Description": "Will affect non-player characters."
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "Apply to Host",
+      "Description": "Will affect host player in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "Apply to Phantom",
+      "Description": "Will affect all types of client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetWhiteGhost",
+      "Name": "Apply to Friendly Phantom",
+      "Description": "Will affect friendly client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetBlackGhost",
+      "Name": "Apply to Hostile Phantom",
+      "Description": "Will affect hostile client players in multiplayer sessions."
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "Apply to Attacker",
+      "Description": "When effect is added via equipParamWeapon spEffectBehavior field, this field determines if the effect will be applied to attacked enemies instead of the effect owner.\ntrue = affects victim, false = affects owner"
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "Display Icon when Inactive",
+      "Description": "If ON, the interface icon for the effect will still disabled even if the effect is inactive due to a failed conditional check."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustMagicAblity",
+      "Name": "Apply Intelligence Correction",
+      "Description": "If ON, the intelligence stat will be used to correct various fields, such as damage."
+    },
+    {
+      "Field": "bAdjustFaithAblity",
+      "Name": "Apply Faith Correction",
+      "Description": "If ON, the faith stat will be used to correct various fields, such as damage."
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "Apply Modifiers only after Game Clear",
+      "Description": "If ON, this effect will only be active in NG+ or higher."
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "Trigger at HP Below %",
+      "Description": "The maximum percentage of HP required for effect to activate.\n-1 = no requirement, 40 = less than 40% HP, 80 = less than 80% HP"
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "Duration",
+      "Description": "The duration of effect. In seconds."
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "Trigger Interval",
+      "Description": "The interval for the contents of this effect to be reapplied. 0 = once per frame. In seconds."
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "Maximum HP %",
+      "Description": "Multiplies maximum HP. See bCurrHPIndependeMaxHP to determine how current HP behaves.\n1 = default, .5 = -50%, 2 = +100%"
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "Maximum MP %",
+      "Description": "Multiplies maximum MP."
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "Maximum Stamina %",
+      "Description": "Multiplies maximum stamina."
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "Weapon Influence Type",
+      "Description": "Determines how specific fields, such as damage modifiers, behave with certain attack categories"
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "Apply Modifiers to Sorcery",
+      "Description": "If ON, damage and scaling fields will apply to sorcery and pyromancies."
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "Apply Modifiers to Miracles",
+      "Description": "If ON, damage and scaling fields will apply to miracles."
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "Clear Held Souls",
+      "Description": "Sets soul counter to 0."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "physicsDamageCutRate",
+      "Name": "Absorption %: Physical",
+      "Description": "Multiplies neutral physical damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "Absorption %: Magic",
+      "Description": "Multiplies magic damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "Absorption %: Fire",
+      "Description": "Multiplies fire damage taken. Values below 1 mean damage is reduced, values above 1 mean damage is increased."
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "Post-Defense Attack %: Physical",
+      "Description": "Multiplies physical damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "Post-Defense Attack %: Magic",
+      "Description": "Multiplies magic damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "Post-Defense Attack %: Fire",
+      "Description": "Multiplies fire damage dealt (post-defense, bypasses attack rating)"
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "Attack %: Physical",
+      "Description": "Multiplies physical damage dealt."
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "Attack %: Magic",
+      "Description": "Multiplies magic damage dealt."
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "Attack %: Fire",
+      "Description": "Multiplies fire damage dealt."
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "Damage: Physical",
+      "Description": "Adds physical damage to attack rating."
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "Damage: Magic",
+      "Description": "Adds magic damage to attack rating."
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "Damage: Fire",
+      "Description": "Adds fire damage to attack rating."
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "Defense %: Physical",
+      "Description": "Multiplies physical defense."
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "Defense %: Magic",
+      "Description": "Multiplies magic defense."
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "Defense %: Fire",
+      "Description": "Multiplies fire defense."
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "Defense: Physical",
+      "Description": "Adds to physical defense."
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "Defense: Magic",
+      "Description": "Adds to magic defense."
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "Defense: Fire",
+      "Description": "Adds to fire defense."
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "Damage on Hit %: Unguarded",
+      "Description": "Multiplier to the damage suffered by the target if it is not guarding when hit."
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "Damage on Hit %: Weak Point",
+      "Description": "Multiplier to the damage suffered by the target if it is hit in a part designated as a 'weak point'."
+    },
+    {
+      "Field": "normalSpotChangeRate",
+      "Name": "Damage on Hit %: Standard",
+      "Description": "Multiplier to the damage suffered by the target if it is hit normally."
+    },
+    {
+      "Field": "maxHpChangeRate",
+      "Name": "Maximum HP Source Multiplier",
+      "Description": "Multiplier to the maxHpRate values present on the character this effect belongs to."
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "Damage HP by Percentage",
+      "Description": "Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum HP of the character."
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "Damage HP by Point",
+      "Description": "Causes HP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "Damage MP by Percentage",
+      "Description": "Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character."
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "Damage MP by Point",
+      "Description": "Causes MP loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "MP Recovery Speed",
+      "Description": "The amount of MP recovered per second."
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "Damage Stamina by Percentage",
+      "Description": "Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a percentage of the maximum MP of the character."
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "Damage Stamina by Point",
+      "Description": "Causes Stamina loss to the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "Stamina Recovery Speed",
+      "Description": "The amount of stamina recovered per second."
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "Magic Effect Duration Change",
+      "Description": "For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration.\n\nLingering Dragoncrest Ring uses stateinfo 193 which checks for isExtendSpEffectLife."
+    },
+    {
+      "Field": "insideDurability",
+      "Name": "Damage Durability by Point",
+      "Description": "Causes Durability loss to the used equipment of the character this effect belongs to by the set value. Negative values will restore. The value is a flat value."
+    },
+    {
+      "Field": "maxDurability",
+      "Name": "Hits per Durability Loss",
+      "Description": "Affects hits required before durability is consumed. 5 = +5 hits before durability consumed, -5 = -5 hits before durability consumed"
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "Attack %: Stamina",
+      "Description": "Multiplies stamina damage dealt."
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "poizonAttackPower",
+      "Name": "Inflict: Poison",
+      "Description": "Adds to the amount of poison status effect inflicted."
+    },
+    {
+      "Field": "registIllness",
+      "Name": "Inflict: Toxic",
+      "Description": "Adds to the amount of toxic status effect inflicted."
+    },
+    {
+      "Field": "registBlood",
+      "Name": "Inflict: Bleed",
+      "Description": "Adds to the amount of bleed status effect inflicted."
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "Fall Damage %",
+      "Description": "Does nothing. Fall control effects use stateInfo 47"
+    },
+    {
+      "Field": "soulRate",
+      "Name": "Soul Absorption %",
+      "Description": "Multiplies souls received from enemies."
+    },
+    {
+      "Field": "equipWeightChangeRate",
+      "Name": "Equipment Weight %",
+      "Description": "Multiplies maximum equip weight."
+    },
+    {
+      "Field": "allItemWeightChangeRate",
+      "Name": "Item Weight %",
+      "Description": "Multiplies maximum item weight. Does nothing. Probable DeS remnant."
+    },
+    {
+      "Field": "soul",
+      "Name": "Souls",
+      "Description": "Flat increase/decrease to souls."
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "Soul Possession %",
+      "Description": "Multiplies the amount of souls granted after death. Requires base value in character's NpcParam row."
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "Target Priority Addition",
+      "Description": "Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)."
+    },
+    {
+      "Field": "sightSearchEnemyCut",
+      "Name": "Visual Search Reduction %",
+      "Description": "The value to reduce the distance at which enemies see the effect's owner.\n0 = default, 50 = -50% sight distance, 100 = -100% sight distance"
+    },
+    {
+      "Field": "hearingSearchEnemyCut",
+      "Name": "Auditory Search Reduction %",
+      "Description": "The value to reduce the distance at which enemies hear the effect's owner.\n0 = default, 50 = -50% hearing distance, 100 = -100% hearing distance"
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "Request: Friendly Phantom",
+      "Description": "Used only by White Sign Soapstone. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "Request: Hostile Phantom",
+      "Description": "Used only by Red Sign Soapstone. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "Request: Invader",
+      "Description": "Used only by (Cracked) Red Eye Orb. Probably used for network matchmaking."
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "Request: Kick Phantom",
+      "Description": "Possibly kicks all clients out of your world."
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "Request: Leave",
+      "Description": "Used only by Black Separation Crystal. Probably used to leave network sessions."
+    },
+    {
+      "Field": "noDead",
+      "Name": "Is Owner Undying",
+      "Description": "If ON, character cannot become a corpse (and thus die)."
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "Ignore Current HP on Max HP Change",
+      "Description": "Determines how current HP behaves when maximum HP is modified. true = current HP will not change, false = current HP will change with max HP"
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "Attunement Slots (Magic)",
+      "Description": "Increases attunement slots."
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "Attunement Slots (Miracle)",
+      "Description": "Increases attunement slots."
+    },
+    {
+      "Field": "moveType",
+      "Name": "Movement Type",
+      "Description": "Offsets character movement animations."
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "registPoizonChangeRate",
+      "Name": "Resistance %: Poison",
+      "Description": "Multiplies stat based poison resistance."
+    },
+    {
+      "Field": "registIllnessChangeRate",
+      "Name": "Resistance %: Toxic",
+      "Description": "Multiplies stat based toxic resistance."
+    },
+    {
+      "Field": "registBloodChangeRate",
+      "Name": "Resistance %: Bleed",
+      "Description": "Multiplies stat based bleed resistance."
+    },
+    {
+      "Field": "soulStealRate",
+      "Name": "Soul Steal %",
+      "Description": "The defense power against HP loss when soul steal move is used."
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "Disable Durability",
+      "Description": "If ON, disables durability damage to the effect owner's weapons and armor."
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "Ignore Visual Search Adjustments",
+      "Description": "If ON, visual search adjustments from sightSearchEnemyCut are ignored by the effect owner."
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "Ignore Auditory Search Adjustments",
+      "Description": "If ON, auditory search adjustments from hearingSearchEnemyCut are ignored by the effect owner."
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "Ignore Magic Block",
+      "Description": "If ON, magic blocking effects are ignored by the effect owner (Vow of Silence)."
+    },
+    {
+      "Field": "forgedTargetIgnore",
+      "Name": "Ignore Decoy Target",
+      "Description": "If ON, the effect owner will ignore fake targets (Aural Decoy projectiles)."
+    },
+    {
+      "Field": "pad11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "Effect Duration Change Type",
+      "Description": "Determines the type of status effect to modify the duration of. SpEffects with the specified stateInfo will be affected."
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "Effect Duration Change %",
+      "Description": "Multiplies the duration of the status effect with the stateInfo specified by lifeReductionType."
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "HP Recovery %",
+      "Description": "Multiplies healing received."
+    },
+    {
+      "Field": "disablePoison",
+      "Name": "Is Immune to Poison",
+      "Description": "If ON, effect owner becomes immune to poison."
+    },
+    {
+      "Field": "disableDisease",
+      "Name": "Is Immune to Toxic",
+      "Description": "If ON, effect owner becomes immune to toxic."
+    },
+    {
+      "Field": "disableBlood",
+      "Name": "Is Immune to Bleed",
+      "Description": "If ON, effect owner becomes immune to bleed."
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "The priority of this SpEffect."
+    },
+    {
+      "Field": "category",
+      "Name": "Category",
+      "Description": "The category of this SpEffect."
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

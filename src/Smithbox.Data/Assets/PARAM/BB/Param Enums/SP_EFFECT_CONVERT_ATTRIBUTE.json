@@ -1,0 +1,47 @@
+{
+  "Key": "SP_EFFECT_CONVERT_ATTRIBUTE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_CONVERT_ATTRIBUTE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arcane"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bolt"
+        }
+      ]
+    }
+  ]
+}

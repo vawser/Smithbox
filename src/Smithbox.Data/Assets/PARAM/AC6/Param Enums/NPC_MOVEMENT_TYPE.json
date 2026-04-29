@@ -1,0 +1,47 @@
+{
+  "Key": "NPC_MOVEMENT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_MOVEMENT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AC"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Name": "Skill",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_Icon_Skill",
+    "SB_Icon_Skill_02"
+  ],
+  "SubTexturePrefix": "MENU_SkillStory_"
+}

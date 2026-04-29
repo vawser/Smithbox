@@ -1,0 +1,857 @@
+{
+  "Name": "SpEffectParam",
+  "Groups": [
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "iconId",
+        "dispIconNonactive"
+      ]
+    },
+    {
+      "Key": "Timing",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Timing"
+        }
+      ],
+      "Fields": [
+        "effectEndurance",
+        "motionInterval"
+      ]
+    },
+    {
+      "Key": "Common Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common Parameters"
+        }
+      ],
+      "Fields": [
+        "spCategory",
+        "categoryPriority",
+        "saveCategory",
+        "atkAttribute",
+        "spAttribute",
+        "spAttributeVariationValue",
+        "wepParamChange",
+        "moveType",
+        "throwCondition",
+        "deleteCriteriaDamage",
+        "dexterityCancelSystemOnlyAddDexterity",
+        "consumeStaminaRate",
+        "guardStaminaMult",
+        "changeSuperArmorPoint",
+        "bowDistRate",
+        "changeMagicSlot",
+        "heroPointDamage",
+        "addDeceasedLv",
+        "value_Magnification",
+        "itemDropRate",
+        "soulRate",
+        "soul",
+        "haveSoulRate",
+        "applyPartsGroup",
+        "wetConditionDepth",
+        "changeTeamType"
+      ]
+    },
+    {
+      "Key": "Behavior",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Behavior"
+        }
+      ],
+      "Fields": [
+        "behaviorId",
+        "dmypolyId",
+        "addBehaviorJudgeId_condition",
+        "addBehaviorJudgeId_add"
+      ]
+    },
+    {
+      "Key": "Triggers",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Triggers"
+        }
+      ],
+      "Fields": [
+        "conditionHp",
+        "conditionHpRate",
+        "replaceSpEffectId",
+        "cycleOccurrenceSpEffectId",
+        "atkOccurrenceSpEffectId",
+        "applyIdOnGetSoul",
+        "effectTargetOpposeTarget",
+        "effectTargetFriendlyTarget",
+        "effectTargetSelfTarget",
+        "effectTargetPcHorse",
+        "effectTargetPcDeceased",
+        "spiritDeathSpEffectId"
+      ]
+    },
+    {
+      "Key": "Targets",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Targets"
+        }
+      ],
+      "Fields": [
+        "effectTargetSelf",
+        "effectTargetFriend",
+        "effectTargetEnemy",
+        "effectTargetPlayer",
+        "effectTargetAI",
+        "effectTargetLive",
+        "effectTargetGhost",
+        "effectTargetWhiteGhost",
+        "effectTargetBlackGhost",
+        "effectTargetAttacker"
+      ]
+    },
+    {
+      "Key": "Categories",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Categories"
+        }
+      ],
+      "Fields": [
+        "magicSubCategoryChange1",
+        "magicSubCategoryChange2",
+        "magicSubCategoryChange3"
+      ]
+    },
+    {
+      "Key": "State",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "State"
+        }
+      ],
+      "Fields": [
+        "stateInfo",
+        "waitForTriggerStateInfo",
+        "invocationConditionsStateChange1",
+        "invocationConditionsStateChange2",
+        "invocationConditionsStateChange3"
+      ]
+    },
+    {
+      "Key": "Accumulator",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Accumulator"
+        }
+      ],
+      "Fields": [
+        "accumuOverFireId",
+        "accumuOverVal",
+        "accumuUnderFireId",
+        "accumuUnderVal",
+        "accumuVal"
+      ]
+    },
+    {
+      "Key": "Stats",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stats"
+        }
+      ],
+      "Fields": [
+        "addLifeForceStatus",
+        "addWillpowerStatus",
+        "addEndureStatus",
+        "addVitalityStatus",
+        "addStrengthStatus",
+        "addDexterityStatus",
+        "addMagicStatus",
+        "addFaithStatus",
+        "addLuckStatus"
+      ]
+    },
+    {
+      "Key": "Vitals",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Vitals"
+        }
+      ],
+      "Fields": [
+        "maxHpRate",
+        "maxMpRate",
+        "maxStaminaRate",
+        "equipWeightChangeRate",
+        "hpRecoverRate",
+        "bCurrHPIndependeMaxHP",
+        "isDestinedDeathHpMult",
+        "changeHpRate",
+        "changeHpPoint",
+        "changeMpRate",
+        "changeMpPoint",
+        "changeStaminaRate",
+        "changeStaminaPoint",
+        "staminaRecoverChangeSpeed"
+      ]
+    },
+    {
+      "Key": "PVP Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "PVP Damage"
+        }
+      ],
+      "Fields": [
+        "atkPlayerDmgCorrectRate_Physics",
+        "atkPlayerDmgCorrectRate_Magic",
+        "atkPlayerDmgCorrectRate_Fire",
+        "atkPlayerDmgCorrectRate_Thunder",
+        "atkPlayerDmgCorrectRate_Dark"
+      ]
+    },
+    {
+      "Key": "PVE Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "PVE Damage"
+        }
+      ],
+      "Fields": [
+        "atkEnemyDmgCorrectRate_Physics",
+        "atkEnemyDmgCorrectRate_Magic",
+        "atkEnemyDmgCorrectRate_Fire",
+        "atkEnemyDmgCorrectRate_Thunder",
+        "atkEnemyDmgCorrectRate_Dark"
+      ]
+    },
+    {
+      "Key": "Flat Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Flat Damage"
+        }
+      ],
+      "Fields": [
+        "physicsAttackRate",
+        "magicAttackRate",
+        "fireAttackRate",
+        "thunderAttackRate",
+        "darkAttackRate",
+        "staminaAttackRate",
+        "slashAttackRate",
+        "blowAttackRate",
+        "thrustAttackRate",
+        "neutralAttackRate"
+      ]
+    },
+    {
+      "Key": "Damage %",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage %"
+        }
+      ],
+      "Fields": [
+        "physicsAttackPowerRate",
+        "magicAttackPowerRate",
+        "fireAttackPowerRate",
+        "thunderAttackPowerRate",
+        "darkAttackPowerRate",
+        "slashAttackPowerRate",
+        "blowAttackPowerRate",
+        "thrustAttackPowerRate",
+        "neutralAttackPowerRate",
+        "saAttackPowerRate"
+      ]
+    },
+    {
+      "Key": "Power %",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Power %"
+        }
+      ],
+      "Fields": [
+        "physicsAttackPower",
+        "magicAttackPower",
+        "fireAttackPower",
+        "thunderAttackPower",
+        "darkAttackPower",
+        "slashAttackPower",
+        "blowAttackPower",
+        "thrustAttackPower",
+        "neutralAttackPower",
+        "changeSaPoint"
+      ]
+    },
+    {
+      "Key": "Weakness Types",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weakness Types"
+        }
+      ],
+      "Fields": [
+        "weakDmgRateA",
+        "weakDmgRateB",
+        "weakDmgRateC",
+        "weakDmgRateD",
+        "weakDmgRateE",
+        "weakDmgRateF"
+      ]
+    },
+    {
+      "Key": "Stat Changes",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Stat Changes"
+        }
+      ],
+      "Fields": [
+        "changeStrengthPoint",
+        "changeAgilityPoint",
+        "changeMagicPoint",
+        "changeFaithPoint",
+        "changeLuckPoint"
+      ]
+    },
+    {
+      "Key": "Weapon Art Restore",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weapon Art Restore"
+        }
+      ],
+      "Fields": [
+        "recoverArtsPoint_Str",
+        "recoverArtsPoint_Dex",
+        "recoverArtsPoint_Magic",
+        "recoverArtsPoint_Miracle"
+      ]
+    },
+    {
+      "Key": "Correction Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Correction Options"
+        }
+      ],
+      "Fields": [
+        "bAdjustStrengthAblity",
+        "bAdjustAgilityAblity",
+        "bAdjustMagicAblity",
+        "bAdjustFaithAblity",
+        "isUseAtkParamAtkPowerCorrect"
+      ]
+    },
+    {
+      "Key": "Affect Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Affect Options"
+        }
+      ],
+      "Fields": [
+        "magParamChange",
+        "miracleParamChange",
+        "shamanParamChange",
+        "throwAttackParamChange"
+      ]
+    },
+    {
+      "Key": "Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Absorption"
+        }
+      ],
+      "Fields": [
+        "slashDamageCutRate",
+        "blowDamageCutRate",
+        "thrustDamageCutRate",
+        "neutralDamageCutRate",
+        "magicDamageCutRate",
+        "fireDamageCutRate",
+        "thunderDamageCutRate",
+        "darkDamageCutRate",
+        "toughnessDamageCutRate"
+      ]
+    },
+    {
+      "Key": "PVP Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "PVP Absorption"
+        }
+      ],
+      "Fields": [
+        "defPlayerDmgCorrectRate_Physics",
+        "defPlayerDmgCorrectRate_Magic",
+        "defPlayerDmgCorrectRate_Fire",
+        "defPlayerDmgCorrectRate_Thunder",
+        "defPlayerDmgCorrectRate_Dark"
+      ]
+    },
+    {
+      "Key": "PVE Absorption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "PVE Absorption"
+        }
+      ],
+      "Fields": [
+        "defEnemyDmgCorrectRate_Physics",
+        "defEnemyDmgCorrectRate_Magic",
+        "defEnemyDmgCorrectRate_Fire",
+        "defEnemyDmgCorrectRate_Thunder",
+        "defEnemyDmgCorrectRate_Dark",
+        "defObjectAttackPowerRate",
+        "saReceiveDamageRate",
+        "defObjDmgCorrectRate"
+      ]
+    },
+    {
+      "Key": "Defence %",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Defence %"
+        }
+      ],
+      "Fields": [
+        "physicsDiffenceRate",
+        "magicDiffenceRate",
+        "fireDiffenceRate",
+        "thunderDiffenceRate",
+        "darkDiffenceRate"
+      ]
+    },
+    {
+      "Key": "Flat Defence",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Flat Defence"
+        }
+      ],
+      "Fields": [
+        "physicsDiffence",
+        "magicDiffence",
+        "fireDiffence",
+        "thunderDiffence",
+        "darkDiffence"
+      ]
+    },
+    {
+      "Key": "Aux Inflict",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Aux Inflict"
+        }
+      ],
+      "Fields": [
+        "poizonAttackPower",
+        "diseaseAttackPower",
+        "bloodAttackPower",
+        "curseAttackPower",
+        "freezeAttackPower",
+        "sleepAttackPower",
+        "madnessAttackPower"
+      ]
+    },
+    {
+      "Key": "Aux Resist",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Aux Resist"
+        }
+      ],
+      "Fields": [
+        "registPoizonChangeRate",
+        "registDiseaseChangeRate",
+        "registBloodChangeRate",
+        "registCurseChangeRate",
+        "registFreezeChangeRate",
+        "registSleepChangeRate",
+        "registMadnessChangeRate"
+      ]
+    },
+    {
+      "Key": "Flat Aux Resist",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Flat Aux Resist"
+        }
+      ],
+      "Fields": [
+        "changePoisonResistPoint",
+        "changeDiseaseResistPoint",
+        "changeBloodResistPoint",
+        "changeCurseResistPoint",
+        "changeFreezeResistPoint",
+        "changeSleepResistPoint",
+        "changeMadnessResistPoint"
+      ]
+    },
+    {
+      "Key": "Aux Damage Correction",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Aux Damage Correction"
+        }
+      ],
+      "Fields": [
+        "poisonDefDamageRate",
+        "diseaseDefDamageRate",
+        "bloodDefDamageRate",
+        "curseDefDamageRate",
+        "freezeDefDamageRate",
+        "sleepDefDamageRate",
+        "madnessDefDamageRate",
+        "bloodDamageRate",
+        "freezeDamageRate",
+        "sleepDamageRate",
+        "madnessDamageRate"
+      ]
+    },
+    {
+      "Key": "Aux Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Aux Options"
+        }
+      ],
+      "Fields": [
+        "isUseStatusAilmentAtkPowerCorrect",
+        "disablePoison",
+        "disableDisease",
+        "disableBlood",
+        "disableCurse",
+        "disableFreeze",
+        "disableSleep",
+        "disableMadness"
+      ]
+    },
+    {
+      "Key": "Guard",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Guard"
+        }
+      ],
+      "Fields": [
+        "guardStaminaCutRate",
+        "atkFlickPower",
+        "defFlickPower",
+        "flickDamageCutRate",
+        "guardDefFlickPowerRate"
+      ]
+    },
+    {
+      "Key": "Poise",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Poise"
+        }
+      ],
+      "Fields": [
+        "changeSuperArmorPoint",
+        "changeSaRecoveryVelocity"
+      ]
+    },
+    {
+      "Key": "Rally",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Rally"
+        }
+      ],
+      "Fields": [
+        "regainGaugeDamage",
+        "regainRate"
+      ]
+    },
+    {
+      "Key": "FP Consumption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "FP Consumption"
+        }
+      ],
+      "Fields": [
+        "artsConsumptionRate",
+        "magicConsumptionRate",
+        "shamanConsumptionRate",
+        "miracleConsumptionRate",
+        "goodsConsumptionRate"
+      ]
+    },
+    {
+      "Key": "Durability",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Durability"
+        }
+      ],
+      "Fields": [
+        "insideDurability",
+        "maxDurability",
+        "corrosionIgnore"
+      ]
+    },
+    {
+      "Key": "Estus Flask",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Estus Flask"
+        }
+      ],
+      "Fields": [
+        "changeHpEstusFlaskRate",
+        "changeHpEstusFlaskPoint",
+        "changeMpEstusFlaskRate",
+        "changeMpEstusFlaskPoint",
+        "changeHpEstusFlaskCorrectRate",
+        "changeMpEstusFlaskCorrectRate"
+      ]
+    },
+    {
+      "Key": "AI Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "AI Parameters"
+        }
+      ],
+      "Fields": [
+        "targetPriority",
+        "teamOffenseEffectivity",
+        "overwrite_maxBackhomeDist",
+        "overwrite_backhomeDist",
+        "overwrite_backhomeBattleDist",
+        "overwrite_BackHome_LookTargetDist",
+        "eye_angX",
+        "eye_angY",
+        "eyeAngleUpper_around",
+        "eyeAngleUpper_bottom",
+        "sightSearchEnemyRate",
+        "sightSearchRate",
+        "addAwarePointCorrectValue_forMe",
+        "addAwarePointCorrectValue_forTarget",
+        "sightSearchEnemyAdd",
+        "sightSearchAdd",
+        "sightSearchCutIgnore",
+        "hearingSearchEnemyRate",
+        "hearingAiSoundLevel",
+        "hearingSearchAdd",
+        "hearingSearchEnemyAdd",
+        "hearingSearchRate",
+        "hearingSearchCutIgnore",
+        "AppearAiSoundId",
+        "antiDarkSightRadius",
+        "antiDarkSightDmypolyId",
+        "isStopSearchedNotify"
+      ]
+    },
+    {
+      "Key": "Damage Level",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage Level"
+        }
+      ],
+      "Fields": [
+        "repAtkDmgLv",
+        "dmgLv_None",
+        "dmgLv_S",
+        "dmgLv_M",
+        "dmgLv_L",
+        "dmgLv_BlowM",
+        "dmgLv_Push",
+        "dmgLv_Strike",
+        "dmgLv_BlowS",
+        "dmgLv_Min",
+        "dmgLv_Uppercut",
+        "dmgLv_BlowLL",
+        "dmgLv_Breath"
+      ]
+    },
+    {
+      "Key": "Visual Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Visual Effects"
+        }
+      ],
+      "Fields": [
+        "vfxId",
+        "vfxId1",
+        "vfxId2",
+        "vfxId3",
+        "vfxId4",
+        "vfxId5",
+        "vfxId6",
+        "vfxId7",
+        "addFootEffectSfxId",
+        "effectEndDeleteDecalGroupId"
+      ]
+    },
+    {
+      "Key": "Effect Duration",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Effect Duration"
+        }
+      ],
+      "Fields": [
+        "isExtendSpEffectLife",
+        "enableLifeTime",
+        "extendLifeRate",
+        "contractLifeRate",
+        "lifeReductionRate",
+        "lifeReductionType"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "dontDeleteOnDead",
+        "ignoreNoDamage",
+        "dispIconNonactive",
+        "useSpEffectEffect",
+        "bGameClearBonus",
+        "clearSoul",
+        "noDead",
+        "antiMagicIgnore",
+        "grabityIgnore",
+        "hasTarget",
+        "clearTarget",
+        "replanningOnFire",
+        "eraseOnBonfireRecover",
+        "affectedByDurationContraction",
+        "isDisableNetSync",
+        "isCheckAboveShadowTest",
+        "isContractSpEffectLife",
+        "isWaitModeDelete",
+        "isIgnoreNoDamage",
+        "isHpBurnEffect"
+      ]
+    },
+    {
+      "Key": "Charm",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Charm"
+        }
+      ],
+      "Fields": [
+        "enableCharm",
+        "fakeTargetIgnore",
+        "fakeTargetIgnoreUndead",
+        "fakeTargetIgnoreAnimal",
+        "fakeTargetIgnoreAjin",
+        "fakeTargetIgnoreMirageArts"
+      ]
+    },
+    {
+      "Key": "Summon Requests",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Summon Requests"
+        }
+      ],
+      "Fields": [
+        "requestSOS",
+        "requestBlackSOS",
+        "requestForceJoinBlackSOS",
+        "requestForceJoinBlackSOS_B",
+        "requestKickSession",
+        "requestLeaveSession",
+        "requestNpcInveda",
+        "requestLeaveColiseumSession"
+      ]
+    },
+    {
+      "Key": "Covenant Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Covenant Options"
+        }
+      ],
+      "Fields": [
+        "vowType0",
+        "vowType1",
+        "vowType2",
+        "vowType3",
+        "vowType4",
+        "vowType5",
+        "vowType6",
+        "vowType7",
+        "vowType8",
+        "vowType9",
+        "vowType10",
+        "vowType11",
+        "vowType12",
+        "vowType13",
+        "vowType14",
+        "vowType15"
+      ]
+    }
+  ]
+}

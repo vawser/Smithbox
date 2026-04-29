@@ -1,0 +1,56 @@
+{
+  "Key": "BULLET_SHAPE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_SHAPE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Horizontal Capsule"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fan"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule (opposite direction)"
+        }
+      ]
+    }
+  ]
+}

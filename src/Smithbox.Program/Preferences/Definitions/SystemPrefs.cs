@@ -23,7 +23,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 0,
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -42,7 +42,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -61,7 +61,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -80,7 +80,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 4,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,
@@ -199,7 +199,6 @@ public class SystemPrefs
             OrderID = 4,
             Category = PreferenceCategory.System,
             Spacer = true,
-            InlineName = false,
             Section = SectionCategory.Loggers,
             Title = "Enable Log Message Color Fade",
             Description = "If enabled, log messages will slowly fade from their original color to a faded color.",
@@ -217,7 +216,6 @@ public class SystemPrefs
             OrderID = 5,
             Category = PreferenceCategory.System,
             Spacer = true,
-            InlineName = false,
             
             Section = SectionCategory.Loggers,
             
@@ -226,6 +224,24 @@ public class SystemPrefs
             
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Log_Popups);
+            }
+        };
+    }
+    public static PreferenceItem Logger_Enable_Scope_Logging()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 6,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = SectionCategory.Loggers,
+
+            Title = "Enable Scope Logging",
+            Description = "If enabled, the scope the log message is sent from is included in the log message.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Scope_Logging);
             }
         };
     }

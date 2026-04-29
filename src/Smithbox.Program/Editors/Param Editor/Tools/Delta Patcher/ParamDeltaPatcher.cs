@@ -68,7 +68,9 @@ public class ParamDeltaPatcher
 
         if (ImGui.CollapsingHeader("Param Delta Patcher"))
         {
-            if(ImGui.BeginTabBar("deltaTabs"))
+            ImGui.BeginChild("ParamDeltaPatcherToolSection");
+
+            if (ImGui.BeginTabBar("deltaTabs"))
             {
                 if(ImGui.BeginTabItem("Import"))
                 {
@@ -86,6 +88,8 @@ public class ParamDeltaPatcher
 
                 ImGui.EndTabBar();
             }
+
+            ImGui.EndChild();
         }
     }
 

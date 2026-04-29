@@ -64,6 +64,8 @@ public class ParamRowWindow
                 var curParam = Editor.Project.Handler.ParamData.PrimaryBank.Params[activeParam];
                 var meta = Editor.Project.Handler.ParamData.GetParamMeta(curParam.AppliedParamdef);
 
+                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(curParam.AppliedParamdef.ParamType);
+
                 var pinnedRowList = Editor.Project.Descriptor.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
@@ -112,7 +114,7 @@ public class ParamRowWindow
 
                         lastCol = HandleRowPresentation(selectionCachePins, i, activeParam, null, row,
                             vanillaDiffCache, auxDiffCaches, fmgDecorator, ref scrollTo, false, true, compareCol,
-                            compareColProp, meta);
+                            compareColProp, meta, annotations);
                     }
 
                     if (lastCol)
@@ -140,10 +142,14 @@ public class ParamRowWindow
                     _focusRows = false;
                 }
 
-                List<Param.Row> rows = CacheBank.GetCached(Editor, (ParentView.ViewIndex, activeParam),
-                    () => ParentView.MassEdit.RSE.Search((Editor.Project.Handler.ParamData.PrimaryBank, para),
+                var curSearchTerm = ParentView.Selection.GetCurrentRowSearchString();
 
-                ParentView.Selection.GetCurrentRowSearchString(), true, true));
+                List<Param.Row> rows = CacheBank.GetCached(
+                    Editor, (ParentView.ViewIndex, activeParam),
+                    () => ParentView.MassEdit.RSE.Search(
+                        (Editor.Project.Handler.ParamData.PrimaryBank, para),
+                       curSearchTerm, true, true)
+                    );
 
                 var enableGrouping = false;
 
@@ -188,7 +194,7 @@ public class ParamRowWindow
 
                             HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
                                 auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
-                                meta);
+                                meta, annotations);
 
                             if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
                                 currentRow.ID + 1 != next.ID)
@@ -200,7 +206,7 @@ public class ParamRowWindow
                         {
                             HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
                                 auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
-                                meta);
+                                meta, annotations);
                         }
                     }
                 }
@@ -402,9 +408,11 @@ public class ParamRowWindow
 
         if (ParentView.ParamTableWindow.IsInTableGroupMode(activeParam))
         {
-            if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.None)
+            if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
             {
-                label = $@"{Utils.ImGuiEscape(r.Name)}";
+                // Ignore the option if the Name is empty
+                if(r.Name != "")
+                    label = $@"{Utils.ImGuiEscape(r.Name)}";
             }
         }
 
@@ -524,7 +532,7 @@ public class ParamRowWindow
     private bool HandleRowPresentation(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
-        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta meta)
+        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta meta, ParamAnnotationEntry annotations)
     {
         if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
@@ -554,8 +562,10 @@ public class ParamRowWindow
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
                 ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(0, 0));
 
+                var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, c.Def.InternalName);
+
                 var metaContext = new FieldMetaContext(
-                    ParentView, meta, meta.GetField(c.Def), ParentView.Selection.GetActiveParam(), c.Def.InternalName);
+                    ParentView, meta, meta.GetField(c.Def), fieldAnnotation, ParentView.Selection.GetActiveParam(), c.Def.InternalName);
 
                 ParentView.FieldInputHandler.DisplayFieldInput(metaContext, compareCol.ValueType, c.Value, ref newval);
 

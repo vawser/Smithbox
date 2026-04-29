@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <eventFlag />
+        <condition  Enum="ITEM_USE_PERMIT_TYPE_CONDITION"/>
+        <isAllowUseOnLadder  IsBool=""/>
+        <isAllowMultipleUse  IsBool=""/>
+        <isConsume  IsBool=""/>
+        <isNormalConsumu  IsBool=""/>
+        <permitOnlineSingle  IsBool=""/>
+        <permitOnlineMulti  IsBool=""/>
+        <permitOffline  IsBool=""/>
+        <permitOnlineGuest  IsBool=""/>
+        <permitBattlePhantom  IsBool=""/>
+        <permitLeave  IsBool=""/>
+        <permitDrop  IsBool=""/>
+        <exEvalFuncID />
+    </Field>
+</PARAMMETA>

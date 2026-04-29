@@ -1,0 +1,56 @@
+{
+  "Key": "GEMEFFECT_GEN_PT",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GEMEFFECT_GEN_PT"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1: Fixed Effect"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2: Fixed Category"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 3: Category Group ID"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 4: Directional ID"
+        }
+      ]
+    }
+  ]
+}

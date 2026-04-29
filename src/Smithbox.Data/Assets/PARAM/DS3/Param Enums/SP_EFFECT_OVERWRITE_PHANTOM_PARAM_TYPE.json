@@ -1,0 +1,38 @@
+{
+  "Key": "SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forced Human"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forced Hollow"
+        }
+      ]
+    }
+  ]
+}

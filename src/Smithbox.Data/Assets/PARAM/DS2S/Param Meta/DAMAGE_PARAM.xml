@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <damageCategory  Refs="DamageCtrlParam"/>
+        <childDamage  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <damageGroup  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <damage01 />
+        <damage02 />
+        <damage03 />
+        <damageLower />
+        <damageType01  Enum="DAMAGE_ATTRIBUTE"/>
+        <damageType02  Enum="DAMAGE_ATTRIBUTE"/>
+        <damageType03  Enum="DAMAGE_ATTRIBUTE"/>
+        <damageRate />
+        <counterDamageRate />
+        <staminaDamage />
+        <durabilityDamage />
+        <knockBackPower />
+        <stiff />
+        <hitDummyPolyType  Enum="DAMAGE_DUMMY_POLY_TYPE"/>
+        <hitDummyPolyId />
+        <hitAttackMotionType  Enum="DAMAGE_ATTACK_TYPE"/>
+        <hitModelType  Enum="DAMAGE_MODEL_TYPE"/>
+        <radius />
+        <length />
+        <hitDistance />
+        <downAttackFlag />
+        <onceFlag />
+        <hitFlagOwner />
+        <hitFlagFriend />
+        <hitFlagEnemy />
+        <hitFlagNeutral />
+        <hitFlagMap />
+        <hitFlagObj />
+        <directionType  Enum="DAMAGE_DIRECTION_TYPE"/>
+        <guardDirectionType  Enum="DAMAGE_DIRECTION_TYPE"/>
+        <hitPosType  Enum="DAMAGE_HIT_POS_TYPE"/>
+        <hitAngleXZ />
+        <hitAngleY />
+        <isDamageGroupChr  IsBool=""/>
+        <isDamageGroupMap  IsBool=""/>
+        <isDamageGroupObj  IsBool=""/>
+        <spEffectIdWhenHit />
+        <spEffectTarget  Enum="DAMAGE_SP_EFFECT_TARGET"/>
+        <spEffectTargetRegion  Enum="SP_EFFECT_TARGET_REGION"/>
+        <spEffectDuplication  Enum="SP_EFFECT_DUPLICATION"/>
+        <materialSize  Enum="DAMAGE_MATERIAL_SIZE"/>
+        <material  Refs="MaterialParam"/>
+        <traceSfx />
+        <traceSfxColor  Enum="DAMAGE_SFX_TRACE_DP_COLOR_ENUM"/>
+        <traceSfxPos />
+        <overKilledBlowPower />
+        <movementPowerType  Refs="DamageMovementPowerParam"/>
+        <attackTypeRateType  Refs="DamageAttackTypeRateParam"/>
+        <styleRateType  Refs="DamageStyleRateParam"/>
+        <eventDamage />
+        <flipHitDummyPolyType  Enum="DAMAGE_DUMMY_POLY_TYPE"/>
+        <flipHitDummyPolyId />
+        <flipHitModelType  Enum="DAMAGE_MODEL_TYPE"/>
+        <damagOverwrite  IsBool=""/>
+        <disallowInvincible  IsBool=""/>
+        <flipFlagMapFloor />
+        <flipFlagMapWall />
+        <flipFlagObj />
+        <isDoorCheck />
+        <expandSfxDisable />
+        <dummy5 />
+        <flipHitRadius />
+        <flipHitLength />
+        <grabParamId  Refs="GrabParam"/>
+        <expandSize />
+        <expandTime />
+    </Field>
+</PARAMMETA>

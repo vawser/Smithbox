@@ -1,0 +1,117 @@
+{
+  "Name": "maptargetdirparam",
+  "Instances": [
+    {
+      "DisplayName": "Things Betwixt",
+      "Param": "maptargetdirparam_m10_02_00_00"
+    },
+    {
+      "DisplayName": "Majula",
+      "Param": "maptargetdirparam_m10_04_00_00"
+    },
+    {
+      "DisplayName": "Forest of Fallen Giants",
+      "Param": "maptargetdirparam_m10_10_00_00"
+    },
+    {
+      "DisplayName": "Brightstone Cove Tseldora",
+      "Param": "maptargetdirparam_m10_14_00_00"
+    },
+    {
+      "DisplayName": "Aldia's Keep",
+      "Param": "maptargetdirparam_m10_15_00_00"
+    },
+    {
+      "DisplayName": "The Lost Bastille & Belfry Luna",
+      "Param": "maptargetdirparam_m10_16_00_00"
+    },
+    {
+      "DisplayName": "Harvest Valley & Earthen Peak",
+      "Param": "maptargetdirparam_m10_17_00_00"
+    },
+    {
+      "DisplayName": "No-man's Wharf",
+      "Param": "maptargetdirparam_m10_18_00_00"
+    },
+    {
+      "DisplayName": "Iron Keep & Belfry Sol",
+      "Param": "maptargetdirparam_m10_19_00_00"
+    },
+    {
+      "DisplayName": "Huntsman's Copse & Undead Purgatory",
+      "Param": "maptargetdirparam_m10_23_00_00"
+    },
+    {
+      "DisplayName": "The Gutter & Black Gulch",
+      "Param": "maptargetdirparam_m10_25_00_00"
+    },
+    {
+      "DisplayName": "Dragon Aerie & Dragon Shrine",
+      "Param": "maptargetdirparam_m10_27_00_00"
+    },
+    {
+      "DisplayName": "Majula <-> Shaded Woods",
+      "Param": "maptargetdirparam_m10_29_00_00"
+    },
+    {
+      "DisplayName": "Heide's Tower <-> No-man's Wharf",
+      "Param": "maptargetdirparam_m10_30_00_00"
+    },
+    {
+      "DisplayName": "Heide's Tower of Flame",
+      "Param": "maptargetdirparam_m10_31_00_00"
+    },
+    {
+      "DisplayName": "Shaded Woods & Shrine of Winter",
+      "Param": "maptargetdirparam_m10_32_00_00"
+    },
+    {
+      "DisplayName": "Doors of Pharros",
+      "Param": "maptargetdirparam_m10_33_00_00"
+    },
+    {
+      "DisplayName": "Grave of Saints",
+      "Param": "maptargetdirparam_m10_34_00_00"
+    },
+    {
+      "DisplayName": "Memory of Vammar, Orro, and Jeigh",
+      "Param": "maptargetdirparam_m20_10_00_00"
+    },
+    {
+      "DisplayName": "Shrine of Amana",
+      "Param": "maptargetdirparam_m20_11_00_00"
+    },
+    {
+      "DisplayName": "Drangleic Castle & Throne of Want",
+      "Param": "maptargetdirparam_m20_21_00_00"
+    },
+    {
+      "DisplayName": "Undead Crypt",
+      "Param": "maptargetdirparam_m20_24_00_00"
+    },
+    {
+      "DisplayName": "Dragon Memories",
+      "Param": "maptargetdirparam_m20_26_00_00"
+    },
+    {
+      "DisplayName": "Dark Chasm of Old",
+      "Param": "maptargetdirparam_m40_03_00_00"
+    },
+    {
+      "DisplayName": "Shulva, Sanctum City",
+      "Param": "maptargetdirparam_m50_35_00_00"
+    },
+    {
+      "DisplayName": "Brume Tower",
+      "Param": "maptargetdirparam_m50_36_00_00"
+    },
+    {
+      "DisplayName": "Frozen Eleum Loyce",
+      "Param": "maptargetdirparam_m50_37_00_00"
+    },
+    {
+      "DisplayName": "Memory of the King",
+      "Param": "maptargetdirparam_m50_38_00_00"
+    }
+  ]
+}

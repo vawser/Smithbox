@@ -1,0 +1,63 @@
+{
+  "Param": "RITUAL_REQUIRED_MAT_PARAM",
+  "Type": "RITUAL_REQUIRED_MAT_PARAM",
+  "Name": "RITUAL_REQUIRED_MAT_PARAM",
+  "Description": "Chalice - Ritual Materials",
+  "Fields": [
+    {
+      "Field": "useSoul",
+      "Name": "Soul Amount",
+      "Description": "Required soul amount (0: none)"
+    },
+    {
+      "Field": "materialItemId_1",
+      "Name": "Material Item ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "materialItemId_2",
+      "Name": "Material Item ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "materialItemId_3",
+      "Name": "Material Item ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "materialItemId_4",
+      "Name": "Material Item ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "materialItemId_5",
+      "Name": "Material Item ID [5]",
+      "Description": ""
+    },
+    {
+      "Field": "num_1",
+      "Name": "Material Count [1]",
+      "Description": ""
+    },
+    {
+      "Field": "num_2",
+      "Name": "Material Count [2]",
+      "Description": ""
+    },
+    {
+      "Field": "num_3",
+      "Name": "Material Count [3]",
+      "Description": ""
+    },
+    {
+      "Field": "num_4",
+      "Name": "Material Count [4]",
+      "Description": ""
+    },
+    {
+      "Field": "num_5",
+      "Name": "Material Count [5]",
+      "Description": ""
+    }
+  ]
+}

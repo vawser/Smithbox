@@ -1,0 +1,14 @@
+{
+  "id": "227",
+  "name": "Undead Dog",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

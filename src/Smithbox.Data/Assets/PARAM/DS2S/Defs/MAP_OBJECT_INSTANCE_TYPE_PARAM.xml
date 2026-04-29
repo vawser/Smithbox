@@ -1,22 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MAP_OBJECT_INSTANCE_TYPE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 Unk00a" />
-    <Field Def="u8 Unk00b" />
-    <Field Def="u8 Unk00c" />
-    <Field Def="u8 Unk00d" />
-    <Field Def="s32 object_hp" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="s32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="f32 Unk07" />
-  </Fields>
+    <ParamType>MAP_OBJECT_INSTANCE_TYPE_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 sizeType">
+            <DisplayName>《小型/大型》</DisplayName>
+            <Enum>OBJ_SIZE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 weightType">
+            <DisplayName>《重量》</DisplayName>
+            <Enum>OBJ_WEIGHT_TYPE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 breakAction">
+            <DisplayName>《破壊可能行動》</DisplayName>
+            <Enum>OBJ_BREAK_ACTION_TYPE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 durabilityType">
+            <DisplayName>《荷重限界》</DisplayName>
+            <Enum>OBJ_UPPER_DURABILITY_TYPE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="s16 hp">
+            <DisplayName>《HP》</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>9999</Maximum>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 impact">
+            <DisplayName>《接触衝撃耐性》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Minimum>-1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 mass = 0.1">
+            <DisplayName>《質量》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Minimum>0.1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 friction">
+            <DisplayName>《摩擦係数》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 restitution">
+            <DisplayName>《反発係数》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u32 objAttackAttr">
+            <DisplayName>《ダメージ_攻撃属性》</DisplayName>
+            <Enum>DAMAGE_OBJ_ATTACK_ATTR_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 rumbleScale">
+            <DisplayName>《ヒット時揺れ最大幅》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 rumbleTime">
+            <DisplayName>《ヒット時揺れ時間》</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

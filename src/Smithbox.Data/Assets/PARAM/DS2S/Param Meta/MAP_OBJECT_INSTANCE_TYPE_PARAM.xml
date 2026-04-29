@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <sizeType  Enum="OBJ_SIZE_ENUM"/>
+        <weightType  Refs="MapObjectWeightParam"/>
+        <breakAction  Enum="OBJ_BREAK_ACTION_TYPE_ENUM"/>
+        <durabilityType  Enum="OBJ_UPPER_DURABILITY_TYPE_ENUM"/>
+        <hp />
+        <dummy />
+        <impact />
+        <mass />
+        <friction />
+        <restitution />
+        <objAttackAttr  Enum="DAMAGE_OBJ_ATTACK_ATTR_ENUM"/>
+        <rumbleScale />
+        <rumbleTime />
+    </Field>
+</PARAMMETA>

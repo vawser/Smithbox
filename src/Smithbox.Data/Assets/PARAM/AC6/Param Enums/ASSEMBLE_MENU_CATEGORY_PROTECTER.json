@@ -1,0 +1,56 @@
+{
+  "Key": "ASSEMBLE_MENU_CATEGORY_PROTECTER",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSEMBLE_MENU_CATEGORY_PROTECTER"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HEAD"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CORE"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ARM"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "LEGS"
+        }
+      ]
+    }
+  ]
+}

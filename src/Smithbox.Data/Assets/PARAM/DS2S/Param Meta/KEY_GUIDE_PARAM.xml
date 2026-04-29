@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <textId />
+        <width_radius />
+        <height />
+        <depth />
+        <depthOffset />
+        <shapeType  Enum="KEY_GUIDE_SHAPE_TYPE"/>
+        <angleType  Enum="KEY_GUIDE_ANGLE_TYPE"/>
+        <angleDeg />
+        <bFollow  IsBool=""/>
+        <dummyPolyId />
+        <bEnableActing  IsBool=""/>
+        <posAngleDeg />
+    </Field>
+</PARAMMETA>

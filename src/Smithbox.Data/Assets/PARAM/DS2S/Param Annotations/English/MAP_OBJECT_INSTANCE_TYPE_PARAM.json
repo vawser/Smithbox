@@ -1,0 +1,73 @@
+{
+  "Param": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Type": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Name": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sizeType",
+      "Name": "《小型/大型》",
+      "Description": ""
+    },
+    {
+      "Field": "weightType",
+      "Name": "《重量》",
+      "Description": ""
+    },
+    {
+      "Field": "breakAction",
+      "Name": "《破壊可能行動》",
+      "Description": ""
+    },
+    {
+      "Field": "durabilityType",
+      "Name": "《荷重限界》",
+      "Description": ""
+    },
+    {
+      "Field": "hp",
+      "Name": "《HP》",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "impact",
+      "Name": "《接触衝撃耐性》",
+      "Description": ""
+    },
+    {
+      "Field": "mass",
+      "Name": "《質量》",
+      "Description": ""
+    },
+    {
+      "Field": "friction",
+      "Name": "《摩擦係数》",
+      "Description": ""
+    },
+    {
+      "Field": "restitution",
+      "Name": "《反発係数》",
+      "Description": ""
+    },
+    {
+      "Field": "objAttackAttr",
+      "Name": "《ダメージ_攻撃属性》",
+      "Description": ""
+    },
+    {
+      "Field": "rumbleScale",
+      "Name": "《ヒット時揺れ最大幅》",
+      "Description": ""
+    },
+    {
+      "Field": "rumbleTime",
+      "Name": "《ヒット時揺れ時間》",
+      "Description": ""
+    }
+  ]
+}

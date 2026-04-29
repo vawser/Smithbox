@@ -1,0 +1,98 @@
+{
+  "Param": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Type": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Name": "CHR_NET_PHANTOM_SOUL_RATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "ホスト",
+      "Description": ""
+    },
+    {
+      "Field": "white",
+      "Name": "白霊",
+      "Description": ""
+    },
+    {
+      "Field": "smallWhite",
+      "Name": "小白霊",
+      "Description": ""
+    },
+    {
+      "Field": "gold",
+      "Name": "金霊",
+      "Description": ""
+    },
+    {
+      "Field": "smallGold",
+      "Name": "小金霊",
+      "Description": ""
+    },
+    {
+      "Field": "coopBlue",
+      "Name": "救援青霊",
+      "Description": ""
+    },
+    {
+      "Field": "versusBlue",
+      "Name": "報復青霊",
+      "Description": ""
+    },
+    {
+      "Field": "signBlack",
+      "Name": "闇霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "intrudeBlack",
+      "Name": "闇霊（乱入）",
+      "Description": ""
+    },
+    {
+      "Field": "signRed",
+      "Name": "赤霊（サイン）",
+      "Description": ""
+    },
+    {
+      "Field": "intrudeRed",
+      "Name": "赤霊（乱入）",
+      "Description": ""
+    },
+    {
+      "Field": "bellGuard",
+      "Name": "鐘守灰霊",
+      "Description": ""
+    },
+    {
+      "Field": "ratKing",
+      "Name": "ねずみの王灰霊",
+      "Description": ""
+    },
+    {
+      "Field": "dragon",
+      "Name": "竜霊",
+      "Description": ""
+    },
+    {
+      "Field": "mirrorKnight",
+      "Name": "ミラーナイト霊",
+      "Description": ""
+    },
+    {
+      "Field": "abyss",
+      "Name": "深淵霊",
+      "Description": ""
+    },
+    {
+      "Field": "duelBlue",
+      "Name": "決闘青霊",
+      "Description": ""
+    },
+    {
+      "Field": "duelRed",
+      "Name": "決闘赤霊",
+      "Description": ""
+    }
+  ]
+}

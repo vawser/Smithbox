@@ -38,6 +38,7 @@ public class EntityIdentifierTool
 
         if (ImGui.CollapsingHeader("Entity Identifiers"))
         {
+            ImGui.BeginChild("EntityIdToolSection");
             var windowWidth = ImGui.GetWindowWidth();
 
             var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
@@ -89,6 +90,8 @@ public class EntityIdentifierTool
                 ImGui.Text("No map has been loaded and selected yet.");
 
             DisplayEIOList();
+
+            ImGui.EndChild();
 
             ImGui.EndChild();
         }

@@ -1,0 +1,38 @@
+{
+  "Key": "DECAL_FLIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DECAL_FLIP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Random"
+        }
+      ]
+    }
+  ]
+}

@@ -153,7 +153,7 @@ public class ParamComparisonTools
             RowNameHelper.ImportRowNames(
                 Project,
                 Project.Handler.ParamData.PrimaryBank,
-                ParamRowNameImportType.Community);
+                CFG.Current.ParamEditor_Import_Language);
         }
 
         if (ImportNamesOnGeneration_Compare)
@@ -163,7 +163,7 @@ public class ParamComparisonTools
                 RowNameHelper.ImportRowNames(
                     Project,
                     Project.Handler.ParamData.VanillaBank,
-                    ParamRowNameImportType.Community);
+                    CFG.Current.ParamEditor_Import_Language);
             }
             else
             {
@@ -172,7 +172,7 @@ public class ParamComparisonTools
                 RowNameHelper.ImportRowNames(
                     Project,
                     auxBank.Value,
-                    ParamRowNameImportType.Community);
+                    CFG.Current.ParamEditor_Import_Language);
             }
         }
 
@@ -441,9 +441,9 @@ public class ParamComparisonTools
             {
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
-                    "Param Editor",
-                    "comparison report has been generated.",
-                    "comparison report failed to be generated.",
+                    "[Param Editor]",
+                    "Comparison report has been generated.",
+                    "Comparison report failed to be generated.",
                     TaskManager.RequeueType.None,
                     false,
                     GenerateReport);
@@ -477,9 +477,9 @@ public class ParamComparisonTools
             {
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
-                    "Param Editor",
-                    "comparison report has been generated.",
-                    "comparison report failed to be generated.",
+                    "[Param Editor]",
+                    "Comparison report has been generated.",
+                    "Comparison report failed to be generated.",
                     TaskManager.RequeueType.None,
                     false,
                     GenerateReport

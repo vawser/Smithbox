@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_ATTACH_EFFECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ATTACH_EFFECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Repel Physical Projectiles (isHitForceMagic)"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Repel Magical Projectiles (isHitDarkForceMagic)"
+        }
+      ]
+    }
+  ]
+}

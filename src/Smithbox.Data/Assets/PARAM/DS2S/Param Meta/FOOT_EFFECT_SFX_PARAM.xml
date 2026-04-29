@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <none />
+        <metal />
+        <heavymetal />
+        <wood />
+        <water />
+        <swamp />
+        <lumber />
+        <meat />
+        <deadmeat />
+        <insect />
+        <giant />
+        <bone />
+        <copper />
+        <energy />
+        <fire />
+        <thunder />
+        <dark />
+        <magic />
+        <stone />
+        <dirt />
+        <carpet />
+        <grass />
+        <gravel />
+        <cloth />
+        <sand />
+        <ash />
+        <poisonswamp />
+        <oil />
+        <coaltar />
+        <lava />
+        <string />
+        <sulfurcrystal />
+        <footEffect33 />
+        <footEffect34 />
+        <footEffect35 />
+        <footEffect36 />
+        <footEffect37 />
+        <footEffect38 />
+        <footEffect39 />
+        <footEffect40 />
+        <footEffect41 />
+        <footEffect42 />
+        <footEffect43 />
+    </Field>
+</PARAMMETA>

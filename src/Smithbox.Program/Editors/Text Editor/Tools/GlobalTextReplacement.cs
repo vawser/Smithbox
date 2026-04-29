@@ -25,6 +25,8 @@ public static class GlobalTextReplacement
     private static bool HasSearched = false;
     public static void Display(TextEditorView view)
     {
+        ImGui.BeginChild("TextReplacementToolSection");
+
         var windowWidth = ImGui.GetWindowWidth();
 
         if (ImGui.BeginTable($"globalReplacementTable", 2, ImGuiTableFlags.SizingFixedFit))
@@ -264,5 +266,7 @@ public static class GlobalTextReplacement
         {
             UIHelper.WrappedText("No text entries found matching the filter.");
         }
+
+        ImGui.EndChild();
     }
 }

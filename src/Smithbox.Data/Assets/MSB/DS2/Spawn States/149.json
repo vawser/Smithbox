@@ -1,0 +1,14 @@
+{
+  "id": "149",
+  "name": "Undead Steelworker",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

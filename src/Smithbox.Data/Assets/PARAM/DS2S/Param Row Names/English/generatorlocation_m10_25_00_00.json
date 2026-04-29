@@ -1,0 +1,851 @@
+{
+  "Name": "generatorlocation_m10_25_00_00",
+  "Entries": [
+    {
+      "ID": 40,
+      "Entries": [
+        "[GEN:40] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[GEN:41] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[GEN:90] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[GEN:91] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "[GEN:590] Melinda the Butcher"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "[GEN:591] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 592,
+      "Entries": [
+        "[GEN:592] Woodland Child Victor"
+      ]
+    },
+    {
+      "ID": 593,
+      "Entries": [
+        "[GEN:593] Woodland Child Gully"
+      ]
+    },
+    {
+      "ID": 594,
+      "Entries": [
+        "[GEN:594] Gutter Denizen"
+      ]
+    },
+    {
+      "ID": 596,
+      "Entries": [
+        "[GEN:596] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 597,
+      "Entries": [
+        "[GEN:597] Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 598,
+      "Entries": [
+        "[GEN:598] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "[GEN:851] The Rotten"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "[GEN:914] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 947,
+      "Entries": [
+        "[GEN:947] Forlorn"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[GEN:1110] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[GEN:1111] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[GEN:1120] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[GEN:1210] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[GEN:1211] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[GEN:1301] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "[GEN:1305] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[GEN:1310] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1324,
+      "Entries": [
+        "[GEN:1324] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "[GEN:1325] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1326,
+      "Entries": [
+        "[GEN:1326] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1327,
+      "Entries": [
+        "[GEN:1327] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1328,
+      "Entries": [
+        "[GEN:1328] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1329,
+      "Entries": [
+        "[GEN:1329] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1360,
+      "Entries": [
+        "[GEN:1360] Darksucker"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "[GEN:1401] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "[GEN:1402] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "[GEN:1411] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[GEN:1420] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 1421,
+      "Entries": [
+        "[GEN:1421] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 1490,
+      "Entries": [
+        "[GEN:1490] Mimic"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[GEN:1500] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[GEN:1501] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "[GEN:1502] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "[GEN:1503] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "[GEN:1530] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 1531,
+      "Entries": [
+        "[GEN:1531] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 1532,
+      "Entries": [
+        "[GEN:1532] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "[GEN:1560] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "[GEN:1561] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1562,
+      "Entries": [
+        "[GEN:1562] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "[GEN:1570] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1571,
+      "Entries": [
+        "[GEN:1571] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "[GEN:1580] Captive Undead"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[GEN:1900] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[GEN:2020] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "[GEN:2021] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "[GEN:2070] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "[GEN:2080] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "[GEN:2081] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "[GEN:2090] Heide Knight"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[GEN:2101] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[GEN:2102] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[GEN:2300] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "[GEN:2503] Captive Undead"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "[GEN:2505] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[GEN:2510] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "[GEN:2520] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "[GEN:2521] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 2522,
+      "Entries": [
+        "[GEN:2522] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 2523,
+      "Entries": [
+        "[GEN:2523] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[GEN:2700] Corrosive Ant Queen"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[GEN:2710] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 2711,
+      "Entries": [
+        "[GEN:2711] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 2712,
+      "Entries": [
+        "[GEN:2712] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[GEN:3101] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "[GEN:3102] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[GEN:3110] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[GEN:3111] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "[GEN:3112] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[GEN:3120] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[GEN:3121] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "[GEN:3122] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "[GEN:3123] Captive Undead"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "[GEN:3124] Captive Undead"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[GEN:4210] Darksucker"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "[GEN:4211] Darksucker"
+      ]
+    },
+    {
+      "ID": 4212,
+      "Entries": [
+        "[GEN:4212] Darksucker"
+      ]
+    },
+    {
+      "ID": 4213,
+      "Entries": [
+        "[GEN:4213] Darksucker"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "[GEN:4260] Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "[GEN:4310] Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[GEN:4400] Darksucker"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[GEN:4401] Darksucker"
+      ]
+    },
+    {
+      "ID": 4402,
+      "Entries": [
+        "[GEN:4402] Darksucker"
+      ]
+    },
+    {
+      "ID": 4403,
+      "Entries": [
+        "[GEN:4403] Darksucker"
+      ]
+    },
+    {
+      "ID": 4404,
+      "Entries": [
+        "[GEN:4404] Darksucker"
+      ]
+    },
+    {
+      "ID": 4405,
+      "Entries": [
+        "[GEN:4405] Darksucker"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[GEN:4500] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Elite Giant"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[GEN:6001] Elite Giant"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[GEN:6010] Elite Giant"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[GEN:6020] Elite Giant"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Captive Undead"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Captive Undead"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Captive Undead"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[GEN:7004] NO MATCH"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[GEN:7005] Captive Undead"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[GEN:7006] Captive Undead"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[GEN:8500] Poison Moth"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[GEN:9002] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "[GEN:9003] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "[GEN:9004] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "[GEN:9005] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "[GEN:9006] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "[GEN:9007] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "[GEN:9008] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "[GEN:9009] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[GEN:9010] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "[GEN:9011] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "[GEN:9012] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "[GEN:9013] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "[GEN:9014] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "[GEN:9015] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "[GEN:9016] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "[GEN:9017] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9018,
+      "Entries": [
+        "[GEN:9018] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9019,
+      "Entries": [
+        "[GEN:9019] NO MATCH"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[GEN:9500] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "[GEN:9501] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "[GEN:9502] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "[GEN:9503] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "[GEN:9504] Invisible Hollow"
+      ]
+    }
+  ]
+}

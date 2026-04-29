@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <multiPlayZoneId />
+        <coopBlueDisableDistance />
+        <otherDisableDistance />
+        <multiPlayType  Enum="PLAY_AREA_MULTIPLAY_ENUM"/>
+        <enableSearchBellGuard  IsBool=""/>
+        <enableSearchCoopBlue  IsBool=""/>
+        <enableSearchVsBlue  IsBool=""/>
+        <enableSearchAbyss  IsBool=""/>
+        <enableBossCheck  IsBool=""/>
+        <dummy />
+    </Field>
+</PARAMMETA>

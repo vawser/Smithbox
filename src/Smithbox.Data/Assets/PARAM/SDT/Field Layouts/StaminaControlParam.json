@@ -1,0 +1,220 @@
+{
+  "Name": "StaminaControlParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType000",
+        "staminaMaxRatio_forType000",
+        "staminaMinRatio_forType000"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType001",
+        "staminaMaxRatio_forType001",
+        "staminaMinRatio_forType001"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType002",
+        "staminaMaxRatio_forType002",
+        "staminaMinRatio_forType002"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType003",
+        "staminaMaxRatio_forType003",
+        "staminaMinRatio_forType003"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType004",
+        "staminaMaxRatio_forType004",
+        "staminaMinRatio_forType004"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType005",
+        "staminaMaxRatio_forType005",
+        "staminaMinRatio_forType005"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType006",
+        "staminaMaxRatio_forType006",
+        "staminaMinRatio_forType006"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType007",
+        "staminaMaxRatio_forType007",
+        "staminaMinRatio_forType007"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType008",
+        "staminaMaxRatio_forType008",
+        "staminaMinRatio_forType008"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType009",
+        "staminaMaxRatio_forType009",
+        "staminaMinRatio_forType009"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType010",
+        "staminaMaxRatio_forType010",
+        "staminaMinRatio_forType010"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType011",
+        "staminaMaxRatio_forType011",
+        "staminaMinRatio_forType011"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType012",
+        "staminaMaxRatio_forType012",
+        "staminaMinRatio_forType012"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType013",
+        "staminaMaxRatio_forType013",
+        "staminaMinRatio_forType013"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "staminaRecoverRatio_forType014",
+        "staminaMaxRatio_forType014",
+        "staminaMinRatio_forType014"
+      ]
+    }
+  ]
+}

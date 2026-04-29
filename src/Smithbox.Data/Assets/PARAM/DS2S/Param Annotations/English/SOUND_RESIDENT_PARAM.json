@@ -1,0 +1,28 @@
+{
+  "Param": "SOUND_RESIDENT_PARAM",
+  "Type": "SOUND_RESIDENT_PARAM",
+  "Name": "SOUND_RESIDENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipId1",
+      "Name": "装備セットID1",
+      "Description": ""
+    },
+    {
+      "Field": "equipId2",
+      "Name": "装備セットID2",
+      "Description": ""
+    },
+    {
+      "Field": "equipId3",
+      "Name": "装備セットID3",
+      "Description": ""
+    },
+    {
+      "Field": "equipId4",
+      "Name": "装備セットID4",
+      "Description": ""
+    }
+  ]
+}

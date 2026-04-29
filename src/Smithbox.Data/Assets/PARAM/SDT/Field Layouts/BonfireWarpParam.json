@@ -1,0 +1,48 @@
+{
+  "Name": "BonfireWarpParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "bonfireEntityId",
+        "isHome"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "eventflagId",
+        "grayoutEventflagId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "blockCultId"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "ObjActParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "actionEnableMsgId",
+        "actionFailedMsgId",
+        "actionButtonParamId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "playerAnimId",
+        "chrAnimId",
+        "objAnimId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "objDummyId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "validDist",
+        "validObjAngle",
+        "validPlayerAngle"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "chrSorbType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isEventKickSync",
+        "eventKickTiming"
+      ]
+    }
+  ]
+}

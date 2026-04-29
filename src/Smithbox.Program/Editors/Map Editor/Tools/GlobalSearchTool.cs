@@ -65,6 +65,8 @@ public class GlobalSearchTool : IMapQueryEngine
 
         if (ImGui.CollapsingHeader("Global Property Search"))
         {
+            ImGui.BeginChild("GlobalPropSearchToolSection");
+
             if (!Bank.MapBankInitialized && !UserLoadedData)
             {
                 if (ImGui.Button("Load Map Data", DPI.WholeWidthButton(windowWidth, 24)))
@@ -77,6 +79,8 @@ public class GlobalSearchTool : IMapQueryEngine
             DisplayInput();
 
             DisplayResults();
+
+            ImGui.EndChild();
         }
         else
         {

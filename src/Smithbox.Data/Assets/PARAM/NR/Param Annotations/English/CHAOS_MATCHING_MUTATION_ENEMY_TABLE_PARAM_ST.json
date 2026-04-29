@@ -1,0 +1,93 @@
+{
+  "Param": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Type": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Name": "CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "categoryId",
+      "Name": "Category ID",
+      "Description": "Used with ChaosMatchingMutationCategoryParam, for determining which mutation category to use."
+    },
+    {
+      "Field": "mutationCount",
+      "Name": "Mutation Count",
+      "Description": "Number of enemies to mutate."
+    },
+    {
+      "Field": "isTeamMutation",
+      "Name": "Is Team Mutation",
+      "Description": "Used for groups, mutates all members with incremented mutation ID."
+    },
+    {
+      "Field": "mutationId",
+      "Name": "Mutation ID",
+      "Description": "ID of enemy/team to mutate, set in MSB, can be checked in emevd."
+    },
+    {
+      "Field": "smallBaseId",
+      "Name": "Small Base Map ID",
+      "Description": "Related base map."
+    },
+    {
+      "Field": "variation",
+      "Name": "Variation ID",
+      "Description": "Variation to mutate."
+    },
+    {
+      "Field": "mapUnk_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapUnk_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mapUnk_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomAppearId",
+      "Name": "Random Appear ID",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId1",
+      "Name": "Modifier ID 1",
+      "Description": ""
+    },
+    {
+      "Field": "unk_06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId2",
+      "Name": "Modifier ID 2",
+      "Description": ""
+    },
+    {
+      "Field": "modifierMapId3",
+      "Name": "Modifier ID 3",
+      "Description": ""
+    },
+    {
+      "Field": "unk_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unk_11",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

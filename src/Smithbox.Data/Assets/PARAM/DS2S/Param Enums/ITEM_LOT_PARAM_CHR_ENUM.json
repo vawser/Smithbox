@@ -1,0 +1,4799 @@
+{
+  "Key": "ITEM_LOT_PARAM_CHR_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_PARAM_CHR_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy (prohibited to use)_Item lottery (character)"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Drop - Ghost"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Drop - Cutscene"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Drop - Boss"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Drop - none"
+        }
+      ]
+    },
+    {
+      "Key": "1020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Woman - Old Woman's House"
+        }
+      ]
+    },
+    {
+      "Key": "1020100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player NPC - Tutorial Stage"
+        }
+      ]
+    },
+    {
+      "Key": "1020200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre - Sandy Beach"
+        }
+      ]
+    },
+    {
+      "Key": "1040000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton-A's house basement"
+        }
+      ]
+    },
+    {
+      "Key": "1040100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pig-A's house"
+        }
+      ]
+    },
+    {
+      "Key": "1040200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Worker - Black Spirit: No drop"
+        }
+      ]
+    },
+    {
+      "Key": "1100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander-Boss Treasure Room"
+        }
+      ]
+    },
+    {
+      "Key": "1100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Dead) - Spear: Knock and move deep"
+        }
+      ]
+    },
+    {
+      "Key": "1100200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - One-handed Sword: Forest of the Decayed Giant"
+        }
+      ]
+    },
+    {
+      "Key": "1100201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - One-handed Sword: Forest of the Decayed Giant: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "1100500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant - Zako: Giant's Forest"
+        }
+      ]
+    },
+    {
+      "Key": "1101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen5000"
+        }
+      ]
+    },
+    {
+      "Key": "1105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Shizukuishi and throwing knife - bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "1105100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Shizukuishi and throwing knife - dagger"
+        }
+      ]
+    },
+    {
+      "Key": "1105200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Shizukuishi and throwing knife - one-handed sword: small shield"
+        }
+      ]
+    },
+    {
+      "Key": "1105300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Shizukuishi and throwing knife - one-handed ax"
+        }
+      ]
+    },
+    {
+      "Key": "1105400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased): Shizukuishi and throwing knife - two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "1140000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss battle Zako - no drop"
+        }
+      ]
+    },
+    {
+      "Key": "1140100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parent pig-tent square"
+        }
+      ]
+    },
+    {
+      "Key": "1140200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pig-Tent Square"
+        }
+      ]
+    },
+    {
+      "Key": "1140300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wealthy people's clothes♂-key and fragrant wood drop"
+        }
+      ]
+    },
+    {
+      "Key": "1140400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes ♂-Torch: Head part 1"
+        }
+      ]
+    },
+    {
+      "Key": "1140500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes ♂-Torch: Head part 2"
+        }
+      ]
+    },
+    {
+      "Key": "1141000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1240"
+        }
+      ]
+    },
+    {
+      "Key": "1141100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1360"
+        }
+      ]
+    },
+    {
+      "Key": "1141200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori (explosion)-gen1361"
+        }
+      ]
+    },
+    {
+      "Key": "1150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrified Auger-gen2500"
+        }
+      ]
+    },
+    {
+      "Key": "1151000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori (explosion)-gen1700"
+        }
+      ]
+    },
+    {
+      "Key": "1153000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen1850"
+        }
+      ]
+    },
+    {
+      "Key": "1160000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Caged Undead Citizens Pulled Out of the Well - Wandering Series Drop"
+        }
+      ]
+    },
+    {
+      "Key": "1164000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Oblivion: Normal] Zako Bell Keeper - Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "1164100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Oblivion: Normal] Dark Spirit Bell Keeper - Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "1171000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen2403"
+        }
+      ]
+    },
+    {
+      "Key": "1173000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen3304"
+        }
+      ]
+    },
+    {
+      "Key": "1181000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen4850"
+        }
+      ]
+    },
+    {
+      "Key": "1190000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Deceased)_Captain-Recovery Fountain"
+        }
+      ]
+    },
+    {
+      "Key": "1190001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead)_Captain-2nd lap: Bow drop"
+        }
+      ]
+    },
+    {
+      "Key": "1190500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant-Zako: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "1191000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen4039"
+        }
+      ]
+    },
+    {
+      "Key": "1193000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen4035"
+        }
+      ]
+    },
+    {
+      "Key": "1194100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Zako Bell Keeper - Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "1230000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear C: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "1230001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear C: Hunting Forest: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "1231000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen4112"
+        }
+      ]
+    },
+    {
+      "Key": "1250000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Non-poisonous hornworm - Antidote drop"
+        }
+      ]
+    },
+    {
+      "Key": "1270000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern - Dragon's Den"
+        }
+      ]
+    },
+    {
+      "Key": "1271000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1200"
+        }
+      ]
+    },
+    {
+      "Key": "1271100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1300"
+        }
+      ]
+    },
+    {
+      "Key": "1271200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1400"
+        }
+      ]
+    },
+    {
+      "Key": "1271300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1401"
+        }
+      ]
+    },
+    {
+      "Key": "1271400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stonemori-gen1402"
+        }
+      ]
+    },
+    {
+      "Key": "1271500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1403"
+        }
+      ]
+    },
+    {
+      "Key": "1271600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1404"
+        }
+      ]
+    },
+    {
+      "Key": "1271700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1500"
+        }
+      ]
+    },
+    {
+      "Key": "1271800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1501"
+        }
+      ]
+    },
+    {
+      "Key": "1271900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1600"
+        }
+      ]
+    },
+    {
+      "Key": "1272000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1601"
+        }
+      ]
+    },
+    {
+      "Key": "1273000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen5000"
+        }
+      ]
+    },
+    {
+      "Key": "1273001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen5000: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "1310000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Two-Handed Sword & Medium Shield_Heide"
+        }
+      ]
+    },
+    {
+      "Key": "1310100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior-Oversized Sword_Heide"
+        }
+      ]
+    },
+    {
+      "Key": "1310200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Ax Spear & Great Shield_Heide"
+        }
+      ]
+    },
+    {
+      "Key": "1310300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Two-Handed Long Ax_Heide"
+        }
+      ]
+    },
+    {
+      "Key": "1310400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior-Hammer_Heide"
+        }
+      ]
+    },
+    {
+      "Key": "1310500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior (Blue Spirit) - Bone Meal Drop"
+        }
+      ]
+    },
+    {
+      "Key": "1320000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Petrified Lion Warrior-gen2041"
+        }
+      ]
+    },
+    {
+      "Key": "1320500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-sided warrior - Zako"
+        }
+      ]
+    },
+    {
+      "Key": "1321000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stone Guardian - Forest of Hollow Shadows"
+        }
+      ]
+    },
+    {
+      "Key": "1331000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1400: Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "1333000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-mimic-gen1100"
+        }
+      ]
+    },
+    {
+      "Key": "1341000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-gen1910"
+        }
+      ]
+    },
+    {
+      "Key": "2110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer (Immortal) - Staff"
+        }
+      ]
+    },
+    {
+      "Key": "2210501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Royal Castle: Normal] Vagrant-Zako: Ring Drop"
+        }
+      ]
+    },
+    {
+      "Key": "2210601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Royal Castle: Normal] Vagrant-Zako: Wedge Stone Drop"
+        }
+      ]
+    },
+    {
+      "Key": "2210602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Royal Castle: Normal] Vagrant-Zako: Wedge Stone Drop: After 3rd week"
+        }
+      ]
+    },
+    {
+      "Key": "2210700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Royal Castle: Normal] Warrior in the Mirror - Zako"
+        }
+      ]
+    },
+    {
+      "Key": "2211000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ojo: Normal] Ishimori-gen1098"
+        }
+      ]
+    },
+    {
+      "Key": "2240000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Black Witch - Hat and Veil"
+        }
+      ]
+    },
+    {
+      "Key": "2240001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Black Witch - Hat and Veil: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "4030000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC - Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-2nd lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-3rd lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-4th lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-5th lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-6th lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-7th lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "4030007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC-8th lap_Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "5000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-1"
+        }
+      ]
+    },
+    {
+      "Key": "5001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-2"
+        }
+      ]
+    },
+    {
+      "Key": "5002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-3"
+        }
+      ]
+    },
+    {
+      "Key": "5003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-4"
+        }
+      ]
+    },
+    {
+      "Key": "5004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-5"
+        }
+      ]
+    },
+    {
+      "Key": "5005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-6"
+        }
+      ]
+    },
+    {
+      "Key": "5006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-7"
+        }
+      ]
+    },
+    {
+      "Key": "5007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-8"
+        }
+      ]
+    },
+    {
+      "Key": "5008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-9"
+        }
+      ]
+    },
+    {
+      "Key": "5009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guest player drop-10"
+        }
+      ]
+    },
+    {
+      "Key": "6000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong Drop - Entire map"
+        }
+      ]
+    },
+    {
+      "Key": "10000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (Living) - Bare Hands: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "10000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (Living) - Bare Hands: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "10001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living) - Sword"
+        }
+      ]
+    },
+    {
+      "Key": "10002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goblin (living) - Sling"
+        }
+      ]
+    },
+    {
+      "Key": "10100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kobold - Cave of the Gap"
+        }
+      ]
+    },
+    {
+      "Key": "10100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kobold - Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "10200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Spear: Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "10201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "10202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Two-handed long ax"
+        }
+      ]
+    },
+    {
+      "Key": "10203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Piercing Sword: Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "10204000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Bow"
+        }
+      ]
+    },
+    {
+      "Key": "10205000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Deceased) - Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "10210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Living) - Spear: Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "10211000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (living) - Two-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "10213000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Living) - Dying"
+        }
+      ]
+    },
+    {
+      "Key": "10214000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier (Living) - Bow"
+        }
+      ]
+    },
+    {
+      "Key": "10300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - Bare Hands: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "10300100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Dead) - Bare Hands: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - Dagger: Forest of Fallen Giants"
+        }
+      ]
+    },
+    {
+      "Key": "10301100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - Dagger: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (dead) - one-handed sword: small shield: rotten giant forest"
+        }
+      ]
+    },
+    {
+      "Key": "10302100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - One-handed sword: Small shield: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10302200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - One-handed sword: Small shield: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "10303000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - One-Handed Ax: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "10303100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - One-handed ax: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10303200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - One-handed Ax: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "10304000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Deceased) - Two-handed Bow: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "10304100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - Two-handed bow: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10305000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - two-handed bow (fire arrow): Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "10305100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lower-class soldier (deceased) - Two-handed bow (fire arrow): Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "10310000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - Dagger: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "10310100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - Dagger: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "10311000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - One-handed Sword: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "10311100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - One-handed Sword: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "10312000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - One-handed Ax: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "10312100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - One-handed Ax: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "10313000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - Bow: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "10313100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Junior Soldier (Living) - Bow: Giant's Memory"
+        }
+      ]
+    },
+    {
+      "Key": "10500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fairy Priestess - Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "10501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fairy Priestess - Cane"
+        }
+      ]
+    },
+    {
+      "Key": "10600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (Deceased)-Color ①_No mask"
+        }
+      ]
+    },
+    {
+      "Key": "10620000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest (Deceased)-Color ③_Head c"
+        }
+      ]
+    },
+    {
+      "Key": "10700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite spider (parasitic) -"
+        }
+      ]
+    },
+    {
+      "Key": "10800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (Dead) - Dagger x2"
+        }
+      ]
+    },
+    {
+      "Key": "10801000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (Dead) - One-handed mallet x 2"
+        }
+      ]
+    },
+    {
+      "Key": "10802000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rogue (Dead) - Two-handed bow x2"
+        }
+      ]
+    },
+    {
+      "Key": "11300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (Deceased) - One-handed sword: Small shield"
+        }
+      ]
+    },
+    {
+      "Key": "11301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (Dead) - Curved Sword x2"
+        }
+      ]
+    },
+    {
+      "Key": "11302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sailor (Deceased) - Two-handed bow"
+        }
+      ]
+    },
+    {
+      "Key": "11500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traveler's clothes ♂ - Bare hands: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "11500100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traveler's Clothes♂-Bare Hands: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "11501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traveler's clothes♂-dagger"
+        }
+      ]
+    },
+    {
+      "Key": "11700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue_Pawn-Spear: Shield"
+        }
+      ]
+    },
+    {
+      "Key": "11800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Wizard (Dead) - Color ①: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "11800100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Wizard (Dead) - Color ①: Head A: Immortal Hall"
+        }
+      ]
+    },
+    {
+      "Key": "11820000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Wizard (Dead) - Color ③: Head B"
+        }
+      ]
+    },
+    {
+      "Key": "11900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Black Mage (Living) -"
+        }
+      ]
+    },
+    {
+      "Key": "12100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan) - Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "12101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier (Titan) - Two-handed club"
+        }
+      ]
+    },
+    {
+      "Key": "12102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier Poison (Titan) - Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "12103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Junior Soldier Fire (Titan) - Bare Hands"
+        }
+      ]
+    },
+    {
+      "Key": "12300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living) - Mask A: Two Swords Claws"
+        }
+      ]
+    },
+    {
+      "Key": "12300001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living) - Mask A: 2 Swords Claws: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "12301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living) - Mask A: Dagger: Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "12302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living) - Mask B: Two Swords Claws"
+        }
+      ]
+    },
+    {
+      "Key": "12303000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strange Shadow (Living) - Mask B: Dagger: Piercing Sword"
+        }
+      ]
+    },
+    {
+      "Key": "12400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living) - Mask A: Two sword claws"
+        }
+      ]
+    },
+    {
+      "Key": "12401000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living) - Mask A: Dagger"
+        }
+      ]
+    },
+    {
+      "Key": "12402000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (Living) - Mask A: Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "12403000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin (living) - Mask A: Bow"
+        }
+      ]
+    },
+    {
+      "Key": "12500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Explosion: Tomb of Saints"
+        }
+      ]
+    },
+    {
+      "Key": "12500100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Explosion: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "12500200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Explosion: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "12501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Poison"
+        }
+      ]
+    },
+    {
+      "Key": "12502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead citizen - acid"
+        }
+      ]
+    },
+    {
+      "Key": "12503000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Petrified"
+        }
+      ]
+    },
+    {
+      "Key": "12504000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Normal: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "12504100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen-Normal: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "12505000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Undead Citizen - Trap After Boss"
+        }
+      ]
+    },
+    {
+      "Key": "12700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Bare Hands: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "12700100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Bare Hands: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "12700200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Worker (Dead) - Bare Hands: Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "12700300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Bare Hands: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "12700400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Bare Hands: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "12700500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Bare Hands: Old Dark Pit"
+        }
+      ]
+    },
+    {
+      "Key": "12701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Worker (Dead) - Torch: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "12701100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Workers (Deceased) - Torches: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "12702000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Worker (Deceased) - Broken Straight Sword"
+        }
+      ]
+    },
+    {
+      "Key": "12900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest guard-cane"
+        }
+      ]
+    },
+    {
+      "Key": "12901000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest Keeper-Bell"
+        }
+      ]
+    },
+    {
+      "Key": "13100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric-Warhammer"
+        }
+      ]
+    },
+    {
+      "Key": "13101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric-Bell"
+        }
+      ]
+    },
+    {
+      "Key": "13102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cleric-Wand"
+        }
+      ]
+    },
+    {
+      "Key": "13200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton-2 sword style: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "13200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton - Dual Wield: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "13201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "スケルトン-片手曲剣"
+        }
+      ]
+    },
+    {
+      "Key": "13202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton - One-handed stab"
+        }
+      ]
+    },
+    {
+      "Key": "13203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton-bow"
+        }
+      ]
+    },
+    {
+      "Key": "13300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel skeleton - bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "13301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel Skeleton - Curved Sword"
+        }
+      ]
+    },
+    {
+      "Key": "13302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wheel Skeleton-Omagariken"
+        }
+      ]
+    },
+    {
+      "Key": "13400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf-"
+        }
+      ]
+    },
+    {
+      "Key": "13500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf - Two handed ax x 2: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "13501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf - Two-handed Hammer: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "13502000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf-Bow: Head A"
+        }
+      ]
+    },
+    {
+      "Key": "13503000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf - Two handed ax x 2: Head B"
+        }
+      ]
+    },
+    {
+      "Key": "13504000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf - Two-handed Hammer: Head B"
+        }
+      ]
+    },
+    {
+      "Key": "13505000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy Dwarf-Bow: Head B"
+        }
+      ]
+    },
+    {
+      "Key": "13701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Necromancer (Immortal) - Shield: Staff"
+        }
+      ]
+    },
+    {
+      "Key": "13800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer - torture device"
+        }
+      ]
+    },
+    {
+      "Key": "13801000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Torturer - Whip"
+        }
+      ]
+    },
+    {
+      "Key": "13900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal - Sickle: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "13900100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial Immortal - Sickle: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "13901000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Artificial immortal - bare hands"
+        }
+      ]
+    },
+    {
+      "Key": "14100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced Immortal - Hall of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "14100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhanced Immortal - Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "14600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wealthy people's clothes♂-dagger"
+        }
+      ]
+    },
+    {
+      "Key": "14601000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wealthy people's clothes♂-piercing sword"
+        }
+      ]
+    },
+    {
+      "Key": "14602000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wealthy people's clothes♂-dagger & torch"
+        }
+      ]
+    },
+    {
+      "Key": "14700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sick man's clothes♂-"
+        }
+      ]
+    },
+    {
+      "Key": "14800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes♂-Two-handed hammer: Head part 1"
+        }
+      ]
+    },
+    {
+      "Key": "14801000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes ♂-Two-handed hammer: Head part 2"
+        }
+      ]
+    },
+    {
+      "Key": "14802000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes ♂ - Two-handed sickle: Head part 1"
+        }
+      ]
+    },
+    {
+      "Key": "14803000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Farmer's clothes ♂ - Two-handed sickle: Head part 2"
+        }
+      ]
+    },
+    {
+      "Key": "14900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Steelworks worker_without apron-"
+        }
+      ]
+    },
+    {
+      "Key": "15000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Statue_Night-"
+        }
+      ]
+    },
+    {
+      "Key": "15100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior-Color ①: Two-handed War Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "15120000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior - Color ③: Two-handed Warhammer: Forest of Rotting Giants"
+        }
+      ]
+    },
+    {
+      "Key": "15120100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Soldier Heavy Warrior - Color ③: Two-handed War Hammer: Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "15121000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Heavy Warrior - Color ③: One-handed club"
+        }
+      ]
+    },
+    {
+      "Key": "15200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior-Two-Handed Sword: Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "15200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Warrior - Two-handed Sword: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "15200101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior - Two-Handed Sword: Prison of Oblivion: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "15201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior-Crossbow: Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "15201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Warrior-Crossbow: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "15201101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Soldier Warrior-Crossbow: Prison of Oblivion: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "15300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Ax Spear: Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "15300100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Ax Spear: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "15300200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Ax Spear: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "15300300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Ax Spear: Immortal Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "15301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Extra Large Sword: Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "15301100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Extra Large Sword: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "15301200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Extra Large Sword: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "15301300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Guard Guard - Extra Large Sword: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "15400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Skeleton aristocrat-"
+        }
+      ]
+    },
+    {
+      "Key": "15500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lizard person-"
+        }
+      ]
+    },
+    {
+      "Key": "15700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor Skeleton - Dual Sword Style: Death Penalty"
+        }
+      ]
+    },
+    {
+      "Key": "15701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor Skeleton - One-handed Curved Sword: Death Place"
+        }
+      ]
+    },
+    {
+      "Key": "15702000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor Skeleton - One-handed Pierce: Death Place"
+        }
+      ]
+    },
+    {
+      "Key": "15703000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor Skeleton-Bow: Death Row"
+        }
+      ]
+    },
+    {
+      "Key": "20300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider-"
+        }
+      ]
+    },
+    {
+      "Key": "20300001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parasite Spider-2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "20400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Moss-"
+        }
+      ]
+    },
+    {
+      "Key": "20500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison hornworm - Poison: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "20500100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm - Poison: Kudzubottom"
+        }
+      ]
+    },
+    {
+      "Key": "20510000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison hornworm-acid: Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "20510100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm - Acid: House of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "20510200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Poison Hornworm - Acid: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "20600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Needle maggot-"
+        }
+      ]
+    },
+    {
+      "Key": "20900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Dog - Color ①: House of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "20900100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Dog - Color ①: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "20900200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting dog-color ①: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "21000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk-Color ①: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "21000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk-Color ①: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "21000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk-Color ①: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "21000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk-Color ①: Saint’s Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "21000400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Basilisk-Color ①: Eyeball crushed"
+        }
+      ]
+    },
+    {
+      "Key": "21200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern-"
+        }
+      ]
+    },
+    {
+      "Key": "21300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ishimori-"
+        }
+      ]
+    },
+    {
+      "Key": "21400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fanged beast-"
+        }
+      ]
+    },
+    {
+      "Key": "21600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Door possession-"
+        }
+      ]
+    },
+    {
+      "Key": "21700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden in the darkness-"
+        }
+      ]
+    },
+    {
+      "Key": "22000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant poisonous hornworm-acid: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "22000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Poisonous Hornworm - Acid: Anne Deal's House"
+        }
+      ]
+    },
+    {
+      "Key": "22000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant poisonous hornworm-acid: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "22200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Basilisk-Color ②: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "22200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Basilisk - Color ②: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "22300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corpse Scavenging Rat-Color ①"
+        }
+      ]
+    },
+    {
+      "Key": "22400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Coal tar-"
+        }
+      ]
+    },
+    {
+      "Key": "22600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog rat-"
+        }
+      ]
+    },
+    {
+      "Key": "22610000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog Mouse-Color ②"
+        }
+      ]
+    },
+    {
+      "Key": "22620000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "King of Mouse-"
+        }
+      ]
+    },
+    {
+      "Key": "22700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wild Dog - Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "22700100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wild dog-hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "30000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living) - Color ①: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "30000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living) - Color ①: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "30000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ogre (living) - Color ①: Hall of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "30100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - One-handed Sword"
+        }
+      ]
+    },
+    {
+      "Key": "30100001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - One-handed sword: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "30101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear A"
+        }
+      ]
+    },
+    {
+      "Key": "30101001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear A: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "30102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead)-Spear B"
+        }
+      ]
+    },
+    {
+      "Key": "30102001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear B: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "30103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead)-Spear C"
+        }
+      ]
+    },
+    {
+      "Key": "30103001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Knight (Dead) - Spear C: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "30200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner (dead) -"
+        }
+      ]
+    },
+    {
+      "Key": "30330000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-sided warrior - snake head"
+        }
+      ]
+    },
+    {
+      "Key": "30400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Banshee (Dead)_Monster-"
+        }
+      ]
+    },
+    {
+      "Key": "30401000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Banshee (Dead)_Beauty-"
+        }
+      ]
+    },
+    {
+      "Key": "30500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Knight (Dead) -"
+        }
+      ]
+    },
+    {
+      "Key": "30600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead)_Captain-Sword"
+        }
+      ]
+    },
+    {
+      "Key": "30601000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead)_Captain-Bow: Molten Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "30601100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead)_Captain-Bow: Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "30700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (dead) -"
+        }
+      ]
+    },
+    {
+      "Key": "30710000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living) -"
+        }
+      ]
+    },
+    {
+      "Key": "30711000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dullahan (living) - head only"
+        }
+      ]
+    },
+    {
+      "Key": "30800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion warrior-"
+        }
+      ]
+    },
+    {
+      "Key": "30810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lion Warrior ②-"
+        }
+      ]
+    },
+    {
+      "Key": "30900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Titan Senior Soldier (Titan) - Giant's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "30900100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Senior Soldier (Titan) - Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "30960000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Senior Soldier (Deceased) -"
+        }
+      ]
+    },
+    {
+      "Key": "30970000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Senior Soldier (Living) -"
+        }
+      ]
+    },
+    {
+      "Key": "31100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cavalry - Mounted Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "31200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal) - Sickle: Robe"
+        }
+      ]
+    },
+    {
+      "Key": "31201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal) - Spear: Robe: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "31201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal) - Spear: Robe: Valley of the Pool"
+        }
+      ]
+    },
+    {
+      "Key": "31202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal) - Sickle: Armor: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "31202100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal) - Sickle: Armor: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "31203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal) - Spear: Armor: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "31203100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Advanced Soldier (Immortal) - Spear: Armor: Valley of the Pool"
+        }
+      ]
+    },
+    {
+      "Key": "31203200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal) - Spear: Armor: Immortal Mausoleum"
+        }
+      ]
+    },
+    {
+      "Key": "31204000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal) - Sickle: Naked"
+        }
+      ]
+    },
+    {
+      "Key": "31205000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Senior Soldier (Immortal) - Spear: Naked"
+        }
+      ]
+    },
+    {
+      "Key": "31300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior - Straight Sword & Shield: No Falcon"
+        }
+      ]
+    },
+    {
+      "Key": "31301000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior - Sword & Shield: No Falcon"
+        }
+      ]
+    },
+    {
+      "Key": "31302000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior - Sword & Falcon"
+        }
+      ]
+    },
+    {
+      "Key": "31303000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falconer Warrior - Bow: No falcon"
+        }
+      ]
+    },
+    {
+      "Key": "31400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant (dead) -"
+        }
+      ]
+    },
+    {
+      "Key": "31500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elephant (living) -"
+        }
+      ]
+    },
+    {
+      "Key": "31600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Captured Magician (Living) -"
+        }
+      ]
+    },
+    {
+      "Key": "31700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Professor Dragon-"
+        }
+      ]
+    },
+    {
+      "Key": "31800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant - no luggage"
+        }
+      ]
+    },
+    {
+      "Key": "31801000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant - with luggage"
+        }
+      ]
+    },
+    {
+      "Key": "31900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon armor (dead)_mass production type-sword"
+        }
+      ]
+    },
+    {
+      "Key": "31901000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Armor (Dead)_Mass Production Type-Bow"
+        }
+      ]
+    },
+    {
+      "Key": "32100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic_Wooden-"
+        }
+      ]
+    },
+    {
+      "Key": "32101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ν-Mimic_Iron-"
+        }
+      ]
+    },
+    {
+      "Key": "32400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle-"
+        }
+      ]
+    },
+    {
+      "Key": "32500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior in the mirror-"
+        }
+      ]
+    },
+    {
+      "Key": "32600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butcher-"
+        }
+      ]
+    },
+    {
+      "Key": "32700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bone dragon-"
+        }
+      ]
+    },
+    {
+      "Key": "33000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Two-Handed Sword & Medium Shield"
+        }
+      ]
+    },
+    {
+      "Key": "33001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Oversized Sword"
+        }
+      ]
+    },
+    {
+      "Key": "33002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Ax Spear & Great Shield"
+        }
+      ]
+    },
+    {
+      "Key": "33003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Two-handed Long Ax"
+        }
+      ]
+    },
+    {
+      "Key": "33004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient Warrior - Two-Handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "33100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier - Two-handed sword & medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "33101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier - Extra Large Sword"
+        }
+      ]
+    },
+    {
+      "Key": "33102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon heavy soldier - two-handed long axe"
+        }
+      ]
+    },
+    {
+      "Key": "33103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier - Two-Handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "33104000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Demon Heavy Soldier - One-handed Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "33200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight A-"
+        }
+      ]
+    },
+    {
+      "Key": "33300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight B-"
+        }
+      ]
+    },
+    {
+      "Key": "33400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's Knight C-"
+        }
+      ]
+    },
+    {
+      "Key": "33700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "33700100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "33700200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "33700300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Saint's Cemetery"
+        }
+      ]
+    },
+    {
+      "Key": "33700400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "33700500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "33700600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead - Bare Hands: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "33701000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Ghost-Torch: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "33701100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Ghost-Torch: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "33702000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Ghost-Sword: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "33702100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead-Sword: Kuzuso"
+        }
+      ]
+    },
+    {
+      "Key": "33702200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead-Sword: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "33702300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing Dead-Sword: Amana"
+        }
+      ]
+    },
+    {
+      "Key": "50000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jabba the Hut-"
+        }
+      ]
+    },
+    {
+      "Key": "50100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Naga-"
+        }
+      ]
+    },
+    {
+      "Key": "50200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♂-"
+        }
+      ]
+    },
+    {
+      "Key": "50300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion♀-"
+        }
+      ]
+    },
+    {
+      "Key": "50400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror night-"
+        }
+      ]
+    },
+    {
+      "Key": "50610000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's Stand-"
+        }
+      ]
+    },
+    {
+      "Key": "50620000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wormhole-"
+        }
+      ]
+    },
+    {
+      "Key": "50650000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tombkeeper-"
+        }
+      ]
+    },
+    {
+      "Key": "50700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rich-"
+        }
+      ]
+    },
+    {
+      "Key": "50800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wraith-"
+        }
+      ]
+    },
+    {
+      "Key": "50900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Bishop-"
+        }
+      ]
+    },
+    {
+      "Key": "51100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Knight (Spiritual Body) -"
+        }
+      ]
+    },
+    {
+      "Key": "51200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Phantom Mage (Spiritual Body) -"
+        }
+      ]
+    },
+    {
+      "Key": "51460000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old king-"
+        }
+      ]
+    },
+    {
+      "Key": "60000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon-"
+        }
+      ]
+    },
+    {
+      "Key": "60100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Salamander-"
+        }
+      ]
+    },
+    {
+      "Key": "60200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful voice frog-"
+        }
+      ]
+    },
+    {
+      "Key": "60300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen-"
+        }
+      ]
+    },
+    {
+      "Key": "60310000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spider Queen (Cliff) -"
+        }
+      ]
+    },
+    {
+      "Key": "60700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Iron Demon-"
+        }
+      ]
+    },
+    {
+      "Key": "60800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Decay insects - outer shell"
+        }
+      ]
+    },
+    {
+      "Key": "61100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry-"
+        }
+      ]
+    },
+    {
+      "Key": "61911000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Silver Chariot-"
+        }
+      ]
+    },
+    {
+      "Key": "62500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ornstein-"
+        }
+      ]
+    },
+    {
+      "Key": "62600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forgotten sinner-"
+        }
+      ]
+    },
+    {
+      "Key": "62700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Queen's armor form-"
+        }
+      ]
+    },
+    {
+      "Key": "62800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant rat-"
+        }
+      ]
+    },
+    {
+      "Key": "70050000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden_In-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "70150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden (Children) _For in-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "70360000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Queen-"
+        }
+      ]
+    },
+    {
+      "Key": "70450000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop_In-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "70550000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire protection woman 1_In-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "70560000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire protection woman 2_for in-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "70580000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Retired fire protection woman 3_for in-game use-"
+        }
+      ]
+    },
+    {
+      "Key": "72110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit of the Prime Minister"
+        }
+      ]
+    },
+    {
+      "Key": "72300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Housekeeper-"
+        }
+      ]
+    },
+    {
+      "Key": "72400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kingdom Captain-"
+        }
+      ]
+    },
+    {
+      "Key": "72500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss-"
+        }
+      ]
+    },
+    {
+      "Key": "72600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf Governance -"
+        }
+      ]
+    },
+    {
+      "Key": "73000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's Servant 1_Extra Large Sword-"
+        }
+      ]
+    },
+    {
+      "Key": "73101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight's servant 2_Two-handed long ax-"
+        }
+      ]
+    },
+    {
+      "Key": "73200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 1-"
+        }
+      ]
+    },
+    {
+      "Key": "73300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer's Sinner 2-"
+        }
+      ]
+    },
+    {
+      "Key": "74100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Broken-hearted Blue Sect Warrior-"
+        }
+      ]
+    },
+    {
+      "Key": "74200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior - One-handed Ax"
+        }
+      ]
+    },
+    {
+      "Key": "74201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wandering Warrior - Great Sword"
+        }
+      ]
+    },
+    {
+      "Key": "74300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Moonlight old man-"
+        }
+      ]
+    },
+    {
+      "Key": "74400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Patch-"
+        }
+      ]
+    },
+    {
+      "Key": "75100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map drawing-"
+        }
+      ]
+    },
+    {
+      "Key": "75200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight Akertira"
+        }
+      ]
+    },
+    {
+      "Key": "75300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bell Keeper-"
+        }
+      ]
+    },
+    {
+      "Key": "75400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu hag-"
+        }
+      ]
+    },
+    {
+      "Key": "75500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stalker warrior-"
+        }
+      ]
+    },
+    {
+      "Key": "76000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 1 -"
+        }
+      ]
+    },
+    {
+      "Key": "76010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bard Girl 2-"
+        }
+      ]
+    },
+    {
+      "Key": "76020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prisoner girl-"
+        }
+      ]
+    },
+    {
+      "Key": "76100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor shop-"
+        }
+      ]
+    },
+    {
+      "Key": "76200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop-"
+        }
+      ]
+    },
+    {
+      "Key": "76300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jujutsuya-"
+        }
+      ]
+    },
+    {
+      "Key": "76400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith - Hammer & Fire Scissors"
+        }
+      ]
+    },
+    {
+      "Key": "76401000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blacksmith - Otsuchi"
+        }
+      ]
+    },
+    {
+      "Key": "76430000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "EX blacksmith-"
+        }
+      ]
+    },
+    {
+      "Key": "76600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician-"
+        }
+      ]
+    },
+    {
+      "Key": "76800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spellmania-"
+        }
+      ]
+    },
+    {
+      "Key": "76900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Miracle Man Leash"
+        }
+      ]
+    },
+    {
+      "Key": "77000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician-Cane"
+        }
+      ]
+    },
+    {
+      "Key": "77001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Magician-Sashiken"
+        }
+      ]
+    },
+    {
+      "Key": "77100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person-"
+        }
+      ]
+    },
+    {
+      "Key": "77200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Curious item shop-"
+        }
+      ]
+    },
+    {
+      "Key": "77600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Top weapon shop: Bird Goal-"
+        }
+      ]
+    },
+    {
+      "Key": "77700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cat-"
+        }
+      ]
+    },
+    {
+      "Key": "78300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantomya-"
+        }
+      ]
+    },
+    {
+      "Key": "78400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Indulgence-"
+        }
+      ]
+    },
+    {
+      "Key": "78500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight - Two-handed long ax & medium shield"
+        }
+      ]
+    },
+    {
+      "Key": "78501000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight - Two-handed long ax & bell"
+        }
+      ]
+    },
+    {
+      "Key": "78600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kirakira Musume-"
+        }
+      ]
+    },
+    {
+      "Key": "81000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male) - Red Spirit: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "81000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male) - White Spirit: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "81000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male) - Bell Keeper Area"
+        }
+      ]
+    },
+    {
+      "Key": "81000300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male) - White Spirit: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "81000400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Swordsman (male) - White Spirit: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "81100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Archer (male) - White Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "81200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Sage (Female) - White Spirit: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "81200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Sage (Female) - White Spirit: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "81300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Lancer (Female) - Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "81400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Meat Cut (Female) - White Spirit: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "81400800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Meat Cut (Female) - Black Spirit: Ojo Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "81400900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Meat Cut (Female) - Black Spirit: Scum Bottom"
+        }
+      ]
+    },
+    {
+      "Key": "82000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Spearman (male) - Dark Spirit: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "82000100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Spearman (male) - Dark Spirit: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "82000200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Spearman (male) - Dark Spirit: Hollow Shadow Forest"
+        }
+      ]
+    },
+    {
+      "Key": "82100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Grim Reaper (Female) - Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "82100100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Grim Reaper (Female) - Dark Spirit: Mansion of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "82200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male) - Dark Spirit: Doorway of Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "82200100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male) - Ash Spirit: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "82200200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male) - Dark Spirit: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "82200300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Mage (male) - Dark Spirit: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "82300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Ancient Dragon Swordsman (Male) - Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "82400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Female Swordsman's Brother"
+        }
+      ]
+    },
+    {
+      "Key": "82400001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer NPC: Female Swordsman's Brother - 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "83100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint’s Tomb: Abandoned Saint-"
+        }
+      ]
+    },
+    {
+      "Key": "83110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Saint’s Tomb: Saint’s Knight-"
+        }
+      ]
+    },
+    {
+      "Key": "83200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 1: Sniper-"
+        }
+      ]
+    },
+    {
+      "Key": "83210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 2: Axman-"
+        }
+      ]
+    },
+    {
+      "Key": "83220000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 3: Huang Yifu-"
+        }
+      ]
+    },
+    {
+      "Key": "83230000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 4: Yellow Robe Wife-"
+        }
+      ]
+    },
+    {
+      "Key": "83240000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 5: Traveler-"
+        }
+      ]
+    },
+    {
+      "Key": "83250000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 6: Knight-"
+        }
+      ]
+    },
+    {
+      "Key": "83260000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 7: Heavy Warrior-"
+        }
+      ]
+    },
+    {
+      "Key": "83270000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Old Dark Hole: Abyssal Spirit 8: Queen-"
+        }
+      ]
+    },
+    {
+      "Key": "83300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amana Shrine: Cannibal Banchou-"
+        }
+      ]
+    },
+    {
+      "Key": "83400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Sorcerer-"
+        }
+      ]
+    },
+    {
+      "Key": "83410000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prison of Oblivion: Dark Knight-"
+        }
+      ]
+    },
+    {
+      "Key": "83500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceremonial site: Dragon Knight - Dual Wielding"
+        }
+      ]
+    },
+    {
+      "Key": "83505000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceremony place: Painting guardian (male) -"
+        }
+      ]
+    },
+    {
+      "Key": "83510000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceremonial place: Dragon Knight - Hammer"
+        }
+      ]
+    },
+    {
+      "Key": "83520000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ceremonial place: Dragon Knight - One-handed sword"
+        }
+      ]
+    },
+    {
+      "Key": "83600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle: Samurai Sorcerer-"
+        }
+      ]
+    },
+    {
+      "Key": "83600001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten Castle: Samurai Sorcerer - 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "83610000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Castle: Bell Keeper 1:-"
+        }
+      ]
+    },
+    {
+      "Key": "83620000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Castle: Bell Keeper 2:-"
+        }
+      ]
+    },
+    {
+      "Key": "83630000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Castle: Bell Keeper 3:-"
+        }
+      ]
+    },
+    {
+      "Key": "83640000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melted Iron Fortress: Light Heavy Soldier-"
+        }
+      ]
+    },
+    {
+      "Key": "83700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: 2nd round hunting-"
+        }
+      ]
+    },
+    {
+      "Key": "83700001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: 2nd round hunting - 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "83710000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Proximity-"
+        }
+      ]
+    },
+    {
+      "Key": "83720000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: Shooting-"
+        }
+      ]
+    },
+    {
+      "Key": "83730000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gap Cave: To be determined."
+        }
+      ]
+    },
+    {
+      "Key": "83800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 1-"
+        }
+      ]
+    },
+    {
+      "Key": "83810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow Shadow Forest: Phantom Enemy 2-"
+        }
+      ]
+    },
+    {
+      "Key": "84000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy NPC for Conqueror's Pledge-"
+        }
+      ]
+    },
+    {
+      "Key": "84100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dummy NPC for the Pledge of the Sun-"
+        }
+      ]
+    },
+    {
+      "Key": "84200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Decayed Giant: In front of the King's Door - 2nd lap Red Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "84300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Fallen Giant: In front of the King's Door - 2nd lap Red Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "84400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forest of the Decayed Giant: Fissure Plaza - 2nd lap Red Spirit 3"
+        }
+      ]
+    },
+    {
+      "Key": "84400001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant's Forest: Fissure Plaza - 2nd round Red Ghost 3: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "84500000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fallen Giant Forest - 2nd round dark spirit"
+        }
+      ]
+    },
+    {
+      "Key": "84600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Luminous Stone Town Geldra-Dark Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "84700000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower - 2nd round Dark Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "84710000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heide Great Fire Tower - 2nd round Dark Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "84800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple - 2nd round Dark Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "84810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immortal Temple-Dark Spirit 2 (Ghost)"
+        }
+      ]
+    },
+    {
+      "Key": "84900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig-Dark Spirit 1 (Ghost)"
+        }
+      ]
+    },
+    {
+      "Key": "84900001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig-Dark Spirit 1 (Ghost): 2nd lap"
+        }
+      ]
+    },
+    {
+      "Key": "84910000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig-Dark Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "84920000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig-Dark Spirit 3"
+        }
+      ]
+    },
+    {
+      "Key": "85000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Anne Deal's Hall - 2nd round Dark Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "85000001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hall of Anne Deal - 2nd round Dark spirit: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "85100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valley of reservoir-dark spirit"
+        }
+      ]
+    },
+    {
+      "Key": "85200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunting Forest - Red Spirit Level 3"
+        }
+      ]
+    },
+    {
+      "Key": "85300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Castle Drangraig - Dual Wield Avelyn"
+        }
+      ]
+    },
+    {
+      "Key": "85310000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ojo Drangraig-Leroy"
+        }
+      ]
+    },
+    {
+      "Key": "85320000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig - 2nd round Dark Spirit 1"
+        }
+      ]
+    },
+    {
+      "Key": "85330000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig - 2nd round Dark Spirit 2"
+        }
+      ]
+    },
+    {
+      "Key": "85340000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig - 2nd round Dark Spirit 3"
+        }
+      ]
+    },
+    {
+      "Key": "85340001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig - 2nd round Dark Spirit 3: 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "85350000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Royal Castle Drangraig - Dark Spirit Key Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "85400000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port - Dark Spirit (Darth Maul)"
+        }
+      ]
+    },
+    {
+      "Key": "85400001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden Port - Dark Spirit (Darth Maul): 2nd round"
+        }
+      ]
+    },
+    {
+      "Key": "99900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test-based"
+        }
+      ]
+    },
+    {
+      "Key": "99990000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ito test 1"
+        }
+      ]
+    },
+    {
+      "Key": "99990001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ito test 2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <iconId />
+        <specialEffectId />
+        <startSfxId />
+        <actionSfxId />
+        <effectSfxId />
+        <weaponParamId  Refs="WeaponParam"/>
+        <armorParamId  Refs="ArmorParam"/>
+        <arrowParamId  Refs="ArrowParam"/>
+        <ringParamId  Refs="RingParam"/>
+        <spellParamId  Refs="SpellParam"/>
+        <gestureId />
+        <sortId />
+        <price />
+        <salePrice />
+        <motionSpeedRate />
+        <weight />
+        <itemTypeParamId  Refs="ItemTypeParam"/>
+        <itemUsageParamId  Refs="ItemUsageParam"/>
+        <getFrag />
+        <maxNum />
+        <spEffectTargetRegion  Enum="SP_EFFECT_TARGET_REGION"/>
+        <spEffectDuplication  Enum="SP_EFFECT_DUPLICATION"/>
+        <spEffectSfxPriority />
+        <menuIconCategory  Enum="ITEM_MENU_ICON_CATEGORY"/>
+        <enchantType  Enum="ITEM_ENCHANT_TYPE"/>
+        <completeTrophy  Enum="ITEM_COMPLETE_TROPHY_TYPE"/>
+        <isOnlyOne  IsBool=""/>
+        <isOnlyOneUtilGameClear  IsBool=""/>
+        <isTakeOver  IsBool=""/>
+        <canGet_WhenGetAllItem  IsBool=""/>
+        <padding />
+    </Field>
+</PARAMMETA>

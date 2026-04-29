@@ -1,0 +1,1397 @@
+{
+  "Key": "EVENT_FLAG_GLOBAL_TALK",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_FLAG_GLOBAL_TALK"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "200001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk1《ID:200001》"
+        }
+      ]
+    },
+    {
+      "Key": "200002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk2《ID:200002》"
+        }
+      ]
+    },
+    {
+      "Key": "200003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk3《ID:200003》"
+        }
+      ]
+    },
+    {
+      "Key": "200004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk4《ID:200004》"
+        }
+      ]
+    },
+    {
+      "Key": "200005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Talk5《ID:200005》"
+        }
+      ]
+    },
+    {
+      "Key": "200900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow cancellation [Warrior of the Sun]《ID:200900》"
+        }
+      ]
+    },
+    {
+      "Key": "200901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge cancellation [Guardian Knight]《ID:200901》"
+        }
+      ]
+    },
+    {
+      "Key": "200902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow cancellation [Dark Spirit of Blood]《ID:200902》"
+        }
+      ]
+    },
+    {
+      "Key": "200903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge cancellation [Seikyo]《ID:200903》"
+        }
+      ]
+    },
+    {
+      "Key": "200904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow cancellation [Mouse King]《ID:200904》"
+        }
+      ]
+    },
+    {
+      "Key": "200905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow cancellation [Bell Keeper]《ID:200905》"
+        }
+      ]
+    },
+    {
+      "Key": "200906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge cancellation [Road to the Ancient Dragon]《ID:200906》"
+        }
+      ]
+    },
+    {
+      "Key": "200907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge cancellation [Strong person]《ID:200907》"
+        }
+      ]
+    },
+    {
+      "Key": "200908",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow cancellation [Pilgrimage to the Abyss]《ID:200908》"
+        }
+      ]
+    },
+    {
+      "Key": "201100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk: Part 1]《ID:201100》"
+        }
+      ]
+    },
+    {
+      "Key": "201101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk: Part 2]《ID:201101》"
+        }
+      ]
+    },
+    {
+      "Key": "201102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk: Part 3]《ID:201102》"
+        }
+      ]
+    },
+    {
+      "Key": "201110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk to 4: After witnessing and defeating one 4 boss]《ID:201110》"
+        }
+      ]
+    },
+    {
+      "Key": "201111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk to 4: After seeing and defeating 2 bosses]《ID:201111》"
+        }
+      ]
+    },
+    {
+      "Key": "201112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk to 4: After witnessing and defeating 3 bosses]《ID:201112》"
+        }
+      ]
+    },
+    {
+      "Key": "201113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Talk to 4: After witnessing and defeating 4 bosses]《ID:201113》"
+        }
+      ]
+    },
+    {
+      "Key": "201120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 1]《ID:201120》"
+        }
+      ]
+    },
+    {
+      "Key": "201121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 2]《ID:201121》"
+        }
+      ]
+    },
+    {
+      "Key": "201122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 3]《ID:201122》"
+        }
+      ]
+    },
+    {
+      "Key": "201123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 4]《ID:201123》"
+        }
+      ]
+    },
+    {
+      "Key": "201124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 5]《ID:201124》"
+        }
+      ]
+    },
+    {
+      "Key": "201125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 6]《ID:201125》"
+        }
+      ]
+    },
+    {
+      "Key": "201126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 7]《ID:201126》"
+        }
+      ]
+    },
+    {
+      "Key": "201127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 8]《ID:201127》"
+        }
+      ]
+    },
+    {
+      "Key": "201128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Madura [Menu Conversation: Part 9]《ID:201128》"
+        }
+      ]
+    },
+    {
+      "Key": "201140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Inside the castle [Talk to: After defeating 4 bosses]《ID:201140》"
+        }
+      ]
+    },
+    {
+      "Key": "201160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Immortal Shrine [Talk: Part 1]《ID:201160》"
+        }
+      ]
+    },
+    {
+      "Key": "201180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Shrine Maiden: Andeel's Hall [Talk: Part 1]《ID:201180》"
+        }
+      ]
+    },
+    {
+      "Key": "201800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Talk_Part 1]《ID:201800》"
+        }
+      ]
+    },
+    {
+      "Key": "201801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Talk_Part 2]《ID:201801》"
+        }
+      ]
+    },
+    {
+      "Key": "201802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Menu conversation_Part 1]《ID:201802》"
+        }
+      ]
+    },
+    {
+      "Key": "201803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Menu conversation_Part 2]《ID:201803》"
+        }
+      ]
+    },
+    {
+      "Key": "201804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Menu conversation_Part 3]《ID:201804》"
+        }
+      ]
+    },
+    {
+      "Key": "201805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop [Menu conversation_Part 4]《ID:201805》"
+        }
+      ]
+    },
+    {
+      "Key": "201850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Talk_Self-introduction]《ID:201850》"
+        }
+      ]
+    },
+    {
+      "Key": "201851",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Menu conversation_Part 1]《ID:201851》"
+        }
+      ]
+    },
+    {
+      "Key": "201852",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Menu conversation_Part 2]《ID:201852》"
+        }
+      ]
+    },
+    {
+      "Key": "201853",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Menu conversation_Part 3]《ID:201853》"
+        }
+      ]
+    },
+    {
+      "Key": "201854",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Menu conversation_Part 4]《ID:201854》"
+        }
+      ]
+    },
+    {
+      "Key": "201855",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder shop: Migration [Ladder menu: First conversation]《ID:201855》"
+        }
+      ]
+    },
+    {
+      "Key": "202700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Lottery in progress]《ID:202700》"
+        }
+      ]
+    },
+    {
+      "Key": "202701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Scum Bottom_Appearance]《ID:202701》"
+        }
+      ]
+    },
+    {
+      "Key": "202702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Drangraig_Appearance]《ID:202702》"
+        }
+      ]
+    },
+    {
+      "Key": "202703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Shadow Forest_Appearance]《ID:202703》"
+        }
+      ]
+    },
+    {
+      "Key": "202704",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Scum Bottom_Encounter]《ID:202704》"
+        }
+      ]
+    },
+    {
+      "Key": "202705",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Drangraig_Encounter]《ID:202705》"
+        }
+      ]
+    },
+    {
+      "Key": "202706",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Shadow Forest_Encounter]《ID:202706》"
+        }
+      ]
+    },
+    {
+      "Key": "202750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Talk: 1st encounter]《ID:202750》"
+        }
+      ]
+    },
+    {
+      "Key": "202751",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Talk: 2nd encounter]《ID:202751》"
+        }
+      ]
+    },
+    {
+      "Key": "202752",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Talk: 3rd encounter]《ID:202752》"
+        }
+      ]
+    },
+    {
+      "Key": "202753",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Talk: 3rd encounter: NO response]《ID:202753》"
+        }
+      ]
+    },
+    {
+      "Key": "202754",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Devotion Conversation: Contract Rank 1]《ID:202754》"
+        }
+      ]
+    },
+    {
+      "Key": "202755",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Devotion Conversation: Contract Rank 2]《ID:202755》"
+        }
+      ]
+    },
+    {
+      "Key": "202756",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pilgrim of the Abyss [Devotion Conversation: Contract Rank 3]《ID:202756》"
+        }
+      ]
+    },
+    {
+      "Key": "202900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Talk: Part 1]《ID:202900》"
+        }
+      ]
+    },
+    {
+      "Key": "202901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Greetings: Long time no see 1]《ID:202901》"
+        }
+      ]
+    },
+    {
+      "Key": "202902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Greetings: Long time no see 2]《ID:202902》"
+        }
+      ]
+    },
+    {
+      "Key": "202903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Greetings: Long time no see 3]《ID:202903》"
+        }
+      ]
+    },
+    {
+      "Key": "202904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Greetings: Long time no see 4]《ID:202904》"
+        }
+      ]
+    },
+    {
+      "Key": "202920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Encounter: Valley of Pools]《ID:202920》"
+        }
+      ]
+    },
+    {
+      "Key": "202921",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Encounter: Hidden Port]《ID:202921》"
+        }
+      ]
+    },
+    {
+      "Key": "202922",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Encounter: Scum Bottom]《ID:202922》"
+        }
+      ]
+    },
+    {
+      "Key": "202923",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Encounter: Door of Pharos]《ID:202923》"
+        }
+      ]
+    },
+    {
+      "Key": "202924",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dwarf [Encounter: Altar of Amana]《ID:202924》"
+        }
+      ]
+    },
+    {
+      "Key": "203100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [First look: Talking_Part 1]《ID:203100》"
+        }
+      ]
+    },
+    {
+      "Key": "203101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [First look: Talking_Part 2]《ID:203101》"
+        }
+      ]
+    },
+    {
+      "Key": "203102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [First look: Talking_Part 3]《ID:203102》"
+        }
+      ]
+    },
+    {
+      "Key": "203103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [First look: Talk: Pledge contract: First time]《ID:203103》"
+        }
+      ]
+    },
+    {
+      "Key": "203104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [Menu Conversation: Part 1]《ID:203104》"
+        }
+      ]
+    },
+    {
+      "Key": "203105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 2]《ID:203105》"
+        }
+      ]
+    },
+    {
+      "Key": "203106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 3]《ID:203106》"
+        }
+      ]
+    },
+    {
+      "Key": "203107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 4]《ID:203107》"
+        }
+      ]
+    },
+    {
+      "Key": "203108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Cult Warrior [Menu Conversation: Part 5]《ID:203108》"
+        }
+      ]
+    },
+    {
+      "Key": "203109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 6]《ID:203109》"
+        }
+      ]
+    },
+    {
+      "Key": "203110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 7]《ID:203110》"
+        }
+      ]
+    },
+    {
+      "Key": "203111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blue Warrior [Menu Conversation: Part 8]《ID:203111》"
+        }
+      ]
+    },
+    {
+      "Key": "203600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [1st encounter: Talk to: Part 1]《ID:203600》"
+        }
+      ]
+    },
+    {
+      "Key": "203601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [1st encounter: Talk to: Part 2]《ID:203601》"
+        }
+      ]
+    },
+    {
+      "Key": "203602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [1st encounter: Talk to: Part 3]《ID:203602》"
+        }
+      ]
+    },
+    {
+      "Key": "203605",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Can appear: Prison of Oblivion]《ID:203605》"
+        }
+      ]
+    },
+    {
+      "Key": "203606",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Can appear: Tamari no Tani]《ID:203606》"
+        }
+      ]
+    },
+    {
+      "Key": "203607",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Can appear: Hidden Port]《ID:203607》"
+        }
+      ]
+    },
+    {
+      "Key": "203608",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Can appear: Scum Bottom]《ID:203608》"
+        }
+      ]
+    },
+    {
+      "Key": "203610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [2nd encounter: Talk to: Part 1]《ID:203610》"
+        }
+      ]
+    },
+    {
+      "Key": "203611",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [2nd encounter: Talk to: Part 2]《ID:203611》"
+        }
+      ]
+    },
+    {
+      "Key": "203612",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [2nd encounter: Talk to: Part 3]《ID:203612》"
+        }
+      ]
+    },
+    {
+      "Key": "203613",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [2nd encounter: Talk to: Part 4]《ID:203613》"
+        }
+      ]
+    },
+    {
+      "Key": "203614",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [2nd encounter: Talk to: Part 5]《ID:203614》"
+        }
+      ]
+    },
+    {
+      "Key": "203620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [3rd encounter: Talk to: Part 1]《ID:203620》"
+        }
+      ]
+    },
+    {
+      "Key": "203621",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [3rd Encounter: Talk to: Part 2]《ID:203621》"
+        }
+      ]
+    },
+    {
+      "Key": "203622",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [3rd encounter: Talk to: Part 3]《ID:203622》"
+        }
+      ]
+    },
+    {
+      "Key": "203623",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [3rd Encounter: Talk to: Part 4]《ID:203623》"
+        }
+      ]
+    },
+    {
+      "Key": "203630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [4th encounter: Talk to: Part 1]《ID:203630》"
+        }
+      ]
+    },
+    {
+      "Key": "203631",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [4th encounter: Talk to: Part 2]《ID:203631》"
+        }
+      ]
+    },
+    {
+      "Key": "203632",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [4th encounter: Talk to: Part 3]《ID:203632》"
+        }
+      ]
+    },
+    {
+      "Key": "203633",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [4th encounter: Talk to: Part 4]《ID:203633》"
+        }
+      ]
+    },
+    {
+      "Key": "203640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Appearing: Prison of Oblivion]《ID:203640》"
+        }
+      ]
+    },
+    {
+      "Key": "203641",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Appearing: Tamari no Tani]《ID:203641》"
+        }
+      ]
+    },
+    {
+      "Key": "203642",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Appearing: Hidden Port]《ID:203642》"
+        }
+      ]
+    },
+    {
+      "Key": "203643",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [Appearing: Scum Bottom]《ID:203643》"
+        }
+      ]
+    },
+    {
+      "Key": "203650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [5th encounter: Talk to: Part 1]《ID:203650》"
+        }
+      ]
+    },
+    {
+      "Key": "203651",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Female Knight [5th encounter: Talk to: Part 2]《ID:203651》"
+        }
+      ]
+    },
+    {
+      "Key": "203800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Baba [Talk to you_first conversation]《ID:203800》"
+        }
+      ]
+    },
+    {
+      "Key": "203801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Baba [Menu Conversation_Part 1]《ID:203801》"
+        }
+      ]
+    },
+    {
+      "Key": "203802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Baba [Menu Conversation_Part 2]《ID:203802》"
+        }
+      ]
+    },
+    {
+      "Key": "203803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Baba [Menu Conversation_Part 3]《ID:203803》"
+        }
+      ]
+    },
+    {
+      "Key": "203850",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Granny: After moving [Talk to you_first conversation]《ID:203850》"
+        }
+      ]
+    },
+    {
+      "Key": "203851",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Granny: After moving [Menu conversation_Part 1]《ID:203851》"
+        }
+      ]
+    },
+    {
+      "Key": "203852",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Yorozu Granny: After moving [Menu conversation_Part 2]《ID:203852》"
+        }
+      ]
+    },
+    {
+      "Key": "204300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Talk: First conversation]《ID:204300》"
+        }
+      ]
+    },
+    {
+      "Key": "204301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Menu conversation: Part 1]《ID:204301》"
+        }
+      ]
+    },
+    {
+      "Key": "204302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Menu conversation: Part 2]《ID:204302》"
+        }
+      ]
+    },
+    {
+      "Key": "204303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Menu conversation: Part 3]《ID:204303》"
+        }
+      ]
+    },
+    {
+      "Key": "204304",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Menu conversation: Part 4]《ID:204304》"
+        }
+      ]
+    },
+    {
+      "Key": "204305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop [Menu: Leave: When deciding to migrate]《ID:204305》"
+        }
+      ]
+    },
+    {
+      "Key": "204350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Migration [Talk: First conversation]《ID:204350》"
+        }
+      ]
+    },
+    {
+      "Key": "204351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Migration [Menu conversation: Part 1]《ID:204351》"
+        }
+      ]
+    },
+    {
+      "Key": "204352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material shop: Migration [Menu conversation: Part 2]《ID:204352》"
+        }
+      ]
+    },
+    {
+      "Key": "205200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Living person: Talk to 1]《ID:205200》"
+        }
+      ]
+    },
+    {
+      "Key": "205201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Living person: Talk to 2]《ID:205201》"
+        }
+      ]
+    },
+    {
+      "Key": "205202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: living: after conversation with dead]《ID:205202》"
+        }
+      ]
+    },
+    {
+      "Key": "205220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: Talk 1]《ID:205220》"
+        }
+      ]
+    },
+    {
+      "Key": "205221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: Talk 2]《ID:205221》"
+        }
+      ]
+    },
+    {
+      "Key": "205222",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 1st request]《ID:205222》"
+        }
+      ]
+    },
+    {
+      "Key": "205223",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 1st person request: YES]《ID:205223》"
+        }
+      ]
+    },
+    {
+      "Key": "205224",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 2nd person request: 2nd person request: YES]《ID:205224》"
+        }
+      ]
+    },
+    {
+      "Key": "205225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 3rd person request: 3rd person request: YES]《ID:205225》"
+        }
+      ]
+    },
+    {
+      "Key": "205226",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 1st person quest completed]《ID:205226》"
+        }
+      ]
+    },
+    {
+      "Key": "205227",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 2nd person quest completed]《ID:205227》"
+        }
+      ]
+    },
+    {
+      "Key": "205228",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 3rd person quest completed]《ID:205228》"
+        }
+      ]
+    },
+    {
+      "Key": "205229",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 4th person request: 4th person request: YES]《ID:205229》"
+        }
+      ]
+    },
+    {
+      "Key": "205230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Unsealed: Dead: 4th person quest completed]《ID:205230》"
+        }
+      ]
+    },
+    {
+      "Key": "205240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sealed person [Seal: Dead: Talk 1]《ID:205240》"
+        }
+      ]
+    },
+    {
+      "Key": "205600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop [Talk_First conversation]《ID:205600》"
+        }
+      ]
+    },
+    {
+      "Key": "205601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop [Talk_First conversation for vow cancellation]《ID:205601》"
+        }
+      ]
+    },
+    {
+      "Key": "205602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop [Menu Conversation_Part 1]《ID:205602》"
+        }
+      ]
+    },
+    {
+      "Key": "205603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Phantom Shop [Menu Conversation_Part 2]《ID:205603》"
+        }
+      ]
+    },
+    {
+      "Key": "205700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Absolution [Talk to Part 1]《ID:205700》"
+        }
+      ]
+    },
+    {
+      "Key": "205701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chaplain of Absolution [Talk to Part 2]《ID:205701》"
+        }
+      ]
+    },
+    {
+      "Key": "205800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_Does not have proof of goodwill_First conversation]《ID:205800》"
+        }
+      ]
+    },
+    {
+      "Key": "205801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_Possession of Goodwill Proof_First Conversation]《ID:205801》"
+        }
+      ]
+    },
+    {
+      "Key": "205802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_Pledge Rank 1]《ID:205802》"
+        }
+      ]
+    },
+    {
+      "Key": "205803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_Pledge Rank 2]《ID:205803》"
+        }
+      ]
+    },
+    {
+      "Key": "205804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_Pledge Rank 3]《ID:205804》"
+        }
+      ]
+    },
+    {
+      "Key": "205805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Menu Conversation_Part 1]《ID:205805》"
+        }
+      ]
+    },
+    {
+      "Key": "205806",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Menu Conversation_Part 2]《ID:205806》"
+        }
+      ]
+    },
+    {
+      "Key": "205807",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Menu Conversation_Part 3]《ID:205807》"
+        }
+      ]
+    },
+    {
+      "Key": "205808",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guardian Knight [Talk_First look after vow cancellation]《ID:205808》"
+        }
+      ]
+    }
+  ]
+}

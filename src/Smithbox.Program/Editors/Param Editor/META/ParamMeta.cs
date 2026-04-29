@@ -7,19 +7,23 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace StudioCore.Editors.ParamEditor;
 
 public class ParamMeta
 {
+    [XmlIgnore]
     public ParamData DataParent;
 
     public const int XML_VERSION = 0;
 
     public string Name;
 
+    [XmlIgnore]
     public string _path;
 
+    [XmlIgnore]
     public XmlDocument _xml;
 
     public Dictionary<string, ParamEnum> ParamEnums = new();
@@ -29,11 +33,6 @@ public class ParamMeta
     public List<ParamColorEdit> ColorEditors = new();
 
     public Dictionary<PARAMDEF.Field, ParamFieldMeta> Fields = new();
-
-    /// <summary>
-    /// Provides a brief description of the param's usage and behaviour
-    /// </summary>
-    public string Wiki { get; set; }
 
     /// <summary>
     /// Range of grouped rows (eg weapon infusions, itemlot groups)
@@ -84,6 +83,12 @@ public class ParamMeta
     /// Provides a set of fields the define a CalcCorrectGraph for soul cost
     /// </summary>
     public SoulCostDefinition SoulCostDef { get; set; }
+
+    public string FieldLayout { get; set; } = "";
+
+    public string Wiki { get; set; } = "";
+
+    public ParamMeta() { }
 
     public ParamMeta(ParamData parent)
     {
@@ -144,10 +149,10 @@ public class ParamMeta
             XmlNode self = root.SelectSingleNode("Self");
             if (self != null)
             {
-                XmlAttribute WikiEntry = self.Attributes["Wiki"];
-                if (WikiEntry != null)
+                XmlAttribute tWiki = self.Attributes["Wiki"];
+                if (tWiki != null)
                 {
-                    Wiki = WikiEntry.InnerText.Replace("\\n", "\n");
+                    Wiki = tWiki.InnerText;
                 }
 
                 XmlAttribute GroupSize = self.Attributes["BlockSize"];
@@ -208,6 +213,12 @@ public class ParamMeta
                 if (SCD != null)
                 {
                     SoulCostDef = new SoulCostDefinition(this, SCD.InnerText);
+                }
+
+                XmlAttribute tFieldLayout = self.Attributes["FieldLayout"];
+                if (tFieldLayout != null)
+                {
+                    FieldLayout = tFieldLayout.InnerText;
                 }
             }
 

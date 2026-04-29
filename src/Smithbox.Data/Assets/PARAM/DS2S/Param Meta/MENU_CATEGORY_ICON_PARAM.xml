@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <bagSubscript />
+        <cofferSubscript />
+        <repositorySubscript />
+        <shopSubscript />
+        <inventory  IsBool=""/>
+        <equipWeapon  IsBool=""/>
+        <equipHelmet  IsBool=""/>
+        <equipArmor  IsBool=""/>
+        <equipGauntlet  IsBool=""/>
+        <equipLeggings  IsBool=""/>
+        <equipRing  IsBool=""/>
+        <equipArrow  IsBool=""/>
+        <equipItem  IsBool=""/>
+        <equipSpell  IsBool=""/>
+        <equipGesture  IsBool=""/>
+        <repository  IsBool=""/>
+        <shop  IsBool=""/>
+        <equipWeaponArmor  IsBool=""/>
+        <padding />
+    </Field>
+</PARAMMETA>

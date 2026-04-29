@@ -1,0 +1,56 @@
+{
+  "Key": "DAMAGE_ATTACK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_ATTACK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Piercing"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blow"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet"
+        }
+      ]
+    }
+  ]
+}

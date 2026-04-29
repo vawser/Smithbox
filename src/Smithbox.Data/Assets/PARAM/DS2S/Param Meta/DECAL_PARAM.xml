@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <width />
+        <height />
+        <depth />
+        <texId />
+        <bumpTexId />
+        <colorR />
+        <colorG />
+        <colorB />
+        <colorA />
+        <invisibleDeleteTime />
+        <parallaxScale />
+        <lightId />
+        <flipType  Enum="DECAL_FLIP_TYPE"/>
+        <rotateType  Enum="DECAL_ROTATE_TYPE"/>
+        <aReserved />
+    </Field>
+</PARAMMETA>

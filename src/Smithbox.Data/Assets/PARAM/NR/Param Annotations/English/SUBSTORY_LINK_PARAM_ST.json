@@ -1,0 +1,18 @@
+{
+  "Param": "SUBSTORY_LINK_PARAM_ST",
+  "Type": "SUBSTORY_LINK_PARAM_ST",
+  "Name": "SUBSTORY_LINK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

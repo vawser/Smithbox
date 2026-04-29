@@ -1,0 +1,75 @@
+{
+  "Name": "RoleParam",
+  "Groups": [
+    {
+      "Key": "Team Type",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Team Type"
+        }
+      ],
+      "Fields": [
+        "TeamType",
+        "subTeamType"
+      ]
+    },
+    {
+      "Key": "Role",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Role"
+        }
+      ],
+      "Fields": [
+        "roleNameId",
+        "voiceChatGroup",
+        "roleNameColor"
+      ]
+    },
+    {
+      "Key": "Summon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Summon"
+        }
+      ],
+      "Fields": [
+        "sosSignSfxId",
+        "mySosSignSfxId",
+        "summonStartAnimId",
+        "nonPlayerSummonStartAnimId"
+      ]
+    },
+    {
+      "Key": "Item Drop",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Item Drop"
+        }
+      ],
+      "Fields": [
+        "itemlotParamId"
+      ]
+    },
+    {
+      "Key": "Phantom",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Phantom"
+        }
+      ],
+      "Fields": [
+        "PhantomParamId0",
+        "PhantomParamId1",
+        "PhantomParamId2",
+        "PhantomParamId3",
+        "signPhantomId"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "Key": "Undead Crypt",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Undead Crypt"
+      }
+  ],
+  "Params": [
+    "demopointlight_scn202410",
+    "demospotlight_scn202410",
+    "eventlocation_m20_24_00_00",
+    "eventparam_m20_24_00_00",
+    "generatorlocation_m20_24_00_00",
+    "generatorparam_m20_24_00_00",
+    "generatorregistparam_m20_24_00_00",
+    "hitgroupparam_m20_24_00_00",
+    "intrudepointparam_m20_24_00_00",
+    "mapobjectinstanceparam_m20_24_00_00",
+    "maptargetdirparam_m20_24_00_00",
+    "npctalkparam_m20_24_00_00",
+    "treasureboxparam_m20_24_00_00"
+  ]
+}

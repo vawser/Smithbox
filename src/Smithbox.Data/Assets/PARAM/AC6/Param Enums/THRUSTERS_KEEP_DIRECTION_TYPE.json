@@ -1,0 +1,29 @@
+{
+  "Key": "THRUSTERS_KEEP_DIRECTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THRUSTERS_KEEP_DIRECTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keep orientation"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Align horizontally"
+        }
+      ]
+    }
+  ]
+}

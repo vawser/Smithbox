@@ -1,0 +1,125 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Lady Butterfly"
+      ]
+    },
+    {
+      "ID": 1000900,
+      "Entries": [
+        "Owl (Father)"
+      ]
+    },
+    {
+      "ID": 1100800,
+      "Entries": [
+        "Gyoubu Oniwa"
+      ]
+    },
+    {
+      "ID": 1100900,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 1110801,
+      "Entries": [
+        "Genichiro Ashina (Castle)"
+      ]
+    },
+    {
+      "ID": 1110850,
+      "Entries": [
+        "Great Shinobi Owl"
+      ]
+    },
+    {
+      "ID": 1110900,
+      "Entries": [
+        "Emma, the Gentle Blade"
+      ]
+    },
+    {
+      "ID": 1110920,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 1120800,
+      "Entries": [
+        "Genichiro Ashina (Tutorial)"
+      ]
+    },
+    {
+      "ID": 1120830,
+      "Entries": [
+        "Genichiro, Way of Tomoe (Reservoir)"
+      ]
+    },
+    {
+      "ID": 1120860,
+      "Entries": [
+        "Isshin the Sword Saint"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    },
+    {
+      "ID": 1700850,
+      "Entries": [
+        "Headless Ape"
+      ]
+    },
+    {
+      "ID": 2000800,
+      "Entries": [
+        "Folding Screen Monkeys"
+      ]
+    },
+    {
+      "ID": 2500800,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 2500840,
+      "Entries": [
+        "Old Dragons of the Tree"
+      ]
+    },
+    {
+      "ID": 2500850,
+      "Entries": [
+        "True Monk"
+      ]
+    }
+  ]
+}

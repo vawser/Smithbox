@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <damageOverWriteNoMotion />
+        <damageOverWriteSmall />
+        <damageOverWriteSmallKnockBack />
+        <damageOverWriteLargeKnockBack />
+        <damageOverWriteLarge />
+        <damageOverWriteBlow />
+        <damageOverWriteUpper />
+        <damageOverWriteBreath />
+        <damageOverWriteStumble />
+        <damageOverWriteBreakDown />
+        <damageOverWriteAerialDown />
+        <damageOverWriteDown />
+        <damageOverWriteDownAttack />
+        <damageOverWriteLadder />
+        <damageOverWriteRope />
+        <damageOverWriteParryBreak />
+        <damageOverWriteGuardBreak />
+        <damageOverWriteStun />
+        <damageOverWriteBleeding />
+        <damageOverWriteGrab />
+        <damageOverWriteHeadShot />
+        <damageOverWriteFallSmall />
+        <damageOverWriteFallLarge />
+        <damageOverWriteAerialSmall />
+        <damageOverWriteAerialLarge />
+        <damageOverWriteGroundJumpAttack />
+        <damageOverWriteAerialJumpAttack />
+    </Field>
+</PARAMMETA>

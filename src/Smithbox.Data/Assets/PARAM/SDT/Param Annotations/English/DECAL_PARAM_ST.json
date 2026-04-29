@@ -1,0 +1,418 @@
+{
+  "Param": "DECAL_PARAM_ST",
+  "Type": "DECAL_PARAM_ST",
+  "Name": "DECAL_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "textureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pitchAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "yawAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "farDistance",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "nearSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "farSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maskSpeffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "replaceTextureId_byMaterial",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmypolyCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_05",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useDeferredDecal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePaintDecal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bloodTypeEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bUseNormal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_08",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_09",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePom",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useEmissive",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "putVertical",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomSizeMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomSizeMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomRollMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomRollMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomPitchMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomPitchMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomYawMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randomYawMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pomHightScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pomSampleMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pomSampleMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "blendMode",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "appearDirType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveValueBegin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveValueEnd",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bIntpEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "intpIntervalDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "beginIntpTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "endIntpTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "appearSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "appearSfxOffsetPos",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maskTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflecTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maskScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "normalTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heightTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveTextureId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflecColorR",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflecColorG",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reflecColorB",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bLifeEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "siniScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lifeTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "priority",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bDistThinOutEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bAlignedTexRandomVariationEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distThinOutCheckDist",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distThinOutCheckAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distThinOutMaxNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distThinOutCheckNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "delayAppearFrame",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Diffuse",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Mask",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Reflec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Normal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Height",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Emissive",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInTimeSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxDecalSfxCreatableSlopeAngleDeg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_02",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

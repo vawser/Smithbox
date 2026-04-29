@@ -1,0 +1,83 @@
+{
+  "Param": "CHR_FULLBODY_SFX_PARAM",
+  "Type": "CHR_FULLBODY_SFX_PARAM",
+  "Name": "CHR_FULLBODY_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFX ID",
+      "Description": "The SFX used for this entry."
+    },
+    {
+      "Field": "dirType",
+      "Name": "Generation Direction",
+      "Description": "The direction in which the SFX is generated."
+    },
+    {
+      "Field": "traceType",
+      "Name": "Maintain Direction",
+      "Description": "The direction that the SFX is maintained in."
+    },
+    {
+      "Field": "dummy0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableHead",
+      "Name": "Disable Head",
+      "Description": "If enabled, disable occurrence on the head."
+    },
+    {
+      "Field": "isDisableBody",
+      "Name": "Disable Body",
+      "Description": "If enabled, disable occurrence on the body."
+    },
+    {
+      "Field": "isDisableRArm",
+      "Name": "Disable Right Arm",
+      "Description": "If enabled, disable occurrence on the right arm."
+    },
+    {
+      "Field": "isDisableLArm",
+      "Name": "Disable Left Arm",
+      "Description": "If enabled, disable occurrence on the left arm."
+    },
+    {
+      "Field": "isDisableRHand",
+      "Name": "Disable Right Hand",
+      "Description": "If enabled, disable occurrence on the right hand."
+    },
+    {
+      "Field": "isDisableLHand",
+      "Name": "Disable Left Hand",
+      "Description": "If enabled, disable occurrence on the left hand."
+    },
+    {
+      "Field": "isDisableRLeg",
+      "Name": "Disable Right Leg",
+      "Description": "If enabled, disable occurrence on the right leg."
+    },
+    {
+      "Field": "isDisableLLeg",
+      "Name": "Disable Left Leg",
+      "Description": "If enabled, disable occurrence on the left leg."
+    },
+    {
+      "Field": "dummy1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "time",
+      "Name": "Generation Time",
+      "Description": "The time for the SFX generation."
+    },
+    {
+      "Field": "seId",
+      "Name": "Sound ID",
+      "Description": "The sound ID to play when generating the SFX."
+    }
+  ]
+}

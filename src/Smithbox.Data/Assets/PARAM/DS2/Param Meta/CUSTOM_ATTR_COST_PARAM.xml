@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <physicalSoul />
+        <fireSoul />
+        <magicSoul />
+        <thunderSoul />
+        <darkSoul />
+        <poisonSoul />
+        <bleedSoul />
+        <physicalByCrudeSoul />
+        <physicalByEnchantedSoul />
+        <physicalByAbyssSoul />
+        <physicalItemID />
+        <fireItemID />
+        <magicItemID />
+        <thunderItemID />
+        <darkItemID />
+        <poisonItemID />
+        <bleedItemID />
+        <physicalByCrudeItemID />
+        <physicalByEnchantedItemID />
+        <physicalByAbyssItemID />
+        <physicalItemNumber />
+        <fireItemNumber />
+        <magicItemNumber />
+        <thunderItemNumber />
+        <darkItemNumber />
+        <poisonItemNumber />
+        <bleedItemNumber />
+        <physicalByCrudeItemNumber />
+        <physicalByEnchantedItemNumber />
+        <physicalByAbyssItemNumber />
+    </Field>
+</PARAMMETA>

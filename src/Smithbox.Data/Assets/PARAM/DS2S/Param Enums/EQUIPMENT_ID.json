@@ -1,0 +1,461 @@
+{
+  "Key": "EQUIPMENT_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIPMENT_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prohibited from use"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Elementary body"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lightweight warrior"
+        }
+      ]
+    },
+    {
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thief"
+        }
+      ]
+    },
+    {
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wanderer"
+        }
+      ]
+    },
+    {
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunter"
+        }
+      ]
+    },
+    {
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Soldier"
+        }
+      ]
+    },
+    {
+      "Key": "1060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic soldier"
+        }
+      ]
+    },
+    {
+      "Key": "1080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bandit"
+        }
+      ]
+    },
+    {
+      "Key": "1090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Have-nots"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Traveler's clothes"
+        }
+      ]
+    },
+    {
+      "Key": "1110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Viking"
+        }
+      ]
+    },
+    {
+      "Key": "1120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magician"
+        }
+      ]
+    },
+    {
+      "Key": "1130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clergyman"
+        }
+      ]
+    },
+    {
+      "Key": "1140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item master"
+        }
+      ]
+    },
+    {
+      "Key": "1150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hunter"
+        }
+      ]
+    },
+    {
+      "Key": "1160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy warrior"
+        }
+      ]
+    },
+    {
+      "Key": "1170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Berserker"
+        }
+      ]
+    },
+    {
+      "Key": "1180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "1190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fighter"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assassin"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Clown"
+        }
+      ]
+    },
+    {
+      "Key": "1220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Explorer"
+        }
+      ]
+    },
+    {
+      "Key": "1230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Astrologer"
+        }
+      ]
+    },
+    {
+      "Key": "1240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic swordsman"
+        }
+      ]
+    },
+    {
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Knight"
+        }
+      ]
+    },
+    {
+      "Key": "1260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sorcerer"
+        }
+      ]
+    },
+    {
+      "Key": "1270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black magician"
+        }
+      ]
+    },
+    {
+      "Key": "1280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Priest"
+        }
+      ]
+    },
+    {
+      "Key": "1290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kensei"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shaman"
+        }
+      ]
+    },
+    {
+      "Key": "1310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mage"
+        }
+      ]
+    },
+    {
+      "Key": "1320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Commander"
+        }
+      ]
+    },
+    {
+      "Key": "1330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ancient dragon armor"
+        }
+      ]
+    },
+    {
+      "Key": "9900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: specular only 1/4"
+        }
+      ]
+    },
+    {
+      "Key": "9901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: diffuse only 1/4"
+        }
+      ]
+    },
+    {
+      "Key": "9902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: DS 1/16 N 1/4"
+        }
+      ]
+    },
+    {
+      "Key": "9903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: DN 1/4 S 1/16"
+        }
+      ]
+    },
+    {
+      "Key": "9904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Onion"
+        }
+      ]
+    },
+    {
+      "Key": "9905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Four Horsemen C"
+        }
+      ]
+    },
+    {
+      "Key": "9906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Magician"
+        }
+      ]
+    },
+    {
+      "Key": "9907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Princess"
+        }
+      ]
+    },
+    {
+      "Key": "9908",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Chainmail"
+        }
+      ]
+    },
+    {
+      "Key": "9909",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Iron Golem"
+        }
+      ]
+    },
+    {
+      "Key": "9910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Witch"
+        }
+      ]
+    },
+    {
+      "Key": "9911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Assassin"
+        }
+      ]
+    },
+    {
+      "Key": "9912",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Saint"
+        }
+      ]
+    },
+    {
+      "Key": "9913",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: 3 people haori"
+        }
+      ]
+    },
+    {
+      "Key": "9914",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: King of Firewood"
+        }
+      ]
+    },
+    {
+      "Key": "9915",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test: Crown of the Shadow Sun"
+        }
+      ]
+    }
+  ]
+}

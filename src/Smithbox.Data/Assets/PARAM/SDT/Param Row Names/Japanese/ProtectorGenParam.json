@@ -1,0 +1,35 @@
+{
+  "Name": "ProtectorGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Nukire -- ぬのきれ"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "[Proto] Hunter_head_new joint -- 【プロト】ハンター_頭_新関節"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "[Proto] Hunter_Torso_New joint -- 【プロト】ハンター_胴_新関節"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "[Proto] Hunter_arm_new joint -- 【プロト】ハンター_腕_新関節"
+      ]
+    },
+    {
+      "ID": 773000,
+      "Entries": [
+        "[Proto] Hunter_Leg_New joint -- 【プロト】ハンター_脚_新関節"
+      ]
+    }
+  ]
+}

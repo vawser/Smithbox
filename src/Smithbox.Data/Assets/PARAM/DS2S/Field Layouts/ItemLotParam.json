@@ -1,0 +1,352 @@
+{
+  "Name": "ItemLotParam",
+  "TotalChanceLot": {
+      "ChanceSet": [
+        "chance_lot_0",
+        "chance_lot_1",
+        "chance_lot_2",
+        "chance_lot_3",
+        "chance_lot_4",
+        "chance_lot_5",
+        "chance_lot_6",
+        "chance_lot_7",
+        "chance_lot_8",
+        "chance_lot_9"
+     ]
+  },
+  "Groups": [
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "lots_dropped_order",
+        "lots_dropped_num"
+      ]
+    },
+    {
+      "Key": "Lot 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 1"
+        }
+      ],
+      "Fields": [
+        "item_lot_0",
+        "amount_lot_0",
+        "chance_lot_0",
+        "infinite_lot_0",
+        "reinforcement_lot_0",
+        "infusion_lot_0"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_0",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 2"
+        }
+      ],
+      "Fields": [
+        "item_lot_1",
+        "amount_lot_1",
+        "chance_lot_1",
+        "infinite_lot_1",
+        "reinforcement_lot_1",
+        "infusion_lot_1"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_1",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 3"
+        }
+      ],
+      "Fields": [
+        "item_lot_2",
+        "amount_lot_2",
+        "chance_lot_2",
+        "infinite_lot_2",
+        "reinforcement_lot_2",
+        "infusion_lot_2"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_2",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 4"
+        }
+      ],
+      "Fields": [
+        "item_lot_3",
+        "amount_lot_3",
+        "chance_lot_3",
+        "infinite_lot_3",
+        "reinforcement_lot_3",
+        "infusion_lot_3"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_3",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 5"
+        }
+      ],
+      "Fields": [
+        "item_lot_4",
+        "amount_lot_4",
+        "chance_lot_4",
+        "infinite_lot_4",
+        "reinforcement_lot_4",
+        "infusion_lot_4"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_4",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 6"
+        }
+      ],
+      "Fields": [
+        "item_lot_5",
+        "amount_lot_5",
+        "chance_lot_5",
+        "infinite_lot_5",
+        "reinforcement_lot_5",
+        "infusion_lot_5"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_5",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 7"
+        }
+      ],
+      "Fields": [
+        "item_lot_6",
+        "amount_lot_6",
+        "chance_lot_6",
+        "infinite_lot_6",
+        "reinforcement_lot_6",
+        "infusion_lot_6"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_6",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 8"
+        }
+      ],
+      "Fields": [
+        "item_lot_7",
+        "amount_lot_7",
+        "chance_lot_7",
+        "infinite_lot_7",
+        "reinforcement_lot_7",
+        "infusion_lot_7"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_7",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 9",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 9"
+        }
+      ],
+      "Fields": [
+        "item_lot_8",
+        "amount_lot_8",
+        "chance_lot_8",
+        "infinite_lot_8",
+        "reinforcement_lot_8",
+        "infusion_lot_8"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_8",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    },
+    {
+      "Key": "Lot 10",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Lot 10"
+        }
+      ],
+      "Fields": [
+        "item_lot_9",
+        "amount_lot_9",
+        "chance_lot_9",
+        "infinite_lot_9",
+        "reinforcement_lot_9",
+        "infusion_lot_9"
+      ],
+      "ChanceLot": {
+          "TargetField": "chance_lot_9",
+          "ChanceSet": [
+            "chance_lot_0",
+            "chance_lot_1",
+            "chance_lot_2",
+            "chance_lot_3",
+            "chance_lot_4",
+            "chance_lot_5",
+            "chance_lot_6",
+            "chance_lot_7",
+            "chance_lot_8",
+            "chance_lot_9"
+         ]
+      }
+    }
+  ]
+}

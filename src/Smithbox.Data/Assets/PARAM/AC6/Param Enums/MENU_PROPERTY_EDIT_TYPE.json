@@ -1,0 +1,47 @@
+{
+  "Key": "MENU_PROPERTY_EDIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_PROPERTY_EDIT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "List selection"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slider"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Button"
+        }
+      ]
+    }
+  ]
+}

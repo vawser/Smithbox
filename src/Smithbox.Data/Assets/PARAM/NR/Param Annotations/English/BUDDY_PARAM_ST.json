@@ -1,0 +1,173 @@
+{
+  "Param": "BUDDY_PARAM_ST",
+  "Type": "BUDDY_PARAM_ST",
+  "Name": "BUDDY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "triggerSpEffectId",
+      "Name": "Trigger SpEffect ID",
+      "Description": "Set the special effect ID that will be the summoning condition"
+    },
+    {
+      "Field": "npcParamId",
+      "Name": "NPC Param ID",
+      "Description": "Set the NPC parameter ID of the summoned buddy"
+    },
+    {
+      "Field": "npcThinkParamId",
+      "Name": "NPC Think Param ID",
+      "Description": "Sets the NPC Thinking Parameter ID of the summoned buddy"
+    },
+    {
+      "Field": "activeSpEffectId",
+      "Name": "Active SpEffect ID",
+      "Description": "SpEffect applied when buddy is actively summoned"
+    },
+    {
+      "Field": "inactiveSpEffectId",
+      "Name": "Inactive SpEffect ID",
+      "Description": "SpEffect applied when buddy is not actively summoned"
+    },
+    {
+      "Field": "x_offset",
+      "Name": "Spawn Offset: X (left/right)",
+      "Description": "Sets the distance in meters to offset the buddy from the summon point to the X coordinate (left/right)."
+    },
+    {
+      "Field": "z_offset",
+      "Name": "Spawn Offset: Z (forward/back)",
+      "Description": "Sets the distance in meters to offsets the buddy from the summon point to the Z coordinate (forwad/back)."
+    },
+    {
+      "Field": "y_angle",
+      "Name": "Spawn Angle: Y",
+      "Description": "Sets summon position rotation."
+    },
+    {
+      "Field": "appearOnAroundSekihi",
+      "Name": "Appear near Stone Monument",
+      "Description": "Forces summon to spawn at summon monument."
+    },
+    {
+      "Field": "disablePCTargetShare",
+      "Name": "Disable Player Target Share",
+      "Description": "Disables summon targeting whoever PC locked-onto."
+    },
+    {
+      "Field": "pcFollowType",
+      "Name": "Player Follow Type",
+      "Description": "Determines PC tracking and non-combat behavior."
+    },
+    {
+      "Field": "Reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dopingSpEffect_lv0",
+      "Name": "Reinforcement SpEffect: +0",
+      "Description": "SpEffect granted when reinforced to +0"
+    },
+    {
+      "Field": "dopingSpEffect_lv1",
+      "Name": "Reinforcement SpEffect: +1",
+      "Description": "SpEffect granted when reinforced to +1."
+    },
+    {
+      "Field": "dopingSpEffect_lv2",
+      "Name": "Reinforcement SpEffect: +2",
+      "Description": "SpEffect granted when reinforced to +2."
+    },
+    {
+      "Field": "dopingSpEffect_lv3",
+      "Name": "Reinforcement SpEffect: +3",
+      "Description": "SpEffect granted when reinforced to +3."
+    },
+    {
+      "Field": "dopingSpEffect_lv4",
+      "Name": "Reinforcement SpEffect: +4",
+      "Description": "SpEffect granted when reinforced to +4."
+    },
+    {
+      "Field": "dopingSpEffect_lv5",
+      "Name": "Reinforcement SpEffect: +5",
+      "Description": "SpEffect granted when reinforced to +5."
+    },
+    {
+      "Field": "dopingSpEffect_lv6",
+      "Name": "Reinforcement SpEffect: +6",
+      "Description": "SpEffect granted when reinforced to +6."
+    },
+    {
+      "Field": "dopingSpEffect_lv7",
+      "Name": "Reinforcement SpEffect: +7",
+      "Description": "SpEffect granted when reinforced to +7."
+    },
+    {
+      "Field": "dopingSpEffect_lv8",
+      "Name": "Reinforcement SpEffect: +8",
+      "Description": "SpEffect granted when reinforced to +8."
+    },
+    {
+      "Field": "dopingSpEffect_lv9",
+      "Name": "Reinforcement SpEffect: +9",
+      "Description": "SpEffect granted when reinforced to +9."
+    },
+    {
+      "Field": "dopingSpEffect_lv10",
+      "Name": "Reinforcement SpEffect: +10",
+      "Description": "SpEffect granted when reinforced to +10."
+    },
+    {
+      "Field": "npcPlayerInitParamId",
+      "Name": "Character Init ID",
+      "Description": "CharaInitParam ID this c0000 summon will use."
+    },
+    {
+      "Field": "generateAnimId",
+      "Name": "Generate Anim ID",
+      "Description": "Generate Anime ID"
+    },
+    {
+      "Field": "usageShortcutTextId",
+      "Name": "Shortcut Text ID",
+      "Description": "The shortcut key text for this summon."
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon used for buddy in UI"
+    },
+    {
+      "Field": "baseDopingSpEffectId",
+      "Name": "Base Leveling SpEffect ID",
+      "Description": "Base SpEffect ID used for leveling with character (see HeroStatusParam)."
+    },
+    {
+      "Field": "padding",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

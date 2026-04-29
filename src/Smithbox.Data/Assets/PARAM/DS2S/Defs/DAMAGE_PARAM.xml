@@ -1,73 +1,436 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>DAMAGE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 damage_ctrl_id" />
-    <Field Def="s32 damage_id_followup" />
-    <Field Def="s32 damage_id_origin " />
-    <Field Def="s32 damage_0" />
-    <Field Def="s32 damage_1" />
-    <Field Def="s32 damage_2" />
-    <Field Def="u8 physical_damage_floor" />
-    <Field Def="u8 damage_type_0" />
-    <Field Def="u8 damage_type_1" />
-    <Field Def="u8 damage_type_2" />
-    <Field Def="f32 damage_mult" />
-    <Field Def="f32 counter_damage_mult" />
-    <Field Def="u16 stamina_damage_mult" />
-    <Field Def="u16 durability_damage_mult" />
-    <Field Def="f32 knockback_amount" />
-    <Field Def="f32 knockback_speed" />
-    <Field Def="u8 is_spawn_on_weapon" />
-    <Field Def="u8 hitbox_origin_dummy_poly_id" />
-    <Field Def="s8 guardbreak_type" />
-    <Field Def="u8 hitbox_shape" />
-    <Field Def="f32 hitbox_radius_mult" />
-    <Field Def="f32 hitbox_length_mult" />
-    <Field Def="f32 cycle_period" />
-    <Field Def="u8 target_disable_damage:1 = 1" />
-    <Field Def="u8 target2:1 = 1" />
-    <Field Def="u8 target_self:1 = 1" />
-    <Field Def="u8 target4:1 = 1" />
-    <Field Def="u8 target_characters:1 = 1" />
-    <Field Def="u8 target6:1 = 1" />
-    <Field Def="u8 target_map:1 = 1" />
-    <Field Def="u8 target8:1 = 1" />
-    <Field Def="u8 Unk01" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 Unk03" />
-    <Field Def="u8 Unk04" />
-    <Field Def="u8 Unk05" />
-    <Field Def="u8 Unk06" />
-    <Field Def="u8 Unk07" />
-    <Field Def="s32 speffect_id" />
-    <Field Def="u8 apply_speffect" />
-    <Field Def="u8 speffect_type" />
-    <Field Def="u8 speffect_apply_mode" />
-    <Field Def="u8 Unk08" />
-    <Field Def="s32 damage_effect_material_param_id" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk11" />
-    <Field Def="u8 Unk12" />
-    <Field Def="u8 Unk13" />
-    <Field Def="u8 damage_movement_power_param_id" />
-    <Field Def="u8 Unk15" />
-    <Field Def="u8 Unk16" />
-    <Field Def="u8 Unk17" />
-    <Field Def="u8 hitback_is_spawn_on_weapon" />
-    <Field Def="u8 hitback_hitbox_origin_dummy_poly_id" />
-    <Field Def="u8 hitback_hitbox_shape" />
-    <Field Def="u8 sfx_opacity_adjustment" />
-    <Field Def="u8 Unk20" />
-    <Field Def="u8 Unk21" />
-    <Field Def="f32 hitback_hitbox_radius_mult" />
-    <Field Def="f32 hitback_hitbox_length_mult" />
-    <Field Def="s32 grab_param_id" />
-    <Field Def="f32 hitbox_max_size" />
-    <Field Def="f32 hitbox_expand_speed" />
-  </Fields>
+    <ParamType>DAMAGE_PARAM</ParamType>
+    <DataVersion>20</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 damageCategory">
+            <DisplayName>ダメージカテゴリ</DisplayName>
+            <Enum>DAMAGE_CTRL_PARAM_ENUM</Enum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u32 childDamage">
+            <DisplayName>子ダメージID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 damageGroup">
+            <DisplayName>ダメージグループID</DisplayName>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 damage01">
+            <DisplayName>ダメージ値1</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s32 damage02">
+            <DisplayName>ダメージ値2</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="s32 damage03">
+            <DisplayName>ダメージ値3</DisplayName>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="u8 damageLower">
+            <DisplayName>ダメージ最低保障値</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>103</SortID>
+        </Field>
+        <Field Def="u8 damageType01">
+            <DisplayName>ダメージ属性1</DisplayName>
+            <Enum>DAMAGE_ATTRIBUTE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 damageType02">
+            <DisplayName>ダメージ属性2</DisplayName>
+            <Enum>DAMAGE_ATTRIBUTE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="u8 damageType03">
+            <DisplayName>ダメージ属性3</DisplayName>
+            <Enum>DAMAGE_ATTRIBUTE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="f32 damageRate">
+            <DisplayName>ダメージ倍率</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 counterDamageRate = 1">
+            <DisplayName>カウンターダメージ倍率</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u16 staminaDamage">
+            <DisplayName>スタミナ奪取量</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u16 durabilityDamage">
+            <DisplayName>耐久削り値</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 knockBackPower = 5">
+            <DisplayName>ノックバック[m]</DisplayName>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 stiff">
+            <DisplayName>硬直[sec]</DisplayName>
+            <Maximum>10000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="s8 hitDummyPolyType">
+            <DisplayName>発生源タイプ</DisplayName>
+            <Enum>DAMAGE_DUMMY_POLY_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="u8 hitDummyPolyId">
+            <DisplayName>発生源ダミポリID</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="s8 hitAttackMotionType = -1">
+            <DisplayName>攻撃属性 モーション</DisplayName>
+            <Enum>DAMAGE_ATTACK_TYPE</Enum>
+            <Minimum>-1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="u8 hitModelType">
+            <DisplayName>形状タイプ</DisplayName>
+            <Enum>DAMAGE_MODEL_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="f32 radius">
+            <DisplayName>半径[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="f32 length">
+            <DisplayName>長さ[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="f32 hitDistance">
+            <DisplayName>連続HIT設定</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 downAttackFlag:1">
+            <DisplayName>ダウン攻撃フラグ</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 onceFlag:1">
+            <DisplayName>単体限定フラグ</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 hitFlagOwner:1">
+            <DisplayName>オーナーヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 hitFlagFriend:1">
+            <DisplayName>友軍ヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 hitFlagEnemy:1">
+            <DisplayName>敵軍ヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 hitFlagNeutral:1">
+            <DisplayName>中立ヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 hitFlagMap:1">
+            <DisplayName>マップヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 hitFlagObj:1">
+            <DisplayName>OBJヒット許可</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>202</SortID>
+        </Field>
+        <Field Def="u8 directionType">
+            <DisplayName>ノックバック方向</DisplayName>
+            <Enum>DAMAGE_DIRECTION_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 guardDirectionType">
+            <DisplayName>ガード判定方向</DisplayName>
+            <Enum>DAMAGE_DIRECTION_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 hitPosType">
+            <DisplayName>ＨＩＴ上下位置</DisplayName>
+            <Enum>DAMAGE_HIT_POS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>201</SortID>
+        </Field>
+        <Field Def="s16 hitAngleXZ">
+            <DisplayName>強制HIT角度　XZ</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s8 hitAngleY">
+            <DisplayName>強制HIT角度　Y</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 isDamageGroupChr:1">
+            <DisplayName>キャラのグループ判定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 isDamageGroupMap:1">
+            <DisplayName>マップのグループ判定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 isDamageGroupObj:1">
+            <DisplayName>OBJのグループ判定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 spEffectIdWhenHit">
+            <DisplayName>ヒット時に発動する特殊効果のID</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>205</SortID>
+        </Field>
+        <Field Def="u8 spEffectTarget">
+            <DisplayName>ヒット時に発動する特殊効果の発動対象</DisplayName>
+            <Enum>DAMAGE_SP_EFFECT_TARGET</Enum>
+            <SortID>205</SortID>
+        </Field>
+        <Field Def="u8 spEffectTargetRegion">
+            <DisplayName>特殊効果管理カテゴリ</DisplayName>
+            <Enum>SP_EFFECT_TARGET_REGION</Enum>
+            <SortID>205</SortID>
+        </Field>
+        <Field Def="u8 spEffectDuplication">
+            <DisplayName>特殊効果の重複判定</DisplayName>
+            <Enum>SP_EFFECT_DUPLICATION</Enum>
+            <SortID>205</SortID>
+        </Field>
+        <Field Def="u8 materialSize">
+            <DisplayName>サイズ</DisplayName>
+            <Enum>DAMAGE_MATERIAL_SIZE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>121</SortID>
+        </Field>
+        <Field Def="u32 material">
+            <DisplayName>材質</DisplayName>
+            <Enum>MATERIAL_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="s32 traceSfx">
+            <DisplayName>軌跡SFX</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="u32 traceSfxColor">
+            <DisplayName>軌跡SFX追従ダミポリ色</DisplayName>
+            <Enum>DAMAGE_SFX_TRACE_DP_COLOR_ENUM</Enum>
+            <SortID>132</SortID>
+        </Field>
+        <Field Def="u8 traceSfxPos">
+            <DisplayName>軌跡SFX位置</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>131</SortID>
+        </Field>
+        <Field Def="u8 overKilledBlowPower = 5">
+            <DisplayName>オーバーキル 吹き飛び初速[m/sec]</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>410</SortID>
+        </Field>
+        <Field Def="u8 movementPowerType">
+            <DisplayName>運動量</DisplayName>
+            <Enum>DAMAGE_MOVEMENT_POWER_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="u8 attackTypeRateType">
+            <DisplayName>攻撃タイプ倍率</DisplayName>
+            <Enum>DAMAGE_ATTACK_TYPE_RATE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="u8 styleRateType">
+            <DisplayName>持ち方倍率</DisplayName>
+            <Enum>DAMAGE_STYLE_RATE_TYPE</Enum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="u8 eventDamage">
+            <DisplayName>イベントダメージ</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>150</SortID>
+        </Field>
+        <Field Def="s8 flipHitDummyPolyType">
+            <DisplayName>弾きＨＩＴ 発生源タイプ</DisplayName>
+            <Enum>DAMAGE_DUMMY_POLY_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u8 flipHitDummyPolyId">
+            <DisplayName>弾きＨＩＴ 発生源ダミポリID</DisplayName>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u8 flipHitModelType">
+            <DisplayName>弾きＨＩＴ 形状タイプ</DisplayName>
+            <Enum>DAMAGE_MODEL_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u8 damagOverwrite:1">
+            <DisplayName>ダメージ強制上書き</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>210</SortID>
+        </Field>
+        <Field Def="u8 disallowInvincible:1">
+            <DisplayName>無敵無効化フラグ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>210</SortID>
+        </Field>
+        <Field Def="u8 flipFlagMapFloor:1">
+            <DisplayName>マップ弾かれ　床　無効</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>401</SortID>
+        </Field>
+        <Field Def="u8 flipFlagMapWall:1">
+            <DisplayName>マップ弾かれ　壁　無効</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>401</SortID>
+        </Field>
+        <Field Def="u8 flipFlagObj:1">
+            <DisplayName>OBJ弾かれ無効</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>401</SortID>
+        </Field>
+        <Field Def="u8 isDoorCheck:1">
+            <DisplayName>扉判定を行う</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>401</SortID>
+        </Field>
+        <Field Def="u8 expandSfxDisable:1">
+            <DisplayName>SFX拡大 無効</DisplayName>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>191</SortID>
+        </Field>
+        <Field Def="dummy8 dummy5[2]">
+            <DisplayName>予約領域</DisplayName>
+            <SortID>411</SortID>
+        </Field>
+        <Field Def="f32 flipHitRadius">
+            <DisplayName>弾きＨＩＴ 半径[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="f32 flipHitLength">
+            <DisplayName>弾きＨＩＴ 長さ[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="s32 grabParamId = -1">
+            <DisplayName>投げパラメータID</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>401</SortID>
+        </Field>
+        <Field Def="f32 expandSize">
+            <DisplayName>拡大サイズ[m]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="f32 expandTime">
+            <DisplayName>拡大時間[sec]</DisplayName>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>190</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

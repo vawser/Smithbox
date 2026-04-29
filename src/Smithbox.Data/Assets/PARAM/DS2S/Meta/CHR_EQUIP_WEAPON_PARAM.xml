@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters used by player and humanoid characters for equip weapons." Row0Dummy="" />
-  <Field>
-    <chr_id AltName="Chr ID"/>
-    <weapon_ffx_id Wiki="Weapon Visual Effect Related"/>
-    <unk_ffx Wiki="Body Visual Effect Related"/>
-  </Field>
-</PARAMMETA>

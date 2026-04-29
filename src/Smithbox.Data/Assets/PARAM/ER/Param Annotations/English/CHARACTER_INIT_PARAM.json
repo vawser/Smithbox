@@ -1,0 +1,593 @@
+{
+  "Param": "CHARACTER_INIT_PARAM",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CHARACTER_INIT_PARAM",
+  "Description": "Defines instances of c0000 (player) characters in the game, including starting classes.\nNote that many fields are not used and remain from earlier games, particularly with respect to starting classes.\nStarting classes begin at 3000 with consecutive IDs, and starting gifts begin at 2400 likewise.",
+  "Fields": [
+    {
+      "Field": "baseRec_mp",
+      "Name": "Base FP Recovery Time",
+      "Description": "Time until MP recovers 1 point (first decimal place)"
+    },
+    {
+      "Field": "baseRec_sp",
+      "Name": "Base Stamina Recovery Time",
+      "Description": "Time to recover 1 point of stamina (first decimal place)"
+    },
+    {
+      "Field": "red_Falldam",
+      "Name": "Characer Head Land - Damage Reduction",
+      "Description": "Damage reduction amount (%) that can be a cushion when scolded by another character from above (first decimal place)"
+    },
+    {
+      "Field": "soul",
+      "Name": "Runes",
+      "Description": "The amount of soul you have at the beginning"
+    },
+    {
+      "Field": "equip_Wep_Right",
+      "Name": "Equipped Weapon: Right Primary",
+      "Description": "Weapon ID of equipment parameter (right hand slot 1)"
+    },
+    {
+      "Field": "equip_Subwep_Right",
+      "Name": "Equipped Weapon: Right Secondary",
+      "Description": "Weapon ID of equipment parameter (right hand slot 2)"
+    },
+    {
+      "Field": "equip_Wep_Left",
+      "Name": "Equipped Weapon: Left Primary",
+      "Description": "Weapon ID of equipment parameter (left hand slot 1)"
+    },
+    {
+      "Field": "equip_Subwep_Left",
+      "Name": "Equipped Weapon: Left Secondary",
+      "Description": "Weapon ID of equipment parameter (left hand slot 2)"
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "Equipped Armor: Head",
+      "Description": "Equipment parameter armor ID (head armor)"
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "Equipped Armor: Chest",
+      "Description": "Equipment parameter armor ID (torso armor)"
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "Equipped Armor: Arms",
+      "Description": "Equipment parameter armor ID (arm armor)"
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "Equipped Armor: Legs",
+      "Description": "Equipment parameter armor ID (leg armor)"
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "Equipped Ammunition: Arrow Primary",
+      "Description": "Weapon ID (arrow) of equipment parameter"
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "Equipped Ammunition: Bolt Primary",
+      "Description": "Weapon ID (bolt) of equipment parameter"
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "Equipped Ammunition: Arrow Secondary",
+      "Description": "Weapon ID of equipment parameter (arrow reserve)"
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "Equipped Ammunition: Bolt Secondary",
+      "Description": "Weapon ID of equipment parameter (spare bolt)"
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "Equipped Accessory: Slot 1",
+      "Description": "Equipment parameter decoration ID01"
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "Equipped Accessory: Slot 2",
+      "Description": "Equipment parameter decoration ID02"
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "Equipped Accessory: Slot 3",
+      "Description": "Equipment parameter decoration ID03"
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "Equipped Accessory: Slot 4",
+      "Description": "Equipment parameter decoration ID04"
+    },
+    {
+      "Field": "pad8_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "scadutreeBlessing",
+      "Name": "Scadutree Blessing",
+      "Description": "Level of Scadutree Blessing"
+    },
+    {
+      "Field": "reveredSpiritAshBlessing",
+      "Name": "Revered Spirit Ash Blessing",
+      "Description": "Level of Revered Spirit Ash Blessing"
+    },
+    {
+      "Field": "pad8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "elixir_material00",
+      "Name": "Elixir Material 1",
+      "Description": "Material ID1 for Elixir"
+    },
+    {
+      "Field": "elixir_material01",
+      "Name": "Elixir Material 2",
+      "Description": "Material ID2 for Elixir"
+    },
+    {
+      "Field": "elixir_material02",
+      "Name": "Elixir Material 3",
+      "Description": "Material ID3 for Elixir"
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "Equipped Spell: Slot 1",
+      "Description": "Initial placement magic / miracle ID01"
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "Equipped Spell: Slot 2",
+      "Description": "Initial placement magic / miracle ID02"
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "Equipped Spell: Slot 3",
+      "Description": "Initial placement magic / miracle ID03"
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "Equipped Spell: Slot 4",
+      "Description": "Initial placement magic / miracle ID04"
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "Equipped Spell: Slot 5",
+      "Description": "Initial placement magic / miracle ID05"
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "Equipped Spell: Slot 6",
+      "Description": "Initial placement magic / miracle ID06"
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "Equipped Spell: Slot 7",
+      "Description": "Initial placement magic / miracle ID07"
+    },
+    {
+      "Field": "item_01",
+      "Name": "Equipped Item: Slot 1",
+      "Description": "Initial possession item ID 01"
+    },
+    {
+      "Field": "item_02",
+      "Name": "Equipped Item: Slot 2",
+      "Description": "Initial possession item ID 02"
+    },
+    {
+      "Field": "item_03",
+      "Name": "Equipped Item: Slot 3",
+      "Description": "Initial possession item ID 03"
+    },
+    {
+      "Field": "item_04",
+      "Name": "Equipped Item: Slot 4",
+      "Description": "Initial possession item ID 04"
+    },
+    {
+      "Field": "item_05",
+      "Name": "Equipped Item: Slot 5",
+      "Description": "Initial possession item ID 05"
+    },
+    {
+      "Field": "item_06",
+      "Name": "Equipped Item: Slot 6",
+      "Description": "Initial possession item ID 06"
+    },
+    {
+      "Field": "item_07",
+      "Name": "Equipped Item: Slot 7",
+      "Description": "Initial possession item ID 07"
+    },
+    {
+      "Field": "item_08",
+      "Name": "Equipped Item: Slot 8",
+      "Description": "Initial possession item ID 08"
+    },
+    {
+      "Field": "item_09",
+      "Name": "Equipped Item: Slot 9",
+      "Description": "Initial possession item ID 09"
+    },
+    {
+      "Field": "item_10",
+      "Name": "Equipped Item: Slot 10",
+      "Description": "Initial possession item ID 10"
+    },
+    {
+      "Field": "npcPlayerFaceGenId",
+      "Name": "NPC Player - Face Gen ID",
+      "Description": "Facegen parameter ID used by NPC players. Not used by normal players."
+    },
+    {
+      "Field": "npcPlayerThinkId",
+      "Name": "NPC Player - Think ID",
+      "Description": "NPC Thinking Parameter ID used by NPC players. Not used by normal players."
+    },
+    {
+      "Field": "baseHp",
+      "Name": "Base HP",
+      "Description": "Basic value of HP (actually, it is corrected by the calculation formula)"
+    },
+    {
+      "Field": "baseMp",
+      "Name": "Base FP",
+      "Description": "Basic value of MP (actually, it is corrected by the calculation formula)"
+    },
+    {
+      "Field": "baseSp",
+      "Name": "Base Stamina",
+      "Description": "Basic value of stamina (actually, it is corrected by the formula)"
+    },
+    {
+      "Field": "arrowNum",
+      "Name": "Equipped Ammunition: Arrow Primary Count",
+      "Description": "Initial number of arrows"
+    },
+    {
+      "Field": "boltNum",
+      "Name": "Equipped Ammunition: Bolt Primary Count",
+      "Description": "Initial number of bolts"
+    },
+    {
+      "Field": "subArrowNum",
+      "Name": "Equipped Ammunition: Arrow Secondary Count",
+      "Description": "Initial number of arrows"
+    },
+    {
+      "Field": "subBoltNum",
+      "Name": "Equipped Ammunition: Bolt Secondary Count",
+      "Description": "Initial number of bolts"
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "soulLv",
+      "Name": "Level",
+      "Description": "Initial Lv"
+    },
+    {
+      "Field": "baseVit",
+      "Name": "Vigor",
+      "Description": "Basic value of physical fitness"
+    },
+    {
+      "Field": "baseWil",
+      "Name": "Attunement",
+      "Description": "Basic value of spirit"
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "Endurance",
+      "Description": "Robust base value"
+    },
+    {
+      "Field": "baseStr",
+      "Name": "Strength",
+      "Description": "Basic value of muscle strength"
+    },
+    {
+      "Field": "baseDex",
+      "Name": "Dexterity",
+      "Description": "Basic value of agility"
+    },
+    {
+      "Field": "baseMag",
+      "Name": "Intelligence",
+      "Description": "Basic value of magic power"
+    },
+    {
+      "Field": "baseFai",
+      "Name": "Faith",
+      "Description": "Basic value of faith"
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "Arcane",
+      "Description": "Basic value of luck"
+    },
+    {
+      "Field": "baseHeroPoint",
+      "Name": "Humanity",
+      "Description": "Basic value of human nature"
+    },
+    {
+      "Field": "baseDurability",
+      "Name": "Vitality",
+      "Description": "Basic value of endurance"
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "Equipped Item: Slot 1 Amount",
+      "Description": "Initial possession number of items 01"
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "Equipped Item: Slot 2 Amount",
+      "Description": "Initial possession number of items 02"
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "Equipped Item: Slot 3 Amount",
+      "Description": "Initial possession number of items 03"
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "Equipped Item: Slot 4 Amount",
+      "Description": "Initial possession number of items 04"
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "Equipped Item: Slot 5 Amount",
+      "Description": "Initial possession number of items 05"
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "Equipped Item: Slot 6 Amount",
+      "Description": "Initial possession number of items 06"
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "Equipped Item: Slot 7 Amount",
+      "Description": "Initial possession number of items 07"
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "Equipped Item: Slot 8 Amount",
+      "Description": "Initial possession number of items 08"
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "Equipped Item: Slot 9 Amount",
+      "Description": "Initial possession number of items 09"
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "Equipped Item: Slot 10 Amount",
+      "Description": "Initial possession number of items 10"
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId0",
+      "Name": "Equipped Gesture: Slot 0",
+      "Description": "Gesture 0th (0 if you want to play EzState gesture 0)"
+    },
+    {
+      "Field": "gestureId1",
+      "Name": "Equipped Gesture: Slot 1",
+      "Description": "Gesture 1st (0 if you want to play EzState gesture 0)"
+    },
+    {
+      "Field": "gestureId2",
+      "Name": "Equipped Gesture: Slot 2",
+      "Description": "Gesture 2nd (0 if you want to play EzState's gesture 0)"
+    },
+    {
+      "Field": "gestureId3",
+      "Name": "Equipped Gesture: Slot 3",
+      "Description": "Gesture 3rd (0 if you want to play EzState gesture 0)"
+    },
+    {
+      "Field": "gestureId4",
+      "Name": "Equipped Gesture: Slot 4",
+      "Description": "Gesture 4th (0 if you want to play EzState's gesture 0)"
+    },
+    {
+      "Field": "gestureId5",
+      "Name": "Equipped Gesture: Slot 5",
+      "Description": "Gesture 5th (0 if you want to play EzState gesture 0)"
+    },
+    {
+      "Field": "gestureId6",
+      "Name": "Equipped Gesture: Slot 6",
+      "Description": "Gesture 6th (0 if you want to play EzState gesture 0)"
+    },
+    {
+      "Field": "npcPlayerType",
+      "Name": "NPC Player - Type",
+      "Description": "NPC type used by NPC players. Not used by normal players."
+    },
+    {
+      "Field": "npcPlayerDrawType",
+      "Name": "NPC Player - Draw Type",
+      "Description": "Drawing type used by NPC players. Not used by normal players."
+    },
+    {
+      "Field": "npcPlayerSex",
+      "Name": "NPC Player - Sex",
+      "Description": "The gender used by NPC players. It is not reflected to normal players."
+    },
+    {
+      "Field": "vowType",
+      "Name": "Vow Type",
+      "Description": "Pledge type (None: 0)"
+    },
+    {
+      "Field": "isSyncTarget",
+      "Name": "Is Sync Target",
+      "Description": "Is it a send / receive target (for copy NPCs)?"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "wepParamType_Right1",
+      "Name": "Weapon Param Type - Right Primary",
+      "Description": "Right-handed weapon slot 1 parameter reference"
+    },
+    {
+      "Field": "wepParamType_Right2",
+      "Name": "Weapon Param Type - Right Secondary",
+      "Description": "Right-handed weapon slot 2 parameter reference"
+    },
+    {
+      "Field": "wepParamType_Right3",
+      "Name": "Weapon Param Type - Right Tertiary",
+      "Description": "Right-handed weapon slot 3 parameter reference"
+    },
+    {
+      "Field": "wepParamType_Left1",
+      "Name": "Weapon Param Type - Left Primary",
+      "Description": "Parameter reference for left-handed weapon slot 1"
+    },
+    {
+      "Field": "wepParamType_Left2",
+      "Name": "Weapon Param Type - Left Secondary",
+      "Description": "Parameter reference for left-handed weapon slot 2"
+    },
+    {
+      "Field": "wepParamType_Left3",
+      "Name": "Weapon Param Type - Left Tertiary",
+      "Description": "Parameter reference for left-handed weapon slot 3"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "equip_Subwep_Right3",
+      "Name": "Equipped Weapon: Right Tertiary",
+      "Description": "Weapon ID of equipment parameter (right hand slot 3)"
+    },
+    {
+      "Field": "equip_Subwep_Left3",
+      "Name": "Equipped Weapon: Left Tertiary",
+      "Description": "Weapon ID of equipment parameter (left hand slot 3)"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryItem_01",
+      "Name": "Stored Item: Slot 1",
+      "Description": "Item ID 01 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItem_02",
+      "Name": "Stored Item: Slot 2",
+      "Description": "Item ID 02 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItem_03",
+      "Name": "Stored Item: Slot 3",
+      "Description": "Item ID 03 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItem_04",
+      "Name": "Stored Item: Slot 4",
+      "Description": "Item ID 04 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItem_05",
+      "Name": "Stored Item: Slot 5",
+      "Description": "Item ID 05 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItem_06",
+      "Name": "Stored Item: Slot 6",
+      "Description": "Item ID 06 of the second shortcut initial possession"
+    },
+    {
+      "Field": "secondaryItemNum_01",
+      "Name": "Stored Item: Slot 1 Count",
+      "Description": "2nd Shortcut Initial possession number of items 01"
+    },
+    {
+      "Field": "secondaryItemNum_02",
+      "Name": "Stored Item: Slot 2 Count",
+      "Description": "2nd Shortcut Initial possession number of items 02"
+    },
+    {
+      "Field": "secondaryItemNum_03",
+      "Name": "Stored Item: Slot 3 Count",
+      "Description": "2nd Shortcut Initial possession number of items 03"
+    },
+    {
+      "Field": "secondaryItemNum_04",
+      "Name": "Stored Item: Slot 4 Count",
+      "Description": "2nd Shortcut Initial possession number of items 04"
+    },
+    {
+      "Field": "secondaryItemNum_05",
+      "Name": "Stored Item: Slot 5 Count",
+      "Description": "2nd Shortcut Initial possession number of items 05"
+    },
+    {
+      "Field": "secondaryItemNum_06",
+      "Name": "Stored Item: Slot 6 Count",
+      "Description": "2nd Shortcut Initial possession number of items 06"
+    },
+    {
+      "Field": "HpEstMax",
+      "Name": "HP Flask - Max Possession Limit",
+      "Description": "HP Est Bottle Possession Limit"
+    },
+    {
+      "Field": "MpEstMax",
+      "Name": "FP Flask - Max Possession Limit",
+      "Description": "MP Est Bottle Possession Limit"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "voiceType",
+      "Name": "Voice Type",
+      "Description": "Voice type"
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

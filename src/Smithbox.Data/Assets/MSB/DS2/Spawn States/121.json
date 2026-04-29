@@ -1,0 +1,22 @@
+{
+  "id": "121",
+  "name": "Giant",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Idle"
+    },
+    {
+      "value": "3",
+      "name": "Leap"
+    }
+  ]
+}

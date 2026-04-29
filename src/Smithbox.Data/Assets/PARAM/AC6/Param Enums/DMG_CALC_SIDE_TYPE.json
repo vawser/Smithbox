@@ -1,0 +1,29 @@
+{
+  "Key": "DMG_CALC_SIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DMG_CALC_SIDE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giver"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Receiver"
+        }
+      ]
+    }
+  ]
+}

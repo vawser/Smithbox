@@ -161,10 +161,19 @@ public static class MapEditorDecorations
         object val,
         ref object newVal)
     {
+        if (view.Project.Handler.ParamData == null)
+            return false;
+
+        var enums = view.Project.Handler.ParamData.Enums;
+
         if (meta != null && meta.EnumType != null)
         {
-            var enumName = meta.EnumType.Name;
-            var options = meta.EnumType.Values;
+            var enumName = meta.EnumType;
+
+            var entry = enums.List.FirstOrDefault(e => e.Key == enumName);
+
+            if (entry == null)
+                return false;
 
             ImGui.NextColumn();
 
@@ -178,13 +187,13 @@ public static class MapEditorDecorations
 
             string currentEntry = "___";
 
-            KeyValuePair<string, string> match = options.Where(x => x.Key == val.ToString()).FirstOrDefault();
+            var matchedOption = entry.Options.Where(x => x.Key == val.ToString()).FirstOrDefault();
 
             ImGui.BeginGroup();
 
-            if (match.Key != null)
+            if (matchedOption != null)
             {
-                currentEntry = match.Value;
+                currentEntry = matchedOption.GetName();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
                 ImGui.TextUnformatted(currentEntry);
                 ImGui.PopStyleColor();
@@ -200,7 +209,7 @@ public static class MapEditorDecorations
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
-                var opened = MsbEnumContextMenu(view, meta, propinfo, val, ref newVal, options);
+                var opened = MsbEnumContextMenu(view, meta, propinfo, val, ref newVal, entry.Options);
                 ImGui.EndPopup();
                 return opened;
             }
@@ -217,7 +226,7 @@ public static class MapEditorDecorations
         PropertyInfo propinfo,
         object val,
         ref object newVal,
-        Dictionary<string, string> options)
+        List<ParamEnumOption> options)
     {
         ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
@@ -225,13 +234,13 @@ public static class MapEditorDecorations
         {
             try
             {
-                foreach (KeyValuePair<string, string> entry in options)
+                foreach (var entry in options)
                 {
                     if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Key, " ")
-                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Value, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.GetName(), " ")
                         || enumSearchStr == "")
                     {
-                        if (ImGui.Selectable($"{entry.Key}: {entry.Value}"))
+                        if (ImGui.Selectable($"{entry.Key}: {entry.GetName()}"))
                         {
                             newVal = Convert.ChangeType(entry.Key, val.GetType());
                             ImGui.EndChild();
@@ -589,7 +598,7 @@ public static class MapEditorDecorations
         bool display = false;
         string enumName = "";
         var matchId = $"{rowID}";
-        List<SpawnStatePair> options = null;
+        List<SpawnStateContents> options = null;
 
         if (meta != null && meta.ShowSpawnStateList)
         {
@@ -597,7 +606,7 @@ public static class MapEditorDecorations
             {
                 matchId = $"{rowID}".Substring(0, 3);
 
-                var states = view.Project.Handler.MapData.MapSpawnStates.list;
+                var states = view.Project.Handler.MapData.SpawnStates.List;
                 var matchedState = states.Where(e => e.id == matchId).FirstOrDefault();
                 if (matchedState != null)
                 {
@@ -664,7 +673,7 @@ public static class MapEditorDecorations
         PropertyInfo propinfo,
         object val,
         ref object newVal,
-        List<SpawnStatePair> options)
+        List<SpawnStateContents> options)
     {
         ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
@@ -713,10 +722,10 @@ public static class MapEditorDecorations
 
         if (ent.WrappedObject is MSBE.Part.Asset assetEnt)
         {
-            FormatMaskEntry targetEntry = null;
+            AssetMaskEntry targetEntry = null;
 
             // Get the entry for the current model
-            foreach (var entry in view.Project.Handler.MapData.MsbMasks.list)
+            foreach (var entry in view.Project.Handler.MapData.AssetMasks.List)
             {
                 if (assetEnt.ModelName == entry.model)
                 {

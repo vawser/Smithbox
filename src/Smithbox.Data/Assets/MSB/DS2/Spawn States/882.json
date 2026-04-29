@@ -1,0 +1,14 @@
+{
+  "id": "882",
+  "name": "Prowler (Bow)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

@@ -1,48 +1,297 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>GRAB_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 attacker_dummy_poly_id" />
-    <Field Def="s32 attacker_orientation" />
-    <Field Def="s32 Unk08" />
-    <Field Def="s32 Unk0C" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk14" />
-    <Field Def="s32 defender_dummy_poly_id" />
-    <Field Def="s32 defender_orientation" />
-    <Field Def="s32 Unk20" />
-    <Field Def="s32 Unk24" />
-    <Field Def="s32 Unk28" />
-    <Field Def="s32 Unk2C" />
-    <Field Def="s32 shift_target" />
-    <Field Def="s32 Unk34" />
-    <Field Def="s32 Unk38" />
-    <Field Def="u8 Unk3C" />
-    <Field Def="u8 Unk3D" />
-    <Field Def="u8 Unk3E" />
-    <Field Def="u8 Unk3F" />
-    <Field Def="f32 relative_position_x" />
-    <Field Def="f32 relative_position_z" />
-    <Field Def="s32 Unk48" />
-    <Field Def="s32 Unk4C" />
-    <Field Def="u8 distance_confirmation_type" />
-    <Field Def="u8 enable_angle_confirmation_type" />
-    <Field Def="u8 Unk50c" />
-    <Field Def="u8 Unk50d" />
-    <Field Def="f32 minimum_distance_x" />
-    <Field Def="f32 minimum_distance_y" />
-    <Field Def="f32 minimum_distance_z" />
-    <Field Def="f32 Unk60" />
-    <Field Def="f32 Unk64" />
-    <Field Def="f32 Unk68" />
-    <Field Def="f32 angle_difference_unk_1" />
-    <Field Def="f32 angle_difference_unk_2" />
-    <Field Def="f32 angle_difference_unk_3" />
-    <Field Def="f32 Unk78" />
-    <Field Def="f32 angle_difference_maximum" />
-  </Fields>
+    <ParamType>GRAB_PARAM</ParamType>
+    <DataVersion>10</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u32 grabAttackDumyPolyId">
+            <DisplayName>投げる側 ダミポリID</DisplayName>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u32 grabAttackRotationType">
+            <DisplayName>投げる側 旋回設定</DisplayName>
+            <Enum>GRAB_ROTATION_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="s32 grabAttackRHandDumyPolyId = -1">
+            <DisplayName>投げる側 右手IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="s32 grabAttackLHandDumyPolyId = -1">
+            <DisplayName>投げる側 左手IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="s32 grabAttackRRegDumyPolyId = -1">
+            <DisplayName>投げる側 右足IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="s32 grabAttackLRegDumyPolyId = -1">
+            <DisplayName>投げる側 左足IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u32 grabDefenseDumyPolyId">
+            <DisplayName>投げられる側 ダミポリID</DisplayName>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u32 grabDefenseRotationType">
+            <DisplayName>投げられる側 旋回設定</DisplayName>
+            <Enum>GRAB_ROTATION_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="s32 grabDefenseRHandDumyPolyId = -1">
+            <DisplayName>投げられる側 右手IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="s32 grabDefenseLHandDumyPolyId = -1">
+            <DisplayName>投げられる側 左手IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s32 grabDefenseRRegDumyPolyId = -1">
+            <DisplayName>投げられる側 右足IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="s32 grabDefenseLRegDumyPolyId = -1">
+            <DisplayName>投げられる側 左足IKダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u32 grabAttachType">
+            <DisplayName>投げ位置吸着設定</DisplayName>
+            <Enum>GRAB_ATTACH_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 grabAttachFollow">
+            <DisplayName>投げ吸着追従設定</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="dummy8 dummy2[3]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u32 grabDirAttachType">
+            <DisplayName>投げ向き吸着設定</DisplayName>
+            <Enum>GRAB_ATTACH_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1[3]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u8 grabDirReversal">
+            <DisplayName>投げ向き反転有効設定</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <DisplayFormat>%u</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 grabPosOffsetX">
+            <DisplayName>投げ位置オフセットX</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 grabPosOffsetZ">
+            <DisplayName>投げ位置オフセットZ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-100</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="s32 grabBreakHp = -1">
+            <DisplayName>投げブレイク HP</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="s32 grabCameraId = -1">
+            <DisplayName>投げカメラＩＤ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 grabCastType = -1">
+            <DisplayName>キャスト基準</DisplayName>
+            <Enum>GRAB_CAST_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="dummy8 dummy3[3]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 grabRadius = 1">
+            <DisplayName>キャスト半径</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="f32 grabHeight = 1">
+            <DisplayName>キャスト高さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="f32 grabLength = 1">
+            <DisplayName>キャスト長さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="f32 grabOffsetX">
+            <DisplayName>キャストオフセット位置 Ｘ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 grabOffsetY">
+            <DisplayName>キャストオフセット位置 Y</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 grabOffsetZ">
+            <DisplayName>キャストオフセット位置 Z</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="angle32 grabSideAngle = 180">
+            <DisplayName>投げ許可左右角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="angle32 grabUpAngle = 90">
+            <DisplayName>投げ許可上角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="angle32 grabDownAngle = 90">
+            <DisplayName>投げ許可下角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="dummy8 dummy4[4]">
+            <DisplayName>dummy</DisplayName>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="angle32 grabAngleDiff = 90">
+            <DisplayName>Grab angle maximum difference</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

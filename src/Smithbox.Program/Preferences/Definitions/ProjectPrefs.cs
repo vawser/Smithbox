@@ -393,7 +393,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.Project,
             Spacer = true,
             DisplayRestrictions = new List<ProjectType>() { ProjectType.DS1R },
@@ -412,7 +412,7 @@ public class ProjectPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.Project,
             Spacer = true,
             InlineName = false,
@@ -442,50 +442,6 @@ public class ProjectPrefs
         };
     }
 
-    public static PreferenceItem Project_Enable_Project_Metadata()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.Project,
-            Spacer = true,
-
-            Section = SectionCategory.DataOverride,
-
-            Title = "Enable Project Metadata",
-            Description = "If enabled, Smithbox will use project-specific metadata instead of Smithbox's base versions.",
-
-            Draw = () => {
-                var curProject = Smithbox.Orchestrator.SelectedProject;
-
-                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Project_Metadata))
-                {
-                    if (curProject != null)
-                    {
-                        curProject.Handler.ParamData.ParamMeta.Clear();
-                        curProject.Handler.ParamData.ReloadMeta();
-                    }
-                }
-            },
-
-            PostDraw = () =>
-            {
-                var curProject = Smithbox.Orchestrator.SelectedProject;
-
-                if (curProject != null)
-                {
-                    if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
-                    {
-                        var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                        if (dialog is DialogResult.Yes)
-                        {
-                            curProject.Handler.ParamData.CreateProjectMetadata();
-                        }
-                    }
-                }
-            }
-        };
-    }
     #endregion
+
 }

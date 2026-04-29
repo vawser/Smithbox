@@ -1,0 +1,56 @@
+{
+  "Key": "SPELL_AVAILABLE_CONDITION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SPELL_AVAILABLE_CONDITION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No conditions"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Catalyst reverse arm “weapon” equipment"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Equipped with Catalyst Reverse Arm “Shield”"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not during multiplayer"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other than client time"
+        }
+      ]
+    }
+  ]
+}

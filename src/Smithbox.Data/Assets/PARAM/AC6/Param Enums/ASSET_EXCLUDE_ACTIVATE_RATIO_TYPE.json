@@ -1,0 +1,20 @@
+{
+  "Key": "ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    }
+  ]
+}

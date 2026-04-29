@@ -1,0 +1,13 @@
+{
+  "Param": "EZSTATE_SHARED_PARAM",
+  "Type": "EZSTATE_SHARED_PARAM",
+  "Name": "EZSTATE_SHARED_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "設定値",
+      "Description": ""
+    }
+  ]
+}

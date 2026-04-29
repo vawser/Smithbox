@@ -222,7 +222,7 @@ public class ModelContainerWrapper
                             var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name.Replace('\\',System.IO.Path.DirectorySeparatorChar));
                             var filepath = file.Name.ToLower();
 
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                            if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
                             {
                                 var modelWrapper = new ModelWrapper(this, filename);
                                 Models.Add(modelWrapper);
@@ -375,7 +375,7 @@ public class ModelWrapper
                             var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name.Replace('\\',System.IO.Path.DirectorySeparatorChar));
                             var filepath = file.Name.ToLower();
 
-                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                            if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
                             {
                                 if (filename == Name)
                                 {

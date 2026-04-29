@@ -1,0 +1,63 @@
+{
+  "Param": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Type": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Name": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Description": "Determines the parameters that relate to map info defaults.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MapAiSightType",
+      "Name": "Shadow Sight Type",
+      "Description": "The AI sight visibility type to use for this map when in shadows."
+    },
+    {
+      "Field": "SoundIndoorType",
+      "Name": "Indoor Sound Type",
+      "Description": "The indoor sound type to apply in the map GD settings for 'indoor'."
+    },
+    {
+      "Field": "ReverbDefaultType",
+      "Name": "Default Reverb Type",
+      "Description": "The default reverb sewttings to use for this map."
+    },
+    {
+      "Field": "Reserve0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MapAdditionalSoundBankId",
+      "Name": "Additional Sound Bank ID",
+      "Description": "A sound bank ID to use as an additional sound bank. -1 for none."
+    },
+    {
+      "Field": "OverrideGIResolution_XSS",
+      "Name": "Override Global Illumination Settings: XSS",
+      "Description": "The global illumination settings to override with for this map if running on the Xbox Series S (XSS)."
+    },
+    {
+      "Field": "OverrideGIResolution_XSX",
+      "Name": "Override Global Illumination Settings: XSX",
+      "Description": "The global illumination settings to override with for this map if running on the Xbox Series X (XSX)."
+    },
+    {
+      "Field": "Reserve1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

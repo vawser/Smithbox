@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 using static SoapstoneLib.SoulsKey;
 
 namespace StudioCore.Editors.ParamEditor;
 
 public class ParamFieldMeta
 {
+    [XmlIgnore]
     private ParamMeta MetaParent;
 
     public ParamFieldMeta(ParamMeta parent, PARAMDEF.Field field)
@@ -31,6 +33,8 @@ public class ParamFieldMeta
         MovieAliasEnum_ConditionalField = "";
         MovieAliasEnum_ConditionalValue = "";
     }
+
+    public ParamFieldMeta() { }
 
     public ParamFieldMeta(ParamMeta parent, XmlNode fieldMeta, PARAMDEF.Field field)
     {
@@ -114,7 +118,8 @@ public class ParamFieldMeta
         XmlAttribute Enum = fieldMeta.Attributes["Enum"];
         if (Enum != null)
         {
-            EnumType = parent.ParamEnums.GetValueOrDefault(Enum.InnerText, null);
+            ShowProjectEnumList = true;
+            ProjectEnumType = Enum.InnerText;
         }
 
         XmlAttribute ProjectEnum = fieldMeta.Attributes["ProjectEnum"];
@@ -122,18 +127,6 @@ public class ParamFieldMeta
         {
             ShowProjectEnumList = true;
             ProjectEnumType = ProjectEnum.InnerText;
-        }
-
-        XmlAttribute AlternateName = fieldMeta.Attributes["AltName"];
-        if (AlternateName != null)
-        {
-            AltName = AlternateName.InnerText;
-        }
-
-        XmlAttribute WikiText = fieldMeta.Attributes["Wiki"];
-        if (WikiText != null)
-        {
-            Wiki = WikiText.InnerText.Replace("\\n", "\n");
         }
 
         XmlAttribute IsBoolean = fieldMeta.Attributes["IsBool"];
@@ -242,7 +235,16 @@ public class ParamFieldMeta
         {
             ShowCharacterEnumList = true;
         }
+
+        XmlAttribute tRefGroup = fieldMeta.Attributes["RefGroup"];
+        if (tRefGroup != null)
+        {
+            RefGroup = tRefGroup.InnerText;
+        }
     }
+
+    public string AltName { get; set; }
+    public string Wiki { get; set; }
 
     /// <summary>
     /// Determines whether this field points to a NR tile MSB
@@ -285,16 +287,6 @@ public class ParamFieldMeta
     ///     Set of generally acceptable values, named
     /// </summary>
     public ParamEnum EnumType { get; set; }
-
-    /// <summary>
-    ///     Alternate name for a field not provided by source defs or paramfiles.
-    /// </summary>
-    public string AltName { get; set; }
-
-    /// <summary>
-    ///     A big tooltip to explain the field to the user
-    /// </summary>
-    public string Wiki { get; set; }
 
     /// <summary>
     ///     Is this u8 field actually a boolean?
@@ -363,5 +355,7 @@ public class ParamFieldMeta
     /// </summary>
     public List<ExtRef> ExtRefs { get; set; }
     public bool ShowCharacterEnumList { get; set; }
+
+    public string RefGroup { get; set; }
 
 }

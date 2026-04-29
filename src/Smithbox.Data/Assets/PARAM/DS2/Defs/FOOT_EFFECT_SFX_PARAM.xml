@@ -1,53 +1,311 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>FOOT_EFFECT_SFX_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 foot_sfx_0" />
-    <Field Def="s32 foot_sfx_1" />
-    <Field Def="s32 foot_sfx_2" />
-    <Field Def="s32 foot_sfx_3" />
-    <Field Def="s32 foot_sfx_4" />
-    <Field Def="s32 foot_sfx_5" />
-    <Field Def="s32 foot_sfx_6" />
-    <Field Def="s32 foot_sfx_7" />
-    <Field Def="s32 foot_sfx_8" />
-    <Field Def="s32 foot_sfx_9" />
-    <Field Def="s32 foot_sfx_10" />
-    <Field Def="s32 foot_sfx_11" />
-    <Field Def="s32 foot_sfx_12" />
-    <Field Def="s32 foot_sfx_13" />
-    <Field Def="s32 foot_sfx_14" />
-    <Field Def="s32 foot_sfx_15" />
-    <Field Def="s32 foot_sfx_16" />
-    <Field Def="s32 foot_sfx_17" />
-    <Field Def="s32 foot_sfx_18" />
-    <Field Def="s32 foot_sfx_19" />
-    <Field Def="s32 foot_sfx_20" />
-    <Field Def="s32 foot_sfx_21" />
-    <Field Def="s32 foot_sfx_22" />
-    <Field Def="s32 foot_sfx_23" />
-    <Field Def="s32 foot_sfx_24" />
-    <Field Def="s32 foot_sfx_25" />
-    <Field Def="s32 foot_sfx_26" />
-    <Field Def="s32 foot_sfx_27" />
-    <Field Def="s32 foot_sfx_28" />
-    <Field Def="s32 foot_sfx_29" />
-    <Field Def="s32 foot_sfx_30" />
-    <Field Def="s32 foot_sfx_31" />
-    <Field Def="s32 foot_sfx_32" />
-    <Field Def="s32 foot_sfx_33" />
-    <Field Def="s32 foot_sfx_34" />
-    <Field Def="s32 foot_sfx_35" />
-    <Field Def="s32 foot_sfx_36" />
-    <Field Def="s32 foot_sfx_37" />
-    <Field Def="s32 foot_sfx_38" />
-    <Field Def="s32 foot_sfx_39" />
-    <Field Def="s32 foot_sfx_40" />
-    <Field Def="s32 foot_sfx_41" />
-    <Field Def="s32 foot_sfx_42" />
-  </Fields>
+    <ParamType>FOOT_EFFECT_SFX_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="u32 none">
+            <DisplayName>なし</DisplayName>
+            <Description>なし</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u32 metal">
+            <DisplayName>鉄</DisplayName>
+            <Description>鉄</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u32 heavymetal">
+            <DisplayName>重鉄</DisplayName>
+            <Description>重鉄</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u32 wood">
+            <DisplayName>木</DisplayName>
+            <Description>木</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u32 water">
+            <DisplayName>水</DisplayName>
+            <Description>水</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u32 swamp">
+            <DisplayName>沼</DisplayName>
+            <Description>沼</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u32 lumber">
+            <DisplayName>木材</DisplayName>
+            <Description>木材</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u32 meat">
+            <DisplayName>生者肉</DisplayName>
+            <Description>生者肉</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u32 deadmeat">
+            <DisplayName>亡者肉</DisplayName>
+            <Description>亡者肉</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u32 insect">
+            <DisplayName>虫</DisplayName>
+            <Description>虫</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u32 giant">
+            <DisplayName>巨人</DisplayName>
+            <Description>巨人</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u32 bone">
+            <DisplayName>骨</DisplayName>
+            <Description>骨</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u32 copper">
+            <DisplayName>銅</DisplayName>
+            <Description>銅</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u32 energy">
+            <DisplayName>エネルギー</DisplayName>
+            <Description>エネルギー</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u32 fire">
+            <DisplayName>炎</DisplayName>
+            <Description>炎</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u32 thunder">
+            <DisplayName>雷</DisplayName>
+            <Description>雷</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u32 dark">
+            <DisplayName>闇</DisplayName>
+            <Description>闇</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u32 magic">
+            <DisplayName>魔力</DisplayName>
+            <Description>魔力</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u32 stone">
+            <DisplayName>石</DisplayName>
+            <Description>石</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u32 dirt">
+            <DisplayName>土</DisplayName>
+            <Description>土</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u32 carpet">
+            <DisplayName>カーペット</DisplayName>
+            <Description>カーペット</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u32 grass">
+            <DisplayName>草</DisplayName>
+            <Description>草</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u32 gravel">
+            <DisplayName>砂利</DisplayName>
+            <Description>砂利</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u32 cloth">
+            <DisplayName>布</DisplayName>
+            <Description>布</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u32 sand">
+            <DisplayName>砂</DisplayName>
+            <Description>砂</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u32 ash">
+            <DisplayName>灰</DisplayName>
+            <Description>灰</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u32 poisonswamp">
+            <DisplayName>毒沼</DisplayName>
+            <Description>毒沼</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u32 oil">
+            <DisplayName>油</DisplayName>
+            <Description>油</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="u32 coaltar">
+            <DisplayName>コールタール</DisplayName>
+            <Description>コールタール</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="u32 lava">
+            <DisplayName>溶岩</DisplayName>
+            <Description>溶岩</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u32 string">
+            <DisplayName>蜘蛛の糸</DisplayName>
+            <Description>蜘蛛の糸</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="u32 sulfurcrystal">
+            <DisplayName>硫黄結晶</DisplayName>
+            <Description>硫黄結晶</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="u32 footEffect33">
+            <DisplayName>Foot effect 33</DisplayName>
+            <Description>Foot effect 33</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="u32 footEffect34">
+            <DisplayName>Foot effect 34</DisplayName>
+            <Description>Foot effect 34</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="u32 footEffect35">
+            <DisplayName>Foot effect 35</DisplayName>
+            <Description>Foot effect 35</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u32 footEffect36">
+            <DisplayName>Foot effect 36</DisplayName>
+            <Description>Foot effect 36</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u32 footEffect37">
+            <DisplayName>Foot effect 37</DisplayName>
+            <Description>Foot effect 37</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="u32 footEffect38">
+            <DisplayName>Foot effect 38</DisplayName>
+            <Description>Foot effect 38</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="u32 footEffect39">
+            <DisplayName>Foot effect 39</DisplayName>
+            <Description>Foot effect 39</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="u32 footEffect40">
+            <DisplayName>Foot effect 40</DisplayName>
+            <Description>Foot effect 40</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="u32 footEffect41">
+            <DisplayName>Foot effect 41</DisplayName>
+            <Description>Foot effect 41</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="u32 footEffect42">
+            <DisplayName>Foot effect 42</DisplayName>
+            <Description>Foot effect 42</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="u32 footEffect43">
+            <DisplayName>Foot effect 43</DisplayName>
+            <Description>Foot effect 43</Description>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>43</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

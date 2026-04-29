@@ -1,27 +1,485 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>HIT_GROUP_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 Unk01" />
-    <Field Def="s32 Unk02" />
-    <Field Def="s32 Unk03" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk05" />
-    <Field Def="s32 Unk06" />
-    <Field Def="s32 Unk07" />
-    <Field Def="s32 Unk08" />
-    <Field Def="s32 Unk09" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk11" />
-    <Field Def="s32 Unk12" />
-    <Field Def="s32 Unk13" />
-    <Field Def="s32 Unk14" />
-    <Field Def="s32 Unk15" />
-    <Field Def="s32 Unk16" />
-  </Fields>
+    <ParamType>HIT_GROUP_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 gameBright0">
+            <DisplayName>明るさ設定_スロット0</DisplayName>
+            <Enum>HIT_GAME_BRIGHT_TYPE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 gameBright1">
+            <DisplayName>明るさ設定_スロット1</DisplayName>
+            <Enum>HIT_GAME_BRIGHT_TYPE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="u8 generateMaxNum = 15">
+            <DisplayName>最大敵生成数</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>20</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[1]">
+            <DisplayName>予約</DisplayName>
+            <SortID>2531</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial240_0">
+            <DisplayName>GM_240_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial240_1">
+            <DisplayName>GM_240_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial240_2">
+            <DisplayName>GM_240_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial240_3">
+            <DisplayName>GM_240_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1030</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial241_0">
+            <DisplayName>GM_241_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1100</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial241_1">
+            <DisplayName>GM_241_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1110</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial241_2">
+            <DisplayName>GM_241_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1120</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial241_3">
+            <DisplayName>GM_241_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1130</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial242_0">
+            <DisplayName>GM_242_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1200</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial242_1">
+            <DisplayName>GM_242_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1210</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial242_2">
+            <DisplayName>GM_242_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1220</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial242_3">
+            <DisplayName>GM_242_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1230</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial243_0">
+            <DisplayName>GM_243_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1300</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial243_1">
+            <DisplayName>GM_243_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1310</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial243_2">
+            <DisplayName>GM_243_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1320</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial243_3">
+            <DisplayName>GM_243_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1330</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial244_0">
+            <DisplayName>GM_244_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1400</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial244_1">
+            <DisplayName>GM_244_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1410</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial244_2">
+            <DisplayName>GM_244_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1420</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial244_3">
+            <DisplayName>GM_244_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1430</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial245_0">
+            <DisplayName>GM_245_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1500</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial245_1">
+            <DisplayName>GM_245_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1510</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial245_2">
+            <DisplayName>GM_245_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1520</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial245_3">
+            <DisplayName>GM_245_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1530</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial246_0">
+            <DisplayName>GM_246_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1600</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial246_1">
+            <DisplayName>GM_246_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1610</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial246_2">
+            <DisplayName>GM_246_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1620</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial246_3">
+            <DisplayName>GM_246_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1630</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial247_0">
+            <DisplayName>GM_247_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1700</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial247_1">
+            <DisplayName>GM_247_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1710</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial247_2">
+            <DisplayName>GM_247_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1720</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial247_3">
+            <DisplayName>GM_247_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1730</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial248_0">
+            <DisplayName>GM_248_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1800</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial248_1">
+            <DisplayName>GM_248_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1810</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial248_2">
+            <DisplayName>GM_248_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1820</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial248_3">
+            <DisplayName>GM_248_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1830</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial249_0">
+            <DisplayName>GM_249_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1900</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial249_1">
+            <DisplayName>GM_249_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1910</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial249_2">
+            <DisplayName>GM_249_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1920</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial249_3">
+            <DisplayName>GM_249_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1930</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial250_0">
+            <DisplayName>GM_250_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2000</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial250_1">
+            <DisplayName>GM_250_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2010</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial250_2">
+            <DisplayName>GM_250_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2020</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial250_3">
+            <DisplayName>GM_250_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2030</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial251_0">
+            <DisplayName>GM_251_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2100</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial251_1">
+            <DisplayName>GM_251_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2110</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial251_2">
+            <DisplayName>GM_251_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2120</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial251_3">
+            <DisplayName>GM_251_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2130</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial252_0">
+            <DisplayName>GM_252_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2200</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial252_1">
+            <DisplayName>GM_252_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2210</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial252_2">
+            <DisplayName>GM_252_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2220</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial252_3">
+            <DisplayName>GM_252_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2230</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial253_0">
+            <DisplayName>GM_253_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2300</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial253_1">
+            <DisplayName>GM_253_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2310</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial253_2">
+            <DisplayName>GM_253_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2320</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial253_3">
+            <DisplayName>GM_253_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2330</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial254_0">
+            <DisplayName>GM_254_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2400</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial254_1">
+            <DisplayName>GM_254_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2410</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial254_2">
+            <DisplayName>GM_254_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2420</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial254_3">
+            <DisplayName>GM_254_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2430</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial255_0">
+            <DisplayName>GM_255_スロット0</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2500</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial255_1">
+            <DisplayName>GM_255_スロット1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2510</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial255_2">
+            <DisplayName>GM_255_スロット2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2520</SortID>
+        </Field>
+        <Field Def="u8 groundMaterial255_3">
+            <DisplayName>GM_255_スロット3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2530</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

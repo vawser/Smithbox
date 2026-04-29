@@ -1,0 +1,123 @@
+{
+  "Param": "GARAGE_CUTSCENE_PARAM_ST",
+  "Type": "GARAGE_CUTSCENE_PARAM_ST",
+  "Name": "GARAGE_CUTSCENE_PARAM_ST",
+  "Description": "Determines the handling of garage cutscenes.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defualtSortieCutSceneID",
+      "Name": "Default Starting Cutscene",
+      "Description": "The default cutscene to play when starting a mission."
+    },
+    {
+      "Field": "defaultReturnCutSceneID",
+      "Name": "Default Ending Cutscene",
+      "Description": "The default cutscene to play when ending a mission."
+    },
+    {
+      "Field": "defualtReturnOmitCutSceneID",
+      "Name": "Default Failure Cutscene",
+      "Description": "The default cutscene to play when failing a mission."
+    },
+    {
+      "Field": "sortieCutSceneID1",
+      "Name": "Starting Cutscene Variant: 1",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID2",
+      "Name": "Starting Cutscene Variant: 2",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID3",
+      "Name": "Starting Cutscene Variant: 3",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID4",
+      "Name": "Starting Cutscene Variant: 4",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID5",
+      "Name": "Starting Cutscene Variant: 5",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID6",
+      "Name": "Starting Cutscene Variant: 6",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID7",
+      "Name": "Starting Cutscene Variant: 7",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "sortieCutSceneID8",
+      "Name": "Starting Cutscene Variant: 8",
+      "Description": "A variant of the starting cutscene."
+    },
+    {
+      "Field": "returnCutSceneID1",
+      "Name": "Ending Cutscene Variant: 1",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID2",
+      "Name": "Ending Cutscene Variant: 2",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID3",
+      "Name": "Ending Cutscene Variant: 3",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID4",
+      "Name": "Ending Cutscene Variant: 4",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID5",
+      "Name": "Ending Cutscene Variant: 5",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID6",
+      "Name": "Ending Cutscene Variant: 6",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID7",
+      "Name": "Ending Cutscene Variant: 7",
+      "Description": "A variant of the ending cutscene."
+    },
+    {
+      "Field": "returnCutSceneID8",
+      "Name": "Ending Cutscene Variant: 8",
+      "Description": "A variant of the ending cutscene."
+    }
+  ]
+}

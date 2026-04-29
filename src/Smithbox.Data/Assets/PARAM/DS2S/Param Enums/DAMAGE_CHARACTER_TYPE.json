@@ -1,0 +1,56 @@
+{
+  "Key": "DAMAGE_CHARACTER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_CHARACTER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spirit body"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Raw/cloth"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slightly hard"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Very hard"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant/Demon"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "PARTS_BREAK_BROKEN_PARTS_ANIME_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PARTS_BREAK_BROKEN_PARTS_ANIME_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fixed in destruction pose"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Continues playback as-is"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Instantly becomes ragdoll"
+        }
+      ]
+    }
+  ]
+}

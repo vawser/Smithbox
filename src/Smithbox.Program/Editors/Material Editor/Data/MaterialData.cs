@@ -42,13 +42,13 @@ public class MaterialData : IDisposable
         Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
         bool matDispTaskResult = await matDispTask;
 
-        if (matDispTaskResult)
+        if (!matDispTaskResult)
         {
-            Smithbox.Log(this, $"[Material Editor] Setup Material Display Configuration.");
+            Smithbox.LogError(this, $"[Material Editor] Failed to setup the Material Display Configuration data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to setup Material Display Configuration.");
+            Smithbox.Log(this, $"[Material Editor] Setup the Material Display Configuration data.");
         }
 
         // Primary Bank
@@ -57,17 +57,12 @@ public class MaterialData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Material Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Material Editor] Failed to setup the Primary Bank.");
         }
-
-        // Vanilla Bank
-        //Task<bool> vanillaBankTask = VanillaBank.Setup();
-        //bool vanillaBankTaskResult = await vanillaBankTask;
-
-        //if (!vanillaBankTaskResult)
-        //{
-        //    Smithbox.LogError(this, $"[Material Editor] Failed to fully setup Vanilla Bank.");
-        //}
+        else
+        {
+            Smithbox.Log(this, $"[Material Editor] Setup the Primary Bank.");
+        }
 
         return true;
     }
@@ -108,12 +103,12 @@ public class MaterialData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Material Editor] Failed to deserialize the Material Display Configuration: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Material Display Configuration: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Material Editor] Failed to read the Material Display Configuration: {targetFile}", LogPriority.High, e);
             }
         }
 

@@ -1,18 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MAP_OBJECT_WHITE_DOOR_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 entry_delay" />
-    <Field Def="s32 Unk01" />
-    <Field Def="s32 Unk02" />
-    <Field Def="s32 key_guide_param_id_1" />
-    <Field Def="s32 key_guide_param_id_2" />
-    <Field Def="s32 Unk04" />
-    <Field Def="s32 Unk05" />
-  </Fields>
+    <ParamType>MAP_OBJECT_WHITE_DOOR_PARAM</ParamType>
+    <DataVersion>5</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 whiteDoorCategory">
+            <DisplayName>白扉カテゴリ</DisplayName>
+            <Enum>OBJ_WHITE_DOOR_CATEGORY_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[3]">
+            <DisplayName>予約</DisplayName>
+            <SortID>801</SortID>
+        </Field>
+        <Field Def="f32 waitTime">
+            <DisplayName>待機時間[秒]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s32 defaultSfxId">
+            <DisplayName>デフォルトSFXID（白・灰）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s32 multiPlaySfxId">
+            <DisplayName>マルチプレイ時SFXID（黒）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="u32 frontKeyGuideParamId">
+            <DisplayName>前から入る際のキーガイドパラメータID</DisplayName>
+            <Enum>KEY_GUIDE_PARAM_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="u32 backKeyGuideParamId">
+            <DisplayName>後ろから入る際のキーガイドパラメータID</DisplayName>
+            <Enum>KEY_GUIDE_PARAM_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>510</SortID>
+        </Field>
+        <Field Def="s32 passFlagId">
+            <DisplayName>開通時イベントフラグ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="s32 enableKeyGuideFlagId">
+            <DisplayName>キーガイド有効フラグ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

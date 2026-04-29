@@ -1,0 +1,41 @@
+{
+  "Name": "GemeffectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Nothing happens -- なにもおこらない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Attack power up -- 攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Defensive power up -- 防御力アップ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "HP regen -- HPリジェネ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Max HP up -- マックスHPアップ"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

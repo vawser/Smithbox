@@ -1,0 +1,13 @@
+{
+  "Param": "MESSAGEBOX_PARAM_ST",
+  "Type": "MESSAGEBOX_PARAM_ST",
+  "Name": "MESSAGEBOX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

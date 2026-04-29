@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_SP_EFFECT_ADD_COND_PARTS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_SP_EFFECT_ADD_COND_PARTS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ice-worm Head"
+        }
+      ]
+    }
+  ]
+}

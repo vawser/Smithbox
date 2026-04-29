@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <noneSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <superSmallSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <smallSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <normalSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <largeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <superLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <hyperLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+        <ultraLargeSize  Enum="HIT_BACK_WEIGHT_TYPE"/>
+    </Field>
+</PARAMMETA>

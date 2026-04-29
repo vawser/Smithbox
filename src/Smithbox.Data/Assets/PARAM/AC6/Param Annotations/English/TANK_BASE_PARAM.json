@@ -1,0 +1,93 @@
+{
+  "Param": "TANK_BASE_PARAM",
+  "Type": "TANK_BASE_PARAM",
+  "Name": "TANK_BASE_PARAM",
+  "Description": "Fields related to tank wheels and treads.",
+  "Fields": [
+    {
+      "Field": "texScrollForwardSpeedScale",
+      "Name": "Texture Scroll: Movement Scale",
+      "Description": "Movement speed until the scroll completes one revolution (Km/h)"
+    },
+    {
+      "Field": "texScrollAngleSpeedScale",
+      "Name": "Texture Scroll: Rotation Scale",
+      "Description": "Rotating speed until the scroll completes one revolution (rad/frame)"
+    },
+    {
+      "Field": "paramL_texScrollmaterialID",
+      "Name": "Left: Texture Scroll - Material ID",
+      "Description": "Material ID specified in Matxml"
+    },
+    {
+      "Field": "paramL_texScrollMaterialParamID",
+      "Name": "Left: Texture Scroll - Parameter ID",
+      "Description": ""
+    },
+    {
+      "Field": "paramL_forwardAnimID",
+      "Name": "Left: Forward Animation ID",
+      "Description": "Animation ID of the wheel part when moving forward"
+    },
+    {
+      "Field": "paramL_backAnimID",
+      "Name": "Left: Backward Animation ID",
+      "Description": "Animation ID of the wheel part when moving backwards"
+    },
+    {
+      "Field": "paramR_texScrollmaterialID",
+      "Name": "Right: Texture Scroll - Material ID",
+      "Description": "Material ID specified in Matxml"
+    },
+    {
+      "Field": "paramR_texScrollMaterialParamID",
+      "Name": "Right: Texture Scroll - Parameter ID",
+      "Description": ""
+    },
+    {
+      "Field": "paramR_forwardAnimID",
+      "Name": "Right: Forward Animation ID",
+      "Description": "Animation ID of the wheel part when moving forward"
+    },
+    {
+      "Field": "paramR_backAnimID",
+      "Name": "Right: Backward Animation ID",
+      "Description": "Animation ID of the wheel part when moving backwards"
+    },
+    {
+      "Field": "WheelLeftBackIndex",
+      "Name": "Back Left Wheel ID",
+      "Description": "The leftmost rear index in the wheel internal control parameters"
+    },
+    {
+      "Field": "WheelRightBackIndex",
+      "Name": "Back Right Wheel ID",
+      "Description": "The rightmost rear index in the wheel internal control parameters"
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "texScrollForwardTexSpeedScale",
+      "Name": "Texture Scroll: Movement Scale",
+      "Description": "Movement speed until the scroll completes one revolution (Km/h)"
+    },
+    {
+      "Field": "texScrollAngleTexSpeedScale",
+      "Name": "Texture Scroll: Rotation Scale",
+      "Description": "Rotating speed until the scroll completes one revolution (rad/frame)"
+    },
+    {
+      "Field": "footIKChangeTime",
+      "Name": "Foot IK Interpolation Time",
+      "Description": "Interpolation time of animation of wheel and belt part when FootIK is enabled/disabled"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

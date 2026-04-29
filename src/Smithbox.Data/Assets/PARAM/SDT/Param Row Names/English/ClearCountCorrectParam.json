@@ -1,0 +1,101 @@
+{
+  "Name": "ClearCountCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "NG+0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "NG+1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "NG+2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "NG+3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "NG+4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "NG+5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "NG+6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "NG+7"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "NG+0 Charmless"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "NG+1 Charmless"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "NG+2 Charmless"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "NG+3 Charmless"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "NG+4 Charmless"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "NG+5 Charmless"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "NG+6 Charmless"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "NG+7 Charmless"
+      ]
+    }
+  ]
+}

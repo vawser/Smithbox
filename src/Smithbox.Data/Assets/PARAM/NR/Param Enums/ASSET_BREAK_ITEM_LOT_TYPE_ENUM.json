@@ -1,0 +1,29 @@
+{
+  "Key": "ASSET_BREAK_ITEM_LOT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_BREAK_ITEM_LOT_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

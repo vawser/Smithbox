@@ -92,7 +92,7 @@ public static class HKX_Helper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.Log(typeof(HKX_Helper), $"[Smithbox] Failed to load HKX.", LogLevel.Error, LogPriority.High, e);
+                            Smithbox.Log(typeof(HKX_Helper), $"Failed to load HKX.", LogLevel.Error, LogPriority.High, e);
                         }
                     }
                 }

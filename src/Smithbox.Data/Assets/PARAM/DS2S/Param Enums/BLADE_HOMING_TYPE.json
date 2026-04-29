@@ -1,0 +1,38 @@
+{
+  "Key": "BLADE_HOMING_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BLADE_HOMING_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Upper body"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Whole body"
+        }
+      ]
+    }
+  ]
+}

@@ -224,6 +224,7 @@ public class TexContainerList
             }
 
             LoadTextureBinder = false;
+            Parent.Selection.AutoSelectTpf = true;
         }
     }
 

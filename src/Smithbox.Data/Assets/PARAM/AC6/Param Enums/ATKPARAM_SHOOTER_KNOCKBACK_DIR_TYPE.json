@@ -1,0 +1,29 @@
+{
+  "Key": "ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_SHOOTER_KNOCKBACK_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet Direction"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Muzzle Direction"
+        }
+      ]
+    }
+  ]
+}

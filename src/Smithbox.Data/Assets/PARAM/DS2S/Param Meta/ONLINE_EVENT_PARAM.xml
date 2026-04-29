@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <newMoon  IsBool=""/>
+        <multiPlayEvent  IsBool=""/>
+        <itemPresentEventId />
+        <dummy />
+    </Field>
+</PARAMMETA>

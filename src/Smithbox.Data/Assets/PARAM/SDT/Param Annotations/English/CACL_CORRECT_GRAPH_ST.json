@@ -1,0 +1,108 @@
+{
+  "Param": "CACL_CORRECT_GRAPH_ST",
+  "Type": "CACL_CORRECT_GRAPH_ST",
+  "Name": "CACL_CORRECT_GRAPH_ST",
+  "Description": "Formulas used for various upgrades",
+  "Fields": [
+    {
+      "Field": "stageMaxVal0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxVal1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxVal2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxVal3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxVal4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "init_inclination_soul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "adjustment_value",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundry_inclination_soul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "boundry_value",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

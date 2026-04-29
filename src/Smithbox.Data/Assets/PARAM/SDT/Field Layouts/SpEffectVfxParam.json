@@ -1,0 +1,320 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "playCategory",
+        "playPriority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "initSfxId",
+        "initSeId",
+        "initDmyId",
+        "isInitFullbody"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "midstSfxId",
+        "midstSeId",
+        "midstDmyId",
+        "isMidstFullbody"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "finishSfxId",
+        "finishSeId",
+        "finishDmyId",
+        "isFinishFullbody"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_0",
+        "enchantEndDmyId_0"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_1",
+        "enchantEndDmyId_1"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_2",
+        "enchantEndDmyId_2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_3",
+        "enchantEndDmyId_3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_4",
+        "enchantEndDmyId_4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_5",
+        "enchantEndDmyId_5"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_6",
+        "enchantEndDmyId_6"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enchantStartDmyId_7",
+        "enchantEndDmyId_7"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialParamId",
+        "materialParamInitValue",
+        "materialParamTargetValue",
+        "materialParamFadeTime",
+        "cinderIntensityScale"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "useCamouflage",
+        "camouflageBeginDist",
+        "camouflageEndDist",
+        "camouflageMinAlpha",
+        "halfCamouflage",
+        "fadeInRateCamouflage",
+        "fadeOutRateCamouflage",
+        "effectInvisibleAtCamouflage",
+        "invisibleAtFriendCamouflage"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "footEffectPriority",
+        "footEffectOffset",
+        "footDecalMaterialOffsetOverwriteId",
+        "footSfxMaterialOffsetOverwriteId",
+        "footSeMaterialOffsetOverwriteId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "SfxIdOffsetType",
+        "traceSfxIdOffsetType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "emissiveFadeTime",
+        "emissiveIntensity"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "phantomParamOverwriteId",
+        "phantomParamOverwriteType",
+        "soulParamIdForWepEnchant"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "decalId1",
+        "decalId2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "ninsatuDmyId",
+        "ninsatuVisible"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "transformProtectorId",
+        "isFullBodyTransformProtectorId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "existEffectForLarge",
+        "existEffectForSoul",
+        "isInvisibleWeapon",
+        "isSilence",
+        "isVisibleDeadChr",
+        "isUseOffsetEnchantSfxSize"
+      ]
+    }
+  ]
+}

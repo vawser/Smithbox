@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>DAMAGE_STYLE_RATE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk01" />
-  </Fields>
+    <ParamType>DAMAGE_STYLE_RATE_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 rate">
+            <DisplayName>倍率</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 break_rate">
+            <DisplayName>破壊時倍率</DisplayName>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

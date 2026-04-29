@@ -1,0 +1,275 @@
+{
+  "Name": "BossBattleParam",
+  "Entries": [
+    {
+      "ID": 1010000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 1010010,
+      "Entries": [
+        "The Last Giant"
+      ]
+    },
+    {
+      "ID": 1014000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 1014001,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 1014010,
+      "Entries": [
+        "Prowling Magus & Congregation"
+      ]
+    },
+    {
+      "ID": 1015000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 1016000,
+      "Entries": [
+        "Ruin Sentinels"
+      ]
+    },
+    {
+      "ID": 1016010,
+      "Entries": [
+        "The Lost Sinner"
+      ]
+    },
+    {
+      "ID": 1016020,
+      "Entries": [
+        "Belfry Gargoyles"
+      ]
+    },
+    {
+      "ID": 1017000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 1017010,
+      "Entries": [
+        "Mytha, the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 1018000,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 1019000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 1019010,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 1021000,
+      "Entries": [
+        "Dragonrider & Dragonrider"
+      ]
+    },
+    {
+      "ID": 1021010,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 1021020,
+      "Entries": [
+        "Throne Watcher & Throne Defender"
+      ]
+    },
+    {
+      "ID": 1021021,
+      "Entries": [
+        "Throne Watcher & Throne Defender"
+      ]
+    },
+    {
+      "ID": 1021030,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 1021031,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 1021040,
+      "Entries": [
+        "Aldia, Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 1023000,
+      "Entries": [
+        "Skeleton Lords"
+      ]
+    },
+    {
+      "ID": 1023010,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 1025000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 1027000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 1031000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 1031010,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 1032000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 1033000,
+      "Entries": [
+        "Royal Rat Authority"
+      ]
+    },
+    {
+      "ID": 1034000,
+      "Entries": [
+        "Royal Rat Vanguard"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 2011000,
+      "Entries": [
+        "Demon of Song"
+      ]
+    },
+    {
+      "ID": 2024000,
+      "Entries": [
+        "Velstadt, the Royal Aegis"
+      ]
+    },
+    {
+      "ID": 2024010,
+      "Entries": [
+        "Vendrick"
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "Elana, the Squalid Queen"
+      ]
+    },
+    {
+      "ID": 5030020,
+      "Entries": [
+        "Afflicted Graverobber, Ancient Soldier Varg & Cerah, the Old Explorer"
+      ]
+    },
+    {
+      "ID": 5030030,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 5036000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 5036001,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 5036010,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 5036020,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 5037000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 5037010,
+      "Entries": [
+        "Lud, the King's Pet & Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 5037030,
+      "Entries": [
+        "Aava, the King's Pet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "Key": "Common",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Common"
+      }
+  ],
+  "ForceTop": true,
+  "Params": [
+    "AtkParam_Npc",
+    "AtkParam_Pc",
+    "AttackElementCorrectParam",
+    "BehaviorParam",
+    "BehaviorParam_PC",
+    "BuddyParam",
+    "Bullet",
+    "BulletCreateLimitParam",
+    "CalcCorrectGraph",
+    "CharaInitParam",
+    "EquipMtrlSetParam",
+    "EquipParamAccessory",
+    "EquipParamCustomWeapon",
+    "EquipParamGem",
+    "EquipParamGoods",
+    "EquipParamProtector",
+    "EquipParamWeapon",
+    "GameAreaParam",
+    "ItemLotParam_enemy",
+    "ItemLotParam_map",
+    "LockCamParam",
+    "Magic",
+    "NpcParam",
+    "NpcThinkParam",
+    "ReinforceParamProtector",
+    "ReinforceParamWeapon",
+    "ResistCorrectParam",
+    "ShopLineupParam",
+    "ShopLineupParam_Recipe",
+    "SpEffectParam",
+    "SpEffectSetParam",
+    "SpEffectVfxParam",
+    "SwordArtsParam",
+    "default_EnemyBehaviorBank",
+    "default_EnemyBehaviorBank",
+    "default_EnemyBehaviorBank",
+    "default_EnemyBehaviorBank",
+    "default_EnemyBehaviorBank",
+    "default_EnemyBehaviorBank"
+  ]
+}

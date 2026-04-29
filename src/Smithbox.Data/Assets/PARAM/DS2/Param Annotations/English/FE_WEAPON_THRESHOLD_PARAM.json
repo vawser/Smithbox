@@ -1,0 +1,33 @@
+{
+  "Param": "FE_WEAPON_THRESHOLD_PARAM",
+  "Type": "FE_WEAPON_THRESHOLD_PARAM",
+  "Name": "FE_WEAPON_THRESHOLD_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "thresholdA",
+      "Name": "A以上評価の閾値",
+      "Description": ""
+    },
+    {
+      "Field": "thresholdB",
+      "Name": "B以上評価の閾値",
+      "Description": ""
+    },
+    {
+      "Field": "thresholdC",
+      "Name": "C以上評価の閾値",
+      "Description": ""
+    },
+    {
+      "Field": "thresholdD",
+      "Name": "D以上評価の閾値",
+      "Description": ""
+    },
+    {
+      "Field": "thresholdE",
+      "Name": "E以上評価の閾値",
+      "Description": ""
+    }
+  ]
+}

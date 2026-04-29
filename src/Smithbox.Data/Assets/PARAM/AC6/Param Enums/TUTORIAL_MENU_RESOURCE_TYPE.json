@@ -1,0 +1,92 @@
+{
+  "Key": "TUTORIAL_MENU_RESOURCE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "TUTORIAL_MENU_RESOURCE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Toast: One Line"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Toast: Multi-Line"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Toast: Key Guide"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: No Image"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: Image"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: Archive"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: No Image (In-game)"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: Image (In-game)"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modal: Movie (In-game)"
+        }
+      ]
+    }
+  ]
+}

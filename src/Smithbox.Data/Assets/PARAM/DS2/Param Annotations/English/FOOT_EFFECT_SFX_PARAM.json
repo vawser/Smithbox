@@ -1,0 +1,223 @@
+{
+  "Param": "FOOT_EFFECT_SFX_PARAM",
+  "Type": "FOOT_EFFECT_SFX_PARAM",
+  "Name": "FOOT_EFFECT_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "なし",
+      "Description": ""
+    },
+    {
+      "Field": "metal",
+      "Name": "鉄",
+      "Description": ""
+    },
+    {
+      "Field": "heavymetal",
+      "Name": "重鉄",
+      "Description": ""
+    },
+    {
+      "Field": "wood",
+      "Name": "木",
+      "Description": ""
+    },
+    {
+      "Field": "water",
+      "Name": "水",
+      "Description": ""
+    },
+    {
+      "Field": "swamp",
+      "Name": "沼",
+      "Description": ""
+    },
+    {
+      "Field": "lumber",
+      "Name": "木材",
+      "Description": ""
+    },
+    {
+      "Field": "meat",
+      "Name": "生者肉",
+      "Description": ""
+    },
+    {
+      "Field": "deadmeat",
+      "Name": "亡者肉",
+      "Description": ""
+    },
+    {
+      "Field": "insect",
+      "Name": "虫",
+      "Description": ""
+    },
+    {
+      "Field": "giant",
+      "Name": "巨人",
+      "Description": ""
+    },
+    {
+      "Field": "bone",
+      "Name": "骨",
+      "Description": ""
+    },
+    {
+      "Field": "copper",
+      "Name": "銅",
+      "Description": ""
+    },
+    {
+      "Field": "energy",
+      "Name": "エネルギー",
+      "Description": ""
+    },
+    {
+      "Field": "fire",
+      "Name": "炎",
+      "Description": ""
+    },
+    {
+      "Field": "thunder",
+      "Name": "雷",
+      "Description": ""
+    },
+    {
+      "Field": "dark",
+      "Name": "闇",
+      "Description": ""
+    },
+    {
+      "Field": "magic",
+      "Name": "魔力",
+      "Description": ""
+    },
+    {
+      "Field": "stone",
+      "Name": "石",
+      "Description": ""
+    },
+    {
+      "Field": "dirt",
+      "Name": "土",
+      "Description": ""
+    },
+    {
+      "Field": "carpet",
+      "Name": "カーペット",
+      "Description": ""
+    },
+    {
+      "Field": "grass",
+      "Name": "草",
+      "Description": ""
+    },
+    {
+      "Field": "gravel",
+      "Name": "砂利",
+      "Description": ""
+    },
+    {
+      "Field": "cloth",
+      "Name": "布",
+      "Description": ""
+    },
+    {
+      "Field": "sand",
+      "Name": "砂",
+      "Description": ""
+    },
+    {
+      "Field": "ash",
+      "Name": "灰",
+      "Description": ""
+    },
+    {
+      "Field": "poisonswamp",
+      "Name": "毒沼",
+      "Description": ""
+    },
+    {
+      "Field": "oil",
+      "Name": "油",
+      "Description": ""
+    },
+    {
+      "Field": "coaltar",
+      "Name": "コールタール",
+      "Description": ""
+    },
+    {
+      "Field": "lava",
+      "Name": "溶岩",
+      "Description": ""
+    },
+    {
+      "Field": "string",
+      "Name": "蜘蛛の糸",
+      "Description": ""
+    },
+    {
+      "Field": "sulfurcrystal",
+      "Name": "硫黄結晶",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect33",
+      "Name": "Foot effect 33",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect34",
+      "Name": "Foot effect 34",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect35",
+      "Name": "Foot effect 35",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect36",
+      "Name": "Foot effect 36",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect37",
+      "Name": "Foot effect 37",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect38",
+      "Name": "Foot effect 38",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect39",
+      "Name": "Foot effect 39",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect40",
+      "Name": "Foot effect 40",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect41",
+      "Name": "Foot effect 41",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect42",
+      "Name": "Foot effect 42",
+      "Description": ""
+    },
+    {
+      "Field": "footEffect43",
+      "Name": "Foot effect 43",
+      "Description": ""
+    }
+  ]
+}

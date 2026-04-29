@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <doorType  Enum="DOOR_TYPE_ENUM"/>
+        <aReserved />
+        <openKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
+        <closeKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
+    </Field>
+</PARAMMETA>

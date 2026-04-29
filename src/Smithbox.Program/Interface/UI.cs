@@ -207,7 +207,7 @@ public class UI
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
+                Smithbox.LogError<UI>("Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
 
                 Current = new UI();
                 Save();
@@ -240,7 +240,7 @@ public class UI
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
+                Smithbox.LogError<UI>("Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
 
                 Current = new UI();
                 Save();

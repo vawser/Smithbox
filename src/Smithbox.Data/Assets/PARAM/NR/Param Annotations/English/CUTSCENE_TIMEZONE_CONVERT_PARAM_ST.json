@@ -1,0 +1,18 @@
+{
+  "Param": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Type": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Name": "CUTSCENE_TIMEZONE_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SrcTimezoneStart",
+      "Name": "Source - Timezone Start",
+      "Description": "Start time of the time zone to be converted to cutscene time [hour]"
+    },
+    {
+      "Field": "DstCutscenTime",
+      "Name": "Destination - Cutscene Time",
+      "Description": "Enter the time used during cutscene playback in hours [hour]"
+    }
+  ]
+}

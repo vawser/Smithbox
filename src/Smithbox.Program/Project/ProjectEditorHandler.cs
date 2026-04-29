@@ -189,9 +189,9 @@ public class ProjectEditorHandler : IDisposable
     public void LogDataResults()
     {
         if (_projectDataTask?.Result == true)
-            Smithbox.Log(this, "Setup Project Data.");
+            Smithbox.Log(this, "[Project] Setup Project Data.");
         else
-            Smithbox.LogError(this, "Failed to setup Project Data.");
+            Smithbox.LogError(this, "[Project] Failed to setup Project Data.");
 
         if (_mapDataTask != null)
             Smithbox.Log(this, _mapDataTask.Result
@@ -225,13 +225,13 @@ public class ProjectEditorHandler : IDisposable
 
         if (_textureDataTask != null)
             Smithbox.Log(this, _textureDataTask.Result
-                ? "[Texture Viewer] Setup texture bank."
-                : "[Texture Viewer] Failed to setup texture bank.");
+                ? "[Texture Viewer] Setup the Texture Bank."
+                : "[Texture Viewer] Failed to setup Texture Bank.");
 
         if (_animDataTask != null)
             Smithbox.Log(this, _animDataTask.Result
-                ? "[Animation Editor] Setup animation bank."
-                : "[Animation Editor] Failed to setup animation bank.");
+                ? "[Animation Editor] Setup Animation Bank."
+                : "[Animation Editor] Failed to setup Animation Bank.");
     }
 
     public void InitializeEditors(ProjectInitType initType)

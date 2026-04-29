@@ -1,0 +1,200 @@
+{
+  "Key": "SP_EFFECT_SPCATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_SPCATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Persist through death"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stack"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reset On Application"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove previous"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove previous"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove previous"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Previous"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove previous"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove previous"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage Animation Change"
+        }
+      ]
+    },
+    {
+      "Key": "10000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First"
+        }
+      ]
+    },
+    {
+      "Key": "10001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Regen effect)"
+        }
+      ]
+    },
+    {
+      "Key": "10002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First"
+        }
+      ]
+    },
+    {
+      "Key": "10003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Rapid Poison)"
+        }
+      ]
+    },
+    {
+      "Key": "10004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Slow Poison)"
+        }
+      ]
+    },
+    {
+      "Key": "10005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Mana Point Poison)"
+        }
+      ]
+    },
+    {
+      "Key": "10006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Left Hand?)"
+        }
+      ]
+    },
+    {
+      "Key": "10007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply First (Beasthood)"
+        }
+      ]
+    }
+  ]
+}

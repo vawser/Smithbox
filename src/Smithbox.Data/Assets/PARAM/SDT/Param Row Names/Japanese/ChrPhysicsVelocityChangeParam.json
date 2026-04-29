@@ -1,0 +1,1049 @@
+{
+  "Name": "ChrPhysicsVelocityChangeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal state (default) -- 通常状態（デフォルト）"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Jump_vertical -- ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Jump_before -- ジャンプ_前"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Jump_Position_Before -- ジャンプ_位置取り_前"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "After jump_positioning_ -- ジャンプ_位置取り_後"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Jump_Position_Left -- ジャンプ_位置取り_左"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Jump_Position_Right -- ジャンプ_位置取り_右"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Jump_Position_Left front -- ジャンプ_位置取り_左前"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Jump_Position_Right front -- ジャンプ_位置取り_右前"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Jump_Position_Left Rear -- ジャンプ_位置取り_左後"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Jump_Position_Right rear -- ジャンプ_位置取り_右後"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Jump_dash_before -- ジャンプ_ダッシュ_前"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Water jump_vertical -- 水上ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Water jump_before -- 水上ジャンプ_前"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Water jump_acceleration_before -- 水上ジャンプ_加速_前"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Dolphin Jump 1_Vertical -- ドルフィンジャンプ1_垂直"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Dolphin Jump 2_Vertical -- ドルフィンジャンプ2_垂直"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Swamp Jump_Vertical -- 沼ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Swamp Jump_Before -- 沼ジャンプ_前"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Swamp jump_positioning_before -- 沼ジャンプ_位置取り_前"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Swamp jump_positioning_after -- 沼ジャンプ_位置取り_後"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Swamp jump_positioning_left -- 沼ジャンプ_位置取り_左"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Swamp jump_positioning_right -- 沼ジャンプ_位置取り_右"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Swamp jump_positioning_left front -- 沼ジャンプ_位置取り_左前"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Swamp jump_positioning_right front -- 沼ジャンプ_位置取り_右前"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Swamp jump_positioning_left rear -- 沼ジャンプ_位置取り_左後"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Swamp jump_positioning_right rear -- 沼ジャンプ_位置取り_右後"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "Storm Jump_Top 1 -- ストームジャンプ_上1"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "Storm Jump_Top 2 -- ストームジャンプ_上2"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "After storm jump_ -- ストームジャンプ_後"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Wall jump_vertical -- 壁ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Wall jump_horizontal_front -- 壁ジャンプ_水平_前"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "After wall jump_horizontal_ -- 壁ジャンプ_水平_後"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Wall jump_horizontal_left -- 壁ジャンプ_水平_左"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Wall jump_horizontal_right -- 壁ジャンプ_水平_右"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Wall jump_horizontal_front_infinite -- 壁ジャンプ_水平_前_無限"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Wall jump_positioning_front -- 壁ジャンプ_位置取り_前"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "After wall jump_positioning_ -- 壁ジャンプ_位置取り_後"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Wall jump_positioning_left -- 壁ジャンプ_位置取り_左"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Wall jump_positioning_right -- 壁ジャンプ_位置取り_右"
+      ]
+    },
+    {
+      "ID": 1115,
+      "Entries": [
+        "Wall jump_positioning_left front -- 壁ジャンプ_位置取り_左前"
+      ]
+    },
+    {
+      "ID": 1116,
+      "Entries": [
+        "Wall jump_positioning_right front -- 壁ジャンプ_位置取り_右前"
+      ]
+    },
+    {
+      "ID": 1117,
+      "Entries": [
+        "Wall jump_positioning_left rear -- 壁ジャンプ_位置取り_左後"
+      ]
+    },
+    {
+      "ID": 1118,
+      "Entries": [
+        "Wall jump_positioning_right rear -- 壁ジャンプ_位置取り_右後"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Wall jump_vertical -- 壁ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Wall jump_horizontal_front -- 壁ジャンプ_水平_前"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "After wall jump_horizontal_ -- 壁ジャンプ_水平_後"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Wall jump_positioning_front -- 壁ジャンプ_位置取り_前"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "After wall jump_positioning_ -- 壁ジャンプ_位置取り_後"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "Wall jump_positioning_left -- 壁ジャンプ_位置取り_左"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "Wall jump_positioning_right -- 壁ジャンプ_位置取り_右"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "Wall jump_positioning_left front -- 壁ジャンプ_位置取り_左前"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "Wall jump_positioning_right front -- 壁ジャンプ_位置取り_右前"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "Wall jump_positioning_left rear -- 壁ジャンプ_位置取り_左後"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "Wall jump_positioning_right rear -- 壁ジャンプ_位置取り_右後"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Wall Jump_Ignore Gravity Alternative 1 -- 壁ジャンプ_重力無視代替1"
+      ]
+    },
+    {
+      "ID": 1251,
+      "Entries": [
+        "Wall Jump_Gravity Ignore Alternative 1_ Hanging -- 壁ジャンプ_重力無視代替1_ぶら下がり"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "Wall Jump_Gravity Ignore Alternative 2 -- 壁ジャンプ_重力無視代替2"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "wire -- ワイヤー"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[For system] Ground wire acceleration -- 【システム用】地上ワイヤー加速"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[For system] Aerial wire deceleration -- 【システム用】空中ワイヤー減速"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Charged_strong_hop (common to jasuga / guard / direct hit / death) -- 帯電_強_ホップ（ジャスガ/ガード/直撃/死亡共通）"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "Charged_strong_slow (common to jasuga / guard / direct hit / death) -- 帯電_強_スロー（ジャスガ/ガード/直撃/死亡共通）"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Charged_weak_hop (jasuga) -- 帯電_弱_ホップ（ジャスガ）"
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        "Charged_weak_hop (guard) -- 帯電_弱_ホップ（ガード）"
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        "Charged_weak_hop (direct hit) -- 帯電_弱_ホップ（直撃）"
+      ]
+    },
+    {
+      "ID": 1613,
+      "Entries": [
+        "Charged_weak_hop (death) -- 帯電_弱_ホップ（死亡）"
+      ]
+    },
+    {
+      "ID": 1615,
+      "Entries": [
+        "Charged_weak_slow (common to jasuga / guard / direct hit / death) -- 帯電_弱_スロー（ジャスガ/ガード/直撃/死亡共通）"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "Lightning return _ strong -- 雷返し_強"
+      ]
+    },
+    {
+      "ID": 1621,
+      "Entries": [
+        "Lightning return _ strong _ direct hit blast receiver 1 -- 雷返し_強_直撃爆風受け1"
+      ]
+    },
+    {
+      "ID": 1622,
+      "Entries": [
+        "Lightning return _ strong _ direct hit blast receiver 2 -- 雷返し_強_直撃爆風受け2"
+      ]
+    },
+    {
+      "ID": 1630,
+      "Entries": [
+        "Lightning return _ weak -- 雷返し_弱"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Kick jump_enemy_ground_vertical -- 蹴りジャンプ_敵_地上_垂直"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Kick jump_enemy_ground_front -- 蹴りジャンプ_敵_地上_前"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Kick jump_enemy_ground_after -- 蹴りジャンプ_敵_地上_後"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Kick jump_enemy_ground_left -- 蹴りジャンプ_敵_地上_左"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Kick jump_enemy_ground_right -- 蹴りジャンプ_敵_地上_右"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Kick jump_enemy_ground_front_locking -- 蹴りジャンプ_敵_地上_前_ロック中"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Kick Jump_Enemy_Ground_Vertical / Front 2 -- 蹴りジャンプ_敵_地上_垂直/前2"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Kick jump_slow -- 蹴りジャンプ_スロー"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Kick jump_enemy_air_vertical -- 蹴りジャンプ_敵_空中_垂直"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Kick jump_enemy_air_front -- 蹴りジャンプ_敵_空中_前"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Kick jump_enemy_air_after -- 蹴りジャンプ_敵_空中_後"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Kick jump_enemy_air_left -- 蹴りジャンプ_敵_空中_左"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Kick jump_enemy_air_right -- 蹴りジャンプ_敵_空中_右"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Kick jump_enemy_air_front_locking -- 蹴りジャンプ_敵_空中_前_ロック中"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Kick Jump_Enemy_Aerial_Vertical / Front 2 -- 蹴りジャンプ_敵_空中_垂直/前2"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Jumping during aging_vertical -- 老化中ジャンプ_垂直"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "Jumping during aging_before -- 老化中ジャンプ_前"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Fluffy damage_before -- ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "After fluffy damage_ -- ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Lifting damage -- かち上げダメージ"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Large fluffy damage_before -- 大ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "After a big fluffy damage_ -- 大ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Super oversized fluffy damage _ before -- 超特大ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "After super-large fluffy damage_ -- 超特大ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "Futobi died _ before -- ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        "After fluffy death_ -- ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3290,
+      "Entries": [
+        "Lifting death -- かち上げ死亡"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Big fluffy death _ before -- 大ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "After a big fluffy death_ -- 大ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Super oversized fluffy death _ before -- 超特大ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "Super oversized fluffy death _ after -- 超特大ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Small aerial damage_before -- 空中小ダメージ_前"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "After small aerial damage_ -- 空中小ダメージ_後"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Large aerial damage_before -- 空中大ダメージ_前"
+      ]
+    },
+    {
+      "ID": 3431,
+      "Entries": [
+        "After heavy damage in the air -- 空中大ダメージ_後"
+      ]
+    },
+    {
+      "ID": 3440,
+      "Entries": [
+        "Aerial fluffy damage_before -- 空中ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3441,
+      "Entries": [
+        "After aerial fluffy damage_ -- 空中ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Air slamming damage -- 空中叩き付けダメージ"
+      ]
+    },
+    {
+      "ID": 3490,
+      "Entries": [
+        "Aerial lift damage -- 空中かち上げダメージ"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Large aerial fluffy damage_before -- 空中大ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "After a large fluffy damage in the air -- 空中大ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Super oversized fluffy damage in the air_before -- 空中超特大ふっとびダメージ_前"
+      ]
+    },
+    {
+      "ID": 3511,
+      "Entries": [
+        "After the aerial super-large fluffy damage_ -- 空中超特大ふっとびダメージ_後"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Aerial death_before -- 空中死亡_前"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "After aerial death_ -- 空中死亡_後"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        "Aerial fluffy death _ before -- 空中ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3641,
+      "Entries": [
+        "After aerial fluffy death_ -- 空中ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3660,
+      "Entries": [
+        "Slammed in the air and died -- 空中叩き付け死亡"
+      ]
+    },
+    {
+      "ID": 3690,
+      "Entries": [
+        "Raised in the air and died -- 空中かち上げ死亡"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Large aerial fluffy death _ before -- 空中大ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "After the aerial big fluffy death_ -- 空中大ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Air super oversized fluffy death _ before -- 空中超特大ふっとび死亡_前"
+      ]
+    },
+    {
+      "ID": 3711,
+      "Entries": [
+        "After the aerial super-large fluffy death_ -- 空中超特大ふっとび死亡_後"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Air speed maintenance_normal fall -- 空中速度維持_通常落下"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Air speed maintenance_normal fall_not adjustable -- 空中速度維持_通常落下_調整不可"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Aerial small guard receiver -- 空中小ガード受け"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Received a large aerial guard -- 空中大ガード受け"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Received oversized guard in the air -- 空中特大ガード受け"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Aerial small jasuga receiver -- 空中小ジャスガ受け"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "Large aerial jasuga receiver -- 空中大ジャスガ受け"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "Aerial oversized jasuga receiver -- 空中特大ジャスガ受け"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Enemy] Aerial damage_Hop-up_Before -- 【敵】空中ダメージ_ホップアップ_前"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Enemy] After aerial damage_hop-up_ -- 【敵】空中ダメージ_ホップアップ_後"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Enemy] Aerial damage_Hop-up_No before or after -- 【敵】空中ダメージ_ホップアップ_前後無し"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[Enemy] Aerial damage_slow -- 【敵】空中ダメージ_スロー"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Prosthetic hand ninja _fire_air -- 義手忍具_発火_空中"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Prosthesis Ninja _Ignition_Aerial_Slow -- 義手忍具_発火_空中_スロー"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Prosthetic hand ninja _ training ax _ in the air -- 義手忍具_仕込み斧_空中"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Prosthetic Hand Ninja _ Transformation _ Aerial _ Vertical Reset &amp; Hop -- 義手忍具_変わり身_空中_鉛直リセット & ホップ"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ slow -- 義手忍具_変わり身_空中_スロー"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ bottom -- 義手忍具_変わり身_空中_下"
+      ]
+    },
+    {
+      "ID": 7411,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ front -- 義手忍具_変わり身_空中_前"
+      ]
+    },
+    {
+      "ID": 7412,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ after -- 義手忍具_変わり身_空中_後"
+      ]
+    },
+    {
+      "ID": 7413,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ left -- 義手忍具_変わり身_空中_左"
+      ]
+    },
+    {
+      "ID": 7414,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ right -- 義手忍具_変わり身_空中_右"
+      ]
+    },
+    {
+      "ID": 7415,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ left front -- 義手忍具_変わり身_空中_左前"
+      ]
+    },
+    {
+      "ID": 7416,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ right front -- 義手忍具_変わり身_空中_右前"
+      ]
+    },
+    {
+      "ID": 7417,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ left rear -- 義手忍具_変わり身_空中_左後"
+      ]
+    },
+    {
+      "ID": 7418,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ aerial _ right rear -- 義手忍具_変わり身_空中_右後"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Fall shinobi -- 落下忍殺"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Unlimited Fall Shinobi -- 制限なし落下忍殺"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Anti-aircraft shinobi -- 対空忍殺"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Wire Shinobi _ Horseman Warrior / Red Demon -- ワイヤー忍殺_騎馬武者/赤鬼"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Red demon thrown and blown away -- 赤鬼投げられ吹っ飛び"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Yasha Ape is thrown and blown away -- 夜叉猿投げられ吹っ飛び"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "School technique_Sneak stab_Jump after hit -- 流派技_忍び刺し_ヒット後ジャンプ"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "School technique_Sneak stab_Jump after hit_Slow -- 流派技_忍び刺し_ヒット後ジャンプ_スロー"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "School Technique_Sneak Prick_Aerial_Slow -- 流派技_忍び刺し_空中_スロー"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "School Technique_Sneak Prick_Aerial_Acceleration -- 流派技_忍び刺し_空中_加速"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "School technique_kick rush -- 流派技_蹴りラッシュ"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "School technique_new technique_jump -- 流派技_新技_ジャンプ"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "School technique_new technique_slow after jump -- 流派技_新技_ジャンプ後スロー"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "School technique_new technique_hop -- 流派技_新技_ホップ"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "School technique_new technique_slow after hop -- 流派技_新技_ホップ後スロー"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "School technique_new technique_air_jump -- 流派技_新技_空中_ジャンプ"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "School technique_new technique_air_slow after jump -- 流派技_新技_空中_ジャンプ後スロー"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "School technique_new technique_hop -- 流派技_新技_ホップ"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "School technique_new technique_slow after hop -- 流派技_新技_ホップ後スロー"
+      ]
+    },
+    {
+      "ID": 10014500,
+      "Entries": [
+        "Nightjars_Jump attack (test) -- 夜鷹衆_ジャンプ攻撃（テスト）"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Base_jump move -- ベース_ジャンプ移動"
+      ]
+    },
+    {
+      "ID": 40014500,
+      "Entries": [
+        "Nightjars_Jump move -- 夜鷹衆_ジャンプ移動"
+      ]
+    },
+    {
+      "ID": 40013100,
+      "Entries": [
+        "Genpei Samurai_Jump move -- 源平武者_ジャンプ移動"
+      ]
+    }
+  ]
+}

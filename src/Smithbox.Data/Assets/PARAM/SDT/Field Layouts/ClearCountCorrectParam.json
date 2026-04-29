@@ -1,0 +1,100 @@
+{
+  "Name": "ClearCountCorrectParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "MaxHpRate",
+        "MaxMpRate",
+        "MaxStaminaRate",
+        "StaminaRevoverSpeedRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "PhysicsAttackRate",
+        "SlashAttackRate",
+        "LightHitAttackRate",
+        "ThrustAttackRate",
+        "NeturalAttackRate",
+        "NinsatsuAttackRate",
+        "HeavyHitAttackRate",
+        "AntiGroundAttackRate",
+        "AntiAirAttackRate",
+        "LightShootAttackRate",
+        "AttriAAttackRate",
+        "AttriBAttackRate",
+        "AttriCAttackRate",
+        "MagicAttackRate",
+        "FireAttackRate",
+        "ThunderAttackRate",
+        "DarkAttackRate",
+        "StaminaAttackRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "PhysicsDefenseRate",
+        "MagicDefenseRate",
+        "FireDefenseRate",
+        "ThunderDefenseRate",
+        "DarkDefenseRate",
+        "SuperArmorDamageRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "PoisionResistRate",
+        "DeseaseResistRate",
+        "BloodResistRate",
+        "CurseResistRate",
+        "FreezeResistRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "BloodDamageRate",
+        "FreezeDamageRate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "862",
+  "name": "Cerah, the Old Explorer ",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

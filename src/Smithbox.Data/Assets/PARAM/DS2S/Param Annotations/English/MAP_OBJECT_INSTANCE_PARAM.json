@@ -1,0 +1,193 @@
+{
+  "Param": "MAP_OBJECT_INSTANCE_PARAM",
+  "Type": "MAP_OBJECT_INSTANCE_PARAM",
+  "Name": "MAP_OBJECT_INSTANCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "objCtrlId",
+      "Name": "《OBJ制御ID》",
+      "Description": ""
+    },
+    {
+      "Field": "bulletId0",
+      "Name": "《バレットID スロット0》",
+      "Description": ""
+    },
+    {
+      "Field": "damageId0",
+      "Name": "《ダメージID スロット0》",
+      "Description": ""
+    },
+    {
+      "Field": "touchRegionScale",
+      "Name": "《タッチ領域のスケール》",
+      "Description": ""
+    },
+    {
+      "Field": "movableRange",
+      "Name": "《移動可能距離》",
+      "Description": ""
+    },
+    {
+      "Field": "objType",
+      "Name": "《OBJタイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "objCtrlType",
+      "Name": "《OBJ制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "objLabbel",
+      "Name": "《ラベル》",
+      "Description": ""
+    },
+    {
+      "Field": "usableWhite",
+      "Name": "《白霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableSmallWhite",
+      "Name": "《半霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableDragon",
+      "Name": "《竜霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableCoopBlue",
+      "Name": "《救援青霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableVersusBlue",
+      "Name": "《報復青霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableBlack",
+      "Name": "《闇霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableBellGuard",
+      "Name": "《鐘守灰霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableRatKing",
+      "Name": "《ねずみの王灰霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableMirrorKnight",
+      "Name": "《ミラーナイト霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableNoneVow",
+      "Name": "《誓約なし使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableSunlightVow",
+      "Name": "《太陽の戦士使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableGuardianVow",
+      "Name": "《守護の騎士使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableBloodVow",
+      "Name": "《血の闇霊使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableBlueVow",
+      "Name": "《青教使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableRatKingVow",
+      "Name": "《ねずみの王使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableBellGuardVow",
+      "Name": "《鐘守使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableDragonVow",
+      "Name": "《古竜への道使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableStrongerVow",
+      "Name": "《強者使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableAbyssVow",
+      "Name": "《深淵の巡礼使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "usableEnemy",
+      "Name": "《敵使用可能》",
+      "Description": ""
+    },
+    {
+      "Field": "onlyEventCanBreak",
+      "Name": "《イベントでしか壊せない》",
+      "Description": ""
+    },
+    {
+      "Field": "useAltSfx",
+      "Name": "《SFX切り替え》",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "breakObjMakeStateId",
+      "Name": "《ブレイクオブジェ生成ステート》",
+      "Description": ""
+    },
+    {
+      "Field": "resetType",
+      "Name": "リセットタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "tmpBreakObjMakeStateId",
+      "Name": "《(にぎやかし)ブレイクオブジェ生成ステート》",
+      "Description": ""
+    },
+    {
+      "Field": "iblTextureId",
+      "Name": "環境マップテクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId",
+      "Name": "初週アイテム抽選ID",
+      "Description": ""
+    }
+  ]
+}

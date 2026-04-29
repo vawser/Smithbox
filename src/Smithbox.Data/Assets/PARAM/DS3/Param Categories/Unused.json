@@ -1,0 +1,18 @@
+{
+  "Key": "Unused",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Unused"
+      }
+  ],
+  "Params": [
+    "GemCategoryParam",
+    "GemDropDopingParam",
+    "GemDropModifyParam",
+    "GemeffectParam",
+    "GemGenParam",
+    "ProtectorGenParam",
+    "WeaponGenParam"
+  ]
+}

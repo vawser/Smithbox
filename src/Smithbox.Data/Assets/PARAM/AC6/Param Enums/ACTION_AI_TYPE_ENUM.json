@@ -1,0 +1,245 @@
+{
+  "Key": "ACTION_AI_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ACTION_AI_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jump"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Land"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Quick Boost"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Brake"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fall"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hover"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Boost: Start"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Boost: End"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Boost"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Assault Boost: Kick"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stagger: Small"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stagger: Big"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stagger: Explosion"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard Break"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard: Start"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard: End"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee: First Attack"
+        }
+      ]
+    },
+    {
+      "Key": "51",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Melee: Combo Attack"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prepare to Start Shooting"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Start Shooting"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stop Shooting: Stage 1"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stop Shooting: Stage 2"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Repair Kit"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AI Enemy Judgment: is target jumping"
+        }
+      ]
+    },
+    {
+      "Key": "241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AI Enemy Judgment: is target on special standby"
+        }
+      ]
+    }
+  ]
+}

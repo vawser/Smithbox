@@ -1,0 +1,29 @@
+{
+  "Key": "PLAYER_COMMAND_STICK_VIEW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_VIEW"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Camera standards"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player standards"
+        }
+      ]
+    }
+  ]
+}

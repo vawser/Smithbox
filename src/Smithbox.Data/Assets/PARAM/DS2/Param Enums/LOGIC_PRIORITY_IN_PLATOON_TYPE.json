@@ -1,0 +1,56 @@
+{
+  "Key": "LOGIC_PRIORITY_IN_PLATOON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LOGIC_PRIORITY_IN_PLATOON_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle boss"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High level weakling"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium level weakling"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low level weakling"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ignore"
+        }
+      ]
+    }
+  ]
+}

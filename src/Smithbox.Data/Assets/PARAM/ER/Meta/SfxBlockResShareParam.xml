@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
-  <Field>
-    <shareBlockRsMapUidVal AltName="Shared Resource Block - Map UID" Wiki="The map number that references the resource. Set the numerical value of the map number. (m12_34_56_78  12345678)" />
-  </Field>
-  <Self />
-</PARAMMETA>

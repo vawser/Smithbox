@@ -1,0 +1,29 @@
+{
+  "Key": "PLAYER_COMMAND_STICK_SIDE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_STICK_SIDE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left stick"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right stick"
+        }
+      ]
+    }
+  ]
+}

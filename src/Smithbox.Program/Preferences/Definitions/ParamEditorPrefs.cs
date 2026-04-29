@@ -18,11 +18,86 @@ public class ParamEditorPrefs
     }
 
     #region General
-    public static PreferenceItem ParamEditor_Enable_Compact_Mode()
+    public static PreferenceItem ParamEditor_Annotation_Language()
     {
         return new PreferenceItem
         {
             OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Annotation Language",
+            Description = "Determines the language used for meta annotations (i.e. community field names).",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                var languages = curProject.Handler.ParamData.ParamAnnotationLanguages;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Annotation_Language))
+                {
+                    foreach (var entry in languages.Languages)
+                    {
+                        if (ImGui.Selectable(entry.Name))
+                        {
+                            CFG.Current.ParamEditor_Annotation_Language = entry.Name;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Import_Language()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Row Import Language",
+            Description = "Determines the language used for community row imports.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                var languages = curProject.Handler.ParamData.RowImportLanguages;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Import_Language))
+                {
+                    foreach (var entry in languages.Options)
+                    {
+                        if (ImGui.Selectable(entry.Name))
+                        {
+                            CFG.Current.ParamEditor_Import_Language = entry.Name;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+
+    public static PreferenceItem ParamEditor_Enable_Compact_Mode()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
             Category = PreferenceCategory.ParamEditor,
             Spacer = true,
 
@@ -623,7 +698,7 @@ public class ParamEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
                 var index = CFG.Current.ParamReloader_Current_Offsets;
 
-                string[] options = curProject.Handler.ParamData.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+                string[] options = curProject.Handler.ParamData.ParamReloaderOffsets.Groups.Select(entry => entry.exeVersion).ToArray();
 
                 DPI.ApplyInputWidth();
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
@@ -1108,6 +1183,148 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Field_List_GroupReference_DisplayCommunityName()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 16,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_List,
+
+            Title = "Display Group Reference Community Names",
+            Description = "If enabled, group references will use community name labels.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName);
+            }
+        };
+    }
+
+    #endregion
+
+    #region Field Layouts
+
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Grouping()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Enable Field Layouts",
+            Description = "If enabled, fields will be arranged based on field layout data (if applicable).",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Layout_Category_Names()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Enable Group Names",
+            Description = "If enabled, the grouping headers will have names.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names);
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Enable Chance Hints",
+            Description = "If enabled, the chance percentages for item lots will be displayed.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints);
+            }
+        };
+    }
+
+    public static PreferenceItem ParamEditor_Field_List_Enable_Field_Group_Type()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Field Layout Mode",
+            Description = "Determines how the field layouts are displayed.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(FieldLayoutMode)))
+                    {
+                        var type = (FieldLayoutMode)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type = (FieldLayoutMode)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+    public static PreferenceItem ParamEditor_Field_List_Unsorted_Field_Placement()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ParamEditor_Field_Layouts,
+
+            Title = "Unsorted Field Placement",
+            Description = "Determines where the unsorted fields are placed when Field Layouts are active.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement.GetDisplayName()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(FieldLayoutUnsortedPlacement)))
+                    {
+                        var type = (FieldLayoutUnsortedPlacement)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement = (FieldLayoutUnsortedPlacement)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
     #endregion
 
     #region Field Input
@@ -1531,5 +1748,303 @@ public class ParamEditorPrefs
             }
         };
     }
+    #endregion
+
+
+    #region Metadata
+    public static PreferenceItem Project_Enable_Param_Meta_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Meta Override",
+            Description = "If enabled, the Param Editor will use the Param META local to your project's .smithbox folder, instead of the base version.",
+
+            Draw = () => {
+                var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Meta_Override))
+                {
+                    if (curProject != null)
+                    {
+                        curProject.Handler.ParamData.ParamMeta.Clear();
+                        curProject.Handler.ParamData.ReloadMeta();
+                    }
+                }
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Enum_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Enum Addition",
+            Description = "If enabled, the Param Editor will add param enums from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Enum_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Enum Override",
+            Description = "If enabled, the Param Editor will use the Param Enums local to your project's .smithbox folder, instead of the base version.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Category_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Category Addition",
+            Description = "If enabled, the Param Editor will add param categories from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Category_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Category Override",
+            Description = "If enabled, the Param Editor will only use param categories from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Commutativity_Group_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 6,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Commutativity Group Addition",
+            Description = "If enabled, the Param Editor will add param commutativity groups from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Param_Commutativity_Group_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Commutativity Override",
+            Description = "If enabled, the Param Editor will only use param commutativity groups from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Field_Reference_Group_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 8,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Field Reference Group Addition",
+            Description = "If enabled, the Param Editor will add param field reference groups from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Field_Reference_Group_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 9,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Field Reference Group Override",
+            Description = "If enabled, the Param Editor will only use param field reference groups from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Field_Layout_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 10,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Field Layout Addition",
+            Description = "If enabled, the Param Editor will add param field layouts from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Field_Layout_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Field_Layout_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 11,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Field Layout Override",
+            Description = "If enabled, the Param Editor will only use param field layouts from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Icon_Configuration_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 12,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Icon Configuration Addition",
+            Description = "If enabled, the Param Editor will add param icon configurations from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Icon_Configuration_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 13,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Icon Configuration Override",
+            Description = "If enabled, the Param Editor will only use param icon configurations from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Override);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Graph_Annotation_Addition()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 14,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Graph Annotation Addition",
+            Description = "If enabled, the Param Editor will add param graph annotations from your project's .smithbox folder alongside the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition);
+            }
+        };
+    }
+
+    public static PreferenceItem Project_Enable_Graph_Annotation_Override()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 15,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Metadata,
+
+            Title = "Enable Param Graph Annotation Override",
+            Description = "If enabled, the Param Editor will only use param graph annotations from your project's .smithbox folder, and ignore the base versions.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Override);
+            }
+        };
+    }
+
     #endregion
 }

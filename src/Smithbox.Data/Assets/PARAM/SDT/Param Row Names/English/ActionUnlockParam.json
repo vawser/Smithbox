@@ -1,0 +1,365 @@
+{
+  "Name": "ActionUnlockParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Resurrection"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Kusabimaru"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Spirit Emblems"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Shinobi Prosthetic"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Spirit Emblems - Prosthetic"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "Spirit Emblems - Combat Arts"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Spirit Emblems - Items"
+      ]
+    },
+    {
+      "ID": 2390,
+      "Entries": [
+        "Night Eye"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Mortal Blade"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "Diving"
+      ]
+    },
+    {
+      "ID": 2440,
+      "Entries": [
+        "Vault Over"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "Anti-air Deathblow"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Grappling Hook Attack"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Mid-air Deflection"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Mid-air Prosthetic Tools"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Mikiri"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Run and Slide"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Mid-air Combat Arts"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Chasing Slice"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Fang and Blade"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Projected Force"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Living Force"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Unused Thrust Unlock"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Nothing"
+      ]
+    },
+    {
+      "ID": 910010,
+      "Entries": [
+        "Debugging skills lifted: Castle"
+      ]
+    },
+    {
+      "ID": 910020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence"
+      ]
+    },
+    {
+      "ID": 910030,
+      "Entries": [
+        "Debugging skills lifted: Honjo"
+      ]
+    },
+    {
+      "ID": 910040,
+      "Entries": [
+        "Debugging skills lifted: Hidden prison"
+      ]
+    },
+    {
+      "ID": 910050,
+      "Entries": [
+        "Debugging skills lifted: Dungeon"
+      ]
+    },
+    {
+      "ID": 910060,
+      "Entries": [
+        "Debugging skills lifted: Temple"
+      ]
+    },
+    {
+      "ID": 910070,
+      "Entries": [
+        "Debugging skills lifted: Valley"
+      ]
+    },
+    {
+      "ID": 910080,
+      "Entries": [
+        "Debugging skills lifted: Lower valley"
+      ]
+    },
+    {
+      "ID": 910090,
+      "Entries": [
+        "Debugging Skills Lifted: Sick Village "
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "Debugging skill lifted: Honjo_Ninja army invasion"
+      ]
+    },
+    {
+      "ID": 910110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city"
+      ]
+    },
+    {
+      "ID": 910120,
+      "Entries": [
+        "Debugging skills lifted: Honjo Tokugawa invasion "
+      ]
+    },
+    {
+      "ID": 910130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison when Tokugawa attacks "
+      ]
+    },
+    {
+      "ID": 910140,
+      "Entries": [
+        "Debugging skills lifted: Castle Tokugawa invasion "
+      ]
+    },
+    {
+      "ID": 910150,
+      "Entries": [
+        "Debugging skills lifted: Game clear"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Debugging skills lifted: New game for checking enemies "
+      ]
+    },
+    {
+      "ID": 920010,
+      "Entries": [
+        "Debugging skill lifted: Castle for checking enemies "
+      ]
+    },
+    {
+      "ID": 920020,
+      "Entries": [
+        "Debugging skills lifted: Samurai residence for checking enemies"
+      ]
+    },
+    {
+      "ID": 920030,
+      "Entries": [
+        "Debugging skill lifted: Honjo for checking enemies"
+      ]
+    },
+    {
+      "ID": 920040,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies"
+      ]
+    },
+    {
+      "ID": 920050,
+      "Entries": [
+        "Debugging skills lifted: Enemy check dungeon"
+      ]
+    },
+    {
+      "ID": 920060,
+      "Entries": [
+        "Debugging skill lifted: Enemy check temple"
+      ]
+    },
+    {
+      "ID": 920070,
+      "Entries": [
+        "Debugging skills lifted: Enemy check valley"
+      ]
+    },
+    {
+      "ID": 920080,
+      "Entries": [
+        "Debugging skill lifted: Lower layer of valley for checking enemies"
+      ]
+    },
+    {
+      "ID": 920090,
+      "Entries": [
+        "Debugging skill lifted: Enemy check sick village"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo Ninja army invasion"
+      ]
+    },
+    {
+      "ID": 920110,
+      "Entries": [
+        "Debugging skill lifted: Submerged city for checking enemies"
+      ]
+    },
+    {
+      "ID": 920120,
+      "Entries": [
+        "Debugging skill lifted: Enemy check Honjo when Tokugawa attacks"
+      ]
+    },
+    {
+      "ID": 920130,
+      "Entries": [
+        "Debugging skill lifted: Hidden prison for checking enemies When Tokugawa attacks"
+      ]
+    },
+    {
+      "ID": 920140,
+      "Entries": [
+        "Debugging skill lifted: Enemy check castle Tokugawa invasion"
+      ]
+    },
+    {
+      "ID": 920150,
+      "Entries": [
+        "Debugging skill lifted: Clear enemy check game "
+      ]
+    },
+    {
+      "ID": 999996,
+      "Entries": [
+        "Lifting of all actions for debugging No derivative attacks"
+      ]
+    },
+    {
+      "ID": 999997,
+      "Entries": [
+        "Lifting of the ban on all actions for debugging except for immortal slashing / acquisition of form charges"
+      ]
+    },
+    {
+      "ID": 999998,
+      "Entries": [
+        "All actions for debugging have been lifted except for immortal slashing"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "All actions for debugging have been lifted"
+      ]
+    }
+  ]
+}

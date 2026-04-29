@@ -70,7 +70,9 @@ public class CreateAction
     {
         if (ImGui.CollapsingHeader("Create"))
         {
+            ImGui.BeginChild("CreateToolSection");
             DisplayMenu();
+            ImGui.EndChild();
         }
     }
 

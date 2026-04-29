@@ -1,0 +1,83 @@
+{
+  "Param": "WEAPON_GEN_PARAM_ST",
+  "Type": "WEAPON_GEN_PARAM_ST",
+  "Name": "WEAPON_GEN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "wepParamId",
+      "Name": "Weapon ID",
+      "Description": "Equipment_Weapon parameter ID"
+    },
+    {
+      "Field": "gemSlotType_0",
+      "Name": "Gem Slot Type [0]",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_0",
+      "Name": "Gem Generation ID [0]",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_1",
+      "Name": "Gem Slot Type [1]",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_1",
+      "Name": "Gem Generation ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_2",
+      "Name": "Gem Slot Type [2]",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_2",
+      "Name": "Gem Generation ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_3",
+      "Name": "Gem Slot Type [3]",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_3",
+      "Name": "Gem Generation ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "gemSlotType_4",
+      "Name": "Gem Slot Type [4]",
+      "Description": ""
+    },
+    {
+      "Field": "gemGenId_4",
+      "Name": "Gem Generation ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "equipableGemSegmentMask",
+      "Name": "Gem Classification Mask",
+      "Description": ""
+    },
+    {
+      "Field": "reserveGemSlotNo_0",
+      "Name": "Reserved Gem Slot [0]",
+      "Description": ""
+    },
+    {
+      "Field": "reserveGemSlotNo_1",
+      "Name": "Reserved Gem Slot [1]",
+      "Description": ""
+    },
+    {
+      "Field": "reserveGemSlotNo_2",
+      "Name": "Reserved Gem Slot [2]",
+      "Description": ""
+    }
+  ]
+}

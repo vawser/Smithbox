@@ -1,0 +1,56 @@
+{
+  "Key": "RESULT_EVENT_MSG_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "RESULT_EVENT_MSG_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No message"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Text only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Display dead character name"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Show hostname"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Message type termination"
+        }
+      ]
+    }
+  ]
+}

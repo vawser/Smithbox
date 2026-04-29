@@ -40,9 +40,9 @@ public static class DokuWikiGenerator
 
         foreach(var param in curProject.Handler.ParamData.PrimaryBank.Params)
         {
-            var targetParamMeta = editor.Project.Handler.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(param.Value.AppliedParamdef.ParamType);
 
-            var sanitizedWiki = $"{targetParamMeta.Wiki}".Replace("\n", ", ").Replace("|", "-");
+            var sanitizedWiki = $"{annotations.Description}".Replace("\n", ", ").Replace("|", "-");
 
             output = output + $"| [[XXX-refmat:param:{param.Key}]] | {sanitizedWiki} |\n";
         }
@@ -215,7 +215,8 @@ public static class DokuWikiGenerator
                 }
             }
 
-            var sanitizedWiki = $"{fieldMeta.Wiki}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
+            var annotations = editor.Project.Handler.ParamData.GetParamAnnotations(targetParamDef.AppliedParamdef.ParamType);
+            var sanitizedWiki = $"{annotations.Description}".Replace("\n", " ").Replace("|", "-").Replace("^", "<nowiki>^</nowiki>");
 
             var colString = "";
 

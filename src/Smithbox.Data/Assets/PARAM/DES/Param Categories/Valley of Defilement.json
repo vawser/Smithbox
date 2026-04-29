@@ -1,0 +1,23 @@
+{
+  "Key": "Valley of Defilement",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Valley of Defilement"
+      }
+  ],
+  "Params": [
+    "m05_DofBank",
+    "m05_EnvLightTexBank",
+    "m05_FogBank",
+    "m05_LensFlareBank",
+    "m05_LensFlareExBank",
+    "m05_LightBank",
+    "m05_LightScatteringBank",
+    "m05_PointLightBank",
+    "m05_ShadowBank",
+    "m05_ToneCorrectBank",
+    "m05_ToneMapBank",
+    "s05_LightBank"
+  ]
+}

@@ -24,23 +24,29 @@ public class MapModelInsightHelper
         Entries = new();
     }
 
-    public Dictionary<string, MapModelInsightEntry> Entries { get; set; }
+    public Dictionary<string, MapModelInsightEntry> Entries { get; set; } = new();
     public MapModelInsightEntry SelectedDataEntry { get; set; }
     public MapFlverInsightEntry SelectedFlverEntry { get; set; }
 
     public void AddEntry(MapContainer container)
     {
-        if (!Entries.ContainsKey(container.Name))
+        if (Entries != null && container != null)
         {
-            Entries.Add(container.Name, new MapModelInsightEntry(container.Name, container));
+            if (!Entries.ContainsKey(container.Name))
+            {
+                Entries.Add(container.Name, new MapModelInsightEntry(container.Name, container));
+            }
         }
     }
 
     public void ClearEntry(MapContainer container)
     {
-        if (Entries.ContainsKey(container.Name))
+        if (Entries != null && container != null)
         {
-            Entries.Remove(container.Name);
+            if (Entries.ContainsKey(container.Name))
+            {
+                Entries.Remove(container.Name);
+            }
         }
     }
 

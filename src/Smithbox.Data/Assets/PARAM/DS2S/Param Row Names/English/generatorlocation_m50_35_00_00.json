@@ -1,0 +1,923 @@
+{
+  "Name": "generatorlocation_m50_35_00_00",
+  "Entries": [
+    {
+      "ID": 700,
+      "Entries": [
+        "[GEN:700] Jester Thomas"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "[GEN:710] Abbess Feeva"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[GEN:711] Ruined Aflis"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "[GEN:712] Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "[GEN:713] Transcendent Edde"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "[GEN:714] Rapacious Andrei"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "[GEN:715] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "[GEN:720] Rockshield Baldyr"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "[GEN:721] Rhoy the Explorer"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "[GEN:722] Stewart the Explorer"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "[GEN:723] Courh the Explorer"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[GEN:900] Elana, Squalid Queen"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[GEN:901] Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 974,
+      "Entries": [
+        "[GEN:974] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[GEN:1050] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[GEN:1051] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "[GEN:1052] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[GEN:1060] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "[GEN:1061] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1062,
+      "Entries": [
+        "[GEN:1062] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1063,
+      "Entries": [
+        "[GEN:1063] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[GEN:1070] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[GEN:1101] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[GEN:1200] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "[GEN:1201] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[GEN:1410] NO MATCH"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "[GEN:1411] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[GEN:1601] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[GEN:1800] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[GEN:1801] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "[GEN:1802] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "[GEN:1803] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "[GEN:1804] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[GEN:2001] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[GEN:2002] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[GEN:2200] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[GEN:2201] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[GEN:2401] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "[GEN:2402] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "[GEN:2403] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "[GEN:2404] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "[GEN:2405] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[GEN:2410] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Pagan Tree"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "[GEN:2501] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "[GEN:2502] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "[GEN:2503] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[GEN:2601] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "[GEN:2602] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[GEN:2700] NO MATCH"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "[GEN:2701] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] NO MATCH"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[GEN:3201] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[GEN:4001] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[GEN:4002] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "[GEN:4201] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "[GEN:4202] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4203,
+      "Entries": [
+        "[GEN:4203] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[GEN:4400] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[GEN:4401] NO MATCH"
+      ]
+    },
+    {
+      "ID": 4402,
+      "Entries": [
+        "[GEN:4402] Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "[GEN:4410] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[GEN:4600] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "[GEN:4601] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "[GEN:4602] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "[GEN:4800] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4801,
+      "Entries": [
+        "[GEN:4801] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4802,
+      "Entries": [
+        "[GEN:4802] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4803,
+      "Entries": [
+        "[GEN:4803] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4804,
+      "Entries": [
+        "[GEN:4804] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4805,
+      "Entries": [
+        "[GEN:4805] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4806,
+      "Entries": [
+        "[GEN:4806] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4807,
+      "Entries": [
+        "[GEN:4807] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4808,
+      "Entries": [
+        "[GEN:4808] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4809,
+      "Entries": [
+        "[GEN:4809] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "[GEN:4810] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[GEN:5002] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[GEN:5200] Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[GEN:5201] Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[GEN:5202] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "[GEN:5400] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        "[GEN:5401] NO MATCH"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "[GEN:5800] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "[GEN:5801] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 5802,
+      "Entries": [
+        "[GEN:5802] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Imperfect"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[GEN:6001] Imperfect"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[GEN:6002] Imperfect"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[GEN:6003] Imperfect"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[GEN:6004] Imperfect"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[GEN:6500] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "[GEN:6510] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "[GEN:6520] NO MATCH"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "[GEN:6530] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "[GEN:6531] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6540,
+      "Entries": [
+        "[GEN:6540] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "[GEN:6550] Drakeblood Knight Rondor"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[GEN:6600] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "[GEN:6601] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "[GEN:6602] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "[GEN:6603] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "[GEN:6700] Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[GEN:7010] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[GEN:7011] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "[GEN:7012] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[GEN:8000] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[GEN:8001] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[GEN:8002] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "[GEN:8003] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[GEN:8010] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "[GEN:8200] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "[GEN:8201] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "[GEN:8202] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "[GEN:8203] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "[GEN:8204] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "[GEN:8205] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "[GEN:8206] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "[GEN:8300] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "[GEN:8301] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8302,
+      "Entries": [
+        "[GEN:8302] Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "[GEN:8400] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "[GEN:8401] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "[GEN:8402] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "[GEN:8403] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8404,
+      "Entries": [
+        "[GEN:8404] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "[GEN:8405] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "[GEN:8410] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 8411,
+      "Entries": [
+        "[GEN:8411] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8412,
+      "Entries": [
+        "[GEN:8412] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8413,
+      "Entries": [
+        "[GEN:8413] NO MATCH"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "[GEN:8420] Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[GEN:8500] Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "[GEN:8501] Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "[GEN:8502] Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "[GEN:8503] Small Undead Boar (Elana)"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "[GEN:8504] Small Undead Boar (Elana)"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "[GEN:8505] Small Undead Boar (Elana)"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "[GEN:8506] Velstadt (Elana)"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "[GEN:8507] Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 8508,
+      "Entries": [
+        "[GEN:8508] Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Sinh, the Slumbering Dragon"
+      ]
+    }
+  ]
+}

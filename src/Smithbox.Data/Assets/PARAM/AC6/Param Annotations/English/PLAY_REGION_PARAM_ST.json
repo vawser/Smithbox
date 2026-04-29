@@ -1,0 +1,168 @@
+{
+  "Param": "PLAY_REGION_PARAM_ST",
+  "Type": "PLAY_REGION_PARAM_ST",
+  "Name": "PLAY_REGION_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "multiPlayZoneId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId",
+      "Name": "Multiplayer Start Limit - Event Flag ID",
+      "Description": "Multiplayer start limit event flag ID"
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "Disable Intrusion if Other Ghost In Range",
+      "Description": "Other distances that cannot be invaded by spirits. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position."
+    },
+    {
+      "Field": "pcPositionSaveLimitEventFlagId",
+      "Name": "Player Position Save Limit - Event Flag ID",
+      "Description": "PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)"
+    },
+    {
+      "Field": "multiPlayHostLimitEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "cultNpcWhiteGhostEntityId_byFree",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bMapGuradianRegion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "bYellowCostumeRegion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId_targetFlagState",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakInLimitEventFlagId_targetFlagState",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_targetFlagState",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "redSignLimitEventFlagId_targetFlagState",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "breakInLimitEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayHASHostLimitEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

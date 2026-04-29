@@ -1,17 +1,18 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Application;
 
 public class ChangeEnumList : EditorAction
 {
-    private readonly ProjectEnumEntry EnumSource;
-    private readonly ProjectEnumOption CurrentEntry;
-    private readonly ProjectEnumOption NewEntry;
-    private readonly ProjectEnumOption StoredEntry;
+    private readonly ParamEnumEntry EnumSource;
+    private readonly ParamEnumOption CurrentEntry;
+    private readonly ParamEnumOption NewEntry;
+    private readonly ParamEnumOption StoredEntry;
     private readonly ProjectEnumListOperation ChangeType;
     private readonly int Index;
 
-    public ChangeEnumList(ProjectEnumEntry enumSource, ProjectEnumOption curEntry, ProjectEnumOption newEntry, ProjectEnumListOperation changeType, int index = 0)
+    public ChangeEnumList(ParamEnumEntry enumSource, ParamEnumOption curEntry, ParamEnumOption newEntry, ProjectEnumListOperation changeType, int index = 0)
     {
         EnumSource = enumSource;
         CurrentEntry = curEntry;
@@ -19,10 +20,9 @@ public class ChangeEnumList : EditorAction
         ChangeType = changeType;
         Index = index;
 
-        StoredEntry = new ProjectEnumOption();
-        StoredEntry.ID = curEntry.ID;
-        StoredEntry.Name = curEntry.Name;
-        StoredEntry.Description = curEntry.Description;
+        StoredEntry = new ParamEnumOption();
+        StoredEntry.Key = curEntry.Key;
+        StoredEntry.Names = curEntry.Names;
     }
 
     public override ActionEvent Execute()

@@ -1,0 +1,29 @@
+{
+  "Key": "SHOP_LINEUP_EQUIPTYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHOP_LINEUP_EQUIPTYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Goods"
+        }
+      ]
+    }
+  ]
+}

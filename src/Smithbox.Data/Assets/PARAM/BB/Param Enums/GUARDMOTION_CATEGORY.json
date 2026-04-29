@@ -1,0 +1,38 @@
+{
+  "Key": "GUARDMOTION_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GUARDMOTION_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Greatshield"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    }
+  ]
+}

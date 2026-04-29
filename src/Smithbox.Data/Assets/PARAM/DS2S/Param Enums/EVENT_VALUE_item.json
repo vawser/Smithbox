@@ -1,0 +1,1136 @@
+{
+  "Key": "EVENT_VALUE_item",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_item"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1870000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1870000: Blue Great Sword (NPC: Father of the Avenge Warrior: Two-handed Sword (Moonlight))"
+        }
+      ]
+    },
+    {
+      "Key": "1871000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1871000:★Name not set (Moonlight sword (genuine))"
+        }
+      ]
+    },
+    {
+      "Key": "1980000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1980000:★Name not set (keyman's key)"
+        }
+      ]
+    },
+    {
+      "Key": "3900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3900000: 0 (NPC: Spell Four Heavenly Kings (Magic): One-handed Staff)"
+        }
+      ]
+    },
+    {
+      "Key": "27510100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "27510100: Kale's helmet ([Brother looking for his sister]/Head)"
+        }
+      ]
+    },
+    {
+      "Key": "40510000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40510000: Transcendental Illusion Ring (King's Ring)"
+        }
+      ]
+    },
+    {
+      "Key": "40530000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40530000: Thorn Ring"
+        }
+      ]
+    },
+    {
+      "Key": "40530001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40530001: Thorn Ring +1"
+        }
+      ]
+    },
+    {
+      "Key": "40530002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40530002: Thorn Ring +2"
+        }
+      ]
+    },
+    {
+      "Key": "40610000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "40610000: Whisper ring"
+        }
+      ]
+    },
+    {
+      "Key": "50600000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50600000: Soldier's Key (Royal Soldier's Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50610000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50610000: King's Corridor Key (Royal Castle Corridor Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50640000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50640000: Weapon smith box (weapon smith box)"
+        }
+      ]
+    },
+    {
+      "Key": "50650000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50650000: Armor blacksmith box (armor blacksmith box)"
+        }
+      ]
+    },
+    {
+      "Key": "50800000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50800000: Prison key (prison key)"
+        }
+      ]
+    },
+    {
+      "Key": "50810000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50810000: Melted Iron Key (Fire Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50820000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50820000: Abandoned Key (Key of Death)"
+        }
+      ]
+    },
+    {
+      "Key": "50830000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50830000: Pyroxene Street Key (White Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50840000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50840000: Old key (● key)"
+        }
+      ]
+    },
+    {
+      "Key": "50850000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50850000: Fang Key (Beast Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50860000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50860000: House key (Mr. A's house key)"
+        }
+      ]
+    },
+    {
+      "Key": "50870000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50870000: Reni Guts key (key to Mr. B's house)"
+        }
+      ]
+    },
+    {
+      "Key": "50880000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50880000: Tsurusube stone (smooth stone)"
+        }
+      ]
+    },
+    {
+      "Key": "50885000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50885000: Small hanging stone (small hanging stone)"
+        }
+      ]
+    },
+    {
+      "Key": "50890000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50890000: Ring Hall Keystone (Lever)"
+        }
+      ]
+    },
+    {
+      "Key": "50900000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50900000: Giant's Resonance (Giant's Hole)"
+        }
+      ]
+    },
+    {
+      "Key": "50910000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50910000: Core of Ash Mist (Dragon Chaos)"
+        }
+      ]
+    },
+    {
+      "Key": "50920000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50920000: Soul of the Titans (Soul of the Titans)"
+        }
+      ]
+    },
+    {
+      "Key": "50930000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50930000: Jeldora's hiding place key (Patch's house key)"
+        }
+      ]
+    },
+    {
+      "Key": "50940000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50940000: Conqueror's stone tablet (list of strong men)"
+        }
+      ]
+    },
+    {
+      "Key": "50950000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50950000: Ladder ornament (ladder ornament)"
+        }
+      ]
+    },
+    {
+      "Key": "50960000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50960000: Soul vessel (status reroll item)"
+        }
+      ]
+    },
+    {
+      "Key": "50970000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50970000: Immortal Stone Prison Key (Immortal Cell Key)"
+        }
+      ]
+    },
+    {
+      "Key": "50980000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50980000: Item that enters the giant's memory"
+        }
+      ]
+    },
+    {
+      "Key": "50990000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50990000: Dull pilot fire (fire given to EX blacksmith)"
+        }
+      ]
+    },
+    {
+      "Key": "51000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "51000000: Crushed Eye Orb (miracle item)"
+        }
+      ]
+    },
+    {
+      "Key": "51010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "51010000: Fool's Spice (Spell Status Reduction Reason)"
+        }
+      ]
+    },
+    {
+      "Key": "51020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "51020000: Spice of the unbeliever (spell status reduction faith)"
+        }
+      ]
+    },
+    {
+      "Key": "51030000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "51030000: An Deal's Key (An Deal's Key)"
+        }
+      ]
+    },
+    {
+      "Key": "60151000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60151000: Human statue (human statue)"
+        }
+      ]
+    },
+    {
+      "Key": "60155000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60155000: Est bottle (Est bottle)"
+        }
+      ]
+    },
+    {
+      "Key": "60355000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60355000: Estintia Feather (Estintia Feather)"
+        }
+      ]
+    },
+    {
+      "Key": "60405000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60405000: Ryuzu Stone (Ryuzu Stone)"
+        }
+      ]
+    },
+    {
+      "Key": "60406000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60406000: Dragon body stone (Dragon body stone)"
+        }
+      ]
+    },
+    {
+      "Key": "60511000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60511000: Egg Fossil (Egg Fossil)"
+        }
+      ]
+    },
+    {
+      "Key": "60525000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60525000: Est Fragment (Small Est Bottle Fragment)"
+        }
+      ]
+    },
+    {
+      "Key": "60526000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60526000: Bone meal of the noble (dragon fat powder)"
+        }
+      ]
+    },
+    {
+      "Key": "60527000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60527000: Ascetic's spark (lifespan regeneration)"
+        }
+      ]
+    },
+    {
+      "Key": "60536000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60536000: Pharos Stone (Magic Stone)"
+        }
+      ]
+    },
+    {
+      "Key": "60537000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60537000: Nostalgic fragrant wood (item to remove petrification)"
+        }
+      ]
+    },
+    {
+      "Key": "60538000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "60538000: Seed of Fire (Seed of Magic)"
+        }
+      ]
+    },
+    {
+      "Key": "62000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62000000: Dry finger (Dry finger)"
+        }
+      ]
+    },
+    {
+      "Key": "62010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62010000: Peaceful and safe"
+        }
+      ]
+    },
+    {
+      "Key": "62020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62020000: Ri no Bone (Line Ri)"
+        }
+      ]
+    },
+    {
+      "Key": "62030000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62030000: White sign wax stone (white sign wax stone)"
+        }
+      ]
+    },
+    {
+      "Key": "62040000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62040000: Small white sign wax stone (small white sign wax stone)"
+        }
+      ]
+    },
+    {
+      "Key": "62045000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62045000: Red sign wax stone (red sign wax stone)"
+        }
+      ]
+    },
+    {
+      "Key": "62050000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62050000: Cracked Blue Eye Orb (Cracked Blue Eye Orb)"
+        }
+      ]
+    },
+    {
+      "Key": "62060000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62060000: Cracked Red Eye Orb (Cracked Red Eye Orb)"
+        }
+      ]
+    },
+    {
+      "Key": "62070000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62070000: Ancient dragon's eyes (old dragon's eyes)"
+        }
+      ]
+    },
+    {
+      "Key": "62100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62100000: Proof of faith (proof of goodwill)"
+        }
+      ]
+    },
+    {
+      "Key": "62110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62110000: Proof of hatred (Proof of malice)"
+        }
+      ]
+    },
+    {
+      "Key": "62120000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62120000: Sun Medal (Sun Medal)"
+        }
+      ]
+    },
+    {
+      "Key": "62130000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62130000: Dragon scales (Dragon scales)"
+        }
+      ]
+    },
+    {
+      "Key": "62140000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62140000: Mouse's tail (mouse's tail)"
+        }
+      ]
+    },
+    {
+      "Key": "62150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62150000: Chikaraishi (Chikaraishi)"
+        }
+      ]
+    },
+    {
+      "Key": "62160000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62160000: Black Crystal of Farewell (Black Crystal of Farewell)"
+        }
+      ]
+    },
+    {
+      "Key": "62170000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62170000: Giant's Nut Seed (Giant's Nut Seed)"
+        }
+      ]
+    },
+    {
+      "Key": "62190000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "62190000: Fossil egg (dragon egg)"
+        }
+      ]
+    },
+    {
+      "Key": "63000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63000000: Gesture \"pointing\" (book of \"pointing\")"
+        }
+      ]
+    },
+    {
+      "Key": "63001000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63001000: Gesture \"Come on\" (Book of \"Come on\")"
+        }
+      ]
+    },
+    {
+      "Key": "63002000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63002000: Gesture \"Polite One Bow\" (Book of \"Polite One Bow\")"
+        }
+      ]
+    },
+    {
+      "Key": "63003000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63003000: Gesture \"Ichirei\" (Book of \"Ichirei\")"
+        }
+      ]
+    },
+    {
+      "Key": "63004000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63004000: Gesture \"Welcome\" (Book of \"Welcome\")"
+        }
+      ]
+    },
+    {
+      "Key": "63005000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63005000: Gesture \"Opening Ceremony\" (Book of \"Opening Ceremony\")"
+        }
+      ]
+    },
+    {
+      "Key": "63006000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63006000: Gesture \"Wave your hand\" (Book of \"Wave your hand\")"
+        }
+      ]
+    },
+    {
+      "Key": "63007000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63007000: Gesture \"Guts Pose\" (Book of \"Guts Pose\")"
+        }
+      ]
+    },
+    {
+      "Key": "63008000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63008000: Gesture \"Joy\" (Book of \"Joy\")"
+        }
+      ]
+    },
+    {
+      "Key": "63009000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63009000: Gesture \"Battle Cry\" (Book of \"Battle Cry\")"
+        }
+      ]
+    },
+    {
+      "Key": "63010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63010000: Gesture \"Shoulder Warming\" (Book of \"Shoulder Warming\")"
+        }
+      ]
+    },
+    {
+      "Key": "63011000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63011000: Gesture \"Eieio\" (Book of \"Eieio\")"
+        }
+      ]
+    },
+    {
+      "Key": "63012000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63012000: Gesture \"Understanding\" (Book of \"Understanding\")"
+        }
+      ]
+    },
+    {
+      "Key": "63013000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63013000: Gesture \"Negation\" (Book of \"Negation\")"
+        }
+      ]
+    },
+    {
+      "Key": "63014000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63014000: Gesture \"Leave it to me\" (Book of \"Leave it to me\")"
+        }
+      ]
+    },
+    {
+      "Key": "63015000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63015000: Gesture \"Begging for Life\" (Book of \"Begging for Life\")"
+        }
+      ]
+    },
+    {
+      "Key": "63016000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63016000: Gesture \"Dogeza\" (Book of \"Dogeza\")"
+        }
+      ]
+    },
+    {
+      "Key": "63017000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63017000: Gesture \"Kekiziri\" (Book of \"Kekiziri\")"
+        }
+      ]
+    },
+    {
+      "Key": "63018000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63018000: Gesture \"Provocation\" (Book of \"Provocation\")"
+        }
+      ]
+    },
+    {
+      "Key": "63019000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63019000: Gesture \"Make fun of\" (Book of \"Make fun of\")"
+        }
+      ]
+    },
+    {
+      "Key": "63021000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "63021000: Gesture \"Praise the Sun\" (Book of \"Praise the Sun\")"
+        }
+      ]
+    },
+    {
+      "Key": "64000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64000000: Soul of the Curse (Soul of Vagrant)"
+        }
+      ]
+    },
+    {
+      "Key": "64010000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64010000: Soul of the last giant (Soul of the dead giant king)"
+        }
+      ]
+    },
+    {
+      "Key": "64020000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64020000: Dragoon Soul (Heavy Cavalry Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64030000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64030000: Old Dragon Slayer Soul (Soul of Ornstein)"
+        }
+      ]
+    },
+    {
+      "Key": "64040000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64040000: Soul of the Four-Armed Guardian (Double-faced Warrior: Snake-headed Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64050000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64050000: Soul of the Hollow Guard (Soul of the Warrior in the Mirror)"
+        }
+      ]
+    },
+    {
+      "Key": "64060000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64060000: Soul of the Forgotten Sinner (Soul of the Forgotten Sinner)"
+        }
+      ]
+    },
+    {
+      "Key": "64070000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64070000: Executioner's Chariot Soul (Silver Chariot Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64080000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64080000: Skeleton King's Soul (Skeleton Noble Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64090000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64090000: Soul of Devouring Demon (Soul of Jabba the Hutt)"
+        }
+      ]
+    },
+    {
+      "Key": "64100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64100000: Poison Queen Mida's Soul (Naga's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64110000: Molten Demon Soul (Demon Knight Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64120000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64120000: Soul of Molten Earth Incarnation (Soul of Molten Iron Demon)"
+        }
+      ]
+    },
+    {
+      "Key": "64130000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64130000: Soul of the Mouse King's spearheads (Dog Mouse: Soul of color ②)"
+        }
+      ]
+    },
+    {
+      "Key": "64140000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64140000: \"Rotten\" Lingrus' Soul (Butcher's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64150000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64150000: Soul of Najika the Scorpion (Soul of Man Scorpion♀)"
+        }
+      ]
+    },
+    {
+      "Key": "64160000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64160000: Soul of the Rat King's Trial (Giant Rat Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64170000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64170000: Soul of the Crawling Insect Guardian (Soul of the Spider Queen)"
+        }
+      ]
+    },
+    {
+      "Key": "64180000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64180000: Mirror Knight's Soul (Mirror Knight's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64190000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64190000: Singing Demon Soul (Singing Frog Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64200000: Verstad's Soul (Queen's Knight B's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64210000: King's Soul (Old King's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64220000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64220000: Guardian Dragon Soul (Wyvern Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64230000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64230000: Ancient Dragon Soul (Ancient Dragon Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64240000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64240000: Soul of the Giant King (Soul of the Giant King Living)"
+        }
+      ]
+    },
+    {
+      "Key": "64250000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64250000: Soul of Dunashandra (soul of queen's armor form)"
+        }
+      ]
+    },
+    {
+      "Key": "64260000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64260000: Soul of the Guardian of the Throne (Soul of Queen's Knight A)"
+        }
+      ]
+    },
+    {
+      "Key": "64270000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64270000: Soul of the Throne Watcher (Soul of Queen's Knight C)"
+        }
+      ]
+    },
+    {
+      "Key": "64280000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64280000: Soul of Darkness (Soul of Agaduran's Stand)"
+        }
+      ]
+    },
+    {
+      "Key": "64290000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64290000:★Name not set (Gargoyle Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64300000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64300000: Old Witch's Soul (Izalith's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64310000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64310000: Old King's Soul (Gwyn's Soul)"
+        }
+      ]
+    },
+    {
+      "Key": "64320000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64320000: Soul of the Old Dead (Soul of Nito)"
+        }
+      ]
+    },
+    {
+      "Key": "64330000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64330000: Old White Dragon Soul (Sheath Soul)"
+        }
+      ]
+    }
+  ]
+}

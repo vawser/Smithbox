@@ -131,10 +131,10 @@ public class ParamEditorScreen : EditorScreen
     {
         if (!Project.Descriptor.ImportedParamRowNames)
         {
-            var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            var dialog = PlatformUtils.Instance.MessageBox($"Do you wish to import {CFG.Current.ParamEditor_Import_Language} row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                RowNameHelper.ImportRowNames(Project, Project.Handler.ParamData.PrimaryBank, ParamRowNameImportType.Community);
+                RowNameHelper.ImportRowNames(Project, Project.Handler.ParamData.PrimaryBank, CFG.Current.ParamEditor_Import_Language);
             }
 
             Project.Descriptor.ImportedParamRowNames = true;
@@ -321,6 +321,13 @@ public class ParamEditorScreen : EditorScreen
             if (ImGui.BeginMenu("Import CSV", activeParamExists))
             {
                 ParamCsvTools.ImportMenu(ViewHandler.ActiveView);
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("CSV Settings", activeParamExists))
+            {
+                ParamCsvTools.SettingMenu(ViewHandler.ActiveView);
 
                 ImGui.EndMenu();
             }

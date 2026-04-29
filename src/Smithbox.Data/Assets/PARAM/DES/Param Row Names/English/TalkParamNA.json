@@ -1,0 +1,8475 @@
+{
+  "Name": "TalkParamNA",
+  "Entries": [
+    {
+      "ID": 10100,
+      "Entries": [
+        "help me"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Arigatou was saved"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "thank you"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Watch out for the knight ahead"
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        "friend was killed"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "information from me"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "what are you going to do"
+      ]
+    },
+    {
+      "ID": 10501,
+      "Entries": [
+        "Buzz cut bastard"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "dead"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "Where are you looking"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "interrupted conversation"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "appreciate"
+      ]
+    },
+    {
+      "ID": 29100,
+      "Entries": [
+        "on this gate"
+      ]
+    },
+    {
+      "ID": 29101,
+      "Entries": [
+        "open it quickly"
+      ]
+    },
+    {
+      "ID": 29110,
+      "Entries": [
+        "Hurry up"
+      ]
+    },
+    {
+      "ID": 29120,
+      "Entries": [
+        "thank you somehow"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Please! Help me! I am trapped; surrounded by dreglings!"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "My thanks for your brave rescue."
+      ]
+    },
+    {
+      "ID": 11111,
+      "Entries": [
+        "I am Ostrava of Boletaria. \nAccept this as a token of my gratitude."
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "Now, I must go. There is something for me to take care of."
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "That was a bold jump! A surprise indeed!"
+      ]
+    },
+    {
+      "ID": 11131,
+      "Entries": [
+        "Well, now that you are here, \npray thee, fend off these dreglings"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "No matter how far I venture, only the soul-starved remain."
+      ]
+    },
+    {
+      "ID": 11141,
+      "Entries": [
+        "Is there a single sane person left in Boletaria?"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "Hello! You yonder! Over here! It's me, Ostrava!"
+      ]
+    },
+    {
+      "ID": 11201,
+      "Entries": [
+        "Look at me, again surrounded by evil warriors.\nCould you, perhaps, help me one last time?"
+      ]
+    },
+    {
+      "ID": 11202,
+      "Entries": [
+        "Clear out the soldiers at the far end of this passage, \nif it pleases you."
+      ]
+    },
+    {
+      "ID": 11203,
+      "Entries": [
+        "The Lord's Path, just down yonder, has degenerated \ninto a feeding ground for flying dragons. \nHave your wits about you."
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "Thank you. That makes twice."
+      ]
+    },
+    {
+      "ID": 11211,
+      "Entries": [
+        "Thanks to you, I can now forge ahead.\nThis is a token of my gratitude. Please accept it."
+      ]
+    },
+    {
+      "ID": 11221,
+      "Entries": [
+        "This is bad... Not a single person left... Why on Earth...?"
+      ]
+    },
+    {
+      "ID": 11222,
+      "Entries": [
+        "How did all of this happen...Father!"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Help! Helppp!"
+      ]
+    },
+    {
+      "ID": 11301,
+      "Entries": [
+        "Soul-starved soldiers are after me! \nIn the name of all that is sacred, please open this gate!"
+      ]
+    },
+    {
+      "ID": 11302,
+      "Entries": [
+        "Oh Lord, hurry, please! They are almost upon me!"
+      ]
+    },
+    {
+      "ID": 11310,
+      "Entries": [
+        "Thank you for rescuing me."
+      ]
+    },
+    {
+      "ID": 11320,
+      "Entries": [
+        "A dead-end?"
+      ]
+    },
+    {
+      "ID": 11321,
+      "Entries": [
+        "No! Help me!"
+      ]
+    },
+    {
+      "ID": 11322,
+      "Entries": [
+        "I'll never make it! I'll be killed!"
+      ]
+    },
+    {
+      "ID": 11330,
+      "Entries": [
+        "You saved my life."
+      ]
+    },
+    {
+      "ID": 11331,
+      "Entries": [
+        "This is the third time. I am truly indebted to you."
+      ]
+    },
+    {
+      "ID": 11332,
+      "Entries": [
+        "This is... all I have, but please accept it."
+      ]
+    },
+    {
+      "ID": 11333,
+      "Entries": [
+        "Now, I must go. \nMy father the King awaits me just over there."
+      ]
+    },
+    {
+      "ID": 11340,
+      "Entries": [
+        "My father the King awaits me just over there."
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "Oh, it's you, is it?"
+      ]
+    },
+    {
+      "ID": 11401,
+      "Entries": [
+        "My father is up above."
+      ]
+    },
+    {
+      "ID": 11402,
+      "Entries": [
+        "Well, what's left of him, anyway.\nHe's transformed into a fiendish Demon."
+      ]
+    },
+    {
+      "ID": 11403,
+      "Entries": [
+        "I began this quest in a search for truth, \nbut it seems I was a fool to even try."
+      ]
+    },
+    {
+      "ID": 11404,
+      "Entries": [
+        "Please kill my father. \nIn his degenerated state, \nhe can only bring peril to the lands."
+      ]
+    },
+    {
+      "ID": 11405,
+      "Entries": [
+        "This key... fits the Boletaria mausoleum."
+      ]
+    },
+    {
+      "ID": 11406,
+      "Entries": [
+        "Inside the mausoleum are my father's two swords, \nSoulbrandt and Demonbrandt."
+      ]
+    },
+    {
+      "ID": 11407,
+      "Entries": [
+        "Use them to bring an end to this madness."
+      ]
+    },
+    {
+      "ID": 11410,
+      "Entries": [
+        "What on earth are you doing?!"
+      ]
+    },
+    {
+      "ID": 11411,
+      "Entries": [
+        "Please, you must not! I thought we were allies!"
+      ]
+    },
+    {
+      "ID": 11415,
+      "Entries": [
+        "what are you doing"
+      ]
+    },
+    {
+      "ID": 11420,
+      "Entries": [
+        "Please, wait a while!"
+      ]
+    },
+    {
+      "ID": 11421,
+      "Entries": [
+        "You are running off to where?"
+      ]
+    },
+    {
+      "ID": 11430,
+      "Entries": [
+        "What was the hurry just now?"
+      ]
+    },
+    {
+      "ID": 11431,
+      "Entries": [
+        "Surely you can spare a mere moment."
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "Here in Boletaria, \nwe speak of the legend of The Two Swords and\nThe Last Hero."
+      ]
+    },
+    {
+      "ID": 11501,
+      "Entries": [
+        "The Two Swords are Demonbrandt and Soulbrandt."
+      ]
+    },
+    {
+      "ID": 11502,
+      "Entries": [
+        "One sword banishes that which befouls man, \nand the other banishes man himself."
+      ]
+    },
+    {
+      "ID": 11503,
+      "Entries": [
+        "The Last Hero is old King Doran."
+      ]
+    },
+    {
+      "ID": 11504,
+      "Entries": [
+        "King Doran is the Everlasting One, founder of Boletaria, \nand protector of the Two Swords."
+      ]
+    },
+    {
+      "ID": 11505,
+      "Entries": [
+        "Hah hah, of course, only according to legend!"
+      ]
+    },
+    {
+      "ID": 11506,
+      "Entries": [
+        "But in the dark state of our land, \nlegends are all we can depend upon..."
+      ]
+    },
+    {
+      "ID": 11510,
+      "Entries": [
+        "At its peak, Boletaria was a grand kingdom."
+      ]
+    },
+    {
+      "ID": 11511,
+      "Entries": [
+        "The king, his knights, \nand his subjects were modest and plain, \nbut also steadfast and compassionate."
+      ]
+    },
+    {
+      "ID": 11512,
+      "Entries": [
+        "In the distant southern kingdom, \nBoletaria was known as paradise on earth."
+      ]
+    },
+    {
+      "ID": 11513,
+      "Entries": [
+        "But look at what has become of us now!"
+      ]
+    },
+    {
+      "ID": 11514,
+      "Entries": [
+        "I refuse to believe that \nthis is what Father wished for our great land..."
+      ]
+    },
+    {
+      "ID": 11520,
+      "Entries": [
+        "King Allant led Boletaria with \na round table of brave knights."
+      ]
+    },
+    {
+      "ID": 11521,
+      "Entries": [
+        "The royal Twin Fangs, Vallarfax and Biorr,"
+      ]
+    },
+    {
+      "ID": 11522,
+      "Entries": [
+        "Alfred, the knight of the tower, \nMetas, the knight of the lance,"
+      ]
+    },
+    {
+      "ID": 11523,
+      "Entries": [
+        "and the brave tribesman Long Bow Oolan \nand his fearsome legions."
+      ]
+    },
+    {
+      "ID": 11524,
+      "Entries": [
+        "But today Boletaria is an abysmal mess."
+      ]
+    },
+    {
+      "ID": 11525,
+      "Entries": [
+        "Vallarfax was lost, \nand Biorr slipped through the fissure, \nnever to be heard from again."
+      ]
+    },
+    {
+      "ID": 11526,
+      "Entries": [
+        "All the rest, along with Boletaria, \nhave been devoured by the fog, \nand will soon be prey to the Demons."
+      ]
+    },
+    {
+      "ID": 11527,
+      "Entries": [
+        "The Boletarian knights are no longer."
+      ]
+    },
+    {
+      "ID": 11528,
+      "Entries": [
+        "But perhaps our age will see the rise of new heroes, \nsuch as yourself."
+      ]
+    },
+    {
+      "ID": 11530,
+      "Entries": [
+        "what are you doing"
+      ]
+    },
+    {
+      "ID": 11531,
+      "Entries": [
+        "stop it! I thought you were my friend!"
+      ]
+    },
+    {
+      "ID": 11540,
+      "Entries": [
+        "Hey, wait a minute!"
+      ]
+    },
+    {
+      "ID": 11541,
+      "Entries": [
+        "Where are you going all of a sudden!"
+      ]
+    },
+    {
+      "ID": 11550,
+      "Entries": [
+        "What's wrong, it suddenly..."
+      ]
+    },
+    {
+      "ID": 11551,
+      "Entries": [
+        "I guess it's convenient for you..."
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Good day to you. Care to look over me wares?"
+      ]
+    },
+    {
+      "ID": 12001,
+      "Entries": [
+        "Mostly stolen, but who's telling, eh?"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Thanks for that. Come back soon."
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Go ahead, take your time."
+      ]
+    },
+    {
+      "ID": 12021,
+      "Entries": [
+        "I'm not going anywhere. Heh heh heh."
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Ah, we meet again. Fancy that."
+      ]
+    },
+    {
+      "ID": 12031,
+      "Entries": [
+        "Hope you find something that suits you."
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        "Hello, what can I do for you?"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Thanks for that."
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        "Be you brave knight or depraved slave, \nthe Demons will snatch your soul, \nthen you'll go mad."
+      ]
+    },
+    {
+      "ID": 12061,
+      "Entries": [
+        "And those who dare cling to their humanity are hunted down."
+      ]
+    },
+    {
+      "ID": 12062,
+      "Entries": [
+        "It is the end of Great Boletaria as we know it."
+      ]
+    },
+    {
+      "ID": 12063,
+      "Entries": [
+        "But hell, at least the Demons don't send us to our\ndeaths in battle! Heh heh heh heh."
+      ]
+    },
+    {
+      "ID": 12070,
+      "Entries": [
+        "There's this skinny fellow, clad in fabulous armour, \nwho is always mumbling about some mission."
+      ]
+    },
+    {
+      "ID": 12071,
+      "Entries": [
+        "He's another one who's managed to stay sane like yourself."
+      ]
+    },
+    {
+      "ID": 12072,
+      "Entries": [
+        "Probably some pampered son, by the looks of his attire."
+      ]
+    },
+    {
+      "ID": 12073,
+      "Entries": [
+        "I'd give an arm just for the buttons off his shirt!"
+      ]
+    },
+    {
+      "ID": 12080,
+      "Entries": [
+        "The King? He's gone mad like the rest of them."
+      ]
+    },
+    {
+      "ID": 12081,
+      "Entries": [
+        "Or perhaps he was mad in the first place. \nI can never tell with those eccentric royal oafs!"
+      ]
+    },
+    {
+      "ID": 12090,
+      "Entries": [
+        "The giant lizard?"
+      ]
+    },
+    {
+      "ID": 12091,
+      "Entries": [
+        "One of the King's pets, just like those Demons."
+      ]
+    },
+    {
+      "ID": 12092,
+      "Entries": [
+        "That monster leaves a trail of charred carcasses. \nWhich is great for business, of course!"
+      ]
+    },
+    {
+      "ID": 12093,
+      "Entries": [
+        "But unless you're a scavenger like me, \nyou'd better stay clear. Heh heh heh."
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "What the devil's wrong with you!"
+      ]
+    },
+    {
+      "ID": 12102,
+      "Entries": [
+        "I'm not afraid! I'll tear you limb from limb!"
+      ]
+    },
+    {
+      "ID": 12110,
+      "Entries": [
+        "Hard times, eh?"
+      ]
+    },
+    {
+      "ID": 12111,
+      "Entries": [
+        "I'm sure you'll turn things around. Heh heh heh."
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        "Hold it, friend! Going so soon?"
+      ]
+    },
+    {
+      "ID": 12130,
+      "Entries": [
+        "Go on. Treat yourself to something."
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Who goes there!"
+      ]
+    },
+    {
+      "ID": 13001,
+      "Entries": [
+        "Have I been freed?"
+      ]
+    },
+    {
+      "ID": 13002,
+      "Entries": [
+        "Ah!"
+      ]
+    },
+    {
+      "ID": 13003,
+      "Entries": [
+        "Mmmmmmnnn... Ah-hah! \nThat vile insect, I shall tear him limb from limb!"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "You obsequious larvae!"
+      ]
+    },
+    {
+      "ID": 13011,
+      "Entries": [
+        "Grovelling soul-starved abomination!"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Hm? Who are you?...Ah, you're the one who saved me."
+      ]
+    },
+    {
+      "ID": 13021,
+      "Entries": [
+        "I am called Biorr, the elder of the Twin Fangs\nof Boletaria. I thank you."
+      ]
+    },
+    {
+      "ID": 13022,
+      "Entries": [
+        "You deserve a handsome reward. Only I have none! \nGahahahahah..."
+      ]
+    },
+    {
+      "ID": 13023,
+      "Entries": [
+        "I'm going to sleep. Go on ahead."
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Hmmmggggggg..."
+      ]
+    },
+    {
+      "ID": 13040,
+      "Entries": [
+        "Do you need some help?"
+      ]
+    },
+    {
+      "ID": 13041,
+      "Entries": [
+        "By the honour of the good knights!"
+      ]
+    },
+    {
+      "ID": 13042,
+      "Entries": [
+        "This demonic folly shall be stopped once and for all!"
+      ]
+    },
+    {
+      "ID": 13045,
+      "Entries": [
+        "One more Demon down!"
+      ]
+    },
+    {
+      "ID": 13046,
+      "Entries": [
+        "Gahahahahahah!"
+      ]
+    },
+    {
+      "ID": 13050,
+      "Entries": [
+        "Do you need some help?"
+      ]
+    },
+    {
+      "ID": 13051,
+      "Entries": [
+        "Leave the flying lizard to me!"
+      ]
+    },
+    {
+      "ID": 13052,
+      "Entries": [
+        "May light shine upon our Lord and our proud Boletaria!"
+      ]
+    },
+    {
+      "ID": 13060,
+      "Entries": [
+        "Boletariaaaa!"
+      ]
+    },
+    {
+      "ID": 13061,
+      "Entries": [
+        "Gahahahahahah!"
+      ]
+    },
+    {
+      "ID": 13070,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 13071,
+      "Entries": [
+        "Why the rush? Off to save the world? Gahahahah."
+      ]
+    },
+    {
+      "ID": 13080,
+      "Entries": [
+        "Hrggk!"
+      ]
+    },
+    {
+      "ID": 13081,
+      "Entries": [
+        "What the...! What has possessed you?!"
+      ]
+    },
+    {
+      "ID": 13082,
+      "Entries": [
+        "I may be old, but I'm not frail!"
+      ]
+    },
+    {
+      "ID": 13085,
+      "Entries": [
+        "Wow!"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "Our great King is a magnanimous leader. "
+      ]
+    },
+    {
+      "ID": 13501,
+      "Entries": [
+        "He is stolid, spirited, caring of his subjects. \nHe fought vigilantly against the vile and depraved."
+      ]
+    },
+    {
+      "ID": 13502,
+      "Entries": [
+        "The seditious claims that our Lord brought \nthis scourge upon us--they are mere fabrications\nwoven by jealous conspirators."
+      ]
+    },
+    {
+      "ID": 13503,
+      "Entries": [
+        "I am certain of it, for there is no other explanation."
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "My brother-in-arms, Vallarfax of the Twin Fangs,\nwas a brave and mighty knight."
+      ]
+    },
+    {
+      "ID": 13511,
+      "Entries": [
+        "Unlike myself, he was the master of more than the sword. \nVallarfax's mind was sharper than most scholars."
+      ]
+    },
+    {
+      "ID": 13512,
+      "Entries": [
+        "Dark times have befallen us. If our Lord, with the\nesteemed help of Vallarfax, could not prevent it..."
+      ]
+    },
+    {
+      "ID": 13513,
+      "Entries": [
+        "Then no one could have."
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "Who goes there!"
+      ]
+    },
+    {
+      "ID": 13521,
+      "Entries": [
+        "Ah, you killed that vile insect, and saved me, heheh."
+      ]
+    },
+    {
+      "ID": 13522,
+      "Entries": [
+        "I am called Biorr, the elder of the Twin Fangs\nof Boletaria. I thank you."
+      ]
+    },
+    {
+      "ID": 13523,
+      "Entries": [
+        "You deserve a handsome reward. Only I have none! \nGahahahahah..."
+      ]
+    },
+    {
+      "ID": 13524,
+      "Entries": [
+        "Go on ahead. I shall sleep a while."
+      ]
+    },
+    {
+      "ID": 13530,
+      "Entries": [
+        "Fine work back there."
+      ]
+    },
+    {
+      "ID": 13531,
+      "Entries": [
+        "Then again, how could a Demon ever stand up\nto a bona fide knight? Gahahahahah..."
+      ]
+    },
+    {
+      "ID": 13532,
+      "Entries": [
+        "Now, you go on ahead. \nI must be getting older. I need some rest."
+      ]
+    },
+    {
+      "ID": 13540,
+      "Entries": [
+        "We managed, did we? That leaping lizard was\nmore trouble than expected."
+      ]
+    },
+    {
+      "ID": 13541,
+      "Entries": [
+        "Now, you go on ahead. You know me; I need a nap..."
+      ]
+    },
+    {
+      "ID": 13542,
+      "Entries": [
+        "That swooping monstrosity... was quite a drain on me..."
+      ]
+    },
+    {
+      "ID": 13550,
+      "Entries": [
+        "I heard an odd piece of news from a merchant dregling..."
+      ]
+    },
+    {
+      "ID": 13551,
+      "Entries": [
+        "He claims that the son of the King, \nAriona, has come to Boletaria alone."
+      ]
+    },
+    {
+      "ID": 13552,
+      "Entries": [
+        "Ariona is a wise and kind soul, almost too kind; \nhe would not be safe in this accursed land\nwithout protection."
+      ]
+    },
+    {
+      "ID": 13553,
+      "Entries": [
+        "If you find Ariona, do look after him, \nand tell him to return to the Nexus immediately..."
+      ]
+    },
+    {
+      "ID": 13554,
+      "Entries": [
+        "And that Biorr of the Twin Fangs will\nlook after His Highness."
+      ]
+    },
+    {
+      "ID": 13560,
+      "Entries": [
+        "Do you intend to challenge the King?"
+      ]
+    },
+    {
+      "ID": 13561,
+      "Entries": [
+        "You may be a great Demon hunter, \nbut I fear you may not be ready."
+      ]
+    },
+    {
+      "ID": 13562,
+      "Entries": [
+        "The King is defended by the black souls of mighty knights, \nand a fire-breathing dragon."
+      ]
+    },
+    {
+      "ID": 13563,
+      "Entries": [
+        "They defeated even myself; \nthat's how I ended up in the dungeon."
+      ]
+    },
+    {
+      "ID": 13564,
+      "Entries": [
+        "Beware the limits of your own power."
+      ]
+    },
+    {
+      "ID": 13570,
+      "Entries": [
+        "Hmm, you've seen the lone stone tower that \nsprouts forth from the outer wall of Boletaria castle?"
+      ]
+    },
+    {
+      "ID": 13571,
+      "Entries": [
+        "According to that spineless warden, a young sorceress\nis held prisoner there, where she is subject to, um, \nall manner of untold acts in the name of purification."
+      ]
+    },
+    {
+      "ID": 13572,
+      "Entries": [
+        "Regrettably, I cannot find my way into that tower."
+      ]
+    },
+    {
+      "ID": 13573,
+      "Entries": [
+        "How long will those vermin dishonour the King's good name?"
+      ]
+    },
+    {
+      "ID": 13580,
+      "Entries": [
+        "Ah, hello there."
+      ]
+    },
+    {
+      "ID": 13581,
+      "Entries": [
+        "You rescued the young sorceress from that tower!"
+      ]
+    },
+    {
+      "ID": 13582,
+      "Entries": [
+        "I express my gratitude. There can be no excuse for\nsuch ill treatment of a young innocent."
+      ]
+    },
+    {
+      "ID": 13583,
+      "Entries": [
+        "The King would be proud."
+      ]
+    },
+    {
+      "ID": 13590,
+      "Entries": [
+        "Sir, where are you going?"
+      ]
+    },
+    {
+      "ID": 13591,
+      "Entries": [
+        "He's such an impatient man (Gahahahahahaha)"
+      ]
+    },
+    {
+      "ID": 13600,
+      "Entries": [
+        "Wow!"
+      ]
+    },
+    {
+      "ID": 13601,
+      "Entries": [
+        "Sir, what are you doing! Are you out of your mind!"
+      ]
+    },
+    {
+      "ID": 13602,
+      "Entries": [
+        "No matter how old you are, don't underestimate the twin swords of Orlant!"
+      ]
+    },
+    {
+      "ID": 13605,
+      "Entries": [
+        "Wow!"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "...What do you want with me?"
+      ]
+    },
+    {
+      "ID": 14001,
+      "Entries": [
+        "...Have you brutes no mercy...?"
+      ]
+    },
+    {
+      "ID": 14002,
+      "Entries": [
+        "Do as you wish."
+      ]
+    },
+    {
+      "ID": 14003,
+      "Entries": [
+        "There are no secrets here; only a tired, emaciated frame."
+      ]
+    },
+    {
+      "ID": 14005,
+      "Entries": [
+        "…Who?"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Heavens, you..."
+      ]
+    },
+    {
+      "ID": 14011,
+      "Entries": [
+        "You... you came to... save me?"
+      ]
+    },
+    {
+      "ID": 14012,
+      "Entries": [
+        "Thank you. No, I'm fine."
+      ]
+    },
+    {
+      "ID": 14013,
+      "Entries": [
+        "With a little rest, I can soon walk."
+      ]
+    },
+    {
+      "ID": 14016,
+      "Entries": [
+        "You go on ahead. I do not wish to be a dead weight."
+      ]
+    },
+    {
+      "ID": 14500,
+      "Entries": [
+        "Hello again. You saved me from great agony."
+      ]
+    },
+    {
+      "ID": 14501,
+      "Entries": [
+        "I am sorry, for I cannot offer proper thanks."
+      ]
+    },
+    {
+      "ID": 14502,
+      "Entries": [
+        "If you wish, however, I can teach you magic\nin trade for Demon souls."
+      ]
+    },
+    {
+      "ID": 14503,
+      "Entries": [
+        "But my witchcraft is of a dark nature, \nand arouses suspicions."
+      ]
+    },
+    {
+      "ID": 14504,
+      "Entries": [
+        "Why not try the magic of great Sage Freke?"
+      ]
+    },
+    {
+      "ID": 14506,
+      "Entries": [
+        "Perhaps it would not fit you..."
+      ]
+    },
+    {
+      "ID": 14510,
+      "Entries": [
+        "Are you certain you wish to learn witchcraft?"
+      ]
+    },
+    {
+      "ID": 14511,
+      "Entries": [
+        "It would honour me to assist one such as you, but..."
+      ]
+    },
+    {
+      "ID": 14512,
+      "Entries": [
+        "Are you sure?"
+      ]
+    },
+    {
+      "ID": 14520,
+      "Entries": [
+        "Are you here for more witchcraft?"
+      ]
+    },
+    {
+      "ID": 14521,
+      "Entries": [
+        "Very well. I shall help you however I can."
+      ]
+    },
+    {
+      "ID": 14530,
+      "Entries": [
+        "I owe my life to you."
+      ]
+    },
+    {
+      "ID": 14531,
+      "Entries": [
+        "If you are ever in need of witchcraft, speak to me."
+      ]
+    },
+    {
+      "ID": 14532,
+      "Entries": [
+        "It is a dark art, but it is all that I can offer."
+      ]
+    },
+    {
+      "ID": 14540,
+      "Entries": [
+        "I feel great misgivings about Freke."
+      ]
+    },
+    {
+      "ID": 14541,
+      "Entries": [
+        "I was branded a witch at a very young age, and since then, \nI have been persecuted as a threat to human society."
+      ]
+    },
+    {
+      "ID": 14542,
+      "Entries": [
+        "Although I never had ill intentions, \nthis black craft of mine is intrinsically evil."
+      ]
+    },
+    {
+      "ID": 14543,
+      "Entries": [
+        "If there is a God, he gave us souls to do good, \nnot to practise witchcraft."
+      ]
+    },
+    {
+      "ID": 14544,
+      "Entries": [
+        "My accusers detested my dark arts for good reason, \nfor the path I have taken is tainted."
+      ]
+    },
+    {
+      "ID": 14545,
+      "Entries": [
+        "This has been one of my realizations \nsince coming to Boletaria."
+      ]
+    },
+    {
+      "ID": 14546,
+      "Entries": [
+        "But I am afraid that Freke, too, has ventured down\nthe wrong path. He has become obsessed with the\ndark arts."
+      ]
+    },
+    {
+      "ID": 14550,
+      "Entries": [
+        "Once, I lusted after the power offered by Demon souls."
+      ]
+    },
+    {
+      "ID": 14551,
+      "Entries": [
+        "I ventured through the fissure into Boletaria, \nbut became trapped in the Nexus."
+      ]
+    },
+    {
+      "ID": 14552,
+      "Entries": [
+        "Then, the King's executioner, Miralda, chained \nme up inside that tower."
+      ]
+    },
+    {
+      "ID": 14553,
+      "Entries": [
+        "My thirst for Demon souls is no more."
+      ]
+    },
+    {
+      "ID": 14554,
+      "Entries": [
+        "On the contrary, I find such power dangerous."
+      ]
+    },
+    {
+      "ID": 14560,
+      "Entries": [
+        "Do you know Yurt, the silent chief?"
+      ]
+    },
+    {
+      "ID": 14561,
+      "Entries": [
+        "He dons pitch black armour, \nand a helmet with two sharp spikes."
+      ]
+    },
+    {
+      "ID": 14562,
+      "Entries": [
+        "Yurt's presence in Boletaria has resulted in the\ndeath of many a great hero."
+      ]
+    },
+    {
+      "ID": 14563,
+      "Entries": [
+        "Whatever his motives may be, he is a grave danger to us all."
+      ]
+    },
+    {
+      "ID": 14564,
+      "Entries": [
+        "Do watch out for him. \nI cannot bear to think of harm coming to you."
+      ]
+    },
+    {
+      "ID": 14570,
+      "Entries": [
+        "Freke wields a different type of magic from my witchcraft."
+      ]
+    },
+    {
+      "ID": 14571,
+      "Entries": [
+        "Freke's magic stems from an understanding of \nthe essence of the Demon soul,"
+      ]
+    },
+    {
+      "ID": 14572,
+      "Entries": [
+        "while my witchcraft merely channels its energy."
+      ]
+    },
+    {
+      "ID": 14573,
+      "Entries": [
+        "If the Demon is cursed, so shall be the witchcraft."
+      ]
+    },
+    {
+      "ID": 14574,
+      "Entries": [
+        "Freke's power comes from human potential, \nwhile mine is a dark, dependent art."
+      ]
+    },
+    {
+      "ID": 14580,
+      "Entries": [
+        "Thank you. I hope that my witchcraft may be of some help."
+      ]
+    },
+    {
+      "ID": 14590,
+      "Entries": [
+        "Thank you. Speak to me again whenever you are in need."
+      ]
+    },
+    {
+      "ID": 14600,
+      "Entries": [
+        "Oh..."
+      ]
+    },
+    {
+      "ID": 14610,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 14620,
+      "Entries": [
+        "Wh-Why!?"
+      ]
+    },
+    {
+      "ID": -1,
+      "Entries": [
+        "あなたも同じなのですか！？",
+        "はるか昔",
+        "私たちは、ソウルの業により、世界を統べていました",
+        "そして、飽くなき探求により古い獣を目覚めさせ",
+        "それから生じた、色のない濃霧と、デーモンたちにより",
+        "世界は滅びの危機に瀕しました",
+        "私たちは、なんとか、古い獣をまどろみに導きました",
+        "ですが、その時には、多くのソウルが失われ",
+        "世界の大半は濃霧に飲まれ、消失していました",
+        "私たちは、僅かに残った世界を繋ぎ留めるために",
+        "六つの要石を、小人の長たちに託しました",
+        "　野心ある小国の王と",
+        "　地下に潜る穴掘りたちの王と",
+        "　知性ある象牙の塔の女王と",
+        "　さまよえる貧者たちの長と",
+        "　死と嵐を祀る影人の司祭と",
+        "　北の巨人たちに",
+        "要石を託した私たちは",
+        "まどろむ獣をこの楔に封じ、ソウルの業を禁忌とし",
+        "自らを要人として、拡散する世界を取り戻すための人柱となりました",
+        "―――今や要人の大半は失われ、ただ私だけが残っています",
+        "しかし、どうしても、あの牢の鍵が見つからない…",
+        "それらしい鍵を持っていないか？"
+      ]
+    },
+    {
+      "ID": 14630,
+      "Entries": [
+        "a…"
+      ]
+    },
+    {
+      "ID": 14640,
+      "Entries": [
+        "where are you going"
+      ]
+    },
+    {
+      "ID": 14650,
+      "Entries": [
+        "What!"
+      ]
+    },
+    {
+      "ID": 14651,
+      "Entries": [
+        "I thought you were different from the rest!"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "heh heh heh heh..."
+      ]
+    },
+    {
+      "ID": 15001,
+      "Entries": [
+        "I have you now, wretched traitor to the King!"
+      ]
+    },
+    {
+      "ID": 15002,
+      "Entries": [
+        "I, Miralda, shall show you no mercy!"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Are you dead already? Oh, you deserve it."
+      ]
+    },
+    {
+      "ID": 15011,
+      "Entries": [
+        "Hee hee hee hee..."
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Foolish traitor to the King!"
+      ]
+    },
+    {
+      "ID": 15021,
+      "Entries": [
+        "Hee hee hee hee... hee..."
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Hee hee hee hee"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "oh you're human..."
+      ]
+    },
+    {
+      "ID": 16001,
+      "Entries": [
+        "My body hurts, it hurts, it smells so bad..."
+      ]
+    },
+    {
+      "ID": 16002,
+      "Entries": [
+        "I'm begging you, please take it easy..."
+      ]
+    },
+    {
+      "ID": 16003,
+      "Entries": [
+        "Please..."
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "thank you"
+      ]
+    },
+    {
+      "ID": 16011,
+      "Entries": [
+        "sorry dad..."
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Phew! You saved me."
+      ]
+    },
+    {
+      "ID": 17001,
+      "Entries": [
+        "Heavens, I can't believe I fell for that trap."
+      ]
+    },
+    {
+      "ID": 17002,
+      "Entries": [
+        "I suppose I owe you now."
+      ]
+    },
+    {
+      "ID": 17003,
+      "Entries": [
+        "I'm graverobber Blige."
+      ]
+    },
+    {
+      "ID": 17004,
+      "Entries": [
+        "As thanks I can provide you with useful goods."
+      ]
+    },
+    {
+      "ID": 17005,
+      "Entries": [
+        "Who couldn't do with a little help down in these parts?"
+      ]
+    },
+    {
+      "ID": 17010,
+      "Entries": [
+        "Satisfied? I'll have more for you next time."
+      ]
+    },
+    {
+      "ID": 17011,
+      "Entries": [
+        "May we have a long and fruitful relationship!"
+      ]
+    },
+    {
+      "ID": 17020,
+      "Entries": [
+        "Nothing suits your fancy? Well, don't be too frugal."
+      ]
+    },
+    {
+      "ID": 17021,
+      "Entries": [
+        "A bit of indulgence goes a long way."
+      ]
+    },
+    {
+      "ID": 17030,
+      "Entries": [
+        "Hello, there. We meet again."
+      ]
+    },
+    {
+      "ID": 17031,
+      "Entries": [
+        "You look terrible. Cheer up, life is an adventure! \nHahahah."
+      ]
+    },
+    {
+      "ID": 17040,
+      "Entries": [
+        "Ah, hello. I'm here to please. What can I get you?"
+      ]
+    },
+    {
+      "ID": 17050,
+      "Entries": [
+        "All done? Good day."
+      ]
+    },
+    {
+      "ID": 17051,
+      "Entries": [
+        "Be sure not to get yourself killed!"
+      ]
+    },
+    {
+      "ID": 17060,
+      "Entries": [
+        "This shrine was used in a ghastly ritual \nby an ancient tribe."
+      ]
+    },
+    {
+      "ID": 17061,
+      "Entries": [
+        "They have long perished, and now Demons have\nput the souls to work."
+      ]
+    },
+    {
+      "ID": 17062,
+      "Entries": [
+        "At least here you're killing things that are already dead,\nlike skeletons and shadow lurkers."
+      ]
+    },
+    {
+      "ID": 17063,
+      "Entries": [
+        "That's what I like about this place."
+      ]
+    },
+    {
+      "ID": 17064,
+      "Entries": [
+        "Better than killing those poor soul-starved humans, right?"
+      ]
+    },
+    {
+      "ID": 17070,
+      "Entries": [
+        "There's somebody I ought to warn you about. \nA fellow who lacks common decency."
+      ]
+    },
+    {
+      "ID": 17071,
+      "Entries": [
+        "They call him Patches the Hyena, \nand he's the one that laid that trap for me."
+      ]
+    },
+    {
+      "ID": 17072,
+      "Entries": [
+        "He's the kind of person who'd stab his mother in the back."
+      ]
+    },
+    {
+      "ID": 17073,
+      "Entries": [
+        "If you happen to spot him, you'll be doing us all a\nfavour by putting him out of his misery."
+      ]
+    },
+    {
+      "ID": 17080,
+      "Entries": [
+        "Have you been to the altar where sorcerers summon shadows?"
+      ]
+    },
+    {
+      "ID": 17081,
+      "Entries": [
+        "Well, I think someone may be trapped in the lower cavity. \nI heard them praying for dear life."
+      ]
+    },
+    {
+      "ID": 17082,
+      "Entries": [
+        "Pity the poor fool. \nHe probably fell for one of Patches' old tricks."
+      ]
+    },
+    {
+      "ID": 17090,
+      "Entries": [
+        "This is where the ancient barbarians offered \ntheir honoured heroes to the winds."
+      ]
+    },
+    {
+      "ID": 17091,
+      "Entries": [
+        "To seek winds in life, and meet winds in death. \nThat was the warrior's code."
+      ]
+    },
+    {
+      "ID": 17092,
+      "Entries": [
+        "And all that's left here now is a fine pile of dust."
+      ]
+    },
+    {
+      "ID": 17093,
+      "Entries": [
+        "I've never been so wrong about a dig. \nI've disgraced the Blige line of graverobbers!"
+      ]
+    },
+    {
+      "ID": 17100,
+      "Entries": [
+        "What the hell's wrong with you?"
+      ]
+    },
+    {
+      "ID": 17101,
+      "Entries": [
+        "Have you been possessed by a soul?"
+      ]
+    },
+    {
+      "ID": 17110,
+      "Entries": [
+        "Hmm... Well, suit yourself."
+      ]
+    },
+    {
+      "ID": 17111,
+      "Entries": [
+        "But a bit of indulgence goes a long way."
+      ]
+    },
+    {
+      "ID": 17120,
+      "Entries": [
+        "Hey, wait! I'm not finished yet!"
+      ]
+    },
+    {
+      "ID": 17130,
+      "Entries": [
+        "I'll forgive you this time, but don't do it again."
+      ]
+    },
+    {
+      "ID": 17140,
+      "Entries": [
+        "I have nothing to sell to the likes of you."
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Hm? I haven't seen you around these parts."
+      ]
+    },
+    {
+      "ID": 18001,
+      "Entries": [
+        "Bah, what does it matter? You need a blacksmith,\nshow me some coin. If not, head straight for the door."
+      ]
+    },
+    {
+      "ID": 18010,
+      "Entries": [
+        "Bah. What be your need?"
+      ]
+    },
+    {
+      "ID": 18011,
+      "Entries": [
+        "If it be a blacksmith, then show me some coin. \nIf not, head straight for the door."
+      ]
+    },
+    {
+      "ID": 18020,
+      "Entries": [
+        "All done? Then be gone. I work alone."
+      ]
+    },
+    {
+      "ID": 18030,
+      "Entries": [
+        "Bah. Don't waste my time."
+      ]
+    },
+    {
+      "ID": 18034,
+      "Entries": [
+        "Hey, come back this instant!"
+      ]
+    },
+    {
+      "ID": 18036,
+      "Entries": [
+        "I have no business with your kind."
+      ]
+    },
+    {
+      "ID": 18037,
+      "Entries": [
+        "I am busy. Be gone with you."
+      ]
+    },
+    {
+      "ID": 18040,
+      "Entries": [
+        "I am busy. I'm not here to chit-chat."
+      ]
+    },
+    {
+      "ID": 18041,
+      "Entries": [
+        "Forging a weapon strengthens it, and alters its character."
+      ]
+    },
+    {
+      "ID": 18042,
+      "Entries": [
+        "Ores are transmogrified sprites. \nTheir presence blesses the weapon."
+      ]
+    },
+    {
+      "ID": 18050,
+      "Entries": [
+        "How many times must I tell you? \nI am busy. I've no time for chit-chat."
+      ]
+    },
+    {
+      "ID": 18051,
+      "Entries": [
+        "Ores are picky, and fickle."
+      ]
+    },
+    {
+      "ID": 18052,
+      "Entries": [
+        "No matter how gently you treat them, a different type\nwill not give its blessing to the same weapon."
+      ]
+    },
+    {
+      "ID": 18053,
+      "Entries": [
+        "Of course, they are unpredictable in nature, \nand some are less fickle than others."
+      ]
+    },
+    {
+      "ID": 18060,
+      "Entries": [
+        "I told you that I am busy."
+      ]
+    },
+    {
+      "ID": 18061,
+      "Entries": [
+        "Each ore has a grade."
+      ]
+    },
+    {
+      "ID": 18062,
+      "Entries": [
+        "Mighty weapons can only be blessed by ores of high grade."
+      ]
+    },
+    {
+      "ID": 18063,
+      "Entries": [
+        "The highest grade of all is a pure ore that shines in\nutter brilliance. A spirit force that delights the eyes...\nKeh heh heh heh."
+      ]
+    },
+    {
+      "ID": 18070,
+      "Entries": [
+        "Demon Souls?"
+      ]
+    },
+    {
+      "ID": 18071,
+      "Entries": [
+        "The Demons are powerful spirits; \nsome can even bless weapons."
+      ]
+    },
+    {
+      "ID": 18072,
+      "Entries": [
+        "But doing so requires a powerful flame..."
+      ]
+    },
+    {
+      "ID": 18073,
+      "Entries": [
+        "For the soul of a Demon is an inferno of wrath."
+      ]
+    },
+    {
+      "ID": 18080,
+      "Entries": [
+        "Yes, that's the one, a red-hot Demon Soul."
+      ]
+    },
+    {
+      "ID": 18081,
+      "Entries": [
+        "Now you can bless your weapon with another Demon Soul."
+      ]
+    },
+    {
+      "ID": 18090,
+      "Entries": [
+        "Hm, a wise choice. You have done well to put your\ntrust in the great blacksmith Ed."
+      ]
+    },
+    {
+      "ID": 18091,
+      "Entries": [
+        "Bring me a Demon soul, \nand I shall use it to bless your weapon."
+      ]
+    },
+    {
+      "ID": 18100,
+      "Entries": [
+        "Now, surely you jest!"
+      ]
+    },
+    {
+      "ID": 18101,
+      "Entries": [
+        "...Why talk all that nonsense, if you've no\nsuch intention...?"
+      ]
+    },
+    {
+      "ID": 18102,
+      "Entries": [
+        "...The poor lad doesn't know a good blacksmith when \nhe sees one and hardly deserves a Demon soul..."
+      ]
+    },
+    {
+      "ID": 18110,
+      "Entries": [
+        "What the hell are you doing?"
+      ]
+    },
+    {
+      "ID": 18111,
+      "Entries": [
+        "I'm just a blacksmith, you fool!!"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "You there!"
+      ]
+    },
+    {
+      "ID": 19001,
+      "Entries": [
+        "Won't you buy something? My poor child is hungry."
+      ]
+    },
+    {
+      "ID": 19010,
+      "Entries": [
+        "Finished already?"
+      ]
+    },
+    {
+      "ID": 19011,
+      "Entries": [
+        "My little one is a growing boy. Please be generous."
+      ]
+    },
+    {
+      "ID": 19020,
+      "Entries": [
+        "Curses! I wasted my breath on you!"
+      ]
+    },
+    {
+      "ID": 19021,
+      "Entries": [
+        "Did that witch send you to torment me!?"
+      ]
+    },
+    {
+      "ID": 19030,
+      "Entries": [
+        "Hey, I know you!"
+      ]
+    },
+    {
+      "ID": 19031,
+      "Entries": [
+        "Won't you buy something? \nMy poor child is sick. He needs your help!"
+      ]
+    },
+    {
+      "ID": 19040,
+      "Entries": [
+        "Finished already?"
+      ]
+    },
+    {
+      "ID": 19041,
+      "Entries": [
+        "You wretched penny-pincher. \"Just let the children of\nthe poor die,\" is that it?"
+      ]
+    },
+    {
+      "ID": 19050,
+      "Entries": [
+        "Please buy another. For the poor child, the poor child!"
+      ]
+    },
+    {
+      "ID": 19060,
+      "Entries": [
+        "Finished already?"
+      ]
+    },
+    {
+      "ID": 19061,
+      "Entries": [
+        "I only want my dear boy to be happy."
+      ]
+    },
+    {
+      "ID": 19070,
+      "Entries": [
+        "Ever since that Demon witch came here,\neverything has turned foul."
+      ]
+    },
+    {
+      "ID": 19071,
+      "Entries": [
+        "This was a much better place before she came. \nI was the apple of every man's eye."
+      ]
+    },
+    {
+      "ID": 19072,
+      "Entries": [
+        "You're here to rid us of her, aren't you? \nWell, don't show her any mercy!"
+      ]
+    },
+    {
+      "ID": 19080,
+      "Entries": [
+        "You don't deserve to die, so let me give you some advice."
+      ]
+    },
+    {
+      "ID": 19081,
+      "Entries": [
+        "This place is buzzing with pests fattened \non a diet of souls."
+      ]
+    },
+    {
+      "ID": 19082,
+      "Entries": [
+        "In order to protect yourself, \nyou must keep a Lotus with you."
+      ]
+    },
+    {
+      "ID": 19083,
+      "Entries": [
+        "The price of survival can never be too high, can it?"
+      ]
+    },
+    {
+      "ID": 19090,
+      "Entries": [
+        "This place? It's a proper mound of rubbish."
+      ]
+    },
+    {
+      "ID": 19091,
+      "Entries": [
+        "All the rot of the world, living or not, ends up here."
+      ]
+    },
+    {
+      "ID": 19092,
+      "Entries": [
+        "I thank the stars that I still have my boy..."
+      ]
+    },
+    {
+      "ID": 19100,
+      "Entries": [
+        "How many years has it been?"
+      ]
+    },
+    {
+      "ID": 19101,
+      "Entries": [
+        "That witch Astraea came to this valley \nwith that squid-headed knight."
+      ]
+    },
+    {
+      "ID": 19102,
+      "Entries": [
+        "Those ridiculous white robes of hers...\nI swear I caught her glaring at my son in disgust!"
+      ]
+    },
+    {
+      "ID": 19103,
+      "Entries": [
+        "Yes, yes, it's true! She is as nasty as they come."
+      ]
+    },
+    {
+      "ID": 19104,
+      "Entries": [
+        "And she's a Demon to boot! Doesn't surprise me."
+      ]
+    },
+    {
+      "ID": 19110,
+      "Entries": [
+        "You beast! What're you doing to me!?"
+      ]
+    },
+    {
+      "ID": 19111,
+      "Entries": [
+        "Even beggars can fight back, you scurvy rat!"
+      ]
+    },
+    {
+      "ID": 19120,
+      "Entries": [
+        "Don't you just walk away!"
+      ]
+    },
+    {
+      "ID": 19130,
+      "Entries": [
+        "For the love of god..."
+      ]
+    },
+    {
+      "ID": 19131,
+      "Entries": [
+        "I've had enough humiliation for one lifetime."
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Oh, human, are you?"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "I am Freke. I have been trapped here for ages."
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Perhaps you could help me get out of here?"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "I am a sage, and I can lend you my power in return."
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "Oh, take heed of those octopus-headed guards."
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Magnificent. I never expected to get out of there alive."
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "My name is Freke. I am known as a sage."
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "I thought my magic would give me an edge \nagainst these Demons, but how wrong I was..."
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "I have been enfeebled by my long imprisonment."
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "But I can still move my legs, \nand I can make it back to the Nexus."
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "I thank the stars that I escaped when I did.\nI owe you my life."
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Due to the long life in captivity, my body has deteriorated badly."
+      ]
+    },
+    {
+      "ID": 20021,
+      "Entries": [
+        "If my legs start moving, I should be able to escape to the temple of the wedge."
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Hmm..."
+      ]
+    },
+    {
+      "ID": 20501,
+      "Entries": [
+        "I have a proposal for you."
+      ]
+    },
+    {
+      "ID": 20502,
+      "Entries": [
+        "Could you bring your Demon Souls to me?"
+      ]
+    },
+    {
+      "ID": 20503,
+      "Entries": [
+        "As I determine more about the essence of the soul, \nI can teach you new magic."
+      ]
+    },
+    {
+      "ID": 20504,
+      "Entries": [
+        "A Demon's soul is no mere amalgamation of lesser souls."
+      ]
+    },
+    {
+      "ID": 20505,
+      "Entries": [
+        "You have your wits about you; surely you understand me?"
+      ]
+    },
+    {
+      "ID": 20508,
+      "Entries": [
+        "If you wish to be a magician, come to me."
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        "Bravo! Thank you for offering your Demon souls!"
+      ]
+    },
+    {
+      "ID": 20511,
+      "Entries": [
+        "I cannot express my gratitude."
+      ]
+    },
+    {
+      "ID": 20512,
+      "Entries": [
+        "To have my wish granted at so late an age...!"
+      ]
+    },
+    {
+      "ID": 20513,
+      "Entries": [
+        "Thank you. You are a fine magician."
+      ]
+    },
+    {
+      "ID": 20514,
+      "Entries": [
+        "As promised, let me teach you new magic."
+      ]
+    },
+    {
+      "ID": 20520,
+      "Entries": [
+        "Bravo! You have brought more Demon souls to me!"
+      ]
+    },
+    {
+      "ID": 20521,
+      "Entries": [
+        "Thank you. You are a fine magician."
+      ]
+    },
+    {
+      "ID": 20522,
+      "Entries": [
+        "Let me pass on further arts of the wand."
+      ]
+    },
+    {
+      "ID": 20523,
+      "Entries": [
+        "...I am one step closer to the essence of the Demon soul..."
+      ]
+    },
+    {
+      "ID": 20524,
+      "Entries": [
+        "...Our human potential is great..."
+      ]
+    },
+    {
+      "ID": 20526,
+      "Entries": [
+        "Bring me more Demon souls when you can!"
+      ]
+    },
+    {
+      "ID": 20527,
+      "Entries": [
+        "I patiently await you, my fine magician friend!"
+      ]
+    },
+    {
+      "ID": 20530,
+      "Entries": [
+        "I am fully prepared. Please fetch more Demon Souls."
+      ]
+    },
+    {
+      "ID": 20531,
+      "Entries": [
+        "I can still be patient, my fine magician friend!"
+      ]
+    },
+    {
+      "ID": 20540,
+      "Entries": [
+        "I know of three human leaders who became Demons."
+      ]
+    },
+    {
+      "ID": 20541,
+      "Entries": [
+        "King Allant of Boletaria, \nAstraea of the Valley of Defilement, \nand the golden elder of Latria."
+      ]
+    },
+    {
+      "ID": 20542,
+      "Entries": [
+        "They have proven that humans can evolve to a higher state."
+      ]
+    },
+    {
+      "ID": 20543,
+      "Entries": [
+        "We were wrong to assume that only Demons could\ndo demon work."
+      ]
+    },
+    {
+      "ID": 20550,
+      "Entries": [
+        "I was defeated and captured by the golden elder\nbeyond that dungeon."
+      ]
+    },
+    {
+      "ID": 20551,
+      "Entries": [
+        "Beware of him, for he manipulates souls."
+      ]
+    },
+    {
+      "ID": 20552,
+      "Entries": [
+        "He has power over dark souls, those susceptible to\nmadness and paranoia."
+      ]
+    },
+    {
+      "ID": 20560,
+      "Entries": [
+        "Do you have a connection to the disciples?"
+      ]
+    },
+    {
+      "ID": 20561,
+      "Entries": [
+        "Do not pay attention to them if they speak poorly of\nme and my magic."
+      ]
+    },
+    {
+      "ID": 20562,
+      "Entries": [
+        "Prayer is for the foolish, quaint, and soon-to-be dead."
+      ]
+    },
+    {
+      "ID": 20563,
+      "Entries": [
+        "And heaven forbid the day you find out \nwhat their so-called God really is..."
+      ]
+    },
+    {
+      "ID": 20570,
+      "Entries": [
+        "That witch Yuria is quite a compelling woman."
+      ]
+    },
+    {
+      "ID": 20571,
+      "Entries": [
+        "She uses a different type of magic than I. \nHers is powered by emotion; a lesser type of miracle."
+      ]
+    },
+    {
+      "ID": 20572,
+      "Entries": [
+        "I wonder if it is related to her gender?"
+      ]
+    },
+    {
+      "ID": 20573,
+      "Entries": [
+        "I still have much to learn..."
+      ]
+    },
+    {
+      "ID": 20580,
+      "Entries": [
+        "As you know, magic is one of the soul arts."
+      ]
+    },
+    {
+      "ID": 20581,
+      "Entries": [
+        "The scourge of Boletaria has activated all souls, \nand energized all magic."
+      ]
+    },
+    {
+      "ID": 20582,
+      "Entries": [
+        "Perhaps, then, we should work to preserve this state\nof heightened reality?"
+      ]
+    },
+    {
+      "ID": 20583,
+      "Entries": [
+        "No, no, heaven forbid."
+      ]
+    },
+    {
+      "ID": 20584,
+      "Entries": [
+        "The Demons steal souls, and with them, our sanity."
+      ]
+    },
+    {
+      "ID": 20585,
+      "Entries": [
+        "Such blasphemy must not be permitted."
+      ]
+    },
+    {
+      "ID": 20591,
+      "Entries": [
+        "Hello."
+      ]
+    },
+    {
+      "ID": 20592,
+      "Entries": [
+        "You assisted me in Latria. For that I thank you."
+      ]
+    },
+    {
+      "ID": 20593,
+      "Entries": [
+        "But at my age, I do not believe that I can be\nof help to you."
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "I don't care, go ahead"
+      ]
+    },
+    {
+      "ID": 20601,
+      "Entries": [
+        "If this leg starts moving, I'll escape to the temple of the wedge."
+      ]
+    },
+    {
+      "ID": 20610,
+      "Entries": [
+        "Why, you have defeated all the Demons, have you not?"
+      ]
+    },
+    {
+      "ID": 20611,
+      "Entries": [
+        "This ghastly howl...\nThe Monumental has spoken of it before..."
+      ]
+    },
+    {
+      "ID": 20612,
+      "Entries": [
+        "There is a question I have long had in my mind."
+      ]
+    },
+    {
+      "ID": 20613,
+      "Entries": [
+        "It is whether we are right to banish the Old One."
+      ]
+    },
+    {
+      "ID": 20614,
+      "Entries": [
+        "And I now have the answer, and it is a resounding \"no.\""
+      ]
+    },
+    {
+      "ID": 20615,
+      "Entries": [
+        "Listen closely. The Old One must not be cut off from us."
+      ]
+    },
+    {
+      "ID": 20616,
+      "Entries": [
+        "If the candle maiden tries to entrap it, kill her."
+      ]
+    },
+    {
+      "ID": 20617,
+      "Entries": [
+        "Then absorb the souls of the Old One for yourself."
+      ]
+    },
+    {
+      "ID": 20618,
+      "Entries": [
+        "The Old One is an unfathomable deposit of energy; \nit contains all the souls collected by the Demons."
+      ]
+    },
+    {
+      "ID": 20619,
+      "Entries": [
+        "You will gain the power of a King, \nand I will gain knowledge from beyond."
+      ]
+    },
+    {
+      "ID": 20620,
+      "Entries": [
+        "And that, my dear friend, is the righteous path. \nYou must not allow trifling matters to dissuade you."
+      ]
+    },
+    {
+      "ID": 20621,
+      "Entries": [
+        "The Demon souls shall be ours!"
+      ]
+    },
+    {
+      "ID": 20622,
+      "Entries": [
+        "If truth be told, that woman has been tainted by\nDemons herself. She would thank you in her death,\nfor relieving her... agony."
+      ]
+    },
+    {
+      "ID": 20630,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 20640,
+      "Entries": [
+        "What in the devil is wrong with you?"
+      ]
+    },
+    {
+      "ID": 20641,
+      "Entries": [
+        "What can you gain by killing me?"
+      ]
+    },
+    {
+      "ID": 20650,
+      "Entries": [
+        "Sir, where are you going?"
+      ]
+    },
+    {
+      "ID": 20660,
+      "Entries": [
+        "Sir, what are you doing!"
+      ]
+    },
+    {
+      "ID": 20661,
+      "Entries": [
+        "Killing me won't do you any good!"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "You're an ordinary human, aren't you? \nWhere do you call home?"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "Dear me, I shouldn't pry. Oh, perhaps you'd like\nsomething from my collection?"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "I've had better days. I was once the wife of royalty,\nand I have some nice things to show for it."
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Thank you."
+      ]
+    },
+    {
+      "ID": 21011,
+      "Entries": [
+        "Now I can stay here for a little while longer."
+      ]
+    },
+    {
+      "ID": 21020,
+      "Entries": [
+        "Well, that's quite alright."
+      ]
+    },
+    {
+      "ID": 21021,
+      "Entries": [
+        "I wish to stay here, but I need souls to stay sane. \nSurely you must understand this..."
+      ]
+    },
+    {
+      "ID": 21030,
+      "Entries": [
+        "Oh, it's you. Are you looking to purchase something today?"
+      ]
+    },
+    {
+      "ID": 21032,
+      "Entries": [
+        "My, don't just run off!"
+      ]
+    },
+    {
+      "ID": 21034,
+      "Entries": [
+        "You came back... Are you looking for something\nspecial today?"
+      ]
+    },
+    {
+      "ID": 21040,
+      "Entries": [
+        "Before, there were many others trapped here."
+      ]
+    },
+    {
+      "ID": 21041,
+      "Entries": [
+        "But they went mad, and ventured above,\nof their own volition."
+      ]
+    },
+    {
+      "ID": 21042,
+      "Entries": [
+        "Redemption? Hah. There exists no such thing."
+      ]
+    },
+    {
+      "ID": 21050,
+      "Entries": [
+        "The Queen banished her depraved old husband from the land."
+      ]
+    },
+    {
+      "ID": 21051,
+      "Entries": [
+        "He returned in strange golden garb with foul Demons in tow."
+      ]
+    },
+    {
+      "ID": 21052,
+      "Entries": [
+        "They pillaged great Latria, land of the learned, \nand locked us in this dungeon."
+      ]
+    },
+    {
+      "ID": 21053,
+      "Entries": [
+        "Since then, they've been feeding off our souls..."
+      ]
+    },
+    {
+      "ID": 21054,
+      "Entries": [
+        "Telling us over and over that if we go above, \nwe will be granted redemption."
+      ]
+    },
+    {
+      "ID": 21060,
+      "Entries": [
+        "I know the truth."
+      ]
+    },
+    {
+      "ID": 21061,
+      "Entries": [
+        "The church goddess may die, but never for long."
+      ]
+    },
+    {
+      "ID": 21062,
+      "Entries": [
+        "And we are trapped below forever."
+      ]
+    },
+    {
+      "ID": 21070,
+      "Entries": [
+        "Are you out for blood?"
+      ]
+    },
+    {
+      "ID": 21071,
+      "Entries": [
+        "For heaven's sake! Why on earth!?"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Oh! The Demons haven't got to you, have they? I'm in luck."
+      ]
+    },
+    {
+      "ID": 22001,
+      "Entries": [
+        "You see that pit? It's filled with treasure, \nbut, er, I can't get to it myself."
+      ]
+    },
+    {
+      "ID": 22002,
+      "Entries": [
+        "Go on, have a look! It's more riches than \nI've ever dreamed of!"
+      ]
+    },
+    {
+      "ID": 22003,
+      "Entries": [
+        "That's it, that pit just there. Go on, get a little closer."
+      ]
+    },
+    {
+      "ID": 22005,
+      "Entries": [
+        "What's keeping you?"
+      ]
+    },
+    {
+      "ID": 22006,
+      "Entries": [
+        "Have a look at that treasure down in the pit."
+      ]
+    },
+    {
+      "ID": 22007,
+      "Entries": [
+        "Then we'll work out a way to fish it out. Heh heh heh."
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "Heh heh, don't hold it against me, eh?"
+      ]
+    },
+    {
+      "ID": 22011,
+      "Entries": [
+        "Take your time starving to death; \nthen I'll sell every last trinket off your corpse!"
+      ]
+    },
+    {
+      "ID": 22012,
+      "Entries": [
+        "Keh heh heh heh!"
+      ]
+    },
+    {
+      "ID": 22020,
+      "Entries": [
+        "Y-You..."
+      ]
+    },
+    {
+      "ID": 22021,
+      "Entries": [
+        "Hey look, I'm really sorry, I didn't mean what I said."
+      ]
+    },
+    {
+      "ID": 22022,
+      "Entries": [
+        "I mean, a man's got to make a living, right? \nHere, look, I can make up for it."
+      ]
+    },
+    {
+      "ID": 22023,
+      "Entries": [
+        "There aren't many humans like us. We need to stick together!"
+      ]
+    },
+    {
+      "ID": 22024,
+      "Entries": [
+        "I know! Here, take this, as a token of my friendship. \nYou've seen one of these before, surely?"
+      ]
+    },
+    {
+      "ID": 22026,
+      "Entries": [
+        "Heh heh heh."
+      ]
+    },
+    {
+      "ID": 22027,
+      "Entries": [
+        "C'mon, let's be friends, what do you say?"
+      ]
+    },
+    {
+      "ID": 22028,
+      "Entries": [
+        "No need to drag each other down."
+      ]
+    },
+    {
+      "ID": 22030,
+      "Entries": [
+        "You slimy little wretch!"
+      ]
+    },
+    {
+      "ID": 22031,
+      "Entries": [
+        "What did I ever do to you?!"
+      ]
+    },
+    {
+      "ID": 22040,
+      "Entries": [
+        "Oh, hello again."
+      ]
+    },
+    {
+      "ID": 22041,
+      "Entries": [
+        "Hey, don't turn a cold shoulder. \nI didn't mean to do you wrong, really!"
+      ]
+    },
+    {
+      "ID": 22042,
+      "Entries": [
+        "C'mon now, we've got better things to fret about!"
+      ]
+    },
+    {
+      "ID": 22043,
+      "Entries": [
+        "That pit there is filled with treasure, \nbut, er, I can't get to it myself."
+      ]
+    },
+    {
+      "ID": 22044,
+      "Entries": [
+        "Go on, have a look! \nIt's more riches than I've ever dreamed of!"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "Oh, hello again."
+      ]
+    },
+    {
+      "ID": 22101,
+      "Entries": [
+        "Hey, don't turn a cold shoulder. \nI didn't mean to do you wrong, really!"
+      ]
+    },
+    {
+      "ID": 22102,
+      "Entries": [
+        "Oh, I have an idea!"
+      ]
+    },
+    {
+      "ID": 22103,
+      "Entries": [
+        "That treasure over there should be mine, \nbut I'll let YOU have it!"
+      ]
+    },
+    {
+      "ID": 22104,
+      "Entries": [
+        "I promise, no tricks! I won't move a muscle\nuntil the treasure's safely in your hands."
+      ]
+    },
+    {
+      "ID": 22105,
+      "Entries": [
+        "You can trust me... can't you? I'm just trying to do\nright and make amends here, hmm?"
+      ]
+    },
+    {
+      "ID": 22107,
+      "Entries": [
+        "What's the matter? You're too good for treasure?"
+      ]
+    },
+    {
+      "ID": 22110,
+      "Entries": [
+        "Oh, oh!! Who'd have thought it? Bearbugs!"
+      ]
+    },
+    {
+      "ID": 22111,
+      "Entries": [
+        "My apologies. It's just not your day."
+      ]
+    },
+    {
+      "ID": 22112,
+      "Entries": [
+        "As promised, the treasure is all yours. \nIf you survive, that is!"
+      ]
+    },
+    {
+      "ID": 22113,
+      "Entries": [
+        "Good luck to you!"
+      ]
+    },
+    {
+      "ID": 22120,
+      "Entries": [
+        "You... How did you do that?"
+      ]
+    },
+    {
+      "ID": 22121,
+      "Entries": [
+        "I really didn't attempt to fool you. It was just bad luck."
+      ]
+    },
+    {
+      "ID": 22122,
+      "Entries": [
+        "And besides, you're safe and sound, right? \nWorry not, worry not."
+      ]
+    },
+    {
+      "ID": 22123,
+      "Entries": [
+        "Here it is, your little treasure, safe and sound."
+      ]
+    },
+    {
+      "ID": 22124,
+      "Entries": [
+        "Go on, take it, take it! Heh heh heh heh."
+      ]
+    },
+    {
+      "ID": 22130,
+      "Entries": [
+        "Heh heh heh."
+      ]
+    },
+    {
+      "ID": 22131,
+      "Entries": [
+        "You're simply unlucky. Worry not."
+      ]
+    },
+    {
+      "ID": 22132,
+      "Entries": [
+        "Stay by me, and my luck'll rub off on you soon enough!"
+      ]
+    },
+    {
+      "ID": 22140,
+      "Entries": [
+        "Hey, where are you off to?"
+      ]
+    },
+    {
+      "ID": 22145,
+      "Entries": [
+        "What's the matter? I'm going out on a limb here;\ngive me a chance to prove my good faith."
+      ]
+    },
+    {
+      "ID": 22147,
+      "Entries": [
+        "what up? Strange guy, aren't you interested in treasure?"
+      ]
+    },
+    {
+      "ID": 22150,
+      "Entries": [
+        "Oh, you're not mad like the rest, are you?"
+      ]
+    },
+    {
+      "ID": 22151,
+      "Entries": [
+        "Well, what jolly travelling companions are we! \nPleased to meet you; call me Patches."
+      ]
+    },
+    {
+      "ID": 22152,
+      "Entries": [
+        "Oh, see that treasure over there? Go on and take it."
+      ]
+    },
+    {
+      "ID": 22153,
+      "Entries": [
+        "My gift to you, just to show that we're friends."
+      ]
+    },
+    {
+      "ID": 22154,
+      "Entries": [
+        "Phew, I'm glad to meet you. \nThese soul-starved imbeciles will drive you mad."
+      ]
+    },
+    {
+      "ID": 22156,
+      "Entries": [
+        "You... How did you do that?"
+      ]
+    },
+    {
+      "ID": 22160,
+      "Entries": [
+        "Oh, you are amazing..."
+      ]
+    },
+    {
+      "ID": 22161,
+      "Entries": [
+        "Worry not, the treasure is all yours!"
+      ]
+    },
+    {
+      "ID": 22162,
+      "Entries": [
+        "Tough luck with the bearbugs, \nbut you certainly showed them, didn't you?"
+      ]
+    },
+    {
+      "ID": 22163,
+      "Entries": [
+        "Here it is, the treasure, safe and sound."
+      ]
+    },
+    {
+      "ID": 22164,
+      "Entries": [
+        "Go on, take it, take it! Heh heh heh heh."
+      ]
+    },
+    {
+      "ID": 22167,
+      "Entries": [
+        "Oh, you are amazing..."
+      ]
+    },
+    {
+      "ID": 22168,
+      "Entries": [
+        "But, of course, the treasure is yours"
+      ]
+    },
+    {
+      "ID": 22170,
+      "Entries": [
+        "Well, I remember you."
+      ]
+    },
+    {
+      "ID": 22171,
+      "Entries": [
+        "I'm glad I found you. I've found some really nice trinkets."
+      ]
+    },
+    {
+      "ID": 22172,
+      "Entries": [
+        "Well, we've been long acquainted, so I'm willing to part\nwith them at a special price, but only if you buy today!"
+      ]
+    },
+    {
+      "ID": 22175,
+      "Entries": [
+        "Nice stuff, eh? Come again, then. I'll be a-waiting!"
+      ]
+    },
+    {
+      "ID": 22177,
+      "Entries": [
+        "Well, do as you please, but you may yet regret\nrefusing my offer."
+      ]
+    },
+    {
+      "ID": 22180,
+      "Entries": [
+        "Oh, I've not seen YOU of late."
+      ]
+    },
+    {
+      "ID": 22181,
+      "Entries": [
+        "I have some precious new stuff. \nYou'll find something really useful, surely."
+      ]
+    },
+    {
+      "ID": 22185,
+      "Entries": [
+        "Good stuff, eh? You won't find it anywhere else. \nI aim to please!"
+      ]
+    },
+    {
+      "ID": 22187,
+      "Entries": [
+        "Well, do as you please, but don't come a-crying\nwhen it works not."
+      ]
+    },
+    {
+      "ID": 22189,
+      "Entries": [
+        "Well, how was it? Aren't you glad we're such\ngood friends? Heh heh heh heh."
+      ]
+    },
+    {
+      "ID": 22191,
+      "Entries": [
+        "Fine, fine, fine, I cannot make you. \nThough I know you'll come back soon."
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "I've not seen YOU of late."
+      ]
+    },
+    {
+      "ID": 22201,
+      "Entries": [
+        "Heh heh heh, have I got some stuff for you!"
+      ]
+    },
+    {
+      "ID": 22202,
+      "Entries": [
+        "No, no, don't mention it! It's the least I can do\nfor a dear friend! But do pay for them."
+      ]
+    },
+    {
+      "ID": 22210,
+      "Entries": [
+        "Nothing here is stolen, I swear."
+      ]
+    },
+    {
+      "ID": 22211,
+      "Entries": [
+        "I no longer partake in the whole corpse-robbing thing."
+      ]
+    },
+    {
+      "ID": 22212,
+      "Entries": [
+        "Yeah... No, I'm completely free from my vice. \nMy old Mother would be proud indeed!"
+      ]
+    },
+    {
+      "ID": 22213,
+      "Entries": [
+        "Aren't you proud of me too?"
+      ]
+    },
+    {
+      "ID": 22220,
+      "Entries": [
+        "You see that priest and his disciples over there?"
+      ]
+    },
+    {
+      "ID": 22221,
+      "Entries": [
+        "They still don't trust me after that little incident\nbehind the altar."
+      ]
+    },
+    {
+      "ID": 22222,
+      "Entries": [
+        "Shouldn't they believe in forgiving \nand forgetting and all that?"
+      ]
+    },
+    {
+      "ID": 22223,
+      "Entries": [
+        "Well, I have news for them. Praying has not put food\nin my mouth, nor anyone else's."
+      ]
+    },
+    {
+      "ID": 22230,
+      "Entries": [
+        "I have bad news."
+      ]
+    },
+    {
+      "ID": 22231,
+      "Entries": [
+        "There's a rumour that the silent chief Yurt has\ninfiltrated Boletaria."
+      ]
+    },
+    {
+      "ID": 22232,
+      "Entries": [
+        "Yurt's a mercenary; he'd kill his own kin for\nthe right price."
+      ]
+    },
+    {
+      "ID": 22233,
+      "Entries": [
+        "Now, I'm not a saint, but compared to Yurt I'm as\nsaintly as they come."
+      ]
+    },
+    {
+      "ID": 22234,
+      "Entries": [
+        "So I implore you to stay away from Yurt, \nthe assassin in black."
+      ]
+    },
+    {
+      "ID": 22240,
+      "Entries": [
+        "Did you ever visit the Valley of Defilement?"
+      ]
+    },
+    {
+      "ID": 22241,
+      "Entries": [
+        "The bog there is filled with the corpses of honourable\nknights too foolish to stay out of harm's way."
+      ]
+    },
+    {
+      "ID": 22242,
+      "Entries": [
+        "You may have heard of some of them. \nVito the Moonlight Knight, Risaia of Istarel, \nand many, many more."
+      ]
+    },
+    {
+      "ID": 22243,
+      "Entries": [
+        "I reckon they left behind some fine armour and weapons. \nWhy not have a visit... see what you can find?"
+      ]
+    },
+    {
+      "ID": 22250,
+      "Entries": [
+        "Damn it!"
+      ]
+    },
+    {
+      "ID": 22251,
+      "Entries": [
+        "what did i do"
+      ]
+    },
+    {
+      "ID": 22260,
+      "Entries": [
+        "Damn it!"
+      ]
+    },
+    {
+      "ID": 22261,
+      "Entries": [
+        "what did i do"
+      ]
+    },
+    {
+      "ID": 22270,
+      "Entries": [
+        "Hey, where are you going!"
+      ]
+    },
+    {
+      "ID": 22280,
+      "Entries": [
+        "Hey, where are you going!"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Thank you."
+      ]
+    },
+    {
+      "ID": 24001,
+      "Entries": [
+        "I will remember this."
+      ]
+    },
+    {
+      "ID": 24002,
+      "Entries": [
+        "I am certain we will meet again."
+      ]
+    },
+    {
+      "ID": 24010,
+      "Entries": [
+        "Mmm, hello brave one."
+      ]
+    },
+    {
+      "ID": 24011,
+      "Entries": [
+        "I was looking for you just now."
+      ]
+    },
+    {
+      "ID": 24012,
+      "Entries": [
+        "I am Yurt, the Silent Chief. I am an assassin."
+      ]
+    },
+    {
+      "ID": 24013,
+      "Entries": [
+        "My work in Boletaria is almost complete. \nI have murdered every surviving human."
+      ]
+    },
+    {
+      "ID": 24014,
+      "Entries": [
+        "...Except for one."
+      ]
+    },
+    {
+      "ID": 24020,
+      "Entries": [
+        "Meddling souls never last for long..."
+      ]
+    },
+    {
+      "ID": 24030,
+      "Entries": [
+        "…Are you an enemy of demons?"
+      ]
+    },
+    {
+      "ID": 24031,
+      "Entries": [
+        "If so, get me out of here"
+      ]
+    },
+    {
+      "ID": 24032,
+      "Entries": [
+        "My thoughts are with you... first and foremost, to fight demons"
+      ]
+    },
+    {
+      "ID": 24040,
+      "Entries": [
+        "Are you here to fight the Demons?"
+      ]
+    },
+    {
+      "ID": 24041,
+      "Entries": [
+        "If so, then help me escape this place."
+      ]
+    },
+    {
+      "ID": 24042,
+      "Entries": [
+        "I am on your side. I have come to face the Demons."
+      ]
+    },
+    {
+      "ID": 24050,
+      "Entries": [
+        "Come back here!"
+      ]
+    },
+    {
+      "ID": 24051,
+      "Entries": [
+        "You will one day regret this! \nI do not forget those who do me wrong!"
+      ]
+    },
+    {
+      "ID": 24060,
+      "Entries": [
+        "Ah... The brave one."
+      ]
+    },
+    {
+      "ID": 24061,
+      "Entries": [
+        "I am indebted to you for your help in Latria."
+      ]
+    },
+    {
+      "ID": 24062,
+      "Entries": [
+        "Without it, I would not have made it back to the Nexus."
+      ]
+    },
+    {
+      "ID": 24063,
+      "Entries": [
+        "Now I can go on with my work..."
+      ]
+    },
+    {
+      "ID": 24064,
+      "Entries": [
+        "And for that, I must thank you."
+      ]
+    },
+    {
+      "ID": 24070,
+      "Entries": [
+        "What is it?"
+      ]
+    },
+    {
+      "ID": 24071,
+      "Entries": [
+        "I have no business with you. Not yet."
+      ]
+    },
+    {
+      "ID": 24072,
+      "Entries": [
+        "Do not be concerned."
+      ]
+    },
+    {
+      "ID": 24073,
+      "Entries": [
+        "Life is hardly as precious as one might think."
+      ]
+    },
+    {
+      "ID": 24080,
+      "Entries": [
+        "Well, what have we here?"
+      ]
+    },
+    {
+      "ID": 24081,
+      "Entries": [
+        "Do you wish to die so soon?"
+      ]
+    },
+    {
+      "ID": 24090,
+      "Entries": [
+        "Why, you...!"
+      ]
+    },
+    {
+      "ID": 24091,
+      "Entries": [
+        "Mephistopheles was right about you!"
+      ]
+    },
+    {
+      "ID": 24100,
+      "Entries": [
+        "What do you mean?"
+      ]
+    },
+    {
+      "ID": 24101,
+      "Entries": [
+        "Don't rush to death!"
+      ]
+    },
+    {
+      "ID": 24110,
+      "Entries": [
+        "You..."
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "Caw, you, scary!"
+      ]
+    },
+    {
+      "ID": 25001,
+      "Entries": [
+        "Give sparkly, me! Give twinkly, me!"
+      ]
+    },
+    {
+      "ID": 25002,
+      "Entries": [
+        "Me, caw, you, trade, trade!"
+      ]
+    },
+    {
+      "ID": 25003,
+      "Entries": [
+        "Give me. Sparkly-twinkly."
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Caw, caw, you, scary, caw."
+      ]
+    },
+    {
+      "ID": 25011,
+      "Entries": [
+        "Sparkly, happy, happy! Caw."
+      ]
+    },
+    {
+      "ID": 25012,
+      "Entries": [
+        "More trade? More trade?"
+      ]
+    },
+    {
+      "ID": 25013,
+      "Entries": [
+        "Give me. Sparkly-twinkly."
+      ]
+    },
+    {
+      "ID": 25014,
+      "Entries": [
+        "Please, please. Give, caw, give!"
+      ]
+    },
+    {
+      "ID": 25020,
+      "Entries": [
+        "You, scary, caw."
+      ]
+    },
+    {
+      "ID": 25021,
+      "Entries": [
+        "No sparkly! Caw. That not twinkly!"
+      ]
+    },
+    {
+      "ID": 25022,
+      "Entries": [
+        "Want sparkly, me. Caw. Want...want twinkly, me. Caw."
+      ]
+    },
+    {
+      "ID": 25023,
+      "Entries": [
+        "Me, you, trade. Give. Caw."
+      ]
+    },
+    {
+      "ID": 25030,
+      "Entries": [
+        "Caw, caw, you, scary."
+      ]
+    },
+    {
+      "ID": 25031,
+      "Entries": [
+        "Me have that."
+      ]
+    },
+    {
+      "ID": 25032,
+      "Entries": [
+        "Give sparkly, me! Caw. Give twinkly, me!"
+      ]
+    },
+    {
+      "ID": 25033,
+      "Entries": [
+        "Caw, caw, caw. Me, you, trade, trade."
+      ]
+    },
+    {
+      "ID": 25034,
+      "Entries": [
+        "Give me. Caw. Sparkly-twinkly. Caw, caw."
+      ]
+    },
+    {
+      "ID": 25035,
+      "Entries": [
+        "Please, please, Give, give! Caw, caw, caw."
+      ]
+    },
+    {
+      "ID": 25040,
+      "Entries": [
+        "shiny, thank you, thank you"
+      ]
+    },
+    {
+      "ID": 25050,
+      "Entries": [
+        "That's not shiny"
+      ]
+    },
+    {
+      "ID": 25060,
+      "Entries": [
+        "I don't need that anymore"
+      ]
+    },
+    {
+      "ID": 25061,
+      "Entries": [
+        "Give me a sparkle, give me a sparkle"
+      ]
+    },
+    {
+      "ID": 25070,
+      "Entries": [
+        "Hey, hey, scary, people"
+      ]
+    },
+    {
+      "ID": 25071,
+      "Entries": [
+        "shiny, thank you, thank you"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "Oh, it's you."
+      ]
+    },
+    {
+      "ID": 26001,
+      "Entries": [
+        "Did you cleanse the world of another dark soul today?"
+      ]
+    },
+    {
+      "ID": 26002,
+      "Entries": [
+        "God has chosen you, and for that we are thankful."
+      ]
+    },
+    {
+      "ID": 26003,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 26499,
+      "Entries": [
+        "Oh, hello there."
+      ]
+    },
+    {
+      "ID": 26500,
+      "Entries": [
+        "Thanks to you, I was able to seek refuge in this Nexus."
+      ]
+    },
+    {
+      "ID": 26501,
+      "Entries": [
+        "Now I stay here and pray, along with my disciples, \nfor the heroes facing the Demons."
+      ]
+    },
+    {
+      "ID": 26502,
+      "Entries": [
+        "If you wish for benevolent protection in your fight\nagainst the demons, then bring me Demon Souls."
+      ]
+    },
+    {
+      "ID": 26503,
+      "Entries": [
+        "I will cleanse them, and perform a miracle with their power."
+      ]
+    },
+    {
+      "ID": 26510,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 26511,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 26520,
+      "Entries": [
+        "Oh, is that you again?"
+      ]
+    },
+    {
+      "ID": 26521,
+      "Entries": [
+        "Do you have further gifts to offer?"
+      ]
+    },
+    {
+      "ID": 26530,
+      "Entries": [
+        "God bless this brave warrior."
+      ]
+    },
+    {
+      "ID": 26531,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 26533,
+      "Entries": [
+        "Yes, I see."
+      ]
+    },
+    {
+      "ID": 26534,
+      "Entries": [
+        "I certainly cannot force you to do anything."
+      ]
+    },
+    {
+      "ID": 26535,
+      "Entries": [
+        "But you must remember this. \nA Demon's Soul is a source of evil power."
+      ]
+    },
+    {
+      "ID": 26540,
+      "Entries": [
+        "As you know, souls are a source of evil power \nemanating from the Demons."
+      ]
+    },
+    {
+      "ID": 26541,
+      "Entries": [
+        "King Allant was overcome by a lust for such power, \nand has placed Boletaria in her present predicament."
+      ]
+    },
+    {
+      "ID": 26542,
+      "Entries": [
+        "Old Freke and the candle maiden are no exception..."
+      ]
+    },
+    {
+      "ID": 26550,
+      "Entries": [
+        "If you truly are a disciple, then you must have\na talisman in God's image."
+      ]
+    },
+    {
+      "ID": 26551,
+      "Entries": [
+        "Heavenly miracles occur in Boletaria through the talismans."
+      ]
+    },
+    {
+      "ID": 26552,
+      "Entries": [
+        "God has granted this accursed land with a special power."
+      ]
+    },
+    {
+      "ID": 26553,
+      "Entries": [
+        "It is God's way of telling us \nwe must stand up to the Demons."
+      ]
+    },
+    {
+      "ID": 26559,
+      "Entries": [
+        "Oh, it's you."
+      ]
+    },
+    {
+      "ID": 26560,
+      "Entries": [
+        "Thanks to you, I managed to seek refuge in this Nexus."
+      ]
+    },
+    {
+      "ID": 26561,
+      "Entries": [
+        "Now I stay here and pray, along with my disciples, \nfor the heroes facing the Demons."
+      ]
+    },
+    {
+      "ID": 26562,
+      "Entries": [
+        "May the heavens smile benevolently upon you."
+      ]
+    },
+    {
+      "ID": 26563,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 26570,
+      "Entries": [
+        "Heavens, did you fall for that little devil's trap?"
+      ]
+    },
+    {
+      "ID": 26571,
+      "Entries": [
+        "Well, I did the same. He fooled me, and now I am stuck here."
+      ]
+    },
+    {
+      "ID": 26572,
+      "Entries": [
+        "The reverberations seem to suggest \nthat we are connected to the outside."
+      ]
+    },
+    {
+      "ID": 26573,
+      "Entries": [
+        "But dark, fearsome souls stand between us and freedom."
+      ]
+    },
+    {
+      "ID": 26574,
+      "Entries": [
+        "But have no fear, God will cleanse us of evil."
+      ]
+    },
+    {
+      "ID": 26575,
+      "Entries": [
+        "Pray with me."
+      ]
+    },
+    {
+      "ID": 26576,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 26580,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 26590,
+      "Entries": [
+        "What are you doing?"
+      ]
+    },
+    {
+      "ID": 26591,
+      "Entries": [
+        "Wha--! Have the souls driven you mad!?"
+      ]
+    },
+    {
+      "ID": 26600,
+      "Entries": [
+        "Stop it."
+      ]
+    },
+    {
+      "ID": 26601,
+      "Entries": [
+        "You will anger the heavens."
+      ]
+    },
+    {
+      "ID": 26610,
+      "Entries": [
+        "After the dark arts spread across the land, \nholy miracles were witnessed once again."
+      ]
+    },
+    {
+      "ID": 26611,
+      "Entries": [
+        "The will of God is clear."
+      ]
+    },
+    {
+      "ID": 26612,
+      "Entries": [
+        "We must defeat the Demons, annul the curse of Boletaria,"
+      ]
+    },
+    {
+      "ID": 26613,
+      "Entries": [
+        "and purge the evil magicians who \nmanipulate those accursed souls."
+      ]
+    },
+    {
+      "ID": 26620,
+      "Entries": [
+        "Ah, Astraea of the Valley of Defilement?"
+      ]
+    },
+    {
+      "ID": 26621,
+      "Entries": [
+        "I am not sure, but Saint Astraea of the West was\naccompanied by the knight Garl Vinland."
+      ]
+    },
+    {
+      "ID": 26622,
+      "Entries": [
+        "She would never turn to evil with \nthat upstanding knight to guide her."
+      ]
+    },
+    {
+      "ID": 26623,
+      "Entries": [
+        "Surely it is mere slander. \nSadly, the weak are prone to such backstabbing."
+      ]
+    },
+    {
+      "ID": 26630,
+      "Entries": [
+        "Vito the Moonlight Knight, Risaia of Istarel, \nand Selen Vinland."
+      ]
+    },
+    {
+      "ID": 26631,
+      "Entries": [
+        "Many honourable knights have ventured into Boletaria \nin search of the Valley of Defilement."
+      ]
+    },
+    {
+      "ID": 26632,
+      "Entries": [
+        "The vicious rumours about Astraea offend our \nmost basic sense of respect for God's name."
+      ]
+    },
+    {
+      "ID": 26633,
+      "Entries": [
+        "However, none of these great knights has made it back."
+      ]
+    },
+    {
+      "ID": 26634,
+      "Entries": [
+        "Could it be that the wretched valley is so infested with \ngrime that even our Lord's voice does not resonate there?"
+      ]
+    },
+    {
+      "ID": 26635,
+      "Entries": [
+        "Or... perhaps it is the fate of those left behind by God..."
+      ]
+    },
+    {
+      "ID": 26650,
+      "Entries": [
+        "From where does that howl come!?"
+      ]
+    },
+    {
+      "ID": 26651,
+      "Entries": [
+        "That is no Demon."
+      ]
+    },
+    {
+      "ID": 26652,
+      "Entries": [
+        "It sounds more like a poor, hungry child."
+      ]
+    },
+    {
+      "ID": 26653,
+      "Entries": [
+        "Do you have any idea what it might be?"
+      ]
+    },
+    {
+      "ID": 26654,
+      "Entries": [
+        "Something about it puts me at great unease."
+      ]
+    },
+    {
+      "ID": 26655,
+      "Entries": [
+        "May God watch over us. Bless us, and all of Boletaria."
+      ]
+    },
+    {
+      "ID": 26656,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 26660,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 26670,
+      "Entries": [
+        "what are you doing"
+      ]
+    },
+    {
+      "ID": 26671,
+      "Entries": [
+        "No...! Have you been swallowed by the power of Soul!? ?"
+      ]
+    },
+    {
+      "ID": 26680,
+      "Entries": [
+        "stop it"
+      ]
+    },
+    {
+      "ID": 26681,
+      "Entries": [
+        "I feel God's wrath"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "You will not turn back, will you?"
+      ]
+    },
+    {
+      "ID": 27001,
+      "Entries": [
+        "I shall let no harm come to dearest Astraea."
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "May you rot in the deepest depths of this swamp."
+      ]
+    },
+    {
+      "ID": 27010,
+      "Entries": [
+        "Dearest Astraea... I have failed you."
+      ]
+    },
+    {
+      "ID": 27020,
+      "Entries": [
+        "How dare you persist in intruding upon our haven?"
+      ]
+    },
+    {
+      "ID": 27021,
+      "Entries": [
+        "You abandoned us long ago; what right do you have?"
+      ]
+    },
+    {
+      "ID": 27022,
+      "Entries": [
+        "We live humble lives. Leave us be!"
+      ]
+    },
+    {
+      "ID": 27030,
+      "Entries": [
+        "Plunge to your death..."
+      ]
+    },
+    {
+      "ID": 27031,
+      "Entries": [
+        "And let the acid melt the flesh from your bones."
+      ]
+    },
+    {
+      "ID": 27040,
+      "Entries": [
+        "Ye covetous ones, let it be known."
+      ]
+    },
+    {
+      "ID": 27041,
+      "Entries": [
+        "We shall defend our hearth and home to the death."
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "How did you defeat my precious Demon?"
+      ]
+    },
+    {
+      "ID": 28001,
+      "Entries": [
+        "No human has an appetite for souls such as you."
+      ]
+    },
+    {
+      "ID": 28002,
+      "Entries": [
+        "The rest is up to the Old One. \nIf it is to be, then you shall be beckoned."
+      ]
+    },
+    {
+      "ID": 28500,
+      "Entries": [
+        "You have been chosen by the Old One."
+      ]
+    },
+    {
+      "ID": 28501,
+      "Entries": [
+        "Shalt thou seek everlasting demon Souls? \nOr obey that naive Monumental?"
+      ]
+    },
+    {
+      "ID": 28502,
+      "Entries": [
+        "Whatever your choice, you are our first visitor. \nMay you be welcome here."
+      ]
+    },
+    {
+      "ID": 28510,
+      "Entries": [
+        "Surely you have seen for yourself..."
+      ]
+    },
+    {
+      "ID": 28511,
+      "Entries": [
+        "The pain and suffering that fills this world!"
+      ]
+    },
+    {
+      "ID": 28512,
+      "Entries": [
+        "But fight poison with poison. \nGod is merciful, and so, created the Old One."
+      ]
+    },
+    {
+      "ID": 28513,
+      "Entries": [
+        "The Old One will feed upon our souls, \nand put an end to our tragic realm of existence!"
+      ]
+    },
+    {
+      "ID": 28520,
+      "Entries": [
+        "You fool..."
+      ]
+    },
+    {
+      "ID": 28521,
+      "Entries": [
+        "Don't you understand?"
+      ]
+    },
+    {
+      "ID": 28522,
+      "Entries": [
+        "No one wishes to go on..."
+      ]
+    },
+    {
+      "ID": 28530,
+      "Entries": [
+        "I have had enough of this rotten world."
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "Leave us, slayer of Demons."
+      ]
+    },
+    {
+      "ID": 29001,
+      "Entries": [
+        "This is a sanctuary for the lost and wretched."
+      ]
+    },
+    {
+      "ID": 29002,
+      "Entries": [
+        "There is nothing here for you to pillage or plunder."
+      ]
+    },
+    {
+      "ID": 29003,
+      "Entries": [
+        "Please, leave quietly."
+      ]
+    },
+    {
+      "ID": 29010,
+      "Entries": [
+        "Go forth, Garl Vinland."
+      ]
+    },
+    {
+      "ID": 29011,
+      "Entries": [
+        "May you be unharmed."
+      ]
+    },
+    {
+      "ID": 29020,
+      "Entries": [
+        "Cruel Lord..."
+      ]
+    },
+    {
+      "ID": 29021,
+      "Entries": [
+        "What more can you possibly take from us?"
+      ]
+    },
+    {
+      "ID": 29030,
+      "Entries": [
+        "Stop..."
+      ]
+    },
+    {
+      "ID": 29031,
+      "Entries": [
+        "Please stop..."
+      ]
+    },
+    {
+      "ID": 29040,
+      "Entries": [
+        "This is our home."
+      ]
+    },
+    {
+      "ID": 29041,
+      "Entries": [
+        "We have done no harm to you."
+      ]
+    },
+    {
+      "ID": 29050,
+      "Entries": [
+        "Dear God, have mercy."
+      ]
+    },
+    {
+      "ID": 29051,
+      "Entries": [
+        "Is not your abandonment of us punishment enough?"
+      ]
+    },
+    {
+      "ID": 29052,
+      "Entries": [
+        "How long must we weather this cruel fate?"
+      ]
+    },
+    {
+      "ID": 29060,
+      "Entries": [
+        "Please, leave quietly..."
+      ]
+    },
+    {
+      "ID": 29061,
+      "Entries": [
+        "Lest you face the wrath of my loyal follower."
+      ]
+    },
+    {
+      "ID": 29070,
+      "Entries": [
+        "You..."
+      ]
+    },
+    {
+      "ID": 29071,
+      "Entries": [
+        "You killed him, didn't you?"
+      ]
+    },
+    {
+      "ID": 29072,
+      "Entries": [
+        "Very well. I can no longer resist you."
+      ]
+    },
+    {
+      "ID": 29073,
+      "Entries": [
+        "Do as you like. Take your precious Demon soul."
+      ]
+    },
+    {
+      "ID": 29080,
+      "Entries": [
+        "Dear Lord..."
+      ]
+    },
+    {
+      "ID": 29081,
+      "Entries": [
+        "You are too cruel."
+      ]
+    },
+    {
+      "ID": 29082,
+      "Entries": [
+        "You have abandoned us, is that not punishment enough?"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Hi!"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "You nearly frightened me to death! \nCreeping up on me like that..."
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "My name is Scirvir. I seek treasures of the unknown."
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "I'm impressed you've come this far."
+      ]
+    },
+    {
+      "ID": 30004,
+      "Entries": [
+        "Where you guided by a sixth sense? Or a brash\nimprudence? Either way, you've more skill than I."
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Let us put that skill to work?"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "There is a temple beyond here, below the ground."
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        "It is a work of art, moulded by the ancient burrowers \nto appease the bones of dragons."
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "As a precaution, a broadsword which can crush bone \nand slay dragon is stored in the temple."
+      ]
+    },
+    {
+      "ID": 30014,
+      "Entries": [
+        "Truth told, it is the laughingstock of many a swordsmith. \nThey say it's as blunt as a bludgeon."
+      ]
+    },
+    {
+      "ID": 30015,
+      "Entries": [
+        "A dull blade meant to slay a dragon... Curious, is it not?"
+      ]
+    },
+    {
+      "ID": 30016,
+      "Entries": [
+        "I would search for it myself, but I'm afraid I'd fare\npoorly against the Demons."
+      ]
+    },
+    {
+      "ID": 30017,
+      "Entries": [
+        "If you happen to come upon the sword, \nplease let me have a look at it."
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Hi!"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "Oh, you..."
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Hmm, no luck finding it, eh? \nPerhaps it's not there after all."
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "Or, it could have been melted in the lava. 'Tis a pity."
+      ]
+    },
+    {
+      "ID": 30038,
+      "Entries": [
+        "Hey! That's...!"
+      ]
+    },
+    {
+      "ID": 30039,
+      "Entries": [
+        "You found it!"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "Let me have a look!"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "Wonderful. The arts of swordsmanship applied in a \nperfectly useless manner!"
+      ]
+    },
+    {
+      "ID": 30051,
+      "Entries": [
+        "Hm..."
+      ]
+    },
+    {
+      "ID": 30052,
+      "Entries": [
+        "Ah..."
+      ]
+    },
+    {
+      "ID": 30053,
+      "Entries": [
+        "Mm..."
+      ]
+    },
+    {
+      "ID": 30054,
+      "Entries": [
+        "Oh, do not mind me. Thank you. It was a pleasure."
+      ]
+    },
+    {
+      "ID": 30055,
+      "Entries": [
+        "Please take this as a small show of thanks."
+      ]
+    },
+    {
+      "ID": 30056,
+      "Entries": [
+        "Take care of that sword, will you? She's a beauty."
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "This place is magnificent, eh?"
+      ]
+    },
+    {
+      "ID": 30061,
+      "Entries": [
+        "The bones of dragons exuding ore... A dream come true!"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "Demons? Sorry, friend, I have no interest."
+      ]
+    },
+    {
+      "ID": 30071,
+      "Entries": [
+        "I love Boletaria for what she is: a place of odd wonders."
+      ]
+    },
+    {
+      "ID": 30072,
+      "Entries": [
+        "Strange faces... wielding strange trinkets...\nhiding in strange places."
+      ]
+    },
+    {
+      "ID": 30073,
+      "Entries": [
+        "I'm beginning to think Boletaria \nis better off now than it used to be."
+      ]
+    },
+    {
+      "ID": 30074,
+      "Entries": [
+        "Hah hah, don't tell anyone I said that!"
+      ]
+    },
+    {
+      "ID": 30075,
+      "Entries": [
+        "I could get myself into bother if I'm not careful."
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "Have you gone mad!?"
+      ]
+    },
+    {
+      "ID": 30081,
+      "Entries": [
+        "You've nothing to gain by assaulting me!"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "Stop it! I'll come back to haunt you!"
+      ]
+    },
+    {
+      "ID": 31004,
+      "Entries": [
+        "What is it?"
+      ]
+    },
+    {
+      "ID": 31005,
+      "Entries": [
+        "Dost thou seek soul power?"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "…Do you also seek the power of souls?"
+      ]
+    },
+    {
+      "ID": 31011,
+      "Entries": [
+        "…got it. Please sit in front of me and touch my heart"
+      ]
+    },
+    {
+      "ID": 31012,
+      "Entries": [
+        "please…"
+      ]
+    },
+    {
+      "ID": 31014,
+      "Entries": [
+        "Thou seeketh soul power, dost thou not?"
+      ]
+    },
+    {
+      "ID": 31015,
+      "Entries": [
+        "Then touch the Demon inside me."
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        "So be it."
+      ]
+    },
+    {
+      "ID": 31021,
+      "Entries": [
+        "After all, thou requireth strength."
+      ]
+    },
+    {
+      "ID": 31022,
+      "Entries": [
+        "Go forth; touch the Demon inside me."
+      ]
+    },
+    {
+      "ID": 31023,
+      "Entries": [
+        "Let these ownerless souls become thine own."
+      ]
+    },
+    {
+      "ID": 31025,
+      "Entries": [
+        "I understand."
+      ]
+    },
+    {
+      "ID": 31026,
+      "Entries": [
+        "Pray forgive me."
+      ]
+    },
+    {
+      "ID": 31027,
+      "Entries": [
+        "Perhaps my opinion of you was wrong. I am sorry."
+      ]
+    },
+    {
+      "ID": 31030,
+      "Entries": [
+        "The truth of all living things that will no longer return to the Lord"
+      ]
+    },
+    {
+      "ID": 31031,
+      "Entries": [
+        "Understanding in relationship and the power of the soul that mediates it"
+      ]
+    },
+    {
+      "ID": 31032,
+      "Entries": [
+        "Give this person a chance, and thus make it a side of the world."
+      ]
+    },
+    {
+      "ID": 31033,
+      "Entries": [
+        "Therefore, let the world come close"
+      ]
+    },
+    {
+      "ID": 31040,
+      "Entries": [
+        "Art thou done?"
+      ]
+    },
+    {
+      "ID": 31041,
+      "Entries": [
+        "May thine strength help the world be mended."
+      ]
+    },
+    {
+      "ID": 31050,
+      "Entries": [
+        "The Monumental awaits thee, above."
+      ]
+    },
+    {
+      "ID": 31051,
+      "Entries": [
+        "The Monumental will explain the Nexus to thee."
+      ]
+    },
+    {
+      "ID": 31060,
+      "Entries": [
+        "Hark, I hear a voice of yore."
+      ]
+    },
+    {
+      "ID": 31061,
+      "Entries": [
+        "The Old One is calling for thee."
+      ]
+    },
+    {
+      "ID": 31062,
+      "Entries": [
+        "Let us proceed below to its lair."
+      ]
+    },
+    {
+      "ID": 31065,
+      "Entries": [
+        "Together, let's go to the beast..."
+      ]
+    },
+    {
+      "ID": 31070,
+      "Entries": [
+        "Old One, I have brought thee what thou wisheth."
+      ]
+    },
+    {
+      "ID": 31071,
+      "Entries": [
+        "Thine new Demon."
+      ]
+    },
+    {
+      "ID": 31072,
+      "Entries": [
+        "Come, now, be good..."
+      ]
+    },
+    {
+      "ID": 31080,
+      "Entries": [
+        "Thine work is done."
+      ]
+    },
+    {
+      "ID": 31081,
+      "Entries": [
+        "Slayer of Demons, go back above."
+      ]
+    },
+    {
+      "ID": 31082,
+      "Entries": [
+        "The Nexus shall imprison thee no longer."
+      ]
+    },
+    {
+      "ID": 31083,
+      "Entries": [
+        "I shall lull the Old One back to slumber."
+      ]
+    },
+    {
+      "ID": 31084,
+      "Entries": [
+        "Thanks to you, I was able to look like a lovely beast"
+      ]
+    },
+    {
+      "ID": 31090,
+      "Entries": [
+        "Brave soul, who fears not death."
+      ]
+    },
+    {
+      "ID": 31091,
+      "Entries": [
+        "Prithee lull the Old One back to its ancient slumber."
+      ]
+    },
+    {
+      "ID": 31100,
+      "Entries": [
+        "I shall await thine return, slayer of Demons."
+      ]
+    },
+    {
+      "ID": 31101,
+      "Entries": [
+        "I am here for thee and thee only."
+      ]
+    },
+    {
+      "ID": 31110,
+      "Entries": [
+        "My thanks."
+      ]
+    },
+    {
+      "ID": 31111,
+      "Entries": [
+        "At last... at last... my duty is fulfilled..."
+      ]
+    },
+    {
+      "ID": 31120,
+      "Entries": [
+        "Ancient Old One! My dearest!"
+      ]
+    },
+    {
+      "ID": 31121,
+      "Entries": [
+        "I have brought a new Demon to thee."
+      ]
+    },
+    {
+      "ID": 31122,
+      "Entries": [
+        "This is what thou wanted, is it not?"
+      ]
+    },
+    {
+      "ID": 31123,
+      "Entries": [
+        "Yes, yes, good boy."
+      ]
+    },
+    {
+      "ID": 31124,
+      "Entries": [
+        "Now be still."
+      ]
+    },
+    {
+      "ID": 31125,
+      "Entries": [
+        "Now, now, dearest Old One..."
+      ]
+    },
+    {
+      "ID": 31130,
+      "Entries": [
+        "Old One, all the Demons are destroyed."
+      ]
+    },
+    {
+      "ID": 31131,
+      "Entries": [
+        "But do not despair; they are of use to thee no longer."
+      ]
+    },
+    {
+      "ID": 31132,
+      "Entries": [
+        "Together, we shall slumber soundly. \nThis is the way things must be."
+      ]
+    },
+    {
+      "ID": 31133,
+      "Entries": [
+        "I thank thee, slayer of Demons."
+      ]
+    },
+    {
+      "ID": 31134,
+      "Entries": [
+        "My thanks to thee; we sleep at last."
+      ]
+    },
+    {
+      "ID": 31135,
+      "Entries": [
+        "Thou may'st depart. Be gone to your world."
+      ]
+    },
+    {
+      "ID": 31140,
+      "Entries": [
+        "The Old One and I shall slumber interminably. \nThat is the way it must be."
+      ]
+    },
+    {
+      "ID": 31141,
+      "Entries": [
+        "Thou may'st go. Be gone to thine world."
+      ]
+    },
+    {
+      "ID": 31150,
+      "Entries": [
+        "As for me..."
+      ]
+    },
+    {
+      "ID": 31151,
+      "Entries": [
+        "I am only here to tend to the flames."
+      ]
+    },
+    {
+      "ID": 31152,
+      "Entries": [
+        "I keep the candles lit and serve \nthe brave Demon slayers who are trapped here."
+      ]
+    },
+    {
+      "ID": 31160,
+      "Entries": [
+        "I have always been here in this Nexus."
+      ]
+    },
+    {
+      "ID": 31161,
+      "Entries": [
+        "I was here when the Old One awakened, \nand I will be here when It rests once again."
+      ]
+    },
+    {
+      "ID": 31170,
+      "Entries": [
+        "Ah... (Subdued scream)"
+      ]
+    },
+    {
+      "ID": 31172,
+      "Entries": [
+        "Ugh... (Subdued scream)"
+      ]
+    },
+    {
+      "ID": 31174,
+      "Entries": [
+        "Kyah (death mourning)"
+      ]
+    },
+    {
+      "ID": 31176,
+      "Entries": [
+        "Wait... Where are you...?"
+      ]
+    },
+    {
+      "ID": 31180,
+      "Entries": [
+        "I'm sorry."
+      ]
+    },
+    {
+      "ID": 31181,
+      "Entries": [
+        "I cannot die."
+      ]
+    },
+    {
+      "ID": 31182,
+      "Entries": [
+        "Not while the Nexus binds me..."
+      ]
+    },
+    {
+      "ID": 31190,
+      "Entries": [
+        "…sorry"
+      ]
+    },
+    {
+      "ID": 31191,
+      "Entries": [
+        "…I cannot die"
+      ]
+    },
+    {
+      "ID": 31192,
+      "Entries": [
+        "As long as this wedge keeps me connected..."
+      ]
+    },
+    {
+      "ID": 32500,
+      "Entries": [
+        "We have long awaited you, slayer of Demons."
+      ]
+    },
+    {
+      "ID": 32501,
+      "Entries": [
+        "I am one of the Monumentals. \nWe preserve the fabric of reality."
+      ]
+    },
+    {
+      "ID": 32502,
+      "Entries": [
+        "There is something thou needst to know."
+      ]
+    },
+    {
+      "ID": 32503,
+      "Entries": [
+        "Once, we too, a scourge of Demons faced."
+      ]
+    },
+    {
+      "ID": 32510,
+      "Entries": [
+        "Yes, we are fortunate indeed to have you."
+      ]
+    },
+    {
+      "ID": 32511,
+      "Entries": [
+        "Now, go forth, and destroy every last Demon."
+      ]
+    },
+    {
+      "ID": 32512,
+      "Entries": [
+        "The Old One, without Demons to feed it souls, \nwill a new servant seek, and lure you to its bosom."
+      ]
+    },
+    {
+      "ID": 32514,
+      "Entries": [
+        "Take this. It will be of help to you on your quest."
+      ]
+    },
+    {
+      "ID": 32520,
+      "Entries": [
+        "Yes, I see. That is unfortunate."
+      ]
+    },
+    {
+      "ID": 32521,
+      "Entries": [
+        "You should know that you will be \nimprisoned in the Nexus forever."
+      ]
+    },
+    {
+      "ID": 32522,
+      "Entries": [
+        "Just like the poor candle maiden."
+      ]
+    },
+    {
+      "ID": 32523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32530,
+      "Entries": [
+        "Now it is your turn."
+      ]
+    },
+    {
+      "ID": 32531,
+      "Entries": [
+        "You must lull the Old One back to Its slumber, \nand seal It away for all eternity."
+      ]
+    },
+    {
+      "ID": 32532,
+      "Entries": [
+        "If not, the Deep Fog will absorb all that we know."
+      ]
+    },
+    {
+      "ID": 32533,
+      "Entries": [
+        "Have you the strength to accept this mission?"
+      ]
+    },
+    {
+      "ID": 32540,
+      "Entries": [
+        "A soul is the essence with which living things \ncomprehend the world around them."
+      ]
+    },
+    {
+      "ID": 32541,
+      "Entries": [
+        "When one loses the Soul, one loses the mind; \na land barren of Souls is absorbed by fog\nand banished to the infinite darkness."
+      ]
+    },
+    {
+      "ID": 32542,
+      "Entries": [
+        "The Old One is a bottomless pit of Nothingness, \nwith an insatiable appetite for the souls \ncollected by its faithful Demons."
+      ]
+    },
+    {
+      "ID": 32543,
+      "Entries": [
+        "The Old One's very nature cannot be fathomed by the living."
+      ]
+    },
+    {
+      "ID": 32550,
+      "Entries": [
+        "We neutralised the Old One, and banned the soul arts. \nThen we spread the Archstones, and in order to mend\nreality, Monumentals we became."
+      ]
+    },
+    {
+      "ID": 32551,
+      "Entries": [
+        "However, man's memory of history is o'er short, \nand before long he repeated his mistakes."
+      ]
+    },
+    {
+      "ID": 32552,
+      "Entries": [
+        "The Monumentals perished, \nand the Archstones were long forgotten."
+      ]
+    },
+    {
+      "ID": 32553,
+      "Entries": [
+        "And the short-sighted King Allant \nonce again aroused the Old One."
+      ]
+    },
+    {
+      "ID": 32560,
+      "Entries": [
+        "The soul arts shall be lost once \nthe Old One is lulled back to slumber."
+      ]
+    },
+    {
+      "ID": 32561,
+      "Entries": [
+        "A soul is the essence of thought which \nis latent in all living things."
+      ]
+    },
+    {
+      "ID": 32562,
+      "Entries": [
+        "You must never forget..."
+      ]
+    },
+    {
+      "ID": 32563,
+      "Entries": [
+        "The power that you now enjoy contradicts the essence\nof the soul, for it stems from Demon magic."
+      ]
+    },
+    {
+      "ID": 32570,
+      "Entries": [
+        "You have destroyed all of the Demons."
+      ]
+    },
+    {
+      "ID": 32571,
+      "Entries": [
+        "You soon shall hear the call of the Old One."
+      ]
+    },
+    {
+      "ID": 32572,
+      "Entries": [
+        "Then, the candle maiden shall guide you below the Nexus, \nwhere the Old One awaits."
+      ]
+    },
+    {
+      "ID": 32573,
+      "Entries": [
+        "She will lull the Old One back to slumber."
+      ]
+    },
+    {
+      "ID": 32574,
+      "Entries": [
+        "That is, after all, her purpose."
+      ]
+    },
+    {
+      "ID": 32580,
+      "Entries": [
+        "Hahaha..."
+      ]
+    },
+    {
+      "ID": 32581,
+      "Entries": [
+        "Cease, you are wasting your lifeforce."
+      ]
+    },
+    {
+      "ID": 32582,
+      "Entries": [
+        "I am a Monumental. You cannot harm me."
+      ]
+    },
+    {
+      "ID": 32590,
+      "Entries": [
+        "Arrgghaaaaaa!"
+      ]
+    },
+    {
+      "ID": 32591,
+      "Entries": [
+        "But... I am a Monumental...!"
+      ]
+    },
+    {
+      "ID": 32600,
+      "Entries": [
+        "Have you received assistance from the candle maiden?"
+      ]
+    },
+    {
+      "ID": 32601,
+      "Entries": [
+        "She is a prisoner of this Nexus. \nIt is her duty to lull the Old One back to slumber. \nThat is why she helps those who hunt Demons."
+      ]
+    },
+    {
+      "ID": 32602,
+      "Entries": [
+        "And that is why she has become a Demon herself."
+      ]
+    },
+    {
+      "ID": 32610,
+      "Entries": [
+        "Have you visited the pantheon at the uppermost floor?"
+      ]
+    },
+    {
+      "ID": 32611,
+      "Entries": [
+        "The pantheon honours those like yourself \nwho sought the Demon souls."
+      ]
+    },
+    {
+      "ID": 32612,
+      "Entries": [
+        "Perhaps one day your soul, too, \nwill be honoured in that same fashion."
+      ]
+    },
+    {
+      "ID": 32613,
+      "Entries": [
+        "That is the most we can do to give you thanks."
+      ]
+    },
+    {
+      "ID": 32614,
+      "Entries": [
+        "To give thanks to the brave and honourable warriors, \nwho must fight to reverse our sins..."
+      ]
+    },
+    {
+      "ID": 32620,
+      "Entries": [
+        "Hahahahaha"
+      ]
+    },
+    {
+      "ID": 32622,
+      "Entries": [
+        "Hahahahahahaha"
+      ]
+    },
+    {
+      "ID": 32630,
+      "Entries": [
+        "You must destroy all the Demons if you wish to be freed \nfrom the curse of the Nexus."
+      ]
+    },
+    {
+      "ID": 32631,
+      "Entries": [
+        "The Old One, without the Demons to feed its souls, \nwill seek a new servant, and lure you to its bosom."
+      ]
+    },
+    {
+      "ID": 32632,
+      "Entries": [
+        "You must lull the Old One back to slumber, \nfor your own sake as well as for ours."
+      ]
+    },
+    {
+      "ID": 32640,
+      "Entries": [
+        "You must despise me."
+      ]
+    },
+    {
+      "ID": 32641,
+      "Entries": [
+        "But remember, we Monumentals, too, \nare trapped within this Nexus."
+      ]
+    },
+    {
+      "ID": 32642,
+      "Entries": [
+        "For we prevent your world from breaking apart at the seams."
+      ]
+    },
+    {
+      "ID": 32650,
+      "Entries": [
+        "Please forgive me, but I wish to concentrate."
+      ]
+    },
+    {
+      "ID": 32651,
+      "Entries": [
+        "'Tis no easy task, being a Monumental."
+      ]
+    },
+    {
+      "ID": 32653,
+      "Entries": [
+        "......"
+      ]
+    },
+    {
+      "ID": 32660,
+      "Entries": [
+        "Brave soul, who fears not death."
+      ]
+    },
+    {
+      "ID": 32661,
+      "Entries": [
+        "I shall guide you…"
+      ]
+    },
+    {
+      "ID": 32662,
+      "Entries": [
+        "So that you may lull the Old One back to slumber."
+      ]
+    },
+    {
+      "ID": 33500,
+      "Entries": [
+        "Well, you slipped through the fissure too, did you?"
+      ]
+    },
+    {
+      "ID": 33501,
+      "Entries": [
+        "You came for Demon souls? Or to save this land,\nand be remembered as a hero?"
+      ]
+    },
+    {
+      "ID": 33502,
+      "Entries": [
+        "Bah, it's all the same. \nYou're just another prisoner of the Nexus."
+      ]
+    },
+    {
+      "ID": 33503,
+      "Entries": [
+        "We're welcome here, as long as we keep slashing up Demons."
+      ]
+    },
+    {
+      "ID": 33504,
+      "Entries": [
+        "Hahahahah..."
+      ]
+    },
+    {
+      "ID": 33506,
+      "Entries": [
+        "Hunting for Demons? Try one of the archstones."
+      ]
+    },
+    {
+      "ID": 33507,
+      "Entries": [
+        "Now, go. That is why you came, is it not...?\nTo this accursed Boletaria."
+      ]
+    },
+    {
+      "ID": 33510,
+      "Entries": [
+        "Still alive? I am impressed."
+      ]
+    },
+    {
+      "ID": 33511,
+      "Entries": [
+        "This is something that might interest you."
+      ]
+    },
+    {
+      "ID": 33512,
+      "Entries": [
+        "The black-robed maiden of the Nexus looks after the flames. \nShe's a morose type, with eyes occluded by wax."
+      ]
+    },
+    {
+      "ID": 33513,
+      "Entries": [
+        "She can control souls like no other."
+      ]
+    },
+    {
+      "ID": 33514,
+      "Entries": [
+        "Bring her the souls of men and Demons, and she will\nembolden your flesh and blood with their power."
+      ]
+    },
+    {
+      "ID": 33515,
+      "Entries": [
+        "But beware; do not devolve into a foul beast..."
+      ]
+    },
+    {
+      "ID": 33520,
+      "Entries": [
+        "Ah, hello again."
+      ]
+    },
+    {
+      "ID": 33521,
+      "Entries": [
+        "I wonder how many others are in this Nexus?"
+      ]
+    },
+    {
+      "ID": 33522,
+      "Entries": [
+        "They are no different than I."
+      ]
+    },
+    {
+      "ID": 33523,
+      "Entries": [
+        "They traversed the foggy fissure with determination, \nbut realised their powerlessness, and became\nprisoners of the Nexus."
+      ]
+    },
+    {
+      "ID": 33530,
+      "Entries": [
+        "What, you again?"
+      ]
+    },
+    {
+      "ID": 33531,
+      "Entries": [
+        "The disciples and the magicians \nin the Nexus despise one another."
+      ]
+    },
+    {
+      "ID": 33532,
+      "Entries": [
+        "Did you notice they never sit in sight of each other?"
+      ]
+    },
+    {
+      "ID": 33533,
+      "Entries": [
+        "The fools. What good comes of childish rivalries? \nWe are all prisoners here."
+      ]
+    },
+    {
+      "ID": 33540,
+      "Entries": [
+        "What's happened, have you lost your nerve?"
+      ]
+    },
+    {
+      "ID": 33541,
+      "Entries": [
+        "No matter. Have a seat; we can sit here forever!"
+      ]
+    },
+    {
+      "ID": 33542,
+      "Entries": [
+        "At least we will be safe!"
+      ]
+    },
+    {
+      "ID": 33543,
+      "Entries": [
+        "Hahahahah..."
+      ]
+    },
+    {
+      "ID": 33550,
+      "Entries": [
+        "Have you met the last surviving Monumental?"
+      ]
+    },
+    {
+      "ID": 33551,
+      "Entries": [
+        "Those fools revived the Old One on a whim,"
+      ]
+    },
+    {
+      "ID": 33552,
+      "Entries": [
+        "and now they've trapped us here in the Nexus \nin a desperate attempt to undo their mistake."
+      ]
+    },
+    {
+      "ID": 33553,
+      "Entries": [
+        "It's all a travesty, if you ask me."
+      ]
+    },
+    {
+      "ID": 33560,
+      "Entries": [
+        "The flame-tending maiden has not come down \nfrom the upper level."
+      ]
+    },
+    {
+      "ID": 33561,
+      "Entries": [
+        "Go ahead, seek her; you monsters deserve each other."
+      ]
+    },
+    {
+      "ID": 33562,
+      "Entries": [
+        "I could not care any less."
+      ]
+    },
+    {
+      "ID": 33570,
+      "Entries": [
+        "You, have you seen my corporeal flesh? \nHas my body gone rotten?"
+      ]
+    },
+    {
+      "ID": 33580,
+      "Entries": [
+        "...I'm sorry, please leave me alone."
+      ]
+    },
+    {
+      "ID": 33590,
+      "Entries": [
+        "...Argh... who are you? I don't remember anything..."
+      ]
+    },
+    {
+      "ID": 33600,
+      "Entries": [
+        "What are you doing?"
+      ]
+    },
+    {
+      "ID": 33601,
+      "Entries": [
+        "Even I will not just sit back and take it!"
+      ]
+    },
+    {
+      "ID": 33610,
+      "Entries": [
+        "Hmph. Not enjoying the conversation?"
+      ]
+    },
+    {
+      "ID": 33611,
+      "Entries": [
+        "Monster! Do you think that you are somehow special!?"
+      ]
+    },
+    {
+      "ID": 33620,
+      "Entries": [
+        "Hm? What is it?"
+      ]
+    },
+    {
+      "ID": 33621,
+      "Entries": [
+        "I'm not going anywhere. Question me as you please."
+      ]
+    },
+    {
+      "ID": 33630,
+      "Entries": [
+        "Hahahah, you've gone and died, have you?"
+      ]
+    },
+    {
+      "ID": 33631,
+      "Entries": [
+        "If you die here in Boletaria, \nyour soul is returned to the Nexus."
+      ]
+    },
+    {
+      "ID": 33632,
+      "Entries": [
+        "Well, what'll you do next? Going to just give up?"
+      ]
+    },
+    {
+      "ID": 33633,
+      "Entries": [
+        "That's what I did."
+      ]
+    },
+    {
+      "ID": 33634,
+      "Entries": [
+        "I think I just lost my nerve for this kind of thing..."
+      ]
+    },
+    {
+      "ID": 33650,
+      "Entries": [
+        "Well, you found yourself a Demon soul, did you?"
+      ]
+    },
+    {
+      "ID": 33651,
+      "Entries": [
+        "I'm impressed, yes, indeed I am."
+      ]
+    },
+    {
+      "ID": 33652,
+      "Entries": [
+        "Stay the path, and you will soon be a monster yourself!"
+      ]
+    },
+    {
+      "ID": 33653,
+      "Entries": [
+        "Hahahahahah!"
+      ]
+    },
+    {
+      "ID": 33654,
+      "Entries": [
+        "Can't you see you've fallen for their trap?"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "Why, you are one of the sane ones, are you not?"
+      ]
+    },
+    {
+      "ID": 35001,
+      "Entries": [
+        "I am Selen of the West."
+      ]
+    },
+    {
+      "ID": 35002,
+      "Entries": [
+        "I seek my brother Garl Vinland, the knight who\naccompanied Saint Astraea on her travels."
+      ]
+    },
+    {
+      "ID": 35003,
+      "Entries": [
+        "I believe they settled here."
+      ]
+    },
+    {
+      "ID": 35004,
+      "Entries": [
+        "If you happen to see my younger brother, please tell me."
+      ]
+    },
+    {
+      "ID": 35005,
+      "Entries": [
+        "I must share with him the last words of our father."
+      ]
+    },
+    {
+      "ID": 35010,
+      "Entries": [
+        "This crest!"
+      ]
+    },
+    {
+      "ID": 35011,
+      "Entries": [
+        "That is a Vinland heirloom meant for my younger brother."
+      ]
+    },
+    {
+      "ID": 35012,
+      "Entries": [
+        "So, my brother and Astraea have both strayed \nfrom the path of God..."
+      ]
+    },
+    {
+      "ID": 35013,
+      "Entries": [
+        "The poor souls. Perhaps their hearts were too pure."
+      ]
+    },
+    {
+      "ID": 35014,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 35020,
+      "Entries": [
+        "Thank you, kind warrior."
+      ]
+    },
+    {
+      "ID": 35021,
+      "Entries": [
+        "As Garl's sister, I express my deepest thanks for your\nhonouring of his name."
+      ]
+    },
+    {
+      "ID": 35022,
+      "Entries": [
+        "Please accept this. It was intended for my brother, \nbut now it should belong to you."
+      ]
+    },
+    {
+      "ID": 35023,
+      "Entries": [
+        "May the angels gaze favourably upon you."
+      ]
+    },
+    {
+      "ID": 35024,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 35030,
+      "Entries": [
+        "Thank you, kind warrior."
+      ]
+    },
+    {
+      "ID": 35031,
+      "Entries": [
+        "As Garl's sister, I express my deepest appreciation \nfor your honouring of his name."
+      ]
+    },
+    {
+      "ID": 35035,
+      "Entries": [
+        "Please accept this as thanks. \nPerhaps you will have use for it on your travels."
+      ]
+    },
+    {
+      "ID": 35040,
+      "Entries": [
+        "Can you give me a memento of my brother"
+      ]
+    },
+    {
+      "ID": 35041,
+      "Entries": [
+        "Of course, I would like to thank you"
+      ]
+    },
+    {
+      "ID": 35050,
+      "Entries": [
+        "Yes, I see."
+      ]
+    },
+    {
+      "ID": 35051,
+      "Entries": [
+        "But you must realize that an ordinary crest \nwill bestow upon you no power?"
+      ]
+    },
+    {
+      "ID": 35052,
+      "Entries": [
+        "I only wished to remember my poor younger brother by it."
+      ]
+    },
+    {
+      "ID": 35053,
+      "Entries": [
+        "Perhaps you can reconsider?"
+      ]
+    },
+    {
+      "ID": 35060,
+      "Entries": [
+        "Yes, I see."
+      ]
+    },
+    {
+      "ID": 35061,
+      "Entries": [
+        "I can no further presume upon you. \nPerhaps this is punishment for Garl's wrongdoing."
+      ]
+    },
+    {
+      "ID": 35062,
+      "Entries": [
+        "I will search for a way back home."
+      ]
+    },
+    {
+      "ID": 35063,
+      "Entries": [
+        "May you be unharmed in battle,"
+      ]
+    },
+    {
+      "ID": 35064,
+      "Entries": [
+        "and safe along the roads of your travels."
+      ]
+    },
+    {
+      "ID": 35070,
+      "Entries": [
+        "O travelling warrior..."
+      ]
+    },
+    {
+      "ID": 35071,
+      "Entries": [
+        "I hesitate to ask, but can you part with that crest?"
+      ]
+    },
+    {
+      "ID": 35072,
+      "Entries": [
+        "Garl has strayed from the path of righteousness, \nbut I wish to have the heirloom, in honour of\nour Vinland blood."
+      ]
+    },
+    {
+      "ID": 35073,
+      "Entries": [
+        "I shall reward you in kind."
+      ]
+    },
+    {
+      "ID": 35080,
+      "Entries": [
+        "What in heaven's name!?"
+      ]
+    },
+    {
+      "ID": 35081,
+      "Entries": [
+        "I am no foe of yours!"
+      ]
+    },
+    {
+      "ID": 35090,
+      "Entries": [
+        "I find something odd about this place."
+      ]
+    },
+    {
+      "ID": 35091,
+      "Entries": [
+        "It brims with grime, but at once feels strangely pure."
+      ]
+    },
+    {
+      "ID": 35100,
+      "Entries": [
+        "I heard an unflattering rumour about Saint Astraea."
+      ]
+    },
+    {
+      "ID": 35101,
+      "Entries": [
+        "Have you met that herb-peddling woman? \nShe claims that Saint Astraea is herself a demon."
+      ]
+    },
+    {
+      "ID": 35102,
+      "Entries": [
+        "That woman has no reason to lie. \nSurely she must be mistaken. "
+      ]
+    },
+    {
+      "ID": 36000,
+      "Entries": [
+        "Well! You are a sane one, aren't you?"
+      ]
+    },
+    {
+      "ID": 36001,
+      "Entries": [
+        "My name is Rydell. Please, liberate me from this cell."
+      ]
+    },
+    {
+      "ID": 36002,
+      "Entries": [
+        "I have precious little time. \nI must retrieve an article from my corpse."
+      ]
+    },
+    {
+      "ID": 36010,
+      "Entries": [
+        "yeah, don't you have one? It's not so convenient"
+      ]
+    },
+    {
+      "ID": 36020,
+      "Entries": [
+        "Yes, can't you find it? No wonder..."
+      ]
+    },
+    {
+      "ID": 36030,
+      "Entries": [
+        "No... it's not that kind of key..."
+      ]
+    },
+    {
+      "ID": 36040,
+      "Entries": [
+        "The key is... I've never seen it before... Maybe it's what I'm looking for..."
+      ]
+    },
+    {
+      "ID": 36041,
+      "Entries": [
+        "Can you give me that key? let me thank you"
+      ]
+    },
+    {
+      "ID": 36050,
+      "Entries": [
+        "Why! Thank you! Thank you, kind soul."
+      ]
+    },
+    {
+      "ID": 36051,
+      "Entries": [
+        "Please take this fine piece of work. \nBesides, I have no use for it now."
+      ]
+    },
+    {
+      "ID": 36052,
+      "Entries": [
+        "Ahh, and thus begins my final, eternal rest..."
+      ]
+    },
+    {
+      "ID": 36054,
+      "Entries": [
+        "Oh, is this finally the end..."
+      ]
+    },
+    {
+      "ID": 36060,
+      "Entries": [
+        "yeah it's a shame"
+      ]
+    },
+    {
+      "ID": 36061,
+      "Entries": [
+        "I don't want to kill people anymore"
+      ]
+    },
+    {
+      "ID": 36070,
+      "Entries": [
+        "Lord Black of the frontier has also fallen."
+      ]
+    },
+    {
+      "ID": 36071,
+      "Entries": [
+        "I lost the battle, and I'm still not finished with regrets..."
+      ]
+    },
+    {
+      "ID": 36080,
+      "Entries": [
+        "I'm sorry you guys..."
+      ]
+    },
+    {
+      "ID": 36090,
+      "Entries": [
+        "oh oh oh oh oh (roar)"
+      ]
+    },
+    {
+      "ID": 36092,
+      "Entries": [
+        "Whoever you are, open up here!"
+      ]
+    },
+    {
+      "ID": 36094,
+      "Entries": [
+        "Hey! Whoa!"
+      ]
+    },
+    {
+      "ID": 36100,
+      "Entries": [
+        "As you can see, the only thing that remains\nof me is my soul."
+      ]
+    },
+    {
+      "ID": 36101,
+      "Entries": [
+        "My body is trapped in another cell; \nI fancy it a fine rotten mess by now."
+      ]
+    },
+    {
+      "ID": 36102,
+      "Entries": [
+        "I've no interest in my corporeal flesh, but I left upon\nmy person a keepsake of my late wife."
+      ]
+    },
+    {
+      "ID": 36103,
+      "Entries": [
+        "I will soon fade into the beyond. \nMy only wish is to do so near that token of my beloved."
+      ]
+    },
+    {
+      "ID": 36110,
+      "Entries": [
+        "A retainer to the King once held the key to this cell."
+      ]
+    },
+    {
+      "ID": 36111,
+      "Entries": [
+        "That ebony swine with his gluttonous, swaying belly..."
+      ]
+    },
+    {
+      "ID": 36120,
+      "Entries": [
+        "What's gone wrong with you!? In the Lord's name, stop!"
+      ]
+    },
+    {
+      "ID": 36121,
+      "Entries": [
+        "I do not wish to harm anyone!"
+      ]
+    },
+    {
+      "ID": 36122,
+      "Entries": [
+        "Especially not you, my kind saviour!"
+      ]
+    },
+    {
+      "ID": 37000,
+      "Entries": [
+        "Thou who seeketh the King's sword!"
+      ]
+    },
+    {
+      "ID": 37001,
+      "Entries": [
+        "I am the Old King. Show me thine strength and\nthe strength of thine souls."
+      ]
+    },
+    {
+      "ID": 37005,
+      "Entries": [
+        "Prepare thyself, brave knight."
+      ]
+    },
+    {
+      "ID": 37010,
+      "Entries": [
+        "Thou dost well to impress one such as me, young knight."
+      ]
+    },
+    {
+      "ID": 37011,
+      "Entries": [
+        "I am Old King Doran, and thou hast proven thine\nstrength to me."
+      ]
+    },
+    {
+      "ID": 37012,
+      "Entries": [
+        "Go forth, and take the King's sword in thine hand."
+      ]
+    },
+    {
+      "ID": 37020,
+      "Entries": [
+        "I am the Old King. Darest thou to challenge me? Very well."
+      ]
+    },
+    {
+      "ID": 37021,
+      "Entries": [
+        "But may thou be determined from the depths of thine heart, \nelse thou shalt fail."
+      ]
+    },
+    {
+      "ID": 37022,
+      "Entries": [
+        "May fate be with thee."
+      ]
+    },
+    {
+      "ID": 37025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39500,
+      "Entries": [
+        "Yes, I see..."
+      ]
+    },
+    {
+      "ID": 39501,
+      "Entries": [
+        "Your hands are too clean."
+      ]
+    },
+    {
+      "ID": 39502,
+      "Entries": [
+        "I have no use for one such as you."
+      ]
+    },
+    {
+      "ID": 39510,
+      "Entries": [
+        "I can see that you have killed in the past."
+      ]
+    },
+    {
+      "ID": 39511,
+      "Entries": [
+        "No one can blame you for that. \nDemon souls are too precious to relinquish."
+      ]
+    },
+    {
+      "ID": 39512,
+      "Entries": [
+        "Perhaps a knight like you would have \nan interest in my offer?"
+      ]
+    },
+    {
+      "ID": 39515,
+      "Entries": [
+        "I want you to kill Prince Ariona Allant. \nHe goes by the pseudonym Ostrava."
+      ]
+    },
+    {
+      "ID": 39517,
+      "Entries": [
+        "You will be rewarded amply."
+      ]
+    },
+    {
+      "ID": 39518,
+      "Entries": [
+        "Do we have an agreement?"
+      ]
+    },
+    {
+      "ID": 39519,
+      "Entries": [
+        "A reason? Bah, just think of it as an opportunity to\nextinguish a competitor."
+      ]
+    },
+    {
+      "ID": 39522,
+      "Entries": [
+        "Excellent. I'm relying on you."
+      ]
+    },
+    {
+      "ID": 39530,
+      "Entries": [
+        "Hm, I see. My ears are open, if you ever change your mind."
+      ]
+    },
+    {
+      "ID": 39531,
+      "Entries": [
+        "But remember, I will not linger here long."
+      ]
+    },
+    {
+      "ID": 39540,
+      "Entries": [
+        "What's wrong?"
+      ]
+    },
+    {
+      "ID": 39541,
+      "Entries": [
+        "I granted you a simple task; get on with it."
+      ]
+    },
+    {
+      "ID": 39550,
+      "Entries": [
+        "Well, well... Very smooth work. Almost... merciless."
+      ]
+    },
+    {
+      "ID": 39551,
+      "Entries": [
+        "Here is your reward. Be thankful for it; normally it\nwould never find its way into your impure hands."
+      ]
+    },
+    {
+      "ID": 39553,
+      "Entries": [
+        "Now, for your next task."
+      ]
+    },
+    {
+      "ID": 39555,
+      "Entries": [
+        "Kill Prince Ariona Allant. He goes by the pseudonym Ostrava."
+      ]
+    },
+    {
+      "ID": 39557,
+      "Entries": [
+        "I will, of course, provide you with a reward of\nsimilar value."
+      ]
+    },
+    {
+      "ID": 39560,
+      "Entries": [
+        "Hm, done already?"
+      ]
+    },
+    {
+      "ID": 39561,
+      "Entries": [
+        "Here is your reward. Take it."
+      ]
+    },
+    {
+      "ID": 39563,
+      "Entries": [
+        "Don't look at me with that ravenous countenance of greed. \nThere is more work for you."
+      ]
+    },
+    {
+      "ID": 39565,
+      "Entries": [
+        "Next, kill Prince Ariona Allant, who goes by the\npseudonym Ostrava."
+      ]
+    },
+    {
+      "ID": 39567,
+      "Entries": [
+        "No reason for pause now, is there?"
+      ]
+    },
+    {
+      "ID": 39570,
+      "Entries": [
+        "So, you've completed everything, eh?"
+      ]
+    },
+    {
+      "ID": 39571,
+      "Entries": [
+        "You're what they might call a miracle worker."
+      ]
+    },
+    {
+      "ID": 39572,
+      "Entries": [
+        "Lastly, I must only kill you, and the secret of the\nsouls shall be eternally safe."
+      ]
+    },
+    {
+      "ID": 39580,
+      "Entries": [
+        "Fool. Did you really think that you were special?"
+      ]
+    },
+    {
+      "ID": 39590,
+      "Entries": [
+        "I want you to kill Biorr."
+      ]
+    },
+    {
+      "ID": 39592,
+      "Entries": [
+        "Kill Biorr of the Twin Fangs."
+      ]
+    },
+    {
+      "ID": 39594,
+      "Entries": [
+        "Next, you will kill Biorr of the Twin Fangs."
+      ]
+    },
+    {
+      "ID": 39600,
+      "Entries": [
+        "I want you to kill Sage Freke and his apprentice."
+      ]
+    },
+    {
+      "ID": 39602,
+      "Entries": [
+        "Kill Sage Freke and his apprentice."
+      ]
+    },
+    {
+      "ID": 39604,
+      "Entries": [
+        "Next, you will kill Sage Freke and his apprentice."
+      ]
+    },
+    {
+      "ID": 39610,
+      "Entries": [
+        "I want you to kill the witch Yuria."
+      ]
+    },
+    {
+      "ID": 39612,
+      "Entries": [
+        "Kill the witch Yuria."
+      ]
+    },
+    {
+      "ID": 39614,
+      "Entries": [
+        "Next, you will kill the witch Yuria."
+      ]
+    },
+    {
+      "ID": 39620,
+      "Entries": [
+        "I want you to kill Saint Urbain and his followers."
+      ]
+    },
+    {
+      "ID": 39622,
+      "Entries": [
+        "Kill Saint Urbain and his followers."
+      ]
+    },
+    {
+      "ID": 39624,
+      "Entries": [
+        "Next, you will kill Saint Urbain and his followers."
+      ]
+    },
+    {
+      "ID": 39630,
+      "Entries": [
+        "I want you to kill Stockpile Thomas."
+      ]
+    },
+    {
+      "ID": 39632,
+      "Entries": [
+        "Kill Stockpile Thomas."
+      ]
+    },
+    {
+      "ID": 39634,
+      "Entries": [
+        "Next, you will kill Stockpile Thomas."
+      ]
+    },
+    {
+      "ID": 39640,
+      "Entries": [
+        "I want you to kill Patches the Hyena."
+      ]
+    },
+    {
+      "ID": 39642,
+      "Entries": [
+        "Kill Patches the Hyena."
+      ]
+    },
+    {
+      "ID": 39644,
+      "Entries": [
+        "Next, you will kill Patches the Hyena."
+      ]
+    },
+    {
+      "ID": 39650,
+      "Entries": [
+        "Are you mad?"
+      ]
+    },
+    {
+      "ID": 39660,
+      "Entries": [
+        "A fool such as you is a rare thing..."
+      ]
+    },
+    {
+      "ID": 39670,
+      "Entries": [
+        "what up?"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Well, you seem to have your head about you."
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "I am Satsuki. I seek a keepsake of my father."
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Have you seen the sword inscribed \"Makoto\"?"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "I will offer you Demon souls if you can help me find it."
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "The Makoto chooses its owner."
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "But he who harbours self-delusions should at once be warned."
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "The Makoto is no sword for the faint of heart."
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "Ah, you have found the Makoto, have you?"
+      ]
+    },
+    {
+      "ID": 40021,
+      "Entries": [
+        "Bless your good fortune. And, well, your good work."
+      ]
+    },
+    {
+      "ID": 40022,
+      "Entries": [
+        "Now, just hand the Makoto over to me."
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "Yes, yes, this is she."
+      ]
+    },
+    {
+      "ID": 40031,
+      "Entries": [
+        "This lustre... It's finally mine! Keheheheh..."
+      ]
+    },
+    {
+      "ID": 40032,
+      "Entries": [
+        "Except... could this sword really be as deadly \nas the rumours claim?"
+      ]
+    },
+    {
+      "ID": 40033,
+      "Entries": [
+        "There is only one way to find out!"
+      ]
+    },
+    {
+      "ID": 40040,
+      "Entries": [
+        "What on earth is wrong with you?"
+      ]
+    },
+    {
+      "ID": 40041,
+      "Entries": [
+        "How dare you waste my precious time!?\nDo you not want Demon souls?"
+      ]
+    },
+    {
+      "ID": 40050,
+      "Entries": [
+        "Fine! Have it your way!"
+      ]
+    },
+    {
+      "ID": 40051,
+      "Entries": [
+        "A duel will settle this!"
+      ]
+    },
+    {
+      "ID": 40060,
+      "Entries": [
+        "How dare you!"
+      ]
+    },
+    {
+      "ID": 40061,
+      "Entries": [
+        "You shall pay in blood!"
+      ]
+    },
+    {
+      "ID": 40070,
+      "Entries": [
+        "Hmm, expecting the Makoto to warm up to you?"
+      ]
+    },
+    {
+      "ID": 40071,
+      "Entries": [
+        "Nonsense! Your very touch soils her impeccable hilt!"
+      ]
+    },
+    {
+      "ID": 40072,
+      "Entries": [
+        "May you plunge to the depths of hell \nfor your unsavoury insolence!"
+      ]
+    },
+    {
+      "ID": 40080,
+      "Entries": [
+        "The Makoto lives up to its name. \nIts blade shines with an unworldly perfection."
+      ]
+    },
+    {
+      "ID": 40081,
+      "Entries": [
+        "Keheheh, kehehehehehehahaha!"
+      ]
+    },
+    {
+      "ID": 40090,
+      "Entries": [
+        "You useless invertebrate. Face your rotten fate..."
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Hey, you over there!"
+      ]
+    },
+    {
+      "ID": 40101,
+      "Entries": [
+        "You seem to have your head about you."
+      ]
+    },
+    {
+      "ID": 40102,
+      "Entries": [
+        "Come here. I have a proposal for you."
+      ]
+    },
+    {
+      "ID": 40103,
+      "Entries": [
+        "Do not be afraid. You have much to gain."
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "Hahahahahah..."
+      ]
+    },
+    {
+      "ID": 41001,
+      "Entries": [
+        "Ye fools know nothing of the world!"
+      ]
+    },
+    {
+      "ID": 41002,
+      "Entries": [
+        "The idols shall be revived for eternity!"
+      ]
+    },
+    {
+      "ID": 41003,
+      "Entries": [
+        "Rejoice, fools, for it is as you wished!"
+      ]
+    },
+    {
+      "ID": 41004,
+      "Entries": [
+        "Hahahahahahaha (lol)"
+      ]
+    },
+    {
+      "ID": 41010,
+      "Entries": [
+        "Wh-What do you want?"
+      ]
+    },
+    {
+      "ID": 41011,
+      "Entries": [
+        "I am a humble servant. I do not wish to interfere."
+      ]
+    },
+    {
+      "ID": 41012,
+      "Entries": [
+        "I won't cause you trouble, I won't!"
+      ]
+    },
+    {
+      "ID": 41020,
+      "Entries": [
+        "What are you doing!?"
+      ]
+    },
+    {
+      "ID": 41021,
+      "Entries": [
+        "I am merely a servant!"
+      ]
+    },
+    {
+      "ID": 41030,
+      "Entries": [
+        "Please stop!"
+      ]
+    },
+    {
+      "ID": 41031,
+      "Entries": [
+        "Eek! Eeeeek!"
+      ]
+    },
+    {
+      "ID": 42500,
+      "Entries": [
+        "Are you here to face the Demons?"
+      ]
+    },
+    {
+      "ID": 42501,
+      "Entries": [
+        "If so, please free Sage Freke the Visionary \nfrom the dungeon of Latria."
+      ]
+    },
+    {
+      "ID": 42502,
+      "Entries": [
+        "I will help you however I can. \nI can teach you elementary spells."
+      ]
+    },
+    {
+      "ID": 42503,
+      "Entries": [
+        "Sage Freke is a gleaming hope for humankind, \nbut I have not the power to save him alone."
+      ]
+    },
+    {
+      "ID": 42510,
+      "Entries": [
+        "Are you begging for a magic lesson?"
+      ]
+    },
+    {
+      "ID": 42520,
+      "Entries": [
+        "Be careful how you use it."
+      ]
+    },
+    {
+      "ID": 42521,
+      "Entries": [
+        "Normally, it would not be granted to one such as yourself."
+      ]
+    },
+    {
+      "ID": 42522,
+      "Entries": [
+        "I had to make an exception, for the sake of Sage Freke."
+      ]
+    },
+    {
+      "ID": 42530,
+      "Entries": [
+        "I see. Suit yourself."
+      ]
+    },
+    {
+      "ID": 42531,
+      "Entries": [
+        "Just ensure that you rescue Sage Freke \nas quickly as possible."
+      ]
+    },
+    {
+      "ID": 42534,
+      "Entries": [
+        "You saved Sage Freke, did you not?"
+      ]
+    },
+    {
+      "ID": 42535,
+      "Entries": [
+        "Then I was right to bend the rules \nand teach you a few tricks."
+      ]
+    },
+    {
+      "ID": 42536,
+      "Entries": [
+        "Nevertheless, I am grateful to you."
+      ]
+    },
+    {
+      "ID": 42537,
+      "Entries": [
+        "Do you see how important selfless acts are \nin this dreary world?"
+      ]
+    },
+    {
+      "ID": 42540,
+      "Entries": [
+        "What is it? Are you still begging for magic lessons?"
+      ]
+    },
+    {
+      "ID": 42541,
+      "Entries": [
+        "Oh, so be it."
+      ]
+    },
+    {
+      "ID": 42542,
+      "Entries": [
+        "Better than having you bother Sage Freke."
+      ]
+    },
+    {
+      "ID": 42550,
+      "Entries": [
+        "Freke is a great sage who systemised the magic of the\nSoul arts to make it possible for human imitation."
+      ]
+    },
+    {
+      "ID": 42551,
+      "Entries": [
+        "By observing the state of Boletaria and the Demons\nwithin it, he is likely to pave the way for greater things."
+      ]
+    },
+    {
+      "ID": 42552,
+      "Entries": [
+        "All the more reason that I must meet Freke\nas soon as possible..."
+      ]
+    },
+    {
+      "ID": 42560,
+      "Entries": [
+        "Me? Without doubt, I made my best effort to save Sage Freke."
+      ]
+    },
+    {
+      "ID": 42561,
+      "Entries": [
+        "But I had not the strength. It is as simple as that."
+      ]
+    },
+    {
+      "ID": 42562,
+      "Entries": [
+        "Besides, if I myself were captured, \nwho would stand here and recruit rescuers?"
+      ]
+    },
+    {
+      "ID": 42564,
+      "Entries": [
+        "Sage Freke prefers to work alone."
+      ]
+    },
+    {
+      "ID": 42565,
+      "Entries": [
+        "Do not dare to bother him by gabbing \nabout trifling nonsense."
+      ]
+    },
+    {
+      "ID": 42566,
+      "Entries": [
+        "He is on the verge of discovering something \nthat will rival even the Demon Souls."
+      ]
+    },
+    {
+      "ID": 42570,
+      "Entries": [
+        "What do you want, brute?"
+      ]
+    },
+    {
+      "ID": 42571,
+      "Entries": [
+        "I have no use for miscreants like yourself. Away with you!"
+      ]
+    },
+    {
+      "ID": 42580,
+      "Entries": [
+        "Wait! Where are you going?"
+      ]
+    },
+    {
+      "ID": 42590,
+      "Entries": [
+        "I am not done yet!"
+      ]
+    },
+    {
+      "ID": 42600,
+      "Entries": [
+        "Wh-What are you doing!?"
+      ]
+    },
+    {
+      "ID": 42610,
+      "Entries": [
+        "Why!? Have you madness about you?"
+      ]
+    },
+    {
+      "ID": 42611,
+      "Entries": [
+        "Cease!"
+      ]
+    },
+    {
+      "ID": 42620,
+      "Entries": [
+        "Use it carefully"
+      ]
+    },
+    {
+      "ID": 42630,
+      "Entries": [
+        "I see... that's fine"
+      ]
+    },
+    {
+      "ID": 43500,
+      "Entries": [
+        "I have sinned."
+      ]
+    },
+    {
+      "ID": 43501,
+      "Entries": [
+        "I swore allegiance to Saint Urbain, \nbut was of no use to him."
+      ]
+    },
+    {
+      "ID": 43502,
+      "Entries": [
+        "And now I have run away, and abandoned his Honourableness."
+      ]
+    },
+    {
+      "ID": 43510,
+      "Entries": [
+        "O Lord, punish me."
+      ]
+    },
+    {
+      "ID": 43511,
+      "Entries": [
+        "For I have not the strength to punish myself."
+      ]
+    },
+    {
+      "ID": 43520,
+      "Entries": [
+        "Oh, Honourable One, I hesitate to imagine your\npresent state."
+      ]
+    },
+    {
+      "ID": 43521,
+      "Entries": [
+        "Deep within the darkness, where no light shall ever shine."
+      ]
+    },
+    {
+      "ID": 43522,
+      "Entries": [
+        "Will you continue to pray, even in such misery?"
+      ]
+    },
+    {
+      "ID": 43530,
+      "Entries": [
+        "I swear that I will catch that blasted Hyena some day soon."
+      ]
+    },
+    {
+      "ID": 43531,
+      "Entries": [
+        "He fooled me, and kicked the Honourable One down\na trap door behind the altar of a shrine."
+      ]
+    },
+    {
+      "ID": 43532,
+      "Entries": [
+        "I... lost my nerve, and very swiftly fled out of that place."
+      ]
+    },
+    {
+      "ID": 43540,
+      "Entries": [
+        "My! You have rescued the Honourable One!"
+      ]
+    },
+    {
+      "ID": 43541,
+      "Entries": [
+        "I express my deepest gratitude. \nYou have relieved me of a great onus."
+      ]
+    },
+    {
+      "ID": 43542,
+      "Entries": [
+        "Oh, thank God!"
+      ]
+    },
+    {
+      "ID": 43543,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 43550,
+      "Entries": [
+        "Have you heard the rumours about\nAstraea of the Valley of Defilement?"
+      ]
+    },
+    {
+      "ID": 43551,
+      "Entries": [
+        "They claim that she and her loyal knight have\nbecome Demons, and lead a clan of\ndegenerate miscreants."
+      ]
+    },
+    {
+      "ID": 43552,
+      "Entries": [
+        "In truth, the rumours are surely unfounded. \nThere are all sorts of wrongdoers down there \nwho would think up such nonsense."
+      ]
+    },
+    {
+      "ID": 43553,
+      "Entries": [
+        "...Yet, if the rumours are true..."
+      ]
+    },
+    {
+      "ID": 43554,
+      "Entries": [
+        "Then may she be eternally damned for her \ndebasement of the Lord's name!"
+      ]
+    },
+    {
+      "ID": 43560,
+      "Entries": [
+        "With Lord Urbain back, the magicians will have to\nwatch themselves."
+      ]
+    },
+    {
+      "ID": 43561,
+      "Entries": [
+        "Thanks to his holy miracles, you brave battlers of\nDemons will no longer be solely dependent on\ndark magic."
+      ]
+    },
+    {
+      "ID": 43562,
+      "Entries": [
+        "Isn't it wonderful? Surely the Demon slayers have\nawaited such an opportunity!"
+      ]
+    },
+    {
+      "ID": 43570,
+      "Entries": [
+        "Do you have any connection to Patches the Hyena?"
+      ]
+    },
+    {
+      "ID": 43571,
+      "Entries": [
+        "I trust not. He is a depraved, vile man, and he\ndeserves no allies."
+      ]
+    },
+    {
+      "ID": 43572,
+      "Entries": [
+        "I hope that an upstanding hero such as yourself is \nselective when making associations."
+      ]
+    },
+    {
+      "ID": 43573,
+      "Entries": [
+        "By the way, I highly recommend the companionship\nof the jovial Sage Urbain!"
+      ]
+    },
+    {
+      "ID": 43580,
+      "Entries": [
+        "What? Where are you going?"
+      ]
+    },
+    {
+      "ID": 43581,
+      "Entries": [
+        "I have yet to finish..."
+      ]
+    },
+    {
+      "ID": 43590,
+      "Entries": [
+        "What are you doing!?"
+      ]
+    },
+    {
+      "ID": 43600,
+      "Entries": [
+        "P-Please, stop that!"
+      ]
+    },
+    {
+      "ID": 43610,
+      "Entries": [
+        "You have turned against God's teachings! \nLet heaven's wrath be set upon you!"
+      ]
+    },
+    {
+      "ID": 44500,
+      "Entries": [
+        "Oh, you must be another disciple of God."
+      ]
+    },
+    {
+      "ID": 44501,
+      "Entries": [
+        "I, too, am on a quest to fight the Demons \nin the name of the Lord."
+      ]
+    },
+    {
+      "ID": 44502,
+      "Entries": [
+        "May I share God's power with you? Do not be bashful; \nwe are both cut from the same cloth."
+      ]
+    },
+    {
+      "ID": 44510,
+      "Entries": [
+        "Miracles are the work of God."
+      ]
+    },
+    {
+      "ID": 44511,
+      "Entries": [
+        "May your actions mimic His greatness."
+      ]
+    },
+    {
+      "ID": 44520,
+      "Entries": [
+        "Oh, fellow disciple, you seek the power of God?"
+      ]
+    },
+    {
+      "ID": 44522,
+      "Entries": [
+        "Do you seek the power of God?"
+      ]
+    },
+    {
+      "ID": 44524,
+      "Entries": [
+        "Now, come back; I am still speaking."
+      ]
+    },
+    {
+      "ID": 44525,
+      "Entries": [
+        "That hardly befits an honourable warrior such as yourself."
+      ]
+    },
+    {
+      "ID": 44527,
+      "Entries": [
+        "What in the Lord's name has taken you over?"
+      ]
+    },
+    {
+      "ID": 44528,
+      "Entries": [
+        "We have a common foe! The Demons!"
+      ]
+    },
+    {
+      "ID": 44530,
+      "Entries": [
+        "I see. You wish to train yourself in stoicism. Very well."
+      ]
+    },
+    {
+      "ID": 44531,
+      "Entries": [
+        "I pray we meet again."
+      ]
+    },
+    {
+      "ID": 44540,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 44541,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 44542,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 44550,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 44551,
+      "Entries": [
+        null
+      ]
+    },
+    {
+      "ID": 44560,
+      "Entries": [
+        "A miracle is a heavenly act, but spells are the acts of\nDemons, the work of soul arts."
+      ]
+    },
+    {
+      "ID": 44561,
+      "Entries": [
+        "They have similar effects, and yet, one is clearly evil, \nand the other is clearly good."
+      ]
+    },
+    {
+      "ID": 44562,
+      "Entries": [
+        "Magicians, in the end, are mere servants of the Demons."
+      ]
+    },
+    {
+      "ID": 44570,
+      "Entries": [
+        "Do you know Saint Urbain?"
+      ]
+    },
+    {
+      "ID": 44571,
+      "Entries": [
+        "Saint Urbain is a true sage. He can hear the voice of God."
+      ]
+    },
+    {
+      "ID": 44572,
+      "Entries": [
+        "But that despondent disciple over there claims that \nhe has fallen in a trap behind the altar."
+      ]
+    },
+    {
+      "ID": 44573,
+      "Entries": [
+        "I hate to think that such misfortune could \nhave befallen so eminent a man!"
+      ]
+    },
+    {
+      "ID": 44574,
+      "Entries": [
+        "We intend to leave shortly for the altar, \nto rescue Saint Urbain."
+      ]
+    },
+    {
+      "ID": 44575,
+      "Entries": [
+        "God has ordered it done, and we are His disciples."
+      ]
+    },
+    {
+      "ID": 44576,
+      "Entries": [
+        "I am afraid we may not meet again for quite some time."
+      ]
+    },
+    {
+      "ID": 44580,
+      "Entries": [
+        "A warrior from afar, are you?"
+      ]
+    },
+    {
+      "ID": 44581,
+      "Entries": [
+        "May you enjoy victory in battle."
+      ]
+    },
+    {
+      "ID": 44582,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 45500,
+      "Entries": [
+        "Oh, my, how has this happened?"
+      ]
+    },
+    {
+      "ID": 45501,
+      "Entries": [
+        "Has God abandoned us for failing to show \nproper respect to King Allant?"
+      ]
+    },
+    {
+      "ID": 45502,
+      "Entries": [
+        "Oh, umbasa..."
+      ]
+    },
+    {
+      "ID": 45510,
+      "Entries": [
+        "It is said that if you are attacked by a terrifying demon, you will cease to be a human."
+      ]
+    },
+    {
+      "ID": 45511,
+      "Entries": [
+        "Is this at least salvation?"
+      ]
+    },
+    {
+      "ID": 45520,
+      "Entries": [
+        "is it you I'm not lost anymore"
+      ]
+    },
+    {
+      "ID": 45521,
+      "Entries": [
+        "I will take care of Lord Urbain and pray with him."
+      ]
+    },
+    {
+      "ID": 45522,
+      "Entries": [
+        "for God's sake. Ambassa"
+      ]
+    },
+    {
+      "ID": 45530,
+      "Entries": [
+        "Oh, I can hardly believe it."
+      ]
+    },
+    {
+      "ID": 45531,
+      "Entries": [
+        "The fact that I am helping to save the world!"
+      ]
+    },
+    {
+      "ID": 45532,
+      "Entries": [
+        "Oh, Saint Urbain..."
+      ]
+    },
+    {
+      "ID": 45533,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 45540,
+      "Entries": [
+        "Back in the time that I lived below Boletaria castle,"
+      ]
+    },
+    {
+      "ID": 45541,
+      "Entries": [
+        "King Allant left on some strange business, \nthen returned with horrible Demons in tow."
+      ]
+    },
+    {
+      "ID": 45542,
+      "Entries": [
+        "Soon, the land was ravaged by Demons \nand soul-starved madmen."
+      ]
+    },
+    {
+      "ID": 45543,
+      "Entries": [
+        "My spine shudders just to think about it."
+      ]
+    },
+    {
+      "ID": 45544,
+      "Entries": [
+        "If I did not have my miracle stone-shard, a keepsake\nof my grandfather, I may not have survived."
+      ]
+    },
+    {
+      "ID": 45550,
+      "Entries": [
+        "Have you heard?"
+      ]
+    },
+    {
+      "ID": 45551,
+      "Entries": [
+        "If you are attacked by a Demon, you will lose your humanity."
+      ]
+    },
+    {
+      "ID": 45552,
+      "Entries": [
+        "What a horrible thought... Just what would happen then?"
+      ]
+    },
+    {
+      "ID": 45553,
+      "Entries": [
+        "I simply cannot fathom it."
+      ]
+    },
+    {
+      "ID": 45554,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 45560,
+      "Entries": [
+        "My grandfather had unusual tastes."
+      ]
+    },
+    {
+      "ID": 45561,
+      "Entries": [
+        "He often visited Stonefang mine, where he collected\nrocks of all shapes and sizes."
+      ]
+    },
+    {
+      "ID": 45562,
+      "Entries": [
+        "Most of them had no value..."
+      ]
+    },
+    {
+      "ID": 45563,
+      "Entries": [
+        "But among them he found a miracle stone-shard, \nwhich he gave to me."
+      ]
+    },
+    {
+      "ID": 45564,
+      "Entries": [
+        "Could this, too, be a sign from God?"
+      ]
+    },
+    {
+      "ID": 45570,
+      "Entries": [
+        "Thank goodness; the Lord has not forgotten me yet."
+      ]
+    },
+    {
+      "ID": 45571,
+      "Entries": [
+        "For He has reunited me with Saint Urbain."
+      ]
+    },
+    {
+      "ID": 45572,
+      "Entries": [
+        "I shall serve him, and pray with him."
+      ]
+    },
+    {
+      "ID": 45573,
+      "Entries": [
+        "And thus express my faith in God!"
+      ]
+    },
+    {
+      "ID": 45574,
+      "Entries": [
+        "Umbasa!"
+      ]
+    },
+    {
+      "ID": 45580,
+      "Entries": [
+        "I plan to bequeath all my possessions to Saint Urbain."
+      ]
+    },
+    {
+      "ID": 45581,
+      "Entries": [
+        "My grandfather's articles may contain more miracle\nstone-shards like the one he gave me."
+      ]
+    },
+    {
+      "ID": 45582,
+      "Entries": [
+        "It has no intrinsic powers in and of itself,"
+      ]
+    },
+    {
+      "ID": 45583,
+      "Entries": [
+        "but Saint Urbain can hear the voice of God through it."
+      ]
+    },
+    {
+      "ID": 45590,
+      "Entries": [
+        "I shall always be by Saint Urbain's side."
+      ]
+    },
+    {
+      "ID": 45591,
+      "Entries": [
+        "That is the purpose for which \nGod hath put me upon this earth."
+      ]
+    },
+    {
+      "ID": 45600,
+      "Entries": [
+        "Er... where are you hiding yourself...?"
+      ]
+    },
+    {
+      "ID": 45610,
+      "Entries": [
+        "Eek!"
+      ]
+    },
+    {
+      "ID": 45620,
+      "Entries": [
+        "Ow!"
+      ]
+    },
+    {
+      "ID": 45630,
+      "Entries": [
+        "What are you...! You stop that!"
+      ]
+    },
+    {
+      "ID": 45640,
+      "Entries": [
+        "You there..."
+      ]
+    },
+    {
+      "ID": 45641,
+      "Entries": [
+        "I can sense it. You can hear the voice of God."
+      ]
+    },
+    {
+      "ID": 45642,
+      "Entries": [
+        "And you are battling those terrible Demons."
+      ]
+    },
+    {
+      "ID": 45643,
+      "Entries": [
+        "Our merciful God has sent you here to protect us!"
+      ]
+    },
+    {
+      "ID": 45644,
+      "Entries": [
+        "I will share with you everything I have."
+      ]
+    },
+    {
+      "ID": 45645,
+      "Entries": [
+        "May the heavens gaze favourably upon you."
+      ]
+    },
+    {
+      "ID": 45646,
+      "Entries": [
+        "Umbasa."
+      ]
+    },
+    {
+      "ID": 45650,
+      "Entries": [
+        "oh how did this happen"
+      ]
+    },
+    {
+      "ID": 47500,
+      "Entries": [
+        "This is Boletaria, a warped world \nshaped by the trade in souls."
+      ]
+    },
+    {
+      "ID": 47501,
+      "Entries": [
+        "Do you have your soul still? Then beware: \nsoul-starved men and terrible Demons will hunt \nyou down for it."
+      ]
+    },
+    {
+      "ID": 47502,
+      "Entries": [
+        "You seem to have plenty about you. \nSurely you realize that you are a sacrifice; \nyou are meant to die here."
+      ]
+    },
+    {
+      "ID": 47503,
+      "Entries": [
+        "Are you in need of a way out? \nYou must begin by seeking knowledge."
+      ]
+    },
+    {
+      "ID": 47504,
+      "Entries": [
+        "I am Tell All. And I can tell you... anything."
+      ]
+    },
+    {
+      "ID": 47510,
+      "Entries": [
+        "Very well. But this is a dangerous place to \nnavigate on one's own."
+      ]
+    },
+    {
+      "ID": 47520,
+      "Entries": [
+        "Wise warrior, do you seek further knowledge?"
+      ]
+    },
+    {
+      "ID": 47530,
+      "Entries": [
+        "I see. May God have mercy upon the ignorant."
+      ]
+    },
+    {
+      "ID": 47540,
+      "Entries": [
+        "I am Tell All."
+      ]
+    },
+    {
+      "ID": 47541,
+      "Entries": [
+        "My knowledge is vast, and memory deep."
+      ]
+    },
+    {
+      "ID": 47542,
+      "Entries": [
+        "Trust in me, for I will not misguide you."
+      ]
+    },
+    {
+      "ID": 47550,
+      "Entries": [
+        "Come again, eternal prisoner."
+      ]
+    },
+    {
+      "ID": 47551,
+      "Entries": [
+        "If you wish to save yourself."
+      ]
+    },
+    {
+      "ID": 47560,
+      "Entries": [
+        "Come again."
+      ]
+    },
+    {
+      "ID": 47561,
+      "Entries": [
+        "If you survive, I have much more to tell."
+      ]
+    },
+    {
+      "ID": 47570,
+      "Entries": [
+        "What foolishness..."
+      ]
+    },
+    {
+      "ID": 47571,
+      "Entries": [
+        "What will violence accomplish here?"
+      ]
+    },
+    {
+      "ID": 47580,
+      "Entries": [
+        "Where are you going?"
+      ]
+    },
+    {
+      "ID": 47581,
+      "Entries": [
+        "Do you fear the truth?"
+      ]
+    },
+    {
+      "ID": 48500,
+      "Entries": [
+        "I'm Stockpile Thomas."
+      ]
+    },
+    {
+      "ID": 48501,
+      "Entries": [
+        "When the Scourge came, I didn't know what hit me. \nWhen I came to, I found myself here, in the Nexus."
+      ]
+    },
+    {
+      "ID": 48502,
+      "Entries": [
+        "My wife and daughter fell victim to the Demons."
+      ]
+    },
+    {
+      "ID": 48503,
+      "Entries": [
+        "But I would be worthless in battle. \nAt the very least, I hope to lend my assistance \nto you brave slayers of Demons."
+      ]
+    },
+    {
+      "ID": 48504,
+      "Entries": [
+        "I would be happy to lighten your load \nand look after any excess baggage."
+      ]
+    },
+    {
+      "ID": 48510,
+      "Entries": [
+        "Rest assured. Your goods are safe and sound with me."
+      ]
+    },
+    {
+      "ID": 48511,
+      "Entries": [
+        "Best of luck to you!"
+      ]
+    },
+    {
+      "ID": 48520,
+      "Entries": [
+        "Hello again."
+      ]
+    },
+    {
+      "ID": 48521,
+      "Entries": [
+        "I'm keeping a close watch on your belongings. Rest assured!"
+      ]
+    },
+    {
+      "ID": 48530,
+      "Entries": [
+        "You have a heart of gold. Don't let them take it from you."
+      ]
+    },
+    {
+      "ID": 48540,
+      "Entries": [
+        "Thank goodness you are safe!"
+      ]
+    },
+    {
+      "ID": 48541,
+      "Entries": [
+        "I was worried sick about you."
+      ]
+    },
+    {
+      "ID": 48550,
+      "Entries": [
+        "We are indebted to you, for you fight on our behalf."
+      ]
+    },
+    {
+      "ID": 48552,
+      "Entries": [
+        "Wait, where are you going?"
+      ]
+    },
+    {
+      "ID": 48554,
+      "Entries": [
+        "What was that about? Running off like that."
+      ]
+    },
+    {
+      "ID": 48560,
+      "Entries": [
+        "When the Scourge came, I abandoned my wife and daughter, \nand fled like a madman."
+      ]
+    },
+    {
+      "ID": 48561,
+      "Entries": [
+        "When I came to, I was in the Nexus. \nI haven't dared venture outside these walls since."
+      ]
+    },
+    {
+      "ID": 48562,
+      "Entries": [
+        "I wish I could do more, but I am ignorant of the world\nbeyond these walls."
+      ]
+    },
+    {
+      "ID": 48570,
+      "Entries": [
+        "That candle maiden cared for me \nduring my first days in the Nexus."
+      ]
+    },
+    {
+      "ID": 48571,
+      "Entries": [
+        "She says very little, but has a kind heart. \nShe's just the age my young daughter would have been."
+      ]
+    },
+    {
+      "ID": 48572,
+      "Entries": [
+        "The poor, poor girl... trapped here \nwith her eyes occluded by wax."
+      ]
+    },
+    {
+      "ID": 48573,
+      "Entries": [
+        "If only something could be done to help her..."
+      ]
+    },
+    {
+      "ID": 48580,
+      "Entries": [
+        "Th-Th-That hairpin! That belongs to my daughter!"
+      ]
+    },
+    {
+      "ID": 48581,
+      "Entries": [
+        "...Then, she didn't make it after all...\nmy dearest little baby... may she rest in peace..."
+      ]
+    },
+    {
+      "ID": 48582,
+      "Entries": [
+        "May I ask you a favour?"
+      ]
+    },
+    {
+      "ID": 48583,
+      "Entries": [
+        "Would you mind giving up that hairpin? \nI'd like to have it in memory of my daughter."
+      ]
+    },
+    {
+      "ID": 48590,
+      "Entries": [
+        "You're a saint!"
+      ]
+    },
+    {
+      "ID": 48591,
+      "Entries": [
+        "Thank you, thank you so much!"
+      ]
+    },
+    {
+      "ID": 48592,
+      "Entries": [
+        "Oh, I mustn't forget..."
+      ]
+    },
+    {
+      "ID": 48593,
+      "Entries": [
+        "It's not much, but please accept this as thanks."
+      ]
+    },
+    {
+      "ID": 48594,
+      "Entries": [
+        "I'm a bit ashamed to say, but I found it one day,\ndiscarded on the main road."
+      ]
+    },
+    {
+      "ID": 48595,
+      "Entries": [
+        "But it seems to possess a strange power."
+      ]
+    },
+    {
+      "ID": 48596,
+      "Entries": [
+        "Anyway, I feel that you should have it. \nIt will be happier in your hands."
+      ]
+    },
+    {
+      "ID": 48600,
+      "Entries": [
+        "Yes, yes, of course..."
+      ]
+    },
+    {
+      "ID": 48601,
+      "Entries": [
+        "You are the one who found it; it should remain yours."
+      ]
+    },
+    {
+      "ID": 48602,
+      "Entries": [
+        "Hahaha, please, forgive me. \nI didn't mean to get emotional."
+      ]
+    },
+    {
+      "ID": 48603,
+      "Entries": [
+        "Hahahaha..."
+      ]
+    },
+    {
+      "ID": 48610,
+      "Entries": [
+        "Saints, sages, and all manner of wise men \nwatch over the halls of this Nexus."
+      ]
+    },
+    {
+      "ID": 48611,
+      "Entries": [
+        "This rejuvenating sanctorium is a fine place \nfor the slayers of Demons to rest their weary bones."
+      ]
+    },
+    {
+      "ID": 48612,
+      "Entries": [
+        "I, too, must contribute how I can, \nfor we are indebted to our honourable defenders."
+      ]
+    },
+    {
+      "ID": 48620,
+      "Entries": [
+        "What is the world like outside the Nexus?"
+      ]
+    },
+    {
+      "ID": 48621,
+      "Entries": [
+        "With brave souls like you confronting these vile Demons,"
+      ]
+    },
+    {
+      "ID": 48622,
+      "Entries": [
+        "perhaps it won't be long before things return to normal."
+      ]
+    },
+    {
+      "ID": 48623,
+      "Entries": [
+        "At least, that is what we are all praying for..."
+      ]
+    },
+    {
+      "ID": 48630,
+      "Entries": [
+        "Sometimes I stop and wonder"
+      ]
+    },
+    {
+      "ID": 48631,
+      "Entries": [
+        "how I ended up in the Nexus in the first place."
+      ]
+    },
+    {
+      "ID": 48632,
+      "Entries": [
+        "Why didn't I protect my wife and daughter, \neven if it meant being slain by the Demons?"
+      ]
+    },
+    {
+      "ID": 48633,
+      "Entries": [
+        "Hahahah, please forgive me. I am over it now."
+      ]
+    },
+    {
+      "ID": 48640,
+      "Entries": [
+        "How do you do it?"
+      ]
+    },
+    {
+      "ID": 48641,
+      "Entries": [
+        "I can't imagine what it takes to slay a Demon..."
+      ]
+    },
+    {
+      "ID": 48642,
+      "Entries": [
+        "If only I could assist in this fight..."
+      ]
+    },
+    {
+      "ID": 48650,
+      "Entries": [
+        "What on earth has come over you!?"
+      ]
+    },
+    {
+      "ID": 48651,
+      "Entries": [
+        "In God's name, stop!"
+      ]
+    },
+    {
+      "ID": 49000,
+      "Entries": [
+        "Heh heh heh, hello there!"
+      ]
+    },
+    {
+      "ID": 49001,
+      "Entries": [
+        "Souls, souls! I trade fine goods for souls!"
+      ]
+    },
+    {
+      "ID": 49010,
+      "Entries": [
+        "Heh heh heh! It's a pleasure doin' business with yer."
+      ]
+    },
+    {
+      "ID": 49020,
+      "Entries": [
+        "Yer want to play, well, you've got to pay."
+      ]
+    },
+    {
+      "ID": 49021,
+      "Entries": [
+        "Don't you agree?"
+      ]
+    },
+    {
+      "ID": 49030,
+      "Entries": [
+        "Heh heh heh, remember me?"
+      ]
+    },
+    {
+      "ID": 49031,
+      "Entries": [
+        "I've got plenty o' wares, so bring me plenty o' souls!"
+      ]
+    },
+    {
+      "ID": 49040,
+      "Entries": [
+        "Heh heh heh, hello. Here to make a deal?"
+      ]
+    },
+    {
+      "ID": 49050,
+      "Entries": [
+        "Heh heh, hello there. Bless yer souls!"
+      ]
+    },
+    {
+      "ID": 49052,
+      "Entries": [
+        "Heh heh...well all right then."
+      ]
+    },
+    {
+      "ID": 49053,
+      "Entries": [
+        "Come back when you actually need something!"
+      ]
+    },
+    {
+      "ID": 49055,
+      "Entries": [
+        "Where're yer running off to?"
+      ]
+    },
+    {
+      "ID": 49057,
+      "Entries": [
+        "Heh heh heh, stop with yer messing!"
+      ]
+    },
+    {
+      "ID": 49060,
+      "Entries": [
+        "Our little town? Well, heh heh... It's a nice wee place."
+      ]
+    },
+    {
+      "ID": 49061,
+      "Entries": [
+        "All those lizard-eyed townsfolk are busy tinkering \nwith stone, and don't bother with old men like meself."
+      ]
+    },
+    {
+      "ID": 49062,
+      "Entries": [
+        "Makes life rather easy for me. \nI can get away with anything! \nHeh heh heh heh."
+      ]
+    },
+    {
+      "ID": 49063,
+      "Entries": [
+        "Thank you, Lord, for this golden opportunity! Heh heh heh."
+      ]
+    },
+    {
+      "ID": 49070,
+      "Entries": [
+        "Have you heard about that sparkling lizard?"
+      ]
+    },
+    {
+      "ID": 49071,
+      "Entries": [
+        "He's not easy to catch, but he's got some fine stones."
+      ]
+    },
+    {
+      "ID": 49072,
+      "Entries": [
+        "And I know where his nest is!"
+      ]
+    },
+    {
+      "ID": 49073,
+      "Entries": [
+        "Oh, I'm sorry, I can't give it away! Heh heh heh heh!"
+      ]
+    },
+    {
+      "ID": 49080,
+      "Entries": [
+        "Heh heh heh, have you heard?"
+      ]
+    },
+    {
+      "ID": 49081,
+      "Entries": [
+        "Deep below this mine, there's a dragon shrine filled\nwith dragon bones."
+      ]
+    },
+    {
+      "ID": 49082,
+      "Entries": [
+        "Well, according to little Scirvir, anyway."
+      ]
+    },
+    {
+      "ID": 49083,
+      "Entries": [
+        "I'm not about to go and find out. "
+      ]
+    },
+    {
+      "ID": 49084,
+      "Entries": [
+        "Those bearbugs scare the living daylights out of me!"
+      ]
+    },
+    {
+      "ID": 49090,
+      "Entries": [
+        "What do you think you're doing!"
+      ]
+    },
+    {
+      "ID": 49091,
+      "Entries": [
+        "You can't get around me easy, so watch yourself!"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Hm? You new here? Are you here for my services?"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "The name's Boldwin... Just an ordinary blacksmith."
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "It's simple. Just bring me all the souls you can."
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "In trade, I'll give you weapons. \nOr forge ones you already have."
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "With your souls, I can eke out a living, \nand with my weapons, you can go on living. \nNot a bad deal, eh?"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Oh, good day to you."
+      ]
+    },
+    {
+      "ID": 50011,
+      "Entries": [
+        "I can forge weapons for you, for a fair price."
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Do come back alive. I need your business."
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "No interest, eh?"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "I can tell you're not going to last long here..."
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "What's the hurry? Where're you off to?"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Have you any manners?"
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        "I'll excuse the rudeness, but only this once."
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        "You're lucky that it's me and not one of the\nother barbaric louts."
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        "Perhaps you've already heard, but there's another\nblacksmith at the entrance of Stonefang mine."
+      ]
+    },
+    {
+      "ID": 50041,
+      "Entries": [
+        "He's an eccentric old man, but he knows his trade well. \nHe's the only sane one left in a town of soul-starved men."
+      ]
+    },
+    {
+      "ID": 50042,
+      "Entries": [
+        "If you do meet him... Yeah... well, forget it, \nthat stubborn old n'er do well will just ignore you..."
+      ]
+    },
+    {
+      "ID": 50050,
+      "Entries": [
+        "There aren't enough blacksmiths \nin this temple to handle all the work."
+      ]
+    },
+    {
+      "ID": 50051,
+      "Entries": [
+        "Only certain ores can be used to forge weapons, \nbut you'll just have to make do."
+      ]
+    },
+    {
+      "ID": 50052,
+      "Entries": [
+        "And be thankful that I'm still of good health."
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "Well, old Ed's still up to his old strange ways, is he?"
+      ]
+    },
+    {
+      "ID": 50071,
+      "Entries": [
+        "Hah hah, even the Demons don't know what to\ndo with him, hmm?"
+      ]
+    },
+    {
+      "ID": 50072,
+      "Entries": [
+        "Gawd, my sides ache! Hah hah hah hah..."
+      ]
+    },
+    {
+      "ID": 50080,
+      "Entries": [
+        "Deep inside Stonefang mine is \nan ancient dragon burial ground."
+      ]
+    },
+    {
+      "ID": 50081,
+      "Entries": [
+        "The bones of the dragons exude ore."
+      ]
+    },
+    {
+      "ID": 50090,
+      "Entries": [
+        "Back in my younger years, I had the strength of an ox."
+      ]
+    },
+    {
+      "ID": 50091,
+      "Entries": [
+        "The miners would always ask me to clear out the bearbugs, \nwhich I pummelled with my bare hands!"
+      ]
+    },
+    {
+      "ID": 50092,
+      "Entries": [
+        "But even I couldn't beat 'em. \nSo I lobbed them into the lava pits!"
+      ]
+    },
+    {
+      "ID": 50093,
+      "Entries": [
+        "Gah hah hah hah hah!"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "I'm pretty strong myself, \nbut even I don't compare to old Ed."
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "The man's a beast, I tell you! The man must eat\ndragon tails and wishing stones."
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "If you heed my advice, you'll avoid crossing him."
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "I reckon he'd prove a lot more trouble than most Demons!"
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        "Gah hah hah hah hah!"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "What in blazes do you think you're doing!?"
+      ]
+    },
+    {
+      "ID": 50111,
+      "Entries": [
+        "Have you lost your wretched senses?"
+      ]
+    },
+    {
+      "ID": 50112,
+      "Entries": [
+        "I am Boldwin, and I am not going down without a fight!"
+      ]
+    }
+  ]
+}

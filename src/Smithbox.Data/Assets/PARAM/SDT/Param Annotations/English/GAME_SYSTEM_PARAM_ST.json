@@ -1,0 +1,658 @@
+{
+  "Param": "GAME_SYSTEM_PARAM_ST",
+  "Type": "GAME_SYSTEM_PARAM_ST",
+  "Name": "GAME_SYSTEM_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "BaseToughnessRecoverTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_byLeft90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_byRight90",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_byLeft180",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_byRight180",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_90TurnStartAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ChrEventTrun_180TurnStartAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DeptDeceasedItemId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "FlickDamageCutRateSuccessGurad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NpcTalkAnimBeginDiffAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NpcTalkAnimEndDiffAngle",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_Optional",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_LevelUp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_StatusReroll",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_DeadLevelReset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_Atonement",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_NpcWhiteGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_Bomb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultDeadSpEffectId_NoInvasion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_LevelUp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_StatusReroll",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_DeadLevelReset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_Atonement",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_NpcWhiteGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_Bomb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "CultSwordItemId_NoInvasion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_LevelUp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_StatusReroll",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_DeadLevelReset",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Atonement",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_MaxChr",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaOut",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaClear",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Bomb",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NoInvasion",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AcquittalTargetNpcEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActiveCultAtonementEventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RecoverBelowMaxHpCompletionNoticeSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byMp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RespawnSpecialEffectActiveCheckerSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byHost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byHost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyHpGaugeScreenOffset_byUp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_ShootBulletDummypolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopHost",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_None",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_BulletId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_ShootBulletDummypolyId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_DeadFadeOutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "IgnorNetStateSyncTime_ForThrow",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPenaltyPointLanDisconnect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPenaltyPointProfileSignout",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPenaltyPointReboot",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPnaltyPointSuspend",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPenaltyForgiveItemLimitTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetPenaltyPointThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "UncontrolledMoveThresholdTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byNpcEnemy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_MaxLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetFpsCheck_fpsThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NetFpsCheck_lowfpsTImeThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SoloBreakInMaxPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "NpcTalkTimeOutThreshold",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SendPlayLogIntervalTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Item370_MaxSfxNum",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_83",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperAbs",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperRel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SummonDataCoopMatchingWepLevelMul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PickUpBerserkerSignSpEffectBulletId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SucceedBerserkerSelfKillingEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperRel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperAbs",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingLevelRedSignUpperRel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingLevelRedSignUpperAbs",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_94",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SendGlobalEventLogIntervalTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AddSoloBreakInPoint_White",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AddSoloBreakInPoint_Black",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AddSoloBreakInPoint_ForceJoin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorGuardian",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorRedHunter",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved_98",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "RedHunter_HostBossAreaGetSoulRate",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

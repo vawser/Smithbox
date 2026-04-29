@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <consumeType  Enum="SPELL_SOUL_CONSUME_TYPE"/>
+        <dummy0 />
+        <consumeSoul />
+        <bulletAndDamageId01 />
+        <bulletAndDamageId02 />
+        <bulletAndDamageId03 />
+        <bulletAndDamageId04 />
+        <bulletAndDamageId05 />
+        <bulletAndDamageLeftId01 />
+        <bulletAndDamageLeftId02 />
+        <bulletAndDamageLeftId03 />
+        <bulletAndDamageLeftId04 />
+        <bulletAndDamageLeftId05 />
+    </Field>
+</PARAMMETA>

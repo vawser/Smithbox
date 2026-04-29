@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>EZSTATE_SHARED_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 ezstate_value" />
-  </Fields>
+    <ParamType>EZSTATE_SHARED_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>104</FormatVersion>
+    <Fields>
+        <Field Def="f32 value">
+            <DisplayName>設定値</DisplayName>
+            <Description>設定用データ</Description>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>999999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>1</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

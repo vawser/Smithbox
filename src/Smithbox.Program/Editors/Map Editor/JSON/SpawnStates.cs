@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class SpawnStateResource
+public class SpawnStates
 {
-    public List<SpawnStateEntry> list { get; set; }
+    public List<SpawnStateEntry> List { get; set; } = new();
 }
 
 public class SpawnStateEntry
 {
     public string id { get; set; }
     public string name { get; set; }
-    public List<SpawnStatePair> states { get; set; }
+    public List<SpawnStateContents> states { get; set; }
 }
 
-public class SpawnStatePair
+public class SpawnStateContents
 {
     public string value { get; set; }
     public string name { get; set; }

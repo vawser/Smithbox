@@ -7,17 +7,20 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="s32 unk_00"/>
-    <Field Def="u16 unk_01a"/>
-    <Field Def="u16 unk_01b"/>
-    <Field Def="s32 unk_02"/>
-    <Field Def="u16 unk_03a"/>
-    <Field Def="u16 unk_03b"/>
-    <Field Def="s32 unk_04"/>
-    <Field Def="s32 unk_05"/>
+    <Field Def="u8 categoryId"/>
+	<Field Def="u8 mutationCount"/>
+	<Field Def="s16 isTeamMutation"/>
+    <Field Def="u16 mutationId"/>
+    <Field Def="u16 smallBaseId"/>
+    <Field Def="s32 variation"/>
+    <Field Def="u8 mapUnk_1"/>
+	<Field Def="u8 mapUnk_2"/>
+    <Field Def="u16 mapUnk_3"/>
+    <Field Def="s32 randomAppearId"/>
+    <Field Def="s32 modifierMapId1"/>
     <Field Def="s32 unk_06"/>
-    <Field Def="s32 unk_07"/>
-    <Field Def="s32 unk_08"/>
+    <Field Def="s32 modifierMapId2"/>
+    <Field Def="s32 modifierMapId3"/>
     <Field Def="s32 unk_09"/>
     <Field Def="s32 unk_10"/>
     <Field Def="s32 unk_11"/>

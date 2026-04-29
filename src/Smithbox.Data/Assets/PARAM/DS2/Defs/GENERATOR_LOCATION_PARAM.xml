@@ -1,18 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>GENERATOR_LOCATION_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 PositionX" />
-    <Field Def="f32 PositionY" />
-    <Field Def="f32 PositionZ" />
-    <Field Def="f32 RotationX" />
-    <Field Def="f32 RotationY" />
-    <Field Def="f32 RotationZ" />
-    <Field Def="u32 LocUnk18" />
-    <Field Def="u32 UnkInheritInstanceParamId" />
-  </Fields>
+    <ParamType>GENERATOR_LOCATION_PARAM</ParamType>
+    <DataVersion>1</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 PositionX">
+            <DisplayName>配置位置X</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-100000</Minimum>
+            <Maximum>100000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 PositionY">
+            <DisplayName>配置位置Y</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-100000</Minimum>
+            <Maximum>100000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>101</SortID>
+        </Field>
+        <Field Def="f32 PositionZ">
+            <DisplayName>配置位置Z</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-100000</Minimum>
+            <Maximum>100000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>102</SortID>
+        </Field>
+        <Field Def="f32 RotationX">
+            <DisplayName>配置角度X</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="f32 RotationY">
+            <DisplayName>配置角度Y</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>111</SortID>
+        </Field>
+        <Field Def="f32 RotationZ">
+            <DisplayName>配置角度Z</DisplayName>
+            <DisplayFormat>%s</DisplayFormat>
+            <Minimum>-180</Minimum>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>112</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[8]">
+            <DisplayName>予約</DisplayName>
+            <SortID>113</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

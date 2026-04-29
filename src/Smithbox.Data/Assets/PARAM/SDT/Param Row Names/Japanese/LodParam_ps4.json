@@ -1,0 +1,389 @@
+{
+  "Name": "LodParam_ps4",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default configuration -- デフォルト設定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 main -- L0メイン"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 main -- L1メイン"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Do not LOD -- LODしない"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "testparm -- testparm"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Small size -- サイズ小"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Medium size -- サイズ中"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Large size -- サイズ大"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Oversized size -- サイズ特大"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Does not switch to LOD model -- LODモデルに切り替わらない"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Lake beast -- 湖獣"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Does not switch to low texture -- lowテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Does not switch to LOD model does not switch to low texture -- LODモデルに切り替わらない lowテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 only (reflection scene default) -- L2のみ（反射シーンデフォルト）"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Does not switch to LOD model (for poly drama) -- LODモデルに切り替わらない(ポリ劇用)"
+      ]
+    }
+  ]
+}

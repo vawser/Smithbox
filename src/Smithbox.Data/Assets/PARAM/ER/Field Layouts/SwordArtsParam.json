@@ -1,0 +1,79 @@
+{
+  "Name": "SwordArtsParam",
+  "Groups": [
+    {
+      "Key": "Presentation",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Presentation"
+        }
+      ],
+      "Fields": [
+        "textId",
+        "iconId",
+        "shieldIconType"
+      ]
+    },
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Parameters"
+        }
+      ],
+      "Fields": [
+        "swordArtsTypeNew",
+        "artsSpeedType",
+        "refStatus",
+        "aiUsageId"
+      ]
+    },
+    {
+      "Key": "FP Consumption",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "FP Consumption"
+        }
+      ],
+      "Fields": [
+        "useMagicPoint_L1",
+        "useMagicPoint_L2",
+        "useMagicPoint_R1",
+        "useMagicPoint_R2"
+      ]
+    },
+    {
+      "Key": "Arts Points",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Arts Points"
+        }
+      ],
+      "Fields": [
+        "usePoint_L1",
+        "usePoint_L2",
+        "usePoint_R1",
+        "usePoint_R2"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "isRefRightArts",
+        "isGrayoutLeftHand",
+        "isGrayoutRightHand",
+        "isGrayoutBothHand"
+      ]
+    }
+  ]
+}

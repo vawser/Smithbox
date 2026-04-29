@@ -1,0 +1,56 @@
+{
+  "Key": "ItemCategory",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ItemCategory"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "4294967295",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "268435456",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Armor"
+        }
+      ]
+    },
+    {
+      "Key": "536870912",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Accessory"
+        }
+      ]
+    },
+    {
+      "Key": "1073741824",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Good"
+        }
+      ]
+    }
+  ]
+}

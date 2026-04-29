@@ -1,0 +1,283 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": "Determines the hit effect particles.",
+  "Fields": [
+    {
+      "Field": "Slash_S",
+      "Name": "Slash: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Slash_M",
+      "Name": "Slash: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "Slash: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Slash_LL",
+      "Name": "Slash: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Slash_LLL",
+      "Name": "Slash: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "Thrust: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Thrust_M",
+      "Name": "Thrust: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "Thrust: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Thrust_LL",
+      "Name": "Thrust: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Thrust_LLL",
+      "Name": "Thrust: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "Strike: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blow_M",
+      "Name": "Strike: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "Strike: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blow_LL",
+      "Name": "Strike: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blow_LLL",
+      "Name": "Strike: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blast_S",
+      "Name": "Blast: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blast_M",
+      "Name": "Blast: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blast_L",
+      "Name": "Blast: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blast_LL",
+      "Name": "Blast: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Blast_LLL",
+      "Name": "Blast: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Bullet_S",
+      "Name": "Bullet: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Bullet_M",
+      "Name": "Bullet: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Bullet_L",
+      "Name": "Bullet: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Bullet_LL",
+      "Name": "Bullet: Giant - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Bullet_LLL",
+      "Name": "Bullet: Enormous - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "bFollow_Slash_S",
+      "Name": "Slash: Small - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Slash_M",
+      "Name": "Slash: Medium - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Slash_L",
+      "Name": "Slash: Large - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Slash_LL",
+      "Name": "Slash: Giant - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Slash_LLL",
+      "Name": "Slash: Enormous - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Thrust_S",
+      "Name": "Thrust: Small - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Thrust_M",
+      "Name": "Thrust: Medium - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Thrust_L",
+      "Name": "Thrust: Large - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Thrust_LL",
+      "Name": "Thrust: Giant - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Thrust_LLL",
+      "Name": "Thrust: Enormous - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blow_S",
+      "Name": "Strike: Small - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blow_M",
+      "Name": "Strike: Medium - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blow_L",
+      "Name": "Strike: Large - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blow_LL",
+      "Name": "Strike: Giant - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blow_LLL",
+      "Name": "Strike: Enormous - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blast_S",
+      "Name": "Blast: Small - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blast_M",
+      "Name": "Blast: Medium - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blast_L",
+      "Name": "Blast: Large - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blast_LL",
+      "Name": "Blast: Giant - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Blast_LLL",
+      "Name": "Blast: Enormous - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Bullet_S",
+      "Name": "Bullet: Small - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Bullet_M",
+      "Name": "Bullet: Medium - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Bullet_L",
+      "Name": "Bullet: Large - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Bullet_LL",
+      "Name": "Bullet: Giant - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "bFollow_Bullet_LLL",
+      "Name": "Bullet: Enormous - Follow Impact Position",
+      "Description": "If ON, the SFX will follow the impact position if the bullet impacts for 2 frames or more. If OFF, a new SFX is created instead."
+    },
+    {
+      "Field": "reserved01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Critical_Small",
+      "Name": "Critical: Small - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Critical_Middle",
+      "Name": "Critical: Medium - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "Critical_Large",
+      "Name": "Critical: Large - Particle ID",
+      "Description": "The SFX ID to use for this slot."
+    },
+    {
+      "Field": "reserved02",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

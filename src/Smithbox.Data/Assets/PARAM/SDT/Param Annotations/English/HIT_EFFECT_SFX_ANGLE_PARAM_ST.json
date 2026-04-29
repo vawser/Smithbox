@@ -1,0 +1,93 @@
+{
+  "Param": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "XAxisAngle_AttackDirUpper",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "YAxisAngle_AttackDirUpper",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirUpper",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "XAxisAngle_AttackDirBottom",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "YAxisAngle_AttackDirBottom",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirBottom",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "XAxisAngle_AttackDirLeft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "YAxisAngle_AttackDirLeft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirLeft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "XAxisAngle_AttackDirRight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "YAxisAngle_AttackDirRight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirRight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkDirUpper",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkDirBottom",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkDirLeft",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkDirRight",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

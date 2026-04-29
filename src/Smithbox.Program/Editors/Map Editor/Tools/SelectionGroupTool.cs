@@ -154,6 +154,8 @@ public class SelectionGroupTool
 
         if (ImGui.CollapsingHeader("Selection Groups"))
         {
+            ImGui.BeginChild("SelectionGroupToolSection");
+
             var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
             var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
             var topSectionHeight = windowSize.Y * 0.1f;
@@ -287,6 +289,8 @@ public class SelectionGroupTool
                     UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
                 }
             }
+
+            ImGui.EndChild();
 
             ImGui.EndChild();
         }

@@ -1,0 +1,74 @@
+{
+  "Key": "ASSET_SLOD_TEX_SIZE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_SLOD_TEX_SIZE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "64x64"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "128x128"
+        }
+      ]
+    },
+    {
+      "Key": "256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "256x256"
+        }
+      ]
+    },
+    {
+      "Key": "512",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "512x512"
+        }
+      ]
+    },
+    {
+      "Key": "1024",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1024x1024"
+        }
+      ]
+    },
+    {
+      "Key": "2048",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2048x2048"
+        }
+      ]
+    },
+    {
+      "Key": "4096",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4096x4096"
+        }
+      ]
+    }
+  ]
+}

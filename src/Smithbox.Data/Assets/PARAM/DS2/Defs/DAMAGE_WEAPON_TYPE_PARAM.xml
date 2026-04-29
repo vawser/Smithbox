@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>DAMAGE_WEAPON_TYPE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 Unk04" />
-  </Fields>
+    <ParamType>DAMAGE_WEAPON_TYPE_PARAM</ParamType>
+    <DataVersion>4</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 phantomRate = 1">
+            <DisplayName>霊体</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 freshRate = 1">
+            <DisplayName>生・布</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 hardRate = 1">
+            <DisplayName>やや硬い</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 veryHardRate = 1">
+            <DisplayName>とても硬い</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 giantRate = 1">
+            <DisplayName>巨人・デーモン</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

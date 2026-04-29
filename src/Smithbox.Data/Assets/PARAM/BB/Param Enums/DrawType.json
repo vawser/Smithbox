@@ -1,0 +1,29 @@
+{
+  "Key": "DrawType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DrawType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Human"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hollow"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2936 @@
+{
+  "Key": "OBJ_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Template"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other tests"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden treasure chest test"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Metal treasure chest test"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wall prefab test"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No block test"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tiny block test"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small block test"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium block test"
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large block test"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra large block test"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "∞Block test"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden barrel test"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Colossus Head Test"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden box test"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Tackle Destruction Great Door Test"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden chair test"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Prefab test test"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Destroyed Bridge Test"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A test that breaks if you touch it"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Wooden scaffolding test"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Stone Pillar Test"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hanging trinket test"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unbreakable accessories (general purpose) test"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Non-moving wooden barrel test"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Fortress of Resistance] Broken Ballista Test"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss statue test test"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] Figurine GD test"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [GGD compatible] Breaks with one attack"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Dragon Research Institute: Giant Attribute"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Breaks with one attack: Roll"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Breaks with one attack: Figurine"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [GGD compatible] Breaks with one attack: On paper"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tentative] Default value for \"destructible\" objects"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Statue Knight Neck"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Statue Knight neck (temporary Mr. Shimizu)"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] [E3 compatible] Statue Knight Stone Statue"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Test] Cart (hard)"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bonfire_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Bonfire_Destructible"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White door_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wooden treasure chest_destructible"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron treasure chest_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Wooden treasure chest_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flaming treasure chest Destructible"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Treasure Corpse_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Corpse_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Item_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Iron ladder_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rope_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lever, valve, strap_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Unusable] Wall lever_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Switch_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "195",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door_destructible"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single door_indestructible HP setting available"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Iron single door_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Stone single door_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both doors_indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "231",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both doors_destructible"
+        }
+      ]
+    },
+    {
+      "Key": "235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Stone double doors_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Double iron doors_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Wooden standing board_Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lighthouse_Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Boss statue"
+        }
+      ]
+    },
+    {
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Barista barrel"
+        }
+      ]
+    },
+    {
+      "Key": "290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Hanging lantern"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Titan] Head of the Colossus"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Fortress of Resistance] Broken Ballista"
+        }
+      ]
+    },
+    {
+      "Key": "320",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Fortress of Resistance] Bridge destroyed by fireballs"
+        }
+      ]
+    },
+    {
+      "Key": "330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Fortress of Resistance] Barricade"
+        }
+      ]
+    },
+    {
+      "Key": "340",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Fairy's Bank] Tree branch wall"
+        }
+      ]
+    },
+    {
+      "Key": "350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Fortress of Resistance] Boss room stone floor"
+        }
+      ]
+    },
+    {
+      "Key": "360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Andile] Ogre Destruction Wall"
+        }
+      ]
+    },
+    {
+      "Key": "365",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Andile] Ogre Destruction Double Door"
+        }
+      ]
+    },
+    {
+      "Key": "370",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[General Purpose] Walls that can be broken by flame barrels"
+        }
+      ]
+    },
+    {
+      "Key": "371",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[General purpose] Lazy pot (normal)"
+        }
+      ]
+    },
+    {
+      "Key": "372",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[General purpose] Flame barrel (moving object)"
+        }
+      ]
+    },
+    {
+      "Key": "373",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[General purpose] Flame barrel (immovable)"
+        }
+      ]
+    },
+    {
+      "Key": "374",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[General purpose] Lazy pot (hollow fall only)"
+        }
+      ]
+    },
+    {
+      "Key": "380",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Hidden door (destructible)"
+        }
+      ]
+    },
+    {
+      "Key": "381",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Hidden door (cannot be destroyed)"
+        }
+      ]
+    },
+    {
+      "Key": "390",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Prisoner's Prison] OBJ that changes from static to dynamic"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Decoy"
+        }
+      ]
+    },
+    {
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hunting Forest] Chariots event_horse carriage"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] Lazy pot"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Damari Valley] Boss battle jar"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Heide's Great Fire Tower] Pillar that can only be destroyed by the boss"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Hollow Shadow Forest] Human Face Tree"
+        }
+      ]
+    },
+    {
+      "Key": "460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Giant] Boss destroys the tower"
+        }
+      ]
+    },
+    {
+      "Key": "470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Madura] Well event punching stone"
+        }
+      ]
+    },
+    {
+      "Key": "480",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Memory of the Giant] Ladder destroyed by the boss"
+        }
+      ]
+    },
+    {
+      "Key": "490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Prison of Oblivion] Iron bars in the boss room"
+        }
+      ]
+    },
+    {
+      "Key": "491",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Forgotten Prison] Barrel shelf"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ojo Doran] Statue Knight's Head"
+        }
+      ]
+    },
+    {
+      "Key": "501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Ojo Doran] Pitfall"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Gerald] Well roof"
+        }
+      ]
+    },
+    {
+      "Key": "511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Gerald] Lower desk"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Hollow Forest] Icicle Stone"
+        }
+      ]
+    },
+    {
+      "Key": "521",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] [Hollow Forest] Dead tree (small tree) in the boss room"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Tamaru Valley] Jar in Jabba the Hutt's room"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Volcano Steel Works] Broken Bridge"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Kudzu bottom] Jizo stone OBJ"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Guardian Dragon's Nest] Wyvern Egg"
+        }
+      ]
+    },
+    {
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Extremely small weight: Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Small weight: Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Heavy: Unbreakable"
+        }
+      ]
+    },
+    {
+      "Key": "903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Heavy: Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Extra large weight: Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss part destruction: Extra large weight: Cannot be destroyed"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Barrel - None - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Barrel - Minimal - Durability Minimal"
+        }
+      ]
+    },
+    {
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Barrel - Small - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Barrel - Medium - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Barrel - Large - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Barrel - Extra Large - Minimum Durability"
+        }
+      ]
+    },
+    {
+      "Key": "1006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Barrel - Extra Large - Minimum Durability"
+        }
+      ]
+    },
+    {
+      "Key": "1007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Barrel - ∞ - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No box - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1051",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-box-extremely small-durability extremely small"
+        }
+      ]
+    },
+    {
+      "Key": "1052",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - box - small - minimal durability"
+        }
+      ]
+    },
+    {
+      "Key": "1053",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Box-Medium-Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1054",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose-box-large-durability minimal"
+        }
+      ]
+    },
+    {
+      "Key": "1055",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Box-Extra Large-Minimum Durability"
+        }
+      ]
+    },
+    {
+      "Key": "1056",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Box - Extra Large - Extremely Durable"
+        }
+      ]
+    },
+    {
+      "Key": "1057",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose-Box-∞-Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise lounge - None - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - Extra small - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - chaise longue - small - wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - Medium - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - Large - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - Extra large - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - Extra large - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Chaise longue - ∞ - Wooden"
+        }
+      ]
+    },
+    {
+      "Key": "1150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Contact destruction - Figurine - Destructible"
+        }
+      ]
+    },
+    {
+      "Key": "1151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose-contact destruction-floor-destructible"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Minimum durability - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Minimum durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Minimum durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Small durability - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Small durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - No weight - Durable - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durable - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General-purpose - Weightless - Durable - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durable extra large - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Durable extra large - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extremely durable - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1251",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extremely durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extremely durable - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - Small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - Small durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1256",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - Medium durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1257",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Very small weight - Medium durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1258",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - Medium durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1259",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - High durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - High durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1261",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Very small weight - High durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1262",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1263",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1264",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1265",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1266",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1267",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extremely small weight - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Minimal durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Minimal durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Minimum durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1304",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Small durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1306",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Light weight - Medium durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1307",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Light weight - Medium durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1308",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Light weight - Medium durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Low Weight-Large Durability-Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - High durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - High durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1312",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1313",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Small weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1314",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Small Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1315",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Light weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1316",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Small Weight - Extra Large Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1317",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Small Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1350",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Medium weight - Minimum durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1351",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Medium weight - Minimum durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1352",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Medium weight - Minimum durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1353",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1354",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1355",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Small durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1356",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-heavy-medium-durable-bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1357",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy - Medium - Durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1358",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Medium Heavy - Medium Durable - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1359",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - High durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1360",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - High durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1361",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - High durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1362",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1363",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1364",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1365",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1366",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1367",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Medium weight - Extra large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - large weight - minimal durability - bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Large weight - Minimum durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1402",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - large weight - minimal durability - special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1403",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - large weight - small durability - bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - large weight - small durability - normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1405",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Large Weight - Small Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1406",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Heavy weight - Medium durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1407",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Heavy Weight - Medium Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1408",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Heavy Weight - Medium Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1409",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Heavy weight - Durable - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Heavy weight - Durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1411",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Heavy Weight - Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1412",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1413",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1414",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Heavy Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1415",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1416",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1417",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Heavy Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Small Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1451",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extra large weight - Extremely small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1452",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Small Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1453",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Extra large weight - Small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1454",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Extra large weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1455",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Extra large weight - Small durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1456",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Medium durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1457",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Medium durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1458",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Heavy weight - Medium durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1459",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extra heavy weight - Large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1460",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Extra heavy weight - Large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1461",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Extra heavy weight - Large durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1462",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1463",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1464",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1465",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1466",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1467",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Super heavy weight - Super small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extremely Small Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Small Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1503",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extra large weight - Small durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1504",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Extra large weight - Small durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1505",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Small Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1506",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Super heavy weight - Medium durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1507",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Medium Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1508",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Medium Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1509",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Super heavy weight - Large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Super heavy weight - Large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1512",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1513",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1514",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1515",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1516",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1517",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Extra Large Weight - Extra Large Durability - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General purpose-Weight ∞-Minimum durability-Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1551",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General Purpose-Weight ∞-Minimum Durability-Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1552",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General purpose-Weight ∞-Minimum durability-Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1553",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1554",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1555",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General purpose - Weight ∞ - Durability small - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1556",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General Purpose-Weight ∞-Durable-Anything"
+        }
+      ]
+    },
+    {
+      "Key": "1557",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General-purpose - Weight ∞ - Durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1558",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Scheduled to be deleted] General Purpose-Weight ∞-Durable-Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1559",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Mass extremely small - Destroy only giants"
+        }
+      ]
+    },
+    {
+      "Key": "1560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Mass small - Destroy only giants"
+        }
+      ]
+    },
+    {
+      "Key": "1561",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Mass Medium - Destroy only giants"
+        }
+      ]
+    },
+    {
+      "Key": "1562",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose weight ∞ - Large mass (pillars) - Destroy only giants"
+        }
+      ]
+    },
+    {
+      "Key": "1563",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Mass extra large - Destroy only giants"
+        }
+      ]
+    },
+    {
+      "Key": "1564",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Mass Extra Large - Destroyed only by giants"
+        }
+      ]
+    },
+    {
+      "Key": "1600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Weightless - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1601",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Extremely small weight - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1602",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - small weight - non-destructible"
+        }
+      ]
+    },
+    {
+      "Key": "1603",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Medium weight - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1604",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Heavy weight - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1605",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Extra large weight - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1606",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Not used] General purpose - Extra large weight - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1607",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Weight ∞ - Indestructible"
+        }
+      ]
+    },
+    {
+      "Key": "1608",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Indestructible - HP setting available"
+        }
+      ]
+    },
+    {
+      "Key": "1650",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Minimum durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1651",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Minimum durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1652",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Minimum durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1653",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Durability small - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1654",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Durability small - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1655",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Weight ∞ - Durability Small - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1656",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Durable - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1657",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Durable - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1658",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Durable - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1659",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1660",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Weight ∞-Large Durability-Normal Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1661",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1662",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Weight ∞ - Extra Large Durability - Bow and Arrow Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1663",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1664",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Weight ∞ - Durability Extra Large - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1665",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Extra large durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1666",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Extra large durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1667",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose - Weight ∞ - Durability Extra Large - Special Attack"
+        }
+      ]
+    },
+    {
+      "Key": "1700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Evasion - Minimum durability - Bow and arrow attack"
+        }
+      ]
+    },
+    {
+      "Key": "1701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Weight ∞ - Evasion - Minimum durability - Normal attack"
+        }
+      ]
+    },
+    {
+      "Key": "1702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Weight ∞ - Evasion - Minimum durability - Special attack"
+        }
+      ]
+    },
+    {
+      "Key": "1800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone-based OBJ - Minimum weight - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - stone-based OBJ - small weight - minimal durability"
+        }
+      ]
+    },
+    {
+      "Key": "1802",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone-based OBJ - Medium weight - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1803",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone-based OBJ - Large weight - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1804",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone OBJ - Extra large weight - Ultra small durability"
+        }
+      ]
+    },
+    {
+      "Key": "1805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone-based OBJ - Extra large weight - Ultra small durability"
+        }
+      ]
+    },
+    {
+      "Key": "1806",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Stone-based OBJ - Weight ∞ - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Stone OBJ-Weight ∞-Durable Extra Large"
+        }
+      ]
+    },
+    {
+      "Key": "1900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Pot type OBJ - Avoidance - Minimum weight - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - pot type OBJ - avoidance - small weight - minimal durability"
+        }
+      ]
+    },
+    {
+      "Key": "1902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - pot type OBJ - avoidance - medium weight - minimal durability"
+        }
+      ]
+    },
+    {
+      "Key": "1903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Pot type OBJ - Avoidance - Large weight - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Pot type OBJ - Avoidance - Extra large weight - Minimal durability"
+        }
+      ]
+    },
+    {
+      "Key": "1905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Pot type OBJ - Avoidance - Extra large weight - Extremely small durability"
+        }
+      ]
+    },
+    {
+      "Key": "1906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose - Pot type OBJ - Avoidance - Weight ∞ - Minimum durability"
+        }
+      ]
+    },
+    {
+      "Key": "1910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Potter OBJ-Avoidance-Weight ∞-Durability Extra Large"
+        }
+      ]
+    },
+    {
+      "Key": "1920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General purpose - Pot type OBJ - Avoidance - Weight ∞ - Durability minimal - Breaks under load"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "GRAB_ROTATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAB_ROTATION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Front"
+        }
+      ]
+    }
+  ]
+}

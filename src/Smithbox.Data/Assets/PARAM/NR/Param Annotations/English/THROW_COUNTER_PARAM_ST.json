@@ -1,0 +1,28 @@
+{
+  "Param": "THROW_COUNTER_PARAM_ST",
+  "Type": "THROW_COUNTER_PARAM_ST",
+  "Name": "THROW_COUNTER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "characterId",
+      "Name": "Character ID",
+      "Description": "The character this applies to."
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

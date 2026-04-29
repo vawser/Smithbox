@@ -61,6 +61,8 @@ public class MassEditTool
 
         if (ImGui.CollapsingHeader("Property Mass Edit"))
         {
+            ImGui.BeginChild("MassEditToolSection");
+
             UIHelper.SimpleHeader("Map Target", "Map Target", "Determine which maps will be affected by the mass edit.", UI.Current.ImGui_Default_Text_Color);
 
             ConfigureMapTarget();
@@ -97,6 +99,8 @@ public class MassEditTool
             ImGui.Separator();
 
             DisplayHintPopups();
+
+            ImGui.EndChild();
         }
     }
 

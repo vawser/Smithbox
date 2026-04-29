@@ -1,0 +1,137 @@
+{
+  "Key": "ATKPARAM_BEHAVIOR_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_BEHAVIOR_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Mikiri Counter"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Mikiri Counter"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Fistful of Ash/Bloodsmoke stun"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Red Eyes scared reaction"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Illusion stun/damage"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Divine Abduction"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Pc) Kicks"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Dirt/Dust stun"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Divine Dragon wind, blows upwards"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Divine Dragon wind, blows backwards"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Isshin, special deflect reaction"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Genichiro, special deflect reaction"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Emma, special deflect reaction"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(Npc) Owl, special deflect reaction"
+        }
+      ]
+    }
+  ]
+}

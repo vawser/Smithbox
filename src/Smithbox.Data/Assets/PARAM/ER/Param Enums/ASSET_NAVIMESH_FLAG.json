@@ -1,0 +1,47 @@
+{
+  "Key": "ASSET_NAVIMESH_FLAG",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_NAVIMESH_FLAG"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Obstacle"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Impassable"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High Cost"
+        }
+      ]
+    }
+  ]
+}

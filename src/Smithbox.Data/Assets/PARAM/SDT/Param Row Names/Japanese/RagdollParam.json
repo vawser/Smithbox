@@ -1,0 +1,167 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Doesn&#39;t work -- 動かない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok default value -- Havokのデフォルト値"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Caucasian slave_head -- 白人奴隷_頭部"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Caucasian slave_torso -- 白人奴隷_胴体"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Caucasian slave_right hand -- 白人奴隷_右手"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Caucasian slave_left hand -- 白人奴隷_左手"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Caucasian slave_right foot -- 白人奴隷_右足"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Caucasian slave_left foot -- 白人奴隷_左足"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Sokushinbutsu_root -- 即身仏_根元"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Sokushinbutsu_center (from the root) -- 即身仏_真ん中（根元より）"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Sokushinbutsu_center (from the tip) -- 即身仏_真ん中（先端より）"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Sokushinbutsu_tip -- 即身仏_先端"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Nishikigoi_head -- 錦鯉_頭部"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Nishikigoi_in front of the torso -- 錦鯉_胴体前"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Nishikigoi_after the torso -- 錦鯉_胴体後"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Nishikigoi_tail -- 錦鯉_尻尾"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Mermaid Dragon_Right Arm -- 人魚竜_右腕"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Mermaid dragon _ head -- 人魚竜_頭部"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Mermaid dragon _ chest -- 人魚竜_胸部"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Near the mermaid dragon_neck_root -- 人魚竜_首_付け根付近"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Mermaid dragon_neck_middle -- 人魚竜_首_真ん中"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Fire cow _ head -- 火牛_頭部"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Fire cow _ ass -- 火牛_尻"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Fire cow _ ass -- 火牛_尻"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Bandit_Shield -- 野盗_盾"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Lower man _ shield -- 下男_盾"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <edgeColorR />
+        <edgeColorG />
+        <edgeColorB />
+        <edgeColorA />
+        <frontColorR />
+        <frontColorG />
+        <frontColorB />
+        <frontColorA />
+        <diffMulColorR />
+        <diffMulColorG />
+        <diffMulColorB />
+        <diffMulColorA />
+        <specMulColorR />
+        <specMulColorG />
+        <specMulColorB />
+        <specMulColorA />
+        <lightColorR />
+        <lightColorG />
+        <lightColorB />
+        <lightColorA />
+        <blendRate />
+        <alpha />
+        <blendType  Enum="CHR_PHANTOM_BLEND_TYPE"/>
+        <isEdgeSubtract  IsBool=""/>
+        <isFrontSubtract  IsBool=""/>
+        <aReserved />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <levelStatusValue />
+        <spellSlot />
+        <spellUsesLevel />
+        <hpMax />
+        <staminaMax />
+        <equipLoadMax />
+        <physicalAttackByStrength />
+        <physicalAttackByDexterity />
+        <magicAttack />
+        <flameAttack />
+        <lightningAttack />
+        <darkAttack />
+        <weaponBreakAdditionalEffect />
+        <bleedingAdditionalEffect />
+        <poisonAdditionalEffect />
+        <curseAdditionalEffect />
+        <chantingTimeCorrectScale />
+        <criticalAttackCorrectScale />
+        <fluctuationCorrectScaleMin />
+        <fluctuationCorrectScaleMax />
+        <weaponBreakResistance />
+        <bleedingResistance />
+        <poisonResistance />
+        <petrifactionResistance />
+        <curseResistance />
+        <magicResistance />
+        <flameResistance />
+        <lightningResistance />
+        <darkResistance />
+        <stepInvincibleTimeRate />
+        <rollingInvincibleTimeRate />
+        <jumpInvincibleTimeRate />
+        <changeEquipSpeedScale />
+        <useItemSpeedScale />
+        <blockSpeedScale />
+        <defense />
+        <itemDropTicketCount />
+        <misfireChestTrapTicketCount />
+        <criticalTicketCount />
+        <additionalHp />
+        <dummy1 />
+        <physicalAttackByAbyss />
+        <poise />
+    </Field>
+</PARAMMETA>

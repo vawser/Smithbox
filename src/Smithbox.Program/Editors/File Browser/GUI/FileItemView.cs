@@ -216,7 +216,7 @@ public class FileItemView
             {
                 File.WriteAllBytes(absPath, rawData.ToArray());
 
-                Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {absPath}");
+                Smithbox.Log(this, $"[File Browser] Extracted {absPath}");
 
                 data = null;
                 rawData = null;
@@ -224,7 +224,7 @@ public class FileItemView
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to write file: {fileEntry.Path}", LogPriority.High, e);
+            Smithbox.LogError(this, $"[File Browser] Failed to write file: {fileEntry.Path}", LogPriority.High, e);
         }
     }
 
@@ -291,7 +291,7 @@ public class FileItemView
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
             else
@@ -326,7 +326,7 @@ public class FileItemView
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
                 }
             }
         }
@@ -345,7 +345,7 @@ public class FileItemView
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             try
@@ -354,7 +354,7 @@ public class FileItemView
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox:File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
+                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
             }
 
             if (bhd.Length != 0 && bdt.Length != 0)

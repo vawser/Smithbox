@@ -1,0 +1,299 @@
+{
+  "Name": "HitEffectSfxConceptJustGuardParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Weapon iron -- 武器鉄"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Weapon Iron [PC only] -- 武器鉄【PC専用】"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Weapon tree -- 武器木"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weapon meat -- 武器肉"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Shield iron -- 盾鉄"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield tree -- 盾木"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "insect -- 虫"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor leather -- 鎧革"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "meat -- 肉"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Meat_weakness -- 肉_弱点"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon meat -- 竜肉"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Ins meat -- インス肉"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Meat under armor -- 鎧の下の肉"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "hair -- 毛"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (soft) -- 石（軟）"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "wing -- 羽"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Carrion -- 腐肉"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Dead spirit -- 死霊"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "crystal -- 結晶"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "liquid -- 液体"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "rock -- 岩"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield stone -- 盾石"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield heavy iron -- 盾重鉄"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Grief is effective -- 怨霊\u3000有効"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Grief invalid -- 怨霊\u3000無効"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Phantom (valid) -- 幻影(有効)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Phantom (invalid) -- 幻影(無効)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Poisonous meat -- 毒肉"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Ghost White (for guarding) -- ゴーストホワイト(ガード時用)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Ghost Black (for guarding) -- ゴーストブラック(ガード時用)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Ghost Enemy White (for guarding) -- ゴースト敵ホワイト(ガード時用)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Ghost Enemy Black (for guarding) -- ゴースト敵ブラック(ガード時用)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "None -- なし"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Eye light -- 眼光"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Eclipse -- 蝕"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Maggot -- 蛆"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Charcoal -- 炭"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body fluid -- 体液"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Meat (raw) -- 肉（生者）"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Meat (raw) _ weakness -- 肉（生者）_弱点"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Corrosion_weakness -- 蝕_弱点"
+      ]
+    }
+  ]
+}

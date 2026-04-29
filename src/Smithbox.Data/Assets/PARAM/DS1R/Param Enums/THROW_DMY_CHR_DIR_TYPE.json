@@ -1,0 +1,38 @@
+{
+  "Key": "THROW_DMY_CHR_DIR_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "THROW_DMY_CHR_DIR_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn towards defender"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn away from defender"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do nothing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <heightType ProjectEnum="CHR_HEIGHT_TYPE" />
+        <weightType ProjectEnum="CHR_WEIGHT_TYPE" />
+        <loadWeightRateMin />
+        <loadWeightRateMax />
+        <tireKeepTime />
+        <staminaCostDash />
+        <staminaCostLockOnDash />
+        <staminaCostLadder />
+        <staminaCostRope />
+        <staminaCostEvasionBase />
+        <staminaCostStep />
+        <staminaCostRolling />
+        <staminaCostDashJump />
+        <staminaCostStandJump />
+        <staminaCostRateEvasion />
+        <staminaCostRateAttack />
+        <moveDemeritPercentMin />
+        <moveDemeritPercentMax />
+        <equipDemeritPercentMin />
+        <equipDemeritPercentMax />
+        <attackDemeritPercentMin />
+        <attackDemeritPercentMax />
+        <attackExtraLackOfStatsRate />
+        <rollingExtraLackOfStatsRate />
+        <attackKeepEmptyStaminaTime />
+        <emptyStaminaAttackExtraLackOfStatsRate />
+        <shotReserveSpeed />
+        <attackWaitSpeed />
+        <armorType ProjectEnum="NON_INTERRUPTIBLE_TYPE" />
+        <damageWeaponType ProjectEnum="DAMAGE_CHARACTER_TYPE" />
+        <deadRagdollFitGround IsBool="" />
+        <dummy0 />
+        <deadTimerA />
+        <dyingHpMax />
+        <dyingHpMin />
+        <dyingMoveBlendMaxRate />
+        <ctrlType ProjectEnum="CHR_CTRL_TYPE" />
+        <collisionType ProjectEnum="CHR_COLLISION_TYPE" />
+        <fHitHeight />
+        <fHitRadius />
+        <fChrHeight />
+        <fGuardAngleY />
+        <fGuardAngleX />
+        <fMaxLinearVelocity />
+        <loadGravityRateBaseMin />
+        <loadGravityRateBaseMax />
+        <gravityFactorMin />
+        <gravityFactorMax />
+        <gravitySpeedMax />
+        <flyCtrlValue />
+        <lockPointType />
+        <lockDummy Padding="" />
+        <lockCameraCategory Refs="LockOnCameraOffsetParam" />
+        <lockDisableRadius />
+        <lockDisableHeight />
+        <guardKnockBackRateSuperSmall />
+        <guardKnockBackRateSmall />
+        <guardKnockBackRateMedium />
+        <guardKnockBackRateLarge />
+        <guardKnockBackRateSuperLarge />
+        <guardKnockBackRateUltraLarge />
+        <guardKnockBackRateFlip />
+        <guardRotationRate />
+        <headShotEnable IsBool="" />
+        <guardBreakEnable IsBool="" />
+        <backStabEnable IsBool="" />
+        <parryBreakStabEnable IsBool="" />
+        <parryBreakDefenselessTime />
+        <parryBreakShorteningTime />
+        <guardBreakStabEnable IsBool="" />
+        <pad0 Padding="" />
+        <downAttackLength />
+        <backStabSideAngle />
+        <backStabUpSideAngle />
+        <backStabHeight />
+        <backStabLength />
+        <parryBreakStabSideAngle />
+        <parryBreakStabUpSideAngle />
+        <parryBreakStabHeight />
+        <parryStabLength />
+        <guardBreakStabSideAngle />
+        <guardBreakStabUpSideAngle />
+        <guardBreakStabHeight />
+        <guardBreakStabLength />
+        <lowerEnable IsBool="" />
+        <pad1 Padding="" />
+        <lowerDmgBendingValue />
+        <lowerDmgBendingStartTime />
+        <lowerDmgBendingEndTime />
+        <lowerDmgMoveDecelerationRate />
+        <lowerDmgRotateDecelerationRate />
+        <ragdollMassFactor />
+        <ragdollFrictionFactor />
+        <ragdollRestitutionFactor />
+        <ragdollMaxLinearVelocityFactor />
+        <ragdollMaxAngularVelocityFactor />
+        <ragdollGravityFactorMin />
+        <ragdollGravityFactorMax />
+        <jumpAttackSideAngle />
+        <damageRotationSpeed />
+        <damageMoveDistRate />
+        <heavyDamageKnockBackDist />
+        <heavyDamageStiff />
+        <heavyDamageDefenselessTime />
+        <bleedingDamageStiff />
+        <heavyDamageShorteningTime />
+        <guardBreakDamageDefenselessTime />
+        <guardBreakDamageShorteningTime />
+        <blowDecelerationTimeFirst />
+        <blowDecelerationTimeSecond />
+        <blowDecelerationFirst />
+        <blowDecelerationSecond />
+        <attackPushBackRate />
+        <parryRotationSpeed />
+        <BreathDamageEnable IsBool="" />
+        <dummy1 Padding="" />
+        <hitLowerBodyHeight />
+        <hitFrontAngle />
+        <attackMoveSpeed />
+        <attackRotationSpeed />
+        <attackRange />
+        <fLookAtRotationLeftMax />
+        <fLookAtRotationRightMax />
+        <fLookAtRotationUpperMax />
+        <fLookAtRotationLownerMax />
+        <fLookAtVisibilitySideMax />
+        <fLookAtVisibilityUpperMax />
+        <fLookAtRotationSideSpeedMax />
+        <fLookAtRotationUpperSpeedMax />
+        <isLookAtDummyPolyBasePos IsBool="" />
+        <lookAtDummy Padding="" />
+        <fShootingLookAtRotationLeftMax />
+        <fShootingLookAtRotationRightMax />
+        <fShootingLookAtRotationUpperMax />
+        <fShootingLookAtRotationLownerMax />
+        <fShootingLookAtVisibilitySideMax />
+        <fShootingLookAtVisibilityUpperMax />
+        <fShootingLookAtRotationSideSpeedMax />
+        <fShootingLookAtRotationUpperSpeedMax />
+        <shootingIsLookAtDummyPolyBasePos IsBool="" />
+        <shootingLookAtDummy Padding="" />
+        <footDummyPoly001 />
+        <footDummyPoly002 />
+        <footDummyPoly003 />
+        <footDummyPoly004 />
+        <footDummyPoly005 />
+        <footDummyPoly006 />
+        <footDummyPoly007 />
+        <footDummyPoly008 />
+        <footEffectOffset />
+        <footEffectOffsetMoveRate />
+        <footRayMargin />
+        <footRayMinLength />
+        <footRayMaxLength />
+        <footRayMaxDownHillLength />
+        <footRayUpDownMargin />
+        <footRunSpeedRate />
+        <footSoundLevelSuperSmall />
+        <footSoundLevelSmall />
+        <footSoundLevelNormal />
+        <footSoundLevelLarge />
+        <footSoundLevelSuperLarge />
+        <footSoundDummy Padding="" />
+        <single1HandNormal />
+        <single1HandStrong />
+        <single2HandedNormal />
+        <single2HandedStrong />
+        <dual1HandNormal />
+        <dual1HandStrong />
+        <dual2HandedNormal />
+        <dual2HandedStrong />
+        <bladePartsDamage IsBool="" />
+        <partsDummy Padding="" />
+        <damageAdjustPartsRateSuperSmall />
+        <damageAdjustPartsRateSmall />
+        <damageAdjustPartsRateNormal />
+        <damageAdjustPartsRateLarge />
+        <damageAdjustPartsRateSuperLarge />
+        <grabAttackDamageRate />
+        <receiveSlashDamageRate />
+        <receiveThrustDamageRate />
+        <receiveStrikeDamageRate />
+        <fallStrikeFallDist />
+        <jumpFallStrikeHeight />
+        <isSlopeAdjust IsBool="" />
+        <slopeAdjustDummy Padding="" />
+        <slopeAdjustPitchMax />
+        <slopeAdjustRollMax />
+        <slopeAdjustPitchSpeed />
+        <slopeAdjustRollSpeed />
+        <fallStabSlashAnim ProjectEnum="PLAYER_SP_ATTACK_MOTION" />
+        <fallStabStabAnim ProjectEnum="PLAYER_SP_ATTACK_MOTION" />
+        <fallStabGrabParamId />
+        <fallStabDummyPolyId />
+        <fallStabDummyPolyReverse />
+        <fallStabDummy Padding="" />
+        <fallStabDistance />
+        <fallStabAngle />
+        <poisonRecoverTimeMin />
+        <poisonRecoverTimeMax />
+        <burningRecoverTimeMin />
+        <burningRecoverTimeMax />
+        <bleedingRecoverTimeMin />
+        <bleedingRecoverTimeMax />
+        <curseRecoverTimeMin />
+        <curseRecoverTimeMax />
+        <weaponBreakRecoverTimeMin />
+        <weaponBreakRecoverTimeMax />
+        <petrifiedRecoverTimeMin />
+        <petrifiedRecoverTimeMax />
+        <poisonWetEffectTimeMin />
+        <poisonWetEffectTimeMax />
+        <oilWetEffectTimeMin />
+        <oilWetEffectTimeMax />
+        <WatierWetEffectTimeMin />
+        <WatierWetEffectTimeMax />
+        <itemAnimSpeedRateMin />
+        <itemAnimSpeedRateMax />
+        <downStiffRate />
+        <downShorteningTime />
+        <damageUpperRotationAngleY />
+        <damageUpperRotationAngleX />
+        <damageUpperRotationAngleZ />
+        <damageUpperRotationAngleCenter />
+        <environmentSfxRain Refs="ChrFullBodySfxParam" />
+        <environmentSfxWaterFall Refs="ChrFullBodySfxParam" />
+        <moveWindParamSmall Refs="ChrPointWindParam" />
+        <moveWindParamMedium Refs="ChrPointWindParam" />
+        <moveWindParamLarge Refs="ChrPointWindParam" />
+        <atkAutoHomingDistance />
+        <atkAutoHomingSdAngle />
+        <atkAutoHomingUdAngle />
+        <shotAutoHomingDistance />
+        <shotAutoHomingSdAngle />
+        <shotAutoHomingUdAngle />
+        <footEffectSize ProjectEnum="CHR_WEIGHT_TYPE" />
+        <grabDamageRateSlash />
+        <grabDamageRateBlow />
+        <grabDamageRateStab />
+        <grabDamageRateBullet />
+        <disallowDamageDecrementDist />
+        <lockInvisibleReleaseTime />
+        <fHitOffsetX />
+        <fHitOffsetZ />
+        <takeWaterHeightLow />
+        <takeWaterHeightMiddle />
+        <takeWaterType ProjectEnum="CHR_TAKE_WATER_TYPE" />
+        <takeWaterDummy Padding="" />
+        <bulletDamageRatePhysical />
+        <bulletDamageRateMagic />
+        <bulletDamageRateMiracle />
+        <bulletDamageRatePyromancy />
+        <bulletDamageRateDark />
+    </Field>
+</PARAMMETA>

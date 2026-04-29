@@ -1,18 +1,14 @@
-﻿using Microsoft.Extensions.Logging;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.FileBrowser;
 using StudioCore.Logger;
 using StudioCore.Renderer;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static StudioCore.Editors.ParamEditor.ParamBank;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -32,15 +28,27 @@ public class ParamData : IDisposable
     public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
     public Dictionary<PARAMDEF, ParamMeta> ParamMeta = new();
 
-    // Additional Data
+    public ParamAnnotationLanguages ParamAnnotationLanguages = new();
+    public ParamAnnotations ParamAnnotations = new();
+
+    public ParamImportLanguages RowImportLanguages = new();
+
+    // Base meta data
     public ParamTypeInfo ParamTypeInfo;
-    public GraphLegends GraphLegends;
-    public IconConfigurations IconConfigurations;
     public TableParams TableParamList;
+    public ParamReloaderOffsets ParamReloaderOffsets;
+
+    // User-overridable meta data
+    public ParamEnums Enums;
+    public ParamCategories ParamCategories;
+    public ParamCommutativityGroups ParamCommutativityGroups;
+    public FieldReferenceGroups FieldReferenceGroups;
+    public FieldLayouts FieldLayouts;
+    public IconConfigurations IconConfigurations;
+    public GraphAnnotations GraphAnnotations;
+
+    // Special-case
     public TableGroupNameStore TableGroupNames;
-    public GameOffsetResource ParamMemoryOffsets;
-    public ParamCategoryResource ParamCategories;
-    public ParamCommutativeResource CommutativeParamGroups;
 
     public ParamData(ProjectEntry project)
     {
@@ -58,118 +66,184 @@ public class ParamData : IDisposable
         Task<bool> paramDefTask = SetupParamDefs();
         bool paramDefTaskResult = await paramDefTask;
 
-        if (paramDefTaskResult)
+        if (!paramDefTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup PARAM definitions.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM definitions.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM definitions.");
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM definitions.");
         }
 
         // Param Meta
         Task<bool> paramMetaTask = SetupParamMeta();
         bool paramMetaTaskResult = await paramMetaTask;
 
-        if (paramMetaTaskResult)
+        if (!paramMetaTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup PARAM meta.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM meta.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup PARAM meta.");
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM meta.");
         }
 
-        // Graph Legends
-        Task<bool> graphLegendsTask = SetupGraphLegends();
+        // Param Annotations
+        Task<bool> paramAnnotationTask = SetupParamAnnotations();
+        bool paramAnnotationTaskResult = await paramAnnotationTask;
+
+        if (!paramAnnotationTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM annotations.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM annotations.");
+        }
+
+        // Param Enums
+        Task<bool> paramEnumsTask = SetupParamEnums();
+        bool paramEnumsTaskResult = await paramEnumsTask;
+
+        if (!paramEnumsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM enums.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM enums.");
+        }
+
+        // Secondary Language Options
+        Task<bool> secondaryLanguageOptionsTask = SetupSecondaryLanguageOptions();
+        bool secondaryLanguageOptionsTaskResult = await secondaryLanguageOptionsTask;
+
+        if (!secondaryLanguageOptionsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM language options.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the PARAM language options.");
+        }
+
+        // Graph Annotations
+        Task<bool> graphLegendsTask = SetupGraphAnnotations();
         bool graphLegendsTaskResult = await graphLegendsTask;
 
-        if (graphLegendsTaskResult)
+        if (!graphLegendsTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup graph legends.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Graph annotations.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup graph legends.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Graph annotations.");
         }
 
         // Icon Configurations
         Task<bool> iconConfigTask = SetupIconConfigurations();
         bool iconConfigTaskResult = await iconConfigTask;
 
-        if (iconConfigTaskResult)
+        if (!iconConfigTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup icon configurations.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Icon Configuration data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup icon configurations.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Icon Configuration data.");
         }
 
         // Table Param List
         Task<bool> tableParamTask = SetupTableParamList();
         bool tableParamTaskResult = await tableParamTask;
 
-        if (tableParamTaskResult)
+        if (!tableParamTaskResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup table param list.");
+            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
         }
         else
         {
-            //Smithbox.LogError(this, $"[Param Editor] Failed to setup table param list.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Table Param list.");
         }
 
         // Table Group Names
         Task<bool> tableGroupNameTask = SetupTableGroupNames();
         bool tableGroupNameTaskResult = await tableGroupNameTask;
 
-        if (tableGroupNameTaskResult)
-        {
-            Smithbox.Log(this, $"[Param Editor] Setup table group name bank.");
-        }
-        else
+        if (!tableGroupNameTaskResult)
         {
             // Smithbox.LogError(this, $"[Param Editor] Failed to setup table group name bank.");
         }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Table Group Name data.");
+        }
 
         // Game Offsets (per project)
-        Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
+        Task<bool> gameOffsetTask = SetupParamReloaderOffsets();
         bool gameOffsetResult = await gameOffsetTask;
 
-        if (gameOffsetResult)
+        if (!gameOffsetResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Param Memory Offsets.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Memory Offset data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Memory Offsets.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Param Memory Offset data.");
         }
 
         // Param Categories (per project)
         Task<bool> paramCategoryTask = SetupParamCategories();
         bool paramCategoryResult = await paramCategoryTask;
 
-        if (paramCategoryResult)
+        if (!paramCategoryResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Param Categories.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Param Categories data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Param Categories.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Param Categories data.");
         }
 
         // Commutative Param Groups (per project)
-        Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
+        Task<bool> commutativeParamGroupTask = SetupParamCommutativityGroups();
         bool commutativeParamGroupResult = await commutativeParamGroupTask;
 
-        if (commutativeParamGroupResult)
+        if (!commutativeParamGroupResult)
         {
-            Smithbox.Log(this, $"[Param Editor] Setup Commutative Param Groups.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Commutative Param Groups data.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup Commutative Param Groups.");
+            Smithbox.Log(this, $"[Param Editor] Setup the Commutative Param Groups data.");
         }
+
+        // Field Reference Groups
+        Task<bool> groupRefTask = SetupFieldReferenceGroups();
+        bool groupRefTaskResult = await groupRefTask;
+
+        if (!groupRefTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Group Reference data.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Group Reference data.");
+        }
+
+        // Field Layouts
+        Task<bool> fieldLayoutsTask = SetupFieldLayouts();
+        bool fieldLayoutsTaskResult = await fieldLayoutsTask;
+
+        if (!fieldLayoutsTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Field Layout data.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Field Layout data.");
+        }
+
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Load();
@@ -177,7 +251,11 @@ public class ParamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Primary Bank.");
         }
 
         // Vanilla Bank
@@ -186,10 +264,14 @@ public class ParamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to fully setup Vanilla Bank.");
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup Vanilla Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Vanilla Bank.");
         }
 
-        switch(Project.Descriptor.ProjectType)
+        switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
                 if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
@@ -364,37 +446,102 @@ public class ParamData : IDisposable
         }
     }
 
+    public void RefreshParamDifferenceCacheTask(bool checkAuxVanillaDiff = false)
+    {
+        // Refresh diff cache
+        TaskManager.LiveTask task = new(
+            "paramEditor_refreshDifferenceCache",
+            "[Param Editor]",
+            "Difference cache between param banks has been refreshed.",
+            "Difference cache refresh has failed.",
+            TaskManager.RequeueType.Repeat,
+            true,
+            LogPriority.Low,
+            () => RefreshAllParamDiffCaches(checkAuxVanillaDiff)
+        );
+
+        TaskManager.Run(task);
+    }
+
+
+    public void RefreshAllParamDiffCaches(bool checkAuxVanillaDiff)
+    {
+        PrimaryBank.RefreshPrimaryDiffCaches(true);
+        VanillaBank.RefreshVanillaDiffCaches();
+
+        foreach (KeyValuePair<string, ParamBank> bank in AuxBanks)
+        {
+            bank.Value.RefreshAuxDiffCaches(checkAuxVanillaDiff);
+        }
+
+        CacheBank.ClearCaches();
+    }
+
+    public ParamMeta GetParamMeta(PARAMDEF def)
+    {
+        if (ParamMeta.ContainsKey(def))
+        {
+            return ParamMeta[def];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public ParamAnnotationEntry GetParamAnnotations(string paramType)
+    {
+        var curLangString = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = ParamAnnotationLanguages.Languages.FirstOrDefault(e => e.Name == curLangString);
+
+        if (curLang == null)
+            return null;
+
+        var curAnnotations = ParamAnnotations.Entries[curLang];
+        var curParam = curAnnotations.Params.FirstOrDefault(e => e.Type == paramType);
+
+        if(curParam == null)
+            return null;
+
+        return curParam;
+    }
+
+    public ParamAnnotationFieldEntry GetFieldAnnotation(ParamAnnotationEntry annotations, string fieldName)
+    {
+        if (annotations == null)
+            return null;
+
+        var match = annotations.Fields.FirstOrDefault(e => e.Field == fieldName);
+
+        if (match == null) 
+            return null;
+
+        return match;
+    }
+
+    public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
+    {
+        if (curMeta != null && curMeta.Fields != null && curMeta.Fields.ContainsKey(def))
+        {
+            return curMeta.Fields[def];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public async Task<bool> SetupParamMeta()
     {
         await Task.Yield();
 
-        var rootMetaDir = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var rootMetaDir = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
-        var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
-        if (CFG.Current.Project_Enable_Project_Metadata)
+        if (CFG.Current.Param_Editor_Enable_Param_Meta_Override)
         {
-            if (Project.Descriptor.ProjectType != ProjectType.Undefined)
-            {
-                // Create the project meta copy if it doesn't already exist
-                if (!Directory.Exists(projectMetaDir))
-                {
-                    Directory.CreateDirectory(projectMetaDir);
-                    var files = Directory.GetFileSystemEntries(rootMetaDir);
-
-                    foreach (var f in files)
-                    {
-                        var name = Path.GetFileName(f);
-                        var tPath = Path.Combine(rootMetaDir, name);
-                        var pPath = Path.Combine(projectMetaDir, name);
-
-                        if (File.Exists(tPath) && !File.Exists(pPath))
-                        {
-                            File.Copy(tPath, pPath);
-                        }
-                    }
-                }
-            }
+            CreateProjectParamMeta();
         }
 
         foreach ((var f, PARAMDEF pdef) in ParamDefsByFilename)
@@ -405,7 +552,7 @@ public class ParamData : IDisposable
 
             try
             {
-                if (CFG.Current.Project_Enable_Project_Metadata && Project.Descriptor.ProjectType != ProjectType.Undefined)
+                if(CFG.Current.Param_Editor_Enable_Param_Meta_Override)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -425,43 +572,216 @@ public class ParamData : IDisposable
         return true;
     }
 
-    public async Task<bool> SetupGraphLegends()
+    public async Task<bool> SetupParamAnnotations()
     {
         await Task.Yield();
 
-        var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
-        var file = Path.Combine(folder, "Graph Legends.json");
+        ParamAnnotationLanguages = new();
 
-        if(CFG.Current.Project_Enable_Project_Metadata)
+        // Build the language list first
+        var sourcefile = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", "Annotation Languages.json");
+
+        if (Path.Exists(sourcefile))
         {
-            var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
-            var projFile = Path.Combine(projFolder, "Graph Legends.json");
-
-            if(File.Exists(projFile))
-            {
-                folder = projFolder;
-                file = projFile;
-            }
-        }
-
-        if (File.Exists(file))
-        {
+            var file = File.ReadAllText(sourcefile);
             try
             {
-                var filestring = await File.ReadAllTextAsync(file);
-
-                try
-                {
-                    GraphLegends = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.GraphLegends);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Graph Legends: {file}", e);
-                }
+                ParamAnnotationLanguages = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamAnnotationLanguages);
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to read Graph Legends: {file}", e);
+                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation languages: {file}", LogPriority.High, e);
+            }
+        }
+        else
+        {
+            // Default to English if the file is missing
+            var english = new ParamAnnotationLanguageEntry();
+            english.Name = "English";
+            english.Folder = "English";
+
+            ParamAnnotationLanguages.Languages.Add(english);
+        }
+
+        // Then build the annotations
+        ParamAnnotations = new();
+
+        foreach (var lang in ParamAnnotationLanguages.Languages)
+        {
+            var paramList = new ParamAnnotationList();
+            ParamAnnotations.Entries.Add(lang, paramList);
+
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamAnnotationEntry);
+
+                        if (!ParamAnnotations.Entries[lang].Params.Any(e => e.Param == layout.Param))
+                        {
+                            ParamAnnotations.Entries[lang].Params.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation entry: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupSecondaryLanguageOptions()
+    {
+        await Task.Yield();
+
+        // Row Names
+        RowImportLanguages = new();
+
+        // Build the language list first
+        var sourcefile = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Row Import Languages.json");
+
+        if (Path.Exists(sourcefile))
+        {
+            var file = File.ReadAllText(sourcefile);
+            try
+            {
+                RowImportLanguages = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamImportLanguages);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param import languages: {file}", LogPriority.High, e);
+            }
+        }
+        else
+        {
+            // Default to English if the file is missing
+            var english = new ParamImportLanguageEntry();
+            english.Name = "English";
+            english.Folder = "English";
+
+            RowImportLanguages.Options.Add(english);
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupParamEnums()
+    {
+        await Task.Yield();
+
+        Enums = new();
+
+        if (CFG.Current.Param_Editor_Enable_Param_Enum_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
+
+            if (Path.Exists(projectFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
+
+                        if (!Enums.List.Any(e => e.Key == layout.Key))
+                        {
+                            Enums.List.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Param_Enum_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
+
+                        if (!Enums.List.Any(e => e.Key == layout.Key))
+                        {
+                            Enums.List.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+
+    public async Task<bool> SetupGraphAnnotations()
+    {
+        await Task.Yield();
+
+        GraphAnnotations = new();
+
+        if (CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
+
+            if (Path.Exists(projectFolder))
+            {
+                var fileName = Path.Combine(projectFolder, $"Annotations.json");
+
+                var file = File.ReadAllText(fileName);
+
+                try
+                {
+                    GraphAnnotations = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.GraphAnnotations);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize graph annotation groups: {file}", LogPriority.High, e);
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Graph_Annotation_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
+
+            if (Path.Exists(sourceFolder))
+            {
+                var fileName = Path.Combine(sourceFolder, $"Annotations.json");
+
+                var file = File.ReadAllText(fileName);
+
+                try
+                {
+                    GraphAnnotations = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.GraphAnnotations);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize graph annotation groups: {file}", LogPriority.High, e);
+                }
             }
         }
 
@@ -472,39 +792,337 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
-        var file = Path.Combine(folder, "Icon Configurations.json");
+        IconConfigurations = new();
 
-        if (CFG.Current.Project_Enable_Project_Metadata)
+        if (CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition)
         {
-            var projFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
-            var projFile = Path.Combine(projFolder, "Icon Configurations.json");
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
 
-            if (File.Exists(projFile))
+            if (Path.Exists(projectFolder))
             {
-                folder = projFolder;
-                file = projFile;
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.IconConfigurationEntry);
+
+                        if (!IconConfigurations.Groups.Any(e => e.Name == layout.Name))
+                        {
+                            IconConfigurations.Groups.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize icon configuration group: {file}", LogPriority.High, e);
+                    }
+                }
             }
         }
 
-        if (File.Exists(file))
+        if (!CFG.Current.Param_Editor_Enable_Icon_Configuration_Override)
         {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(file);
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
 
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.IconConfigurationEntry);
+
+                        if (!IconConfigurations.Groups.Any(e => e.Name == layout.Name))
+                        {
+                            IconConfigurations.Groups.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize icon configuration group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupParamReloaderOffsets()
+    {
+        await Task.Yield();
+
+        ParamReloaderOffsets = new();
+
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Reloader");
+
+        if (Path.Exists(sourceFolder))
+        {
+            foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+            {
+                var file = File.ReadAllText(entry);
                 try
                 {
-                    IconConfigurations = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.IconConfigurations);
+                    var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamReloaderOffsetEntry);
+
+                    if (!ParamReloaderOffsets.Groups.Any(e => e.exeVersion == layout.exeVersion))
+                    {
+                        ParamReloaderOffsets.Groups.Add(layout);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize Icon Configurations: {file}", e);
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param reloader offset data: {file}", LogPriority.High, e);
                 }
             }
-            catch (Exception e)
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupParamCategories()
+    {
+        await Task.Yield();
+
+        ParamCategories = new();
+
+        if (CFG.Current.Param_Editor_Enable_Param_Category_Addition)
+        {
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
+
+            if (Path.Exists(projectFolder))
             {
-                Smithbox.LogError(this, $"[:Param Editor] Failed to read Icon Configurations: {file}", e);
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCategoryEntry);
+
+                        if (!ParamCategories.Categories.Any(e => e.Key == layout.Key))
+                        {
+                            ParamCategories.Categories.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param category group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Param_Category_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCategoryEntry);
+
+                        if (!ParamCategories.Categories.Any(e => e.Key == layout.Key))
+                        {
+                            ParamCategories.Categories.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param category group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupParamCommutativityGroups()
+    {
+        await Task.Yield();
+
+        ParamCommutativityGroups = new();
+
+        if (CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
+
+            if (Path.Exists(projectFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCommutativityEntry);
+
+                        if (!ParamCommutativityGroups.Groups.Any(e => e.Name == layout.Name))
+                        {
+                            ParamCommutativityGroups.Groups.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param commutativity group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.ParamCommutativityEntry);
+
+                        if (!ParamCommutativityGroups.Groups.Any(e => e.Name == layout.Name))
+                        {
+                            ParamCommutativityGroups.Groups.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param commutativity group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupFieldReferenceGroups()
+    {
+        await Task.Yield();
+
+        FieldReferenceGroups = new();
+
+        if (CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
+
+            if (Path.Exists(projectFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldReferenceGroup);
+
+                        if (!FieldReferenceGroups.Entries.Any(e => e.Name == layout.Name))
+                        {
+                            FieldReferenceGroups.Entries.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field reference group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldReferenceGroup);
+
+                        if (!FieldReferenceGroups.Entries.Any(e => e.Name == layout.Name))
+                        {
+                            FieldReferenceGroups.Entries.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field reference group: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupFieldLayouts()
+    {
+        await Task.Yield();
+
+        FieldLayouts = new();
+
+        if (CFG.Current.Param_Editor_Enable_Field_Layout_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
+
+            if (Path.Exists(projectFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(projectFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldLayout);
+
+                        if (!FieldLayouts.Entries.Any(e => e.Name == layout.Name))
+                        {
+                            FieldLayouts.Entries.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                    }
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override)
+        {
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.FieldLayout);
+
+                        if (!FieldLayouts.Entries.Any(e => e.Name == layout.Name))
+                        {
+                            FieldLayouts.Entries.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                    }
+                }
             }
         }
 
@@ -515,7 +1133,8 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
+        var lang = CFG.Current.ParamEditor_Import_Language;
+        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets,  "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Table Names", lang);
 
         if (!Directory.Exists(srcDir))
         {
@@ -550,7 +1169,7 @@ public class ParamData : IDisposable
         }
 
         // Project Store
-        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Param Table Names", lang);
 
         var projStore = new TableGroupNameStore();
         projStore.Groups = new();
@@ -583,7 +1202,7 @@ public class ParamData : IDisposable
         // Add unique groups from project store
         foreach (var entry in projStore.Groups)
         {
-            if(!TableGroupNames.Groups.Any(e => e.Param == entry.Param))
+            if (!TableGroupNames.Groups.Any(e => e.Param == entry.Param))
             {
                 TableGroupNames.Groups.Add(entry);
             }
@@ -591,7 +1210,7 @@ public class ParamData : IDisposable
 
         // Merge in unique table group names from the project store,
         // and replace base group names if the project store contains entries that match
-        foreach(var group in TableGroupNames.Groups)
+        foreach (var group in TableGroupNames.Groups)
         {
             var projGroup = projStore.Groups.FirstOrDefault(e => e.Param == group.Param);
 
@@ -600,15 +1219,15 @@ public class ParamData : IDisposable
                 // Update the names if any project entries should replace the base entries
                 foreach (var entry in group.Entries)
                 {
-                    if(projGroup.Entries.Any(e => e.ID == entry.ID))
+                    if (projGroup.Entries.Any(e => e.ID == entry.ID))
                     {
                         entry.Name = projGroup.Entries.FirstOrDefault(e => e.ID == entry.ID).Name;
                     }
                 }
 
-                foreach(var entry in projGroup.Entries)
+                foreach (var entry in projGroup.Entries)
                 {
-                    if(!group.Entries.Any(e => e.ID == entry.ID))
+                    if (!group.Entries.Any(e => e.ID == entry.ID))
                     {
                         var newEntry = new TableGroupEntry();
                         newEntry.ID = entry.ID;
@@ -662,9 +1281,10 @@ public class ParamData : IDisposable
         return true;
     }
 
-    public void CreateProjectMetadata()
+
+    #region Project Metadata Creation
+    public void CreateProjectParamMeta()
     {
-        // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(StudioCore.Common.FileLocations.Resources, metaDir);
         var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", metaDir);
@@ -685,10 +1305,6 @@ public class ParamData : IDisposable
                 }
             }
         }
-
-        CopyMetadataFile("Shared Param Enums.json");
-        CopyMetadataFile("Graph Legends.json");
-        CopyMetadataFile("Icon Configurations.json");
     }
 
     public void CopyMetadataFile(string name)
@@ -699,7 +1315,7 @@ public class ParamData : IDisposable
         var targetFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");
         var targetFile = Path.Combine(targetFolder, name);
 
-        if(!Directory.Exists(targetFolder))
+        if (!Directory.Exists(targetFolder))
         {
             Directory.CreateDirectory(targetFolder);
         }
@@ -709,193 +1325,7 @@ public class ParamData : IDisposable
             File.Copy(srcFile, targetFile, true);
         }
     }
-
-    public void RefreshParamDifferenceCacheTask(bool checkAuxVanillaDiff = false)
-    {
-        // Refresh diff cache
-        TaskManager.LiveTask task = new(
-            "paramEditor_refreshDifferenceCache",
-            "Param Editor",
-            "difference cache between param banks has been refreshed.",
-            "difference cache refresh has failed.",
-            TaskManager.RequeueType.Repeat,
-            true,
-            LogPriority.Low,
-            () => RefreshAllParamDiffCaches(checkAuxVanillaDiff)
-        );
-
-        TaskManager.Run(task);
-    }
-
-
-    public void RefreshAllParamDiffCaches(bool checkAuxVanillaDiff)
-    {
-        PrimaryBank.RefreshPrimaryDiffCaches(true);
-        VanillaBank.RefreshVanillaDiffCaches();
-
-        foreach (KeyValuePair<string, ParamBank> bank in AuxBanks)
-        {
-            bank.Value.RefreshAuxDiffCaches(checkAuxVanillaDiff);
-        }
-
-        CacheBank.ClearCaches();
-    }
-
-    public ParamMeta GetParamMeta(PARAMDEF def)
-    {
-        if(ParamMeta.ContainsKey(def))
-        {
-            return ParamMeta[def];
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
-    {
-        if (curMeta != null && curMeta.Fields != null && curMeta.Fields.ContainsKey(def))
-        {
-            return curMeta.Fields[def];
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    /// <summary>
-    /// Setup the PARAM memory offsets for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupParamMemoryOffsets()
-    {
-        await Task.Yield();
-
-        ParamMemoryOffsets = new();
-
-        // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.GameOffsetResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-
-    /// <summary>
-    /// Setup the param categories for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupParamCategories()
-    {
-        await Task.Yield();
-
-        ParamCategories = new();
-
-        // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Param Categories.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Param Categories: {targetFile}", LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-
-    public async Task<bool> SetupCommutativeParamGroups()
-    {
-        await Task.Yield();
-
-        CommutativeParamGroups = new();
-
-        // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCommutativeResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
+    #endregion
 
     #region Dispose
     public void Dispose()
@@ -916,13 +1346,13 @@ public class ParamData : IDisposable
         ParamDefsByFilename = null;
         ParamMeta = null;
         ParamTypeInfo = null;
-        GraphLegends = null;
+        GraphAnnotations = null;
         IconConfigurations = null;
         TableParamList = null;
         TableGroupNames = null;
-        ParamMemoryOffsets = null;
+        ParamReloaderOffsets = null;
         ParamCategories = null;
-        CommutativeParamGroups = null;
+        ParamCommutativityGroups = null;
     }
     #endregion
 }

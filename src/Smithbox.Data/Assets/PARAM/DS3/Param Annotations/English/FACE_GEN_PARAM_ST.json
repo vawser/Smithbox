@@ -1,0 +1,688 @@
+{
+  "Param": "FACE_GEN_PARAM_ST",
+  "Type": "FACE_GEN_PARAM_ST",
+  "Name": "FACE_GEN_PARAM_ST",
+  "Description": "Face Generation data",
+  "Fields": [
+    {
+      "Field": "FaceGeoData01",
+      "Name": "Face Geo Data 01",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData02",
+      "Name": "Face Geo Data 02",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData03",
+      "Name": "Face Geo Data 03",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData04",
+      "Name": "Face Geo Data 04",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData05",
+      "Name": "Face Geo Data 05",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData06",
+      "Name": "Face Geo Data 06",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData07",
+      "Name": "Face Geo Data 07",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData08",
+      "Name": "Face Geo Data 08",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData09",
+      "Name": "Face Geo Data 09",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData10",
+      "Name": "Face Geo Data 10",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData11",
+      "Name": "Face Geo Data 11",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData12",
+      "Name": "Face Geo Data 12",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData13",
+      "Name": "Face Geo Data 13",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData14",
+      "Name": "Face Geo Data 14",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData15",
+      "Name": "Face Geo Data 15",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData16",
+      "Name": "Face Geo Data 16",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData17",
+      "Name": "Face Geo Data 17",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData18",
+      "Name": "Face Geo Data 18",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData19",
+      "Name": "Face Geo Data 19",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData20",
+      "Name": "Face Geo Data 20",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData21",
+      "Name": "Face Geo Data 21",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData22",
+      "Name": "Face Geo Data 22",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData23",
+      "Name": "Face Geo Data 23",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData24",
+      "Name": "Face Geo Data 24",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData25",
+      "Name": "Face Geo Data 25",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData26",
+      "Name": "Face Geo Data 26",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData27",
+      "Name": "Face Geo Data 27",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData28",
+      "Name": "Face Geo Data 28",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData29",
+      "Name": "Face Geo Data 29",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData30",
+      "Name": "Face Geo Data 30",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData31",
+      "Name": "Face Geo Data 31",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData32",
+      "Name": "Face Geo Data 32",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData33",
+      "Name": "Face Geo Data 33",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData34",
+      "Name": "Face Geo Data 34",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData35",
+      "Name": "Face Geo Data 35",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData36",
+      "Name": "Face Geo Data 36",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData37",
+      "Name": "Face Geo Data 37",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData38",
+      "Name": "Face Geo Data 38",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData39",
+      "Name": "Face Geo Data 39",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData40",
+      "Name": "Face Geo Data 40",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData41",
+      "Name": "Face Geo Data 41",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData42",
+      "Name": "Face Geo Data 42",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData43",
+      "Name": "Face Geo Data 43",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData44",
+      "Name": "Face Geo Data 44",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData45",
+      "Name": "Face Geo Data 45",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData46",
+      "Name": "Face Geo Data 46",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData47",
+      "Name": "Face Geo Data 47",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData48",
+      "Name": "Face Geo Data 48",
+      "Description": ""
+    },
+    {
+      "Field": "FaceGeoData49",
+      "Name": "Face Geo Data 49",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData00",
+      "Name": "Face Texture Data 00",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData01",
+      "Name": "Face Texture Data 01",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData02",
+      "Name": "Face Texture Data 02",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData03",
+      "Name": "Face Texture Data 03",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData04",
+      "Name": "Face Texture Data 04",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData05",
+      "Name": "Face Texture Data 05",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData06",
+      "Name": "Face Texture Data 06",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData07",
+      "Name": "Face Texture Data 07",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData08",
+      "Name": "Face Texture Data 08",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData09",
+      "Name": "Face Texture Data 09",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData10",
+      "Name": "Face Texture Data 10",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData11",
+      "Name": "Face Texture Data 11",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData12",
+      "Name": "Face Texture Data 12",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData13",
+      "Name": "Face Texture Data 13",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData14",
+      "Name": "Face Texture Data 14",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData15",
+      "Name": "Face Texture Data 15",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData16",
+      "Name": "Face Texture Data 16",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData17",
+      "Name": "Face Texture Data 17",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData18",
+      "Name": "Face Texture Data 18",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData19",
+      "Name": "Face Texture Data 19",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData20",
+      "Name": "Face Texture Data 20",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData21",
+      "Name": "Face Texture Data 21",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData22",
+      "Name": "Face Texture Data 22",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData23",
+      "Name": "Face Texture Data 23",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData24",
+      "Name": "Face Texture Data 24",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData25",
+      "Name": "Face Texture Data 25",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData26",
+      "Name": "Face Texture Data 26",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData27",
+      "Name": "Face Texture Data 27",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData28",
+      "Name": "Face Texture Data 28",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData29",
+      "Name": "Face Texture Data 29",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData30",
+      "Name": "Face Texture Data 30",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData31",
+      "Name": "Face Texture Data 31",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData32",
+      "Name": "Face Texture Data 32",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData33",
+      "Name": "Face Texture Data 33",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData34",
+      "Name": "Face Texture Data 34",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData35",
+      "Name": "Face Texture Data 35",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData36",
+      "Name": "Face Texture Data 36",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData37",
+      "Name": "Face Texture Data 37",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData38",
+      "Name": "Face Texture Data 38",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData39",
+      "Name": "Face Texture Data 39",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData40",
+      "Name": "Face Texture Data 40",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData41",
+      "Name": "Face Texture Data 41",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData42",
+      "Name": "Face Texture Data 42",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData43",
+      "Name": "Face Texture Data 43",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData44",
+      "Name": "Face Texture Data 44",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData45",
+      "Name": "Face Texture Data 45",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData46",
+      "Name": "Face Texture Data 46",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData47",
+      "Name": "Face Texture Data 47",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData48",
+      "Name": "Face Texture Data 48",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData49",
+      "Name": "Face Texture Data 49",
+      "Description": ""
+    },
+    {
+      "Field": "FaceTexData50",
+      "Name": "Face Texture Data 50",
+      "Description": ""
+    },
+    {
+      "Field": "facePartsId",
+      "Name": "Face Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_R",
+      "Name": "Skin Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_G",
+      "Name": "Skin Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "skinColor_B",
+      "Name": "Skin Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "hairPartsId",
+      "Name": "Hair Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_R",
+      "Name": "Hair Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_G",
+      "Name": "Hair Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "hairColor_B",
+      "Name": "Hair Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLPartsId",
+      "Name": "Left Eye Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_R",
+      "Name": "Left Eye Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_G",
+      "Name": "Left Eye Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "eyeLColor_B",
+      "Name": "Left Eye Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRPartsId",
+      "Name": "Right Eye Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_R",
+      "Name": "Right Eye Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_G",
+      "Name": "Right Eye Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "eyeRColor_B",
+      "Name": "Right Eye Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "eyeBrowPartsId",
+      "Name": "Eyebrow Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "eyeBrowColor_R",
+      "Name": "Eyebrow Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "eyeBrowColor_G",
+      "Name": "Eyebrow Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "eyeBrowColor_B",
+      "Name": "Eyebrow Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "beardPartsId",
+      "Name": "Beard Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_R",
+      "Name": "Beard Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_G",
+      "Name": "Beard Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "beardColor_B",
+      "Name": "Beard Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesPartsId",
+      "Name": "Accessory Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_R",
+      "Name": "Accessory Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_G",
+      "Name": "Accessory Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_B",
+      "Name": "Accessory Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "decalPartsId",
+      "Name": "Decal Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_R",
+      "Name": "Decal Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_G",
+      "Name": "Decal Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "decalColor_B",
+      "Name": "Decal Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "decalPosX",
+      "Name": "Decal Position: X",
+      "Description": ""
+    },
+    {
+      "Field": "decalPosY",
+      "Name": "Decal Position: Y",
+      "Description": ""
+    },
+    {
+      "Field": "decalAngle",
+      "Name": "Decal Angle",
+      "Description": ""
+    },
+    {
+      "Field": "decalScale",
+      "Name": "Decal Scale",
+      "Description": ""
+    }
+  ]
+}

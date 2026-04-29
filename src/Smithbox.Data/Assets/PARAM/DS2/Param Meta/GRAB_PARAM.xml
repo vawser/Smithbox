@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <grabAttackDumyPolyId />
+        <grabAttackRotationType  Enum="GRAB_ROTATION_TYPE"/>
+        <grabAttackRHandDumyPolyId />
+        <grabAttackLHandDumyPolyId />
+        <grabAttackRRegDumyPolyId />
+        <grabAttackLRegDumyPolyId />
+        <grabDefenseDumyPolyId />
+        <grabDefenseRotationType  Enum="GRAB_ROTATION_TYPE"/>
+        <grabDefenseRHandDumyPolyId />
+        <grabDefenseLHandDumyPolyId />
+        <grabDefenseRRegDumyPolyId />
+        <grabDefenseLRegDumyPolyId />
+        <grabAttachType  Enum="GRAB_ATTACH_TYPE"/>
+        <grabAttachFollow  IsBool=""/>
+        <dummy2 />
+        <grabDirAttachType  Enum="GRAB_ATTACH_TYPE"/>
+        <dummy1 />
+        <grabDirReversal  IsBool=""/>
+        <grabPosOffsetX />
+        <grabPosOffsetZ />
+        <grabBreakHp />
+        <grabCameraId />
+        <grabCastType  Enum="GRAB_CAST_TYPE"/>
+        <dummy3 />
+        <grabRadius />
+        <grabHeight />
+        <grabLength />
+        <grabOffsetX />
+        <grabOffsetY />
+        <grabOffsetZ />
+        <grabSideAngle />
+        <grabUpAngle />
+        <grabDownAngle />
+        <dummy4 />
+        <grabAngleDiff />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,8 @@
+{
+  "Name": "Decal",
+  "File": "01_common",
+  "InternalFiles": [
+    "SB_DecalThumbnails"
+  ],
+  "SubTexturePrefix": "Decal_tmb_"
+}

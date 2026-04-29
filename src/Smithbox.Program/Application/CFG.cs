@@ -53,6 +53,7 @@ public class CFG
     public int Logger_Warning_Fade_Time = 1500;
     public bool Logger_Enable_Color_Fade = true;
     public bool Logger_Enable_Log_Popups = true;
+    public bool Logger_Enable_Scope_Logging = false;
 
     public bool Developer_Enable_Tools = false;
     public string Developer_Smithbox_Build_Folder = "";
@@ -80,7 +81,6 @@ public class CFG
     public bool MapEditor_Use_PTDE_Collisions_In_DS1R_Projects = true;
     public string PTDE_Data_Path = "";
 
-    public bool Project_Enable_Project_Metadata = false;
     public bool Project_Scan_Directory_For_Additions = true;
     public bool Project_Scan_Directory_Strict_Mode = false;
 
@@ -88,6 +88,30 @@ public class CFG
     public string Project_Alias_Export_Delimiter = ";";
     public bool Project_Alias_Editor_Export_Ignore_Empty = false;
 
+    // Metadata (Param Editor)
+    public bool Param_Editor_Enable_Param_Meta_Override = false;
+    public bool Param_Editor_Enable_Param_Meta_Addition = true;
+
+    public bool Param_Editor_Enable_Param_Enum_Override = false;
+    public bool Param_Editor_Enable_Param_Enum_Addition = true;
+
+    public bool Param_Editor_Enable_Param_Category_Override = false;
+    public bool Param_Editor_Enable_Param_Category_Addition = true;
+
+    public bool Param_Editor_Enable_Param_Commutativity_Group_Override = false;
+    public bool Param_Editor_Enable_Param_Commutativity_Group_Addition = true;
+
+    public bool Param_Editor_Enable_Param_Field_Reference_Group_Override = false;
+    public bool Param_Editor_Enable_Param_Field_Reference_Group_Addition = true;
+
+    public bool Param_Editor_Enable_Param_Field_Layout_Override = false;
+    public bool Param_Editor_Enable_Field_Layout_Addition = true;
+
+    public bool Param_Editor_Enable_Icon_Configuration_Override = false;
+    public bool Param_Editor_Enable_Icon_Configuration_Addition = true;
+
+    public bool Param_Editor_Enable_Graph_Annotation_Override = false;
+    public bool Param_Editor_Enable_Graph_Annotation_Addition = true;
     #endregion
 
     #region Interface
@@ -361,6 +385,9 @@ public class CFG
     public int Toolbar_EntityGroupID = 0;
     public string Toolbar_EntityGroup_Attribute = "";
 
+    // Param Properties
+    public bool MapEditor_Field_List_Display_Padding = false;
+
     // Windows
     public bool Interface_MapEditor_Viewport_Grid = true;
     public bool Interface_MapEditor_MapList = true;
@@ -499,7 +526,10 @@ public class CFG
     /// Param Editor
     ///------------------------------------------------------------
     // General
+    public string ParamEditor_Annotation_Language = "English";
     public bool ParamEditor_Enable_Compact_Mode = false;
+
+    public string ParamEditor_Import_Language = "English";
 
     // Regulation
     public bool ParamEditor_Loose_Param_Mode_DS2 = false;
@@ -535,7 +565,7 @@ public class CFG
 
     // Table List
     public bool ParamEditor_Display_Table_List = true;
-    public ParamTableRowDisplayType ParamEditor_Table_List_Row_Display_Type = ParamTableRowDisplayType.None;
+    public ParamTableRowDisplayType ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.ID;
 
 
     // Row List
@@ -562,6 +592,13 @@ public class CFG
     public bool ParamEditor_Field_List_Display_Icon_Preview = true;
     public float ParamEditor_Field_List_Icon_Preview_Scale = 1.0f;
     public bool ParamEditor_Field_List_Display_Modified_Field_Bg = true;
+    public bool ParamEditor_Field_List_GroupReference_DisplayCommunityName = true;
+
+    public bool ParamEditor_Field_List_Enable_Field_Layouts = true;
+    public bool ParamEditor_Field_List_Enable_Field_Layout_Category_Names = true;
+    public bool ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints = true;
+    public FieldLayoutMode ParamEditor_Field_List_Enable_Field_Layout_Type = FieldLayoutMode.Collapsible;
+    public FieldLayoutUnsortedPlacement ParamEditor_Field_List_Unsorted_Field_Placement = FieldLayoutUnsortedPlacement.Bottom;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;
 
@@ -686,6 +723,9 @@ public class CFG
     private string _Param_Export_Delimiter = ",";
 
     public string Param_Import_Delimiter = ",";
+
+    public bool Param_CSV_Append_Only = false;
+    public bool Param_CSV_Replace_Row = false;
 
     #endregion
 
@@ -999,8 +1039,8 @@ public class CFG
 
     public Vector3 Viewport_Bg_Color = new(0.1f, 0.1f, 0.1f);
 
-    public float Viewport_Untextured_Model_Brightness = 1.0f;
-    public float Viewport_Untextured_Model_Saturation = 0.5f;
+    public float Viewport_Flat_Model_Brightness = 1.0f;
+    public float Viewport_Flat_Model_Saturation = 0.5f;
 
     public bool Viewport_Enable_Selection_Outline = false;
     public Vector3 Viewport_Selection_Outline_Color = new(1.0f, 0.5f, 0.0f);
@@ -1242,7 +1282,7 @@ public class CFG
             }
             catch (Exception e)
             {
-                Smithbox.Log<CFG>("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.Log<CFG>("Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
 
                 Current = new CFG();
                 Save();

@@ -1,0 +1,2189 @@
+{
+  "Key": "PLAYER_STATUS_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_STATUS_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "10: Initial character"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "20: Nature-Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "30: Identity - Knight"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "50: Identity - Bandit"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "70: Identity-Clergy"
+        }
+      ]
+    },
+    {
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "80: Identity - Magician"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "90: Identity - Explorer"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "100: Background - Swordsman"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "110: Identity - What you don't have"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "500: None"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "510: Ring of Life"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "520: Human statue"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "530: Healing items"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "540: Bone Fragment of Return"
+        }
+      ]
+    },
+    {
+      "Key": "550",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "550: Giant's Nut Seed"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "560: Ascetic's Spark"
+        }
+      ]
+    },
+    {
+      "Key": "570",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "570: Egg fossil"
+        }
+      ]
+    },
+    {
+      "Key": "805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "805: Dragon Head Stone/Dragon Body Stone Check"
+        }
+      ]
+    },
+    {
+      "Key": "806",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "806: Advice request confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "807",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "807: Spell seal confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "808",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "808: Weapon enchantment confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "809",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "809: Lloyd's amulet confirmed"
+        }
+      ]
+    },
+    {
+      "Key": "810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "810: Dead person damage confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "811",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "811: Confirm spell parry"
+        }
+      ]
+    },
+    {
+      "Key": "812",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "812: Mimicry for control confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "813",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "813: Decoy control confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "814",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "814: Enchantment confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "815",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "815: No sound/fall control confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "816",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "816: Lucky Gauntlet"
+        }
+      ]
+    },
+    {
+      "Key": "817",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "817: For checking maximum HP increase/decrease"
+        }
+      ]
+    },
+    {
+      "Key": "818",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "818: For checking the increase in maximum equipment weight"
+        }
+      ]
+    },
+    {
+      "Key": "819",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "819: For checking equipment durability value reduction amount"
+        }
+      ]
+    },
+    {
+      "Key": "820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "820: For checking backstab invalidity/headshot invalidity"
+        }
+      ]
+    },
+    {
+      "Key": "821",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "821: For confirmation of tough cutting value"
+        }
+      ]
+    },
+    {
+      "Key": "822",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "822: Near death attack power & defense power ↑ for confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "823",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "823:Hide left and right weapons"
+        }
+      ]
+    },
+    {
+      "Key": "824",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "824: Strong bare hand weapon"
+        }
+      ]
+    },
+    {
+      "Key": "825",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "825: Reduction of demerits of dead and spirits"
+        }
+      ]
+    },
+    {
+      "Key": "826",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "826: Antidote effect confirmed"
+        }
+      ]
+    },
+    {
+      "Key": "827",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "827: Item check"
+        }
+      ]
+    },
+    {
+      "Key": "828",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "828: Spell slot number check"
+        }
+      ]
+    },
+    {
+      "Key": "829",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "829: Dry finger check"
+        }
+      ]
+    },
+    {
+      "Key": "830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "830: Reason/faith increase check"
+        }
+      ]
+    },
+    {
+      "Key": "831",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "831: Priority lock-on check"
+        }
+      ]
+    },
+    {
+      "Key": "832",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "832: Replacement for back damage"
+        }
+      ]
+    },
+    {
+      "Key": "880",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "880: Menu SFX display confirmation character"
+        }
+      ]
+    },
+    {
+      "Key": "881",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "881: Damage accumulation bullet generation"
+        }
+      ]
+    },
+    {
+      "Key": "882",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "882: For checking attribute defense power"
+        }
+      ]
+    },
+    {
+      "Key": "883",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "883: Seven-colored stone"
+        }
+      ]
+    },
+    {
+      "Key": "884",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "884: Spirit Shader"
+        }
+      ]
+    },
+    {
+      "Key": "885",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "885: Casting time shortened & effect time extended"
+        }
+      ]
+    },
+    {
+      "Key": "886",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "886: Forced living person display"
+        }
+      ]
+    },
+    {
+      "Key": "887",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "887: Flintstone"
+        }
+      ]
+    },
+    {
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "900: Barret confirmed (Spider Queen's Curved Sword)"
+        }
+      ]
+    },
+    {
+      "Key": "901",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "901: Barret confirmation (Queen's Knight A's two-handed sword)"
+        }
+      ]
+    },
+    {
+      "Key": "902",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "902: Valet confirmation (Queen's Knight B's Hammer)"
+        }
+      ]
+    },
+    {
+      "Key": "903",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "903: Barret confirmation (Queen's Knight C's two-handed sword)"
+        }
+      ]
+    },
+    {
+      "Key": "904",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "904: Barret confirmation (dragon oversized sword)"
+        }
+      ]
+    },
+    {
+      "Key": "905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "905: Barret confirmation (Dragon's Omagariken)"
+        }
+      ]
+    },
+    {
+      "Key": "906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "906: Bullet confirmation (moonlight sword)"
+        }
+      ]
+    },
+    {
+      "Key": "907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "907: Barret confirmation (Preacher's Trident)"
+        }
+      ]
+    },
+    {
+      "Key": "908",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "908: Valet confirmation (Queen's two-handed bow)"
+        }
+      ]
+    },
+    {
+      "Key": "909",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "909: Barret confirmation (Demon Knight's oversized sword)"
+        }
+      ]
+    },
+    {
+      "Key": "910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "910: Bullet confirmation (Mirror Knight's two-handed sword)"
+        }
+      ]
+    },
+    {
+      "Key": "911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "911: Bullet confirmation (molten iron demon's two-handed hammer)"
+        }
+      ]
+    },
+    {
+      "Key": "912",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "912: Barret confirmation (Salamander Spear)"
+        }
+      ]
+    },
+    {
+      "Key": "913",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "913: Barret confirmed (Spear of Ornstein)"
+        }
+      ]
+    },
+    {
+      "Key": "922",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "922: Effect confirmation (Chaos Blade)"
+        }
+      ]
+    },
+    {
+      "Key": "923",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "923: Effect confirmation (King Vanglad's two-handed sword)"
+        }
+      ]
+    },
+    {
+      "Key": "924",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "924: Effect confirmation (King Vanglad's oversized sword)"
+        }
+      ]
+    },
+    {
+      "Key": "925",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "925: Effect confirmation (sinner's two-handed sword)"
+        }
+      ]
+    },
+    {
+      "Key": "926",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "926: Effect confirmation (Mail Breaker)"
+        }
+      ]
+    },
+    {
+      "Key": "927",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "927: Effect confirmation (Ricard's stabbing sword)"
+        }
+      ]
+    },
+    {
+      "Key": "928",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "928: Effect confirmation (Meat cutting knife)"
+        }
+      ]
+    },
+    {
+      "Key": "929",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "929: Effect confirmation (Immortal senior soldier's one-handed ax)"
+        }
+      ]
+    },
+    {
+      "Key": "930",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "930: Effect confirmation (Cleric's Hammer)"
+        }
+      ]
+    },
+    {
+      "Key": "931",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "931: Effect confirmation (housekeeper's ladle)"
+        }
+      ]
+    },
+    {
+      "Key": "932",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "932: Effect confirmation (Dairyuga)"
+        }
+      ]
+    },
+    {
+      "Key": "933",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "933: Effect confirmation (Lutzern)"
+        }
+      ]
+    },
+    {
+      "Key": "934",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "934: Effect confirmation (Brain stem sacred tree spear)"
+        }
+      ]
+    },
+    {
+      "Key": "935",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "935: Effect confirmation (hermit crab claw)"
+        }
+      ]
+    },
+    {
+      "Key": "936",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "936: Effect confirmation (Elder's Whip)"
+        }
+      ]
+    },
+    {
+      "Key": "937",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "937: Effect confirmation (Silver Chariot's one-handed bow)"
+        }
+      ]
+    },
+    {
+      "Key": "938",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "938: Effect confirmation (Fairy Shrine Maiden's staff)"
+        }
+      ]
+    },
+    {
+      "Key": "939",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "939: Effect confirmation (Dragon's one-handed bell)"
+        }
+      ]
+    },
+    {
+      "Key": "940",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "940: Effect confirmation (Queen's one-handed bell)"
+        }
+      ]
+    },
+    {
+      "Key": "941",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "941: Effect confirmation (Dark magician's one-handed bell)"
+        }
+      ]
+    },
+    {
+      "Key": "942",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "942: Effect confirmation (shield bell)"
+        }
+      ]
+    },
+    {
+      "Key": "943",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "943: Effect confirmation (Magic fire)"
+        }
+      ]
+    },
+    {
+      "Key": "944",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "944: Effect confirmation (Cleric medium shield A)"
+        }
+      ]
+    },
+    {
+      "Key": "945",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "945: Effect confirmation (Cleric's medium shield B)"
+        }
+      ]
+    },
+    {
+      "Key": "946",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "946: Effect confirmation (Phantom Knight's left shield)"
+        }
+      ]
+    },
+    {
+      "Key": "947",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "947: Effect confirmation (Mirror Knight's Shield)"
+        }
+      ]
+    },
+    {
+      "Key": "948",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "948: Effect confirmation (large-flowered kite shield)"
+        }
+      ]
+    },
+    {
+      "Key": "949",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "949: Effect confirmation (Evil Eye Great Shield)"
+        }
+      ]
+    },
+    {
+      "Key": "950",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "950: Lv.20 Status change display confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "951",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "951: Lv.100 Status change display confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "952",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "952: Lv.150 Status change display confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "953",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "953: Lv.500 Status change display confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "954",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "954: Lv.999 Status change display confirmation"
+        }
+      ]
+    },
+    {
+      "Key": "980",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "980: For confirming impact SFX"
+        }
+      ]
+    },
+    {
+      "Key": "994",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "994: For checking assault spear and curved sword"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1001: For placement check"
+        }
+      ]
+    },
+    {
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1002: For spell check"
+        }
+      ]
+    },
+    {
+      "Key": "1003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1003: For spell checking - Magic 1"
+        }
+      ]
+    },
+    {
+      "Key": "1004",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1004: For spell check - Magic 2"
+        }
+      ]
+    },
+    {
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1005: For spell checking - Magic 3"
+        }
+      ]
+    },
+    {
+      "Key": "1006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1006: For spell checking - Magic 4"
+        }
+      ]
+    },
+    {
+      "Key": "1007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1007: For spell checking - Magic 5"
+        }
+      ]
+    },
+    {
+      "Key": "1008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1008: For spell checking - Magic 6"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1010: For spell check - Miracle 1"
+        }
+      ]
+    },
+    {
+      "Key": "1011",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1011: For spell check - Miracle 2"
+        }
+      ]
+    },
+    {
+      "Key": "1012",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1012: For spell check - Miracle 3"
+        }
+      ]
+    },
+    {
+      "Key": "1013",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1013: For spell check - Miracle 4"
+        }
+      ]
+    },
+    {
+      "Key": "1014",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1014: For spell check - Miracle 5"
+        }
+      ]
+    },
+    {
+      "Key": "1020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1020: For spell check - Jujutsu 1"
+        }
+      ]
+    },
+    {
+      "Key": "1021",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1021: For spell check - Jujutsu 2"
+        }
+      ]
+    },
+    {
+      "Key": "1022",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1022: For spell check - Jujutsu 3"
+        }
+      ]
+    },
+    {
+      "Key": "1023",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1023: For spell check - Jujutsu 4"
+        }
+      ]
+    },
+    {
+      "Key": "1024",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1024: For spell check - Jujutsu 5"
+        }
+      ]
+    },
+    {
+      "Key": "1030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1030: For spell checking - Dark Arts - Magic 1"
+        }
+      ]
+    },
+    {
+      "Key": "1031",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1031: Auror 2 for spell checking"
+        }
+      ]
+    },
+    {
+      "Key": "1040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1040: For spell checking - Dark Arts - Odd 1"
+        }
+      ]
+    },
+    {
+      "Key": "1041",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1041: Spell Check - Dark Arts - Odd 2"
+        }
+      ]
+    },
+    {
+      "Key": "1106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1106: DLC weapon confirmation 1"
+        }
+      ]
+    },
+    {
+      "Key": "1107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1107: DLC weapon confirmation 2"
+        }
+      ]
+    },
+    {
+      "Key": "1108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1108: Shield Design Contest"
+        }
+      ]
+    },
+    {
+      "Key": "1116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1116: Bow check"
+        }
+      ]
+    },
+    {
+      "Key": "1181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1181:SFX drawing load test 1"
+        }
+      ]
+    },
+    {
+      "Key": "1182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1182:SFX drawing load test 2"
+        }
+      ]
+    },
+    {
+      "Key": "1183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1183:SFX drawing load test 3"
+        }
+      ]
+    },
+    {
+      "Key": "1190",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1190: Equipment reinforcement test"
+        }
+      ]
+    },
+    {
+      "Key": "1200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1200: Pledge \"None\""
+        }
+      ]
+    },
+    {
+      "Key": "1201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1201: Pledge \"Warrior of the Sun\""
+        }
+      ]
+    },
+    {
+      "Key": "1202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1202: Pledge “Guardian Knight Lv.0”"
+        }
+      ]
+    },
+    {
+      "Key": "1203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1203: Pledge “Guardian Knight Lv.1”"
+        }
+      ]
+    },
+    {
+      "Key": "1204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1204: Pledge “Guardian Knight Lv.2”"
+        }
+      ]
+    },
+    {
+      "Key": "1205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1205: Pledge “Guardian Knight Lv.3”"
+        }
+      ]
+    },
+    {
+      "Key": "1206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1206: Pledge “Dark Spirit of Blood Lv.0”"
+        }
+      ]
+    },
+    {
+      "Key": "1207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1207: Pledge “Dark Spirit of Blood Lv.1”"
+        }
+      ]
+    },
+    {
+      "Key": "1208",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1208: Pledge “Dark Spirit of Blood Lv.2”"
+        }
+      ]
+    },
+    {
+      "Key": "1209",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1209: Pledge “Dark Spirit of Blood Lv.3”"
+        }
+      ]
+    },
+    {
+      "Key": "1210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1210: Pledge “Seikyo”"
+        }
+      ]
+    },
+    {
+      "Key": "1211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1211: Covenant “Mouse King”"
+        }
+      ]
+    },
+    {
+      "Key": "1212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1212: Pledge “Bellkeeper”"
+        }
+      ]
+    },
+    {
+      "Key": "1213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1213: Pledge “Koryu”"
+        }
+      ]
+    },
+    {
+      "Key": "1214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1214: Covenant “Strong”"
+        }
+      ]
+    },
+    {
+      "Key": "1215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1215: Pledge “Pilgrimage to the Abyss Lv.0”"
+        }
+      ]
+    },
+    {
+      "Key": "1216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1216: Pledge “Pilgrimage to the Abyss Lv.1”"
+        }
+      ]
+    },
+    {
+      "Key": "1217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1217: Pledge “Pilgrimage to the Abyss Lv.2”"
+        }
+      ]
+    },
+    {
+      "Key": "1218",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1218: Pledge “Pilgrimage to the Abyss Lv.3”"
+        }
+      ]
+    },
+    {
+      "Key": "3000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3000: Heaviest equipment"
+        }
+      ]
+    },
+    {
+      "Key": "3001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3001: Translucent drawing equipment"
+        }
+      ]
+    },
+    {
+      "Key": "3002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3002: Equipment with heavy cross"
+        }
+      ]
+    },
+    {
+      "Key": "300101000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.11:: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "300102000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.17: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "300103000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.19: Decayed Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "300104000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.23:: Forest of the Decayed Giant: Boss Battle Route"
+        }
+      ]
+    },
+    {
+      "Key": "300105000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.25:: Forest of the Decayed Giant: Water area"
+        }
+      ]
+    },
+    {
+      "Key": "300106000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.25: Heide Great Fire Tower"
+        }
+      ]
+    },
+    {
+      "Key": "300107000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.30: Hidden Port"
+        }
+      ]
+    },
+    {
+      "Key": "300108000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.32:: Forest of Hollow Shadow: Road to the forest Madura connection ~ until the branching tower"
+        }
+      ]
+    },
+    {
+      "Key": "300109000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.33: : Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "300110000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.34: Heide Great Fire Tower: Blue Cathedral"
+        }
+      ]
+    },
+    {
+      "Key": "300111000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.35:: Forest of Decayed Giants: Vagrant"
+        }
+      ]
+    },
+    {
+      "Key": "300112000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.35:: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "300113000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.39: Prison of Oblivion: Bell Tower of the Moon"
+        }
+      ]
+    },
+    {
+      "Key": "300114000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.40:: Valley of pools"
+        }
+      ]
+    },
+    {
+      "Key": "300115000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.41:: Forest of the Decayed Giant: Turtle Route"
+        }
+      ]
+    },
+    {
+      "Key": "300116000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.42: : Valley of pools: Tower of earth"
+        }
+      ]
+    },
+    {
+      "Key": "300117000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.46::Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "300118000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.47:: Valley of pools: Boss battle route"
+        }
+      ]
+    },
+    {
+      "Key": "300119000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.48: Hunting Forest: Death Penalty"
+        }
+      ]
+    },
+    {
+      "Key": "300120000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.50:: Scum bottom"
+        }
+      ]
+    },
+    {
+      "Key": "300121000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.54: Prison of Oblivion: Tower of Sinners"
+        }
+      ]
+    },
+    {
+      "Key": "300122000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.56:: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "300123000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.57: Melted Iron Fortress: Bell Tower of the Sun"
+        }
+      ]
+    },
+    {
+      "Key": "300124000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.59: Hollow Shadow Forest: First half"
+        }
+      ]
+    },
+    {
+      "Key": "300125000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.62: Decayed Giant Forest: Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "300126000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.63:: Molten Castle: Boss battle route"
+        }
+      ]
+    },
+    {
+      "Key": "300127000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.65:: Melted Iron Fortress: Medium boss route"
+        }
+      ]
+    },
+    {
+      "Key": "300128000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.65: Hollow Shadow Forest: Second half/Boss battle"
+        }
+      ]
+    },
+    {
+      "Key": "300129000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.72: : Doorway of Pharos"
+        }
+      ]
+    },
+    {
+      "Key": "300130000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.73:: Shining Stone Town Geldra"
+        }
+      ]
+    },
+    {
+      "Key": "300131000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.78:: Scum Bottom: Black Valley"
+        }
+      ]
+    },
+    {
+      "Key": "300132000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.79: Hollow Shadow Forest: Road to the Royal Castle"
+        }
+      ]
+    },
+    {
+      "Key": "300133000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.99: Royal Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "300134000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.103:: Forest of Hollow Shadows: To the mansion of Andir"
+        }
+      ]
+    },
+    {
+      "Key": "300135000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.104: Royal Castle Drangraig: King's Corridor"
+        }
+      ]
+    },
+    {
+      "Key": "300136000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.106:: Altar of Amana"
+        }
+      ]
+    },
+    {
+      "Key": "300137000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.112:: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "300138000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.114:: House of An Deal"
+        }
+      ]
+    },
+    {
+      "Key": "300139000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.118: : Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "300140000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.120:: Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "300141000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.123:: Giant Wamda's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "300142000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.123:: Giant Law's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "300143000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.128:: Memories of Giant Ojay"
+        }
+      ]
+    },
+    {
+      "Key": "300144000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.130: Firelink Throne"
+        }
+      ]
+    },
+    {
+      "Key": "300145000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lv.136: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "300200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For lap check 1st lap clear"
+        }
+      ]
+    },
+    {
+      "Key": "300200010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For lap check 2nd lap clear"
+        }
+      ]
+    },
+    {
+      "Key": "300200020",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For lap check, 3rd lap clear"
+        }
+      ]
+    },
+    {
+      "Key": "300201000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Gap Cave"
+        }
+      ]
+    },
+    {
+      "Key": "300202000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Madura"
+        }
+      ]
+    },
+    {
+      "Key": "300203000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Fallen Giant Forest"
+        }
+      ]
+    },
+    {
+      "Key": "300206000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Heide Tower of Fire"
+        }
+      ]
+    },
+    {
+      "Key": "300207000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Hidden port"
+        }
+      ]
+    },
+    {
+      "Key": "300209000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Hunting Forest"
+        }
+      ]
+    },
+    {
+      "Key": "300210000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Heide Tower of Fire: Blue Cathedral"
+        }
+      ]
+    },
+    {
+      "Key": "300211000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Forest of Fallen Giants: Vagrant"
+        }
+      ]
+    },
+    {
+      "Key": "300212000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Prison of Oblivion"
+        }
+      ]
+    },
+    {
+      "Key": "300213000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Prison of Oblivion: Bell Tower of the Moon"
+        }
+      ]
+    },
+    {
+      "Key": "300214000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Tamari no Tani"
+        }
+      ]
+    },
+    {
+      "Key": "300215000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Forest of Decayed Giants: Turtle Route"
+        }
+      ]
+    },
+    {
+      "Key": "300216000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Tamari no Tani: Earthen Tower"
+        }
+      ]
+    },
+    {
+      "Key": "300217000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Saint's Tomb"
+        }
+      ]
+    },
+    {
+      "Key": "300218000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Tamari no Tani: Boss Battle Route"
+        }
+      ]
+    },
+    {
+      "Key": "300219000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Hunting Forest: Death Place"
+        }
+      ]
+    },
+    {
+      "Key": "300220000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Kuzuso"
+        }
+      ]
+    },
+    {
+      "Key": "300221000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Prison of Oblivion: Tower of Sinners"
+        }
+      ]
+    },
+    {
+      "Key": "300222000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Melted Iron Castle"
+        }
+      ]
+    },
+    {
+      "Key": "300223000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Melted Iron Castle: Bell Tower of the Sun"
+        }
+      ]
+    },
+    {
+      "Key": "300224000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Hollow Shadow Forest: First Half"
+        }
+      ]
+    },
+    {
+      "Key": "300225000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Forest of Fallen Giants: Salamander"
+        }
+      ]
+    },
+    {
+      "Key": "300226000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Molten Castle: Boss Battle Route"
+        }
+      ]
+    },
+    {
+      "Key": "300227000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Molten Castle: Middle boss route"
+        }
+      ]
+    },
+    {
+      "Key": "300228000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Hollow Shadow Forest: Second Half/Boss Battle"
+        }
+      ]
+    },
+    {
+      "Key": "300229000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Pharos Doorway"
+        }
+      ]
+    },
+    {
+      "Key": "300230000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Geldra, Shinseki Town"
+        }
+      ]
+    },
+    {
+      "Key": "300231000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Kuzuzo: Kuro Valley"
+        }
+      ]
+    },
+    {
+      "Key": "300233000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Castle Drangraig"
+        }
+      ]
+    },
+    {
+      "Key": "300236000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Amana Altar"
+        }
+      ]
+    },
+    {
+      "Key": "300237000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Immortal Temple"
+        }
+      ]
+    },
+    {
+      "Key": "300238000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: House of Anne Deal"
+        }
+      ]
+    },
+    {
+      "Key": "300239000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Guardian Dragon's Nest"
+        }
+      ]
+    },
+    {
+      "Key": "300240000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map check: Shrine"
+        }
+      ]
+    },
+    {
+      "Key": "300241000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Giant Wamda's Memories"
+        }
+      ]
+    },
+    {
+      "Key": "300242000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Memories of Giant Law"
+        }
+      ]
+    },
+    {
+      "Key": "300243000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Memories of Giant Ojay"
+        }
+      ]
+    },
+    {
+      "Key": "300244000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Firelink Throne"
+        }
+      ]
+    },
+    {
+      "Key": "300245000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Map Check: Old Dark Hole"
+        }
+      ]
+    },
+    {
+      "Key": "999999999",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illegal data (prohibited from use)"
+        }
+      ]
+    }
+  ]
+}

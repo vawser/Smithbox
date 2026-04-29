@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <minValue />
+        <maxValue />
+        <faceParamType />
+        <faceParamCategory  Enum="CHR_EDIT_FACE_PARAM_CATEGORY"/>
+        <montageUsed />
+        <menuReverse />
+        <dummy />
+    </Field>
+</PARAMMETA>

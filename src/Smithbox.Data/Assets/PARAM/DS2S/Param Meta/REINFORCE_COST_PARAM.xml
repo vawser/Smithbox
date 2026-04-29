@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <lv1Soul />
+        <lv2Soul />
+        <lv3Soul />
+        <lv4Soul />
+        <lv5Soul />
+        <lv6Soul />
+        <lv7Soul />
+        <lv8Soul />
+        <lv9Soul />
+        <lv10Soul />
+        <lv1ItemID  Refs="ItemParam"/>
+        <lv2ItemID  Refs="ItemParam"/>
+        <lv3ItemID  Refs="ItemParam"/>
+        <lv4ItemID  Refs="ItemParam"/>
+        <lv5ItemID  Refs="ItemParam"/>
+        <lv6ItemID  Refs="ItemParam"/>
+        <lv7ItemID  Refs="ItemParam"/>
+        <lv8ItemID  Refs="ItemParam"/>
+        <lv9ItemID  Refs="ItemParam"/>
+        <lv10ItemID  Refs="ItemParam"/>
+        <lv1ItemCount />
+        <lv2ItemCount />
+        <lv3ItemCount />
+        <lv4ItemCount />
+        <lv5ItemCount />
+        <lv6ItemCount />
+        <lv7ItemCount />
+        <lv8ItemCount />
+        <lv9ItemCount />
+        <lv10ItemCount />
+    </Field>
+</PARAMMETA>

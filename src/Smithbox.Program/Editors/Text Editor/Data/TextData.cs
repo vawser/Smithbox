@@ -37,13 +37,13 @@ public class TextData : IDisposable
         Task<bool> descriptorTask = SetupFmgDescriptors();
         bool descriptorTaskResult = await descriptorTask;
 
-        if (descriptorTaskResult)
+        if (!descriptorTaskResult)
         {
-            Smithbox.Log(this, $"Setup FMG Descriptors.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup the FMG Descriptor data.");
         }
         else
         {
-            Smithbox.LogError(this, $"Failed to setup FMG Descriptors.");
+            Smithbox.Log(this, $"[Text Editor] Setup the FMG Descriptor data.");
         }
 
         // Primary Bank
@@ -52,7 +52,11 @@ public class TextData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Text Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Text Editor] Setup the Primary Bank.");
         }
 
         // Vanilla Bank
@@ -61,7 +65,11 @@ public class TextData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Text Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup Vanilla Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Text Editor] Setup the Vanilla Bank.");
         }
 
         return true;
@@ -79,7 +87,7 @@ public class TextData : IDisposable
 
         if (!auxBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Text Editor] Failed to setup Aux FMG Bank.");
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup the Aux FMG Bank.");
         }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
@@ -91,7 +99,7 @@ public class TextData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
-        Smithbox.Log(this, $"[Text Editor] Setup Aux FMG Bank.");
+        Smithbox.Log(this, $"[Text Editor] Setup the Aux FMG Bank.");
 
         return true;
     }

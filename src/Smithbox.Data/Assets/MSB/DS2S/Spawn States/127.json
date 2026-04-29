@@ -1,0 +1,46 @@
+{
+  "id": "127",
+  "name": "Undead Crypt Hollow",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Sitting"
+    },
+    {
+      "value": "3",
+      "name": "Kneeling"
+    },
+    {
+      "value": "4",
+      "name": "Prone"
+    },
+    {
+      "value": "5",
+      "name": "Standing Prayer"
+    },
+    {
+      "value": "6",
+      "name": "Kneeling Prayer"
+    },
+    {
+      "value": "7",
+      "name": "Kneeling Wall Bang"
+    },
+    {
+      "value": "9",
+      "name": "Sitting"
+    },
+    {
+      "value": "11",
+      "name": "Ground Rise"
+    }
+  ]
+}

@@ -1,40 +1,189 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MENU_STATS_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u16 stat_hp" />
-    <Field Def="u16 stat_stamina" />
-    <Field Def="u8 stat_poise" />
-    <Field Def="u8 stat_cast_tier" />
-    <Field Def="u16 stat_attunement_slots" />
-    <Field Def="u16 stat_cast_speed" />
-    <Field Def="u16 stat_strength_bonus" />
-    <Field Def="u16 stat_dexterity_bonus" />
-    <Field Def="u16 stat_magic_bonus" />
-    <Field Def="u16 stat_lightning_bonus" />
-    <Field Def="u16 stat_fire_bonus" />
-    <Field Def="u16 stat_dark_bonus" />
-    <Field Def="u16 stat_poison_bonus" />
-    <Field Def="u16 stat_bleed_bonus" />
-    <Field Def="u16 Unk01" />
-    <Field Def="u16 stat_physical_defence" />
-    <Field Def="u16 stat_magic_defence" />
-    <Field Def="u16 stat_lightning_defence" />
-    <Field Def="u16 stat_fire_defence" />
-    <Field Def="u16 stat_dark_defence" />
-    <Field Def="u16 stat_poison_defence" />
-    <Field Def="u16 stat_bleed_defence" />
-    <Field Def="u16 Unk02" />
-    <Field Def="u16 stat_petrify_defence" />
-    <Field Def="u16 stat_curse_defence" />
-    <Field Def="u16 Unk03" />
-    <Field Def="u16 stat_agility" />
-    <Field Def="u16 stat_mundane_bonus" />
-    <Field Def="u16 Unk04" />
-    <Field Def="f32 stat_equip_load" />
-  </Fields>
+    <ParamType>MENU_STATS_PARAM</ParamType>
+    <DataVersion>5</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s16 hpMax">
+            <DisplayName>メニュー用 最大HP</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s16 staminaMax">
+            <DisplayName>メニュー用 スタミナ</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 poise">
+            <DisplayName>メニュー用 強靭度</DisplayName>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s8 spellUsesLevel = 1">
+            <DisplayName>メニュー用 スペル使用回数レベル</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="s16 spellSlot">
+            <DisplayName>メニュー用 スペル記憶数</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="s16 chantingTimeCorrectScale">
+            <DisplayName>メニュー用 スペル詠唱速度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="s16 physicalAttackByStrength">
+            <DisplayName>メニュー用 物理攻撃力（筋力）</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="s16 physicalAttackByDexterity">
+            <DisplayName>メニュー用 物理攻撃力（技量）</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="s16 magicAttack">
+            <DisplayName>メニュー用 魔力攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="s16 fireAttack">
+            <DisplayName>メニュー用 炎攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="s16 thunderAttack">
+            <DisplayName>メニュー用 雷攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>110</SortID>
+        </Field>
+        <Field Def="s16 darkAttack">
+            <DisplayName>メニュー用 闇攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>120</SortID>
+        </Field>
+        <Field Def="s16 poisonAttack">
+            <DisplayName>メニュー用 毒攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>130</SortID>
+        </Field>
+        <Field Def="s16 bleedingAttack">
+            <DisplayName>メニュー用 出血攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>140</SortID>
+        </Field>
+        <Field Def="s16 weaponBreakAttack">
+            <DisplayName>メニュー用 破壊攻撃力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>150</SortID>
+        </Field>
+        <Field Def="s16 defense">
+            <DisplayName>メニュー用 防御力</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>160</SortID>
+        </Field>
+        <Field Def="s16 magicResistance">
+            <DisplayName>メニュー用 魔力耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>170</SortID>
+        </Field>
+        <Field Def="s16 fireResistance">
+            <DisplayName>メニュー用 炎耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>180</SortID>
+        </Field>
+        <Field Def="s16 thunderResistance">
+            <DisplayName>メニュー用 雷耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>190</SortID>
+        </Field>
+        <Field Def="s16 darkResistance">
+            <DisplayName>メニュー用 闇耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s16 poisonResistance">
+            <DisplayName>メニュー用 毒耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>210</SortID>
+        </Field>
+        <Field Def="s16 bleedingResistance">
+            <DisplayName>メニュー用 出血耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>220</SortID>
+        </Field>
+        <Field Def="s16 weaponBreakResistance">
+            <DisplayName>メニュー用 武器破壊耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>230</SortID>
+        </Field>
+        <Field Def="s16 petrifactionResistance">
+            <DisplayName>メニュー用 石化耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>235</SortID>
+        </Field>
+        <Field Def="s16 curseResistance">
+            <DisplayName>メニュー用 呪耐性</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>240</SortID>
+        </Field>
+        <Field Def="s16 evasionInvincibleTime">
+            <DisplayName>メニュー用 回避無敵時間</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>250</SortID>
+        </Field>
+        <Field Def="s16 actionSpeed">
+            <DisplayName>メニュー用 各種アクション速度</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>260</SortID>
+        </Field>
+        <Field Def="s16 physicalAttackByAbyss">
+            <DisplayName>メニュー用 物理攻撃力(深淵)</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>270</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>301</SortID>
+        </Field>
+        <Field Def="f32 equipLoadMax">
+            <DisplayName>メニュー用 装備重量</DisplayName>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

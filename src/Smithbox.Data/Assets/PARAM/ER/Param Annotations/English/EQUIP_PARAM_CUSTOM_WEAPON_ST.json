@@ -1,0 +1,28 @@
+{
+  "Param": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Type": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Name": "EQUIP_PARAM_CUSTOM_WEAPON_ST",
+  "Description": "Defines a pairing of Weapon and Ash of War (Gem) for use from CharaInitParam.\nFor loot and shops, change the default AoW/Gem on the weapon.",
+  "Fields": [
+    {
+      "Field": "baseWepId",
+      "Name": "Base Weapon ID",
+      "Description": "Weapon base ID"
+    },
+    {
+      "Field": "gemId",
+      "Name": "Gem ID",
+      "Description": "Magic stone ID"
+    },
+    {
+      "Field": "reinforceLv",
+      "Name": "Reinforcement Level",
+      "Description": "Enhancement value"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

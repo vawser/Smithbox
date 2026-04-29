@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_ON_DAMAGE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ON_DAMAGE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Landing"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Knockdown"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "892",
+  "name": "Bashful Ray",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

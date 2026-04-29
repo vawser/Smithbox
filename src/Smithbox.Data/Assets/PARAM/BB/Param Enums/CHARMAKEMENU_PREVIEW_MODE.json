@@ -1,0 +1,38 @@
+{
+  "Key": "CHARMAKEMENU_PREVIEW_MODE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHARMAKEMENU_PREVIEW_MODE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Body Armored"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Full Body Naked"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face Close Up"
+        }
+      ]
+    }
+  ]
+}

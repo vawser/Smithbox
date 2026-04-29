@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <none  IsBool=""/>
+        <unarmed  IsBool=""/>
+        <fist  IsBool=""/>
+        <dagger  IsBool=""/>
+        <thrustingSword  IsBool=""/>
+        <sword  IsBool=""/>
+        <doublelBlade  IsBool=""/>
+        <hammer  IsBool=""/>
+        <greatSword  IsBool=""/>
+        <axe  IsBool=""/>
+        <greatHammer  IsBool=""/>
+        <ultraGreatSword  IsBool=""/>
+        <greatAxe  IsBool=""/>
+        <scythe  IsBool=""/>
+        <halberd  IsBool=""/>
+        <spear  IsBool=""/>
+        <lance  IsBool=""/>
+        <whip  IsBool=""/>
+        <bow  IsBool=""/>
+        <burstBow  IsBool=""/>
+        <wand  IsBool=""/>
+        <bell  IsBool=""/>
+        <rightShield  IsBool=""/>
+        <leftShield  IsBool=""/>
+        <claw  IsBool=""/>
+        <unk0  IsBool=""/>
+        <unk1  IsBool=""/>
+    </Field>
+</PARAMMETA>

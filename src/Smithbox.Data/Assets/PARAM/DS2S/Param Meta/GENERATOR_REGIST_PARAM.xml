@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <EnemyId  Enum="ENEMY_LIST_ENUM"/>
+        <HighLogicId />
+        <LowLogicId />
+        <startUpStateType />
+        <bAnotherWorldGenerate  IsBool=""/>
+        <memoryBlock1  IsBool=""/>
+        <memoryBlock2  IsBool=""/>
+        <memoryBlock3  IsBool=""/>
+        <memoryBlock4  IsBool=""/>
+        <memoryBlock5  IsBool=""/>
+        <memoryBlock6  IsBool=""/>
+        <memoryBlock7  IsBool=""/>
+        <memoryBlock8  IsBool=""/>
+        <memoryBlock9  IsBool=""/>
+        <memoryBlock10  IsBool=""/>
+        <memoryBlock11  IsBool=""/>
+        <memoryBlock12  IsBool=""/>
+        <memoryBlock13  IsBool=""/>
+        <memoryBlock14  IsBool=""/>
+        <memoryBlock15  IsBool=""/>
+        <memoryBlock16  IsBool=""/>
+    </Field>
+</PARAMMETA>

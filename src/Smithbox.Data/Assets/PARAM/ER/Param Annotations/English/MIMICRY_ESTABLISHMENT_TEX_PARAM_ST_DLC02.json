@@ -1,0 +1,73 @@
+{
+  "Param": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Type": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Name": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "srcR",
+      "Name": "Pre-conversion - Map Image R",
+      "Description": "Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcG",
+      "Name": "Pre-conversion - Map Image G",
+      "Description": "Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "srcB",
+      "Name": "Pre-conversion - Map Image B",
+      "Description": "Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mimicryEstablishmentParamId",
+      "Name": "Mimicry Establishment Param ID",
+      "Description": "Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio"
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1c",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

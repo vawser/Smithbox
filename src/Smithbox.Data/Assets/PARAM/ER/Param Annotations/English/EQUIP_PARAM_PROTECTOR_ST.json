@@ -1,0 +1,1258 @@
+{
+  "Param": "EQUIP_PARAM_PROTECTOR_ST",
+  "Type": "EQUIP_PARAM_PROTECTOR_ST",
+  "Name": "EQUIP_PARAM_PROTECTOR_ST",
+  "Description": "Defines all types of equippable Armor, including no armor. Responsible for model masks.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)"
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "Wandering Equip ID",
+      "Description": "Replacement equipment ID for wandering ghosts."
+    },
+    {
+      "Field": "resistSleep",
+      "Name": "Resist - Sleep",
+      "Description": "Difficulty in getting sleep abnormalities"
+    },
+    {
+      "Field": "resistMadness",
+      "Name": "Resist - Madness",
+      "Description": "Difficulty in getting mad"
+    },
+    {
+      "Field": "saDurability",
+      "Name": "Poise Durability",
+      "Description": "Super armor endurance"
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "Toughness Correction",
+      "Description": "It is a magnification that corrects the basic value of toughness."
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "Repair Price",
+      "Description": "Basic repair price"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Basic Price",
+      "Description": "Basic price"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "Sell Value",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]."
+    },
+    {
+      "Field": "residentSpEffectId",
+      "Name": "Resident SpEffect ID [1]",
+      "Description": "Resident special effect ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "Resident SpEffect ID [2]",
+      "Description": "Resident special effect ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "Resident SpEffect ID [3]",
+      "Description": "Resident special effect ID3"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Upgrade Material ID",
+      "Description": "Material parameter ID required for weapon enhancement"
+    },
+    {
+      "Field": "partsDamageRate",
+      "Name": "Weak Parts Damage %",
+      "Description": "Part damage rate"
+    },
+    {
+      "Field": "corectSARecover",
+      "Name": "Poise Recovery Correction",
+      "Description": "Super Armor Recovery Time Correction Value"
+    },
+    {
+      "Field": "originEquipPro",
+      "Name": "Origin Armor +0",
+      "Description": "Strengthening of this armor Original armor ID"
+    },
+    {
+      "Field": "originEquipPro1",
+      "Name": "Origin Armor +1",
+      "Description": "Strengthening this armor Original armor ID1"
+    },
+    {
+      "Field": "originEquipPro2",
+      "Name": "Origin Armor +2",
+      "Description": "Strengthening this armor Original armor ID2"
+    },
+    {
+      "Field": "originEquipPro3",
+      "Name": "Origin Armor +3",
+      "Description": "Strengthening this armor Original armor ID3"
+    },
+    {
+      "Field": "originEquipPro4",
+      "Name": "Origin Armor +4",
+      "Description": "Strengthening this armor Original armor ID4"
+    },
+    {
+      "Field": "originEquipPro5",
+      "Name": "Origin Armor +5",
+      "Description": "Strengthening this armor Original armor ID5"
+    },
+    {
+      "Field": "originEquipPro6",
+      "Name": "Origin Armor +6",
+      "Description": "Strengthening this armor Original armor ID6"
+    },
+    {
+      "Field": "originEquipPro7",
+      "Name": "Origin Armor +7",
+      "Description": "Strengthening this armor Original armor ID7"
+    },
+    {
+      "Field": "originEquipPro8",
+      "Name": "Origin Armor +8",
+      "Description": "Strengthening this armor Original armor ID8"
+    },
+    {
+      "Field": "originEquipPro9",
+      "Name": "Origin Armor +9",
+      "Description": "Strengthening this armor Original armor ID9"
+    },
+    {
+      "Field": "originEquipPro10",
+      "Name": "Origin Armor +10",
+      "Description": "Strengthening this armor Original armor ID10"
+    },
+    {
+      "Field": "originEquipPro11",
+      "Name": "Origin Armor +11",
+      "Description": "Strengthening this armor Original armor ID11"
+    },
+    {
+      "Field": "originEquipPro12",
+      "Name": "Origin Armor +12",
+      "Description": "Strengthening this armor Original armor ID12"
+    },
+    {
+      "Field": "originEquipPro13",
+      "Name": "Origin Armor +13",
+      "Description": "Strengthening this armor Original armor ID13"
+    },
+    {
+      "Field": "originEquipPro14",
+      "Name": "Origin Armor +14",
+      "Description": "Strengthening this armor Original armor ID14"
+    },
+    {
+      "Field": "originEquipPro15",
+      "Name": "Origin Armor +15",
+      "Description": "Strengthening this armor Original armor ID15"
+    },
+    {
+      "Field": "faceScaleM_ScaleX",
+      "Name": "Facescale - Male - Scale X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_ScaleZ",
+      "Name": "Facescale - Male - Scale Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxX",
+      "Name": "Facescale - Male - Max X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxZ",
+      "Name": "Facescale - Male - Max Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleX",
+      "Name": "Facescale - Female - Scale X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleZ",
+      "Name": "Facescale - Female - Scale Z",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxX",
+      "Name": "Facescale - Female - Max X",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxZ",
+      "Name": "Facescale - Female - Max Z",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWC ID",
+      "Description": "QWC parameter ID"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Equip Model ID",
+      "Description": "Equipment model number."
+    },
+    {
+      "Field": "iconIdM",
+      "Name": "Icon ID - Male",
+      "Description": "Men's menu icon ID."
+    },
+    {
+      "Field": "iconIdF",
+      "Name": "Icon ID - Female",
+      "Description": "Women's menu icon ID."
+    },
+    {
+      "Field": "knockBack",
+      "Name": "Knockback",
+      "Description": "Knockback reduction value."
+    },
+    {
+      "Field": "knockbackBounceRate",
+      "Name": "Knockback Bounce Rate",
+      "Description": "Knockback repulsion rate."
+    },
+    {
+      "Field": "durability",
+      "Name": "Durability",
+      "Description": "Initial durability."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "Max Durability",
+      "Description": "New durability."
+    },
+    {
+      "Field": "pad03",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "Weapon Repel Power",
+      "Description": "Used to determine the repulsion of enemy attacks."
+    },
+    {
+      "Field": "defensePhysics",
+      "Name": "Defence - Physical",
+      "Description": "Physical attack damage protection."
+    },
+    {
+      "Field": "defenseMagic",
+      "Name": "Defence - Magic",
+      "Description": "Magic attack damage protection."
+    },
+    {
+      "Field": "defenseFire",
+      "Name": "Defence - Fire",
+      "Description": "Fire attack damage protection."
+    },
+    {
+      "Field": "defenseThunder",
+      "Name": "Defence - Lightning",
+      "Description": "Damage protection for electric shock attacks."
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "Defence - Slash",
+      "Description": "Look at the attack type, and if it is a slashing attribute, reduce the defense power"
+    },
+    {
+      "Field": "defenseBlow",
+      "Name": "Defence - Strike",
+      "Description": "Look at the attack attribute, and if it is a hit attribute, reduce the defense power."
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "Defence - Thrust",
+      "Description": "Look at the attack attribute, and if it is a hit attribute, reduce the defense power."
+    },
+    {
+      "Field": "resistPoison",
+      "Name": "Resist - Poison",
+      "Description": "Difficulty in getting poisonous"
+    },
+    {
+      "Field": "resistDisease",
+      "Name": "Resist - Scarlet Rot",
+      "Description": "Difficulty in getting sick"
+    },
+    {
+      "Field": "resistBlood",
+      "Name": "Resist - Blood Loss",
+      "Description": "Difficulty in getting bleeding abnormalities"
+    },
+    {
+      "Field": "resistCurse",
+      "Name": "Resist - Death Blight",
+      "Description": "Difficulty in getting a curse condition"
+    },
+    {
+      "Field": "reinforceTypeId",
+      "Name": "Reinforce Type ID",
+      "Description": "Enhanced type ID"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "Is it related to the trophy system?"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "Knockback Param ID",
+      "Description": "ID of the parameter used for knockback"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "Weapon Repel Damage %",
+      "Description": "Used for damage attenuation rate when repelling"
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "Equip Model Category",
+      "Description": "Equipment model type."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Equip Model Gender",
+      "Description": "Gender of equipment model."
+    },
+    {
+      "Field": "protectorCategory",
+      "Name": "Armor Category",
+      "Description": "Armor category."
+    },
+    {
+      "Field": "rarity",
+      "Name": "Rarity",
+      "Description": "Rarity used in item acquisition logs"
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "Sort Group ID",
+      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    },
+    {
+      "Field": "partsDmgType",
+      "Name": "Parts Damage Type",
+      "Description": "Set the attack type to judge the part damage"
+    },
+    {
+      "Field": "pad04",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "Can Deposit",
+      "Description": "Can you leave it in the warehouse?"
+    },
+    {
+      "Field": "headEquip",
+      "Name": "Is Head Equipment",
+      "Description": "Is it head equipment?"
+    },
+    {
+      "Field": "bodyEquip",
+      "Name": "Is Body Equipment",
+      "Description": "Is it torso equipment?"
+    },
+    {
+      "Field": "armEquip",
+      "Name": "Is Arm Equipment",
+      "Description": "Is it arm equipment?"
+    },
+    {
+      "Field": "legEquip",
+      "Name": "Is Leg Equipment",
+      "Description": "Is it leg equipment?"
+    },
+    {
+      "Field": "useFaceScale",
+      "Name": "Use Facescale",
+      "Description": "Whether to use a face scale"
+    },
+    {
+      "Field": "isSkipWeakDamageAnim",
+      "Name": "Skip Weak Damage Anim",
+      "Description": "Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation."
+    },
+    {
+      "Field": "pad06",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "defenseMaterialVariationValue_Weak",
+      "Name": "Defence Material - Variation Value - Weak",
+      "Description": "It is a value used for variation of abnormal condition, damage SFX, SE in combination with weak point defense material. SEQ16473"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId2",
+      "Name": "Auto Foot Effect Decal Base ID [2]",
+      "Description": "Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs."
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId3",
+      "Name": "Auto Foot Effect Decal Base ID [3]",
+      "Description": "Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs."
+    },
+    {
+      "Field": "defenseMaterialVariationValue",
+      "Name": "Defence Material - Variation Value",
+      "Description": "It is a value used in combination with the defense material to classify abnormal conditions, damage SFX, and SE. SEQ16473"
+    },
+    {
+      "Field": "isDiscard",
+      "Name": "Can Discard",
+      "Description": "Can you throw away the item? TRUE = thrown away"
+    },
+    {
+      "Field": "isDrop",
+      "Name": "Can Drop",
+      "Description": "Can I put the item on the spot? TRUE = can be placed"
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "Cannot Drop in Multiplayer",
+      "Description": "Is multi-drop sharing prohibited?"
+    },
+    {
+      "Field": "simpleModelForDlc",
+      "Name": "Simple Model for DLC1",
+      "Description": "Is there a simple model for DLC?"
+    },
+    {
+      "Field": "showLogCondType",
+      "Name": "Item Acquisition Log Condition Type",
+      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+    },
+    {
+      "Field": "showDialogCondType",
+      "Name": "Item Acquisition Dialog Condition Type ",
+      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "Absorption - Physical",
+      "Description": "Non-attribute damage multiplier"
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "Absorption - Slash",
+      "Description": "Slash damage multiplier"
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "Absorption - Strike",
+      "Description": "Batter damage multiplier"
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "Absorption - Thrust",
+      "Description": "Puncture damage ratio"
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "Absorption - Magic",
+      "Description": "Magic damage multiplier"
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "Absorption - Fire",
+      "Description": "Flame damage multiplier"
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "Absorption - Lightning",
+      "Description": "Electric shock damage ratio"
+    },
+    {
+      "Field": "defenseMaterialSfx1",
+      "Name": "Defence Material SFX [1]",
+      "Description": "For SFX when moving / defending. 1"
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak1",
+      "Name": "Defence Material SFX - Weakness [1]",
+      "Description": "For SFX when weak points are damaged 1"
+    },
+    {
+      "Field": "defenseMaterial1",
+      "Name": "Defence Material - SE [1]",
+      "Description": "For SE when moving / defending. 1"
+    },
+    {
+      "Field": "defenseMaterial_Weak1",
+      "Name": "Defence Material SE - Weakness [1]",
+      "Description": "For SE when weak points are damaged 1"
+    },
+    {
+      "Field": "defenseMaterialSfx2",
+      "Name": "Defence Material SFX [2]",
+      "Description": "For SFX when moving / defending. 2"
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak2",
+      "Name": "Defence Material SFX - Weakness [2]",
+      "Description": "2 for SFX when weak points are damaged"
+    },
+    {
+      "Field": "footMaterialSe",
+      "Name": "Foot Material SE",
+      "Description": "Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to."
+    },
+    {
+      "Field": "defenseMaterial_Weak2",
+      "Name": "Defence Material SE - Weakness [2]",
+      "Description": "2 for SE when weak points are damaged"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId1",
+      "Name": "Auto Foot Effect Decal Base ID [1]",
+      "Description": "Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs."
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "Toughness Absorption",
+      "Description": "Toughness version cut rate"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "Toughness Recovery Correction",
+      "Description": "Correction value for toughness recovery time"
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "Absorption - Holy",
+      "Description": "Dark damage multiplier"
+    },
+    {
+      "Field": "defenseDark",
+      "Name": "Defence - Holy",
+      "Description": "Dark attack damage protection."
+    },
+    {
+      "Field": "invisibleFlag48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag59",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag60",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag61",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag62",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag63",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag64",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag65",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag66",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag67",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag68",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag69",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag70",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag71",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag72",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag73",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag74",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag75",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag76",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag77",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag78",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag79",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag80",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padbit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "postureControlId",
+      "Name": "Posture Control ID",
+      "Description": "Attitude control ID (torso)"
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "saleValue",
+      "Name": "Shop Price",
+      "Description": "Selling price"
+    },
+    {
+      "Field": "resistFreeze",
+      "Name": "Resist - Frost",
+      "Description": "Difficulty in getting cold air condition abnormal"
+    },
+    {
+      "Field": "invisibleFlag_SexVer00",
+      "Name": "Mask 00 - Upper face",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer01",
+      "Name": "Mask 01 - Chin",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer02",
+      "Name": "Mask 02 - Nose and cheeks",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer03",
+      "Name": "Mask 03 - Ears and top of head",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer04",
+      "Name": "Mask 04 - Neck",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer05",
+      "Name": "Mask 05 - Lower neck",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer06",
+      "Name": "Mask 06 - Chest",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer07",
+      "Name": "Mask 07 - Upper elbows",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer08",
+      "Name": "Mask 08 - Shoulders",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer09",
+      "Name": "Mask 09 - Lower elbows",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer10",
+      "Name": "Mask 10 - Lower arms",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer11",
+      "Name": "Mask 11 - Right hand",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer12",
+      "Name": "Mask 12 - Waist",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer13",
+      "Name": "Mask 13 - Left hand",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer14",
+      "Name": "Mask 14 - Knees",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer15",
+      "Name": "Mask 15 - Lower legs",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer16",
+      "Name": "Mask 16 - Feet",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer17",
+      "Name": "Mask 17 - Eyepatch",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer18",
+      "Name": "Mask 18 - Unknown",
+      "Description": "Set on most gauntlets"
+    },
+    {
+      "Field": "invisibleFlag_SexVer19",
+      "Name": "Mask 19 - Unknown",
+      "Description": "Set on most chests and legs"
+    },
+    {
+      "Field": "invisibleFlag_SexVer20",
+      "Name": "Mask 20 - [ARMS] Long Gloves (Lower Arm)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer21",
+      "Name": "Mask 21 - [ARMS] Long Gloves (Full Length)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer22",
+      "Name": "Mask 22 - Unknown",
+      "Description": "Set on bare chest"
+    },
+    {
+      "Field": "invisibleFlag_SexVer23",
+      "Name": "Mask 23 - [BODY] Scarf / High Collar (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer24",
+      "Name": "Mask 24 - [BODY] Sleeves (Bunched to Elbow)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer25",
+      "Name": "Mask 25 - [BODY] Sleeves (Bunched Midway)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer26",
+      "Name": "Mask 26 - [BODY] Sleeves (Full)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer27",
+      "Name": "Mask 27 - [BODY] Large Sleeves (Bunched to Elbow)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer28",
+      "Name": "Mask 28 - [BODY] Large Sleeves (Full)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer29",
+      "Name": "Mask 29 - [BODY] Sleeves (Wrist Bracelets)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer30",
+      "Name": "Mask 30 - [BODY] Couter / Elbow Armor",
+      "Description": "belt"
+    },
+    {
+      "Field": "invisibleFlag_SexVer31",
+      "Name": "Mask 31 - [BODY] Couter / Elbow Armor (Higher Up)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer32",
+      "Name": "Mask 32 - [BODY] Small Collar",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer33",
+      "Name": "Mask 33 - [BODY] Small Collar (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer34",
+      "Name": "Mask 34 - [BODY] Scarf / High Collar (Full)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer35",
+      "Name": "Mask 35 - [BODY] Lower Abdomen Cover",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer36",
+      "Name": "Mask 36 - [BODY] Small Hood (Down)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer37",
+      "Name": "Mask 37 - [BODY] Small Hood (Up)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer38",
+      "Name": "Mask 38 - [BODY] Left Pauldron / Shoulder",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer39",
+      "Name": "Mask 39 - [BODY] Right Pauldron / Shoulder",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer40",
+      "Name": "Mask 40 - [BODY] Cowl",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer41",
+      "Name": "Mask 41 - [BODY] Cowl (Long)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer42",
+      "Name": "Mask 42 - [BODY] Cowl (Mid)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer43",
+      "Name": "Mask 43 - [BODY] Cowl (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer44",
+      "Name": "Mask 44 - [HEAD] Gorget / Neckpiece",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer45",
+      "Name": "Mask 45 - [HEAD] Gorget / Neckpiece (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer46",
+      "Name": "Mask 46 - [HEAD] Long Hood / Plume (Low)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer47",
+      "Name": "Mask 47 - [HEAD] Long Hood / Plume (Mid)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer48",
+      "Name": "Mask 48 - [HEAD] Long Hood / Plume (High)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer49",
+      "Name": "Mask 49 - [HEAD] Long Hood / Plume (Short)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer50",
+      "Name": "Mask 50 - [LEGS] High Waistbelt",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer51",
+      "Name": "Mask 51 - [LEGS] Leggings",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer52",
+      "Name": "Mask 52 - [LEGS] Leggings (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer53",
+      "Name": "Mask 53 - [LEGS] Kneepads",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer54",
+      "Name": "Mask 54 - [LEGS] Kneepads (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer55",
+      "Name": "Mask 55 - [LEGS] Waistbelt",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer56",
+      "Name": "Mask 56 - [LEGS] Waistbelt (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer57",
+      "Name": "Mask 57 - [LEGS] Waistcloth",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer58",
+      "Name": "Mask 58 - [LEGS] Wiastcloth (Compressed)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer59",
+      "Name": "Mask 59 - [LEGS] Pants Big Thighs",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer60",
+      "Name": "Mask 60 - Hair (Front)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer61",
+      "Name": "Mask 61 - Hair (Forehead)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer62",
+      "Name": "Mask 62 - Hair (Under Helmet)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer63",
+      "Name": "Mask 63 - Hair (Over Headband)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer64",
+      "Name": "Mask 64 - Hair (Full)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer65",
+      "Name": "Mask 65 - Hair (Back of Head)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer66",
+      "Name": "Mask 66 - Long Hair Braid / Tail (Low)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer67",
+      "Name": "Mask 67 - Long Hair Braid / Tail (High)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer68",
+      "Name": "Mask 68 - Long Hair Braid / Tail (Highest)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer69",
+      "Name": "Mask 69 - Long Hair Braid / Tail (Lowest, Shortest)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer70",
+      "Name": "Mask 70 - [HEAD] Gorget / Neckpiece (Large)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer71",
+      "Name": "Mask 71 - [BODY] Long Shirt (Bunched up to Belt)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer72",
+      "Name": "Mask 72 - [BODY] Long Shirt (Full Length over Waist)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer73",
+      "Name": "Mask 73 - Bare Torso and Upper Arms",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer74",
+      "Name": "Mask 74 - [BODY] Gravekeeper Cloak Hood (Down)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer75",
+      "Name": "Mask 75 - [BODY] Gravekeeper Cloak Hood (Up)",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer76",
+      "Name": "Mask 76 - Lower Neck Warp",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer77",
+      "Name": "Mask 77 - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer78",
+      "Name": "Mask 78 - Beard Jaw",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer79",
+      "Name": "Mask 79 - Beard Chin",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer80",
+      "Name": "Mask 80 - Beard Stubble",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag_SexVer81",
+      "Name": "Mask 81 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer82",
+      "Name": "Mask 82 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer83",
+      "Name": "Mask 83 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer84",
+      "Name": "Mask 84 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer85",
+      "Name": "Mask 85 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer86",
+      "Name": "Mask 86 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer87",
+      "Name": "Mask 87 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer88",
+      "Name": "Mask 88 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer89",
+      "Name": "Mask 89 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer90",
+      "Name": "Mask 90 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer91",
+      "Name": "Mask 91 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer92",
+      "Name": "Mask 92 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer93",
+      "Name": "Mask 93 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer94",
+      "Name": "Mask 94 - Unknown",
+      "Description": "Used by chest armors"
+    },
+    {
+      "Field": "invisibleFlag_SexVer95",
+      "Name": "Mask 95 - Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "pad404",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Description": "Items to display during the loadscreen",
+  "Fields": [
+    {
+      "Field": "LoadscreenCategoryId",
+      "Name": "Loadscreen Category ID",
+      "Description": ""
+    },
+    {
+      "Field": "KnowledgeId",
+      "Name": "Knowledge ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

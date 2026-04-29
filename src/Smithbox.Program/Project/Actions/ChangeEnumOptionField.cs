@@ -1,15 +1,17 @@
 ﻿using StudioCore.Editors.Common;
+using StudioCore.Editors.ParamEditor;
+using System.Linq;
 
 namespace StudioCore.Application;
 
 public class ChangeEnumOptionField : EditorAction
 {
-    private readonly ProjectEnumOption OptionEntry;
+    private readonly ParamEnumOption OptionEntry;
     private readonly object NewValue;
     private readonly object OldValue;
     private readonly ProjectEnumOptionFieldType ChangeType;
 
-    public ChangeEnumOptionField(ProjectEnumOption curEntry, object oldValue, object newValue, ProjectEnumOptionFieldType changeType)
+    public ChangeEnumOptionField(ParamEnumOption curEntry, object oldValue, object newValue, ProjectEnumOptionFieldType changeType)
     {
         OptionEntry = curEntry;
         NewValue = newValue;
@@ -22,13 +24,16 @@ public class ChangeEnumOptionField : EditorAction
         switch (ChangeType)
         {
             case ProjectEnumOptionFieldType.ID:
-                OptionEntry.ID = $"{NewValue}";
+                OptionEntry.Key = $"{NewValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
-                OptionEntry.Name = $"{NewValue}";
-                break;
-            case ProjectEnumOptionFieldType.Description:
-                OptionEntry.Description = $"{NewValue}";
+                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+
+                if (OptionEntry.Names.Any(e => e.Language == curLang))
+                {
+                    var nameEntry = OptionEntry.Names.FirstOrDefault(e => e.Language == curLang);
+                    nameEntry.Text = $"{NewValue}";
+                }
                 break;
         }
 
@@ -40,13 +45,16 @@ public class ChangeEnumOptionField : EditorAction
         switch (ChangeType)
         {
             case ProjectEnumOptionFieldType.ID:
-                OptionEntry.ID = $"{OldValue}";
+                OptionEntry.Key = $"{OldValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
-                OptionEntry.Name = $"{OldValue}";
-                break;
-            case ProjectEnumOptionFieldType.Description:
-                OptionEntry.Description = $"{OldValue}";
+                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+
+                if (OptionEntry.Names.Any(e => e.Language == curLang))
+                {
+                    var nameEntry = OptionEntry.Names.FirstOrDefault(e => e.Language == curLang);
+                    nameEntry.Text = $"{OldValue}";
+                }
                 break;
         }
 

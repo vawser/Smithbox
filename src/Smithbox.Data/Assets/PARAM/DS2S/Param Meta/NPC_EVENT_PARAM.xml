@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <bShop  IsBool=""/>
+        <bPointReplace  IsBool=""/>
+        <bRepair  IsBool=""/>
+        <bFortify  IsBool=""/>
+        <bPledge  IsBool=""/>
+        <bVotive  IsBool=""/>
+        <bUptrade  IsBool=""/>
+        <bBarter  IsBool=""/>
+        <bDecriminalize  IsBool=""/>
+        <bContractKickout  IsBool=""/>
+        <bGesture  IsBool=""/>
+        <bLadder  IsBool=""/>
+        <bRootChange  IsBool=""/>
+        <bPresent  IsBool=""/>
+        <bPledgeView  IsBool=""/>
+        <pledgeType  Enum="VOW_TYPES"/>
+        <bTalk  IsBool=""/>
+        <bEstusFlaskFortify  IsBool=""/>
+        <bLevelUp  IsBool=""/>
+        <bAttributeFortify  IsBool=""/>
+        <bPresentArmor  IsBool=""/>
+        <bPyromancyFortify  IsBool=""/>
+        <bSpellDecrementState  IsBool=""/>
+        <reserved />
+        <shopIdBegin />
+        <shopIdEnd />
+        <fortifyTyoe />
+        <votiveItemId />
+        <barterParamBeginId />
+        <gestureId />
+        <npcId />
+        <aReserved />
+        <eventValueChangeType  Enum="NPC_EVENT_CHANGE_VALUE_TYPE"/>
+        <eventValueId  Enum="EVENT_VALUE_global"/>
+        <pluralSelectIdBegin />
+        <pluralSelectIdEnd />
+        <barterParamEndId />
+    </Field>
+</PARAMMETA>

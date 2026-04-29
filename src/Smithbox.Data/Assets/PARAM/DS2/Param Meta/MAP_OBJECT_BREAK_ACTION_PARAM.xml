@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <sideWalk  IsBool=""/>
+        <walk  IsBool=""/>
+        <dash  IsBool=""/>
+        <rolling  IsBool=""/>
+        <jump  IsBool=""/>
+        <fall  IsBool=""/>
+        <damaged  IsBool=""/>
+        <attack  IsBool=""/>
+        <fall_attack  IsBool=""/>
+        <dummy />
+    </Field>
+</PARAMMETA>

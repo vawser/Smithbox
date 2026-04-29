@@ -1,0 +1,28 @@
+{
+  "Param": "FACE_EDIT_PARAM_COLOR_A_PRESET",
+  "Type": "FACE_EDIT_PARAM_COLOR_A_PRESET",
+  "Name": "FACE_EDIT_PARAM_COLOR_A_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "red",
+      "Name": "赤",
+      "Description": ""
+    },
+    {
+      "Field": "green",
+      "Name": "緑",
+      "Description": ""
+    },
+    {
+      "Field": "blue",
+      "Name": "青",
+      "Description": ""
+    },
+    {
+      "Field": "alpha",
+      "Name": "α値",
+      "Description": ""
+    }
+  ]
+}

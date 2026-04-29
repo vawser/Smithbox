@@ -30,6 +30,8 @@ public class ModelInsightView
             if (View.Selection.SelectedModelWrapper == null)
                 return;
 
+            ImGui.BeginChild("ModelInsightToolSection");
+
             var curModelData = View.ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedModelWrapper.Name);
 
             if (curModelData.Value != null && curModelData.Value != View.ModelInsightHelper.SelectedDataEntry)
@@ -50,6 +52,8 @@ public class ModelInsightView
             }
 
             Display();
+
+            ImGui.EndChild();
         }
     }
 
@@ -131,6 +135,7 @@ public class ModelInsightView
             }
             UIHelper.Tooltip("Extract the MTD or MATBIN that the textures are linked to for this current selection.");
 
+            ImGui.BeginChild("resourceScrollable", new(0, 300), ImGuiChildFlags.Borders);
             UIHelper.SimpleHeader("flverHeader", "FLVER", "", UI.Current.ImGui_AliasName_Text);
 
             ImGui.Text($"Name: {entry.Name}");
@@ -173,6 +178,8 @@ public class ModelInsightView
 
                 ImGui.Separator();
             }
+            
+            ImGui.EndChild();
         }
     }
 

@@ -1,0 +1,163 @@
+{
+  "Param": "JIGGLER_BASE_PARAM_ST",
+  "Type": "JIGGLER_BASE_PARAM_ST",
+  "Name": "JIGGLER_BASE_PARAM_ST",
+  "Description": "Determines the configuration of jiggle bones within FLVER models.",
+  "Fields": [
+    {
+      "Field": "ctrlType",
+      "Name": "Control Type",
+      "Description": "The setup type used for setting up the jiggler."
+    },
+    {
+      "Field": "calcType",
+      "Name": "Calculation Type",
+      "Description": "The calculation type to use with the jiggler."
+    },
+    {
+      "Field": "reserved1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId",
+      "Name": "Dummy Polygon ID",
+      "Description": "The dummy polygon ID to apply the jiggler to. Only valid if the control type is set to Dummy Polygon."
+    },
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "Control Bone Name",
+      "Description": "The bone name to apply the jiggler to. Only valid if the control type is set to Skeleton."
+    },
+    {
+      "Field": "reserved2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "axisX",
+      "Name": "Axis: X",
+      "Description": "The axis to treat as the X-axis (so that it does not overlap with other axes)."
+    },
+    {
+      "Field": "axisY",
+      "Name": "Axis: Y",
+      "Description": "The axis to treat as the Y-axis (so that it does not overlap with other axes)."
+    },
+    {
+      "Field": "axisZ",
+      "Name": "Axis: Z",
+      "Description": "The axis to treat as the Z-axis (so that it does not overlap with other axes)."
+    },
+    {
+      "Field": "bUseFollowBaseBone",
+      "Name": "Follow Root Bone",
+      "Description": "If ON, the jiggler will follow the root bone."
+    },
+    {
+      "Field": "limitAngleDeg_MinX",
+      "Name": "Rotation: X-Axis - Minimum Angle",
+      "Description": "The minimum angle for the X-axis. In degrees."
+    },
+    {
+      "Field": "limitAngleDeg_MaxX",
+      "Name": "Rotation: X-Axis - Maximum Angle",
+      "Description": "The maximum angle for the X-axis. In degrees."
+    },
+    {
+      "Field": "limitAngleDeg_MinY",
+      "Name": "Rotation: Y-Axis - Minimum Angle",
+      "Description": "The minimum angle for the Y-axis. In degrees."
+    },
+    {
+      "Field": "limitAngleDeg_MaxY",
+      "Name": "Rotation: Y-Axis - Maximum Angle",
+      "Description": "The maximum angle for the Y-axis. In degrees."
+    },
+    {
+      "Field": "behaviorParamId",
+      "Name": "Rotation Behavior ID",
+      "Description": "The rotation behavior parameter to use."
+    },
+    {
+      "Field": "behaviorSlideParamId",
+      "Name": "Movement Behavior ID",
+      "Description": "The movement behavior parameter to use."
+    },
+    {
+      "Field": "limitOffset_MinX",
+      "Name": "Position: X-Axis - Minimum Offset",
+      "Description": "The minimum position offset for the X-axis."
+    },
+    {
+      "Field": "limitOffset_MaxX",
+      "Name": "Position: X-Axis - Maximum Offset",
+      "Description": "The maximum position offset for the X-axis."
+    },
+    {
+      "Field": "limitOffset_MinY",
+      "Name": "Position: Y-Axis - Minimum Offset",
+      "Description": "The minimum position offset for the Y-axis."
+    },
+    {
+      "Field": "limitOffset_MaxY",
+      "Name": "Position: Y-Axis - Maximum Offset",
+      "Description": "The maximum position offset for the Y-axis."
+    },
+    {
+      "Field": "limitOffset_MinZ",
+      "Name": "Position: Z-Axis - Minimum Offset",
+      "Description": "The minimum position offset for the Z-axis."
+    },
+    {
+      "Field": "limitOffset_MaxZ",
+      "Name": "Position: Z-Axis - Maximum Offset",
+      "Description": "The maximum position offset for the Z-axis."
+    },
+    {
+      "Field": "behaviorWorldFixParamId",
+      "Name": "Ground Attach ID",
+      "Description": "The parameter ID to use when the jiggler is attached to the ground."
+    },
+    {
+      "Field": "behaviorTargetBoneRateParamId",
+      "Name": "Target Bone Rate ID",
+      "Description": "The parameter ID to use for determining the percentage rate from a specified joint."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "followBaseBone_SpineFollowRateRot",
+      "Name": "[Follow Root] Spine Follow %: Rotation",
+      "Description": "Used if Follow Root Bone is ON. The tracking rate to the new position after the rotation of the root bone for the spine."
+    },
+    {
+      "Field": "followBaseBone_SpineFollowRatePos",
+      "Name": "[Follow Root] Spine Follow %: Position",
+      "Description": "Used if Follow Root Bone is ON. The tracking rate to the new position after the movement of the root bone for the spine."
+    },
+    {
+      "Field": "followBaseBone_OffsetX",
+      "Name": "[Follow Root] Spine Position Offset: X",
+      "Description": "Used if Follow Root Bone is ON. The follow position offset on the X-axis for the spine when movement of the root bone occurs."
+    },
+    {
+      "Field": "followBaseBone_OffsetY",
+      "Name": "[Follow Root] Spine Position Offset: Y",
+      "Description": "Used if Follow Root Bone is ON. The follow position offset on the Y-axis for the spine when movement of the root bone occurs."
+    },
+    {
+      "Field": "followBaseBone_OffsetZ",
+      "Name": "[Follow Root] Spine Position Offset: Z",
+      "Description": "Used if Follow Root Bone is ON. The follow position offset on the Z-axis for the spine when movement of the root bone occurs."
+    },
+    {
+      "Field": "reserved4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

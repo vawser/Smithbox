@@ -1,0 +1,113 @@
+{
+  "Param": "WEAPON_ATTACK_MOTION_PARAM",
+  "Type": "WEAPON_ATTACK_MOTION_PARAM",
+  "Name": "WEAPON_ATTACK_MOTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "attackAnim",
+      "Name": "攻撃アニメ",
+      "Description": ""
+    },
+    {
+      "Field": "controlType",
+      "Name": "制御",
+      "Description": ""
+    },
+    {
+      "Field": "dummy0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "startPlaySpeed",
+      "Name": "アニメ速度 開始部",
+      "Description": ""
+    },
+    {
+      "Field": "endPlaySpeed",
+      "Name": "アニメ速度 終了部",
+      "Description": ""
+    },
+    {
+      "Field": "rotationSpeedScale",
+      "Name": "旋回速度 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "limitAngleScale",
+      "Name": "限界角度 倍率",
+      "Description": ""
+    },
+    {
+      "Field": "predictPositionTime",
+      "Name": "位置予測 時間",
+      "Description": ""
+    },
+    {
+      "Field": "wristTiltRate",
+      "Name": "手首角度 割合",
+      "Description": ""
+    },
+    {
+      "Field": "staggerHandMaxBlendWeight",
+      "Name": "攻撃軌跡ブレ 最大ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "staggerPelvisMaxBlendWeight",
+      "Name": "ステータス不足 攻撃よれ 最大ブレンド率",
+      "Description": ""
+    },
+    {
+      "Field": "attackPushBackRate",
+      "Name": "押し返し反映割合",
+      "Description": ""
+    },
+    {
+      "Field": "damageId01",
+      "Name": "ダメージID_01",
+      "Description": ""
+    },
+    {
+      "Field": "damageId02",
+      "Name": "ダメージID_02",
+      "Description": ""
+    },
+    {
+      "Field": "damageId03",
+      "Name": "ダメージID_03",
+      "Description": ""
+    },
+    {
+      "Field": "bulletId01",
+      "Name": "バレットID_01",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageId01",
+      "Name": "バレットダメージID_01",
+      "Description": ""
+    },
+    {
+      "Field": "bulletId02",
+      "Name": "バレットID_02",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageId02",
+      "Name": "バレットダメージID_02",
+      "Description": ""
+    },
+    {
+      "Field": "bulletId03",
+      "Name": "バレットID_03",
+      "Description": ""
+    },
+    {
+      "Field": "bulletDamageId03",
+      "Name": "バレットダメージID_03",
+      "Description": ""
+    }
+  ]
+}

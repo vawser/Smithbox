@@ -1,0 +1,128 @@
+{
+  "Name": "ResourceItemLotParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "alreadyGotFlagId",
+        "isAddLottery"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory01",
+        "lotBasePoint01",
+        "itemNum01",
+        "spLotPointRate01"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory02",
+        "lotBasePoint02",
+        "itemNum02",
+        "spLotPointRate02"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory03",
+        "lotBasePoint03",
+        "itemNum03",
+        "spLotPointRate03"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory04",
+        "lotBasePoint04",
+        "itemNum04",
+        "spLotPointRate04"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory05",
+        "lotBasePoint05",
+        "itemNum05",
+        "spLotPointRate05"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory06",
+        "lotBasePoint06",
+        "itemNum06",
+        "spLotPointRate06"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resourceItemCategory07",
+        "lotBasePoint07",
+        "itemNum07",
+        "spLotPointRate07"
+      ]
+    }
+  ]
+}

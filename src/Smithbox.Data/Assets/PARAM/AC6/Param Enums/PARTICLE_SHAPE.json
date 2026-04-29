@@ -1,0 +1,29 @@
+{
+  "Key": "PARTICLE_SHAPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PARTICLE_SHAPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sphere"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Box"
+        }
+      ]
+    }
+  ]
+}

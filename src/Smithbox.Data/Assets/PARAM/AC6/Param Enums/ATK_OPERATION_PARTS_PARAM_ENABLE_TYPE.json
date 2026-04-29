@@ -1,0 +1,47 @@
+{
+  "Key": "ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Independent"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not possible"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Interruption"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Simultaneous"
+        }
+      ]
+    }
+  ]
+}

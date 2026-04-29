@@ -1,0 +1,92 @@
+{
+  "Key": "EQUIP_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Illegal Equipment Type"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Facial Parts"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Head"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Chest"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Arms"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Feet"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Accessory"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Other"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Types"
+        }
+      ]
+    }
+  ]
+}

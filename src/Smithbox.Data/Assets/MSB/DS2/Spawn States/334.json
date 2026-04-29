@@ -1,0 +1,14 @@
+{
+  "id": "334",
+  "name": "Throne Watcher",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

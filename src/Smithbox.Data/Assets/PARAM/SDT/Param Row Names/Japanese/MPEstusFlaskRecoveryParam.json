@@ -1,0 +1,221 @@
+{
+  "Name": "MPEstusFlaskRecoveryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cooperation route client -- 協力経路のクライアント"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Intrusion route client -- 侵入経路のクライアント"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Enemy test -- エネミーテスト"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "MP Est Bottle +1 -- MPエスト瓶＋１"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "MP Est Bottle +2 -- MPエスト瓶＋２"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "MP Est Bottle +3 -- MPエスト瓶＋３"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "MP Est Bottle +4 -- MPエスト瓶＋４"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "MP Est Bottle +5 -- MPエスト瓶＋５"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "MP Est Bottle +6 -- MPエスト瓶＋６"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "MP Est Bottle +7 -- MPエスト瓶＋７"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "MP Est Bottle +8 -- MPエスト瓶＋８"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "MP Est Bottle +9 -- MPエスト瓶＋９"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "MP Est Bottle +10 -- MPエスト瓶＋１０"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "MP Est Bottle +11 -- MPエスト瓶＋１１"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "MP Est Bottle +12 -- MPエスト瓶＋１２"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "MP Est Bottle +13 -- MPエスト瓶＋１３"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "MP Est Bottle +14 -- MPエスト瓶＋１４"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "MP Est Bottle +15 -- MPエスト瓶＋１５"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Host only _MP Est Bottle +1 -- ホストのみ_MPエスト瓶＋１"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Host only _MP Est bottle +2 -- ホストのみ_MPエスト瓶＋２"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Host only _MP Est bottle +3 -- ホストのみ_MPエスト瓶＋３"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Host only _MP Est bottle +4 -- ホストのみ_MPエスト瓶＋４"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Host only _MP Est bottle +5 -- ホストのみ_MPエスト瓶＋５"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Host only _MP Est bottle +6 -- ホストのみ_MPエスト瓶＋６"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Host only _MP Est bottle +7 -- ホストのみ_MPエスト瓶＋７"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Host only _MP Est bottle +8 -- ホストのみ_MPエスト瓶＋８"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Host only _MP Est Bottle +9 -- ホストのみ_MPエスト瓶＋９"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Host only _MP Est bottle +10 -- ホストのみ_MPエスト瓶＋１０"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Host Only _MP Est Bottle +11 -- ホストのみ_MPエスト瓶＋１１"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Host only _MP Est bottle +12 -- ホストのみ_MPエスト瓶＋１２"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Host only _MP Est bottle +13 -- ホストのみ_MPエスト瓶＋１３"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Host only _MP Est Bottle +14 -- ホストのみ_MPエスト瓶＋１４"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Host only _MP Est bottle +15 -- ホストのみ_MPエスト瓶＋１５"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Prank Madness Reward __MP Est Bottle +2 -- いんちき狂闇霊報酬__MPエスト瓶＋２"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Test ID -- テストID"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1973 @@
+{
+  "Key": "SP_EFFECT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SP_EFFECT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: ACS Anomaly"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Electric Discharge"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Plasma"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy Adjustment: Sight Reduction"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: ACS Anomaly"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: Electric Discharge"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: Plasma"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: All"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vision Adjustment: Zoom In"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revival"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dispel Black Phantom"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OnReviveMagic"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disables Spell Usage"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Right-hand Buff"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Body Buff"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ghost Parameter Change"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle of Paralysis"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Giant Slime Freezing"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sound Feed"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Greater Body Buff"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Flash Sweat"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: HP Recovery"
+        }
+      ]
+    },
+    {
+      "Key": "46",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Target Priority"
+        }
+      ]
+    },
+    {
+      "Key": "47",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disable Fall Damage"
+        }
+      ]
+    },
+    {
+      "Key": "48",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Increase Damage"
+        }
+      ]
+    },
+    {
+      "Key": "49",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Increase Defense"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: HP/FP/Stamina Recovery"
+        }
+      ]
+    },
+    {
+      "Key": "52",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge Effect Test"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Enemy Listen Reduction"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HostDeath"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Point Light Source Equipped"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Your Message Was Rated"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Magic Buff"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Magic Weapon Buff"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Fire Weapon Buff"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Enchanted Weapon Buff"
+        }
+      ]
+    },
+    {
+      "Key": "66",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Item Discovery"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Tears of Denial"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Is Dead Test Condition"
+        }
+      ]
+    },
+    {
+      "Key": "71",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Power Boost"
+        }
+      ]
+    },
+    {
+      "Key": "75",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Green Blossom"
+        }
+      ]
+    },
+    {
+      "Key": "76",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Rune Gain"
+        }
+      ]
+    },
+    {
+      "Key": "95",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Applies Chameleon effect"
+        }
+      ]
+    },
+    {
+      "Key": "96",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Applies Dragon Form effect"
+        }
+      ]
+    },
+    {
+      "Key": "98",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Detection"
+        }
+      ]
+    },
+    {
+      "Key": "99",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Wait for Cooperation"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Cooperation"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Cooperation Sent"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wax Slow Down"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Used for Evil Eye effect"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Wait for Cooperation"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Cooperation LV 1"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Cooperation LV 2"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Multiplayer Cooperation LV 3"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Used for Evil Eye effect (1)"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Used for Evil Eye effect (2)"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Counter Damage"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstep Animation Change"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Electric Discharge (Type 2)"
+        }
+      ]
+    },
+    {
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: Electric Discharge (Type 2)"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage Level Change before Poise Break"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damage Level Change"
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Roll (Head)"
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Roll (Body)"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Roll (Hands)"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Roll (Legs)"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Change Team Type"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enable Developer Messages"
+        }
+      ]
+    },
+    {
+      "Key": "134",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Iron Flesh"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mimic Sleep"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blight"
+        }
+      ]
+    },
+    {
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ResonanceLvl 0"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ResonanceLvl 1"
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ResonanceLvl 2"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ResonanceLvl 3"
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ResonanceLvl 4"
+        }
+      ]
+    },
+    {
+      "Key": "142",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Behavior ID Change"
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character Respawn"
+        }
+      ]
+    },
+    {
+      "Key": "147",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cast Light"
+        }
+      ]
+    },
+    {
+      "Key": "148",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "149",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "White Relief Magic"
+        }
+      ]
+    },
+    {
+      "Key": "150",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Black Relief Magic"
+        }
+      ]
+    },
+    {
+      "Key": "151",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Lightning Weapon Buff"
+        }
+      ]
+    },
+    {
+      "Key": "152",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enable Attack Effect against Enemy"
+        }
+      ]
+    },
+    {
+      "Key": "153",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enable Attack Effect against Player"
+        }
+      ]
+    },
+    {
+      "Key": "154",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Block Estus usage"
+        }
+      ]
+    },
+    {
+      "Key": "155",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Poise"
+        }
+      ]
+    },
+    {
+      "Key": "157",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Transient Curse"
+        }
+      ]
+    },
+    {
+      "Key": "158",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SFX: Left-hand Buff"
+        }
+      ]
+    },
+    {
+      "Key": "159",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Destroy Accessory but Save Runes"
+        }
+      ]
+    },
+    {
+      "Key": "160",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Rare Ring of Sacrifice [DS1]"
+        }
+      ]
+    },
+    {
+      "Key": "161",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "162",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "163",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "164",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "165",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "166",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge Discarded"
+        }
+      ]
+    },
+    {
+      "Key": "167",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Change VFX"
+        }
+      ]
+    },
+    {
+      "Key": "168",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bow Distance Change"
+        }
+      ]
+    },
+    {
+      "Key": "170",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Karmic Justice Counter"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Used for Behavior Change"
+        }
+      ]
+    },
+    {
+      "Key": "173",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ritual"
+        }
+      ]
+    },
+    {
+      "Key": "174",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Power of Evil Spirits"
+        }
+      ]
+    },
+    {
+      "Key": "175",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revival Production"
+        }
+      ]
+    },
+    {
+      "Key": "176",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Aural Decoy"
+        }
+      ]
+    },
+    {
+      "Key": "179",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DeathEffectLv1"
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DeathEffectLv2"
+        }
+      ]
+    },
+    {
+      "Key": "181",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DeathEffectLv3"
+        }
+      ]
+    },
+    {
+      "Key": "182",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DeathEffectLv4"
+        }
+      ]
+    },
+    {
+      "Key": "183",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "BlueSignVisualization"
+        }
+      ]
+    },
+    {
+      "Key": "184",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hide Weapon"
+        }
+      ]
+    },
+    {
+      "Key": "193",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Modify Effect Duration"
+        }
+      ]
+    },
+    {
+      "Key": "194",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CompareWith203"
+        }
+      ]
+    },
+    {
+      "Key": "196",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "IfWorldChrManNull"
+        }
+      ]
+    },
+    {
+      "Key": "197",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enhance Thrusting Counter Attacks"
+        }
+      ]
+    },
+    {
+      "Key": "198",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cure Blight"
+        }
+      ]
+    },
+    {
+      "Key": "199",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Kill Effect"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Power Within VFX"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "VowOfSilenceVisual"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dragon Roar"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CompareWith194"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Great Magic Shield"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Holy Weapon Buff VFX"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Jailer HP Drain"
+        }
+      ]
+    },
+    {
+      "Key": "213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Enemy Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "222",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ItemBan"
+        }
+      ]
+    },
+    {
+      "Key": "232",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DisableUseAtColiseum"
+        }
+      ]
+    },
+    {
+      "Key": "237",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Calamity Ring"
+        }
+      ]
+    },
+    {
+      "Key": "252",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Oil"
+        }
+      ]
+    },
+    {
+      "Key": "253",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Fire"
+        }
+      ]
+    },
+    {
+      "Key": "259",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Target Down"
+        }
+      ]
+    },
+    {
+      "Key": "260",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Apply Status: Uranium"
+        }
+      ]
+    },
+    {
+      "Key": "261",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Effect If Torch In Hand"
+        }
+      ]
+    },
+    {
+      "Key": "262",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WormRecovery(Torch)"
+        }
+      ]
+    },
+    {
+      "Key": "264",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SetCultBool"
+        }
+      ]
+    },
+    {
+      "Key": "266",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "FallDeathIsDisabled"
+        }
+      ]
+    },
+    {
+      "Key": "267",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AI Eye Angle"
+        }
+      ]
+    },
+    {
+      "Key": "270",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow and warp to player (Spirit Summon)"
+        }
+      ]
+    },
+    {
+      "Key": "275",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player Behavior ID Change"
+        }
+      ]
+    },
+    {
+      "Key": "276",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Status: Uranium"
+        }
+      ]
+    },
+    {
+      "Key": "277",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger Great Rune"
+        }
+      ]
+    },
+    {
+      "Key": "278",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "DisableSpellEffect"
+        }
+      ]
+    },
+    {
+      "Key": "280",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WatchdogTriggerForHost"
+        }
+      ]
+    },
+    {
+      "Key": "281",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WetSystemTrigger"
+        }
+      ]
+    },
+    {
+      "Key": "282",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Correction for Coop"
+        }
+      ]
+    },
+    {
+      "Key": "283",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tears of Denial Trigger"
+        }
+      ]
+    },
+    {
+      "Key": "284",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heal Spell"
+        }
+      ]
+    },
+    {
+      "Key": "285",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "286",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weak Movement Slow"
+        }
+      ]
+    },
+    {
+      "Key": "287",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strong Movement Slow"
+        }
+      ]
+    },
+    {
+      "Key": "288",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Critical Hit (HP)"
+        }
+      ]
+    },
+    {
+      "Key": "289",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Critical Hit (FP)"
+        }
+      ]
+    },
+    {
+      "Key": "290",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extend Roll Invincibility"
+        }
+      ]
+    },
+    {
+      "Key": "291",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Grants roll invisibility"
+        }
+      ]
+    },
+    {
+      "Key": "292",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Repair"
+        }
+      ]
+    },
+    {
+      "Key": "293",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Change Durability"
+        }
+      ]
+    },
+    {
+      "Key": "297",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not in Multiplayer Session"
+        }
+      ]
+    },
+    {
+      "Key": "298",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger on Player Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "299",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemies attack Invaders"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemies attack Invaders"
+        }
+      ]
+    },
+    {
+      "Key": "301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove All Lingering SpEffects"
+        }
+      ]
+    },
+    {
+      "Key": "302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp to Grace"
+        }
+      ]
+    },
+    {
+      "Key": "303",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 1"
+        }
+      ]
+    },
+    {
+      "Key": "304",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 2"
+        }
+      ]
+    },
+    {
+      "Key": "305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 3"
+        }
+      ]
+    },
+    {
+      "Key": "306",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 4"
+        }
+      ]
+    },
+    {
+      "Key": "307",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 5"
+        }
+      ]
+    },
+    {
+      "Key": "308",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 6"
+        }
+      ]
+    },
+    {
+      "Key": "309",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 7"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 8"
+        }
+      ]
+    },
+    {
+      "Key": "311",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to Accumulator 9"
+        }
+      ]
+    },
+    {
+      "Key": "312",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "313",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Seek Guidance"
+        }
+      ]
+    },
+    {
+      "Key": "314",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Add to All Active Accumulators"
+        }
+      ]
+    },
+    {
+      "Key": "315",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Scale Attack Power with Equip Load"
+        }
+      ]
+    },
+    {
+      "Key": "316",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "CalcCorrectGraph_33"
+        }
+      ]
+    },
+    {
+      "Key": "317",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Revoke Online Penalty"
+        }
+      ]
+    },
+    {
+      "Key": "318",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dead Again"
+        }
+      ]
+    },
+    {
+      "Key": "321",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reverse Hollowing"
+        }
+      ]
+    },
+    {
+      "Key": "322",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ChrAsmStyle_HKS_LEFTHAND"
+        }
+      ]
+    },
+    {
+      "Key": "323",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ChrAsmStyle_HKS_RIGHTHAND"
+        }
+      ]
+    },
+    {
+      "Key": "325",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wet Aspect Param"
+        }
+      ]
+    },
+    {
+      "Key": "326",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Switch Animation Gender"
+        }
+      ]
+    },
+    {
+      "Key": "327",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ember"
+        }
+      ]
+    },
+    {
+      "Key": "328",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Change Durability"
+        }
+      ]
+    },
+    {
+      "Key": "329",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "GetEstusCharge"
+        }
+      ]
+    },
+    {
+      "Key": "330",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Online Check Reset Event Flag 2100"
+        }
+      ]
+    },
+    {
+      "Key": "331",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AiParam1"
+        }
+      ]
+    },
+    {
+      "Key": "332",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AiParam_effect16189"
+        }
+      ]
+    },
+    {
+      "Key": "333",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Spell Enhance (+6 to ID)"
+        }
+      ]
+    },
+    {
+      "Key": "334",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet Behavior ID Change"
+        }
+      ]
+    },
+    {
+      "Key": "335",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Trigger during Critical Hit"
+        }
+      ]
+    },
+    {
+      "Key": "1000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SkipSpCategoryCheck1"
+        }
+      ]
+    },
+    {
+      "Key": "1001",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SkipSpCategoryCheck2"
+        }
+      ]
+    },
+    {
+      "Key": "1002",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1003",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1005",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1006",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1007",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1008",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1010",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "1502",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2030",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2040",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2050",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2060",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2070",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2080",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    },
+    {
+      "Key": "2090",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown"
+        }
+      ]
+    }
+  ]
+}

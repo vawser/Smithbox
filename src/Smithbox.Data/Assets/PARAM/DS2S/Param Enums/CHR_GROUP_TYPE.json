@@ -1,0 +1,38 @@
+{
+  "Key": "CHR_GROUP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_GROUP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Player army"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy army"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Neutral"
+        }
+      ]
+    }
+  ]
+}

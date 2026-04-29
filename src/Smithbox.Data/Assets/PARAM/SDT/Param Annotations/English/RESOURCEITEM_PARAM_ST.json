@@ -1,0 +1,68 @@
+{
+  "Param": "RESOURCEITEM_PARAM_ST",
+  "Type": "RESOURCEITEM_PARAM_ST",
+  "Name": "RESOURCEITEM_PARAM_ST",
+  "Description": "Defines Resource Items, aka Spirit Emblems/Regenerative Power Fragments",
+  "Fields": [
+    {
+      "Field": "SfxIdOnMap",
+      "Name": "",
+      "Description": "Sfx that appears when a Resource Item is placed in a map"
+    },
+    {
+      "Field": "SfxIdFlying",
+      "Name": "",
+      "Description": "Sfx when Resource Item is travelling towards you"
+    },
+    {
+      "Field": "SfxIdOnHit",
+      "Name": "",
+      "Description": "Sfx spawned when Resource Item hits the player"
+    },
+    {
+      "Field": "ItemID",
+      "Name": "",
+      "Description": "Item awarded"
+    },
+    {
+      "Field": "ActionUnlockType",
+      "Name": "",
+      "Description": "Prevents this Resource Item from being obtained until this Action is unlocked in ActionUnlockParam"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GetVelocityMin",
+      "Name": "",
+      "Description": "Set the minimum initial velocity of the flying object. The initial speed is randomly determined between the minimum and maximum initial speeds."
+    },
+    {
+      "Field": "GetVelocityMax",
+      "Name": "",
+      "Description": "Set the maximum initial velocity of the flying object. The initial speed is randomly determined between the minimum and maximum initial speeds."
+    },
+    {
+      "Field": "GetVelocity",
+      "Name": "",
+      "Description": "Set the acceleration when flying"
+    },
+    {
+      "Field": "GetMaxSpeed",
+      "Name": "",
+      "Description": "Set the maximum speed when flying. Even if you accelerate, the speed will not exceed this speed."
+    },
+    {
+      "Field": "GetTimeoutTime",
+      "Name": "",
+      "Description": "Even if the flying item does not reach the player, it will be forcibly retrieved after this time has elapsed."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

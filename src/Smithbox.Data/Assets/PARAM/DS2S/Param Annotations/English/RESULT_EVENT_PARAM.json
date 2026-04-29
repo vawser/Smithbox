@@ -1,0 +1,48 @@
+{
+  "Param": "RESULT_EVENT_PARAM",
+  "Type": "RESULT_EVENT_PARAM",
+  "Name": "RESULT_EVENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "feType",
+      "Name": "演出タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "msgType",
+      "Name": "メッセージタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "vowContribute",
+      "Name": "誓約貢献増減値",
+      "Description": ""
+    },
+    {
+      "Field": "endType",
+      "Name": "終了タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "msgId",
+      "Name": "メッセージId",
+      "Description": ""
+    },
+    {
+      "Field": "rewardItemId01",
+      "Name": "勝利報酬アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "exRewardItemId01",
+      "Name": "運営イベント追加報酬アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <LodTypeParam_Lv1 />
+        <LodTypeParam_Lv2 />
+        <LodTypeParam_Lv3 />
+        <LodTypeParam_Lv4 />
+        <DrawDist />
+        <ShadowCastDist />
+        <BlurDist />
+        <pading />
+    </Field>
+</PARAMMETA>

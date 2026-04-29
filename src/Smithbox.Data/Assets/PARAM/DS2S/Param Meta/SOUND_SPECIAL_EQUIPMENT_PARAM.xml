@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <type  Enum="SOUND_SPECIAL_EQUIPMENT_TYPE"/>
+        <aReserved />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,47 @@
+{
+  "Key": "DAMAGE_GUARD_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_GUARD_BREAK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry invalid"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard disabled"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Parry, guard invalid"
+        }
+      ]
+    }
+  ]
+}

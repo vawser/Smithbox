@@ -1,0 +1,47 @@
+{
+  "Key": "PLAYER_COMMAND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_COMMAND_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick tilt"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick player"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Stick rotation"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Push down the sticks at the same time"
+        }
+      ]
+    }
+  ]
+}

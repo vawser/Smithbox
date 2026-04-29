@@ -93,7 +93,9 @@ public class DuplicateToMapAction
 
         if (ImGui.CollapsingHeader("Duplicate to Map"))
         {
+            ImGui.BeginChild("DuplicateToMapToolSection");
             DisplayMenu();
+            ImGui.EndChild();
         }
     }
 

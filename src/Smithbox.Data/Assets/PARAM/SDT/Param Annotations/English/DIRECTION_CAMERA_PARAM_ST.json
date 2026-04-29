@@ -1,0 +1,23 @@
+{
+  "Param": "DIRECTION_CAMERA_PARAM_ST",
+  "Type": "DIRECTION_CAMERA_PARAM_ST",
+  "Name": "DIRECTION_CAMERA_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "isUseOption",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

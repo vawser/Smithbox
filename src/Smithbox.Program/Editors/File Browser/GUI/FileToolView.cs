@@ -89,6 +89,8 @@ public class FileToolView
 
     public void DisplayUnpacker()
     {
+        ImGui.BeginChild("GameUnpackerToolSection");
+
         var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
@@ -209,7 +211,7 @@ public class FileToolView
                         }
                         catch(Exception e)
                         {
-                            Smithbox.LogError(this, $"[Smithbox] Failed to delete folder: {absFolder}", LogPriority.High, e);
+                            Smithbox.LogError(this, $"[File Browser] Failed to delete folder: {absFolder}", LogPriority.High, e);
                         }
                     }
                 }
@@ -243,6 +245,8 @@ public class FileToolView
 
             ImGui.EndChild();
         }
+
+        ImGui.EndChild();
     }
 
     public bool HasUnpackedGame()
@@ -317,7 +321,7 @@ public class FileToolView
                 }
                 else
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to write file: {entry.Path}", LogPriority.High);
+                    Smithbox.LogError(this, $"[File Browser] Failed to write file: {entry.Path}", LogPriority.High);
 
                     lock (FailedUnpackEntries)
                     {
@@ -337,7 +341,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
         }
 
         IsUnpacking = false;
@@ -388,7 +392,7 @@ public class FileToolView
         }
         catch (OperationCanceledException)
         {
-            Smithbox.Log(this, "[Smithbox] Deleting was cancelled.", LogLevel.Warning);
+            Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
         }
 
         IsDeleting = false;
@@ -445,12 +449,12 @@ public class FileToolView
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[File Browser] Failed to deserialize the file dictionary: {filepath}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[File Browser] Failed to read the file dictionary: {filepath}", LogPriority.High, e);
             }
         }
 

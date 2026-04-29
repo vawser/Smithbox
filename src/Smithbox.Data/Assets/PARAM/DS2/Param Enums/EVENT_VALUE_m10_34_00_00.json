@@ -1,0 +1,20 @@
+{
+  "Key": "EVENT_VALUE_m10_34_00_00",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_m10_34_00_00"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Boss battle_death count"
+        }
+      ]
+    }
+  ]
+}

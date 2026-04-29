@@ -1,0 +1,29 @@
+{
+  "Key": "HIT_GAME_BRIGHT_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HIT_GAME_BRIGHT_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bright"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark"
+        }
+      ]
+    }
+  ]
+}

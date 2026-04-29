@@ -1,0 +1,41 @@
+{
+  "Name": "BehaviorParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "variationId",
+        "behaviorJudgeId",
+        "ezStateBehaviorType_old"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "refType",
+        "refId",
+        "category",
+        "wepCost",
+        "stamina",
+        "sfxVariationId"
+      ]
+    }
+  ]
+}

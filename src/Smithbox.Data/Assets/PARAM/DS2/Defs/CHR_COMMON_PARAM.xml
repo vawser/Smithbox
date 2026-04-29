@@ -1,242 +1,1987 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>CHR_COMMON_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 chr_size" />
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="f32 stamina_exhaustion_time" />
-    <Field Def="f32 stamina_consumption_sprint" />
-    <Field Def="f32 stamina_consumption_sprint_lockon" />
-    <Field Def="f32 stamina_consumption_sprint_ladder" />
-    <Field Def="f32 Unk03" />
-    <Field Def="f32 stamina_consumption_base_action" />
-    <Field Def="f32 stamina_consumption_backstep" />
-    <Field Def="f32 stamina_consumption_roll" />
-    <Field Def="f32 stamina_consumption_jump" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 stamina_consumption_sequential_roll" />
-    <Field Def="f32 stamina_consumption_queued_roll" />
-    <Field Def="f32 Unk05" />
-    <Field Def="f32 Unk06" />
-    <Field Def="f32 Unk07" />
-    <Field Def="f32 Unk08" />
-    <Field Def="f32 Unk09" />
-    <Field Def="f32 Unk10" />
-    <Field Def="f32 Unk11" />
-    <Field Def="f32 Unk12" />
-    <Field Def="f32 Unk13" />
-    <Field Def="f32 Unk14" />
-    <Field Def="f32 Unk15" />
-    <Field Def="f32 Unk16" />
-    <Field Def="u8 damage_action_state" />
-    <Field Def="u8 Unk17" />
-    <Field Def="u16 Unk18" />
-    <Field Def="f32 Unk19" />
-    <Field Def="f32 low_hp_state_threshold_max" />
-    <Field Def="f32 low_hp_state_threshold_min" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk21" />
-    <Field Def="s32 Unk22" />
-    <Field Def="f32 hit_capsule_height" />
-    <Field Def="f32 hit_capsule_radius" />
-    <Field Def="f32 Unk23" />
-    <Field Def="f32 block_angle" />
-    <Field Def="f32 parry_angle" />
-    <Field Def="f32 movement_speed_limit" />
-    <Field Def="f32 Unk25" />
-    <Field Def="f32 Unk26" />
-    <Field Def="f32 Unk27" />
-    <Field Def="f32 Unk28" />
-    <Field Def="f32 Unk29" />
-    <Field Def="f32 Unk30" />
-    <Field Def="f32 Unk31" />
-    <Field Def="s32 lockon_camera_offset_id" />
-    <Field Def="f32 Unk32" />
-    <Field Def="f32 Unk33" />
-    <Field Def="f32 Unk34" />
-    <Field Def="f32 Unk35" />
-    <Field Def="f32 Unk36" />
-    <Field Def="f32 Unk37" />
-    <Field Def="f32 Unk38" />
-    <Field Def="f32 Unk39" />
-    <Field Def="f32 Unk40" />
-    <Field Def="f32 Unk41" />
-    <Field Def="s32 Unk42" />
-    <Field Def="f32 Unk43" />
-    <Field Def="f32 Unk44" />
-    <Field Def="s32 Unk45" />
-    <Field Def="f32 Unk46" />
-    <Field Def="f32 backstab_hitbox_angle_xy" />
-    <Field Def="f32 backstab_hitbox_angle_z" />
-    <Field Def="f32 backstab_hitbox_height" />
-    <Field Def="f32 backstab_hitbox_radius" />
-    <Field Def="f32 riposte_hitbox_angle_xy" />
-    <Field Def="f32 riposte_hitbox_angle_z" />
-    <Field Def="f32 riposte_hitbox_height" />
-    <Field Def="f32 riposte_hitbox_radius" />
-    <Field Def="f32 guardbreak_hitbox_angle_xy" />
-    <Field Def="f32 guardbreak_hitbox_angle_z" />
-    <Field Def="f32 guardbreak_hitbox_height" />
-    <Field Def="f32 guardbreak_hitbox_radius" />
-    <Field Def="s32 Unk47" />
-    <Field Def="f32 Unk48" />
-    <Field Def="f32 Unk49" />
-    <Field Def="f32 Unk50" />
-    <Field Def="f32 Unk51" />
-    <Field Def="f32 Unk52" />
-    <Field Def="f32 Unk53" />
-    <Field Def="f32 Unk54" />
-    <Field Def="f32 Unk55" />
-    <Field Def="f32 Unk56" />
-    <Field Def="f32 Unk57" />
-    <Field Def="f32 Unk58" />
-    <Field Def="f32 Unk59" />
-    <Field Def="f32 unknown_rotate_speed" />
-    <Field Def="f32 poise_break_rotate_speed" />
-    <Field Def="f32 Unk60" />
-    <Field Def="f32 Unk61" />
-    <Field Def="f32 stance_break_anim_speed" />
-    <Field Def="f32 Unk62" />
-    <Field Def="f32 Unk63" />
-    <Field Def="f32 Unk64" />
-    <Field Def="f32 stance_break_anim_wait_speed" />
-    <Field Def="f32 Unk65" />
-    <Field Def="f32 Unk66" />
-    <Field Def="f32 Unk67" />
-    <Field Def="f32 Unk68" />
-    <Field Def="f32 Unk69" />
-    <Field Def="f32 Unk70" />
-    <Field Def="f32 Unk71" />
-    <Field Def="s32 Unk72" />
-    <Field Def="f32 Unk73" />
-    <Field Def="f32 Unk74" />
-    <Field Def="f32 Unk75" />
-    <Field Def="f32 Unk76" />
-    <Field Def="f32 Unk77" />
-    <Field Def="f32 Unk78" />
-    <Field Def="f32 Unk79" />
-    <Field Def="f32 Unk80" />
-    <Field Def="f32 Unk81" />
-    <Field Def="f32 Unk82" />
-    <Field Def="f32 Unk83" />
-    <Field Def="f32 Unk84" />
-    <Field Def="f32 Unk85" />
-    <Field Def="f32 Unk86" />
-    <Field Def="f32 Unk87" />
-    <Field Def="f32 Unk88" />
-    <Field Def="f32 Unk89" />
-    <Field Def="f32 Unk90" />
-    <Field Def="f32 Unk91" />
-    <Field Def="f32 Unk92" />
-    <Field Def="f32 Unk93" />
-    <Field Def="f32 Unk94" />
-    <Field Def="f32 Unk95" />
-    <Field Def="s32 Unk96" />
-    <Field Def="s32 Unk97" />
-    <Field Def="f32 Unk98" />
-    <Field Def="f32 Unk99" />
-    <Field Def="f32 Unk100" />
-    <Field Def="f32 Unk101" />
-    <Field Def="f32 Unk102" />
-    <Field Def="f32 Unk103" />
-    <Field Def="f32 Unk104" />
-    <Field Def="f32 Unk105" />
-    <Field Def="u8 Unk106a" />
-    <Field Def="u8 Unk106b" />
-    <Field Def="u8 Unk106c" />
-    <Field Def="u8 Unk106d" />
-    <Field Def="s32 Unk107" />
-    <Field Def="f32 Unk108" />
-    <Field Def="f32 Unk109" />
-    <Field Def="f32 Unk110" />
-    <Field Def="f32 Unk111" />
-    <Field Def="f32 Unk112" />
-    <Field Def="f32 Unk113" />
-    <Field Def="f32 Unk114" />
-    <Field Def="f32 Unk115" />
-    <Field Def="s32 Unk116" />
-    <Field Def="f32 Unk117" />
-    <Field Def="f32 Unk118" />
-    <Field Def="f32 Unk119" />
-    <Field Def="f32 headshot_damage_mult" />
-    <Field Def="f32 Unk120" />
-    <Field Def="f32 crit_damage_mult" />
-    <Field Def="f32 absorption_slash" />
-    <Field Def="f32 absorption_thrust" />
-    <Field Def="f32 absorption_strike" />
-    <Field Def="f32 Unk121" />
-    <Field Def="f32 Unk122" />
-    <Field Def="s32 Unk123" />
-    <Field Def="f32 Unk124" />
-    <Field Def="f32 Unk125" />
-    <Field Def="f32 Unk126" />
-    <Field Def="f32 Unk127" />
-    <Field Def="s32 Unk128" />
-    <Field Def="s32 Unk129" />
-    <Field Def="s32 equip_weapon_id" />
-    <Field Def="s32 Unk130" />
-    <Field Def="f32 Unk131" />
-    <Field Def="f32 Unk132" />
-    <Field Def="f32 Unk133" />
-    <Field Def="f32 Unk134" />
-    <Field Def="f32 Unk135" />
-    <Field Def="f32 Unk136" />
-    <Field Def="f32 Unk137" />
-    <Field Def="f32 Unk138" />
-    <Field Def="f32 Unk139" />
-    <Field Def="f32 Unk140" />
-    <Field Def="f32 Unk141" />
-    <Field Def="f32 Unk142" />
-    <Field Def="f32 Unk143" />
-    <Field Def="f32 Unk144" />
-    <Field Def="f32 Unk145" />
-    <Field Def="f32 Unk146" />
-    <Field Def="f32 Unk147" />
-    <Field Def="f32 Unk148" />
-    <Field Def="f32 Unk149" />
-    <Field Def="f32 Unk150" />
-    <Field Def="f32 Unk151" />
-    <Field Def="f32 Unk152" />
-    <Field Def="f32 Unk153" />
-    <Field Def="f32 Unk154" />
-    <Field Def="f32 Unk155" />
-    <Field Def="f32 Unk156" />
-    <Field Def="f32 Unk157" />
-    <Field Def="f32 Unk158" />
-    <Field Def="f32 Unk159" />
-    <Field Def="s32 Unk160" />
-    <Field Def="s32 Unk161" />
-    <Field Def="s32 Unk162" />
-    <Field Def="s32 Unk163" />
-    <Field Def="s32 Unk164" />
-    <Field Def="f32 Unk165" />
-    <Field Def="f32 Unk166" />
-    <Field Def="f32 Unk167" />
-    <Field Def="f32 Unk168" />
-    <Field Def="f32 Unk169" />
-    <Field Def="f32 Unk170" />
-    <Field Def="s32 Unk171" />
-    <Field Def="f32 critical_absorption_slash" />
-    <Field Def="f32 critical_absorption_thrust" />
-    <Field Def="f32 critical_absorption_strike" />
-    <Field Def="f32 critical_absorption_standard" />
-    <Field Def="f32 Unk173" />
-    <Field Def="f32 Unk174" />
-    <Field Def="f32 Unk175" />
-    <Field Def="f32 Unk176" />
-    <Field Def="f32 Unk177" />
-    <Field Def="f32 Unk178" />
-    <Field Def="s32 Unk179" />
-    <Field Def="f32 bullet_absorption_physical" />
-    <Field Def="f32 bullet_absorption_magic" />
-    <Field Def="f32 bullet_absorption_lightning" />
-    <Field Def="f32 bullet_absorption_fire" />
-    <Field Def="f32 bullet_absorption_dark" />
-  </Fields>
+    <ParamType>CHR_COMMON_PARAM</ParamType>
+    <DataVersion>33</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 heightType">
+            <DisplayName>身長</DisplayName>
+            <Enum>CHR_HEIGHT_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 weightType">
+            <DisplayName>体重</DisplayName>
+            <Enum>CHR_WEIGHT_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 loadWeightRateMin">
+            <DisplayName>ウェイト中 防具重量割合 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 loadWeightRateMax">
+            <DisplayName>ウェイト中 防具重量割合 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 tireKeepTime">
+            <DisplayName>疲労状態継続時間</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostDash = 1">
+            <DisplayName>スタミナ消費倍率 ダッシュ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostLockOnDash = 1">
+            <DisplayName>スタミナ消費倍率 ロックオンダッシュ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostLadder = 1">
+            <DisplayName>スタミナ消費倍率 はしごダッシュ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostRope = 1">
+            <DisplayName>スタミナ消費倍率 ロープすべり降り</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostEvasionBase = 1">
+            <DisplayName>スタミナ 消費量 回避ベース値</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostStep = 1">
+            <DisplayName>スタミナ 消費倍率 ステップ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostRolling = 1">
+            <DisplayName>スタミナ 消費倍率 ローリング</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostDashJump = 1">
+            <DisplayName>スタミナ 消費倍率 ダッシュジャンプ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostStandJump = 1">
+            <DisplayName>スタミナ 消費倍率 スタンドジャンプ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostRateEvasion = 1">
+            <DisplayName>スタミナ 消費倍率 補正倍率 回避動作中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 staminaCostRateAttack = 1">
+            <DisplayName>スタミナ 消費倍率 補正倍率 攻撃動作中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 moveDemeritPercentMin">
+            <DisplayName>スタミナ低下 移動系デメリット最小地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 moveDemeritPercentMax">
+            <DisplayName>スタミナ低下 移動系デメリット最大地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 equipDemeritPercentMin">
+            <DisplayName>スタミナ低下 装備系デメリット最小地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 equipDemeritPercentMax">
+            <DisplayName>スタミナ低下 装備系デメリット最大地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackDemeritPercentMin">
+            <DisplayName>スタミナ低下 攻撃系デメリット最小地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackDemeritPercentMax">
+            <DisplayName>スタミナ低下 攻撃系デメリット最大地点 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackExtraLackOfStatsRate">
+            <DisplayName>スタミナ不足攻撃 ステータス不足割合 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 rollingExtraLackOfStatsRate">
+            <DisplayName>スタミナ不足ローリング ステータス不足割合 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackKeepEmptyStaminaTime">
+            <DisplayName>スタミナ切れ攻撃 継続時間 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 emptyStaminaAttackExtraLackOfStatsRate">
+            <DisplayName>スタミナ切れ攻撃 ステータス不足割合 [%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 shotReserveSpeed">
+            <DisplayName>スタミナ切れ攻撃 攻撃予備動作 再生倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackWaitSpeed">
+            <DisplayName>スタミナ切れ攻撃 攻撃待機 再生倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 armorType">
+            <DisplayName>基本アーマー種類</DisplayName>
+            <Enum>NON_INTERRUPTIBLE_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 damageWeaponType">
+            <DisplayName>ダメージ武器タイプ</DisplayName>
+            <Enum>DAMAGE_CHARACTER_TYPE</Enum>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 deadRagdollFitGround">
+            <DisplayName>死亡時ラグドールを地面に沿わせる</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="dummy8 dummy0[1]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>249</SortID>
+        </Field>
+        <Field Def="f32 deadTimerA">
+            <DisplayName>死亡タイマー 経過時間Ａ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dyingHpMax">
+            <DisplayName>瀕死 最大ＨＰ[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dyingHpMin">
+            <DisplayName>瀕死 最小ＨＰ[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dyingMoveBlendMaxRate">
+            <DisplayName>瀕死 移動時 ブレンド率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 ctrlType">
+            <DisplayName>基本制御タイプ</DisplayName>
+            <Enum>CHR_CTRL_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 collisionType">
+            <DisplayName>移動コリジョンタイプ</DisplayName>
+            <Enum>CHR_COLLISION_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fHitHeight = 1.7">
+            <DisplayName>移動コリジョン高さ [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fHitRadius = 0.5">
+            <DisplayName>移動コリジョン半径 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fChrHeight = 1.7">
+            <DisplayName>身長 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fGuardAngleY = 30">
+            <DisplayName>防御角度上下 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fGuardAngleX = 30">
+            <DisplayName>防御角度左右 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fMaxLinearVelocity = 20">
+            <DisplayName>最高速度[m/s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 loadGravityRateBaseMin">
+            <DisplayName>重量 算出基準 最小 [kg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 loadGravityRateBaseMax">
+            <DisplayName>重量 算出基準 最大 [kg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 gravityFactorMin">
+            <DisplayName>重力加速度倍率 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 gravityFactorMax">
+            <DisplayName>重力加速度倍率 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 gravitySpeedMax">
+            <DisplayName>重力最大速度 [m/s]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 flyCtrlValue">
+            <DisplayName>飛行制動率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 lockPointType">
+            <DisplayName>ロックポイントタイプ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 lockDummy[3]">
+            <DisplayName>ロック制御ダミー</DisplayName>
+            <SortID>250</SortID>
+        </Field>
+        <Field Def="u32 lockCameraCategory">
+            <DisplayName>ロックカメラ補正カテゴリ</DisplayName>
+            <Enum>LOCK_ON_CAMERA_OFFSET_TYPE_ENUM</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lockDisableRadius">
+            <DisplayName>ロック不可半径[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lockDisableHeight">
+            <DisplayName>ロック不可高さ[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateSuperSmall">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 極小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateSmall">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateMedium">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateLarge">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateSuperLarge">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 特大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateUltraLarge">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 特特大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardKnockBackRateFlip">
+            <DisplayName>ガードノックバック減少割合 ウェイト補正割合 弾き</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardRotationRate = 100">
+            <DisplayName>ガード旋回 反映割合[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 headShotEnable">
+            <DisplayName>ヘッドショット</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 guardBreakEnable">
+            <DisplayName>ガードブレイク</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 backStabEnable">
+            <DisplayName>バックスタブ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 parryBreakStabEnable">
+            <DisplayName>パリィブレイクスタブ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 parryBreakDefenselessTime">
+            <DisplayName>パリィブレイク 無防備時間</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 parryBreakShorteningTime">
+            <DisplayName>パリィブレイク ＰＡＤ入力 短縮時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 guardBreakStabEnable">
+            <DisplayName>ガードブレイクスタブ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 pad0[3]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>251</SortID>
+        </Field>
+        <Field Def="f32 downAttackLength = 2">
+            <DisplayName>ダウン追い打ち 許容距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>99</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 backStabSideAngle">
+            <DisplayName>バックスタブ 左右角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 backStabUpSideAngle">
+            <DisplayName>バックスタブ 上下角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 backStabHeight">
+            <DisplayName>バックスタブ 高低差 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 backStabLength">
+            <DisplayName>バックスタブ 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 parryBreakStabSideAngle">
+            <DisplayName>パリィブレイクスタブ 左右角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 parryBreakStabUpSideAngle">
+            <DisplayName>パリィブレイクスタブ 上下角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 parryBreakStabHeight">
+            <DisplayName>パリィブレイクスタブ 高低差 [m]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 parryStabLength">
+            <DisplayName>パリィブレイクスタブ 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 guardBreakStabSideAngle">
+            <DisplayName>ガードブレイクスタブ 左右角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 guardBreakStabUpSideAngle">
+            <DisplayName>ガードブレイクスタブ 上下角度 [deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardBreakStabHeight">
+            <DisplayName>ガードブレイクスタブ 高低差 [m]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardBreakStabLength">
+            <DisplayName>ガードブレイクスタブ 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 lowerEnable">
+            <DisplayName>下半身ダメージ</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 pad1[3]">
+            <DisplayName>パディング</DisplayName>
+            <SortID>252</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgBendingValue = 100">
+            <DisplayName>下半身ダメージ しゃがみ量[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgBendingStartTime = 0.3">
+            <DisplayName>下半身ダメージ しゃがみ行き時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgBendingEndTime = 1">
+            <DisplayName>下半身ダメージ しゃがみ戻り時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgMoveDecelerationRate">
+            <DisplayName>下半身ダメージ 移動速度 減少割合[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lowerDmgRotateDecelerationRate">
+            <DisplayName>下半身ダメージ 旋回速度 減少割合[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollMassFactor = 1">
+            <DisplayName>ラグドール質量倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollFrictionFactor = 1">
+            <DisplayName>ラグドール摩擦係数倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollRestitutionFactor = 1">
+            <DisplayName>ラグドール反発係数倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollMaxLinearVelocityFactor = 1">
+            <DisplayName>ラグドール最大速度倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollMaxAngularVelocityFactor = 1">
+            <DisplayName>ラグドール最大角速度倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>0.0099999998</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollGravityFactorMin">
+            <DisplayName>ラグドール重力加速度倍率 最小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 ragdollGravityFactorMax">
+            <DisplayName>ラグドール重力加速度倍率 最大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 jumpAttackSideAngle = 180">
+            <DisplayName>ジャンプ衝突 発生左右角度[°]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 damageRotationSpeed = 360">
+            <DisplayName>ダメージ方向 旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageMoveDistRate = 1">
+            <DisplayName>ダメージ ノックバック減少割合 [%]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 heavyDamageKnockBackDist = 1">
+            <DisplayName>ダメージ 特大ダメージ後退 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 heavyDamageStiff = 1">
+            <DisplayName>ダメージ 特大ダメージ硬直 [Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 heavyDamageDefenselessTime = 1">
+            <DisplayName>ダメージ 特大ダメージ無防備時間 [Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bleedingDamageStiff = 1">
+            <DisplayName>ダメージ 出血硬直[Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 heavyDamageShorteningTime = 1">
+            <DisplayName>ダメージ 特大ダメージ無防備時間 ＰＡＤ入力 短縮時間 [Se</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardBreakDamageDefenselessTime = 1">
+            <DisplayName>ダメージ ガードブレイクダメージ無防備時間 [Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 guardBreakDamageShorteningTime = 1">
+            <DisplayName>ダメージ ガードブレイクダメージ無防備時間 ＰＡＤ入力 短縮時</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 blowDecelerationTimeFirst">
+            <DisplayName>ダメージ 吹飛びダメージ減速１開始時間 [Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 blowDecelerationTimeSecond">
+            <DisplayName>ダメージ 吹飛びダメージ減速２開始時間 [Sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 blowDecelerationFirst = 5">
+            <DisplayName>ダメージ 吹飛びダメージ減速度１ [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 blowDecelerationSecond = 5">
+            <DisplayName>ダメージ 吹飛びダメージ減速度２ [m/sec^2]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackPushBackRate">
+            <DisplayName>押し返し反映割合[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 parryRotationSpeed = 360">
+            <DisplayName>パリィ旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>9999</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 BreathDamageEnable">
+            <DisplayName>ブレスダメージ有効無効設定</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 dummy1[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>253</SortID>
+        </Field>
+        <Field Def="f32 hitLowerBodyHeight">
+            <DisplayName>ＨＩＴ判定 下半身高さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 hitFrontAngle = 90">
+            <DisplayName>ＨＩＴ時正面認識 左右角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackMoveSpeed">
+            <DisplayName>歩行攻撃移動速度 [m/s]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackRotationSpeed">
+            <DisplayName>歩行攻撃旋回速度 [deg/s]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 attackRange">
+            <DisplayName>攻撃範囲 [m]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationLeftMax">
+            <DisplayName>LookAt 旋回限界角度 左 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-180</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationRightMax">
+            <DisplayName>LookAt 旋回限界角度 右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationUpperMax">
+            <DisplayName>LookAt 旋回限界角度 上 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationLownerMax">
+            <DisplayName>LookAt 旋回限界角度 下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtVisibilitySideMax">
+            <DisplayName>LookAt 認識限界角度 左右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtVisibilityUpperMax">
+            <DisplayName>LookAt 認識限界角度 上下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationSideSpeedMax">
+            <DisplayName>LookAt 左右旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fLookAtRotationUpperSpeedMax">
+            <DisplayName>LookAt 上下旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 isLookAtDummyPolyBasePos">
+            <DisplayName>LookAt ダミポリ位置を基準にする</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 lookAtDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>254</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationLeftMax">
+            <DisplayName>射撃 LookAt 旋回限界角度 左 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-180</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationRightMax">
+            <DisplayName>射撃 LookAt 旋回限界角度 右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationUpperMax">
+            <DisplayName>射撃 LookAt 旋回限界角度 上 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationLownerMax">
+            <DisplayName>射撃 LookAt 旋回限界角度 下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtVisibilitySideMax">
+            <DisplayName>射撃 LookAt 認識限界角度 左右 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtVisibilityUpperMax">
+            <DisplayName>射撃 LookAt 認識限界角度 上下 [deg]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-90</Minimum>
+            <Maximum>90</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationSideSpeedMax">
+            <DisplayName>射撃 LookAt 左右旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fShootingLookAtRotationUpperSpeedMax">
+            <DisplayName>射撃 LookAt 上下旋回速度 [deg/sec]</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 shootingIsLookAtDummyPolyBasePos">
+            <DisplayName>射撃 LookAt ダミポリ位置を基準にする</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 shootingLookAtDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>255</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly001">
+            <DisplayName>足裏ダミポリ番号1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly002">
+            <DisplayName>足裏ダミポリ番号2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly003">
+            <DisplayName>足裏ダミポリ番号3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly004">
+            <DisplayName>足裏ダミポリ番号4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly005">
+            <DisplayName>足裏ダミポリ番号5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly006">
+            <DisplayName>足裏ダミポリ番号6</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly007">
+            <DisplayName>足裏ダミポリ番号7</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footDummyPoly008">
+            <DisplayName>足裏ダミポリ番号8</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footEffectOffset">
+            <DisplayName>足エフェクト前後オフセット</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footEffectOffsetMoveRate">
+            <DisplayName>足エフェクト移動量オフセット倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRayMargin">
+            <DisplayName>足エフェクト余白</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRayMinLength">
+            <DisplayName>足エフェクト判定レイキャスト最短</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRayMaxLength">
+            <DisplayName>足エフェクト判定レイキャスト最長（上り坂）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRayMaxDownHillLength">
+            <DisplayName>足エフェクト判定レイキャスト最長（下り坂）</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRayUpDownMargin">
+            <DisplayName>足エフェクト判定上下変化許容量</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 footRunSpeedRate">
+            <DisplayName>走り足音判定速度割合[%]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footSoundLevelSuperSmall">
+            <DisplayName>音大きさ　極小</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footSoundLevelSmall">
+            <DisplayName>音大きさ　小</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footSoundLevelNormal">
+            <DisplayName>音大きさ　中</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footSoundLevelLarge">
+            <DisplayName>音大きさ　大</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 footSoundLevelSuperLarge">
+            <DisplayName>音大きさ　特大</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 footSoundDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>256</SortID>
+        </Field>
+        <Field Def="f32 single1HandNormal">
+            <DisplayName>詠唱時間 片手 弱 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 single1HandStrong">
+            <DisplayName>詠唱時間 片手 強 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 single2HandedNormal">
+            <DisplayName>詠唱時間 両手 弱 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 single2HandedStrong">
+            <DisplayName>詠唱時間 両手 強 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dual1HandNormal">
+            <DisplayName>詠唱時間 二刀流 弱 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dual1HandStrong">
+            <DisplayName>詠唱時間 二刀流 強 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dual2HandedNormal">
+            <DisplayName>詠唱時間 二刀流両手 弱 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 dual2HandedStrong">
+            <DisplayName>詠唱時間 二刀流両手 強 [sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>60</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 bladePartsDamage = 1">
+            <DisplayName>ブレード部位ダメージ有効設定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 partsDummy[3] = 1">
+            <DisplayName>ダミー</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustPartsRateSuperSmall = 1">
+            <DisplayName>部位ダメージ倍率　極小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustPartsRateSmall = 1">
+            <DisplayName>部位ダメージ倍率　小</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustPartsRateNormal = 1">
+            <DisplayName>部位ダメージ倍率　中</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustPartsRateLarge = 1">
+            <DisplayName>部位ダメージ倍率　大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageAdjustPartsRateSuperLarge = 1">
+            <DisplayName>部位ダメージ倍率　特大</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 grabAttackDamageRate = 1">
+            <DisplayName>投げ中ダメージ倍率</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 receiveSlashDamageRate = 1">
+            <DisplayName>通常物理 被ダメージ倍率 斬撃</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 receiveThrustDamageRate = 1">
+            <DisplayName>通常物理 被ダメージ倍率 刺突</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 receiveStrikeDamageRate = 1">
+            <DisplayName>通常物理 被ダメージ倍率 打撃</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fallStrikeFallDist">
+            <DisplayName>落下攻撃 発生落下高度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 jumpFallStrikeHeight">
+            <DisplayName>ジャンプ落下攻撃 発生落下高度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 isSlopeAdjust">
+            <DisplayName>常に傾斜に沿う</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 slopeAdjustDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>257</SortID>
+        </Field>
+        <Field Def="f32 slopeAdjustPitchMax = 90">
+            <DisplayName>傾斜最大ピッチ角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 slopeAdjustRollMax = 90">
+            <DisplayName>傾斜最大ロール角度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>90</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 slopeAdjustPitchSpeed = 360">
+            <DisplayName>傾斜ピッチ補正速度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 slopeAdjustRollSpeed = 360">
+            <DisplayName>傾斜ロール補正速度</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 fallStabSlashAnim">
+            <DisplayName>落下投げアニメID 斬り</DisplayName>
+            <Enum>PLAYER_SP_ATTACK_MOTION</Enum>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 fallStabStabAnim">
+            <DisplayName>落下投げアニメID 突き</DisplayName>
+            <Enum>PLAYER_SP_ATTACK_MOTION</Enum>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 fallStabGrabParamId = -1">
+            <DisplayName>落下投げ 投げパラメータID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 fallStabDummyPolyId = -1">
+            <DisplayName>落下投げ 基準ダミポリID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 fallStabDummyPolyReverse">
+            <DisplayName>落下投げ 向き反転</DisplayName>
+            <Enum>BOOL_ENABLEDISABLE_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 fallStabDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>258</SortID>
+        </Field>
+        <Field Def="f32 fallStabDistance = 1">
+            <DisplayName>落下投げ 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 fallStabAngle = 1">
+            <DisplayName>落下投げ 角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 poisonRecoverTimeMin">
+            <DisplayName>状態異常 毒 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 poisonRecoverTimeMax = 1">
+            <DisplayName>状態異常 毒 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 burningRecoverTimeMin">
+            <DisplayName>状態異常 燃焼 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 burningRecoverTimeMax = 1">
+            <DisplayName>状態異常 燃焼 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bleedingRecoverTimeMin">
+            <DisplayName>状態異常 出血 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bleedingRecoverTimeMax = 1">
+            <DisplayName>状態異常 出血 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 curseRecoverTimeMin">
+            <DisplayName>状態異常 呪死 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 curseRecoverTimeMax = 1">
+            <DisplayName>状態異常 呪死 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 weaponBreakRecoverTimeMin">
+            <DisplayName>状態異常 武器破損 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 weaponBreakRecoverTimeMax = 1">
+            <DisplayName>状態異常 武器破損 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 petrifiedRecoverTimeMin">
+            <DisplayName>状態異常 石化 ゲージ回復時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 petrifiedRecoverTimeMax = 1">
+            <DisplayName>状態異常 石化 ゲージ回復時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 poisonWetEffectTimeMin">
+            <DisplayName>毒濡れ 効果時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 poisonWetEffectTimeMax = 1">
+            <DisplayName>毒濡れ 効果時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 oilWetEffectTimeMin">
+            <DisplayName>油濡れ 効果時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 oilWetEffectTimeMax = 1">
+            <DisplayName>油濡れ 効果時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 WatierWetEffectTimeMin">
+            <DisplayName>水濡れ 効果時間 最小値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 WatierWetEffectTimeMax = 1">
+            <DisplayName>水濡れ 効果時間 最大値[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>1</Minimum>
+            <Maximum>600</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 itemAnimSpeedRateMin = 1">
+            <DisplayName>アイテムアニメ速度 補正倍率 最小[倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 itemAnimSpeedRateMax = 1">
+            <DisplayName>アイテムアニメ速度 補正倍率 最大[倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 downStiffRate = 1">
+            <DisplayName>ダウン硬直時間　倍率[倍]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 downShorteningTime">
+            <DisplayName>ダウン硬直時間　ＰＡＤ入力 短縮時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageUpperRotationAngleY">
+            <DisplayName>ダメージ上半身捻り範囲 Y</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageUpperRotationAngleX">
+            <DisplayName>ダメージ上半身捻り範囲 X</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageUpperRotationAngleZ">
+            <DisplayName>ダメージ上半身捻り範囲 Z</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 damageUpperRotationAngleCenter">
+            <DisplayName>ダメージ上半身捻り範囲　中央</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 environmentSfxRain">
+            <DisplayName>環境SFX：雨</DisplayName>
+            <Enum>CHR_FULLBODY_SFX_PARAM_ENUM</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 environmentSfxWaterFall">
+            <DisplayName>環境SFX：滝</DisplayName>
+            <Enum>CHR_FULLBODY_SFX_PARAM_ENUM</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 moveWindParamSmall">
+            <DisplayName>移動風：小</DisplayName>
+            <Enum>CHR_POINT_WIND_PARAM_ENUM</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 moveWindParamMedium">
+            <DisplayName>移動風：中</DisplayName>
+            <Enum>CHR_POINT_WIND_PARAM_ENUM</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u32 moveWindParamLarge">
+            <DisplayName>移動風：大</DisplayName>
+            <Enum>CHR_POINT_WIND_PARAM_ENUM</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 atkAutoHomingDistance">
+            <DisplayName>接近オートホーミング 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 atkAutoHomingSdAngle">
+            <DisplayName>接近オートホーミング 左右角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 atkAutoHomingUdAngle">
+            <DisplayName>接近オートホーミング 上下角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 shotAutoHomingDistance">
+            <DisplayName>射撃オートホーミング 距離[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 shotAutoHomingSdAngle">
+            <DisplayName>射撃オートホーミング 左右角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="angle32 shotAutoHomingUdAngle">
+            <DisplayName>射撃オートホーミング 上下角度[deg]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>180</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="s32 footEffectSize">
+            <DisplayName>足エフェクトサイズ</DisplayName>
+            <Enum>CHR_WEIGHT_TYPE</Enum>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 grabDamageRateSlash = 1">
+            <DisplayName>投げ 被ダメージ倍率 斬撃</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 grabDamageRateBlow = 1">
+            <DisplayName>投げ 被ダメージ倍率 打撃</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 grabDamageRateStab = 1">
+            <DisplayName>投げ 被ダメージ倍率刺突</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 grabDamageRateBullet = 1">
+            <DisplayName>投げ 被ダメージ倍率 弾</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 disallowDamageDecrementDist = 1">
+            <DisplayName>距離減衰無効距離</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 lockInvisibleReleaseTime = 2">
+            <DisplayName>不可視ロック解除時間[sec]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fHitOffsetX">
+            <DisplayName>移動コリジョンオフセット左右 [m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 fHitOffsetZ">
+            <DisplayName>移動コリジョンオフセット前後[m]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-10</Minimum>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 takeWaterHeightLow">
+            <DisplayName>着水判定高さ足首</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 takeWaterHeightMiddle">
+            <DisplayName>着水判定高さ股下</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 takeWaterType">
+            <DisplayName>着水タイプ</DisplayName>
+            <Enum>CHR_TAKE_WATER_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 takeWaterDummy[3]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>259</SortID>
+        </Field>
+        <Field Def="f32 bulletDamageRatePhysical = 1">
+            <DisplayName>Bullet damage rate [Physical]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bulletDamageRateMagic = 1">
+            <DisplayName>Bullet damage rate [Magic]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bulletDamageRateMiracle = 1">
+            <DisplayName>Bullet damage rate [Miracle]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bulletDamageRatePyromancy = 1">
+            <DisplayName>Bullet damage rate [Pytomancy]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="f32 bulletDamageRateDark = 1">
+            <DisplayName>Bullet damage rate [Hex]</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>0</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

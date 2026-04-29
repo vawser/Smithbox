@@ -1,0 +1,38 @@
+{
+  "Key": "BULLET_ALERT_SHOW_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_ALERT_SHOW_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not issue"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tracking"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alive"
+        }
+      ]
+    }
+  ]
+}

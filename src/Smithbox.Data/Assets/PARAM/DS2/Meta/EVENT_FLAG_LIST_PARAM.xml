@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to event flags." Row0Dummy="" />
-  <Field>   
-    <flag_id AltName="Flag ID"/>
-  </Field>
-</PARAMMETA>

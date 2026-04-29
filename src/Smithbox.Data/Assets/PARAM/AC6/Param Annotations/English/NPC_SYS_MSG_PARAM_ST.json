@@ -1,0 +1,53 @@
+{
+  "Param": "NPC_SYS_MSG_PARAM_ST",
+  "Type": "NPC_SYS_MSG_PARAM_ST",
+  "Name": "NPC_SYS_MSG_PARAM_ST",
+  "Description": "System notification settings.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "baseTalkParamId",
+      "Name": "Talk Param ID",
+      "Description": "Last 3 digits of the TalkParam entry to reference."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "Priority. Lower numbers apply a greater priority."
+    },
+    {
+      "Field": "dispLimitNum",
+      "Name": "Message Display Limit",
+      "Description": "Limit on number of messages to display."
+    },
+    {
+      "Field": "dispCoolTime",
+      "Name": "Message Display Interval",
+      "Description": "Minimum message display interval, in seconds."
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

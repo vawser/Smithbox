@@ -1,0 +1,48 @@
+{
+  "Param": "MODEL_LINK_LOD_TYPE_PARAM",
+  "Type": "MODEL_LINK_LOD_TYPE_PARAM",
+  "Name": "MODEL_LINK_LOD_TYPE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "LodTypeParam_Lv1",
+      "Name": "LOD切り替え距離Lv1",
+      "Description": ""
+    },
+    {
+      "Field": "LodTypeParam_Lv2",
+      "Name": "LOD切り替え距離Lv2",
+      "Description": ""
+    },
+    {
+      "Field": "LodTypeParam_Lv3",
+      "Name": "LOD切り替え距離Lv3",
+      "Description": ""
+    },
+    {
+      "Field": "LodTypeParam_Lv4",
+      "Name": "LOD切り替え距離Lv4",
+      "Description": ""
+    },
+    {
+      "Field": "DrawDist",
+      "Name": "描画距離",
+      "Description": ""
+    },
+    {
+      "Field": "ShadowCastDist",
+      "Name": "影を落とす距離",
+      "Description": ""
+    },
+    {
+      "Field": "BlurDist",
+      "Name": "モーションブラー有効距離",
+      "Description": ""
+    },
+    {
+      "Field": "pading",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

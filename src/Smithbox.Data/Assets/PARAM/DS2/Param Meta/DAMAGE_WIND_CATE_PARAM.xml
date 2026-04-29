@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <cloth  IsBool=""/>
+        <model  IsBool=""/>
+        <obj  IsBool=""/>
+        <sfx  IsBool=""/>
+        <dmgSfx  IsBool=""/>
+        <eraseSfx  IsBool=""/>
+        <dummy0 />
+        <fadeInTime />
+        <fadeOutTime />
+    </Field>
+</PARAMMETA>

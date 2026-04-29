@@ -1,0 +1,38 @@
+{
+  "Key": "WEAPON_RIGHT_POSE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEAPON_RIGHT_POSE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single/Double"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Single Trigger only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double Trigger only"
+        }
+      ]
+    }
+  ]
+}

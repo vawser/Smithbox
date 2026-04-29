@@ -1,0 +1,41 @@
+{
+  "Name": "ShopLineupParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "equipId",
+        "equipType",
+        "shopType",
+        "sellQuantity"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "value",
+        "value_Add",
+        "value_Magnification",
+        "value_SAN",
+        "mtrlId"
+      ]
+    }
+  ]
+}

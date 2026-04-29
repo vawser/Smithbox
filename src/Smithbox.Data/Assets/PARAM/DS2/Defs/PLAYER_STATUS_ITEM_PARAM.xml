@@ -1,50 +1,270 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>PLAYER_STATUS_ITEM_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 item_1" />
-    <Field Def="s32 item_2" />
-    <Field Def="s32 item_3" />
-    <Field Def="s32 item_4" />
-    <Field Def="s32 item_5" />
-    <Field Def="s32 item_6" />
-    <Field Def="s32 item_7" />
-    <Field Def="s32 item_8" />
-    <Field Def="s32 item_9" />
-    <Field Def="s32 item_10" />
-    <Field Def="s32 item_11" />
-    <Field Def="s32 item_12" />
-    <Field Def="s32 item_13" />
-    <Field Def="s32 item_14" />
-    <Field Def="s32 item_15" />
-    <Field Def="s32 item_16" />
-    <Field Def="s32 item_17" />
-    <Field Def="s32 item_18" />
-    <Field Def="s32 item_19" />
-    <Field Def="s32 item_20" />
-    <Field Def="u16 item_amount_1" />
-    <Field Def="u16 item_amount_2" />
-    <Field Def="u16 item_amount_3" />
-    <Field Def="u16 item_amount_4" />
-    <Field Def="u16 item_amount_5" />
-    <Field Def="u16 item_amount_6" />
-    <Field Def="u16 item_amount_7" />
-    <Field Def="u16 item_amount_8" />
-    <Field Def="u16 item_amount_9" />
-    <Field Def="u16 item_amount_10" />
-    <Field Def="u16 item_amount_11" />
-    <Field Def="u16 item_amount_12" />
-    <Field Def="u16 item_amount_13" />
-    <Field Def="u16 item_amount_14" />
-    <Field Def="u16 item_amount_15" />
-    <Field Def="u16 item_amount_16" />
-    <Field Def="u16 item_amount_17" />
-    <Field Def="u16 item_amount_18" />
-    <Field Def="u16 item_amount_19" />
-    <Field Def="u16 item_amount_20" />
-  </Fields>
+    <ParamType>PLAYER_STATUS_ITEM_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 item01 = -1">
+            <DisplayName>アイテム 01</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="s32 item02 = -1">
+            <DisplayName>アイテム 02</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="s32 item03 = -1">
+            <DisplayName>アイテム 03</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="s32 item04 = -1">
+            <DisplayName>アイテム 04</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="s32 item05 = -1">
+            <DisplayName>アイテム 05</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="s32 item06 = -1">
+            <DisplayName>アイテム 06</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="s32 item07 = -1">
+            <DisplayName>アイテム 07</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="s32 item08 = -1">
+            <DisplayName>アイテム 08</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="s32 item09 = -1">
+            <DisplayName>アイテム 09</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="s32 item10 = -1">
+            <DisplayName>アイテム 10</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="s32 item11 = -1">
+            <DisplayName>アイテム 11</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="s32 item12 = -1">
+            <DisplayName>アイテム 12</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="s32 item13 = -1">
+            <DisplayName>アイテム 13</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="s32 item14 = -1">
+            <DisplayName>アイテム 14</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="s32 item15 = -1">
+            <DisplayName>アイテム 15</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="s32 item16 = -1">
+            <DisplayName>アイテム 16</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="s32 item17 = -1">
+            <DisplayName>アイテム 17</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="s32 item18 = -1">
+            <DisplayName>アイテム 18</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="s32 item19 = -1">
+            <DisplayName>アイテム 19</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="s32 item20 = -1">
+            <DisplayName>アイテム 20</DisplayName>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u16 item01Num">
+            <DisplayName>アイテム数 01</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u16 item02Num">
+            <DisplayName>アイテム数 02</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u16 item03Num">
+            <DisplayName>アイテム数 03</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u16 item04Num">
+            <DisplayName>アイテム数 04</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u16 item05Num">
+            <DisplayName>アイテム数 05</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u16 item06Num">
+            <DisplayName>アイテム数 06</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u16 item07Num">
+            <DisplayName>アイテム数 07</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="u16 item08Num">
+            <DisplayName>アイテム数 08</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="u16 item09Num">
+            <DisplayName>アイテム数 09</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="u16 item10Num">
+            <DisplayName>アイテム数 10</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="u16 item11Num">
+            <DisplayName>アイテム数 11</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="u16 item12Num">
+            <DisplayName>アイテム数 12</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="u16 item13Num">
+            <DisplayName>アイテム数 13</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="u16 item14Num">
+            <DisplayName>アイテム数 14</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="u16 item15Num">
+            <DisplayName>アイテム数 15</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="u16 item16Num">
+            <DisplayName>アイテム数 16</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="u16 item17Num">
+            <DisplayName>アイテム数 17</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="u16 item18Num">
+            <DisplayName>アイテム数 18</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="u16 item19Num">
+            <DisplayName>アイテム数 19</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="u16 item20Num">
+            <DisplayName>アイテム数 20</DisplayName>
+            <Maximum>999</Maximum>
+            <Increment>1</Increment>
+            <SortID>40</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

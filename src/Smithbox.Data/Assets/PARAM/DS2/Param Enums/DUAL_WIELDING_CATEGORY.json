@@ -1,0 +1,29 @@
+{
+  "Key": "DUAL_WIELDING_CATEGORY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DUAL_WIELDING_CATEGORY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dual wielding permission"
+        }
+      ]
+    }
+  ]
+}

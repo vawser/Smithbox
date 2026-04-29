@@ -1,50 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>BOSS_PARTS_MODEL_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 Unk00a" />
-    <Field Def="u8 Unk00b" />
-    <Field Def="u8 Unk00c" />
-    <Field Def="u8 Unk00d" />
-    <Field Def="u8 Unk04a" />
-    <Field Def="u8 Unk04b" />
-    <Field Def="u8 Unk04c" />
-    <Field Def="u8 Unk04d" />
-    <Field Def="u8 Unk08a" />
-    <Field Def="u8 Unk08b" />
-    <Field Def="u8 Unk08c" />
-    <Field Def="u8 Unk08d" />
-    <Field Def="u8 Unk0Ca" />
-    <Field Def="u8 Unk0Cb" />
-    <Field Def="u8 Unk0Cc" />
-    <Field Def="u8 Unk0Cd" />
-    <Field Def="u8 Unk10a" />
-    <Field Def="u8 Unk10b" />
-    <Field Def="u8 Unk10c" />
-    <Field Def="u8 Unk10d" />
-    <Field Def="u8 Unk14a" />
-    <Field Def="u8 Unk14b" />
-    <Field Def="u8 Unk14c" />
-    <Field Def="u8 Unk14d" />
-    <Field Def="u8 Unk18a" />
-    <Field Def="u8 Unk18b" />
-    <Field Def="u8 Unk18c" />
-    <Field Def="u8 Unk18d" />
-    <Field Def="u8 Unk1Ca" />
-    <Field Def="u8 Unk1Cb" />
-    <Field Def="u8 Unk1Cc" />
-    <Field Def="u8 Unk1Cd" />
-    <Field Def="u8 Unk20a" />
-    <Field Def="u8 Unk20b" />
-    <Field Def="u8 Unk20c" />
-    <Field Def="u8 Unk20d" />
-    <Field Def="u8 Unk24a" />
-    <Field Def="u8 Unk24b" />
-    <Field Def="u8 Unk24c" />
-    <Field Def="u8 Unk24d" />
-  </Fields>
+    <ParamType>BOSS_PARTS_MODEL_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 baseCulling">
+            <DisplayName>通常カリンググループ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 breakCulling">
+            <DisplayName>壊れ時カリンググループ</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>99</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableRagdollParts">
+            <DisplayName>壊れ時無効ラグドール部位</DisplayName>
+            <Enum>BOSS_RAGDOLL_PARTS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableHitParts1">
+            <DisplayName>壊れ時無効ヒット部位１</DisplayName>
+            <Enum>BOSS_HIT_PARTS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableHitParts2">
+            <DisplayName>壊れ時無効ヒット部位２</DisplayName>
+            <Enum>BOSS_HIT_PARTS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableHitParts3">
+            <DisplayName>壊れ時無効ヒット部位３</DisplayName>
+            <Enum>BOSS_HIT_PARTS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableHitParts4">
+            <DisplayName>壊れ時無効ヒット部位４</DisplayName>
+            <Enum>BOSS_HIT_PARTS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableResidentSfxNo">
+            <DisplayName>壊れ時無効にする常駐SFXグループ番号</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>4</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon1">
+            <DisplayName>装備１：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon2">
+            <DisplayName>装備２：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon3">
+            <DisplayName>装備３：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon4">
+            <DisplayName>装備４：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon5">
+            <DisplayName>装備５：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 enableWeapon6">
+            <DisplayName>装備６：有効</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId1">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId2">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId3">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId4">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId5">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId6">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId7">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableDamageDpId8">
+            <DisplayName>無効ダミポリID（ダメージ）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId1">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId2">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId3">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId4">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId5">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId6">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId7">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSfxDpId8">
+            <DisplayName>無効ダミポリID（SFX）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId1">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId2">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId3">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId4">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId5">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId6">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId7">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="u8 disableSoundDpId8">
+            <DisplayName>無効ダミポリID（サウンド）</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>0</SortID>
+        </Field>
+        <Field Def="dummy8 dummy[2]">
+            <DisplayName>ダミー</DisplayName>
+            <SortID>40</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -1,0 +1,93 @@
+{
+  "Param": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Type": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Name": "LOCK_ON_CAMERA_OFFSET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "time",
+      "Name": "ロックオンカメラ補正\u3000完了時間",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetX",
+      "Name": "基準点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "基準点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "基準点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "distance",
+      "Name": "カメラ距離目標[m]",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateAtLockXZ",
+      "Name": "ロック中ターゲット追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateAtLockY",
+      "Name": "ロック中ターゲット追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMinAngAtLock",
+      "Name": "ロック中ターゲット追尾率最小角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMaxAngAtLock",
+      "Name": "ロック中ターゲット追尾率最大角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMinXAtLock",
+      "Name": "ロック中X軸回転最小値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMaxXAtLock",
+      "Name": "ロック中X軸回転最大値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeLerpBeginHeight",
+      "Name": "ロック中X軸回転補間開始高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeLerpEndHeight",
+      "Name": "ロック中X軸回転補間終了高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "ロック回転追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChasePlayAng",
+      "Name": "ロック回転追尾遊び角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "ロックX回転シフト率(0.0～1.0)",
+      "Description": ""
+    }
+  ]
+}

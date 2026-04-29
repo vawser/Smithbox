@@ -1,0 +1,47 @@
+{
+  "Key": "ATKPARAM_KNOCKBACK_STARTPOINT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_KNOCKBACK_STARTPOINT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Default"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Impact position"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character who attacked"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attack source"
+        }
+      ]
+    }
+  ]
+}

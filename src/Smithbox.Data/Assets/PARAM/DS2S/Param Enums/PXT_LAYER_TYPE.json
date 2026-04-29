@@ -1,0 +1,38 @@
+{
+  "Key": "PXT_LAYER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PXT_LAYER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vertical reflectance only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Smoothness only"
+        }
+      ]
+    }
+  ]
+}

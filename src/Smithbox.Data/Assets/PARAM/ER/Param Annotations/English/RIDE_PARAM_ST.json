@@ -1,0 +1,78 @@
+{
+  "Param": "RIDE_PARAM_ST",
+  "Type": "RIDE_PARAM_ST",
+  "Name": "RIDE_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "atkChrId",
+      "Name": "Rider - Character ID",
+      "Description": "It is a parameter that identifies the character of the riding side when riding."
+    },
+    {
+      "Field": "defChrId",
+      "Name": "Mount - Character ID",
+      "Description": "It is a parameter that identifies the character of the riding side when riding."
+    },
+    {
+      "Field": "rideCamParamId",
+      "Name": "Ride - Camera Param ID",
+      "Description": "It is a parameter to change the camera parameter at the time of riding to a dedicated camera. It is a parameter for PC only, and it does not work even if it is set to the enemy."
+    },
+    {
+      "Field": "atkChrAnimId",
+      "Name": "Rider - Character Animation ID",
+      "Description": "It is a parameter to rewrite the value of variable RideOnAnimId set in RideOn (playback during riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback."
+    },
+    {
+      "Field": "defChrAnimId",
+      "Name": "Mount - Character Animation ID",
+      "Description": "It is a parameter to rewrite the value of variable RiddenOnAnimId set in RiddenOn (playback when riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback."
+    },
+    {
+      "Field": "defAdjustDmyId",
+      "Name": "Mount - Adjust Dummy Poly ID",
+      "Description": "This is a Damipoli setting that is required only for the rider (the rider's character does not need to be set)."
+    },
+    {
+      "Field": "defCheckDmyId",
+      "Name": "Mount - Check Dummy Poly ID",
+      "Description": "There is no need to set Damipoli for the character on the riding side."
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "Rider/Mount - Ride Angle Tolerance",
+      "Description": "Judgment is made by the angle difference between the [direction] on the riding side and the front judgment Damipoly ID on the riding side. The higher the value, the more you can ride even if you are facing away."
+    },
+    {
+      "Field": "dist",
+      "Name": "Mount Distance",
+      "Description": "It is a parameter that determines the mountable distance to the target"
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "Mount Distance - Max Height",
+      "Description": "Is it possible to ride even if the target to be ridden is above the target to be ridden? Is set in meters"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "Mount Distance - Min Height",
+      "Description": "Is it possible to ride even if the target to be ridden is below the target to be ridden? Is set in meters"
+    },
+    {
+      "Field": "diffAngMin",
+      "Name": "Ride Angle Tolerance - Min",
+      "Description": "In what range (angle) of the rider can ride? Set the minimum value of"
+    },
+    {
+      "Field": "diffAngMax",
+      "Name": "Ride Angle Tolerance - Max",
+      "Description": "In what range (angle) of the rider can ride? Set the maximum value of"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

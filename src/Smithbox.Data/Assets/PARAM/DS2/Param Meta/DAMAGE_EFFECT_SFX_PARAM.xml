@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <sfxIdSmall0 />
+        <sfxIdNormal0 />
+        <sfxIdLarge0 />
+        <sfxIdSuperLarge0 />
+        <sfxIdHyperLarge0 />
+        <sfxIdSmall1 />
+        <sfxIdNormal1 />
+        <sfxIdLarge1 />
+        <sfxIdSuperLarge1 />
+        <sfxIdHyperLarge1 />
+        <sfxIdSmall2 />
+        <sfxIdNormal2 />
+        <sfxIdLarge2 />
+        <sfxIdSuperLarge2 />
+        <sfxIdHyperLarge2 />
+        <sfxIdSmall3 />
+        <sfxIdNormal3 />
+        <sfxIdLarge3 />
+        <sfxIdSuperLarge3 />
+        <sfxIdHyperLarge3 />
+        <sfxIdSmall4 />
+        <sfxIdNormal4 />
+        <sfxIdLarge4 />
+        <sfxIdSuperLarge4 />
+        <sfxIdHyperLarge4 />
+        <sfxIdCritical />
+        <isTrace />
+        <soundLevelSmall />
+        <soundLevelNormal />
+        <soundLevelLarge />
+        <soundLevelSuperLarge />
+        <soundLevelHyperLarge />
+        <soundLevelBody />
+        <soundLevelCritical />
+        <spatterId />
+    </Field>
+</PARAMMETA>

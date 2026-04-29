@@ -102,7 +102,7 @@ public static class ModEngineHandler
         }
         else
         {
-            Smithbox.Log(typeof(ModEngineHandler), $"[Smithbox] Failed to find profile: {readPath}");
+            Smithbox.Log(typeof(ModEngineHandler), $"[Project] Failed to find profile: {readPath}");
         }
     }
 }

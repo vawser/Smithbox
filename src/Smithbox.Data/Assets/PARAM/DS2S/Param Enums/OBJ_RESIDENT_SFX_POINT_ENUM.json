@@ -1,0 +1,38 @@
+{
+  "Key": "OBJ_RESIDENT_SFX_POINT_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "OBJ_RESIDENT_SFX_POINT_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Center"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Damipoly specification"
+        }
+      ]
+    }
+  ]
+}

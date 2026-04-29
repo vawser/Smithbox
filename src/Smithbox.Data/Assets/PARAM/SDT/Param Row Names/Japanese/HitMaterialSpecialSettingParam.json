@@ -1,0 +1,59 @@
+{
+  "Name": "HitMaterialSpecialSettingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stairs / slopes -- 階段・斜面"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Without camera -- カメラ抜き"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Absolutely climb -- 絶対上る"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Can&#39;t ride -- 乗れない"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "I can&#39;t ride without the camera -- カメラ抜き＆乗れない"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Steep slope -- 急斜面"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Deep waterside -- 深い水辺"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Objects that can be ridden -- 乗れるオブジェ"
+      ]
+    }
+  ]
+}

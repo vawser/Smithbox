@@ -1,0 +1,13 @@
+{
+  "Param": "FE_TIME_SETTING_PARAM",
+  "Type": "FE_TIME_SETTING_PARAM",
+  "Name": "FE_TIME_SETTING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Time",
+      "Name": "時間",
+      "Description": ""
+    }
+  ]
+}

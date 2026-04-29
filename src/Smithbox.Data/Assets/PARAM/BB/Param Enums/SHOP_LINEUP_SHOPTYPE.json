@@ -1,0 +1,29 @@
+{
+  "Key": "SHOP_LINEUP_SHOPTYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SHOP_LINEUP_SHOPTYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Blood Echo Messenger Bath"
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Insight Messenger Bath"
+        }
+      ]
+    }
+  ]
+}

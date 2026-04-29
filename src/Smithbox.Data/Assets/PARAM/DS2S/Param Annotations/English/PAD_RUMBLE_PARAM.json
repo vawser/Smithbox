@@ -1,0 +1,48 @@
+{
+  "Param": "PAD_RUMBLE_PARAM",
+  "Type": "PAD_RUMBLE_PARAM",
+  "Name": "PAD_RUMBLE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "largeMotorPower",
+      "Name": "大モーターの強さ",
+      "Description": ""
+    },
+    {
+      "Field": "largeStartScale",
+      "Name": "大モーターの初期最大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "largeMiddleScale",
+      "Name": "大モーターの中間点スケール",
+      "Description": ""
+    },
+    {
+      "Field": "largeLastScale",
+      "Name": "大モーターの終点最大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "smallMotorPower",
+      "Name": "小モーターの強さ",
+      "Description": ""
+    },
+    {
+      "Field": "smallStartScale",
+      "Name": "小モーターの初期最大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "smallMiddleScale",
+      "Name": "小モーターの中間点スケール",
+      "Description": ""
+    },
+    {
+      "Field": "smallLastScale",
+      "Name": "小モーターの終点最大スケール",
+      "Description": ""
+    }
+  ]
+}

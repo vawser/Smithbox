@@ -1,0 +1,93 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_SLIDE_PARAM_ST",
+  "Description": "Determines the movement behavior of a jiggle bone.",
+  "Fields": [
+    {
+      "Field": "minAccelMPSS",
+      "Name": "Minimum Acceleration for Movement",
+      "Description": "The minimum acceleration to start the movement of the bone. In metres per second ^ 2."
+    },
+    {
+      "Field": "maxAccelMPSS",
+      "Name": "Acceleration for Maximum Movement",
+      "Description": "The acceleration at which the movement force reaches it maximum value. In metres per second ^ 2."
+    },
+    {
+      "Field": "minSpeedKMH",
+      "Name": "Minimum Velocity for Movement",
+      "Description": "The minimum velocity to start the movement of the bone. In kilometres per hour."
+    },
+    {
+      "Field": "maxSpeedKMH",
+      "Name": "Velocity for Maximum Movement",
+      "Description": "The velocity at which the movement force reaches it maximum value. In kilometres per hour."
+    },
+    {
+      "Field": "moveAccelScaleX",
+      "Name": "Movement Acceleration: X-Axis",
+      "Description": "The coefficient for moving along the X-axis with regards to velocity and acceleration."
+    },
+    {
+      "Field": "moveAccelScaleY",
+      "Name": "Movement Acceleration: Y-Axis",
+      "Description": "The coefficient for moving along the Y-axis with regards to velocity and acceleration."
+    },
+    {
+      "Field": "moveAccelScaleZ",
+      "Name": "Movement Acceleration: Z-Axis",
+      "Description": "The coefficient for moving along the Z-axis with regards to velocity and acceleration."
+    },
+    {
+      "Field": "moveDecayValueX",
+      "Name": "Movement Decay: X-Axis",
+      "Description": "The coefficient that dampens the movement velocity on the X-axis."
+    },
+    {
+      "Field": "moveDecayValueY",
+      "Name": "Movement Decay: Y-Axis",
+      "Description": "The coefficient that dampens the movement velocity on the Y-axis."
+    },
+    {
+      "Field": "moveDecayValueZ",
+      "Name": "Movement Decay: Y-Axis",
+      "Description": "The coefficient that dampens the movement velocity on the Y-axis."
+    },
+    {
+      "Field": "limitMinAngReflecRateX",
+      "Name": "Reflection Rate at Minimum Position: X-Axis",
+      "Description": "The reflection rate when the X-axis position reaches it's minimum position."
+    },
+    {
+      "Field": "limitMaxAngReflecRateX",
+      "Name": "Reflection Rate at Maximum Position: X-Axis",
+      "Description": "The reflection rate when the X-axis position reaches it's maximum position."
+    },
+    {
+      "Field": "limitMinAngReflecRateY",
+      "Name": "Reflection Rate at Minimum Position: Y-Axis",
+      "Description": "The reflection rate when the Y-axis position reaches it's minimum position."
+    },
+    {
+      "Field": "limitMaxAngReflecRateY",
+      "Name": "Reflection Rate at Maximum Position: Y-Axis",
+      "Description": "The reflection rate when the Y-axis position reaches it's maximum position."
+    },
+    {
+      "Field": "limitMinAngReflecRateZ",
+      "Name": "Reflection Rate at Minimum Position: Z-Axis",
+      "Description": "The reflection rate when the Z-axis position reaches it's minimum position."
+    },
+    {
+      "Field": "limitMaxAngReflecRateZ",
+      "Name": "Reflection Rate at Maximum Position: Z-Axis",
+      "Description": "The reflection rate when the Z-axis position reaches it's maximum position."
+    },
+    {
+      "Field": "reserved3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

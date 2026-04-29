@@ -1,37 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>DUAL_WIELDING_PERMISSION_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 permission_Unk00" />
-    <Field Def="u8 permission_fist" />
-    <Field Def="u8 permission_claw" />
-    <Field Def="u8 permission_dagger" />
-    <Field Def="u8 permission_straight_sword" />
-    <Field Def="u8 permission_thrusting_sword" />
-    <Field Def="u8 permission_Unk06" />
-    <Field Def="u8 permission_Unk07" />
-    <Field Def="u8 permission_Unk08" />
-    <Field Def="u8 permission_Unk09" />
-    <Field Def="u8 permission_Unk10" />
-    <Field Def="u8 permission_Unk11" />
-    <Field Def="u8 permission_Unk12" />
-    <Field Def="u8 permission_Unk13" />
-    <Field Def="u8 permission_Unk14" />
-    <Field Def="u8 permission_Unk15" />
-    <Field Def="u8 permission_Unk16" />
-    <Field Def="u8 permission_whip" />
-    <Field Def="u8 permission_bow" />
-    <Field Def="u8 permission_crossbow" />
-    <Field Def="u8 permission_Unk20" />
-    <Field Def="u8 permission_Unk21" />
-    <Field Def="u8 permission_Unk22" />
-    <Field Def="u8 permission_shield" />
-    <Field Def="u8 permission_Unk24" />
-    <Field Def="u8 permission_Unk25" />
-    <Field Def="u8 permission_Unk26" />
-  </Fields>
+    <ParamType>DUAL_WIELDING_PERMISSION_PARAM</ParamType>
+    <DataVersion>5</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 none">
+            <DisplayName>なし</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 unarmed">
+            <DisplayName>二刀流 素手</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 fist">
+            <DisplayName>二刀流 拳</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 dagger">
+            <DisplayName>二刀流 短剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 thrustingSword">
+            <DisplayName>二刀流 刺剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 sword">
+            <DisplayName>二刀流 片手剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 doublelBlade">
+            <DisplayName>二刀流 双刃剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 hammer">
+            <DisplayName>二刀流 片手槌</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 greatSword">
+            <DisplayName>二刀流 両手剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 axe">
+            <DisplayName>二刀流 片手斧</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 greatHammer">
+            <DisplayName>二刀流 両手槌</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="u8 ultraGreatSword">
+            <DisplayName>二刀流 両手特大剣</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="u8 greatAxe">
+            <DisplayName>二刀流 両手斧</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="u8 scythe">
+            <DisplayName>二刀流 両手鎌</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="u8 halberd">
+            <DisplayName>二刀流 両手長斧</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="u8 spear">
+            <DisplayName>二刀流 槍</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="u8 lance">
+            <DisplayName>二刀流 突撃槍</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="u8 whip">
+            <DisplayName>二刀流 鞭</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="u8 bow">
+            <DisplayName>二刀流 片手ボウ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="u8 burstBow">
+            <DisplayName>二刀流 連射片手ボウ</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="u8 wand">
+            <DisplayName>二刀流 片手杖</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="u8 bell">
+            <DisplayName>二刀流 片手ベル</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="u8 rightShield">
+            <DisplayName>二刀流 右盾</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="u8 leftShield">
+            <DisplayName>二刀流 左盾</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="u8 claw">
+            <DisplayName>二刀流 かぎ爪</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="u8 unk0">
+            <DisplayName>Dual-wielding Unknown0</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="u8 unk1">
+            <DisplayName>Dual-wielding Unknown1</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>27</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

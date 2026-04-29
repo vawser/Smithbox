@@ -1,0 +1,29 @@
+{
+  "Key": "ACTION_BUTTON_ANGLE_CHECK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ACTION_BUTTON_ANGLE_CHECK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Point"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Line"
+        }
+      ]
+    }
+  ]
+}

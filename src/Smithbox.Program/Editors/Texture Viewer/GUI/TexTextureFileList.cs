@@ -67,6 +67,15 @@ public class TexTextureFileList
                             Parent.Selection.SelectTexture = true;
                         }
                     }
+
+                    if(index == 0 && Parent.Selection.AutoSelectTexture)
+                    {
+                        Parent.Selection.AutoSelectTexture = false;
+                        Parent.Selection.SelectTexture = false;
+                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
+                        TargetIndex = index;
+                        LoadTexture = true;
+                    }
                 }
 
                 index++;
@@ -84,7 +93,7 @@ public class TexTextureFileList
     {
         if (LoadTexture)
         {
-            if (TargetIndex != -1)
+            if (TargetIndex != -1 && Parent.Selection.SelectedTpf != null)
             {
                 Parent.Selection.ViewerTextureResource = new TextureResource(Parent.Selection.SelectedTpf, TargetIndex);
                 Parent.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);

@@ -407,7 +407,7 @@ public static class ParamRowOperations
     #region Adjust Row Name
     public static void AdjustRowName(ParamEditorView curView, string adjustment, ParamRowNameAdjustType type)
     {
-        if (string.IsNullOrEmpty(adjustment))
+        if (type != ParamRowNameAdjustType.Clear && string.IsNullOrEmpty(adjustment))
             return;
 
         string curParamKey = curView.Selection.GetActiveParam();
@@ -428,7 +428,7 @@ public static class ParamRowOperations
 
         foreach (Param.Row row in rows)
         {
-            var command = $"selection: Name: = ";
+            var command = $"param {curParamKey}: id {row.ID}: Name: = ";
 
             if (type is ParamRowNameAdjustType.Prepend)
             {

@@ -1,0 +1,29 @@
+{
+  "Key": "CHR_FULLBODY_SFX_TRACE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_FULLBODY_SFX_TRACE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Horizontal"
+        }
+      ]
+    }
+  ]
+}

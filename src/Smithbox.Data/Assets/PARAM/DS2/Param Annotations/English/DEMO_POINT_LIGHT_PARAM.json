@@ -1,0 +1,103 @@
+{
+  "Param": "DEMO_POINT_LIGHT_PARAM",
+  "Type": "DEMO_POINT_LIGHT_PARAM",
+  "Name": "DEMO_POINT_LIGHT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "offsetX",
+      "Name": "位置X",
+      "Description": ""
+    },
+    {
+      "Field": "offsetY",
+      "Name": "位置Y",
+      "Description": ""
+    },
+    {
+      "Field": "offsetZ",
+      "Name": "位置Z",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseR",
+      "Name": "デフューズR",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseG",
+      "Name": "デフューズG",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseB",
+      "Name": "デフューズB",
+      "Description": ""
+    },
+    {
+      "Field": "diffuseA",
+      "Name": "デフューズA",
+      "Description": ""
+    },
+    {
+      "Field": "specularR",
+      "Name": "スペキュラR",
+      "Description": ""
+    },
+    {
+      "Field": "specularG",
+      "Name": "スペキュラG",
+      "Description": ""
+    },
+    {
+      "Field": "specularB",
+      "Name": "スペキュラB",
+      "Description": ""
+    },
+    {
+      "Field": "specularA",
+      "Name": "スペキュラA",
+      "Description": ""
+    },
+    {
+      "Field": "radius",
+      "Name": "ライトの半径",
+      "Description": ""
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": ""
+    },
+    {
+      "Field": "depthShadow",
+      "Name": "影の濃さ",
+      "Description": ""
+    },
+    {
+      "Field": "blinkTimeMax",
+      "Name": "明滅の時間(最大)",
+      "Description": ""
+    },
+    {
+      "Field": "blinkTimeMin",
+      "Name": "明滅の時間(最小)",
+      "Description": ""
+    },
+    {
+      "Field": "blinkPower",
+      "Name": "明滅の強さ",
+      "Description": ""
+    },
+    {
+      "Field": "enableShadow",
+      "Name": "影を落とす",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

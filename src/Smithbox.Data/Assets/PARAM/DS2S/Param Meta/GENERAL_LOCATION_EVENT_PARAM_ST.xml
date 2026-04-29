@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <PositionX />
+        <PositionY />
+        <PositionZ />
+        <RotationX />
+        <RotationY />
+        <RotationZ />
+        <formType  Enum="GENERAL_LOCATION_FORM_TYPE_ENUM"/>
+        <colorR />
+        <colorG />
+        <colorB />
+        <radius />
+        <height />
+        <depth />
+        <aReserved />
+        <memoryBlockId />
+        <categoryType  Enum="GENERAL_LOCATION_EVENT_ENUM"/>
+        <categoryId />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,29 @@
+{
+  "Key": "CHARACTER_INIT_SEX",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHARACTER_INIT_SEX"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

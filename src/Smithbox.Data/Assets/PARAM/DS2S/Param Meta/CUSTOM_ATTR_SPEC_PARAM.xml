@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <physical  IsBool=""/>
+        <fire  IsBool=""/>
+        <magic  IsBool=""/>
+        <thunder  IsBool=""/>
+        <dark  IsBool=""/>
+        <poison  IsBool=""/>
+        <bleed  IsBool=""/>
+        <physicalByCrude  IsBool=""/>
+        <physicalByEnchanted  IsBool=""/>
+        <physicalByAbyss  IsBool=""/>
+        <padding />
+    </Field>
+</PARAMMETA>

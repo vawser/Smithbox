@@ -23,6 +23,8 @@ public static class GlobalTextSearch
 
     public static void Display(TextEditorView view)
     {
+        ImGui.BeginChild("TextFinderToolSection");
+
         var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
 
@@ -217,6 +219,8 @@ public static class GlobalTextSearch
                 PlatformUtils.Instance.SetClipboardText(jsonText);
             }
         }
+
+        ImGui.EndChild();
 
         ImGui.EndChild();
     }

@@ -1,0 +1,418 @@
+{
+  "Param": "MAGIC_PARAM_ST",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "MAGIC_PARAM_ST",
+  "Description": "Handles spells, not used in Sekiro",
+  "Fields": [
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitCancelSpEffectId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "replaceMagicId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxQuantity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "slotLength",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "requirementIntellect",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "requirementFaith",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "analogDexterityMin",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "analogDexterityMax",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "hasSpEffectType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "replaceCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useLimitCategory",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isShieldEnchant",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_live",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_white",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "enable_black",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "castResonanceMagic",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isValidTough_ProtSADmg",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isWarpMagic",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType8",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType9",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType12",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType13",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType14",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "vowType15",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "castSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "fireSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "effectSfxId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementStatusType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementStatus1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementStatus2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementStatus3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementStatus4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refCategory_slot2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad10",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementMagic1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementMagic2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementMagic3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReplacementMagic4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mp_slot2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina_slot2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "createLimitGroupId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refCategory_slot3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad11",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "mp_slot3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "stamina_slot3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId_slot2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refId_slot3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

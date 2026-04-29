@@ -15,6 +15,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
 using Tracy;
+using static SoulsFormats.NVA;
 using PropertiesChangedAction = StudioCore.Editors.MapEditor.PropertiesChangedAction;
 
 namespace StudioCore.Editors.Common;

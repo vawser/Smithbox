@@ -17,14 +17,19 @@ namespace StudioCore.Editors.MapEditor;
 [JsonSerializable(typeof(EntitySelectionGroupList))]
 [JsonSerializable(typeof(EntitySelectionGroupResource))]
 
-// Spawn States
-[JsonSerializable(typeof(SpawnStateResource))]
-[JsonSerializable(typeof(SpawnStateEntry))]
-[JsonSerializable(typeof(SpawnStatePair))]
-
 // Map Object Names
 [JsonSerializable(typeof(MapObjectNameMapEntry))]
 [JsonSerializable(typeof(MapObjectNameEntry))]
+
+// Asset Masks (ER)
+[JsonSerializable(typeof(AssetMasks))]
+[JsonSerializable(typeof(AssetMaskEntry))]
+[JsonSerializable(typeof(AssetMaskSection))]
+
+// Spawn States (DS2)
+[JsonSerializable(typeof(SpawnStates))]
+[JsonSerializable(typeof(SpawnStateEntry))]
+[JsonSerializable(typeof(SpawnStateContents))]
 
 internal partial class MapEditorJsonSerializerContext : JsonSerializerContext
 {

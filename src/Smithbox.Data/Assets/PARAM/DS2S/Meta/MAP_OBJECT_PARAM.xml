@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to map objects." Row0Dummy="" />
-  <Field>
-    <interact_speed_start AltName="Interact Speed - Start" />
-    <interact_speed_end AltName="Interact Speed - End" />
-  </Field>
-</PARAMMETA>

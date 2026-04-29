@@ -1,0 +1,38 @@
+{
+  "Key": "HMP_FOOT_EFFECT_HEIGHT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "HMP_FOOT_EFFECT_HEIGHT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Change"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force to Reflective Surface Height"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Force to Character Height"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "DamageAttackTypeRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "弱"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "強"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "ジャンプ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "落下"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "Name": "Bullet",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkId_Bullet",
+        "autoSearchNPCThinkID"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "sfxId_Bullet",
+        "sfxId_Hit",
+        "sfxId_Flick",
+        "sfxId_ForceErase",
+        "sfxPostureType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "HitBulletID",
+        "launchConditionType",
+        "expDelay",
+        "intervalCreateBulletId",
+        "intervalCreateTimeMax",
+        "intervalCreateTimeMin",
+        "intervalCreateWaitTime",
+        "EmittePosType",
+        "FollowType",
+        "generationMaxDistWhenOwner",
+        "createLimitGroupId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectIDForShooter",
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId3",
+        "spEffectId4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "life",
+        "lifeRandomRange",
+        "dist",
+        "disappearDistanceToTarget",
+        "shootInterval",
+        "gravityInRange",
+        "gravityOutRange",
+        "elevationMaxAngle",
+        "elevationMinAngle",
+        "initVellocity",
+        "initMaxVellocity",
+        "initMinVellocity",
+        "maxVellocity",
+        "minVellocity",
+        "accelInRange",
+        "accelOutRange",
+        "accelTime",
+        "homingAngle",
+        "homingAngleX",
+        "homingBeginDist",
+        "hormingOffsetRange",
+        "hormingStopRange",
+        "isEnableAutoHoming"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hitRadius",
+        "hitRadiusMax",
+        "spreadTime",
+        "numShoot",
+        "randomCreateRadius",
+        "dmgHitRecordLifeTime"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "shootAngle",
+        "shootAngleXZ",
+        "shootAngleInterval",
+        "shootAngleXInterval",
+        "shootAngleXMaxRandom",
+        "shootAngleYMaxRandom",
+        "shootYOffsetRange",
+        "lockShootLimitAng"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isAttackSFX",
+        "isEndlessHit",
+        "isHitBothTeam",
+        "isUseSharedHitList",
+        "isPenetrate",
+        "isPenetrateMap",
+        "isHitForceMagic",
+        "isHitDarkForceMagic",
+        "isHitOtherBulletForceEraseA",
+        "isHitOtherBulletForceEraseB",
+        "isIgnoreSfxIfHitWater",
+        "isIgnoreMoveStateIfHitWater",
+        "isUseBulletWallFilter",
+        "isCheckWall_byCenterRay",
+        "isUseMultiDmyPolyIfPlace",
+        "isSendShootInterrupt",
+        "isHowitzer",
+        "isSyncBulletCulcDumypolyPos",
+        "isIntervalCreateTargetLockOn",
+        "isInheritSfxToChild",
+        "isInheritSpeedToChild",
+        "isDisableHitSfx_byChrAndObj",
+        "isUseParentAngForlockShootLimitAng",
+        "isNonDependenceMagicForFunnleNum"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkAttribute",
+        "spAttribute",
+        "staminaPhysicsAttribute"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "generateObjId",
+        "objGenerateTiming"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "damageDamp",
+        "spelDamageDamp",
+        "fireDamageDamp",
+        "thunderDamageDamp",
+        "darkDamageDamp",
+        "staminaDamp",
+        "knockbackDamp"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "bulletSfxDeleteType_byHit",
+        "bulletSfxDeleteType_byLifeDead",
+        "bulletSfxDeleteType_byForceErase"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "Material_AttackType",
+        "Material_Size",
+        "Material_AttackMaterial_forSfx",
+        "Material_AttackMaterial_forSe"
+      ]
+    }
+  ]
+}

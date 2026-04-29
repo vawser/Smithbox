@@ -1,0 +1,24 @@
+{
+  "Key": "Sen's Fortress",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Sen's Fortress"
+      }
+  ],
+  
+  "Params": [
+    "m15_DofBank",
+    "m15_EnvLightTexBank",
+    "m15_FogBank",
+    "m15_LensFlareBank",
+    "m15_LensFlareExBank",
+    "m15_LightBank",
+    "m15_LightScatteringBank",
+    "m15_PointLightBank",
+    "m15_ShadowBank",
+    "m15_ToneCorrectBank",
+    "m15_ToneMapBank",
+    "s15_LightBank"
+  ]
+}

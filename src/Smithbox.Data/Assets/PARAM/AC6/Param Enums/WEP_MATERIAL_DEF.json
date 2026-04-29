@@ -1,0 +1,155 @@
+{
+  "Key": "WEP_MATERIAL_DEF",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_MATERIAL_DEF"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Kinetic"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Strong Kinetic"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Energy"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body: Kinetic"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body: Strong Kinetic"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body: Flesh"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body: Cloth"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Plamsa"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse Armor: Large Energy - White Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generator: Normal"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Generator: Coral"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pulse Armor: Extra-Large Enemy - Coral Hit Ripple"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shield: Coral"
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reserve 3"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Material 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1118 @@
+{
+  "Key": "AttackType",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "AttackType"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #1 or Bullet or Other"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #1 +1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #1 +2"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #1 +3"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #1 +4"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #2"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Light #3"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Jump"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Fall Loop or Kick?"
+        }
+      ]
+    },
+    {
+      "Key": "50",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Fall Landing"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Heavy #1"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Heavy #1 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Heavy #2"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Heavy #2 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Light #1"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Light #2"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Light #3"
+        }
+      ]
+    },
+    {
+      "Key": "230",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Jump"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Fall Loop"
+        }
+      ]
+    },
+    {
+      "Key": "250",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Fall Land"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Heavy #1"
+        }
+      ]
+    },
+    {
+      "Key": "305",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Heavy #1 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "310",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Heavy #2"
+        }
+      ]
+    },
+    {
+      "Key": "315",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Heavy #2 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand"
+        }
+      ]
+    },
+    {
+      "Key": "401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand +1"
+        }
+      ]
+    },
+    {
+      "Key": "402",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand +2"
+        }
+      ]
+    },
+    {
+      "Key": "404",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand +4"
+        }
+      ]
+    },
+    {
+      "Key": "410",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Kick"
+        }
+      ]
+    },
+    {
+      "Key": "420",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Kick"
+        }
+      ]
+    },
+    {
+      "Key": "430",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Guard"
+        }
+      ]
+    },
+    {
+      "Key": "440",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Guard"
+        }
+      ]
+    },
+    {
+      "Key": "450",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand Parry"
+        }
+      ]
+    },
+    {
+      "Key": "451",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Offhand Parry +1"
+        }
+      ]
+    },
+    {
+      "Key": "560",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Guard during Attack"
+        }
+      ]
+    },
+    {
+      "Key": "470",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large Throw"
+        }
+      ]
+    },
+    {
+      "Key": "490",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Falling Throw"
+        }
+      ]
+    },
+    {
+      "Key": "500",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstab"
+        }
+      ]
+    },
+    {
+      "Key": "501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstab +1"
+        }
+      ]
+    },
+    {
+      "Key": "505",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstab Hornet"
+        }
+      ]
+    },
+    {
+      "Key": "506",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstab Hornet +1"
+        }
+      ]
+    },
+    {
+      "Key": "510",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Riposte"
+        }
+      ]
+    },
+    {
+      "Key": "511",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Riposte +1"
+        }
+      ]
+    },
+    {
+      "Key": "515",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Riposte Hornet"
+        }
+      ]
+    },
+    {
+      "Key": "516",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Riposte Hornet +1"
+        }
+      ]
+    },
+    {
+      "Key": "517",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Riposte Hornet +2"
+        }
+      ]
+    },
+    {
+      "Key": "520",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Rolling"
+        }
+      ]
+    },
+    {
+      "Key": "530",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Rolling"
+        }
+      ]
+    },
+    {
+      "Key": "540",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1H Backstep"
+        }
+      ]
+    },
+    {
+      "Key": "580",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H Backstep"
+        }
+      ]
+    },
+    {
+      "Key": "600",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Parry"
+        }
+      ]
+    },
+    {
+      "Key": "610",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Backstab Transition"
+        }
+      ]
+    },
+    {
+      "Key": "615",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Missed Backstab Transition"
+        }
+      ]
+    },
+    {
+      "Key": "620",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #1"
+        }
+      ]
+    },
+    {
+      "Key": "621",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #1 +1"
+        }
+      ]
+    },
+    {
+      "Key": "622",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #1 +2"
+        }
+      ]
+    },
+    {
+      "Key": "630",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #2"
+        }
+      ]
+    },
+    {
+      "Key": "631",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #2 +1"
+        }
+      ]
+    },
+    {
+      "Key": "640",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #3"
+        }
+      ]
+    },
+    {
+      "Key": "641",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #3 +1"
+        }
+      ]
+    },
+    {
+      "Key": "642",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #3 +2"
+        }
+      ]
+    },
+    {
+      "Key": "643",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2H L1 #3 +3"
+        }
+      ]
+    },
+    {
+      "Key": "699",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA -1"
+        }
+      ]
+    },
+    {
+      "Key": "700",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA"
+        }
+      ]
+    },
+    {
+      "Key": "701",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +1"
+        }
+      ]
+    },
+    {
+      "Key": "702",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +2"
+        }
+      ]
+    },
+    {
+      "Key": "703",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +3"
+        }
+      ]
+    },
+    {
+      "Key": "704",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +4"
+        }
+      ]
+    },
+    {
+      "Key": "705",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +5"
+        }
+      ]
+    },
+    {
+      "Key": "706",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +5 +1"
+        }
+      ]
+    },
+    {
+      "Key": "710",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +10"
+        }
+      ]
+    },
+    {
+      "Key": "711",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +10    +1"
+        }
+      ]
+    },
+    {
+      "Key": "715",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +10 +5"
+        }
+      ]
+    },
+    {
+      "Key": "716",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +10 +5 +1"
+        }
+      ]
+    },
+    {
+      "Key": "720",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20"
+        }
+      ]
+    },
+    {
+      "Key": "721",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20 +1"
+        }
+      ]
+    },
+    {
+      "Key": "722",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20 +2"
+        }
+      ]
+    },
+    {
+      "Key": "723",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20 +3"
+        }
+      ]
+    },
+    {
+      "Key": "725",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20 +5"
+        }
+      ]
+    },
+    {
+      "Key": "726",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +20 +5 +1"
+        }
+      ]
+    },
+    {
+      "Key": "730",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +30"
+        }
+      ]
+    },
+    {
+      "Key": "731",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +30 +1"
+        }
+      ]
+    },
+    {
+      "Key": "732",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +30 +2"
+        }
+      ]
+    },
+    {
+      "Key": "735",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +30 +5"
+        }
+      ]
+    },
+    {
+      "Key": "736",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +30 +5 +1"
+        }
+      ]
+    },
+    {
+      "Key": "740",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40"
+        }
+      ]
+    },
+    {
+      "Key": "741",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +1"
+        }
+      ]
+    },
+    {
+      "Key": "742",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +2"
+        }
+      ]
+    },
+    {
+      "Key": "743",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +3"
+        }
+      ]
+    },
+    {
+      "Key": "744",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +4"
+        }
+      ]
+    },
+    {
+      "Key": "745",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +5"
+        }
+      ]
+    },
+    {
+      "Key": "746",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +5 +1"
+        }
+      ]
+    },
+    {
+      "Key": "747",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +40 +5 +2"
+        }
+      ]
+    },
+    {
+      "Key": "750",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +50"
+        }
+      ]
+    },
+    {
+      "Key": "751",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +50 +1"
+        }
+      ]
+    },
+    {
+      "Key": "755",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +50 +5"
+        }
+      ]
+    },
+    {
+      "Key": "760",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +60"
+        }
+      ]
+    },
+    {
+      "Key": "761",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +60 +1"
+        }
+      ]
+    },
+    {
+      "Key": "770",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +70"
+        }
+      ]
+    },
+    {
+      "Key": "780",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "WA +80"
+        }
+      ]
+    },
+    {
+      "Key": "800",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #1"
+        }
+      ]
+    },
+    {
+      "Key": "801",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #1 +1"
+        }
+      ]
+    },
+    {
+      "Key": "805",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #1 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "806",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #1 Charged +1"
+        }
+      ]
+    },
+    {
+      "Key": "807",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #1 Charged +2"
+        }
+      ]
+    },
+    {
+      "Key": "810",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #2"
+        }
+      ]
+    },
+    {
+      "Key": "811",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #2 +1"
+        }
+      ]
+    },
+    {
+      "Key": "815",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #2 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "816",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 1H Heavy #2 Charged +1"
+        }
+      ]
+    },
+    {
+      "Key": "820",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State +20"
+        }
+      ]
+    },
+    {
+      "Key": "821",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State +20 +1"
+        }
+      ]
+    },
+    {
+      "Key": "830",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State +30"
+        }
+      ]
+    },
+    {
+      "Key": "840",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State +40"
+        }
+      ]
+    },
+    {
+      "Key": "900",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #1"
+        }
+      ]
+    },
+    {
+      "Key": "905",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #1 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "906",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #1 Charged +1"
+        }
+      ]
+    },
+    {
+      "Key": "907",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #1 Charged +2"
+        }
+      ]
+    },
+    {
+      "Key": "910",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #2"
+        }
+      ]
+    },
+    {
+      "Key": "911",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #2 +1"
+        }
+      ]
+    },
+    {
+      "Key": "915",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #2 Charged"
+        }
+      ]
+    },
+    {
+      "Key": "916",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Alt State 2H Heavy #2 Charged +1"
+        }
+      ]
+    },
+    {
+      "Key": "920",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown A"
+        }
+      ]
+    },
+    {
+      "Key": "921",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown B"
+        }
+      ]
+    }
+  ]
+}

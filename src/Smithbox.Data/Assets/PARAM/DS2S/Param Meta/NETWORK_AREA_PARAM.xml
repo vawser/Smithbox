@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <cellSizeX />
+        <cellSizeY />
+        <cellSizeZ />
+        <cellOffsetX />
+        <cellOffsetY />
+        <cellOffsetZ />
+        <enableBloodstain  IsBool=""/>
+        <enableBloodMessage  IsBool=""/>
+        <enableGhost  IsBool=""/>
+        <enableMultiPlay  IsBool=""/>
+        <enableRingSearch  IsBool=""/>
+        <enableBreakInSearch  IsBool=""/>
+        <dummy />
+    </Field>
+</PARAMMETA>

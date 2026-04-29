@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field>
-    <RespawnSpecialEffectActiveCheckerSpEffectId Refs="SpEffectParam" />
-  </Field>
-  <Self />
-</PARAMMETA>

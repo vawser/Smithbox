@@ -1,0 +1,13 @@
+{
+  "Param": "WORLD_MAP_POINT_ICON_PARAM_ST",
+  "Type": "WORLD_MAP_POINT_ICON_PARAM_ST",
+  "Name": "WORLD_MAP_POINT_ICON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": ""
+    }
+  ]
+}

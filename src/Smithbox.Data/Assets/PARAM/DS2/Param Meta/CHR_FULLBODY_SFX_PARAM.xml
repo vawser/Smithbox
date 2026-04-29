@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <sfxId />
+        <dirType  Enum="CHR_FULLBODY_SFX_DIR_TYPE"/>
+        <traceType  Enum="CHR_FULLBODY_SFX_TRACE_TYPE"/>
+        <dummy0 />
+        <isDisableHead  IsBool=""/>
+        <isDisableBody  IsBool=""/>
+        <isDisableRArm  IsBool=""/>
+        <isDisableLArm  IsBool=""/>
+        <isDisableRHand  IsBool=""/>
+        <isDisableLHand  IsBool=""/>
+        <isDisableRLeg  IsBool=""/>
+        <isDisableLLeg  IsBool=""/>
+        <dummy1 />
+        <time />
+        <seId />
+    </Field>
+</PARAMMETA>

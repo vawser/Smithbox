@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <mapId />
+        <menuAreaID />
+        <enemyDisableDistance />
+        <enemyDisableHeight />
+        <eventCameraIdBegin />
+        <eventCameraIdEnd />
+        <decLimitTime />
+        <multiPlayAreaid />
+        <isUseReGenerateItem  IsBool=""/>
+        <isUseDisableNetworkItem  IsBool=""/>
+        <isUseLevelUpEstusFlaskItem  IsBool=""/>
+        <menuSortID />
+        <rootFlagId  Enum="EVENT_FLAG_GLOBAL_EVENT"/>
+        <bossKillCountValId  Enum="EVENT_VALUE_global"/>
+        <bossKillCountValId2  Enum="EVENT_VALUE_global"/>
+    </Field>
+</PARAMMETA>

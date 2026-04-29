@@ -1,0 +1,83 @@
+{
+  "Param": "SWORD_ARTS_PARAM_ST",
+  "Type": "SWORD_ARTS_PARAM_ST",
+  "Name": "SWORD_ARTS_PARAM_ST",
+  "Description": "Weapon Arts, not used in Sekiro",
+  "Fields": [
+    {
+      "Field": "swordArtsType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "artsSpeedType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "refStatus",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "feType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePoint_L1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePoint_L2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePoint_R1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "usePoint_R2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useMagicPoint_L1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useMagicPoint_L2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useMagicPoint_R1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "useMagicPoint_R2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shieldIconType",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

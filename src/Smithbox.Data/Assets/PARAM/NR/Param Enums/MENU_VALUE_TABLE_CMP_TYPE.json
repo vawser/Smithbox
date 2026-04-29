@@ -1,0 +1,38 @@
+{
+  "Key": "MENU_VALUE_TABLE_CMP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_VALUE_TABLE_CMP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2"
+        }
+      ]
+    }
+  ]
+}

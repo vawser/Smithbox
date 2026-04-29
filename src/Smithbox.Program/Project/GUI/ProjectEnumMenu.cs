@@ -1,8 +1,11 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
+using Octokit;
+using StudioCore.Editors.ParamEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using static SoulsFormats.MQB;
 
@@ -13,8 +16,8 @@ public class ProjectEnumMenu
     public bool IsDisplayed = false;
     public ProjectOrchestrator Orchestrator;
 
-    private ProjectEnumEntry CurrentEnum;
-    private ProjectEnumOption CurrentOption;
+    private ParamEnumEntry CurrentEnum;
+    private ParamEnumOption CurrentOption;
 
     private string OptionEntryFilter = "";
     private bool InitialLayout = false;
@@ -88,14 +91,14 @@ public class ProjectEnumMenu
         ImGui.Text("Enums");
         ImGui.Separator();
 
-        foreach (var entry in Orchestrator.SelectedProject.Handler.ProjectData.ProjectEnums.List)
+        foreach (var entry in Orchestrator.SelectedProject.Handler.ParamData.Enums.List)
         {
             bool selected = entry == CurrentEnum;
 
             if (selected)
                 ImGui.PushStyleColor(ImGuiCol.Header, ImGui.GetStyle().Colors[(int)ImGuiCol.HeaderActive]);
 
-            if (ImGui.Selectable($"{Icons.List} {entry.Name}", selected))
+            if (ImGui.Selectable($"{Icons.List} {entry.GetName()}##{entry.Key}", selected))
             {
                 CurrentEnum = entry;
                 CurrentOption = null;
@@ -123,7 +126,7 @@ public class ProjectEnumMenu
             return;
         }
 
-        var options = CurrentEnum.Options ?? new List<ProjectEnumOption>();
+        var options = CurrentEnum.Options ?? new List<ParamEnumOption>();
 
         ImGui.Text($"Options ({options.Count})");
         ImGui.Separator();
@@ -147,12 +150,7 @@ public class ProjectEnumMenu
             if (ImGui.Button($"{Icons.Plus} Add Option"))
             {
                 CurrentEnum.Options ??= new();
-                CurrentEnum.Options.Add(new ProjectEnumOption
-                {
-                    ID = "NEW_ID",
-                    Name = "New Option",
-                    Description = ""
-                });
+                CurrentEnum.Options.Add(new ParamEnumOption("NEW_ID", "New Option"));
             }
 
             ImGui.EndChild();
@@ -162,12 +160,12 @@ public class ProjectEnumMenu
 
         var filter = OptionEntryFilter.ToLowerInvariant();
 
-        var filteredList = new List<ProjectEnumOption>();
+        var filteredList = new List<ParamEnumOption>();
 
         foreach (var entry in options)
         {
             if (!string.IsNullOrWhiteSpace(filter) &&
-                !entry.Name.ToLowerInvariant().Contains(filter))
+                !entry.GetName().ToLowerInvariant().Contains(filter))
                 continue;
 
             filteredList.Add(entry);
@@ -184,7 +182,7 @@ public class ProjectEnumMenu
 
                 bool selected = option == CurrentOption;
 
-                if (ImGui.Selectable($"[{option.ID}] {option.Name}", selected))
+                if (ImGui.Selectable($"[{option.Key}] {option.GetName()}", selected))
                 {
                     CurrentOption = option;
                 }
@@ -197,12 +195,7 @@ public class ProjectEnumMenu
                             new ChangeEnumList(
                                 CurrentEnum,
                                 option,
-                                new ProjectEnumOption
-                                {
-                                    ID = option.ID,
-                                    Name = $"{option.Name}_1",
-                                    Description = option.Description
-                                },
+                                new ParamEnumOption(option.Key, $"{option.GetName()}_1"),
                                 ProjectEnumListOperation.Add,
                                 i + 1));
                     }
@@ -261,12 +254,8 @@ public class ProjectEnumMenu
         ImGui.Columns(2, "enumEditorCols", false);
 
         DrawEnumField("Display Name",
-            CurrentEnum.DisplayName,
-            ProjectEnumFieldType.DisplayName);
-
-        DrawEnumField("Description",
-            CurrentEnum.Description,
-            ProjectEnumFieldType.Description);
+            CurrentEnum.GetName(),
+            ProjectEnumFieldType.Text);
 
         ImGui.Columns(1);
     }
@@ -298,16 +287,12 @@ public class ProjectEnumMenu
         ImGui.Columns(2, "optionEditorCols", false);
 
         DrawOptionField("ID",
-            CurrentOption.ID,
+            CurrentOption.Key,
             ProjectEnumOptionFieldType.ID);
 
         DrawOptionField("Name",
-            CurrentOption.Name,
+            CurrentOption.GetName(),
             ProjectEnumOptionFieldType.Name);
-
-        DrawOptionField("Description",
-            CurrentOption.Description,
-            ProjectEnumOptionFieldType.Description);
 
         ImGui.Columns(1);
     }
@@ -337,21 +322,28 @@ public class ProjectEnumMenu
 
     public void Save()
     {
-        var projectFolder = Path.Join(
-            Orchestrator.SelectedProject.Descriptor.ProjectPath,
-            ".smithbox",
-            "Project");
+        var projectFolder = Path.Join(Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
 
-        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
-
-        var json = JsonSerializer.Serialize(
-            Orchestrator.SelectedProject.Handler.ProjectData.ProjectEnums,
-            ProjectJsonSerializerContext.Default.ProjectEnumResource);
+        var enums = Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        File.WriteAllText(projectFile, json);
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        foreach (var entry in enums.List)
+        {
+            var filePath = Path.Combine(projectFolder, $"{entry.Key}.json");
+
+            var json = JsonSerializer.Serialize(entry, typeof(ParamEnumEntry), options);
+
+            File.WriteAllText(filePath, json);
+        }
     }
 
     #endregion

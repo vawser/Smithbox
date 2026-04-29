@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_NET_HIT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_NET_HIT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attacker"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Defender"
+        }
+      ]
+    }
+  ]
+}

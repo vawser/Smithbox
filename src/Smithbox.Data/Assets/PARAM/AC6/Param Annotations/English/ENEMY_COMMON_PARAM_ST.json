@@ -1,0 +1,168 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "Determines common parameters for enemies.",
+  "Fields": [
+    {
+      "Field": "TargetNoForget_TargetEne0_LadderHeight",
+      "Name": "Never Forget Distance when on Ladder (TARGET_ENE_0)",
+      "Description": "When TARGET_ENE_0 is on a ladder, if the height difference with the enemy itself is within this value, the target will not be forgotten."
+    },
+    {
+      "Field": "IsIntegrateWithRaycast_CheckRoofLength",
+      "Name": "Distance from Player that allows Ceiling Height Determination",
+      "Description": "Only when the distance from the local player is less than this distance, the lifting height of the floor integral will be determined by considering the ceiling height."
+    },
+    {
+      "Field": "WallHitInteruptFlag_Angle",
+      "Name": "Wall Collision Interrupt Flag: Judgement Angle",
+      "Description": "Threshold value of the angle between the wall normal and the movement direction (opposite direction). In degrees."
+    },
+    {
+      "Field": "WallHitInteruptFlag_KeptTime",
+      "Name": "Wall Collision Interrupt Flag: Judgment Duration",
+      "Description": "Threshold for the time that wall collision lasts (If it gets too large, flag issuance will be delayed; if it gets too small, it will be easier to accidentally detonate). In seconds."
+    },
+    {
+      "Field": "WallHitInteruptFlag_StoppedTime",
+      "Name": "Wall Collision Interrupt Flag: Allowable Interruption Time",
+      "Description": "Maximum allowable interruption time, as wall collisions can be choppy due to system and terrain considerations."
+    },
+    {
+      "Field": "ForceIntegrateWithRaycastForSlopeTime",
+      "Name": "Judgement Duration for Forced Lift when Stuck on Slope",
+      "Description": "If you continue to get stuck on the slope for more than this time, forced lift update will be performed depending on the NPC parameter settings. In seconds."
+    },
+    {
+      "Field": "reserve",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActivateChrByTime_PhantomId",
+      "Name": "Phantom ID: Time-based Activation",
+      "Description": "Fade the phantom shader with appearance/disappearance effects."
+    },
+    {
+      "Field": "ExcessSubAwarePointIntervalTime",
+      "Name": "Awareness Decay Start Time to Upper Limit",
+      "Description": "Enemy search level Decay start time to upper limit. In seconds."
+    },
+    {
+      "Field": "SearchToDiscoveryStatePoint",
+      "Name": "Awareness: Change to Discovery State Trigger",
+      "Description": "Enemy search level that shifts to complete discovery state."
+    },
+    {
+      "Field": "SearchToNomalStatePoint",
+      "Name": "Awareness: Change to Normal State Trigger",
+      "Description": "Enemy search level that shifts to complete normal state."
+    },
+    {
+      "Field": "AwarePointDecreaseTime_Normal",
+      "Name": "Awareness Decrease: Grace Duration (Normal)",
+      "Description": "Grace time until enemy search level decreases - Normal (in seconds)."
+    },
+    {
+      "Field": "AwarePointDecreaseTime_Damage",
+      "Name": "Awareness Decrease: Grace Duration (Damage)",
+      "Description": "Grace time until enemy search level decreases - During Damage (in seconds)."
+    },
+    {
+      "Field": "AwarePointMax",
+      "Name": "Max Awareness",
+      "Description": "Maximum enemy search level."
+    },
+    {
+      "Field": "CombatPointDecreaseTime",
+      "Name": "Engagement: Grace Duration",
+      "Description": "Grace time until engagement level decreases (for perception in new specifications). In seconds."
+    },
+    {
+      "Field": "CombatPointDecreasePoint",
+      "Name": "Engagement: Decrease per Second",
+      "Description": "The amount of engagement level that decreases every second."
+    },
+    {
+      "Field": "ShareTargetTime",
+      "Name": "Target Sharing: Grace Duration",
+      "Description": "Grace time before sharing target. In seconds."
+    },
+    {
+      "Field": "CombatPointDecreasePerSec_Sense",
+      "Name": "Sense: Engagement Decrease per Second",
+      "Description": "Amount of reduction in engagement level accumulated due to audiovisual/hitting. In points per second."
+    },
+    {
+      "Field": "CombatPointDecreasePerSec_Radar",
+      "Name": "Scan: Engagement Decrease per Second",
+      "Description": "Engagement reduction amount accumulated by radar. In points per second."
+    },
+    {
+      "Field": "CombatPointDecreaseTime_Radar",
+      "Name": "Scan: Engagement Decrease Grace Duration",
+      "Description": "Grace time until engagement level decreases (radar). In seconds."
+    },
+    {
+      "Field": "AwarePointDescreasePerSec",
+      "Name": "Awareness Reduction per Second",
+      "Description": "Decreased amount of enemy search level per second."
+    },
+    {
+      "Field": "bodyTrunk_BodyGaugePoint",
+      "Name": "Core: Body Guage",
+      "Description": "Body trunk gauge (point)"
+    },
+    {
+      "Field": "bodyTrunk_ActionGaugePoint",
+      "Name": "Core: Action Guage",
+      "Description": "Body trunk gauge (point)"
+    },
+    {
+      "Field": "bodyTrunk_PointHealWaitTimeSec",
+      "Name": "Core Recovery: Wait Time",
+      "Description": "Time to wait for core recovery. In seconds."
+    },
+    {
+      "Field": "bodyTrunk_PointHealPerSec",
+      "Name": "Core Recovery: HP per Second",
+      "Description": "Points per second to restore core recovery."
+    },
+    {
+      "Field": "endPermanentStunStateValue",
+      "Name": "End Permanent Stun Value",
+      "Description": ""
+    },
+    {
+      "Field": "assignRoleEvaluateInterval",
+      "Name": "Platoon Follower: Role Evaluation Interval",
+      "Description": "Time interval for evaluating platoon follower roles. In seconds."
+    },
+    {
+      "Field": "assignAttackRoleBattleRange",
+      "Name": "Attacker Battle Limit Distance",
+      "Description": "Within the set distance, the attacker will be given priority to the locked-on character. In metres."
+    },
+    {
+      "Field": "SmoothPatrol_routeAdjustRadius",
+      "Name": "Platoon Patrol: Route Correction Upper Limit Radius",
+      "Description": "Radius value for correction of tour route smoothing process."
+    },
+    {
+      "Field": "ShareTargetRecognitionLagError",
+      "Name": "Shared Target Recognition Delay Error",
+      "Description": "Delay time = shared target recognition delay + random( 0, shared target recognition delay error). In seconds."
+    },
+    {
+      "Field": "addImpactDisableTimeSec",
+      "Name": "Impact Invicibility Time",
+      "Description": "Impact value invalidation time when exiting the state of 'impact invincibility activated when exiting the state'. In seconds."
+    },
+    {
+      "Field": "pad_01",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

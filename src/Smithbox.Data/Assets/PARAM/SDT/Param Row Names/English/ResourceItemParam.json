@@ -1,0 +1,41 @@
+{
+  "Name": "ResourceItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Spirit Emblem"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Regenerative Power"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Regenerative Power Fragment"
+      ]
+    }
+  ]
+}

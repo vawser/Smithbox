@@ -1,0 +1,18 @@
+{
+  "Param": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Name": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "limitNum_byGroup",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

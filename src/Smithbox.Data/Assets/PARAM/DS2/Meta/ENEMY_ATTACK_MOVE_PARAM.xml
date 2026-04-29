@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Self Wiki="Defines parameters related to enemy attack moves." Row0Dummy="" />
-  <Field>
-    <attack_move_speed AltName="Speed"/>
-    <attack_move_turn_rate_1 AltName="Turn Rate [1]"/>
-    <attack_move_turn_rate_2 AltName="Turn Rate [2]"/>
-  </Field>
-</PARAMMETA>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <criminalUpNetwork />
+        <criminalDownNetwork />
+        <criminalUpNpc />
+        <criminalThreshold1 />
+        <criminalThreshold2 />
+        <deceasedUpNormal />
+        <deceasedUpCursed />
+        <deceasedThreshold1 />
+        <hpLowerBound1 />
+        <hpLowerBound2 />
+        <hpUpperBound1 />
+        <padding />
+    </Field>
+</PARAMMETA>

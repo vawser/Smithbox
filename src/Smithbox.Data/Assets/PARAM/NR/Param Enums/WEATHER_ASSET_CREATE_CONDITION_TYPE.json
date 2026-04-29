@@ -1,0 +1,29 @@
+{
+  "Key": "WEATHER_ASSET_CREATE_CONDITION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEATHER_ASSET_CREATE_CONDITION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

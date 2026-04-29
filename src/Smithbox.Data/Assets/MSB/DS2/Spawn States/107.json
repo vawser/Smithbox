@@ -1,0 +1,14 @@
+{
+  "id": "107",
+  "name": "Spider Hollow",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

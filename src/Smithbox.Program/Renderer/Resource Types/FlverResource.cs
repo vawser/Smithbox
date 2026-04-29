@@ -197,7 +197,7 @@ public class FlverResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Smithbox] Failed to load {relativePath} during FlverResource load.", LogPriority.High, e);
+            Smithbox.LogError(this, $"Failed to load {relativePath} during FlverResource load.", LogPriority.High, e);
         }
 
         return false;
@@ -233,12 +233,12 @@ public class FlverResource : IResource, IDisposable
                 MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
-                    //Smithbox.Log(this, $"[Smithbox] {VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
+                    //Smithbox.Log(this, $"{VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
                     return;
                 }
 
                 path = tex.Path;
-                //Smithbox.Log(this, $"[Smithbox] {VirtPath}: MTD: {path}");
+                //Smithbox.Log(this, $"{VirtPath}: MTD: {path}");
             }
 
             // MATBIN
@@ -310,12 +310,12 @@ public class FlverResource : IResource, IDisposable
 
                     if (tex == null || tex.Path == "")
                     {
-                        //Smithbox.Log(this, $"[Smithbox] {VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
+                        //Smithbox.Log(this, $"{VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
                         return;
                     }
 
                     path = tex.Path;
-                    //Smithbox.Log(this, $"[Smithbox] {VirtPath}: MATBIN: {path}");
+                    //Smithbox.Log(this, $"{VirtPath}: MATBIN: {path}");
                 }
             }
         }
@@ -324,7 +324,7 @@ public class FlverResource : IResource, IDisposable
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            //Smithbox.Log(this, $"[Smithbox] LISTENER for {virtualPath}");
+            //Smithbox.Log(this, $"LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
             if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is MapEditorScreen)

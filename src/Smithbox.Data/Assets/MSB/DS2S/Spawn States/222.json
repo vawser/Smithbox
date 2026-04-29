@@ -1,0 +1,14 @@
+{
+  "id": "222",
+  "name": "Giant Basilisk",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

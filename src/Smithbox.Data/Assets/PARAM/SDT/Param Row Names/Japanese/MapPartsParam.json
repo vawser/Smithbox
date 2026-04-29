@@ -1,0 +1,2579 @@
+{
+  "Name": "MapPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy (Please do not delete the contents entered in &quot;Parameter file name&quot;) -- ダミー（「パラメータファイル名」に入力した内容は消さないで下さい）"
+      ]
+    },
+    {
+      "ID": 100002023,
+      "Entries": [
+        "House of servants _1_wall_pillaster_beam -- 奉公人の家_1_壁_柱_梁"
+      ]
+    },
+    {
+      "ID": 100002024,
+      "Entries": [
+        "House of servants _1_roof_snow split -- 奉公人の家_1_屋根_雪割り"
+      ]
+    },
+    {
+      "ID": 100002032,
+      "Entries": [
+        "House of servants_hearth_window -- 奉公人の家_囲炉裏_窓"
+      ]
+    },
+    {
+      "ID": 100002051,
+      "Entries": [
+        "Serviceman&#39;s house_pillar_window_roof -- 奉公人の家_柱_窓_屋根"
+      ]
+    },
+    {
+      "ID": 100002453,
+      "Entries": [
+        "General-purpose gate A_pillar_onigawara -- 汎用門A_柱_鬼瓦"
+      ]
+    },
+    {
+      "ID": 100002454,
+      "Entries": [
+        "General-purpose gate A_closed_pillar_onigawara -- 汎用門A_閉_柱_鬼瓦"
+      ]
+    },
+    {
+      "ID": 100002462,
+      "Entries": [
+        "Mansion Street_Main Gate_Closed_Pillar -- 屋敷通り_正門_閉_柱"
+      ]
+    },
+    {
+      "ID": 100002463,
+      "Entries": [
+        "Mansion Street_Main Gate_Pillar_Onigawara -- 屋敷通り_正門_柱_鬼瓦"
+      ]
+    },
+    {
+      "ID": 100002471,
+      "Entries": [
+        "Mansion Street_Yaguramon_Pillar -- 屋敷通り_櫓門_柱"
+      ]
+    },
+    {
+      "ID": 100002503,
+      "Entries": [
+        "Bridge_Handrail_Pillar -- 橋_手摺り_柱"
+      ]
+    },
+    {
+      "ID": 100002504,
+      "Entries": [
+        "Bridge_Small B_Handrail_Pillar -- 橋_小B_手摺り_柱"
+      ]
+    },
+    {
+      "ID": 100002506,
+      "Entries": [
+        "Bridge_handrail -- 橋_手摺り"
+      ]
+    },
+    {
+      "ID": 100002507,
+      "Entries": [
+        "Bridge_pillar -- 橋_柱"
+      ]
+    },
+    {
+      "ID": 100002004,
+      "Entries": [
+        "Nagaya_1_roof_window -- 長屋_1_屋根_窓"
+      ]
+    },
+    {
+      "ID": 100002003,
+      "Entries": [
+        "Nagaya_2_roof_window -- 長屋_2_屋根_窓"
+      ]
+    },
+    {
+      "ID": 100002505,
+      "Entries": [
+        "Bridge_Small A_Handrail_Pillar -- 橋_小A_手摺り_柱"
+      ]
+    },
+    {
+      "ID": 100002702,
+      "Entries": [
+        "Outer edge_floor bundle_4 pcs set -- 外縁_床束_4本セット"
+      ]
+    },
+    {
+      "ID": 100002703,
+      "Entries": [
+        "Outer edge_floor bundle_2 set -- 外縁_床束_2本セット"
+      ]
+    },
+    {
+      "ID": 100202001,
+      "Entries": [
+        "Mansion Street_Baya_Pillar_Beam -- 屋敷通り_馬屋_柱_梁"
+      ]
+    },
+    {
+      "ID": 100202101,
+      "Entries": [
+        "Mansion Street_Bansho_Pillar -- 屋敷通り_番所_柱"
+      ]
+    },
+    {
+      "ID": 100504001,
+      "Entries": [
+        "Main house _ passage _ pillar _ handrail _01 -- 本家屋敷_通路_柱_手摺り_01"
+      ]
+    },
+    {
+      "ID": 100504011,
+      "Entries": [
+        "Main house _ passage _ pillar _ handrail _ 02 -- 本家屋敷_通路_柱_手摺り_02"
+      ]
+    },
+    {
+      "ID": 100504021,
+      "Entries": [
+        "Main house _ passage _ pillar _ handrail _ 03 -- 本家屋敷_通路_柱_手摺り_03"
+      ]
+    },
+    {
+      "ID": 100504031,
+      "Entries": [
+        "Main house _ passage _ pillar _ handrail _ 04 -- 本家屋敷_通路_柱_手摺り_04"
+      ]
+    },
+    {
+      "ID": 100590003,
+      "Entries": [
+        "Main house _ Interior view _ Samurai _ Pillar -- 本家屋敷_内観_遠侍_柱"
+      ]
+    },
+    {
+      "ID": 100590004,
+      "Entries": [
+        "Main house _Introspection_Far samurai_Pillar_2 -- 本家屋敷_内観_遠侍_柱_2"
+      ]
+    },
+    {
+      "ID": 100590005,
+      "Entries": [
+        "Main house _ Interior view _ Samurai _ Pillar _ 3 -- 本家屋敷_内観_遠侍_柱_3"
+      ]
+    },
+    {
+      "ID": 100591001,
+      "Entries": [
+        "Main house _ Interior view _ Tea room _ Pillar -- 本家屋敷_内観_茶室_柱"
+      ]
+    },
+    {
+      "ID": 100592003,
+      "Entries": [
+        "Main house _Introspection_Kuroshoin_Pillar -- 本家屋敷_内観_黒書院_柱"
+      ]
+    },
+    {
+      "ID": 100592004,
+      "Entries": [
+        "Honke Residence_Introspection_Kuroshoin_Pillar_2 -- 本家屋敷_内観_黒書院_柱_2"
+      ]
+    },
+    {
+      "ID": 100592005,
+      "Entries": [
+        "Honke Residence_Introspection_Kuroshoin_Pillar_3 -- 本家屋敷_内観_黒書院_柱_3"
+      ]
+    },
+    {
+      "ID": 100593001,
+      "Entries": [
+        "Main house _Introspection_Urashoin_Sudare -- 本家屋敷_内観_裏書院_御簾"
+      ]
+    },
+    {
+      "ID": 100594001,
+      "Entries": [
+        "Main house _Introspection_Audience room_Sudare -- 本家屋敷_内観_謁見の間_御簾"
+      ]
+    },
+    {
+      "ID": 100595001,
+      "Entries": [
+        "Honke Residence_Introspection_White Paper Institute_Pillar -- 本家屋敷_内観_白書院_柱"
+      ]
+    },
+    {
+      "ID": 110002305,
+      "Entries": [
+        "厩 _ pillar -- 厩_柱"
+      ]
+    },
+    {
+      "ID": 110002315,
+      "Entries": [
+        "厩 _ broken _ pillar -- 厩_壊れ_柱"
+      ]
+    },
+    {
+      "ID": 110002550,
+      "Entries": [
+        "Stone turret -- 投石櫓"
+      ]
+    },
+    {
+      "ID": 110003106,
+      "Entries": [
+        "One Gate_Pillar -- 一の門_柱"
+      ]
+    },
+    {
+      "ID": 110003115,
+      "Entries": [
+        "Ninomon_Fence -- 二の門_柵"
+      ]
+    },
+    {
+      "ID": 110003501,
+      "Entries": [
+        "Yaguramon_pillar -- 櫓門_柱"
+      ]
+    },
+    {
+      "ID": 110003515,
+      "Entries": [
+        "Damaged turret_beam -- 破損櫓_梁"
+      ]
+    },
+    {
+      "ID": 110003801,
+      "Entries": [
+        "Burnt down bridge_pillar -- 焼け落ちた橋_柱"
+      ]
+    },
+    {
+      "ID": 110003805,
+      "Entries": [
+        "Burnt down bridge _ balustrade -- 焼け落ちた橋_欄干"
+      ]
+    },
+    {
+      "ID": 110005000,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 110005010,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 110005020,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 110020410,
+      "Entries": [
+        "Burnt down Kobashi_Baluster -- 焼け落ちた小橋_欄干"
+      ]
+    },
+    {
+      "ID": 110015153,
+      "Entries": [
+        "Battlefield turret_pillar -- 戦場櫓_柱"
+      ]
+    },
+    {
+      "ID": 110015405,
+      "Entries": [
+        "Battlefield turret_stairs_rail -- 戦場櫓_階段_手摺り"
+      ]
+    },
+    {
+      "ID": 110016000,
+      "Entries": [
+        "Battlefield turret_handrail -- 戦場櫓_手摺り"
+      ]
+    },
+    {
+      "ID": 110016001,
+      "Entries": [
+        "Battlefield turret_handrail -- 戦場櫓_手摺り"
+      ]
+    },
+    {
+      "ID": 110016005,
+      "Entries": [
+        "Battlefield turret_handrail_pillar -- 戦場櫓_手摺り_柱"
+      ]
+    },
+    {
+      "ID": 110310020,
+      "Entries": [
+        "Yaguramon_Toraguchi side pillar -- 櫓門_虎口側柱"
+      ]
+    },
+    {
+      "ID": 110310110,
+      "Entries": [
+        "Yaguramon_passage beam -- 櫓門_通路梁"
+      ]
+    },
+    {
+      "ID": 110320100,
+      "Entries": [
+        "Yaguramon room (left) _ beam -- 櫓門部屋(左)_梁"
+      ]
+    },
+    {
+      "ID": 110320410,
+      "Entries": [
+        "Yaguramon room (right) _ beam -- 櫓門部屋(右)_梁"
+      ]
+    },
+    {
+      "ID": 110340004,
+      "Entries": [
+        "Return route_branch -- 復帰ルート_枝"
+      ]
+    },
+    {
+      "ID": 110340050,
+      "Entries": [
+        "Shutsuka Hint Company_Baluster -- 首塚ヒント社_欄干"
+      ]
+    },
+    {
+      "ID": 110450100,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 110450110,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 110802040,
+      "Entries": [
+        "Rough Temple_Pillar -- 荒れ寺_柱"
+      ]
+    },
+    {
+      "ID": 110802050,
+      "Entries": [
+        "Araji Temple_Baluster -- 荒れ寺_欄干"
+      ]
+    },
+    {
+      "ID": 110804100,
+      "Entries": [
+        "Broken bridge_fence -- 壊れた橋_柵"
+      ]
+    },
+    {
+      "ID": 110911101,
+      "Entries": [
+        "From the distant view castle tower Koguchi -- 遠景天守虎口から"
+      ]
+    },
+    {
+      "ID": 110911030,
+      "Entries": [
+        "Distant view Koguchi -- 遠景虎口"
+      ]
+    },
+    {
+      "ID": 111002059,
+      "Entries": [
+        "Flat turret _ balustrade -- 平櫓_欄干"
+      ]
+    },
+    {
+      "ID": 111002061,
+      "Entries": [
+        "Flat turret_burning_parapet -- 平櫓_燃焼_欄干"
+      ]
+    },
+    {
+      "ID": 111003501,
+      "Entries": [
+        "Yaguramon_pillar, crossbar -- 櫓門_柱、横木"
+      ]
+    },
+    {
+      "ID": 111003506,
+      "Entries": [
+        "Yaguramon_pillar, crossbar -- 櫓門_柱、横木"
+      ]
+    },
+    {
+      "ID": 111003521,
+      "Entries": [
+        "Yaguramon_pillar, crossbar -- 櫓門_柱、横木"
+      ]
+    },
+    {
+      "ID": 111003531,
+      "Entries": [
+        "Yaguramon_pillar, crossbar -- 櫓門_柱、横木"
+      ]
+    },
+    {
+      "ID": 111003541,
+      "Entries": [
+        "Yaguramon_pillar, crossbar -- 櫓門_柱、横木"
+      ]
+    },
+    {
+      "ID": 111003542,
+      "Entries": [
+        "Gate curtain -- 門の幕"
+      ]
+    },
+    {
+      "ID": 111003801,
+      "Entries": [
+        "Bridge_parapet -- 橋_欄干"
+      ]
+    },
+    {
+      "ID": 111003811,
+      "Entries": [
+        "Bridge_parapet -- 橋_欄干"
+      ]
+    },
+    {
+      "ID": 111003821,
+      "Entries": [
+        "Bridge_parapet -- 橋_欄干"
+      ]
+    },
+    {
+      "ID": 111006670,
+      "Entries": [
+        "Honjo indoor _ bamboo blind -- 本城屋内_簾"
+      ]
+    },
+    {
+      "ID": 111006671,
+      "Entries": [
+        "Honjo indoor _ bamboo blind -- 本城屋内_簾"
+      ]
+    },
+    {
+      "ID": 111006672,
+      "Entries": [
+        "Honjo indoor _ bamboo blind -- 本城屋内_簾"
+      ]
+    },
+    {
+      "ID": 111006675,
+      "Entries": [
+        "Honjo indoor _ bamboo blind -- 本城屋内_簾"
+      ]
+    },
+    {
+      "ID": 111006680,
+      "Entries": [
+        "Honjo indoor _ curtain -- 本城屋内_幔幕"
+      ]
+    },
+    {
+      "ID": 111012002,
+      "Entries": [
+        "Company to the valley_ balustrade -- 渓谷への社_欄干"
+      ]
+    },
+    {
+      "ID": 111012101,
+      "Entries": [
+        "Company to the valley_indoor_pillar -- 渓谷への社_屋内_柱"
+      ]
+    },
+    {
+      "ID": 111012201,
+      "Entries": [
+        "Company to the valley_pillar_horizontal tree -- 渓谷への社_柱_横木"
+      ]
+    },
+    {
+      "ID": 111012501,
+      "Entries": [
+        "Company to the valley_ balustrade -- 渓谷への社_欄干"
+      ]
+    },
+    {
+      "ID": 111012601,
+      "Entries": [
+        "Company _ pillar to the valley -- 渓谷への社_柱"
+      ]
+    },
+    {
+      "ID": 111012701,
+      "Entries": [
+        "Company _ pillar to the valley -- 渓谷への社_柱"
+      ]
+    },
+    {
+      "ID": 111012901,
+      "Entries": [
+        "Company to the valley_Pillar_Horizontal tree_Balustrade_Shimenawa -- 渓谷への社_柱_横木_欄干_注連縄"
+      ]
+    },
+    {
+      "ID": 111015047,
+      "Entries": [
+        "Honjo Indoor_4th Floor Hidden Room_Transparent Pillar -- 本城屋内_4階隠し部屋_透過柱"
+      ]
+    },
+    {
+      "ID": 111015049,
+      "Entries": [
+        "Honjo Indoor_4th Floor Hidden Room_Spider&#39;s Nest -- 本城屋内_4階隠し部屋_くもの巣"
+      ]
+    },
+    {
+      "ID": 111015071,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Accessories -- 本城屋内_展望部屋_小物"
+      ]
+    },
+    {
+      "ID": 111015079,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Decal -- 本城屋内_展望部屋_デカール"
+      ]
+    },
+    {
+      "ID": 111015263,
+      "Entries": [
+        "Indoor_column (high) -- 屋内_欄間(高)"
+      ]
+    },
+    {
+      "ID": 111015280,
+      "Entries": [
+        "Indoor_column -- 屋内_欄間"
+      ]
+    },
+    {
+      "ID": 111015370,
+      "Entries": [
+        "Honjo indoor _ balustrade -- 本城屋内_欄干"
+      ]
+    },
+    {
+      "ID": 111015390,
+      "Entries": [
+        "Honjo indoor _ balustrade -- 本城屋内_欄干"
+      ]
+    },
+    {
+      "ID": 111015395,
+      "Entries": [
+        "Honjo indoor _ balustrade -- 本城屋内_欄干"
+      ]
+    },
+    {
+      "ID": 111015471,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Banma -- 本城屋内_展望部屋_欄間"
+      ]
+    },
+    {
+      "ID": 111015472,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Banma -- 本城屋内_展望部屋_欄間"
+      ]
+    },
+    {
+      "ID": 111015475,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Pillar -- 本城屋内_展望部屋_柱"
+      ]
+    },
+    {
+      "ID": 111015479,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Door -- 本城屋内_展望部屋_扉"
+      ]
+    },
+    {
+      "ID": 111015485,
+      "Entries": [
+        "Honjo indoor _ tea room _ bamboo blind -- 本城屋内_茶室_御簾"
+      ]
+    },
+    {
+      "ID": 111015812,
+      "Entries": [
+        "Honjo Indoor_Observation Room_Wall -- 本城屋内_展望部屋_壁"
+      ]
+    },
+    {
+      "ID": 111016010,
+      "Entries": [
+        "Honjo indoor _ observation room _ balustrade -- 本城屋内_展望部屋_高欄"
+      ]
+    },
+    {
+      "ID": 111016015,
+      "Entries": [
+        "Honjo indoor _ observation room _ balustrade (corner) -- 本城屋内_展望部屋_高欄(角)"
+      ]
+    },
+    {
+      "ID": 111016020,
+      "Entries": [
+        "Honjo outdoor _ balustrade -- 本城屋外_欄干"
+      ]
+    },
+    {
+      "ID": 111016100,
+      "Entries": [
+        "Honjo Indoor_Giant Pillar -- 本城屋内_巨大支柱"
+      ]
+    },
+    {
+      "ID": 111911021,
+      "Entries": [
+        "Middle view valley -- 中景渓谷"
+      ]
+    },
+    {
+      "ID": 111911120,
+      "Entries": [
+        "Distant castle tower -- 遠景天守表"
+      ]
+    },
+    {
+      "ID": 111911130,
+      "Entries": [
+        "Far view roof right -- 遠景屋根上右"
+      ]
+    },
+    {
+      "ID": 111911200,
+      "Entries": [
+        "Distant view hidden prison -- 遠景隠し牢"
+      ]
+    },
+    {
+      "ID": 112000160,
+      "Entries": [
+        "Hidden prison_root_large -- 隠し牢_根_大"
+      ]
+    },
+    {
+      "ID": 112000170,
+      "Entries": [
+        "Hidden prison_root_middle -- 隠し牢_根_中"
+      ]
+    },
+    {
+      "ID": 112200301,
+      "Entries": [
+        "Hidden Prison_Base Terrain_Jinmaku -- 隠し牢_ベース地形_陣幕"
+      ]
+    },
+    {
+      "ID": 112001180,
+      "Entries": [
+        "Hidden prison_tree root -- 隠し牢_木の根"
+      ]
+    },
+    {
+      "ID": 112001190,
+      "Entries": [
+        "Hidden prison_tree root -- 隠し牢_木の根"
+      ]
+    },
+    {
+      "ID": 112001302,
+      "Entries": [
+        "Hidden prison_sugi tree -- 隠し牢_杉の木"
+      ]
+    },
+    {
+      "ID": 112001390,
+      "Entries": [
+        "Hidden prison_shrub A -- 隠し牢_灌木A"
+      ]
+    },
+    {
+      "ID": 112001700,
+      "Entries": [
+        "Hidden prison_straw floor -- 隠し牢_藁床"
+      ]
+    },
+    {
+      "ID": 112001810,
+      "Entries": [
+        "Hidden prison_arrow_ground -- 隠し牢_矢_地面"
+      ]
+    },
+    {
+      "ID": 112003011,
+      "Entries": [
+        "Hidden prison_spear stand -- 隠し牢_槍立て"
+      ]
+    },
+    {
+      "ID": 112003020,
+      "Entries": [
+        "Hidden prison_sword rack -- 隠し牢_刀掛け"
+      ]
+    },
+    {
+      "ID": 112003220,
+      "Entries": [
+        "Hidden prison_Koryo gate_open -- 隠し牢_高麗門扉_開"
+      ]
+    },
+    {
+      "ID": 112003202,
+      "Entries": [
+        "Hidden prison_Koryomon_Pillar -- 隠し牢_高麗門_控柱"
+      ]
+    },
+    {
+      "ID": 112003255,
+      "Entries": [
+        "Hidden prison_Koryomon_Pillar_Burning version -- 隠し牢_高麗門_控柱_燃焼版"
+      ]
+    },
+    {
+      "ID": 112003380,
+      "Entries": [
+        "Hidden prison_straw shoes_1 -- 隠し牢_草鞋_1"
+      ]
+    },
+    {
+      "ID": 112003390,
+      "Entries": [
+        "Hidden prison_straw shoes_2 -- 隠し牢_草鞋_2"
+      ]
+    },
+    {
+      "ID": 112003801,
+      "Entries": [
+        "Hidden prison _ burnt down bridge _ balustrade -- 隠し牢_焼け落ちた橋_欄干"
+      ]
+    },
+    {
+      "ID": 112201001,
+      "Entries": [
+        "Hidden prison_bansho_outer pillar -- 隠し牢_番所_外柱"
+      ]
+    },
+    {
+      "ID": 112201002,
+      "Entries": [
+        "Hidden prison_bansho_inner pillar -- 隠し牢_番所_内柱"
+      ]
+    },
+    {
+      "ID": 112201050,
+      "Entries": [
+        "Hidden prison_bansho curtain -- 隠し牢_番所の幔幕"
+      ]
+    },
+    {
+      "ID": 112201090,
+      "Entries": [
+        "Hidden prison_bansho_spider web -- 隠し牢_番所_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 112201515,
+      "Entries": [
+        "Hidden prison_Prince hut_Roof_Balustrade -- 隠し牢_皇子小屋_屋根_欄干"
+      ]
+    },
+    {
+      "ID": 112201531,
+      "Entries": [
+        "Hidden prison _ Prince&#39;s hut _ Prince&#39;s cabin interior _ Pillar balustrade -- 隠し牢_皇子小屋_皇子小屋内部_支柱欄干"
+      ]
+    },
+    {
+      "ID": 112201550,
+      "Entries": [
+        "Hidden prison_Prince hut_Prince hut_Bretèche -- 隠し牢_皇子小屋_皇子小屋_石落とし"
+      ]
+    },
+    {
+      "ID": 112201580,
+      "Entries": [
+        "Hidden prison_Tsukimi turret decal -- 隠し牢_月見櫓のデカール"
+      ]
+    },
+    {
+      "ID": 112201590,
+      "Entries": [
+        "Hidden prison_Prince hut_Spider web -- 隠し牢_皇子小屋_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 112209900,
+      "Entries": [
+        "Hidden prison_Tsukimi turret distant view -- 隠し牢_月見櫓遠景"
+      ]
+    },
+    {
+      "ID": 112300301,
+      "Entries": [
+        "Hidden Prison_Base Terrain 2_Jinmaku -- 隠し牢_ベース地形2_陣幕"
+      ]
+    },
+    {
+      "ID": 112304000,
+      "Entries": [
+        "Hidden prison_loophole_support tree -- 隠し牢_抜け穴_支え木"
+      ]
+    },
+    {
+      "ID": 112402000,
+      "Entries": [
+        "Hidden prison_Susuki field_Human bone -- 隠し牢_ススキ野原_人骨"
+      ]
+    },
+    {
+      "ID": 130000800,
+      "Entries": [
+        "Dungeon_neck stand -- 地下牢_首置台"
+      ]
+    },
+    {
+      "ID": 130001010,
+      "Entries": [
+        "Dungeon_Fat length -- 地下牢_油脂長"
+      ]
+    },
+    {
+      "ID": 130001020,
+      "Entries": [
+        "Dungeon_Fat and oil large -- 地下牢_油脂大"
+      ]
+    },
+    {
+      "ID": 130001030,
+      "Entries": [
+        "Dungeon_small oil and fat -- 地下牢_油脂小"
+      ]
+    },
+    {
+      "ID": 130001100,
+      "Entries": [
+        "Dungeon_Human bone -- 地下牢_人骨"
+      ]
+    },
+    {
+      "ID": 130001110,
+      "Entries": [
+        "Dungeon_Human bone -- 地下牢_人骨"
+      ]
+    },
+    {
+      "ID": 130001120,
+      "Entries": [
+        "Dungeon_Human bone -- 地下牢_人骨"
+      ]
+    },
+    {
+      "ID": 130007000,
+      "Entries": [
+        "Dungeon _ wooden pillar _ general purpose 1 -- 地下牢_木柱_汎用1"
+      ]
+    },
+    {
+      "ID": 130105200,
+      "Entries": [
+        "Dungeon_Wooden Pillar_Artificial Area -- 地下牢_木柱_人工物エリア"
+      ]
+    },
+    {
+      "ID": 130105300,
+      "Entries": [
+        "Dungeon _ wooden pillar _ temple side -- 地下牢_木柱_寺側"
+      ]
+    },
+    {
+      "ID": 130105400,
+      "Entries": [
+        "Dungeon_Sluice -- 地下牢_水門"
+      ]
+    },
+    {
+      "ID": 130201100,
+      "Entries": [
+        "Dungeon_Prison hanging blame -- 地下牢_牢獄の吊り責め"
+      ]
+    },
+    {
+      "ID": 130201110,
+      "Entries": [
+        "Dungeon_Prison hanging blame_Large -- 地下牢_牢獄の吊り責め_大"
+      ]
+    },
+    {
+      "ID": 130201200,
+      "Entries": [
+        "Dungeon_Prison Stone Hugging -- 地下牢_牢獄の石抱き"
+      ]
+    },
+    {
+      "ID": 130201300,
+      "Entries": [
+        "Dungeon_corpse -- 地下牢_死体"
+      ]
+    },
+    {
+      "ID": 130201310,
+      "Entries": [
+        "Dungeon_corpse shelf A -- 地下牢_死体棚A"
+      ]
+    },
+    {
+      "ID": 130201320,
+      "Entries": [
+        "Dungeon_corpse shelf B -- 地下牢_死体棚B"
+      ]
+    },
+    {
+      "ID": 130201400,
+      "Entries": [
+        "Dungeon_Beam 1 -- 地下牢_梁1"
+      ]
+    },
+    {
+      "ID": 130201410,
+      "Entries": [
+        "Dungeon_Beam 2 -- 地下牢_梁2"
+      ]
+    },
+    {
+      "ID": 130202300,
+      "Entries": [
+        "Dungeon_Spider Web 1 -- 地下牢_蜘蛛の巣1"
+      ]
+    },
+    {
+      "ID": 130205000,
+      "Entries": [
+        "Dungeon_scaffolding -- 地下牢_足場"
+      ]
+    },
+    {
+      "ID": 130205110,
+      "Entries": [
+        "Dungeon_Prison Pillar -- 地下牢_牢獄の支柱"
+      ]
+    },
+    {
+      "ID": 130205120,
+      "Entries": [
+        "Dungeon_Prison Pillar -- 地下牢_牢獄の支柱"
+      ]
+    },
+    {
+      "ID": 130205130,
+      "Entries": [
+        "Dungeon_Prison Pillar -- 地下牢_牢獄の支柱"
+      ]
+    },
+    {
+      "ID": 150002021,
+      "Entries": [
+        "House_thatched 02_pillar -- 家屋_茅葺02_柱"
+      ]
+    },
+    {
+      "ID": 150002024,
+      "Entries": [
+        "House_thatched 02_pillar 02 -- 家屋_茅葺02_柱02"
+      ]
+    },
+    {
+      "ID": 150002082,
+      "Entries": [
+        "Charcoal-grilled hut_pillar -- 炭焼き小屋_柱"
+      ]
+    },
+    {
+      "ID": 150002261,
+      "Entries": [
+        "Long bridge_pillar -- 長い橋_柱"
+      ]
+    },
+    {
+      "ID": 150002900,
+      "Entries": [
+        "Araibari Object_1 -- 洗い張りオブジェ_1"
+      ]
+    },
+    {
+      "ID": 150002910,
+      "Entries": [
+        "Araibari Object_2 -- 洗い張りオブジェ_2"
+      ]
+    },
+    {
+      "ID": 150002970,
+      "Entries": [
+        "Araibari Object_Barricade 1 -- 洗い張りオブジェ_バリケード1"
+      ]
+    },
+    {
+      "ID": 150002980,
+      "Entries": [
+        "Araibari Object_Barricade 2 -- 洗い張りオブジェ_バリケード2"
+      ]
+    },
+    {
+      "ID": 150002990,
+      "Entries": [
+        "Araibari Object_Barricade 3 -- 洗い張りオブジェ_バリケード3"
+      ]
+    },
+    {
+      "ID": 150003250,
+      "Entries": [
+        "Cloth drying -- 布干し"
+      ]
+    },
+    {
+      "ID": 150106000,
+      "Entries": [
+        "cliff -- 崖"
+      ]
+    },
+    {
+      "ID": 150106060,
+      "Entries": [
+        "Cliff_half -- 崖_半"
+      ]
+    },
+    {
+      "ID": 150106100,
+      "Entries": [
+        "Cliff_cut -- 崖_抉れ"
+      ]
+    },
+    {
+      "ID": 150106200,
+      "Entries": [
+        "Cliff_high -- 崖_高い"
+      ]
+    },
+    {
+      "ID": 150106260,
+      "Entries": [
+        "Cliff_high_half -- 崖_高い_半"
+      ]
+    },
+    {
+      "ID": 150106500,
+      "Entries": [
+        "Cliff_swamp -- 崖_沼"
+      ]
+    },
+    {
+      "ID": 150123000,
+      "Entries": [
+        "Land on the right_Trickgrass -- 右側の土地_トリクグラズ"
+      ]
+    },
+    {
+      "ID": 150150011,
+      "Entries": [
+        "Disliked land_houses_pillars -- 嫌われ者の土地_家屋_柱"
+      ]
+    },
+    {
+      "ID": 150153001,
+      "Entries": [
+        "Land of hated _ dock _ pillar -- 嫌われ者の土地_船着場_柱"
+      ]
+    },
+    {
+      "ID": 150162103,
+      "Entries": [
+        "Team leader&#39;s house_pillar -- 班長の家_柱"
+      ]
+    },
+    {
+      "ID": 150240300,
+      "Entries": [
+        "Village Mayor&#39;s House_Torii -- 村長の家_鳥居"
+      ]
+    },
+    {
+      "ID": 150242008,
+      "Entries": [
+        "Village Mayor&#39;s House_Pillar -- 村長の家_柱"
+      ]
+    },
+    {
+      "ID": 150242009,
+      "Entries": [
+        "Village mayor&#39;s house_decoration -- 村長の家_装飾"
+      ]
+    },
+    {
+      "ID": 150242011,
+      "Entries": [
+        "Gate of the approach _ pillar -- 参道の門_柱"
+      ]
+    },
+    {
+      "ID": 150242400,
+      "Entries": [
+        "torii -- 鳥居"
+      ]
+    },
+    {
+      "ID": 150250011,
+      "Entries": [
+        "Village Mayor&#39;s House_Terrain Parts_Barrier Stone -- 村長の家_地形パーツ_結界石"
+      ]
+    },
+    {
+      "ID": 150300401,
+      "Entries": [
+        "Cave_Sacred Treasure Parts 02 -- 洞窟_神器パーツ02"
+      ]
+    },
+    {
+      "ID": 150602000,
+      "Entries": [
+        "Rough Temple Destruction_Pillar -- 荒れ寺破壊_柱"
+      ]
+    },
+    {
+      "ID": 150602003,
+      "Entries": [
+        "Destruction of Araji Temple_Curtain -- 荒れ寺破壊_垂れ幕"
+      ]
+    },
+    {
+      "ID": 150602010,
+      "Entries": [
+        "Araji Temple Normal_Pillar -- 荒れ寺通常_柱"
+      ]
+    },
+    {
+      "ID": 150602013,
+      "Entries": [
+        "Araji Temple Normal _ banner -- 荒れ寺通常_垂れ幕"
+      ]
+    },
+    {
+      "ID": 150602101,
+      "Entries": [
+        "Hut_wall.pillar -- 小屋_壁.柱"
+      ]
+    },
+    {
+      "ID": 170000260,
+      "Entries": [
+        "Wooden fence 2m -- 木柵2m"
+      ]
+    },
+    {
+      "ID": 170001000,
+      "Entries": [
+        "Dead tree_A -- 枯れ木_A"
+      ]
+    },
+    {
+      "ID": 170001010,
+      "Entries": [
+        "Dead tree_B -- 枯れ木_B"
+      ]
+    },
+    {
+      "ID": 170001020,
+      "Entries": [
+        "Dead tree_C -- 枯れ木_C"
+      ]
+    },
+    {
+      "ID": 170001030,
+      "Entries": [
+        "Dead tree_D -- 枯れ木_D"
+      ]
+    },
+    {
+      "ID": 170001180,
+      "Entries": [
+        "For walls_roots -- 壁用_根"
+      ]
+    },
+    {
+      "ID": 170001140,
+      "Entries": [
+        "Unable to ride pine -- 乗れない松"
+      ]
+    },
+    {
+      "ID": 170001150,
+      "Entries": [
+        "Unable to ride pine -- 乗れない松"
+      ]
+    },
+    {
+      "ID": 170001160,
+      "Entries": [
+        "Unable to ride pine -- 乗れない松"
+      ]
+    },
+    {
+      "ID": 170001190,
+      "Entries": [
+        "For walls_roots -- 壁用_根"
+      ]
+    },
+    {
+      "ID": 170001310,
+      "Entries": [
+        "A messed up corpse -- 食い散らかされた死骸"
+      ]
+    },
+    {
+      "ID": 170001311,
+      "Entries": [
+        "A messed up corpse -- 食い散らかされた死骸"
+      ]
+    },
+    {
+      "ID": 170001320,
+      "Entries": [
+        "Monkey bone -- 猿の骨"
+      ]
+    },
+    {
+      "ID": 170001321,
+      "Entries": [
+        "Monkey bone -- 猿の骨"
+      ]
+    },
+    {
+      "ID": 170001322,
+      "Entries": [
+        "Monkey bone -- 猿の骨"
+      ]
+    },
+    {
+      "ID": 170001410,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 170001420,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 170001430,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 170001470,
+      "Entries": [
+        "Tree_autumn leaves -- 木_紅葉"
+      ]
+    },
+    {
+      "ID": 170001480,
+      "Entries": [
+        "Tree_Ginkgo -- 木_銀杏"
+      ]
+    },
+    {
+      "ID": 170001500,
+      "Entries": [
+        "Shrub_1 -- 灌木_1"
+      ]
+    },
+    {
+      "ID": 170001510,
+      "Entries": [
+        "Shrub_2 -- 灌木_2"
+      ]
+    },
+    {
+      "ID": 170001520,
+      "Entries": [
+        "Shrub_3 -- 灌木_3"
+      ]
+    },
+    {
+      "ID": 170003100,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 170003110,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 170003120,
+      "Entries": [
+        "icicle -- 氷柱"
+      ]
+    },
+    {
+      "ID": 170006150,
+      "Entries": [
+        "Gorinto_A -- 五輪塔_A"
+      ]
+    },
+    {
+      "ID": 170006151,
+      "Entries": [
+        "Gorinto_B -- 五輪塔_B"
+      ]
+    },
+    {
+      "ID": 170006152,
+      "Entries": [
+        "Gorinto_Collapse -- 五輪塔_崩れ"
+      ]
+    },
+    {
+      "ID": 170207501,
+      "Entries": [
+        "Pillars inside the fort -- 砦内部の支柱"
+      ]
+    },
+    {
+      "ID": 170207620,
+      "Entries": [
+        "Fortress Horse Barrier_Support -- 砦の馬防壁_支え"
+      ]
+    },
+    {
+      "ID": 170207800,
+      "Entries": [
+        "Fort fur -- 砦の毛皮"
+      ]
+    },
+    {
+      "ID": 170212000,
+      "Entries": [
+        "Bottom wooden scaffolding -- 最下層の木製足場"
+      ]
+    },
+    {
+      "ID": 170212100,
+      "Entries": [
+        "Base of the valley bottom -- 谷底の陣地"
+      ]
+    },
+    {
+      "ID": 170212101,
+      "Entries": [
+        "Valley bottom position_destroy -- 谷底の陣地_破壊"
+      ]
+    },
+    {
+      "ID": 170212110,
+      "Entries": [
+        "Position at the bottom of the valley 2 -- 谷底の陣地2"
+      ]
+    },
+    {
+      "ID": 170212111,
+      "Entries": [
+        "Valley bottom position 2_ destruction -- 谷底の陣地2_破壊"
+      ]
+    },
+    {
+      "ID": 170212120,
+      "Entries": [
+        "Base of the valley bottom 3 -- 谷底の陣地3"
+      ]
+    },
+    {
+      "ID": 170212121,
+      "Entries": [
+        "Valley bottom position 3_ destruction -- 谷底の陣地3_破壊"
+      ]
+    },
+    {
+      "ID": 170300001,
+      "Entries": [
+        "Terrain_cobweb -- 地形_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170300101,
+      "Entries": [
+        "Terrain_stairs_cobweb -- 地形_階段_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170300201,
+      "Entries": [
+        "Terrain_Loss Room_Spider Web -- 地形_ハズレの部屋_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170300301,
+      "Entries": [
+        "Terrain_dead end_cobweb -- 地形_行き止まり_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170300401,
+      "Entries": [
+        "Terrain_Atari&#39;s Room_Spider Web -- 地形_アタリの部屋_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170301001,
+      "Entries": [
+        "Company_Spider Web -- 社_蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170419200,
+      "Entries": [
+        "Natural cave_Shimenawa -- 自然洞窟_しめ縄"
+      ]
+    },
+    {
+      "ID": 170808100,
+      "Entries": [
+        "Company spider web -- 社の蜘蛛の巣"
+      ]
+    },
+    {
+      "ID": 170808200,
+      "Entries": [
+        "Sokushinbutsu -- 即身仏"
+      ]
+    },
+    {
+      "ID": 200000250,
+      "Entries": [
+        "stalagmite -- 石筍"
+      ]
+    },
+    {
+      "ID": 200001000,
+      "Entries": [
+        "Persimmon tree -- 柿の木"
+      ]
+    },
+    {
+      "ID": 200001050,
+      "Entries": [
+        "Cedar -- 杉"
+      ]
+    },
+    {
+      "ID": 200001051,
+      "Entries": [
+        "Cedar -- 杉"
+      ]
+    },
+    {
+      "ID": 200001803,
+      "Entries": [
+        "Branch of the sacred tree -- 御神木の枝"
+      ]
+    },
+    {
+      "ID": 200001804,
+      "Entries": [
+        "Branch of the sacred tree -- 御神木の枝"
+      ]
+    },
+    {
+      "ID": 200002113,
+      "Entries": [
+        "Five-storied pagoda_pillar -- 五重塔_柱"
+      ]
+    },
+    {
+      "ID": 200002401,
+      "Entries": [
+        "General-purpose gate A_ pillar -- 汎用門A_柱"
+      ]
+    },
+    {
+      "ID": 200002501,
+      "Entries": [
+        "Bell tower _ railing. Pillar -- 鐘楼_手すり.柱"
+      ]
+    },
+    {
+      "ID": 200002802,
+      "Entries": [
+        "Broken bridge_railing -- 壊れた橋_手すり"
+      ]
+    },
+    {
+      "ID": 200002803,
+      "Entries": [
+        "Broken bridge _02_ railing -- 壊れた橋_02_手すり"
+      ]
+    },
+    {
+      "ID": 200102002,
+      "Entries": [
+        "Connection with the valley_timbered_doorway -- 渓谷との接続_木組み_出入り口"
+      ]
+    },
+    {
+      "ID": 200102041,
+      "Entries": [
+        "Kuri 2_ pillar -- 庫裏2_柱"
+      ]
+    },
+    {
+      "ID": 200122012,
+      "Entries": [
+        "Oyamamon _ Pillar -- 大山門_柱"
+      ]
+    },
+    {
+      "ID": 200132023,
+      "Entries": [
+        "Monastery_Engawa_Pillar -- 僧堂_縁側_柱"
+      ]
+    },
+    {
+      "ID": 200132026,
+      "Entries": [
+        "Monastery_Introspection -- 僧堂_内観"
+      ]
+    },
+    {
+      "ID": 200132201,
+      "Entries": [
+        "Hodo_railing -- 法堂_手すり"
+      ]
+    },
+    {
+      "ID": 200212112,
+      "Entries": [
+        "Tsuten Bridge Wall_Beam -- 通天橋壁_梁"
+      ]
+    },
+    {
+      "ID": 200212121,
+      "Entries": [
+        "Tsuten Bridge_Pillar -- 通天橋_柱"
+      ]
+    },
+    {
+      "ID": 200312006,
+      "Entries": [
+        "Hall_Introspection_Beams, Pillars -- 堂_内観_梁、柱"
+      ]
+    },
+    {
+      "ID": 200312013,
+      "Entries": [
+        "Hodo_entrance_pillar -- 法堂_玄関_柱"
+      ]
+    },
+    {
+      "ID": 200312030,
+      "Entries": [
+        "Hodo_Pillar_3 consecutive -- 法堂_柱_3連"
+      ]
+    },
+    {
+      "ID": 200312031,
+      "Entries": [
+        "Hodo_Pillar_Single -- 法堂_柱_単体"
+      ]
+    },
+    {
+      "ID": 200312607,
+      "Entries": [
+        "Small hall_railing -- 小さなお堂_手すり"
+      ]
+    },
+    {
+      "ID": 200322001,
+      "Entries": [
+        "Main hall front _ gate _ railing. Pillar -- 本堂前_門_手すり.柱"
+      ]
+    },
+    {
+      "ID": 200402023,
+      "Entries": [
+        "Main hall_stage edge_pillar -- 本堂_舞台端_柱"
+      ]
+    },
+    {
+      "ID": 200402024,
+      "Entries": [
+        "Main hall_stage_pillar -- 本堂_舞台_柱"
+      ]
+    },
+    {
+      "ID": 200482109,
+      "Entries": [
+        "Hidden Hall_Introspection_Pillar -- 隠れ堂_内観_柱"
+      ]
+    },
+    {
+      "ID": 200482112,
+      "Entries": [
+        "Hidden Hall_Passage_Pillar -- 隠れ堂_通路_柱"
+      ]
+    },
+    {
+      "ID": 200482113,
+      "Entries": [
+        "Hidden Hall_Exterior_Pillar, Railing -- 隠れ堂_外観_柱、手すり"
+      ]
+    },
+    {
+      "ID": 200402400,
+      "Entries": [
+        "Main hall railing A -- 本堂手すりA"
+      ]
+    },
+    {
+      "ID": 200402401,
+      "Entries": [
+        "Main hall railing A_3 consecutive -- 本堂手すりA_3連"
+      ]
+    },
+    {
+      "ID": 200402402,
+      "Entries": [
+        "Main hall railing A_ corner -- 本堂手すりA_角"
+      ]
+    },
+    {
+      "ID": 200402403,
+      "Entries": [
+        "Main hall railing A_ without pillars -- 本堂手すりA_柱なし"
+      ]
+    },
+    {
+      "ID": 200402404,
+      "Entries": [
+        "Main hall railing A_ short -- 本堂手すりA_短"
+      ]
+    },
+    {
+      "ID": 200402405,
+      "Entries": [
+        "Main hall railing A_ chief -- 本堂手すりA_長"
+      ]
+    },
+    {
+      "ID": 200402406,
+      "Entries": [
+        "Main hall railing A_ diagonal -- 本堂手すりA_斜"
+      ]
+    },
+    {
+      "ID": 200402410,
+      "Entries": [
+        "Main hall railing C_ jumping point -- 本堂手すりC_飛び降り箇所"
+      ]
+    },
+    {
+      "ID": 200450011,
+      "Entries": [
+        "Main hall_introspection_pillar -- 本堂_内観_柱"
+      ]
+    },
+    {
+      "ID": 200602011,
+      "Entries": [
+        "Introspection_introspection_beams, pillars -- 胎内くぐり_内観_梁、柱"
+      ]
+    },
+    {
+      "ID": 200502001,
+      "Entries": [
+        "Gomadou_Introspection_Pillar -- 護摩堂_内観_柱"
+      ]
+    },
+    {
+      "ID": 200502011,
+      "Entries": [
+        "Gomadou_Admission_Pillar -- 護摩堂_進入口_柱"
+      ]
+    },
+    {
+      "ID": 200600060,
+      "Entries": [
+        "Tainai Kuguri_Main Hall Back_Pillar -- 胎内くぐり_本堂裏_柱"
+      ]
+    },
+    {
+      "ID": 200802116,
+      "Entries": [
+        "Infinite Corridor_Wall_Pillar -- 無限回廊_壁_柱"
+      ]
+    },
+    {
+      "ID": 200802131,
+      "Entries": [
+        "Infinite Corridor_Corridor_Stairs_Pillar -- 無限回廊_回廊_階段_柱"
+      ]
+    },
+    {
+      "ID": 200802121,
+      "Entries": [
+        "Infinite Corridor_Corridor B -- 無限回廊_回廊B"
+      ]
+    },
+    {
+      "ID": 200802122,
+      "Entries": [
+        "Infinite Corridor_Corridor A_End -- 無限回廊_回廊A_端"
+      ]
+    },
+    {
+      "ID": 200802123,
+      "Entries": [
+        "Infinite Corridor_Corridor A_Gate -- 無限回廊_回廊A_門"
+      ]
+    },
+    {
+      "ID": 200802127,
+      "Entries": [
+        "Infinite Corridor_Corridor_Bonsho_Pillar -- 無限回廊_回廊_梵鐘_柱"
+      ]
+    },
+    {
+      "ID": 200802403,
+      "Entries": [
+        "Infinite corridor_railing A_oblique -- 無限回廊_手すりA_斜"
+      ]
+    },
+    {
+      "ID": 200802404,
+      "Entries": [
+        "Infinite Corridor_Handrail A_Gateway -- 無限回廊_手すりA_出入り口"
+      ]
+    },
+    {
+      "ID": 200802592,
+      "Entries": [
+        "Infinite corridor_roof_entrance_pillar -- 無限回廊_屋根_進入口_柱"
+      ]
+    },
+    {
+      "ID": 200810111,
+      "Entries": [
+        "Infinite Corridor_Light Source Room_Pillar -- 無限回廊_光源部屋_柱"
+      ]
+    },
+    {
+      "ID": 200820111,
+      "Entries": [
+        "Infinite Corridor_Waterfall Room_Pillar -- 無限回廊_滝部屋_柱"
+      ]
+    },
+    {
+      "ID": 200830111,
+      "Entries": [
+        "Infinite Corridor_Mud Room_Pillar -- 無限回廊_泥部屋_柱"
+      ]
+    },
+    {
+      "ID": 200840110,
+      "Entries": [
+        "Infinite Corridor_Attic_Pillar -- 無限回廊_屋根裏部屋_柱"
+      ]
+    },
+    {
+      "ID": 200860111,
+      "Entries": [
+        "Infinite Corridor_Old Starting Point_Pillar -- 無限回廊_旧スタート地点_柱"
+      ]
+    },
+    {
+      "ID": 250001525,
+      "Entries": [
+        "Autumn leaves_branch -- 紅葉_枝"
+      ]
+    },
+    {
+      "ID": 250001545,
+      "Entries": [
+        "Autumn leaves_branch -- 紅葉_枝"
+      ]
+    },
+    {
+      "ID": 250002023,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002024,
+      "Entries": [
+        "Residential area_pillar -- 居住区_柱"
+      ]
+    },
+    {
+      "ID": 250002026,
+      "Entries": [
+        "Residential area_pillar -- 居住区_柱"
+      ]
+    },
+    {
+      "ID": 250002027,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002028,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002032,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002033,
+      "Entries": [
+        "Residential area_pillar -- 居住区_柱"
+      ]
+    },
+    {
+      "ID": 250002041,
+      "Entries": [
+        "Residential area_Baluster_Pillar_Beam -- 居住区_欄干_柱_梁"
+      ]
+    },
+    {
+      "ID": 250002112,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002121,
+      "Entries": [
+        "Gomiya center _ pillar -- 後宮中心_柱"
+      ]
+    },
+    {
+      "ID": 250002131,
+      "Entries": [
+        "Gomiya center _ pillar -- 後宮中心_柱"
+      ]
+    },
+    {
+      "ID": 250002140,
+      "Entries": [
+        "Gomiya center _ balustrade -- 後宮中心_欄干"
+      ]
+    },
+    {
+      "ID": 250002151,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002161,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002172,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002181,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250002192,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002193,
+      "Entries": [
+        "Shinkan district building_pillar -- 神官地区の建物_柱"
+      ]
+    },
+    {
+      "ID": 250002206,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002207,
+      "Entries": [
+        "Shinden-zukuri_Baluster -- 寝殿造り_欄干"
+      ]
+    },
+    {
+      "ID": 250002213,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002224,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002227,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002231,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002261,
+      "Entries": [
+        "Samurai-dokoro_pillar -- 侍所_柱"
+      ]
+    },
+    {
+      "ID": 250002271,
+      "Entries": [
+        "Shinden-zukuri_pillar -- 寝殿造り_柱"
+      ]
+    },
+    {
+      "ID": 250002301,
+      "Entries": [
+        "Shinden-zukuri_Curved Bridge_Balustrade -- 寝殿造り_反り橋_欄干"
+      ]
+    },
+    {
+      "ID": 250002321,
+      "Entries": [
+        "Shinden-zukuri_Underwater_Pillar -- 寝殿造り_水中_柱"
+      ]
+    },
+    {
+      "ID": 250002409,
+      "Entries": [
+        "Gate_pillar -- 門_柱"
+      ]
+    },
+    {
+      "ID": 250002457,
+      "Entries": [
+        "Gate_pillar -- 門_柱"
+      ]
+    },
+    {
+      "ID": 250002506,
+      "Entries": [
+        "Gomiya_Baluster -- 後宮_欄干"
+      ]
+    },
+    {
+      "ID": 250002693,
+      "Entries": [
+        "Gate_pillar -- 門_柱"
+      ]
+    },
+    {
+      "ID": 250002696,
+      "Entries": [
+        "Gate_pillar -- 門_柱"
+      ]
+    },
+    {
+      "ID": 250002711,
+      "Entries": [
+        "Residential area_Ohashi_Balustrade -- 居住区_大橋_欄干"
+      ]
+    },
+    {
+      "ID": 250002712,
+      "Entries": [
+        "Residential area_Ohashi_Balustrade -- 居住区_大橋_欄干"
+      ]
+    },
+    {
+      "ID": 250002715,
+      "Entries": [
+        "Residential area_Ohashi_Balustrade -- 居住区_大橋_欄干"
+      ]
+    },
+    {
+      "ID": 250002722,
+      "Entries": [
+        "Taiko Bridge_Pillar -- 太鼓橋_柱"
+      ]
+    },
+    {
+      "ID": 250002760,
+      "Entries": [
+        "Bridge of the Haunting Monk_Baluster -- 破戒僧の橋_欄干"
+      ]
+    },
+    {
+      "ID": 250002800,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002801,
+      "Entries": [
+        "Residential area_Baluster_Algae -- 居住区_欄干_藻"
+      ]
+    },
+    {
+      "ID": 250002802,
+      "Entries": [
+        "Residential area_Baluster_Algae -- 居住区_欄干_藻"
+      ]
+    },
+    {
+      "ID": 250002803,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002810,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002820,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002830,
+      "Entries": [
+        "Plane_Baluster Pillar -- 平面_欄干柱"
+      ]
+    },
+    {
+      "ID": 250002840,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002841,
+      "Entries": [
+        "Residential area_Baluster_Algae -- 居住区_欄干_藻"
+      ]
+    },
+    {
+      "ID": 250002850,
+      "Entries": [
+        "Residential area _ balustrade -- 居住区_欄干"
+      ]
+    },
+    {
+      "ID": 250002912,
+      "Entries": [
+        "Stage_Broken Company_Baluster -- 舞台_壊れた社_欄干"
+      ]
+    },
+    {
+      "ID": 250003204,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003211,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003213,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003223,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003225,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003226,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003231,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003331,
+      "Entries": [
+        "Underwater _ rubble _ balustrade -- 水中_瓦礫_欄干"
+      ]
+    },
+    {
+      "ID": 250003341,
+      "Entries": [
+        "Underwater _ rubble _ balustrade -- 水中_瓦礫_欄干"
+      ]
+    },
+    {
+      "ID": 250003602,
+      "Entries": [
+        "Underwater cave building_pillar -- 水中洞窟建物_柱"
+      ]
+    },
+    {
+      "ID": 250003801,
+      "Entries": [
+        "Underwater _ warp bridge _ balustrade -- 水中_反り橋_欄干"
+      ]
+    },
+    {
+      "ID": 250004350,
+      "Entries": [
+        "Plane_column space -- 平面_欄間"
+      ]
+    },
+    {
+      "ID": 250004370,
+      "Entries": [
+        "Plane_column space -- 平面_欄間"
+      ]
+    },
+    {
+      "ID": 250006001,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006011,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006022,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006023,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006031,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006041,
+      "Entries": [
+        "Stage_stairs_parapet_pillar -- 舞台_階段_欄干_柱"
+      ]
+    },
+    {
+      "ID": 250006051,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006060,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006061,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006070,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006072,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006081,
+      "Entries": [
+        "Stage_landing_pillar -- 舞台_踊り場_柱"
+      ]
+    },
+    {
+      "ID": 250006101,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250006102,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006103,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006111,
+      "Entries": [
+        "Stage_landing_parapet -- 舞台_踊り場_欄干"
+      ]
+    },
+    {
+      "ID": 250006121,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006201,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006202,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250006301,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006302,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250006311,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006312,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250006401,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006402,
+      "Entries": [
+        "Stage_Yokogi -- 舞台_横木"
+      ]
+    },
+    {
+      "ID": 250006501,
+      "Entries": [
+        "Stage_stairs_parapet -- 舞台_階段_欄干"
+      ]
+    },
+    {
+      "ID": 250006601,
+      "Entries": [
+        "Stage_stairs_parapet -- 舞台_階段_欄干"
+      ]
+    },
+    {
+      "ID": 250006701,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250006800,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006810,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006820,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006830,
+      "Entries": [
+        "Stage_pillar_moss -- 舞台_柱_苔"
+      ]
+    },
+    {
+      "ID": 250006850,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006851,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006852,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006853,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006854,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006855,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006860,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006870,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250006880,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250007001,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250007101,
+      "Entries": [
+        "Stage_Baluster -- 舞台_欄干"
+      ]
+    },
+    {
+      "ID": 250007302,
+      "Entries": [
+        "Carp feeding ground building_pillar -- 鯉のエサやり場の建物_柱"
+      ]
+    },
+    {
+      "ID": 250007411,
+      "Entries": [
+        "Indoor company _ balustrade -- 屋内社_欄干"
+      ]
+    },
+    {
+      "ID": 250007681,
+      "Entries": [
+        "Residential area_gate_pillar -- 居住区_門_柱"
+      ]
+    },
+    {
+      "ID": 250401001,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250402001,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 250404001,
+      "Entries": [
+        "Stage_pillar -- 舞台_柱"
+      ]
+    },
+    {
+      "ID": 251001525,
+      "Entries": [
+        "Autumn leaves_branch (E3) -- 紅葉_枝（E3）"
+      ]
+    },
+    {
+      "ID": 251001545,
+      "Entries": [
+        "Autumn leaves_branch (E3) -- 紅葉_枝（E3）"
+      ]
+    },
+    {
+      "ID": 251002409,
+      "Entries": [
+        "Gate_Pillar (E3) -- 門_柱（E3）"
+      ]
+    },
+    {
+      "ID": 251002693,
+      "Entries": [
+        "Gate_Pillar (E3) -- 門_柱（E3）"
+      ]
+    },
+    {
+      "ID": 251002760,
+      "Entries": [
+        "Bridge of the Haunting Monk_Baluster (E3) -- 破戒僧の橋_欄干（E3）"
+      ]
+    },
+    {
+      "ID": 250905100,
+      "Entries": [
+        "haze -- 靄"
+      ]
+    },
+    {
+      "ID": 250925160,
+      "Entries": [
+        "Distant view_residential area -- 遠景_居住区"
+      ]
+    },
+    {
+      "ID": 250925130,
+      "Entries": [
+        "Distant view_3D Innsmouth_first half_top -- 遠景_立体インスマス_前半_上"
+      ]
+    },
+    {
+      "ID": 250925139,
+      "Entries": [
+        "Distant view_3D Innsmouth_first half_bottom -- 遠景_立体インスマス_前半_下"
+      ]
+    },
+    {
+      "ID": 250925180,
+      "Entries": [
+        "Distant view_3D Innsmouth_second half_top -- 遠景_立体インスマス_後半_上"
+      ]
+    },
+    {
+      "ID": 250925184,
+      "Entries": [
+        "Distant view_3D Innsmouth_Middle_After -- 遠景_立体インスマス_中間_後"
+      ]
+    },
+    {
+      "ID": 250925185,
+      "Entries": [
+        "Distant view_3D Innsmouth_Middle_Front -- 遠景_立体インスマス_中間_前"
+      ]
+    },
+    {
+      "ID": 250925189,
+      "Entries": [
+        "Distant view_3D Innsmouth_second half_bottom -- 遠景_立体インスマス_後半_下"
+      ]
+    }
+  ]
+}

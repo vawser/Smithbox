@@ -1,0 +1,29 @@
+{
+  "Key": "GET_DIALOG_CONDITION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GET_DIALOG_CONDITION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 2"
+        }
+      ]
+    }
+  ]
+}

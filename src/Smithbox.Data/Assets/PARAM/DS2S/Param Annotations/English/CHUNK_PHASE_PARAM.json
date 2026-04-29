@@ -1,0 +1,28 @@
+{
+  "Param": "CHUNK_PHASE_PARAM",
+  "Type": "CHUNK_PHASE_PARAM",
+  "Name": "CHUNK_PHASE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "Unk00",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "Unk03",
+      "Description": ""
+    }
+  ]
+}

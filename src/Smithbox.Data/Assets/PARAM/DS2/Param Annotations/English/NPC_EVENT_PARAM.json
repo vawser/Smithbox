@@ -1,0 +1,193 @@
+{
+  "Param": "NPC_EVENT_PARAM",
+  "Type": "NPC_EVENT_PARAM",
+  "Name": "NPC_EVENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bShop",
+      "Name": "ショップメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bPointReplace",
+      "Name": "ポイント振り直し",
+      "Description": ""
+    },
+    {
+      "Field": "bRepair",
+      "Name": "装備修理メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bFortify",
+      "Name": "装備強化メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bPledge",
+      "Name": "誓約メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bVotive",
+      "Name": "奉納メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bUptrade",
+      "Name": "下取りメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bBarter",
+      "Name": "物々交換メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bDecriminalize",
+      "Name": "免罪メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bContractKickout",
+      "Name": "誓約破棄メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bGesture",
+      "Name": "ジェスチャー",
+      "Description": ""
+    },
+    {
+      "Field": "bLadder",
+      "Name": "はしごを掛けるメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bRootChange",
+      "Name": "ルートチェンジメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bPresent",
+      "Name": "○○を渡すメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bPledgeView",
+      "Name": "誓約一覧メニュー",
+      "Description": ""
+    },
+    {
+      "Field": "pledgeType",
+      "Name": "契約のタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bTalk",
+      "Name": "話すメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "bEstusFlaskFortify",
+      "Name": "エスト瓶強化",
+      "Description": ""
+    },
+    {
+      "Field": "bLevelUp",
+      "Name": "レベルアップ",
+      "Description": ""
+    },
+    {
+      "Field": "bAttributeFortify",
+      "Name": "変質強化",
+      "Description": ""
+    },
+    {
+      "Field": "bPresentArmor",
+      "Name": "装備を渡す",
+      "Description": ""
+    },
+    {
+      "Field": "bPyromancyFortify",
+      "Name": "呪術の炎を強化",
+      "Description": ""
+    },
+    {
+      "Field": "bSpellDecrementState",
+      "Name": "必要能力値引き下げメニュー",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "shopIdBegin",
+      "Name": "ラインナップ開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "shopIdEnd",
+      "Name": "ラインナップ終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "fortifyTyoe",
+      "Name": "強化タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "votiveItemId",
+      "Name": "奉納アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "barterParamBeginId",
+      "Name": "ラインナップ開始ID（物々交換）",
+      "Description": ""
+    },
+    {
+      "Field": "gestureId",
+      "Name": "ジェスチャーID",
+      "Description": ""
+    },
+    {
+      "Field": "npcId",
+      "Name": "NPCキャラID",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "eventValueChangeType",
+      "Name": "イベント変数変更タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "eventValueId",
+      "Name": "イベント変数ID",
+      "Description": ""
+    },
+    {
+      "Field": "pluralSelectIdBegin",
+      "Name": "N択選択肢開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "pluralSelectIdEnd",
+      "Name": "N択選択肢終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "barterParamEndId",
+      "Name": "ラインナップ終了ID（物々交換）",
+      "Description": ""
+    }
+  ]
+}

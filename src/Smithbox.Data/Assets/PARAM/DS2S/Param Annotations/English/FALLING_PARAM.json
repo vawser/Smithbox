@@ -1,0 +1,48 @@
+{
+  "Param": "FALLING_PARAM",
+  "Type": "FALLING_PARAM",
+  "Name": "FALLING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fallingDamageSafety",
+      "Name": "《着地 落下ダメージ 安全》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageNormal",
+      "Name": "《着地 落下ダメージ 通常》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageDanger",
+      "Name": "《着地 落下ダメージ 危険》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageDead",
+      "Name": "《着地 落下ダメージ 死亡》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageMitigationDodge",
+      "Name": "《着地 落下ダメージ軽減 回避》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageMitigationMagic",
+      "Name": "《着地 落下ダメージ軽減 魔法》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageMitigationRing",
+      "Name": "《着地 落下ダメージ軽減 指輪》",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDamageMitigationTramp",
+      "Name": "《着地 落下ダメージ軽減 踏み付け》",
+      "Description": ""
+    }
+  ]
+}

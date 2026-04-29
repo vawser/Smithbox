@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <deadChrDeleteTime />
+        <deadLockOffTime />
+        <deadItemDropTime />
+        <deadHitDisableTime />
+        <deadSoulDropTime />
+        <deadSfxTime />
+        <deadSfxType  Refs="ChrFullBodySfxParam"/>
+        <deadFadeDelay />
+        <deadFadeTime />
+        <deadSeId />
+        <deadCullingFilterId />
+        <deadDisableParts  Enum="CHR_PARTS_CATEGORY_TYPE"/>
+        <deadIsNoConstraint  IsBool=""/>
+        <deadIsChrSe />
+        <deadSoulBulletId />
+    </Field>
+</PARAMMETA>

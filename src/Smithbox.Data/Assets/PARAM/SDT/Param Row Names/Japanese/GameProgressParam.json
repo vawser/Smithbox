@@ -1,0 +1,83 @@
+{
+  "Name": "GameProgressParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Abyss Observer Subjugation -- 深遠の監視者討伐"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Harek Subjugation -- ハレック討伐"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Sullivan Subjugation -- サリヴァーン討伐"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Subjugation of the two princes -- 双皇子討伐"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Hero Gunda Subjugation -- 英雄グンダ討伐"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Full armor beast subjugation -- フルアーマー獣討伐"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Crystal Elder Subjugation -- 結晶の古老討伐"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Subjugation of the Cardinals -- 枢機卿団討伐"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Subjugation of the King of the Dead -- 死霊の王討伐"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Subjugation of the Old King of Corrosion -- 蝕の老王討伐"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Tracker subjugation -- 追跡者討伐"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Subjugation of the guardian knight of the dragon -- 竜の守護騎士討伐"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "I saw ED * Regardless of type -- EDを見た※種類問わず"
+      ]
+    }
+  ]
+}

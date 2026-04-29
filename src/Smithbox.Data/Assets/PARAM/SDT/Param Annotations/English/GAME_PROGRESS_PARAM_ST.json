@@ -1,0 +1,23 @@
+{
+  "Param": "GAME_PROGRESS_PARAM_ST",
+  "Type": "GAME_PROGRESS_PARAM_ST",
+  "Name": "GAME_PROGRESS_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "eventFlagId",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "progressValue",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

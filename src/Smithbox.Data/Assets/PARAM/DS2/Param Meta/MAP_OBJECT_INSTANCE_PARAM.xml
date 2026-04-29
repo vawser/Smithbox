@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <objCtrlId />
+        <bulletId0 />
+        <damageId0 />
+        <touchRegionScale />
+        <movableRange />
+        <objType  Refs="MapObjectInstanceTypeParam"/>
+        <objCtrlType  Enum="OBJ_CTRL_TYPE_ENUM"/>
+        <objLabbel  Enum="OBJ_LABBEL_ENUM"/>
+        <usableWhite  IsBool=""/>
+        <usableSmallWhite  IsBool=""/>
+        <usableDragon  IsBool=""/>
+        <usableCoopBlue  IsBool=""/>
+        <usableVersusBlue  IsBool=""/>
+        <usableBlack  IsBool=""/>
+        <usableBellGuard  IsBool=""/>
+        <usableRatKing  IsBool=""/>
+        <usableMirrorKnight  IsBool=""/>
+        <usableNoneVow  IsBool=""/>
+        <usableSunlightVow  IsBool=""/>
+        <usableGuardianVow  IsBool=""/>
+        <usableBloodVow  IsBool=""/>
+        <usableBlueVow  IsBool=""/>
+        <usableRatKingVow  IsBool=""/>
+        <usableBellGuardVow  IsBool=""/>
+        <usableDragonVow  IsBool=""/>
+        <usableStrongerVow  IsBool=""/>
+        <usableAbyssVow  IsBool=""/>
+        <usableEnemy  IsBool=""/>
+        <onlyEventCanBreak  IsBool=""/>
+        <useAltSfx  IsBool=""/>
+        <dummy1 />
+        <breakObjMakeStateId />
+        <resetType  Enum="OBJ_RESET_TYPE_ENUM"/>
+        <tmpBreakObjMakeStateId />
+        <iblTextureId />
+        <dummy2 />
+        <itemLotId />
+    </Field>
+</PARAMMETA>

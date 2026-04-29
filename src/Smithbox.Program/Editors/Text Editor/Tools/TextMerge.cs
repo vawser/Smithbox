@@ -21,6 +21,8 @@ public static class TextMerge
 
     public static void Display(TextEditorView view)
     {
+        ImGui.BeginChild("TextMergeToolSection");
+
         var windowWidth = ImGui.GetWindowWidth();
 
         UIHelper.WrappedText("Use this to merge a target project's text files into your current project.");
@@ -88,6 +90,8 @@ public static class TextMerge
             UIHelper.WrappedText("");
             UIHelper.WrappedText("Text merge is in progress...");
         }
+
+        ImGui.EndChild();
     }
 
     public static async void HandleMergeAction(TextEditorView view)

@@ -1,0 +1,74 @@
+{
+  "Key": "LEGS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "LEGS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bipedal"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tetrapod"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Reverse Joint"
+        }
+      ]
+    },
+    {
+      "Key": "300",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tank 1"
+        }
+      ]
+    },
+    {
+      "Key": "301",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tank 2"
+        }
+      ]
+    },
+    {
+      "Key": "302",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tank 3"
+        }
+      ]
+    }
+  ]
+}

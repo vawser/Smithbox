@@ -1,0 +1,97 @@
+{
+  "Name": "RematchWarpParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "EvdFileOffset",
+        "MapFile",
+        "WarpPointId",
+        "EnemyNameAndImage"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "EventFlagId1",
+        "EventFlagId2",
+        "EventFlagId3",
+        "EventFlagId4",
+        "EventFlagId5",
+        "EventFlagId6",
+        "EventFlagId7",
+        "EventFlagId8",
+        "EventFlagId9",
+        "EventFlagId10"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "EventFlagManByte1",
+        "EventFlagManByte2",
+        "EventFlagManByte3",
+        "EventFlagManByte4",
+        "EventFlagManByte5",
+        "EventFlagManByte6",
+        "EventFlagManByte7",
+        "EventFlagManByte8",
+        "EventFlagManByte9",
+        "EventFlagManByte10"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "LocalPlayerWeaponStruct1",
+        "LocalPlayerWeaponStruct2",
+        "LocalPlayerWeaponStruct3",
+        "LocalPlayerWeaponStruct4",
+        "LocalPlayerWeaponStruct5",
+        "LocalPlayerWeaponStruct6"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "WeaponStructFlag1",
+        "WeaponStructFlag2"
+      ]
+    }
+  ]
+}

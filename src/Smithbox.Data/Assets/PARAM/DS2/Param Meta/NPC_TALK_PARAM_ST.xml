@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <msgId />
+        <voiceId />
+        <actionId  Enum="EVENT_VALUE_npc_action"/>
+        <windowType  Enum="NPC_TALK_WINDOW_TYPE_ENUM"/>
+        <bNextPlay />
+        <changeNameNpcId />
+        <endWaitTime />
+    </Field>
+</PARAMMETA>

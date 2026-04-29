@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <hpMax />
+        <staminaMax />
+        <poise />
+        <spellUsesLevel />
+        <spellSlot />
+        <chantingTimeCorrectScale />
+        <physicalAttackByStrength />
+        <physicalAttackByDexterity />
+        <magicAttack />
+        <fireAttack />
+        <thunderAttack />
+        <darkAttack />
+        <poisonAttack />
+        <bleedingAttack />
+        <weaponBreakAttack />
+        <defense />
+        <magicResistance />
+        <fireResistance />
+        <thunderResistance />
+        <darkResistance />
+        <poisonResistance />
+        <bleedingResistance />
+        <weaponBreakResistance />
+        <petrifactionResistance />
+        <curseResistance />
+        <evasionInvincibleTime />
+        <actionSpeed />
+        <physicalAttackByAbyss />
+        <dummy1 />
+        <equipLoadMax />
+    </Field>
+</PARAMMETA>

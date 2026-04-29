@@ -1,0 +1,1068 @@
+{
+  "Param": "ATK_PARAM_ST",
+  "Type": "ATK_PARAM_ST",
+  "Name": "ATK_PARAM_ST",
+  "Description": "Governs hitboxes and damage of attacks",
+  "Fields": [
+    {
+      "Field": "hit0_Radius",
+      "Name": "Hit 0: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit1_Radius",
+      "Name": "Hit 1: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit2_Radius",
+      "Name": "Hit 2: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit3_Radius",
+      "Name": "Hit 3: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "knockbackDist",
+      "Name": "Knockback Distance",
+      "Description": "Knockback distance [m]"
+    },
+    {
+      "Field": "hitStopTime",
+      "Name": "Hit Stop Time",
+      "Description": "Hit stop stop time [s]"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "Target SpEffect [0]",
+      "Description": "Enter the ID created with the special effects parameter"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "Target SpEffect [1]",
+      "Description": "Enter the ID created with the special effects parameter"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "Target SpEffect [2]",
+      "Description": "Enter the ID created with the special effects parameter"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "Target SpEffect [3]",
+      "Description": "Enter the ID created with the special effects parameter"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "Target SpEffect [4]",
+      "Description": "Enter the ID created with the special effects parameter"
+    },
+    {
+      "Field": "hit0_DmyPoly1",
+      "Name": "Hit 0: Dummy Poly [1]",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit1_DmyPoly1",
+      "Name": "Hit 1: Dummy Poly [1]",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit2_DmyPoly1",
+      "Name": "Hit 2: Dummy Poly [1]",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit3_DmyPoly1",
+      "Name": "Hit 3: Dummy Poly [1]",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit0_DmyPoly2",
+      "Name": "Hit 0: Dummy Poly [2]",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit1_DmyPoly2",
+      "Name": "Hit 1: Dummy Poly [2]",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit2_DmyPoly2",
+      "Name": "Hit 2: Dummy Poly [2]",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit3_DmyPoly2",
+      "Name": "Hit 3: Dummy Poly [2]",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "blowingCorrection",
+      "Name": "Attack Correction: Blowing",
+      "Description": "Correction value when blowing off"
+    },
+    {
+      "Field": "atkPhysCorrection",
+      "Name": "Attack Correction: Physical",
+      "Description": "PC only. Multiplier by multiplying the basic physical attack power"
+    },
+    {
+      "Field": "atkMagCorrection",
+      "Name": "Attack Correction: Magic",
+      "Description": "PC only. Multiply the magic attack power (in the case of a bow, correct the missile)"
+    },
+    {
+      "Field": "atkFireCorrection",
+      "Name": "Attack Correction: Fire",
+      "Description": "PC only. Multiply the fire attack power (in the case of a bow, correct the missile)"
+    },
+    {
+      "Field": "atkThunCorrection",
+      "Name": "Attack Correction: Lightning",
+      "Description": "PC only. Multiplier for electric shock attack power (in the case of a bow, correct the missile)"
+    },
+    {
+      "Field": "atkStamCorrection",
+      "Name": "Attack Correction: Stamina",
+      "Description": "PC only. Multiplier for stamina attack power"
+    },
+    {
+      "Field": "guardAtkRateCorrection",
+      "Name": "Attack Correction: Guard Attack Rate",
+      "Description": "PC only. 1 only"
+    },
+    {
+      "Field": "guardBreakCorrection",
+      "Name": "Attack Correction: Guard Break",
+      "Description": "PC only. Multiplying the base value by the repelling of the attack"
+    },
+    {
+      "Field": "atkThrowEscapeCorrection",
+      "Name": "Attack Correction: Throw Escape",
+      "Description": "Weapon correction value for throw-through attacks"
+    },
+    {
+      "Field": "subCategory1",
+      "Name": "Conditional Category [1]",
+      "Description": "Subcategory 1"
+    },
+    {
+      "Field": "subCategory2",
+      "Name": "Conditional Category [2]",
+      "Description": "Subcategory 2"
+    },
+    {
+      "Field": "atkPhys",
+      "Name": "Damage: Physical",
+      "Description": "NPCs only. Basic damage of physical attack"
+    },
+    {
+      "Field": "atkMag",
+      "Name": "Damage: Magic",
+      "Description": "NPCs only. Additional damage from magic attacks"
+    },
+    {
+      "Field": "atkFire",
+      "Name": "Damage: Fire",
+      "Description": "NPCs only. Additional damage from fire attacks"
+    },
+    {
+      "Field": "atkThun",
+      "Name": "Damage: Lightning",
+      "Description": "NPCs only. Additional damage from electric shock attacks"
+    },
+    {
+      "Field": "atkStam",
+      "Name": "Damage: Stamina",
+      "Description": "NPCs only. Amount of damage to enemy (player) stamina"
+    },
+    {
+      "Field": "guardAtkRate",
+      "Name": "Damage: Guard Attack Rate",
+      "Description": "NPCs only. Flick value"
+    },
+    {
+      "Field": "guardBreakRate",
+      "Name": "Damage: Guard Break Rate",
+      "Description": "NPCs only. Value used to determine if an attack is repelled"
+    },
+    {
+      "Field": "pad6",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isEnableCalcDamageForBushesObj",
+      "Name": "Is Considered Special Attack for Asset Destruction",
+      "Description": "Do you want to calculate damage for assets that are Break due to bush damage? To set. : Calculate, : Do not calculate (that is, you cannot inflict damage) [GR] SEQ20617"
+    },
+    {
+      "Field": "atkThrowEscape",
+      "Name": "Damage: Throw Escape",
+      "Description": "Throw-through attack power"
+    },
+    {
+      "Field": "atkObj",
+      "Name": "Damage: Object",
+      "Description": "Attack power against OBJ"
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "Guard Cut Stamina Rate",
+      "Description": "Correct the [stamina cut rate when guarding] set in the weapon parameter and NPC parameter."
+    },
+    {
+      "Field": "guardRate",
+      "Name": "Guard Rate",
+      "Description": "NPC, the guard performance set in the weapon parameter is uniformly corrected. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "Throw Type ID",
+      "Description": "ID associated with the throw parameter"
+    },
+    {
+      "Field": "hit0_hitType",
+      "Name": "Hit 0: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit1_hitType",
+      "Name": "Hit 1: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit2_hitType",
+      "Name": "Hit 2: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit3_hitType",
+      "Name": "Hit 3: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hti0_Priority",
+      "Name": "Hit 0: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti1_Priority",
+      "Name": "Hit 1: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti2_Priority",
+      "Name": "Hit 2: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti3_Priority",
+      "Name": "Hit 3: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "dmgLevel",
+      "Name": "Damage Level",
+      "Description": "Which damage motion should be played against the enemy when attacking? To decide."
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "Map Hit Type",
+      "Description": "Which map do you see around the attack? The set"
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "Guard Absorption Bypass Rate",
+      "Description": "Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become "
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "Attack Attribute",
+      "Description": "Physical attributes to set for attacks"
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "Special Attribute",
+      "Description": "Special attributes to set for attacks"
+    },
+    {
+      "Field": "atkType",
+      "Name": "Attack Type",
+      "Description": "Specify SFX / SE at the time of attack (1 set by attribute, material, size)"
+    },
+    {
+      "Field": "atkMaterial",
+      "Name": "Attack Material",
+      "Description": "Specify SFX / SE at the time of attack (1 set by attribute, material, size)"
+    },
+    {
+      "Field": "guardRangeType",
+      "Name": "Guard Range Type",
+      "Description": "Guard judgment position"
+    },
+    {
+      "Field": "defSeMaterial1",
+      "Name": "Defence SE Material",
+      "Description": "Used for SE when guarding 1"
+    },
+    {
+      "Field": "hitSourceType",
+      "Name": "Hit Source Type",
+      "Description": "Where do you get the Damipoli ID per attack? To specify"
+    },
+    {
+      "Field": "throwFlag",
+      "Name": "Throw Flag",
+      "Description": "Flag used for throwing information"
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "Disable Guard",
+      "Description": "If 1, ignore the guard on the guard side and enter the damage level"
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "Disable Stamina Attack",
+      "Description": "Destruction judgment is performed by stamina attack power, but stamina is not actually reduced."
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "Disable Hit SpEffect",
+      "Description": "Disables special effects when an attack hits. SCE bug countermeasures"
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "Disable Missed Attack Notification For AI",
+      "Description": "Do not notify AI of missed swing"
+    },
+    {
+      "Field": "repeatHitSfx",
+      "Name": "Repeat Hit Sound FX",
+      "Description": "Enemy only: Does SFX occur continuously when hitting a wall?"
+    },
+    {
+      "Field": "isArrowAtk",
+      "Name": "Is Physical Projectile",
+      "Description": "Used for site damage judgment."
+    },
+    {
+      "Field": "isGhostAtk",
+      "Name": "Is Attack By Ghost",
+      "Description": "Used for determining spirit damage."
+    },
+    {
+      "Field": "isDisableNoDamage",
+      "Name": "Disable No Damage",
+      "Description": "Ignore invincible effects such as steps, TAE's complete invincibility cannot be ignored."
+    },
+    {
+      "Field": "atkPow_forSfx",
+      "Name": "Attack Power - SFX Effect",
+      "Description": "Attack strength [SFX]"
+    },
+    {
+      "Field": "atkDir_forSfx",
+      "Name": "Attack Direction - SFX Effect",
+      "Description": "Attack direction [SFX]"
+    },
+    {
+      "Field": "opposeTarget",
+      "Name": "Oppose Target",
+      "Description": "Target:  Hostile"
+    },
+    {
+      "Field": "friendlyTarget",
+      "Name": "Friendly Target",
+      "Description": "Target:  Allies"
+    },
+    {
+      "Field": "selfTarget",
+      "Name": "Self Target",
+      "Description": "Target: myself"
+    },
+    {
+      "Field": "isCheckDoorPenetration",
+      "Name": "Is Target Hit Through Door",
+      "Description": "Whether to check the door penetration. In the case of , it is judged whether or not the target through the door can be attacked."
+    },
+    {
+      "Field": "isVsRideAtk",
+      "Name": "Is Ride Special Attack",
+      "Description": "If you hit the target of the riding special attack while riding, the SA damage will be multiplied by the multiplier."
+    },
+    {
+      "Field": "isAddBaseAtk",
+      "Name": "Is Base Attack Added",
+      "Description": "Do you refer to the additional attack power even in weapon attacks?"
+    },
+    {
+      "Field": "excludeThreatLvNotify",
+      "Name": "Is Excluded from Threat Level Notification",
+      "Description": "Is it excluded from threat level notification?"
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "atkBehaviorId",
+      "Name": "Attack Behavior ID",
+      "Description": "Behavior identification value: Extra large damage transition"
+    },
+    {
+      "Field": "atkPow_forSe",
+      "Name": "Attack Power - SE Effect",
+      "Description": "Attack strength [SE]"
+    },
+    {
+      "Field": "atkSuperArmor",
+      "Name": "Damage: Poise",
+      "Description": "NPCs only. Value used for SA break calculation formula"
+    },
+    {
+      "Field": "decalId1",
+      "Name": "Decal ID [1]",
+      "Description": "Decal ID 1 (directly specified)"
+    },
+    {
+      "Field": "decalId2",
+      "Name": "Decal ID [2]",
+      "Description": "Decal ID 2 (directly specified)"
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "Appear AI Sound ID",
+      "Description": "ID of AI sound generated when an attack occurs"
+    },
+    {
+      "Field": "HitAiSoundId",
+      "Name": "Hit AI Sound ID",
+      "Description": "ID of AI sound generated at the time of hit"
+    },
+    {
+      "Field": "HitRumbleId",
+      "Name": "Hit Rumble ID - Default",
+      "Description": "Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies"
+    },
+    {
+      "Field": "HitRumbleIdByNormal",
+      "Name": "Hit Rumble ID - Normal",
+      "Description": "Vibration ID at the time of hit when hitting the tip (-1 invalid)"
+    },
+    {
+      "Field": "HitRumbleIdByMiddle",
+      "Name": "Hit Rumble ID - Middle",
+      "Description": "Vibration ID at the time of hit when hit in the middle (-1 invalid)"
+    },
+    {
+      "Field": "HitRumbleIdByRoot",
+      "Name": "Hit Rumble ID - Root",
+      "Description": "Vibration ID at the time of hit when hitting the root (-1 invalid)"
+    },
+    {
+      "Field": "traceSfxId0",
+      "Name": "Trace SFX ID [0]",
+      "Description": "Sword flash SfxID_0 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead0",
+      "Name": "Trace SFX ID [0] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_0 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail0",
+      "Name": "Trace SFX ID [0] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_0"
+    },
+    {
+      "Field": "traceSfxId1",
+      "Name": "Trace SFX ID [1]",
+      "Description": "Sword flash SfxID_1 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead1",
+      "Name": "Trace SFX ID [1] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_1 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail1",
+      "Name": "Trace SFX ID [1] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_1"
+    },
+    {
+      "Field": "traceSfxId2",
+      "Name": "Trace SFX ID [2]",
+      "Description": "Sword flash SfxID_2 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead2",
+      "Name": "Trace SFX ID [2] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_2 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail2",
+      "Name": "Trace SFX ID [2] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_2"
+    },
+    {
+      "Field": "traceSfxId3",
+      "Name": "Trace SFX ID [3]",
+      "Description": "Sword Flash SfxID_3 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead3",
+      "Name": "Trace SFX ID [3] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_3 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail3",
+      "Name": "Trace SFX ID [3] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_3"
+    },
+    {
+      "Field": "traceSfxId4",
+      "Name": "Trace SFX ID [4]",
+      "Description": "Sword Flash SfxID_4 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead4",
+      "Name": "Trace SFX ID [4] - Head Dummy Poly",
+      "Description": "Sword flash root Damipoli ID_4 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail4",
+      "Name": "Trace SFX ID [4] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_4"
+    },
+    {
+      "Field": "traceSfxId5",
+      "Name": "Trace SFX ID [5]",
+      "Description": "Sword Flash SfxID_5 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead5",
+      "Name": "Trace SFX ID [5] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_5 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail5",
+      "Name": "Trace SFX ID [5] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_5"
+    },
+    {
+      "Field": "traceSfxId6",
+      "Name": "Trace SFX ID [6]",
+      "Description": "Sword Flash SfxID_6 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead6",
+      "Name": "Trace SFX ID [6] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_6 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail6",
+      "Name": "Trace SFX ID [6] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_6"
+    },
+    {
+      "Field": "traceSfxId7",
+      "Name": "Trace SFX ID [7]",
+      "Description": "Sword Flash SfxID_7 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdHead7",
+      "Name": "Trace SFX ID [7] - Head Dummy Poly",
+      "Description": "Sword Flash Root Damipoli ID_7 (-1 invalid)"
+    },
+    {
+      "Field": "traceDmyIdTail7",
+      "Name": "Trace SFX ID [7] - Tail Dummy Poly",
+      "Description": "Sword Flash Sword Tip Damipoli ID_7"
+    },
+    {
+      "Field": "hit4_Radius",
+      "Name": "Hit 4: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit5_Radius",
+      "Name": "Hit 5: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit6_Radius",
+      "Name": "Hit 6: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit7_Radius",
+      "Name": "Hit 7: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit8_Radius",
+      "Name": "Hit 8: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit9_Radius",
+      "Name": "Hit 9: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit10_Radius",
+      "Name": "Hit 10: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit11_Radius",
+      "Name": "Hit 11: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit12_Radius",
+      "Name": "Hit 12: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit13_Radius",
+      "Name": "Hit 13: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit14_Radius",
+      "Name": "Hit 14: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit15_Radius",
+      "Name": "Hit 15: Radius",
+      "Description": "Sphere, capsule radius"
+    },
+    {
+      "Field": "hit4_DmyPoly1",
+      "Name": "Hit 4: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit5_DmyPoly1",
+      "Name": "Hit 5: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit6_DmyPoly1",
+      "Name": "Hit 6: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit7_DmyPoly1",
+      "Name": "Hit 7: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit8_DmyPoly1",
+      "Name": "Hit 8: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit9_DmyPoly1",
+      "Name": "Hit 9: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit10_DmyPoly1",
+      "Name": "Hit 10: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit11_DmyPoly1",
+      "Name": "Hit 11: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit12_DmyPoly1",
+      "Name": "Hit 12: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit13_DmyPoly1",
+      "Name": "Hit 13: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit14_DmyPoly1",
+      "Name": "Hit 14: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit15_DmyPoly1",
+      "Name": "Hit 15: Dummy Poly 1",
+      "Description": "Damipoli in sphere, capsule position"
+    },
+    {
+      "Field": "hit4_DmyPoly2",
+      "Name": "Hit 4: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit5_DmyPoly2",
+      "Name": "Hit 5: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit6_DmyPoly2",
+      "Name": "Hit 6: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit7_DmyPoly2",
+      "Name": "Hit 7: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit8_DmyPoly2",
+      "Name": "Hit 8: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit9_DmyPoly2",
+      "Name": "Hit 9: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit10_DmyPoly2",
+      "Name": "Hit 10: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit11_DmyPoly2",
+      "Name": "Hit 11: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit12_DmyPoly2",
+      "Name": "Hit 12: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit13_DmyPoly2",
+      "Name": "Hit 13: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit14_DmyPoly2",
+      "Name": "Hit 14: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit15_DmyPoly2",
+      "Name": "Hit 15: Dummy Poly 2",
+      "Description": "The position of another point on the capsule Damipoli. -1 makes it a sphere"
+    },
+    {
+      "Field": "hit4_hitType",
+      "Name": "Hit 4: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit5_hitType",
+      "Name": "Hit 5: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit6_hitType",
+      "Name": "Hit 6: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit7_hitType",
+      "Name": "Hit 7: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit8_hitType",
+      "Name": "Hit 8: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit9_hitType",
+      "Name": "Hit 9: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit10_hitType",
+      "Name": "Hit 10: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit11_hitType",
+      "Name": "Hit 11: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit12_hitType",
+      "Name": "Hit 12: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit13_hitType",
+      "Name": "Hit 13: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit14_hitType",
+      "Name": "Hit 14: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hit15_hitType",
+      "Name": "Hit 15: Hit Type",
+      "Description": "Hit part"
+    },
+    {
+      "Field": "hti4_Priority",
+      "Name": "Hit 4: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti5_Priority",
+      "Name": "Hit 5: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti6_Priority",
+      "Name": "Hit 6: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti7_Priority",
+      "Name": "Hit 7: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti8_Priority",
+      "Name": "Hit 8: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti9_Priority",
+      "Name": "Hit 9: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti10_Priority",
+      "Name": "Hit 10: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti11_Priority",
+      "Name": "Hit 11: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti12_Priority",
+      "Name": "Hit 12: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti13_Priority",
+      "Name": "Hit 13: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti14_Priority",
+      "Name": "Hit 14: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "hti15_Priority",
+      "Name": "Hit 15: Priority",
+      "Description": "priority. If there are two or more hits at the same time, the one with the higher priority will be adopted."
+    },
+    {
+      "Field": "defSfxMaterial1",
+      "Name": "Defence SFX Material [1]",
+      "Description": "Used for SFX when guarding. 1"
+    },
+    {
+      "Field": "defSeMaterial2",
+      "Name": "Defence SE Material [2]",
+      "Description": "Used for SE when guarding 2"
+    },
+    {
+      "Field": "defSfxMaterial2",
+      "Name": "Defence SFX Material [2]",
+      "Description": "Used for SFX when guarding. 2"
+    },
+    {
+      "Field": "atkDarkCorrection",
+      "Name": "Attack Correction: Holy",
+      "Description": "PC only. Multiply the dark attack power (in the case of a bow, correct the missile)"
+    },
+    {
+      "Field": "atkDark",
+      "Name": "Damage: Holy",
+      "Description": "NPCs only. Additional damage from dark attacks"
+    },
+    {
+      "Field": "pad5",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "isDisableParry",
+      "Name": "Is Disable Parry",
+      "Description": "This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side."
+    },
+    {
+      "Field": "isDisableBothHandsAtkBonus",
+      "Name": "Is Disable 2H ATK Bonus",
+      "Description": "Avoid using the 1.5x growth status adaptation with both hands"
+    },
+    {
+      "Field": "isInvalidatedByNoDamageInAir",
+      "Name": "Is Invalidated by No Damage in Air",
+      "Description": "If Do you want to penetrate invincibility is , this setting will be ignored."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLevel_vsPlayer",
+      "Name": "Damage Level - Vs. Player",
+      "Description": "Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level."
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate",
+      "Name": "Status Ailment Correction",
+      "Description": "Magnification correction is performed for the abnormal state attack power of special effects."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byPoint",
+      "Name": "Attack Correction - By SpEffect Point",
+      "Description": "Magnification correction is performed for the special effect ~ ~ attack power [point]."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byRate",
+      "Name": "Attack Correction - By SpEffect Power",
+      "Description": "Magnification is corrected for the special effect's attack power multiplier."
+    },
+    {
+      "Field": "spEffectAtkPowerCorrectRate_byDmg",
+      "Name": "Attack Correction - By SpEffect Damage",
+      "Description": "Attack side of special effect: ~ ~ Performs magnification correction for damage multiplier."
+    },
+    {
+      "Field": "atkBehaviorId_2",
+      "Name": "Attack Behavior ID [2]",
+      "Description": "Behavior identification value: Plays damage motion only at specific times"
+    },
+    {
+      "Field": "throwDamageAttribute",
+      "Name": "Throw Damage Attribute",
+      "Description": "Attribute of throw damage of attack judgment. Corresponding special effects will be applied. It works only when the attack ATK_PATAM_THROWFLAG_TYPE is 2: Throw."
+    },
+    {
+      "Field": "statusAilmentAtkPowerCorrectRate_byPoint",
+      "Name": "Status Ailment Correction - By Point",
+      "Description": "Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction."
+    },
+    {
+      "Field": "overwriteAttackElementCorrectId",
+      "Name": "Attack Element Correct ID",
+      "Description": "For overwriting the ID of the parameter that corrects the attack attribute"
+    },
+    {
+      "Field": "decalBaseId1",
+      "Name": "Decal Base ID [1]",
+      "Description": "Decal identifier 1 (3 digits)"
+    },
+    {
+      "Field": "decalBaseId2",
+      "Name": "Decal Base ID [2]",
+      "Description": "Decal identifier 2 (3 digits)"
+    },
+    {
+      "Field": "wepRegainHpScale",
+      "Name": "Weapon HP Regain Amount Scale",
+      "Description": "Weapon regain amount correction value"
+    },
+    {
+      "Field": "atkRegainHp",
+      "Name": "Attack HP Regain Amount",
+      "Description": "Amount of attack regain"
+    },
+    {
+      "Field": "regainableTimeScale",
+      "Name": "HP Regain Time Scale",
+      "Description": "Regainable time correction factor"
+    },
+    {
+      "Field": "regainableHpRateScale",
+      "Name": "HP Regain Rate Scale",
+      "Description": "Regainable rate correction factor"
+    },
+    {
+      "Field": "regainableSlotId",
+      "Name": "Same Attack Judgment ID",
+      "Description": "Same attack judgment ID"
+    },
+    {
+      "Field": "spAttributeVariationValue",
+      "Name": "Special Attribute VFX Variation Offset",
+      "Description": "Value for giving variation to SFX and SE generated by special attribute in combination with special attribute (SEQ16473)"
+    },
+    {
+      "Field": "parryForwardOffset",
+      "Name": "Parry Forward Offset",
+      "Description": "Front angle offset of [collapsed side] of parry establishment condition"
+    },
+    {
+      "Field": "atkSuperArmorCorrection",
+      "Name": "Attack Correction: Poise",
+      "Description": "PC only. Correction value to be applied to the [basic value] set for the weapon"
+    },
+    {
+      "Field": "defSfxMaterialVariationValue",
+      "Name": "Defence SFX Material Variation Offset",
+      "Description": "A value to have variations of damage SFX and SE in combination with defense material 1 or 2 used when guarding. (SEQ16473)"
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "finalDamageRateId",
+      "Name": "Final Damage % ID",
+      "Description": ""
+    },
+    {
+      "Field": "pad7_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subCategory3",
+      "Name": "Conditional Category [3]",
+      "Description": "Subcategory 3"
+    },
+    {
+      "Field": "subCategory4",
+      "Name": "Conditional Category [4]",
+      "Description": "Subcategory 4"
+    },
+    {
+      "Field": "pad7",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

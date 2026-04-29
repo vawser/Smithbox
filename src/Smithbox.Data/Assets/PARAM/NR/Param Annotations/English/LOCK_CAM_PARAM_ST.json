@@ -1,0 +1,113 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "Camera Target Distance",
+      "Description": "Camera distance target"
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "Rotation Range - Min X",
+      "Description": "Minimum X-axis rotation"
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "Lock Rotation X - Shift Ratio",
+      "Description": "Lock X rotation shift rate"
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "Character Origin - Offset Z",
+      "Description": "Character base point offset"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "Character Lock Range - Max Radius",
+      "Description": "Maximum radius of character range"
+    },
+    {
+      "Field": "camFovY",
+      "Name": "Field of View - Vertical FOV",
+      "Description": "Vertical angle of view"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forD",
+      "Name": "Character Lock Range - Max Radius (Darkness)",
+      "Description": "Lockable range of characters in dark places"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forPD",
+      "Name": "Character Lock Range - Max Radius (Total Darkness)",
+      "Description": "Character lockable range in total darkness"
+    },
+    {
+      "Field": "closeMaxHeight",
+      "Name": "Attack Capture - Upper Limit Height",
+      "Description": "Automatic lock-on judgment height upper limit when non-lock-on is close"
+    },
+    {
+      "Field": "closeMinHeight",
+      "Name": "Attack Capture - Lower Limit Height",
+      "Description": "Automatic lock-on judgment height lower limit when not locked on Proximity"
+    },
+    {
+      "Field": "closeAngRange",
+      "Name": "Attack Capture - Auto Acquisition - Angle Range Left",
+      "Description": "Automatic lock-on judgment when non-lock-on Left / right angle [deg] Proximity"
+    },
+    {
+      "Field": "closeMaxRadius",
+      "Name": "Attack Capture - Auto Acquisition - Max Radius",
+      "Description": "Automatic lock-on judgment distance when non-lock-on is close"
+    },
+    {
+      "Field": "closeMaxRadius_forD",
+      "Name": "Attack Capture - Auto Acquisition - Max Radius (Darkness)",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness proximity"
+    },
+    {
+      "Field": "closeMaxRadius_forPD",
+      "Name": "Attack Capture - Auto Acquisition - Max Radius (Total Darkness)",
+      "Description": "Automatic lock-on when non-lock-on _ pitch black proximity"
+    },
+    {
+      "Field": "bulletMaxRadius",
+      "Name": "Attack Capture - Bullet - Max Radius",
+      "Description": "Automatic lock-on judgment distance when non-lock-on bullet"
+    },
+    {
+      "Field": "bulletMaxRadius_forD",
+      "Name": "Attack Capture - Bullet - Max Radius (Dark)",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness bullet"
+    },
+    {
+      "Field": "bulletMaxRadius_forPD",
+      "Name": "Attack Capture - Bullet - Max Radius (Pitch Dark",
+      "Description": "Automatic lock-on judgment distance at non-lock-on _ pitch black bullet"
+    },
+    {
+      "Field": "bulletAngRange",
+      "Name": "Attack Capture - Bullet - Angle Range Left/Right",
+      "Description": "Automatic lock-on left / right angle when non-lock-on bullet"
+    },
+    {
+      "Field": "lockTgtKeepTime",
+      "Name": "Lock Target Keep Time",
+      "Description": "Time to continue locking even if the lock condition is not met (disabled at 0.0)"
+    },
+    {
+      "Field": "chrTransChaseRateForNormal",
+      "Name": "Transition Chase Factor for Normal Character",
+      "Description": "Normal character translation tracking rate (disabled at -1.0)"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

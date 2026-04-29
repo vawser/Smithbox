@@ -1,0 +1,253 @@
+{
+  "Param": "LOGIC_COM_PARAM",
+  "Type": "LOGIC_COM_PARAM",
+  "Name": "LOGIC_COM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "id",
+      "Name": "LogicID",
+      "Description": ""
+    },
+    {
+      "Field": "viewingDistanceMax",
+      "Name": "視界距離最大",
+      "Description": ""
+    },
+    {
+      "Field": "viewingDistanceMin",
+      "Name": "視界距離最小",
+      "Description": ""
+    },
+    {
+      "Field": "viewingBackDistance",
+      "Name": "後方視界距離",
+      "Description": ""
+    },
+    {
+      "Field": "viewingAngleLR",
+      "Name": "視界左右角度",
+      "Description": ""
+    },
+    {
+      "Field": "viewingAngleUD",
+      "Name": "視界上下角度",
+      "Description": ""
+    },
+    {
+      "Field": "nightBlindRate",
+      "Name": "暗闇倍率",
+      "Description": ""
+    },
+    {
+      "Field": "chaseDistance",
+      "Name": "追尾距離",
+      "Description": ""
+    },
+    {
+      "Field": "hearingDistance",
+      "Name": "音認識範囲倍率",
+      "Description": ""
+    },
+    {
+      "Field": "hearingSensitivity",
+      "Name": "音認識感度",
+      "Description": ""
+    },
+    {
+      "Field": "obstacleTime",
+      "Name": "障害判定時間",
+      "Description": ""
+    },
+    {
+      "Field": "obstacleRate",
+      "Name": "障害判定速度",
+      "Description": ""
+    },
+    {
+      "Field": "platoonWeight",
+      "Name": "小隊内重み",
+      "Description": ""
+    },
+    {
+      "Field": "platoonPriority",
+      "Name": "小隊内優先度",
+      "Description": ""
+    },
+    {
+      "Field": "viewingBrightnessType",
+      "Name": "明るさによる変化",
+      "Description": ""
+    },
+    {
+      "Field": "useDoor",
+      "Name": "ドアを使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "useLadder",
+      "Name": "はしごを使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "useRope",
+      "Name": "ロープを使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "upperRunNum",
+      "Name": "上位ロジック多重起動数",
+      "Description": ""
+    },
+    {
+      "Field": "damageAfterActionPriority",
+      "Name": "ダメージ後優先行動指定",
+      "Description": ""
+    },
+    {
+      "Field": "roundLv2",
+      "Name": "LV2になる周回数",
+      "Description": ""
+    },
+    {
+      "Field": "roundLv3",
+      "Name": "LV3になる周回数",
+      "Description": ""
+    },
+    {
+      "Field": "roundLv4",
+      "Name": "LV4になる周回数",
+      "Description": ""
+    },
+    {
+      "Field": "roundLv5",
+      "Name": "LV5になる周回数",
+      "Description": ""
+    },
+    {
+      "Field": "distanceCheckType",
+      "Name": "攻撃時距離測定精度",
+      "Description": ""
+    },
+    {
+      "Field": "itemPursuitTable",
+      "Name": "アイテム追撃テーブル",
+      "Description": ""
+    },
+    {
+      "Field": "itemPursuitActionNo",
+      "Name": "アイテム追撃行動",
+      "Description": ""
+    },
+    {
+      "Field": "guardBreakPursuitTable",
+      "Name": "ガード崩れ追撃テーブル",
+      "Description": ""
+    },
+    {
+      "Field": "guardPursuitActionNo",
+      "Name": "ガード崩れ追撃行動",
+      "Description": ""
+    },
+    {
+      "Field": "backAttackTable",
+      "Name": "背後攻撃テーブル",
+      "Description": ""
+    },
+    {
+      "Field": "backAttackActionNo",
+      "Name": "背後攻撃行動",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "itemPursuitDistance",
+      "Name": "アイテム追撃距離",
+      "Description": ""
+    },
+    {
+      "Field": "guardPursuitDistance",
+      "Name": "ガード崩れ追撃距離",
+      "Description": ""
+    },
+    {
+      "Field": "backAttackDistance",
+      "Name": "背後攻撃距離距離",
+      "Description": ""
+    },
+    {
+      "Field": "noLOSForgetTime",
+      "Name": "遮蔽されて忘れるまでの時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "genReturnDist",
+      "Name": "帰還時後退距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "genReturnTime",
+      "Name": "帰還時後退時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "healProbabilityTable",
+      "Name": "回復テーブル",
+      "Description": ""
+    },
+    {
+      "Field": "healActionNo",
+      "Name": "回復行動",
+      "Description": ""
+    },
+    {
+      "Field": "healHpPerc",
+      "Name": "回復行動をする残ＨＰ[％]",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeActionType",
+      "Name": "使用可能な回避行動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "autoBreakPower",
+      "Name": "自動ブレーキ強度",
+      "Description": ""
+    },
+    {
+      "Field": "returnSoundCheck",
+      "Name": "帰還時音チェック",
+      "Description": ""
+    },
+    {
+      "Field": "bTargetHighPos",
+      "Name": "近接攻撃が届かないロック位置も狙う",
+      "Description": ""
+    },
+    {
+      "Field": "itemAlluringSkullType",
+      "Name": "誘い骸骨タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "spellNostalgiaType",
+      "Name": "望郷タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bLongAiCandidate",
+      "Name": "長距離でもAI権を要求するか",
+      "Description": ""
+    },
+    {
+      "Field": "pad00",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

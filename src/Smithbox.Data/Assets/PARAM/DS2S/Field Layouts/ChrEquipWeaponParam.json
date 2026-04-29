@@ -1,0 +1,77 @@
+{
+      "Name": "ChrEquipWeaponParam",
+      "Groups": [
+        {
+          "Key": "Slot 0",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Slot 0"
+              }
+          ],
+          "Fields": [
+            "residentSfxId00",
+            "residentSfxAttachType00",
+            "residentSfxDummyPolyId00",
+            "residentSfxDummyPolyIdEnd00",
+            "residentSfxIdInterval00",
+            "residentSfxSetType00",
+            "residentSfxEndType00"
+          ]
+        },
+        {
+          "Key": "Slot 1",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Slot 1"
+              }
+          ],
+          "Fields": [
+            "residentSfxId01",
+            "residentSfxAttachType01",
+            "residentSfxDummyPolyId01",
+            "residentSfxDummyPolyIdEnd01",
+            "residentSfxIdInterval01",
+            "residentSfxSetType01",
+            "residentSfxEndType01"
+          ]
+        },
+        {
+          "Key": "Slot 2",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Slot 2"
+              }
+          ],
+          "Fields": [
+            "residentSfxId02",
+            "residentSfxAttachType02",
+            "residentSfxDummyPolyId02",
+            "residentSfxDummyPolyIdEnd02",
+            "residentSfxIdInterval02",
+            "residentSfxSetType02",
+            "residentSfxEndType02"
+          ]
+        },
+        {
+          "Key": "Slot 3",
+          "Names": [
+              {
+                "Language": "English",
+                "Name": "Slot 3"
+              }
+          ],
+          "Fields": [
+            "residentSfxId03",
+            "residentSfxAttachType03",
+            "residentSfxDummyPolyId03",
+            "residentSfxDummyPolyIdEnd03",
+            "residentSfxIdInterval03",
+            "residentSfxSetType03",
+            "residentSfxEndType03"
+          ]
+        }
+      ]
+}

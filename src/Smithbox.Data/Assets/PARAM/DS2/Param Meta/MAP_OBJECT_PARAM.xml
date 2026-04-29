@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <animSpeedBaseRate />
+        <animSpeedOverwrteRate />
+        <animSpeedSharplyRate />
+        <material  Enum="MATERIAL_TYPE_ENUM"/>
+        <moveDumyPolyId />
+        <moveType  IsBool=""/>
+        <weaponStorage  Enum="GIMMIC_STORAGE_TYPE_ENUM"/>
+        <rotationType  Enum="GIMMIC_ROTATION_TYPE"/>
+        <timeActId />
+        <breakLogicSoundVolume />
+        <naviCtrlType  Enum="OBJ_NAVI_CTRL_TYPE_ENUM"/>
+        <sharplyAnimEnable  IsBool=""/>
+        <enableDecal  IsBool=""/>
+        <unk1C/>
+    </Field>
+</PARAMMETA>

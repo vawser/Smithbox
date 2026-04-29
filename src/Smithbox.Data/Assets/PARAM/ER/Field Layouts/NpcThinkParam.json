@@ -1,0 +1,245 @@
+{
+  "Name": "NpcThinkParam",
+  "Groups": [
+    {
+      "Key": "Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Logic"
+        }
+      ],
+      "Fields": [
+        "logicId",
+        "battleGoalID",
+        "TeamAttackEffectivity",
+        "idAttackCannotMove",
+        "targetSys_DmgEffectRate",
+        "actTypeOnFailedPath",
+        "actTypeOnNonBtlFailedPath",
+        "spEffectId_RangedAttack",
+        "shiftAnimeId_RangedAttack",
+        "rangedAttackId"
+      ]
+    },
+    {
+      "Key": "Battle Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "BattleStartDist",
+        "nonBattleActLife"
+      ]
+    },
+    {
+      "Key": "Smell Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Smell Parameters"
+        }
+      ],
+      "Fields": [
+        "nose_dist",
+        "MemoryTargetForgetTime",
+        "searchTargetLv1ForgetTime",
+        "searchTargetLv2ForgetTime"
+      ]
+    },
+    {
+      "Key": "Sight Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sight Parameters"
+        }
+      ],
+      "Fields": [
+        "eye_dist",
+        "eye_angX",
+        "eye_angY",
+        "searchEye_dist",
+        "searchEye_angY",
+        "SightTargetForgetTime",
+        "searchEye_angX",
+        "eye_BeginDist",
+        "eye_BackOffsetDist"
+      ]
+    },
+    {
+      "Key": "Listen Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Listen Parameters"
+        }
+      ],
+      "Fields": [
+        "ear_dist",
+        "ear_soundcut_dist",
+        "SoundTargetForgetTime",
+        "ear_listenLevel"
+      ]
+    },
+    {
+      "Key": "Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Options"
+        }
+      ],
+      "Fields": [
+        "disablePathMove",
+        "skipArrivalVisibleCheck",
+        "thinkAttr_doAdmirer",
+        "disableDark",
+        "isGuard_Act",
+        "disableLocalSteering",
+        "isNoAvoidHugeEnemy",
+        "targetAILockDmyPoly",
+        "isBuddyAI",
+        "enableJumpMove",
+        "enableJumpMove_onBattle"
+      ]
+    },
+    {
+      "Key": "Navigation Options",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "enableNaviFlg_Edge",
+        "enableNaviFlg_LargeSpace",
+        "enableNaviFlg_Ladder",
+        "enableNaviFlg_Hole",
+        "enableNaviFlg_Door",
+        "enableNaviFlg_InSideWall",
+        "enableNaviFlg_EdgeOrdinary",
+        "enableNaviFlg_Lava",
+        "enableNaviFlg_Edge_Ordinary"
+      ]
+    },
+    {
+      "Key": "Retreat Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Retreat Parameters"
+        }
+      ],
+      "Fields": [
+        "maxBackhomeDist",
+        "backhomeDist",
+        "backhomeBattleDist",
+        "BackHome_LookTargetTime",
+        "BackHome_LookTargetDist",
+        "BackHomeLife_OnHitEneWal",
+        "backToHomeStuckAct"
+      ]
+    },
+    {
+      "Key": "Battle Sight",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Battle Sight"
+        }
+      ],
+      "Fields": [
+        "isUpdateBattleSight",
+        "battleEye_updateDist",
+        "battleEye_updateAngX",
+        "battleEye_updateAngY"
+      ]
+    },
+    {
+      "Key": "Search Parameters",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Search Parameters"
+        }
+      ],
+      "Fields": [
+        "goalAction_ToCaution",
+        "goalAction_ToCautionImportant",
+        "goalAction_ToDisappear",
+        "goalAction_ToSearchLv1",
+        "goalAction_ToSearchLv2",
+        "searchThreshold_Lv0toLv1",
+        "searchThreshold_Lv1toLv2",
+        "changeStateAction_ToNormal",
+        "useFall_onNormalCaution",
+        "useFall_onSearchBattle"
+      ]
+    },
+    {
+      "Key": "Platoon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Platoon"
+        }
+      ],
+      "Fields": [
+        "platoonReplyTime",
+        "platoonReplyAddRandomTime",
+        "caravanRole",
+        "callHelp_ActionAnimId",
+        "callHelp_CallActionId",
+        "callHelp_MyPeerId",
+        "callHelp_CallPeerId",
+        "callHelp_CallValidMinDistTarget",
+        "callHelp_CallValidRange",
+        "callHelp_ForgetTimeByArrival",
+        "callHelp_MinWaitTime",
+        "callHelp_MaxWaitTime",
+        "callHelp_ReplyBehaviorType"
+      ]
+    },
+    {
+      "Key": "Weapon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weapon"
+        }
+      ],
+      "Fields": [
+        "enableWeaponOnOff",
+        "weaponOffSpecialEffectId",
+        "weaponOffAnimId",
+        "weaponOnSpecialEffectId",
+        "weaponOnAnimId",
+        "surpriseAnimId"
+      ]
+    },
+    {
+      "Key": "Sound",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Sound"
+        }
+      ],
+      "Fields": [
+        "soundBehaviorId01",
+        "soundBehaviorId02",
+        "soundBehaviorId03",
+        "soundBehaviorId04",
+        "soundBehaviorId05",
+        "soundBehaviorId06",
+        "soundBehaviorId07",
+        "soundBehaviorId08"
+      ]
+    }
+  ]
+}

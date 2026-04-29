@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <whiteDoorCategory  Enum="OBJ_WHITE_DOOR_CATEGORY_ENUM"/>
+        <aReserved />
+        <waitTime />
+        <defaultSfxId />
+        <multiPlaySfxId />
+        <frontKeyGuideParamId  Refs="KeyGuideParam"/>
+        <backKeyGuideParamId  Refs="KeyGuideParam"/>
+        <passFlagId />
+        <enableKeyGuideFlagId />
+    </Field>
+</PARAMMETA>

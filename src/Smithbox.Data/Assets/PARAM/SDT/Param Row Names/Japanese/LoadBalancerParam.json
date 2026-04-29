@@ -1,0 +1,29 @@
+{
+  "Name": "LoadBalancerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4 -- PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Xbox One -- XboxOne"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win64 -- Win64"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Stadia -- Stadia"
+      ]
+    }
+  ]
+}

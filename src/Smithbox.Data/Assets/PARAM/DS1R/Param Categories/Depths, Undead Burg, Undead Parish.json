@@ -1,0 +1,23 @@
+{
+  "Key": "Depths / Undead Burg / Undead Parish",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Depths / Undead Burg / Undead Parish"
+      }
+  ],
+  "Params": [
+    "m10_DofBank",
+    "m10_EnvLightTexBank",
+    "m10_FogBank",
+    "m10_LensFlareBank",
+    "m10_LensFlareExBank",
+    "m10_LightBank",
+    "m10_LightScatteringBank",
+    "m10_PointLightBank",
+    "m10_ShadowBank",
+    "m10_ToneCorrectBank",
+    "m10_ToneMapBank",
+    "s10_LightBank"
+  ]
+}

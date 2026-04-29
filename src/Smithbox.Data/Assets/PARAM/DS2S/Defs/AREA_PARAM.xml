@@ -1,47 +1,293 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>AREA_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 Unk00" />
-    <Field Def="s32 lock_on_1" />
-    <Field Def="s32 lock_on_2" />
-    <Field Def="s32 lock_on_3" />
-    <Field Def="s16 Unk01" />
-    <Field Def="s16 Unk02" />
-    <Field Def="s32 area_flag_id" />
-    <Field Def="s32 map_id" />
-    <Field Def="s16 Unk03" />
-    <Field Def="s16 Unk04" />
-    <Field Def="s16 Unk05" />
-    
-    <Field Def="f32 Unk06" />
-    
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
-    
-    <Field Def="f32 Unk09" />
-    
-    <Field Def="f32 Unk10" />
-    
-    <Field Def="s32 mimicry_map_object_1" />
-    <Field Def="s32 mimicry_map_object_2" />
-    <Field Def="s32 mimicry_map_object_3" />
-    <Field Def="s32 mimicry_map_object_4" />
-    <Field Def="s32 mimicry_map_object_5" />
-    
-    <Field Def="f32 Unk17" />
-    <Field Def="f32 Unk18" />
-    <Field Def="f32 Unk19" />
-    <Field Def="f32 Unk20" />
-    <Field Def="f32 Unk21" />
-    <Field Def="f32 Unk22" />
-    <Field Def="f32 Unk23" />
-    <Field Def="f32 Unk24" />
-    <Field Def="f32 Unk25" />
-    <Field Def="f32 Unk26" />
-  </Fields>
+    <ParamType>AREA_PARAM</ParamType>
+    <DataVersion>7</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 intrudeEnable">
+            <DisplayName>侵入可否</DisplayName>
+            <Enum>AREA_PARAM_INTRUDE_ENUM</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved[3]">
+            <DisplayName>予約</DisplayName>
+            <SortID>825</SortID>
+        </Field>
+        <Field Def="s32 lockOnId">
+            <DisplayName>通常 ロックオン</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s32 lockOnIdDark">
+            <DisplayName>暗闇 ロックオン</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s32 lockOnIdTorch">
+            <DisplayName>光源 ロックオン</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 isPriorityLockOnIdTorch">
+            <DisplayName>外部光源 最優先</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="u8 isAbyss">
+            <DisplayName>深淵か</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="u8 waterMaterial">
+            <DisplayName>水面材質</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>701</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved1[1]">
+            <DisplayName>予約</DisplayName>
+            <SortID>826</SortID>
+        </Field>
+        <Field Def="s32 cameraId">
+            <DisplayName>カメラ設定</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="s32 playerLightSfxId">
+            <DisplayName>プレイヤーの光源SFXID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>400</SortID>
+        </Field>
+        <Field Def="f32 logicSoundDistance">
+            <DisplayName>音の届く範囲</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1000</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="f32 staminaCostScaleDash = 1">
+            <DisplayName>スタミナ消費補正倍率 ダッシュ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>10</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>600</SortID>
+        </Field>
+        <Field Def="u32 fallWaterSfxId">
+            <DisplayName>水中落下SFXID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>700</SortID>
+        </Field>
+        <Field Def="u8 chameleonEnableRare">
+            <DisplayName>擬態オブジェ1レア指定</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="u8 chameleonWeight1">
+            <DisplayName>擬態オブジェ重み1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>802</SortID>
+        </Field>
+        <Field Def="u8 chameleonWeight2">
+            <DisplayName>擬態オブジェ重み2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>812</SortID>
+        </Field>
+        <Field Def="u8 chameleonWeight3">
+            <DisplayName>擬態オブジェ重み3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>822</SortID>
+        </Field>
+        <Field Def="u8 chameleonWeight4">
+            <DisplayName>擬態オブジェ重み4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>832</SortID>
+        </Field>
+        <Field Def="u8 chameleonWeight5">
+            <DisplayName>擬態オブジェ重み5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>842</SortID>
+        </Field>
+        <Field Def="dummy8 aReserved2[2]">
+            <DisplayName>予約</DisplayName>
+            <Description>予約</Description>
+            <SortID>827</SortID>
+        </Field>
+        <Field Def="s32 chameleonId1">
+            <DisplayName>擬態オブジェID1</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>801</SortID>
+        </Field>
+        <Field Def="s32 chameleonId2">
+            <DisplayName>擬態オブジェID2</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>811</SortID>
+        </Field>
+        <Field Def="s32 chameleonId3">
+            <DisplayName>擬態オブジェID3</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>821</SortID>
+        </Field>
+        <Field Def="s32 chameleonId4">
+            <DisplayName>擬態オブジェID4</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>831</SortID>
+        </Field>
+        <Field Def="s32 chameleonId5">
+            <DisplayName>擬態オブジェID5</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Minimum>-1</Minimum>
+            <Maximum>999999</Maximum>
+            <Increment>1</Increment>
+            <SortID>841</SortID>
+        </Field>
+        <Field Def="f32 chameleonAngle1 = 1">
+            <DisplayName>擬態オブジェ1角度補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>803</SortID>
+        </Field>
+        <Field Def="f32 chameleonAngle2 = 1">
+            <DisplayName>擬態オブジェ2角度補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>813</SortID>
+        </Field>
+        <Field Def="f32 chameleonAngle3 = 1">
+            <DisplayName>擬態オブジェ3角度補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>823</SortID>
+        </Field>
+        <Field Def="f32 chameleonAngle4 = 1">
+            <DisplayName>擬態オブジェ4角度補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>833</SortID>
+        </Field>
+        <Field Def="f32 chameleonAngle5 = 1">
+            <DisplayName>擬態オブジェ5角度補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>360</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>843</SortID>
+        </Field>
+        <Field Def="f32 chameleonHeight1 = 1">
+            <DisplayName>擬態オブジェ1高さ補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>804</SortID>
+        </Field>
+        <Field Def="f32 chameleonHeight2 = 1">
+            <DisplayName>擬態オブジェ2高さ補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>814</SortID>
+        </Field>
+        <Field Def="f32 chameleonHeight3 = 1">
+            <DisplayName>擬態オブジェ3高さ補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>824</SortID>
+        </Field>
+        <Field Def="f32 chameleonHeight4 = 1">
+            <DisplayName>擬態オブジェ4高さ補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>834</SortID>
+        </Field>
+        <Field Def="f32 chameleonHeight5 = 1">
+            <DisplayName>擬態オブジェ5高さ補正</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <EditFlags>Wrap</EditFlags>
+            <Maximum>100</Maximum>
+            <Increment>0.0099999998</Increment>
+            <SortID>844</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

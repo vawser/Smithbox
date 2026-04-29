@@ -8,12 +8,7 @@ namespace StudioCore.Application;
 
 public class ProjectEnumResource
 {
-    public List<ProjectEnumEntry> List { get; set; }
-
-    public ProjectEnumResource()
-    {
-        List = new List<ProjectEnumEntry>();
-    }
+    public List<ProjectEnumEntry> List { get; set; } = new();
 }
 
 public class ProjectEnumEntry
@@ -22,7 +17,7 @@ public class ProjectEnumEntry
     public string Name { get; set; }
     public string Description { get; set; }
 
-    public List<ProjectEnumOption> Options { get; set; }
+    public List<ProjectEnumOption> Options { get; set; } = new();
 
     public ProjectEnumEntry()
     {

@@ -1,0 +1,707 @@
+{
+  "Name": "AtkParam",
+  "Groups": [
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkPhys",
+        "atkMag",
+        "atkFire",
+        "atkThun",
+        "atkDark",
+        "atkStam",
+        "atkSuperArmor",
+        "atkPhysCorrection",
+        "atkMagCorrection",
+        "atkFireCorrection",
+        "atkThunCorrection",
+        "atkDarkCorrection",
+        "atkStamCorrection",
+        "atkSuperArmorCorrection",
+        "directAtkStamCorrection",
+        "directAtkStamDamage",
+        "repelLostStamDamage",
+        "directAtkStamDamage_Attacker",
+        "repelVictoryStamDamage_Attacker",
+        "repelLostStamDamage_Attacker",
+        "staminaDamageAttackHitParry",
+        "disableStaminaAttack"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkAttribute",
+        "spAttribute",
+        "staminaPhysicsAttribute",
+        "atkType",
+        "atkSize",
+        "atkBehaviorId",
+        "atkBehaviorId_2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "knockbackDist_DirectHit",
+        "knockbackDist_Guard",
+        "knockbackDist_JustGuard"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "guardAtkRate",
+        "guardAtkRateCorrection",
+        "guardBreakRate",
+        "guardBreakCorrection",
+        "guardRate",
+        "guardAttribute",
+        "guardCutCancelRate",
+        "excessDmgKeepHp",
+        "guardStaminaCutRate",
+        "isAllDirGuard",
+        "disableGuard_vsGuardAttribute0",
+        "disableJustGuard_vsGuardAttribute0",
+        "disableGuard_vsGuardAttribute1",
+        "disableJustGuard_vsGuardAttribute1"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId3",
+        "spEffectId4",
+        "counterSpEffectCondition"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "statusAilmentAtkPowerCorrectRate",
+        "statusAilmentAtkPowerCorrectRate_byPoint",
+        "spEffectAtkPowerCorrectRate_byRate",
+        "spEffectAtkPowerCorrectRate_byPoint",
+        "spEffectAtkPowerCorrectRate_byDmg"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hitStopTime",
+        "hitStopTime_Defencer"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "dmgLevel",
+        "dmgLevel_vsPlayer"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "deflectedAction",
+        "justDeflectedAction",
+        "deflectAction",
+        "justDeflectAction"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "opposeTarget",
+        "friendlyTarget",
+        "selfTarget"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "AppearAiSoundId",
+        "HitAiSoundId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "decalId1",
+        "decalId2",
+        "decalBaseId1",
+        "decalBaseId2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "mapHitType_Normal",
+        "mapHitType_Middle",
+        "mapHitType_Root"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkThrowEscapeCorrection",
+        "atkThrowEscape",
+        "throwFlag",
+        "throwTypeId",
+        "throwDamageAttribute"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkMaterial_forSfx",
+        "atkMaterial_forSe",
+        "defSfxMaterial1",
+        "defSeMaterial1",
+        "defSfxMaterial2",
+        "defSeMaterial2",
+        "atkPow_forSfx",
+        "atkPow_forSe",
+        "atkDir_forSfx",
+        "repeatHitSfx"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "trackType",
+        "isDisableNoDamage"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "atkObj",
+        "isObjExtHitSfx",
+        "hitObjAnimeId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "disableHitSpEffect",
+        "isArrowAtk",
+        "isGhostAtk",
+        "isChargeAtk",
+        "isCheckDoorPenetration",
+        "isDamageDropAttack",
+        "doesBreakRepelStamDamage",
+        "isDisableParry",
+        "isDisableBothHandsAtkBonus",
+        "IgnoreNotifyMissSwingForAI",
+        "attackDirectionPoint",
+        "rigidImpulse"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "HitRumbleId",
+        "HitRumbleIdByNormal",
+        "HitRumbleIdByMiddle",
+        "HitRumbleIdByRoot"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hitSourceType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit0_Radius",
+        "hit0_DmyPoly1",
+        "hit0_DmyPoly2",
+        "hit0_hitType",
+        "hti0_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit1_Radius",
+        "hit1_DmyPoly1",
+        "hit1_DmyPoly2",
+        "hit1_hitType",
+        "hti1_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit2_Radius",
+        "hit2_DmyPoly1",
+        "hit2_DmyPoly2",
+        "hit2_hitType",
+        "hti2_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit3_Radius",
+        "hit3_DmyPoly1",
+        "hit3_DmyPoly2",
+        "hit3_hitType",
+        "hti3_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit4_Radius",
+        "hit4_DmyPoly1",
+        "hit4_DmyPoly2",
+        "hit4_hitType",
+        "hti4_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit5_Radius",
+        "hit5_DmyPoly1",
+        "hit5_DmyPoly2",
+        "hit5_hitType",
+        "hti5_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit6_Radius",
+        "hit6_DmyPoly1",
+        "hit6_DmyPoly2",
+        "hit6_hitType",
+        "hti6_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit7_Radius",
+        "hit7_DmyPoly1",
+        "hit7_DmyPoly2",
+        "hit7_hitType",
+        "hti7_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit8_Radius",
+        "hit8_DmyPoly1",
+        "hit8_DmyPoly2",
+        "hit8_hitType",
+        "hti8_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit9_Radius",
+        "hit9_DmyPoly1",
+        "hit9_DmyPoly2",
+        "hit9_hitType",
+        "hti9_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit10_Radius",
+        "hit10_DmyPoly1",
+        "hit10_DmyPoly2",
+        "hit10_hitType",
+        "hti10_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit11_Radius",
+        "hit11_DmyPoly1",
+        "hit11_DmyPoly2",
+        "hit11_hitType",
+        "hti11_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit12_Radius",
+        "hit12_DmyPoly1",
+        "hit12_DmyPoly2",
+        "hit12_hitType",
+        "hti12_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit13_Radius",
+        "hit13_DmyPoly1",
+        "hit13_DmyPoly2",
+        "hit13_hitType",
+        "hti13_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit14_Radius",
+        "hit14_DmyPoly1",
+        "hit14_DmyPoly2",
+        "hit14_hitType",
+        "hti14_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hit15_Radius",
+        "hit15_DmyPoly1",
+        "hit15_DmyPoly2",
+        "hit15_hitType",
+        "hti15_Priority"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId0",
+        "traceDmyIdHead0",
+        "traceDmyIdTail0"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId1",
+        "traceDmyIdHead1",
+        "traceDmyIdTail1"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId2",
+        "traceDmyIdHead2",
+        "traceDmyIdTail2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId3",
+        "traceDmyIdHead3",
+        "traceDmyIdTail3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId4",
+        "traceDmyIdHead4",
+        "traceDmyIdTail4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId5",
+        "traceDmyIdHead5",
+        "traceDmyIdTail5"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId6",
+        "traceDmyIdHead6",
+        "traceDmyIdTail6"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "traceSfxId7",
+        "traceDmyIdHead7",
+        "traceDmyIdTail7"
+      ]
+    }
+  ]
+}

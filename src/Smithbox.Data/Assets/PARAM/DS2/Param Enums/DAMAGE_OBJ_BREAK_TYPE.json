@@ -1,0 +1,29 @@
+{
+  "Key": "DAMAGE_OBJ_BREAK_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_OBJ_BREAK_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Valid"
+        }
+      ]
+    }
+  ]
+}

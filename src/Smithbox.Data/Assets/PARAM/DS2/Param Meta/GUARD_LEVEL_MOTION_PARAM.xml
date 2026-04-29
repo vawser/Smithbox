@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <superSmallGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <smallGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <mediumGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <largeGuardLvel  Enum="GUARD_MOTION_TYPE"/>
+        <superLargeGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <ultraLargeGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+        <flipGuardLevel  Enum="GUARD_MOTION_TYPE"/>
+    </Field>
+</PARAMMETA>

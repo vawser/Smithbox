@@ -1,0 +1,28 @@
+{
+  "Param": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Type": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Name": "WHITE_SIGN_COOL_TIME_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "limitationTime_Normal",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_NormalDriedFinger",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_Guardian",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "limitationTime_GuardianDriedFinger",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "SWORD_ARTS_SHIELD_ICON_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SWORD_ARTS_SHIELD_ICON_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 3: Shield Bash"
+        }
+      ]
+    }
+  ]
+}

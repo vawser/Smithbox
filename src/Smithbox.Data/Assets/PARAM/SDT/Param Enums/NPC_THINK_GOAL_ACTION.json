@@ -1,0 +1,56 @@
+{
+  "Key": "NPC_THINK_GOAL_ACTION",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_THINK_GOAL_ACTION"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wait for Battle Start Distance"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Look at Source"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Approach Source"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Run to Source"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immediate Battle AI"
+        }
+      ]
+    }
+  ]
+}

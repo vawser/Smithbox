@@ -1,0 +1,461 @@
+{
+  "Name": "CameraExFollowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "In-Game Camera -- インゲームカメラ"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Prowling Magus & Congregation"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Lords"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "Royal Rat Authority"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Royal Rat Vanguard"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Smelter Demon - Old Iron King DLC"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "The Last Giant"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "Dragonrider & Dragonrider"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Belfry Gargoyles"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Ruin Sentinels"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne Watcher & Throne Defender"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Velstadt, the Royal Aegis"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Mytha, the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Vendrick"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Demon of Song"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "The Lost Sinner"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Lud, the King's Pet & Zallen, the King's Pet"
+      ]
+    },
+    {
+      "ID": 679100,
+      "Entries": [
+        "Aava, the King's Pet"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh, the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana, the Squalid Queen"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 691000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        "Aldia, Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "Afflicted Graverobber, Ancient Soldier Varg & Cerah, the Old Explorer"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Things Betwixt"
+      ]
+    },
+    {
+      "ID": 1004000,
+      "Entries": [
+        "Majula"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 1014000,
+      "Entries": [
+        "Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 1015000,
+      "Entries": [
+        "Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 1016000,
+      "Entries": [
+        "The Lost Bastille"
+      ]
+    },
+    {
+      "ID": 1017000,
+      "Entries": [
+        "Harvest Valley / Earthen Peak"
+      ]
+    },
+    {
+      "ID": 1018000,
+      "Entries": [
+        "No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 1019000,
+      "Entries": [
+        "Iron Keep"
+      ]
+    },
+    {
+      "ID": 1021000,
+      "Entries": [
+        "Drangleic Castle (alt)"
+      ]
+    },
+    {
+      "ID": 1023000,
+      "Entries": [
+        "Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 1025000,
+      "Entries": [
+        "The Gutter"
+      ]
+    },
+    {
+      "ID": 1027000,
+      "Entries": [
+        "Dragon Aerie / Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 1028000,
+      "Entries": [
+        "Firelink Throne (Unused)"
+      ]
+    },
+    {
+      "ID": 1029000,
+      "Entries": [
+        "Path to Shaded Woods"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "Path to Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 1031000,
+      "Entries": [
+        "Heide's Tower of Flame/Cathedral of Blue"
+      ]
+    },
+    {
+      "ID": 1032000,
+      "Entries": [
+        "Shaded Woods"
+      ]
+    },
+    {
+      "ID": 1032010,
+      "Entries": [
+        "Shaded Woods - Forest of Fog"
+      ]
+    },
+    {
+      "ID": 1033000,
+      "Entries": [
+        "Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 1034000,
+      "Entries": [
+        "Grave of Saints"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Memory of Giants"
+      ]
+    },
+    {
+      "ID": 2011000,
+      "Entries": [
+        "Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 2021000,
+      "Entries": [
+        "Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 2024000,
+      "Entries": [
+        "Undead Crypt"
+      ]
+    },
+    {
+      "ID": 2026000,
+      "Entries": [
+        "Dragon Memories"
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        "Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 5035000,
+      "Entries": [
+        "Shulva, Sanctum City"
+      ]
+    },
+    {
+      "ID": 5036000,
+      "Entries": [
+        "Brume Tower"
+      ]
+    },
+    {
+      "ID": 5037000,
+      "Entries": [
+        "Frozen Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 5037010,
+      "Entries": [
+        "Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 5038000,
+      "Entries": [
+        "Memory of the King"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1043 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Uncorrected weapon"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Throw knife"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Whirlwind Slash"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Nightjar Slash"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Ichimonji"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Dragon Flash"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Ashina Cross"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Floating Passage"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Mortal Draw"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Senpou Leaping Kicks"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Praying Strikes"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Shadowrush"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "One Mind"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Nightjar Slash Reversal"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Ichimonji: Doubel"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Spiral Cloud Passage"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Empowered Mortal Draw"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "High Monk"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Praying Strikes - Exorcism"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Shadowfall"
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Loaded Shuriken"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "Spinning Shuriken"
+      ]
+    },
+    {
+      "ID": 70200,
+      "Entries": [
+        "Gouging Top"
+      ]
+    },
+    {
+      "ID": 70300,
+      "Entries": [
+        "Phantom Kunai"
+      ]
+    },
+    {
+      "ID": 70400,
+      "Entries": [
+        "Sen Throw"
+      ]
+    },
+    {
+      "ID": 70500,
+      "Entries": [
+        "Lazulite Shuriken"
+      ]
+    },
+    {
+      "ID": 71000,
+      "Entries": [
+        "Shinobi Firecracker"
+      ]
+    },
+    {
+      "ID": 71100,
+      "Entries": [
+        "Spring-load Firecracker"
+      ]
+    },
+    {
+      "ID": 71200,
+      "Entries": [
+        "Long Spark"
+      ]
+    },
+    {
+      "ID": 71300,
+      "Entries": [
+        "Purple Fume Spark"
+      ]
+    },
+    {
+      "ID": 72000,
+      "Entries": [
+        "Flame Vent"
+      ]
+    },
+    {
+      "ID": 72100,
+      "Entries": [
+        "Spring-load Flame Vent"
+      ]
+    },
+    {
+      "ID": 72200,
+      "Entries": [
+        "Okinaga's Flame Vent"
+      ]
+    },
+    {
+      "ID": 72300,
+      "Entries": [
+        "Lazulite Sacred Flame"
+      ]
+    },
+    {
+      "ID": 73000,
+      "Entries": [
+        "Loaded Axe"
+      ]
+    },
+    {
+      "ID": 73100,
+      "Entries": [
+        "Spring-load Axe"
+      ]
+    },
+    {
+      "ID": 73200,
+      "Entries": [
+        "Sparking Axe"
+      ]
+    },
+    {
+      "ID": 73300,
+      "Entries": [
+        "Lazulite Axe"
+      ]
+    },
+    {
+      "ID": 74000,
+      "Entries": [
+        "Mist Raven"
+      ]
+    },
+    {
+      "ID": 74100,
+      "Entries": [
+        "Aged Feather Mist Raven"
+      ]
+    },
+    {
+      "ID": 74200,
+      "Entries": [
+        "Great Feather Mist Raven"
+      ]
+    },
+    {
+      "ID": 75000,
+      "Entries": [
+        "Sabimaru"
+      ]
+    },
+    {
+      "ID": 75100,
+      "Entries": [
+        "Improved Sabimaru"
+      ]
+    },
+    {
+      "ID": 75200,
+      "Entries": [
+        "Piercing Sabimaru"
+      ]
+    },
+    {
+      "ID": 75300,
+      "Entries": [
+        "Lazulite Sabimaru"
+      ]
+    },
+    {
+      "ID": 76000,
+      "Entries": [
+        "Loaded Umbrella"
+      ]
+    },
+    {
+      "ID": 76100,
+      "Entries": [
+        "Loaded Umbrella - Magnet"
+      ]
+    },
+    {
+      "ID": 76200,
+      "Entries": [
+        "Suzaku's Lotus Umbrella"
+      ]
+    },
+    {
+      "ID": 76300,
+      "Entries": [
+        "Phoenix's Lilac Umbrella"
+      ]
+    },
+    {
+      "ID": 77000,
+      "Entries": [
+        "Divine Abduction"
+      ]
+    },
+    {
+      "ID": 77100,
+      "Entries": [
+        "Double Divine Abduction"
+      ]
+    },
+    {
+      "ID": 77200,
+      "Entries": [
+        "Golden Vortex"
+      ]
+    },
+    {
+      "ID": 78000,
+      "Entries": [
+        "Loaded Spear"
+      ]
+    },
+    {
+      "ID": 78100,
+      "Entries": [
+        "Loaded Spear Thrust type"
+      ]
+    },
+    {
+      "ID": 78200,
+      "Entries": [
+        "Loaded Spear Cleave type"
+      ]
+    },
+    {
+      "ID": 78300,
+      "Entries": [
+        "Spiral Spear"
+      ]
+    },
+    {
+      "ID": 78400,
+      "Entries": [
+        "Leaping Flame"
+      ]
+    },
+    {
+      "ID": 79000,
+      "Entries": [
+        "Finger Whistle"
+      ]
+    },
+    {
+      "ID": 79100,
+      "Entries": [
+        "Mountain Echo"
+      ]
+    },
+    {
+      "ID": 79200,
+      "Entries": [
+        "Malconent"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 110900,
+      "Entries": [
+        "Bare hand for sword confirmation"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Grappling Hook Attack"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Mid-air Deflection"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Mid-air Prosthetic Tool"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Mikiri Counter"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Run and Slide"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Mid-air Combat Arts"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Vault Over"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Skill Tree: Whirlwind Slash"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Skill Tree: Shadowrush"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Chasing Slice"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Fang and Blade"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Projected Force"
+      ]
+    },
+    {
+      "ID": 301300,
+      "Entries": [
+        "Living Force"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Skill Tree: Nightjar Slash"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "Skill Tree: Nightjar Slash Reversal"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Skill Tree: Ichimonji"
+      ]
+    },
+    {
+      "ID": 410100,
+      "Entries": [
+        "Skill Tree: Ichimonji: Double"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Skill Tree: Ashina Cross"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Skill Tree: Praying Strikes"
+      ]
+    },
+    {
+      "ID": 510100,
+      "Entries": [
+        "Skill Tree: Praying Strikes - Exorcism"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Skill Tree: Senpou Leaping Kicks"
+      ]
+    },
+    {
+      "ID": 511100,
+      "Entries": [
+        "Skill Tree: High Monk"
+      ]
+    },
+    {
+      "ID": 610100,
+      "Entries": [
+        "Skill Tree: Shadowfall"
+      ]
+    },
+    {
+      "ID": 611100,
+      "Entries": [
+        "Skill Tree: Spiral Cloud Passage"
+      ]
+    },
+    {
+      "ID": 612100,
+      "Entries": [
+        "Skill Tree: Empowered Mortal Draw"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Suppress Presence"
+      ]
+    },
+    {
+      "ID": 620100,
+      "Entries": [
+        "Suppress Sound"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Virtuous Deed"
+      ]
+    },
+    {
+      "ID": 630100,
+      "Entries": [
+        "Most Virtuous Deed"
+      ]
+    },
+    {
+      "ID": 640000,
+      "Entries": [
+        "Emma's Medicine: Potency"
+      ]
+    },
+    {
+      "ID": 640100,
+      "Entries": [
+        "Emma's Medicine: Aroma"
+      ]
+    },
+    {
+      "ID": 640200,
+      "Entries": [
+        "Shinobi Medicine Rank 1"
+      ]
+    },
+    {
+      "ID": 640300,
+      "Entries": [
+        "Shinobi Medicine Rank 2"
+      ]
+    },
+    {
+      "ID": 640400,
+      "Entries": [
+        "Shinobi Medicine Rank 3"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "A Shinobi's Karma: Body"
+      ]
+    },
+    {
+      "ID": 650100,
+      "Entries": [
+        "A Shinobi's Karma: Mind"
+      ]
+    },
+    {
+      "ID": 650200,
+      "Entries": [
+        "Sculptor's Karma: Blood"
+      ]
+    },
+    {
+      "ID": 650300,
+      "Entries": [
+        "Sculptor's Karma: Scars"
+      ]
+    },
+    {
+      "ID": 650400,
+      "Entries": [
+        "A Beast's Karma"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Breath of Life: Light"
+      ]
+    },
+    {
+      "ID": 660100,
+      "Entries": [
+        "Breath of Life: Shadow"
+      ]
+    },
+    {
+      "ID": 660200,
+      "Entries": [
+        "Breath of Nature: Light"
+      ]
+    },
+    {
+      "ID": 660300,
+      "Entries": [
+        "Breath of Nature: Shadow"
+      ]
+    },
+    {
+      "ID": 660400,
+      "Entries": [
+        "Shinobi Eyes"
+      ]
+    },
+    {
+      "ID": 660500,
+      "Entries": [
+        "Devotion"
+      ]
+    },
+    {
+      "ID": 660600,
+      "Entries": [
+        "Ascending Carp"
+      ]
+    },
+    {
+      "ID": 660700,
+      "Entries": [
+        "Descending Carp"
+      ]
+    },
+    {
+      "ID": 660800,
+      "Entries": [
+        "Flowing Water"
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        "Mortal Draw"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Dragon Flash"
+      ]
+    },
+    {
+      "ID": 672000,
+      "Entries": [
+        "Floating Passage"
+      ]
+    },
+    {
+      "ID": 673000,
+      "Entries": [
+        "One Mind"
+      ]
+    },
+    {
+      "ID": 674000,
+      "Entries": [
+        "Sakura Dance"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Mibu Breathing Technique"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Anti-air Deathblow"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Unknown Combat Art"
+      ]
+    },
+    {
+      "ID": 690100,
+      "Entries": [
+        "Unknown Art Upgrade"
+      ]
+    },
+    {
+      "ID": 690200,
+      "Entries": [
+        "Unknown Martial Art"
+      ]
+    },
+    {
+      "ID": 690300,
+      "Entries": [
+        "Unknown Latend Effect"
+      ]
+    },
+    {
+      "ID": 690400,
+      "Entries": [
+        "Unknown Secret Technique"
+      ]
+    },
+    {
+      "ID": 699000,
+      "Entries": [
+        "Unknown Skill No Type"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Upgrade Menu: Spinning Shuriken"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Upgrade Menu: Gouging Top"
+      ]
+    },
+    {
+      "ID": 703000,
+      "Entries": [
+        "Upgrade Menu: Phantom Kunai"
+      ]
+    },
+    {
+      "ID": 704000,
+      "Entries": [
+        "Upgrade Menu: Sen Throw"
+      ]
+    },
+    {
+      "ID": 705000,
+      "Entries": [
+        "Upgrade Menu: Lazulite Shuriken"
+      ]
+    },
+    {
+      "ID": 711000,
+      "Entries": [
+        "Upgrade Menu: Spring-load Firecracker"
+      ]
+    },
+    {
+      "ID": 712000,
+      "Entries": [
+        "Upgrade Menu: Long Spark"
+      ]
+    },
+    {
+      "ID": 713000,
+      "Entries": [
+        "Upgrade Menu: Purple Fume Spark"
+      ]
+    },
+    {
+      "ID": 721000,
+      "Entries": [
+        "Upgrade Menu: Spring-load Flame Vent"
+      ]
+    },
+    {
+      "ID": 722000,
+      "Entries": [
+        "Upgrade Menu: Okinaga's Flame Vent"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Upgrade Menu: Lazulite Sacred Flame"
+      ]
+    },
+    {
+      "ID": 731000,
+      "Entries": [
+        "Upgrade Menu: Spring-load Axe"
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "Upgrade Menu: Sparking Axe"
+      ]
+    },
+    {
+      "ID": 733000,
+      "Entries": [
+        "Upgrade Menu: Lazulite Axe"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "Upgrade Menu: Aged Feather Mist Raven"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Upgrade Menu: Great Feather Mist Rave"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Upgrade Menu: Improved Sabimaru"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "Upgrade Menu: Piercing Sabimaru"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Upgrade Menu: Lazulite Sabimaru"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "Upgrade Menu: Loaded Umbrella - Magnet"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Upgrade Menu: Suzaku's Lotus Umbrella"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "Upgrade Menu: Phoenix's Lilac Umbrella"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "Upgrade Menu: Double Divine Abduction"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Upgrade Menu: Golden Vortex"
+      ]
+    },
+    {
+      "ID": 781000,
+      "Entries": [
+        "Upgrade Menu: Loaded Spear Thrust type"
+      ]
+    },
+    {
+      "ID": 782000,
+      "Entries": [
+        "Upgrade Menu: Loaded Spear Cleave Type"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Upgrade Menu: Spiral Spear"
+      ]
+    },
+    {
+      "ID": 784000,
+      "Entries": [
+        "Upgrade Menu: Leaping Flame"
+      ]
+    },
+    {
+      "ID": 791000,
+      "Entries": [
+        "Upgrade Menu: Mountain Echo"
+      ]
+    },
+    {
+      "ID": 792000,
+      "Entries": [
+        "Upgrade Menu: Malcontent"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Upgrade Menu: Unknown Shuriken"
+      ]
+    },
+    {
+      "ID": 1710000,
+      "Entries": [
+        "Upgrade Menu: Unknown Firecracker"
+      ]
+    },
+    {
+      "ID": 1720000,
+      "Entries": [
+        "Upgrade Menu: Unknown Flame Barrel"
+      ]
+    },
+    {
+      "ID": 1730000,
+      "Entries": [
+        "Upgrade Menu: Unknown Loaded Axe"
+      ]
+    },
+    {
+      "ID": 1740000,
+      "Entries": [
+        "Upgrade Menu: Unknown Mist Raven"
+      ]
+    },
+    {
+      "ID": 1750000,
+      "Entries": [
+        "Upgrade Menu: Unknown Sabimaru"
+      ]
+    },
+    {
+      "ID": 1760000,
+      "Entries": [
+        "Upgrade Menu: Unknown Loaded Umbrella"
+      ]
+    },
+    {
+      "ID": 1770000,
+      "Entries": [
+        "Upgrade Menu: Unknown Divine Abduction"
+      ]
+    },
+    {
+      "ID": 1780000,
+      "Entries": [
+        "Upgrade Menu: Unknown Loaded Spear"
+      ]
+    },
+    {
+      "ID": 1790000,
+      "Entries": [
+        "Upgrade Menu: Unknown Finger Whistle"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Upgrade Menu: Unknown Prosthetic Tool"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Debug non-killing sword -- デバッグ無殺刀"
+      ]
+    },
+    {
+      "ID": 8000100,
+      "Entries": [
+        "Debug Special Sword -- デバッグ必殺刀"
+      ]
+    },
+    {
+      "ID": 8000200,
+      "Entries": [
+        "Debug bare hand sword -- デバッグ素手刀"
+      ]
+    },
+    {
+      "ID": 9500000,
+      "Entries": [
+        "Wire weapon -- ワイヤー武器"
+      ]
+    },
+    {
+      "ID": 9600000,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 9700000,
+      "Entries": [
+        "Immortal sword -- 不死斬りの刀"
+      ]
+    }
+  ]
+}

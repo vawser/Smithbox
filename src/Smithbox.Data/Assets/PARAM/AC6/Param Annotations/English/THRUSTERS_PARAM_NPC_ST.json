@@ -1,0 +1,1573 @@
+{
+  "Param": "THRUSTERS_PARAM_NPC_ST",
+  "Type": "THRUSTERS_PARAM_NPC_ST",
+  "Name": "THRUSTERS_PARAM_NPC_ST",
+  "Description": "Defines where certain particles should appear under various circumstances. For NPCs.",
+  "Fields": [
+    {
+      "Field": "DummyID",
+      "Name": "Dummy Polygon ID",
+      "Description": "SFX generation dummy poly position (-1: placement position) dummy poly ID. If specified as a booster, it will be the ID of the dummy poly in the booster."
+    },
+    {
+      "Field": "main_SFXID",
+      "Name": "Main: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "main_SlotNO",
+      "Name": "Main: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "main_useRPCType",
+      "Name": "Main: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "main_IsHorizontal",
+      "Name": "Main: Is Horizontal",
+      "Description": "0: Maintain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "main_IsFollowDmyPoly",
+      "Name": "Main: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "main_IsEraseActionEnd",
+      "Name": "Main: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "main_camouFlageShow",
+      "Name": "Main: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "main_TurnMoveDirType",
+      "Name": "Main: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "main_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "main_TurnMoveDirLimitX",
+      "Name": "Main: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "main_TurnMoveDirLimitY",
+      "Name": "Main: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "main_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "main_Scale",
+      "Name": "Main: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subFront_SFXID",
+      "Name": "Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_SlotNO",
+      "Name": "Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subFront_useRPCType",
+      "Name": "Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subFront_IsHorizontal",
+      "Name": "Front: Is Horizontal",
+      "Description": "0: subFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subFront_IsFollowDmyPoly",
+      "Name": "Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_IsEraseActionEnd",
+      "Name": "Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_camouFlageShow",
+      "Name": "Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subFront_TurnMoveDirType",
+      "Name": "Front: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "subFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitX",
+      "Name": "Front: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitY",
+      "Name": "Front: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_Scale",
+      "Name": "Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subBack_SFXID",
+      "Name": "Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_SlotNO",
+      "Name": "Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subBack_useRPCType",
+      "Name": "Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subBack_IsHorizontal",
+      "Name": "Back: Is Horizontal",
+      "Description": "0: subBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subBack_IsFollowDmyPoly",
+      "Name": "Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_IsEraseActionEnd",
+      "Name": "Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_camouFlageShow",
+      "Name": "Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subBack_TurnMoveDirType",
+      "Name": "Back: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "subBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitX",
+      "Name": "Back: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitY",
+      "Name": "Back: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_Scale",
+      "Name": "Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subLeft_SFXID",
+      "Name": "Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_SlotNO",
+      "Name": "Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subLeft_useRPCType",
+      "Name": "Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subLeft_IsHorizontal",
+      "Name": "Left: Is Horizontal",
+      "Description": "0: subLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subLeft_IsFollowDmyPoly",
+      "Name": "Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_IsEraseActionEnd",
+      "Name": "Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_camouFlageShow",
+      "Name": "Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subLeft_TurnMoveDirType",
+      "Name": "Left: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "subLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitX",
+      "Name": "Left: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitY",
+      "Name": "Left: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_Scale",
+      "Name": "Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "subRight_SFXID",
+      "Name": "Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_SlotNO",
+      "Name": "Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "subRight_useRPCType",
+      "Name": "Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "subRight_IsHorizontal",
+      "Name": "Right: Is Horizontal",
+      "Description": "0: subRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "subRight_IsFollowDmyPoly",
+      "Name": "Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_IsEraseActionEnd",
+      "Name": "Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_camouFlageShow",
+      "Name": "Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "subRight_TurnMoveDirType",
+      "Name": "Right: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "subRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitX",
+      "Name": "Right: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitY",
+      "Name": "Right: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_Scale",
+      "Name": "Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbFront_SFXID",
+      "Name": "Quick Boost Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_SlotNO",
+      "Name": "Quick Boost Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbFront_useRPCType",
+      "Name": "Quick Boost Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbFront_IsHorizontal",
+      "Name": "Quick Boost Front: Is Horizontal",
+      "Description": "0: qbFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbFront_IsFollowDmyPoly",
+      "Name": "Quick Boost Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_IsEraseActionEnd",
+      "Name": "Quick Boost Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_camouFlageShow",
+      "Name": "Quick Boost Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbFront_TurnMoveDirType",
+      "Name": "Quick Boost Front: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "qbFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitX",
+      "Name": "Quick Boost Front: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitY",
+      "Name": "Quick Boost Front: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_Scale",
+      "Name": "Quick Boost Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbBack_SFXID",
+      "Name": "Quick Boost Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_SlotNO",
+      "Name": "Quick Boost Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbBack_useRPCType",
+      "Name": "Quick Boost Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbBack_IsHorizontal",
+      "Name": "Quick Boost Back: Is Horizontal",
+      "Description": "0: qbBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbBack_IsFollowDmyPoly",
+      "Name": "Quick Boost Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_IsEraseActionEnd",
+      "Name": "Quick Boost Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_camouFlageShow",
+      "Name": "Quick Boost Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbBack_TurnMoveDirType",
+      "Name": "Quick Boost Back: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "qbBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitX",
+      "Name": "Quick Boost Back: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitY",
+      "Name": "Quick Boost Back: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_Scale",
+      "Name": "Quick Boost Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbLeft_SFXID",
+      "Name": "Quick Boost Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_SlotNO",
+      "Name": "Quick Boost Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbLeft_useRPCType",
+      "Name": "Quick Boost Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbLeft_IsHorizontal",
+      "Name": "Quick Boost Left: Is Horizontal",
+      "Description": "0: qbLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbLeft_IsFollowDmyPoly",
+      "Name": "Quick Boost Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_IsEraseActionEnd",
+      "Name": "Quick Boost Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_camouFlageShow",
+      "Name": "Quick Boost Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirType",
+      "Name": "Quick Boost Left: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "qbLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitX",
+      "Name": "Quick Boost Left: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitY",
+      "Name": "Quick Boost Left: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_Scale",
+      "Name": "Quick Boost Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "qbRight_SFXID",
+      "Name": "Quick Boost Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_SlotNO",
+      "Name": "Quick Boost Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "qbRight_useRPCType",
+      "Name": "Quick Boost Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "qbRight_IsHorizontal",
+      "Name": "Quick Boost Right: Is Horizontal",
+      "Description": "0: qbRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "qbRight_IsFollowDmyPoly",
+      "Name": "Quick Boost Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_IsEraseActionEnd",
+      "Name": "Quick Boost Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_camouFlageShow",
+      "Name": "Quick Boost Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "qbRight_TurnMoveDirType",
+      "Name": "Quick Boost Right: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "qbRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitX",
+      "Name": "Quick Boost Right: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitY",
+      "Name": "Quick Boost Right: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_Scale",
+      "Name": "Quick Boost Right: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "lift_SFXID",
+      "Name": "Lift: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "lift_SlotNO",
+      "Name": "Lift: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "lift_useRPCType",
+      "Name": "Lift: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "lift_IsHorizontal",
+      "Name": "Lift: Is Horizontal",
+      "Description": "0: lifttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "lift_IsFollowDmyPoly",
+      "Name": "Lift: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "lift_IsEraseActionEnd",
+      "Name": "Lift: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "lift_camouFlageShow",
+      "Name": "Lift: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "lift_TurnMoveDirType",
+      "Name": "Lift: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "lift_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitX",
+      "Name": "Lift: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitY",
+      "Name": "Lift: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "lift_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "lift_Scale",
+      "Name": "Lift: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique01_SFXID",
+      "Name": "Unique 1: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_SlotNO",
+      "Name": "Unique 1: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique01_useRPCType",
+      "Name": "Unique 1: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique01_IsHorizontal",
+      "Name": "Unique 1: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique01_IsFollowDmyPoly",
+      "Name": "Unique 1: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_IsEraseActionEnd",
+      "Name": "Unique 1: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_camouFlageShow",
+      "Name": "Unique 1: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique01_TurnMoveDirType",
+      "Name": "Unique 1: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique01_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_TurnMoveDirLimitX",
+      "Name": "Unique 1: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_TurnMoveDirLimitY",
+      "Name": "Unique 1: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_Scale",
+      "Name": "Unique 1: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique02_SFXID",
+      "Name": "Unique 2: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_SlotNO",
+      "Name": "Unique 2: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique02_useRPCType",
+      "Name": "Unique 2: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique02_IsHorizontal",
+      "Name": "Unique 2: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique02_IsFollowDmyPoly",
+      "Name": "Unique 2: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_IsEraseActionEnd",
+      "Name": "Unique 2: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_camouFlageShow",
+      "Name": "Unique 2: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique02_TurnMoveDirType",
+      "Name": "Unique 2: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique02_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_TurnMoveDirLimitX",
+      "Name": "Unique 2: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_TurnMoveDirLimitY",
+      "Name": "Unique 2: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_Scale",
+      "Name": "Unique 2: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique03_SFXID",
+      "Name": "Unique 3: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_SlotNO",
+      "Name": "Unique 3: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique03_useRPCType",
+      "Name": "Unique 3: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique03_IsHorizontal",
+      "Name": "Unique 3: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique03_IsFollowDmyPoly",
+      "Name": "Unique 3: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_IsEraseActionEnd",
+      "Name": "Unique 3: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_camouFlageShow",
+      "Name": "Unique 3: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique03_TurnMoveDirType",
+      "Name": "Unique 3: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique03_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_TurnMoveDirLimitX",
+      "Name": "Unique 3: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_TurnMoveDirLimitY",
+      "Name": "Unique 3: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_Scale",
+      "Name": "Unique 3: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique04_SFXID",
+      "Name": "Unique 4: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_SlotNO",
+      "Name": "Unique 4: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique04_useRPCType",
+      "Name": "Unique 4: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique04_IsHorizontal",
+      "Name": "Unique 4: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique04_IsFollowDmyPoly",
+      "Name": "Unique 4: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_IsEraseActionEnd",
+      "Name": "Unique 4: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_camouFlageShow",
+      "Name": "Unique 4: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique04_TurnMoveDirType",
+      "Name": "Unique 4: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique04_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_TurnMoveDirLimitX",
+      "Name": "Unique 4: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_TurnMoveDirLimitY",
+      "Name": "Unique 4: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_Scale",
+      "Name": "Unique 4: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique05_SFXID",
+      "Name": "Unique 5: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_SlotNO",
+      "Name": "Unique 5: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique05_useRPCType",
+      "Name": "Unique 5: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique05_IsHorizontal",
+      "Name": "Unique 5: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique05_IsFollowDmyPoly",
+      "Name": "Unique 5: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_IsEraseActionEnd",
+      "Name": "Unique 5: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_camouFlageShow",
+      "Name": "Unique 5: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique05_TurnMoveDirType",
+      "Name": "Unique 5: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique05_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_TurnMoveDirLimitX",
+      "Name": "Unique 5: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_TurnMoveDirLimitY",
+      "Name": "Unique 5: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_Scale",
+      "Name": "Unique 5: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique06_SFXID",
+      "Name": "Unique 6: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_SlotNO",
+      "Name": "Unique 6: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique06_useRPCType",
+      "Name": "Unique 6: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique06_IsHorizontal",
+      "Name": "Unique 6: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique06_IsFollowDmyPoly",
+      "Name": "Unique 6: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_IsEraseActionEnd",
+      "Name": "Unique 6: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_camouFlageShow",
+      "Name": "Unique 6: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique06_TurnMoveDirType",
+      "Name": "Unique 6: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique06_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_TurnMoveDirLimitX",
+      "Name": "Unique 6: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_TurnMoveDirLimitY",
+      "Name": "Unique 6: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_Scale",
+      "Name": "Unique 6: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique07_SFXID",
+      "Name": "Unique 7: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_SlotNO",
+      "Name": "Unique 7: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique07_useRPCType",
+      "Name": "Unique 7: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique07_IsHorizontal",
+      "Name": "Unique 7: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique07_IsFollowDmyPoly",
+      "Name": "Unique 7: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_IsEraseActionEnd",
+      "Name": "Unique 7: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_camouFlageShow",
+      "Name": "Unique 7: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique07_TurnMoveDirType",
+      "Name": "Unique 7: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique07_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_TurnMoveDirLimitX",
+      "Name": "Unique 7: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_TurnMoveDirLimitY",
+      "Name": "Unique 7: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_Scale",
+      "Name": "Unique 7: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique08_SFXID",
+      "Name": "Unique 8: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_SlotNO",
+      "Name": "Unique 8: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique08_useRPCType",
+      "Name": "Unique 8: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique08_IsHorizontal",
+      "Name": "Unique 8: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique08_IsFollowDmyPoly",
+      "Name": "Unique 8: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_IsEraseActionEnd",
+      "Name": "Unique 8: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_camouFlageShow",
+      "Name": "Unique 8: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique08_TurnMoveDirType",
+      "Name": "Unique 8: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique08_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_TurnMoveDirLimitX",
+      "Name": "Unique 8: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_TurnMoveDirLimitY",
+      "Name": "Unique 8: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_Scale",
+      "Name": "Unique 8: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique09_SFXID",
+      "Name": "Unique 9: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_SlotNO",
+      "Name": "Unique 9: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique09_useRPCType",
+      "Name": "Unique 9: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique09_IsHorizontal",
+      "Name": "Unique 9: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique09_IsFollowDmyPoly",
+      "Name": "Unique 9: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_IsEraseActionEnd",
+      "Name": "Unique 9: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_camouFlageShow",
+      "Name": "Unique 9: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique09_TurnMoveDirType",
+      "Name": "Unique 9: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique09_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_TurnMoveDirLimitX",
+      "Name": "Unique 9: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_TurnMoveDirLimitY",
+      "Name": "Unique 9: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_Scale",
+      "Name": "Unique 9: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "unique10_SFXID",
+      "Name": "Unique 10: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_SlotNO",
+      "Name": "Unique 10: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "unique10_useRPCType",
+      "Name": "Unique 10: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "unique10_IsHorizontal",
+      "Name": "Unique 10: Is Horizontal",
+      "Description": "0: unique01tain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "unique10_IsFollowDmyPoly",
+      "Name": "Unique 10: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_IsEraseActionEnd",
+      "Name": "Unique 10: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_camouFlageShow",
+      "Name": "Unique 10: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "unique10_TurnMoveDirType",
+      "Name": "Unique 10: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "unique10_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_TurnMoveDirLimitX",
+      "Name": "Unique 10: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_TurnMoveDirLimitY",
+      "Name": "Unique 10: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_Scale",
+      "Name": "Unique 10: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeFront_SFXID",
+      "Name": "Brake Front: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_SlotNO",
+      "Name": "Brake Front: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeFront_useRPCType",
+      "Name": "Brake Front: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeFront_IsHorizontal",
+      "Name": "Brake Front: Is Horizontal",
+      "Description": "0: brakeFronttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeFront_IsFollowDmyPoly",
+      "Name": "Brake Front: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_IsEraseActionEnd",
+      "Name": "Brake Front: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_camouFlageShow",
+      "Name": "Brake Front: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirType",
+      "Name": "Brake Front: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "brakeFront_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitX",
+      "Name": "Brake Front: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitY",
+      "Name": "Brake Front: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_Scale",
+      "Name": "Brake Front: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeBack_SFXID",
+      "Name": "Brake Back: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_SlotNO",
+      "Name": "Brake Back: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeBack_useRPCType",
+      "Name": "Brake Back: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeBack_IsHorizontal",
+      "Name": "Brake Back: Is Horizontal",
+      "Description": "0: brakeBacktain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeBack_IsFollowDmyPoly",
+      "Name": "Brake Back: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_IsEraseActionEnd",
+      "Name": "Brake Back: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_camouFlageShow",
+      "Name": "Brake Back: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirType",
+      "Name": "Brake Back: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "brakeBack_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitX",
+      "Name": "Brake Back: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitY",
+      "Name": "Brake Back: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_Scale",
+      "Name": "Brake Back: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeLeft_SFXID",
+      "Name": "Brake Left: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_SlotNO",
+      "Name": "Brake Left: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeLeft_useRPCType",
+      "Name": "Brake Left: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeLeft_IsHorizontal",
+      "Name": "Brake Left: Is Horizontal",
+      "Description": "0: brakeLefttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeLeft_IsFollowDmyPoly",
+      "Name": "Brake Left: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_IsEraseActionEnd",
+      "Name": "Brake Left: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_camouFlageShow",
+      "Name": "Brake Left: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirType",
+      "Name": "Brake Left: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "brakeLeft_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitX",
+      "Name": "Brake Left: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitY",
+      "Name": "Brake Left: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_Scale",
+      "Name": "Brake Left: SFX Scale",
+      "Description": "SFX scale value"
+    },
+    {
+      "Field": "brakeRight_SFXID",
+      "Name": "Brake Right: SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_SlotNO",
+      "Name": "Brake Right: Slot Number",
+      "Description": "-1: Do not set loop SFX when there is no management or no management slot"
+    },
+    {
+      "Field": "brakeRight_useRPCType",
+      "Name": "Brake Right: RPC Type",
+      "Description": "Used when you want to change the size of SFX etc. according to the horizontal movement speed of the character. If it is 1, the actual value used is 60000."
+    },
+    {
+      "Field": "brakeRight_IsHorizontal",
+      "Name": "Brake Right: Is Horizontal",
+      "Description": "0: brakeRighttain direction, 1: Align horizontally"
+    },
+    {
+      "Field": "brakeRight_IsFollowDmyPoly",
+      "Name": "Brake Right: Follow Dummy Polygon",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_IsEraseActionEnd",
+      "Name": "Brake Right: Delete SFX on End of Action",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_camouFlageShow",
+      "Name": "Brake Right: SFX are always visible",
+      "Description": "SFX will always appear, even if the entity is invisible."
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirType",
+      "Name": "Brake Right: Correction Direction based on Movement",
+      "Description": "Used to change the direction of the dummy poly according to the character's movement direction."
+    },
+    {
+      "Field": "brakeRight_pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitX",
+      "Name": "Brake Right: Correction Limit Angle: X",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitY",
+      "Name": "Brake Right: Correction Limit Angle: Y",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_Scale",
+      "Name": "Brake Right: SFX Scale",
+      "Description": "SFX scale value"
+    }
+  ]
+}

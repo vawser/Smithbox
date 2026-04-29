@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <graveGenerateTime />
+        <deadTimeValueId  Enum="EVENT_VALUE_global"/>
+        <deadFlagId  Enum="EVENT_FLAG_GLOBAL_EVENT"/>
+        <graveSoulValue />
+        <chrNameTextId />
+        <aReserved1 />
+        <value0 />
+        <value1 />
+        <value2 />
+        <value3 />
+        <value4 />
+        <value5 />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <offsetX />
+        <offsetY />
+        <offsetZ />
+        <diffuseR />
+        <diffuseG />
+        <diffuseB />
+        <dummy0 />
+        <specularR />
+        <specularG />
+        <specularB />
+        <dummy1 />
+        <diffuseA />
+        <specularA />
+        <radius />
+        <priority />
+        <depthShadow />
+        <blinkTimeMax />
+        <blinkTimeMin />
+        <blinkPower />
+        <windDepthShadow />
+        <windBlinkTimeMax />
+        <windBlinkTimeMin />
+        <windBlinkPower />
+        <enableShadow  IsBool=""/>
+        <enableWind  IsBool=""/>
+        <dummy3 />
+    </Field>
+</PARAMMETA>

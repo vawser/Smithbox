@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <animId />
+        <initialFrameHead />
+        <initialFrameTail />
+        <isLoopAnim  IsBool=""/>
+        <isBreakable  IsBool=""/>
+        <isPrefab  IsBool=""/>
+        <pad1 />
+        <cameraHit  Enum="OBJ_CAMERA_HIT_ENUM"/>
+        <emissiveScale0 />
+        <emissiveScale1 />
+        <pad2 />
+        <sfxId0 />
+        <sfxId1 />
+        <sfxId2 />
+        <sfxId3 />
+        <sfxId4 />
+        <sfxId5 />
+        <sfxIdBreak0 />
+        <sfxPoint0  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPoint1  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPoint2  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPoint3  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPoint4  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPoint5  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxPointBreak0  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
+        <sfxDmyPolyId0 />
+        <sfxDmyPolyId1 />
+        <sfxDmyPolyId2 />
+        <sfxDmyPolyId3 />
+        <sfxDmyPolyId4 />
+        <sfxDmyPolyId5 />
+        <sfxDmyPolyIdBreak0 />
+        <doesFollow0  IsBool=""/>
+        <doesFollow1  IsBool=""/>
+        <doesFollow2  IsBool=""/>
+        <doesFollow3  IsBool=""/>
+        <doesFollow4  IsBool=""/>
+        <doesFollow5  IsBool=""/>
+    </Field>
+</PARAMMETA>

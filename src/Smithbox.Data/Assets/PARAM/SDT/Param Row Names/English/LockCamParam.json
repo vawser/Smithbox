@@ -1,0 +1,905 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal Narrow Space"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal Indoors Wide"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Crouching"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Crouching Narrow Space"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Crouching Indoors Wide"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Crouching"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Crouching"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Hugging Wall"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Hugging Wall Narrow Space"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Hugging Wall Indoors Wide"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Hugging Wall"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Peeping"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Peeping Narrow Space"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Peeping Indoors Wide"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Ledge Hanging"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Ledge Hanging Narrow Space"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Ledge Hanging Indoors Wide"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Ledge Hanging Ashina Reservoir Bridge Eavesdrop"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Waiting for Resurrection Narrow Space"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Waiting for Resurrection Indoors Wide"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "On Water Surface"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "In water Grappling Hook Use"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "In Water waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Underwater"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Underwater Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Underwater swim up"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "Under water swim up Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Underwater swim down"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Underwater swim down Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Underwater waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Underwater waiting for Resurrection Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Resurface"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Dive"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 5055,
+      "Entries": [
+        "Great Colored Carp Bridge Smash"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Great Shinobi Owl"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Guardrian Ape"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Guardrian Ape"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "Guardrian Ape"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Guardrian Ape"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "O'Rin of the Water"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "Demon of Hatred Closeup"
+      ]
+    },
+    {
+      "ID": 7022,
+      "Entries": [
+        "Demon of Hatred In Air"
+      ]
+    },
+    {
+      "ID": 59200,
+      "Entries": [
+        "Temple look up allowed"
+      ]
+    },
+    {
+      "ID": 59201,
+      "Entries": [
+        "Allowed to look up at the temple hanging"
+      ]
+    },
+    {
+      "ID": 59210,
+      "Entries": [
+        "Allowed overlooking the temple default"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Corrupted Monk"
+      ]
+    },
+    {
+      "ID": 5000001,
+      "Entries": [
+        "Corrupted Monk Crouching"
+      ]
+    },
+    {
+      "ID": 5000007,
+      "Entries": [
+        "Corrupted Monk Waiting For Resurrection"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "Corrupted Monk While On Treebranch"
+      ]
+    },
+    {
+      "ID": 5000101,
+      "Entries": [
+        "Corrupted Monk While On Treebranch Crouching"
+      ]
+    },
+    {
+      "ID": 5000107,
+      "Entries": [
+        "Corrupted Monk While On Treebranch Waiting For Resurrection"
+      ]
+    },
+    {
+      "ID": 5050000,
+      "Entries": [
+        "Great Colored Carp"
+      ]
+    },
+    {
+      "ID": 5050100,
+      "Entries": [
+        "Great Colored Carp - Brige Smash"
+      ]
+    },
+    {
+      "ID": 5050101,
+      "Entries": [
+        "Great Colored Carp - Brige Smash Crouching"
+      ]
+    },
+    {
+      "ID": 5060000,
+      "Entries": [
+        "Great Shinobi Owl"
+      ]
+    },
+    {
+      "ID": 5060001,
+      "Entries": [
+        "Great Shinobi Owl Crouching"
+      ]
+    },
+    {
+      "ID": 5060007,
+      "Entries": [
+        "Great Shinobi Owl Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5061000,
+      "Entries": [
+        "Owl (Father)"
+      ]
+    },
+    {
+      "ID": 5061001,
+      "Entries": [
+        "Owl (Father) Crouching"
+      ]
+    },
+    {
+      "ID": 5061007,
+      "Entries": [
+        "Owl (Father) Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5080000,
+      "Entries": [
+        "Gyoubu Oniwa"
+      ]
+    },
+    {
+      "ID": 5080001,
+      "Entries": [
+        "Gyoubu Oniwa Crouching"
+      ]
+    },
+    {
+      "ID": 5080007,
+      "Entries": [
+        "Gyoubu Oniwa Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5080100,
+      "Entries": [
+        "Gyoubu Oniwa Looking Up"
+      ]
+    },
+    {
+      "ID": 5080101,
+      "Entries": [
+        "Gyoubu Oniwa Looking Up Crouching"
+      ]
+    },
+    {
+      "ID": 5080107,
+      "Entries": [
+        "Gyoubu Oniwa Looking Up Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5080200,
+      "Entries": [
+        "Gyoubu Oniwa Closeup"
+      ]
+    },
+    {
+      "ID": 5080201,
+      "Entries": [
+        "Gyoubu Oniwa Closeup Crouching"
+      ]
+    },
+    {
+      "ID": 5080207,
+      "Entries": [
+        "Gyoubu Oniwa Closeup Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "Lady Butterfly"
+      ]
+    },
+    {
+      "ID": 5090001,
+      "Entries": [
+        "Lady Butterfly Crouching"
+      ]
+    },
+    {
+      "ID": 5090007,
+      "Entries": [
+        "Lady Butterfly Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Guardian Ape"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "Guardian Ape Crouching"
+      ]
+    },
+    {
+      "ID": 5100007,
+      "Entries": [
+        "Guardian Ape Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        "Guardian Ape Closeup"
+      ]
+    },
+    {
+      "ID": 5100011,
+      "Entries": [
+        "Guardian Ape Closeup Crouching"
+      ]
+    },
+    {
+      "ID": 5100017,
+      "Entries": [
+        "Guardian Ape Closeup Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100020,
+      "Entries": [
+        "Guardian Ape Jump"
+      ]
+    },
+    {
+      "ID": 5100021,
+      "Entries": [
+        "Guardian Ape Jump Crouching"
+      ]
+    },
+    {
+      "ID": 5100027,
+      "Entries": [
+        "Guardian Ape Jump Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100100,
+      "Entries": [
+        "Guardian Ape After Bride Appears"
+      ]
+    },
+    {
+      "ID": 5100101,
+      "Entries": [
+        "Guardian Ape After Bride Appears Crouching"
+      ]
+    },
+    {
+      "ID": 5100107,
+      "Entries": [
+        "Guardian Ape After Bride Appears Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100110,
+      "Entries": [
+        "Guardian Ape Closeup"
+      ]
+    },
+    {
+      "ID": 5100111,
+      "Entries": [
+        "Guardian Ape Closeup Crouching"
+      ]
+    },
+    {
+      "ID": 5100117,
+      "Entries": [
+        "Guardian Ape Closeup Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5100120,
+      "Entries": [
+        "Guardian Ape Jump"
+      ]
+    },
+    {
+      "ID": 5100121,
+      "Entries": [
+        "Guardian Ape Jump Crouching"
+      ]
+    },
+    {
+      "ID": 5100127,
+      "Entries": [
+        "Guardian Ape Jump Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5200000,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 5200001,
+      "Entries": [
+        "Divine Dragon Crouching"
+      ]
+    },
+    {
+      "ID": 5200007,
+      "Entries": [
+        "Divine Dragon Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5200100,
+      "Entries": [
+        "Divine Dragon Finale"
+      ]
+    },
+    {
+      "ID": 5200200,
+      "Entries": [
+        "Divine Dragon After Finale"
+      ]
+    },
+    {
+      "ID": 5200300,
+      "Entries": [
+        "Divine Dragon Storm Blowback Attack"
+      ]
+    },
+    {
+      "ID": 5200310,
+      "Entries": [
+        "Divine Dragon"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "Old Dragons of the Tree"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "Old Dragons of the Tree Crouching"
+      ]
+    },
+    {
+      "ID": 5300007,
+      "Entries": [
+        "Old Dragons of the Tree Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5300100,
+      "Entries": [
+        "Old Dragons of the Tree Branch Attack"
+      ]
+    },
+    {
+      "ID": 5300101,
+      "Entries": [
+        "Old Dragons of the Tree Branch Attack Crouching"
+      ]
+    },
+    {
+      "ID": 5300107,
+      "Entries": [
+        "Old Dragons of the Tree Branch Attack Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5400000,
+      "Entries": [
+        "Isshin Ashina"
+      ]
+    },
+    {
+      "ID": 5400001,
+      "Entries": [
+        "Isshin Ashina Crouching"
+      ]
+    },
+    {
+      "ID": 5400007,
+      "Entries": [
+        "Isshin Ashina Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 5400500,
+      "Entries": [
+        "Isshin the Sword Saint"
+      ]
+    },
+    {
+      "ID": 5400501,
+      "Entries": [
+        "Isshin the Sword Saint Crouching"
+      ]
+    },
+    {
+      "ID": 5400507,
+      "Entries": [
+        "Isshin the Sword Saint Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7000000,
+      "Entries": [
+        "O'Rin of the Water"
+      ]
+    },
+    {
+      "ID": 7000001,
+      "Entries": [
+        "O'Rin of the Water Crouching"
+      ]
+    },
+    {
+      "ID": 7000007,
+      "Entries": [
+        "O'Rin of the Water Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7020000,
+      "Entries": [
+        "Demon of Hatred"
+      ]
+    },
+    {
+      "ID": 7020001,
+      "Entries": [
+        "Demon of Hatred Crouching"
+      ]
+    },
+    {
+      "ID": 7020007,
+      "Entries": [
+        "Demon of Hatred Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7020100,
+      "Entries": [
+        "Demon of Hatred Jumping"
+      ]
+    },
+    {
+      "ID": 7020101,
+      "Entries": [
+        "Demon of Hatred Jumping Crouching"
+      ]
+    },
+    {
+      "ID": 7020107,
+      "Entries": [
+        "Demon of Hatred Jumping Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7020200,
+      "Entries": [
+        "Demon of Hatred Lower Jump"
+      ]
+    },
+    {
+      "ID": 7020201,
+      "Entries": [
+        "Demon of Hatred Lower Jump Crouching"
+      ]
+    },
+    {
+      "ID": 7020207,
+      "Entries": [
+        "Demon of Hatred Lower Jump Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7020300,
+      "Entries": [
+        "Demon of Hatred Closeup"
+      ]
+    },
+    {
+      "ID": 7020301,
+      "Entries": [
+        "Demon of Hatred Closeup Crouching"
+      ]
+    },
+    {
+      "ID": 7020307,
+      "Entries": [
+        "Demon of Hatred Closeup Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7100000,
+      "Entries": [
+        "Genichiro (Ashina Castle)"
+      ]
+    },
+    {
+      "ID": 7100001,
+      "Entries": [
+        "Genichiro (Ashina Castle) Crouching"
+      ]
+    },
+    {
+      "ID": 7100007,
+      "Entries": [
+        "Genichiro (Ashina Castle) Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7100100,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 7100101,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Crouching"
+      ]
+    },
+    {
+      "ID": 7100107,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7100500,
+      "Entries": [
+        "Genichiro (Ashina Reservoir)"
+      ]
+    },
+    {
+      "ID": 7100501,
+      "Entries": [
+        "Genichiro (Ashina Castle) Crouching"
+      ]
+    },
+    {
+      "ID": 7100507,
+      "Entries": [
+        "Genichiro (Ashina Castle) Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7100600,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot"
+      ]
+    },
+    {
+      "ID": 7100601,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Crouching"
+      ]
+    },
+    {
+      "ID": 7100607,
+      "Entries": [
+        "Genichiro (Ashina Castle) Quadruple Bow Shot Waiting for Resurrection"
+      ]
+    },
+    {
+      "ID": 7400000,
+      "Entries": [
+        "Emma, the Gentle Blade"
+      ]
+    },
+    {
+      "ID": 7400001,
+      "Entries": [
+        "Emma, the Gentle Blade Crouching"
+      ]
+    },
+    {
+      "ID": 7400007,
+      "Entries": [
+        "Emma, the Gentle Blade Waiting for Resurrection"
+      ]
+    }
+  ]
+}

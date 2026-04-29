@@ -1,0 +1,28 @@
+{
+  "Param": "SOUNDID_SPATIAL_SETTING",
+  "Type": "SOUNDID_SPATIAL_SETTING",
+  "Name": "SOUNDID_SPATIAL_SETTING",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "SoundID_Type",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SoundID_No",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ReflectLv",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_last",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

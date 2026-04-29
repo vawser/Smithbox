@@ -1,0 +1,38 @@
+{
+  "Key": "MENU_PROPERTY_EXTRACT_OPERATION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MENU_PROPERTY_EXTRACT_OPERATION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Constant 0 * Value + Constant 1"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Constant 0 / Value + Constant 1"
+        }
+      ]
+    }
+  ]
+}

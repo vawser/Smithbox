@@ -1,0 +1,48 @@
+{
+  "Param": "PARTSTOKEN_PARAM_ST",
+  "Type": "PARTSTOKEN_PARAM_ST",
+  "Name": "PARTSTOKEN_PARAM_ST",
+  "Description": "Determines the configuration of a combat log dropped by an enemy. Linked via the PartTokenParamID field within an Enemy part in a MSB.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "point",
+      "Name": "Loghunt Points",
+      "Description": "Points awarded to your mercenary rank (loghunt)"
+    },
+    {
+      "Field": "grade",
+      "Name": "Grade",
+      "Description": "Menu display category."
+    },
+    {
+      "Field": "usage",
+      "Name": "Acquisition Type",
+      "Description": "Acquisition type of the part."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

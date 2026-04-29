@@ -1,0 +1,29 @@
+{
+  "Key": "CHR_COLLISION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_COLLISION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Capsule"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ragdoll"
+        }
+      ]
+    }
+  ]
+}

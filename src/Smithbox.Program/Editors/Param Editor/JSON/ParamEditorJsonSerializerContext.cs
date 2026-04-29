@@ -14,6 +14,13 @@ namespace StudioCore.Editors.ParamEditor;
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
 
+// Param Annotations
+[JsonSerializable(typeof(ParamAnnotations))]
+[JsonSerializable(typeof(ParamAnnotationEntry))]
+[JsonSerializable(typeof(ParamAnnotationFieldEntry))]
+
+[JsonSerializable(typeof(ParamAnnotationLanguages))]
+[JsonSerializable(typeof(ParamAnnotationLanguageEntry))]
 
 // Icon Configurations
 [JsonSerializable(typeof(IconConfigurations))]
@@ -28,16 +35,17 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(TableParams))]
 
 // Param Memory Offsets
-[JsonSerializable(typeof(GameOffsetResource))]
-[JsonSerializable(typeof(GameOffsetReference))]
+[JsonSerializable(typeof(ParamReloaderOffsets))]
+[JsonSerializable(typeof(ParamReloaderOffsetEntry))]
 
 // Param Categories
-[JsonSerializable(typeof(ParamCategoryResource))]
+[JsonSerializable(typeof(ParamCategories))]
 [JsonSerializable(typeof(ParamCategoryEntry))]
+[JsonSerializable(typeof(ParamCategoryNameEntry))]
 
 // Commutative Param Groups
-[JsonSerializable(typeof(ParamCommutativeResource))]
-[JsonSerializable(typeof(ParamCommutativeEntry))]
+[JsonSerializable(typeof(ParamCommutativityGroups))]
+[JsonSerializable(typeof(ParamCommutativityEntry))]
 
 // Param Type Info
 [JsonSerializable(typeof(ParamTypeInfo))]
@@ -50,20 +58,41 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(RowNameEntry))]
 [JsonSerializable(typeof(RowNameEntryLegacy))]
 
+// Row Name Languages
+[JsonSerializable(typeof(ParamImportLanguages))]
+[JsonSerializable(typeof(ParamImportLanguageEntry))]
+
 // Param Upgrader Instructions
 [JsonSerializable(typeof(ParamUpgraderInfo))]
 [JsonSerializable(typeof(OldRegulationEntry))]
 [JsonSerializable(typeof(UpgraderMassEditEntry))]
 
 // Graph Legends
-[JsonSerializable(typeof(GraphLegends))]
-[JsonSerializable(typeof(GraphLegendEntry))]
+[JsonSerializable(typeof(GraphAnnotations))]
+[JsonSerializable(typeof(GraphAnnotationEntry))]
 
 // Delta Patch
 [JsonSerializable(typeof(ParamDeltaPatch))]
 [JsonSerializable(typeof(ParamDelta))]
 [JsonSerializable(typeof(RowDelta))]
 [JsonSerializable(typeof(FieldDelta))]
+
+// Group References
+[JsonSerializable(typeof(FieldReferenceGroups))]
+[JsonSerializable(typeof(FieldReferenceGroup))]
+[JsonSerializable(typeof(FieldReferenceSet))]
+
+// Field Groups
+[JsonSerializable(typeof(FieldLayouts))]
+[JsonSerializable(typeof(FieldLayout))]
+[JsonSerializable(typeof(FieldLayoutEntry))]
+
+// Param Enums
+[JsonSerializable(typeof(ParamEnums))]
+[JsonSerializable(typeof(ParamEnumEntry))]
+[JsonSerializable(typeof(ParamEnumOption))]
+[JsonSerializable(typeof(ParamCategoryTextEntry))]
+
 
 internal partial class ParamEditorJsonSerializerContext : JsonSerializerContext
 {

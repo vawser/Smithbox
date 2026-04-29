@@ -1,0 +1,56 @@
+{
+  "Key": "BULLET_FOLLOW_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_FOLLOW_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not following"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follows the shooter"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follows the shooter's footsteps"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follows the target"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Crawl on the ground after impact"
+        }
+      ]
+    }
+  ]
+}

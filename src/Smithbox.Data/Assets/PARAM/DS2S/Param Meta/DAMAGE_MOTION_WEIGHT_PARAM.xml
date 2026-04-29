@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <noneSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <superSmallSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <smallSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <normalSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <largeSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <superLargeSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <hyperLargeSize  Enum="DAMAGE_MOTION_TYPE"/>
+        <ultraLargeSize  Enum="DAMAGE_MOTION_TYPE"/>
+    </Field>
+</PARAMMETA>

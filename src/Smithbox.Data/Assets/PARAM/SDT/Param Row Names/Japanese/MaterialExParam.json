@@ -1,0 +1,203 @@
+{
+  "Name": "MaterialExParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Buddy composition effect -- バディ組成効果"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "c4500 wyvern HU effect -- c4500ワイバーンHU効果"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "c1300 Innsmouth HU effect -- c1300インスマウスHU効果"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "PC cat eye change -- PC猫目変化"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "c5310 Mermaid dragon tentacle withering effect -- c5310人魚龍の触手枯れ効果"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "c7020 Busshi HU switching expression -- c7020仏師HU切り替え表現"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "c7020 Busshi HU switching expression (arm) -- c7020仏師HU切り替え表現(腕)"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "c5200 Mermaid dragon cherry blossom expression -- c5200人魚龍桜咲き表現"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Multiple ParamTest_color lightness_A -- 複数ParamTest_カラー明度_A"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Multiple ParamTest_color lightness_B -- 複数ParamTest_カラー明度_B"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Multiple ParamTest_ Fresnel strength -- 複数ParamTest_フレネル強度"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Multiple ParamTest_ Fresnel blur -- 複数ParamTest_フレネルぼかし"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "RedMask_Strength -- RedMask_強度"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "GreenMask_Strength -- GreenMask_強度"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "BlueMask_Strength -- BlueMask_強度"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Switching between the sun and the moon -- 太陽と月の切り替え"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Α of the sun and the moon -- 太陽と月のα"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "The color of the sun -- 太陽の色"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Sun Int -- 太陽のInt"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Sun contrast -- 太陽のコントラスト"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Sun scale -- 太陽のスケール"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Moon color -- 月の色"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "The size of the moon -- 月の大きさ"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "The shade of the moon -- 月の陰色"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "Moon shade Int -- 月の陰Int"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "Moon shade contrast -- 月の陰コントラスト"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "Moon shade offset -- 月の陰オフセット"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "Moon shade scale -- 月の陰スケール"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "Lunar shadow rotation -- 月の陰回転"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Temple_elevator -- 寺_エレベーター"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "SEQ01080_white red -- SEQ01080_白赤"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "SEQ01080_black blue -- SEQ01080_黒青"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "SEQ01080_ falloff -- SEQ01080_フォールオフ"
+      ]
+    }
+  ]
+}

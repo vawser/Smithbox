@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <feType  Enum="RESULT_EVENT_FE_TYPE_ENUM"/>
+        <msgType  Enum="RESULT_EVENT_MSG_TYPE_ENUM"/>
+        <vowContribute />
+        <endType  Enum="RESULT_EVENT_END_TYPE_ENUM"/>
+        <msgId />
+        <rewardItemId01 />
+        <exRewardItemId01 />
+        <dummy />
+    </Field>
+</PARAMMETA>

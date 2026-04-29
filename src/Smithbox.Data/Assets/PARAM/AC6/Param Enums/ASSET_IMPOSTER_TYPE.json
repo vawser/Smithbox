@@ -1,0 +1,29 @@
+{
+  "Key": "ASSET_IMPOSTER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_IMPOSTER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Lock-cam Billboard"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cross Billboard"
+        }
+      ]
+    }
+  ]
+}

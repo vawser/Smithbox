@@ -1,0 +1,108 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": "Hit Visual Effects",
+  "Fields": [
+    {
+      "Field": "Slash_Normal",
+      "Name": "Slash: Standard",
+      "Description": "Slash: Standard"
+    },
+    {
+      "Field": "Slash_S",
+      "Name": "Slash: Small",
+      "Description": "Slash: Small"
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "Slash: Large",
+      "Description": "Slash: Large"
+    },
+    {
+      "Field": "Slash_Specific1",
+      "Name": "Slash: Specific 1",
+      "Description": "Slash: Specific 1"
+    },
+    {
+      "Field": "Slash_Specific2",
+      "Name": "Slash: Specific 2",
+      "Description": "Slash: Specific 2"
+    },
+    {
+      "Field": "Blow_Normal",
+      "Name": "Batter: Standard",
+      "Description": "Batter: Standard"
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "Batter: Small",
+      "Description": "Batter: Small"
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "Batter: Large",
+      "Description": "Batter: Large"
+    },
+    {
+      "Field": "Blow_Specific1",
+      "Name": "Batter: Specific 1",
+      "Description": "Batter: Specific 1"
+    },
+    {
+      "Field": "Blow_Specific2",
+      "Name": "Batter: Specific 2",
+      "Description": "Batter: Specific 2"
+    },
+    {
+      "Field": "Thrust_Normal",
+      "Name": "Piercing: Standard",
+      "Description": "Piercing: Standard"
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "Piercing: Small",
+      "Description": "Piercing: Small"
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "Piercing: Large",
+      "Description": "Piercing: Large"
+    },
+    {
+      "Field": "Thrust_Specific1",
+      "Name": "Piercing: Specific 1",
+      "Description": "Piercing: Specific 1"
+    },
+    {
+      "Field": "Thrust_Specific2",
+      "Name": "Piercing: Specific 2",
+      "Description": "Piercing: Specific 2"
+    },
+    {
+      "Field": "Neutral_Normal",
+      "Name": "Neutral: Standard",
+      "Description": "Neutral: standard"
+    },
+    {
+      "Field": "Neutral_S",
+      "Name": "Neutral: Small",
+      "Description": "Neutral: Small"
+    },
+    {
+      "Field": "Neutral_L",
+      "Name": "Neutral: Large",
+      "Description": "Neutral: Large"
+    },
+    {
+      "Field": "Neutral_Specific1",
+      "Name": "Neutral: Specific 1",
+      "Description": "Neutral: Specific 1"
+    },
+    {
+      "Field": "Neutral_Specific2",
+      "Name": "Neutral: Specific 2",
+      "Description": "Neutral: Specific 2"
+    }
+  ]
+}

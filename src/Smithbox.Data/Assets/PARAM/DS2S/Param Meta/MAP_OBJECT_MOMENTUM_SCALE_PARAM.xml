@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <noneObj0 />
+        <superSmallObj0 />
+        <smallObj0 />
+        <normalObj0 />
+        <largeObj0 />
+        <superLargeObj0 />
+        <hyperLargeObj0 />
+        <infiniteObj0 />
+        <noneObj1 />
+        <superSmallObj1 />
+        <smallObj1 />
+        <normalObj1 />
+        <largeObj1 />
+        <superLargeObj1 />
+        <hyperLargeObj1 />
+        <infiniteObj1 />
+    </Field>
+</PARAMMETA>

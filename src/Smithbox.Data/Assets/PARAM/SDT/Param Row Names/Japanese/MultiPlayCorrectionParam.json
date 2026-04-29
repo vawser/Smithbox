@@ -1,0 +1,155 @@
+{
+  "Name": "MultiPlayCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test data 2 -- テストデータ2"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Zako -- ザコ"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Strong enemy -- 強敵"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "boss -- ボス"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Ash Judge Gunda -- 灰の審判者グンダ"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Bold in the cold valley -- 冷たい谷のボルド"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Taiki of the curse belly -- 呪腹の大樹"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Crystal Elder -- 結晶の古老"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Bishops of depth -- 深みの主教たち"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Observer (King of firewood) -- 監視者（薪の王状態）"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Overlord Wolneil -- 覇王ウォルニール"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Pope Sullivan -- 法王サリヴァーン"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Giant Yom -- 巨人ヨーム"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Old King of Demon -- デーモンの老王"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "God-eating Eldritch -- 神喰らいのエルドリッチ"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Dancer in the valley of water -- 水の谷の踊り子"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Youkai Osloes -- 妖王オスロエス"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Hero Gunda -- 英雄グンダ"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Dragon hunting armor -- 竜狩りの鎧"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Brother Prince Laurian + Prince Roslick -- 兄王子ローリアン+王子ロスリック"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Old flying dragon -- 古の飛竜"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Storm King -- 嵐の王"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Incarnation of kings -- 王たちの化身"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "In front of Storm King HU -- 嵐の王HU前"
+      ]
+    }
+  ]
+}

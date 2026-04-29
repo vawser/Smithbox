@@ -1,0 +1,44 @@
+{
+  "Key": "Common",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Common"
+      }
+  ],
+  "ForceTop": true,
+  "Params": [
+    "AtkParam_Npc",
+    "AtkParam_Pc",
+    "AttackElementCorrectParam",
+    "BehaviorParam",
+    "BehaviorParam_PC",
+    "Bullet",
+    "BulletCreateLimitParam",
+    "CalcCorrectGraph",
+    "CharaInitParam",
+    "EquipMtrlSetParam",
+    "EquipParamAccessory",
+    "EquipParamGoods",
+    "EquipParamProtector",
+    "EquipParamWeapon",
+    "GameAreaParam",
+    "ItemLotParam",
+    "LockCamParam",
+    "NpcParam",
+    "NpcThinkParam",
+    "ResourceItemLotParam",
+    "ResourceItemParam",
+    "ShopLineupParam",
+    "SkillParam",
+    "SpEffectParam",
+    "SpEffectVfxParam",
+    "StaminaControlParam",
+    "SwordArtsParam",
+    "ThrowDirectionDecalParam",
+    "ThrowDirectionSeParam",
+    "ThrowDirectionSfxParam",
+    "ThrowKindParam",
+    "ThrowParam"
+  ]
+}

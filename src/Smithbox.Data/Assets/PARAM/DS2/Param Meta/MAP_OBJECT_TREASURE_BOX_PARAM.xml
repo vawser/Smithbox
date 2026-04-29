@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <forceTrapEnable />
+        <aReserved1 />
+        <trapGasDamageId  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <trapHealDamageId  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <trapBurstDamageId  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <trapArrowDamageId  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <trapEnemy />
+    </Field>
+</PARAMMETA>

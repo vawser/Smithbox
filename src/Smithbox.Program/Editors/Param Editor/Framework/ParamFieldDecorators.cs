@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
@@ -33,7 +34,16 @@ public class ParamFieldDecorators
         ParentView = curView;
     }
 
-    public void HandleLabels(FieldMetaContext metaContext, Param.Row row)
+    public void HandleCache(FieldMetaContext metaContext, Param.Row row, object oldval)
+    {
+        // Group reference
+        if (metaContext.DisplayFieldReferenceGroup)
+        {
+            GroupReferenceHelper.BuildCache(ParentView, metaContext.FieldReferenceGroup, row, oldval);
+        }
+    }
+
+    public void HandleLabels(FieldMetaContext metaContext, Param.Row row, object oldval)
     {
         if (metaContext.HasAnyDisplayedElements())
         {
@@ -43,6 +53,12 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 ParamReferenceHelper.Label(ParentView, metaContext.ParamReferences, row);
+            }
+
+            // Field reference group label
+            if (metaContext.DisplayFieldReferenceGroup)
+            {
+                GroupReferenceHelper.Label(ParentView, metaContext.FieldReferenceGroup, row, oldval);
             }
 
             // FMG reference label
@@ -151,6 +167,12 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 ParamReferenceHelper.Hint(ParentView, metaContext.ParamReferences, row, oldval);
+            }
+
+            // Group reference
+            if (metaContext.DisplayFieldReferenceGroup)
+            {
+                GroupReferenceHelper.Hint(ParentView, metaContext.FieldReferenceGroup, row, oldval);
             }
 
             // FMG reference
@@ -270,6 +292,11 @@ public class ParamFieldDecorators
             ParamReferenceHelper.Click(ParentView, oldval, row, metaContext.ParamReferences);
         }
 
+        if (metaContext.DisplayFieldReferenceGroup)
+        {
+            GroupReferenceHelper.Click(ParentView, oldval, row, metaContext.FieldReferenceGroup);
+        }
+
         if (metaContext.DisplayTextReferences)
         {
             TextReferenceHelper.Click(ParentView, oldval, row, metaContext.TextReferences, metaContext.FmgRefRoleOverride);
@@ -285,6 +312,11 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParamReference)
             {
                 result |= ParamReferenceHelper.ContextMenu(ParentView, metaContext.ParamReferences, row, oldval, ref newval, Editor.ActionManager);
+            }
+
+            if (metaContext.DisplayFieldReferenceGroup)
+            {
+                result |= GroupReferenceHelper.ContextMenu(ParentView, metaContext.FieldReferenceGroup, row, oldval, ref newval, Editor.ActionManager);
             }
 
             if (metaContext.DisplayTextReference)
@@ -339,7 +371,7 @@ public class ParamFieldDecorators
 
             if (metaContext.DisplayProjectEnum && metaContext.FieldMeta.ProjectEnumType != null)
             {
-                var optionList = ParentView.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
+                var optionList = ParentView.Project.Handler.ParamData.Enums.List.Where(e => e.Key == metaContext.FieldMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -359,6 +391,8 @@ public class FieldMetaContext
     public ParamEditorView View;
     public ParamMeta Meta;
     public ParamFieldMeta FieldMeta;
+
+    public ParamAnnotationFieldEntry FieldAnnotation;
 
     public string ActiveParam = "";
     public string InternalName = "";
@@ -404,6 +438,7 @@ public class FieldMetaContext
     public bool DisplayMapTextReference = false;
     public bool DisplayVirtualReference = false;
     public bool DisplayTextureReference = false;
+    public bool DisplayFieldReferenceGroup = false;
 
     public bool DisplayEnum = false;
     public bool DisplayParticleEnum = false;
@@ -416,11 +451,20 @@ public class FieldMetaContext
 
     public bool DisplayTileReference = false;
 
-    public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, string activeParam, string internalName)
+    public string FieldReferenceGroup = "";
+
+    public FieldMetaContext(ParamEditorView curView, ParamMeta meta, ParamFieldMeta fieldMeta, ParamAnnotationFieldEntry fieldAnnotation, string activeParam, string internalName)
     {
         View = curView;
         Meta = meta;
         FieldMeta = fieldMeta;
+
+        FieldAnnotation = fieldAnnotation;
+
+        if (fieldAnnotation != null)
+        {
+            Description = fieldAnnotation.Description;
+        }
 
         ActiveParam = activeParam;
         InternalName = internalName;
@@ -431,8 +475,6 @@ public class FieldMetaContext
 
         if (fieldMeta != null)
         {
-            Description = fieldMeta?.Wiki;
-
             ParamReferences = fieldMeta?.RefTypes;
             DisplayParamReference = ParamReferences != null;
 
@@ -480,6 +522,9 @@ public class FieldMetaContext
             DisplayTileReference = fieldMeta.TileRef != null;
 
             FmgRefRoleOverride = fieldMeta?.FmgRefRoleOverride;
+
+            FieldReferenceGroup = fieldMeta?.RefGroup;
+            DisplayFieldReferenceGroup = FieldReferenceGroup != null;
         }
     }
 
@@ -532,6 +577,12 @@ public class FieldMetaContext
         if (DisplayTileReference)
             display = true;
 
+        if (DisplayFieldReferenceGroup)
+            display = true;
+
+        if (DisplayAC6FieldOffsetData)
+            display = true;
+
         return display;
     }
 
@@ -555,6 +606,9 @@ public class FieldMetaContext
             display = true;
 
         if (DisplayTextureReference)
+            display = true;
+
+        if (DisplayFieldReferenceGroup)
             display = true;
 
         return display;
@@ -605,10 +659,7 @@ public static class FieldTooltipHelper
                         $"Increment: {col.Def.Increment}";
                     }
 
-                    if (EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true))
-                    {
-                        context.FieldMeta.Wiki = context.Description;
-                    }
+                    EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true);
 
                     ImGui.SameLine();
                 }
@@ -746,18 +797,13 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ProjectData.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List.Where(e => e.Key == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+            ImGui.TextUnformatted($@"   {enumEntry.GetName()}");
             ImGui.PopStyleColor(1);
-
-            if (enumEntry.Description != "")
-            {
-                UIHelper.Tooltip($"   {enumEntry.Description}");
-            }
         }
     }
 
@@ -766,17 +812,17 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ProjectData.ProjectEnums.List
-            .Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List
+            .Where(e => e.Key == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
             var enumValueName = "";
-            var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
+            var enumValue = enumEntry.Options.Where(e => e.Key == value).FirstOrDefault();
 
             if (enumValue != null)
             {
-                enumValueName = enumValue.Name;
+                enumValueName = enumValue.GetName();
             }
 
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
@@ -785,7 +831,7 @@ public static class ProjectEnumHelper
         }
     }
 
-    public static bool ContextMenu(ParamEditorView curView, ProjectEnumEntry en, object oldval, ref object newval)
+    public static bool ContextMenu(ParamEditorView curView, ParamEnumEntry en, object oldval, ref object newval)
     {
         ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
 
@@ -801,13 +847,13 @@ public static class ProjectEnumHelper
             {
                 foreach (var option in en.Options)
                 {
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.ID, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Name, " ")
+                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
+                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.GetName(), " ")
                         || enumSearchStr == "")
                     {
-                        if (ImGui.Selectable($"{option.ID}: {option.Name}"))
+                        if (ImGui.Selectable($"{option.Key}: {option.GetName()}"))
                         {
-                            newval = Convert.ChangeType(option.ID, oldval.GetType());
+                            newval = Convert.ChangeType(option.Key, oldval.GetType());
                             ImGui.EndChild();
                             return true;
                         }
@@ -1849,6 +1895,8 @@ public static class AC6_FieldOffsetHelper
 
             var targetMeta = curView.GetParamData().GetParamMeta(firstRow.Def);
 
+            var annotations = curView.Project.Handler.ParamData.GetParamAnnotations(firstRow.Def.ParamType);
+
             foreach (var col in firstRow.Columns)
             {
                 var offset = (int)col.GetByteOffset();
@@ -1857,8 +1905,9 @@ public static class AC6_FieldOffsetHelper
                 {
                     internalName = col.Def.InternalName;
 
-                    var cellmeta = curView.GetParamData().GetParamFieldMeta(targetMeta, col.Def);
-                    displayName = cellmeta.AltName;
+                    var fieldAnnotation = curView.GetParamData().GetFieldAnnotation(annotations, internalName);
+
+                    displayName = fieldAnnotation.Name;
                 }
             }
 
@@ -1899,9 +1948,9 @@ public static class CalcCorrectGraphHelper
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if (curView.GetParamData().GraphLegends != null && curView.GetParamData().GraphLegends.Entries != null)
+            if (curView.GetParamData().GraphAnnotations != null && curView.GetParamData().GraphAnnotations.Groups != null)
             {
-                var entry = curView.GetParamData().GraphLegends.Entries
+                var entry = curView.GetParamData().GraphAnnotations.Groups
                     .FirstOrDefault(e => e.RowID == $"{row.ID}");
                 if (entry != null)
                 {
@@ -2336,6 +2385,147 @@ public static class FieldColorPicker
         }
 
         return new Vector3(rVal, gVal, bVal);
+    }
+}
+#endregion
+
+#region Field Reference Group Helper
+public static class GroupReferenceHelper
+{
+    private static List<GroupReferenceState> refCache = new();
+
+    public static void BuildCache(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        var groupRefData = curView.Project.Handler.ParamData.FieldReferenceGroups;
+        var targetData = groupRefData.Entries.FirstOrDefault(e => e.Name == groupRef);
+
+        if (targetData == null)
+            return;
+
+        refCache = ParamReferenceResolver.ResolveGroupReferences(curView, targetData, context, oldval);
+    }
+
+    public static void Label(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+            return;
+
+        if (groupRef == null || groupRef == "" || refCache.Count == 0)
+        {
+            return;
+        }
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+
+        ImGui.BeginGroup();
+        foreach (var entry in refCache)
+        {
+            if (CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName)
+            {
+                ImGui.TextUnformatted($"  <{entry.DisplayName}>");
+            }
+            else
+            {
+                ImGui.TextUnformatted($"  <{entry.Param}>");
+            }
+        }
+        ImGui.EndGroup();
+
+        ImGui.PopStyleVar(1);
+    }
+
+    public static void Hint(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
+    {
+        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+            return;
+
+        if (groupRef == null || groupRef == "" || refCache.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var entry in refCache)
+        {
+            if (entry.Row.ID == oldval)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.TextUnformatted(entry.Hint);
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+
+    public static bool ContextMenu(ParamEditorView curView, string groupRef, Param.Row context,
+        dynamic oldval, ref object newval, ActionManager executor)
+    {
+        if (curView.GetPrimaryBank().Params == null)
+        {
+            return false;
+        }
+
+        int index = 0;
+
+        foreach (var entry in refCache)
+        {
+            if (entry.Row.ID == oldval)
+            {
+                if (ImGui.Selectable($@"Go to {entry.Hint}##GoToElement{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{entry.Param}/{entry.Row.ID}");
+                }
+
+                if (ImGui.Selectable($@"Go to {entry.Hint} in new view##GoToElementInView{index}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/new/{entry.Param}/{entry.Row.ID}");
+                }
+
+                if (!string.IsNullOrWhiteSpace(entry.Row.Name) &&
+                    (InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(context.Name)) &&
+                    ImGui.Selectable($@"Inherit referenced row's name ({entry.Row.Name})##InheritName{index}"))
+                {
+                    executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
+                        entry.Row.Name));
+                }
+                else if ((InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(entry.Row.Name)) &&
+                         !string.IsNullOrWhiteSpace(context.Name) &&
+                         ImGui.Selectable($@"Proliferate name to referenced row ({entry.Param})##ProliferateName{index}"))
+                {
+                    executor.ExecuteAction(new PropertiesChangedAction(entry.Row.GetType().GetProperty("Name"), entry.Row, context.Name));
+                }
+
+                index++;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool Click(ParamEditorView curView, dynamic oldval, Param.Row context, string groupRef)
+    {
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
+        {
+            foreach (var entry in refCache)
+            {
+                if (entry.Row.ID == oldval)
+                {
+                    if (entry.Row != null)
+                    {
+                        if (InputManager.HasShiftDown())
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/select/new/{entry.Param}/{entry.Row.ID}");
+                        }
+                        else
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/select/-1/{entry.Param}/{entry.Row.ID}");
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }
 #endregion

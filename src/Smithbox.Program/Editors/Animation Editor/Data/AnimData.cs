@@ -30,7 +30,11 @@ public class AnimData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Animation Editor] Failed to fully setup Primary Behavior Bank.");
+            Smithbox.LogError(this, $"[Animation Editor] Failed to setup the Primary Behavior Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Animation Editor] Setup the Primary Behavior Bank.");
         }
 
         return primaryBankTaskResult;

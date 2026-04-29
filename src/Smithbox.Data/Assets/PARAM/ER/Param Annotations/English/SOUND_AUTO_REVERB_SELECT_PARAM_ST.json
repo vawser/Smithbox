@@ -1,0 +1,63 @@
+{
+  "Param": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Type": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Name": "SOUND_AUTO_REVERB_SELECT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "reverbType",
+      "Name": "Reverb Type",
+      "Description": "Reverb type"
+    },
+    {
+      "Field": "AreaNo",
+      "Name": "Condition: Area Number",
+      "Description": "Condition: Area No. (-1: Invalid)"
+    },
+    {
+      "Field": "IndoorOutdoor",
+      "Name": "Condition: Indoor/Outdoor",
+      "Description": "Condition: Indoor / outdoor designation (0: outdoor, 1: indoor) (-1: invalid)"
+    },
+    {
+      "Field": "useDistNoA",
+      "Name": "Condition: Evaluation Distance A",
+      "Description": "Condition: Evaluation distance number A to use (-1: invalid)"
+    },
+    {
+      "Field": "useDistNoB",
+      "Name": "Condition: Evaluation Distance B",
+      "Description": "Condition: Evaluation distance number B to be used (-1: invalid)"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DistMinA",
+      "Name": "Condition: Evaluation Distance A - Min",
+      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+    },
+    {
+      "Field": "DistMaxA",
+      "Name": "Condition: Evaluation Distance A - Max",
+      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+    },
+    {
+      "Field": "DistMinB",
+      "Name": "Condition: Evaluation Distance B - Min",
+      "Description": "Condition: For evaluation distance minimum specification A (less than 0: invalid)"
+    },
+    {
+      "Field": "DistMaxB",
+      "Name": "Condition: Evaluation Distance B - Max",
+      "Description": "Condition: For evaluation distance maximum specification A (less than 0: invalid)"
+    },
+    {
+      "Field": "NoHitNumMin",
+      "Name": "Condition: No Hit Minimum",
+      "Description": "Condition: No Hit number (-1: invalid)"
+    }
+  ]
+}

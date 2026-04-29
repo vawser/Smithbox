@@ -1,0 +1,18 @@
+{
+  "id": "202",
+  "name": "Undead Boar (Medium)",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Idle"
+    }
+  ]
+}

@@ -2036,6 +2036,11 @@ public class ParamBank : IDisposable
             return null;
         }
 
+        if (_params == null)
+        {
+            return null;
+        }
+
         Dictionary<string, HashSet<int>> newCache = new();
         foreach (var param in _params.Keys)
         {
@@ -2156,7 +2161,7 @@ public class ParamBank : IDisposable
     public string GetChrIDForEnemy(long enemyID)
     {
         Param.Row enemy = EnemyParam?[(int)enemyID];
-        return enemy != null ? $@"{enemy.GetCellHandleOrThrow("chr_id").Value:D4}" : null;
+        return enemy != null ? $@"{enemy.GetCellHandleOrThrow("modelId").Value:D4}" : null;
     }
 
     public string GetKeyForParam(Param param)

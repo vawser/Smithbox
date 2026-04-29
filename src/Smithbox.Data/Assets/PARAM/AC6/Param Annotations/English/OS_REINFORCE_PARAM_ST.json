@@ -1,0 +1,148 @@
+{
+  "Param": "OS_REINFORCE_PARAM_ST",
+  "Type": "OS_REINFORCE_PARAM_ST",
+  "Name": "OS_REINFORCE_PARAM_ST",
+  "Description": "Determines the configuration for each OS Tuning install or upgrade.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param - Product",
+      "Description": "Parameters marked with  are excluded in the Product version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "maxLevel",
+      "Name": "OS Install: Number of Unlocks",
+      "Description": "Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades."
+    },
+    {
+      "Field": "iconId",
+      "Name": "OS Install: Image ID",
+      "Description": "Refers to the icon ID from SB_OsIcon.layout"
+    },
+    {
+      "Field": "pad0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addVal_lv1",
+      "Name": "OS Install 1: Value",
+      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+    },
+    {
+      "Field": "exp_lv1",
+      "Name": "OS Install 1: Cost",
+      "Description": "The cost in OS chips for the upgrade."
+    },
+    {
+      "Field": "textId_lv1",
+      "Name": "OS Install 1: Description",
+      "Description": "The description text that displays the effect. The effect value is placed within this FMG text."
+    },
+    {
+      "Field": "pad_lv1_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addVal_lv2",
+      "Name": "OS Install 2: Value",
+      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+    },
+    {
+      "Field": "exp_lv2",
+      "Name": "OS Install 2: Cost",
+      "Description": "The cost in OS chips for the upgrade."
+    },
+    {
+      "Field": "textId_lv2",
+      "Name": "OS Install 2: Description",
+      "Description": "The description text that displays the effect. The effect value is placed within this FMG text."
+    },
+    {
+      "Field": "pad_lv2_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addVal_lv3",
+      "Name": "OS Install 3: Value",
+      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+    },
+    {
+      "Field": "exp_lv3",
+      "Name": "OS Install 3: Cost",
+      "Description": "The cost in OS chips for the upgrade."
+    },
+    {
+      "Field": "textId_lv3",
+      "Name": "OS Install 3: Description",
+      "Description": "The description text that displays the effect. The effect value is placed within this FMG text."
+    },
+    {
+      "Field": "pad_lv3_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addVal_lv4",
+      "Name": "OS Install 4: Value",
+      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+    },
+    {
+      "Field": "exp_lv4",
+      "Name": "OS Install 4: Cost",
+      "Description": "The cost in OS chips for the upgrade."
+    },
+    {
+      "Field": "textId_lv4",
+      "Name": "OS Install 4: Description",
+      "Description": "The description text that displays the effect. The effect value is placed within this FMG text."
+    },
+    {
+      "Field": "pad_lv4_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "addVal_lv5",
+      "Name": "OS Install 5: Value",
+      "Description": "The effectiveness string to display for the OS upgrade text in UI."
+    },
+    {
+      "Field": "exp_lv5",
+      "Name": "OS Install 5: Cost",
+      "Description": "The cost in OS chips for the upgrade."
+    },
+    {
+      "Field": "textId_lv5",
+      "Name": "OS Install 5: Description",
+      "Description": "The description text that displays the effect. The effect value is placed within this FMG text."
+    },
+    {
+      "Field": "pad_lv5_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

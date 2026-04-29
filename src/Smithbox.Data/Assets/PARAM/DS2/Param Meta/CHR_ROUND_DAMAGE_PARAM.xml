@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <round1DamagePercent />
+        <round1StaminaDamagePercent />
+        <round1StunDamagePercent />
+        <round2DamagePercent />
+        <round2StaminaDamagePercent />
+        <round2StunDamagePercent />
+        <round3DamagePercent />
+        <round3StaminaDamagePercent />
+        <round3StunDamagePercent />
+        <round4DamagePercent />
+        <round4StaminaDamagePercent />
+        <round4StunDamagePercent />
+        <round5DamagePercent />
+        <round5StaminaDamagePercent />
+        <round5StunDamagePercent />
+        <round6DamagePercent />
+        <round6StaminaDamagePercent />
+        <round6StunDamagePercent />
+        <round7DamagePercent />
+        <round7StaminaDamagePercent />
+        <round7StunDamagePercent />
+        <round8DamagePercent />
+        <round8StaminaDamagePercent />
+        <round8StunDamagePercent />
+        <round1StaminaDamageTakenPercent />
+        <round1StunDamageTakenPercent />
+        <round2StaminaDamageTakenPercent />
+        <round2StunDamageTakenPercent />
+        <round3StaminaDamageTakenPercent />
+        <round3StunDamageTakenPercent />
+        <round4StaminaDamageTakenPercent />
+        <round4StunDamageTakenPercent />
+        <round5StaminaDamageTakenPercent />
+        <round5StunDamageTakenPercent />
+        <round6StaminaDamageTakenPercent />
+        <round6StunDamageTakenPercent />
+        <round7StaminaDamageTakenPercent />
+        <round7StunDamageTakenPercent />
+        <round8StaminaDamageTakenPercent />
+        <round8StunDamageTakenPercent />
+    </Field>
+</PARAMMETA>

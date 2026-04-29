@@ -16,9 +16,7 @@ public class ProjectData : IDisposable
 {
     public ProjectEntry Project;
 
-
     public AliasStore Aliases;
-    public ProjectEnumResource ProjectEnums;
 
     public ProjectData(ProjectEntry project)
     {
@@ -35,24 +33,11 @@ public class ProjectData : IDisposable
 
         if (aliasesSetup)
         {
-            Smithbox.Log(this, $"[{Project.Descriptor.ProjectName}] Setup aliases.", LogLevel.Information);
+            Smithbox.Log(this, $"[Project] Setup aliases for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
         }
         else
         {
-            Smithbox.Log(this, $"[{Project.Descriptor.ProjectName}] Failed to setup aliases.", LogLevel.Information);
-        }
-
-        // Project Enums (per project)
-        Task<bool> projectParamEnumTask = SetupProjectEnums();
-        bool projectParamEnumResult = await projectParamEnumTask;
-
-        if (projectParamEnumResult)
-        {
-            Smithbox.Log(this, $"[{Project.Descriptor.ProjectName}] Setup Project Param Enums.", LogLevel.Information);
-        }
-        else
-        {
-            Smithbox.Log(this, $"[{Project.Descriptor.ProjectName}] Failed to setup Project Param Enums.", LogLevel.Information);
+            Smithbox.Log(this, $"[Project] Failed to setup aliases for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
         }
 
         return true;
@@ -95,12 +80,12 @@ public class ProjectData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the aliases: {sourceFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Project] Failed to deserialize the aliases: {sourceFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the aliases: {sourceFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Project] Failed to read the aliases: {sourceFile}", LogPriority.High, e);
             }
         }
 
@@ -112,62 +97,10 @@ public class ProjectData : IDisposable
         return true;
     }
 
-    /// <summary>
-    /// Setup the project-specific PARAM enums for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupProjectEnums()
-    {
-        await Task.Yield();
-
-        ProjectEnums = new();
-
-        // Information
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
-
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Project");
-        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
-
-        var targetFile = sourceFile;
-
-        if (CFG.Current.Project_Enable_Project_Metadata)
-        {
-            if (File.Exists(projectFile))
-            {
-                targetFile = projectFile;
-            }
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    ProjectEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.ProjectEnumResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the Project Enums: {targetFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the Project Enums: {targetFile}", LogPriority.High, e);
-            }
-        }
-
-        return true;
-    }
-
     #region Dispose
     public void Dispose()
     {
         Aliases = null;
-        ProjectEnums = null;
     }
     #endregion
 }

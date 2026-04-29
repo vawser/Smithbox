@@ -1,0 +1,29 @@
+{
+  "Key": "NPC_ITEMDROP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_ITEMDROP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Attached to Corpse"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dropped in Place"
+        }
+      ]
+    }
+  ]
+}

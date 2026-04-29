@@ -36,6 +36,8 @@ public class MapModelInsightView
             if (curEntity == null)
                 return;
 
+            ImGui.BeginChild("ModelInsightToolSection");
+
             var mapEntity = (Entity)curEntity;
 
             var curModelData = View.ModelInsightTool.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedMapID);
@@ -64,6 +66,8 @@ public class MapModelInsightView
             }
 
             Display();
+
+            ImGui.EndChild();
         }
     }
 

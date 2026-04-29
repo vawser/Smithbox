@@ -67,22 +67,22 @@ public class ParamTableWindow
 
         if (ImGui.Button($"{Icons.Bars}##rowDisplayType"))
         {
-            if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.ID)
+            if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.ID)
             {
-                CFG.Current.ParamEditor_Table_List_Row_Display_Type = ParamTableRowDisplayType.None;
+                CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.None;
             }
-            else if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.None)
+            else if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
             {
-                CFG.Current.ParamEditor_Table_List_Row_Display_Type = ParamTableRowDisplayType.ID;
+                CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.ID;
             }
         }
 
         var rowDisplayType = "";
-        if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.ID)
+        if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.ID)
         {
             rowDisplayType = "ID";
         }
-        if (CFG.Current.ParamEditor_Table_List_Row_Display_Type is ParamTableRowDisplayType.None)
+        if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
         {
             rowDisplayType = "None";
         }
@@ -502,7 +502,8 @@ public class ParamTableWindow
 
         if (writeDir == "")
         {
-            targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Table Names");
+            var lang = CFG.Current.ParamEditor_Import_Language;
+            targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Param Table Names", lang);
         }
 
         if (!Directory.Exists(targetDir))

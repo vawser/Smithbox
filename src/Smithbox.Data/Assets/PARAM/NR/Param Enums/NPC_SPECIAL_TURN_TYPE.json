@@ -1,0 +1,20 @@
+{
+  "Key": "NPC_SPECIAL_TURN_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_SPECIAL_TURN_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    }
+  ]
+}

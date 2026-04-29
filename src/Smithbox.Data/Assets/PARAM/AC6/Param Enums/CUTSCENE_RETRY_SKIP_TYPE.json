@@ -1,0 +1,29 @@
+{
+  "Key": "CUTSCENE_RETRY_SKIP_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CUTSCENE_RETRY_SKIP_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Play"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Do not Play"
+        }
+      ]
+    }
+  ]
+}

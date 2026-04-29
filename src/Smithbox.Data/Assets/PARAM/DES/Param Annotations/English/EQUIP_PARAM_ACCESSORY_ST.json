@@ -1,0 +1,88 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "Determines the parameters of accessories.",
+  "Fields": [
+    {
+      "Field": "equipModelCategory",
+      "Name": "Model Category",
+      "Description": "Equipment model type"
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "Model Gender",
+      "Description": "Gender of equipment model"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "Model ID",
+      "Description": "Equipment model number"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Menu icon ID"
+    },
+    {
+      "Field": "accessoryCategory",
+      "Name": "Accessory Type",
+      "Description": "Armor category"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "Weight",
+      "Description": "Weight [kg]"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Action ID (= Skill)"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "Reinforcement Price",
+      "Description": "Soul cost of reinforcement. See ShopLineupParam for shop prices."
+    },
+    {
+      "Field": "shopLv",
+      "Name": "Shop Level",
+      "Description": "Level that can be sold at the store"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "The ordering within the menu."
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "Achievement ID",
+      "Description": "The achievement ID this part is associated with, if any."
+    },
+    {
+      "Field": "pad_3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "World Tendency ID",
+      "Description": "The world tendency ID this item uses."
+    },
+    {
+      "Field": "pad_4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

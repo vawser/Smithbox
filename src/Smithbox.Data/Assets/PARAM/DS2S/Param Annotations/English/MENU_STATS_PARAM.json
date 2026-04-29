@@ -1,0 +1,158 @@
+{
+  "Param": "MENU_STATS_PARAM",
+  "Type": "MENU_STATS_PARAM",
+  "Name": "MENU_STATS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hpMax",
+      "Name": "メニュー用 最大HP",
+      "Description": ""
+    },
+    {
+      "Field": "staminaMax",
+      "Name": "メニュー用 スタミナ",
+      "Description": ""
+    },
+    {
+      "Field": "poise",
+      "Name": "メニュー用 強靭度",
+      "Description": ""
+    },
+    {
+      "Field": "spellUsesLevel",
+      "Name": "メニュー用 スペル使用回数レベル",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlot",
+      "Name": "メニュー用 スペル記憶数",
+      "Description": ""
+    },
+    {
+      "Field": "chantingTimeCorrectScale",
+      "Name": "メニュー用 スペル詠唱速度",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByStrength",
+      "Name": "メニュー用 物理攻撃力（筋力）",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByDexterity",
+      "Name": "メニュー用 物理攻撃力（技量）",
+      "Description": ""
+    },
+    {
+      "Field": "magicAttack",
+      "Name": "メニュー用 魔力攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "fireAttack",
+      "Name": "メニュー用 炎攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "thunderAttack",
+      "Name": "メニュー用 雷攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "darkAttack",
+      "Name": "メニュー用 闇攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "poisonAttack",
+      "Name": "メニュー用 毒攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingAttack",
+      "Name": "メニュー用 出血攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakAttack",
+      "Name": "メニュー用 破壊攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "defense",
+      "Name": "メニュー用 防御力",
+      "Description": ""
+    },
+    {
+      "Field": "magicResistance",
+      "Name": "メニュー用 魔力耐性",
+      "Description": ""
+    },
+    {
+      "Field": "fireResistance",
+      "Name": "メニュー用 炎耐性",
+      "Description": ""
+    },
+    {
+      "Field": "thunderResistance",
+      "Name": "メニュー用 雷耐性",
+      "Description": ""
+    },
+    {
+      "Field": "darkResistance",
+      "Name": "メニュー用 闇耐性",
+      "Description": ""
+    },
+    {
+      "Field": "poisonResistance",
+      "Name": "メニュー用 毒耐性",
+      "Description": ""
+    },
+    {
+      "Field": "bleedingResistance",
+      "Name": "メニュー用 出血耐性",
+      "Description": ""
+    },
+    {
+      "Field": "weaponBreakResistance",
+      "Name": "メニュー用 武器破壊耐性",
+      "Description": ""
+    },
+    {
+      "Field": "petrifactionResistance",
+      "Name": "メニュー用 石化耐性",
+      "Description": ""
+    },
+    {
+      "Field": "curseResistance",
+      "Name": "メニュー用 呪耐性",
+      "Description": ""
+    },
+    {
+      "Field": "evasionInvincibleTime",
+      "Name": "メニュー用 回避無敵時間",
+      "Description": ""
+    },
+    {
+      "Field": "actionSpeed",
+      "Name": "メニュー用 各種アクション速度",
+      "Description": ""
+    },
+    {
+      "Field": "physicalAttackByAbyss",
+      "Name": "メニュー用 物理攻撃力(深淵)",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "equipLoadMax",
+      "Name": "メニュー用 装備重量",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "Key": "MAP_LOT_COND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAP_LOT_COND_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Always"
+        }
+      ]
+    }
+  ]
+}

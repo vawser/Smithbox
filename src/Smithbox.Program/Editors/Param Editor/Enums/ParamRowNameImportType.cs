@@ -8,7 +8,6 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum ParamRowNameImportType
 {
-    Community,
-    Developer,
+    SelectedOption,
     External
 }

@@ -1,0 +1,733 @@
+{
+  "Param": "EQUIP_INTERFERE_PARAM",
+  "Type": "EQUIP_INTERFERE_PARAM",
+  "Name": "EQUIP_INTERFERE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "interfereId0",
+      "Name": "干渉設定ID",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityNeck0",
+      "Name": "首-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityElbowRight0",
+      "Name": "右腕-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueElbowRight0",
+      "Name": "右腕-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityElbowLeft0",
+      "Name": "左腕-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueElbowLeft0",
+      "Name": "左腕-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityWaist0",
+      "Name": "腰-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueWaist0",
+      "Name": "腰-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "clothCtrlType0",
+      "Name": "クロス制御設定",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup00_0",
+      "Name": "カリンググループ０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup01_0",
+      "Name": "カリンググループ１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup02_0",
+      "Name": "カリンググループ２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup03_0",
+      "Name": "カリンググループ３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup04_0",
+      "Name": "カリンググループ４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup05_0",
+      "Name": "カリンググループ５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup06_0",
+      "Name": "カリンググループ６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup07_0",
+      "Name": "カリンググループ７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup08_0",
+      "Name": "カリンググループ８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup09_0",
+      "Name": "カリンググループ９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup10_0",
+      "Name": "カリンググループ１０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup11_0",
+      "Name": "カリンググループ１１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup12_0",
+      "Name": "カリンググループ１２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup13_0",
+      "Name": "カリンググループ１３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup14_0",
+      "Name": "カリンググループ１４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup15_0",
+      "Name": "カリンググループ１５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup16_0",
+      "Name": "カリンググループ１６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup17_0",
+      "Name": "カリンググループ１７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup18_0",
+      "Name": "カリンググループ１８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup19_0",
+      "Name": "カリンググループ１９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup20_0",
+      "Name": "カリンググループ２０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup21_0",
+      "Name": "カリンググループ２１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup22_0",
+      "Name": "カリンググループ２２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup23_0",
+      "Name": "カリンググループ２３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup24_0",
+      "Name": "カリンググループ２４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup25_0",
+      "Name": "カリンググループ２５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup26_0",
+      "Name": "カリンググループ２６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup27_0",
+      "Name": "カリンググループ２７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup28_0",
+      "Name": "カリンググループ２８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup29_0",
+      "Name": "カリンググループ２９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup30_0",
+      "Name": "カリンググループ３０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup31_0",
+      "Name": "カリンググループ３１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup32_0",
+      "Name": "カリンググループ３２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup33_0",
+      "Name": "カリンググループ３３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup34_0",
+      "Name": "カリンググループ３４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup35_0",
+      "Name": "カリンググループ３５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup36_0",
+      "Name": "カリンググループ３６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup37_0",
+      "Name": "カリンググループ３７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup38_0",
+      "Name": "カリンググループ３８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup39_0",
+      "Name": "カリンググループ３９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup40_0",
+      "Name": "カリンググループ４０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup41_0",
+      "Name": "カリンググループ４１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup42_0",
+      "Name": "カリンググループ４２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup43_0",
+      "Name": "カリンググループ４３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup44_0",
+      "Name": "カリンググループ４４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup45_0",
+      "Name": "カリンググループ４５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup46_0",
+      "Name": "カリンググループ４６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup47_0",
+      "Name": "カリンググループ４７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup48_0",
+      "Name": "カリンググループ４８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup49_0",
+      "Name": "カリンググループ４９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup50_0",
+      "Name": "カリンググループ５０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup51_0",
+      "Name": "カリンググループ５１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup52_0",
+      "Name": "カリンググループ５２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup53_0",
+      "Name": "カリンググループ５３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup54_0",
+      "Name": "カリンググループ５４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup55_0",
+      "Name": "カリンググループ５５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup56_0",
+      "Name": "カリンググループ５６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup57_0",
+      "Name": "カリンググループ５７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup58_0",
+      "Name": "カリンググループ５８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup59_0",
+      "Name": "カリンググループ５９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup60_0",
+      "Name": "カリンググループ６０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup61_0",
+      "Name": "カリンググループ６１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup62_0",
+      "Name": "カリンググループ６２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup63_0",
+      "Name": "カリンググループ６３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityNeck1",
+      "Name": "首-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityElbowRight1",
+      "Name": "右腕-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueElbowRight1",
+      "Name": "右腕-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityElbowLeft1",
+      "Name": "左腕-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueElbowLeft1",
+      "Name": "左腕-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "cullingPriorityWaist1",
+      "Name": "腰-表示優先度",
+      "Description": ""
+    },
+    {
+      "Field": "cullingValueWaist1",
+      "Name": "腰-カリング値",
+      "Description": ""
+    },
+    {
+      "Field": "clothCtrlType1",
+      "Name": "クロス制御設定",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup00_1",
+      "Name": "カリンググループ０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup01_1",
+      "Name": "カリンググループ１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup02_1",
+      "Name": "カリンググループ２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup03_1",
+      "Name": "カリンググループ３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup04_1",
+      "Name": "カリンググループ４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup05_1",
+      "Name": "カリンググループ５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup06_1",
+      "Name": "カリンググループ６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup07_1",
+      "Name": "カリンググループ７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup08_1",
+      "Name": "カリンググループ８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup09_1",
+      "Name": "カリンググループ９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup10_1",
+      "Name": "カリンググループ１０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup11_1",
+      "Name": "カリンググループ１１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup12_1",
+      "Name": "カリンググループ１２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup13_1",
+      "Name": "カリンググループ１３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup14_1",
+      "Name": "カリンググループ１４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup15_1",
+      "Name": "カリンググループ１５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup16_1",
+      "Name": "カリンググループ１６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup17_1",
+      "Name": "カリンググループ１７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup18_1",
+      "Name": "カリンググループ１８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup19_1",
+      "Name": "カリンググループ１９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup20_1",
+      "Name": "カリンググループ２０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup21_1",
+      "Name": "カリンググループ２１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup22_1",
+      "Name": "カリンググループ２２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup23_1",
+      "Name": "カリンググループ２３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup24_1",
+      "Name": "カリンググループ２４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup25_1",
+      "Name": "カリンググループ２５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup26_1",
+      "Name": "カリンググループ２６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup27_1",
+      "Name": "カリンググループ２７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup28_1",
+      "Name": "カリンググループ２８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup29_1",
+      "Name": "カリンググループ２９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup30_1",
+      "Name": "カリンググループ３０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup31_1",
+      "Name": "カリンググループ３１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup32_1",
+      "Name": "カリンググループ３２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup33_1",
+      "Name": "カリンググループ３３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup34_1",
+      "Name": "カリンググループ３４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup35_1",
+      "Name": "カリンググループ３５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup36_1",
+      "Name": "カリンググループ３６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup37_1",
+      "Name": "カリンググループ３７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup38_1",
+      "Name": "カリンググループ３８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup39_1",
+      "Name": "カリンググループ３９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup40_1",
+      "Name": "カリンググループ４０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup41_1",
+      "Name": "カリンググループ４１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup42_1",
+      "Name": "カリンググループ４２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup43_1",
+      "Name": "カリンググループ４３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup44_1",
+      "Name": "カリンググループ４４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup45_1",
+      "Name": "カリンググループ４５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup46_1",
+      "Name": "カリンググループ４６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup47_1",
+      "Name": "カリンググループ４７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup48_1",
+      "Name": "カリンググループ４８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup49_1",
+      "Name": "カリンググループ４９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup50_1",
+      "Name": "カリンググループ５０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup51_1",
+      "Name": "カリンググループ５１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup52_1",
+      "Name": "カリンググループ５２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup53_1",
+      "Name": "カリンググループ５３",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup54_1",
+      "Name": "カリンググループ５４",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup55_1",
+      "Name": "カリンググループ５５",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup56_1",
+      "Name": "カリンググループ５６",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup57_1",
+      "Name": "カリンググループ５７",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup58_1",
+      "Name": "カリンググループ５８",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup59_1",
+      "Name": "カリンググループ５９",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup60_1",
+      "Name": "カリンググループ６０",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup61_1",
+      "Name": "カリンググループ６１",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup62_1",
+      "Name": "カリンググループ６２",
+      "Description": ""
+    },
+    {
+      "Field": "cullingGroup63_1",
+      "Name": "カリンググループ６３",
+      "Description": ""
+    }
+  ]
+}

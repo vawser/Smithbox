@@ -1,0 +1,56 @@
+{
+  "Key": "EQUIP_ATK_COUNT_COND_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_ATK_COUNT_COND_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Simultaneous Shots"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Consecutive Shots"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of Locks"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Maximum number of bullets generated at specified interval"
+        }
+      ]
+    }
+  ]
+}

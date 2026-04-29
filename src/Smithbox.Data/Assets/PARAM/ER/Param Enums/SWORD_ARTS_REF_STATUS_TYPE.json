@@ -1,0 +1,20 @@
+{
+  "Key": "SWORD_ARTS_REF_STATUS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "SWORD_ARTS_REF_STATUS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "LOOK_AT_HEAD_PARAM_ST",
+  "Type": "LOOK_AT_HEAD_PARAM_ST",
+  "Name": "LOOK_AT_HEAD_PARAM_ST",
+  "Description": "Determines the parameters relating to look-at cameras for heads.",
+  "Fields": [
+    {
+      "Field": "lookAtPerf",
+      "Name": "Turning Performance",
+      "Description": "The interpolation performance when LookAt is enabled or disabled. In % per second."
+    },
+    {
+      "Field": "lookAtRateV",
+      "Name": "Vertical Correction %",
+      "Description": "The vertical correction rate to apply to the target angle."
+    },
+    {
+      "Field": "lookAtRateH",
+      "Name": "Horizontal Correction %",
+      "Description": "The horizontal correction rate to apply to the target angle."
+    },
+    {
+      "Field": "minAngDegV",
+      "Name": "Minimum Vertical Angle",
+      "Description": "The minimum LookAt angle on the vertical axis."
+    },
+    {
+      "Field": "maxAngDegV",
+      "Name": "Maximum Vertical Angle",
+      "Description": "The maximum LookAt angle on the vertical axis."
+    },
+    {
+      "Field": "minAngDegH",
+      "Name": "Minimum Horizontal Angle",
+      "Description": "The minimum LookAt angle on the horizontal axis."
+    },
+    {
+      "Field": "maxAngDegH",
+      "Name": "Maximum Horizontal Angle",
+      "Description": "The maximum LookAt angle on the horizontal axis."
+    },
+    {
+      "Field": "reserved4",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

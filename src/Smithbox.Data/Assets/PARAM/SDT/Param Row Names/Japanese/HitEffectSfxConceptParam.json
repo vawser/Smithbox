@@ -1,0 +1,575 @@
+{
+  "Name": "HitEffectSfxConceptParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "stone -- 石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone (dusty) -- 石(埃多い)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood -- 木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grassland -- 草地"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "bamboo -- 竹"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree -- 樹木"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Straw (soft) -- 藁（柔）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Straw (hard) -- 藁（硬）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "flesh and blood -- 血肉"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof tile -- 屋根瓦"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen leaves -- 落ち葉"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "bell -- 鐘"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle) -- 水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle) -- 水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee) -- 水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison swamp (shallow) -- 毒沼（浅い）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison swamp (deep) -- 毒沼（深い）"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison swamp (below the knee) -- 毒沼（膝下）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison swamp (about a puddle) -- 毒沼（水溜まり程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[NTC] Mud -- 【NTC】泥"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "tatami -- 畳"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None -- なし"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[NTC] Snow -- 【NTC】雪"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[NTC] Bushes -- 【NTC】茂み"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[NTC] Wood_Indoor -- 【NTC】木材_屋内"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[NTC] Autumn leaves -- 【NTC】紅葉"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Water (running water_walkable) -- 水（流水_歩ける）"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Water (running water_diving possible) -- 水（流水_潜行可）"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Grass (on the water_walkable) -- 草（水上_歩ける）"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Grass (water_diving possible) -- 草（水_潜行可）"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Very poisonous swamp (waist and above) -- 猛毒沼（腰以上）"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[NTC] Clouds -- 【NTC】雲"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Basilica Church Water Poison -- 聖堂教会水面 毒"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Anor Boss Room Poison -- アノールボス部屋 毒"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater soil -- 水中土"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater stone -- 水中石"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Underwater tree -- 水中木"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Miasma -- 瘴気"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Weapon iron -- 武器鉄"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Weapon Iron [PC only] -- 武器鉄【PC専用】"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Weapon tree -- 武器木"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weapon meat -- 武器肉"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Iron fan -- 鉄扇"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield tree -- 盾木"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "insect -- 虫"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor leather -- 鎧革"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "meat -- 肉"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Meat_weakness -- 肉_弱点"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Underwater meat -- 水中肉"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Ins meat -- インス肉"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Meat under armor -- 鎧の下の肉"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "hair -- 毛"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (soft) -- 石（軟）"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "wing -- 羽"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Carrion -- 腐肉"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "lava -- 溶岩"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Dead spirit -- 死霊"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "crystal -- 結晶"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "liquid -- 液体"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "rock -- 岩"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield stone -- 盾石"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "wood -- 木"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield heavy iron -- 盾重鉄"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Grief is effective -- 怨霊\u3000有効"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Grief invalid -- 怨霊\u3000無効"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Phantom (valid) -- 幻影(有効)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Phantom (invalid) -- 幻影(無効)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Poisonous meat -- 毒肉"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "White meat -- 白肉"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Non-resisting NPC -- 無抵抗NPC"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Ghost Enemy White (for guarding) -- ゴースト敵ホワイト(ガード時用)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Ghost Enemy Black (for guarding) -- ゴースト敵ブラック(ガード時用)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "None -- なし"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Eye light -- 眼光"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Eclipse -- 蝕"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Maggot -- 蛆"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Charcoal -- 炭"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body fluid -- 体液"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Meat (PC meat) -- 肉（PC肉）"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Meat (raw) _ weakness -- 肉（生者）_弱点"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Corrosion_weakness -- 蝕_弱点"
+      ]
+    }
+  ]
+}

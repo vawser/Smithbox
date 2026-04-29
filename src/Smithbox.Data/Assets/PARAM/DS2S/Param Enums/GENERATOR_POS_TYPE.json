@@ -1,0 +1,29 @@
+{
+  "Key": "GENERATOR_POS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GENERATOR_POS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Above ground"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air"
+        }
+      ]
+    }
+  ]
+}

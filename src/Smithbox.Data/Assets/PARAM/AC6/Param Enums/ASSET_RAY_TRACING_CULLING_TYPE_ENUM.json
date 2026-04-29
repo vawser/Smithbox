@@ -1,0 +1,47 @@
+{
+  "Key": "ASSET_RAY_TRACING_CULLING_TYPE_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ASSET_RAY_TRACING_CULLING_TYPE_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Auto"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Table"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-sided"
+        }
+      ]
+    }
+  ]
+}

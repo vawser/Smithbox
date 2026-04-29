@@ -1,0 +1,22 @@
+{
+  "Key": "Dark Chasm of Old",
+  "DisplayNames": [
+      {
+        "Language": "English",
+        "Name": "Dark Chasm of Old"
+      }
+  ],
+  "Params": [
+    "eventlocation_m40_03_00_00",
+    "eventparam_m40_03_00_00",
+    "generatorlocation_m40_03_00_00",
+    "generatorparam_m40_03_00_00",
+    "generatorregistparam_m40_03_00_00",
+    "hitgroupparam_m40_03_00_00",
+    "intrudepointparam_m40_03_00_00",
+    "mapobjectinstanceparam_m40_03_00_00",
+    "maptargetdirparam_m40_03_00_00",
+    "npctalkparam_m40_03_00_00",
+    "treasureboxparam_m40_03_00_00"
+  ]
+}

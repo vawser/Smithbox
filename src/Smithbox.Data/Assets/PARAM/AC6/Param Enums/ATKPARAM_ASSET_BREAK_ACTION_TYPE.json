@@ -1,0 +1,56 @@
+{
+  "Key": "ATKPARAM_ASSET_BREAK_ACTION_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_ASSET_BREAK_ACTION_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Normal"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Explosion"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Combustion"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Laser"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ice Worm"
+        }
+      ]
+    }
+  ]
+}

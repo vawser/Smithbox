@@ -1,0 +1,38 @@
+{
+  "Key": "WEATHER_LOT_TIMEZONE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEATHER_LOT_TIMEZONE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 4"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 6"
+        }
+      ]
+    }
+  ]
+}

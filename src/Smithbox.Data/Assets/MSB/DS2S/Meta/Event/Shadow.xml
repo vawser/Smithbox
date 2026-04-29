@@ -4,31 +4,39 @@
   Wiki="" />
   
   <Field>
-    <UnkT04
-    AltName="Unknown: 0x4"
+    <LightID
+    AltName="Light ID"
     Wiki="" />
     
-    <UnkT08
-    AltName="Unknown: 0x8"
+    <FadeStart
+    AltName="Fade Start"
     Wiki="" />
     
-    <UnkT0C
-    AltName="Unknown: 0x0C"
+    <FadeDistance
+    AltName="Fade Distance"
     Wiki="" />
     
-    <UnkT14
-    AltName="Unknown: 0x14"
+    <DepthOffset
+    AltName="Depth Offset"
     Wiki="" />
     
-    <UnkT18
-    AltName="Unknown: 0x18"
+    <ParsedDepthOffset
+    AltName="Parsed Depth Offset"
     Wiki="" />
     
-    <UnkT20
-    AltName="Unknown: 0x20"
+    <CalibrateFarRate
+    AltName="Calibrate Far Rate"
     Wiki="" />
     
-    <ColorT24
+    <GradientFactor
+    AltName="Gradient Factor"
+    Wiki="" />
+    
+    <VolumeDepth
+    AltName="Volume Depth"
+    Wiki="" />
+    
+    <Color
     AltName="Color"
     Wiki="" />
     

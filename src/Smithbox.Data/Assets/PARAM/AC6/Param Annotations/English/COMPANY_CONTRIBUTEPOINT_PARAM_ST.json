@@ -1,0 +1,58 @@
+{
+  "Param": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Type": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Name": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param: Network Test Version",
+      "Description": "Exclude from the NT version or mark the ones to be excluded."
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "Disable Param: Release Version",
+      "Description": "Exclude from the product version or mark the items to be excluded."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "point_0",
+      "Name": "Company A: Points",
+      "Description": "This company's additional contribution value."
+    },
+    {
+      "Field": "point_1",
+      "Name": "Company B: Points",
+      "Description": "This company's additional contribution value."
+    },
+    {
+      "Field": "point_2",
+      "Name": "Company C: Points",
+      "Description": "This company's additional contribution value."
+    },
+    {
+      "Field": "point_3",
+      "Name": "Company D: Points",
+      "Description": "This company's additional contribution value."
+    },
+    {
+      "Field": "point_4",
+      "Name": "Company E: Points",
+      "Description": "This company's additional contribution value."
+    },
+    {
+      "Field": "reserved",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

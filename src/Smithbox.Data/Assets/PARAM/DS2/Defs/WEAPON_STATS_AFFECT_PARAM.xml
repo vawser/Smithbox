@@ -1,111 +1,616 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>WEAPON_STATS_AFFECT_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-   <Field Def="f32 base_damage_mult" />
-    <Field Def="f32 Unk00" />
-    <Field Def="f32 level_0_physical_scaling_str" />
-    <Field Def="f32 level_0_physical_scaling_dex" />
-    <Field Def="f32 level_0_magic_scaling" />
-    <Field Def="f32 level_0_lightning_scaling" />
-    <Field Def="f32 level_0_fire_scaling" />
-    <Field Def="f32 level_0_dark_scaling" />
-    <Field Def="f32 level_0_poison_scaling" />
-    <Field Def="f32 level_0_bleed_scaling" />
-    <Field Def="f32 level_0_enchanted_scaling" />
-    <Field Def="f32 level_1_physical_scaling_str" />
-    <Field Def="f32 level_1_physical_scaling_dex" />
-    <Field Def="f32 level_1_magic_scaling" />
-    <Field Def="f32 level_1_lightning_scaling" />
-    <Field Def="f32 level_1_fire_scaling" />
-    <Field Def="f32 level_1_dark_scaling" />
-    <Field Def="f32 level_1_poison_scaling" />
-    <Field Def="f32 level_1_bleed_scaling" />
-    <Field Def="f32 level_1_enchanted_scaling" />
-    <Field Def="f32 level_2_physical_scaling_str" />
-    <Field Def="f32 level_2_physical_scaling_dex" />
-    <Field Def="f32 level_2_magic_scaling" />
-    <Field Def="f32 level_2_lightning_scaling" />
-    <Field Def="f32 level_2_fire_scaling" />
-    <Field Def="f32 level_2_dark_scaling" />
-    <Field Def="f32 level_2_poison_scaling" />
-    <Field Def="f32 level_2_bleed_scaling" />
-    <Field Def="f32 level_2_enchanted_scaling" />
-    <Field Def="f32 level_3_physical_scaling_str" />
-    <Field Def="f32 level_3_physical_scaling_dex" />
-    <Field Def="f32 level_3_magic_scaling" />
-    <Field Def="f32 level_3_lightning_scaling" />
-    <Field Def="f32 level_3_fire_scaling" />
-    <Field Def="f32 level_3_dark_scaling" />
-    <Field Def="f32 level_3_poison_scaling" />
-    <Field Def="f32 level_3_bleed_scaling" />
-    <Field Def="f32 level_3_enchanted_scaling" />
-    <Field Def="f32 level_4_physical_scaling_str" />
-    <Field Def="f32 level_4_physical_scaling_dex" />
-    <Field Def="f32 level_4_magic_scaling" />
-    <Field Def="f32 level_4_lightning_scaling" />
-    <Field Def="f32 level_4_fire_scaling" />
-    <Field Def="f32 level_4_dark_scaling" />
-    <Field Def="f32 level_4_poison_scaling" />
-    <Field Def="f32 level_4_bleed_scaling" />
-    <Field Def="f32 level_4_enchanted_scaling" />
-    <Field Def="f32 level_5_physical_scaling_str" />
-    <Field Def="f32 level_5_physical_scaling_dex" />
-    <Field Def="f32 level_5_magic_scaling" />
-    <Field Def="f32 level_5_lightning_scaling" />
-    <Field Def="f32 level_5_fire_scaling" />
-    <Field Def="f32 level_5_dark_scaling" />
-    <Field Def="f32 level_5_poison_scaling" />
-    <Field Def="f32 level_5_bleed_scaling" />
-    <Field Def="f32 level_5_enchanted_scaling" />
-    <Field Def="f32 level_6_physical_scaling_str" />
-    <Field Def="f32 level_6_physical_scaling_dex" />
-    <Field Def="f32 level_6_magic_scaling" />
-    <Field Def="f32 level_6_lightning_scaling" />
-    <Field Def="f32 level_6_fire_scaling" />
-    <Field Def="f32 level_6_dark_scaling" />
-    <Field Def="f32 level_6_poison_scaling" />
-    <Field Def="f32 level_6_bleed_scaling" />
-    <Field Def="f32 level_6_enchanted_scaling" />
-    <Field Def="f32 level_7_physical_scaling_str" />
-    <Field Def="f32 level_7_physical_scaling_dex" />
-    <Field Def="f32 level_7_magic_scaling" />
-    <Field Def="f32 level_7_lightning_scaling" />
-    <Field Def="f32 level_7_fire_scaling" />
-    <Field Def="f32 level_7_dark_scaling" />
-    <Field Def="f32 level_7_poison_scaling" />
-    <Field Def="f32 level_7_bleed_scaling" />
-    <Field Def="f32 level_7_enchanted_scaling" />
-    <Field Def="f32 level_8_physical_scaling_str" />
-    <Field Def="f32 level_8_physical_scaling_dex" />
-    <Field Def="f32 level_8_magic_scaling" />
-    <Field Def="f32 level_8_lightning_scaling" />
-    <Field Def="f32 level_8_fire_scaling" />
-    <Field Def="f32 level_8_dark_scaling" />
-    <Field Def="f32 level_8_poison_scaling" />
-    <Field Def="f32 level_8_bleed_scaling" />
-    <Field Def="f32 level_8_enchanted_scaling" />
-    <Field Def="f32 level_9_physical_scaling_str" />
-    <Field Def="f32 level_9_physical_scaling_dex" />
-    <Field Def="f32 level_9_magic_scaling" />
-    <Field Def="f32 level_9_lightning_scaling" />
-    <Field Def="f32 level_9_fire_scaling" />
-    <Field Def="f32 level_9_dark_scaling" />
-    <Field Def="f32 level_9_poison_scaling" />
-    <Field Def="f32 level_9_bleed_scaling" />
-    <Field Def="f32 level_9_enchanted_scaling" />
-    <Field Def="f32 level_10_physical_scaling_str" />
-    <Field Def="f32 level_10_physical_scaling_dex" />
-    <Field Def="f32 level_10_magic_scaling" />
-    <Field Def="f32 level_10_lightning_scaling" />
-    <Field Def="f32 level_10_fire_scaling" />
-    <Field Def="f32 level_10_dark_scaling" />
-    <Field Def="f32 level_10_poison_scaling" />
-    <Field Def="f32 level_10_bleed_scaling" />
-    <Field Def="f32 level_10_enchanted_scaling" />
-  </Fields>
+    <ParamType>WEAPON_STATS_AFFECT_PARAM</ParamType>
+    <DataVersion>3</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="f32 baseValueScale = 1">
+            <DisplayName>強化ベース値 倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="f32 menuBaseValueScale = 1">
+            <DisplayName>メニュー用 強化ベース値 倍率</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength0">
+            <DisplayName>ステータス影響倍率 物理 筋力 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity0">
+            <DisplayName>ステータス影響倍率 物理 技量 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="f32 magic0">
+            <DisplayName>ステータス影響倍率 魔力 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="f32 thunder0">
+            <DisplayName>ステータス影響倍率 雷 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="f32 fire0">
+            <DisplayName>ステータス影響倍率 炎 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="f32 dark0">
+            <DisplayName>ステータス影響倍率 闇 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="f32 poison0">
+            <DisplayName>ステータス影響倍率 毒 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="f32 bleeding0">
+            <DisplayName>ステータス影響倍率 出血 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant0">
+            <DisplayName>ステータス影響倍率 物理 魔力 0</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength1">
+            <DisplayName>ステータス影響倍率 物理 筋力 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>12</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity1">
+            <DisplayName>ステータス影響倍率 物理 技量 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>13</SortID>
+        </Field>
+        <Field Def="f32 magic1">
+            <DisplayName>ステータス影響倍率 魔力 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>14</SortID>
+        </Field>
+        <Field Def="f32 thunder1">
+            <DisplayName>ステータス影響倍率 雷 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>15</SortID>
+        </Field>
+        <Field Def="f32 fire1">
+            <DisplayName>ステータス影響倍率 炎 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>16</SortID>
+        </Field>
+        <Field Def="f32 dark1">
+            <DisplayName>ステータス影響倍率 闇 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>17</SortID>
+        </Field>
+        <Field Def="f32 poison1">
+            <DisplayName>ステータス影響倍率 毒 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>18</SortID>
+        </Field>
+        <Field Def="f32 bleeding1">
+            <DisplayName>ステータス影響倍率 出血 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>19</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant1">
+            <DisplayName>ステータス影響倍率 物理 魔力 1</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>20</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength2">
+            <DisplayName>ステータス影響倍率 物理 筋力 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>21</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity2">
+            <DisplayName>ステータス影響倍率 物理 技量 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>22</SortID>
+        </Field>
+        <Field Def="f32 magic2">
+            <DisplayName>ステータス影響倍率 魔力 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>23</SortID>
+        </Field>
+        <Field Def="f32 thunder2">
+            <DisplayName>ステータス影響倍率 雷 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>24</SortID>
+        </Field>
+        <Field Def="f32 fire2">
+            <DisplayName>ステータス影響倍率 炎 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>25</SortID>
+        </Field>
+        <Field Def="f32 dark2">
+            <DisplayName>ステータス影響倍率 闇 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>26</SortID>
+        </Field>
+        <Field Def="f32 poison2">
+            <DisplayName>ステータス影響倍率 毒 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>27</SortID>
+        </Field>
+        <Field Def="f32 bleeding2">
+            <DisplayName>ステータス影響倍率 出血 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>28</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant2">
+            <DisplayName>ステータス影響倍率 物理 魔力 2</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>29</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength3">
+            <DisplayName>ステータス影響倍率 物理 筋力 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>30</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity3">
+            <DisplayName>ステータス影響倍率 物理 技量 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>31</SortID>
+        </Field>
+        <Field Def="f32 magic3">
+            <DisplayName>ステータス影響倍率 魔力 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>32</SortID>
+        </Field>
+        <Field Def="f32 thunder3">
+            <DisplayName>ステータス影響倍率 雷 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>33</SortID>
+        </Field>
+        <Field Def="f32 fire3">
+            <DisplayName>ステータス影響倍率 炎 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>34</SortID>
+        </Field>
+        <Field Def="f32 dark3">
+            <DisplayName>ステータス影響倍率 闇 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>35</SortID>
+        </Field>
+        <Field Def="f32 poison3">
+            <DisplayName>ステータス影響倍率 毒 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>36</SortID>
+        </Field>
+        <Field Def="f32 bleeding3">
+            <DisplayName>ステータス影響倍率 出血 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>37</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant3">
+            <DisplayName>ステータス影響倍率 物理 魔力 3</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>38</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength4">
+            <DisplayName>ステータス影響倍率 物理 筋力 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>39</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity4">
+            <DisplayName>ステータス影響倍率 物理 技量 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>40</SortID>
+        </Field>
+        <Field Def="f32 magic4">
+            <DisplayName>ステータス影響倍率 魔力 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>41</SortID>
+        </Field>
+        <Field Def="f32 thunder4">
+            <DisplayName>ステータス影響倍率 雷 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>42</SortID>
+        </Field>
+        <Field Def="f32 fire4">
+            <DisplayName>ステータス影響倍率 炎 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>43</SortID>
+        </Field>
+        <Field Def="f32 dark4">
+            <DisplayName>ステータス影響倍率 闇 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>44</SortID>
+        </Field>
+        <Field Def="f32 poison4">
+            <DisplayName>ステータス影響倍率 毒 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>45</SortID>
+        </Field>
+        <Field Def="f32 bleeding4">
+            <DisplayName>ステータス影響倍率 出血 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>46</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant4">
+            <DisplayName>ステータス影響倍率 物理 魔力 4</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>47</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength5">
+            <DisplayName>ステータス影響倍率 物理 筋力 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>48</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity5">
+            <DisplayName>ステータス影響倍率 物理 技量 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>49</SortID>
+        </Field>
+        <Field Def="f32 magic5">
+            <DisplayName>ステータス影響倍率 魔力 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>50</SortID>
+        </Field>
+        <Field Def="f32 thunder5">
+            <DisplayName>ステータス影響倍率 雷 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>51</SortID>
+        </Field>
+        <Field Def="f32 fire5">
+            <DisplayName>ステータス影響倍率 炎 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>52</SortID>
+        </Field>
+        <Field Def="f32 dark5">
+            <DisplayName>ステータス影響倍率 闇 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>53</SortID>
+        </Field>
+        <Field Def="f32 poison5">
+            <DisplayName>ステータス影響倍率 毒 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>54</SortID>
+        </Field>
+        <Field Def="f32 bleeding5">
+            <DisplayName>ステータス影響倍率 出血 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>55</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant5">
+            <DisplayName>ステータス影響倍率 物理 魔力 5</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>56</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength6">
+            <DisplayName>ステータス影響倍率 物理 筋力 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>57</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity6">
+            <DisplayName>ステータス影響倍率 物理 技量 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>58</SortID>
+        </Field>
+        <Field Def="f32 magic6">
+            <DisplayName>ステータス影響倍率 魔力 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>59</SortID>
+        </Field>
+        <Field Def="f32 thunder6">
+            <DisplayName>ステータス影響倍率 雷 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>60</SortID>
+        </Field>
+        <Field Def="f32 fire6">
+            <DisplayName>ステータス影響倍率 炎 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>61</SortID>
+        </Field>
+        <Field Def="f32 dark6">
+            <DisplayName>ステータス影響倍率 闇 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>62</SortID>
+        </Field>
+        <Field Def="f32 poison6">
+            <DisplayName>ステータス影響倍率 毒 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>63</SortID>
+        </Field>
+        <Field Def="f32 bleeding6">
+            <DisplayName>ステータス影響倍率 出血 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>64</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant6">
+            <DisplayName>ステータス影響倍率 物理 魔力 6</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>65</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength7">
+            <DisplayName>ステータス影響倍率 物理 筋力 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>66</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity7">
+            <DisplayName>ステータス影響倍率 物理 技量 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>67</SortID>
+        </Field>
+        <Field Def="f32 magic7">
+            <DisplayName>ステータス影響倍率 魔力 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>68</SortID>
+        </Field>
+        <Field Def="f32 thunder7">
+            <DisplayName>ステータス影響倍率 雷 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>69</SortID>
+        </Field>
+        <Field Def="f32 fire7">
+            <DisplayName>ステータス影響倍率 炎 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>70</SortID>
+        </Field>
+        <Field Def="f32 dark7">
+            <DisplayName>ステータス影響倍率 闇 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>71</SortID>
+        </Field>
+        <Field Def="f32 poison7">
+            <DisplayName>ステータス影響倍率 毒 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>72</SortID>
+        </Field>
+        <Field Def="f32 bleeding7">
+            <DisplayName>ステータス影響倍率 出血 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>73</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant7">
+            <DisplayName>ステータス影響倍率 物理 魔力 7</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>74</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength8">
+            <DisplayName>ステータス影響倍率 物理 筋力 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>75</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity8">
+            <DisplayName>ステータス影響倍率 物理 技量 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>76</SortID>
+        </Field>
+        <Field Def="f32 magic8">
+            <DisplayName>ステータス影響倍率 魔力 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>77</SortID>
+        </Field>
+        <Field Def="f32 thunder8">
+            <DisplayName>ステータス影響倍率 雷 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>78</SortID>
+        </Field>
+        <Field Def="f32 fire8">
+            <DisplayName>ステータス影響倍率 炎 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>79</SortID>
+        </Field>
+        <Field Def="f32 dark8">
+            <DisplayName>ステータス影響倍率 闇 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>80</SortID>
+        </Field>
+        <Field Def="f32 poison8">
+            <DisplayName>ステータス影響倍率 毒 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>81</SortID>
+        </Field>
+        <Field Def="f32 bleeding8">
+            <DisplayName>ステータス影響倍率 出血 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>82</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant8">
+            <DisplayName>ステータス影響倍率 物理 魔力 8</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>83</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength9">
+            <DisplayName>ステータス影響倍率 物理 筋力 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>84</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity9">
+            <DisplayName>ステータス影響倍率 物理 技量 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>85</SortID>
+        </Field>
+        <Field Def="f32 magic9">
+            <DisplayName>ステータス影響倍率 魔力 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>86</SortID>
+        </Field>
+        <Field Def="f32 thunder9">
+            <DisplayName>ステータス影響倍率 雷 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>87</SortID>
+        </Field>
+        <Field Def="f32 fire9">
+            <DisplayName>ステータス影響倍率 炎 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>88</SortID>
+        </Field>
+        <Field Def="f32 dark9">
+            <DisplayName>ステータス影響倍率 闇 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>89</SortID>
+        </Field>
+        <Field Def="f32 poison9">
+            <DisplayName>ステータス影響倍率 毒 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>90</SortID>
+        </Field>
+        <Field Def="f32 bleeding9">
+            <DisplayName>ステータス影響倍率 出血 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>91</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant9">
+            <DisplayName>ステータス影響倍率 物理 魔力 9</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>92</SortID>
+        </Field>
+        <Field Def="f32 physicalByStrength10">
+            <DisplayName>ステータス影響倍率 物理 筋力 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>93</SortID>
+        </Field>
+        <Field Def="f32 physicalByDexterity10">
+            <DisplayName>ステータス影響倍率 物理 技量 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>94</SortID>
+        </Field>
+        <Field Def="f32 magic10">
+            <DisplayName>ステータス影響倍率 魔力 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>95</SortID>
+        </Field>
+        <Field Def="f32 thunder10">
+            <DisplayName>ステータス影響倍率 雷 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>96</SortID>
+        </Field>
+        <Field Def="f32 fire10">
+            <DisplayName>ステータス影響倍率 炎 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>97</SortID>
+        </Field>
+        <Field Def="f32 dark10">
+            <DisplayName>ステータス影響倍率 闇 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>98</SortID>
+        </Field>
+        <Field Def="f32 poison10">
+            <DisplayName>ステータス影響倍率 毒 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>99</SortID>
+        </Field>
+        <Field Def="f32 bleeding10">
+            <DisplayName>ステータス影響倍率 出血 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="f32 physicalByEnchant10">
+            <DisplayName>ステータス影響倍率 物理 魔力 10</DisplayName>
+            <Maximum>10</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>101</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

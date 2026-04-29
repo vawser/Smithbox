@@ -1,0 +1,93 @@
+{
+  "Param": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Type": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Name": "GENERAL_LOCATION_EVENT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PositionX",
+      "Name": "位置Ｘ",
+      "Description": ""
+    },
+    {
+      "Field": "PositionY",
+      "Name": "位置Ｙ",
+      "Description": ""
+    },
+    {
+      "Field": "PositionZ",
+      "Name": "位置Ｚ",
+      "Description": ""
+    },
+    {
+      "Field": "RotationX",
+      "Name": "角度Ｘ",
+      "Description": ""
+    },
+    {
+      "Field": "RotationY",
+      "Name": "角度Ｙ",
+      "Description": ""
+    },
+    {
+      "Field": "RotationZ",
+      "Name": "角度Ｚ",
+      "Description": ""
+    },
+    {
+      "Field": "formType",
+      "Name": "形状",
+      "Description": ""
+    },
+    {
+      "Field": "colorR",
+      "Name": "色Ｒ",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "色Ｇ",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "色Ｂ",
+      "Description": ""
+    },
+    {
+      "Field": "radius",
+      "Name": "半径・X幅",
+      "Description": ""
+    },
+    {
+      "Field": "height",
+      "Name": "高さ・Y幅",
+      "Description": ""
+    },
+    {
+      "Field": "depth",
+      "Name": "Ｚ幅",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlockId",
+      "Name": "メモリブロックID",
+      "Description": ""
+    },
+    {
+      "Field": "categoryType",
+      "Name": "カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "categoryId",
+      "Name": "カテゴリ内ID",
+      "Description": ""
+    }
+  ]
+}

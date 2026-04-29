@@ -1,0 +1,29 @@
+{
+  "Key": "MULTI_PLAY_CORRECTION_OVERRIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MULTI_PLAY_CORRECTION_OVERRIDE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Type 1"
+        }
+      ]
+    }
+  ]
+}

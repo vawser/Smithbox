@@ -1,25 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>MAP_OBJECT_BONFIRE_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="s32 area_id" />
-    <Field Def="s32 Unk00" />
-    <Field Def="f32 Unk01" />
-    <Field Def="f32 Unk02" />
-    <Field Def="s32 Unk03" />
-    <Field Def="f32 Unk04" />
-    <Field Def="f32 Unk05" />
-    <Field Def="s32 fog_door_id" />
-    <Field Def="u8 Unk06" />
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
-    <Field Def="u8 menu_sort_id" />
-    <Field Def="s32 bonfire_lit_flag" />
-    <Field Def="s32 Unk10" />
-    <Field Def="s32 Unk11" />
-  </Fields>
+    <ParamType>MAP_OBJECT_BONFIRE_PARAM</ParamType>
+    <DataVersion>9</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="s32 mapId">
+            <DisplayName>配置マップID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u32 menuAreaID">
+            <DisplayName>メニュー用エリアID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>300</SortID>
+        </Field>
+        <Field Def="f32 enemyDisableDistance">
+            <DisplayName>敵接近時使用禁止距離</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>500</SortID>
+        </Field>
+        <Field Def="f32 enemyDisableHeight">
+            <DisplayName>敵接近時使用禁止高さ</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>100</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>510</SortID>
+        </Field>
+        <Field Def="s32 eventCameraIdBegin">
+            <DisplayName>イベントカメラ開始ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>800</SortID>
+        </Field>
+        <Field Def="s32 eventCameraIdEnd">
+            <DisplayName>イベントカメラ終了ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>810</SortID>
+        </Field>
+        <Field Def="f32 decLimitTime">
+            <DisplayName>マルチプレイ制限時間減少量</DisplayName>
+            <DisplayFormat>%f</DisplayFormat>
+            <Maximum>1800</Maximum>
+            <Increment>0.1</Increment>
+            <SortID>200</SortID>
+        </Field>
+        <Field Def="s32 multiPlayAreaid">
+            <DisplayName>マルチプレイ区間ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+08</Maximum>
+            <Increment>1</Increment>
+            <SortID>100</SortID>
+        </Field>
+        <Field Def="u8 isUseReGenerateItem">
+            <DisplayName>再生の種火くべる可能</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1000</SortID>
+        </Field>
+        <Field Def="u8 isUseDisableNetworkItem">
+            <DisplayName>人間の像くべる可能</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1010</SortID>
+        </Field>
+        <Field Def="u8 isUseLevelUpEstusFlaskItem">
+            <DisplayName>エスト瓶強化くべる可能</DisplayName>
+            <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1</Maximum>
+            <Increment>1</Increment>
+            <SortID>1020</SortID>
+        </Field>
+        <Field Def="u8 menuSortID = 1">
+            <DisplayName>メニューソート用ID</DisplayName>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1300</SortID>
+        </Field>
+        <Field Def="u32 rootFlagId">
+            <DisplayName>再生の種火使用可能フラグ</DisplayName>
+            <Enum>EVENT_FLAG_GLOBAL_EVENT</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1100</SortID>
+        </Field>
+        <Field Def="u32 bossKillCountValId">
+            <DisplayName>ボスを殺した回数カウント用変数ID</DisplayName>
+            <Enum>EVENT_VALUE_global</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1200</SortID>
+        </Field>
+        <Field Def="u32 bossKillCountValId2">
+            <DisplayName>ボスを殺した回数カウント用変数ID2</DisplayName>
+            <Enum>EVENT_VALUE_global</Enum>
+            <DisplayFormat>%d</DisplayFormat>
+            <Maximum>1e+09</Maximum>
+            <Increment>1</Increment>
+            <SortID>1200</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

@@ -47,14 +47,22 @@ public class PrefabTool
 
         if (ImGui.CollapsingHeader("Import Prefab"))
         {
+            ImGui.BeginChild("PrefabImportToolSection");
+
             ImportPrefabMenu();
             PrefabTree("import");
+
+            ImGui.EndChild();
         }
 
         if (ImGui.CollapsingHeader("Export Prefab"))
         {
+            ImGui.BeginChild("PrefabExportToolSection");
+
             ExportPrefabMenu();
             PrefabTree("export");
+
+            ImGui.EndChild();
         }
     }
 

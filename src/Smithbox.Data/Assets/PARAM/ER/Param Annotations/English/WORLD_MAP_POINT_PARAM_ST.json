@@ -1,0 +1,468 @@
+{
+  "Param": "WORLD_MAP_POINT_PARAM_ST",
+  "Type": "WORLD_MAP_POINT_PARAM_ST",
+  "Name": "WORLD_MAP_POINT_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId",
+      "Name": "Open - Event Flag ID",
+      "Description": "Event flag ID of open condition"
+    },
+    {
+      "Field": "distViewEventFlagId",
+      "Name": "Distant View - Event Flag ID",
+      "Description": "Event flag ID to be set when found on the distant view"
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": "Icon ID"
+    },
+    {
+      "Field": "bgmPlaceType",
+      "Name": "BGM Location Type",
+      "Description": "Bgm location type"
+    },
+    {
+      "Field": "isAreaIcon",
+      "Name": "Is Area Icon",
+      "Description": "Is it an icon that represents a range? Same size as the map"
+    },
+    {
+      "Field": "isOverrideDistViewMarkPos",
+      "Name": "Overwrite Coordinates when Distant View Marker",
+      "Description": "Whether to overwrite the coordinates when using it as a distant view marker"
+    },
+    {
+      "Field": "isEnableNoText",
+      "Name": "Enable with No Text",
+      "Description": "Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo_forDistViewMark",
+      "Name": "Distant View Marker - Map Area",
+      "Description": "AA part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "gridXNo_forDistViewMark",
+      "Name": "Distant View Marker - Map Block",
+      "Description": "BB part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "gridZNo_forDistViewMark",
+      "Name": "Distant View Marker - Map Region",
+      "Description": "CC part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "clearedEventFlagId",
+      "Name": "Cleared - Event Flag ID",
+      "Description": "Cleared event flag ID (0: always treated as cleared)"
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "Display Mask M00",
+      "Description": "Whether to display with M00"
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "Display Mask M01",
+      "Description": "Whether to display with M01"
+    },
+    {
+      "Field": "pad2_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask02",
+      "Name": "Display Mask M02",
+      "Description": "Whether to display with M02"
+    },
+    {
+      "Field": "pad2_0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "distViewIconId",
+      "Name": "Distant View - Icon ID",
+      "Description": "Icon ID when distant view is found"
+    },
+    {
+      "Field": "angle",
+      "Name": "Display Icon Angle",
+      "Description": "Display icon rotation angle [deg]"
+    },
+    {
+      "Field": "areaNo",
+      "Name": "Map Area",
+      "Description": "AA part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "Map Block",
+      "Description": "BB part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "Map Region",
+      "Description": "CC part of mAA_BB_CC_DD"
+    },
+    {
+      "Field": "pad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "Map Coordinate: X",
+      "Description": "X coordinate"
+    },
+    {
+      "Field": "posY",
+      "Name": "Map Coordinate: Y",
+      "Description": "Y coordinate (not used)"
+    },
+    {
+      "Field": "posZ",
+      "Name": "Map Coordinate: Z",
+      "Description": "Z coordinate"
+    },
+    {
+      "Field": "textId1",
+      "Name": "Text ID [1]",
+      "Description": "The text ID to display. If the value is invalid (-1), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId1",
+      "Name": "Text Enable Flag [1]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId1",
+      "Name": "Text Disable Flag [1]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId2",
+      "Name": "Text ID [2]",
+      "Description": "The text ID to display. If it is an invalid value (-2), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId2",
+      "Name": "Text Enable Flag [2]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (1) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId2",
+      "Name": "Text Disable Flag [2]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (1) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId3",
+      "Name": "Text ID [3]",
+      "Description": "The text ID to display. If it is an invalid value (-3), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId3",
+      "Name": "Text Enable Flag [3]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (2) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId3",
+      "Name": "Text Disable Flag [3]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (2) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId4",
+      "Name": "Text ID [4]",
+      "Description": "The text ID to display. If it is an invalid value (-4), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId4",
+      "Name": "Text Enable Flag [4]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (3) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId4",
+      "Name": "Text Disable Flag [4]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (3) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId5",
+      "Name": "Text ID [5]",
+      "Description": "The text ID to display. If it is an invalid value (-5), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId5",
+      "Name": "Text Enable Flag [5]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (4) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId5",
+      "Name": "Text Disable Flag [5]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (4) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId6",
+      "Name": "Text ID [6]",
+      "Description": "The text ID to display. If it is an invalid value (-6), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId6",
+      "Name": "Text Enable Flag [6]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (5) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId6",
+      "Name": "Text Disable Flag [6]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (5) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId7",
+      "Name": "Text ID [7]",
+      "Description": "The text ID to display. If it is an invalid value (-7), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId7",
+      "Name": "Text Enable Flag [7]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (6) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId7",
+      "Name": "Text Disable Flag [7]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (6) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textId8",
+      "Name": "Text ID [8]",
+      "Description": "The text ID to display. If it is an invalid value (-8), nothing is displayed."
+    },
+    {
+      "Field": "textEnableFlagId8",
+      "Name": "Text Enable Flag [8]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (7) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlagId8",
+      "Name": "Text Disable Flag [8]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (7) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textType1",
+      "Name": "Text Type [1]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType2",
+      "Name": "Text Type [2]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType3",
+      "Name": "Text Type [3]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType4",
+      "Name": "Text Type [4]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType5",
+      "Name": "Text Type [5]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType6",
+      "Name": "Text Type [6]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType7",
+      "Name": "Text Type [7]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "textType8",
+      "Name": "Text Type [8]",
+      "Description": "Text type (place name, NPC name, ...)"
+    },
+    {
+      "Field": "distViewId",
+      "Name": "Distant View ID [0]",
+      "Description": "Distance stand ID"
+    },
+    {
+      "Field": "posX_forDistViewMark",
+      "Name": "Distant View Marker - Coordinate: X",
+      "Description": "X coordinate"
+    },
+    {
+      "Field": "posY_forDistViewMark",
+      "Name": "Distant View Marker - Coordinate: Y",
+      "Description": "Y coordinate"
+    },
+    {
+      "Field": "posZ_forDistViewMark",
+      "Name": "Distant View Marker - Coordinate: Z",
+      "Description": "Z coordinate"
+    },
+    {
+      "Field": "distViewId1",
+      "Name": "Distant View ID [1]",
+      "Description": "Distance stand ID"
+    },
+    {
+      "Field": "distViewId2",
+      "Name": "Distant View ID [2]",
+      "Description": "Distance stand ID"
+    },
+    {
+      "Field": "distViewId3",
+      "Name": "Distant View ID [3]",
+      "Description": "Distance stand ID"
+    },
+    {
+      "Field": "dispMinZoomStep",
+      "Name": "Display - Min Zoom Step",
+      "Description": "Zoom step to display map points (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)"
+    },
+    {
+      "Field": "selectMinZoomStep",
+      "Name": "Selection - Min Zoom Step",
+      "Description": "Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)"
+    },
+    {
+      "Field": "entryFEType",
+      "Name": "Entry FE Type",
+      "Description": "Admission display format. Map points to be displayed at the time of admission Types of admission FE"
+    },
+    {
+      "Field": "pad4_old",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xb7",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "altIconId",
+      "Name": "Alternate Icon ID",
+      "Description": "Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1"
+    },
+    {
+      "Field": "pad4",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id1",
+      "Name": "Text Enable Flag ID 2 [1]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id2",
+      "Name": "Text Enable Flag ID 2 [2]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id3",
+      "Name": "Text Enable Flag ID 2 [3]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id4",
+      "Name": "Text Enable Flag ID 2 [4]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id5",
+      "Name": "Text Enable Flag ID 2 [5]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id6",
+      "Name": "Text Enable Flag ID 2 [6]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id7",
+      "Name": "Text Enable Flag ID 2 [7]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textEnableFlag2Id8",
+      "Name": "Text Enable Flag ID 2 [8]",
+      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+    },
+    {
+      "Field": "textDisableFlag2Id1",
+      "Name": "Text Disable Flag ID 2 [1]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id2",
+      "Name": "Text Disable Flag ID 2 [2]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id3",
+      "Name": "Text Disable Flag ID 2 [3]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id4",
+      "Name": "Text Disable Flag ID 2 [4]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id5",
+      "Name": "Text Disable Flag ID 2 [5]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id6",
+      "Name": "Text Disable Flag ID 2 [6]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id7",
+      "Name": "Text Disable Flag ID 2 [7]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    },
+    {
+      "Field": "textDisableFlag2Id8",
+      "Name": "Text Disable Flag ID 2 [8]",
+      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+    }
+  ]
+}

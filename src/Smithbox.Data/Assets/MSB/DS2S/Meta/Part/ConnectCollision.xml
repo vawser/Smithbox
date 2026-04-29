@@ -16,14 +16,6 @@
     AltName="Map ID"
     Wiki=""
     ArrayProperty="" />
-    
-    <UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <UnkT0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
   </Field>
   
   <Enums>

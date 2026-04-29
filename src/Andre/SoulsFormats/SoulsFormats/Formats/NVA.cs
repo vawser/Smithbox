@@ -148,7 +148,7 @@ namespace SoulsFormats
             foreach (Connector connector in ConnectorEntries)
                 connector.TakePointsAndConds(navmeshConnections, graphConnections);
 
-            if(Version is NVAVersion.EldenRing)
+            if (Version is NVAVersion.EldenRing)
             {
                 Section9Entries = new Section9(br);
                 Section10Entries = new Section10(br);
@@ -396,7 +396,7 @@ namespace SoulsFormats
                     for (int i = 0; i < 16 - connectedNavmeshesCount; i++)
                         br.AssertInt32(-1);
                 }
-                else if(version == 4)
+                else if (version == 4)
                 {
                     UnkOffset = br.ReadInt32();
                     ER_Unk04 = br.ReadSingle();
@@ -1194,7 +1194,7 @@ namespace SoulsFormats
                     NeighbourGateNodeCosts = new List<float>(
                         br.ReadUInt16s(16).Select(s => s == 0xFFFF ? -1 : s * 0.01f));
                 }
-                else if(version == 2)
+                else if (version == 2)
                 {
                     int neighbourGateNodeCostsCount = br.ReadInt32();
                     Unk14 = br.ReadInt32();
@@ -1223,7 +1223,7 @@ namespace SoulsFormats
                     for (int i = 0; i < 16 - NeighbourGateNodeCosts.Count; i++)
                         bw.WriteUInt16(0xFFFF);
                 }
-                else if(version == 2)
+                else if (version == 2)
                 {
                     bw.WriteInt32(NeighbourGateNodeCosts.Count);
                     bw.WriteInt32(Unk14);

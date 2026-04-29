@@ -1,0 +1,98 @@
+{
+  "Param": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Type": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Name": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "physicDefRate",
+      "Name": "Defense %: Physical",
+      "Description": ""
+    },
+    {
+      "Field": "magicDefRate",
+      "Name": "Defense %: Magic",
+      "Description": ""
+    },
+    {
+      "Field": "fireDefRate",
+      "Name": "Defense %: Fire",
+      "Description": ""
+    },
+    {
+      "Field": "thunderDefRate",
+      "Name": "Defense %: Lightning",
+      "Description": ""
+    },
+    {
+      "Field": "slashDefRate",
+      "Name": "Defense %: Slash",
+      "Description": ""
+    },
+    {
+      "Field": "blowDefRate",
+      "Name": "Defense %: Strike",
+      "Description": ""
+    },
+    {
+      "Field": "thrustDefRate",
+      "Name": "Defense %: Thrust",
+      "Description": ""
+    },
+    {
+      "Field": "resistPoisonRate",
+      "Name": "Resist %: Poison",
+      "Description": ""
+    },
+    {
+      "Field": "resistToxicRate",
+      "Name": "Resist %: Toxic",
+      "Description": ""
+    },
+    {
+      "Field": "resistBloodRate",
+      "Name": "Resist %: Bleed",
+      "Description": ""
+    },
+    {
+      "Field": "resistCurseRate",
+      "Name": "Resist %: Curse",
+      "Description": ""
+    },
+    {
+      "Field": "ResidentSpEffectId1",
+      "Name": "Passive SpEffect ID 1 Offset",
+      "Description": ""
+    },
+    {
+      "Field": "ResidentSpEffectId2",
+      "Name": "Passive SpEffect ID 2 Offset",
+      "Description": ""
+    },
+    {
+      "Field": "ResidentSpEffectId3",
+      "Name": "Passive SpEffect ID 3 Offset",
+      "Description": ""
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "Material ID Offset",
+      "Description": ""
+    },
+    {
+      "Field": "darkDefRate",
+      "Name": "Defense %: Dark",
+      "Description": ""
+    },
+    {
+      "Field": "resistFrost",
+      "Name": "Resist %: Frost",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

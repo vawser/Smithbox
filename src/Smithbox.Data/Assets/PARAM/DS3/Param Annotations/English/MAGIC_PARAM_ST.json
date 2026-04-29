@@ -1,0 +1,448 @@
+{
+  "Param": "MAGIC_PARAM_ST",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "MAGIC_PARAM_ST",
+  "Description": "Spell data",
+  "Fields": [
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Dialog Message ID",
+      "Description": "Message ID of Yes / No dialog issued when using magic"
+    },
+    {
+      "Field": "limitCancelSpEffectId",
+      "Name": "Ignore Usage Restriction - SpEffect ID",
+      "Description": "Usage restrictions can be ignored when the specified special effect ID is activated"
+    },
+    {
+      "Field": "sortId",
+      "Name": "Sort ID",
+      "Description": "Sort ID (-1: Do not collect)"
+    },
+    {
+      "Field": "requirementLuck",
+      "Name": "Requirement: LCK",
+      "Description": "Can't be equipped without more PC luck"
+    },
+    {
+      "Field": "aiNotifyType",
+      "Name": "AI Interrupt Type",
+      "Description": "AI interrupt occurs in act (AI notification when magic is activated)"
+    },
+    {
+      "Field": "refIdFpCost1",
+      "Name": "FP Consumption [1]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdSpCost1",
+      "Name": "Stamina Consumption [1]",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "Icon ID",
+      "Description": ""
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "Behavior ID",
+      "Description": "Set the action ID"
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "Material Item ID",
+      "Description": "Item ID required for purchase"
+    },
+    {
+      "Field": "replaceMagicId",
+      "Name": "Replace Magic ID",
+      "Description": "Greys out icon when set to 1 and Disabled by State Info has a value. Needs further testing."
+    },
+    {
+      "Field": "maxQuantity",
+      "Name": "Number of Uses",
+      "Description": ""
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "Humanity Cost",
+      "Description": ""
+    },
+    {
+      "Field": "overDexterity",
+      "Name": "Dexterity over Start Value",
+      "Description": "Skill over start value"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX Variation ID",
+      "Description": ""
+    },
+    {
+      "Field": "slotLength",
+      "Name": "Slot Usage",
+      "Description": ""
+    },
+    {
+      "Field": "requirementIntellect",
+      "Name": "Requirement: INT",
+      "Description": "Can't be equipped without more PC intelligence"
+    },
+    {
+      "Field": "requirementFaith",
+      "Name": "Requirement: FTH",
+      "Description": "It cannot be equipped without the power of the PC any more."
+    },
+    {
+      "Field": "analogDexterityMin",
+      "Name": "Casting Speed - DEX Start Range",
+      "Description": "Motion cancel analog: Minimum skill value"
+    },
+    {
+      "Field": "analogDexterityMax",
+      "Name": "Casting Speed - DEX End Range",
+      "Description": "Motion cancel analog: Maximum skill value"
+    },
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "Magic School Type",
+      "Description": "Used for sorting> For menu"
+    },
+    {
+      "Field": "refCategory1",
+      "Name": "Reference Category [1]",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectCategory",
+      "Name": "SpEffect Category",
+      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+    },
+    {
+      "Field": "refType",
+      "Name": "Motion Category",
+      "Description": ""
+    },
+    {
+      "Field": "menuType",
+      "Name": "Open Menu Type",
+      "Description": "Menu type to be displayed when using magic"
+    },
+    {
+      "Field": "refCategory4",
+      "Name": "Reference Category [4]",
+      "Description": ""
+    },
+    {
+      "Field": "hasSpEffectType",
+      "Name": "Disabled by State Info",
+      "Description": "Prevents casting when State Info is active. Set replaceMagicId to 1 to make icon grey out."
+    },
+    {
+      "Field": "unknown1",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "spellchange1",
+      "Name": "Affected by Spell Change Flag 1",
+      "Description": "Allows spell to use +6 ID version when using catalyst like Filianore's Chime.\nBoth flags must be True."
+    },
+    {
+      "Field": "spellchange2",
+      "Name": "Affected by Spell Change Flag 2",
+      "Description": "Allows spell to use +6 ID version when using catalyst like Filianore's Chime.\nBoth flags must be True."
+    },
+    {
+      "Field": "unknown2",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unknown3",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unknown4",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unknown5",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "unknown6",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "enableMulti",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "enableMultOnly",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "isShieldEnchant",
+      "Name": "Is Shield Enchantment",
+      "Description": ""
+    },
+    {
+      "Field": "enable_live",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "enable_white",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "enable_black",
+      "Name": "Unknown",
+      "Description": ""
+    },
+    {
+      "Field": "disable_offline",
+      "Name": "Vow Type 0",
+      "Description": "No Covenant"
+    },
+    {
+      "Field": "vowType1",
+      "Name": "Vow Type 1",
+      "Description": "Blade of the Darkmoon"
+    },
+    {
+      "Field": "vowType2",
+      "Name": "Vow Type 2",
+      "Description": "Warrior of Sunlight"
+    },
+    {
+      "Field": "vowType3",
+      "Name": "Vow Type 3",
+      "Description": "Mound-makers"
+    },
+    {
+      "Field": "vowType4",
+      "Name": "Vow Type 4",
+      "Description": "Spears of the Church"
+    },
+    {
+      "Field": "vowType5",
+      "Name": "Vow Type 5",
+      "Description": "Rosaria's Fingers"
+    },
+    {
+      "Field": "vowType6",
+      "Name": "Vow Type 6",
+      "Description": "Watchdogs of Farron"
+    },
+    {
+      "Field": "vowType7",
+      "Name": "Vow Type 7",
+      "Description": "Aldrich Faithful"
+    },
+    {
+      "Field": "VowType8",
+      "Name": "Enabled in Multiplayer",
+      "Description": ""
+    },
+    {
+      "Field": "VowType9",
+      "Name": "Only Allowed in Multiplayer",
+      "Description": "Needs testing."
+    },
+    {
+      "Field": "VowType10",
+      "Name": "Is Weapon Buff",
+      "Description": ""
+    },
+    {
+      "Field": "VowType11",
+      "Name": "Is Shield Buff",
+      "Description": ""
+    },
+    {
+      "Field": "VowType12",
+      "Name": "Usable by Human",
+      "Description": ""
+    },
+    {
+      "Field": "VowType13",
+      "Name": "Usable by Hollow",
+      "Description": ""
+    },
+    {
+      "Field": "VowType14",
+      "Name": "Usable by Phantom",
+      "Description": ""
+    },
+    {
+      "Field": "VowType15",
+      "Name": "Usable by Dark Spirit",
+      "Description": ""
+    },
+    {
+      "Field": "Unk7",
+      "Name": "Unknown",
+      "Description": "Needs testing. 8 for Homeward.\nPossibily a combo of castResonanceMagic,isValidTough_ProtSADmg, and isWarpMagic."
+    },
+    {
+      "Field": "Unk8",
+      "Name": "Vow Type Extra",
+      "Description": "254 - Vow 8 (Way of Blue) Disabled\n253 - Vow 9 (Blue Sentinels) Disabled\n252 - Vow 8 and 9 Disabled\n251 and beyond - The other vows and permutations"
+    },
+    {
+      "Field": "CastSfx1",
+      "Name": "VFX ID - Casting",
+      "Description": ""
+    },
+    {
+      "Field": "CastSfx2",
+      "Name": "VFX ID - On Cast",
+      "Description": ""
+    },
+    {
+      "Field": "CastSfx3",
+      "Name": "VFX ID - After Cast",
+      "Description": ""
+    },
+    {
+      "Field": "toughnessCorrectRate",
+      "Name": "Toughness Correction",
+      "Description": "Needs testing"
+    },
+    {
+      "Field": "ReplacementStatusType",
+      "Name": "Replacement Status Type",
+      "Description": "Replacement status type"
+    },
+    {
+      "Field": "ReplacementStatus1",
+      "Name": "Replacement Threshold [1]",
+      "Description": "Replacement status value 1"
+    },
+    {
+      "Field": "ReplacementStatus2",
+      "Name": "Replacement Threshold [2]",
+      "Description": "Replacement status value 2"
+    },
+    {
+      "Field": "ReplacementStatus3",
+      "Name": "Replacement Threshold [3]",
+      "Description": "Replacement status value 3"
+    },
+    {
+      "Field": "ReplacementStatus4",
+      "Name": "Replacement Threshold [4]",
+      "Description": "Replacement status value 4"
+    },
+    {
+      "Field": "refCategory2",
+      "Name": "Reference Category [2]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdSpCost4",
+      "Name": "Stamina Consumption [4]",
+      "Description": ""
+    },
+    {
+      "Field": "magicId0",
+      "Name": "Replacement Magic ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "magicId1",
+      "Name": "Replacement Magic ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "magicId2",
+      "Name": "Replacement Magic ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "magicId3",
+      "Name": "Replacement Magic ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdFpCost2",
+      "Name": "FP Consumption [2]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdSpCost2",
+      "Name": "Stamina Consumption [2]",
+      "Description": ""
+    },
+    {
+      "Field": "Unk10",
+      "Name": "Create Limit Group ID",
+      "Description": "Needs testing"
+    },
+    {
+      "Field": "refCategory3",
+      "Name": "Reference Category [3]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdFpCost4",
+      "Name": "FP Consumption [4]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdFpCost3",
+      "Name": "FP Consumption [3]",
+      "Description": ""
+    },
+    {
+      "Field": "refIdSpCost3",
+      "Name": "Stamina Consumption [3]",
+      "Description": ""
+    },
+    {
+      "Field": "refId1",
+      "Name": "Reference ID [1]",
+      "Description": ""
+    },
+    {
+      "Field": "refId2",
+      "Name": "Reference ID [2]",
+      "Description": ""
+    },
+    {
+      "Field": "refId3",
+      "Name": "Reference ID [3]",
+      "Description": ""
+    },
+    {
+      "Field": "refId4",
+      "Name": "Reference ID [4]",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

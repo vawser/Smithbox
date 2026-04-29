@@ -1,0 +1,101 @@
+{
+  "Name": "ActionGuideParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not change"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Pick Up Item"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Does not open from this side."
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Pray"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Hug Wall"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Stop hugging wall"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Ledge Hang"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Climb"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Drop down"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Dive"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Underwater Dash"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Swim Up"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Swim Down"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Swim Up"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Resurrect"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Die"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,704 @@
+{
+  "Name": "NpcParam",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "behaviorVariationId",
+        "nameId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "getSoul",
+        "damageDropSoul",
+        "skillPoint"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hp",
+        "ninsatuNum",
+        "stamina",
+        "staminaRecoverBaseVel",
+        "staminaControlParamId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "superArmorDurability",
+        "superArmorRecoverCorrection",
+        "superArmorBrakeKnockbackDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "itemLotId_1",
+        "itemLotId_2",
+        "itemLotId_3",
+        "itemLotId_4",
+        "itemLotId_5",
+        "itemLotId_6",
+        "resourceItemLotParamId",
+        "resourceItemLotParamId2",
+        "ninsatsuResourceItemLotId_1",
+        "ninsatsuResourceItemLotId_2",
+        "damageDropItemLotId_1",
+        "damageDropItemLotId_2",
+        "lifeCountItemLotId",
+        "dropType",
+        "itemSearchRadius"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "estusFlaskRecoveryParamId",
+        "estusFlaskLotPoint",
+        "hpEstusFlaskLotPoint",
+        "mpEstusFlaskLotPoint",
+        "estusFlaskRecovery_failedLotPointAdd",
+        "hpEstusFlaskRecovery_failedLotPointAdd",
+        "mpEstusFlaskRecovery_failedLotPointAdd"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "spEffectID0",
+        "spEffectID1",
+        "spEffectID2",
+        "spEffectID3",
+        "spEffectID4",
+        "spEffectID5",
+        "spEffectID6",
+        "spEffectID7",
+        "spEffectID8",
+        "spEffectID9",
+        "spEffectID10",
+        "spEffectID11",
+        "spEffectID12",
+        "spEffectID13",
+        "spEffectID14",
+        "spEffectID15",
+        "spEffectID16",
+        "spEffectID17",
+        "spEffectID18",
+        "spEffectID19",
+        "spEffectID20",
+        "spEffectID21",
+        "spEffectID22",
+        "spEffectID23",
+        "spEffectID24",
+        "spEffectID25",
+        "spEffectID26",
+        "spEffectID27",
+        "spEffectID28",
+        "spEffectID29",
+        "spEffectID30",
+        "spEffectID31",
+        "GameClearSpEffectID",
+        "growthDopingSpEffectID",
+        "HardModeSpEffectID"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "modelDispMask0",
+        "modelDispMask1",
+        "modelDispMask2",
+        "modelDispMask3",
+        "modelDispMask4",
+        "modelDispMask5",
+        "modelDispMask6",
+        "modelDispMask7",
+        "modelDispMask8",
+        "modelDispMask9",
+        "modelDispMask10",
+        "modelDispMask11",
+        "modelDispMask12",
+        "modelDispMask13",
+        "modelDispMask14",
+        "modelDispMask15",
+        "modelDispMask16",
+        "modelDispMask17",
+        "modelDispMask18",
+        "modelDispMask19",
+        "modelDispMask20",
+        "modelDispMask21",
+        "modelDispMask22",
+        "modelDispMask23",
+        "modelDispMask24",
+        "modelDispMask25",
+        "modelDispMask26",
+        "modelDispMask27",
+        "modelDispMask28",
+        "modelDispMask29",
+        "modelDispMask30",
+        "modelDispMask31"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "def_phys",
+        "def_slash",
+        "def_lightHit",
+        "def_thrust",
+        "def_neutral",
+        "def_ninsatsu",
+        "def_heavyHit",
+        "def_antiGround",
+        "def_antiAir",
+        "def_lightShoot",
+        "def_attriA",
+        "def_attriB",
+        "def_attriC",
+        "def_mag",
+        "def_fire",
+        "def_thunder",
+        "def_dark",
+        "defFlickPower"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "slashDamageCutRate",
+        "lightHitDamageCutRate",
+        "thrustDamageCutRate",
+        "neutralDamageCutRate",
+        "ninsatsuDamageRate",
+        "heavyHitDamageRate",
+        "antiGroundDamageRate",
+        "antiAirDamageRate",
+        "lightShootDamageRate",
+        "attriADamageCutRate",
+        "attriBDamageCutRate",
+        "attriCDamageCutRate",
+        "magicDamageCutRate",
+        "fireDamageCutRate",
+        "thunderDamageCutRate",
+        "darkDamageCutRate",
+        "flickDamageCutRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "slashStaminaDmgRate",
+        "lightHitStaminaDmgRate",
+        "thrustStaminaDmgRate",
+        "neutralStaminaDmgRate",
+        "ninsatuStaminaDmgRate",
+        "heavyHitStaminaDmgRate",
+        "antiGroundStaminaDmgRate",
+        "antiAirStaminaDmgRate",
+        "lightShootStaminaDmgRate",
+        "attriAStaminaDmgRate",
+        "attriBStaminaDmgRate",
+        "attriCStaminaDmgRate"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "physGuardCutRate",
+        "slashGuardCutRate",
+        "lightHitGuardCutRate",
+        "thrustGuardCutRate",
+        "neutralGuardCutRate",
+        "ninsatsuGuardCutRate",
+        "heavyHitGuardCutRate",
+        "antiGroundGuardCutRate",
+        "antiAirGuardCutRate",
+        "lightShootGuardCutRate",
+        "attriAGuardCutRate",
+        "attriBGuardCutRate",
+        "attriCGuardCutRate",
+        "magGuardCutRate",
+        "fireGuardCutRate",
+        "thunGuardCutRate",
+        "darkGuardCutRate",
+        "staminaGuardDef"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "resist_poison",
+        "resist_desease",
+        "resist_blood",
+        "resist_freeze",
+        "resist_curse"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "poisonGuardResist",
+        "diseaseGuardResist",
+        "bloodGuardResist",
+        "freezeGuardResist",
+        "curseGuardResist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hitStopType",
+        "hitStopType_Defencer"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "damageRate_DamageGroup1",
+        "damageRate_DamageGroup2",
+        "damageRate_DamageGroup3",
+        "damageRate_DamageGroup4",
+        "damageRate_DamageGroup5",
+        "damageRate_DamageGroup6",
+        "damageRate_DamageGroup7",
+        "damageRate_DamageGroup8",
+        "damageRate_DamageGroupWeak",
+        "staminaDamageRate_DamageGroup1",
+        "staminaDamageRate_DamageGroup2",
+        "staminaDamageRate_DamageGroup3",
+        "staminaDamageRate_DamageGroup4",
+        "staminaDamageRate_DamageGroup5",
+        "staminaDamageRate_DamageGroup6",
+        "staminaDamageRate_DamageGroup7",
+        "staminaDamageRate_DamageGroup8",
+        "staminaDamageRate_DamageGroupWeak",
+        "partsAtkParamId1",
+        "partsAtkParamId2",
+        "partsAtkParamId3",
+        "partsAtkParamId4",
+        "partsAtkParamId5",
+        "partsAtkParamId6",
+        "partsAtkParamId7",
+        "partsAtkParamId8",
+        "partsDamageType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "isWeakA",
+        "isWeakB",
+        "isWeakC",
+        "isWeakD",
+        "isWeakE",
+        "isWeakF"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "drawType",
+        "npcType",
+        "teamType",
+        "moveType"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "guardAngle",
+        "guardLevel",
+        "parryAttack",
+        "parryDefence"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "knockbackParamId",
+        "knockbackRate_vsPlayer_DirectHit",
+        "knockbackRate_vsPlayer_Guard",
+        "knockbackRate_vsPlayer_JustGuard",
+        "knockbackRate_vsEnemy_DirectHit",
+        "knockbackRate_vsEnemy_Guard",
+        "knockbackRate_vsEnemy_JustGuard"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "materialSfx1",
+        "materialSe1",
+        "materialSfx_Weak1",
+        "materialSe_Weak1",
+        "materialSfx2",
+        "materialSe2",
+        "materialSfx_Weak2",
+        "materialSe_Weak2"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "footEffectSfxId",
+        "footEffectDecalBaseId1",
+        "footEffectDecalBaseId2",
+        "footEffectDecalBaseId3"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "hitRadius",
+        "hitHeight",
+        "hitYOffset",
+        "chrHitRadius",
+        "chrHitHeight",
+        "squatChrHitRadius",
+        "squatChrHitHeight",
+        "squatMapHitRadius",
+        "squatMapHitHeight"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "animIdOffset",
+        "animIdOffset2",
+        "spMoveAnimId1",
+        "spMoveAnimId2",
+        "moveAnimId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "clothOffLodLevel",
+        "clothUpdateOffset"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "phantomShaderId",
+        "WanderGhostPhantomId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "lockCameraParamId",
+        "disableLockOnAng",
+        "lockDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "fallDamageDump",
+        "fallNoDamageDist"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "normalChangeAnimChrId",
+        "normalChangeModelId",
+        "normalChangeResouceId",
+        "normalChangeTexChrId"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "specialTurnType",
+        "specialTurnDistanceThreshold",
+        "turnVellocity"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "disableRespawn",
+        "disableInitializeDead",
+        "isCrowd",
+        "isGhost",
+        "isChangeWanderGhost",
+        "isNoDamageMotion",
+        "isAffectedPlayingBgm",
+        "isCreateCorpseTarget",
+        "isHitSwimMapCollision",
+        "isDeadSwimMapCollision",
+        "isDopingProgressOffset",
+        "useRagdollCamHit",
+        "disableClothRigidHit",
+        "useRagdoll",
+        "isUnduration",
+        "isEnableNeckTurn",
+        "isMoveAnimWait",
+        "doesAlwaysUseSpecialTurn",
+        "doesPreventTalkingLookAtVibration",
+        "isSmoothTurn",
+        "isHitRumble",
+        "isEnableFe",
+        "isMultilingual",
+        "isIntegrateRaycastCheckRoof",
+        "isUseLowHitFootIk",
+        "isBulletOwner_byObject",
+        "isSoulGetByBoss"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "deadMoveForceRate",
+        "weight",
+        "networkWarpDist",
+        "defaultLodParamId",
+        "maxUndurationAng",
+        "burnSfxType",
+        "sfxSize",
+        "pushOutCamRegionRadius",
+        "npcPlayerWeightType",
+        "paintRenderTargetSize",
+        "cultSettingId",
+        "maxAnklePitchAngle",
+        "maxAnkleRollAngle",
+        "ghostModelId",
+        "roleNameId",
+        "maxDebtStamina",
+        "lookAtHeightOffset",
+        "chrPhysicsHomingIdOffset",
+        "activateBorderDist",
+        "deactivateIntervalDist",
+        "camDitherFadeMinDist",
+        "camDitherFadeMaxDist",
+        "offsetSeID"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "dbgBehaviorL1",
+        "dbgBehaviorR1",
+        "dbgBehaviorL2",
+        "dbgBehaviorR2",
+        "dbgBehaviorLL",
+        "dbgBehaviorRL",
+        "dbgBehaviorLR",
+        "dbgBehaviorRR",
+        "dbgBehaviorLU",
+        "dbgBehaviorRU",
+        "dbgBehaviorLD",
+        "dbgBehaviorRD"
+      ]
+    }
+  ]
+}

@@ -38,7 +38,11 @@ public class GparamData : IDisposable
 
         if (!primaryBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the Primary Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup the Primary Bank.");
         }
 
         // Vanilla Bank
@@ -47,7 +51,11 @@ public class GparamData : IDisposable
 
         if (!vanillaBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to fully setup Primary Bank.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the Vanilla Bank.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup the Vanilla Bank.");
         }
 
         // GPARAM Information
@@ -56,11 +64,11 @@ public class GparamData : IDisposable
 
         if (gparamInfoResult)
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM information.");
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM annotations.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM information.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM annotations.");
         }
 
         // GPARAM Enums
@@ -157,12 +165,12 @@ public class GparamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
             }
         }
 

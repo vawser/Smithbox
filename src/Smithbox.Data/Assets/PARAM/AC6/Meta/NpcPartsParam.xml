@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMMETA XmlVersion="0">
-  <Field>
-    <dummyPolyId AltName="Dummy Poly ID" />
-    <spEffectId1 AltName="SpEffect ID [1]" Refs="SpEffectParam" />
-    <spEffectId2 AltName="SpEffect ID [2]" Refs="SpEffectParam" />
-  </Field>
-  <Self />
-</PARAMMETA>

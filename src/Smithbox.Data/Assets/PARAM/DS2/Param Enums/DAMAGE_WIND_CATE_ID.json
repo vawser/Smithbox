@@ -1,0 +1,308 @@
+{
+  "Key": "DAMAGE_WIND_CATE_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "DAMAGE_WIND_CATE_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Invalid"
+        }
+      ]
+    },
+    {
+      "Key": "3100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Immunity-Medium-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "11100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Minimum-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "12100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Small-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "13100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Medium-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "14100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General-purpose-Large-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "15100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Extra Large-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "16100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "General Purpose-Extra Large-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "21100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Tiny-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "22100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Small-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "23100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Medium-Attack-General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "24100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Large-Attack-General"
+        }
+      ]
+    },
+    {
+      "Key": "25100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Extra Large-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "26100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "PC-Extra Large-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "31100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Minimal - Attack - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "31200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy - Extremely small - Ground vibration - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "32100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Small - Attack - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "32200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy - Small - Ground vibration - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "33100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy-Medium-Attack-General"
+        }
+      ]
+    },
+    {
+      "Key": "33200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy-Medium-Ground Vibration-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "34100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy-Large-Attack-General"
+        }
+      ]
+    },
+    {
+      "Key": "34200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Energy-Large-Ground Vibration-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "35100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Attack - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "35200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Ground Vibration - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "36100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Attack - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "36200000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enemy - Extra Large - Ground Vibration - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "41100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Minimal - Attack - General purpose"
+        }
+      ]
+    },
+    {
+      "Key": "42100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Small-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "43100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Medium-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "44100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object-Large-Attack-General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "45100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Extra Large - Attack - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "46100000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Object - Extra Large - Attack - General Purpose"
+        }
+      ]
+    },
+    {
+      "Key": "90000000",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Test"
+        }
+      ]
+    }
+  ]
+}

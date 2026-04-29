@@ -1,0 +1,88 @@
+{
+  "Param": "BUDDY_STONE_PARAM_ST",
+  "Type": "BUDDY_STONE_PARAM_ST",
+  "Name": "BUDDY_STONE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "Disable Param - Network Test",
+      "Description": "Parameters marked with  are excluded in the NT version package."
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "talkChrEntityId",
+      "Name": "Talk Character Entity ID",
+      "Description": "Used as a foreign key when referencing from a conversation."
+    },
+    {
+      "Field": "eliminateTargetEntityId",
+      "Name": "Defeat Target List Entity ID",
+      "Description": "Entity ID of the character / group to be defeated by the buddy when summoned from this stele"
+    },
+    {
+      "Field": "summonedEventFlagId",
+      "Name": "Summoned Event Flag ID",
+      "Description": "Flag ID that stands when summoned from a stone monument. When this flag is set, the stone monument cannot be summoned."
+    },
+    {
+      "Field": "isSpecial",
+      "Name": "Is Special Monument",
+      "Description": "Is the stone monument an SP stone monument or a general-purpose stone monument? A bool that distinguishes."
+    },
+    {
+      "Field": "pad1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "buddyId",
+      "Name": "Buddy ID",
+      "Description": "ID of the buddy parameter. If Special is , this buddy ID will be summoned."
+    },
+    {
+      "Field": "dopingSpEffectId",
+      "Name": "Applied SpEffect ID",
+      "Description": "Special effect ID applied to the buddy when summoning the buddy."
+    },
+    {
+      "Field": "activateRange",
+      "Name": "Activation Distance",
+      "Description": "If there is at least one character to be defeated in this range, you can summon a buddy at that stone monument."
+    },
+    {
+      "Field": "overwriteReturnRange",
+      "Name": "Overwrite Return Range",
+      "Description": "Buddy's homecoming distance can be overridden"
+    },
+    {
+      "Field": "overwriteActivateRegionEntityId",
+      "Name": "Overwrite Activation Region Entity ID",
+      "Description": "The range where the buddy can be summoned can be overwritten in the area of the specified entity ID."
+    },
+    {
+      "Field": "warnRegionEntityId",
+      "Name": "Warn Region Entity ID",
+      "Description": "Warning area entity ID"
+    },
+    {
+      "Field": "pad3",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

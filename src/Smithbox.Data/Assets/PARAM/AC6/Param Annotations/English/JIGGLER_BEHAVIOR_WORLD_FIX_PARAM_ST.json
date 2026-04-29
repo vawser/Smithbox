@@ -1,0 +1,18 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Description": "Determines the ground attach adjustment for a jiggle bone.",
+  "Fields": [
+    {
+      "Field": "rotRate",
+      "Name": "Rotation %",
+      "Description": "The rotation rate when the jiggler bone is attached to the ground."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Key": "MAP_GI_RESOLUTION_OVERRIDE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MAP_GI_RESOLUTION_OVERRIDE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "-1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No override"
+        }
+      ]
+    },
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Key": "ATKPARAM_SE_ATK_POW",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ATKPARAM_SE_ATK_POW"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Extra Large"
+        }
+      ]
+    }
+  ]
+}

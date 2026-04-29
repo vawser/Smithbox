@@ -1,0 +1,978 @@
+{
+  "Param": "CHR_MOVE_PARAM",
+  "Type": "CHR_MOVE_PARAM",
+  "Name": "CHR_MOVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fParallelWalkAccelerationMax",
+      "Name": "Parallel Walk: Acceleration",
+      "Description": "The acceleration (in metres per second squared) for parallel walking."
+    },
+    {
+      "Field": "fParallelWalkSpeedMin",
+      "Name": "Parallel Walk: Minimum Speed",
+      "Description": "The minimum speed (in metres per second) for parallel walking."
+    },
+    {
+      "Field": "fParallelWalkSpeedMax",
+      "Name": "Parallel Walk: Maximum Speed",
+      "Description": "The maximum speed (in metres per second) for parallel walking."
+    },
+    {
+      "Field": "fParallelWalkDeceleration",
+      "Name": "Parallel Walk: Deceleration",
+      "Description": "The deceleration (in metres per second squared) for parallel walking."
+    },
+    {
+      "Field": "fParallelWalkBackAngleMax",
+      "Name": "Parallel Walk: Translation Input Angle",
+      "Description": "The translation input angle (in degrees) for parallel walking."
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMax",
+      "Name": "Parallel Walk: Translation Velocity Reduction %",
+      "Description": "The rate of velocity reduction during input translation for parallel walking."
+    },
+    {
+      "Field": "fWalkAccelerationMax",
+      "Name": "Walk: Acceleration",
+      "Description": "The acceleration during a walk (in metres per second squared)."
+    },
+    {
+      "Field": "fWalkSpeedMin",
+      "Name": "Walk: Minimum Speed",
+      "Description": "The minimum speed for a walk (in metres per second)."
+    },
+    {
+      "Field": "fWalkSpeedMax",
+      "Name": "Walk: Maximum Speed",
+      "Description": "The maximum speed for a walk (in metres per second)."
+    },
+    {
+      "Field": "fWalkDeceleration",
+      "Name": "Walk: Deceleration",
+      "Description": "The deceleration during a walk (in metres per second squared)."
+    },
+    {
+      "Field": "fWalkRotationAcceleration",
+      "Name": "Walk: Turn Acceleration",
+      "Description": "The acceleration during a walk when turning (in degrees per second squared) ."
+    },
+    {
+      "Field": "fWalkRotationSpeedOnLowSpeed",
+      "Name": "Walk: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a walk when slow turning."
+    },
+    {
+      "Field": "fWalkRotationSpeedOnHighSpeed",
+      "Name": "Walk: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a walk when fast turning."
+    },
+    {
+      "Field": "fWalkRotSpeedMinBorder",
+      "Name": "Walk: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a walk (in metres per second)."
+    },
+    {
+      "Field": "fWalkRotSpeedMaxBorder",
+      "Name": "Walk: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a walk (in metres per second)."
+    },
+    {
+      "Field": "fDashStartSpeed",
+      "Name": "Dash: Initial Speed",
+      "Description": "The initial speed during a dash (in metres per second)."
+    },
+    {
+      "Field": "fDashAcceleration",
+      "Name": "Dash: Acceleration",
+      "Description": "The acceleration during a dash (in metres per second squared)."
+    },
+    {
+      "Field": "fDashSpeedMin",
+      "Name": "Dash: Minimum Speed",
+      "Description": "The minimum speed during a dash (in metres per second)."
+    },
+    {
+      "Field": "fDashSpeedMax",
+      "Name": "Dash: Maximum Speed",
+      "Description": "The maximum speed during a dash (in metres per second)."
+    },
+    {
+      "Field": "fDashDeceleration",
+      "Name": "Dash: Deceleration",
+      "Description": "The deceleration during a dash (in metres per second squared)."
+    },
+    {
+      "Field": "fDashRotationAcceleration",
+      "Name": "Dash: Turn Acceleration",
+      "Description": "The acceleration during a dash when turning (in degrees per second squared) ."
+    },
+    {
+      "Field": "fDashRotationSpeedMin",
+      "Name": "Dash: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a dash when slow turning."
+    },
+    {
+      "Field": "fDashRotationSpeedMax",
+      "Name": "Dash: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a dash when fast turning."
+    },
+    {
+      "Field": "fDashRotSpeedMinBorder",
+      "Name": "Dash: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a dash (in metres per second)."
+    },
+    {
+      "Field": "fDashRotSpeedMaxBorder",
+      "Name": "Dash: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a dash (in metres per second)."
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMax",
+      "Name": "Locked-on Walk: Acceleration",
+      "Description": "The acceleration during a locked-on walk (in metres per second squared)."
+    },
+    {
+      "Field": "fLockOnWalkSpeedMin",
+      "Name": "Locked-on Walk: Minimum Speed",
+      "Description": "The minimum speed for a locked-on walk (in metres per second)."
+    },
+    {
+      "Field": "fLockOnWalkSpeedMax",
+      "Name": "Locked-on Walk: Maximum Speed",
+      "Description": "The maximum speed for a locked-on walk (in metres per second)."
+    },
+    {
+      "Field": "fLockOnWalkDeceleration",
+      "Name": "Locked-on Walk: Deceleration",
+      "Description": "The deceleration during a locked-on walk (in metres per second squared)."
+    },
+    {
+      "Field": "fLockOnWalkRotationAcceleration",
+      "Name": "Locked-on Walk: Turn Acceleration",
+      "Description": "The acceleration during a locked-on walk when turning (in degrees per second squared) ."
+    },
+    {
+      "Field": "fLockOnWalkRotationSpeedMax",
+      "Name": "Locked-on Walk: Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on walk when turning."
+    },
+    {
+      "Field": "fLockOnWalkAngleMax",
+      "Name": "Locked-on Walk: Backward Input Angle",
+      "Description": "The backward input angle (in degrees) during a locked-on walk."
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMax",
+      "Name": "Locked-on Walk: Speed Reduction %",
+      "Description": "The speed reduction rate during a locked-on walk."
+    },
+    {
+      "Field": "fLockOnDashStartSpeed",
+      "Name": "Locked-on Dash: Initial Speed",
+      "Description": "The initial speed during a locked-on dash (in metres per second)."
+    },
+    {
+      "Field": "fLockOnDashAcceleration",
+      "Name": "Locked-on Dash: Acceleration",
+      "Description": "The acceleration during a locked-on dash (in metres per second squared)."
+    },
+    {
+      "Field": "fLockOnDashSpeedMin",
+      "Name": "Locked-on Dash: Minimum Speed",
+      "Description": "The minimum speed during a locked-on dash (in metres per second)."
+    },
+    {
+      "Field": "fLockOnDashSpeedMax",
+      "Name": "Locked-on Dash: Maximum Speed",
+      "Description": "The maximum speed during a locked-on dash (in metres per second)."
+    },
+    {
+      "Field": "fLockOnDashDeceleration",
+      "Name": "Locked-on Dash: Deceleration",
+      "Description": "The deceleration during a locked-on dash (in metres per second squared)."
+    },
+    {
+      "Field": "fLockOnDashRotationAcceleration",
+      "Name": "Locked-on Dash: Turn Acceleration",
+      "Description": "The acceleration during a locked-on dash when turning (in degrees per second squared) ."
+    },
+    {
+      "Field": "fLockOnDashRotationSpeedMin",
+      "Name": "Locked-on Dash: Slow Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on dash when slow turning."
+    },
+    {
+      "Field": "fLockOnDashRotationSpeedMax",
+      "Name": "Locked-on Dash: Fast Turn Speed",
+      "Description": "The speed (in degrees per second) during a locked-on dash when fast turning."
+    },
+    {
+      "Field": "fLockOnDashRotSpeedMinBorder",
+      "Name": "Locked-on Dash: Slow Turn Speed Detection",
+      "Description": "The speed at which a slow turn is detected for a locked-on dash (in metres per second)."
+    },
+    {
+      "Field": "fLockOnDashRotSpeedMaxBorder",
+      "Name": "Locked-on Dash: Fast Turn Speed Detection",
+      "Description": "The speed at which a fast turn is detected for a locked-on dash (in metres per second)."
+    },
+    {
+      "Field": "fRotationValueMin",
+      "Name": "Turn: Minimum Angle",
+      "Description": "The minimum angle to turn during a turning (in degrees)."
+    },
+    {
+      "Field": "fRotationValueMax",
+      "Name": "Turn: Maximum Angle",
+      "Description": "The maximum angle to turn during a turning (in degrees)."
+    },
+    {
+      "Field": "attackAutoPivotRotationSpeed",
+      "Name": "Attack: Auto-Pivot Turn Speed",
+      "Description": "The speed of the auto-pivot turn during an attack (in degrees per second)."
+    },
+    {
+      "Field": "attackAutoPivotLimitAngle",
+      "Name": "Attack: Auto-Pivot Turn Limit",
+      "Description": "Th angle limit for the auto-pivot turn during an attack (in degrees)."
+    },
+    {
+      "Field": "attackManualPivotRotationSpeed",
+      "Name": "Attack: Manual-Pivot Turn Speed",
+      "Description": "The speed of the manual-pivot turn during an attack (in degrees per second)."
+    },
+    {
+      "Field": "attackManualPivotLimitAngle",
+      "Name": "Attack: Manual-Pivot Turn Limit",
+      "Description": "Th angle limit for the manual-pivot turn during an attack (in degrees)."
+    },
+    {
+      "Field": "attackMoveAcceleration",
+      "Name": "Attack Direction: Acceleration",
+      "Description": "The direction change acceleration during an attack (in metres per second squared)."
+    },
+    {
+      "Field": "attackMoveMaxSpeed",
+      "Name": "Attack Direction: Maximum Speed",
+      "Description": "The maximum speed of the direction change during an attack (in metres per second)."
+    },
+    {
+      "Field": "attackMoveDeceleration",
+      "Name": "Attack Direction: Deceleration",
+      "Description": "The direction change deceleration during an attack (in metres per second squared)."
+    },
+    {
+      "Field": "attackMoveRotationSpeed",
+      "Name": "Attack Direction: Turn Speed",
+      "Description": "The turn speed of the direction change during an attack (in metres per second)."
+    },
+    {
+      "Field": "rangedManualPivotRotationSpeed",
+      "Name": "Ranged Attack: Manual-Pivot Turn Speed",
+      "Description": "The turn speed of an attack when standing in place for a ranged attack (in degrees per second)."
+    },
+    {
+      "Field": "rangedAutoPivotRotationSpeed",
+      "Name": "Ranged Attack: Auto-Pivot Turn Speed",
+      "Description": "The turn speed of an attack when standing in place for a ranged attack (in degrees per second)."
+    },
+    {
+      "Field": "shootStanceAnimSpeedScaleMin",
+      "Name": "Shoot Stance: Minimum Animation Speed %",
+      "Description": "The minimum animation speed rate during a shooting stance."
+    },
+    {
+      "Field": "shootStanceAnimSpeedScaleMax",
+      "Name": "Shoot Stance: Maximum Animation Speed %",
+      "Description": "The maximum animation speed rate during a shooting stance."
+    },
+    {
+      "Field": "spellChantingAnimSpeedScaleMin",
+      "Name": "Spell Cast Stance: Minimum Animation Speed %",
+      "Description": "The minimum animation speed rate during a spell cast stance."
+    },
+    {
+      "Field": "spellChantingAnimSpeedScaleMax",
+      "Name": "Spell Cast Stance: Maximum Animation Speed %",
+      "Description": "The maximum animation speed rate during a spell cast stance."
+    },
+    {
+      "Field": "afterAttackAcceleration",
+      "Name": "Post-Attack: Walk Acceleration",
+      "Description": "The acceleration for a walk after an attack has occurred (in metres per second squared)."
+    },
+    {
+      "Field": "afterAttackMaxSpeed",
+      "Name": "Post-Attack: Walk Speed",
+      "Description": "The speed for a walk after an attack has occurred (in metres per second)."
+    },
+    {
+      "Field": "afterAttackDeceleration",
+      "Name": "Post-Attack: Walk Deceleration",
+      "Description": "The deceleration for a walk after an attack has occurred (in metres per second squared)."
+    },
+    {
+      "Field": "afterAttackRotationSpeed",
+      "Name": "Post-Attack: Turn Speed",
+      "Description": "The turn speed for a walk after an attack has occurred (in degrees per second)."
+    },
+    {
+      "Field": "qtRearEnableMasterRotate",
+      "Name": "Quick Turn: Enable Master Rotate for Back",
+      "Description": "If enabled, master rotate for the back is enabled during a quick turn."
+    },
+    {
+      "Field": "qtFrontEnableMasterRotate",
+      "Name": "Quick Turn: Enable Master Rotate for Front",
+      "Description": "If enabled, master rotate for the front is enabled during a quick turn."
+    },
+    {
+      "Field": "quickTurnPad",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRotateSpeed",
+      "Name": "Quick Turn: Turn Speed",
+      "Description": "The turning speed during a quick turn (in degrees per second)."
+    },
+    {
+      "Field": "stepDist",
+      "Name": "Evasion Backstep: Distance",
+      "Description": "The distance to apply (in metres) during an evasion backstep."
+    },
+    {
+      "Field": "stepStaminaEmptyDist",
+      "Name": "Evasion Backstep: Distance (Stamina Exhuasted)",
+      "Description": "The distance to apply (in metres) during an evasion backstep if stamina is empty."
+    },
+    {
+      "Field": "stepRotationSpeed",
+      "Name": "Evasion Backstep: Turn Speed",
+      "Description": "The turn speed during an evasion backstep (in degrees per second)."
+    },
+    {
+      "Field": "rollingDist",
+      "Name": "Evasion Roll: Distance",
+      "Description": "The distance to apply (in metres) during an evasion roll."
+    },
+    {
+      "Field": "rollingStaminaEmptyDist",
+      "Name": "Evasion Roll: Distance (Stamina Exhuasted)",
+      "Description": "The distance to apply (in metres) during an evasion roll if stamina is empty."
+    },
+    {
+      "Field": "rollingRotationSpeed",
+      "Name": "Evasion Backstep: Turn Speed",
+      "Description": "The turn speed during an evasion roll (in degrees per second)."
+    },
+    {
+      "Field": "damageRotationSpeed",
+      "Name": "Damage Direction: Turn Speed",
+      "Description": "The turn speed during a directional damage blend (in degrees per second)."
+    },
+    {
+      "Field": "jumpVerticalSpeed",
+      "Name": "Moving Jump: Ascent Speed",
+      "Description": "The speed of ascent during a moving jump (in metres per second)."
+    },
+    {
+      "Field": "standJumpVerticalSpeed",
+      "Name": "Standing Jump: Ascent Speed",
+      "Description": "The speed of ascent during a standing jump (in metres per second)."
+    },
+    {
+      "Field": "jumpRollLandingHeightMax",
+      "Name": "Moving Jump: Roll Landing Height",
+      "Description": "The maximum height for a roll landing during a moving jump (in metres)."
+    },
+    {
+      "Field": "jumpForwardSpeedMin",
+      "Name": "Moving Jump: Minimum Forward Speed",
+      "Description": "The minimum forward speed for a moving jump (in metres per second)."
+    },
+    {
+      "Field": "jumpForwardSpeedMax",
+      "Name": "Moving Jump: Maximum Forward Speed",
+      "Description": "The maximum forward speed for a moving jump (in metres per second)."
+    },
+    {
+      "Field": "standJumpForwardSpeedMin",
+      "Name": "Standing Jump: Minimum Forward Speed",
+      "Description": "The minimum forward speed for a standing jump (in metres per second)."
+    },
+    {
+      "Field": "standJumpForwardSpeedMax",
+      "Name": "Standing Jump: Maximum Forward Speed",
+      "Description": "The maximum forward speed for a standing jump (in metres per second)."
+    },
+    {
+      "Field": "jumpGravityFactorMin",
+      "Name": "Moving Jump: Minimum Gravity Acceleration %",
+      "Description": "The minimum acceleration rate for gravity applying to a moving jump."
+    },
+    {
+      "Field": "jumpGravityFactorMax",
+      "Name": "Moving Jump: Maximum Gravity Acceleration %",
+      "Description": "The maximum acceleration rate for gravity applying to a moving jump."
+    },
+    {
+      "Field": "standJumpGravityFactorMin",
+      "Name": "Standing Jump: Minimum Gravity Acceleration %",
+      "Description": "The minimum acceleration rate for gravity applying to a standing jump."
+    },
+    {
+      "Field": "standJumpGravityFactorMax",
+      "Name": "Standing Jump: Maximum Gravity Acceleration %",
+      "Description": "The maximum acceleration rate for gravity applying to a standing jump."
+    },
+    {
+      "Field": "fallingInertiaStopSpeed",
+      "Name": "Fall: Stop Acceleration",
+      "Description": "The stopping acceleration applied during a fall (in metres per second)."
+    },
+    {
+      "Field": "fallingDeadTimer",
+      "Name": "Fall: Death Timer",
+      "Description": "The duration after which falling is an automatic death (in seconds)."
+    },
+    {
+      "Field": "landingRollingHeight",
+      "Name": "Landing: Roll Height",
+      "Description": "The height at which a roll landing can occur when falling (in metres)."
+    },
+    {
+      "Field": "landingRollingSpeed",
+      "Name": "Landing: Roll Speed",
+      "Description": "The speed of a roll landing that occurs when rolling (in metres per second)."
+    },
+    {
+      "Field": "landingJumpRollingHeight",
+      "Name": "Landing: Jump Roll Height",
+      "Description": "The height at which a jump roll landing can occur when falling (in metres)."
+    },
+    {
+      "Field": "landingJumpRollingSpeed",
+      "Name": "Landing: Jump Roll Speed",
+      "Description": "The speed of a jump roll landing that occurs when rolling (in metres per second)."
+    },
+    {
+      "Field": "landingStandingRate",
+      "Name": "Landing: Bend Rate",
+      "Description": "The bend rate (in metres per second) during a landing."
+    },
+    {
+      "Field": "landingStandingCrouchRateMin",
+      "Name": "Landing: Bend Crouch Amount %",
+      "Description": "The bend crouch amount rate during a crouch landing."
+    },
+    {
+      "Field": "jumpCrouchRateMin",
+      "Name": "Landing: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a crouch landing."
+    },
+    {
+      "Field": "dodgeCrouchRateMin",
+      "Name": "Moving Evasion: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a moving evasion."
+    },
+    {
+      "Field": "dodgeWaitCrouchRateMin",
+      "Name": "Standing Evasion: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a standing evasion."
+    },
+    {
+      "Field": "stepCrouchRateMin",
+      "Name": "Moving Backstep: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a moving backstep."
+    },
+    {
+      "Field": "stepWaitCrouchRateMin",
+      "Name": "Standing Backstep: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during a standing backstep."
+    },
+    {
+      "Field": "landingCrouchRateMin",
+      "Name": "Landing: Minimum Crouch Amount %",
+      "Description": "The minimum crouch amount rate during an landing."
+    },
+    {
+      "Field": "landingCrouchRateMax",
+      "Name": "Landing: Maximum Crouch Amount %",
+      "Description": "The maximum crouch amount rate during an landing."
+    },
+    {
+      "Field": "landingCrouchReturnTimeMin",
+      "Name": "Landing: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon landing (in seconds)."
+    },
+    {
+      "Field": "landingCrouchReturnTimeMax",
+      "Name": "Landing: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon landing (in seconds)."
+    },
+    {
+      "Field": "jumpCrouchReturnTimeMin",
+      "Name": "Jump Landing: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a jump landing (in seconds)."
+    },
+    {
+      "Field": "jumpCrouchReturnTimeMax",
+      "Name": "Jump Landing: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a jump landing (in seconds)."
+    },
+    {
+      "Field": "rollingCrouchReturnTimeMin",
+      "Name": "Moving Roll: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a moving roll (in seconds)."
+    },
+    {
+      "Field": "rollingCrouchReturnTimeMax",
+      "Name": "Moving Roll: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a moving roll (in seconds)."
+    },
+    {
+      "Field": "rollingWaitCrouchReturnTimeMin",
+      "Name": "Standing Roll: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a standing roll (in seconds)."
+    },
+    {
+      "Field": "rollingWaitCrouchReturnTimeMax",
+      "Name": "Standing Roll: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a standing roll (in seconds)."
+    },
+    {
+      "Field": "stepCrouchReturnTimeMin",
+      "Name": "Moving Backstep: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a moving backstep (in seconds)."
+    },
+    {
+      "Field": "stepCrouchReturnTimeMax",
+      "Name": "Moving Backstep: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a moving backstep (in seconds)."
+    },
+    {
+      "Field": "stepWaitCrouchReturnTimeMin",
+      "Name": "Standing Backstep: Minimum Crouch Recovery Time",
+      "Description": "The minimum time to finish crouching upon a standing backstep (in seconds)."
+    },
+    {
+      "Field": "stepWaitCrouchReturnTimeMax",
+      "Name": "Standing Backstep: Maximum Crouch Recovery Time",
+      "Description": "The maximum time to finish crouching upon a standing backstep (in seconds)."
+    },
+    {
+      "Field": "landingWalkinvalidTimeMin",
+      "Name": "Landing Walk: Minimum Invalid Time",
+      "Description": "The minimum duration after a landing before a walk can occur (in seconds)."
+    },
+    {
+      "Field": "landingWalkinvalidTimeMax",
+      "Name": "Landing Walk: Maximum Invalid Time",
+      "Description": "The maximum duration after a landing before a walk can occur (in seconds)."
+    },
+    {
+      "Field": "landingWalkinvalidFallDistMin",
+      "Name": "Landing Walk: Minimum Invalid Fall Distance",
+      "Description": "The minimum distance for the invalidation of a landing walk (in metres)."
+    },
+    {
+      "Field": "landingWalkinvalidFallDistMax",
+      "Name": "Landing Walk: Maximum Invalid Fall Distance",
+      "Description": "The maximum distance for the invalidation of a landing walk (in metres)."
+    },
+    {
+      "Field": "landingWalkMoveSpeedFallDistMin",
+      "Name": "着地 速度低下 発生高度 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedFallDistMax",
+      "Name": "着地 速度低下 発生高度 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedMin",
+      "Name": "着地 最大速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedMax",
+      "Name": "着地 最大速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveAcceralationMin",
+      "Name": "着地 最大加速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveAcceralationMax",
+      "Name": "着地 最大加速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingMoveStopAcceralationMin",
+      "Name": "着地 停止加速度 増加割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingMoveStopAcceralationMax",
+      "Name": "着地 停止加速度 増加割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkRotationSpeedMin",
+      "Name": "着地 旋回速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkRotationSpeedMax",
+      "Name": "着地 旋回速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistNone",
+      "Name": "着地 落下高度 無効[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistSafety",
+      "Name": "着地 落下高度 安全[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistNormal",
+      "Name": "着地 落下高度 通常[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistDanger",
+      "Name": "着地 落下高度 危険[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistDead",
+      "Name": "着地 落下高度 死亡[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleAngleMax",
+      "Name": "段差乗り 角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleHeightMin",
+      "Name": "段差乗り 高さ 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleHeightMax",
+      "Name": "段差乗り 高さ 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpLightAnimSpeedScale",
+      "Name": "段差乗り 軽量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpHeavyAnimSpeedScale",
+      "Name": "段差乗り 重量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleAngleMax",
+      "Name": "段差よじ登り 角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleHeightMin",
+      "Name": "段差よじ登り 高さ 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleHeightMax",
+      "Name": "段差よじ登り 高さ 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepLightAnimSpeedScale",
+      "Name": "段差よじ登り 軽量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepHeavyAnimSpeedScale",
+      "Name": "段差よじ登り 重量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderStartStep",
+      "Name": "はしご 初期段差[段]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderNormalMoveAnimRate",
+      "Name": "はしご 移動 アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderDashMoveAnimRate",
+      "Name": "はしご ダッシュ アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGetOffMoveAnimRate",
+      "Name": "はしご 滑り降り アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixMoveSpeed",
+      "Name": "位置修正制御 移動速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixMoveAngulerSpeed",
+      "Name": "位置修正制御 旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixRotationValueMax",
+      "Name": "位置修正制御 角速度使用率最大角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackVerticalSpeed",
+      "Name": "ジャンプ攻撃 上昇速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMin",
+      "Name": "ジャンプ攻撃 水平速度 最少距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMax",
+      "Name": "ジャンプ攻撃 水平速度 最大距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMin",
+      "Name": "ジャンプ攻撃 水平速度 最少 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMax",
+      "Name": "ジャンプ攻撃 水平速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackVerticalSpeed",
+      "Name": "ジャンプ落下攻撃 上昇速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMin",
+      "Name": "ジャンプ落下攻撃 水平速度 最少距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMax",
+      "Name": "ジャンプ落下攻撃 水平速度 最大距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMin",
+      "Name": "ジャンプ落下攻撃 水平速度 最少 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMax",
+      "Name": "ジャンプ落下攻撃 水平速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeAngMin",
+      "Name": "平行移動 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeAngMax",
+      "Name": "平行移動 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeSpeedRateMax",
+      "Name": "平行移動 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeRotRateMax",
+      "Name": "平行移動 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeAngMin",
+      "Name": "歩行 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeAngMax",
+      "Name": "歩行 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeSpeedRateMax",
+      "Name": "歩行 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeRotRateMax",
+      "Name": "歩行 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeAngMin",
+      "Name": "ダッシュ 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeAngMax",
+      "Name": "ダッシュ 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeSpeedRateMax",
+      "Name": "ダッシュ 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeRotRateMax",
+      "Name": "ダッシュ 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeAngMin",
+      "Name": "ロック移動 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeAngMax",
+      "Name": "ロック移動 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeSpeedRateMax",
+      "Name": "ロック移動 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeRotRateMax",
+      "Name": "ロック移動 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeAngMin",
+      "Name": "ロックダッシュ 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeAngMax",
+      "Name": "ロックダッシュ 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeSpeedRateMax",
+      "Name": "ロックダッシュ 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeRotRateMax",
+      "Name": "ロックダッシュ 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveAcceralation",
+      "Name": "瀕死移動 加速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveSpeed",
+      "Name": "瀕死移動 最高速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveDeceleration",
+      "Name": "瀕死移動 減速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveRotationSpeed",
+      "Name": "瀕死移動 旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveAcceleration",
+      "Name": "浮遊制御 上昇 加速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveSpeedMax",
+      "Name": "浮遊制御 上昇 最大速度 [m/Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveDeceleration",
+      "Name": "浮遊制御 上昇 減速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveAcceleration",
+      "Name": "浮遊制御 下降 加速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveSpeedMax",
+      "Name": "浮遊制御 下降 最大速度 [m/Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveDeceleration",
+      "Name": "浮遊制御 下降 減速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "landingSfxHeight",
+      "Name": "着地SFX発生高さ",
+      "Description": ""
+    },
+    {
+      "Field": "landingSfxId",
+      "Name": "着地時足音SFXパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "landingRagdollSfxId",
+      "Name": "着地時足音SFXパラメータID（ラグドール）",
+      "Description": ""
+    },
+    {
+      "Field": "fMaterialMoveInfluenceRate",
+      "Name": "床材質 移動速度影響倍率 有効割合",
+      "Description": ""
+    },
+    {
+      "Field": "fMaterialTurnInfluenceRate",
+      "Name": "床材質 旋回速度影響倍率 有効割合",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

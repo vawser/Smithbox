@@ -1,0 +1,14 @@
+{
+  "id": "812",
+  "name": "Pilgrim Bellclaire",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    }
+  ]
+}

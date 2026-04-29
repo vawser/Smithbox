@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <material  Refs="MaterialParam"/>
+        <subMaterial  Refs="MaterialParam"/>
+        <moveSpeedRate />
+        <moveRotateRate />
+        <soundLevel />
+        <isTorchOff  Enum="MATERIAL_TORCH_OFF_TYPE_ENUM"/>
+        <torchOffParam />
+        <isWaterSurface  IsBool=""/>
+        <environment  Enum="MATERIAL_ENVIRONMENT_TYPE_ENUM"/>
+        <dodgeLimitCategory  Enum="MATERIAL_DODGE_LIMIT_TYPE_ENUM"/>
+        <isDisableIdleDamage  IsBool=""/>
+        <damageId />
+        <fallWaterSfxId />
+        <dodgeLimitDistanceRateRollLight />
+        <dodgeLimitDistanceRateStepLight />
+        <dodgeLimitDistanceRateRollHeavy />
+        <dodgeLimitDistanceRateStepHeavy />
+        <takeWaterParamId />
+        <sfxID0/>
+        <sfxID1/>
+        <sfxDuration/>
+    </Field>
+</PARAMMETA>

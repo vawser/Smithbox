@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <fAttackDashAcceleration />
+        <fAttackDashSpeed />
+        <fAttackDashRotationLowSpeed />
+        <fAttackDashRotationHighSpeed />
+        <fAttackDashRotSpeedMinBorder />
+        <fAttackDashRotSpeedMaxBorder />
+        <fAttackDashRange />
+        <fAttackBackSwingSpeed />
+        <fAttackFollowSwingSpeed />
+        <fAttackSecondRotationRate />
+        <fAttackTimeOut />
+        <fAttackEstimateFutureTime />
+        <fShotMoveSpeedRate />
+        <rotationOffsetDummyPoly />
+        <attackDashFailedCancel  IsBool=""/>
+        <disableCollisionCheck  IsBool=""/>
+        <dummy1 />
+    </Field>
+</PARAMMETA>

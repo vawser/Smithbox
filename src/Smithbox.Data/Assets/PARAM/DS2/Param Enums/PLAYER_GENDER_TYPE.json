@@ -1,0 +1,29 @@
+{
+  "Key": "PLAYER_GENDER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_GENDER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Male"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Woman"
+        }
+      ]
+    }
+  ]
+}

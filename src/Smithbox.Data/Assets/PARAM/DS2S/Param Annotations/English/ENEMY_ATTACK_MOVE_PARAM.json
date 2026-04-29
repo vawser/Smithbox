@@ -1,0 +1,93 @@
+{
+  "Param": "ENEMY_ATTACK_MOVE_PARAM",
+  "Type": "ENEMY_ATTACK_MOVE_PARAM",
+  "Name": "ENEMY_ATTACK_MOVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fAttackDashAcceleration",
+      "Name": "近接攻撃制御 歩行攻撃移動加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashSpeed",
+      "Name": "近接攻撃制御 歩行攻撃移動速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashRotationLowSpeed",
+      "Name": "攻撃制御 低速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashRotationHighSpeed",
+      "Name": "攻撃制御 高速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashRotSpeedMinBorder",
+      "Name": "攻撃制御 低速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashRotSpeedMaxBorder",
+      "Name": "攻撃制御 高速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackDashRange",
+      "Name": "近接攻撃制御 歩行攻撃攻撃範囲 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackBackSwingSpeed",
+      "Name": "接近攻撃制御 攻撃開始部速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackFollowSwingSpeed",
+      "Name": "接近攻撃制御 攻撃終了部速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackSecondRotationRate",
+      "Name": "攻撃制御 二次旋回倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackTimeOut",
+      "Name": "接近攻撃制御 タイムアウト時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fAttackEstimateFutureTime",
+      "Name": "攻撃制御 位置予測時間 [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fShotMoveSpeedRate",
+      "Name": "射撃制御 移動低下倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "rotationOffsetDummyPoly",
+      "Name": "旋回軸ダミポリ番号",
+      "Description": ""
+    },
+    {
+      "Field": "attackDashFailedCancel",
+      "Name": "ブレードダッシュ失敗時キャンセルフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "disableCollisionCheck",
+      "Name": "障害物判定をしない",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

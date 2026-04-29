@@ -1,0 +1,48 @@
+{
+  "Param": "LOCK_ON_PARAM",
+  "Type": "LOCK_ON_PARAM",
+  "Name": "LOCK_ON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lockOnRangeMax",
+      "Name": "ロックオン最大距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockOnRangeAttack",
+      "Name": "ロックオン攻撃有効距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockOnRange",
+      "Name": "ロックオン距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockAreaHeight",
+      "Name": "ロックエリア縦[%]",
+      "Description": ""
+    },
+    {
+      "Field": "lockAreaWidth",
+      "Name": "ロックエリア横[%]",
+      "Description": ""
+    },
+    {
+      "Field": "lockAngleUD",
+      "Name": "ロック最大上下角度",
+      "Description": ""
+    },
+    {
+      "Field": "lockAngleLR",
+      "Name": "ロック最大左右角度",
+      "Description": ""
+    },
+    {
+      "Field": "lockOutsideRange",
+      "Name": "視界外ロック距離[m]",
+      "Description": ""
+    }
+  ]
+}

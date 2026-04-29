@@ -77,7 +77,7 @@ public static class ParamValidator
 
         TaskManager.LiveTask task = new(
             "system_runParamValidation",
-            "System",
+            "[System]",
             "The param validation has run.",
             "The param validation has failed to run.",
             TaskManager.RequeueType.None,

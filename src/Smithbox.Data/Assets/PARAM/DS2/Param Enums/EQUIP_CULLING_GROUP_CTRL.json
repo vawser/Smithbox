@@ -1,0 +1,47 @@
+{
+  "Key": "EQUIP_CULLING_GROUP_CTRL",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EQUIP_CULLING_GROUP_CTRL"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "━"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "OFF"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "ON"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of culling types"
+        }
+      ]
+    }
+  ]
+}

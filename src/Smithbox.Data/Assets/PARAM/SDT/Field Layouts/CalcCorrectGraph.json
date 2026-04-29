@@ -1,0 +1,58 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Groups": [
+    {
+      "Key": null,
+      "Names": [],
+      "Fields": null
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "stageMaxVal0",
+        "stageMaxVal1",
+        "stageMaxVal2",
+        "stageMaxVal3",
+        "stageMaxVal4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "stageMaxGrowVal0",
+        "stageMaxGrowVal1",
+        "stageMaxGrowVal2",
+        "stageMaxGrowVal3",
+        "stageMaxGrowVal4"
+      ]
+    },
+    {
+      "Key": "TODO",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "TODO"
+        }
+      ],
+      "Fields": [
+        "adjPt_maxGrowVal0",
+        "adjPt_maxGrowVal1",
+        "adjPt_maxGrowVal2",
+        "adjPt_maxGrowVal3",
+        "adjPt_maxGrowVal4"
+      ]
+    }
+  ]
+}

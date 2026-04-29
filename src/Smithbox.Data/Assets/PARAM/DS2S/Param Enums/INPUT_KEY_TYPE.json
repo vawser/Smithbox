@@ -1,0 +1,866 @@
+{
+  "Key": "INPUT_KEY_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "INPUT_KEY_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left mouse button"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right mouse button"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle mouse button"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse wheel up"
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse wheel down"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double left mouse button"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mouse right button double"
+        }
+      ]
+    },
+    {
+      "Key": "54",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Esc"
+        }
+      ]
+    },
+    {
+      "Key": "55",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "Key": "56",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "Key": "57",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "Key": "58",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "4"
+        }
+      ]
+    },
+    {
+      "Key": "59",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "5"
+        }
+      ]
+    },
+    {
+      "Key": "60",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "Key": "61",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "Key": "62",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "8"
+        }
+      ]
+    },
+    {
+      "Key": "63",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "Key": "64",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0"
+        }
+      ]
+    },
+    {
+      "Key": "65",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "-"
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Back Space"
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Tab"
+        }
+      ]
+    },
+    {
+      "Key": "69",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Q"
+        }
+      ]
+    },
+    {
+      "Key": "70",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "W"
+        }
+      ]
+    },
+    {
+      "Key": "71",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "E"
+        }
+      ]
+    },
+    {
+      "Key": "72",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "R"
+        }
+      ]
+    },
+    {
+      "Key": "73",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "T"
+        }
+      ]
+    },
+    {
+      "Key": "74",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Y"
+        }
+      ]
+    },
+    {
+      "Key": "75",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "U"
+        }
+      ]
+    },
+    {
+      "Key": "76",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "I"
+        }
+      ]
+    },
+    {
+      "Key": "77",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "O"
+        }
+      ]
+    },
+    {
+      "Key": "78",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "P"
+        }
+      ]
+    },
+    {
+      "Key": "79",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "["
+        }
+      ]
+    },
+    {
+      "Key": "80",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "]"
+        }
+      ]
+    },
+    {
+      "Key": "81",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enter"
+        }
+      ]
+    },
+    {
+      "Key": "82",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Ctrl"
+        }
+      ]
+    },
+    {
+      "Key": "83",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "A"
+        }
+      ]
+    },
+    {
+      "Key": "84",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "S"
+        }
+      ]
+    },
+    {
+      "Key": "85",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "D"
+        }
+      ]
+    },
+    {
+      "Key": "86",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F"
+        }
+      ]
+    },
+    {
+      "Key": "87",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "G"
+        }
+      ]
+    },
+    {
+      "Key": "88",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "H"
+        }
+      ]
+    },
+    {
+      "Key": "89",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "J"
+        }
+      ]
+    },
+    {
+      "Key": "90",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "K"
+        }
+      ]
+    },
+    {
+      "Key": "91",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "L"
+        }
+      ]
+    },
+    {
+      "Key": "92",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": ";"
+        }
+      ]
+    },
+    {
+      "Key": "93",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "`"
+        }
+      ]
+    },
+    {
+      "Key": "94",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "^"
+        }
+      ]
+    },
+    {
+      "Key": "95",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Shift"
+        }
+      ]
+    },
+    {
+      "Key": "96",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "\\(backslash)"
+        }
+      ]
+    },
+    {
+      "Key": "97",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Z"
+        }
+      ]
+    },
+    {
+      "Key": "98",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "X"
+        }
+      ]
+    },
+    {
+      "Key": "99",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "C"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "V"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "B"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "N"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "M"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": ",(comma)"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": ".(period)"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "/"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Shift"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "*"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left Alt"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Space"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F1"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F2"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F3"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F4"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F5"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F6"
+        }
+      ]
+    },
+    {
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F7"
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F8"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F9"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F10"
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 7"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 8"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 9"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad - (minus)"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 4"
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 5"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 6"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad + (plus)"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 1"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 2"
+        }
+      ]
+    },
+    {
+      "Key": "134",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 3"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad 0"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad . (dot)"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F11"
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "F12"
+        }
+      ]
+    },
+    {
+      "Key": "147",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "￥."
+        }
+      ]
+    },
+    {
+      "Key": "169",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Numeric keypad / (main rush)"
+        }
+      ]
+    },
+    {
+      "Key": "171",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right Alt"
+        }
+      ]
+    },
+    {
+      "Key": "174",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "↑"
+        }
+      ]
+    },
+    {
+      "Key": "176",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "←"
+        }
+      ]
+    },
+    {
+      "Key": "177",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "→"
+        }
+      ]
+    },
+    {
+      "Key": "179",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "↓"
+        }
+      ]
+    }
+  ]
+}

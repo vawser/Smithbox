@@ -1,0 +1,143 @@
+{
+  "Param": "DAMAGE_OVER_WRITE_PARAM",
+  "Type": "DAMAGE_OVER_WRITE_PARAM",
+  "Name": "DAMAGE_OVER_WRITE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "damageOverWriteNoMotion",
+      "Name": "ノーモーション",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteSmall",
+      "Name": "極小",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteSmallKnockBack",
+      "Name": "小ノックバック",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteLargeKnockBack",
+      "Name": "大ノックバック",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteLarge",
+      "Name": "特大",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteBlow",
+      "Name": "吹き飛ばし",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteUpper",
+      "Name": "打ち上げ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteBreath",
+      "Name": "ブレス",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteStumble",
+      "Name": "転倒",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteBreakDown",
+      "Name": "崩れ落ち",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteAerialDown",
+      "Name": "空中転倒",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteDown",
+      "Name": "ダウン",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteDownAttack",
+      "Name": "ダウン攻撃",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteLadder",
+      "Name": "はしご",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteRope",
+      "Name": "ロープ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteParryBreak",
+      "Name": "パリィブレイク",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteGuardBreak",
+      "Name": "ガードブレイク",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteStun",
+      "Name": "気絶",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteBleeding",
+      "Name": "出血",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteGrab",
+      "Name": "掴み",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteHeadShot",
+      "Name": "ヘッドショット",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteFallSmall",
+      "Name": "落下中小ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteFallLarge",
+      "Name": "落下中大ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteAerialSmall",
+      "Name": "空中小ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteAerialLarge",
+      "Name": "空中大ダメージ",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteGroundJumpAttack",
+      "Name": "ジャンプ地上衝突",
+      "Description": ""
+    },
+    {
+      "Field": "damageOverWriteAerialJumpAttack",
+      "Name": "ジャンプ空中衝突",
+      "Description": ""
+    }
+  ]
+}

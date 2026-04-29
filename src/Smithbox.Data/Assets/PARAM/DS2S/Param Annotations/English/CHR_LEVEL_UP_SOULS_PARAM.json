@@ -1,0 +1,28 @@
+{
+  "Param": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Type": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Name": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soulLevelThreshold",
+      "Name": "Soul Level Threshold",
+      "Description": "The required soul level threshold."
+    },
+    {
+      "Field": "dummy",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "increasedSoulsFromThreshold",
+      "Name": "Required Soul Increase",
+      "Description": "The amount of required souls that are added for each threshold."
+    },
+    {
+      "Field": "necessarySouls",
+      "Name": "Required Soul",
+      "Description": "The amount of required souls."
+    }
+  ]
+}

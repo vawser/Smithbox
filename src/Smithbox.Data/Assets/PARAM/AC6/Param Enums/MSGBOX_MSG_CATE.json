@@ -1,0 +1,29 @@
+{
+  "Key": "MSGBOX_MSG_CATE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MSGBOX_MSG_CATE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "System"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dialog"
+        }
+      ]
+    }
+  ]
+}

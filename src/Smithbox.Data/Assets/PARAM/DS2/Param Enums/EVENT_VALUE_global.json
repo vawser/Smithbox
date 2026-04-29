@@ -1,0 +1,1010 @@
+{
+  "Key": "EVENT_VALUE_global",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "EVENT_VALUE_global"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of intrusions when acquiring nuts"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "For obtaining nuts_Current number of intrusions"
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Beautiful voice frog defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the spider queen was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Molten iron demon defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times Silver Chariot was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times skeleton nobles were defeated"
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times defeated by Jabba the Hutt"
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Naga defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "17",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Man Scorpion ♀ Defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mirror Knight defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "19",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry: Number of defeats for soldiers only"
+        }
+      ]
+    },
+    {
+      "Key": "20",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times Ornstein was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Double-faced Warrior: Number of snake head defeats"
+        }
+      ]
+    },
+    {
+      "Key": "22",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the warrior in the mirror was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "23",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Forgotten sinners defeated"
+        }
+      ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times Demon Knight was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dog and Mouse: Color ② Number of defeats"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Butcher defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "27",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the giant rat was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "28",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: Number of defeats with luggage"
+        }
+      ]
+    },
+    {
+      "Key": "29",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vagrant: Number of defeats without luggage"
+        }
+      ]
+    },
+    {
+      "Key": "30",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Wyvern defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "31",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the new giant advanced soldier (deceased) was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "32",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "New Titan Advanced Soldier (living) number of defeats"
+        }
+      ]
+    },
+    {
+      "Key": "33",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the queen's armor form was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "34",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the Queen's Knight A was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "35",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times Queen's Knight B was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "36",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times Queen's Knight C was defeated"
+        }
+      ]
+    },
+    {
+      "Key": "37",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of times the ancient dragon was defeated Number of times defeated"
+        }
+      ]
+    },
+    {
+      "Key": "38",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Number of defeats of King Vanclad"
+        }
+      ]
+    },
+    {
+      "Key": "39",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Agaduran's stand defeat count"
+        }
+      ]
+    },
+    {
+      "Key": "40",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy cavalry: Number of times only 2 soldiers were defeated"
+        }
+      ]
+    },
+    {
+      "Key": "41",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Priest: Number of defeats"
+        }
+      ]
+    },
+    {
+      "Key": "42",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gargoyle: Number of defeats"
+        }
+      ]
+    },
+    {
+      "Key": "100",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Dullahan"
+        }
+      ]
+    },
+    {
+      "Key": "101",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Grave Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "102",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Dragon Shrine Maiden"
+        }
+      ]
+    },
+    {
+      "Key": "103",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Queen"
+        }
+      ]
+    },
+    {
+      "Key": "104",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Ladder shop"
+        }
+      ]
+    },
+    {
+      "Key": "105",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Retired Firekeeper 1"
+        }
+      ]
+    },
+    {
+      "Key": "106",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Retired Firekeeper 2"
+        }
+      ]
+    },
+    {
+      "Key": "107",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Retired Firekeeper 3"
+        }
+      ]
+    },
+    {
+      "Key": "108",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Spirit of the Prime Minister"
+        }
+      ]
+    },
+    {
+      "Key": "109",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Firekeeper Housekeeper"
+        }
+      ]
+    },
+    {
+      "Key": "110",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Kingdom Captain"
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Pilgrim of the Abyss"
+        }
+      ]
+    },
+    {
+      "Key": "112",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Dwarf"
+        }
+      ]
+    },
+    {
+      "Key": "113",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Broken Blue Sect Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "114",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Wandering Warrior"
+        }
+      ]
+    },
+    {
+      "Key": "115",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Moonlight Old Man"
+        }
+      ]
+    },
+    {
+      "Key": "116",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Patch"
+        }
+      ]
+    },
+    {
+      "Key": "117",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Map drawing"
+        }
+      ]
+    },
+    {
+      "Key": "118",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Female Knight"
+        }
+      ]
+    },
+    {
+      "Key": "119",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Bell Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "120",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Yorozu hag"
+        }
+      ]
+    },
+    {
+      "Key": "121",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Bard Girl 1"
+        }
+      ]
+    },
+    {
+      "Key": "122",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Bard Girl 2"
+        }
+      ]
+    },
+    {
+      "Key": "123",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Prisoner girl"
+        }
+      ]
+    },
+    {
+      "Key": "124",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Armor shop"
+        }
+      ]
+    },
+    {
+      "Key": "125",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Material shop"
+        }
+      ]
+    },
+    {
+      "Key": "126",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Sorcerer"
+        }
+      ]
+    },
+    {
+      "Key": "127",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "128",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] EX Blacksmith"
+        }
+      ]
+    },
+    {
+      "Key": "129",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Magician"
+        }
+      ]
+    },
+    {
+      "Key": "130",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Spellmania"
+        }
+      ]
+    },
+    {
+      "Key": "131",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Miracle Man"
+        }
+      ]
+    },
+    {
+      "Key": "132",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Dark Magician"
+        }
+      ]
+    },
+    {
+      "Key": "133",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Sealed person"
+        }
+      ]
+    },
+    {
+      "Key": "134",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave appearance] Curious item shop"
+        }
+      ]
+    },
+    {
+      "Key": "135",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Top Weapon Shop"
+        }
+      ]
+    },
+    {
+      "Key": "136",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Cat"
+        }
+      ]
+    },
+    {
+      "Key": "137",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Black Phantom Shop"
+        }
+      ]
+    },
+    {
+      "Key": "138",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Chaplain of Absolution"
+        }
+      ]
+    },
+    {
+      "Key": "139",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Guardian Knight"
+        }
+      ]
+    },
+    {
+      "Key": "140",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Sparkly Girl"
+        }
+      ]
+    },
+    {
+      "Key": "141",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Mouse King"
+        }
+      ]
+    },
+    {
+      "Key": "142",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Man Scorpion Man"
+        }
+      ]
+    },
+    {
+      "Key": "143",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Three Sisters 1"
+        }
+      ]
+    },
+    {
+      "Key": "144",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Three Sisters 2"
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "[Grave Appearance] Three Sisters 3"
+        }
+      ]
+    },
+    {
+      "Key": "200",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Dwarf: Shop purchase total"
+        }
+      ]
+    },
+    {
+      "Key": "201",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Map writer: Bonfire lighting count"
+        }
+      ]
+    },
+    {
+      "Key": "202",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Armor shop: Number of pieces placed"
+        }
+      ]
+    },
+    {
+      "Key": "203",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Armor shop: Condition level"
+        }
+      ]
+    },
+    {
+      "Key": "204",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Female Knight: White Phantom Summon Achievement Count"
+        }
+      ]
+    },
+    {
+      "Key": "205",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Moonlight Old Man: White Phantom Summon Achievement Count"
+        }
+      ]
+    },
+    {
+      "Key": "206",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Patch: Number of white phantom summons achieved"
+        }
+      ]
+    },
+    {
+      "Key": "207",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Map writer: Number of skeletons defeated"
+        }
+      ]
+    },
+    {
+      "Key": "210",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Warrior of the Sun"
+        }
+      ]
+    },
+    {
+      "Key": "211",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Guardian Knight"
+        }
+      ]
+    },
+    {
+      "Key": "212",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Blood Spirit"
+        }
+      ]
+    },
+    {
+      "Key": "213",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Seikyo"
+        }
+      ]
+    },
+    {
+      "Key": "214",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Mouse King"
+        }
+      ]
+    },
+    {
+      "Key": "215",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Bell Keeper"
+        }
+      ]
+    },
+    {
+      "Key": "216",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Path to Ancient Dragon"
+        }
+      ]
+    },
+    {
+      "Key": "217",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Strong"
+        }
+      ]
+    },
+    {
+      "Key": "218",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pledge: Rank: Abyssal Pilgrimage"
+        }
+      ]
+    },
+    {
+      "Key": "220",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Yorozu Hagba: Shop purchase total"
+        }
+      ]
+    },
+    {
+      "Key": "221",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Material shop: Shop purchase total"
+        }
+      ]
+    },
+    {
+      "Key": "222",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Curious item shop: Shop purchase total"
+        }
+      ]
+    },
+    {
+      "Key": "223",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Spellmania: Number of barter exchanges"
+        }
+      ]
+    },
+    {
+      "Key": "224",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Top weapon shop: Number of barter exchanges"
+        }
+      ]
+    },
+    {
+      "Key": "225",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Blacksmith: Enhancement & Attribute Amount"
+        }
+      ]
+    },
+    {
+      "Key": "226",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: EX Blacksmith: Enhancement & Attribute Amount"
+        }
+      ]
+    },
+    {
+      "Key": "227",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Armor shop: Shop purchase total"
+        }
+      ]
+    },
+    {
+      "Key": "240",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Sorcerer: Helmet equipment"
+        }
+      ]
+    },
+    {
+      "Key": "241",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Sorcerer: Armor equipment"
+        }
+      ]
+    },
+    {
+      "Key": "242",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Sorcerer: Gauntlet equipment"
+        }
+      ]
+    },
+    {
+      "Key": "243",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC: Sorcerer: Equipment"
+        }
+      ]
+    }
+  ]
+}

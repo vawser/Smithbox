@@ -1,0 +1,23 @@
+{
+  "Param": "MOVIE_TEXT_PARAM",
+  "Type": "MOVIE_TEXT_PARAM",
+  "Name": "MOVIE_TEXT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "begin",
+      "Name": "開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "end",
+      "Name": "終了時間",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": ""
+    }
+  ]
+}

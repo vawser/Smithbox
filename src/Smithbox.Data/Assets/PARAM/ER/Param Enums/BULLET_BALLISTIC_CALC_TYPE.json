@@ -1,0 +1,29 @@
+{
+  "Key": "BULLET_BALLISTIC_CALC_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BULLET_BALLISTIC_CALC_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Emit Forwards"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Emit Backwards"
+        }
+      ]
+    }
+  ]
+}

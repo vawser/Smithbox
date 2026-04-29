@@ -173,7 +173,7 @@ public class SearchEngine<A, B>
         }
         catch (Exception)
         {
-            //Smithbox.LogError(this, $"[Smithbox:Param Editor] Search Engine search failed.", LogPriority.High, e);
+            //Smithbox.LogError(this, $"[Param Editor] Search Engine search failed.", LogPriority.High, e);
 
             liveSet = failureAllOrNone ? sourceSet : new List<B>();
         }

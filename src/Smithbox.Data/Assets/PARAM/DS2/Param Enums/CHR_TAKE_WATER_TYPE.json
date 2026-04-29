@@ -1,0 +1,38 @@
+{
+  "Key": "CHR_TAKE_WATER_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "CHR_TAKE_WATER_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Small"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Medium"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Large"
+        }
+      ]
+    }
+  ]
+}

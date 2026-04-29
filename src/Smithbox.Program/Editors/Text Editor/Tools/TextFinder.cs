@@ -32,32 +32,64 @@ public static class TextFinder
             {
                 foreach (var fmg in entry.FmgWrappers)
                 {
-                    var enumName = TextUtils.GetFmgInternalName(view.Project, entry, fmg.ID, fmg.Name);
-
-                    // Contains here to capture the _DLC, _DLC1 and _DLC2 fmgs
-                    if (enumName.Contains(fmgName))
+                    if (view.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                     {
-                        foreach (var fmgEntry in fmg.File.Entries)
+                        if(containerName == fmgName)
                         {
-                            var entryId = Math.Abs(value) + offset;
-
-                            if (fmgEntry.ID == entryId)
+                            foreach (var fmgEntry in fmg.File.Entries)
                             {
-                                TextResult result = new();
-                                result.ContainerName = containerName;
-                                result.ContainerWrapper = entry;
-                                result.FmgID = fmg.ID;
-                                result.FmgName = fmg.Name;
-                                result.Fmg = fmg.File;
-                                result.FmgEntryID = fmgEntry.ID;
-                                result.Entry = fmgEntry;
+                                var entryId = Math.Abs(value) + offset;
 
-                                if (!CachedResults.ContainsKey(cacheName))
+                                if (fmgEntry.ID == entryId)
                                 {
-                                    CachedResults.Add(cacheName, result);
-                                }
+                                    TextResult result = new();
+                                    result.ContainerName = containerName;
+                                    result.ContainerWrapper = entry;
+                                    result.FmgID = fmg.ID;
+                                    result.FmgName = fmg.Name;
+                                    result.Fmg = fmg.File;
+                                    result.FmgEntryID = fmgEntry.ID;
+                                    result.Entry = fmgEntry;
 
-                                return result;
+                                    if (!CachedResults.ContainsKey(cacheName))
+                                    {
+                                        CachedResults.Add(cacheName, result);
+                                    }
+
+                                    return result;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var enumName = TextUtils.GetFmgInternalName(view.Project, entry, fmg.ID, fmg.Name);
+
+                        // Contains here to capture the _DLC, _DLC1 and _DLC2 fmgs
+                        if (enumName.Contains(fmgName))
+                        {
+                            foreach (var fmgEntry in fmg.File.Entries)
+                            {
+                                var entryId = Math.Abs(value) + offset;
+
+                                if (fmgEntry.ID == entryId)
+                                {
+                                    TextResult result = new();
+                                    result.ContainerName = containerName;
+                                    result.ContainerWrapper = entry;
+                                    result.FmgID = fmg.ID;
+                                    result.FmgName = fmg.Name;
+                                    result.Fmg = fmg.File;
+                                    result.FmgEntryID = fmgEntry.ID;
+                                    result.Entry = fmgEntry;
+
+                                    if (!CachedResults.ContainsKey(cacheName))
+                                    {
+                                        CachedResults.Add(cacheName, result);
+                                    }
+
+                                    return result;
+                                }
                             }
                         }
                     }

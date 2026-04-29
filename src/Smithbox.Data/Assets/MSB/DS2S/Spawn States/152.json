@@ -1,0 +1,30 @@
+{
+  "id": "152",
+  "name": "Royal Swordsman",
+  "states": [
+    {
+      "value": "0",
+      "name": "Idle"
+    },
+    {
+      "value": "1",
+      "name": "Idle"
+    },
+    {
+      "value": "2",
+      "name": "Stoneform (dissolve when near)"
+    },
+    {
+      "value": "3",
+      "name": "Stoneform (dissolve when near)"
+    },
+    {
+      "value": "15",
+      "name": "Ragdoll"
+    },
+    {
+      "value": "17",
+      "name": "Climbing Ladder"
+    }
+  ]
+}

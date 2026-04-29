@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PARAMMETA XmlVersion="0">
+    <Field>
+        <stateMapId />
+        <ownerId />
+        <bonfireId />
+        <resourceType  Enum="EVENT_RES_TYPE_ENUM"/>
+        <bootType  Enum="EVENT_BOOT_TYPE_ENUM"/>
+        <ownerType  Enum="EVENT_OWNER_TYPE_ENUM"/>
+        <bGroupConditionSync  IsBool=""/>
+        <bPlayerDeadPlaying  IsBool=""/>
+        <bDemoPlaying  IsBool=""/>
+        <aReserved1 />
+    </Field>
+</PARAMMETA>

@@ -1,0 +1,239 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Original Memory: Wolf - Head"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Original Memory: Wolf - Body"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Original Memory: Wolf - Prosthetic Arm"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Original Memory: Wolf - Legs"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Original Memory: Wolf - Uncut Arm"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Original Memory: Wolf - Armless"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Original Memory: Wolf - Body - No Mortal Blade"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Original Memory: Wolf - Body - No Kusabimaru No Mortal Blade"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Original Memory: Wolf - Barefoot"
+      ]
+    },
+    {
+      "ID": 162000,
+      "Entries": [
+        "Original Memory: Wolf - High Resolution Prosthetic"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Immortal Severance Cutscene Head"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Immortal Severance Cutscene Body"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Immortal Severance Cutscene Arm"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Immortal Severance Cutscene Legs"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Another's Memory: Shura - Head"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Another's Memory: Shura - Body"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Another's Memory: Shura - Prosthetic Arm"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Another's Memory: Shura - Legs"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Another's Memory: Shura - Hair"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Another's Memory: Shura - Body - No Mortal Blade"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Another's Memory: Ashina - Head"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Another's Memory: Ashina - Body"
+      ]
+    },
+    {
+      "ID": 431000,
+      "Entries": [
+        "Another's Memory: Ashina - Body - No Mortal Blade"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Another's Memory: Ashina - Prosthetic Arm"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Another's Memory: Ashina - Legs"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Another's Memory: Tengu - Head"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Another's Memory: Tengu - Body"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "Another's Memory: Tengu - Body - No Mortal Blade"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Another's Memory: Tengu - Prosthetic Arm"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Another's Memory: Tengu - Legs"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 641000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901300,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

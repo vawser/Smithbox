@@ -1,0 +1,29 @@
+{
+  "Key": "FALL_STAB_TYPES",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "FALL_STAB_TYPES"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cut"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Thrust"
+        }
+      ]
+    }
+  ]
+}

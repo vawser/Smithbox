@@ -1,0 +1,38 @@
+{
+  "Key": "MOVEMENT_ACTION_SUPPORT_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "MOVEMENT_ACTION_SUPPORT_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ground/Air"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ground only"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Air only"
+        }
+      ]
+    }
+  ]
+}

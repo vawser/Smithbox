@@ -1,0 +1,56 @@
+{
+  "Key": "NPC_DEATH_ANIM_TYPE_2",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_DEATH_ANIM_TYPE_2"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Not used"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Before"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Before and after"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left and right"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Front and back, left and right"
+        }
+      ]
+    }
+  ]
+}

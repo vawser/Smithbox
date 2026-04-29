@@ -1,0 +1,478 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "Determines the parameters relating to lock-on camera configurations, and the default camera.",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "Camera: Target Distance",
+      "Description": "The distance the camera is placed from the current target. In metres."
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "Rotation: Minimum X-Axis Value",
+      "Description": "The minimum rotational value on the X-axis for the camera. In degrees."
+    },
+    {
+      "Field": "lockRotXShiftRatio_Base",
+      "Name": "Lock-on - Rotation: Shift Ratio",
+      "Description": "The standard value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom."
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "Character: Height Offset (Ground)",
+      "Description": "The height of the camera's look point (from the character's root position, when touching the ground). In metres."
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "Character: Max Lock Radius",
+      "Description": "The maximum radius from the character's root position that the camera can be locked-on to."
+    },
+    {
+      "Field": "camFovY",
+      "Name": "Camera: Vertical Field of View",
+      "Description": "The vertical field of view to apply when active to the camera."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalX",
+      "Name": "Character: Horizontal Tracking %",
+      "Description": "The character tracking rate for left and right motion, applied to the camera."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalU",
+      "Name": "Character: Vertical Tracking %",
+      "Description": "The character tracking rate for up and down motion, applied to the camera."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalF",
+      "Name": "Character: Forward Tracking %",
+      "Description": "The character tracking rate for forward motion, applied to the camera."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalB",
+      "Name": "Character: Backward Tracking %",
+      "Description": "The character tracking rate for backward motion, applied to the camera."
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpRate",
+      "Name": "Lock-on - Rotation: Interpolation for Shift Ratio",
+      "Description": "The interpolation rate for the 'Rotation: Shift Ratio' field, independant of distance."
+    },
+    {
+      "Field": "shoulderOverDeg",
+      "Name": "Over-the-Shoulder: Angle",
+      "Description": "If not 0, then an over-the-shoulder perspective is applied. If positive, the character is to the left, if negative, to the right."
+    },
+    {
+      "Field": "lockCamParamLerpRate",
+      "Name": "Lock-on - Interpolation %",
+      "Description": "The interpolation rate for the lock-camera parameters."
+    },
+    {
+      "Field": "shoulderOverChangeDirectionMethod",
+      "Name": "Over-the-Shoulder: Turning Method",
+      "Description": "The turning method applied for the over-the-shoulder perspective."
+    },
+    {
+      "Field": "pad2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "shoulderOverChangeDirectionSpeed",
+      "Name": "Over-the-Shoulder: Turning Speed",
+      "Description": "The turning speed for the over-the-shoulder perspective, if the method is 'Press and Hold (Angle)'"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionTimeThreshold",
+      "Name": "Over-the-Shoulder: Turning Time Threshold",
+      "Description": "The turning time threshold for the over-the-shoulder perspective, if the method is 'Press and Hold (Time)'"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionLerpRate",
+      "Name": "Over-the-Shoulder: Turning Interpolation %",
+      "Description": "The turning interpolation rate for the over-the-shoulder perspective."
+    },
+    {
+      "Field": "chrTransChaseRateParam_AccelMaxX",
+      "Name": "Character: Horizontal Tracking Acceleration",
+      "Description": "The maximum acceleration rate when tracking a character on the horizontal (X-axis) plane. In metres per second ^ 2."
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseMaxX",
+      "Name": "Character: Horizontal Tracking Deceleration",
+      "Description": "The maximum deceleration if tracking a character on the horizontal (X-axis) plane, after having reached acceleration maximum. In metres per second ^ 2."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalX_LerpRate",
+      "Name": "Character: Horizontal Tracking Interpolation %",
+      "Description": "The interpolation rate for tracking a character on the horizontal (X-axis) plane."
+    },
+    {
+      "Field": "shoulderOverChangeDirectionShortTimeThreshold",
+      "Name": "Over-the-Shoulder: Turning Time Threshold (Play Short)",
+      "Description": "The turning time threshold for the over-the-shoulder perspective, if the method is 'Play Short'. Do not set below 1 frame."
+    },
+    {
+      "Field": "chrTransChaseRateParam_AccelMaxY",
+      "Name": "Character: Vertical Tracking Acceleration",
+      "Description": "The maximum acceleration rate when tracking a character on the vertical (Y-axis) plane. In metres per second ^ 2."
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseMaxY",
+      "Name": "Character: Vertical Tracking Deceleration",
+      "Description": "The maximum deceleration if tracking a character on the vertical (Y-axis) plane, after having reached acceleration maximum. In metres per second ^ 2."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalY_LerpRate",
+      "Name": "Character: Vertical Tracking Interpolation %",
+      "Description": "The interpolation rate for tracking a character on the vertical (Y-axis) plane."
+    },
+    {
+      "Field": "shoulderOverChangeDirectionMinAngleThreshold",
+      "Name": "Over-the-Shoulder: Minimum Rotation Input Threshold (Play Short)",
+      "Description": "The minimum rotation input threshold for the over-the-shoulder perspective, if the method is 'Play Short'. In radians."
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "Lock-on - Rotation Tracking %",
+      "Description": "The tracking rate when the camera is locked-on to another character."
+    },
+    {
+      "Field": "rotSpeed_Min_X",
+      "Name": "Rotation Speed: Minimum (X-Axis)",
+      "Description": "The minimum rotation speed on the X-axis. In degrees per second."
+    },
+    {
+      "Field": "rotSpeed_Max_X",
+      "Name": "Rotation Speed: Maximum (X-Axis)",
+      "Description": "The maximum rotation speed on the X-axis. In degrees per second."
+    },
+    {
+      "Field": "rotHiSpeed_Min_X",
+      "Name": "Rotation High Speed: Minimum (X-Axis)",
+      "Description": "The minimum rotation speed on the X-axis in the high-speed state. In degrees per second."
+    },
+    {
+      "Field": "rotHiSpeed_Max_X",
+      "Name": "Rotation High Speed: Maximum (X-Axis)",
+      "Description": "The maximum rotation speed on the X-axis in the high-speed state. In degrees per second."
+    },
+    {
+      "Field": "priority",
+      "Name": "Priority",
+      "Description": "The priority at which this parameter is applied. If the priority is the same as another, the ordering is handled internally."
+    },
+    {
+      "Field": "doInverseTurnDirection",
+      "Name": "Over-the-Shoulder: Reverse Direction of Rotation",
+      "Description": "If ON, when the character is on the left-hand side of the screen, and turns to the right, the over-the-shoulder perspective will switch, and vice versa. "
+    },
+    {
+      "Field": "doUseOverShoulderViewWhenLockOn",
+      "Name": "Over-the-Shoulder: Apply when Locked",
+      "Description": "If ON, then the over-the-shoulder perspective will apply whilst locked-on."
+    },
+    {
+      "Field": "doUseOverShoulderViewWhenNotLockOn",
+      "Name": "Over-the-Shoulder: Apply when Unlocked",
+      "Description": "If ON, then the over-the-shoulder perspective will apply whilst not locked-on."
+    },
+    {
+      "Field": "doIgnoreOptionRotSpeedRate",
+      "Name": "Ignore Optional Rotation Speed %",
+      "Description": "If ON, optional rotation speed rate is ignored (if ignored, the value used is 5)."
+    },
+    {
+      "Field": "padding0",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "padding01",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "locksiteMoveFactor",
+      "Name": "Lock-on - Reticule Movement %",
+      "Description": "The factor to use with the movement speed value for the lock reticule when moving."
+    },
+    {
+      "Field": "rotRangeMaxX",
+      "Name": "Rotation: Maximum X-Axis Value",
+      "Description": "The maximum rotational value on the X-axis for the camera. In degrees."
+    },
+    {
+      "Field": "rotRangeMinY",
+      "Name": "Rotation: Minimum Y-Axis Value",
+      "Description": "The minimum rotational value on the Y-axis for the camera. In degrees."
+    },
+    {
+      "Field": "rotRangeMaxY",
+      "Name": "Rotation: Maximum Y-Axis Value",
+      "Description": "The maximum rotational value on the Y-axis for the camera. In degrees."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalD",
+      "Name": "Character: Down Tracking %",
+      "Description": "The character tracking rate for down motion, applied to the camera."
+    },
+    {
+      "Field": "lockRotXShiftRatio_Min",
+      "Name": "Lock-on - Rotation: Minimum Shift Ratio",
+      "Description": "The minimum value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom."
+    },
+    {
+      "Field": "lockRotXShiftRatio_Max",
+      "Name": "Lock-on - Rotation: Maximum Shift Ratio",
+      "Description": "The maximum value of rotation * rotation shift rate. 0.0 is the centre of screen, 1.0 is the top, -1.0 is the bottom."
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMinDist",
+      "Name": "Lock-on - Rotation: Shift Ratio - Interpolation Minimum Distance",
+      "Description": "The minimum distance for the interpolation of the rotation * rotation shift rate."
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMidMinDist",
+      "Name": "Lock-on - Rotation: Shift Ratio - Interpolation Middle-Minimum Distance",
+      "Description": "The middle-minimum distance for the interpolation of the rotation * rotation shift rate."
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMidMaxDist",
+      "Name": "Lock-on - Rotation: Shift Ratio - Interpolation Middle-Maximum Distance",
+      "Description": "The middle-maximum distance for the interpolation of the rotation * rotation shift rate."
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMaxDist",
+      "Name": "Lock-on - Rotation: Shift Ratio - Interpolation Maximum Distance",
+      "Description": "The maximum distance for the interpolation of the rotation * rotation shift rate."
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxX",
+      "Name": "Character: Maximum Horizontal Tracking Reduction from Speed",
+      "Description": "The maximum amount of horizontal tracking reduction due to the speed of the character."
+    },
+    {
+      "Field": "chrTransChaseRateParam_MaxHorizontalSpeed",
+      "Name": "Character: Minimum Horizontal Tracking Speed",
+      "Description": "The horizontal speed at which the horizontal tracking rate is the lowest. In metres per second."
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxFront",
+      "Name": "Character: Maximum Horizontal Tracking Reduction from Speed (Front)",
+      "Description": "The maximum amount of horizontal (front) tracking reduction due to the speed of the character."
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxBack",
+      "Name": "Character: Maximum Horizontal Tracking Reduction from Speed (Back)",
+      "Description": "The maximum amount of horizontal (Back) tracking reduction due to the speed of the character."
+    },
+    {
+      "Field": "closeToTargetDistance",
+      "Name": "Camera: Minimum Lock-on Distance",
+      "Description": "The minimum distance away from a target that the camera is able to lock-on to them. In metres."
+    },
+    {
+      "Field": "overShoulderRadLerpRate",
+      "Name": "Over-the-Shoulder: Interpolation %",
+      "Description": "The interpolation rate for the over-the-shoulder turning. In radians."
+    },
+    {
+      "Field": "overShoulderRadLerpRateWhenLockOnOff",
+      "Name": "Over-the-Shoulder: Interpolation % (Unlocked)",
+      "Description": "The interpolation rate for the over-the-shoulder turning when unlocked. In radians."
+    },
+    {
+      "Field": "overShoulderRadLerpRateLerpRate",
+      "Name": "Over-the-Shoulder: Interpolation of Interpolation %",
+      "Description": "The interpolation of the interpolation rate for the over-the-shoulder turning. In radians."
+    },
+    {
+      "Field": "chrTransChaseRateForQBX",
+      "Name": "Quick Boost: Horizontal Tracking %",
+      "Description": "The horizontal tracking rate during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForQBF",
+      "Name": "Quick Boost: Forward Tracking %",
+      "Description": "The forward tracking rate during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForQBB",
+      "Name": "Quick Boost: Backward Tracking %",
+      "Description": "The backward tracking rate during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForBoostX",
+      "Name": "Quick Boost: Horizontal Tracking",
+      "Description": "The horizontal tracking value during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForBoostF",
+      "Name": "Quick Boost: Forward Tracking",
+      "Description": "The forward tracking value during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForBoostB",
+      "Name": "Quick Boost: Backward Tracking",
+      "Description": "The backward tracking value during quick-boost of characters."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalF_LerpRate",
+      "Name": "Quick Boost: Interpolation % of Forward Tracking",
+      "Description": "The interpolation rate of the forward tracking rate during quick-boost."
+    },
+    {
+      "Field": "chrTransChaseRateForNormalB_LerpRate",
+      "Name": "Quick Boost: Interpolation % of Backward Tracking",
+      "Description": "The interpolation rate of the backward tracking rate during quick-boost."
+    },
+    {
+      "Field": "shootTargetLookUpAngAtUnlock",
+      "Name": "Shoot Target: Look Angle (Unlocked)",
+      "Description": "The angle at which the camera looks when it is a free camera (whilst unlocked)."
+    },
+    {
+      "Field": "shootTargetLookUpAngAtLock",
+      "Name": "Shoot Target: Look Angle (Locked)",
+      "Description": "The angle at which the camera looks when it is a free camera (whilst locked)."
+    },
+    {
+      "Field": "lockRotChasePlayAngHorizontal",
+      "Name": "Lock-on - Rotation: Horizontal Tracking Angle",
+      "Description": "The horizontal tracking rotation angle to use during lock-on. In degrees."
+    },
+    {
+      "Field": "camLookupOffsetY",
+      "Name": "Camera Look: Height Correction (Up)",
+      "Description": "The offset to apply to the upwards camera look on the Y-axis. In metres."
+    },
+    {
+      "Field": "camLookupOffsetZ",
+      "Name": "Camera Look: Depth Correction (Up)",
+      "Description": "The offset to apply to the upwards camera look on the Z-axis. In metres."
+    },
+    {
+      "Field": "camLookdownOffsetY",
+      "Name": "Camera Look: Height Correction (Down)",
+      "Description": "The offset to apply to the downwards camera look on the Y-axis. In metres."
+    },
+    {
+      "Field": "camLookdownOffsetZ",
+      "Name": "Camera Look: Depth Correction (Down)",
+      "Description": "The offset to apply to the downwards camera look on the Z-axis. In metres."
+    },
+    {
+      "Field": "lockRotChaseRateRecoverRateAfterCrossing",
+      "Name": "Lock-on Target: Rotation Speed (Passing)",
+      "Description": "The higher the value, the faster the camera will rotate towards the target after moving pass them."
+    },
+    {
+      "Field": "crossingLockRotChaseRate",
+      "Name": "Lock-on Target: Rotation Tracking % (Passing)",
+      "Description": "The lock-on rotation tracking rate to apply after moving pass the target. The smaller the value, the more linear our movement will be."
+    },
+    {
+      "Field": "crossingLastTime",
+      "Name": "Passing Effect Duration",
+      "Description": "The duration of the passing moment, the moment we pass our target."
+    },
+    {
+      "Field": "crossingHorizontalDistanceThreshold",
+      "Name": "Horziontal Threshold for Passing",
+      "Description": "The horziontal distance threshold to trigger the passing state between us and our target. In metres."
+    },
+    {
+      "Field": "crossingRelativeVelocityThreshold",
+      "Name": "Relative Velocity Threshold for Passing",
+      "Description": "The relative velocity required to 'pass' our target. The horizontal velocity between us and our target must be above this threshold."
+    },
+    {
+      "Field": "lockRotChasePlayAngVertical",
+      "Name": "Lock-on - Rotation: Vertical Tracking Angle",
+      "Description": "The vertical tracking rotation angle to use during lock-on. In degrees."
+    },
+    {
+      "Field": "lockRotChasePlayAngHorizontalReturnLerpRate",
+      "Name": "Lock-on - Rotation: Horziontal Return Interpolation %",
+      "Description": "The interpolation rate when the target returns to the centre of the screen from a horizontal angle."
+    },
+    {
+      "Field": "lockRotChasePlayAngVerticalReturnLerpRate",
+      "Name": "Lock-on - Rotation: Vertical Return Interpolation %",
+      "Description": "The interpolation rate when the target returns to the centre of the screen from a vertical angle."
+    },
+    {
+      "Field": "camAutoPullWhenLookUpRotXThreshold",
+      "Name": "Automatic Camera Pull: X-Axis Rotation Threshold",
+      "Description": "Applies when the camera looks up. The angle on the X-axis at which the threshold for the automatic camera pulling occurs. -1 means it will trigger if the camera descends to the character's root position. Set to 90 to disable the pulling."
+    },
+    {
+      "Field": "camAutoPullWhenLookUpWeight",
+      "Name": "Automatic Camera Pull: Weight",
+      "Description": "Applies when the camera looks up. The higher the weight, the lower the rotation. Higher values mean the view is pulled closer to the character, away from the target."
+    },
+    {
+      "Field": "camAutoPullWhenLookUpCamDistWeight",
+      "Name": "Automatic Camera Pull: Magnification",
+      "Description": "Applies when the camera looks up. The magnification rate to apply to the automatic camera pulling."
+    },
+    {
+      "Field": "camAutoPullWhenLookUpCamDistMax",
+      "Name": "Automatic Camera Pull: Maximum Distance.",
+      "Description": "Applies when the camera looks up. The maximum distance for the automatic camera pulling."
+    },
+    {
+      "Field": "chrOrgOffset_Y_Up",
+      "Name": "Character: Height Offset (Ascending)",
+      "Description": "The height of the camera's look point (from the character's root position, whilst ascending). In metres."
+    },
+    {
+      "Field": "chrOrgOffset_Y_Down",
+      "Name": "Character: Height Offset (Descending)",
+      "Description": "The height of the camera's look point (from the character's root position, whilst descending). In metres."
+    },
+    {
+      "Field": "chrOrgOffset_Y_LerpRate",
+      "Name": "Character: Height Offset Interpolation %",
+      "Description": "The interpolation rate for the character height offset."
+    },
+    {
+      "Field": "chrOrgOffset_Y_MuteAirLerpRate",
+      "Name": "Character: Height Offset Interpolation % (Disable Camera Aerial Offset)",
+      "Description": "The interpolation rate for the character height offset, after the 'Disable camera aerial offset (for PC)' event has been triggered via TAE."
+    },
+    {
+      "Field": "playerFadeDist",
+      "Name": "Character: Dither Fade Distance",
+      "Description": "The distance between the camera and the character at which the dither fade starts."
+    },
+    {
+      "Field": "rotSpeed_Min_Y",
+      "Name": "Rotation Speed: Minimum (Y-Axis)",
+      "Description": "The minimum rotation speed on the Y-axis. In degrees per second."
+    },
+    {
+      "Field": "rotSpeed_Max_Y",
+      "Name": "Rotation Speed: Maximum (Y-Axis)",
+      "Description": "The maximum rotation speed on the Y-axis. In degrees per second."
+    },
+    {
+      "Field": "rotHiSpeed_Min_Y",
+      "Name": "Rotation High-Speed: Minimum (Y-Axis)",
+      "Description": "The minimum rotation high-speed on the Y-axis. In degrees per second."
+    },
+    {
+      "Field": "rotHiSpeed_Max_Y",
+      "Name": "Rotation High-Speed: Maximum (Y-Axis)",
+      "Description": "The maximum rotation high-speed on the Y-axis. In degrees per second."
+    },
+    {
+      "Field": "reserve031",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

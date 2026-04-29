@@ -1,22 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PARAMDEF XmlVersion="0">
-  <ParamType>CRIMINAL_AND_DECEASED_PARAM</ParamType>
-  <Unk06>0</Unk06>
-  <BigEndian>False</BigEndian>
-  <Unicode>True</Unicode>
-  <Version>201</Version>
-  <Fields>
-    <Field Def="u8 Unk00" />
-    <Field Def="u8 Unk01" />
-    <Field Def="u8 Unk02" />
-    <Field Def="u8 sinner_sin_points" />
-    <Field Def="u8 wretch_sin_points" />
-    <Field Def="u8 hollowing_increase_on_death" />
-    <Field Def="u8 hollowing_unknown" />
-    <Field Def="u8 hollowing_appearance_change" />
-    <Field Def="u8 hp_min_percent" />
-    <Field Def="u8 hp_min_percent_wretch" />
-    <Field Def="u8 unknown_percent" />
-    <Field Def="u8 unknown_percent_wretch" />
-  </Fields>
+    <ParamType>CRIMINAL_AND_DECEASED_PARAM</ParamType>
+    <DataVersion>2</DataVersion>
+    <BigEndian>true</BigEndian>
+    <Unicode>true</Unicode>
+    <FormatVersion>105</FormatVersion>
+    <Fields>
+        <Field Def="u8 criminalUpNetwork = 1">
+            <DisplayName>《罪人カウンター加算値（ネットワーク）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>1</SortID>
+        </Field>
+        <Field Def="u8 criminalDownNetwork = 1">
+            <DisplayName>《罪人カウンター減算値（ネットワーク）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>2</SortID>
+        </Field>
+        <Field Def="u8 criminalUpNpc = 1">
+            <DisplayName>《罪人カウンター加算値（NPC）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>3</SortID>
+        </Field>
+        <Field Def="u8 criminalThreshold1 = 1">
+            <DisplayName>《罪人レベル閾値（一般⇔罪人）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>4</SortID>
+        </Field>
+        <Field Def="u8 criminalThreshold2 = 1">
+            <DisplayName>《大罪人レベル閾値（罪人⇔大罪人）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>5</SortID>
+        </Field>
+        <Field Def="u8 deceasedUpNormal = 1">
+            <DisplayName>《亡者カウンター加算値（通常）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>6</SortID>
+        </Field>
+        <Field Def="u8 deceasedUpCursed = 1">
+            <DisplayName>《亡者カウンター加算値（呪死）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>7</SortID>
+        </Field>
+        <Field Def="u8 deceasedThreshold1 = 1">
+            <DisplayName>《亡者レベル閾値（亡者⇔すごい亡者）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>255</Maximum>
+            <Increment>1</Increment>
+            <SortID>8</SortID>
+        </Field>
+        <Field Def="u8 hpLowerBound1 = 1">
+            <DisplayName>《HP下限%（一般/罪人）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>9</SortID>
+        </Field>
+        <Field Def="u8 hpLowerBound2 = 1">
+            <DisplayName>《HP下限%（大罪人）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>10</SortID>
+        </Field>
+        <Field Def="u8 hpUpperBound1 = 1">
+            <DisplayName>《HP上限%（呪い）》</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>11</SortID>
+        </Field>
+        <Field Def="dummy8 padding[1] = 1">
+            <DisplayName>dummy</DisplayName>
+            <Minimum>1</Minimum>
+            <Maximum>100</Maximum>
+            <Increment>1</Increment>
+            <SortID>13</SortID>
+        </Field>
+    </Fields>
 </PARAMDEF>

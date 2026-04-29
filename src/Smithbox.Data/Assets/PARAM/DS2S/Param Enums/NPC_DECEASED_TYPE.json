@@ -1,0 +1,38 @@
+{
+  "Key": "NPC_DECEASED_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "NPC_DECEASED_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Flesh and blood"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deceased"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing dead"
+        }
+      ]
+    }
+  ]
+}

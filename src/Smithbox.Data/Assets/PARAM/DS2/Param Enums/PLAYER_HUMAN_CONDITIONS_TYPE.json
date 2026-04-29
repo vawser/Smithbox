@@ -1,0 +1,38 @@
+{
+  "Key": "PLAYER_HUMAN_CONDITIONS_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PLAYER_HUMAN_CONDITIONS_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Living person"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Deceased"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Amazing dead"
+        }
+      ]
+    }
+  ]
+}

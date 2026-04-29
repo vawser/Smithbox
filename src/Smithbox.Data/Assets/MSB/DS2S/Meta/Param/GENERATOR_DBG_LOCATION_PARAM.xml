@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MSBMETA XmlVersion="0">
+    <Field>
+        <radius />
+        <height />
+        <colorR />
+        <colorG />
+        <colorB />
+        <aReserved1 IsPadding="" />
+    </Field>
+</MSBMETA>

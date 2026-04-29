@@ -1,0 +1,328 @@
+{
+  "Param": "MENU_PARAM_ST",
+  "Type": "MENU_PARAM_ST",
+  "Name": "MENU_PARAM_ST",
+  "Description": null,
+  "Fields": [
+    {
+      "Field": "SoloPlayDeath_ToFadeOutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PartyGhostDeath_ToFadeOutTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxHpLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxMpLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxSpLimit",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_Vel",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "ActionPanelChangeThreshold_PassTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxAddHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxAddMp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerMaxAddSp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DecalPosOffsetX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "DecalPosOffsetY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WirePointMinSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WirePointMaxSize",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HealthHpNoDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HealthHpLightDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HealthHpHeavyDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HealthHpDying",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "HealthHpDead",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerCountSoul",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaNoDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaLightDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaMiddleDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaHeavyDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaCriticalDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenRangeX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenRangeY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenDisplayX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenDisplayY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenScaleEnable",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenScale",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "LockStaminaFatalDamage",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PreOpeningMovie_WaitSec",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerDangerSp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatchTargetPointRate",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenRangeX_Test",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenRangeY_Test",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenDisplayX_Test",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WireOffScreenDisplayY_Test",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerQuarterHp",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatchTargetOffScrRangeX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatchTargetOffScrRangeY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayX",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "WatchTargetOffScrDisplayY",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "GetItemViewTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "SpMinimumDispTime",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

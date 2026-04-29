@@ -1,0 +1,376 @@
+{
+  "Name": "AtkParam",
+  "Groups": [
+    {
+      "Key": "Damage",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Damage"
+        }
+      ],
+      "Fields": [
+        "atkPhys",
+        "atkMag",
+        "atkFire",
+        "atkThun",
+        "atkDark",
+        "atkStam",
+        "atkSuperArmor",
+        "atkThrowEscape",
+        "atkObj",
+        "reviveDamage"
+      ]
+    },
+    {
+      "Key": "Correction",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Correction"
+        }
+      ],
+      "Fields": [
+        "blowingCorrection",
+        "atkPhysCorrection",
+        "atkMagCorrection",
+        "atkFireCorrection",
+        "atkDarkCorrection",
+        "atkStamCorrection",
+        "atkSuperArmorCorrection",
+        "atkThrowEscapeCorrection",
+        "guardAtkRateCorrection",
+        "guardBreakCorrection",
+        "ultimateChargeCorrection",
+        "reviveDamageCorrection",
+        "statusAilmentAtkPowerCorrectRate",
+        "spEffectAtkPowerCorrectRate_byPoint",
+        "spEffectAtkPowerCorrectRate_byRate",
+        "spEffectAtkPowerCorrectRate_byDmg"
+      ]
+    },
+    {
+      "Key": "Conditional Category",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Conditional Category"
+        }
+      ],
+      "Fields": [
+        "subCategory1",
+        "subCategory2",
+        "subCategory3",
+        "subCategory4",
+        "subCategory5"
+      ]
+    },
+    {
+      "Key": "SpEffect",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "SpEffect"
+        }
+      ],
+      "Fields": [
+        "spEffectId0",
+        "spEffectId1",
+        "spEffectId2",
+        "spEffectId3",
+        "spEffectId4"
+      ]
+    },
+    {
+      "Key": "Trace",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Trace"
+        }
+      ],
+      "Fields": [
+        "traceSfxId0",
+        "traceDmyIdHead0",
+        "traceDmyIdTail0",
+        "traceSfxId1",
+        "traceDmyIdHead1",
+        "traceDmyIdTail1",
+        "traceSfxId2",
+        "traceDmyIdHead2",
+        "traceDmyIdTail2",
+        "traceSfxId3",
+        "traceDmyIdHead3",
+        "traceDmyIdTail3",
+        "traceSfxId4",
+        "traceDmyIdHead4",
+        "traceDmyIdTail4",
+        "traceSfxId5",
+        "traceDmyIdHead5",
+        "traceDmyIdTail5",
+        "traceSfxId6",
+        "traceDmyIdHead6",
+        "traceDmyIdTail6",
+        "traceSfxId7",
+        "traceDmyIdHead7",
+        "traceDmyIdTail7"
+      ]
+    },
+    {
+      "Key": "Hit 0",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 0"
+        }
+      ],
+      "Fields": [
+        "hit0_Radius",
+        "hit0_hitType",
+        "hti0_Priority",
+        "hit0_DmyPoly1",
+        "hit0_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 1",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 1"
+        }
+      ],
+      "Fields": [
+        "hit1_Radius",
+        "hit1_hitType",
+        "hti1_Priority",
+        "hit1_DmyPoly1",
+        "hit1_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 2",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 2"
+        }
+      ],
+      "Fields": [
+        "hit2_Radius",
+        "hit2_hitType",
+        "hti2_Priority",
+        "hit2_DmyPoly1",
+        "hit2_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 3",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 3"
+        }
+      ],
+      "Fields": [
+        "hit3_Radius",
+        "hit3_hitType",
+        "hti3_Priority",
+        "hit3_DmyPoly1",
+        "hit3_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 4",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 4"
+        }
+      ],
+      "Fields": [
+        "hit4_Radius",
+        "hit4_hitType",
+        "hti4_Priority",
+        "hit4_DmyPoly1",
+        "hit4_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 5",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 5"
+        }
+      ],
+      "Fields": [
+        "hit5_Radius",
+        "hit5_hitType",
+        "hti5_Priority",
+        "hit5_DmyPoly1",
+        "hit5_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 6",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 6"
+        }
+      ],
+      "Fields": [
+        "hit6_Radius",
+        "hit6_hitType",
+        "hti6_Priority",
+        "hit6_DmyPoly1",
+        "hit6_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 7",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 7"
+        }
+      ],
+      "Fields": [
+        "hit7_Radius",
+        "hit7_hitType",
+        "hti7_Priority",
+        "hit7_DmyPoly1",
+        "hit7_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 8",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 8"
+        }
+      ],
+      "Fields": [
+        "hit8_Radius",
+        "hit8_hitType",
+        "hti8_Priority",
+        "hit8_DmyPoly1",
+        "hit8_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 9",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 9"
+        }
+      ],
+      "Fields": [
+        "hit9_Radius",
+        "hit9_hitType",
+        "hti9_Priority",
+        "hit9_DmyPoly1",
+        "hit9_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 10",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 10"
+        }
+      ],
+      "Fields": [
+        "hit10_Radius",
+        "hit10_hitType",
+        "hti10_Priority",
+        "hit10_DmyPoly1",
+        "hit10_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 11",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 11"
+        }
+      ],
+      "Fields": [
+        "hit11_Radius",
+        "hit11_hitType",
+        "hti11_Priority",
+        "hit11_DmyPoly1",
+        "hit11_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 12",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 12"
+        }
+      ],
+      "Fields": [
+        "hit12_Radius",
+        "hit12_hitType",
+        "hti12_Priority",
+        "hit12_DmyPoly1",
+        "hit12_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 13",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 13"
+        }
+      ],
+      "Fields": [
+        "hit13_Radius",
+        "hit13_hitType",
+        "hti13_Priority",
+        "hit13_DmyPoly1",
+        "hit13_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 14",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 14"
+        }
+      ],
+      "Fields": [
+        "hit14_Radius",
+        "hit14_hitType",
+        "hti14_Priority",
+        "hit14_DmyPoly1",
+        "hit14_DmyPoly2"
+      ]
+    },
+    {
+      "Key": "Hit 15",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Hit 15"
+        }
+      ],
+      "Fields": [
+        "hit15_Radius",
+        "hit15_hitType",
+        "hti15_Priority",
+        "hit15_DmyPoly1",
+        "hit15_DmyPoly2"
+      ]
+    }
+  ]
+}

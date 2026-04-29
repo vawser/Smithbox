@@ -1,0 +1,73 @@
+{
+  "Param": "NETWORK_AREA_PARAM",
+  "Type": "NETWORK_AREA_PARAM",
+  "Name": "NETWORK_AREA_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cellSizeX",
+      "Name": "セルサイズX",
+      "Description": ""
+    },
+    {
+      "Field": "cellSizeY",
+      "Name": "セルサイズY",
+      "Description": ""
+    },
+    {
+      "Field": "cellSizeZ",
+      "Name": "セルサイズZ",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetX",
+      "Name": "セルオフセットX",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetY",
+      "Name": "セルオフセットY",
+      "Description": ""
+    },
+    {
+      "Field": "cellOffsetZ",
+      "Name": "セルオフセットZ",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "血痕・死亡幻影有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "血文字有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "幻影有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableMultiPlay",
+      "Name": "マルチプレイ有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableRingSearch",
+      "Name": "指輪検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableBreakInSearch",
+      "Name": "乱入検索有効",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

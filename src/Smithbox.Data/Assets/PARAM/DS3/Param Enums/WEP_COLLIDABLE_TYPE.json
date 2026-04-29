@@ -1,0 +1,29 @@
+{
+  "Key": "WEP_COLLIDABLE_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "WEP_COLLIDABLE_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Light"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Heavy"
+        }
+      ]
+    }
+  ]
+}

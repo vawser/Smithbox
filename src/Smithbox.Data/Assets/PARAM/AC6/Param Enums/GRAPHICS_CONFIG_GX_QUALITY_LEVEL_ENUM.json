@@ -1,0 +1,56 @@
+{
+  "Key": "GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "GRAPHICS_CONFIG_GX_QUALITY_LEVEL_ENUM"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Disabled"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Low"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Middle"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "High"
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ultra"
+        }
+      ]
+    }
+  ]
+}

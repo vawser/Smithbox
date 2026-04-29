@@ -1,0 +1,38 @@
+{
+  "Key": "BEHAVIOR_REF_TYPE",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "BEHAVIOR_REF_TYPE"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Behavior"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Bullet"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "SpEffect"
+        }
+      ]
+    }
+  ]
+}

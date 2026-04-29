@@ -1,0 +1,128 @@
+{
+  "Param": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Type": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Name": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Description": "Defines enemy flight parameters.",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Field": "moveMaxSpeedKMPH_H",
+      "Name": "Maximum Horizontal Speed",
+      "Description": "In km/h"
+    },
+    {
+      "Field": "moveAccelMPSS_H",
+      "Name": "Horizontal Acceleration",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "moveMaxSpeedKMPH_V",
+      "Name": "Maximum Vertical Speed",
+      "Description": "In km/h"
+    },
+    {
+      "Field": "moveAccelMPSS_V",
+      "Name": "Vertical Acceleration",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "Horizontal Flight Braking Speed",
+      "Description": "Braking when exceeding the maximum airborne horizontal speed, in m/s^2"
+    },
+    {
+      "Field": "flyVerticalBrakeMPSS",
+      "Name": "Vertical Flight Braking Speed",
+      "Description": "Braking when exceeding the maximum airborne vertical speed, in m/s^2"
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "Actual Movement Reflection %",
+      "Description": "The smaller this value, the greater the sense of weight."
+    },
+    {
+      "Field": "landDeadBrakeMPSS",
+      "Name": "Ground Brake At Death",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "flyDeadBrakeMPSS",
+      "Name": "Air Brake At Death",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "damageBrake_BeginBrakeMPSS",
+      "Name": "Damage Brake: Start",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "damageBrake_PeakBrakeMPSS",
+      "Name": "Damage Brake: End",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "damageBrake_BeginToPeakTimeSec",
+      "Name": "Damage Brake: Duration",
+      "Description": "Time from damage brake start to end, in seconds."
+    },
+    {
+      "Field": "damageBrake_TimerResetDelayTime",
+      "Name": "Damage Brake: Reset Delay",
+      "Description": "Time from when knockback speed reaches 0 until the damage brake timer resets."
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "Minimum Move Acceleration",
+      "Description": "Minimum garaunteed acceleration during movement animation, in m/s^2"
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "Slow-Speed Brake Threshold",
+      "Description": "Switches to slow-speed braking when the horizontal speed is below this value."
+    },
+    {
+      "Field": "blowDeadBrake_BeginBrakeMPSS",
+      "Name": "Blow Dead Brake: Start",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "blowDeadBrake_PeakBrakeMPSS",
+      "Name": "Blow Dead Brake: End",
+      "Description": "m/s^2"
+    },
+    {
+      "Field": "blowDeadBrake_BeginToPeakTimeSec",
+      "Name": "Blow Dead Brake: Duration",
+      "Description": "Time from blow dead brake start to end, in seconds."
+    },
+    {
+      "Field": "blowDeadBrake_TimerResetDelayTime",
+      "Name": "Blow Dead Brake: Reset Delay",
+      "Description": "Time from when knockback speed reaches 0 until the blow dead brake timer resets."
+    },
+    {
+      "Field": "pad_end",
+      "Name": "",
+      "Description": ""
+    }
+  ]
+}

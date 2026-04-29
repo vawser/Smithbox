@@ -1,0 +1,38 @@
+{
+  "Key": "ITEM_LOT_WEIGHT_PARAM_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ITEM_LOT_WEIGHT_PARAM_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "0"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Evenly"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Must be first"
+        }
+      ]
+    }
+  ]
+}

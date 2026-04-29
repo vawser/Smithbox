@@ -38,6 +38,8 @@ public class ParamListCategories
     {
         if (ImGui.CollapsingHeader("Param List Categories"))
         {
+            ImGui.BeginChild("ParamListCategories");
+
             var categories = Project.Handler.ParamData.ParamCategories;
 
             if (categories == null)
@@ -107,7 +109,7 @@ public class ParamListCategories
 
             foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
             {
-                if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($"{category.GetDisplayName()}##userCategory_{category.GetDisplayName()}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     _selectedUserCategory = category;
                     isNewEntryMode = false;
@@ -172,8 +174,13 @@ public class ParamListCategories
                 {
                     isNewEntryMode = false;
 
+                    var nameEntry = new ParamCategoryNameEntry();
+                    nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
+                    nameEntry.Name = NewEntryName;
+
                     var newCategoryEntry = new ParamCategoryEntry();
-                    newCategoryEntry.DisplayName = NewEntryName;
+                    newCategoryEntry.Key = NewEntryName;
+                    newCategoryEntry.DisplayNames = [nameEntry];
                     newCategoryEntry.Params = NewEntryParams;
 
                     Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
@@ -193,7 +200,7 @@ public class ParamListCategories
                     {
                         isInitialEditMode = false;
 
-                        NewEntryName = _selectedUserCategory.DisplayName;
+                        NewEntryName = _selectedUserCategory.GetDisplayName();
                         NewEntryParamsCount = _selectedUserCategory.Params.Count;
                         ForceTop = _selectedUserCategory.ForceTop;
                         ForceBottom = _selectedUserCategory.ForceBottom;
@@ -226,7 +233,7 @@ public class ParamListCategories
                     {
                         isEditEntryMode = false;
 
-                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.GetDisplayName() == NewEntryName).FirstOrDefault();
 
                         if (curEntry != null)
                         {
@@ -256,37 +263,34 @@ public class ParamListCategories
                     }
                 }
             }
+
+            ImGui.EndChild();
         }
     }
 
     public void RestoreDefault()
     {
-        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
+        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
-        if (File.Exists(sourceFile))
+        if (Directory.Exists(projectFolder))
         {
-            try
+            foreach (var file in Directory.EnumerateFiles(projectFolder))
             {
-                var filestring = File.ReadAllText(sourceFile);
-
-                try
-                {
-                    Editor.Project.Handler.ParamData.ParamCategories = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamCategoryResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, "Failed to deserialize param categories", e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, "Failed to read param categories", e);
+                File.Delete(file);
             }
         }
-        else
+
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
+
+        if (Directory.Exists(sourceFolder))
         {
-            Smithbox.LogError(this, "Failed to find default param categories for game");
+            foreach (var file in Directory.EnumerateFiles(projectFolder))
+            {
+                var filename = Path.GetFileName(file);
+                var projPath = Path.Combine(projectFolder, filename);
+
+                File.Copy(file, projPath);
+            }
         }
     }
 
@@ -302,7 +306,7 @@ public class ParamListCategories
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(Project.Handler.ParamData.ParamCategories, typeof(ParamCategoryResource), ParamEditorJsonSerializerContext.Default);
+            string jsonString = JsonSerializer.Serialize(Project.Handler.ParamData.ParamCategories, typeof(ParamCategories), ParamEditorJsonSerializerContext.Default);
             var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
             var data = Encoding.ASCII.GetBytes(jsonString);
             fs.Write(data, 0, data.Length);
