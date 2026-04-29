@@ -16,67 +16,67 @@
     {
       "ID": 10,
       "Entries": [
-        "PC_common_ egg attack -- PC_共通_卵攻撃"
+        ""
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Contact impact_in-game start -- 接触衝撃_インゲーム開始"
+        "Impact"
       ]
     },
     {
       "ID": 210,
       "Entries": [
-        "Contact impact_weak_upper and lower wrap -- 接触衝撃_弱_上下包み"
+        "Impact"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "Contact impact_weak_origin wrap -- 接触衝撃_弱_原点包み"
+        "Impact"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Contact impact_middle_upper and lower wrap -- 接触衝撃_中_上下包み"
+        "Impact"
       ]
     },
     {
       "ID": 221,
       "Entries": [
-        "Contact impact_medium_origin wrap -- 接触衝撃_中_原点包み"
+        "Impact"
       ]
     },
     {
       "ID": 222,
       "Entries": [
-        "Contact impact_middle_below origin -- 接触衝撃_中_原点下方"
+        "Impact"
       ]
     },
     {
       "ID": 280,
       "Entries": [
-        "Foot for SFX / right foot -- フットSFX用/右足"
+        "Right foot for SFX"
       ]
     },
     {
       "ID": 281,
       "Entries": [
-        "Foot for SFX / left foot -- フットSFX用/左足"
+        "Left foot for SFX"
       ]
     },
     {
       "ID": 285,
       "Entries": [
-        "Hand for SFX / right hand -- ハンドSFX用/右手"
+        "Right hand for SFX"
       ]
     },
     {
       "ID": 286,
       "Entries": [
-        "Hand for SFX / left hand -- ハンドSFX用/左手"
+        "Left hand for SFX"
       ]
     },
     {
@@ -964,13 +964,13 @@
     {
       "ID": 105002200,
       "Entries": [
-        "School Technique_Dive Slash 1 -- 流派技_飛び込み斬り1"
+        "Nightjar Slash"
       ]
     },
     {
       "ID": 105002201,
       "Entries": [
-        "School Technique_Dive Slash 2 -- 流派技_飛び込み斬り2"
+        "Nightjar Slash Reversal"
       ]
     },
     {
@@ -3622,49 +3622,49 @@
     {
       "ID": 150100000,
       "Entries": [
-        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+        ""
       ]
     },
     {
       "ID": 150100010,
       "Entries": [
-        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+        ""
       ]
     },
     {
       "ID": 150200000,
       "Entries": [
-        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+        ""
       ]
     },
     {
       "ID": 150200010,
       "Entries": [
-        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+        ""
       ]
     },
     {
       "ID": 150300000,
       "Entries": [
-        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+        ""
       ]
     },
     {
       "ID": 150300010,
       "Entries": [
-        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+        ""
       ]
     },
     {
       "ID": 150400000,
       "Entries": [
-        "Test Shinobi 1 Grab -- テスト忍殺1掴み"
+        ""
       ]
     },
     {
       "ID": 150400010,
       "Entries": [
-        "Test Shinobi 2 Grab -- テスト忍殺2掴み"
+        ""
       ]
     }
   ]
