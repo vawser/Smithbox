@@ -4,79 +4,79 @@
     {
       "ID": 0,
       "Entries": [
-        "test -- テスト"
+        ""
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Magic test -- 魔法テスト"
+        ""
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Funnel test -- ファンネルテスト"
+        ""
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Flying Dragon Breath Test -- 飛竜\u3000ブレステスト"
+        ""
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "For destroying automatic patrol objects -- 自動巡回オブジェ破壊用"
+        "For destroying automatic patrol objects"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "For automatic patrol object destruction_for debug function verification -- 自動巡回オブジェ破壊用_デバッグ機能検証用"
+        "Dummy for debug"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Bonfire recovery effect -- かがり火回復効果"
+        "Idol Recovery Effect"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "Bullet Random Number Test_Parent -- 弾丸乱数テスト_親"
+        ""
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "Bullet random number test_child -- 弾丸乱数テスト_子"
+        ""
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        "Long-range magic: Flame to pierce_Begin to appear -- 遠距離魔法：穿つ炎_出始め"
+        ""
       ]
     },
     {
       "ID": 63,
       "Entries": [
-        "Long-range magic: Flame to wear_Parent -- 遠距離魔法：穿つ炎_親"
+        ""
       ]
     },
     {
       "ID": 64,
       "Entries": [
-        "Long-range magic: Flame to pierce_Search bullet -- 遠距離魔法：穿つ炎_検索弾"
+        ""
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "Long-range magic: Flame _ child to wear -- 遠距離魔法：穿つ炎_子"
+        ""
       ]
     },
     {
@@ -100,229 +100,229 @@
     {
       "ID": 300,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Normal_Reaction Playback -- 忍殺忍術_血煙_通常_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 301,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Normal_Blind Effect + Eye Shield -- 忍殺忍術_血煙_通常_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 360,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Early_Early_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_親_序盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 361,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Early_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_親_序盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 362,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_親_中盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 363,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Middle_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_親_中盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 364,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_親_終盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 365,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Parent_Late Stage_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_親_終盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 366,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Early_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_子_序盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 367,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Early_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_子_序盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 368,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_子_中盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 369,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Middle_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_子_中盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 370,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_赤血_子_終盤_リアクション再生"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 371,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Red Blood_Child_Late Stage_Blind Effect + Eye Shield -- 忍殺忍術_血煙_放射_赤血_子_終盤_盲目効果 + 視線遮蔽"
+        "Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 375,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Early_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_親_序盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 376,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Early_Blind Effect + Eye Shield + Poison -- 忍殺忍術_血煙_放射_毒血_親_序盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 377,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_親_中盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 378,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Middle_Blind Effect + Line of Sight + Poison -- 忍殺忍術_血煙_放射_毒血_親_中盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 379,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_親_終盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 380,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Parent_Late Stage_Blind Effect + Eye Shield + Poison -- 忍殺忍術_血煙_放射_毒血_親_終盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 381,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Early_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_子_序盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 382,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Early_Blind Effect + Gaze Shielding + Poison -- 忍殺忍術_血煙_放射_毒血_子_序盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 383,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_子_中盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 384,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Middle_Blind Effect + Line of Sight + Poison -- 忍殺忍術_血煙_放射_毒血_子_中盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 385,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_毒血_子_終盤_リアクション再生"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 386,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_Poisonous Blood_Child_Late _Blind Effect + Eye-shielding + Poison -- 忍殺忍術_血煙_放射_毒血_子_終盤_盲目効果 + 視線遮蔽 + 毒"
+        "Poison Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 390,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Early_Early_Reaction Playback -- 忍殺忍術_血煙_放射_白血_親_序盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 391,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Early_Blind Effect + Gaze Shielding + Recovery -- 忍殺忍術_血煙_放射_白血_親_序盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 392,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_白血_親_中盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 393,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Middle_Blind Effect + Gaze Shielding + Recovery -- 忍殺忍術_血煙_放射_白血_親_中盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 394,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_白血_親_終盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 395,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Parent_Late Stage_Blind Effect + Gaze Shielding + Recovery -- 忍殺忍術_血煙_放射_白血_親_終盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 396,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Early_Reaction Playback -- 忍殺忍術_血煙_放射_白血_子_序盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 397,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Early_Blind Effect + Gaze Shielding + Recovery -- 忍殺忍術_血煙_放射_白血_子_序盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 398,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Middle_Reaction Playback -- 忍殺忍術_血煙_放射_白血_子_中盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 399,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Middle_Blind Effect + Gaze Shielding + Recovery -- 忍殺忍術_血煙_放射_白血_子_中盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Late Stage_Reaction Playback -- 忍殺忍術_血煙_放射_白血_子_終盤_リアクション再生"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        "Ninjutsu Ninjutsu_Blood Smoke_Radiation_White Blood_Child_Late Stage_Blind Effect + Eye Shield + Recovery -- 忍殺忍術_血煙_放射_白血_子_終盤_盲目効果 + 視線遮蔽 + 回復"
+        "Lifesteal Bloodsmoke Ninjutsu"
       ]
     },
     {
@@ -5956,3235 +5956,3235 @@
     {
       "ID": 50000300,
       "Entries": [
-        "c5000_Recon Monk_Pinpoint Magic [Searching Enemies] -- c5000_破戒僧_ピンポイント呪術【索敵】"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000301,
       "Entries": [
-        "c5000_Burning Monk_Pinpoint Magic [Omen] -- c5000_破戒僧_ピンポイント呪術【予兆】"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000302,
       "Entries": [
-        "c5000_Burning Monk_Pinpoint Magic [Main Body] -- c5000_破戒僧_ピンポイント呪術【本体】"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000310,
       "Entries": [
-        "c5000_Burning Monk_Wide Range Magic_Center (with SFX) -- c5000_破戒僧_広範囲幻術_中央（SFX有）"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000311,
       "Entries": [
-        "c5000_Burning Monk_Wide Range Magic_End (without SFX) -- c5000_破戒僧_広範囲幻術_端（SFX無）"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000400,
       "Entries": [
-        "c5000_Burning Monk_Naginata_Normal Position_Mushi Radiation_Parent 1 -- c5000_破戒僧_薙刀_通常構え_蟲放射_親1"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000401,
       "Entries": [
-        "c5000_Burning Monk_Naginata_Normal Position_Mushi Radiation_Parent 2 -- c5000_破戒僧_薙刀_通常構え_蟲放射_親2"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000402,
       "Entries": [
-        "c5000_Burning Monk_Naginata_Normal Position_Mushi Radiation_Parent 3 -- c5000_破戒僧_薙刀_通常構え_蟲放射_親3"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000408,
       "Entries": [
-        "c5000_Burning Monk_Naginata_Normal Position_Mushi Radiation_Child -- c5000_破戒僧_薙刀_通常構え_蟲放射_子"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000409,
       "Entries": [
-        "c5000_Burning Monk_Naginata_Normal Position_Mushi Radiation_Grandson -- c5000_破戒僧_薙刀_通常構え_蟲放射_孫"
+        "Corrupted Monk"
       ]
     },
     {
       "ID": 50000980,
       "Entries": [
-        "c5000_Burning Monk_Dummy Bullet_Dangerous Attack -- c5000_破戒僧_ダミー弾丸_危険な攻撃"
+        "Corrupted Monk - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50000981,
       "Entries": [
-        "c5000_Burning Monk_Dummy Bullet_Dangerous Attack_Running Bottom -- c5000_破戒僧_ダミー弾丸_危険な攻撃_走り込み下段"
+        "Corrupted Monk - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50100100,
       "Entries": [
-        "c5010_Large snake_Snow splash_For grounding judgment -- c5010_大蛇_雪飛沫_接地判定用"
+        "Great Serpent - Snow"
       ]
     },
     {
       "ID": 50100101,
       "Entries": [
-        "c5010_Large snake_Snow splash_Main body -- c5010_大蛇_雪飛沫_本体"
+        "Great Serpent - Snow"
       ]
     },
     {
       "ID": 50100990,
       "Entries": [
-        "c5010_Large Snake_Dummy Bullet_Dangerous Attack -- c5010_大蛇_ダミー弾丸_危険な攻撃"
+        "Great Serpent - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50102800,
       "Entries": [
-        "c5010_Large snake_Stuck vibration_Suspension bridge -- c5010_大蛇_足止め振動_吊り橋"
+        "Great Serpent"
       ]
     },
     {
       "ID": 50103930,
       "Entries": [
-        "c5010_Large snake_Geyser_Poisonous fog_Spout -- c5010_大蛇_間欠泉_毒霧_噴出"
+        "Great Serpent - Cave Poison Mist"
       ]
     },
     {
       "ID": 50103940,
       "Entries": [
-        "c5010_Large snake_Geyser_Poison fog_Stay -- c5010_大蛇_間欠泉_毒霧_滞留"
+        "Great Serpent - Cave Poison Mist"
       ]
     },
     {
       "ID": 50200101,
       "Entries": [
-        "c5020_Akaoni_Earthquake [Searching enemy] 1 -- c5020_赤鬼_地震【索敵】1"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200102,
       "Entries": [
-        "c5020_Akaoni_Earthquake [Prediction] 1 -- c5020_赤鬼_地震【予兆】1"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200103,
       "Entries": [
-        "c5020_Red Demon_Parent_Remains -- c5020_赤鬼_親_残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200104,
       "Entries": [
-        "c5020_ Red Demon [Searching enemy] 2 -- c5020_赤鬼【索敵】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200105,
       "Entries": [
-        "c5020_ Red Demon [Sign] 2 -- c5020_赤鬼【予兆】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200106,
       "Entries": [
-        "c5020_Akaoni_Parent_Birth a child -- c5020_赤鬼_親_子を産む"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200107,
       "Entries": [
-        "c5020_Akaoni_Child_Remains -- c5020_赤鬼_子_残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200108,
       "Entries": [
-        "c5020_ Red Demon [Searching enemy] 3 -- c5020_赤鬼【索敵】3"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200109,
       "Entries": [
-        "c5020_ Red Demon [Sign] 3 -- c5020_赤鬼【予兆】3"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200110,
       "Entries": [
-        "c5020_Akaoni_Parent_Grandchildren -- c5020_赤鬼_親_孫を産む子を産む"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200111,
       "Entries": [
-        "c5020_Akaoni_Child_Grandchild -- c5020_赤鬼_子_孫を産む"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200112,
       "Entries": [
-        "c5020_Red Demon_Grandson_Remains -- c5020_赤鬼_孫_残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200560,
       "Entries": [
-        "c5020_Akaoni_Earthquake [Searching enemy] 1 -- c5020_赤鬼_地震【索敵】1"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200561,
       "Entries": [
-        "c5020_Akaoni_Earthquake [Prediction] 1 -- c5020_赤鬼_地震【予兆】1"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200562,
       "Entries": [
-        "c5020_Red Demon_Parent_Remains -- c5020_赤鬼_親_残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200563,
       "Entries": [
-        "c5020_ Red Demon [Searching enemy] 2 -- c5020_赤鬼【索敵】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200564,
       "Entries": [
-        "c5020_ Red Demon [Sign] 2 -- c5020_赤鬼【予兆】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200565,
       "Entries": [
-        "c5020_Akaoni_Parent_Birth a child -- c5020_赤鬼_親_子を産む"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200566,
       "Entries": [
-        "c5020_Akaoni_Child_Remains -- c5020_赤鬼_子_残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200600,
       "Entries": [
-        "c5020_ Red Demon [Searching enemy] 2 -- c5020_赤鬼【索敵】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200601,
       "Entries": [
-        "c5020_ Red Demon [Sign] 2 -- c5020_赤鬼【予兆】2"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200602,
       "Entries": [
-        "c5020_Akaoni_Parent remains -- c5020_赤鬼_親\u3000残る"
+        "Chained Ogre - Breakable Object Attack"
       ]
     },
     {
       "ID": 50200980,
       "Entries": [
-        "c5020_Akaoni_Dummy bullet_Dangerous attack sign Grab both hands on the spot -- c5020_赤鬼_ダミー弾丸_危険な攻撃予兆\u3000その場両手掴み"
+        "Chained Ogre - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50200981,
       "Entries": [
-        "c5020_Red Demon_Dummy Bullet_Dangerous Attack Prediction Medium-range two-handed grab -- c5020_赤鬼_ダミー弾丸_危険な攻撃予兆\u3000中距離両手掴み"
+        "Chained Ogre - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50200982,
       "Entries": [
-        "c5020_Akaoni_Dummy bullet_Dangerous attack sign -- c5020_赤鬼_ダミー弾丸_危険な攻撃予兆\u3000遠距離両手掴み"
+        "Chained Ogre - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50200983,
       "Entries": [
-        "c5020_Red Demon_Dummy Bullet_Dangerous Attack Prediction Medium Range Tackle -- c5020_赤鬼_ダミー弾丸_危険な攻撃予兆\u3000中距離タックル"
+        "Chained Ogre - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50200984,
       "Entries": [
-        "c5020_Red Demon_Dummy Bullet_Dangerous Attack Prediction Long Range Tackle -- c5020_赤鬼_ダミー弾丸_危険な攻撃予兆\u3000遠距離タックル"
+        "Chained Ogre - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50310110,
       "Entries": [
-        "c5031_Straw doll bug_Venom -- c5031_藁人形の蟲_毒液"
+        ""
       ]
     },
     {
       "ID": 50500071,
       "Entries": [
-        "c5050_Nishikigoi_Rampaging_Underwater tornado -- c5050_錦鯉_暴れる_水中竜巻"
+        "Great Colored Carp - Attack"
       ]
     },
     {
       "ID": 50500900,
       "Entries": [
-        "c5050_Nishikigoi_Collision detection sonar -- c5050_錦鯉_衝突検出ソナー"
+        "Great Colored Carp - Collision Detection"
       ]
     },
     {
       "ID": 50500901,
       "Entries": [
-        "c5050_Nishikigoi_Collision detection sonar_Reflection -- c5050_錦鯉_衝突検出ソナー_反射"
+        "Great Colored Carp - Collision Detection"
       ]
     },
     {
       "ID": 50500980,
       "Entries": [
-        "c5050_Nishikigoi_Dummy bullet_Dangerous attack sign_100m -- c5050_錦鯉_ダミー弾丸_危険な攻撃予兆_100m"
+        "Great Colored Carp - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50500981,
       "Entries": [
-        "c5050_Nishikigoi_Dummy bullet_Dangerous attack sign_30m -- c5050_錦鯉_ダミー弾丸_危険な攻撃予兆_30m"
+        "Great Colored Carp - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50600131,
       "Entries": [
-        "c5060: Chief of Ninja Army_Somersault Shuriken -- c5060：忍軍の長_宙返り手裏剣"
+        "Owl - Kickoff Shuriken"
       ]
     },
     {
       "ID": 50600150,
       "Entries": [
-        "c5060: Chief of Ninja Army_Shuriken -- c5060：忍軍の長_手裏剣"
+        "Owl - Shuriken"
       ]
     },
     {
       "ID": 50600160,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent A -- c5060：忍軍の長_爆竹親A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600161,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent B -- c5060：忍軍の長_爆竹親B"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600162,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent C -- c5060：忍軍の長_爆竹親C"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600163,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent D -- c5060：忍軍の長_爆竹親D"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600164,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker A -- c5060：忍軍の長_爆竹子A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600165,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker B -- c5060：忍軍の長_爆竹子B"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600166,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker C -- c5060：忍軍の長_爆竹子C"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600167,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker D -- c5060：忍軍の長_爆竹子D"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600168,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Grandson -- c5060：忍軍の長_爆竹孫"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600190,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent A -- c5060：忍軍の長_爆竹親A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600195,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker A -- c5060：忍軍の長_爆竹子A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600200,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Grandson_Firecracker Explosion &amp; Damage -- c5060：忍軍の長_爆竹孫_爆竹破裂＆ダメージ"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600201,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Son_Flame -- c5060：忍軍の長_爆竹孫_炎"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50600250,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy A -- c5060：忍軍の長_爆炎親ダミーA"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600251,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy B -- c5060：忍軍の長_爆炎親ダミーB"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600252,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy C -- c5060：忍軍の長_爆炎親ダミーC"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600253,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy D -- c5060：忍軍の長_爆炎親ダミーD"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600254,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy E -- c5060：忍軍の長_爆炎親ダミーE"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600255,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosive Child Dummy A -- c5060：忍軍の長_爆炎子ダミーA"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600256,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy B -- c5060：忍軍の長_爆炎子ダミーB"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600257,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy C -- c5060：忍軍の長_爆炎子ダミーC"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600258,
       "Entries": [
-        "c5060: Ninja Army Chief_Explosion Child Dummy D -- c5060：忍軍の長_爆炎子ダミーD"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600259,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy E -- c5060：忍軍の長_爆炎子ダミーE"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600260,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Grandson_Explosion of Firecracker -- c5060：忍軍の長_爆炎孫_爆竹破裂"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600261,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Grandson_Flame -- c5060：忍軍の長_爆炎孫_炎"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50600700,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Parent -- c5060：忍軍の長_毒玉投擲A_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600701,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲A_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600702,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲A_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600710,
       "Entries": [
-        "c5060: Chief of Ninja Army_Recovery Sealed Throwing_Parent -- c5060：忍軍の長_回復封じ投擲_親"
+        "Owl - Heal Block"
       ]
     },
     {
       "ID": 50600711,
       "Entries": [
-        "c5060: Chief of Ninja Army_Recovery Sealed Throwing_Child -- c5060：忍軍の長_回復封じ投擲_子"
+        "Owl - Heal Block"
       ]
     },
     {
       "ID": 50600720,
       "Entries": [
-        "c5060: Chief of Ninja Army_Smoke Screen -- c5060：忍軍の長_煙幕"
+        "Owl - Smoke Bomb"
       ]
     },
     {
       "ID": 50600721,
       "Entries": [
-        "c5060: Chief of Ninja Army_Smoke Screen_Dazzle -- c5060：忍軍の長_煙幕_目くらまし"
+        "Owl - Smoke Bomb"
       ]
     },
     {
       "ID": 50600730,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Parent -- c5060：忍軍の長_毒玉投擲B_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600731,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲B_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600732,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲B_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600740,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Parent -- c5060：忍軍の長_毒玉投擲C_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600741,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲C_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600742,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲C_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50600980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Lower fall down -- ダミー弾丸_危険な攻撃予兆_下段倒れ込み薙ぎ払い"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50600981,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Firecracker Powder A -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆竹粉A"
+        "Owl - Firecracker Powder"
       ]
     },
     {
       "ID": 50600982,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Firecracker Powder B -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆竹粉B"
+        "Owl - Firecracker Powder"
       ]
     },
     {
       "ID": 50600983,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Explosion Powder A -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆炎粉A"
+        "Owl - Firecracker Explosion Powder"
       ]
     },
     {
       "ID": 50600984,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Explosion Powder B -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆炎粉B"
+        "Owl - Firecracker Explosion Powder"
       ]
     },
     {
       "ID": 50600985,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Zigzag Lower dive slash from the left -- ダミー弾丸_危険な攻撃予兆_ジグザグ左からの下段飛び込み斬り"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50600986,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Left strong flow and turning from collapse Lower row -- ダミー弾丸_危険な攻撃予兆_左強流され崩れからの振り向き下段"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50600987,
       "Entries": [
-        "Dummy bullet _ dangerous attack sign _ stab -- ダミー弾丸_危険な攻撃予兆_忍刺し"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50600990,
       "Entries": [
-        "c5060_Ninja Army Chief_Warp SFX -- c5060_忍軍の長_ワープSFX"
+        "Owl - Warp SFX"
       ]
     },
     {
       "ID": 50601131,
       "Entries": [
-        "c5060: Chief of Ninja Army_Somersault Shuriken -- c5060：忍軍の長_宙返り手裏剣"
+        "Owl - Kickoff Shuriken"
       ]
     },
     {
       "ID": 50601150,
       "Entries": [
-        "c5060: Chief of Ninja Army_Shuriken -- c5060：忍軍の長_手裏剣"
+        "Owl - Shuriken"
       ]
     },
     {
       "ID": 50601160,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent A -- c5060：忍軍の長_爆竹親A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601161,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent B -- c5060：忍軍の長_爆竹親B"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601162,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent C -- c5060：忍軍の長_爆竹親C"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601163,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent D -- c5060：忍軍の長_爆竹親D"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601164,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker A -- c5060：忍軍の長_爆竹子A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601165,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker B -- c5060：忍軍の長_爆竹子B"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601166,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker C -- c5060：忍軍の長_爆竹子C"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601167,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker D -- c5060：忍軍の長_爆竹子D"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601168,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Grandson -- c5060：忍軍の長_爆竹孫"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601190,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Parent A -- c5060：忍軍の長_爆竹親A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601195,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker A -- c5060：忍軍の長_爆竹子A"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601200,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Grandson_Firecracker Explosion &amp; Damage -- c5060：忍軍の長_爆竹孫_爆竹破裂＆ダメージ"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601201,
       "Entries": [
-        "c5060: Chief of Ninja Army_Firecracker Son_Flame -- c5060：忍軍の長_爆竹孫_炎"
+        "Owl - Firecracker"
       ]
     },
     {
       "ID": 50601250,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy A -- c5060：忍軍の長_爆炎親ダミーA"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601251,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy B -- c5060：忍軍の長_爆炎親ダミーB"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601252,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy C -- c5060：忍軍の長_爆炎親ダミーC"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601253,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy D -- c5060：忍軍の長_爆炎親ダミーD"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601254,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Parent Dummy E -- c5060：忍軍の長_爆炎親ダミーE"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601255,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosive Child Dummy A -- c5060：忍軍の長_爆炎子ダミーA"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601256,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy B -- c5060：忍軍の長_爆炎子ダミーB"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601257,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy C -- c5060：忍軍の長_爆炎子ダミーC"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601258,
       "Entries": [
-        "c5060: Ninja Army Chief_Explosion Child Dummy D -- c5060：忍軍の長_爆炎子ダミーD"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601259,
       "Entries": [
-        "c5060: Chief of Ninja Army_Bomb Flame Child Dummy E -- c5060：忍軍の長_爆炎子ダミーE"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601260,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Grandson_Explosion of Firecracker -- c5060：忍軍の長_爆炎孫_爆竹破裂"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601261,
       "Entries": [
-        "c5060: Chief of Ninja Army_Explosion Grandson_Flame -- c5060：忍軍の長_爆炎孫_炎"
+        "Owl - Firecracker Explosion Attack"
       ]
     },
     {
       "ID": 50601700,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Parent -- c5060：忍軍の長_毒玉投擲A_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601701,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲A_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601702,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing A_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲A_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601710,
       "Entries": [
-        "c5060: Chief of Ninja Army_Recovery Sealed Throwing_Parent -- c5060：忍軍の長_回復封じ投擲_親"
+        "Owl - Heal Block"
       ]
     },
     {
       "ID": 50601711,
       "Entries": [
-        "c5060: Chief of Ninja Army_Recovery Sealed Throwing_Child -- c5060：忍軍の長_回復封じ投擲_子"
+        "Owl - Heal Block"
       ]
     },
     {
       "ID": 50601720,
       "Entries": [
-        "c5060: Chief of Ninja Army_Smoke Screen -- c5060：忍軍の長_煙幕"
+        "Owl - Smoke Bomb"
       ]
     },
     {
       "ID": 50601721,
       "Entries": [
-        "c5060: Chief of Ninja Army_Smoke Screen_Dazzle -- c5060：忍軍の長_煙幕_目くらまし"
+        "Owl - Smoke Bomb"
       ]
     },
     {
       "ID": 50601730,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Parent -- c5060：忍軍の長_毒玉投擲B_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601731,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲B_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601732,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing B_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲B_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601740,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Parent -- c5060：忍軍の長_毒玉投擲C_親"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601741,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Poison Floor Drop -- c5060：忍軍の長_毒玉投擲C_毒床落とし"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601742,
       "Entries": [
-        "c5060: Chief of Ninja Army_Poison Ball Throwing C_Poison Bed Installation -- c5060：忍軍の長_毒玉投擲C_毒床設置"
+        "Owl - Poison Throw"
       ]
     },
     {
       "ID": 50601980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Lower fall down -- ダミー弾丸_危険な攻撃予兆_下段倒れ込み薙ぎ払い"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50601981,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Firecracker Powder A -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆竹粉A"
+        "Owl - Firecracker Powder"
       ]
     },
     {
       "ID": 50601982,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Firecracker Powder B -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆竹粉B"
+        "Owl - Firecracker Powder"
       ]
     },
     {
       "ID": 50601983,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Explosion Powder A -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆炎粉A"
+        "Owl - Firecracker Explosion Powder"
       ]
     },
     {
       "ID": 50601984,
       "Entries": [
-        "c5060: Ninja Army Chief_Effect Dummy Bullet_Explosion Powder B -- c5060：忍軍の長_エフェクト用ダミー弾丸_爆炎粉B"
+        "Owl - Firecracker Explosion Powder"
       ]
     },
     {
       "ID": 50601985,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Zigzag Lower dive slash from the left -- ダミー弾丸_危険な攻撃予兆_ジグザグ左からの下段飛び込み斬り"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50601986,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Left strong flow and turning from collapse Lower row -- ダミー弾丸_危険な攻撃予兆_左強流され崩れからの振り向き下段"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50601987,
       "Entries": [
-        "Dummy bullet _ dangerous attack sign _ stab -- ダミー弾丸_危険な攻撃予兆_忍刺し"
+        "Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50601990,
       "Entries": [
-        "c5060_Ninja Army Chief_Warp SFX -- c5060_忍軍の長_ワープSFX"
+        "Owl - Warp SFX"
       ]
     },
     {
       "ID": 50700100,
       "Entries": [
-        "c5070_long owl_warp sign -- c5070_長の梟_ワープ予兆"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700600,
       "Entries": [
-        "c5070_long owl_sign of straight attack -- c5070_長の梟_直進攻撃の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700610,
       "Entries": [
-        "c5070_long owl_left curve attack signal -- c5070_長の梟_左カーブ攻撃の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700620,
       "Entries": [
-        "c5070_long owl_right curve attack signal -- c5070_長の梟_右カーブ攻撃の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700630,
       "Entries": [
-        "c5070_long owl_sign of diagonal rise -- c5070_長の梟_斜め上昇の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700640,
       "Entries": [
-        "c5070_Owl of the length_Sign of lower rush attack -- c5070_長の梟_下段突進攻撃の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700650,
       "Entries": [
-        "c5070_long owl_bullet attack signal -- c5070_長の梟_弾丸攻撃の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700660,
       "Entries": [
-        "c5070_long owl_lateral movement signal -- c5070_長の梟_横移動の合図"
+        "Owl's Pet Owl"
       ]
     },
     {
       "ID": 50700980,
       "Entries": [
-        "c5070_long owl_dummy bullet_dangerous attack -- c5070_長の梟_ダミー弾丸_危険な攻撃"
+        "Owl's Pet Owl - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50800930,
       "Entries": [
-        "c5080_Cavalry Warrior_Running Collision Detection Bullet 1 -- c5080_騎馬武者_走行中衝突判定用弾丸１"
+        "Gyoubu - Collision Detection"
       ]
     },
     {
       "ID": 50800931,
       "Entries": [
-        "c5080_Cavalry Warrior_Running Collision Detection Bullet 1 -- c5080_騎馬武者_走行中衝突判定用弾丸１"
+        "Gyoubu - Collision Detection"
       ]
     },
     {
       "ID": 50800980,
       "Entries": [
-        "c5080_Cavalry Warrior_Dummy Bullet_Dangerous Attack Prediction_Near -- c5080_騎馬武者_ダミー弾丸_危険な攻撃予兆_近"
+        "Gyoubu - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50800981,
       "Entries": [
-        "c5080_Cavalry Warrior_Dummy Bullet_Dangerous Attack Prediction_Far -- c5080_騎馬武者_ダミー弾丸_危険な攻撃予兆_遠"
+        "Gyoubu - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50900160,
       "Entries": [
-        "c5090_butterfly_diffusion needle throwing_ground -- c5090_お蝶_拡散針投げ_地上"
+        "Lady Butterfly - Kunai"
       ]
     },
     {
       "ID": 50900170,
       "Entries": [
-        "c5090_butterfly_backstep needle throw -- c5090_お蝶_バックステップ針投げ"
+        "Lady Butterfly - Kunai"
       ]
     },
     {
       "ID": 50900100,
       "Entries": [
-        "c5090_Butterfly_Double needle throwing Steel wire jumping -- c5090_お蝶_二連針投げ鋼線飛び乗り"
+        "Lady Butterfly - Kunai"
       ]
     },
     {
       "ID": 50900300,
       "Entries": [
-        "c5090_Butterfly_Diffusion needle throw_On steel wire -- c5090_お蝶_拡散針投げ_鋼線上"
+        "Lady Butterfly - Kunai"
       ]
     },
     {
       "ID": 50900310,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Short life -- c5090_お蝶_HU後時間差弾丸_親_寿命短い"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900311,
       "Entries": [
-        "c5091_Butterfly_HU Time difference bullet_Child_Short life -- c5091_お蝶_HU後時間差弾丸_子_寿命短い"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900320,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Life is normal -- c5090_お蝶_HU後時間差弾丸_親_寿命普通"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900321,
       "Entries": [
-        "c5091_Butterfly_HU Time difference bullet_Child_Life Normal -- c5091_お蝶_HU後時間差弾丸_子_寿命普通"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900330,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Long life -- c5090_お蝶_HU後時間差弾丸_親_寿命長い"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900331,
       "Entries": [
-        "c5091_Butterfly_HU Time difference bullet_Child_Long life -- c5091_お蝶_HU後時間差弾丸_子_寿命長い"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900420,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Needle kick for continuous attack_Second stage -- c5090_お蝶_HU後時間差弾丸_親_針蹴り連撃用_二段目"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900421,
       "Entries": [
-        "c5091_Butterfly_HU Time difference bullet_Child_Needle kick For continuous attack -- c5091_お蝶_HU後時間差弾丸_子_針蹴り連撃用"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900430,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Needle kick for continuous attack_First stage -- c5090_お蝶_HU後時間差弾丸_親_針蹴り連撃用_一段目"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900520,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Diffusion needle throwing_Second stage -- c5090_お蝶_HU後時間差弾丸_親_拡散針投げ用_二段目"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900521,
       "Entries": [
-        "c5091_Butterfly_HU Time difference bullet_Child_Diffusion needle throwing -- c5091_お蝶_HU後時間差弾丸_子_拡散針投げ用"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900530,
       "Entries": [
-        "c5090_Butterfly_HU Time difference bullet_Parent_Diffusion needle throwing_First stage -- c5090_お蝶_HU後時間差弾丸_親_拡散針投げ用_一段目"
+        "Lady Butterfly - Butterflies"
       ]
     },
     {
       "ID": 50900920,
       "Entries": [
-        "c5090_Butterfly_Phantom activation -- c5090_お蝶_幻術発動"
+        "Lady Butterfly - Illusion Activation"
       ]
     },
     {
       "ID": 50900921,
       "Entries": [
-        "c5090_butterfly_butterfly change -- c5090_お蝶_蝶々変化"
+        "Lady Butterfly - Release Illusion"
       ]
     },
     {
       "ID": 50900930,
       "Entries": [
-        "c5090_Butterfly_Forced release when beam falls -- c5090_お蝶_梁落下時強制解除"
+        "Lady Butterfly - Release Illusion On Death"
       ]
     },
     {
       "ID": 50900980,
       "Entries": [
-        "c5090_Butterfly_Dummy bullet_Dangerous attack sign -- c5090_お蝶_ダミー弾丸_危険な攻撃予兆"
+        "Lady Butterfly - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50900981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Strong lower slash -- ダミー弾丸_危険な攻撃予兆_強下段斬り抜け"
+        "Lady Butterfly - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50900982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Needle &amp; kick continuous attack final stage -- ダミー弾丸_危険な攻撃予兆_針&蹴り連撃最終段"
+        "Lady Butterfly - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50900983,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Lower slash from kicking -- ダミー弾丸_危険な攻撃予兆_蹴り弾かれからの下段斬り抜け"
+        "Lady Butterfly - Perilous Attack Warning"
       ]
     },
     {
       "ID": 50900984,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Steel wire → Fall throw start _ Start -- ダミー弾丸_危険な攻撃予兆_鋼線→落下投げ始動_開始"
+        "Lady Butterfly - Perilous Attack Warning"
       ]
     },
     {
       "ID": 51000280,
       "Entries": [
-        "c5100_Yasha Ape_Skip the skull from your mouth -- c5100_夜叉猿_髑髏を口から飛ばす"
+        "Guardian Ape"
       ]
     },
     {
       "ID": 51000290,
       "Entries": [
-        "c5100_Yasha Ape_Dung throwing -- c5100_夜叉猿_糞投げ"
+        "Guardian Ape - Poo Throw"
       ]
     },
     {
       "ID": 51000291,
       "Entries": [
-        "c5100_Yasha Ape_Dung Throw_Go underwater -- c5100_夜叉猿_糞投げ_水中を進む"
+        "Guardian Ape - Poo Throw Underwater"
       ]
     },
     {
       "ID": 51000310,
       "Entries": [
-        "c5100_Yasha Monkey_Flatulence_ (Tentative) Valley Enemy_Cannon_Fire -- c5100_夜叉猿_屁_（仮）谷敵_大砲_発射"
+        "Guardian Ape - Fart"
       ]
     },
     {
       "ID": 51000311,
       "Entries": [
-        "c5100_Yasha Ape_Flatulence_Remains -- c5100_夜叉猿_屁_残る"
+        "Guardian Ape - Fart"
       ]
     },
     {
       "ID": 51000330,
       "Entries": [
-        "c5100_Yasha Ape_Sprinkling feces -- c5100_夜叉猿_糞ばら撒き"
+        "Guardian Ape - Poo Remains"
       ]
     },
     {
       "ID": 51000331,
       "Entries": [
-        "c5100_Yasha Ape_Sprinkling feces_Impact_Bouncing -- c5100_夜叉猿_糞ばら撒き_着弾_跳ねる"
+        "Guardian Ape - Poo Remains"
       ]
     },
     {
       "ID": 51000332,
       "Entries": [
-        "c5100_Yasha Ape_Sprinkling feces_Landing_Falling -- c5100_夜叉猿_糞ばら撒き_着弾_落ちる"
+        "Guardian Ape - Poo Remains"
       ]
     },
     {
       "ID": 51000333,
       "Entries": [
-        "c5100_Yasha Ape_Sprinkling feces_Remaining -- c5100_夜叉猿_糞ばら撒き_残る"
+        "Guardian Ape - Poo Remains"
       ]
     },
     {
       "ID": 51000480,
       "Entries": [
-        "c5100_Yasha Ape_Dummy bullet_Dangerous attack sign HU -- c5100_夜叉猿_ダミー弾丸_危険な攻撃予兆 HU前"
+        "Guardian Ape - Perilous Attack Warning"
       ]
     },
     {
       "ID": 51000580,
       "Entries": [
-        "c5100_Yasha Ape_Roar -- c5100_夜叉猿_咆哮"
+        "Guardian Ape - Roar"
       ]
     },
     {
       "ID": 51000581,
       "Entries": [
-        "c5100_Yasha Ape_Roar_Afterglow -- c5100_夜叉猿_咆哮_余韻"
+        "Guardian Ape - Roar Remainings"
       ]
     },
     {
       "ID": 51000630,
       "Entries": [
-        "c5100_Yasha Ape_Weak Roar -- c5100_夜叉猿_弱咆哮"
+        "Guardian Ape - Summon Wife"
       ]
     },
     {
       "ID": 51000900,
       "Entries": [
-        "c5100_Yasha Ape_Bride Monkey Command Bullet -- c5100_夜叉猿_嫁猿命令用弾丸"
+        "Guardian Ape - Wife Command"
       ]
     },
     {
       "ID": 51000980,
       "Entries": [
-        "c5100_Yasha Ape_Dummy Bullet_Dangerous Attack Prediction After HU -- c5100_夜叉猿_ダミー弾丸_危険な攻撃予兆 HU後"
+        "Guardian Ape - Perilous Attack Warning"
       ]
     },
     {
       "ID": 52000500,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Appearance -- c5200_人魚竜_落雷_出現"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000501,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Move -- c5200_人魚竜_落雷_移動"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000502,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Fall -- c5200_人魚竜_落雷_落下"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000503,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Attack -- c5200_人魚竜_落雷_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000504,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Effect -- c5200_人魚竜_落雷_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000505,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Propagation -- c5200_人魚竜_落雷_伝播"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000510,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Appearance -- c5200_人魚竜_落雷(雷返し用)_出現"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000511,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Move -- c5200_人魚竜_落雷(雷返し用)_移動"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000512,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 0 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ0"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000513,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 1 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ1"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000514,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 2 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ2"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000515,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 3 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ3"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000516,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 4 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ4"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000517,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 5 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ5"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000518,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 6 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ6"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000519,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 7 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ7"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000520,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 8 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ8"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000521,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike (for lightning strike) _Signal loop 9 -- c5200_人魚竜_落雷(雷返し用)_予兆ループ9"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000530,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Appearance -- c5200_人魚竜_落雷_出現"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000531,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Move -- c5200_人魚竜_落雷_移動"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000532,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Fall -- c5200_人魚竜_落雷_落下"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000533,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Attack -- c5200_人魚竜_落雷_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000534,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Effect -- c5200_人魚竜_落雷_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000535,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Propagation -- c5200_人魚竜_落雷_伝播"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000540,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Appearance -- c5200_人魚竜_落雷_出現"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000541,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Move -- c5200_人魚竜_落雷_移動"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000542,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Fall -- c5200_人魚竜_落雷_落下"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000543,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Attack -- c5200_人魚竜_落雷_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000544,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Effect -- c5200_人魚竜_落雷_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000545,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_Propagation -- c5200_人魚竜_落雷_伝播"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000550,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_PC Direct Hit_Effect -- c5200_人魚竜_落雷_PC直撃_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000555,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Strike_PC Direct Hit_Attack -- c5200_人魚竜_落雷_PC直撃_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000600,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Weak Lightning_Sign -- c5200_人魚竜_ピンポイント弱落雷_予兆"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000601,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Weak Lightning_Attack -- c5200_人魚竜_ピンポイント弱落雷_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000602,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Weak Lightning_Effect -- c5200_人魚竜_ピンポイント弱落雷_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000603,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Weak Lightning_Predictive Effect -- c5200_人魚竜_ピンポイント弱落雷_予兆エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000610,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Lightning Strike_Sign -- c5200_人魚竜_ピンポイント強落雷_予兆"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000611,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Lightning Strike_Attack -- c5200_人魚竜_ピンポイント強落雷_攻撃"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000612,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Lightning Strike_Effect -- c5200_人魚竜_ピンポイント強落雷_エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000613,
       "Entries": [
-        "c5200_Mermaid Dragon_Pinpoint Lightning Strike_Predictive Effect -- c5200_人魚竜_ピンポイント強落雷_予兆エフェクト"
+        "Divine Dragon - Lightning"
       ]
     },
     {
       "ID": 52000620,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Vertical_Parent -- c5200_人魚竜_遠距離攻撃_剣閃光波_縦_親"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000629,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Vertical_Child -- c5200_人魚竜_遠距離攻撃_剣閃光波_縦_子"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000630,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Horizontal_Parent -- c5200_人魚竜_遠距離攻撃_剣閃光波_横_親"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000639,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Horizontal_Child -- c5200_人魚竜_遠距離攻撃_剣閃光波_横_子"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000640,
       "Entries": [
-        "c5200_Mermaid Dragon_Full Range Attack -- c5200_人魚竜_全範囲攻撃"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000650,
       "Entries": [
-        "c5200_Mermaid Dragon_Lower Range Attack -- c5200_人魚竜_下段範囲攻撃"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000660,
       "Entries": [
-        "c5200_Mermaid Dragon_Storm Jump_Lightning Omen 0 -- c5200_人魚竜_ストームジャンプ_雷予兆0"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000661,
       "Entries": [
-        "c5200_Mermaid Dragon_Storm Jump_Lightning Omen 1 -- c5200_人魚竜_ストームジャンプ_雷予兆1"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000665,
       "Entries": [
-        "c5200_Mermaid Dragon_Storm Jump_Updraft -- c5200_人魚竜_ストームジャンプ_上昇気流"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000670,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Kasaya_Parent -- c5200_人魚竜_遠距離攻撃_剣閃光波_袈裟_親"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000679,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Kasaya_Child -- c5200_人魚竜_遠距離攻撃_剣閃光波_袈裟_子"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000680,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Reverse Kasaya_Parent -- c5200_人魚竜_遠距離攻撃_剣閃光波_逆袈裟_親"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000689,
       "Entries": [
-        "c5200_Mermaid Dragon_Distance Attack_Sword Flash Wave_Reverse Kasaya_Child -- c5200_人魚竜_遠距離攻撃_剣閃光波_逆袈裟_子"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000700,
       "Entries": [
-        "c5200_Mermaid Dragon_Slamming effect bullet -- c5200_人魚竜_叩きつけエフェクト弾"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000701,
       "Entries": [
-        "c5200_Mermaid Dragon_Slamming effect bullet -- c5200_人魚竜_叩きつけエフェクト弾"
+        "Divine Dragon - Sword Projectile"
       ]
     },
     {
       "ID": 52000800,
       "Entries": [
-        "c5200_Mermaid Dragon_Updraft Bullet -- c5200_人魚竜_上昇気流弾丸"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000801,
       "Entries": [
-        "c5200_Mermaid Dragon_Sign of lightning strike during updraft -- c5200_人魚竜_上昇気流中落雷予兆"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000820,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning Return_PC Blow-off Explosion -- c5200_人魚竜_雷返し_PC吹っ飛び爆発"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000830,
       "Entries": [
-        "c5200_Mermaid Dragon_Strong Wind_Blows Off After PC -- c5200_人魚竜_強風_PC後吹っ飛び"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000850,
       "Entries": [
-        "c5200_Mermaid Dragon_Lightning strike sign deleted -- c5200_人魚竜_落雷予兆削除"
+        "Divine Dragon - Storm Jump"
       ]
     },
     {
       "ID": 52000899,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Updraft Direct -- c5200_人魚竜_Dbg_上昇気流直出し"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000910,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Storm Wall_Before -- c5200_人魚竜_Dbg_嵐の壁_前"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000911,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Storm Wall_After -- c5200_人魚竜_Dbg_嵐の壁_後"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000912,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Storm Wall_Deleted -- c5200_人魚竜_Dbg_嵐の壁_削除"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000913,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Storm Wall_Fall -- c5200_人魚竜_Dbg_嵐の壁_落下"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000914,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Storm Wall_Body -- c5200_人魚竜_Dbg_嵐の壁_本体"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000920,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Danger mark -- c5200_人魚竜_Dbg_危険マークを出す"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000930,
       "Entries": [
-        "c5200_Mermaid Dragon_Dbg_Updraft_Necessary -- c5200_人魚竜_Dbg_上昇気流_必中"
+        "Divine Dragon"
       ]
     },
     {
       "ID": 52000980,
       "Entries": [
-        "c5200_Mermaid Dragon_Dummy Bullet_Dangerous Attack Prediction -- c5200_人魚竜_ダミー弾丸_危険な攻撃予兆"
+        "Divine Dragon - Perilous Attack"
       ]
     },
     {
       "ID": 53000140,
       "Entries": [
-        "c5300_Okina Dragon_Continuous magic bullet -- c5300_翁竜_連続魔法弾"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53000150,
       "Entries": [
-        "c5300_Okina Dragon_Induced magic bullet -- c5300_翁竜_誘導魔法弾"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53000160,
       "Entries": [
-        "c5300_Okinayu_Coughing_Parent -- c5300_翁竜_大咳き込み_親"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53000180,
       "Entries": [
-        "c5300_Okina Dragon_Big coughing_Child -- c5300_翁竜_大咳き込み_子"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53100210,
       "Entries": [
-        "c5310_tentacle_attack sign -- c5310_触手_攻撃予兆"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100600,
       "Entries": [
-        "c5310_Tentacle_Lightning strike_Omen bullet_SFX dummy 1 -- c5310_触手_落雷_予兆弾丸_SFX用ダミー1"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100610,
       "Entries": [
-        "c5310_Tentacle_Lightning strike_Omen bullet_SFX dummy 2 -- c5310_触手_落雷_予兆弾丸_SFX用ダミー2"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100620,
       "Entries": [
-        "c5310_Tentacle_Lightning strike_Dummy for erasing signs -- c5310_触手_落雷_予兆消す用ダミー"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100630,
       "Entries": [
-        "c5310_Tentacle_Lightning strike_Dummy B for erasing signs -- c5310_触手_落雷_予兆消す用ダミーB"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100640,
       "Entries": [
-        "c5310_tentacles_updraft bullets -- c5310_触手_上昇気流弾丸"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100650,
       "Entries": [
-        "c5310_tentacles_lightning strikes_body bullets -- c5310_触手_落雷_本体弾丸"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100661,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 1 -- c5310_触手_落雷_予兆弾丸_出現1"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100662,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 2 -- c5310_触手_落雷_予兆弾丸_出現2"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100663,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 3 -- c5310_触手_落雷_予兆弾丸_出現3"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100664,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 4 -- c5310_触手_落雷_予兆弾丸_出現4"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100665,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 5 -- c5310_触手_落雷_予兆弾丸_出現5"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100666,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 6 -- c5310_触手_落雷_予兆弾丸_出現6"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100667,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 7 -- c5310_触手_落雷_予兆弾丸_出現7"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100668,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 8 -- c5310_触手_落雷_予兆弾丸_出現8"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100669,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_appearance 9 -- c5310_触手_落雷_予兆弾丸_出現9"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100671,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 1 -- c5310_触手_落雷_予兆弾丸_発射1"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100672,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 2 -- c5310_触手_落雷_予兆弾丸_発射2"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100673,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 3 -- c5310_触手_落雷_予兆弾丸_発射3"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100674,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 4 -- c5310_触手_落雷_予兆弾丸_発射4"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100675,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 5 -- c5310_触手_落雷_予兆弾丸_発射5"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100676,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 6 -- c5310_触手_落雷_予兆弾丸_発射6"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100677,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 7 -- c5310_触手_落雷_予兆弾丸_発射7"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100678,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 8 -- c5310_触手_落雷_予兆弾丸_発射8"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100679,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_launch 9 -- c5310_触手_落雷_予兆弾丸_発射9"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100681,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 1 -- c5310_触手_落雷_予兆弾丸_置き1"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100682,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 2 -- c5310_触手_落雷_予兆弾丸_置き2"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100683,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 3 -- c5310_触手_落雷_予兆弾丸_置き3"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100684,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 4 -- c5310_触手_落雷_予兆弾丸_置き4"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100685,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 5 -- c5310_触手_落雷_予兆弾丸_置き5"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100686,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 6 -- c5310_触手_落雷_予兆弾丸_置き6"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100687,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 7 -- c5310_触手_落雷_予兆弾丸_置き7"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100688,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 8 -- c5310_触手_落雷_予兆弾丸_置き8"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53100689,
       "Entries": [
-        "c5310_tentacles_lightning strike_predictive bullets_place 9 -- c5310_触手_落雷_予兆弾丸_置き9"
+        "Old Dragon Tentacle"
       ]
     },
     {
       "ID": 53200030,
       "Entries": [
-        "c5300_Okinayu_Coughing_Parent -- c5300_翁竜_咳き込み_親"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53200031,
       "Entries": [
-        "c5300_Okinayu_Coughing_Dummy_Parent -- c5300_翁竜_咳き込み_ダミー_親"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53200032,
       "Entries": [
-        "c5300_Okina Dragon_Coughing_Dummy_Child -- c5300_翁竜_咳き込み_ダミー_子"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53200033,
       "Entries": [
-        "c5300_Okinayu_Coughing_Dummy_Grandchild -- c5300_翁竜_咳き込み_ダミー_孫"
+        "Old Dragon"
       ]
     },
     {
       "ID": 53200035,
       "Entries": [
-        "c5300_Okina Dragon_Coughing_Main body -- c5300_翁竜_咳き込み_本体"
+        "Old Dragon"
       ]
     },
     {
       "ID": 54000250,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Horizontal (search bullet) -- c5400_蘇った剣聖_強い居合_横（検索弾丸）"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000251,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Horizontal (preparatory bullet) -- c5400_蘇った剣聖_強い居合_横（準備弾）"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000252,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Horizontal (main body) -- c5400_蘇った剣聖_強い居合_横(本体)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000253,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Horizontal (SFX) -- c5400_蘇った剣聖_強い居合_横(SFX)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000270,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (dummy live ammunition) -- c5400_蘇った剣聖_強い居合_縦(ダミー実弾)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000271,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (live bullet) -- c5400_蘇った剣聖_強い居合_縦(実弾)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000272,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (child) -- c5400_蘇った剣聖_強い居合_縦(子)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000273,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (grandchild) -- c5400_蘇った剣聖_強い居合_縦(孫)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000274,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (live bullet) -- c5400_蘇った剣聖_強い居合_縦(実弾)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000275,
       "Entries": [
-        "c5400_Revived Kensei_Strong Iai_Vertical (Parent) -- c5400_蘇った剣聖_強い居合_縦(親)"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000310,
       "Entries": [
-        "c5400_Revived Kensei_Desperate Vertical Cut_Bullet 1_Additional Damage -- c5400_蘇った剣聖_必殺の縦切り_弾丸1_加算ダメージ"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000311,
       "Entries": [
-        "c5400_Revived Kensei_Desperate Vertical Cut_Bullet 2_Blow-off Damage -- c5400_蘇った剣聖_必殺の縦切り_弾丸2_吹っ飛びダメージ"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000350,
       "Entries": [
-        "c5400_Revived Kensei_Stomping on the ground_Blow-off damage -- c5400_蘇った剣聖_地面踏みつけ_吹っ飛びダメージ"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000355,
       "Entries": [
-        "c5400_Revived Kensei_Stomping on the ground_Staying on the spot and burning -- c5400_蘇った剣聖_地面踏みつけ_その場に残って炎上"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000360,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slash Test_Spreading Flame_Search Bullet -- c5400_蘇った剣聖_炎斬りテスト_広がる炎_検索弾丸"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000361,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slash Test_Spreading Flame_Falls to the Ground -- c5400_蘇った剣聖_炎斬りテスト_広がる炎_地面に落ちる"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000362,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slash Test_Spreading Flame_Damage Bullet -- c5400_蘇った剣聖_炎斬りテスト_広がる炎_ダメージ弾丸"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000370,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slasher_Fan-shaped Appearance -- c5400_蘇った剣聖_炎斬り_扇状\u3000見た目"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000371,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slasher_Fan-shaped Atari -- c5400_蘇った剣聖_炎斬り_扇状\u3000アタリ"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000372,
       "Entries": [
-        "c5400_Revived Kensei_Flame Slasher_Flame Damage -- c5400_蘇った剣聖_炎斬り_炎ダメージ"
+        "Isshin Ashina - Fire"
       ]
     },
     {
       "ID": 54000380,
       "Entries": [
-        "c5400_Revived Kensei_Two consecutive Iai_Launch from player Damipoli_Spread -- c5400_蘇った剣聖_二連居合_プレイヤーのダミポリから発射_広がる"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000381,
       "Entries": [
-        "c5400_Revived Kensei_Two consecutive Iai_Fall -- c5400_蘇った剣聖_二連居合_落ちる"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000382,
       "Entries": [
-        "c5400_Revived Kensei_Two consecutive Iai_Stay on the ground -- c5400_蘇った剣聖_二連居合_地面にとどまる"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000383,
       "Entries": [
-        "c5400_Revived Kensei_Two consecutive Iai_Launch damage -- c5400_蘇った剣聖_二連居合_打ち上げダメージ"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000385,
       "Entries": [
-        "c5400_Revived Kensei_Two consecutive Iai_Launched from player Damipoli_Near -- c5400_蘇った剣聖_二連居合_プレイヤーのダミポリから発射_近く"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000391,
       "Entries": [
-        "c5400_Revived Kensei_Stomping on the ground_Blow-off damage -- c5400_蘇った剣聖_地面踏みつけ_吹っ飛びダメージ"
+        "Sword Saint Isshin"
       ]
     },
     {
       "ID": 54000392,
       "Entries": [
-        "c5400_Revived Kensei_Delayed Bullet 2_Stay on the Ground -- c5400_蘇った剣聖_遅延弾丸2_地面にとどまる"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000393,
       "Entries": [
-        "c5400_Revived Kensei_Delayed Bullet 3_Burning -- c5400_蘇った剣聖_遅延弾丸3_炎上する"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000630,
       "Entries": [
-        "c5400_Revived Kensei_Weakness Slash (Power Wave Body) -- c5400_蘇った剣聖_脱力斬り（パワーウェイブの本体）"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000631,
       "Entries": [
-        "c5400_Revived Kensei_Weakness Slash (Search Bullet 1) -- c5400_蘇った剣聖_脱力斬り（検索弾丸1）"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000632,
       "Entries": [
-        "c5400_Revived Kensei_Weakness Slash (Search bullet 2_Birth 149 after landing) -- c5400_蘇った剣聖_脱力斬り（検索弾丸2_着弾後149を産む）"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000635,
       "Entries": [
-        "c5400_Revived Kensei_Weakness Slash (SFX) -- c5400_蘇った剣聖_脱力斬り(SFX)"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000639,
       "Entries": [
-        "c5400_Revived Kensei_Weakness Slash (predictive bullet) -- c5400_蘇った剣聖_脱力斬り（予兆弾丸）"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000691,
       "Entries": [
-        "c5400_Revived Kensei_Kounami First Stage_Appearance -- c5400_蘇った剣聖_光波初段_見た目"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000692,
       "Entries": [
-        "c5400_Revived Kensei_Kounami First Stage_Hit -- c5400_蘇った剣聖_光波初段_当たり"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000693,
       "Entries": [
-        "c5400_Revived Kensei_Kounami 2nd Stage_Appearance -- c5400_蘇った剣聖_光波二段_見た目"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000694,
       "Entries": [
-        "c5400_Revived Kensei_Kounami 2nd Stage_Hit -- c5400_蘇った剣聖_光波二段_当たり"
+        "Isshin Ashina"
       ]
     },
     {
       "ID": 54000800,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol -- c5400_蘇った剣聖_HU後_短銃"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000801,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol_Power Attenuation -- c5400_蘇った剣聖_HU後_短銃_威力減衰"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000810,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol_Rapid Fire_Left -- c5400_蘇った剣聖_HU後_短銃_連射_左"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000811,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol_Rapid Fire_Right -- c5400_蘇った剣聖_HU後_短銃_連射_右"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000812,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol_Rapid Fire_Left_Weak -- c5400_蘇った剣聖_HU後_短銃_連射_左_弱"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000813,
       "Entries": [
-        "c5400_Revived Kensei_After HU_Pistol_Rapid Fire_Right_Weak -- c5400_蘇った剣聖_HU後_短銃_連射_右_弱"
+        "Sword Saint Isshin - Pistol"
       ]
     },
     {
       "ID": 54000820,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Horizontal (First Wave) -- c5400_EX蘇った剣聖_強い居合_横(第一波)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000821,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Horizontal (Second Wave_Parent) -- c5400_EX蘇った剣聖_強い居合_横(第二波_親)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000822,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Horizontal (Second Wave_Child) -- c5400_EX蘇った剣聖_強い居合_横(第二波_子)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000828,
       "Entries": [
-        "c5400_EX Revived Kensei Strong Iai_Horizontal_Inside SFX -- c5400_EX蘇った剣聖 強い居合_横_内側SFX"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000829,
       "Entries": [
-        "c5400_EX Revived Kensei Strong Iai_Horizontal_Outside SFX -- c5400_EX蘇った剣聖 強い居合_横_外側SFX"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000830,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical -- c5400_EX蘇った剣聖_強い居合_縦"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000831,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Follow-up (parent) -- c5400_EX蘇った剣聖_強い居合_縦_後追い(親)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000832,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Follow-up (child) -- c5400_EX蘇った剣聖_強い居合_縦_後追い(子)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000833,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Follow-up (grandchild) -- c5400_EX蘇った剣聖_強い居合_縦_後追い(孫)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000834,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Follow-up (live bullet) -- c5400_EX蘇った剣聖_強い居合_縦_後追い(実弾)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000835,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Crawling ver (parent) -- c5400_EX蘇った剣聖_強い居合_縦_這ver(親)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000836,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Crawling ver (child) -- c5400_EX蘇った剣聖_強い居合_縦_這ver(子)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000837,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Crawling ver (grandson) -- c5400_EX蘇った剣聖_強い居合_縦_這ver(孫)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000838,
       "Entries": [
-        "c5400_EX Revived Kensei_Strong Iai_Vertical_Crawling ver (live bullet) -- c5400_EX蘇った剣聖_強い居合_縦_這ver(実弾)"
+        "Inner Isshin"
       ]
     },
     {
       "ID": 54000980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign thrust -- ダミー弾丸_危険な攻撃予兆\u3000突き"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lower -- ダミー弾丸_危険な攻撃予兆\u3000下段"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000982,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Lower Level from Lifting -- ダミー弾丸_危険な攻撃予兆\u3000かち上げからの下段"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000983,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Yokoi Ai -- ダミー弾丸_危険な攻撃予兆\u3000横居合"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000984,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Vertical Iai -- ダミー弾丸_危険な攻撃予兆\u3000縦居合"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000985,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Deadly Vertical Slash -- ダミー弾丸_危険な攻撃予兆\u3000必殺の縦斬り"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000986,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Thrust with a spear -- ダミー弾丸_危険な攻撃予兆\u3000槍で突き"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000987,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lower with spear -- ダミー弾丸_危険な攻撃予兆\u3000槍で下段"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 54000988,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Aikido Throw -- ダミー弾丸_危険な攻撃予兆\u3000合気道投げ"
+        "Isshin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70000980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Mai continuous attack 3 _ Lower tightening -- ダミー弾丸_危険な攻撃予兆_舞連撃3_下段締め"
+        "O'Rin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70000981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Slash around _ Left _ Lower -- ダミー弾丸_危険な攻撃予兆_回り込み斬り_左_下段"
+        "O'Rin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70000982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Slash around _ Left _ Lower -- ダミー弾丸_危険な攻撃予兆_回り込み斬り_左_下段"
+        "O'Rin - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70100000,
       "Entries": [
-        "c7010_Busshi (NPC) _Buddha image throwing -- c7010_仏師（NPC）_仏像投げ"
+        "Sculptor"
       ]
     },
     {
       "ID": 70200122,
       "Entries": [
-        "c7020_Busshi Demon_FW_Dummy_Parent -- c7020_仏師鬼_FW_ダミー_親"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200123,
       "Entries": [
-        "c7020_Busshi demon_FW_dummy_child -- c7020_仏師鬼_FW_ダミー_子"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200124,
       "Entries": [
-        "c7020_Busshi Demon_FW_Grandson -- c7020_仏師鬼_FW_孫"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200125,
       "Entries": [
-        "c7020_Busshi demon_FW_main body -- c7020_仏師鬼_FW_本体"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200126,
       "Entries": [
-        "c7020_Busshi Demon_Long Jump Right Hand Slamming_Shock Wave_ -- c7020_仏師鬼_幅跳び右手叩き付け_衝撃波_"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200222,
       "Entries": [
-        "c7020_Busshi Demon_Flame Ranbu_Dummy_Diffusion -- c7020_仏師鬼_炎乱舞_ダミー_拡散"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200223,
       "Entries": [
-        "c7020_Busshi Demon_Flame Ranbu_Demon Buddha_Rise -- c7020_仏師鬼_炎乱舞_鬼仏_上昇"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200224,
       "Entries": [
-        "c7020_Busshi Oni_Flame Ranbu_Onibutsu_Staying -- c7020_仏師鬼_炎乱舞_鬼仏_滞空"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200225,
       "Entries": [
-        "c7020_Busshi Oni_Flame Ranbu_Onibutsu_Main body -- c7020_仏師鬼_炎乱舞_鬼仏_本体"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200231,
       "Entries": [
-        "c7020_Busshi Demon_Landing Shockwave_Dummy -- c7020_仏師鬼_着地衝撃波_ダミー"
+        "Demon of Hatred - Self-explosion Shockwave"
       ]
     },
     {
       "ID": 70200232,
       "Entries": [
-        "c7020_Busshi demon_landing shock wave -- c7020_仏師鬼_着地衝撃波"
+        "Demon of Hatred - Self-explosion Shockwave"
       ]
     },
     {
       "ID": 70200233,
       "Entries": [
-        "c7020_Busshi demon_Wide range shock wave_First stage_DL3 -- c7020_仏師鬼_広範囲衝撃波_一段目_DL3"
+        "Demon of Hatred - Self-explosion Shockwave"
       ]
     },
     {
       "ID": 70200234,
       "Entries": [
-        "c7020_Busshi demon_Wide range shock wave_Second stage_DL10 -- c7020_仏師鬼_広範囲衝撃波_二段目_DL10"
+        "Demon of Hatred - Self-explosion Shockwave"
       ]
     },
     {
       "ID": 70200270,
       "Entries": [
-        "c7020_Busshi Demon_Breath_Dummy_Parent -- c7020_仏師鬼_ブレス_ダミー_親"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200271,
       "Entries": [
-        "c7020_Busshi Demon_Breath_Dummy_Child -- c7020_仏師鬼_ブレス_ダミー_子"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200272,
       "Entries": [
-        "c7020_Busshi Demon_Breath_Dummy_Grandson -- c7020_仏師鬼_ブレス_ダミー_孫"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200273,
       "Entries": [
-        "c7020_Busshi Demon_Breath_Center -- c7020_仏師鬼_ブレス_中心"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200274,
       "Entries": [
-        "c7020_Busshi Demon_Breath_Around -- c7020_仏師鬼_ブレス_周辺"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200280,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_Main Body -- c7020_仏師鬼_ダメージ床用_炎_本体"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200281,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_Short Life -- c7020_仏師鬼_ダメージ床用_炎_寿命短め"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200282,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_Short Life -- c7020_仏師鬼_ダメージ床用_炎_寿命短め"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200290,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_Diffusion dmp51_00 -- c7020_仏師鬼_ダメージ床用_炎_拡散dmp51_00"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200300,
       "Entries": [
-        "c7020_Busshi demon_extending flame -- c7020_仏師鬼_延びる炎"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200301,
       "Entries": [
-        "c7020_Busshi Demon_Extending Flame_Floor Flame Dummy -- c7020_仏師鬼_延びる炎_床炎上用ダミー"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200310,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion_Dummy_Parent -- c7020_仏師鬼_範囲爆発_ダミー_親"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200311,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion_Dummy_Child -- c7020_仏師鬼_範囲爆発_ダミー_子"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200312,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion_Dummy_Grandson -- c7020_仏師鬼_範囲爆発_ダミー_孫"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200313,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion_Dummy_Great Grandson -- c7020_仏師鬼_範囲爆発_ダミー_曾孫"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200315,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion__Main Body_Parent -- c7020_仏師鬼_範囲爆発__本体_親"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200316,
       "Entries": [
-        "c7020_Busshi Demon_Range Explosion__Main Body_Child -- c7020_仏師鬼_範囲爆発__本体_子"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200320,
       "Entries": [
-        "c7020_Busshi demon_FB_First stage_Before division -- c7020_仏師鬼_FB_一段目_分裂前"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200321,
       "Entries": [
-        "c7020_Busshi demon_FB_second stage -- c7020_仏師鬼_FB_二段目"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200322,
       "Entries": [
-        "c7020_Busshi Demon_FB_Explosion -- c7020_仏師鬼_FB_爆発"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200323,
       "Entries": [
-        "c7020_Busshi demon_FB_First stage_After division -- c7020_仏師鬼_FB_一段目_分裂後"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200350,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_01_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_01_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200351,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_02_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_02_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200352,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_03_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_03_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200353,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_04_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_04_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200354,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_05_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_05_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200355,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_06_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_06_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200356,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_07_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_07_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200357,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_01_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_01_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200358,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_02_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_02_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200359,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_03_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_03_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200360,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_04_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_04_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200361,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_05_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_05_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200362,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_06_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_06_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200363,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_07_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp51_07_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200364,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_01_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_01_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200365,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_02_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_02_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200366,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_03_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_03_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200367,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_04_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_04_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200368,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_05_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_05_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200369,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_06_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp52_06_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200370,
       "Entries": [
-        "c7020_Busshi Demon__Damage Floor_Flame_dmp52_07_Horizontal Dummy -- c7020_仏師鬼__ダメージ床用_炎_dmp52_07_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200380,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_Diffusion dmp51_00 -- c7020_仏師鬼_ダメージ床用_炎_拡散dmp51_00"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200390,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_01_Horizontal Dummy -- c7020_仏師鬼_ダメージ床用_炎_dmp50_01_水平取り用ダミー"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200440,
       "Entries": [
-        "c7020_Busshi Demon_Flame Wall_Dummy -- c7020_仏師鬼_炎壁_ダミー"
+        "Demon of Hatred - Flame Wall"
       ]
     },
     {
       "ID": 70200441,
       "Entries": [
-        "c7020_Busshi Demon_Flame Wall -- c7020_仏師鬼_炎壁"
+        "Demon of Hatred - Flame Wall"
       ]
     },
     {
       "ID": 70200450,
       "Entries": [
-        "c7020_Busshi Demon_Self-centered Explosion_HU2 -- c7020_仏師鬼_自己中心爆発_HU2"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200451,
       "Entries": [
-        "c7020_Busshi demon_Wide range shock wave HU2_First stage_DL3 -- c7020_仏師鬼_広範囲衝撃波HU2_一段目_DL3"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200452,
       "Entries": [
-        "c7020_Busshi demon_Wide range shock wave HU2_Second stage_DL10 -- c7020_仏師鬼_広範囲衝撃波HU2_二段目_DL10"
+        "Demon of Hatred - Self-explosion"
       ]
     },
     {
       "ID": 70200460,
       "Entries": [
-        "c7020_Busshi Demon_Meteor_Diffusion -- c7020_仏師鬼_メテオ_拡散"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200461,
       "Entries": [
-        "c7020_Busshi Demon_Meteor_Rise -- c7020_仏師鬼_メテオ_上昇"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200462,
       "Entries": [
-        "c7020_Busshi Demon_Meteor_Staying -- c7020_仏師鬼_メテオ_滞空"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200463,
       "Entries": [
-        "c7020_Busshi demon_Meteor_body -- c7020_仏師鬼_メテオ_本体"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200500,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_01 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_01"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200501,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_02 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_02"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200502,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_03 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_03"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200503,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_04 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_04"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200504,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_05 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_05"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200505,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_06 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_06"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200506,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_07 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_07"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200507,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_01 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_01"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200508,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_02 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_02"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200509,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_03 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_03"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200510,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_04 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_04"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200511,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_05 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_05"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200512,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_06 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_06"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200513,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp51_07 -- c7020_仏師鬼_ダメージ床用_炎_dmp51_07"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200514,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_01 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_01"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200515,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_02 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_02"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200516,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_03 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_03"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200517,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_04 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_04"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200518,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_05 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_05"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200519,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_06 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_06"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200520,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp52_07 -- c7020_仏師鬼_ダメージ床用_炎_dmp52_07"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200530,
       "Entries": [
-        "c7020_Busshi Demon_Damage Floor_Flame_dmp50_01 -- c7020_仏師鬼_ダメージ床用_炎_dmp50_01"
+        "Demon of Hatred - Flame Ground"
       ]
     },
     {
       "ID": 70200950,
       "Entries": [
-        "Special effect bullet for foot judgment -- 足元判定用特殊効果弾"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 70200960,
       "Entries": [
-        "Bullet for erasing demon Buddha bullets -- 鬼仏弾消去用弾丸"
+        "Delete Demon of Hatred's Bullets"
       ]
     },
     {
       "ID": 70200980,
       "Entries": [
-        "Dummy bullets _ Dangerous attack sign _ Slashing through _ Lower row -- ダミー弾丸_危険な攻撃予兆_斬り抜けなぎ払い_下段"
+        "Demon of Hatred - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70200981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Flame surrounding attack _ Lower -- ダミー弾丸_危険な攻撃予兆_炎取り囲み攻撃_下段"
+        "Demon of Hatred - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70200982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Fire wave _ Lower -- ダミー弾丸_危険な攻撃予兆_ファイアウェーブ_下段"
+        "Demon of Hatred - Perilous Attack Warning"
       ]
     },
     {
       "ID": 70210100,
       "Entries": [
-        "c7021_demon Buddha_temporary bullet -- c7021_鬼仏_仮弾丸"
+        "Demon of Hatred"
       ]
     },
     {
       "ID": 71000500,
       "Entries": [
-        "c7100_Rival bow_Short distance 0 -- c7100_ライバル\u3000弓_近距離0"
+        "Genichiro - Bow Short Distance"
       ]
     },
     {
       "ID": 71000501,
       "Entries": [
-        "c7100_rival bow_long distance 0 -- c7100_ライバル\u3000弓_遠距離0"
+        "Genichiro - Bow Long Distance"
       ]
     },
     {
       "ID": 71000502,
       "Entries": [
-        "c7100_Rival Bow_Short Distance 1 -- c7100_ライバル\u3000弓_近距離1"
+        "Genichiro - Bow Short Distance"
       ]
     },
     {
       "ID": 71000503,
       "Entries": [
-        "c7100_Rival Bow_Long Distance 1 -- c7100_ライバル\u3000弓_遠距離1"
+        "Genichiro - Bow Long Distance"
       ]
     },
     {
       "ID": 71000510,
       "Entries": [
-        "c7100_Rival Reservoir Bow -- c7100_ライバル\u3000溜め弓"
+        "Genichiro - Charged Bow"
       ]
     },
     {
       "ID": 71000520,
       "Entries": [
-        "c7100_ rival thunder bow -- c7100_ライバル\u3000雷弓"
+        "Genichiro"
       ]
     },
     {
       "ID": 71000530,
       "Entries": [
-        "c7100_Rival bow four-shot 1 -- c7100_ライバル\u3000弓四連射1"
+        "Genichiro - Quadruple Bow Shot"
       ]
     },
     {
       "ID": 71000531,
       "Entries": [
-        "c7100_Rival bow four-shot 2 -- c7100_ライバル\u3000弓四連射2"
+        "Genichiro - Quadruple Bow Shot"
       ]
     },
     {
       "ID": 71000532,
       "Entries": [
-        "c7100_Rival bow four-shot 3 -- c7100_ライバル\u3000弓四連射3"
+        "Genichiro - Quadruple Bow Shot"
       ]
     },
     {
       "ID": 71000533,
       "Entries": [
-        "c7100_Rival bow four-shot 4 -- c7100_ライバル\u3000弓四連射4"
+        "Genichiro - Quadruple Bow Shot"
       ]
     },
     {
       "ID": 71000540,
       "Entries": [
-        "c7100_ Rival Brake Bow Predictive Shooting Ali -- c7100_ライバル\u3000ブレーキ弓\u3000予測射撃アリ"
+        "Genichiro - Bow"
       ]
     },
     {
       "ID": 71000600,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 1_SFX -- c7100_EXライバル\u3000垂直上昇回転斬り1_SFX"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000601,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 2_SFX -- c7100_EXライバル\u3000垂直上昇回転斬り2_SFX"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000602,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 3_SFX -- c7100_EXライバル\u3000垂直上昇回転斬り3_SFX"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000610,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 1_SFX_ Petals -- c7100_EXライバル\u3000垂直上昇回転斬り1_SFX_花弁"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000611,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 2_SFX_ Petals -- c7100_EXライバル\u3000垂直上昇回転斬り2_SFX_花弁"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000612,
       "Entries": [
-        "c7100_EX Rival Vertical Rise Rotation Slash 3_SFX_ Petals -- c7100_EXライバル\u3000垂直上昇回転斬り3_SFX_花弁"
+        "Inner Genichiro - Sakura Dance"
       ]
     },
     {
       "ID": 71000980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lower breakthrough -- ダミー弾丸_危険な攻撃予兆\u3000下段切り抜け"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71000981,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Throw Transition -- ダミー弾丸_危険な攻撃予兆\u3000投げ遷移"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71000982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign -- ダミー弾丸_危険な攻撃予兆\u3000八艘飛びからの突き"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71000983,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Backstep thrust -- ダミー弾丸_危険な攻撃予兆\u3000バックステップ突き"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71000984,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Finish Lower Slash -- ダミー弾丸_危険な攻撃予兆\u3000フィニッシュ下段斬り"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71000985,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Down Revenge -- ダミー弾丸_危険な攻撃予兆\u3000ダウン追い討ち"
+        "Genichiro - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100500,
       "Entries": [
-        "c7110_Rival Naked Bow_Short Distance 0 -- c7110_ライバル裸\u3000弓_近距離0"
+        "Genichiro, Way of Tomoe - Bow Short Distance"
       ]
     },
     {
       "ID": 71100501,
       "Entries": [
-        "c7110_Rival Naked Bow_Long Distance 0 -- c7110_ライバル裸\u3000弓_遠距離0"
+        "Genichiro, Way of Tomoe - Bow Long Distance"
       ]
     },
     {
       "ID": 71100502,
       "Entries": [
-        "c7110_Rival Naked Bow_Short Distance 1 -- c7110_ライバル裸\u3000弓_近距離1"
+        "Genichiro, Way of Tomoe - Bow Short Distance"
       ]
     },
     {
       "ID": 71100503,
       "Entries": [
-        "c7110_Rival Naked Bow_Long Distance 1 -- c7110_ライバル裸\u3000弓_遠距離1"
+        "Genichiro, Way of Tomoe - Bow Long Distance"
       ]
     },
     {
       "ID": 71100510,
       "Entries": [
-        "c7110_ Rival Naked Reservoir Bow -- c7110_ライバル裸\u3000溜め弓"
+        "Genichiro, Way of Tomoe - Charged Bow"
       ]
     },
     {
       "ID": 71100520,
       "Entries": [
-        "c7110_ rival naked thunder bow -- c7110_ライバル裸\u3000雷弓"
+        "Genichiro, Way of Tomoe - Lightning Arrow"
       ]
     },
     {
       "ID": 71100521,
       "Entries": [
-        "c7110_Rival naked thunder bow_thunder part -- c7110_ライバル裸\u3000雷弓_雷部分"
+        "Genichiro, Way of Tomoe - Lightning Arrow"
       ]
     },
     {
       "ID": 71100530,
       "Entries": [
-        "c7110_ Rival Naked Bow Four Fires 1 -- c7110_ライバル裸\u3000弓四連射1"
+        "Genichiro, Way of Tomoe - Quadruple Shot"
       ]
     },
     {
       "ID": 71100531,
       "Entries": [
-        "c7110_ Rival Naked Bow Four Fires 2 -- c7110_ライバル裸\u3000弓四連射2"
+        "Genichiro, Way of Tomoe - Quadruple Shot"
       ]
     },
     {
       "ID": 71100532,
       "Entries": [
-        "c7110_ Rival Naked Bow Four Fires 3 -- c7110_ライバル裸\u3000弓四連射3"
+        "Genichiro, Way of Tomoe - Quadruple Shot"
       ]
     },
     {
       "ID": 71100533,
       "Entries": [
-        "c7110_ Rival Naked Bow Four Fires 4 -- c7110_ライバル裸\u3000弓四連射4"
+        "Genichiro, Way of Tomoe - Quadruple Shot"
       ]
     },
     {
       "ID": 71100540,
       "Entries": [
-        "c7110_ Rival Naked Brake Bow Predictive Shooting Ali -- c7110_ライバル裸\u3000ブレーキ弓\u3000予測射撃アリ"
+        "Genichiro, Way of Tomoe - Bow"
       ]
     },
     {
       "ID": 71100600,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 1_SFX -- c7110_EXライバル裸\u3000垂直上昇回転斬り1_SFX"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100601,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 2_SFX -- c7110_EXライバル裸\u3000垂直上昇回転斬り2_SFX"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100602,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 3_SFX -- c7110_EXライバル裸\u3000垂直上昇回転斬り3_SFX"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100610,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 1_SFX_ Petals -- c7110_EXライバル裸\u3000垂直上昇回転斬り1_SFX_花弁"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100611,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 2_SFX_ Petals -- c7110_EXライバル裸\u3000垂直上昇回転斬り2_SFX_花弁"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100612,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 3_SFX_ Petals -- c7110_EXライバル裸\u3000垂直上昇回転斬り3_SFX_花弁"
+        "Genichiro, Way of Tomoe - Sakura Dance"
       ]
     },
     {
       "ID": 71100620,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 1_SFX_ Lightning Return -- c7110_EXライバル裸\u3000垂直上昇回転斬り1_SFX_雷返し返し"
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
       ]
     },
     {
       "ID": 71100621,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 2_SFX_ Lightning Return -- c7110_EXライバル裸\u3000垂直上昇回転斬り2_SFX_雷返し返し"
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
       ]
     },
     {
       "ID": 71100622,
       "Entries": [
-        "c7110_EX Rival Naked Vertical Rise Rotation Slash 3_SFX_ Lightning Return -- c7110_EXライバル裸\u3000垂直上昇回転斬り3_SFX_雷返し返し"
+        "Genichiro, Way of Tomoe - Sakura Dance Lightning Reversal"
       ]
     },
     {
       "ID": 71100980,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lower breakthrough -- ダミー弾丸_危険な攻撃予兆\u3000下段切り抜け"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lariat neck grab and pull -- ダミー弾丸_危険な攻撃予兆\u3000ラリアット首掴み引き寄せ"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign -- ダミー弾丸_危険な攻撃予兆\u3000八艘飛びからの突き"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100983,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Backstep thrust -- ダミー弾丸_危険な攻撃予兆\u3000バックステップ突き"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100984,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Finish Lower Slash -- ダミー弾丸_危険な攻撃予兆\u3000フィニッシュ下段斬り"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100985,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Prediction Thrust from Repartition -- ダミー弾丸_危険な攻撃予兆\u3000仕切り直しからの突き"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100986,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Jump slash before thunder -- ダミー弾丸_危険な攻撃予兆\u3000雷前ジャンプ斬り"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100987,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Lei Heng jump slash -- ダミー弾丸_危険な攻撃予兆\u3000雷横ジャンプ斬り"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100988,
       "Entries": [
-        "Dummy Bullet_Dangerous Attack Predictor Thunder Bow -- ダミー弾丸_危険な攻撃予兆\u3000雷弓"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 71100989,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign Dash Eight stabs -- ダミー弾丸_危険な攻撃予兆\u3000ダッシュ八艘飛び突き"
+        "Genichiro, Way of Tomoe - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000980,
       "Entries": [
-        "c7100_Daughter of Medical Holy_Dummy Bullet_Dangerous Attack Prediction -- c7100_医聖の娘_ダミー弾丸_危険な攻撃予兆"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000981,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Thrust from slashing -- ダミー弾丸_危険な攻撃予兆_斬り下がりからの突き"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000982,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Lower payment from slashing -- ダミー弾丸_危険な攻撃予兆_斬り下がりからの下段払い"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000983,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Swallow -- ダミー弾丸_危険な攻撃予兆_燕返し"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000984,
       "Entries": [
-        "Dummy bullet _ dangerous attack sign _ jumping technique -- ダミー弾丸_危険な攻撃予兆_飛び技"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000985,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Iai connected from repartitioning -- ダミー弾丸_危険な攻撃予兆_仕切り直しから繋がる居合"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000986,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Swallowing from right hit -- ダミー弾丸_危険な攻撃予兆_右弾かれからの燕返し"
+        "Emma - Perilous Attack Warning"
       ]
     },
     {
       "ID": 74000987,
       "Entries": [
-        "Dummy bullet _ Dangerous attack sign _ Lower sword from left hit -- ダミー弾丸_危険な攻撃予兆_左弾かれからの下段薙ぎ"
+        "Emma - Perilous Attack Warning"
       ]
     }
   ]
