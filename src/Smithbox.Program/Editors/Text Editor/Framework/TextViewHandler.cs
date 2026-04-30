@@ -125,7 +125,7 @@ public class TextViewHandler
                 displayTitle = "Active View";
             }
 
-            if (ImGui.Begin($@"{displayTitle}###TextEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{displayTitle}###TextEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {

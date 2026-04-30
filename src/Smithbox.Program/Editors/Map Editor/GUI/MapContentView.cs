@@ -37,8 +37,6 @@ public class MapContentView
     {
         UIHelper.SimpleHeader("Contents", "");
 
-        DisplayMenubar();
-
         ImGui.BeginChild("MapContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedMapContainer != null)
@@ -56,84 +54,6 @@ public class MapContentView
         }
 
         ImGui.EndChild();
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Content Display"))
-            {
-                if (ImGui.MenuItem("Tree"))
-                {
-                    ContentViewType = MapContentViewType.ObjectType;
-                }
-                UIHelper.Tooltip("Display the content in the object type tree form.");
-                UIHelper.ShowActiveStatus(ContentViewType == MapContentViewType.ObjectType);
-
-                if (ImGui.MenuItem("Flat"))
-                {
-                    ContentViewType = MapContentViewType.Flat;
-                }
-                UIHelper.Tooltip("Display the content in the flat form.");
-                UIHelper.ShowActiveStatus(ContentViewType == MapContentViewType.Flat);
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Name Display"))
-            {
-                var curType = CFG.Current.MapEditor_MapContentList_EntryNameDisplayType;
-
-                if (ImGui.MenuItem("Internal"))
-                {
-                    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal;
-                }
-                UIHelper.Tooltip("Display the internal map object name only.");
-                UIHelper.ShowActiveStatus(curType == EntityNameDisplayType.Internal);
-
-                if (ImGui.MenuItem("Internal + Text"))
-                {
-                    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
-                }
-                UIHelper.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
-                UIHelper.ShowActiveStatus(curType == EntityNameDisplayType.Internal_FMG);
-
-                ImGui.EndMenu();
-            }
-
-            if(View.LightAtlasBank.CanUse())
-            {
-                //if (ImGui.BeginMenu("Light Atlases"))
-                //{
-                //    if (ImGui.MenuItem("Automatically adjust entries"))
-                //    {
-                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
-                //    }
-                //    UIHelper.Tooltip("If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name.");
-                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
-
-
-                //    if (ImGui.MenuItem("Automatically add entries"))
-                //    {
-                //        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
-                //    }
-                //    UIHelper.Tooltip("If enabled, when new parts are duplicated, the a new light atlas entry pointing to the newly duplicated part is created (deriving the other properties from the source part).");
-                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
-
-                //    if (ImGui.MenuItem("Automatically delete entries"))
-                //    {
-                //        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
-                //    }
-                //    UIHelper.Tooltip("If enabled, when parts are deleted, if there is a light atlas entry pointing to that part, the entry is deleted.");
-                //    UIHelper.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
-
-                //    ImGui.EndMenu();
-                //}
-            }
-
-            ImGui.EndMenuBar();
-        }
     }
 
     /// <summary>

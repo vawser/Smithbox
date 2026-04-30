@@ -128,7 +128,7 @@ public class TexViewHandler
                 displayTitle = "Active View";
             }
 
-            if (ImGui.Begin($@"{displayTitle}###TextureEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{displayTitle}###TextureEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {

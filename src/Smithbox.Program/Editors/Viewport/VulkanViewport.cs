@@ -379,10 +379,13 @@ public class VulkanViewport : IViewport
 
                 foreach (var wrapper in modelUniverse.View.Editor.ViewHandler.Views)
                 {
-                    if (wrapper.ViewportWindow.Viewport == this)
+                    if (wrapper != null)
                     {
-                        modelUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
-                        IsActiveViewport = true;
+                        if (wrapper.ViewportWindow.Viewport == this)
+                        {
+                            modelUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
+                            IsActiveViewport = true;
+                        }
                     }
                 }
             }

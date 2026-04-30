@@ -39,8 +39,6 @@ public class ModelContents : IActionEventHandler
     {
         UIHelper.SimpleHeader("Contents", "");
 
-        DisplayMenubar();
-
         ImGui.BeginChild("ModelContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedModelWrapper != null && 
@@ -64,31 +62,6 @@ public class ModelContents : IActionEventHandler
         }
         ImGui.EndChild();
 
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Options"))
-            {
-                if (ImGui.BeginMenu("Contents"))
-                {
-                    if (ImGui.MenuItem("Display Node Name in Mesh Entry"))
-                    {
-                        CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry = !CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry;
-                    }
-                    UIHelper.Tooltip($"If enabled, the linked node name is displayed in the mesh entry name.");
-                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenuBar();
-        }
     }
 
     public void DisplaySearchbar()

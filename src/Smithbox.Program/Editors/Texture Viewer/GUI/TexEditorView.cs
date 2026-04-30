@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -47,6 +48,8 @@ public class TexEditorView
 
     public void Display(bool doFocus, bool isActiveView)
     {
+        DisplayMenubar();
+
         var columnCount = 3;
         var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
@@ -70,7 +73,7 @@ public class TexEditorView
             ImGui.TableNextColumn();
 
             float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y;
+            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
 
             ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
 
@@ -80,9 +83,9 @@ public class TexEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            ContainerList.Display(width, height * 0.2f);
-            InternalFileList.Display(width, height * 0.1f);
-            FileList.Display(width, height * 0.6f);
+            ContainerList.Display(width, height * CFG.Current.TextureViewer_Display_ContainerList_Percentage);
+            InternalFileList.Display(width, height * CFG.Current.TextureViewer_Display_InternalFileList_Percentage);
+            FileList.Display(width, height * CFG.Current.TextureViewer_Display_FileList_Percentage);
 
             ImGui.EndChild();
 
@@ -124,5 +127,58 @@ public class TexEditorView
 
         ContainerList.Update();
         FileList.Update();
+    }
+    public void DisplayMenubar()
+    {
+        if (ImGui.BeginMenuBar())
+        {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.BeginMenu("Display"))
+                {
+                    ImGui.SliderFloat("Containers##containersDisplayPercentage", ref CFG.Current.TextureViewer_Display_ContainerList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.TextureViewer_Display_ContainerList_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage,
+                            ref CFG.Current.TextureViewer_Display_FileList_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
+
+                    ImGui.SliderFloat("Files##internalFilesDisplayPercentage", ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.TextureViewer_Display_InternalFileList_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.TextureViewer_Display_ContainerList_Percentage,
+                            ref CFG.Current.TextureViewer_Display_FileList_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Files section occupies.");
+
+                    ImGui.SliderFloat("Textures##filesDisplayPercentage", ref CFG.Current.TextureViewer_Display_FileList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.TextureViewer_Display_FileList_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.TextureViewer_Display_ContainerList_Percentage,
+                            ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Textures section occupies.");
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenuBar();
+        }
     }
 }

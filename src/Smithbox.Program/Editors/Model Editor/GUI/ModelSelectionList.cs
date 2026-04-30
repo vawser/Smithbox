@@ -29,38 +29,11 @@ public class ModelSelectionList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        DisplayMenubar();
-
         ImGui.BeginChild($"FileSection", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         DisplayModelSelectionList();
 
         ImGui.EndChild();
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Options"))
-            {
-                if (ImGui.BeginMenu("Files"))
-                {
-                    if (ImGui.MenuItem("Auto-Select First Entries"))
-                    {
-                        CFG.Current.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
-                    }
-                    UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
-                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenuBar();
-        }
     }
 
     public void DisplayModelSelectionList()

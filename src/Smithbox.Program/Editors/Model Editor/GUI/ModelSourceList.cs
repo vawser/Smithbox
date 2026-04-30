@@ -35,8 +35,6 @@ public class ModelSourceList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        DisplayMenubar();
-
         ImGui.BeginChild("ContainerList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
@@ -98,31 +96,6 @@ public class ModelSourceList
         ImGui.EndTabBar();
 
         ImGui.EndChild();
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Options"))
-            {
-                if (ImGui.BeginMenu("Containers"))
-                {
-                    if (ImGui.MenuItem("Include Alias in Search"))
-                    {
-                        CFG.Current.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
-                    }
-                    UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
-                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenuBar();
-        }
     }
 
     public void DisplaySearchbar(ModelListType type)

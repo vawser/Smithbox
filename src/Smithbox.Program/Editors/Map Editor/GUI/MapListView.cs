@@ -35,7 +35,6 @@ public class MapListView : IActionEventHandler
 
         FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
 
-        DisplayMenubar();
         DisplaySearchbar();
 
         if (View.Project.Descriptor.ProjectType is ProjectType.BB)
@@ -52,93 +51,6 @@ public class MapListView : IActionEventHandler
         ImGui.EndChild();
 
         ImGui.EndChild();
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Maps"))
-            {
-                if (ImGui.MenuItem("Unload Current"))
-                {
-                    DialogResult result = PlatformUtils.Instance.MessageBox("Unload current?", "Confirm",
-                                MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        View.Universe.UnloadMap(View.Selection.SelectedMapID);
-                    }
-                }
-                UIHelper.Tooltip("Unload the currently loaded and selected map.");
-
-                if (ImGui.MenuItem("Unload All"))
-                {
-                    DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm", MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        View.Universe.UnloadAllMaps();
-                    }
-                }
-                UIHelper.Tooltip("Unload all loaded maps.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("List Filters"))
-            {
-                if (ImGui.BeginMenu("Select"))
-                {
-                    View.MapListFilterTool.SelectionMenu();
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Select an existing list filter to apply to the map list.");
-
-                if (ImGui.MenuItem("Clear"))
-                {
-                    View.MapListFilterTool.Clear();
-                }
-                UIHelper.Tooltip("Clear the current list filter, resetting the filtering of the map list.");
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu("Create"))
-                {
-                    View.MapListFilterTool.CreationMenu();
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Create a new list filter. The filter terms support regular expressions.");
-
-                if (ImGui.BeginMenu("Edit"))
-                {
-                    View.MapListFilterTool.EditMenu();
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Edit an existing list filter.");
-
-                if (ImGui.BeginMenu("Delete"))
-                {
-                    View.MapListFilterTool.DeleteMenu();
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Delete an existing list filter.");
-
-                ImGui.EndMenu();
-            }
-            UIHelper.Tooltip("Select a list filter to narrow the map list down to a pre-defined set of maps.");
-
-            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
-            {
-                if (ImGui.MenuItem("World Map"))
-                {
-                    View.WorldMapTool.DisplayMenuOption();
-                }
-                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
-            }
-
-            ImGui.EndMenuBar();
-        }
     }
 
     private string _lastSearchText = "";
