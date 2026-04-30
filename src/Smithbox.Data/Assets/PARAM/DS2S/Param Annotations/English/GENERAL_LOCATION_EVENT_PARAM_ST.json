@@ -55,18 +55,18 @@
       "Description": ""
     },
     {
-      "Field": "radius",
-      "Name": "半径・X幅",
+      "Field": "ScaleX",
+      "Name": "Radius",
       "Description": ""
     },
     {
-      "Field": "height",
-      "Name": "高さ・Y幅",
+      "Field": "ScaleY",
+      "Name": "Height",
       "Description": ""
     },
     {
-      "Field": "depth",
-      "Name": "Ｚ幅",
+      "Field": "ScaleZ",
+      "Name": "Depth",
       "Description": ""
     },
     {
