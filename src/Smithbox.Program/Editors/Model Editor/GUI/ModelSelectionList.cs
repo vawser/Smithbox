@@ -44,16 +44,20 @@ public class ModelSelectionList
         {
             if (ImGui.BeginMenu("Options"))
             {
-                if (ImGui.MenuItem("Auto-Select First Entries"))
+                if (ImGui.BeginMenu("Files"))
                 {
-                    CFG.Current.ModelEditor_AutoLoadFirstEntry = !CFG.Current.ModelEditor_AutoLoadFirstEntry;
+                    if (ImGui.MenuItem("Auto-Select First Entries"))
+                    {
+                        CFG.Current.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
+                    }
+                    UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
+                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutoLoadFirstEntry);
-                UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
 
                 ImGui.EndMenu();
             }
-
 
             ImGui.EndMenuBar();
         }
@@ -108,7 +112,7 @@ public class ModelSelectionList
         {
             ApplyAutoLoadFirst = false;
 
-            if (CFG.Current.ModelEditor_AutoLoadFirstEntry)
+            if (CFG.Current.ModelEditor_Files_AutoLoadFirstEntry)
             {
                 var first = container.Models.First();
 

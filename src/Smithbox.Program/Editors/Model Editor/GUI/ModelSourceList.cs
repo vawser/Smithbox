@@ -106,12 +106,17 @@ public class ModelSourceList
         {
             if (ImGui.BeginMenu("Options"))
             {
-                if (ImGui.MenuItem("Include Alias in Search"))
+                if (ImGui.BeginMenu("Containers"))
                 {
-                    CFG.Current.ModelEditor_IncludeAliasInSearch = !CFG.Current.ModelEditor_IncludeAliasInSearch;
+                    if (ImGui.MenuItem("Include Alias in Search"))
+                    {
+                        CFG.Current.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
+                    }
+                    UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
+                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_IncludeAliasInSearch);
-                UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
 
                 ImGui.EndMenu();
             }
@@ -147,7 +152,7 @@ public class ModelSourceList
                 var modelName = entry.Key.Filename;
                 var nameAlias = "";
 
-                if (CFG.Current.ModelEditor_IncludeAliasInSearch)
+                if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch)
                 {
                     if (type is ModelListType.Character)
                     {

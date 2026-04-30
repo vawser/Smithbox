@@ -822,7 +822,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             sub.Dispose();
 
-            // 3. Remove from list
             _submeshes.RemoveAt(i);
         }
 
