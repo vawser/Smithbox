@@ -1,0 +1,71 @@
+<!-- Override broken target from Xamarin.Shared.targets to handle filepaths with quotes or apostrophes -->
+<Project>
+	<PropertyGroup>
+		<_TargetsDirectory>$(_XamarinSdkRootDirectory)\tools\msbuild\$(_PlatformName)\</_TargetsDirectory>
+		<_TargetsDirectory Condition="!Exists('$(_TargetsDirectory)')">$(_XamarinSdkRootDirectory)\tools\msbuild\</_TargetsDirectory>
+    </PropertyGroup>
+	<Import Project="$(_TargetsDirectory)Xamarin.Shared.targets" Condition="'($(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS'" />
+	<Target Name="_CleanAppBundleRootDirectory" Condition="'$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS'" DependsOnTargets="_GenerateBundleName">
+		<!-- There shouldn't be any files in the root directory of the app bundle for macOS or Mac Catalyst (signing will fail) -->
+
+		<!-- Delete any crash dumps in the app bundle that might exist. Ref: https://github.com/xamarin/xamarin-macios/issues/12320 -->
+		<!-- Use a task to collect the files, so that we get the correct behavior on Windows -->
+		<!-- This is enabled by default, but can be disabled by setting EnableAutomaticAppBundleRootDirectoryCleanup=false -->
+		<GetFileSystemEntries
+			SessionId="$(BuildSessionId)"
+			Condition="'$(IsMacEnabled)' == 'true' And ('$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS')"
+			DirectoryPath="$(AppBundleDir)"
+			Pattern="mono_crash.*"
+			Recursive="false"
+			IncludeDirectories="false"
+			>
+			<Output TaskParameter="Entries" ItemName="_MonoCrashDumpsInAppBundle" />
+		</GetFileSystemEntries>
+		<Delete
+			SessionId="$(BuildSessionId)"
+			Condition="'$(IsMacEnabled)' == 'true' And ('$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS') And '$(EnableAutomaticAppBundleRootDirectoryCleanup)' != 'false'"
+			Files="@(_MonoCrashDumpsInAppBundle)"
+		/>
+
+		<!-- Warn about any files that are left -->
+		<!-- These can be deleted automatically by setting EnableAutomaticAppBundleRootDirectoryCleanup=true (in which case we won't show the warning) -->
+		<GetFileSystemEntries
+			SessionId="$(BuildSessionId)"
+			Condition="'$(IsMacEnabled)' == 'true' And ('$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS')"
+			DirectoryPath="$(AppBundleDir)"
+			Pattern="*"
+			Recursive="true"
+			IncludeDirectories="true"
+			>
+			<Output TaskParameter="Entries" ItemName="_FilesInAppBundleRootDirectory" />
+		</GetFileSystemEntries>
+		<!-- Remove anything in the Contents subdirectory from the list of files -->
+		<!-- You would think that it would be possible to remove using something like this:
+		         <_FilesInAppBundleRootDirectory Remove="$(AppBundleDir)/Contents/**" />
+		     but that doesn't remove directories, only files -->
+		<FindUnderPath Path="$(AppBundleDir)/Contents" Files="@(_FilesInAppBundleRootDirectory)">
+		    <Output TaskParameter="InPath" ItemName="_FilesInAppBundleRootDirectoryToRemove" />
+		</FindUnderPath>
+		<ItemGroup>
+			<_FilesInAppBundleRootDirectory Remove="@(_FilesInAppBundleRootDirectoryToRemove);$(AppBundleDir)/Contents" />
+		</ItemGroup>
+		<!-- We may have both files and directories, so just run both the Delete and RemoveDir task on all entries we're to delete -->
+		<Delete
+			SessionId="$(BuildSessionId)"
+			Condition="'$(IsMacEnabled)' == 'true' And ('$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS') And '$(EnableAutomaticAppBundleRootDirectoryCleanup)' == 'true'"
+			Files="@(_FilesInAppBundleRootDirectory)"
+		/>
+		<!-- Create a separate item group for directories, excluding anything with length <= 1. This is an additional protection against accidentally wiping out the hard drive: https://github.com/dotnet/msbuild/issues/4105 -->
+		<ItemGroup>
+			<_DirectoriesInAppBundleRootDirectory Include="@(_FilesInAppBundleRootDirectory)" Condition="$([MSBuild]::ValueOrDefault('%(Identity)', '').Length) &gt; 1" />
+		</ItemGroup>
+		<RemoveDir
+			SessionId="$(BuildSessionId)"
+			Condition="'$(IsMacEnabled)' == 'true' And ('$(_PlatformName)' == 'MacCatalyst' Or '$(_PlatformName)' == 'macOS') And '$(EnableAutomaticAppBundleRootDirectoryCleanup)' == 'true'"
+			Directories="@(_DirectoriesInAppBundleRootDirectory)"
+		/>
+		<Warning
+				Text="Found files in the root directory of the app bundle. This will likely cause codesign to fail. Files:%0a@(_FilesInAppBundleRootDirectory, '%0a')"
+				Condition="'$(EnableAutomaticAppBundleRootDirectoryCleanup)' != 'true' And @(_FilesInAppBundleRootDirectory->Count()) &gt; 0"/>
+	</Target>
+</Project>
