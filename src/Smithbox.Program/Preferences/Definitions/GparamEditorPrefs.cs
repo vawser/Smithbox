@@ -39,24 +39,6 @@ public class GparamEditorPrefs
     #endregion
 
     #region Group List
-    public static PreferenceItem GparamEditor_Group_List_Display_Aliases()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.GparamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.GparamEditor_Group_List,
-
-            Title = "Display Aliases",
-            Description = "If enabled, aliases are displayed in the group list.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue_group", ref CFG.Current.GparamEditor_Group_List_Display_Aliases);
-            }
-        };
-    }
     public static PreferenceItem GparamEditor_Group_List_Display_Empty_Group()
     {
         return new PreferenceItem
@@ -78,24 +60,6 @@ public class GparamEditorPrefs
     #endregion
 
     #region Field List
-    public static PreferenceItem Gparam_Editor_Field_List_Enable_Aliases()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.GparamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.GparamEditor_Field_List,
-
-            Title = "Display Aliases",
-            Description = "If enabled, aliases are displayed in the field list.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue_field", ref CFG.Current.GparamEditor_Field_List_Enable_Aliases);
-            }
-        };
-    }
     #endregion
 
     #region Value List
@@ -114,6 +78,42 @@ public class GparamEditorPrefs
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4);
+            }
+        };
+    }
+    public static PreferenceItem GparamEditor_Value_List_Display_Time_Of_Day_Column()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.GparamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.GparamEditor_Value_List,
+
+            Title = "Display Time of Day Column",
+            Description = "If enabled, the time of day column is displayed in the Value section.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column);
+            }
+        };
+    }
+    public static PreferenceItem GparamEditor_Value_List_Display_Information_Column()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.GparamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.GparamEditor_Value_List,
+
+            Title = "Display Information Column",
+            Description = "If enabled, the information column is displayed in the Value section.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Information_Column);
             }
         };
     }

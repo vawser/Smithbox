@@ -132,7 +132,13 @@ public static class AliasHelper
     // Gparam Editor
     public static string GetGparamAliasName(ProjectEntry project, string gparamName)
     {
-        if (!project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Gparams, out var aliases)) return string.Empty;
+        if (!project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Gparams, out var aliases)) 
+            return string.Empty;
+
+        if(project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            gparamName = gparamName.Replace("filter_", "");
+        }
 
         var mPrefix = gparamName;
         var sPrefix = gparamName;

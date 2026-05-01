@@ -26,11 +26,10 @@ public class GparamFieldList
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader("Fields", "");
+        DisplayHeader();
 
-        Parent.Filters.DisplayFieldFilterSearch();
-
-        ImGui.BeginChild("GparamFieldsSection");
+        // Fields
+        ImGui.BeginChild("GparamFieldsSection", ImGuiChildFlags.Borders);
         Parent.Selection.SwitchWindowContext(GparamEditorContext.Field);
 
         if (Parent.Selection.IsGparamGroupSelected())
@@ -42,17 +41,13 @@ public class GparamFieldList
                 GPARAM.IField entry = data.Fields[i];
 
                 var name = entry.Key;
+                var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+                var fieldId = entry.Key;
+                var fieldName = GparamMetaUtils.GetFieldName(Project, groupId, fieldId);
 
-                if (CFG.Current.GparamEditor_Field_List_Enable_Aliases)
+                if (fieldName != null)
                 {
-                    var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
-                    var fieldId = entry.Key;
-                    var fieldName = GparamMetaUtils.GetFieldName(Project, groupId, fieldId);
-
-                    if(fieldName != null)
-                    {
-                        name = fieldName;
-                    }
+                    name = fieldName;
                 }
 
                 if (Parent.Filters.IsFieldFilterMatch(entry.Name, ""))
@@ -86,5 +81,18 @@ public class GparamFieldList
         ImGui.EndChild();
     }
 
+    public void DisplayHeader()
+    {
+        UIHelper.SimpleHeader("Fields", "");
+
+        // Search
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+        Parent.Filters.DisplayFieldFilterSearch();
+
+        ImGui.EndChild();
+
+    }
 }
 

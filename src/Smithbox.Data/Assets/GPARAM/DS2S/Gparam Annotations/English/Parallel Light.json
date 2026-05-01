@@ -7,6 +7,7 @@
       "ID": "有効",
       "Name": "Is Parallel Light Enabled",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -14,6 +15,7 @@
       "ID": "Angle 0",
       "Name": "Angle: 0",
       "Description": "",
+      "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "DiffColor 0",
       "Name": "Diffuse Color: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "SpecColor 0",
       "Name": "Specular Color: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "HemiColorUp 0",
       "Name": "Hemisphere Color Up: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "HemiColorDown 0",
       "Name": "Hemisphere Color Down: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -49,6 +55,7 @@
       "ID": "AddHemiColorUp 0",
       "Name": "Additive Hemisphere Color Up: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -56,6 +63,7 @@
       "ID": "AddHemiColorDown 0",
       "Name": "Additive Hemisphere Color Down: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -63,6 +71,7 @@
       "ID": "PointCloud Scale 0",
       "Name": "Point Cloud Scale: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -70,6 +79,7 @@
       "ID": "PointCloud Offset 0",
       "Name": "Point Cloud Offset: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -77,6 +87,7 @@
       "ID": "PointCloud Scale 0 Slot1",
       "Name": "Point Cloud Scale 0: Slot 1",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -84,6 +95,7 @@
       "ID": "PointCloud Offset 0 Slot1",
       "Name": "Point Cloud Offset 0: Slot 1",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -91,6 +103,7 @@
       "ID": "PointCloud Scale 0 Slot2",
       "Name": "Point Cloud Scale 0: Slot 2",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -98,6 +111,7 @@
       "ID": "PointCloud Offset 0 Slot2",
       "Name": "Point Cloud Offset 0: Slot 2",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -105,6 +119,7 @@
       "ID": "PointCloud Scale 0 Slot3",
       "Name": "Point Cloud Scale 0: Slot 3",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -112,6 +127,7 @@
       "ID": "PointCloud Offset 0 Slot3",
       "Name": "Point Cloud Offset 0: Slot 3",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -119,6 +135,7 @@
       "ID": "GI Color Scale 0",
       "Name": "Global Illumination Color Scale: 0",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -126,6 +143,7 @@
       "ID": "ライトをカメラに追従 0",
       "Name": "Light Tracks Camera: 0",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -133,6 +151,7 @@
       "ID": "ライトマップを無効にする 0",
       "Name": "Disable Light Map: 0",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -140,6 +159,7 @@
       "ID": "Angle 10",
       "Name": "Angle: 10",
       "Description": "",
+      "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -147,6 +167,7 @@
       "ID": "DiffColor 10",
       "Name": "Diffuse Color: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -154,6 +175,7 @@
       "ID": "SpecColor 10",
       "Name": "Specular Color: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -161,6 +183,7 @@
       "ID": "HemiColorUp 10",
       "Name": "Hemisphere Color Up: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -168,6 +191,7 @@
       "ID": "HemiColorDown 10",
       "Name": "Hemisphere Color Down: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -175,6 +199,7 @@
       "ID": "AddHemiColorUp 10",
       "Name": "Additive Hemisphere Color Up: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -182,6 +207,7 @@
       "ID": "AddHemiColorDown 10",
       "Name": "Additive Hemisphere Color Down: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -189,6 +215,7 @@
       "ID": "PointCloud Scale 10",
       "Name": "Point Cloud Scale: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -196,6 +223,7 @@
       "ID": "PointCloud Offset 10",
       "Name": "Point Cloud Offset: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -203,6 +231,7 @@
       "ID": "PointCloud Scale 10 Slot1",
       "Name": "Point Cloud Scale 10: Slot 1",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -210,6 +239,7 @@
       "ID": "PointCloud Offset 10 Slot1",
       "Name": "Point Cloud Offset 10: Slot 1",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -217,6 +247,7 @@
       "ID": "PointCloud Scale 10 Slot2",
       "Name": "Point Cloud Scale 10: Slot 2",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -224,6 +255,7 @@
       "ID": "PointCloud Offset 10 Slot2",
       "Name": "Point Cloud Offset 10: Slot 2",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -231,6 +263,7 @@
       "ID": "PointCloud Scale 10 Slot3",
       "Name": "Point Cloud Scale 10: Slot 3",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -245,6 +278,7 @@
       "ID": "GI Color Scale 10",
       "Name": "Global Illumination Color Scale: 10",
       "Description": "",
+      "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -252,6 +286,7 @@
       "ID": "ライトをカメラに追従 10",
       "Name": "Light Tracks Camera: 10",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -259,6 +294,7 @@
       "ID": "ライト向きを、ライト0に追従 10",
       "Name": "Direction of Light Follows Light 0: 10",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -266,6 +302,7 @@
       "ID": "ライトマップを無効にする 10",
       "Name": "Disable Lightmap: 10",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -273,6 +310,7 @@
       "ID": "αをフェードで薄くする",
       "Name": "Fade Out Alpha",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -280,6 +318,7 @@
       "ID": "αをフェードで薄くするまで待つ時間",
       "Name": "Delay for Alpha Fade Out",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -287,6 +326,7 @@
       "ID": "αをフェードで薄くする時間",
       "Name": "Duration for Alpha Fade Out",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     }

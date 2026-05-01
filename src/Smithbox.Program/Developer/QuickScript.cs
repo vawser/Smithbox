@@ -105,7 +105,7 @@ public class QuickScript
             }
         }
 
-        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\GPARAM\DS2S\";
+        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\GPARAM\temp";
 
         var options = new JsonSerializerOptions
         {

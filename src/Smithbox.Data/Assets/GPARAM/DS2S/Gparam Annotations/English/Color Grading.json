@@ -7,6 +7,7 @@
       "ID": "カラーグレーディング有効",
       "Name": "Is Color Grading Enabled",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -14,6 +15,7 @@
       "ID": "変換モード",
       "Name": "Conversion Mode",
       "Description": "",
+      "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "色相",
       "Name": "Hue",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "彩度",
       "Name": "Saturation",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "明度",
       "Name": "Brightness",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "パレットファイルID",
       "Name": "Palette File ID",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     }

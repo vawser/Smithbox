@@ -42,4 +42,9 @@ public class FileDictionaryEntry : IComparable
         var compare = (FileDictionaryEntry)obj;
         return Filename.CompareTo(compare.Filename);
     }
+
+    public FileDictionaryEntry Clone()
+    {
+        return (FileDictionaryEntry)this.MemberwiseClone();
+    }
 }

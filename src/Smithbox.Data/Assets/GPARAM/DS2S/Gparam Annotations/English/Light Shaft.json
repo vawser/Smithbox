@@ -7,6 +7,7 @@
       "ID": "ライトシャフトアルファ",
       "Name": "Light Shaft Alpha",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -14,6 +15,7 @@
       "ID": "ライトシャフト有効",
       "Name": "Is Light Shaft Enabled",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -21,6 +23,7 @@
       "ID": "ライトシャフト抑制値",
       "Name": "Light Shaft Suppression Value: 1",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "ライトシャフト減衰",
       "Name": "Light Shaft Damping: 1",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "ライトシャフト抑制値2",
       "Name": "Light Shaft Suppression Value: 2",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "ライトシャフト減衰2",
       "Name": "Light Shaft Damping: 2",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -49,6 +55,7 @@
       "ID": "ライトシャフト収束度",
       "Name": "Light Shaft Convergence Degree",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -56,6 +63,7 @@
       "ID": "ライトシャフト平行長さ",
       "Name": "Light Shaft Parallel Length",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -63,6 +71,7 @@
       "ID": "ライトシャフト平行開始する角度",
       "Name": "Light Shaft Angle: Start to Run Parallel",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -70,6 +79,7 @@
       "ID": "ライトシャフト平行完了する角度",
       "Name": "Light Shaft Angle: Parallel",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -77,6 +87,7 @@
       "ID": "ライトシャフトフェードアウト開始する角度",
       "Name": "Right Light Shaft Angle: Fade Out Start",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -84,6 +95,7 @@
       "ID": "ライトシャフトフェードアウト完了する角度",
       "Name": "Right Light Shaft Angle: Fade Out Complete",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     }

@@ -7,6 +7,7 @@
       "ID": "光状テクスチャID",
       "Name": "Luminous Texture ID",
       "Description": "",
+      "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -14,6 +15,7 @@
       "ID": "許容範囲",
       "Name": "Tolerance Range",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "アルファ",
       "Name": "Alpha",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "位置",
       "Name": "Position",
       "Description": "",
+      "Type": "Vector3Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "角度",
       "Name": "Angle",
       "Description": "",
+      "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "距離",
       "Name": "Distance",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -49,6 +55,7 @@
       "ID": "フレア1-中心時のスクリーンサイズ",
       "Name": "Flare 1: Screen Size at Center",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -56,6 +63,7 @@
       "ID": "フレア1-外周時のスクリーンサイズ",
       "Name": "Flare 1: Screen Size at Outer Edge",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -63,6 +71,7 @@
       "ID": "フレア1-中心時の内部色",
       "Name": "Flare 1: Internal Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -70,6 +79,7 @@
       "ID": "フレア1-中心時の外部色",
       "Name": "Flare 1: External Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -77,6 +87,7 @@
       "ID": "フレア1-外周時の内部色",
       "Name": "Flare 1: Internal Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -84,6 +95,7 @@
       "ID": "フレア1-外周時の外部色",
       "Name": "Flare 1: External Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -91,6 +103,7 @@
       "ID": "フレア2-中心時のスクリーンサイズ",
       "Name": "Flare 2: Screen Size at Center",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -98,6 +111,7 @@
       "ID": "フレア2-外周時のスクリーンサイズ",
       "Name": "Flare 2: Screen Size at Outer Edge",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -105,6 +119,7 @@
       "ID": "フレア2-中心時の内部色",
       "Name": "Flare 2: Internal Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -112,6 +127,7 @@
       "ID": "フレア2-中心時の外部色",
       "Name": "Flare 2: External Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -119,6 +135,7 @@
       "ID": "フレア2-外周時の内部色",
       "Name": "Flare 2: Internal Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -126,6 +143,7 @@
       "ID": "フレア2-外周時の外部色",
       "Name": "Flare 2: External Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -133,6 +151,7 @@
       "ID": "光状-中心時のスクリーンサイズ",
       "Name": "Light Shape: Screen Size",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -140,6 +159,7 @@
       "ID": "光状-外周時のスクリーンサイズ",
       "Name": "Light Shape: Screen Size at Outer Edge",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -147,6 +167,7 @@
       "ID": "光状-中心時の内部色",
       "Name": "Light Shape: Internal Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -154,6 +175,7 @@
       "ID": "光状-中心時の外部色",
       "Name": "Light Shape: External Color at Center",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -161,6 +183,7 @@
       "ID": "光状-外周時の内部色",
       "Name": "Light Shape: Internal Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -168,6 +191,7 @@
       "ID": "光状-外周時の外部色",
       "Name": "Light Shape: External Color at Outer Edge",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     }

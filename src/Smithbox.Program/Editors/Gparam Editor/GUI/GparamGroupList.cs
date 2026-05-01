@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -23,19 +24,10 @@ public class GparamGroupList
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader("Groups", "");
+        DisplayHeader();
 
-        Parent.Filters.DisplayGroupFilterSearch();
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.CircleO}##emptyGroupToggle"))
-        {
-            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
-        }
-        UIHelper.Tooltip("Toggle the display of empty groups.");
-
-        ImGui.BeginChild("GparamGroupsSection");
+        // Groups
+        ImGui.BeginChild("GparamGroupsSection", ImGuiChildFlags.Borders);
 
         if (Parent.Selection.IsFileSelected())
         {
@@ -47,15 +39,12 @@ public class GparamGroupList
                 GPARAM.Param entry = data.Params[i];
 
                 var name = entry.Key;
-                if (CFG.Current.GparamEditor_Group_List_Display_Aliases)
-                {
-                    var groupId = entry.Key;
-                    var groupName = GparamMetaUtils.GetGroupName(Project, groupId);
+                var groupId = entry.Key;
+                var groupName = GparamMetaUtils.GetGroupName(Project, groupId);
 
-                    if (groupName != null)
-                    {
-                        name = groupName;
-                    }
+                if (groupName != null)
+                {
+                    name = groupName;
                 }
 
                 var display = false;
@@ -105,6 +94,33 @@ public class GparamGroupList
                 Parent.ContextMenu.GroupContextMenu(i);
             }
         }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayHeader()
+    {
+        UIHelper.SimpleHeader("Groups", "");
+
+        // Search
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("GparamGroupSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+        Parent.Filters.DisplayGroupFilterSearch();
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##emptyGroupToggle"))
+        {
+            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
+        }
+
+        var emptyGroupMode = "Displaying empty groups.";
+        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
+        {
+            emptyGroupMode = "Hiding empty groups.";
+        }
+        UIHelper.Tooltip($"Toggle the display of empty groups.\nCurrent Mode: {emptyGroupMode}");
 
         ImGui.EndChild();
     }

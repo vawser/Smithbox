@@ -7,6 +7,7 @@
       "ID": "AA MODE",
       "Name": "Anti-Alias Mode",
       "Description": "",
+      "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -14,6 +15,7 @@
       "ID": "Alpha",
       "Name": "Alpha",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "ReduceMin",
       "Name": "Reduce Minimum",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "ReduceMul",
       "Name": "Reduce Muliplier",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "SpanMax",
       "Name": "Span Maximum",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     }

@@ -271,7 +271,7 @@ public class ProjectFileLocator : IDisposable
         return combined;
     }
 
-    private static string NormalizePath(string path)
+    public static string NormalizePath(string path)
     {
         return string.IsNullOrWhiteSpace(path)
             ? null

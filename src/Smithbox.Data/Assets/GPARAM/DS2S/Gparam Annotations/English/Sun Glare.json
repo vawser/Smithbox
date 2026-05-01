@@ -7,6 +7,7 @@
       "ID": "Starグレア有効",
       "Name": "Is Sun Glare Enabled",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -14,6 +15,7 @@
       "ID": "アルファ",
       "Name": "Alpha",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "線の数",
       "Name": "Number of Lines",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "パス数",
       "Name": "Number of Passes",
       "Description": "",
+      "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "長さ",
       "Name": "Length",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "減衰",
       "Name": "Attenuation",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -49,6 +55,7 @@
       "ID": "角度",
       "Name": "Angle",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -56,6 +63,7 @@
       "ID": "色収差",
       "Name": "Chromatic Aberration",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -63,6 +71,7 @@
       "ID": "カラー係数",
       "Name": "Color Coefficient",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     }

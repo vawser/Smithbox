@@ -29,12 +29,14 @@ public class GparamFilters
     /// </summary>
     public void DisplayFileFilterSearch()
     {
-        ImGui.InputText($"Search##fileFilterSearch", ref FileFilterInput, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
-
-        ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
         UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
+
+        ImGui.SameLine();
+
+        ImGui.InputText($"##fileFilterSearch", ref FileFilterInput, 255);
+        UIHelper.Tooltip("Separate terms are split via the + character.");
+
     }
 
     /// <summary>
@@ -93,12 +95,13 @@ public class GparamFilters
     /// </summary>
     public void DisplayGroupFilterSearch()
     {
-        ImGui.InputText($"Search##groupFilterSearch", ref GroupFilterInput, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
-
-        ImGui.SameLine();
         ImGui.Checkbox($"##groupFilterExactMatch", ref GroupFilterExactMatch);
         UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
+
+        ImGui.SameLine();
+
+        ImGui.InputText($"##groupFilterSearch", ref GroupFilterInput, 255);
+        UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
     /// <summary>
@@ -157,12 +160,13 @@ public class GparamFilters
     /// </summary>
     public void DisplayFieldFilterSearch()
     {
-        ImGui.InputText($"Search##fieldFilterSearch", ref FieldFilterInput, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
-
-        ImGui.SameLine();
         ImGui.Checkbox($"##fieldFilterExactMatch", ref FieldFilterExactMatch);
         UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
+
+        ImGui.SameLine();
+
+        ImGui.InputText($"##fieldFilterSearch", ref FieldFilterInput, 255);
+        UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
     /// <summary>
@@ -221,12 +225,13 @@ public class GparamFilters
     /// </summary>
     public void DisplayFieldValueFilterSearch()
     {
-        ImGui.InputText($"Search##fieldValueFilterSearch", ref FieldValueFilterInput, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
-
-        ImGui.SameLine();
         ImGui.Checkbox($"##fieldValueFilterExactMatch", ref FieldValueFilterExactMatch);
         UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
+
+        ImGui.SameLine();
+
+        ImGui.InputText($"##fieldValueFilterSearch", ref FieldValueFilterInput, 255);
+        UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
     /// <summary>

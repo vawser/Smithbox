@@ -7,6 +7,7 @@
       "ID": "Near",
       "Name": "Near",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -14,6 +15,7 @@
       "ID": "Cascade Dist 0->1",
       "Name": "Cascade Dist 0 -> 1",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -21,6 +23,7 @@
       "ID": "Cascade Dist 1->2",
       "Name": "Cascade Dist 1 -> 2",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -28,6 +31,7 @@
       "ID": "Cascade Dist 2->3",
       "Name": "Cascade Dist 2 -> 3",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -35,6 +39,7 @@
       "ID": "Far Fade Start",
       "Name": "Far Fade Start",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -42,6 +47,7 @@
       "ID": "Far Fade Dist",
       "Name": "Far Fade Distance",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -49,6 +55,7 @@
       "ID": "計算モード",
       "Name": "Calculation Mode",
       "Description": "",
+      "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -56,6 +63,7 @@
       "ID": "影に使用するライトID",
       "Name": "Light ID for Shadows",
       "Description": "",
+      "Type": "ByteField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -63,6 +71,7 @@
       "ID": "影終了フェード開始距離[m]",
       "Name": "Shadow Fade-out Start Distance",
       "Description": "In metres.",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -70,6 +79,7 @@
       "ID": "影終了フェード距離[m]",
       "Name": "Shadow Fade Distance",
       "Description": "In metres.",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -77,6 +87,7 @@
       "ID": "Zオフセット",
       "Name": "Z Offset",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -84,6 +95,7 @@
       "ID": "Zオフセット(PSM用)",
       "Name": "Z Offset (for PSM)",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -91,6 +103,7 @@
       "ID": "ﾌｧｰｸﾘｯﾌﾟ自動調整距離ﾚｰﾄ(PSM用)",
       "Name": "Fork Clip Auto-Adjust Distance Rate (for PSM)",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -98,6 +111,7 @@
       "ID": "ﾊﾟｰｽ調整ﾊﾟﾗﾒｰﾀ(PSM用)",
       "Name": "Pass Adjustment Parameter (for PSM)",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -105,6 +119,7 @@
       "ID": "シャドウボリュームの長さ[m]",
       "Name": "Shadow Volume Length",
       "Description": "In metres.",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -112,6 +127,7 @@
       "ID": "深度比較スムージング",
       "Name": "Depth Comparison Smoothing",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -119,6 +135,7 @@
       "ID": "影マップ生成時の深度バイアス",
       "Name": "Depth Bias during Shadow Map Generation",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -126,6 +143,7 @@
       "ID": "影マップ生成時フリップ",
       "Name": "Flip when Generating Shadow Map",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -133,6 +151,7 @@
       "ID": "ピクセルアライメントを行う",
       "Name": "Perform Pixel Alignment",
       "Description": "",
+      "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
@@ -140,6 +159,7 @@
       "ID": "Cascade 影の色",
       "Name": "Cascade Shadow Color",
       "Description": "",
+      "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -147,6 +167,7 @@
       "ID": "ファークリップ自動調整距離レート(PSM用)",
       "Name": "Fork Clip Auto-Adjust Distance Rate (for PSM)",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
@@ -154,6 +175,7 @@
       "ID": "パース調整パラメータ(PSM用)",
       "Name": "Perspective Adjustment Parameters (for PSM)",
       "Description": "",
+      "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     }

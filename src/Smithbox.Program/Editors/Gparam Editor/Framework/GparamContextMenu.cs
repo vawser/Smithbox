@@ -15,28 +15,6 @@ public class GparamContextMenu
     }
 
     /// <summary>
-    /// Context menu for File list
-    /// </summary>
-    public void FileContextMenu(FileDictionaryEntry entry)
-    {
-        if (entry.Filename == Parent.Selection._selectedGparamKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
-            {
-                if (ImGui.Selectable("Target in Quick Edit"))
-                {
-                    Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
-    /// <summary>
     /// Context menu for Groups list
     /// </summary>
     public void GroupContextMenu(int index)

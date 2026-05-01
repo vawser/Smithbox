@@ -833,13 +833,11 @@ public class CFG
     public string GparamEditor_Annotation_Language = "English";
 
     public bool GparamEditor_File_List_Display_Aliases = true;
-
-    public bool GparamEditor_Group_List_Display_Aliases = true;
     public bool GparamEditor_Group_List_Display_Empty_Group = true;
 
-    public bool GparamEditor_Field_List_Enable_Aliases = false;
-
     public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;
+    public bool GparamEditor_Value_List_Display_Time_Of_Day_Column = true;
+    public bool GparamEditor_Value_List_Display_Information_Column = true;
 
     public ColorEditDisplayMode GparamEditor_Color_Edit_Mode = ColorEditDisplayMode.RGB;
 
