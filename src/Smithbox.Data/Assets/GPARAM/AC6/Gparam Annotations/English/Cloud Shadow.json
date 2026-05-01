@@ -1,0 +1,95 @@
+{
+  "ID": "Cloud Shadow:Editor",
+  "Name": "Cloud Shadow:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Cloud Shadow-Enable",
+      "Name": "Cloud Shadow-Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture0: Id",
+      "Name": "Cloud Shadow Texture0: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture0: Shadow Scale",
+      "Name": "Cloud Shadow Texture0: Shadow Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture0: UV Offset",
+      "Name": "Cloud Shadow Texture0: UV Offset",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture0: UV Speed",
+      "Name": "Cloud Shadow Texture0: UV Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture0: UV Tilling Size:[m]",
+      "Name": "Cloud Shadow Texture0: UV Tilling Size:[m]",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture1: Id",
+      "Name": "Cloud Shadow Texture1: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture1: Shadow Scale",
+      "Name": "Cloud Shadow Texture1: Shadow Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture1: UV Offset",
+      "Name": "Cloud Shadow Texture1: UV Offset",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture1: UV Speed",
+      "Name": "Cloud Shadow Texture1: UV Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Cloud Shadow Texture1: UV Tilling Size:[m]",
+      "Name": "Cloud Shadow Texture1: UV Tilling Size:[m]",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

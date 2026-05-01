@@ -1,0 +1,231 @@
+{
+  "ID": "[GS]Lens Simulation",
+  "Name": "[GS]Lens Simulation",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "[GS]Lens Simulation Param  Enable",
+      "Name": "[GS]Lens Simulation Param  Enable",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param NearEnd",
+      "Name": "[GS]Lens Simulation Param NearEnd",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param NearStart",
+      "Name": "[GS]Lens Simulation Param NearStart",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param FarStart",
+      "Name": "[GS]Lens Simulation Param FarStart",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param FarEnd",
+      "Name": "[GS]Lens Simulation Param FarEnd",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param FocusDist",
+      "Name": "[GS]Lens Simulation Param FocusDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param UseCameraFocus",
+      "Name": "[GS]Lens Simulation Param UseCameraFocus",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param SkyMaskRate",
+      "Name": "[GS]Lens Simulation Param SkyMaskRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param Lens F",
+      "Name": "[GS]Lens Simulation Param Lens F",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param Av (絞り値)",
+      "Name": "[GS]Lens Simulation Param Av (絞り値)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param FilmSize(mm)",
+      "Name": "[GS]Lens Simulation Param FilmSize(mm)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param LinearCoCFactorNear",
+      "Name": "[GS]Lens Simulation Param LinearCoCFactorNear",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param LinearCoCFactorFar",
+      "Name": "[GS]Lens Simulation Param LinearCoCFactorFar",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param ApertureShape",
+      "Name": "[GS]Lens Simulation Param ApertureShape",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param DiaphragmRotate",
+      "Name": "[GS]Lens Simulation Param DiaphragmRotate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param CoCBlurCountPreMask",
+      "Name": "[GS]Lens Simulation Param CoCBlurCountPreMask",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param CoCBlurCount(1)",
+      "Name": "[GS]Lens Simulation Param CoCBlurCount(1)",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param CoCBlurCount(2)",
+      "Name": "[GS]Lens Simulation Param CoCBlurCount(2)",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param CoCMode",
+      "Name": "[GS]Lens Simulation Param CoCMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param NearCoCMode Linear",
+      "Name": "[GS]Lens Simulation Param NearCoCMode Linear",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param FarCoCMode Linear",
+      "Name": "[GS]Lens Simulation Param FarCoCMode Linear",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param HiResolutionBlur",
+      "Name": "[GS]Lens Simulation Param HiResolutionBlur",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param NearFarSeparatedBlur",
+      "Name": "[GS]Lens Simulation Param NearFarSeparatedBlur",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param PreTempAA",
+      "Name": "[GS]Lens Simulation Param PreTempAA",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param TemporalFeedbackWeight",
+      "Name": "[GS]Lens Simulation Param TemporalFeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param Motion Blur Intensity",
+      "Name": "[GS]Lens Simulation Param Motion Blur Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param Shutter Speed",
+      "Name": "[GS]Lens Simulation Param Shutter Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "[GS]Lens Simulation Param Solve Single Step",
+      "Name": "[GS]Lens Simulation Param Solve Single Step",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

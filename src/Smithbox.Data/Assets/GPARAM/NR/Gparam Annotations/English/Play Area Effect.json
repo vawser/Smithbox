@@ -1,0 +1,263 @@
+{
+  "ID": "PlayAreaEffect ParamEditor",
+  "Name": "PlayAreaEffect ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "PlayAreaEffect Far Tex:Tiling",
+      "Name": "PlayAreaEffect Far Tex:Tiling",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Far",
+      "Name": "PlayAreaEffect Emissive Scale Detail Far",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Enable",
+      "Name": "PlayAreaEffect Enable",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Override BaseColor",
+      "Name": "PlayAreaEffect Override BaseColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Override Smoothness",
+      "Name": "PlayAreaEffect Override Smoothness",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect BaseColor Rate",
+      "Name": "PlayAreaEffect BaseColor Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Smoothness Rate",
+      "Name": "PlayAreaEffect Smoothness Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Rate",
+      "Name": "PlayAreaEffect Emissive Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Floor:Tiling",
+      "Name": "PlayAreaEffect Near Tex Floor:Tiling",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Floor:Speed",
+      "Name": "PlayAreaEffect Near Tex Floor:Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Wall:Tiling",
+      "Name": "PlayAreaEffect Near Tex Wall:Tiling",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Near Tex Wall:Speed",
+      "Name": "PlayAreaEffect Near Tex Wall:Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Far Tex:Speed",
+      "Name": "PlayAreaEffect Far Tex:Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect MaskTex:Tiling|Speed",
+      "Name": "PlayAreaEffect MaskTex:Tiling|Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect DetailMaskTex:Tiling",
+      "Name": "PlayAreaEffect DetailMaskTex:Tiling",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Detail Mask Offset for Wall",
+      "Name": "PlayAreaEffect Detail Mask Offset for Wall",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect DistTex:Tiling|Speed",
+      "Name": "PlayAreaEffect DistTex:Tiling|Speed",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect EmissiveScale",
+      "Name": "PlayAreaEffect EmissiveScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Floor",
+      "Name": "PlayAreaEffect Emissive Scale Detail Near Floor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Wall",
+      "Name": "PlayAreaEffect Emissive Scale Detail Near Wall",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Near Marble",
+      "Name": "PlayAreaEffect Emissive Scale Detail Near Marble",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Emissive Scale Detail Far Marble",
+      "Name": "PlayAreaEffect Emissive Scale Detail Far Marble",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Border Size",
+      "Name": "PlayAreaEffect Border Size",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect BorderColorScale",
+      "Name": "PlayAreaEffect BorderColorScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Wave Scale",
+      "Name": "PlayAreaEffect Wave Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Wave Frequency",
+      "Name": "PlayAreaEffect Wave Frequency",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect RainDrop Tiling",
+      "Name": "PlayAreaEffect RainDrop Tiling",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect RainDrop Speed",
+      "Name": "PlayAreaEffect RainDrop Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Final Mask Offset",
+      "Name": "PlayAreaEffect Final Mask Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distance Fade Start",
+      "Name": "PlayAreaEffect Distance Fade Start",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distance Fade Range",
+      "Name": "PlayAreaEffect Distance Fade Range",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "PlayAreaEffect Distortion Scale",
+      "Name": "PlayAreaEffect Distortion Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

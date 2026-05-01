@@ -1,0 +1,55 @@
+{
+  "ID": "HDR ColorCorrection",
+  "Name": "HDR ColorCorrection",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "HDR ColorCorrection ColorH",
+      "Name": "HDR ColorCorrection ColorH",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "HDR ColorCorrection ColorS",
+      "Name": "HDR ColorCorrection ColorS",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "HDR ColorCorrection ColorShift",
+      "Name": "HDR ColorCorrection ColorShift",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "HDR ColorCorrection ColorScale",
+      "Name": "HDR ColorCorrection ColorScale",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "HDR ColorCorrection ColorV",
+      "Name": "HDR ColorCorrection ColorV",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "HDR ColorCorrection Contrast",
+      "Name": "HDR ColorCorrection Contrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

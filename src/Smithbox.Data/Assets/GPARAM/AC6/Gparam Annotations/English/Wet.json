@@ -1,0 +1,39 @@
+{
+  "ID": "Wet ParamEditor",
+  "Name": "Wet ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Wet-OverrideAlbedo",
+      "Name": "Wet-OverrideAlbedo",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Wet-OverrideShininess",
+      "Name": "Wet-OverrideShininess",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Wet-AlbedoRate",
+      "Name": "Wet-AlbedoRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Wet-ShininessRate",
+      "Name": "Wet-ShininessRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "ID": "ColorParaffin Filter-Editor",
+  "Name": "ColorParaffin Filter-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "ColorParaffin Filter-Enable",
+      "Name": "ColorParaffin Filter-Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Filter-Mode",
+      "Name": "ColorParaffin Filter-Mode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Radiation - CenterPos",
+      "Name": "ColorParaffin Radiation - CenterPos",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Radiation - Radius",
+      "Name": "ColorParaffin Radiation - Radius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Radiation - StartColor",
+      "Name": "ColorParaffin Radiation - StartColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Radiation - EndColor",
+      "Name": "ColorParaffin Radiation - EndColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ColorParaffin Radiation - Curvature",
+      "Name": "ColorParaffin Radiation - Curvature",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

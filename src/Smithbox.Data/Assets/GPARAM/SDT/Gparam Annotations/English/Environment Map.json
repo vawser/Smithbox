@@ -1,0 +1,23 @@
+{
+  "ID": "Env Map:Editor",
+  "Name": "Env Map:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Env Map: EnvMapId",
+      "Name": "Env Map: EnvMapId",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Env Map: ColorScale",
+      "Name": "Env Map: ColorScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

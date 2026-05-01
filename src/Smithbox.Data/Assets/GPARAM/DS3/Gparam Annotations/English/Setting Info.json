@@ -1,0 +1,207 @@
+{
+  "ID": "Setting Info[Yebis]",
+  "Name": "Setting Info[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GS - BG Color-Data",
+      "Name": "GS - BG Color-Data",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Use DepthTexture",
+      "Name": "Yebis-Use DepthTexture",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable LensDistortion",
+      "Name": "Yebis-Enable LensDistortion",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable ApertureairyDisc",
+      "Name": "Yebis-Enable ApertureairyDisc",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable ApertureairyUnlimitedRadius",
+      "Name": "Yebis-Enable ApertureairyUnlimitedRadius",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable MotionBlur-Dof",
+      "Name": "Yebis-Enable MotionBlur-Dof",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable MotionBlurUnlimitedrecursion",
+      "Name": "Yebis-Enable MotionBlurUnlimitedrecursion",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Create MotionBlurInternalVelocityTex",
+      "Name": "Yebis-Create MotionBlurInternalVelocityTex",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable Gaussian",
+      "Name": "Yebis-Enable Gaussian",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable FeedBackEffect",
+      "Name": "Yebis-Enable FeedBackEffect",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Use Enable Anti-Alias",
+      "Name": "Yebis-Use Enable Anti-Alias",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable LightShaft",
+      "Name": "Yebis-Enable LightShaft",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable Choromaticaberration",
+      "Name": "Yebis-Enable Choromaticaberration",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable AnamophicLensAspectratio",
+      "Name": "Yebis-Enable AnamophicLensAspectratio",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable AnamorphicLensAperture",
+      "Name": "Yebis-Enable AnamorphicLensAperture",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable ColorGrading",
+      "Name": "Yebis-Enable ColorGrading",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Enable  SceneLuminanceScale",
+      "Name": "Yebis-Enable  SceneLuminanceScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-BlurShape",
+      "Name": "Yebis-BlurShape",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Use GlareQuality",
+      "Name": "Yebis-Use GlareQuality",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfFieldQuality",
+      "Name": "Yebis-DepthOfFieldQuality",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect- Auto Compute Enable",
+      "Name": "SceneSetting-  LightCollect- Auto Compute Enable",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect- BaseDist",
+      "Name": "SceneSetting-  LightCollect- BaseDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect-DistScaler",
+      "Name": "SceneSetting-  LightCollect-DistScaler",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect-DistMax",
+      "Name": "SceneSetting-  LightCollect-DistMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  ReflectScene Assign DynamicLight",
+      "Name": "SceneSetting-  ReflectScene Assign DynamicLight",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

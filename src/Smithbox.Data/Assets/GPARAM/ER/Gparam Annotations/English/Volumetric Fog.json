@@ -1,0 +1,367 @@
+{
+  "ID": "VolumetricFog ParamEditor",
+  "Name": "VolumetricFog ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "VolumetricFog Enable",
+      "Name": "VolumetricFog Enable",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog VolumeWidth",
+      "Name": "VolumetricFog VolumeWidth",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog VolumeDepth",
+      "Name": "VolumetricFog VolumeDepth",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog GameScale",
+      "Name": "VolumetricFog GameScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog NearDepth",
+      "Name": "VolumetricFog NearDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FarDepth",
+      "Name": "VolumetricFog FarDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog NearOffset",
+      "Name": "VolumetricFog NearOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FogEndDepth",
+      "Name": "VolumetricFog FogEndDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DrawTiming",
+      "Name": "VolumetricFog DrawTiming",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog EnableAnalyticalFog",
+      "Name": "VolumetricFog EnableAnalyticalFog",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog VolumeSliceSampleOffset",
+      "Name": "VolumetricFog VolumeSliceSampleOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog CullingBySceneDepth",
+      "Name": "VolumetricFog CullingBySceneDepth",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog CancelInScatteringRateFromSSR",
+      "Name": "VolumetricFog CancelInScatteringRateFromSSR",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global FixedDensity",
+      "Name": "VolumetricFog Global FixedDensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global ScatteringG",
+      "Name": "VolumetricFog Global ScatteringG",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global LocalLightScale",
+      "Name": "VolumetricFog Global LocalLightScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global LocalLightDistScale",
+      "Name": "VolumetricFog Global LocalLightDistScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global HeightFogDistribution",
+      "Name": "VolumetricFog Global HeightFogDistribution",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global HeightFogOffset",
+      "Name": "VolumetricFog Global HeightFogOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global HeightFogReferenceOffset",
+      "Name": "VolumetricFog Global HeightFogReferenceOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global HeightFogReferenceModeRate",
+      "Name": "VolumetricFog Global HeightFogReferenceModeRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global HeightFogDensity Scale",
+      "Name": "VolumetricFog Global HeightFogDensity Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Global AbsorptionScale",
+      "Name": "VolumetricFog Global AbsorptionScale",
+      "Description": "",
+      "Type": "Vector3Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog SkyLight SkyColor",
+      "Name": "VolumetricFog SkyLight SkyColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog SkyLight HeightAtten",
+      "Name": "VolumetricFog SkyLight HeightAtten",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog SkyLight StartDist",
+      "Name": "VolumetricFog SkyLight StartDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight LightBankId",
+      "Name": "VolumetricFog DirLight LightBankId",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight LightId",
+      "Name": "VolumetricFog DirLight LightId",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight DirectColor",
+      "Name": "VolumetricFog DirLight DirectColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight OppositeColor",
+      "Name": "VolumetricFog DirLight OppositeColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight HeightAtten",
+      "Name": "VolumetricFog DirLight HeightAtten",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight StartDist",
+      "Name": "VolumetricFog DirLight StartDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight ShadowSampleCount",
+      "Name": "VolumetricFog DirLight ShadowSampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight ShadowDither",
+      "Name": "VolumetricFog DirLight ShadowDither",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight AngleClip",
+      "Name": "VolumetricFog DirLight AngleClip",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight EnableReproj",
+      "Name": "VolumetricFog DirLight EnableReproj",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight JitterCount",
+      "Name": "VolumetricFog DirLight JitterCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight JitterXYSize",
+      "Name": "VolumetricFog DirLight JitterXYSize",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog DirLight FeedbackWeight",
+      "Name": "VolumetricFog DirLight FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FogVolume InjectingSampleCount",
+      "Name": "VolumetricFog FogVolume InjectingSampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FogVolume InjectingDither",
+      "Name": "VolumetricFog FogVolume InjectingDither",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FogVolume InjectingReprojEnabled",
+      "Name": "VolumetricFog FogVolume InjectingReprojEnabled",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog FogVolume InjectingFeedbackWeight",
+      "Name": "VolumetricFog FogVolume InjectingFeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Config SampleCount",
+      "Name": "VolumetricFog Config SampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "VolumetricFog Config Dither",
+      "Name": "VolumetricFog Config Dither",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

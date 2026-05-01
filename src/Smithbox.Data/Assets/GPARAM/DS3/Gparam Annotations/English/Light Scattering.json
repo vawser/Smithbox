@@ -1,0 +1,103 @@
+{
+  "ID": "LightScattering : ParamEditor",
+  "Name": "LightScattering : ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Ls-sunRotX",
+      "Name": "Ls-sunRotX",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-sunRotY",
+      "Name": "Ls-sunRotY",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-距離倍率[%]",
+      "Name": "Ls-距離倍率[%]",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-光源色R",
+      "Name": "Ls-光源色R",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-光源色G",
+      "Name": "Ls-光源色G",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-光源色B",
+      "Name": "Ls-光源色B",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-光源RGB倍率[%]",
+      "Name": "Ls-光源RGB倍率[%]",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-散乱方向係数",
+      "Name": "Ls-散乱方向係数",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-レイリー散乱係数",
+      "Name": "Ls-レイリー散乱係数",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-ミー散乱係数",
+      "Name": "Ls-ミー散乱係数",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-ブレンド係数[%]",
+      "Name": "Ls-ブレンド係数[%]",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Ls-地上の乱反射光RGB倍率[%]",
+      "Name": "Ls-地上の乱反射光RGB倍率[%]",
+      "Description": "",
+      "Type": "ShortField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

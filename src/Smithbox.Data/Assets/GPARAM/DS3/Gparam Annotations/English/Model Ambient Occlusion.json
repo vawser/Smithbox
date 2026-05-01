@@ -1,0 +1,39 @@
+{
+  "ID": "AOFields Model - Editor",
+  "Name": "AOFields Model - Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "AOFields - 3DTexture - AO Strength",
+      "Name": "AOFields - 3DTexture - AO Strength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Light Cone Angle",
+      "Name": "AOFields - Sphere Occluder - Light Cone Angle",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Light Cone Coefficient",
+      "Name": "AOFields - Sphere Occluder - Light Cone Coefficient",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Sphere Occluder - Length Limit",
+      "Name": "AOFields - Sphere Occluder - Length Limit",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

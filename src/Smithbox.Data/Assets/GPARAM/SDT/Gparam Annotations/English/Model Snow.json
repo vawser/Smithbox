@@ -1,0 +1,15 @@
+{
+  "ID": "SnowModel:Editor",
+  "Name": "SnowModel:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "SnowModel Snow Rate",
+      "Name": "SnowModel Snow Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

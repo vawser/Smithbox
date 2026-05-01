@@ -1,0 +1,39 @@
+{
+  "ID": "EnvironmentConfig ParamEditor",
+  "Name": "EnvironmentConfig ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "EnvironmentConfig EnvMapColorConvert Hue",
+      "Name": "EnvironmentConfig EnvMapColorConvert Hue",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "EnvironmentConfig EnvMapColorConvert Saturate",
+      "Name": "EnvironmentConfig EnvMapColorConvert Saturate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "EnvironmentConfig EnvMapColorConvert Shift",
+      "Name": "EnvironmentConfig EnvMapColorConvert Shift",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "EnvironmentConfig EnvMapColorConvert Scale",
+      "Name": "EnvironmentConfig EnvMapColorConvert Scale",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

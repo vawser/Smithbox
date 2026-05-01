@@ -1,0 +1,287 @@
+{
+  "ID": "FogVolume ParamEditor",
+  "Name": "FogVolume ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "FogVolume DrawArea NearFadeMinDistance",
+      "Name": "FogVolume DrawArea NearFadeMinDistance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea NearFadeMaxDistance",
+      "Name": "FogVolume DrawArea NearFadeMaxDistance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea EdgeFadeDistance",
+      "Name": "FogVolume DrawArea EdgeFadeDistance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea EdgeFadeExponent",
+      "Name": "FogVolume DrawArea EdgeFadeExponent",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea HeightFallOff",
+      "Name": "FogVolume DrawArea HeightFallOff",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea FadeDistanceForHeightMap",
+      "Name": "FogVolume DrawArea FadeDistanceForHeightMap",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea MaxInjectingDepth",
+      "Name": "FogVolume DrawArea MaxInjectingDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume DrawArea ZOffset",
+      "Name": "FogVolume DrawArea ZOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume RayMarching MaxSampleCount",
+      "Name": "FogVolume RayMarching MaxSampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume RayMarching SteppingDistance",
+      "Name": "FogVolume RayMarching SteppingDistance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume RayMarching SuspendedTransmittance",
+      "Name": "FogVolume RayMarching SuspendedTransmittance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume RayMarching LightProcessingInterval",
+      "Name": "FogVolume RayMarching LightProcessingInterval",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume RayMarching LightProcessingIntervalThreshold",
+      "Name": "FogVolume RayMarching LightProcessingIntervalThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light Overwrite",
+      "Name": "FogVolume Light Overwrite",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light LightInjectingType",
+      "Name": "FogVolume Light LightInjectingType",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light DirectionalLightAngle",
+      "Name": "FogVolume Light DirectionalLightAngle",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light DirectionalLightColor",
+      "Name": "FogVolume Light DirectionalLightColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light DirectionalLightOppositeColor",
+      "Name": "FogVolume Light DirectionalLightOppositeColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light AmbientColor",
+      "Name": "FogVolume Light AmbientColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light ColorMapTextureIntensity",
+      "Name": "FogVolume Light ColorMapTextureIntensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light ColorMapTextureUVTiling-x",
+      "Name": "FogVolume Light ColorMapTextureUVTiling-x",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light ColorMapTextureUVTiling-y",
+      "Name": "FogVolume Light ColorMapTextureUVTiling-y",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light ShadowingIntensity",
+      "Name": "FogVolume Light ShadowingIntensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light AttenuationIntensity",
+      "Name": "FogVolume Light AttenuationIntensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light AttenuationOffset",
+      "Name": "FogVolume Light AttenuationOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Light OctaveNumPerlinNoise",
+      "Name": "FogVolume Light OctaveNumPerlinNoise",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Density Intensity",
+      "Name": "FogVolume Density Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume PerlinNoise Frequency",
+      "Name": "FogVolume PerlinNoise Frequency",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume PerlinNoise Lacunarity",
+      "Name": "FogVolume PerlinNoise Lacunarity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume PerlinNoise Gain",
+      "Name": "FogVolume PerlinNoise Gain",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume PerlinNoise Offset",
+      "Name": "FogVolume PerlinNoise Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Scroll Speed-x",
+      "Name": "FogVolume Scroll Speed-x",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Scroll Speed-y",
+      "Name": "FogVolume Scroll Speed-y",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Scroll Speed-z",
+      "Name": "FogVolume Scroll Speed-z",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FogVolume Scroll DetailScale",
+      "Name": "FogVolume Scroll DetailScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

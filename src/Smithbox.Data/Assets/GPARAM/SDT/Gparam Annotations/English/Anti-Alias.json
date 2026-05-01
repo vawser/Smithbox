@@ -1,0 +1,263 @@
+{
+  "ID": "Anti-Alias-Editor",
+  "Name": "Anti-Alias-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-Anti-Alias Enable",
+      "Name": "Yebis-Anti-Alias Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - AntiAliasType",
+      "Name": "AntiAlias - AntiAliasType",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - fFxaaAlpha",
+      "Name": "AntiAlias - fFxaaAlpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaReduceMin",
+      "Name": "AntiAlias - FxaaReduceMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaReduceMul",
+      "Name": "AntiAlias - FxaaReduceMul",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaSpanMax",
+      "Name": "AntiAlias - FxaaSpanMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaThreshold",
+      "Name": "AntiAlias - DlaaThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaRamda",
+      "Name": "AntiAlias - DlaaRamda",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaEpsilon",
+      "Name": "AntiAlias - DlaaEpsilon",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FeedbackWeight",
+      "Name": "AntiAlias - FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - JitterCount",
+      "Name": "AntiAlias - JitterCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - EnableDitherSwitch",
+      "Name": "AntiAlias - EnableDitherSwitch",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - SharpenIntensity",
+      "Name": "AntiAlias - SharpenIntensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - SharpenRangeMin",
+      "Name": "AntiAlias - SharpenRangeMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - SharpenRangeMax",
+      "Name": "AntiAlias - SharpenRangeMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - SubpixelFeedbackFactor",
+      "Name": "AntiAlias - SubpixelFeedbackFactor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightCancelByDepth(0)",
+      "Name": "AntiAlias - FBWeightCancelByDepth(0)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightCancelByDepth(1)",
+      "Name": "AntiAlias - FBWeightCancelByDepth(1)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightCancelByDepth(2)",
+      "Name": "AntiAlias - FBWeightCancelByDepth(2)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightCancelByDepth(3)",
+      "Name": "AntiAlias - FBWeightCancelByDepth(3)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightBorderDepth(0)",
+      "Name": "AntiAlias - FBWeightBorderDepth(0)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightBorderDepth(1)",
+      "Name": "AntiAlias - FBWeightBorderDepth(1)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FBWeightBorderDepth(2)",
+      "Name": "AntiAlias - FBWeightBorderDepth(2)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - CBFeedbackWeightSampled",
+      "Name": "AntiAlias - CBFeedbackWeightSampled",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - CBFeedbackWeightFiltered",
+      "Name": "AntiAlias - CBFeedbackWeightFiltered",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - EnableMotionVectorDilation",
+      "Name": "AntiAlias - EnableMotionVectorDilation",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - EnableStencilMask",
+      "Name": "AntiAlias - EnableStencilMask",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - RejectedPixelBlurIntensity",
+      "Name": "AntiAlias - RejectedPixelBlurIntensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FeedbackWeightScale(None)",
+      "Name": "AntiAlias - FeedbackWeightScale(None)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FeedbackWeightScale(0)",
+      "Name": "AntiAlias - FeedbackWeightScale(0)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FeedbackWeightScale(1)",
+      "Name": "AntiAlias - FeedbackWeightScale(1)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FeedbackWeightScale(2)",
+      "Name": "AntiAlias - FeedbackWeightScale(2)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

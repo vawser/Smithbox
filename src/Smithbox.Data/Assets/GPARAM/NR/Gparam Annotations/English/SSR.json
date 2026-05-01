@@ -1,0 +1,127 @@
+{
+  "ID": "SSR ParamEditor",
+  "Name": "SSR ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "SSR Enable",
+      "Name": "SSR Enable",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR TraverseMode",
+      "Name": "SSR TraverseMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Shininess Reject Threshold",
+      "Name": "SSR Shininess Reject Threshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Depth Reject Threshold",
+      "Name": "SSR Depth Reject Threshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Fade To Viewer Start",
+      "Name": "SSR Fade To Viewer Start",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Fresnel Reject Threshold",
+      "Name": "SSR Fresnel Reject Threshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Ray Trace Step Scale Min",
+      "Name": "SSR Ray Trace Step Scale Min",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Ray Trace Step Scale Max",
+      "Name": "SSR Ray Trace Step Scale Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Display Mip Scale",
+      "Name": "SSR Display Mip Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Display Mip Offset",
+      "Name": "SSR Display Mip Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Depth Fade Range",
+      "Name": "SSR Depth Fade Range",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Geom Crack Detect Factor",
+      "Name": "SSR Geom Crack Detect Factor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Tex Blur Sigma",
+      "Name": "SSR Tex Blur Sigma",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Tex Blur Sigma for Mip",
+      "Name": "SSR Tex Blur Sigma for Mip",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSR Alpha Boost",
+      "Name": "SSR Alpha Boost",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

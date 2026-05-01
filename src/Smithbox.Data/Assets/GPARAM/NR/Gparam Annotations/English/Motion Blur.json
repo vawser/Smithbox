@@ -1,0 +1,95 @@
+{
+  "ID": "MotionBlur-Editor[Yebis]",
+  "Name": "MotionBlur-Editor[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GSPresents-MotionBlur-Enable",
+      "Name": "GSPresents-MotionBlur-Enable",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Motion Blur Intensity",
+      "Name": "MotionBlur[GS Presents] Motion Blur Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Blur Max Length",
+      "Name": "MotionBlur[GS Presents] Blur Max Length",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Shutter Speed",
+      "Name": "MotionBlur[GS Presents] Shutter Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Sample Count",
+      "Name": "MotionBlur[GS Presents] Sample Count",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Blur ReccurenceCount",
+      "Name": "MotionBlur[GS Presents] Blur ReccurenceCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Bidirectional Blur",
+      "Name": "MotionBlur[GS Presents] Bidirectional Blur",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MotionBlur[GS Presents] Blur Cutoff threshold in Pixel",
+      "Name": "MotionBlur[GS Presents] Blur Cutoff threshold in Pixel",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GSPresents-MotionBlur-bInnerTime",
+      "Name": "GSPresents-MotionBlur-bInnerTime",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
+      "Name": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
+      "Name": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

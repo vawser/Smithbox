@@ -1,0 +1,223 @@
+{
+  "ID": "LightSet ParamEditor",
+  "Name": "LightSet ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Directional Light Angle0",
+      "Name": "Directional Light Angle0",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light DiffColor0",
+      "Name": "Directional Light DiffColor0",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SpecColor0",
+      "Name": "Directional Light SpecColor0",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light Sharpness0",
+      "Name": "Directional Light Sharpness0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SsaoWeight0",
+      "Name": "Directional Light SsaoWeight0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light Angle1",
+      "Name": "Directional Light Angle1",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light DiffColor1",
+      "Name": "Directional Light DiffColor1",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SpecColor1",
+      "Name": "Directional Light SpecColor1",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light Sharpness1",
+      "Name": "Directional Light Sharpness1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SsaoWeight1",
+      "Name": "Directional Light SsaoWeight1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight Angle1",
+      "Name": "Directional Light LocalLight Angle1",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight DiffColor1",
+      "Name": "Directional Light LocalLight DiffColor1",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight SpecColor1",
+      "Name": "Directional Light LocalLight SpecColor1",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional LocalLight Light Sharpness1",
+      "Name": "Directional LocalLight Light Sharpness1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SsaoWeight2",
+      "Name": "Directional Light SsaoWeight2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight Angle2",
+      "Name": "Directional Light LocalLight Angle2",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight DiffColor2",
+      "Name": "Directional Light LocalLight DiffColor2",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light LocalLight SpecColor2",
+      "Name": "Directional Light LocalLight SpecColor2",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional LocalLight Light Sharpness2",
+      "Name": "Directional LocalLight Light Sharpness2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light SsaoWeight3",
+      "Name": "Directional Light SsaoWeight3",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light Hemi Color Up",
+      "Name": "Directional Light Hemi Color Up",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light Hemi Color Down",
+      "Name": "Directional Light Hemi Color Down",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional LightLight1 FollowedCamera",
+      "Name": "Directional LightLight1 FollowedCamera",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Enable LocalLight1",
+      "Name": "Directional Enable LocalLight1",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Enable LocalLight2",
+      "Name": "Directional Enable LocalLight2",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light  LightMask Influence",
+      "Name": "Directional Light  LightMask Influence",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Directional Light giOcclusionRate",
+      "Name": "Directional Light giOcclusionRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

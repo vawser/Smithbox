@@ -1,0 +1,103 @@
+{
+  "ID": "AboveShadow ParamEditor",
+  "Name": "AboveShadow ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "AboveShadow UpdateNarrowShadow",
+      "Name": "AboveShadow UpdateNarrowShadow",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow UpdateBroadShadow",
+      "Name": "AboveShadow UpdateBroadShadow",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow NarrowShadowResolution",
+      "Name": "AboveShadow NarrowShadowResolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow BroadShadowResolution",
+      "Name": "AboveShadow BroadShadowResolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow NarrowShadowRange",
+      "Name": "AboveShadow NarrowShadowRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow BroadShadowRange",
+      "Name": "AboveShadow BroadShadowRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow DepthOffset DepthOffset",
+      "Name": "AboveShadow DepthOffset DepthOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow DepthOffset DepthBias",
+      "Name": "AboveShadow DepthOffset DepthBias",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow DepthOffset SlopeScaledDepthBias",
+      "Name": "AboveShadow DepthOffset SlopeScaledDepthBias",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow VolumeDepth",
+      "Name": "AboveShadow VolumeDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow ShadowModelCullFlip",
+      "Name": "AboveShadow ShadowModelCullFlip",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AboveShadow AlignTexel",
+      "Name": "AboveShadow AlignTexel",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

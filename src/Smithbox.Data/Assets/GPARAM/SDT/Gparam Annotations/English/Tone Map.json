@@ -1,0 +1,543 @@
+{
+  "ID": "Tone Map[Yebis]",
+  "Name": "Tone Map[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GS Presents - ToneMap-Exposure",
+      "Name": "GS Presents - ToneMap-Exposure",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ToneMapMode",
+      "Name": "GS Presents - ToneMap-ToneMapMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Contrast",
+      "Name": "GS Presents - ToneMap-Contrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ReinhardContrast",
+      "Name": "GS Presents - ToneMap-ReinhardContrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ReinhardWhiteBalance",
+      "Name": "GS Presents - ToneMap-ReinhardWhiteBalance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Enable AutoExposure",
+      "Name": "GS Presents - ToneMap-Enable AutoExposure",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
+      "Name": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
+      "Name": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Middle Gray",
+      "Name": "GS Presents - ToneMap-AutoExposure Middle Gray",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Center Weight",
+      "Name": "GS Presents - ToneMap-AutoExposure Center Weight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Adaption Max",
+      "Name": "GS Presents - ToneMap-AutoExposure Adaption Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Adaption Min",
+      "Name": "GS Presents - ToneMap-AutoExposure Adaption Min",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Chromatic Aberration Enable",
+      "Name": "GS Presents - Chromatic Aberration Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneLateralDispersion[0]",
+      "Name": "GS Presents - ToneLateralDispersion[0]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneLateralDispersion[1]",
+      "Name": "GS Presents - ToneLateralDispersion[1]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Power",
+      "Name": "GS Presents - Vignetting Power",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Range",
+      "Name": "GS Presents - Vignetting Range",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Shape",
+      "Name": "GS Presents - Vignetting Shape",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Fov Dependence",
+      "Name": "GS Presents - Vignetting Fov Dependence",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorH",
+      "Name": "GS Presents - ColorH",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorS",
+      "Name": "GS Presents - ColorS",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorV",
+      "Name": "GS Presents - ColorV",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Contrast",
+      "Name": "GS Presents - Contrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneMapExposure",
+      "Name": "Yebis-ToneMapExposure",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Gamma",
+      "Name": "Yebis-Gamma",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneType",
+      "Name": "Yebis-ToneType",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneMappingFactor",
+      "Name": "Yebis-ToneMappingFactor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FilmicContrast",
+      "Name": "Yebis-FilmicContrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ColorH",
+      "Name": "Yebis-ColorH",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ColorS",
+      "Name": "Yebis-ColorS",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ColorV",
+      "Name": "Yebis-ColorV",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Contrust",
+      "Name": "Yebis-Contrust",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AutoExposure",
+      "Name": "Yebis-AutoExposure",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DelayFrame",
+      "Name": "Yebis-DelayFrame",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MiddleGray",
+      "Name": "Yebis-MiddleGray",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneInfluencedByGlare",
+      "Name": "Yebis-ToneInfluencedByGlare",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MinExposure",
+      "Name": "Yebis-MinExposure",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MaxExposure",
+      "Name": "Yebis-MaxExposure",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Exposure MeteringWidth",
+      "Name": "Yebis-Exposure MeteringWidth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Exposure MeteringHeight",
+      "Name": "Yebis-Exposure MeteringHeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Exposure MeteringOffsetX",
+      "Name": "Yebis-Exposure MeteringOffsetX",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Exposure MeteringOffsetY",
+      "Name": "Yebis-Exposure MeteringOffsetY",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AdaptationSensitivity",
+      "Name": "Yebis-AdaptationSensitivity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AdaptationScale",
+      "Name": "Yebis-AdaptationScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AdaptationSpeedLimit",
+      "Name": "Yebis-AdaptationSpeedLimit",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DarkAdaptationSensitivity",
+      "Name": "Yebis-DarkAdaptationSensitivity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DarkAdaptationScale",
+      "Name": "Yebis-DarkAdaptationScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DarkAdaptationSpeedLimit",
+      "Name": "Yebis-DarkAdaptationSpeedLimit",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-fAdaptationScale / fDarkAdaptationScale",
+      "Name": "Yebis-fAdaptationScale / fDarkAdaptationScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Vignette Power",
+      "Name": "Yebis-Vignette Power",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-VignetteFovDependence",
+      "Name": "Yebis-VignetteFovDependence",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Chromatic Aberration Enable",
+      "Name": "Yebis-Chromatic Aberration Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-WaveSample",
+      "Name": "Yebis-WaveSample",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneLateralDispersion[0]",
+      "Name": "Yebis-ToneLateralDispersion[0]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneLateralDispersion[1]",
+      "Name": "Yebis-ToneLateralDispersion[1]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneUniformDispersion[0]",
+      "Name": "Yebis-ToneUniformDispersion[0]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ToneUniformDispersion[1]",
+      "Name": "Yebis-ToneUniformDispersion[1]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-FreezeAdaptionFade",
+      "Name": "GS Presents - ToneMap-FreezeAdaptionFade",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AvgLuminance",
+      "Name": "GS Presents - ToneMap-AvgLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-LuminanceBalanceR",
+      "Name": "GS Presents - ToneMap-LuminanceBalanceR",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-LuminanceBalanceG",
+      "Name": "GS Presents - ToneMap-LuminanceBalanceG",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-LuminanceBalanceB",
+      "Name": "GS Presents - ToneMap-LuminanceBalanceB",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Scaler R",
+      "Name": "GS Presents - ToneMap-Scaler R",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Scaler G",
+      "Name": "GS Presents - ToneMap-Scaler G",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Scaler B",
+      "Name": "GS Presents - ToneMap-Scaler B",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Gamma",
+      "Name": "GS Presents - ToneMap-Gamma",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-UseTable",
+      "Name": "GS Presents - ToneMap-UseTable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "ID": "Bloom[Yebis]",
+  "Name": "Bloom[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Gs Presents【Bloom】 Enable",
+      "Name": "Gs Presents【Bloom】 Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareNumLevels",
+      "Name": "Gs Presents-GlareNumLevels",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-Glare Luminance",
+      "Name": "Gs Presents-Glare Luminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-Glare Threshold",
+      "Name": "Gs Presents-Glare Threshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Alpha",
+      "Name": "Gs Presents-GlareBloom Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom GaussianRadiusScale",
+      "Name": "Gs Presents-GlareBloom GaussianRadiusScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Sturate Ctrl",
+      "Name": "Gs Presents-GlareBloom Sturate Ctrl",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Smooth",
+      "Name": "Gs Presents-GlareBloom Smooth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom FeedbackWeight",
+      "Name": "Gs Presents-GlareBloom FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

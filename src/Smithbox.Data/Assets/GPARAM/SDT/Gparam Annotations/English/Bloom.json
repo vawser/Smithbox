@@ -1,0 +1,359 @@
+{
+  "ID": "Bloom[Yebis]",
+  "Name": "Bloom[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Gs Presents【Bloom】 Enable",
+      "Name": "Gs Presents【Bloom】 Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareNumLevels",
+      "Name": "Gs Presents-GlareNumLevels",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-Glare Luminance",
+      "Name": "Gs Presents-Glare Luminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-Glare Threshold",
+      "Name": "Gs Presents-Glare Threshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Alpha",
+      "Name": "Gs Presents-GlareBloom Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom GaussianRadiusScale",
+      "Name": "Gs Presents-GlareBloom GaussianRadiusScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Sturate Ctrl",
+      "Name": "Gs Presents-GlareBloom Sturate Ctrl",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom Smooth",
+      "Name": "Gs Presents-GlareBloom Smooth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Gs Presents-GlareBloom FeedbackWeight",
+      "Name": "Gs Presents-GlareBloom FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareLuminance",
+      "Name": "Yebis-GlareLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareThreshold",
+      "Name": "Yebis-GlareThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareSamplingThreshold",
+      "Name": "Yebis-GlareSamplingThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-RemapFactor",
+      "Name": "Yebis-RemapFactor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareStarLengthFovDependence",
+      "Name": "Yebis-GlareStarLengthFovDependence",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareStarFileterThreshold",
+      "Name": "Yebis-GlareStarFileterThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareStarSoftness",
+      "Name": "Yebis-GlareStarSoftness",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareShape",
+      "Name": "Yebis-GlareShape",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareNumLevels",
+      "Name": "Yebis-GlareNumLevels",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareBloomGaussianRadiusScale",
+      "Name": "Yebis-GlareBloomGaussianRadiusScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareBloomLuminanceGamma",
+      "Name": "Yebis-GlareBloomLuminanceGamma",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareGhostConcentricDistortion",
+      "Name": "Yebis-GlareGhostConcentricDistortion",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom GlareLuminance",
+      "Name": "Yebis-CustomBloom GlareLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom BloomLuminance",
+      "Name": "Yebis-CustomBloom BloomLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom BloomDispersion",
+      "Name": "Yebis-CustomBloom BloomDispersion",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom BloomDispersionBaseLevel",
+      "Name": "Yebis-CustomBloom BloomDispersionBaseLevel",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom GhostLuminance",
+      "Name": "Yebis-CustomBloom GhostLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom GhostHaloLuminance",
+      "Name": "Yebis-CustomBloom GhostHaloLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom GhostDistortion",
+      "Name": "Yebis-CustomBloom GhostDistortion",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis--CustomBloom GhostSharpness",
+      "Name": "Yebis--CustomBloom GhostSharpness",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarLuminance",
+      "Name": "Yebis-CustomBloom StarLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarStreaks",
+      "Name": "Yebis-CustomBloom StarStreaks",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarLength",
+      "Name": "Yebis-CustomBloom StarLength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarSecondaryLength",
+      "Name": "Yebis-CustomBloom StarSecondaryLength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis--CustomBloom StarRotation",
+      "Name": "Yebis--CustomBloom StarRotation",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarInclinationAngle",
+      "Name": "Yebis-CustomBloom StarInclinationAngle",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom StarDispersion",
+      "Name": "Yebis-CustomBloom StarDispersion",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis--CustomBloom StarForceDispersion",
+      "Name": "Yebis--CustomBloom StarForceDispersion",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom AfterimageLuminance",
+      "Name": "Yebis-CustomBloom AfterimageLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CustomBloom AfterimageLength",
+      "Name": "Yebis-CustomBloom AfterimageLength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AnamorphicLens Enable",
+      "Name": "Yebis-AnamorphicLens Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AnamorphicFlareLuminance",
+      "Name": "Yebis-AnamorphicFlareLuminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AnamorphicFlareGhostLuminanceScale",
+      "Name": "Yebis-AnamorphicFlareGhostLuminanceScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AnamorphicFlareColor",
+      "Name": "Yebis-AnamorphicFlareColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AnamorphicGhostColor",
+      "Name": "Yebis-AnamorphicGhostColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

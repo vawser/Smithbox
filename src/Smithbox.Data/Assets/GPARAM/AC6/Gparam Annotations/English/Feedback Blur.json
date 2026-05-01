@@ -1,0 +1,55 @@
+{
+  "ID": "FeedBackBlur-Editor[Yebis]",
+  "Name": "FeedBackBlur-Editor[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-FeedBackBlur-Enable",
+      "Name": "Yebis-FeedBackBlur-Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FeedbackWeight",
+      "Name": "Yebis-FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Feedback UnitTimeInSeconds",
+      "Name": "Yebis-Feedback UnitTimeInSeconds",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Object-FeedbackBlurRate",
+      "Name": "Object-FeedbackBlurRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Object-FeedbackBlurFallOff",
+      "Name": "Object-FeedbackBlurFallOff",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Object-FeedbackBlurPower",
+      "Name": "Object-FeedbackBlurPower",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

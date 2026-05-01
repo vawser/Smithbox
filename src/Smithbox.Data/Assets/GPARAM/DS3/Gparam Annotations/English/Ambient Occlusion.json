@@ -1,0 +1,55 @@
+{
+  "ID": "AOFields - Editor",
+  "Name": "AOFields - Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "AOFields - Enable Draw",
+      "Name": "AOFields - Enable Draw",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Enable UpScale",
+      "Name": "AOFields - Enable UpScale",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Global Strength",
+      "Name": "AOFields - Global Strength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Depth Thresh",
+      "Name": "AOFields - Depth Thresh",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Distance Max",
+      "Name": "AOFields - Distance Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AOFields - Distance Margin",
+      "Name": "AOFields - Distance Margin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

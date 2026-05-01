@@ -1,0 +1,255 @@
+{
+  "ID": "Other PostEffectsEditor",
+  "Name": "Other PostEffectsEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "FilterOther-fDepthClipRange",
+      "Name": "FilterOther-fDepthClipRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 0",
+      "Name": "FilterOther-DepthEvalRange 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 1",
+      "Name": "FilterOther-DepthEvalRange 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 2",
+      "Name": "FilterOther-DepthEvalRange 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-fAOScale",
+      "Name": "FilterOther-fAOScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-fSampleOffset",
+      "Name": "FilterOther-fSampleOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-fAOOffset",
+      "Name": "FilterOther-fAOOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-AO Blend Scale 0",
+      "Name": "FilterOther-AO Blend Scale 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-AO Blend Scale 1",
+      "Name": "FilterOther-AO Blend Scale 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-AO Blend Scale 2",
+      "Name": "FilterOther-AO Blend Scale 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-Blur Radius 0",
+      "Name": "FilterOther-Blur Radius 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-Blur Radius 1",
+      "Name": "FilterOther-Blur Radius 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-Blur Radius 2",
+      "Name": "FilterOther-Blur Radius 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-Final Blur Radius",
+      "Name": "FilterOther-Final Blur Radius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-Final Blur Radius2",
+      "Name": "FilterOther-Final Blur Radius2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-FinalBlur4x2",
+      "Name": "FilterOther-FinalBlur4x2",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Anti-Alias Enable",
+      "Name": "Yebis-Anti-Alias Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MotionBlur-Enable",
+      "Name": "Yebis-MotionBlur-Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-BlurTimeRatio",
+      "Name": "Yebis-BlurTimeRatio",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-NumBaseSamples",
+      "Name": "Yebis-NumBaseSamples",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MaxBlurLength",
+      "Name": "Yebis-MaxBlurLength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-MaxRecurrences",
+      "Name": "Yebis-MaxRecurrences",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-SampleInterleaved",
+      "Name": "Yebis-SampleInterleaved",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CameraRotationPerspectiveThreshold",
+      "Name": "Yebis-CameraRotationPerspectiveThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CameraTranslationThreshold",
+      "Name": "Yebis-CameraTranslationThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FalloffDistanceMin",
+      "Name": "Yebis-FalloffDistanceMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FalloffDistanceMax",
+      "Name": "Yebis-FalloffDistanceMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FeedBackBlur-Enable",
+      "Name": "Yebis-FeedBackBlur-Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FeedbackWeight",
+      "Name": "Yebis-FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Feedback UnitTimeInSeconds",
+      "Name": "Yebis-Feedback UnitTimeInSeconds",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-Feedback AspectRatio",
+      "Name": "Yebis-Feedback AspectRatio",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

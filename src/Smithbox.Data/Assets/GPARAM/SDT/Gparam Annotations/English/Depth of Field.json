@@ -1,0 +1,279 @@
+{
+  "ID": "Dof[Yebis]",
+  "Name": "Dof[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-DepthOfField:Enable",
+      "Name": "Yebis-DepthOfField:Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ApertuerF",
+      "Name": "Yebis-ApertuerF",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFocusDistance",
+      "Name": "Yebis-DofFocusDistance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-CCD-Size",
+      "Name": "Yebis-CCD-Size",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofAdaptiveApertureFactor",
+      "Name": "Yebis-DofAdaptiveApertureFactor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofAdaptiveApertureBaseFov",
+      "Name": "Yebis-DofAdaptiveApertureBaseFov",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofRotateScale",
+      "Name": "Yebis-DofRotateScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofRotateOffsetInRadians",
+      "Name": "Yebis-DofRotateOffsetInRadians",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ApertureForntNumLevels",
+      "Name": "Yebis-ApertureForntNumLevels",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ApertureBackNumLevels",
+      "Name": "Yebis-ApertureBackNumLevels",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiaphragmRotate",
+      "Name": "Yebis-DiaphragmRotate",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofEdgeQuarity",
+      "Name": "Yebis-DofEdgeQuarity",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofBackgroundMaskThreshold",
+      "Name": "Yebis-DofBackgroundMaskThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-Enable",
+      "Name": "Yebis-DepthOfField CustomDof-Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-NearEnable",
+      "Name": "Yebis-DepthOfField CustomDof-NearEnable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNearDepthStart",
+      "Name": "Yebis-DofNearDepthStart",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNearDepthEnd",
+      "Name": "Yebis-DofNearDepthEnd",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNear CocSize",
+      "Name": "Yebis-DofNear CocSize",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofNear CocScale",
+      "Name": "Yebis-DofNear CocScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField CustomDof-FarEnable",
+      "Name": "Yebis-DepthOfField CustomDof-FarEnable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFarDepthStart",
+      "Name": "Yebis-DofFarDepthStart",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFarDepthEnd",
+      "Name": "Yebis-DofFarDepthEnd",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar CocSize",
+      "Name": "Yebis-DofFar CocSize",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar CocScale",
+      "Name": "Yebis-DofFar CocScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DofFar DistanceThrethold",
+      "Name": "Yebis-DofFar DistanceThrethold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DepthOfField AutoFocus-Enable",
+      "Name": "Yebis-DepthOfField AutoFocus-Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DonotPassOverFocus",
+      "Name": "Yebis-DonotPassOverFocus",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusSensitivity",
+      "Name": "Yebis-FocusSensitivity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusSpeedLimit",
+      "Name": "Yebis-FocusSpeedLimit",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDelay",
+      "Name": "Yebis-FocusDelay",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDistanceRangeMin",
+      "Name": "Yebis-FocusDistanceRangeMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusDistanceRangeMax",
+      "Name": "Yebis-FocusDistanceRangeMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusScreenPositionX",
+      "Name": "Yebis-FocusScreenPositionX",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-FocusScreenPositionY",
+      "Name": "Yebis-FocusScreenPositionY",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

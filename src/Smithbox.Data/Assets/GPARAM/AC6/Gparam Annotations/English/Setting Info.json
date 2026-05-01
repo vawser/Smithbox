@@ -1,0 +1,55 @@
+{
+  "ID": "Setting Info[Yebis]",
+  "Name": "Setting Info[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GS - BG Color-Data",
+      "Name": "GS - BG Color-Data",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect- Auto Compute Enable",
+      "Name": "SceneSetting-  LightCollect- Auto Compute Enable",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect- BaseDist",
+      "Name": "SceneSetting-  LightCollect- BaseDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect-DistScaler",
+      "Name": "SceneSetting-  LightCollect-DistScaler",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  LightCollect-DistMax",
+      "Name": "SceneSetting-  LightCollect-DistMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SceneSetting-  ReflectScene Assign DynamicLight",
+      "Name": "SceneSetting-  ReflectScene Assign DynamicLight",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

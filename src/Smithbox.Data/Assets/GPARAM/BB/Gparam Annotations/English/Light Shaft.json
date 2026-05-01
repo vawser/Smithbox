@@ -1,0 +1,127 @@
+{
+  "ID": "LightShaft[Yebis]",
+  "Name": "LightShaft[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-LightShaft Enable",
+      "Name": "Yebis-LightShaft Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ColorScale",
+      "Name": "Yebis-ColorScale",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-ShaftLength",
+      "Name": "Yebis-ShaftLength",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-GlareRatio",
+      "Name": "Yebis-GlareRatio",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-AngleAttenuation",
+      "Name": "Yebis-AngleAttenuation",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-NoiseMask",
+      "Name": "Yebis-NoiseMask",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-NoiseFrequency",
+      "Name": "Yebis-NoiseFrequency",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-LighShaft RadX",
+      "Name": "Yebis-LighShaft RadX",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-LighShaft RadY",
+      "Name": "Yebis-LighShaft RadY",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-LighShaft DistanceZ",
+      "Name": "Yebis-LighShaft DistanceZ",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiffractionRing",
+      "Name": "Yebis-DiffractionRing",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiffractionRingRadius",
+      "Name": "Yebis-DiffractionRingRadius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiffractionRingAttenuation",
+      "Name": "Yebis-DiffractionRingAttenuation",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-DiffractionRingSpectrumOrder",
+      "Name": "Yebis-DiffractionRingSpectrumOrder",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-RingOuterColor",
+      "Name": "Yebis-RingOuterColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

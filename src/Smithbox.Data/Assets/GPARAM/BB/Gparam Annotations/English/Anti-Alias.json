@@ -1,0 +1,79 @@
+{
+  "ID": "Anti-Alias-Editor",
+  "Name": "Anti-Alias-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-Anti-Alias Enable",
+      "Name": "Yebis-Anti-Alias Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - AntiAliasType",
+      "Name": "AntiAlias - AntiAliasType",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - fFxaaAlpha",
+      "Name": "AntiAlias - fFxaaAlpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaReduceMin",
+      "Name": "AntiAlias - FxaaReduceMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaReduceMul",
+      "Name": "AntiAlias - FxaaReduceMul",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - FxaaSpanMax",
+      "Name": "AntiAlias - FxaaSpanMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaThreshold",
+      "Name": "AntiAlias - DlaaThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaRamda",
+      "Name": "AntiAlias - DlaaRamda",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AntiAlias - DlaaEpsilon",
+      "Name": "AntiAlias - DlaaEpsilon",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

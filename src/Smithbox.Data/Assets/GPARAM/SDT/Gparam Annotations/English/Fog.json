@@ -1,0 +1,103 @@
+{
+  "ID": "FogParamEditor",
+  "Name": "FogParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Fog-Color",
+      "Name": "Fog-Color",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-heightColor",
+      "Name": "Fog-heightColor",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-Dist",
+      "Name": "Fog-Dist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-heightDist",
+      "Name": "Fog-heightDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-DistOffset",
+      "Name": "Fog-DistOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-HeightOffset",
+      "Name": "Fog-HeightOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-heightFogIntencity",
+      "Name": "Fog-heightFogIntencity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-fogAlpha",
+      "Name": "Fog-fogAlpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-fogContrast",
+      "Name": "Fog-fogContrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-heightFogDensity",
+      "Name": "Fog-heightFogDensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-ToUpper",
+      "Name": "Fog-ToUpper",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Fog-heightFogBase",
+      "Name": "Fog-heightFogBase",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "ID": "SeaWave:Editor",
+  "Name": "SeaWave:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Sea Wave BubbleTex: Id",
+      "Name": "Sea Wave BubbleTex: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave BubbleMask: Id",
+      "Name": "Sea Wave BubbleMask: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Normal: Id",
+      "Name": "Sea Wave Normal: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Light: Id",
+      "Name": "Sea Wave Light: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Time Rate",
+      "Name": "Sea Wave Time Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave  Enable",
+      "Name": "Sea Wave  Enable",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Wave Angle",
+      "Name": "Sea Wave Wave Angle",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Wavelength Scale",
+      "Name": "Sea Wave Wavelength Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Amplitude Scale",
+      "Name": "Sea Wave Amplitude Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave  Enable Choppy",
+      "Name": "Sea Wave  Enable Choppy",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave WindAng",
+      "Name": "Sea Wave WindAng",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave WindSpeed",
+      "Name": "Sea Wave WindSpeed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave WaveAmp",
+      "Name": "Sea Wave WaveAmp",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave WaveNumberCoef",
+      "Name": "Sea Wave WaveNumberCoef",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Blend Begin Depth",
+      "Name": "Sea Wave Blend Begin Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Blend End Depth",
+      "Name": "Sea Wave Blend End Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Reflection Max",
+      "Name": "Sea Wave Reflection Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Reflection Min",
+      "Name": "Sea Wave Reflection Min",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Reflectance",
+      "Name": "Sea Wave Reflectance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Shininess",
+      "Name": "Sea Wave Shininess",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Reflection Distortion Scale(near)",
+      "Name": "Sea Wave Reflection Distortion Scale(near)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Reflection Distortion Scale(far)",
+      "Name": "Sea Wave Reflection Distortion Scale(far)",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave FFT Tex Tiling Size",
+      "Name": "Sea Wave FFT Tex Tiling Size",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave BumpMap Tiling Size",
+      "Name": "Sea Wave BumpMap Tiling Size",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Basis Height",
+      "Name": "Sea Wave Basis Height",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Depth Limit",
+      "Name": "Sea Wave Depth Limit",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Area Max",
+      "Name": "Sea Wave Area Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Transparent Depth",
+      "Name": "Sea Wave Transparent Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Border Feed Depth",
+      "Name": "Sea Wave Border Feed Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Border Bubble Depth",
+      "Name": "Sea Wave Border Bubble Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Border Bubble Flat Scale",
+      "Name": "Sea Wave Border Bubble Flat Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Border Wave Scale",
+      "Name": "Sea Wave Border Wave Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Shallow Water",
+      "Name": "Sea Wave Shallow Water",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Deep Water",
+      "Name": "Sea Wave Deep Water",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Use Inner Simulation Time",
+      "Name": "Sea Wave Use Inner Simulation Time",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Enable Average Inner Simulation Time",
+      "Name": "Sea Wave Enable Average Inner Simulation Time",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Enable Fixed Inner Simulation Time",
+      "Name": "Sea Wave Enable Fixed Inner Simulation Time",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sea Wave Fix Fps",
+      "Name": "Sea Wave Fix Fps",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

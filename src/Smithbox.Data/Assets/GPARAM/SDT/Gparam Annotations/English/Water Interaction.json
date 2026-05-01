@@ -1,0 +1,79 @@
+{
+  "ID": "WaterInteraction-Editor",
+  "Name": "WaterInteraction-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "WaterInteraction-Enable",
+      "Name": "WaterInteraction-Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction-Screen Space Enable",
+      "Name": "WaterInteraction-Screen Space Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - Create Distance",
+      "Name": "WaterInteraction - Create Distance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - Delete Distance",
+      "Name": "WaterInteraction - Delete Distance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - MaxResolution",
+      "Name": "WaterInteraction - MaxResolution",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace TexelSize",
+      "Name": "WaterInteraction - ScreenSpace TexelSize",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace Max Resolution",
+      "Name": "WaterInteraction - ScreenSpace Max Resolution",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace Wave Speed",
+      "Name": "WaterInteraction - ScreenSpace Wave Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "WaterInteraction - ScreenSpace Wave Attenuation",
+      "Name": "WaterInteraction - ScreenSpace Wave Attenuation",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

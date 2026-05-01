@@ -1,0 +1,95 @@
+{
+  "ID": "Snow:Editor",
+  "Name": "Snow:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Snow Texture: Id",
+      "Name": "Snow Texture: Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Snow Angle Detail Info",
+      "Name": "Snow Angle Detail Info",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Snow Tiling Scale Detail Info",
+      "Name": "Snow Tiling Scale Detail Info",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Snow Scene Snow Rate Detail Info",
+      "Name": "Snow Scene Snow Rate Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Sparkle Tiling Scale Detail Info",
+      "Name": "Sparkle Tiling Scale Detail Info",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Snow Ground Plane Height Detail Info",
+      "Name": "Snow Ground Plane Height Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Snow Plane Height Detail Info",
+      "Name": "Snow Plane Height Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Normal Scale Detail Info",
+      "Name": "Normal Scale Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Normal Blur Radius Detail Info",
+      "Name": "Normal Blur Radius Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Albedo Scale Detail Info",
+      "Name": "Albedo Scale Detail Info",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Reflectance Detail Info",
+      "Name": "Reflectance Detail Info",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "ID": "LightShaft[Yebis]",
+  "Name": "LightShaft[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GS Presents - LightShaft Enable",
+      "Name": "GS Presents - LightShaft Enable",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft Angle",
+      "Name": "GS Presents - LightShaft Angle",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft EnableRefLight",
+      "Name": "GS Presents - LightShaft EnableRefLight",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft LightBankId",
+      "Name": "GS Presents - LightShaft LightBankId",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft LightId",
+      "Name": "GS Presents - LightShaft LightId",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft HighQualitySkyMask",
+      "Name": "GS Presents - LightShaft HighQualitySkyMask",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SkyMaskMode",
+      "Name": "GS Presents - LightShaft SkyMaskMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft MaskDepthThreshold",
+      "Name": "GS Presents - LightShaft MaskDepthThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SkyMaskSizeAngle",
+      "Name": "GS Presents - LightShaft SkyMaskSizeAngle",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SkyMaskCenterPower",
+      "Name": "GS Presents - LightShaft SkyMaskCenterPower",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SuppressTransparent",
+      "Name": "GS Presents - LightShaft SuppressTransparent",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Sky Multiply Color",
+      "Name": "GS Presents - Sky Multiply Color",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Sky Add Color",
+      "Name": "GS Presents - Sky Add Color",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SkyColorSaturate",
+      "Name": "GS Presents - LightShaft SkyColorSaturate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft SkyColorThreshold",
+      "Name": "GS Presents - LightShaft SkyColorThreshold",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ExposureInfluenceRate AddColor",
+      "Name": "GS Presents - ExposureInfluenceRate AddColor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Parallel mode begin ang",
+      "Name": "GS Presents - Parallel mode begin ang",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Parallel mode end ang",
+      "Name": "GS Presents - Parallel mode end ang",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Fade out begin ang",
+      "Name": "GS Presents - Fade out begin ang",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Fade out end ang",
+      "Name": "GS Presents - Fade out end ang",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ShaftBlurRange",
+      "Name": "GS Presents - ShaftBlurRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft ShaftBlurRange for Parallel",
+      "Name": "GS Presents - LightShaft ShaftBlurRange for Parallel",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft ShaftBlurFallOff",
+      "Name": "GS Presents - LightShaft ShaftBlurFallOff",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - LightShaft ShaftBlurCount",
+      "Name": "GS Presents - LightShaft ShaftBlurCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

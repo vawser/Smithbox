@@ -1,0 +1,279 @@
+{
+  "ID": "SSAO Editor",
+  "Name": "SSAO Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "FilterOther-fDepthClipRange",
+      "Name": "FilterOther-fDepthClipRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-UseNormal",
+      "Name": "SSAO - Edit-UseNormal",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-UseReProj",
+      "Name": "SSAO - Edit-UseReProj",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-PreventGhost",
+      "Name": "SSAO - Edit-PreventGhost",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-EnableUpScale",
+      "Name": "SSAO - Edit-EnableUpScale",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Sample Offset",
+      "Name": "SSAO - Edit-Ver2 Sample Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 AO Scale",
+      "Name": "SSAO - Edit-Ver2 AO Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 AO Offset",
+      "Name": "SSAO - Edit-Ver2 AO Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
+      "Name": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Kernel Scale Min",
+      "Name": "SSAO - Edit-Ver2 Kernel Scale Min",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Kernel Scale Max",
+      "Name": "SSAO - Edit-Ver2 Kernel Scale Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 PrevFrame Strengh",
+      "Name": "SSAO - Edit-Ver2 PrevFrame Strengh",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 DepthFadeStart",
+      "Name": "SSAO - Edit-Ver2 DepthFadeStart",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 DepthFadeRange",
+      "Name": "SSAO - Edit-Ver2 DepthFadeRange",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 PrecisionDepth",
+      "Name": "SSAO - Edit-Ver2 PrecisionDepth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
+      "Name": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Depth Reject Rate",
+      "Name": "SSAO - Edit-Ver2 Depth Reject Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Ver2 Geom Bent Offset",
+      "Name": "SSAO - Edit-Ver2 Geom Bent Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 0",
+      "Name": "FilterOther-DepthEvalRange 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 1",
+      "Name": "FilterOther-DepthEvalRange 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-DepthEvalRange 2",
+      "Name": "FilterOther-DepthEvalRange 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-fAOScale",
+      "Name": "FilterOther-fAOScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-UseNewVersion",
+      "Name": "SSAO - Edit-UseNewVersion",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-fSampleOffset",
+      "Name": "SSAO - Edit-fSampleOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-fAOOffset",
+      "Name": "SSAO - Edit-fAOOffset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-AO Blend Scale 0",
+      "Name": "SSAO - Edit-AO Blend Scale 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-AO Blend Scale 1",
+      "Name": "SSAO - Edit-AO Blend Scale 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-AO Blend Scale 2",
+      "Name": "SSAO - Edit-AO Blend Scale 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Blur Radius 0",
+      "Name": "SSAO - Edit-Blur Radius 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Blur Radius 1",
+      "Name": "SSAO - Edit-Blur Radius 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Blur Radius 2",
+      "Name": "SSAO - Edit-Blur Radius 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Final Blur Radius",
+      "Name": "SSAO - Edit-Final Blur Radius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-Final Blur Radius2",
+      "Name": "SSAO - Edit-Final Blur Radius2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SSAO - Edit-FinalBlur4x2",
+      "Name": "SSAO - Edit-FinalBlur4x2",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "ID": "ShadowParam ParamEditor",
+  "Name": "ShadowParam ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "hadowParam - Shadow: Angle0",
+      "Name": "hadowParam - Shadow: Angle0",
+      "Description": "",
+      "Type": "Vector2Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "shadowParam -   Shadow:  Shadow Light Id",
+      "Name": "shadowParam -   Shadow:  Shadow Light Id",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Near",
+      "Name": "ShadowParam - Shadow: Near",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 0->1",
+      "Name": "ShadowParam - Shadow: Cascade Dist 0->1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 1->2",
+      "Name": "ShadowParam - Shadow: Cascade Dist 1->2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Dist 2->3",
+      "Name": "ShadowParam - Shadow: Cascade Dist 2->3",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Far Fade Start",
+      "Name": "ShadowParam - Shadow: Far Fade Start",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Far Fade Dist",
+      "Name": "ShadowParam - Shadow: Far Fade Dist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Cascade Fade Range Scale",
+      "Name": "ShadowParam - Shadow: Cascade Fade Range Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Shadow Map FilterMode",
+      "Name": "ShadowParam - Shadow: Shadow Map FilterMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Depth Offset",
+      "Name": "ShadowParam - Shadow: Depth Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Volume Depth",
+      "Name": "ShadowParam - Volume Depth",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Depth Bias",
+      "Name": "ShadowParam - Depth Bias",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Slope Scaled Depth Bias",
+      "Name": "ShadowParam - Slope Scaled Depth Bias",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Shadow Model Cull Flip",
+      "Name": "Shadow Model Cull Flip",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - AlignTexel",
+      "Name": "ShadowParam - AlignTexel",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - DepthRate",
+      "Name": "ShadowParam - DepthRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - DepthScale",
+      "Name": "ShadowParam - DepthScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - KernelScale",
+      "Name": "ShadowParam - KernelScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - DepthOffsetScale",
+      "Name": "ShadowParam - DepthOffsetScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Blur Count",
+      "Name": "ShadowParam - Blur Count",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Blur Radius",
+      "Name": "ShadowParam - Blur Radius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - TempAA Auto Jitter",
+      "Name": "ShadowParam - TempAA Auto Jitter",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam Cascade Count",
+      "Name": "ShadowParam Cascade Count",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam - Shadow: Shadow Map Resolution",
+      "Name": "ShadowParam - Shadow: Shadow Map Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam Cascade0 Resolution",
+      "Name": "ShadowParam Cascade0 Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam Cascade1 Resolution",
+      "Name": "ShadowParam Cascade1 Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam Cascade2 Resolution",
+      "Name": "ShadowParam Cascade2 Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam Cascade3 Resolution",
+      "Name": "ShadowParam Cascade3 Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ShadowParam CompartmentShadow Resolution",
+      "Name": "ShadowParam CompartmentShadow Resolution",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

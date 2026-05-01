@@ -21,6 +21,7 @@ public class GparamAnnotationEntry
     public string ID { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
+    public bool IsObsolete { get; set; } // Marks which groups not to present as addable
 
     public List<GparamAnnotationFieldEntry> Fields { get; set; } = new();
 }

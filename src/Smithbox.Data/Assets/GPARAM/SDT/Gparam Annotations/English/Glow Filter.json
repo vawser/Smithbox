@@ -1,0 +1,71 @@
+{
+  "ID": "Glow Filter-Editor",
+  "Name": "Glow Filter-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Glow Filter-Glow Enable",
+      "Name": "Glow Filter-Glow Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Glow Filter - Glow NumLevels",
+      "Name": "Glow Filter - Glow NumLevels",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Glow Filter - Blur Smoothness",
+      "Name": "Glow Filter - Blur Smoothness",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "New Glow Filter-Glow - FinalColorScale",
+      "Name": "New Glow Filter-Glow - FinalColorScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Glow Filter-Glow - BlurSampleScale",
+      "Name": "Glow Filter-Glow - BlurSampleScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Glow Filter-Glow - Blur RgbScale",
+      "Name": "Glow Filter-Glow - Blur RgbScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Glow Filter-Glow - Blur AlphaScale",
+      "Name": "Glow Filter-Glow - Blur AlphaScale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "New Glow Filter-Glow Enable",
+      "Name": "New Glow Filter-Glow Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

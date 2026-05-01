@@ -1,0 +1,47 @@
+{
+  "ID": "FurBlur-Editor",
+  "Name": "FurBlur-Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "FurBlur-Enable",
+      "Name": "FurBlur-Enable",
+      "Description": "",
+      "Type": "ByteField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FurBlur Fur Blur Intensity",
+      "Name": "FurBlur Fur Blur Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FurBlur Blur Max Length",
+      "Name": "FurBlur Blur Max Length",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FurBlur Sample Count",
+      "Name": "FurBlur Sample Count",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FurBlur Blur RecurrenceCount",
+      "Name": "FurBlur Blur RecurrenceCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

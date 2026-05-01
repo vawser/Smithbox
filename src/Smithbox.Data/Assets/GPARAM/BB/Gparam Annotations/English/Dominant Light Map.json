@@ -1,0 +1,39 @@
+{
+  "ID": "DominantLightMap:Editor",
+  "Name": "DominantLightMap:Editor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Dominant Param  Dominant Sharpness Min Value",
+      "Name": "Dominant Param  Dominant Sharpness Min Value",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Dominant Param  Dominant Sharpness Offset",
+      "Name": "Dominant Param  Dominant Sharpness Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Dominant Param  Dominant Sharpness Exponant",
+      "Name": "Dominant Param  Dominant Sharpness Exponant",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Dominant Param  Dominant Sharpness RGB Scale",
+      "Name": "Dominant Param  Dominant Sharpness RGB Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "ID": "Tone Map[Yebis]",
+  "Name": "Tone Map[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "GS Presents - ToneMap-Exposure",
+      "Name": "GS Presents - ToneMap-Exposure",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ToneMapMode",
+      "Name": "GS Presents - ToneMap-ToneMapMode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Contrast",
+      "Name": "GS Presents - ToneMap-Contrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ReinhardContrast",
+      "Name": "GS Presents - ToneMap-ReinhardContrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-ReinhardWhiteBalance",
+      "Name": "GS Presents - ToneMap-ReinhardWhiteBalance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-Enable AutoExposure",
+      "Name": "GS Presents - ToneMap-Enable AutoExposure",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
+      "Name": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
+      "Name": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Middle Gray",
+      "Name": "GS Presents - ToneMap-AutoExposure Middle Gray",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Center Weight",
+      "Name": "GS Presents - ToneMap-AutoExposure Center Weight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Adaption Max",
+      "Name": "GS Presents - ToneMap-AutoExposure Adaption Max",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-AutoExposure Adaption Min",
+      "Name": "GS Presents - ToneMap-AutoExposure Adaption Min",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneMap-FreezeAdaptionFade",
+      "Name": "GS Presents - ToneMap-FreezeAdaptionFade",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Chromatic Aberration Enable",
+      "Name": "GS Presents - Chromatic Aberration Enable",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneLateralDispersion[0]",
+      "Name": "GS Presents - ToneLateralDispersion[0]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ToneLateralDispersion[1]",
+      "Name": "GS Presents - ToneLateralDispersion[1]",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Power",
+      "Name": "GS Presents - Vignetting Power",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Range",
+      "Name": "GS Presents - Vignetting Range",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Shape",
+      "Name": "GS Presents - Vignetting Shape",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Vignetting Fov Dependence",
+      "Name": "GS Presents - Vignetting Fov Dependence",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorH",
+      "Name": "GS Presents - ColorH",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorS",
+      "Name": "GS Presents - ColorS",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Tone Map Color Grading ColorShift",
+      "Name": "Tone Map Color Grading ColorShift",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Tone Map Color Grading ColorScale",
+      "Name": "Tone Map Color Grading ColorScale",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - ColorV",
+      "Name": "GS Presents - ColorV",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "GS Presents - Contrast",
+      "Name": "GS Presents - Contrast",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

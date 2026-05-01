@@ -1,0 +1,207 @@
+{
+  "ID": "RayTracing ParamEditor",
+  "Name": "RayTracing ParamEditor",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "RayTracing Enable DirLightShadow",
+      "Name": "RayTracing Enable DirLightShadow",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing Enable AO",
+      "Name": "RayTracing Enable AO",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Ray SampleCount",
+      "Name": "RayTracing DirLightShadow Ray SampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Ray LengthMin",
+      "Name": "RayTracing DirLightShadow Ray LengthMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Ray LengthMax",
+      "Name": "RayTracing DirLightShadow Ray LengthMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Ray EnableAlpha",
+      "Name": "RayTracing DirLightShadow Ray EnableAlpha",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow ConeRadius",
+      "Name": "RayTracing DirLightShadow ConeRadius",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow PostProcess EnableDenoise",
+      "Name": "RayTracing DirLightShadow PostProcess EnableDenoise",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow PostProcess FeedbackWeight",
+      "Name": "RayTracing DirLightShadow PostProcess FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Composite EnableFadeRate",
+      "Name": "RayTracing DirLightShadow Composite EnableFadeRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Composite FadeStartDist",
+      "Name": "RayTracing DirLightShadow Composite FadeStartDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Composite FadeRangeDist",
+      "Name": "RayTracing DirLightShadow Composite FadeRangeDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray SampleCount",
+      "Name": "RayTracing AO Ray SampleCount",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray LengthMin",
+      "Name": "RayTracing AO Ray LengthMin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray LengthMax",
+      "Name": "RayTracing AO Ray LengthMax",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray EnableAlpha",
+      "Name": "RayTracing AO Ray EnableAlpha",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Scale",
+      "Name": "RayTracing AO Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Offset",
+      "Name": "RayTracing AO Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO PostProcess EnableDenoise",
+      "Name": "RayTracing AO PostProcess EnableDenoise",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO PostProcess FeedbackWeight",
+      "Name": "RayTracing AO PostProcess FeedbackWeight",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Composite EnableFadeRate",
+      "Name": "RayTracing AO Composite EnableFadeRate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Composite FadeStartDist",
+      "Name": "RayTracing AO Composite FadeStartDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Composite FadeRangeDist",
+      "Name": "RayTracing AO Composite FadeRangeDist",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow AdjustRayStartPosition",
+      "Name": "RayTracing DirLightShadow AdjustRayStartPosition",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO PostProcess ATrousFilterSteps",
+      "Name": "RayTracing AO PostProcess ATrousFilterSteps",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

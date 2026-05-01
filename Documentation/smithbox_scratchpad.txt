@@ -15,11 +15,12 @@
  - Add support for load/save for gparambnd files, which BB uses
  - Add json seralization for import/export
 
- - Fix:
-  - Duplicating values doesn't commit change to file
-  - Removing values corrupts file
-  - Changing value ID doesn't work
-  - EnvironmentConfig group attributes cannot be added
+ - Fix edit/add/remove behavior
+  - Currently doesn't persist changes in saved file.
+  
+ - Add proper group add menu that displays potential fields with tick toggles for which to add (in Group section)
+ 
+ - Add proper field add menu that displays which fields to add (in Fields section)
 
 - Finish converting the SDT AlternativeOrders into Field Layouts
 - Translate DS2 meta

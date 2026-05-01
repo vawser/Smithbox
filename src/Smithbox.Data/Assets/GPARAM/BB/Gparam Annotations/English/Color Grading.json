@@ -1,0 +1,23 @@
+{
+  "ID": "ColorGrading[Yebis]",
+  "Name": "ColorGrading[Yebis]",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Yebis-ColorGrading-Enable",
+      "Name": "Yebis-ColorGrading-Enable",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Yebis-LutSourceId",
+      "Name": "Yebis-LutSourceId",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}
