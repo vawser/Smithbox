@@ -19,6 +19,8 @@ public class GparamData : IDisposable
     public GparamBank VanillaBank;
 
     public GparamAnnotationLanguages GparamAnnotationLanguages = new();
+
+    // Annotations serve as both definitions (for add operations) and meta (for editing operations)
     public GparamAnnotations Annotations = new();
     public GparamEnums Enums;
 

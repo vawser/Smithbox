@@ -10,16 +10,16 @@ public class GparamTimeOfDayChangeAction : EditorAction
 
     private string ProvenanceString;
 
-    public GparamTimeOfDayChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index)
+    public GparamTimeOfDayChangeAction(string fileName, string groupKey, IField field, IFieldValue fieldValue, object newValue, int index)
     {
         var change = new GparamValueChange();
         change.Index = index;
         change.Field = field;
-        change.OldValue = fieldValue.Unk04;
+        change.OldValue = fieldValue.TimeOfDay;
         change.NewValue = newValue;
         Changes.Add(change);
 
-        ProvenanceString = $"Param: {fileName} - Group: {groupName} - Field: {field.Name}";
+        ProvenanceString = $"Param: {fileName} - Group: {groupKey} - Field: {field.Name}";
     }
 
     public override ActionEvent Execute()
@@ -28,47 +28,47 @@ public class GparamTimeOfDayChangeAction : EditorAction
         {
             if (change.Field is IntField intField)
             {
-                intField.Values[change.Index].Unk04 = (float)change.NewValue;
+                intField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is UintField uintField)
             {
-                uintField.Values[change.Index].Unk04 = (float)change.NewValue;
+                uintField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is ShortField shortField)
             {
-                shortField.Values[change.Index].Unk04 = (float)change.NewValue;
+                shortField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is SbyteField sbyteField)
             {
-                sbyteField.Values[change.Index].Unk04 = (float)change.NewValue;
+                sbyteField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is ByteField byteField)
             {
-                byteField.Values[change.Index].Unk04 = (float)change.NewValue;
+                byteField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is BoolField boolField)
             {
-                boolField.Values[change.Index].Unk04 = (float)change.NewValue;
+                boolField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is FloatField floatField)
             {
-                floatField.Values[change.Index].Unk04 = (float)change.NewValue;
+                floatField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is Vector2Field vector2Field)
             {
-                vector2Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                vector2Field.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is Vector3Field vector3Field)
             {
-                vector3Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                vector3Field.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is Vector4Field vector4Field)
             {
-                vector4Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                vector4Field.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
             if (change.Field is ColorField colorField)
             {
-                colorField.Values[change.Index].Unk04 = (float)change.NewValue;
+                colorField.Values[change.Index].TimeOfDay = (float)change.NewValue;
             }
         }
 
@@ -81,47 +81,47 @@ public class GparamTimeOfDayChangeAction : EditorAction
         {
             if (change.Field is IntField intField)
             {
-                intField.Values[change.Index].Unk04 = (float)change.OldValue;
+                intField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is UintField uintField)
             {
-                uintField.Values[change.Index].Unk04 = (float)change.OldValue;
+                uintField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is ShortField shortField)
             {
-                shortField.Values[change.Index].Unk04 = (float)change.OldValue;
+                shortField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is SbyteField sbyteField)
             {
-                sbyteField.Values[change.Index].Unk04 = (float)change.OldValue;
+                sbyteField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is ByteField byteField)
             {
-                byteField.Values[change.Index].Unk04 = (float)change.OldValue;
+                byteField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is BoolField boolField)
             {
-                boolField.Values[change.Index].Unk04 = (float)change.OldValue;
+                boolField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is FloatField floatField)
             {
-                floatField.Values[change.Index].Unk04 = (float)change.OldValue;
+                floatField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is Vector2Field vector2Field)
             {
-                vector2Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                vector2Field.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is Vector3Field vector3Field)
             {
-                vector3Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                vector3Field.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is Vector4Field vector4Field)
             {
-                vector4Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                vector4Field.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
             if (change.Field is ColorField colorField)
             {
-                colorField.Values[change.Index].Unk04 = (float)change.OldValue;
+                colorField.Values[change.Index].TimeOfDay = (float)change.OldValue;
             }
         }
 

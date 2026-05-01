@@ -21,14 +21,14 @@ public class GparamRemoveValueRow : EditorAction
         SelectedGPARAM = view.Selection._selectedGparam;
         SelectedField = view.Selection._selectedParamField;
         SelectedFieldValue = view.Selection._selectedFieldValue;
-        RemovedRowID = view.Selection._selectedFieldValue.Id;
+        RemovedRowID = view.Selection._selectedFieldValue.ID;
     }
 
     public override ActionEvent Execute()
     {
         Parent.FieldValueListView.ReduceDisplayTruth(SelectedField);
 
-        RemovedRowIndex = Parent.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
+        RemovedRowIndex = Parent.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.ID);
 
         Parent.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 

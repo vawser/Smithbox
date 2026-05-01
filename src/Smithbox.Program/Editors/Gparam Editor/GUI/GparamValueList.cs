@@ -55,7 +55,7 @@ public class GparamValueList
             {
                 GPARAM.IFieldValue entry = field.Values[i];
 
-                displayTruth[i] = Parent.Filters.IsFieldValueFilterMatch(entry.Id.ToString(), "");
+                displayTruth[i] = Parent.Filters.IsFieldValueFilterMatch(entry.ID.ToString(), "");
 
                 if (displayTruth[i])
                 {
@@ -71,7 +71,6 @@ public class GparamValueList
 
                 // Time of Day
                 ImGui.BeginChild("IdList##GparamTimeOfDay");
-                Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
                 UIHelper.SimpleHeader("Time of Day", "");
 
                 for (int i = 0; i < field.Values.Count; i++)
@@ -90,7 +89,6 @@ public class GparamValueList
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
-            Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             UIHelper.SimpleHeader("Value", "");
 
             for (int i = 0; i < field.Values.Count; i++)
@@ -111,7 +109,6 @@ public class GparamValueList
 
                 // Value
                 ImGui.BeginChild("InfoList##GparamPropertyInfo");
-                Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
                 UIHelper.SimpleHeader("Information", "");
 
                 // Only show once
@@ -219,7 +216,7 @@ public class GparamValueList
     {
         ImGui.AlignTextToFramePadding();
 
-        string name = value.Id.ToString();
+        string name = value.ID.ToString();
 
         if (ImGui.Selectable($"{name}##{index}", index == Parent.Selection._selectedFieldValueKey))
         {

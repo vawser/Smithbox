@@ -59,16 +59,21 @@ public class GparamShortcuts
                 }
             }
 
-            // Duplicate
-            if (InputManager.IsPressed(KeybindID.Duplicate))
+            // Values
+            if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_Properties))
             {
-                activeView.ActionHandler.DuplicateValueRow();
-            }
+                // Duplicate
+                if (InputManager.IsPressed(KeybindID.Duplicate))
+                {
+                    activeView.ActionHandler.DuplicateValueRow();
+                }
 
-            // Delete
-            if (InputManager.IsPressed(KeybindID.Delete))
-            {
-                activeView.ActionHandler.DeleteValueRow();
+                // Delete
+                if (InputManager.IsPressed(KeybindID.Delete))
+                {
+                    activeView.ActionHandler.DeleteValueRow();
+                }
+
             }
 
             // Execute Quick Edit

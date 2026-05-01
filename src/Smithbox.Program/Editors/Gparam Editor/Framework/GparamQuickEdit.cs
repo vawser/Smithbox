@@ -262,7 +262,7 @@ public class GparamQuickEdit
 
         if (Parent.Selection._selectedParamGroup != null)
         {
-            UpdateGroupFilter(Parent.Selection._selectedParamGroup.Key);
+            UpdateGroupFilter(Parent.Selection._selectedParamGroup);
         }
         else
         {
@@ -271,7 +271,7 @@ public class GparamQuickEdit
 
         if (Parent.Selection._selectedParamField != null)
         {
-            UpdateFieldFilter(Parent.Selection._selectedParamField.Key);
+            UpdateFieldFilter(Parent.Selection._selectedParamField);
         }
         else
         {
@@ -750,9 +750,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (intField.Values.Any(x => x.Id == rowsetId))
+                                if (intField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = intField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = intField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -814,9 +814,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (uintField.Values.Any(x => x.Id == rowsetId))
+                                if (uintField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = uintField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = uintField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -879,9 +879,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (shortField.Values.Any(x => x.Id == rowsetId))
+                                if (shortField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = shortField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = shortField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -947,9 +947,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (sbyteField.Values.Any(x => x.Id == rowsetId))
+                                if (sbyteField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = sbyteField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = sbyteField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -1015,9 +1015,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (byteField.Values.Any(x => x.Id == rowsetId))
+                                if (byteField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = byteField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = byteField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -1129,9 +1129,9 @@ public class GparamQuickEdit
                             }
                             if (effectType == EditEffectType.SetByRow)
                             {
-                                if (floatField.Values.Any(x => x.Id == rowsetId))
+                                if (floatField.Values.Any(x => x.ID == rowsetId))
                                 {
-                                    commandValue = floatField.Values.Find(x => x.Id == rowsetId).Value;
+                                    commandValue = floatField.Values.Find(x => x.ID == rowsetId).Value;
 
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
@@ -1171,9 +1171,9 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.SetByRow)
                         {
-                            if (vector2Field.Values.Any(x => x.Id == rowsetId))
+                            if (vector2Field.Values.Any(x => x.ID == rowsetId))
                             {
-                                commandValue = vector2Field.Values.Find(x => x.Id == rowsetId).Value;
+                                commandValue = vector2Field.Values.Find(x => x.ID == rowsetId).Value;
 
                                 GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
@@ -1267,9 +1267,9 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.SetByRow)
                         {
-                            if (vector3Field.Values.Any(x => x.Id == rowsetId))
+                            if (vector3Field.Values.Any(x => x.ID == rowsetId))
                             {
-                                commandValue = vector3Field.Values.Find(x => x.Id == rowsetId).Value;
+                                commandValue = vector3Field.Values.Find(x => x.ID == rowsetId).Value;
 
                                 GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
@@ -1371,9 +1371,9 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.SetByRow)
                         {
-                            if (vector4Field.Values.Any(x => x.Id == rowsetId))
+                            if (vector4Field.Values.Any(x => x.ID == rowsetId))
                             {
-                                commandValue = vector4Field.Values.Find(x => x.Id == rowsetId).Value;
+                                commandValue = vector4Field.Values.Find(x => x.ID == rowsetId).Value;
 
                                 GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
@@ -1522,7 +1522,7 @@ public class GparamQuickEdit
             {
                 GPARAM.IFieldValue entry = targetField.Values[i];
 
-                if (entry.Id == targetId)
+                if (entry.ID == targetId)
                 {
                     filterTruth[i] = true;
                     //Smithbox.Log(this, $"Filter: Matched ID {targetId} - {entry.Id}");
@@ -1566,7 +1566,7 @@ public class GparamQuickEdit
             {
                 GPARAM.IFieldValue entry = targetField.Values[i];
 
-                if (entry.Unk04 == targetTod)
+                if (entry.TimeOfDay == targetTod)
                 {
                     filterTruth[i] = true;
                     //Smithbox.Log(this, $"Filter: Matched Time of Day {targetTod} - {entry.Id}");

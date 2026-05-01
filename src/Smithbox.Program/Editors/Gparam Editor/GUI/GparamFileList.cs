@@ -115,13 +115,27 @@ public class GparamFileList
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.Selectable("Target in Quick Edit"))
+                if (IsDeletableGparamFile(entry))
                 {
-                    Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
-
-                    ImGui.CloseCurrentPopup();
+                    if (ImGui.Selectable("Delete"))
+                    {
+                        DeleteGparamFile(entry);
+                    }
+                    UIHelper.Tooltip("Will delete this GPARAM.");
                 }
-                UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+
+                ImGui.Separator();
+
+                if (ImGui.BeginMenu("Quick Edit"))
+                {
+                    if (ImGui.Selectable("Target"))
+                    {
+                        Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
+                    }
+                    UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+
+                    ImGui.EndMenu();
+                }
 
                 ImGui.EndPopup();
             }
@@ -174,5 +188,31 @@ public class GparamFileList
                 }
             }
         }
+    }
+
+    // Only allow files in the project directory to be deleted.
+    private bool IsDeletableGparamFile(FileDictionaryEntry entry)
+    {
+        var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), entry.Path);
+
+        if(File.Exists(srcPath))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void DeleteGparamFile(FileDictionaryEntry entry)
+    {
+        var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), entry.Path);
+
+        if (File.Exists(srcPath))
+        {
+            File.Delete(srcPath);
+        }
+
+        Project.Locator.GparamFiles.Entries.Remove(entry);
+        Project.Handler.GparamData.PrimaryBank.Entries.Remove(entry);
     }
 }

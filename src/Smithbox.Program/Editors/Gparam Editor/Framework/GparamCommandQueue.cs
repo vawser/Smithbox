@@ -84,7 +84,7 @@ public class GparamCommandQueue
                                 {
                                     GPARAM.IFieldValue entry = field.Values[i];
 
-                                    if (initcmd[4] == entry.Id.ToString())
+                                    if (initcmd[4] == entry.ID.ToString())
                                     {
                                         activeView.Selection.SetGparamFieldValue(i, entry);
                                     }

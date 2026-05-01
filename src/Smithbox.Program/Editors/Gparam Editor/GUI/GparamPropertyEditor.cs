@@ -443,7 +443,7 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup, field, value, newValue, idx, ValueChangeType.Set);
 
                     Parent.ActionManager.ExecuteAction(action);
                 }
@@ -479,7 +479,7 @@ public class GparamPropertyEditor
         object oldValue = null;
         object newValue = null;
 
-        float fieldValue = field.Values[idx].Unk04;
+        float fieldValue = field.Values[idx].TimeOfDay;
         float floatInput = fieldValue;
         oldValue = fieldValue;
 
@@ -508,7 +508,7 @@ public class GparamPropertyEditor
                 else
                 {
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup.Name, field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup, field, value, newValue, idx);
 
                     Parent.ActionManager.ExecuteAction(action);
                 }
@@ -537,9 +537,9 @@ public class GparamPropertyEditor
 
                 foreach (var val in values)
                 {
-                    if (!newGroupIndexList.Ids.Contains(val.Id))
+                    if (!newGroupIndexList.Ids.Contains(val.ID))
                     {
-                        newGroupIndexList.Ids.Add(val.Id);
+                        newGroupIndexList.Ids.Add(val.ID);
                     }
                 }
             }
@@ -565,8 +565,8 @@ public class GparamPropertyEditor
             SbyteField castField = (SbyteField)targetField;
 
             var dupeVal = new FieldValue<sbyte>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (sbyte)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -576,8 +576,8 @@ public class GparamPropertyEditor
             ByteField castField = (ByteField)targetField;
 
             var dupeVal = new FieldValue<byte>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (byte)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -587,8 +587,8 @@ public class GparamPropertyEditor
             ShortField castField = (ShortField)targetField;
 
             var dupeVal = new FieldValue<short>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (short)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -598,8 +598,8 @@ public class GparamPropertyEditor
             IntField castField = (IntField)targetField;
 
             var dupeVal = new FieldValue<int>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (int)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -609,8 +609,8 @@ public class GparamPropertyEditor
             UintField castField = (UintField)targetField;
 
             var dupeVal = new FieldValue<uint>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (uint)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -620,8 +620,8 @@ public class GparamPropertyEditor
             FloatField castField = (FloatField)targetField;
 
             var dupeVal = new FieldValue<float>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (float)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -631,8 +631,8 @@ public class GparamPropertyEditor
             BoolField castField = (BoolField)targetField;
 
             var dupeVal = new FieldValue<bool>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (bool)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -642,8 +642,8 @@ public class GparamPropertyEditor
             Vector2Field castField = (Vector2Field)targetField;
 
             var dupeVal = new FieldValue<Vector2>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector2)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -653,8 +653,8 @@ public class GparamPropertyEditor
             Vector3Field castField = (Vector3Field)targetField;
 
             var dupeVal = new FieldValue<Vector3>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector3)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -664,8 +664,8 @@ public class GparamPropertyEditor
             Vector4Field castField = (Vector4Field)targetField;
 
             var dupeVal = new FieldValue<Vector4>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector4)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -675,8 +675,8 @@ public class GparamPropertyEditor
             ColorField castField = (ColorField)targetField;
 
             var dupeVal = new FieldValue<Color>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Color)targetValue.Value;
 
             castField.Values.Add(dupeVal);
@@ -696,8 +696,8 @@ public class GparamPropertyEditor
             SbyteField castField = (SbyteField)targetField;
 
             var dupeVal = new FieldValue<sbyte>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (sbyte)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -707,8 +707,8 @@ public class GparamPropertyEditor
             ByteField castField = (ByteField)targetField;
 
             var dupeVal = new FieldValue<byte>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (byte)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -718,8 +718,8 @@ public class GparamPropertyEditor
             ShortField castField = (ShortField)targetField;
 
             var dupeVal = new FieldValue<short>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (short)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -729,8 +729,8 @@ public class GparamPropertyEditor
             IntField castField = (IntField)targetField;
 
             var dupeVal = new FieldValue<int>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (int)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -740,8 +740,8 @@ public class GparamPropertyEditor
             UintField castField = (UintField)targetField;
 
             var dupeVal = new FieldValue<uint>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (uint)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -751,8 +751,8 @@ public class GparamPropertyEditor
             FloatField castField = (FloatField)targetField;
 
             var dupeVal = new FieldValue<float>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (float)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -762,8 +762,8 @@ public class GparamPropertyEditor
             BoolField castField = (BoolField)targetField;
 
             var dupeVal = new FieldValue<bool>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (bool)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -773,8 +773,8 @@ public class GparamPropertyEditor
             Vector2Field castField = (Vector2Field)targetField;
 
             var dupeVal = new FieldValue<Vector2>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector2)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -784,8 +784,8 @@ public class GparamPropertyEditor
             Vector3Field castField = (Vector3Field)targetField;
 
             var dupeVal = new FieldValue<Vector3>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector3)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -795,8 +795,8 @@ public class GparamPropertyEditor
             Vector4Field castField = (Vector4Field)targetField;
 
             var dupeVal = new FieldValue<Vector4>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Vector4)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -806,8 +806,8 @@ public class GparamPropertyEditor
             ColorField castField = (ColorField)targetField;
 
             var dupeVal = new FieldValue<Color>();
-            dupeVal.Id = newRowId;
-            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.ID = newRowId;
+            dupeVal.TimeOfDay = targetValue.TimeOfDay;
             dupeVal.Value = (Color)targetValue.Value;
 
             castField.Values.Insert(index, dupeVal);
@@ -892,7 +892,7 @@ public class GparamPropertyEditor
             SbyteField castField = (SbyteField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -905,7 +905,7 @@ public class GparamPropertyEditor
             ByteField castField = (ByteField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -918,7 +918,7 @@ public class GparamPropertyEditor
             ShortField castField = (ShortField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -931,7 +931,7 @@ public class GparamPropertyEditor
             IntField castField = (IntField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -944,7 +944,7 @@ public class GparamPropertyEditor
             UintField castField = (UintField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -957,7 +957,7 @@ public class GparamPropertyEditor
             FloatField castField = (FloatField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -970,7 +970,7 @@ public class GparamPropertyEditor
             BoolField castField = (BoolField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -983,7 +983,7 @@ public class GparamPropertyEditor
             Vector2Field castField = (Vector2Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -996,7 +996,7 @@ public class GparamPropertyEditor
             Vector3Field castField = (Vector3Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -1009,7 +1009,7 @@ public class GparamPropertyEditor
             Vector4Field castField = (Vector4Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -1022,7 +1022,7 @@ public class GparamPropertyEditor
             ColorField castField = (ColorField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
-                if (castField.Values[i].Id == rowId)
+                if (castField.Values[i].ID == rowId)
                 {
                     targetIndex = i;
                 }
@@ -1040,8 +1040,8 @@ public class GparamPropertyEditor
         if (field is IntField intField)
         {
             FieldValue<int> fieldValueRow = new FieldValue<int>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             intField.Values.Add(fieldValueRow);
         }
@@ -1049,8 +1049,8 @@ public class GparamPropertyEditor
         else if (field is UintField uintField)
         {
             FieldValue<uint> fieldValueRow = new FieldValue<uint>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             uintField.Values.Add(fieldValueRow);
         }
@@ -1058,8 +1058,8 @@ public class GparamPropertyEditor
         else if (field is ShortField shortField)
         {
             FieldValue<short> fieldValueRow = new FieldValue<short>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             shortField.Values.Add(fieldValueRow);
         }
@@ -1067,8 +1067,8 @@ public class GparamPropertyEditor
         else if (field is SbyteField sbyteField)
         {
             FieldValue<sbyte> fieldValueRow = new FieldValue<sbyte>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             sbyteField.Values.Add(fieldValueRow);
         }
@@ -1076,8 +1076,8 @@ public class GparamPropertyEditor
         else if (field is ByteField byteField)
         {
             FieldValue<byte> fieldValueRow = new FieldValue<byte>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             byteField.Values.Add(fieldValueRow);
         }
@@ -1085,8 +1085,8 @@ public class GparamPropertyEditor
         else if (field is BoolField boolField)
         {
             FieldValue<bool> fieldValueRow = new FieldValue<bool>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = false;
             boolField.Values.Add(fieldValueRow);
         }
@@ -1094,8 +1094,8 @@ public class GparamPropertyEditor
         else if (field is FloatField floatField)
         {
             FieldValue<float> fieldValueRow = new FieldValue<float>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = 0;
             floatField.Values.Add(fieldValueRow);
         }
@@ -1103,8 +1103,8 @@ public class GparamPropertyEditor
         else if (field is Vector2Field vector2Field)
         {
             FieldValue<Vector2> fieldValueRow = new FieldValue<Vector2>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = new Vector2(0, 0);
             vector2Field.Values.Add(fieldValueRow);
         }
@@ -1112,8 +1112,8 @@ public class GparamPropertyEditor
         else if (field is Vector3Field vector3Field)
         {
             FieldValue<Vector3> fieldValueRow = new FieldValue<Vector3>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = new Vector3(0, 0, 0);
             vector3Field.Values.Add(fieldValueRow);
         }
@@ -1121,8 +1121,8 @@ public class GparamPropertyEditor
         else if (field is Vector4Field vector4Field)
         {
             FieldValue<Vector4> fieldValueRow = new FieldValue<Vector4>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = new Vector4(0, 0, 0, 0);
             vector4Field.Values.Add(fieldValueRow);
         }
@@ -1130,8 +1130,8 @@ public class GparamPropertyEditor
         else if (field is ColorField colorField)
         {
             FieldValue<Color> fieldValueRow = new FieldValue<Color>();
-            fieldValueRow.Id = 0;
-            fieldValueRow.Unk04 = 0;
+            fieldValueRow.ID = 0;
+            fieldValueRow.TimeOfDay = 0;
             fieldValueRow.Value = new Color();
             colorField.Values.Add(fieldValueRow);
         }

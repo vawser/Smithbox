@@ -15,13 +15,13 @@ public class GparamSelection
     public GPARAM _selectedGparam;
     public string _selectedGparamKey;
 
-    public GPARAM.Param _selectedParamGroup;
+    public string _selectedParamGroup;
     public int _selectedParamGroupKey;
 
-    public GPARAM.IField _selectedParamField;
+    public string _selectedParamField;
     public int _selectedParamFieldKey;
 
-    public GPARAM.IFieldValue _selectedFieldValue = null;
+    public int _selectedFieldValue;
     public int _selectedFieldValueKey;
 
     public int _duplicateValueRowId = 0;
@@ -68,7 +68,7 @@ public class GparamSelection
 
     public void ResetGparamFieldValueSelection()
     {
-        _selectedFieldValue = null;
+        _selectedFieldValue = -1;
         _selectedFieldValueKey = -1;
     }
 
@@ -125,7 +125,7 @@ public class GparamSelection
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
 
-        _selectedParamGroup = entry;
+        _selectedParamGroup = entry.Key;
         _selectedParamGroupKey = index;
     }
 
@@ -149,7 +149,7 @@ public class GparamSelection
     {
         ResetGparamFieldValueSelection();
 
-        _selectedParamField = entry;
+        _selectedParamField = entry.Key;
         _selectedParamFieldKey = index;
         Parent.QuickEditHandler.targetParamField = entry;
     }
@@ -159,7 +159,7 @@ public class GparamSelection
     /// </summary>
     public bool IsGparamFieldValueSelected()
     {
-        if (_selectedFieldValue != null && _selectedFieldValueKey != -1)
+        if (_selectedFieldValue != -1 && _selectedFieldValueKey != -1)
         {
             return true;
         }
@@ -172,9 +172,9 @@ public class GparamSelection
     /// </summary>
     public void SetGparamFieldValue(int index, GPARAM.IFieldValue entry)
     {
-        _selectedFieldValue = entry;
+        _selectedFieldValue = entry.ID;
         _selectedFieldValueKey = index;
-        _duplicateValueRowId = entry.Id;
+        _duplicateValueRowId = entry.ID;
     }
 
     /// <summary>
@@ -190,7 +190,12 @@ public class GparamSelection
     /// </summary>
     public GPARAM.Param GetSelectedGparamGroup()
     {
-        return _selectedParamGroup;
+        if(_selectedGparam.Params.Any(e => e.Key == _selectedParamGroup))
+        {
+            return _selectedGparam.Params.First(e => e.Key == _selectedParamGroup);
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -198,7 +203,17 @@ public class GparamSelection
     /// </summary>
     public GPARAM.IField GetSelectedGparamField()
     {
-        return _selectedParamField;
+        var group = GetSelectedGparamGroup();
+
+        if (group == null)
+            return null;
+
+        if (group.Fields.Any(e => e.Key == _selectedParamField))
+        {
+            return group.Fields.First(e => e.Key == _selectedParamField);
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -206,21 +221,20 @@ public class GparamSelection
     /// </summary>
     public GPARAM.IFieldValue GetSelectedGparamFieldValue()
     {
-        return _selectedFieldValue;
-    }
+        var group = GetSelectedGparamGroup();
+        var field = GetSelectedGparamField();
 
-    public GparamEditorContext CurrentWindowContext = GparamEditorContext.None;
+        if (group == null)
+            return null;
 
-    /// <summary>
-    /// Switches the focus context to the passed value.
-    /// Use this on all windows (e.g. both Begin and BeginChild)
-    /// </summary>
-    public void SwitchWindowContext(GparamEditorContext newContext)
-    {
-        if (ImGui.IsWindowHovered())
+        if (field == null)
+            return null;
+        
+        if (field.Values.Any(e => e.ID == _selectedFieldValue))
         {
-            CurrentWindowContext = newContext;
-            //Smithbox.Log(this, $"Context: {newContext.GetDisplayName()}");
+            return field.Values.First(e => e.ID == _selectedFieldValue);
         }
+
+        return null;
     }
 }

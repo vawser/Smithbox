@@ -40,6 +40,7 @@ public enum KeybindID
     Right,
 
     // Contextual Actions
+    Add,
     SelectAll,
     Copy,
     Paste,
@@ -149,6 +150,8 @@ public enum KeybindID
     TextEditor_Configurable_Duplicate,
 
     // Gparam Editor
+    GparamEditor_Add_Missing_Groups,
+    GparamEditor_Add_Missing_Fields,
     GparamEditor_Execute_Quick_Edit,
     GparamEditor_Generate_Quick_Edit,
     GparamEditor_Clear_Quick_Edit,
@@ -196,6 +199,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Right, new() { Key = Key.Right });
 
         // Contextual
+        InputManager.Bind(KeybindID.Add, new() { Key = Key.Y, Shift = true });
         InputManager.Bind(KeybindID.SelectAll, new() { Key = Key.A, Ctrl = true });
         InputManager.Bind(KeybindID.Copy, new() { Key = Key.C, Ctrl = true });
         InputManager.Bind(KeybindID.Paste, new() { Key = Key.V, Ctrl = true });
@@ -442,6 +446,10 @@ public static class KeybindMetadata
         ) },
 
         // Contextual
+        { KeybindID.Add, (
+            "Add",
+            "This will add a new entry to the list."
+        ) },
         { KeybindID.SelectAll, (
             "Select All",
             "This will select all entries within a list."
@@ -906,6 +914,7 @@ public static class KeybindMetadata
         { KeybindID.Right, InputCategory.Common },
 
         // Contextual
+        { KeybindID.Add, InputCategory.Contextual },
         { KeybindID.SelectAll, InputCategory.Contextual },
         { KeybindID.Copy, InputCategory.Contextual },
         { KeybindID.Paste, InputCategory.Contextual },
