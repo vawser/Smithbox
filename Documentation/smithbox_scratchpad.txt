@@ -6,7 +6,7 @@
  - Fix the FMG ref finder (the finder is inconsistent)
  
 - Model Editor
- - Entry delete isn't removing mesh in viewport
+ - Mesh visbility/delete not working properly
  
 - Material Editor:
  - Add MATBIN support back

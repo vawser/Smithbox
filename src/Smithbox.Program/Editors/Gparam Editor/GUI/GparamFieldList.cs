@@ -50,7 +50,9 @@ public class GparamFieldList
 
                 var name = entry.Key;
                 if (CFG.Current.GparamEditor_Field_List_Enable_Aliases)
-                    name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
+                {
+                    name = FormatInformationUtils.GetReferenceName(Project, Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
+                }
 
                 if (Parent.Filters.IsFieldFilterMatch(entry.Name, ""))
                 {

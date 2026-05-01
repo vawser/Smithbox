@@ -56,7 +56,9 @@ public class GparamGroupList
 
                 var name = entry.Key;
                 if (CFG.Current.GparamEditor_Group_List_Display_Aliases)
-                    name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
+                {
+                    name = FormatInformationUtils.GetReferenceName(Project, Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
+                }
 
                 var display = false;
 

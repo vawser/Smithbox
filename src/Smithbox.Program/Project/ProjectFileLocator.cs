@@ -372,6 +372,12 @@ public class ProjectFileLocator : IDisposable
             if (folder.StartsWith("/param") && ext == "gparam")
                 gparamFiles.Add(entry);
 
+            if(projectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                if (folder.StartsWith("/filter") && ext == "fltparam")
+                    gparamFiles.Add(entry);
+            }
+
             // Text files
             if (folder.StartsWith("/msg") && ext == "msgbnd")
                 textFiles.Add(entry);

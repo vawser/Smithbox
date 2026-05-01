@@ -524,7 +524,7 @@ public class GparamPropertyEditor
         foreach (var param in gparam.Params)
         {
             var newGroupIndexList = new UnkParamExtra();
-            newGroupIndexList.Unk00 = idx;
+            newGroupIndexList.GroupIndex = idx;
             newGroupIndexList.Unk0c = 0; // Always 0
 
             foreach (var field in param.Fields)

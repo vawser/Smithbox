@@ -26,7 +26,43 @@ public class QuickScript
 
     public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        UpdateAnnotations(curProject);
+        LoadGparams(curProject);
+    }
+
+    public static void LoadGparams(ProjectEntry curProject)
+    {
+        Dictionary<FileDictionaryEntry, GPARAM> gparamEntries = new();
+
+        foreach (var entry in curProject.Locator.GparamFiles.Entries)
+        {
+            try
+            {
+                var gparamData = curProject.VFS.FS.ReadFileOrThrow(entry.Path);
+
+                try
+                {
+                    var gparam = GPARAM.Read(gparamData);
+
+                    gparamEntries.Add(entry, gparam);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError<QuickScript>($"[Graphics Param Editor] Failed to read {entry.Path} as GPARAM for {entry.Filename}.", e);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError<QuickScript>($"[Graphics Param Editor] Failed to read {entry.Path} from VFS for {entry.Filename}.", e);
+            }
+        }
+
+        ExtractGparamData(curProject, gparamEntries);
+    }
+
+    // Build def bank for the individual fields
+    public static void ExtractGparamData(ProjectEntry curProject, Dictionary<FileDictionaryEntry, GPARAM> entries)
+    {
+
     }
 
     public static void UpdateAnnotations(ProjectEntry curProject)

@@ -484,9 +484,7 @@ public class ProjectUtils
         if (curType
             is ProjectType.DES
             or ProjectType.DS1
-            or ProjectType.DS1R
-            or ProjectType.DS2
-            or ProjectType.DS2S)
+            or ProjectType.DS1R)
         {
             return false;
         }

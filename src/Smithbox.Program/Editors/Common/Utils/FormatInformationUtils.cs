@@ -86,13 +86,31 @@ public class FormatInformationUtils
         return desc;
     }
 
-    public static string GetReferenceName(FormatResource source, string classKey, string name, string sharedTypeName = "")
+    public static string GetReferenceName(ProjectEntry project, FormatResource source, string classKey, string name, string sharedTypeName = "")
     {
         if (source == null)
-            return name;
+        {
+            if(project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return classKey;
+            }
+            else
+            {
+                return name;
+            }
+        }
 
         if (source.list == null)
-            return name;
+        {
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return classKey;
+            }
+            else
+            {
+                return name;
+            }
+        }
 
         // Top
         foreach (FormatReference entry in source.list)
@@ -110,7 +128,14 @@ public class FormatInformationUtils
             }
         }
 
-        return name;
+        if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            return classKey;
+        }
+        else
+        {
+            return name;
+        }
     }
 
     public static string GetReferenceDescription(FormatResource source, string classKey, string key, string sharedTypeName = "")
