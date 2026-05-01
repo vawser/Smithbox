@@ -1,4 +1,4 @@
-name: .NET
+name: .NET Linux
 
 on:
   push:
@@ -8,19 +8,19 @@ on:
       - 'src/Smithbox/AppIcon.icns'
       - 'src/Smithbox/Info.plist'
       - 'src/Smithbox/ProductDefinition.plist'
-      - 'src/Smithbox/Smithbox.Linux.csproj'
+      - 'src/Smithbox/Smithbox.csproj'
       - 'src/Smithbox/Smithbox.Mac.csproj'
   pull_request:
     paths-ignore:
       - 'src/Smithbox/AppIcon.icns'
       - 'src/Smithbox/Info.plist'
       - 'src/Smithbox/ProductDefinition.plist'
-      - 'src/Smithbox/Smithbox.Linux.csproj'
+      - 'src/Smithbox/Smithbox.csproj'
       - 'src/Smithbox/Smithbox.Mac.csproj'
 jobs:
-  build-windows:
+  build-linux:
     runs-on: windows-latest
-    name: "Build Windows"
+    name: "Build Linux"
     env:
       NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
     steps:
@@ -42,8 +42,8 @@ jobs:
 
       - name: Remove extraneous platforms
         run: |
+          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj'
           dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Mac.csproj'
-          dotnet sln remove '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Linux.csproj'
 
       - name: Restore
         run: dotnet restore /p:Configuration=Release
@@ -52,10 +52,10 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy/windows
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.Linux.csproj' --configuration Release -o deploy/linux
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ runner.workspace }}/Smithbox/deploy/windows"
+          name: "Smithbox.Linux-SHA${{ github.sha }}"
+          path: "${{ runner.workspace }}/Smithbox/deploy/linux"
