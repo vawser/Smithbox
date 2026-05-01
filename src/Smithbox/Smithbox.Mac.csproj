@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>Smithbox</AssemblyName>
-    <ApplicationId>com.vawser.Smithbox</ApplicationId>
     <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Vawser</Authors>
     <Version>2.2.0</Version>
@@ -15,13 +14,14 @@
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
     <Platforms>AnyCPU;x64</Platforms>
-    <RuntimeIdentifiers Condition="'$(Platform)'=='AnyCPU'">osx-arm64;osx-x64</RuntimeIdentifiers>
-    <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
-    <SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
     <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
     <RootNamespace>StudioCore</RootNamespace>
     <Title>Smithbox</Title>
     <Description>A mod editor for FromSoftware games.</Description>
+    <RuntimeIdentifiers Condition="'$(Platform)'=='AnyCPU'">osx-arm64;osx-x64</RuntimeIdentifiers>
+    <RuntimeIdentifier Condition="'$(Platform)'=='x64'">osx-x64</RuntimeIdentifier>
+    <ApplicationId>com.vawser.Smithbox</ApplicationId>
+    <SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -68,6 +68,12 @@
   </ItemGroup>
 
   <Target Name="Init" Condition="!Exists('../Platform.Build.props')" />
+
+  <Target Name="Versioning" BeforeTargets="BeforeBuild">
+      <Exec Command="plutil -replace CFBundleShortVersionString -string $(Version) Info.plist" />
+      <Exec Command="plutil -replace CFBundleVersion -string $(Version) Info.plist" />
+  </Target>
+
   <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
       <PropertyGroup>
         <PlatformProps>
