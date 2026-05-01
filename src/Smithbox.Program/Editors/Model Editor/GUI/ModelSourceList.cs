@@ -35,8 +35,6 @@ public class ModelSourceList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        DisplayMenubar();
-
         ImGui.BeginChild("ContainerList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
@@ -100,26 +98,6 @@ public class ModelSourceList
         ImGui.EndChild();
     }
 
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-            if (ImGui.BeginMenu("Options"))
-            {
-                if (ImGui.MenuItem("Include Alias in Search"))
-                {
-                    CFG.Current.ModelEditor_IncludeAliasInSearch = !CFG.Current.ModelEditor_IncludeAliasInSearch;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_IncludeAliasInSearch);
-                UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenuBar();
-        }
-    }
-
     public void DisplaySearchbar(ModelListType type)
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -147,7 +125,7 @@ public class ModelSourceList
                 var modelName = entry.Key.Filename;
                 var nameAlias = "";
 
-                if (CFG.Current.ModelEditor_IncludeAliasInSearch)
+                if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch)
                 {
                     if (type is ModelListType.Character)
                     {
@@ -233,6 +211,7 @@ public class ModelSourceList
                             entry.Value.PopulateModelList();
 
                             View.SelectionList.ApplyAutoSelectPass = true;
+                            View.SelectionList.ApplyAutoLoadFirst = true;
                         }
                     }
                 }
@@ -265,6 +244,7 @@ public class ModelSourceList
                     entry.Value.PopulateModelList();
 
                     View.SelectionList.ApplyAutoSelectPass = true;
+                    View.SelectionList.ApplyAutoLoadFirst = true;
                 }
             }
 

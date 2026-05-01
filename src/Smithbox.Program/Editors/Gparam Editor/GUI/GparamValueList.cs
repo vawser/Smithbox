@@ -2,6 +2,8 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using System.Linq;
+using System.Numerics;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -24,9 +26,10 @@ public class GparamValueList
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader("Values", "");
+        DisplayHeader();
 
-        Parent.Filters.DisplayFieldValueFilterSearch();
+        // Values
+        ImGui.BeginChild("valueListTable", ImGuiChildFlags.Borders);
 
         if (Parent.Selection.IsGparamFieldSelected())
         {
@@ -34,12 +37,19 @@ public class GparamValueList
 
             ResetDisplayTruth(field);
 
-            ImGui.Columns(4);
+            var columnCount = 2;
+
+            if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
+                columnCount++;
+
+            if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
+                columnCount++;
+
+            ImGui.Columns(columnCount);
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
-            ImGui.Text($"ID");
-            ImGui.Separator();
+            UIHelper.SimpleHeader("ID", "");
 
             for (int i = 0; i < field.Values.Count; i++)
             {
@@ -53,44 +63,35 @@ public class GparamValueList
                 }
             }
 
-            // Display "Add" button if field has no value rows.
-            if (field.Values.Count <= 0)
-            {
-                if (ImGui.Button("Add", DPI.StandardButtonSize))
-                {
-                    Parent.PropertyEditor.AddValueField(field);
-                    ResetDisplayTruth(field);
-                }
-            }
-
             ImGui.EndChild();
 
-            ImGui.NextColumn();
-
-            // Time of Day
-            ImGui.BeginChild("IdList##GparamTimeOfDay");
-            Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
-            ImGui.Text($"Time of Day");
-            ImGui.Separator();
-
-            for (int i = 0; i < field.Values.Count; i++)
+            if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
             {
-                if (displayTruth[i])
-                {
-                    GPARAM.IFieldValue entry = field.Values[i];
-                    GparamProperty_TimeOfDay(i, field, entry);
-                }
-            }
+                ImGui.NextColumn();
 
-            ImGui.EndChild();
+                // Time of Day
+                ImGui.BeginChild("IdList##GparamTimeOfDay");
+                Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+                UIHelper.SimpleHeader("Time of Day", "");
+
+                for (int i = 0; i < field.Values.Count; i++)
+                {
+                    if (displayTruth[i])
+                    {
+                        GPARAM.IFieldValue entry = field.Values[i];
+                        GparamProperty_TimeOfDay(i, field, entry);
+                    }
+                }
+
+                ImGui.EndChild();
+            }
 
             ImGui.NextColumn();
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
             Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
-            ImGui.Text($"Value");
-            ImGui.Separator();
+            UIHelper.SimpleHeader("Value", "");
 
             for (int i = 0; i < field.Values.Count; i++)
             {
@@ -104,19 +105,67 @@ public class GparamValueList
             ImGui.EndChild();
 
             // Information
-            ImGui.NextColumn();
+            if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
+            {
+                ImGui.NextColumn();
 
-            // Value
-            ImGui.BeginChild("InfoList##GparamPropertyInfo");
-            Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
-            ImGui.Text($"Information");
-            ImGui.Separator();
+                // Value
+                ImGui.BeginChild("InfoList##GparamPropertyInfo");
+                Parent.Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
+                UIHelper.SimpleHeader("Information", "");
 
-            // Only show once
-            GparamProperty_Info(field);
+                // Only show once
+                GparamProperty_Info(field);
 
-            ImGui.EndChild();
+                ImGui.EndChild();
+            }
         }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayHeader()
+    {
+        UIHelper.SimpleHeader("Values", "");
+
+        // Search
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+        Parent.Filters.DisplayFieldValueFilterSearch();
+
+        // Time of Day Toggle
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.ClockO}##todColumnToggle"))
+        {
+            CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column = !CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column;
+        }
+
+        var todColumnMode = "Displaying Time of Day column.";
+        if (!CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
+        {
+            todColumnMode = "Hiding Time of Day column.";
+        }
+        UIHelper.Tooltip($"Toggle the display of the Time of Day column.\nCurrent Mode: {todColumnMode}");
+
+        // Information Toggle
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Info}##infoColumnToggle"))
+        {
+            CFG.Current.GparamEditor_Value_List_Display_Information_Column = !CFG.Current.GparamEditor_Value_List_Display_Information_Column;
+        }
+
+        var infoColumnMode = "Displaying Information column.";
+        if (!CFG.Current.GparamEditor_Value_List_Display_Information_Column)
+        {
+            infoColumnMode = "Hiding Information column.";
+        }
+        UIHelper.Tooltip($"Toggle the display of the Information column.\nCurrent Mode: {infoColumnMode}");
+
+        ImGui.EndChild();
+
     }
 
     /// <summary>
@@ -212,25 +261,42 @@ public class GparamValueList
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = FormatInformationUtils.GetReferenceDescription(Project.Handler.GparamData.GparamInformation, Parent.Selection._selectedParamGroup.Key, Parent.Selection._selectedParamField.Key);
+        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var fieldId = field.Key;
+        var fieldDescription = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
 
         // Skip if empty
-        if (desc != "")
+        if (fieldDescription != "")
         {
-            UIHelper.WrappedText($"{desc}");
+            UIHelper.WrappedText($"{fieldDescription}");
         }
 
-        // Show enum list if they exist
-        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Project.Handler.GparamData.GparamInformation, Project.Handler.GparamData.GparamEnums, field.Key);
+        var fieldEnum = GparamMetaUtils.GetFieldEnum(Project, groupId, fieldId);
 
-        if (propertyEnum != null)
+        if (fieldEnum != null)
         {
-            foreach (var entry in propertyEnum.members)
+            var enums = Project.Handler.GparamData.Enums.List;
+
+            if (enums.Any(e => e.Key == fieldEnum))
             {
-                UIHelper.WrappedText($"{entry.id} - {entry.name}");
+                var targetEnum = enums.FirstOrDefault(e => e.Key == fieldEnum);
+
+                foreach(var entry in targetEnum.Options)
+                {
+                    var name = entry.Names.FirstOrDefault(e => e.Language == CFG.Current.GparamEditor_Annotation_Language);
+
+                    if (name != null)
+                    {
+                        UIHelper.WrappedText($"{entry.Key} - {name}");
+                    }
+                    else
+                    {
+                        UIHelper.WrappedText($"{entry.Key}");
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,215 @@
+{
+  "ID": "LensSimulation",
+  "Name": "Lens Simulation",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "NearEnd",
+      "Name": "Near End",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "NearStart",
+      "Name": "Near Start",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FarStart",
+      "Name": "Far Start",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FarEnd",
+      "Name": "Far End",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FocusDist",
+      "Name": "Focus Distance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Camera Focus Offset",
+      "Name": "Camera Focus Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "UseCameraFocus",
+      "Name": "Use Camera Focus",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "CoCBlurCount",
+      "Name": "Circle of Confusion: Blur Count",
+      "Description": "",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Lens F",
+      "Name": "F-Number",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Av (絞り値)",
+      "Name": "Aperture Value",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilmSize(mm)",
+      "Name": "Film Size",
+      "Description": "In millimetres.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoC Near Factor",
+      "Name": "Circle of Confusion: Near Factor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoC Far  Factor",
+      "Name": "Circle of Confusion: Far Factor",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoCMode",
+      "Name": "Circle of Confusion: Mode",
+      "Description": "",
+      "Type": "IntField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SkyDomeBokehRate",
+      "Name": "Skybox Bokeh Rate",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Intensity",
+      "Name": "CMB Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Active Rot Speed",
+      "Name": "CMB Active Rotation Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Active Move Speed",
+      "Name": "CMB Active Movement Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Detect Time",
+      "Name": "CMB Detection Time",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur Alpha",
+      "Name": "Sniper: Blur Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur Begin",
+      "Name": "Sniper: Blur Begin",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur End",
+      "Name": "Sniper: Blur End",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Motion Blur Intensity",
+      "Name": "Motion Blur Intensity",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Shutter Speed",
+      "Name": "Shutter Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Solve Single Step",
+      "Name": "Solve Single Step",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "DOF Alpha",
+      "Name": "Depth of Field Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

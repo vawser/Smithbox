@@ -85,24 +85,76 @@ public class FormatInformationUtils
 
         return desc;
     }
-
-    public static string GetReferenceName(FormatResource source, string classKey, string name, string sharedTypeName = "")
+    public static string GetGparamGroupName(ProjectEntry project, FormatResource source, string id, string name)
     {
         if (source == null)
-            return name;
+        {
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
 
         if (source.list == null)
-            return name;
+        {
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
 
-        // Top
         foreach (FormatReference entry in source.list)
         {
-            if (entry.id == classKey || entry.id == sharedTypeName)
+            if (entry.id == id)
             {
-                // Members
+                name = entry.name;
+            }
+        }
+
+        return name;
+    }
+
+    public static string GetGparamFieldName(ProjectEntry project, FormatResource source, string groupId, string id, string name)
+    {
+        if (source == null)
+        {
+            if(project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
+
+        if (source.list == null)
+        {
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
+
+        foreach (FormatReference entry in source.list)
+        {
+            if (entry.id == groupId)
+            {
                 foreach (FormatMember member in entry.members)
                 {
-                    if (member.id == name)
+                    if (member.id == id)
                     {
                         name = member.name;
                     }

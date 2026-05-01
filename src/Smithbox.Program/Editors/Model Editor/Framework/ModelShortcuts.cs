@@ -43,30 +43,30 @@ public class ModelShortcuts
         }
 
         // Undo
-        if (activeView.ActionManager.CanUndo())
+        if (activeView.ViewportActionManager.CanUndo())
         {
             if (InputManager.IsPressed(KeybindID.Undo))
             {
-                activeView.ActionManager.UndoAction();
+                activeView.ViewportActionManager.UndoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
-                activeView.ActionManager.UndoAction();
+                activeView.ViewportActionManager.UndoAction();
             }
         }
 
         // Redo
-        if (activeView.ActionManager.CanRedo())
+        if (activeView.ViewportActionManager.CanRedo())
         {
             if (InputManager.IsPressed(KeybindID.Redo))
             {
-                activeView.ActionManager.RedoAction();
+                activeView.ViewportActionManager.RedoAction();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
-                activeView.ActionManager.RedoAction();
+                activeView.ViewportActionManager.RedoAction();
             }
         }
 

@@ -93,19 +93,19 @@ public class ModelEditorView
         ReorderAction = new ReorderAction(this, Project);
 
         ModelInsightHelper = new ModelInsightHelper(this, Project);
-
-        ActionManager.AddEventHandler(Contents);
     }
 
     public void Display(bool doFocus, bool isActiveView)
     {
+        DisplayMenubar();
+
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             // FLVER
-            if (ImGui.Begin($@"FLVER##ModelFlverWindow{ViewIndex}", UIHelper.GetMainWindowFlags()))
+            if (ImGui.Begin($@"FLVER##ModelFlverWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 float width = ImGui.GetContentRegionAvail().X;
-                float height = ImGui.GetContentRegionAvail().Y;
+                float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
 
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
@@ -113,9 +113,9 @@ public class ModelEditorView
                     Editor.ViewHandler.ActiveView = this;
                 }
 
-                SourceList.Display(width, height * 0.2f);
-                SelectionList.Display(width, height * 0.1f);
-                Contents.Display(width, height * 0.7f);
+                SourceList.Display(width, height * CFG.Current.ModelEditor_Display_SourceList_Percentage);
+                SelectionList.Display(width, height * CFG.Current.ModelEditor_Display_SelectionList_Percentage);
+                Contents.Display(width, height * CFG.Current.ModelEditor_Display_Contents_Percentage);
             }
 
             ImGui.End();
@@ -127,7 +127,7 @@ public class ModelEditorView
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             // Properties
-            if (ImGui.Begin($@"Properties##ModelPropertiesWindow{ViewIndex}", UIHelper.GetMainWindowFlags()))
+            if (ImGui.Begin($@"Properties##ModelPropertiesWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
@@ -141,7 +141,96 @@ public class ModelEditorView
             ImGui.End();
         }
 
-        
+
         ViewportSelection.ClearGotoTarget();
+    }
+    public void DisplayMenubar()
+    {
+        if (ImGui.BeginMenuBar())
+        {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.BeginMenu("Containers"))
+                {
+                    if (ImGui.MenuItem("Include Alias in Search"))
+                    {
+                        CFG.Current.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
+                    }
+                    UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
+                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Files"))
+                {
+                    if (ImGui.MenuItem("Auto-Select First Entries"))
+                    {
+                        CFG.Current.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
+                    }
+                    UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
+                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Contents"))
+                {
+                    if (ImGui.MenuItem("Display Node Name in Mesh Entry"))
+                    {
+                        CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry = !CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry;
+                    }
+                    UIHelper.Tooltip($"If enabled, the linked node name is displayed in the mesh entry name.");
+                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Display"))
+                {
+                    ImGui.SliderFloat("Containers##containersDisplayPercentage", ref CFG.Current.ModelEditor_Display_SourceList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.ModelEditor_Display_SourceList_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.ModelEditor_Display_SelectionList_Percentage,
+                            ref CFG.Current.ModelEditor_Display_Contents_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
+
+                    ImGui.SliderFloat("Files##filesDisplayPercentage", ref CFG.Current.ModelEditor_Display_SelectionList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.ModelEditor_Display_SelectionList_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.ModelEditor_Display_SourceList_Percentage,
+                            ref CFG.Current.ModelEditor_Display_Contents_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Files section occupies.");
+
+                    ImGui.SliderFloat("Contents##contentsDisplayPercentage", ref CFG.Current.ModelEditor_Display_Contents_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        var remainder = 1f - CFG.Current.ModelEditor_Display_Contents_Percentage;
+
+                        StudioMath.Redistribute(
+                            ref CFG.Current.ModelEditor_Display_SourceList_Percentage,
+                            ref CFG.Current.ModelEditor_Display_SelectionList_Percentage,
+                            remainder);
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Contents section occupies.");
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenuBar();
+        }
     }
 }

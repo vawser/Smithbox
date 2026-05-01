@@ -182,7 +182,7 @@ public class SceneRenderPipeline
     /// <summary>
     /// Triggered by mouse click: pick out entities from viewport
     /// </summary>
-    public unsafe void CreateAsyncPickingRequest()
+    public unsafe void CreateAsyncPickingRequest(bool selectPrimitives = false)
     {
         if (_pickingEnabled)
         {
@@ -190,7 +190,15 @@ public class SceneRenderPipeline
         }
 
         _pickingEnabled = true;
-        Scene.SendGPUPickingRequest(_renderQueue, _overlayQueue);
+
+        if (selectPrimitives)
+        {
+            Scene.SendPrimitivePickingRequest(_overlayQueue);
+        }
+        else
+        {
+            Scene.SendGPUPickingRequest(_renderQueue, _overlayQueue);
+        }
 
         SceneRenderer.AddAsyncReadback(PickingResultReadbackBuffer, PickingResultsBuffer, d =>
         {

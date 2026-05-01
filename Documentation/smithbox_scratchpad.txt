@@ -6,14 +6,13 @@
  - Fix the FMG ref finder (the finder is inconsistent)
  
 - Model Editor
- - Fix dummy gizmo movement
-
+ - Mesh visbility/delete not working properly
+ 
 - Material Editor:
  - Add MATBIN support back
  
 - Gparam Editor:
  - Add support for load/save for gparambnd files, which BB uses
- - Add support for DS2 flt files
  - Add json seralization for import/export
 
  - Fix:
@@ -21,8 +20,7 @@
   - Removing values corrupts file
   - Changing value ID doesn't work
   - EnvironmentConfig group attributes cannot be added
- 
- 
+
 - Finish converting the SDT AlternativeOrders into Field Layouts
 - Translate DS2 meta
 

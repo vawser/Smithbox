@@ -77,6 +77,8 @@ public class TextEditorView
 
     public void Display(bool doFocus, bool isActiveView)
     {
+        DisplayMenubar();
+
         var columnCount = 3;
         var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
@@ -93,7 +95,7 @@ public class TextEditorView
             ImGui.TableNextColumn();
 
             float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y;
+            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
 
             ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
 
@@ -103,8 +105,8 @@ public class TextEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            ContainerList.Display(width, height * 0.4f);
-            FileList.Display(width, height * 0.6f);
+            ContainerList.Display(width, height * CFG.Current.TextEditor_Display_ContainerList_Percentage);
+            FileList.Display(width, height * CFG.Current.TextEditor_Display_FileList_Percentage);
 
             ImGui.EndChild();
 
@@ -144,5 +146,39 @@ public class TextEditorView
         NewEntryModal.Display();
         TextDuplicatePopup.Display();
         FmgExporter.OnGui();
+    }
+
+    public void DisplayMenubar()
+    {
+        if (ImGui.BeginMenuBar())
+        {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.BeginMenu("Display"))
+                {
+                    ImGui.SliderFloat("Containers##containerListDisplayPercentage", ref CFG.Current.TextEditor_Display_ContainerList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        // Auto-adjust the other var so the ratio remains 100%
+                        CFG.Current.TextEditor_Display_FileList_Percentage = 1 - CFG.Current.TextEditor_Display_ContainerList_Percentage;
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
+
+                    ImGui.SliderFloat("Files##fileListDisplayPercentage", ref CFG.Current.TextEditor_Display_FileList_Percentage, 0.01f, 0.99f);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        // Auto-adjust the other var so the ratio remains 100%
+                        CFG.Current.TextEditor_Display_ContainerList_Percentage = 1 - CFG.Current.TextEditor_Display_FileList_Percentage;
+                    }
+                    UIHelper.Tooltip("The percentage of the window the Files section occupies.");
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenuBar();
+        }
     }
 }

@@ -497,40 +497,53 @@ public class ModelWrapper
     {
         // Dummies
         FLVER.Dummies.Clear();
-        foreach (var entry in Container.Dummies)
+        foreach (var entry in Container.Objects)
         {
-            var obj = (FLVER.Dummy)entry.WrappedObject;
-            FLVER.Dummies.Add(obj);
+            if (entry.WrappedObject is FLVER.Dummy entDummy)
+            {
+                FLVER.Dummies.Add(entDummy);
+            }
         }
 
         // Nodes
         FLVER.Nodes.Clear();
-        foreach (var entry in Container.Nodes)
+        foreach (var entry in Container.Objects)
         {
-            var obj = (FLVER.Node)entry.WrappedObject;
-            FLVER.Nodes.Add(obj);
+            if (entry.WrappedObject is FLVER.Node entNode)
+            {
+                FLVER.Nodes.Add(entNode);
+            }
         }
 
         // Materials
         FLVER.Materials.Clear();
-        foreach (var entry in Container.Materials)
+        foreach (var entry in Container.Objects)
         {
-            var obj = (FLVER2.Material)entry.WrappedObject;
-            FLVER.Materials.Add(obj);
+            if (entry.WrappedObject is FLVER2.Material entMat)
+            {
+                FLVER.Materials.Add(entMat);
+            }
         }
 
         // Meshes
         FLVER.Meshes.Clear();
-        foreach (var entry in Container.Meshes)
+        foreach (var entry in Container.Objects)
         {
-            var obj = (FLVER2.Mesh)entry.WrappedObject;
-            FLVER.Meshes.Add(obj);
+            if (entry.WrappedObject is FLVER2.Mesh entMesh)
+            {
+                FLVER.Meshes.Add(entMesh);
+            }
         }
 
         // SkeletonSet
-        var newSkeletonSet = Container.Skeletons.First();
-        FLVER.Skeletons = (FLVER2.SkeletonSet)newSkeletonSet.WrappedObject;
-
+        FLVER.Skeletons = null;
+        foreach (var entry in Container.Objects)
+        {
+            if (entry.WrappedObject is FLVER2.SkeletonSet entSkeletonSet)
+            {
+                FLVER.Skeletons = entSkeletonSet;
+            }
+        }
     }
 
     public void Save()

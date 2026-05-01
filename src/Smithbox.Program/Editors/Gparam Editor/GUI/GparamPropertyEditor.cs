@@ -47,6 +47,10 @@ public class GparamPropertyEditor
         object oldValue = null;
         object newValue = null;
 
+        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var fieldId = field.Key;
+        var isBool = GparamMetaUtils.IsFieldBoolean(Project, groupId, fieldId);
+
         // INT
         if (field is IntField intField)
         {
@@ -54,7 +58,7 @@ public class GparamPropertyEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
+            if (isBool)
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -98,7 +102,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{uintInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
+            if (isBool)
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -142,7 +146,7 @@ public class GparamPropertyEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
+            if (isBool)
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -181,7 +185,7 @@ public class GparamPropertyEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
+            if (isBool)
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -222,7 +226,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{byteInput}";
 
-            if (FormatInformationUtils.IsBooleanProperty(Project.Handler.GparamData.GparamInformation, field.Key))
+            if (isBool)
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -524,7 +528,7 @@ public class GparamPropertyEditor
         foreach (var param in gparam.Params)
         {
             var newGroupIndexList = new UnkParamExtra();
-            newGroupIndexList.Unk00 = idx;
+            newGroupIndexList.GroupIndex = idx;
             newGroupIndexList.Unk0c = 0; // Always 0
 
             foreach (var field in param.Fields)

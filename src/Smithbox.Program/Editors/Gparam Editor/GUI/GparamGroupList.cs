@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -23,27 +24,10 @@ public class GparamGroupList
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader("Groups", "");
+        DisplayHeader();
 
-        Parent.Filters.DisplayGroupFilterSearch();
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.CircleO}##emptyGroupToggle"))
-        {
-            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
-        }
-        UIHelper.Tooltip("Toggle the display of empty groups.");
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##addGroupToggle"))
-        {
-            CFG.Current.GparamEditor_Group_List_Display_Group_Add = !CFG.Current.GparamEditor_Group_List_Display_Group_Add;
-        }
-        UIHelper.Tooltip("Toggle the display of the add group buttons.");
-
-        ImGui.BeginChild("GparamGroupsSection");
+        // Groups
+        ImGui.BeginChild("GparamGroupsSection", ImGuiChildFlags.Borders);
 
         if (Parent.Selection.IsFileSelected())
         {
@@ -55,8 +39,13 @@ public class GparamGroupList
                 GPARAM.Param entry = data.Params[i];
 
                 var name = entry.Key;
-                if (CFG.Current.GparamEditor_Group_List_Display_Aliases)
-                    name = FormatInformationUtils.GetReferenceName(Project.Handler.GparamData.GparamInformation, entry.Key, entry.Name);
+                var groupId = entry.Key;
+                var groupName = GparamMetaUtils.GetGroupName(Project, groupId);
+
+                if (groupName != null)
+                {
+                    name = groupName;
+                }
 
                 var display = false;
 
@@ -104,71 +93,35 @@ public class GparamGroupList
 
                 Parent.ContextMenu.GroupContextMenu(i);
             }
-
-            if (CFG.Current.GparamEditor_Group_List_Display_Group_Add)
-            {
-                ImGui.Separator();
-
-                AddMissingGroupSection();
-            }
         }
 
         ImGui.EndChild();
     }
 
-    /// <summary>
-    /// Groups List: add buttons
-    /// </summary>
-    public void AddMissingGroupSection()
+    public void DisplayHeader()
     {
-        GPARAM data = Parent.Selection.GetSelectedGparam();
+        UIHelper.SimpleHeader("Groups", "");
 
-        List<FormatReference> missingGroups = new List<FormatReference>();
+        // Search
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("GparamGroupSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        if (Project.Handler.GparamData.GparamInformation.list == null)
-            return;
+        Parent.Filters.DisplayGroupFilterSearch();
 
-        // Get source Format Reference
-        foreach (var entry in Project.Handler.GparamData.GparamInformation.list)
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##emptyGroupToggle"))
         {
-            bool isPresent = false;
-
-            foreach (var param in data.Params)
-            {
-                if (entry.id == param.Key)
-                {
-                    isPresent = true;
-                }
-            }
-
-            if (!isPresent)
-            {
-                missingGroups.Add(entry);
-            }
+            CFG.Current.GparamEditor_Group_List_Display_Empty_Group = !CFG.Current.GparamEditor_Group_List_Display_Empty_Group;
         }
 
-        foreach (var missing in missingGroups)
+        var emptyGroupMode = "Displaying empty groups.";
+        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
         {
-            if (ImGui.Button($"Add##{missing.id}", DPI.StandardButtonSize))
-            {
-                AddMissingGroup(missing);
-            }
-            ImGui.SameLine();
-            ImGui.Text($"{missing.name}");
+            emptyGroupMode = "Hiding empty groups.";
         }
-    }
+        UIHelper.Tooltip($"Toggle the display of empty groups.\nCurrent Mode: {emptyGroupMode}");
 
-    /// <summary>
-    /// Add missing param group to target GPARAM
-    /// </summary>
-    /// <param name="missingGroup"></param>
-    public void AddMissingGroup(FormatReference missingGroup)
-    {
-        var newGroup = new GPARAM.Param();
-        newGroup.Key = missingGroup.id;
-        newGroup.Name = missingGroup.name;
-        newGroup.Fields = new List<GPARAM.IField>();
-
-        Parent.Selection._selectedGparam.Params.Add(newGroup);
+        ImGui.EndChild();
     }
 }

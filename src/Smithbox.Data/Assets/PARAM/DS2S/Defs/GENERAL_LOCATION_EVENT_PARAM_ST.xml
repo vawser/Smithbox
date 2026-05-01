@@ -83,21 +83,21 @@
             <Increment>1</Increment>
             <SortID>420</SortID>
         </Field>
-        <Field Def="f32 radius = 1">
+        <Field Def="f32 ScaleX = 1">
             <DisplayName>半径・X幅</DisplayName>
             <DisplayFormat>%f</DisplayFormat>
             <Maximum>200</Maximum>
             <Increment>0.0099999998</Increment>
             <SortID>310</SortID>
         </Field>
-        <Field Def="f32 height = 1">
+        <Field Def="f32 ScaleY = 1">
             <DisplayName>高さ・Y幅</DisplayName>
             <DisplayFormat>%f</DisplayFormat>
             <Maximum>200</Maximum>
             <Increment>0.0099999998</Increment>
             <SortID>320</SortID>
         </Field>
-        <Field Def="f32 depth = 1">
+        <Field Def="f32 ScaleZ = 1">
             <DisplayName>Ｚ幅</DisplayName>
             <DisplayFormat>%f</DisplayFormat>
             <Maximum>200</Maximum>

@@ -1,0 +1,47 @@
+{
+  "ID": "ToneMap",
+  "Name": "Tone Map",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "AvgLuminance",
+      "Name": "Average Luminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "LuminanceBalance",
+      "Name": "Luminance Balance",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "MaxLuminance",
+      "Name": "Max Luminance",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Scaler",
+      "Name": "Scaler",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "高輝度抽出しきい値",
+      "Name": "High Brightness Extraction Threshold",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

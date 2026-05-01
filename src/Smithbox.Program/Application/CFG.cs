@@ -146,6 +146,7 @@ public class CFG
     public float Interface_Context_Menu_Width = 350f;
     public float Interface_Context_Menu_List_Height_Multiplier = 1f;
 
+    public float Interace_Editor_Display_Inner_Height_Percent = 0.95f;
     #endregion
 
     #region Map Editor
@@ -155,6 +156,9 @@ public class CFG
     // Preferences
     public bool MapEditor_IgnoreSaveExceptions = false;
     public bool MapEditor_SkipHavokLoad = false;
+
+    public float MapEditor_Display_MapList_Percentage = 0.25f;
+    public float MapEditor_Display_Contents_Percentage = 0.75f;
 
     public bool MapEditor_Map_List_Display_Map_Aliases = true;
     public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;
@@ -455,8 +459,15 @@ public class CFG
     /// Model Editor
     ///------------------------------------------------------------
     // General
-    public bool ModelEditor_AutoLoadSingles = true;
-    public bool ModelEditor_IncludeAliasInSearch = true;
+    public float ModelEditor_Display_SourceList_Percentage = 0.2f;
+    public float ModelEditor_Display_SelectionList_Percentage = 0.1f;
+    public float ModelEditor_Display_Contents_Percentage = 0.7f;
+
+    public bool ModelEditor_Containers_IncludeAliasInSearch = true;
+
+    public bool ModelEditor_Files_AutoLoadFirstEntry = true;
+
+    public bool ModelEditor_Contents_NodeNameInMeshEntry = true;
 
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
@@ -750,6 +761,9 @@ public class CFG
 
     public bool TextEditor_Include_Vanilla_Cache = true;
 
+    public float TextEditor_Display_ContainerList_Percentage = 0.4f;
+    public float TextEditor_Display_FileList_Percentage = 0.6f;
+
     public bool TextEditor_Container_List_Hide_Unused_Containers = true;
     public bool TextEditor_Container_List_Display_Obsolete_Containers = false;
     public bool TextEditor_Container_List_Display_Primary_Category_Only = false;
@@ -820,16 +834,14 @@ public class CFG
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
+    public string GparamEditor_Annotation_Language = "English";
+
     public bool GparamEditor_File_List_Display_Aliases = true;
-
-    public bool GparamEditor_Group_List_Display_Aliases = true;
     public bool GparamEditor_Group_List_Display_Empty_Group = true;
-    public bool GparamEditor_Group_List_Display_Group_Add = true;
-
-    public bool GparamEditor_Field_List_Display_Field_Add = true;
-    public bool GparamEditor_Field_List_Enable_Aliases = false;
 
     public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;
+    public bool GparamEditor_Value_List_Display_Time_Of_Day_Column = true;
+    public bool GparamEditor_Value_List_Display_Information_Column = true;
 
     public ColorEditDisplayMode GparamEditor_Color_Edit_Mode = ColorEditDisplayMode.RGB;
 
@@ -856,6 +868,10 @@ public class CFG
     /// Texture Viewer
     ///------------------------------------------------------------
     // General
+    public float TextureViewer_Display_ContainerList_Percentage = 0.2f;
+    public float TextureViewer_Display_InternalFileList_Percentage = 0.1f;
+    public float TextureViewer_Display_FileList_Percentage = 0.6f;
+
     public bool TextureViewer_File_List_Display_Low_Detail_Entries = true;
 
     public bool TextureViewer_File_List_Display_Character_Aliases = true;
@@ -884,6 +900,9 @@ public class CFG
     ///------------------------------------------------------------
     // General
     public bool MaterialEditor_Properties_Display_Community_Names = false;
+
+    public float MaterialEditor_Display_ContainerList_Percentage = 0.2f;
+    public float MaterialEditor_Display_FileList_Percentage = 0.8f;
 
     // Windows
     public bool Interface_MaterialEditor_ToolWindow = true;

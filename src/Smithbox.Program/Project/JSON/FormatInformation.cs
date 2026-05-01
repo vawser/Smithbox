@@ -8,7 +8,7 @@ namespace StudioCore.Application;
 
 public class FormatResource
 {
-    public List<FormatReference> list { get; set; }
+    public List<FormatReference> list { get; set; } = new();
 }
 
 public class FormatReference
@@ -17,7 +17,7 @@ public class FormatReference
     public string name { get; set; }
     public string description { get; set; }
     public string attributes { get; set; }
-    public List<FormatMember> members { get; set; }
+    public List<FormatMember> members { get; set; } = new();
 }
 
 public class FormatMember
@@ -30,14 +30,14 @@ public class FormatMember
 
 public class FormatEnum
 {
-    public List<FormatEnumEntry> list { get; set; }
+    public List<FormatEnumEntry> list { get; set; } = new();
 }
 
 public class FormatEnumEntry
 {
     public string id { get; set; }
     public string name { get; set; }
-    public List<FormatEnumMember> members { get; set; }
+    public List<FormatEnumMember> members { get; set; } = new();
 }
 
 public class FormatEnumMember
@@ -47,15 +47,15 @@ public class FormatEnumMember
 }
 public class FormatMask
 {
-    public List<FormatMaskEntry> list { get; set; }
+    public List<FormatMaskEntry> list { get; set; } = new();
 }
 
 public class FormatMaskEntry
 {
     public string model { get; set; }
-    public List<MaskSection> section_one { get; set; }
-    public List<MaskSection> section_two { get; set; }
-    public List<MaskSection> section_three { get; set; }
+    public List<MaskSection> section_one { get; set; } = new();
+    public List<MaskSection> section_two { get; set; } = new();
+    public List<MaskSection> section_three { get; set; } = new();
 }
 
 public class MaskSection

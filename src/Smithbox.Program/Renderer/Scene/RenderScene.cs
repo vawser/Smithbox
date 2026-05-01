@@ -85,6 +85,11 @@ public class RenderScene
         queue.RequestPicking();
         overlayQueue.RequestPicking();
     }
+    public void SendPrimitivePickingRequest(
+        SceneRenderer.RenderQueue overlayQueue)
+    {
+        overlayQueue.RequestPicking();
+    }
 
     public void Render(SceneRenderer.RenderQueue queue, SceneRenderer.RenderQueue overlayQueue, BoundingFrustum frustum,
         SceneRenderPipeline pipeline)

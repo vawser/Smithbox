@@ -376,7 +376,22 @@ public class VulkanViewport : IViewport
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.ModelEditor_Viewport);
-                modelUniverse.View.Editor.ViewHandler.ActiveView = modelUniverse.View;
+
+                foreach (var wrapper in modelUniverse.View.Editor.ViewHandler.Views)
+                {
+                    if (wrapper != null)
+                    {
+                        if (wrapper.ViewportWindow.Viewport == this)
+                        {
+                            modelUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
+                            IsActiveViewport = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                IsActiveViewport = false;
             }
         }
     }

@@ -271,7 +271,7 @@ public class ProjectFileLocator : IDisposable
         return combined;
     }
 
-    private static string NormalizePath(string path)
+    public static string NormalizePath(string path)
     {
         return string.IsNullOrWhiteSpace(path)
             ? null
@@ -371,6 +371,12 @@ public class ProjectFileLocator : IDisposable
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam")
                 gparamFiles.Add(entry);
+
+            if(projectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                if (folder.StartsWith("/filter") && ext == "fltparam")
+                    gparamFiles.Add(entry);
+            }
 
             // Text files
             if (folder.StartsWith("/msg") && ext == "msgbnd")

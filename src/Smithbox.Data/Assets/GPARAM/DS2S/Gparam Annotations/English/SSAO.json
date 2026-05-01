@@ -1,0 +1,143 @@
+{
+  "ID": "SSAO",
+  "Name": "SSAO",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "SampleOffset",
+      "Name": "Sample Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthClipRange",
+      "Name": "Depth Clip Range",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 0",
+      "Name": "Depth Evaluation Range: 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 1",
+      "Name": "Depth Evaluation Range: 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "DepthEvalRange 2",
+      "Name": "Depth Evaluation Range: 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Scale",
+      "Name": "Ambient Occlusion Scale",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Offset",
+      "Name": "Ambient Occlusion Offset",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 0",
+      "Name": "Ambient Occlusion Blend Scale: 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 1",
+      "Name": "Ambient Occlusion Blend Scale: 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "AO Blend Scale 2",
+      "Name": "Ambient Occlusion Blend Scale: 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 0",
+      "Name": "Blur Radius: 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 1",
+      "Name": "Blur Radius: 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Blur Radius 2",
+      "Name": "Blur Radius: 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Final Blur Radius",
+      "Name": "Final Blur Radius: 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Final Blur Radius2",
+      "Name": "Final Blur Radius: 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FinalBlur4x2",
+      "Name": "Final Blur 4x2",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Alpha",
+      "Name": "Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

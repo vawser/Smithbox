@@ -123,7 +123,7 @@ public class MaterialViewHandler
                 displayTitle = "Active View";
             }
 
-            if (ImGui.Begin($@"{displayTitle}###MaterialEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{displayTitle}###MaterialEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {

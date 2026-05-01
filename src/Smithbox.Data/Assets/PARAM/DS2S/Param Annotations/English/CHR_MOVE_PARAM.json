@@ -586,23 +586,23 @@
     },
     {
       "Field": "landingWalkMoveSpeedFallDistMin",
-      "Name": "着地 速度低下 発生高度 最小[m]",
-      "Description": ""
+      "Name": "Landing Walk: Minimum Altitude for Speed Reduction",
+      "Description": "The minimum altitude at which landing speed reduction occurs (in metres)."
     },
     {
       "Field": "landingWalkMoveSpeedFallDistMax",
-      "Name": "着地 速度低下 発生高度 最大[m]",
-      "Description": ""
+      "Name": "Landing Walk: Maximum Altitude for Speed Reduction",
+      "Description": "The maximum altitude at which landing speed reduction occurs (in metres)."
     },
     {
       "Field": "landingWalkMoveSpeedMin",
-      "Name": "着地 最大速度 低下割合 最小[%]",
-      "Description": ""
+      "Name": "Landing Walk: Minimum Movement Speed",
+      "Description": "The minimum speed for movement during a landing walk (percentage)."
     },
     {
       "Field": "landingWalkMoveSpeedMax",
-      "Name": "着地 最大速度 低下割合 最大[%]",
-      "Description": ""
+      "Name": "Landing Walk: Maximum Movement Speed",
+      "Description": "The maximum speed for movement during a landing walk (percentage)."
     },
     {
       "Field": "landingWalkMoveAcceralationMin",

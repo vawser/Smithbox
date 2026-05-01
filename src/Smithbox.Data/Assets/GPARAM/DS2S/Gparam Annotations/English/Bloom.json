@@ -1,0 +1,71 @@
+{
+  "ID": "Bloom",
+  "Name": "Bloom",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "Bloom有効",
+      "Name": "Is Bloom Enabled",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ブルームアルファ",
+      "Name": "Bloom Alpha",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルームカラースケール",
+      "Name": "Bloom Color Scale",
+      "Description": "",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルームカラー係数",
+      "Name": "Bloom Color Coefficient",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム彩度制御",
+      "Name": "Bloom Saturation Control",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数0",
+      "Name": "Bloom Coupling Coefficient: 0",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数1",
+      "Name": "Bloom Coupling Coefficient: 1",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数2",
+      "Name": "Bloom Coupling Coefficient: 2",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

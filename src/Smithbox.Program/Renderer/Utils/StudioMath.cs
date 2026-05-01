@@ -4,6 +4,24 @@ namespace StudioCore.Renderer;
 
 public static class StudioMath
 {
+    public static void Redistribute(ref float a, ref float b, float remainder)
+    {
+        var sum = a + b;
+
+        if (sum <= 0.0001f)
+        {
+            a = remainder * 0.5f;
+            b = remainder * 0.5f;
+            return;
+        }
+
+        var ratioA = a / sum;
+        var ratioB = b / sum;
+
+        a = remainder * ratioA;
+        b = remainder * ratioB;
+    }
+
     public static bool EpsEqual(this float flt, float otherFloat, float epsilon)
     {
         return otherFloat <= flt + epsilon && otherFloat >= flt - epsilon;

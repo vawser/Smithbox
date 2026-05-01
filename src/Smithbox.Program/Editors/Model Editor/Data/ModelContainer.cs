@@ -167,7 +167,7 @@ public class ModelContainer : ObjectContainer
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
-                AssignMeshDrawable(newObject, wrapper);
+                AssignMeshDrawable(newObject, wrapper, index);
             }
 
             Meshes.Add(newObject);
@@ -208,7 +208,7 @@ public class ModelContainer : ObjectContainer
         }
     }
 
-    public void AssignMeshDrawable(Entity ent, ModelWrapper wrapper)
+    public void AssignMeshDrawable(Entity ent, ModelWrapper wrapper, int index = -1)
     {
         ResourceDescriptor resource;
 
@@ -277,7 +277,7 @@ public class ModelContainer : ObjectContainer
         }
         else
         {
-            LoadMesh(job, ent, resource);
+            LoadMesh(job, ent, resource, index);
         }
     }
 
@@ -303,15 +303,19 @@ public class ModelContainer : ObjectContainer
         ent.RenderSceneMesh = mesh;
     }
 
-    public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource, int index = -1)
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
                 View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
 
-
         mesh.DrawFilter = RenderFilter.Meshes;
         mesh.World = ent.GetWorldMatrix();
         mesh.SetSelectable(ent);
+
+        if (index != -1)
+        {
+            mesh.RequestSubmesh(index);
+        }
 
         ent.RenderSceneMesh = mesh;
 

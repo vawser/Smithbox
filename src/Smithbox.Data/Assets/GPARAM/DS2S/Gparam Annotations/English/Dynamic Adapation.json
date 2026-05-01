@@ -1,0 +1,71 @@
+{
+  "ID": "動的順応",
+  "Name": "Dynamic Adapation",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "動的順応有効",
+      "Name": "Is Dynamic Adapation Enabled",
+      "Description": "",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "順応速度",
+      "Name": "Adaptation Speed",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応最低輝度",
+      "Name": "Minimum Optimal Brightness",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応最高輝度",
+      "Name": "Maximum Brightness at Adaptation Level",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応輝度中心",
+      "Name": "Adaptation Luminance Center",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応感度-暗",
+      "Name": "Adaptation Sensitivity: Dark",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応感度-明",
+      "Name": "Adaptation Sensitivity: Bright",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "順応抑制値",
+      "Name": "Adaptation Inhibition Value",
+      "Description": "",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

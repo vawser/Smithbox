@@ -1,6 +1,7 @@
 ﻿using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -30,13 +30,14 @@ public class ModelContents : IActionEventHandler
     {
         View = view;
         Project = project;
+
+        view.ViewportActionManager.AddEventHandler(this);
+        view.ActionManager.AddEventHandler(this);
     }
 
     public void Display(float width, float height)
     {
         UIHelper.SimpleHeader("Contents", "");
-
-        DisplayMenubar();
 
         ImGui.BeginChild("ModelContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -61,15 +62,6 @@ public class ModelContents : IActionEventHandler
         }
         ImGui.EndChild();
 
-    }
-
-    public void DisplayMenubar()
-    {
-        if (ImGui.BeginMenuBar())
-        {
-
-            ImGui.EndMenuBar();
-        }
     }
 
     public void DisplaySearchbar()
@@ -129,7 +121,7 @@ public class ModelContents : IActionEventHandler
 
         ISelectable selectTarget = (ISelectable)modelRoot ?? modelRef;
 
-        ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+        ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
 
         var selected = View.ViewportSelection.GetSelection().Contains(modelRoot) || 
             View.ViewportSelection.GetSelection().Contains(modelRef);
@@ -263,7 +255,7 @@ public class ModelContents : IActionEventHandler
         {
             if (cats.Value.Count > 0)
             {
-                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.DefaultOpen;
 
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
@@ -357,6 +349,57 @@ public class ModelContents : IActionEventHandler
             }
         }
 
+        // Mesh: Material [Node]
+        if (e.WrappedObject is FLVER2.Mesh)
+        {
+            var mesh = (FLVER2.Mesh)e.WrappedObject;
+
+            var matIndex = mesh.MaterialIndex;
+            var nodeIndex = mesh.NodeIndex;
+
+            var meshName = "Mesh";
+            var nodeName = "";
+
+            if (matIndex != -1)
+            {
+                for (int i = 0; i < container.Materials.Count; i++)
+                {
+                    var curMat = container.Materials[i];
+
+                    if (i == matIndex)
+                    {
+                        var mat = (FLVER2.Material)curMat.WrappedObject;
+
+                        meshName = mat.Name;
+                    }
+                }
+            }
+
+            if (nodeIndex != -1)
+            {
+                for (int i = 0; i < container.Nodes.Count; i++)
+                {
+                    var curNode = container.Nodes[i];
+
+                    if (i == nodeIndex)
+                    {
+                        var node = (FLVER.Node)curNode.WrappedObject;
+
+                        nodeName = $"{node.Name}";
+                    }
+                }
+            }
+
+            if (CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry)
+            {
+                key = $"{meshName} [{nodeName}]";
+            }
+            else
+            {
+                key = $"{meshName}";
+            }
+        }
+
         // Main selectable
         if (e is ModelEntity me)
         {
@@ -384,7 +427,7 @@ public class ModelContents : IActionEventHandler
 
         if (hierarchial && e.Children.Count > 0)
         {
-            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
             if (View.ViewportSelection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;

@@ -103,29 +103,6 @@ public class ModelUniverse : IUniverse
         }
 
         await Task.WhenAll(Tasks);
-
-        if (CFG.Current.Viewport_Enable_Rendering)
-        {
-            // FIXME: sub-meshes aren't associated with the individual mesh entries yet
-            //int index = 0;
-            //foreach (var ent in newContainer.Meshes)
-            //{
-            //    if (ent.RenderSceneMesh is MeshRenderableProxy meshProxy)
-            //    {
-            //        if (meshProxy.Submeshes.Count > 0 && index < meshProxy.Submeshes.Count)
-            //        {
-            //            ent.RenderSceneMesh = meshProxy.Submeshes[index];
-            //            meshProxy.Submeshes[index].SetSelectable(ent);
-            //        }
-            //    }
-            //    index++;
-            //}
-
-            foreach (Entity obj in newContainer.Objects)
-            {
-                obj.UpdateRenderModel();
-            }
-        }
     }
 
     public void SetupModelLoadList(string modelName, ModelContainerWrapper parent)

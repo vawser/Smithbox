@@ -380,6 +380,9 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public object DeepCopyObject(object obj)
     {
+        if(obj == null) 
+            return null;
+
         Type typ = obj.GetType();
 
         // use copy constructor if available
