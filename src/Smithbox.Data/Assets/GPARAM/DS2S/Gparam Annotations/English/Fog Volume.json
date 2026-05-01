@@ -1,0 +1,14 @@
+{
+  "ID": "ボリュームフォグ",
+  "Name": "Fog Volume",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "α",
+      "Name": "Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

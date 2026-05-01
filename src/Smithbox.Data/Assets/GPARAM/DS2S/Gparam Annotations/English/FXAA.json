@@ -1,0 +1,42 @@
+{
+  "ID": "Fxaa",
+  "Name": "FXAA",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "AA MODE",
+      "Name": "Anti-Alias Mode",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Alpha",
+      "Name": "Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ReduceMin",
+      "Name": "Reduce Minimum",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ReduceMul",
+      "Name": "Reduce Muliplier",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SpanMax",
+      "Name": "Span Maximum",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

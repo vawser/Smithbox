@@ -830,13 +830,13 @@ public class CFG
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
+    public string GparamEditor_Annotation_Language = "English";
+
     public bool GparamEditor_File_List_Display_Aliases = true;
 
     public bool GparamEditor_Group_List_Display_Aliases = true;
     public bool GparamEditor_Group_List_Display_Empty_Group = true;
-    public bool GparamEditor_Group_List_Display_Group_Add = true;
 
-    public bool GparamEditor_Field_List_Display_Field_Add = true;
     public bool GparamEditor_Field_List_Enable_Aliases = false;
 
     public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;

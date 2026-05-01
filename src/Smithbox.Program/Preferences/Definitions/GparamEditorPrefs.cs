@@ -57,24 +57,6 @@ public class GparamEditorPrefs
             }
         };
     }
-    public static PreferenceItem GparamEditor_Group_List_Display_Group_Add()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 1,
-            Category = PreferenceCategory.GparamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.GparamEditor_Group_List,
-
-            Title = "Display Add Missing Group Button",
-            Description = "If enabled, a button for a missing group will be displayed that allows you to add it.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Group_Add);
-            }
-        };
-    }
     public static PreferenceItem GparamEditor_Group_List_Display_Empty_Group()
     {
         return new PreferenceItem
@@ -111,24 +93,6 @@ public class GparamEditorPrefs
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue_field", ref CFG.Current.GparamEditor_Field_List_Enable_Aliases);
-            }
-        };
-    }
-    public static PreferenceItem GparamEditor_Field_List_Display_Field_Add()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 1,
-            Category = PreferenceCategory.GparamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.GparamEditor_Field_List,
-
-            Title = "Display Add Missing Field Button",
-            Description = "If enabled, a button for a missing field will be displayed that allows you to add it.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Field_List_Display_Field_Add);
             }
         };
     }

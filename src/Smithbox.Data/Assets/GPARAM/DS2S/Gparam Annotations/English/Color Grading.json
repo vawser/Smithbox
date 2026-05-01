@@ -1,0 +1,49 @@
+{
+  "ID": "カラーグレーディング",
+  "Name": "Color Grading",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "カラーグレーディング有効",
+      "Name": "Is Color Grading Enabled",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "変換モード",
+      "Name": "Conversion Mode",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "色相",
+      "Name": "Hue",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "彩度",
+      "Name": "Saturation",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "明度",
+      "Name": "Brightness",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "パレットファイルID",
+      "Name": "Palette File ID",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

@@ -85,14 +85,13 @@ public class FormatInformationUtils
 
         return desc;
     }
-
-    public static string GetReferenceName(ProjectEntry project, FormatResource source, string classKey, string name, string sharedTypeName = "")
+    public static string GetGparamGroupName(ProjectEntry project, FormatResource source, string id, string name)
     {
         if (source == null)
         {
-            if(project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                return classKey;
+                return id;
             }
             else
             {
@@ -104,7 +103,7 @@ public class FormatInformationUtils
         {
             if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                return classKey;
+                return id;
             }
             else
             {
@@ -112,15 +111,50 @@ public class FormatInformationUtils
             }
         }
 
-        // Top
         foreach (FormatReference entry in source.list)
         {
-            if (entry.id == classKey || entry.id == sharedTypeName)
+            if (entry.id == id)
             {
-                // Members
+                name = entry.name;
+            }
+        }
+
+        return name;
+    }
+
+    public static string GetGparamFieldName(ProjectEntry project, FormatResource source, string groupId, string id, string name)
+    {
+        if (source == null)
+        {
+            if(project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
+
+        if (source.list == null)
+        {
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                return id;
+            }
+            else
+            {
+                return name;
+            }
+        }
+
+        foreach (FormatReference entry in source.list)
+        {
+            if (entry.id == groupId)
+            {
                 foreach (FormatMember member in entry.members)
                 {
-                    if (member.id == name)
+                    if (member.id == id)
                     {
                         name = member.name;
                     }
@@ -128,14 +162,7 @@ public class FormatInformationUtils
             }
         }
 
-        if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            return classKey;
-        }
-        else
-        {
-            return name;
-        }
+        return name;
     }
 
     public static string GetReferenceDescription(FormatResource source, string classKey, string key, string sharedTypeName = "")

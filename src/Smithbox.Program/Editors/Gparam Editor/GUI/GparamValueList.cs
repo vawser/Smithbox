@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using System.Linq;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -212,25 +213,42 @@ public class GparamValueList
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = FormatInformationUtils.GetReferenceDescription(Project.Handler.GparamData.GparamInformation, Parent.Selection._selectedParamGroup.Key, Parent.Selection._selectedParamField.Key);
+        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var fieldId = field.Key;
+        var fieldDescription = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
 
         // Skip if empty
-        if (desc != "")
+        if (fieldDescription != "")
         {
-            UIHelper.WrappedText($"{desc}");
+            UIHelper.WrappedText($"{fieldDescription}");
         }
 
-        // Show enum list if they exist
-        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Project.Handler.GparamData.GparamInformation, Project.Handler.GparamData.GparamEnums, field.Key);
+        var fieldEnum = GparamMetaUtils.GetFieldEnum(Project, groupId, fieldId);
 
-        if (propertyEnum != null)
+        if (fieldEnum != null)
         {
-            foreach (var entry in propertyEnum.members)
+            var enums = Project.Handler.GparamData.Enums.List;
+
+            if (enums.Any(e => e.Key == fieldEnum))
             {
-                UIHelper.WrappedText($"{entry.id} - {entry.name}");
+                var targetEnum = enums.FirstOrDefault(e => e.Key == fieldEnum);
+
+                foreach(var entry in targetEnum.Options)
+                {
+                    var name = entry.Names.FirstOrDefault(e => e.Language == CFG.Current.GparamEditor_Annotation_Language);
+
+                    if (name != null)
+                    {
+                        UIHelper.WrappedText($"{entry.Key} - {name}");
+                    }
+                    else
+                    {
+                        UIHelper.WrappedText($"{entry.Key}");
+                    }
+                }
             }
         }
     }

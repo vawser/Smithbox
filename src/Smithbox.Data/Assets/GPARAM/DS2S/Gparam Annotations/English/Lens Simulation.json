@@ -1,0 +1,189 @@
+{
+  "ID": "LensSimulation",
+  "Name": "Lens Simulation",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "NearEnd",
+      "Name": "Near End",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "NearStart",
+      "Name": "Near Start",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FarStart",
+      "Name": "Far Start",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FarEnd",
+      "Name": "Far End",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FocusDist",
+      "Name": "Focus Distance",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Camera Focus Offset",
+      "Name": "Camera Focus Offset",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "UseCameraFocus",
+      "Name": "Use Camera Focus",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "CoCBlurCount",
+      "Name": "Circle of Confusion: Blur Count",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Lens F",
+      "Name": "Lens F",
+      "Description": "F-Number",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Av (絞り値)",
+      "Name": "Aperture Value",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilmSize(mm)",
+      "Name": "Film Size",
+      "Description": "In millimetres.",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoC Near Factor",
+      "Name": "Circle of Confusion: Near Factor",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoC Far  Factor",
+      "Name": "Circle of Confusion: Far Factor",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CoCMode",
+      "Name": "Circle of Confusion: Mode",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SkyDomeBokehRate",
+      "Name": "Skybox Bokeh Rate",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Intensity",
+      "Name": "CMB Intensity",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Active Rot Speed",
+      "Name": "CMB Active Rotation Speed",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Active Move Speed",
+      "Name": "CMB Active Movement Speed",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "CMB Detect Time",
+      "Name": "CMB Detection Time",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur Alpha",
+      "Name": "Sniper: Blur Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur Begin",
+      "Name": "Sniper: Blur Begin",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "SniperBlur End",
+      "Name": "Sniper: Blur End",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Motion Blur Intensity",
+      "Name": "Motion Blur Intensity",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Shutter Speed",
+      "Name": "Shutter Speed",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "Solve Single Step",
+      "Name": "Solve Single Step",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "DOF Alpha",
+      "Name": "Depth of Field Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

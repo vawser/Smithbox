@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
@@ -17,8 +18,9 @@ public class GparamData : IDisposable
     public GparamBank PrimaryBank;
     public GparamBank VanillaBank;
 
-    public FormatResource GparamInformation;
-    public FormatEnum GparamEnums;
+    public GparamAnnotationLanguages GparamAnnotationLanguages = new();
+    public GparamAnnotations Annotations = new();
+    public GparamEnums Enums;
 
     public GparamData(ProjectEntry project)
     {
@@ -58,74 +60,95 @@ public class GparamData : IDisposable
             Smithbox.Log(this, $"[Graphics Param Editor] Setup the Vanilla Bank.");
         }
 
-        // GPARAM Information
-        Task<bool> gparamInfoTask = SetupGparamInfo();
-        bool gparamInfoResult = await gparamInfoTask;
+        // Gparam Annotations
+        Task<bool> gparamAnnotationTask = SetupGparamAnnotations();
+        bool gparamAnnotationTaskResult = await gparamAnnotationTask;
 
-        if (gparamInfoResult)
+        if (!gparamAnnotationTaskResult)
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM annotations.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the GPARAM annotations.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM annotations.");
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup the GPARAM annotations.");
         }
 
-        // GPARAM Enums
-        Task<bool> gparamEnumTask = SetupGparamEnums();
-        bool gparamEnumResult = await gparamEnumTask;
+        // Gparam Enums
+        Task<bool> gparamEnumsTask = SetupGparamEnums();
+        bool gparamEnumsTaskResult = await gparamEnumsTask;
 
-        if (gparamEnumResult)
+        if (!gparamEnumsTaskResult)
         {
-            Smithbox.Log(this, $"[Graphics Param Editor] Setup GPARAM enums.");
+            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup the GPARAM enums.");
         }
         else
         {
-            Smithbox.LogError(this, $"[Graphics Param Editor] Failed to setup GPARAM enums.");
+            Smithbox.Log(this, $"[Graphics Param Editor] Setup the GPARAM enums.");
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
     }
 
-    public async Task<bool> SetupGparamInfo()
+    public async Task<bool> SetupGparamAnnotations()
     {
         await Task.Yield();
 
-        GparamInformation = new();
-        GparamEnums = new();
+        GparamAnnotationLanguages = new();
 
-        // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Core.json");
+        // Build the language list first
+        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", "Annotation Languages.json");
 
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Core.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Path.Exists(sourcefile))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
+            var file = File.ReadAllText(sourcefile);
             try
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
-                try
-                {
-                    GparamInformation = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatResource);
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"Failed to deserialize the GPARAM information: {targetFile}", LogPriority.High, e);
-                }
+                GparamAnnotationLanguages = JsonSerializer.Deserialize(file, GparamEditorJsonSerializerContext.Default.GparamAnnotationLanguages);
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"Failed to read the GPARAM information: {targetFile}", LogPriority.High, e);
+                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam annotation languages: {file}", LogPriority.High, e);
+            }
+        }
+        else
+        {
+            // Default to English if the file is missing
+            var english = new GparamAnnotationLanguageEntry();
+            english.Name = "English";
+            english.Folder = "English";
+
+            GparamAnnotationLanguages.Languages.Add(english);
+        }
+
+        // Then build the annotations
+        Annotations = new();
+
+        foreach (var lang in GparamAnnotationLanguages.Languages)
+        {
+            var paramList = new GparamAnnotationList();
+            Annotations.Entries.Add(lang, paramList);
+
+            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Annotations", lang.Folder);
+
+            if (Path.Exists(sourceFolder))
+            {
+                foreach (var entry in Directory.EnumerateFiles(sourceFolder))
+                {
+                    var file = File.ReadAllText(entry);
+                    try
+                    {
+                        var layout = JsonSerializer.Deserialize(file, GparamEditorJsonSerializerContext.Default.GparamAnnotationEntry);
+
+                        if (!Annotations.Entries[lang].Params.Any(e => e.Name == layout.Name))
+                        {
+                            Annotations.Entries[lang].Params.Add(layout);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam annotation entry: {file}", LogPriority.High, e);
+                    }
+                }
             }
         }
 
@@ -137,40 +160,28 @@ public class GparamData : IDisposable
     {
         await Task.Yield();
 
-        GparamEnums = new();
+        Enums = new();
 
-        // Enums
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Enums.json");
+        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Enums");
 
-        var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Enums.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
+        if (Path.Exists(sourceFolder))
         {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
+            foreach (var entry in Directory.EnumerateFiles(sourceFolder))
             {
-                var filestring = await File.ReadAllTextAsync(targetFile);
-
+                var file = File.ReadAllText(entry);
                 try
                 {
-                    GparamEnums = JsonSerializer.Deserialize(filestring, ProjectJsonSerializerContext.Default.FormatEnum);
+                    var layout = JsonSerializer.Deserialize(file, GparamEditorJsonSerializerContext.Default.GparamEnumEntry);
+
+                    if (!Enums.List.Any(e => e.Key == layout.Key))
+                    {
+                        Enums.List.Add(layout);
+                    }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize the GPARAM enums: {targetFile}", LogPriority.High, e);
+                    Smithbox.LogError(this, $"[Graphics Param Editor] Failed to deserialize gparam enum entry: {file}", LogPriority.High, e);
                 }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[Graphics Param Editor] Failed to read the GPARAM enums: {targetFile}", LogPriority.High, e);
             }
         }
 
@@ -186,8 +197,8 @@ public class GparamData : IDisposable
         PrimaryBank = null;
         VanillaBank = null;
 
-        GparamInformation = null;
-        GparamEnums = null;
+        Annotations = null;
+        Enums = null;
     }
     #endregion
 }

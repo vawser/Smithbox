@@ -1,0 +1,238 @@
+{
+  "ID": "フォグ",
+  "Name": "Fog",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "色",
+      "Name": "Color",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "距離",
+      "Name": "Distance",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "高さフォグ基準",
+      "Name": "Height Fog Standard",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "高さフォグ強さ",
+      "Name": "Height Fog Intensity",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "上方向に減衰",
+      "Name": "Upward Attenuation",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "高さの計算を先に行う",
+      "Name": "Perform Height Calculation First",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "カーブの計算を後に行う",
+      "Name": "Perform Curve Calculation After",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "α",
+      "Name": "Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "コントラスト(廃止)",
+      "Name": "Constrast",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "カーブ",
+      "Name": "Curve",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-色",
+      "Name": "Scene: Color",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-距離",
+      "Name": "Scene: Distance",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-高さフォグ基準",
+      "Name": "Scene: Height Fog Standard",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-高さフォグ強さ",
+      "Name": "Scene: Height Fog Intensity",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-α",
+      "Name": "Scene: Alpha",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "scn-コントラスト",
+      "Name": "Scene: Contrast",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "テクスチャ1ID",
+      "Name": "Texture ID: 1",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "テクスチャ2ID",
+      "Name": "Texture ID: 2",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(前後)",
+      "Name": "Forward Movement Magnification (Back/Forward)",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(上下)",
+      "Name": "Forward Movement Magnification (Up/Down)",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(左右)",
+      "Name": "Forward Movement Magnification (Left/Right)",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(拡大最小)",
+      "Name": "Forward Movement Magnification: Minimum",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(拡大最大)",
+      "Name": "Forward Movement Magnification: Maximum",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "前移動倍率(回転による)",
+      "Name": "Forward Movement Magnification: Due to Rotation",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "横スクロール倍率",
+      "Name": "Horizontal Scroll Magnification",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "縦スクロール倍率",
+      "Name": "Vertical Scroll Magnification",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "クロスフェードの周期",
+      "Name": "Crossfade Period",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "波の縦横倍率",
+      "Name": "Wave Length and Width Scaling",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "波の強さ",
+      "Name": "Wave Strength",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "波の周期1",
+      "Name": "Wave Period: 1",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "波の周期2",
+      "Name": "Wave Period: 2",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "描画を行う",
+      "Name": "Draw",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "コントラスト",
+      "Name": "Constrast",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}

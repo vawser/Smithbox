@@ -5,6 +5,7 @@ using Octokit;
 using Org.BouncyCastle.Crypto;
 using Pfim;
 using SoulsFormats;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
@@ -17,6 +18,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
+using static SoulsFormats.MQB;
 
 namespace StudioCore.Application;
 
@@ -62,7 +64,64 @@ public class QuickScript
     // Build def bank for the individual fields
     public static void ExtractGparamData(ProjectEntry curProject, Dictionary<FileDictionaryEntry, GPARAM> entries)
     {
+        var annotationEntries = new List<GparamAnnotationEntry>();
 
+        foreach(var entry in entries)
+        {
+            foreach(var param in entry.Value.Params)
+            {
+                if (!annotationEntries.Any(e => e.ID == param.Key))
+                {
+                    var newAnnotation = new GparamAnnotationEntry();
+                    newAnnotation.ID = param.Key;
+                    newAnnotation.Name = param.Key;
+                    newAnnotation.Description = "";
+                    newAnnotation.Fields = new();
+
+                    annotationEntries.Add(newAnnotation);
+                }
+
+                foreach (var field in param.Fields)
+                {
+                    if (annotationEntries.Any(e => e.ID == param.Key))
+                    {
+                        var curAnnotation = annotationEntries.FirstOrDefault(e => e.ID == param.Key);
+
+                        if(curAnnotation != null)
+                        {
+                            if (!curAnnotation.Fields.Any(e => e.ID == field.Key))
+                            {
+                                var newFieldEntry = new GparamAnnotationFieldEntry();
+                                newFieldEntry.ID = field.Key;
+                                newFieldEntry.Name = field.Key;
+                                newFieldEntry.Description = "";
+                                newFieldEntry.Type = $"{field.GetType().Name}";
+
+                                curAnnotation.Fields.Add(newFieldEntry);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\GPARAM\DS2S\";
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        int id = 0;
+        foreach (var entry in annotationEntries)
+        {
+            var json = JsonSerializer.Serialize(entry, options);
+            File.WriteAllText(Path.Combine(outputDir, $"{id}.json"), json);
+
+            id++;
+        }
     }
 
     public static void UpdateAnnotations(ProjectEntry curProject)

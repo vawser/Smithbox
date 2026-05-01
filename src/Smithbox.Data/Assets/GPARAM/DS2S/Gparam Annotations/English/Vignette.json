@@ -1,0 +1,28 @@
+{
+  "ID": "ケラレ",
+  "Name": "Vignette",
+  "Description": "",
+  "Fields": [
+    {
+      "ID": "色",
+      "Name": "Color",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "中心からの位置オフセット",
+      "Name": "Offset from Center",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "グラデーション部の狭さ倍率",
+      "Name": "Narrowing of Gradient Area",
+      "Description": "",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}
