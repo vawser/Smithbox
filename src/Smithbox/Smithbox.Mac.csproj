@@ -72,6 +72,7 @@
   <Target Name="Versioning" BeforeTargets="BeforeBuild">
       <Exec Command="plutil -replace CFBundleShortVersionString -string $(Version) Info.plist" />
       <Exec Command="plutil -replace CFBundleVersion -string $(Version) Info.plist" />
+      <Exec Command="plutil -replace CFBundleIdentifier -string $(ApplicationId) Info.plist" />
   </Target>
 
   <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences" AfterTargets="Init">
