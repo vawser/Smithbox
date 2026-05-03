@@ -1,60 +1,60 @@
 {
   "ID": "Glow Filter-Editor",
-  "Name": "Glow Filter-Editor",
-  "Description": "",
+  "Name": "Glow Filter",
+  "Description": "Applies a multi-scale glow (light bleeding) post-processing effect that enhances bright areas by blurring and amplifying luminance. Typically used for emissive materials, UI highlights, and stylized lighting effects.",
   "Fields": [
     {
       "ID": "Glow Filter-Glow Enable",
-      "Name": "Glow Filter-Glow Enable",
-      "Description": "",
+      "Name": "Enable Glow",
+      "Description": "Enables or disables the glow effect. When disabled, bright regions will not produce any bloom or light bleeding.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Glow Filter - Glow NumLevels",
-      "Name": "Glow Filter - Glow NumLevels",
-      "Description": "",
+      "Name": "Glow Number of Levels",
+      "Description": "Number of downsampled blur levels used to construct the glow pyramid. Higher values increase glow spread and softness at the cost of performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Glow Filter - Blur Smoothness",
-      "Name": "Glow Filter - Blur Smoothness",
-      "Description": "",
+      "Name": "Blur Smoothness",
+      "Description": "Controls the smoothness of the blur kernel across glow levels. Higher values reduce harsh transitions and produce a softer glow falloff.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "New Glow Filter-Glow - FinalColorScale",
-      "Name": "New Glow Filter-Glow - FinalColorScale",
-      "Description": "",
+      "Name": "Final Color Scale",
+      "Description": "Overall intensity multiplier applied to the final composited glow result. Controls how strongly the glow affects the final image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Glow Filter-Glow - BlurSampleScale",
-      "Name": "Glow Filter-Glow - BlurSampleScale",
-      "Description": "",
+      "Name": "Blur Sample Scale",
+      "Description": "Scales the sampling radius used during glow blur passes. Higher values produce wider, more diffused glow.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Glow Filter-Glow - Blur RgbScale",
-      "Name": "Glow Filter-Glow - Blur RgbScale",
-      "Description": "",
+      "Name": "Blur RGB Scale",
+      "Description": "Per-channel scaling applied to the RGB components of the glow blur. Used to tint or emphasize color channels in the glow contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Glow Filter-Glow - Blur AlphaScale",
-      "Name": "Glow Filter-Glow - Blur AlphaScale",
-      "Description": "",
+      "Name": "Blur Alpha Scale",
+      "Description": "Controls how alpha contributes to the glow blur accumulation. Higher values increase the influence of opacity in glow shaping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

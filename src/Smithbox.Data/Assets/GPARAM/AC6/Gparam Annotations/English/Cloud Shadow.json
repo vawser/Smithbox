@@ -1,92 +1,92 @@
 {
   "ID": "Cloud Shadow:Editor",
-  "Name": "Cloud Shadow:Editor",
-  "Description": "",
+  "Name": "Cloud Shadow",
+  "Description": "Simulates large-scale cloud shadows projected onto the world using scrolling textures. Typically aligned with the directional light to create dynamic, moving shadow patterns that mimic passing clouds.",
   "Fields": [
     {
       "ID": "Cloud Shadow-Enable",
-      "Name": "Cloud Shadow-Enable",
-      "Description": "",
+      "Name": "Enable Cloud Shadow",
+      "Description": "Enables or disables cloud shadow projection. When disabled, no cloud-based light occlusion is applied.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Cloud Shadow Texture0: Id",
-      "Name": "Cloud Shadow Texture0: Id",
-      "Description": "",
+      "Name": "Texture 0: ID",
+      "Description": "Identifier of the primary cloud shadow texture used to modulate light intensity across the scene.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture0: Shadow Scale",
-      "Name": "Cloud Shadow Texture0: Shadow Scale",
-      "Description": "",
+      "Name": "Texture 0: Shadow Scale",
+      "Description": "Intensity multiplier for the shadow contribution of this texture. Higher values produce darker cloud shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture0: UV Offset",
-      "Name": "Cloud Shadow Texture0: UV Offset",
-      "Description": "",
+      "Name": "Texture 0: UV Offset",
+      "Description": "Offset applied to the texture coordinates, allowing manual positioning of the cloud pattern.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture0: UV Speed",
-      "Name": "Cloud Shadow Texture0: UV Speed",
-      "Description": "",
+      "Name": "Texture 0: UV Speed",
+      "Description": "Scrolling speed of the cloud texture in UV space, simulating cloud movement over time.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture0: UV Tilling Size:[m]",
-      "Name": "Cloud Shadow Texture0: UV Tilling Size:[m]",
-      "Description": "",
+      "Name": "Texture 0: UV Tiling Size",
+      "Description": "World-space size (in meters) covered by one repetition of the texture. Larger values result in broader, slower-varying cloud patterns.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture1: Id",
-      "Name": "Cloud Shadow Texture1: Id",
-      "Description": "",
+      "Name": "Texture 1: ID",
+      "Description": "Identifier of a secondary cloud shadow texture used to add variation or layered detail to the cloud pattern.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture1: Shadow Scale",
-      "Name": "Cloud Shadow Texture1: Shadow Scale",
-      "Description": "",
+      "Name": "Texture 1: Shadow Scale",
+      "Description": "Intensity multiplier for the secondary cloud shadow layer, typically used to break up repetition and add depth.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture1: UV Offset",
-      "Name": "Cloud Shadow Texture1: UV Offset",
-      "Description": "",
+      "Name": "Texture 1: UV Offset",
+      "Description": "Offset applied to the secondary texture coordinates for independent positioning relative to the primary layer.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture1: UV Speed",
-      "Name": "Cloud Shadow Texture1: UV Speed",
-      "Description": "",
+      "Name": "Texture 1: UV Speed",
+      "Description": "Scrolling speed of the secondary cloud texture, often set differently from the primary layer to create parallax-like motion.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Cloud Shadow Texture1: UV Tilling Size:[m]",
-      "Name": "Cloud Shadow Texture1: UV Tilling Size:[m]",
-      "Description": "",
+      "Name": "Texture 1: UV Tiling Size",
+      "Description": "World-space tiling size (in meters) for the secondary texture, typically differing from the primary layer to avoid visible repetition.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false

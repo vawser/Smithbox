@@ -25,7 +25,7 @@ public class GparamQuickEdit
 
     private bool[] filterTruth = null;
 
-    public List<GparamValueChangeAction> actions = new List<GparamValueChangeAction>();
+    public List<EditValueAction> actions = new List<EditValueAction>();
 
     public FileDictionaryEntry TargetFile;
     public GPARAM targetGparam;
@@ -260,30 +260,33 @@ public class GparamQuickEdit
             _valueFilterString = "*";
         }
 
-        if (Parent.Selection._selectedParamGroup != null)
+        if (Parent.Selection._selectedParamGroupKey != null)
         {
-            UpdateGroupFilter(Parent.Selection._selectedParamGroup);
+            UpdateGroupFilter(Parent.Selection._selectedParamGroupKey);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Parent.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamFieldKey != null)
         {
-            UpdateFieldFilter(Parent.Selection._selectedParamField);
+            UpdateFieldFilter(Parent.Selection._selectedParamFieldKey);
         }
         else
         {
             _valueFilterString = "*";
         }
 
-        if (Parent.Selection._selectedParamField != null)
+        if (Parent.Selection._selectedParamFieldKey != null)
         {
             var fieldIndex = -1;
-            for (int i = 0; i < Parent.Selection._selectedParamField.Values.Count; i++)
+            var selectedField = Parent.Selection.GetSelectedField();
+            var selectedValue = Parent.Selection.GetSelectedValue();
+
+            for (int i = 0; i < selectedField.Values.Count; i++)
             {
-                if (Parent.Selection._selectedParamField.Values[i] == Parent.Selection._selectedFieldValue)
+                if (selectedField.Values[i] == selectedValue)
                 {
                     fieldIndex = i;
                     break;
@@ -421,7 +424,9 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Parent.Selection._selectedParamGroup.Key == entry.Key || Parent.Selection._selectedParamGroup.Name == entry.Name)
+                var selectedGroup = Parent.Selection.GetSelectedGroup();
+
+                if (selectedGroup.Key == entry.Key || selectedGroup.Name == entry.Name)
                 {
                     match = true;
                     continue;
@@ -459,7 +464,9 @@ public class GparamQuickEdit
 
             if (command == "selection")
             {
-                if (Parent.Selection._selectedParamField.Key == entry.Key)
+                var selectedField = Parent.Selection.GetSelectedField();
+
+                if (selectedField.Key == entry.Key)
                 {
                     match = true;
                     continue;
@@ -532,10 +539,10 @@ public class GparamQuickEdit
         }
     }
 
-    private GparamBatchChangeAction ResolveQuickEdit(string gparamName, string groupName, GPARAM.IField targetField)
+    private BatchChangeAction ResolveQuickEdit(string gparamName, string groupName, GPARAM.IField targetField)
     {
         filterTruth = new bool[targetField.Values.Count];
-        actions = new List<GparamValueChangeAction>();
+        actions = new List<EditValueAction>();
 
         for (int i = 0; i < targetField.Values.Count; i++)
         {
@@ -569,13 +576,16 @@ public class GparamQuickEdit
 
         // Combine all the individual changes into a single action
         // so Undo/Redo treats the Quick Edit changes as one discrete change
-        return new GparamBatchChangeAction(actions);
+        return new BatchChangeAction(actions);
     }
 
     private (bool, object) GetVanillaValue(int index)
     {
         object vanillaValue = -1;
         bool foundValue = false;
+
+        var selectedGroup = Parent.Selection.GetSelectedGroup();
+        var selectedField = Parent.Selection.GetSelectedField();
 
         // Find vanilla value
         foreach (var entry in Project.Handler.GparamData.VanillaBank.Entries)
@@ -584,11 +594,11 @@ public class GparamQuickEdit
             {
                 foreach (var paramGroup in entry.Value.Params)
                 {
-                    if (paramGroup.Key == Parent.Selection._selectedParamGroup.Key)
+                    if (paramGroup.Key == selectedGroup.Key)
                     {
                         foreach (var paramField in paramGroup.Fields)
                         {
-                            if (paramField.Key == Parent.Selection._selectedParamField.Key)
+                            if (paramField.Key == selectedField.Key)
                             {
                                 if (paramField.Values.Count > index)
                                 {
@@ -730,22 +740,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -754,7 +764,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = intField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -766,7 +776,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -778,7 +788,7 @@ public class GparamQuickEdit
                                 if (valid_secondary)
                                 {
                                     int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -794,22 +804,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -818,7 +828,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = uintField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -830,7 +840,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -843,7 +853,7 @@ public class GparamQuickEdit
                                 {
                                     int newValue = Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (uint)newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (uint)newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -859,22 +869,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -883,7 +893,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = shortField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -895,7 +905,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -911,7 +921,7 @@ public class GparamQuickEdit
                                     if (newValue > short.MaxValue)
                                         newValue = short.MaxValue;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (short)newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (short)newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -927,22 +937,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -951,7 +961,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = sbyteField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -963,7 +973,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -979,7 +989,7 @@ public class GparamQuickEdit
                                     if (newValue > sbyte.MaxValue)
                                         newValue = sbyte.MaxValue;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -995,22 +1005,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -1019,7 +1029,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = byteField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1031,7 +1041,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1047,7 +1057,7 @@ public class GparamQuickEdit
                                     if (newValue > byte.MaxValue)
                                         newValue = byte.MaxValue;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (byte)newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (byte)newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1069,7 +1079,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1087,14 +1097,14 @@ public class GparamQuickEdit
                                     if (newValue > 0.5)
                                         newBool = true;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newBool, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newBool, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
                             else
                             {
                                 // Always set bools
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1109,22 +1119,22 @@ public class GparamQuickEdit
                         {
                             if (effectType == EditEffectType.Set)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Add)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Subtract)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.Multiply)
                             {
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                 actions.Add(action);
                             }
                             if (effectType == EditEffectType.SetByRow)
@@ -1133,7 +1143,7 @@ public class GparamQuickEdit
                                 {
                                     commandValue = floatField.Values.Find(x => x.ID == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1145,7 +1155,7 @@ public class GparamQuickEdit
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1158,7 +1168,7 @@ public class GparamQuickEdit
                                 {
                                     double newValue = Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (float)newValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (float)newValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1175,7 +1185,7 @@ public class GparamQuickEdit
                             {
                                 commandValue = vector2Field.Values.Find(x => x.ID == rowsetId).Value;
 
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1187,7 +1197,7 @@ public class GparamQuickEdit
 
                             if (foundValue)
                             {
-                                var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1213,22 +1223,22 @@ public class GparamQuickEdit
 
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Random)
@@ -1252,7 +1262,7 @@ public class GparamQuickEdit
 
                                             Vector2 newValue = new Vector2((float)newValue1, (float)newValue2);
 
-                                            GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
+                                            EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                             actions.Add(action);
                                         }
                                     }
@@ -1271,7 +1281,7 @@ public class GparamQuickEdit
                             {
                                 commandValue = vector3Field.Values.Find(x => x.ID == rowsetId).Value;
 
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1283,7 +1293,7 @@ public class GparamQuickEdit
 
                             if (foundValue)
                             {
-                                var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1312,22 +1322,22 @@ public class GparamQuickEdit
 
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Random)
@@ -1356,7 +1366,7 @@ public class GparamQuickEdit
 
                                             Vector3 newValue = new Vector3((float)newValue1, (float)newValue2, (float)newValue3);
 
-                                            GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
+                                            EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                             actions.Add(action);
                                         }
                                     }
@@ -1375,7 +1385,7 @@ public class GparamQuickEdit
                             {
                                 commandValue = vector4Field.Values.Find(x => x.ID == rowsetId).Value;
 
-                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1387,7 +1397,7 @@ public class GparamQuickEdit
 
                             if (foundValue)
                             {
-                                var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                 actions.Add(action);
                             }
                         }
@@ -1419,22 +1429,22 @@ public class GparamQuickEdit
 
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Random)
@@ -1468,7 +1478,7 @@ public class GparamQuickEdit
 
                                             Vector4 newValue = new Vector4((float)newValue1, (float)newValue2, (float)newValue3, (float)newValue4);
 
-                                            GparamValueChangeAction action = new GparamValueChangeAction(
+                                            EditValueAction action = new EditValueAction(
                                                 gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                             actions.Add(action);
                                         }
@@ -1501,7 +1511,7 @@ public class GparamQuickEdit
         {
             for (int i = 0; i < targetField.Values.Count; i++)
             {
-                if (Parent.Selection._selectedFieldValueKey == i)
+                if (Parent.Selection._selectedFieldValueIndex == i)
                 {
                     filterTruth[i] = true;
                 }

@@ -1,52 +1,52 @@
 {
   "ID": "HDR ColorCorrection",
-  "Name": "HDR ColorCorrection",
-  "Description": "",
+  "Name": "HDR Color Correction",
+  "Description": "Applies high dynamic range color grading adjustments to the final rendered image. Provides controls for hue shifting, saturation, contrast, and per-channel scaling to achieve cinematic or stylized color balance before tone mapping or final output.",
   "Fields": [
     {
       "ID": "HDR ColorCorrection ColorH",
-      "Name": "HDR ColorCorrection ColorH",
-      "Description": "",
+      "Name": "Color: Hue",
+      "Description": "Adjusts the hue of the entire HDR image, rotating all colors around the color wheel.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "HDR ColorCorrection ColorS",
-      "Name": "HDR ColorCorrection ColorS",
-      "Description": "",
+      "Name": "Color: Saturation",
+      "Description": "Controls overall color saturation. Higher values intensify colors, while lower values desaturate toward grayscale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "HDR ColorCorrection ColorShift",
-      "Name": "HDR ColorCorrection ColorShift",
-      "Description": "",
+      "Name": "Color: Shift",
+      "Description": "Applies a per-channel additive offset (RGBA) to shift the overall color balance of the HDR image.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "HDR ColorCorrection ColorScale",
-      "Name": "HDR ColorCorrection ColorScale",
-      "Description": "",
+      "Name": "Color: Scale",
+      "Description": "Applies per-channel multiplicative scaling (RGBA) to adjust intensity and color weighting across the image.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "HDR ColorCorrection ColorV",
-      "Name": "HDR ColorCorrection ColorV",
-      "Description": "",
+      "Name": "Color: Value",
+      "Description": "Adjusts value/brightness component of the image, controlling overall luminance intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "HDR ColorCorrection Contrast",
-      "Name": "HDR ColorCorrection Contrast",
-      "Description": "",
+      "Name": "Contrast",
+      "Description": "Controls tonal contrast of the HDR image, increasing or decreasing separation between dark and bright regions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

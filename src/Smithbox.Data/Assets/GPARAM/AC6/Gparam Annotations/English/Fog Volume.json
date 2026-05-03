@@ -1,244 +1,244 @@
 {
   "ID": "FogVolume ParamEditor",
-  "Name": "FogVolume ParamEditor",
-  "Description": "",
+  "Name": "Fog Volume",
+  "Description": "Defines a volumetric fog region with controllable density, lighting, and noise-based variation. Used to simulate atmospheric effects such as mist, haze, or smoke within a bounded area.",
   "Fields": [
     {
       "ID": "FogVolume DrawArea NearFadeMinDistance",
-      "Name": "FogVolume DrawArea NearFadeMinDistance",
-      "Description": "",
+      "Name": "Draw Area: Near Fade: Minimum Distance",
+      "Description": "Distance from the camera at which fog begins to fade in. Objects closer than this distance will not be affected by the fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea NearFadeMaxDistance",
-      "Name": "FogVolume DrawArea NearFadeMaxDistance",
-      "Description": "",
+      "Name": "Draw Area: Near Fade: Maximum Distance",
+      "Description": "Distance from the camera at which fog reaches full intensity after near fade-in.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea EdgeFadeDistance",
-      "Name": "FogVolume DrawArea EdgeFadeDistance",
-      "Description": "",
+      "Name": "Draw Area: Edge Fade: Distance",
+      "Description": "Controls how far from the volume boundary the fog begins to fade out to avoid hard edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea EdgeFadeExponent",
-      "Name": "FogVolume DrawArea EdgeFadeExponent",
-      "Description": "",
+      "Name": "Draw Area: Edge Fade: Exponent",
+      "Description": "Exponent controlling the smoothness of edge fading. Higher values create a sharper falloff near the boundary.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea HeightFallOff",
-      "Name": "FogVolume DrawArea HeightFallOff",
-      "Description": "",
+      "Name": "Draw Area: Height Falloff",
+      "Description": "Controls how fog density decreases with height. Higher values make fog thinner at higher elevations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea FadeDistanceForHeightMap",
-      "Name": "FogVolume DrawArea FadeDistanceForHeightMap",
-      "Description": "",
+      "Name": "Draw Area: Fade Distance for Height Map",
+      "Description": "Distance over which height-based fog attenuation is blended, useful when using terrain or height maps.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume DrawArea MaxInjectingDepth",
-      "Name": "FogVolume DrawArea MaxInjectingDepth",
-      "Description": "",
+      "Name": "Draw Area: Max Injecting Depth",
+      "Description": "Maximum depth into the scene where fog contribution is injected, limiting how far fog affects distant geometry.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume RayMarching MaxSampleCount",
-      "Name": "FogVolume RayMarching MaxSampleCount",
-      "Description": "",
+      "Name": "Ray Marching: Max Sample Count",
+      "Description": "Maximum number of ray-marching steps used to sample the fog volume. Higher values improve quality but reduce performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume RayMarching SteppingDistance",
-      "Name": "FogVolume RayMarching SteppingDistance",
-      "Description": "",
+      "Name": "Ray Marching: Stepping Distance",
+      "Description": "Distance between each ray-marching sample. Smaller values increase accuracy but require more samples.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume RayMarching SuspendedTransmittance",
-      "Name": "FogVolume RayMarching SuspendedTransmittance",
-      "Description": "",
+      "Name": "Ray Marching: Suspended Transmittance",
+      "Description": "Base transmittance value controlling how much light passes through the fog before attenuation is applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume RayMarching LightProcessingInterval",
-      "Name": "FogVolume RayMarching LightProcessingInterval",
-      "Description": "",
+      "Name": "Ray Marching: Light Processing Interval",
+      "Description": "Interval (in steps) at which lighting calculations are performed during ray marching to optimize performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume RayMarching LightProcessingIntervalThreshold",
-      "Name": "FogVolume RayMarching LightProcessingIntervalThreshold",
-      "Description": "",
+      "Name": "Ray Marching: Light Processing Interval Threshold",
+      "Description": "Threshold distance or density at which reduced light processing intervals are applied to maintain visual quality.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light Overwrite",
-      "Name": "FogVolume Light Overwrite",
-      "Description": "",
+      "Name": "Light: Overwrite",
+      "Description": "If enabled, overrides global scene lighting with the fog volume's custom lighting parameters.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "FogVolume Light DirectionalLightAngle",
-      "Name": "FogVolume Light DirectionalLightAngle",
-      "Description": "",
+      "Name": "Light: Directional Light Angle",
+      "Description": "Direction of the primary light source affecting the fog, typically expressed as azimuth and elevation angles.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light DirectionalLightColor",
-      "Name": "FogVolume Light DirectionalLightColor",
-      "Description": "",
+      "Name": "Light: Directional Light Color",
+      "Description": "Color and intensity of the primary directional light scattering through the fog.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light DirectionalLightOppositeColor",
-      "Name": "FogVolume Light DirectionalLightOppositeColor",
-      "Description": "",
+      "Name": "Light: Directional Light Opposite Color",
+      "Description": "Color of light scattering from the opposite direction, simulating backscattering effects.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light AmbientColor",
-      "Name": "FogVolume Light AmbientColor",
-      "Description": "",
+      "Name": "Light: Ambient Color",
+      "Description": "Ambient light color contributing to the overall illumination of the fog volume.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light ShadowingIntensity",
-      "Name": "FogVolume Light ShadowingIntensity",
-      "Description": "",
+      "Name": "Light: Shadowing Intensity",
+      "Description": "Strength of shadowing within the fog. Higher values produce more pronounced volumetric shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light AttenuationIntensity",
-      "Name": "FogVolume Light AttenuationIntensity",
-      "Description": "",
+      "Name": "Light: Attenuation Intensity",
+      "Description": "Controls how quickly light intensity diminishes as it travels through the fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light AttenuationOffset",
-      "Name": "FogVolume Light AttenuationOffset",
-      "Description": "",
+      "Name": "Light: Attenuation Offset",
+      "Description": "Bias applied to light attenuation, shifting where attenuation begins within the fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Light OctaveNumPerlinNoise",
-      "Name": "FogVolume Light OctaveNumPerlinNoise",
-      "Description": "",
+      "Name": "Light: Octave Number Perlin Noise",
+      "Description": "Number of Perlin noise octaves used to modulate lighting variations within the fog.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Density Intensity",
-      "Name": "FogVolume Density Intensity",
-      "Description": "",
+      "Name": "Density Intensity",
+      "Description": "Overall density multiplier for the fog. Higher values result in thicker, more opaque fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume PerlinNoise Frequency",
-      "Name": "FogVolume PerlinNoise Frequency",
-      "Description": "",
+      "Name": "Perlin Noise Frequency",
+      "Description": "Frequency of the Perlin noise used to shape fog density. Higher values create finer detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume PerlinNoise Lacunarity",
-      "Name": "FogVolume PerlinNoise Lacunarity",
-      "Description": "",
+      "Name": "Perlin Noise Lacunarity",
+      "Description": "Controls how noise frequency increases across octaves, affecting the complexity of the fog pattern.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume PerlinNoise Gain",
-      "Name": "FogVolume PerlinNoise Gain",
-      "Description": "",
+      "Name": "Perlin Noise Gain",
+      "Description": "Controls amplitude reduction between noise octaves, influencing contrast in the fog structure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume PerlinNoise Offset",
-      "Name": "FogVolume PerlinNoise Offset",
-      "Description": "",
+      "Name": "Perlin Noise Offset",
+      "Description": "Offset applied to the noise sampling position, useful for shifting or animating fog patterns.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Scroll Speed-x",
-      "Name": "FogVolume Scroll Speed-x",
-      "Description": "",
+      "Name": "Scroll Speed: X",
+      "Description": "Speed at which the fog noise pattern scrolls along the X axis.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Scroll Speed-y",
-      "Name": "FogVolume Scroll Speed-y",
-      "Description": "",
+      "Name": "Scroll Speed: Y",
+      "Description": "Speed at which the fog noise pattern scrolls along the Y axis.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Scroll Speed-z",
-      "Name": "FogVolume Scroll Speed-z",
-      "Description": "",
+      "Name": "Scroll Speed: Z",
+      "Description": "Speed at which the fog noise pattern scrolls along the Z axis.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FogVolume Scroll DetailScale",
-      "Name": "FogVolume Scroll DetailScale",
-      "Description": "",
+      "Name": "Scroll Detail Scale",
+      "Description": "Scale factor applied to scrolling noise detail, controlling how large or small animated features appear.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

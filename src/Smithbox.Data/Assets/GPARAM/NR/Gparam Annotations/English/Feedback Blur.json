@@ -1,52 +1,52 @@
 {
   "ID": "FeedBackBlur-Editor[Yebis]",
   "Name": "FeedBackBlur-Editor[Yebis]",
-  "Description": "",
+  "Description": "Applies a temporal feedback blur effect by blending the current frame with previous frames. Used to create motion trails, persistence effects, or stylized ghosting based on accumulated history.",
   "Fields": [
     {
       "ID": "Yebis-FeedBackBlur-Enable",
-      "Name": "Yebis-FeedBackBlur-Enable",
-      "Description": "",
+      "Name": "Enable Feedback Blur",
+      "Description": "Enables or disables the feedback blur effect. When disabled, no temporal accumulation or motion persistence is applied.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-FeedbackWeight",
-      "Name": "Yebis-FeedbackWeight",
-      "Description": "",
+      "Name": "Feedback Weight",
+      "Description": "Controls how much of the previous frame is blended into the current frame. Higher values increase persistence and trail length but may cause stronger ghosting.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Feedback UnitTimeInSeconds",
-      "Name": "Yebis-Feedback UnitTimeInSeconds",
-      "Description": "",
+      "Name": "Feedback Time Factor",
+      "Description": "Time factor (in seconds) used to normalize feedback accumulation. Controls how quickly the blur decays over time.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Object-FeedbackBlurRate",
-      "Name": "Object-FeedbackBlurRate",
-      "Description": "",
+      "Name": "Object Feedback Blur Rate",
+      "Description": "Controls how strongly moving objects contribute to the feedback blur effect. Higher values increase motion trail intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Object-FeedbackBlurFallOff",
-      "Name": "Object-FeedbackBlurFallOff",
-      "Description": "",
+      "Name": "Object Feedback Blur Falloff",
+      "Description": "Determines how quickly the blur effect fades based on object motion or distance. Higher values produce faster decay.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Object-FeedbackBlurPower",
-      "Name": "Object-FeedbackBlurPower",
-      "Description": "",
+      "Name": "Object Feedback Blur Power",
+      "Description": "Exponent applied to the blur accumulation, shaping how aggressively the effect builds up over time.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

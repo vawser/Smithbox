@@ -1,116 +1,116 @@
 {
   "ID": "ShadowParam ParamEditor",
-  "Name": "ShadowParam ParamEditor",
-  "Description": "",
+  "Name": "Shadows",
+  "Description": "Controls shadow rendering parameters including cascaded shadow maps, filtering, depth biasing, blur, and cascade distribution for directional and local light shadowing.",
   "Fields": [
     {
       "ID": "hadowParam - Shadow: Angle0",
-      "Name": "hadowParam - Shadow: Angle0",
-      "Description": "",
+      "Name": "Angle",
+      "Description": "Direction of the shadow-casting light, typically used for directional shadow alignment and orientation.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "shadowParam -   Shadow:  Shadow Light Id",
-      "Name": "shadowParam -   Shadow:  Shadow Light Id",
-      "Description": "",
+      "Name": "Shadow Light Id",
+      "Description": "Identifier for the light source that contributes to shadow rendering in this configuration.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Near",
-      "Name": "ShadowParam - Shadow: Near",
-      "Description": "",
+      "Name": "Near Clip Distance",
+      "Description": "Near clipping distance for shadow rendering, defining the closest range where shadows are calculated.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Cascade Dist 0->1",
-      "Name": "ShadowParam - Shadow: Cascade Dist 0->1",
-      "Description": "",
+      "Name": "Cascade Distance: 0 -> 1",
+      "Description": "Distance threshold defining transition from the first to the second shadow cascade.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Cascade Dist 1->2",
-      "Name": "ShadowParam - Shadow: Cascade Dist 1->2",
-      "Description": "",
+      "Name": "Cascade Distance: 1 -> 2",
+      "Description": "Distance threshold defining transition from the second to the third shadow cascade.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Cascade Dist 2->3",
-      "Name": "ShadowParam - Shadow: Cascade Dist 2->3",
-      "Description": "",
+      "Name": "Cascade Distance: 2 -> 3",
+      "Description": "Distance threshold defining transition into the fourth shadow cascade.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Far Fade Start",
-      "Name": "ShadowParam - Shadow: Far Fade Start",
-      "Description": "",
+      "Name": "Far Fade Start Distance",
+      "Description": "Distance at which shadow fading begins to reduce distant shadow visibility.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Far Fade Dist",
-      "Name": "ShadowParam - Shadow: Far Fade Dist",
-      "Description": "",
+      "Name": "Far Fade Distance",
+      "Description": "Distance over which far shadows fully fade out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Cascade Fade Range Scale",
-      "Name": "ShadowParam - Shadow: Cascade Fade Range Scale",
-      "Description": "",
+      "Name": "Cascade Fade Range Scale",
+      "Description": "Scaling factor controlling how quickly shadow cascades blend into each other.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Shadow Map FilterMode",
-      "Name": "ShadowParam - Shadow: Shadow Map FilterMode",
-      "Description": "",
+      "Name": "Shadow Map Filter Mode",
+      "Description": "Filtering mode used for sampling shadow maps (e.g., PCF, linear filtering).",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Depth Offset",
-      "Name": "ShadowParam - Shadow: Depth Offset",
-      "Description": "",
+      "Name": "Depth Offset",
+      "Description": "Offsets shadow depth values to reduce surface self-shadowing artifacts (shadow spots).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Volume Depth",
-      "Name": "ShadowParam - Volume Depth",
-      "Description": "",
+      "Name": "Volume Depth",
+      "Description": "Controls volumetric shadow depth influence for participating media or soft shadow volumes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Depth Bias",
-      "Name": "ShadowParam - Depth Bias",
-      "Description": "",
+      "Name": "Depth Bias",
+      "Description": "Constant depth bias applied to shadow mapping to reduce z-fighting artifacts.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Slope Scaled Depth Bias",
-      "Name": "ShadowParam - Slope Scaled Depth Bias",
-      "Description": "",
+      "Name": "Slope Scaled Depth Bias",
+      "Description": "Depth bias scaled by surface slope to reduce shadow acne on steep angles.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -118,223 +118,223 @@
     {
       "ID": "Shadow Model Cull Flip",
       "Name": "Shadow Model Cull Flip",
-      "Description": "",
+      "Description": "Flips face-culling behavior for shadow rendering, useful for correcting inverted geometry or coordinate systems.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam - AlignTexel",
-      "Name": "ShadowParam - AlignTexel",
-      "Description": "",
+      "Name": "Align Texel",
+      "Description": "Aligns shadow projection to texel grid to reduce shimmering and crawling artifacts.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam - DepthRate",
-      "Name": "ShadowParam - DepthRate",
-      "Description": "",
+      "Name": "Depth Rate",
+      "Description": "Controls scaling of depth sensitivity in shadow computations, affecting precision distribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - DepthScale",
-      "Name": "ShadowParam - DepthScale",
-      "Description": "",
+      "Name": "Depth Scale",
+      "Description": "Global multiplier for shadow depth values, adjusting overall shadow range compression or expansion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - KernelScale",
-      "Name": "ShadowParam - KernelScale",
-      "Description": "",
+      "Name": "Kernel Scale",
+      "Description": "Scales the filtering kernel size used in soft shadow blurring.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - DepthOffsetScale",
-      "Name": "ShadowParam - DepthOffsetScale",
-      "Description": "",
+      "Name": "Depth Offset Scale",
+      "Description": "Multiplier applied to depth offset to fine-tune shadow biasing strength.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Blur Count",
-      "Name": "ShadowParam - Blur Count",
-      "Description": "",
+      "Name": "Blur Count",
+      "Description": "Number of blur passes applied to soften shadow edges.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Blur Radius",
-      "Name": "ShadowParam - Blur Radius",
-      "Description": "",
+      "Name": "Blur Radius",
+      "Description": "Radius of the shadow blur filter, controlling softness of shadow edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - TempAA Auto Jitter",
-      "Name": "ShadowParam - TempAA Auto Jitter",
-      "Description": "",
+      "Name": "Temporal Anti-Alias: Auto Jitter",
+      "Description": "Enables automatic jittering of shadow samples to reduce aliasing across frames.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam Cascade Count",
-      "Name": "ShadowParam Cascade Count",
-      "Description": "",
+      "Name": "Cascade Count",
+      "Description": "Number of cascaded shadow map levels used for directional lighting.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam - Shadow: Shadow Map Resolution",
-      "Name": "ShadowParam - Shadow: Shadow Map Resolution",
-      "Description": "",
+      "Name": "Shadow Map Resolution",
+      "Description": "Base resolution of the shadow map texture used for rendering shadows.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Cascade0 Resolution",
-      "Name": "ShadowParam Cascade0 Resolution",
-      "Description": "",
+      "Name": "Cascade 0 Resolution",
+      "Description": "Resolution of the closest shadow cascade for high-detail shadow rendering.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Cascade1 Resolution",
-      "Name": "ShadowParam Cascade1 Resolution",
-      "Description": "",
+      "Name": "Cascade 1 Resolution",
+      "Description": "Resolution of the second shadow cascade covering mid-range distances.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Cascade2 Resolution",
-      "Name": "ShadowParam Cascade2 Resolution",
-      "Description": "",
+      "Name": "Cascade 2 Resolution",
+      "Description": "Resolution of the third shadow cascade for farther scene regions.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Cascade3 Resolution",
-      "Name": "ShadowParam Cascade3 Resolution",
-      "Description": "",
+      "Name": "Cascade 3 Resolution",
+      "Description": "Resolution of the farthest shadow cascade covering distant geometry.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam CompartmentShadow Resolution",
-      "Name": "ShadowParam CompartmentShadow Resolution",
-      "Description": "",
+      "Name": "Compartment Shadow Resolution",
+      "Description": "Resolution used for specialized compartment or localized shadow rendering systems.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow Enable",
-      "Name": "ShadowParam Screen Space Trace Shadow Enable",
-      "Description": "",
+      "Name": "Enable Screen Space Shadow Trace",
+      "Description": "Enables screen-space shadow tracing as a complement to shadow maps for fine contact shadows.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow SoftTest",
-      "Name": "ShadowParam Screen Space Trace Shadow SoftTest",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Soft Test",
+      "Description": "Enables softer shadow testing during screen-space tracing to reduce hard edges.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow PreBlur",
-      "Name": "ShadowParam Screen Space Trace Shadow PreBlur",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Pre-Blur",
+      "Description": "Applies a blur pass before shadow tracing to smooth input data and reduce noise.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow TraceLength",
-      "Name": "ShadowParam Screen Space Trace Shadow TraceLength",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Trace Length",
+      "Description": "Maximum ray length used for screen-space shadow tracing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow TraceLengthFar",
-      "Name": "ShadowParam Screen Space Trace Shadow TraceLengthFar",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Trace Length Far",
+      "Description": "Extended trace length used for distant shadow calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow HitThickness",
-      "Name": "ShadowParam Screen Space Trace Shadow HitThickness",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Hit Thickness",
+      "Description": "Thickness tolerance used when determining ray intersections during shadow tracing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow SoftTestThickness",
-      "Name": "ShadowParam Screen Space Trace Shadow SoftTestThickness",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Soft Test Thickness",
+      "Description": "Thickness used for softer intersection testing to produce smoother shadow transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow MultiHitTestCount",
-      "Name": "ShadowParam Screen Space Trace Shadow MultiHitTestCount",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Multi Hit Test Count",
+      "Description": "Number of intersection tests per ray to improve shadow accuracy.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow MaxDistFadeStart",
-      "Name": "ShadowParam Screen Space Trace Shadow MaxDistFadeStart",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Max Distance for Fade Start",
+      "Description": "Distance at which screen-space shadows begin to fade out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow MaxDistFadeRange",
-      "Name": "ShadowParam Screen Space Trace Shadow MaxDistFadeRange",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Max Distance for Fade Range",
+      "Description": "Distance range over which screen-space shadows fully fade out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow TraceLengthFadeStart",
-      "Name": "ShadowParam Screen Space Trace Shadow TraceLengthFadeStart",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Trace Length for Fade Start",
+      "Description": "Trace length at which shadow contribution begins fading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ShadowParam Screen Space Trace Shadow TraceLengthFadeRange",
-      "Name": "ShadowParam Screen Space Trace Shadow TraceLengthFadeRange",
-      "Description": "",
+      "Name": "Screen Space Shadow Trace: Trace Length for Fade Range",
+      "Description": "Range over which shadow contribution fades based on trace length.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

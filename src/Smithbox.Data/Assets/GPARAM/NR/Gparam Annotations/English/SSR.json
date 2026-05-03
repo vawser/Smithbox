@@ -1,116 +1,116 @@
 {
   "ID": "SSR ParamEditor",
-  "Name": "SSR ParamEditor",
-  "Description": "",
+  "Name": "Screen Space Reflections",
+  "Description": "Covers parameters relating to Screen Space Reflections.",
   "Fields": [
     {
       "ID": "SSR Enable",
-      "Name": "SSR Enable",
-      "Description": "",
+      "Name": "Enable Screen Space Reflections",
+      "Description": "Enables or disables screen-space reflections for reflective surfaces in the scene.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSR TraverseMode",
-      "Name": "SSR TraverseMode",
-      "Description": "",
+      "Name": "Traverse Mode",
+      "Description": "Selects the algorithm or strategy used for ray traversal during SSR sampling.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Shininess Reject Threshold",
-      "Name": "SSR Shininess Reject Threshold",
-      "Description": "",
+      "Name": "Shininess Reject Threshold",
+      "Description": "Controls the minimum surface shininess required for SSR to be applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Depth Reject Threshold",
-      "Name": "SSR Depth Reject Threshold",
-      "Description": "",
+      "Name": "Depth Reject Threshold",
+      "Description": "Rejects reflection samples based on depth discontinuities to reduce incorrect reflections.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Fade To Viewer Start",
-      "Name": "SSR Fade To Viewer Start",
-      "Description": "",
+      "Name": "Fade To Viewer Start",
+      "Description": "Distance at which SSR begins fading out toward the viewer to reduce artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Fresnel Reject Threshold",
-      "Name": "SSR Fresnel Reject Threshold",
-      "Description": "",
+      "Name": "Fresnel Reject Threshold",
+      "Description": "Controls how strongly Fresnel response affects rejection of reflection contributions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Ray Trace Step Scale Min",
-      "Name": "SSR Ray Trace Step Scale Min",
-      "Description": "",
+      "Name": "Ray Trace Step Scale Minimum",
+      "Description": "Minimum step size used when marching rays through screen space for reflection tracing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Ray Trace Step Scale Max",
-      "Name": "SSR Ray Trace Step Scale Max",
-      "Description": "",
+      "Name": "Ray Trace Step Scale Maximum",
+      "Description": "Maximum step size used when marching rays for screen-space reflection tracing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Display Mip Scale",
-      "Name": "SSR Display Mip Scale",
-      "Description": "",
+      "Name": "Display Mip Scale",
+      "Description": "Scales the mip level used when sampling reflection textures for performance vs quality balance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Display Mip Offset",
-      "Name": "SSR Display Mip Offset",
-      "Description": "",
+      "Name": "Display Mip Offset",
+      "Description": "Offsets the mip level selection for reflection sampling to adjust sharpness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Depth Fade Range",
-      "Name": "SSR Depth Fade Range",
-      "Description": "",
+      "Name": "Depth Fade Range",
+      "Description": "Defines the distance range over which reflections fade out based on depth.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Geom Crack Detect Factor",
-      "Name": "SSR Geom Crack Detect Factor",
-      "Description": "",
+      "Name": "Geometry Crack Detect Factor",
+      "Description": "Helps detect and reduce reflection artifacts caused by geometric discontinuities or surface cracks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Tex Blur Sigma",
-      "Name": "SSR Tex Blur Sigma",
-      "Description": "",
+      "Name": "Texture Blur Sigma",
+      "Description": "Controls Gaussian blur strength applied to reflection textures.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSR Tex Blur Sigma for Mip",
-      "Name": "SSR Tex Blur Sigma for Mip",
-      "Description": "",
+      "Name": "Texture Blur Sigma for Mip",
+      "Description": "Adjusts blur strength for lower mip levels of reflection textures.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -118,7 +118,7 @@
     {
       "ID": "SSR Alpha Boost",
       "Name": "SSR Alpha Boost",
-      "Description": "",
+      "Description": "Boosts the intensity or opacity of reflection contributions, making SSR results appear stronger or more pronounced.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

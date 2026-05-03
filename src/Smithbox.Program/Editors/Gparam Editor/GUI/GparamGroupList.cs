@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hkReflect;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
@@ -7,6 +8,7 @@ using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -31,162 +33,9 @@ public class GparamGroupList
         // Groups
         ImGui.BeginChild("GparamGroupsSection", ImGuiChildFlags.Borders);
 
-        if (Parent.Selection.IsFileSelected())
-        {
-            var data = Parent.Selection.GetSelectedGparam();
-            var group = Parent.Selection.GetSelectedGparamGroup();
-
-            // Available groups
-            for (int i = 0; i < data.Params.Count; i++)
-            {
-                GPARAM.Param entry = data.Params[i];
-
-                var selected = i == Parent.Selection._selectedParamGroupKey;
-                var groupName = GetGroupName(entry);
-
-                if (!DisplayEmptyGroup(entry))
-                {
-                    continue;
-                }
-
-                if (!Parent.Filters.IsGroupFilterMatch(entry.Name, ""))
-                    continue;
-
-                // Group row
-                if (ImGui.Selectable($@" {groupName}##{entry.Key}", selected))
-                {
-                    Parent.Selection.SetGparamGroup(i, entry);
-                }
-
-                // Arrow Selection
-                if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamGroup)
-                {
-                    Parent.Selection.SelectGparamGroup = false;
-                    Parent.Selection.SetGparamGroup(i, entry);
-                }
-
-                if (ImGui.IsItemFocused())
-                {
-                    if (InputManager.HasArrowSelection())
-                    {
-                        Parent.Selection.SelectGparamGroup = true;
-                    }
-                }
-
-                ContextMenu(data, entry, i);
-            }
-
-            Shortcuts(data, group);
-        }
+        DisplayGroupList();
 
         ImGui.EndChild();
-    }
-
-    private void ContextMenu(GPARAM data, GPARAM.Param entry, int index)
-    {
-        if (index == Parent.Selection._selectedParamGroupKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
-            {
-                if (ImGui.BeginMenu("Add"))
-                {
-                    AddGroupMenu(data);
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.Selectable("Delete"))
-                {
-                    var action = new GparamDeleteGroupAction(Project, data, new List<GPARAM.Param>() { entry });
-
-                    Parent.ActionManager.ExecuteAction(action);
-                }
-                UIHelper.Tooltip("Delete the selected group.");
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu("Quick Edit"))
-                {
-                    if (ImGui.Selectable("Target"))
-                    {
-                        Parent.QuickEditHandler.UpdateGroupFilter(Parent.Selection._selectedParamGroup);
-                    }
-                    UIHelper.Tooltip("Add this file to the Group Filter in the Quick Edit window.");
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
-    public void Shortcuts(GPARAM data, GPARAM.Param entry)
-    {
-        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_GroupList))
-        {
-            // Add (all mising groups)
-            if (InputManager.IsPressed(KeybindID.Add))
-            {
-                PopulateAddOptions();
-
-                for (int i = 0; i < AddOptions.Count; i++)
-                {
-                    var curOption = AddOptions[i];
-                    var curAnnotation = curOption.Annotation;
-
-                    // Ignore existing groups, we only want to allow adding missing groups
-                    if (data.Params.Any(e => e.Key == curAnnotation.ID))
-                        continue;
-
-                    curOption.ToAdd = true;
-                }
-
-                AddNewGroups(data, AddOptions);
-            }
-
-            // Delete (selected group)
-            if (InputManager.IsPressed(KeybindID.Delete))
-            {
-                var action = new GparamDeleteGroupAction(Project, data, new List<GPARAM.Param>() { entry });
-
-                Parent.ActionManager.ExecuteAction(action);
-            }
-        }
-    }
-
-    private string GetGroupName(GPARAM.Param entry)
-    {
-        var name = entry.Key;
-        var groupId = entry.Key;
-        var groupName = GparamMetaUtils.GetGroupName(Project, groupId);
-
-        if (groupName != null)
-        {
-            name = groupName;
-        }
-
-        return name;
-    }
-
-    private bool DisplayEmptyGroup(GPARAM.Param entry)
-    {
-        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
-        {
-            foreach (var fieldEntry in entry.Fields)
-            {
-                if (fieldEntry.Values.Count > 0)
-                {
-                    return true;
-                }
-            }
-        }
-        else
-        {
-            return true;
-        }
-
-        return false;
     }
 
     public void DisplayHeader()
@@ -216,8 +65,201 @@ public class GparamGroupList
         ImGui.EndChild();
     }
 
-    private List<GroupAddEntry> AddOptions = null;
+    private void DisplayGroupList()
+    {
+        if (!Parent.Selection.IsFileSelected())
+            return;
 
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+
+        if (data == null)
+            return;
+
+        // Available groups
+        for (int i = 0; i < data.Params.Count; i++)
+        {
+            var curGroup = data.Params[i];
+
+            DisplayGroupSelectable(data, curGroup, i);
+        }
+
+        Shortcuts(data, group);
+    }
+
+    private void DisplayGroupSelectable(GPARAM data, Param group, int index)
+    {
+        var selected = index == Parent.Selection._selectedParamGroupIndex;
+        var groupName = GetGroupName(group);
+        var groupDesc = GetGroupDescription(group);
+
+        if (!DisplayEmptyGroup(group))
+            return;
+
+        if (!Parent.Filters.IsGroupFilterMatch(group.Name, ""))
+            return;
+
+        ImGui.BeginGroup();
+
+        // Group row
+        if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
+        {
+            Parent.Selection.SetGparamGroup(index, group);
+        }
+
+        if (groupDesc != "")
+        {
+            UIHelper.Tooltip(groupDesc);
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamGroup)
+        {
+            Parent.Selection.SelectGparamGroup = false;
+            Parent.Selection.SetGparamGroup(index, group);
+        }
+
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Parent.Selection.SelectGparamGroup = true;
+            }
+        }
+
+        ImGui.EndGroup();
+
+        ContextMenu(data, group, index);
+    }
+
+    private void ContextMenu(GPARAM data, GPARAM.Param group, int index)
+    {
+        var groupIndex = Parent.Selection._selectedParamGroupIndex;
+
+        if (index != groupIndex)
+            return;
+
+        if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+        {
+            // Add
+            if (ImGui.BeginMenu("Add"))
+            {
+                AddGroupMenu(data);
+
+                ImGui.EndMenu();
+            }
+
+            // Delete
+            if (ImGui.Selectable("Delete"))
+            {
+                var action = new DeleteGroupAction(Project, data, new List<GPARAM.Param>() { group });
+
+                Parent.ActionManager.ExecuteAction(action);
+            }
+            UIHelper.Tooltip("Delete the selected group.");
+
+            ImGui.Separator();
+
+            // Quick Edit
+            if (ImGui.BeginMenu("Quick Edit"))
+            {
+                // Target
+                if (ImGui.Selectable("Target"))
+                {
+                    Parent.QuickEditHandler.UpdateGroupFilter(Parent.Selection._selectedParamGroupKey);
+                }
+                UIHelper.Tooltip("Add this file to the Group Filter in the Quick Edit window.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void Shortcuts(GPARAM data, GPARAM.Param entry)
+    {
+        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_GroupList))
+        {
+            // Add
+            if (InputManager.IsPressed(KeybindID.Add))
+            {
+                PopulateAddOptions();
+
+                for (int i = 0; i < AddOptions.Count; i++)
+                {
+                    var curOption = AddOptions[i];
+                    var curAnnotation = curOption.Annotation;
+
+                    // Ignore existing groups, we only want to allow adding missing groups
+                    if (data.Params.Any(e => e.Key == curAnnotation.ID))
+                        continue;
+
+                    curOption.ToAdd = true;
+                }
+
+                AddNewGroups(data, AddOptions);
+            }
+
+            // Delete
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                var action = new DeleteGroupAction(Project, data, new List<GPARAM.Param>() { entry });
+
+                Parent.ActionManager.ExecuteAction(action);
+            }
+        }
+    }
+
+    private string GetGroupName(GPARAM.Param entry)
+    {
+        var name = entry.Key;
+        var groupId = entry.Key;
+        var groupName = GparamMetaUtils.GetGroupName(Project, groupId);
+
+        if (groupName != null)
+        {
+            name = groupName;
+        }
+
+        return name;
+    }
+
+    private string GetGroupDescription(GPARAM.Param entry)
+    {
+        var name = entry.Key;
+        var groupId = entry.Key;
+        var groupName = GparamMetaUtils.GetGroupDescription(Project, groupId);
+
+        if (groupName != null)
+        {
+            name = groupName;
+        }
+
+        return name;
+    }
+
+    private bool DisplayEmptyGroup(GPARAM.Param entry)
+    {
+        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
+        {
+            foreach (var fieldEntry in entry.Fields)
+            {
+                if (fieldEntry.Values.Count > 0)
+                {
+                    return true;
+                }
+            }
+        }
+        else
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private List<GroupAddEntry> AddOptions = null;
     public void AddGroupMenu(GPARAM data)
     {
         PopulateAddOptions();
@@ -272,7 +314,7 @@ public class GparamGroupList
 
     private void PopulateAddOptions()
     {
-        // Only build the option list once
+        // We only ever build the add options once.
         if (AddOptions == null)
         {
             var potentialGroups = Project.Handler.GparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
@@ -310,7 +352,7 @@ public class GparamGroupList
             }
         }
 
-        var action = new GparamAddGroupAction(Project, data, entries);
+        var action = new AddGroupAction(Project, data, entries);
         Parent.ActionManager.ExecuteAction(action);
 
         // Reset the to add state so we don't add the already present entries on secondary usages

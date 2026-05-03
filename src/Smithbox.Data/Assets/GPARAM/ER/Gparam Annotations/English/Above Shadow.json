@@ -1,7 +1,7 @@
 {
   "ID": "AboveShadow ParamEditor",
-  "Name": "AboveShadow ParamEditor",
-  "Description": "",
+  "Name": "Overhead Shadow",
+  "Description": "Controls shadow rendering from an overhead (typically directional) light source using a dual-range shadow map system. Supports high-detail near shadows and lower-detail distant shadows with configurable biasing and stability options.",
   "IsObsolete": true,
   "Fields": []
 }

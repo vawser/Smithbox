@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamBatchChangeAction : EditorAction
+public class BatchChangeAction : EditorAction
 {
-    private readonly List<GparamValueChangeAction> ChangeActions = new();
+    private readonly List<EditValueAction> ChangeActions = new();
 
-    public GparamBatchChangeAction(List<GparamValueChangeAction> actions)
+    public BatchChangeAction(List<EditValueAction> actions)
     {
         ChangeActions = actions;
     }
 
     public override ActionEvent Execute()
     {
-        foreach (GparamValueChangeAction action in ChangeActions)
+        foreach (EditValueAction action in ChangeActions)
         {
             action.Execute();
         }
@@ -24,7 +24,7 @@ public class GparamBatchChangeAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        foreach (GparamValueChangeAction action in ChangeActions)
+        foreach (EditValueAction action in ChangeActions)
         {
             action.Undo();
         }

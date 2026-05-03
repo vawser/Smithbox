@@ -31,111 +31,9 @@ public class GparamFieldList
         // Fields
         ImGui.BeginChild("GparamFieldsSection", ImGuiChildFlags.Borders);
 
-        if (Parent.Selection.IsGparamGroupSelected())
-        {
-            var data = Parent.Selection.GetSelectedGparam();
-            var group = Parent.Selection.GetSelectedGparamGroup();
-            var field = Parent.Selection.GetSelectedGparamField();
-
-            for (int i = 0; i < group.Fields.Count; i++)
-            {
-                var entry = group.Fields[i];
-
-                var selected = i == Parent.Selection._selectedParamFieldKey;
-                var fieldName = GetFieldName(entry);
-
-                if (!Parent.Filters.IsFieldFilterMatch(entry.Name, ""))
-                    continue;
-
-                // Field row
-                if (ImGui.Selectable($@"[{i}] {fieldName}##{entry.Key}{i}", selected))
-                {
-                    Parent.Selection.SetGparamField(i, entry);
-                }
-
-                // Arrow Selection
-                if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamField)
-                {
-                    Parent.Selection.SelectGparamField = false;
-                    Parent.Selection.SetGparamField(i, entry);
-                }
-
-                if (ImGui.IsItemFocused())
-                {
-                    if (InputManager.HasArrowSelection())
-                    {
-                        Parent.Selection.SelectGparamField = true;
-                    }
-                }
-
-                ContextMenu(data, group, entry, i);
-            }
-
-            Shortcuts(data, group, field);
-        }
+        DisplayFieldList();
 
         ImGui.EndChild();
-    }
-
-
-    /// <summary>
-    /// Context menu for Fields list
-    /// </summary>
-    public void ContextMenu(GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
-    {
-        if (index == Parent.Selection._selectedParamFieldKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
-            {
-                if (ImGui.BeginMenu("Add"))
-                {
-                    AddFieldMenu(data, param);
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.Selectable("Delete"))
-                {
-                    var action = new GparamDeleteFieldAction(Project, data, param, field);
-
-                    Parent.ActionManager.ExecuteAction(action);
-                }
-                UIHelper.Tooltip("Delete the selected field.");
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu("Quick Edit"))
-                {
-                    if (ImGui.Selectable("Target"))
-                    {
-                        Parent.QuickEditHandler.UpdateFieldFilter(Parent.Selection._selectedParamField);
-                    }
-                    UIHelper.Tooltip("Add this file to the Field Filter in the Quick Edit window.");
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
-    public void Shortcuts(GPARAM data, GPARAM.Param entry, GPARAM.IField field)
-    {
-        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_FieldList))
-        {
-            // Add (all mising fields)
-            if (InputManager.IsPressed(KeybindID.Add))
-            {
-
-            }
-
-            // Delete (selected fields)
-            if (InputManager.IsPressed(KeybindID.Delete))
-            {
-
-            }
-        }
     }
 
     public void DisplayHeader()
@@ -149,13 +47,165 @@ public class GparamFieldList
         Parent.Filters.DisplayFieldFilterSearch();
 
         ImGui.EndChild();
+    }
 
+    private void DisplayFieldList()
+    {
+        if (!Parent.Selection.IsGparamGroupSelected())
+            return;
+
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+        var field = Parent.Selection.GetSelectedField();
+
+        if (data == null)
+            return;
+
+        if (group == null)
+            return;
+
+        for (int i = 0; i < group.Fields.Count; i++)
+        {
+            var curField = group.Fields[i];
+
+            DisplayFieldSelectable(data, group, curField, i);
+        }
+
+        Shortcuts(data, group, field);
+    }
+
+    private void DisplayFieldSelectable(GPARAM data, Param group, IField field, int index)
+    {
+        var selected = index == Parent.Selection._selectedParamFieldIndex;
+        var fieldName = GetFieldName(field);
+        var fieldDesc = GetFieldDescription(field);
+
+        if (!Parent.Filters.IsFieldFilterMatch(field.Name, ""))
+            return;
+
+        ImGui.BeginGroup();
+
+        // Field row
+        if (ImGui.Selectable($@"[{index}] {fieldName}##{field.Key}{index}", selected))
+        {
+            Parent.Selection.SetGparamField(index, field);
+        }
+
+        if (fieldDesc != "")
+        {
+            UIHelper.Tooltip(fieldDesc);
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamField)
+        {
+            Parent.Selection.SelectGparamField = false;
+            Parent.Selection.SetGparamField(index, field);
+        }
+
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Parent.Selection.SelectGparamField = true;
+            }
+        }
+
+        ImGui.EndGroup();
+
+        ContextMenu(data, group, field, index);
+    }
+
+    public void ContextMenu(GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
+    {
+        var fieldIndex = Parent.Selection._selectedParamFieldIndex;
+
+        if (index != fieldIndex)
+            return;
+
+        if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+        {
+            // Add
+            if (ImGui.BeginMenu("Add"))
+            {
+                AddFieldMenu(data, param);
+
+                ImGui.EndMenu();
+            }
+
+            // Delete
+            if (ImGui.Selectable("Delete"))
+            {
+                var action = new DeleteFieldAction(Project, data, param, field);
+
+                Parent.ActionManager.ExecuteAction(action);
+            }
+            UIHelper.Tooltip("Delete the selected field.");
+
+            ImGui.Separator();
+
+            // Quick Edit
+            if (ImGui.BeginMenu("Quick Edit"))
+            {
+                // Target
+                if (ImGui.Selectable("Target"))
+                {
+                    Parent.QuickEditHandler.UpdateFieldFilter(Parent.Selection._selectedParamFieldKey);
+                }
+                UIHelper.Tooltip("Add this file to the Field Filter in the Quick Edit window.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void Shortcuts(GPARAM data, GPARAM.Param param, GPARAM.IField field)
+    {
+        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_FieldList))
+        {
+            // Add
+            if (InputManager.IsPressed(KeybindID.Add))
+            {
+                PopulateAddOptions(param);
+
+                if (AddOptions.ContainsKey(param.Key))
+                {
+                    var targetFields = AddOptions[param.Key];
+
+                    for (int i = 0; i < targetFields.Count; i++)
+                    {
+                        var curOption = targetFields[i];
+
+                        var curAnnotation = curOption.Annotation;
+                        var curState = curOption.ToAdd;
+
+                        // Ignore existing fields, we only want to allow adding missing fields
+                        if (param.Fields.Any(e => e.Key == curAnnotation.ID))
+                            continue;
+
+                        curOption.ToAdd = true;
+                    }
+
+                    AddNewFields(data, param);
+                }
+            }
+
+            // Delete
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                var action = new DeleteFieldAction(Project, data, param, field);
+
+                Parent.ActionManager.ExecuteAction(action);
+            }
+        }
     }
 
     private string GetFieldName(IField entry)
     {
         var name = entry.Key;
-        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var groupId = Parent.Selection.GetSelectedGroup().Key;
         var fieldId = entry.Key;
         var fieldName = GparamMetaUtils.GetFieldName(Project, groupId, fieldId);
 
@@ -165,6 +215,21 @@ public class GparamFieldList
         }
 
         return name;
+    }
+
+    private string GetFieldDescription(IField entry)
+    {
+        var desc = entry.Key;
+        var groupId = Parent.Selection.GetSelectedGroup().Key;
+        var fieldId = entry.Key;
+        var fieldDesc = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
+
+        if (fieldDesc != null)
+        {
+            desc = fieldDesc;
+        }
+
+        return desc;
     }
 
     private Dictionary<string, List<FieldAddEntry>> AddOptions = null;
@@ -191,7 +256,7 @@ public class GparamFieldList
             var curAnnotation = curOption.Annotation;
             var curState = curOption.ToAdd;
 
-            // Ignore existing groups, we only want to allow adding missing groups
+            // Ignore existing fields, we only want to allow adding missing fields
             if (param.Fields.Any(e => e.Key == curAnnotation.ID))
                 continue;
 
@@ -265,7 +330,7 @@ public class GparamFieldList
             }
         }
 
-        var action = new GparamAddFieldAction(Project, data, param, entries);
+        var action = new AddFieldAction(Project, data, param, entries);
         Parent.ActionManager.ExecuteAction(action);
 
         // Reset the to add state so we don't add the already present entries on secondary usages

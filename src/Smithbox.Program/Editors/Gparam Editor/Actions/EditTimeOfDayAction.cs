@@ -4,13 +4,13 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamTimeOfDayChangeAction : EditorAction
+public class EditTimeOfDayAction : EditorAction
 {
     private readonly List<GparamValueChange> Changes = new();
 
     private string ProvenanceString;
 
-    public GparamTimeOfDayChangeAction(string fileName, string groupKey, IField field, IFieldValue fieldValue, object newValue, int index)
+    public EditTimeOfDayAction(string fileName, string groupKey, IField field, IFieldValue fieldValue, object newValue, int index)
     {
         var change = new GparamValueChange();
         change.Index = index;

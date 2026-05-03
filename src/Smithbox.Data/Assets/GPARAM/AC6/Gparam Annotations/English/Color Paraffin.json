@@ -1,60 +1,60 @@
 {
   "ID": "ColorParaffin Filter-Editor",
-  "Name": "ColorParaffin Filter-Editor",
-  "Description": "",
+  "Name": "Radial Color Filter",
+  "Description": "Applies a stylized color filtering effect, typically using a radial gradient to simulate atmospheric distortion, heat haze, or artistic overlays. The effect blends between two colors based on screen-space distance from a defined center point.",
   "Fields": [
     {
       "ID": "ColorParaffin Filter-Enable",
-      "Name": "ColorParaffin Filter-Enable",
-      "Description": "",
+      "Name": "Enable Color Paraffin Filter",
+      "Description": "Enables or disables the color paraffin filter effect. When disabled, no additional color overlay is applied.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "ColorParaffin Filter-Mode",
-      "Name": "ColorParaffin Filter-Mode",
-      "Description": "",
+      "Name": "Filter Mode",
+      "Description": "Selects the blending or application mode of the filter (e.g., additive, multiplicative, overlay, or screen-space modulation). Determines how the effect interacts with the underlying image.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorParaffin Radiation - CenterPos",
-      "Name": "ColorParaffin Radiation - CenterPos",
-      "Description": "",
+      "Name": "Radiation: Center Position",
+      "Description": "Screen-space position (typically normalized coordinates) defining the center of the radial effect.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorParaffin Radiation - Radius",
-      "Name": "ColorParaffin Radiation - Radius",
-      "Description": "",
+      "Name": "Radiation: Radius",
+      "Description": "Radius of the radial effect from the center point. Determines how far the color transition extends across the screen.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorParaffin Radiation - StartColor",
-      "Name": "ColorParaffin Radiation - StartColor",
-      "Description": "",
+      "Name": "Radiation: Start Color",
+      "Description": "Color applied at the center of the effect. Typically represents the strongest influence of the filter.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorParaffin Radiation - EndColor",
-      "Name": "ColorParaffin Radiation - EndColor",
-      "Description": "",
+      "Name": "Radiation: End Color",
+      "Description": "Color at the outer edge of the effect radius. Defines how the filter fades out toward the screen edges.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorParaffin Radiation - Curvature",
-      "Name": "ColorParaffin Radiation - Curvature",
-      "Description": "",
+      "Name": "Radiation: Curvature",
+      "Description": "Controls the falloff curve of the radial gradient. Higher values produce a sharper transition, while lower values create a smoother gradient.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

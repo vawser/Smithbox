@@ -1,308 +1,308 @@
 {
   "ID": "SeaWave:Editor",
-  "Name": "SeaWave:Editor",
-  "Description": "",
+  "Name": "Sea Waves",
+  "Description": "Controls a procedural sea/ocean surface simulation, including wave generation, choppiness, shading, reflection, and simulation timing behavior.",
   "Fields": [
     {
       "ID": "Sea Wave BubbleTex: Id",
-      "Name": "Sea Wave BubbleTex: Id",
-      "Description": "",
+      "Name": "Bubble Diffuse Texture ID",
+      "Description": "Texture ID for the diffuse appearance of sea foam and surface bubbles used in wave interaction visuals.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave BubbleMask: Id",
-      "Name": "Sea Wave BubbleMask: Id",
-      "Description": "",
+      "Name": "Bubble Mask Texture ID",
+      "Description": "Texture ID defining where foam/bubbles are visible, typically controlling placement and masking of foam effects.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Normal: Id",
-      "Name": "Sea Wave Normal: Id",
-      "Description": "",
+      "Name": "Normal Texture ID",
+      "Description": "Normal map used to simulate small surface wave detail and fine water surface perturbations.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Light: Id",
-      "Name": "Sea Wave Light: Id",
-      "Description": "",
+      "Name": "Light ID",
+      "Description": "Reference to the light source used for water shading and specular reflection calculations.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Time Rate",
-      "Name": "Sea Wave Time Rate",
-      "Description": "",
+      "Name": "Time Rate",
+      "Description": "Multiplier controlling the speed of wave animation and procedural time progression.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave  Enable",
-      "Name": "Sea Wave  Enable",
-      "Description": "",
+      "Name": "Enable Sea Waves",
+      "Description": "Enables or disables the procedural sea wave simulation.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Sea Wave Wave Angle",
-      "Name": "Sea Wave Wave Angle",
-      "Description": "",
+      "Name": "Wave Angle",
+      "Description": "Primary direction of wave propagation in degrees or radians depending on engine convention.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Wavelength Scale",
-      "Name": "Sea Wave Wavelength Scale",
-      "Description": "",
+      "Name": "Wavelength Scale",
+      "Description": "Scales the size of waves, affecting distance between wave crests.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Amplitude Scale",
-      "Name": "Sea Wave Amplitude Scale",
-      "Description": "",
+      "Name": "Amplitude Scale",
+      "Description": "Controls wave height, increasing or decreasing overall wave intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave  Enable Choppy",
-      "Name": "Sea Wave  Enable Choppy",
-      "Description": "",
+      "Name": "Enable Choppy Waves",
+      "Description": "Enables sharper, more physically detailed wave peaks instead of smooth sinusoidal waves.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Sea Wave WindAng",
-      "Name": "Sea Wave WindAng",
-      "Description": "",
+      "Name": "Wind Angle",
+      "Description": "Direction of wind influencing wave direction and secondary wave behavior.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave WindSpeed",
-      "Name": "Sea Wave WindSpeed",
-      "Description": "",
+      "Name": "Wind Speed",
+      "Description": "Strength of wind affecting wave energy, scale, and motion intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave WaveAmp",
-      "Name": "Sea Wave WaveAmp",
-      "Description": "",
+      "Name": "Wave Amplitude",
+      "Description": "Base amplitude of waves before additional scaling factors are applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave WaveNumberCoef",
-      "Name": "Sea Wave WaveNumberCoef",
-      "Description": "",
+      "Name": "Wave Number Coefficient",
+      "Description": "Coefficient controlling wave frequency distribution and overall wave density.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Blend Begin Depth",
-      "Name": "Sea Wave Blend Begin Depth",
-      "Description": "",
+      "Name": "Blend Begin Depth",
+      "Description": "Depth at which surface wave blending with underwater visuals begins.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Blend End Depth",
-      "Name": "Sea Wave Blend End Depth",
-      "Description": "",
+      "Name": "Blend End Depth",
+      "Description": "Depth at which full underwater blending is applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Reflection Max",
-      "Name": "Sea Wave Reflection Max",
-      "Description": "",
+      "Name": "Reflection Maximum",
+      "Description": "Maximum reflection intensity for water surface specular reflections.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Reflection Min",
-      "Name": "Sea Wave Reflection Min",
-      "Description": "",
+      "Name": "Reflection Minimum",
+      "Description": "Minimum reflection intensity used at grazing or low-reflectivity angles.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Reflectance",
-      "Name": "Sea Wave Reflectance",
-      "Description": "",
+      "Name": "Reflectance",
+      "Description": "Overall reflectivity of the water surface controlling how strongly it mirrors the environment.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Shininess",
-      "Name": "Sea Wave Shininess",
-      "Description": "",
+      "Name": "Shininess",
+      "Description": "Controls specular highlight sharpness on the water surface.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Reflection Distortion Scale(near)",
-      "Name": "Sea Wave Reflection Distortion Scale(near)",
-      "Description": "",
+      "Name": "Reflection Distortion Scale: Near",
+      "Description": "Amount of distortion applied to reflections at close viewing distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Reflection Distortion Scale(far)",
-      "Name": "Sea Wave Reflection Distortion Scale(far)",
-      "Description": "",
+      "Name": "Reflection Distortion Scale: Far",
+      "Description": "Amount of distortion applied to reflections at distant viewing ranges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave FFT Tex Tiling Size",
-      "Name": "Sea Wave FFT Tex Tiling Size",
-      "Description": "",
+      "Name": "FFT Texture Tiling Size",
+      "Description": "Controls tiling scale of FFT-based wave simulation textures.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave BumpMap Tiling Size",
-      "Name": "Sea Wave BumpMap Tiling Size",
-      "Description": "",
+      "Name": "Bump Map Tiling Size",
+      "Description": "Tiling scale of bump maps used for fine surface detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Basis Height",
-      "Name": "Sea Wave Basis Height",
-      "Description": "",
+      "Name": "Basis Height",
+      "Description": "Base sea level height used as reference for wave displacement.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Depth Limit",
-      "Name": "Sea Wave Depth Limit",
-      "Description": "",
+      "Name": "Depth Limit",
+      "Description": "Maximum depth used for depth-based blending and shading transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Area Max",
-      "Name": "Sea Wave Area Max",
-      "Description": "",
+      "Name": "Area Max",
+      "Description": "Defines maximum area of influence for wave simulation or rendering bounds.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Transparent Depth",
-      "Name": "Sea Wave Transparent Depth",
-      "Description": "",
+      "Name": "Transparent Depth",
+      "Description": "Depth threshold controlling water transparency and subsurface visibility.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Border Feed Depth",
-      "Name": "Sea Wave Border Feed Depth",
-      "Description": "",
+      "Name": "Border Feed Depth",
+      "Description": "Depth used to blend wave simulation at scene boundaries.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Border Bubble Depth",
-      "Name": "Sea Wave Border Bubble Depth",
-      "Description": "",
+      "Name": "Border Bubble Depth",
+      "Description": "Depth controlling where foam/bubbles appear near water edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Border Bubble Flat Scale",
-      "Name": "Sea Wave Border Bubble Flat Scale",
-      "Description": "",
+      "Name": "Border Bubble Flat Scale",
+      "Description": "Controls flattening and scaling of bubble effects near borders.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Border Wave Scale",
-      "Name": "Sea Wave Border Wave Scale",
-      "Description": "",
+      "Name": "Border Wave Scale",
+      "Description": "Adjusts wave intensity near scene boundaries.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Shallow Water",
-      "Name": "Sea Wave Shallow Water",
-      "Description": "",
+      "Name": "Shallow Water",
+      "Description": "Color tint applied to shallow water regions.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Deep Water",
-      "Name": "Sea Wave Deep Water",
-      "Description": "",
+      "Name": "Deep Water",
+      "Description": "Color tint applied to deep water regions.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sea Wave Use Inner Simulation Time",
-      "Name": "Sea Wave Use Inner Simulation Time",
-      "Description": "",
+      "Name": "Use Inner Simulation Time",
+      "Description": "Enables independent internal time step for wave simulation.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Sea Wave Enable Average Inner Simulation Time",
-      "Name": "Sea Wave Enable Average Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Average Inner Simulation Time",
+      "Description": "Smooths simulation timing by averaging internal time steps.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Sea Wave Enable Fixed Inner Simulation Time",
-      "Name": "Sea Wave Enable Fixed Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Fixed Inner Simulation Time",
+      "Description": "Locks simulation to a fixed timestep for deterministic wave behavior.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Sea Wave Fix Fps",
-      "Name": "Sea Wave Fix Fps",
-      "Description": "",
+      "Name": "Fixed FPS",
+      "Description": "Frame rate used when fixed simulation timing is enabled.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

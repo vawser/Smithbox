@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -29,52 +30,10 @@ public class GparamFileList
         // Files
         ImGui.BeginChild("GparamFileSection", ImGuiChildFlags.Borders);
 
-        for(int i = 0; i < Parent.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
-        {
-            var entry = Parent.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
-
-            var alias = AliasHelper.GetGparamAliasName(Parent.Project, entry.Key.Filename);
-
-            if (Parent.Filters.IsFileFilterMatch(entry.Key.Filename, alias))
-            {
-                ImGui.BeginGroup();
-
-                // File row
-                if (ImGui.Selectable($@" {entry.Key.Filename}", entry.Key.Filename == Parent.Selection._selectedGparamKey))
-                {
-                    Parent.Selection.SetFileSelection(entry.Key);
-                }
-
-                // Arrow Selection
-                if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamFile)
-                {
-                    Parent.Selection.SelectGparamFile = false;
-
-                    Parent.Selection.SetFileSelection(entry.Key);
-                }
-
-                if (ImGui.IsItemFocused())
-                {
-                    if (InputManager.HasArrowSelection())
-                    {
-                        Parent.Selection.SelectGparamFile = true;
-                    }
-                }
-
-                if (CFG.Current.GparamEditor_File_List_Display_Aliases)
-                {
-                    UIHelper.DisplayAlias(alias);
-                }
-
-                ImGui.EndGroup();
-            }
-
-            ContextMenu(entry.Key);
-        }
+        DisplayFileList();
 
         ImGui.EndChild();
     }
-
     public void DisplayHeader()
     {
         UIHelper.SimpleHeader("Files", "");
@@ -102,43 +61,100 @@ public class GparamFileList
         ImGui.EndChild();
     }
 
+    private void DisplayFileList()
+    {
+        for(int i = 0; i < Parent.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
+        {
+            var entry = Parent.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
+
+            DisplayFileSelectable(entry.Key, i);
+        }
+    }
+
+    private void DisplayFileSelectable(FileDictionaryEntry fileEntry, int index)
+    {
+        var alias = AliasHelper.GetGparamAliasName(Parent.Project, fileEntry.Filename);
+
+        if (!Parent.Filters.IsFileFilterMatch(fileEntry.Filename, alias))
+            return;
+
+        ImGui.BeginGroup();
+
+        // File row
+        if (ImGui.Selectable($@" {fileEntry.Filename}", fileEntry.Filename == Parent.Selection._selectedGparamKey))
+        {
+            Parent.Selection.SetFileSelection(fileEntry);
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamFile)
+        {
+            Parent.Selection.SelectGparamFile = false;
+
+            Parent.Selection.SetFileSelection(fileEntry);
+        }
+
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Parent.Selection.SelectGparamFile = true;
+            }
+        }
+
+        if (CFG.Current.GparamEditor_File_List_Display_Aliases)
+        {
+            UIHelper.DisplayAlias(alias);
+        }
+
+        ImGui.EndGroup();
+
+        ContextMenu(fileEntry);
+    }
+
     public void ContextMenu(FileDictionaryEntry entry)
     {
-        if (entry.Filename == Parent.Selection._selectedGparamKey)
+        var fileKey = Parent.Selection._selectedGparamKey;
+
+        if (entry.Filename != fileKey)
+            return;
+
+        if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
+            // Copy as
+            if(ImGui.BeginMenu("Copy As"))
             {
-                if(ImGui.BeginMenu("Copy As"))
-                {
-                    CopyAsMenu();
+                CopyAsMenu();
 
-                    ImGui.EndMenu();
-                }
-
-                if (IsDeletableGparamFile(entry))
-                {
-                    if (ImGui.Selectable("Delete"))
-                    {
-                        DeleteGparamFile(entry);
-                    }
-                    UIHelper.Tooltip("Will delete this GPARAM.");
-                }
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu("Quick Edit"))
-                {
-                    if (ImGui.Selectable("Target"))
-                    {
-                        Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
-                    }
-                    UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndPopup();
+                ImGui.EndMenu();
             }
+
+            // Delete
+            if (IsDeletableGparamFile(entry))
+            {
+                if (ImGui.Selectable("Delete"))
+                {
+                    DeleteGparamFile(entry);
+                }
+                UIHelper.Tooltip("Will delete this GPARAM.");
+            }
+
+            ImGui.Separator();
+
+            // Quick Edit
+            if (ImGui.BeginMenu("Quick Edit"))
+            {
+                // Target
+                if (ImGui.Selectable("Target"))
+                {
+                    Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
+                }
+                UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndPopup();
         }
     }
 

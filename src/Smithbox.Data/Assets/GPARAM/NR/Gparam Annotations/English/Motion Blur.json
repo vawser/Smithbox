@@ -1,95 +1,95 @@
 {
   "ID": "MotionBlur-Editor[Yebis]",
-  "Name": "MotionBlur-Editor[Yebis]",
-  "Description": "",
+  "Name": "Motion Blur",
+  "Description": "Applies screen-space motion blur based on camera and object velocity to simulate camera shutter exposure over time. Produces directional streaking and temporal blending to enhance motion realism or cinematic feel.",
   "Fields": [
     {
       "ID": "GSPresents-MotionBlur-Enable",
-      "Name": "GSPresents-MotionBlur-Enable",
-      "Description": "",
+      "Name": "Enable Motion Blur",
+      "Description": "Enables or disables the motion blur effect. When disabled, no velocity-based temporal smearing is applied.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "MotionBlur[GS Presents] Motion Blur Intensity",
-      "Name": "MotionBlur[GS Presents] Motion Blur Intensity",
-      "Description": "",
+      "Name": "Motion Blur Intensity",
+      "Description": "Controls the overall strength of motion blur. Higher values increase streak length and temporal blending of fast-moving objects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Blur Max Length",
-      "Name": "MotionBlur[GS Presents] Blur Max Length",
-      "Description": "",
+      "Name": "Blur Max Length",
+      "Description": "Maximum allowed screen-space length for motion blur streaks, limiting extreme velocity artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Shutter Speed",
-      "Name": "MotionBlur[GS Presents] Shutter Speed",
-      "Description": "",
+      "Name": "Shutter Speed",
+      "Description": "Simulates camera shutter exposure time. Slower shutter speeds increase motion blur strength, while faster speeds reduce it.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Sample Count",
-      "Name": "MotionBlur[GS Presents] Sample Count",
-      "Description": "",
+      "Name": "Sample Count",
+      "Description": "Number of samples taken along the motion vector. Higher values improve quality but increase performance cost.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Blur ReccurenceCount",
-      "Name": "MotionBlur[GS Presents] Blur ReccurenceCount",
-      "Description": "",
+      "Name": "Blur Reccurence Count",
+      "Description": "Number of iterative blur passes applied to simulate stronger temporal accumulation of motion trails.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Bidirectional Blur",
-      "Name": "MotionBlur[GS Presents] Bidirectional Blur",
-      "Description": "",
+      "Name": "Bidirectional Blur",
+      "Description": "Enables blur to be applied in both forward and backward motion directions, producing smoother and more symmetric streaking.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "MotionBlur[GS Presents] Blur Cutoff threshold in Pixel",
-      "Name": "MotionBlur[GS Presents] Blur Cutoff threshold in Pixel",
-      "Description": "",
+      "Name": "Blur Cutoff threshold in Pixel",
+      "Description": "Minimum motion length (in pixels) required for blur to be applied. Reduces unnecessary blur for very small movements.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GSPresents-MotionBlur-bInnerTime",
-      "Name": "GSPresents-MotionBlur-bInnerTime",
-      "Description": "",
+      "Name": "Enable Inner Simulation Time",
+      "Description": "Enables an internal simulation time step for motion blur evaluation, decoupled from frame time for stability.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
-      "Name": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Average Inner Simulation Time",
+      "Description": "Averages internal simulation timing across frames to reduce jitter in motion blur accumulation.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
-      "Name": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Fixed Inner Simulation Time",
+      "Description": "Uses a fixed timestep for motion blur simulation to ensure deterministic and stable blur behavior.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }

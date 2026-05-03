@@ -1,276 +1,276 @@
 {
   "ID": "Tone Map[Yebis]",
-  "Name": "Tone Map[Yebis]",
-  "Description": "",
+  "Name": "Tone Map",
+  "Description": "Covers parameters relating to the scene tonemapper.",
   "Fields": [
     {
       "ID": "GS Presents - ToneMap-Exposure",
-      "Name": "GS Presents - ToneMap-Exposure",
-      "Description": "",
+      "Name": "Exposure",
+      "Description": "Controls overall scene brightness before tone mapping is applied, simulating camera exposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-ToneMapMode",
-      "Name": "GS Presents - ToneMap-ToneMapMode",
-      "Description": "",
+      "Name": "Tone Map Mode",
+      "Description": "Selects the tone mapping algorithm used to convert HDR values into displayable color range.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Contrast",
-      "Name": "GS Presents - ToneMap-Contrast",
-      "Description": "",
+      "Name": "Contrast",
+      "Description": "Adjusts overall image contrast after tone mapping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-ReinhardContrast",
-      "Name": "GS Presents - ToneMap-ReinhardContrast",
-      "Description": "",
+      "Name": "Reinhard Contrast",
+      "Description": "Controls contrast shaping specifically for the Reinhard tone mapping operator.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-ReinhardWhiteBalance",
-      "Name": "GS Presents - ToneMap-ReinhardWhiteBalance",
-      "Description": "",
+      "Name": "Reinhard White Balance",
+      "Description": "Defines the white point used in Reinhard tone mapping to control highlight compression.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Enable AutoExposure",
-      "Name": "GS Presents - ToneMap-Enable AutoExposure",
-      "Description": "",
+      "Name": "Enable Auto Exposure",
+      "Description": "Enables automatic exposure adjustment based on scene brightness over time.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
-      "Name": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
-      "Description": "",
+      "Name": "Auto Exposure: Light Adaptation Speed",
+      "Description": "Controls how quickly exposure adapts to brightening scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
-      "Name": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
-      "Description": "",
+      "Name": "Auto Exposure: Dark Adaptation Speed",
+      "Description": "Controls how quickly exposure adapts to darker scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Middle Gray",
-      "Name": "GS Presents - ToneMap-AutoExposure Middle Gray",
-      "Description": "",
+      "Name": "Auto Exposure: Middle Gray",
+      "Description": "Defines the reference luminance level considered neutral gray for exposure calculation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Center Weight",
-      "Name": "GS Presents - ToneMap-AutoExposure Center Weight",
-      "Description": "",
+      "Name": "Auto Exposure: Center Weight",
+      "Description": "Weights exposure calculation toward the center of the screen.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Adaption Max",
-      "Name": "GS Presents - ToneMap-AutoExposure Adaption Max",
-      "Description": "",
+      "Name": "Auto Exposure: Adaption Maximum",
+      "Description": "Upper limit for auto exposure adjustment to prevent overexposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Adaption Min",
-      "Name": "GS Presents - ToneMap-AutoExposure Adaption Min",
-      "Description": "",
+      "Name": "Auto Exposure: Adaption Minimum",
+      "Description": "Lower limit for auto exposure adjustment to prevent underexposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-FreezeAdaptionFade",
-      "Name": "GS Presents - ToneMap-FreezeAdaptionFade",
-      "Description": "",
+      "Name": "Freeze Adaptation Fade",
+      "Description": "Controls whether exposure adaptation transitions smoothly when frozen or locked.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Enable Local Exposure",
-      "Name": "GS Presents - ToneMap LocalExposure Enable Local Exposure",
-      "Description": "",
+      "Name": "Enable Local Exposure",
+      "Description": "Enables localized exposure adjustment, allowing different regions of the image to adapt exposure independently.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Local Exposure Middle Offset",
-      "Name": "GS Presents - ToneMap LocalExposure Local Exposure Middle Offset",
-      "Description": "",
+      "Name": "Local Exposure: Middle Offset",
+      "Description": "Offsets the midtone exposure level used in local exposure calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Local Exposure Middle Range",
-      "Name": "GS Presents - ToneMap LocalExposure Local Exposure Middle Range",
-      "Description": "",
+      "Name": "Local Exposure: Middle Range",
+      "Description": "Defines the range of luminance values considered midtones for local exposure adjustment.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Local Exposure Middle Contrast",
-      "Name": "GS Presents - ToneMap LocalExposure Local Exposure Middle Contrast",
-      "Description": "",
+      "Name": "Local Exposure: Middle Contrast",
+      "Description": "Controls contrast applied specifically to midtone regions during local exposure processing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Local Exposure Highlight",
-      "Name": "GS Presents - ToneMap LocalExposure Local Exposure Highlight",
-      "Description": "",
+      "Name": "Local Exposure: Highlight",
+      "Description": "Adjusts exposure scaling applied to bright regions to preserve highlight detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap LocalExposure Local Exposure Shadow",
-      "Name": "GS Presents - ToneMap LocalExposure Local Exposure Shadow",
-      "Description": "",
+      "Name": "Local Exposure: Shadow",
+      "Description": "Adjusts exposure scaling applied to dark regions to improve shadow visibility.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Chromatic Aberration Enable",
-      "Name": "GS Presents - Chromatic Aberration Enable",
-      "Description": "",
+      "Name": "Enable Chromatic Aberration",
+      "Description": "Enables lens-based color separation at image edges for a stylized optical effect.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - ToneLateralDispersion[0]",
-      "Name": "GS Presents - ToneLateralDispersion[0]",
-      "Description": "",
+      "Name": "Tone Lateral Dispersion: 0",
+      "Description": "Controls the first channel offset used in chromatic lateral dispersion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneLateralDispersion[1]",
-      "Name": "GS Presents - ToneLateralDispersion[1]",
-      "Description": "",
+      "Name": "Tone Lateral Dispersion: 1",
+      "Description": "Controls the second channel offset used in chromatic lateral dispersion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting Power",
-      "Name": "GS Presents - Vignetting Power",
-      "Description": "",
+      "Name": "Vignetting Power",
+      "Description": "Controls the strength of darkening toward the screen edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting Range",
-      "Name": "GS Presents - Vignetting Range",
-      "Description": "",
+      "Name": "Vignetting Range",
+      "Description": "Defines how far from the center vignetting begins to affect the image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting Shape",
-      "Name": "GS Presents - Vignetting Shape",
-      "Description": "",
+      "Name": "Vignetting Shape",
+      "Description": "Controls the falloff shape of the vignette effect (circular, elliptical, etc.).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting Fov Dependence",
-      "Name": "GS Presents - Vignetting Fov Dependence",
-      "Description": "",
+      "Name": "Vignetting FOV Dependence",
+      "Description": "Adjusts vignette strength based on camera field of view.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting AspectTrackingMax",
-      "Name": "GS Presents - Vignetting AspectTrackingMax",
-      "Description": "",
+      "Name": "Vignetting Aspect Tracking Maximum",
+      "Description": "Limits how strongly the vignette adapts to changes in screen aspect ratio.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Vignetting Color",
-      "Name": "GS Presents - Vignetting Color",
-      "Description": "",
+      "Name": "Vignetting Color",
+      "Description": "Specifies the color tint applied to the vignette effect around the image edges.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ColorH",
-      "Name": "GS Presents - ColorH",
-      "Description": "",
+      "Name": "Color Grading: Hue",
+      "Description": "Shifts the overall hue of the final image color grading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ColorS",
-      "Name": "GS Presents - ColorS",
-      "Description": "",
+      "Name": "Color Grading: Saturation",
+      "Description": "Adjusts the intensity of colors in the final graded image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Tone Map Color Grading ColorShift",
-      "Name": "Tone Map Color Grading ColorShift",
-      "Description": "",
+      "Name": "Color Grading: Shift",
+      "Description": "Offsets color channels to achieve stylized grading or tinting effects.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Tone Map Color Grading ColorScale",
-      "Name": "Tone Map Color Grading ColorScale",
-      "Description": "",
+      "Name": "Color Grading: Scale",
+      "Description": "Scales individual color channels for fine-tuned color grading control.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ColorV",
-      "Name": "GS Presents - ColorV",
-      "Description": "",
+      "Name": "Color Grading: Value",
+      "Description": "Adjusts overall brightness/value component of the color grading process.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Contrast",
-      "Name": "GS Presents - Contrast",
-      "Description": "",
+      "Name": "Final Contrast",
+      "Description": "Final contrast adjustment applied after tone mapping and color grading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

@@ -6,11 +6,11 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamValueChangeAction : EditorAction
+public class EditValueAction : EditorAction
 {
     private readonly List<GparamValueChange> Changes = new();
 
-    public GparamValueChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
+    public EditValueAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
     {
         var change = new GparamValueChange();
         change.Index = index;

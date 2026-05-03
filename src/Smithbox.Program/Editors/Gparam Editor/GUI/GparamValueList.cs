@@ -31,96 +31,10 @@ public class GparamValueList
         // Values
         ImGui.BeginChild("valueListTable", ImGuiChildFlags.Borders);
 
-        if (Parent.Selection.IsGparamFieldSelected())
-        {
-            GPARAM.IField field = Parent.Selection.GetSelectedGparamField();
-
-            ResetDisplayTruth(field);
-
-            var columnCount = 2;
-
-            if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
-                columnCount++;
-
-            if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
-                columnCount++;
-
-            ImGui.Columns(columnCount);
-
-            // ID
-            ImGui.BeginChild("IdList##GparamPropertyIds");
-            UIHelper.SimpleHeader("ID", "");
-
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = field.Values[i];
-
-                displayTruth[i] = Parent.Filters.IsFieldValueFilterMatch(entry.ID.ToString(), "");
-
-                if (displayTruth[i])
-                {
-                    GparamProperty_ID(i, field, entry);
-                }
-            }
-
-            ImGui.EndChild();
-
-            if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
-            {
-                ImGui.NextColumn();
-
-                // Time of Day
-                ImGui.BeginChild("IdList##GparamTimeOfDay");
-                UIHelper.SimpleHeader("Time of Day", "");
-
-                for (int i = 0; i < field.Values.Count; i++)
-                {
-                    if (displayTruth[i])
-                    {
-                        GPARAM.IFieldValue entry = field.Values[i];
-                        GparamProperty_TimeOfDay(i, field, entry);
-                    }
-                }
-
-                ImGui.EndChild();
-            }
-
-            ImGui.NextColumn();
-
-            // Value
-            ImGui.BeginChild("ValueList##GparamPropertyValues");
-            UIHelper.SimpleHeader("Value", "");
-
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                if (displayTruth[i])
-                {
-                    GPARAM.IFieldValue entry = field.Values[i];
-                    GparamProperty_Value(i, field, entry);
-                }
-            }
-
-            ImGui.EndChild();
-
-            // Information
-            if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
-            {
-                ImGui.NextColumn();
-
-                // Value
-                ImGui.BeginChild("InfoList##GparamPropertyInfo");
-                UIHelper.SimpleHeader("Information", "");
-
-                // Only show once
-                GparamProperty_Info(field);
-
-                ImGui.EndChild();
-            }
-        }
+        DisplayValueTable();
 
         ImGui.EndChild();
     }
-
     public void DisplayHeader()
     {
         UIHelper.SimpleHeader("Values", "");
@@ -164,101 +78,154 @@ public class GparamValueList
         ImGui.EndChild();
 
     }
-
-    /// <summary>
-    /// Reset the Values display truth list
-    /// </summary>
-    /// <param name="field"></param>
-    public void ResetDisplayTruth(IField field)
+    private void DisplayValueTable()
     {
-        displayTruth = new bool[field.Values.Count];
+        if (!Parent.Selection.IsGparamFieldSelected())
+            return;
+
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+        var field = Parent.Selection.GetSelectedField();
+
+        if (data == null)
+            return;
+
+        if (group == null)
+            return;
+
+        if (field == null)
+            return;
+
+        ResetDisplayTruth(field);
+
+        var columnCount = 2;
+
+        if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
+            columnCount++;
+
+        if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
+            columnCount++;
+
+        ImGui.Columns(columnCount);
+
+        DisplayColumn_ID(data, group, field);
+        DisplayColumn_TimeOfDay(data, group, field);
+        DisplayColumn_Value(data, group, field);
+        DisplayColumn_Info(data, group, field);
+
+        ImGui.Columns(1);
+    }
+
+    // ID
+    private void DisplayColumn_ID(GPARAM data, GPARAM.Param group, IField field)
+    {
+        ImGui.BeginChild("GparamPropList_ID");
+        UIHelper.SimpleHeader("ID", "");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
-            displayTruth[i] = true;
+            var value = field.Values[i];
+
+            displayTruth[i] = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+
+            if (displayTruth[i])
+            {
+                GparamProperty_ID(data, group, field, value, i);
+            }
         }
+
+        ImGui.EndChild();
     }
-
-    /// <summary>
-    /// Extend the Values display truth list in preparation for value row addition.
-    /// </summary>
-    /// <param name="field"></param>
-    public void ExtendDisplayTruth(IField field)
+    public void GparamProperty_ID(GPARAM data, GPARAM.Param group, 
+        IField field, IFieldValue value, int index)
     {
-        displayTruth = new bool[field.Values.Count + 1];
-
-        for (int i = 0; i < field.Values.Count + 1; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-    /// <summary>
-    /// REduce the Values display truth list in preparation for value row removal.
-    /// </summary>
-    /// <param name="field"></param>
-    public void ReduceDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count + -1];
-
-        for (int i = 0; i < field.Values.Count + -1; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-
-    /// <summary>
-    /// Values table: ID column
-    /// </summary>
-    /// <param name="index"></param>
-    /// <param name="field"></param>
-    /// <param name="value"></param>
-    public void GparamProperty_ID(int index, IField field, IFieldValue value)
-    {
-        ImGui.AlignTextToFramePadding();
+        var isSelected = index == Parent.Selection._selectedFieldValueIndex;
 
         string name = value.ID.ToString();
 
-        if (ImGui.Selectable($"{name}##{index}", index == Parent.Selection._selectedFieldValueKey))
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Selectable($"{name}##{index}", isSelected))
         {
             Parent.Selection.SetGparamFieldValue(index, value);
         }
 
-        Parent.ContextMenu.FieldValueContextMenu(index);
+        ContextMenu(data, group, field, value, index);
     }
 
-    /// <summary>
-    /// Values table: Time of Day column
-    /// </summary>
-    /// <param name="index"></param>
-    /// <param name="field"></param>
-    /// <param name="value"></param>
+    // Time of Day
+    private void DisplayColumn_TimeOfDay(GPARAM data, GPARAM.Param group, IField field)
+    {
+        if (!CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
+            return;
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("GparamPropList_TimeOfDay");
+        UIHelper.SimpleHeader("Time of Day", "");
+
+        for (int i = 0; i < field.Values.Count; i++)
+        {
+            if (displayTruth[i])
+            {
+                var entry = field.Values[i];
+                GparamProperty_TimeOfDay(i, field, entry);
+            }
+        }
+
+        ImGui.EndChild();
+    }
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
         Parent.PropertyEditor.TimeOfDayField(index, field, value);
     }
 
-    /// <summary>
-    /// Values table: Value column
-    /// </summary>
-    /// <param name="index"></param>
-    /// <param name="field"></param>
-    /// <param name="value"></param>
+    // Value
+    private void DisplayColumn_Value(GPARAM data, GPARAM.Param group, IField field)
+    {
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("GparamPropList_Value");
+        UIHelper.SimpleHeader("Value", "");
+
+        for (int i = 0; i < field.Values.Count; i++)
+        {
+            if (displayTruth[i])
+            {
+                var entry = field.Values[i];
+                GparamProperty_Value(i, field, entry);
+            }
+        }
+
+        ImGui.EndChild();
+    }
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
         Parent.PropertyEditor.ValueField(index, field, value);
     }
 
-    /// <summary>
-    /// Values table: Information column
-    /// </summary>
-    /// <param name="field"></param>
+    // Information
+    private void DisplayColumn_Info(GPARAM data, GPARAM.Param group, IField field)
+    {
+        if (!CFG.Current.GparamEditor_Value_List_Display_Information_Column)
+            return;
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("GparamPropList_Info");
+        UIHelper.SimpleHeader("Information", "");
+
+        GparamProperty_Info(field);
+
+        ImGui.EndChild();
+    }
+
     public void GparamProperty_Info(IField field)
     {
         ImGui.AlignTextToFramePadding();
 
-        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var groupId = Parent.Selection.GetSelectedGroup().Key;
         var fieldId = field.Key;
         var fieldDescription = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
@@ -281,7 +248,7 @@ public class GparamValueList
             {
                 var targetEnum = enums.FirstOrDefault(e => e.Key == fieldEnum);
 
-                foreach(var entry in targetEnum.Options)
+                foreach (var entry in targetEnum.Options)
                 {
                     var name = entry.Names.FirstOrDefault(e => e.Language == CFG.Current.GparamEditor_Annotation_Language);
 
@@ -297,6 +264,94 @@ public class GparamValueList
             }
         }
     }
+
+    public void ResetDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count];
+
+        for (int i = 0; i < field.Values.Count; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
+
+    public void ExtendDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count + 1];
+
+        for (int i = 0; i < field.Values.Count + 1; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
+
+    public void ReduceDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count + -1];
+
+        for (int i = 0; i < field.Values.Count + -1; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
+    public void ContextMenu(GPARAM data, GPARAM.Param group, IField field, IFieldValue value, int index)
+    {
+        var selectedField = Parent.Selection.GetSelectedField();
+        var selectedValue = Parent.Selection.GetSelectedValue();
+
+        if (index == Parent.Selection._selectedFieldValueIndex)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
+            {
+                if (ImGui.Selectable("Target in Quick Edit"))
+                {
+                    var fieldIndex = -1;
+                    for (int i = 0; i < selectedField.Values.Count; i++)
+                    {
+                        if (selectedField.Values[i] == selectedValue)
+                        {
+                            fieldIndex = i;
+                            break;
+                        }
+                    }
+
+                    if (fieldIndex != -1)
+                    {
+                        Parent.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
+                    }
+
+                    ImGui.CloseCurrentPopup();
+                }
+                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
+
+                if (ImGui.Selectable("Remove"))
+                {
+                    Parent.ActionHandler.DeleteValueRow();
+
+                    ImGui.CloseCurrentPopup();
+                }
+                UIHelper.Tooltip("Delete the value row.");
+
+                if (ImGui.Selectable("Duplicate"))
+                {
+                    Parent.ActionHandler.DuplicateValueRow();
+
+                    ImGui.CloseCurrentPopup();
+                }
+                UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+
+                ImGui.InputInt("##valueIdInput", ref Parent.Selection._duplicateValueRowId);
+
+                if (Parent.Selection._duplicateValueRowId < 0)
+                {
+                    Parent.Selection._duplicateValueRowId = 0;
+                }
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
 }
 
 

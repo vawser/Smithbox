@@ -1,140 +1,140 @@
 {
   "ID": "SSAO Editor",
-  "Name": "SSAO Editor",
-  "Description": "",
+  "Name": "Screen Space Ambient Occlusion",
+  "Description": "Covers parameters relating to Screen Space Ambient Occlusion.",
   "Fields": [
     {
       "ID": "SSAO - Edit-UseNormal",
-      "Name": "SSAO - Edit-UseNormal",
-      "Description": "",
+      "Name": "Use Normal",
+      "Description": "Enables the use of surface normals when calculating ambient occlusion for improved accuracy on edges and creases.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-UseReProj",
-      "Name": "SSAO - Edit-UseReProj",
-      "Description": "",
+      "Name": "Use Re-projection",
+      "Description": "Uses temporal reprojection to stabilize SSAO over time and reduce flickering between frames.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-PreventGhost",
-      "Name": "SSAO - Edit-PreventGhost",
-      "Description": "",
+      "Name": "Prevent Ghosting",
+      "Description": "Reduces temporal artifacts where previous-frame data incorrectly lingers in motion-heavy scenes.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-EnableUpScale",
-      "Name": "SSAO - Edit-EnableUpScale",
-      "Description": "",
+      "Name": "Enable Upscaling",
+      "Description": "Enables upscaling of SSAO from a lower internal resolution for improved performance.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-Ver2 Sample Offset",
-      "Name": "SSAO - Edit-Ver2 Sample Offset",
-      "Description": "",
+      "Name": "Sample Offset",
+      "Description": "Adjusts the sampling radius offset used when gathering occlusion samples around pixels.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 AO Scale",
-      "Name": "SSAO - Edit-Ver2 AO Scale",
-      "Description": "",
+      "Name": "Ambient Occlusion Scale",
+      "Description": "Controls the overall intensity of ambient occlusion shading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 AO Offset",
-      "Name": "SSAO - Edit-Ver2 AO Offset",
-      "Description": "",
+      "Name": "Ambient Occlusion Offset",
+      "Description": "Biases SSAO results to reduce overly dark or overly bright occlusion response.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
-      "Description": "",
+      "Name": "Kernel Scale Base Distance",
+      "Description": "Defines the reference distance at which SSAO sampling kernel scaling is centered.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Min",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Min",
-      "Description": "",
+      "Name": "Kernel Scale Minimum",
+      "Description": "Minimum allowed size of the SSAO sampling kernel at close distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Max",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Max",
-      "Description": "",
+      "Name": "Kernel Scale Maximum",
+      "Description": "Maximum allowed size of the SSAO sampling kernel at far distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrevFrame Strengh",
-      "Name": "SSAO - Edit-Ver2 PrevFrame Strengh",
-      "Description": "",
+      "Name": "Previous Frame Strengh",
+      "Description": "Controls how strongly previous-frame SSAO results influence the current frame for temporal stability.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 DepthFadeStart",
-      "Name": "SSAO - Edit-Ver2 DepthFadeStart",
-      "Description": "",
+      "Name": "Depth Fade Start",
+      "Description": "Distance at which SSAO begins fading out based on depth to reduce far-range artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 DepthFadeRange",
-      "Name": "SSAO - Edit-Ver2 DepthFadeRange",
-      "Description": "",
+      "Name": "Depth Fade Range",
+      "Description": "Range over which SSAO fades out with increasing depth.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrecisionDepth",
-      "Name": "SSAO - Edit-Ver2 PrecisionDepth",
-      "Description": "",
+      "Name": "Precision Depth",
+      "Description": "Improves depth buffer precision used in SSAO calculations to reduce banding and artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
-      "Name": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
-      "Description": "",
+      "Name": "Previous Frame Depth Aware",
+      "Description": "Enables depth-aware temporal accumulation to better reject mismatched history samples.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Depth Reject Rate",
-      "Name": "SSAO - Edit-Ver2 Depth Reject Rate",
-      "Description": "",
+      "Name": "Depth Reject Rate",
+      "Description": "Controls how aggressively outdated or mismatched depth samples are rejected in temporal SSAO.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Geom Bent Offset",
-      "Name": "SSAO - Edit-Ver2 Geom Bent Offset",
-      "Description": "",
+      "Name": "Geometry Bent Offset",
+      "Description": "Adjusts the bias applied to bent normals used for directional ambient occlusion shading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

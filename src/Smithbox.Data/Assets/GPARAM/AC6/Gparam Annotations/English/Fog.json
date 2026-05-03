@@ -1,76 +1,76 @@
 {
   "ID": "FogParamEditor",
-  "Name": "FogParamEditor",
-  "Description": "",
+  "Name": "Fog",
+  "Description": "Controls global atmospheric fog applied based on distance and height. Combines distance-based attenuation with height-dependent color blending to simulate realistic haze, mist, and atmospheric perspective.",
   "Fields": [
     {
       "ID": "Fog-Color",
-      "Name": "Fog-Color",
-      "Description": "",
+      "Name": "Color",
+      "Description": "Base fog color applied over distance. Represents the primary atmospheric tint seen at far distances.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-heightColor",
-      "Name": "Fog-heightColor",
-      "Description": "",
+      "Name": "Height Color",
+      "Description": "Fog color used for height-based blending. Typically differs from base color to simulate ground fog or atmospheric layering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-Dist",
-      "Name": "Fog-Dist",
-      "Description": "",
+      "Name": "Distance",
+      "Description": "Controls how quickly fog accumulates with distance from the camera. Higher values result in denser fog over shorter distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-heightDist",
-      "Name": "Fog-heightDist",
-      "Description": "",
+      "Name": "Height Distance",
+      "Description": "Controls how fog density changes with height. Determines how quickly fog fades or intensifies vertically.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-DistOffset",
-      "Name": "Fog-DistOffset",
-      "Description": "",
+      "Name": "Distance Offset",
+      "Description": "Offset applied to distance-based fog calculation, effectively shifting where fog begins relative to the camera.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-HeightOffset",
-      "Name": "Fog-HeightOffset",
-      "Description": "",
+      "Name": "Height Offset",
+      "Description": "Vertical offset applied to height-based fog calculations, allowing control over the base altitude of fog layers.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-heightFogIntencity",
-      "Name": "Fog-heightFogIntencity",
-      "Description": "",
+      "Name": "Height Fog Intensity",
+      "Description": "Strength of the height-based fog contribution. Higher values emphasize vertical fog layering effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-fogAlpha",
-      "Name": "Fog-fogAlpha",
-      "Description": "",
+      "Name": "Fog Alpha",
+      "Description": "Overall opacity of the fog effect. Controls how strongly fog blends over the scene.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Fog-fogContrast",
-      "Name": "Fog-fogContrast",
-      "Description": "",
+      "Name": "Fog Contrast",
+      "Description": "Adjusts contrast of the fog blending curve. Higher values create sharper transitions between clear and foggy regions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

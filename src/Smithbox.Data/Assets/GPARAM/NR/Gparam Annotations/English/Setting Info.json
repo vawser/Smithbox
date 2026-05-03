@@ -1,55 +1,55 @@
 {
   "ID": "Setting Info[Yebis]",
-  "Name": "Setting Info[Yebis]",
-  "Description": "",
+  "Name": "Setting Info",
+  "Description": "Global scene and rendering configuration parameters for environmental lighting, background color, and dynamic light collection used in post-processing and scene evaluation.",
   "Fields": [
     {
       "ID": "GS - BG Color-Data",
-      "Name": "GS - BG Color-Data",
-      "Description": "",
+      "Name": "Background Color Data",
+      "Description": "RGBA color used as the base background color for the scene or sky fallback in rendering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect- Auto Compute Enable",
-      "Name": "SceneSetting-  LightCollect- Auto Compute Enable",
-      "Description": "",
+      "Name": "Light Collection: Enable Auto Compute",
+      "Description": "Enables automatic gathering and evaluation of scene lights for post-processing and global illumination setup.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SceneSetting-  LightCollect- BaseDist",
-      "Name": "SceneSetting-  LightCollect- BaseDist",
-      "Description": "",
+      "Name": "Light Collection: Base Distance",
+      "Description": "Base radius used to determine which lights are included in the light collection system.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect-DistScaler",
-      "Name": "SceneSetting-  LightCollect-DistScaler",
-      "Description": "",
+      "Name": "Light Collection: Distance Scaler",
+      "Description": "Multiplier applied to light collection distance thresholds to expand or reduce light influence range.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect-DistMax",
-      "Name": "SceneSetting-  LightCollect-DistMax",
-      "Description": "",
+      "Name": "Light Collection: Maximum Distance",
+      "Description": "Maximum distance at which lights are considered for inclusion in scene lighting calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  ReflectScene Assign DynamicLight",
-      "Name": "SceneSetting-  ReflectScene Assign DynamicLight",
-      "Description": "",
+      "Name": "Reflect Scene: Assign Dynamic Light",
+      "Description": "Enables dynamic lights to be included in reflection rendering for more accurate reflective surfaces.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }

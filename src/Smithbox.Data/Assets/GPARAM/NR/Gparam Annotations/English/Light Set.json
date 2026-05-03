@@ -1,212 +1,212 @@
 {
   "ID": "LightSet ParamEditor",
-  "Name": "LightSet ParamEditor",
-  "Description": "",
+  "Name": "Light Set",
+  "Description": "Defines a collection of directional, local, and hemispheric lighting parameters used to construct the scene's direct and indirect lighting model. Supports multiple light slots with independent color, direction, and shading behavior, as well as SSAO and mask-based influence controls.",
   "Fields": [
     {
       "ID": "Directional Light Angle0",
-      "Name": "Directional Light Angle0",
-      "Description": "",
+      "Name": "Directional Light: Angle: 0",
+      "Description": "Direction of the first directional light, typically defined as azimuth and elevation angles for sun-like lighting.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light DiffColor0",
-      "Name": "Directional Light DiffColor0",
-      "Description": "",
+      "Name": "Directional Light: Diffuse Color: 0",
+      "Description": "Diffuse (Lambertian) color contribution of directional light 0, controlling base surface illumination.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SpecColor0",
-      "Name": "Directional Light SpecColor0",
-      "Description": "",
+      "Name": "Directional Light: Specular Color: 0",
+      "Description": "Specular highlight color for directional light 0, affecting reflected light intensity and tint.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light Sharpness0",
-      "Name": "Directional Light Sharpness0",
-      "Description": "",
+      "Name": "Directional Light: Sharpness: 0",
+      "Description": "Controls specular highlight tightness for directional light 0. Higher values produce sharper, more concentrated highlights.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SsaoWeight0",
-      "Name": "Directional Light SsaoWeight0",
-      "Description": "",
+      "Name": "Directional Light: SSAO Weight: 0",
+      "Description": "Scales how much screen-space ambient occlusion affects directional light 0's contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light Angle1",
-      "Name": "Directional Light Angle1",
-      "Description": "",
+      "Name": "Directional Light: Angle: 1",
+      "Description": "Direction of the second directional light, typically used for secondary sun or fill lighting.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light DiffColor1",
-      "Name": "Directional Light DiffColor1",
-      "Description": "",
+      "Name": "Directional Light: Diffuse Color: 1",
+      "Description": "Diffuse color contribution of directional light 1.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SpecColor1",
-      "Name": "Directional Light SpecColor1",
-      "Description": "",
+      "Name": "Directional Light: Specular Color: 1",
+      "Description": "Specular color contribution of directional light 1.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light Sharpness1",
-      "Name": "Directional Light Sharpness1",
-      "Description": "",
+      "Name": "Directional Light: Sharpness: 1",
+      "Description": "Specular sharpness control for directional light 1.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SsaoWeight1",
-      "Name": "Directional Light SsaoWeight1",
-      "Description": "",
+      "Name": "Directional Light: SSAO Weight: 1",
+      "Description": "SSAO influence factor for directional light 1.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight Angle1",
-      "Name": "Directional Light LocalLight Angle1",
-      "Description": "",
+      "Name": "Local Light: Angle: 1",
+      "Description": "Orientation of local light 1, typically defining spotlight or point-light directionality.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight DiffColor1",
-      "Name": "Directional Light LocalLight DiffColor1",
-      "Description": "",
+      "Name": "Local Light: Diffuse Color: 1",
+      "Description": "Diffuse contribution of local light 1.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight SpecColor1",
-      "Name": "Directional Light LocalLight SpecColor1",
-      "Description": "",
+      "Name": "Local Light: Specular Color: 1",
+      "Description": "Specular contribution of local light 1.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional LocalLight Light Sharpness1",
-      "Name": "Directional LocalLight Light Sharpness1",
-      "Description": "",
+      "Name": "Local Light: Sharpness: 1",
+      "Description": "Specular sharpness for local light 1, controlling highlight falloff.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SsaoWeight2",
-      "Name": "Directional Light SsaoWeight2",
-      "Description": "",
+      "Name": "Directional Light: SSAO Weight: 2",
+      "Description": "SSAO influence factor for directional light 2.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight Angle2",
-      "Name": "Directional Light LocalLight Angle2",
-      "Description": "",
+      "Name": "Local Light: Angle: 2",
+      "Description": "Orientation of local light 2.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight DiffColor2",
-      "Name": "Directional Light LocalLight DiffColor2",
-      "Description": "",
+      "Name": "Local Light: Diffuse Color: 2",
+      "Description": "Diffuse contribution of local light 2.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light LocalLight SpecColor2",
-      "Name": "Directional Light LocalLight SpecColor2",
-      "Description": "",
+      "Name": "Local Light: Specular Color: 2",
+      "Description": "Specular contribution of local light 2.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional LocalLight Light Sharpness2",
-      "Name": "Directional LocalLight Light Sharpness2",
-      "Description": "",
+      "Name": "Local Light: Sharpness: 2",
+      "Description": "Specular sharpness for local light 2.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light SsaoWeight3",
-      "Name": "Directional Light SsaoWeight3",
-      "Description": "",
+      "Name": "Directional Light: SSAO Weight: 3",
+      "Description": "SSAO influence factor for directional light 3.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light Hemi Color Up",
-      "Name": "Directional Light Hemi Color Up",
-      "Description": "",
+      "Name": "Directional Light: Hemisphere Color Up",
+      "Description": "Sky-facing hemisphere lighting color used for ambient gradient lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional Light Hemi Color Down",
-      "Name": "Directional Light Hemi Color Down",
-      "Description": "",
+      "Name": "Directional Light: Hemisphere Color Down",
+      "Description": "Ground-facing hemisphere lighting color used for ambient gradient lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Directional LightLight1 FollowedCamera",
-      "Name": "Directional LightLight1 FollowedCamera",
-      "Description": "",
+      "Name": "Light 1: Follow Camera",
+      "Description": "When enabled, light 1 orientation or position follows the camera, useful for view-relative lighting effects.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Directional Enable LocalLight1",
-      "Name": "Directional Enable LocalLight1",
-      "Description": "",
+      "Name": "Enable Local Light: 1",
+      "Description": "Enables or disables local light 1.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Directional Enable LocalLight2",
-      "Name": "Directional Enable LocalLight2",
-      "Description": "",
+      "Name": "Enable Local Light: 2",
+      "Description": "Enables or disables local light 2.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Directional Light  LightMask Influence",
-      "Name": "Directional Light  LightMask Influence",
-      "Description": "",
+      "Name": "Light Mask Influence",
+      "Description": "Controls how strongly light masking affects the final lighting contribution, allowing selective light attenuation or region-based lighting control.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

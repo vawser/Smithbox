@@ -420,7 +420,7 @@ namespace SoulsFormats
                 var newParam = new Param();
                 newParam.Key = Key;
                 newParam.Name = Name;
-                newParam.Comments = Comments;
+                newParam.Comments = new List<string>(Comments);
 
                 // Clone within
                 newParam.Fields = new();
@@ -442,8 +442,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is ShortField shortField)
+                    else if (entry is ShortField shortField)
                     {
                         var newField = new ShortField();
                         newField.Key = shortField.Key;
@@ -459,8 +458,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is IntField intField)
+                    else if (entry is IntField intField)
                     {
                         var newField = new IntField();
                         newField.Key = intField.Key;
@@ -476,8 +474,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is ByteField byteField)
+                    else if (entry is ByteField byteField)
                     {
                         var newField = new ByteField();
                         newField.Key = byteField.Key;
@@ -493,8 +490,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is UintField uintField)
+                    else if (entry is UintField uintField)
                     {
                         var newField = new UintField();
                         newField.Key = uintField.Key;
@@ -510,8 +506,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is FloatField floatField)
+                    else if (entry is FloatField floatField)
                     {
                         var newField = new FloatField();
                         newField.Key = floatField.Key;
@@ -527,8 +522,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is BoolField boolField)
+                    else if (entry is BoolField boolField)
                     {
                         var newField = new BoolField();
                         newField.Key = boolField.Key;
@@ -544,8 +538,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is Vector2Field vec2Field)
+                    else if (entry is Vector2Field vec2Field)
                     {
                         var newField = new Vector2Field();
                         newField.Key = vec2Field.Key;
@@ -561,8 +554,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is Vector3Field vec3Field)
+                    else if (entry is Vector3Field vec3Field)
                     {
                         var newField = new Vector3Field();
                         newField.Key = vec3Field.Key;
@@ -578,8 +570,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is Vector4Field vec4Field)
+                    else if (entry is Vector4Field vec4Field)
                     {
                         var newField = new Vector4Field();
                         newField.Key = vec4Field.Key;
@@ -595,8 +586,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is ColorField colorField)
+                    else if (entry is ColorField colorField)
                     {
                         var newField = new ColorField();
                         newField.Key = colorField.Key;
@@ -612,8 +602,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is LongField longField)
+                    else if (entry is LongField longField)
                     {
                         var newField = new LongField();
                         newField.Key = longField.Key;
@@ -629,8 +618,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is UshortField ushortField)
+                    else if (entry is UshortField ushortField)
                     {
                         var newField = new UshortField();
                         newField.Key = ushortField.Key;
@@ -646,8 +634,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is UlongField ulongField)
+                    else if (entry is UlongField ulongField)
                     {
                         var newField = new UlongField();
                         newField.Key = ulongField.Key;
@@ -663,8 +650,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is DoubleField doubleField)
+                    else if (entry is DoubleField doubleField)
                     {
                         var newField = new DoubleField();
                         newField.Key = doubleField.Key;
@@ -680,8 +666,7 @@ namespace SoulsFormats
 
                         newParam.Fields.Add(newField);
                     }
-
-                    if (entry is StringField stringField)
+                    else if (entry is StringField stringField)
                     {
                         var newField = new StringField();
                         newField.Key = stringField.Key;

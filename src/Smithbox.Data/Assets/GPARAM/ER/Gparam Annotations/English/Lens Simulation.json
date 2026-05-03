@@ -1,223 +1,223 @@
 {
   "ID": "[GS]Lens Simulation",
-  "Name": "[GS]Lens Simulation",
-  "Description": "",
+  "Name": "Lens Simulation",
+  "Description": "Simulates camera lens depth-of-field and optical blur using Circle of Confusion (CoC), aperture shaping, and near/far focus control. Supports physically-inspired parameters such as f-number, film size, and temporal stabilization for cinematic focus effects.",
   "Fields": [
     {
       "ID": "[GS]Lens Simulation Param  Enable",
-      "Name": "[GS]Lens Simulation Param  Enable",
-      "Description": "",
+      "Name": "Enable Lens Simultation",
+      "Description": "Enables or disables the full lens simulation system, including depth-of-field and optical blur effects.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param NearEnd",
-      "Name": "[GS]Lens Simulation Param NearEnd",
-      "Description": "",
+      "Name": "Near Focus: End Distance",
+      "Description": "End distance of the near focus range where objects begin transitioning into blur.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param NearStart",
-      "Name": "[GS]Lens Simulation Param NearStart",
-      "Description": "",
+      "Name": "Near Focus: Start Distance",
+      "Description": "Start distance for near-field depth-of-field transition. Objects closer than this are fully blurred.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param FarStart",
-      "Name": "[GS]Lens Simulation Param FarStart",
-      "Description": "",
+      "Name": "Far Focus: Start Distance",
+      "Description": "Start distance for far-field depth-of-field blur. Objects beyond this begin losing focus.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param FarEnd",
-      "Name": "[GS]Lens Simulation Param FarEnd",
-      "Description": "",
+      "Name": "Far Focus: End Distance",
+      "Description": "Maximum far blur distance where defocus reaches full intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param FocusDist",
-      "Name": "[GS]Lens Simulation Param FocusDist",
-      "Description": "",
+      "Name": "Focus Distance",
+      "Description": "Primary focus distance of the virtual camera. Objects at this depth appear sharp.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param UseCameraFocus",
-      "Name": "[GS]Lens Simulation Param UseCameraFocus",
-      "Description": "",
+      "Name": "Use Camera Focus",
+      "Description": "When enabled, the focus distance is automatically derived from the camera's internal focus system.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param SkyMaskRate",
-      "Name": "[GS]Lens Simulation Param SkyMaskRate",
-      "Description": "",
+      "Name": "Sky Mask Rate",
+      "Description": "Controls how strongly the sky is excluded or reduced from depth-of-field calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param Lens F",
-      "Name": "[GS]Lens Simulation Param Lens F",
-      "Description": "",
+      "Name": "Lens F-Number",
+      "Description": "Simulated camera aperture f-number. Lower values create stronger blur (shallow depth-of-field), higher values increase sharpness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param Av (絞り値)",
-      "Name": "[GS]Lens Simulation Param Av (絞り値)",
-      "Description": "",
+      "Name": "Aperture Value",
+      "Description": "Photographic aperture value controlling exposure and depth-of-field intensity in a logarithmic scale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param FilmSize(mm)",
-      "Name": "[GS]Lens Simulation Param FilmSize(mm)",
-      "Description": "",
+      "Name": "Film Size",
+      "Description": "Virtual sensor/film size in millimeters. Larger sensors produce shallower depth-of-field for the same aperture.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param LinearCoCFactorNear",
-      "Name": "[GS]Lens Simulation Param LinearCoCFactorNear",
-      "Description": "",
+      "Name": "Linear Circle of Confusion: Near Factor",
+      "Description": "Scaling factor for near-field circle of confusion size, controlling blur strength for objects closer than focus distance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param LinearCoCFactorFar",
-      "Name": "[GS]Lens Simulation Param LinearCoCFactorFar",
-      "Description": "",
+      "Name": "Linear Circle of Confusion: Far Factor",
+      "Description": "Scaling factor for far-field circle of confusion size, controlling blur strength for distant objects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param ApertureShape",
-      "Name": "[GS]Lens Simulation Param ApertureShape",
-      "Description": "",
+      "Name": "Aperture Shape",
+      "Description": "Defines the shape of the simulated lens aperture (e.g., circular, polygonal), affecting bokeh shape.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param DiaphragmRotate",
-      "Name": "[GS]Lens Simulation Param DiaphragmRotate",
-      "Description": "",
+      "Name": "Diaphragm Rotate",
+      "Description": "Rotation of the aperture blades, affecting the orientation of bokeh highlights.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param CoCBlurCountPreMask",
-      "Name": "[GS]Lens Simulation Param CoCBlurCountPreMask",
-      "Description": "",
+      "Name": "Circle of Confusion: Blur Count Pre-Mask",
+      "Description": "Number of blur samples applied before foreground/background masking is applied.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param CoCBlurCount(1)",
-      "Name": "[GS]Lens Simulation Param CoCBlurCount(1)",
-      "Description": "",
+      "Name": "Circle of Confusion: Blur Count 1",
+      "Description": "Primary blur pass sample count for CoC-based depth-of-field.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param CoCBlurCount(2)",
-      "Name": "[GS]Lens Simulation Param CoCBlurCount(2)",
-      "Description": "",
+      "Name": "Circle of Confusion: Blur Count 2",
+      "Description": "Secondary blur pass sample count for refined depth-of-field smoothing.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Lens Simulation Param MaxBlurLevel",
-      "Name": "Lens Simulation Param MaxBlurLevel",
-      "Description": "",
+      "Name": "Max Blur Level",
+      "Description": "Maximum blur intensity level allowed in the depth-of-field system.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param CoCMode",
-      "Name": "[GS]Lens Simulation Param CoCMode",
-      "Description": "",
+      "Name": "Circle of Confusion: Mode",
+      "Description": "Selects the method used to compute circle of confusion (linear, physically-based, or artistic approximation).",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "[GS]Lens Simulation Param NearCoCMode Linear",
-      "Name": "[GS]Lens Simulation Param NearCoCMode Linear",
-      "Description": "",
+      "Name": "Near Linear Circle of Confusion Mode",
+      "Description": "Determines whether near-field CoC is computed using a linear approximation.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param FarCoCMode Linear",
-      "Name": "[GS]Lens Simulation Param FarCoCMode Linear",
-      "Description": "",
+      "Name": "Far Linear Circle of Confusion Mode",
+      "Description": "Determines whether far-field CoC is computed using a linear approximation.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param HiResolutionBlur",
-      "Name": "[GS]Lens Simulation Param HiResolutionBlur",
-      "Description": "",
+      "Name": "High Resolution Blur",
+      "Description": "Enables high-quality blur sampling for improved bokeh and reduced artifacts at the cost of performance.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param NearFarSeparatedBlur",
-      "Name": "[GS]Lens Simulation Param NearFarSeparatedBlur",
-      "Description": "",
+      "Name": "Near-Far Separated Blur",
+      "Description": "Separates near-field and far-field blur passes for more accurate depth-of-field reconstruction.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param PreTempAA",
-      "Name": "[GS]Lens Simulation Param PreTempAA",
-      "Description": "",
+      "Name": "Before Temporal Anti-Alias",
+      "Description": "Determines whether lens blur is applied before temporal anti-aliasing to improve stability or after for sharper accumulation.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "[GS]Lens Simulation Param TemporalFeedbackWeight",
-      "Name": "[GS]Lens Simulation Param TemporalFeedbackWeight",
-      "Description": "",
+      "Name": "Temporal Feedback Weight",
+      "Description": "Controls temporal accumulation of blur across frames to stabilize depth-of-field over time.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Lens Simulation Param AffectedByTransparentDepth",
-      "Name": "Lens Simulation Param AffectedByTransparentDepth",
-      "Description": "",
+      "Name": "Affected by Transparent Depth",
+      "Description": "Determines whether transparent objects contribute to depth-of-field calculations.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }

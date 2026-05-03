@@ -4,7 +4,7 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamRemoveValueRow : EditorAction
+public class DeleteValueAction : EditorAction
 {
     private GparamEditorView Parent;
 
@@ -14,14 +14,14 @@ public class GparamRemoveValueRow : EditorAction
     private int RemovedRowID;
     private int RemovedRowIndex;
 
-    public GparamRemoveValueRow(GparamEditorView view)
+    public DeleteValueAction(GparamEditorView view)
     {
         Parent = view;
 
-        SelectedGPARAM = view.Selection._selectedGparam;
-        SelectedField = view.Selection._selectedParamField;
-        SelectedFieldValue = view.Selection._selectedFieldValue;
-        RemovedRowID = view.Selection._selectedFieldValue.ID;
+        SelectedGPARAM = view.Selection.GetSelectedGparam();
+        SelectedField = view.Selection.GetSelectedField();
+        SelectedFieldValue = view.Selection.GetSelectedValue();
+        RemovedRowID = SelectedFieldValue.ID;
     }
 
     public override ActionEvent Execute()

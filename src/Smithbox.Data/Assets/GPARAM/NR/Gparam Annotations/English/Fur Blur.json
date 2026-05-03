@@ -1,44 +1,44 @@
 {
   "ID": "FurBlur-Editor",
-  "Name": "FurBlur-Editor",
-  "Description": "",
+  "Name": "Fur Blur",
+  "Description": "Applies a directional blur to fur or hair rendering to simulate strand softness and reduce aliasing artifacts. Typically used in shell or card-based fur systems to improve visual density and realism.",
   "Fields": [
     {
       "ID": "FurBlur-Enable",
-      "Name": "FurBlur-Enable",
-      "Description": "",
+      "Name": "Enable Fur Blur",
+      "Description": "Enables or disables the fur blur effect. When disabled, fur strands remain sharp and unfiltered.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "FurBlur Fur Blur Intensity",
-      "Name": "FurBlur Fur Blur Intensity",
-      "Description": "",
+      "Name": "Fur Blur Intensity",
+      "Description": "Controls overall strength of the blur applied to fur strands. Higher values increase softness and reduce visible strand separation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FurBlur Blur Max Length",
-      "Name": "FurBlur Blur Max Length",
-      "Description": "",
+      "Name": "Blur Max Distance",
+      "Description": "Maximum distance over which fur pixels are sampled and blurred. Higher values create longer, more diffuse strand blending.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FurBlur Sample Count",
-      "Name": "FurBlur Sample Count",
-      "Description": "",
+      "Name": "Sample Count",
+      "Description": "Number of samples taken along the blur direction. Higher values improve quality but increase performance cost.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FurBlur Blur RecurrenceCount",
-      "Name": "FurBlur Blur RecurrenceCount",
-      "Description": "",
+      "Name": "Blur Pass Count",
+      "Description": "Number of iterative blur passes applied. Higher values simulate stronger diffusion and volumetric softness in fur shading.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false

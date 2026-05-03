@@ -47,7 +47,7 @@ public class GparamPropertyEditor
         object oldValue = null;
         object newValue = null;
 
-        var groupId = Parent.Selection.GetSelectedGparamGroup().Key;
+        var groupId = Parent.Selection.GetSelectedGroup().Key;
         var fieldId = field.Key;
         var isBool = GparamMetaUtils.IsFieldBoolean(Project, groupId, fieldId);
 
@@ -442,8 +442,8 @@ public class GparamPropertyEditor
                 }
                 else
                 {
-                    GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup, field, value, newValue, idx, ValueChangeType.Set);
+                    EditValueAction action = null;
+                    action = new EditValueAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroupKey, field, value, newValue, idx, ValueChangeType.Set);
 
                     Parent.ActionManager.ExecuteAction(action);
                 }
@@ -507,8 +507,8 @@ public class GparamPropertyEditor
                 }
                 else
                 {
-                    GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroup, field, value, newValue, idx);
+                    EditTimeOfDayAction action = null;
+                    action = new EditTimeOfDayAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroupKey, field, value, newValue, idx);
 
                     Parent.ActionManager.ExecuteAction(action);
                 }

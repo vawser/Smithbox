@@ -1,7 +1,7 @@
 {
   "ID": "Cloud Shadow:Editor",
-  "Name": "Cloud Shadow:Editor",
-  "Description": "",
+  "Name": "Cloud Shadow",
+  "Description": "Simulates large-scale cloud shadows projected onto the world using scrolling textures. Typically aligned with the directional light to create dynamic, moving shadow patterns that mimic passing clouds.",
   "IsObsolete": true,
   "Fields": []
 }

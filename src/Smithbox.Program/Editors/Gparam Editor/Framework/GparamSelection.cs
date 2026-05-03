@@ -15,14 +15,14 @@ public class GparamSelection
     public GPARAM _selectedGparam;
     public string _selectedGparamKey;
 
-    public string _selectedParamGroup;
-    public int _selectedParamGroupKey;
+    public string _selectedParamGroupKey;
+    public int _selectedParamGroupIndex;
 
-    public string _selectedParamField;
-    public int _selectedParamFieldKey;
+    public string _selectedParamFieldKey;
+    public int _selectedParamFieldIndex;
 
-    public int _selectedFieldValue;
     public int _selectedFieldValueKey;
+    public int _selectedFieldValueIndex;
 
     public int _duplicateValueRowId = 0;
 
@@ -48,6 +48,7 @@ public class GparamSelection
 
         return false;
     }
+
     public void ResetGparamFileSelection()
     {
         _selectedGparam = null;
@@ -56,20 +57,20 @@ public class GparamSelection
 
     public void ResetGparamGroupSelection()
     {
-        _selectedParamGroup = null;
-        _selectedParamGroupKey = -1;
+        _selectedParamGroupKey = null;
+        _selectedParamGroupIndex = -1;
     }
 
     public void ResetGparamFieldSelection()
     {
-        _selectedParamField = null;
-        _selectedParamFieldKey = -1;
+        _selectedParamFieldKey = null;
+        _selectedParamFieldIndex = -1;
     }
 
     public void ResetGparamFieldValueSelection()
     {
-        _selectedFieldValue = -1;
         _selectedFieldValueKey = -1;
+        _selectedFieldValueIndex = -1;
     }
 
     /// <summary>
@@ -109,7 +110,7 @@ public class GparamSelection
     /// </summary>
     public bool IsGparamGroupSelected()
     {
-        if (_selectedParamGroup != null && _selectedParamGroupKey != -1)
+        if (_selectedParamGroupKey != null && _selectedParamGroupIndex != -1)
         {
             return true;
         }
@@ -125,8 +126,8 @@ public class GparamSelection
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
 
-        _selectedParamGroup = entry.Key;
-        _selectedParamGroupKey = index;
+        _selectedParamGroupKey = entry.Key;
+        _selectedParamGroupIndex = index;
     }
 
     /// <summary>
@@ -134,7 +135,7 @@ public class GparamSelection
     /// </summary>
     public bool IsGparamFieldSelected()
     {
-        if (_selectedParamField != null && _selectedParamFieldKey != -1)
+        if (_selectedParamFieldKey != null && _selectedParamFieldIndex != -1)
         {
             return true;
         }
@@ -149,8 +150,8 @@ public class GparamSelection
     {
         ResetGparamFieldValueSelection();
 
-        _selectedParamField = entry.Key;
-        _selectedParamFieldKey = index;
+        _selectedParamFieldKey = entry.Key;
+        _selectedParamFieldIndex = index;
         Parent.QuickEditHandler.targetParamField = entry;
     }
 
@@ -159,7 +160,7 @@ public class GparamSelection
     /// </summary>
     public bool IsGparamFieldValueSelected()
     {
-        if (_selectedFieldValue != -1 && _selectedFieldValueKey != -1)
+        if (_selectedFieldValueKey != -1 && _selectedFieldValueIndex != -1)
         {
             return true;
         }
@@ -172,8 +173,8 @@ public class GparamSelection
     /// </summary>
     public void SetGparamFieldValue(int index, GPARAM.IFieldValue entry)
     {
-        _selectedFieldValue = entry.ID;
-        _selectedFieldValueKey = index;
+        _selectedFieldValueKey = entry.ID;
+        _selectedFieldValueIndex = index;
         _duplicateValueRowId = entry.ID;
     }
 
@@ -188,11 +189,11 @@ public class GparamSelection
     /// <summary>
     /// Get currently selected GPARAM.Param
     /// </summary>
-    public GPARAM.Param GetSelectedGparamGroup()
+    public GPARAM.Param GetSelectedGroup()
     {
-        if(_selectedGparam.Params.Any(e => e.Key == _selectedParamGroup))
+        if(_selectedGparam.Params.Any(e => e.Key == _selectedParamGroupKey))
         {
-            return _selectedGparam.Params.First(e => e.Key == _selectedParamGroup);
+            return _selectedGparam.Params.First(e => e.Key == _selectedParamGroupKey);
         }
 
         return null;
@@ -201,16 +202,16 @@ public class GparamSelection
     /// <summary>
     /// Get currently selected GPARAM.IField
     /// </summary>
-    public GPARAM.IField GetSelectedGparamField()
+    public GPARAM.IField GetSelectedField()
     {
-        var group = GetSelectedGparamGroup();
+        var group = GetSelectedGroup();
 
         if (group == null)
             return null;
 
-        if (group.Fields.Any(e => e.Key == _selectedParamField))
+        if (group.Fields.Any(e => e.Key == _selectedParamFieldKey))
         {
-            return group.Fields.First(e => e.Key == _selectedParamField);
+            return group.Fields.First(e => e.Key == _selectedParamFieldKey);
         }
 
         return null;
@@ -219,10 +220,10 @@ public class GparamSelection
     /// <summary>
     /// Get currently selected GPARAM.IFieldValue
     /// </summary>
-    public GPARAM.IFieldValue GetSelectedGparamFieldValue()
+    public GPARAM.IFieldValue GetSelectedValue()
     {
-        var group = GetSelectedGparamGroup();
-        var field = GetSelectedGparamField();
+        var group = GetSelectedGroup();
+        var field = GetSelectedField();
 
         if (group == null)
             return null;
@@ -230,9 +231,9 @@ public class GparamSelection
         if (field == null)
             return null;
         
-        if (field.Values.Any(e => e.ID == _selectedFieldValue))
+        if (field.Values.Any(e => e.ID == _selectedFieldValueKey))
         {
-            return field.Values.First(e => e.ID == _selectedFieldValue);
+            return field.Values.First(e => e.ID == _selectedFieldValueKey);
         }
 
         return null;

@@ -1,29 +1,15 @@
 #---------------------
 # TODO 
 #---------------------
-
-- Param Editor
- - Fix the FMG ref finder (the finder is inconsistent)
- 
 - Model Editor
  - Mesh visbility/delete not working properly
  
 - Material Editor:
  - Add MATBIN support back
  
-- Gparam Editor:
- - Add support for load/save for gparambnd files, which BB uses
- - Add json seralization for import/export
-
- - Fix edit/add/remove behavior
-  - Currently doesn't persist changes in saved file.
-  
- - Add proper group add menu that displays potential fields with tick toggles for which to add (in Group section)
- 
- - Add proper field add menu that displays which fields to add (in Fields section)
-
-- Finish converting the SDT AlternativeOrders into Field Layouts
-- Translate DS2 meta
+- Param Editor
+ - Finish converting the SDT AlternativeOrders into Field Layouts
+ - Translate DS2 meta
 
  CHR_MOVE_PARAM
  CHR_NETWORK_PHANTOM_PARAM
@@ -232,3 +218,10 @@
  WEAPON_STATS_AFFECT_PARAM
  
  WEAPON_STATS_AFFECT_PARAM
+ 
+- Gparam Editor:
+ - Add support for load/save for gparambnd files, which BB uses
+ - Add json seralization for import/export
+
+ - Fix edit/add/remove behavior
+  - Currently doesn't persist changes in saved file.

@@ -157,8 +157,6 @@ public static class GparamConstructUtils
 
             default: throw new Exception("Unknown gparam field type");
         }
-
-        return null;
     }
 
     public static SbyteField AddNewSbyteField(GparamAnnotationFieldEntry fieldEntry)

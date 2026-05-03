@@ -4,7 +4,7 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
-public class GparamDuplicateValueRow : EditorAction
+public class AddValueAction : EditorAction
 {
     private GparamEditorView Parent;
 
@@ -13,12 +13,12 @@ public class GparamDuplicateValueRow : EditorAction
     private IFieldValue SelectedFieldValue;
     private int NewRowID;
 
-    public GparamDuplicateValueRow(GparamEditorView view)
+    public AddValueAction(GparamEditorView view)
     {
         Parent = view;
-        SelectedGPARAM = view.Selection._selectedGparam;
-        SelectedField = view.Selection._selectedParamField;
-        SelectedFieldValue = view.Selection._selectedFieldValue;
+        SelectedGPARAM = view.Selection.GetSelectedGparam();
+        SelectedField = view.Selection.GetSelectedField();
+        SelectedFieldValue = view.Selection.GetSelectedValue();
         NewRowID = view.Selection._duplicateValueRowId;
     }
 

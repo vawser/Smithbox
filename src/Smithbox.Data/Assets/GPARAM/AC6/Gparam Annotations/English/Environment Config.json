@@ -1,36 +1,36 @@
 {
   "ID": "EnvironmentConfig ParamEditor",
-  "Name": "EnvironmentConfig ParamEditor",
-  "Description": "",
+  "Name": "Environment Config",
+  "Description": "Controls color transformation applied to the environment map used for image-based lighting (IBL). Allows artistic adjustment of reflection and ambient lighting contribution without modifying the source texture.",
   "Fields": [
     {
       "ID": "EnvironmentConfig EnvMapColorConvert Hue",
-      "Name": "EnvironmentConfig EnvMapColorConvert Hue",
-      "Description": "",
+      "Name": "Environment Map: Color Convert: Hue",
+      "Description": "Applies a hue rotation to the environment map colors, shifting all reflected and ambient lighting tones.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "EnvironmentConfig EnvMapColorConvert Saturate",
-      "Name": "EnvironmentConfig EnvMapColorConvert Saturate",
-      "Description": "",
+      "Name": "Environment Map: Color Convert: Saturate",
+      "Description": "Controls color saturation of the environment map. Higher values increase color intensity, while lower values desaturate toward grayscale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "EnvironmentConfig EnvMapColorConvert Shift",
-      "Name": "EnvironmentConfig EnvMapColorConvert Shift",
-      "Description": "",
+      "Name": "Environment Map: Color Convert: Shift",
+      "Description": "Per-channel additive color offset applied to the environment map (RGBA). Useful for fine-tuning color balance or introducing a global tint.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "EnvironmentConfig EnvMapColorConvert Scale",
-      "Name": "EnvironmentConfig EnvMapColorConvert Scale",
-      "Description": "",
+      "Name": "Environment Map: Color Convert: Scale",
+      "Description": "Per-channel multiplicative scale applied to the environment map (RGBA). Controls overall intensity and color weighting of reflected and ambient light.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false

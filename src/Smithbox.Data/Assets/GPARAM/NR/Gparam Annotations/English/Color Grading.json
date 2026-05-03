@@ -1,28 +1,28 @@
 {
   "ID": "ColorGrading[Yebis]",
-  "Name": "ColorGrading[Yebis]",
-  "Description": "",
+  "Name": "Color Grading",
+  "Description": "Applies color grading using lookup tables (LUTs) to remap scene colors for artistic or cinematic effects. Supports smooth transitions between grading profiles over time.",
   "Fields": [
     {
       "ID": "Yebis-ColorGrading-Enable",
-      "Name": "Yebis-ColorGrading-Enable",
-      "Description": "",
+      "Name": "Enable Color Grading",
+      "Description": "Enables or disables the color grading pass. When disabled, the scene is displayed without LUT-based color adjustments.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-LutSourceId",
-      "Name": "Yebis-LutSourceId",
-      "Description": "",
+      "Name": "LUT Source ID",
+      "Description": "Identifier of the color grading LUT texture. Defines the color transformation applied to the final image.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "ColorGrading FadeTime",
-      "Name": "ColorGrading FadeTime",
-      "Description": "",
+      "Name": "Fade Time",
+      "Description": "Duration (in seconds) over which the system blends from the current LUT to a new one, enabling smooth transitions between color grading presets.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

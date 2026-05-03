@@ -1,260 +1,260 @@
 {
   "ID": "Anti-Alias-Editor",
-  "Name": "Anti-Alias-Editor",
-  "Description": "",
+  "Name": "Anti-Aliasing",
+  "Description": "Controls anti-aliasing techniques including post-process edge smoothing (FXAA/DLAA) and temporal accumulation. Provides fine control over edge detection, temporal feedback, sharpening, and stability to balance image quality and performance.",
   "Fields": [
     {
       "ID": "Yebis-Anti-Alias Enable",
-      "Name": "Yebis-Anti-Alias Enable",
-      "Description": "",
+      "Name": "Enable Anti-Alias",
+      "Description": "Enables or disables the anti-aliasing system. When disabled, no edge smoothing or temporal accumulation is applied.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AntiAlias - AntiAliasType",
-      "Name": "AntiAlias - AntiAliasType",
-      "Description": "",
+      "Name": "Anti-Alias Type",
+      "Description": "Selects the anti-aliasing method. Determines which parameters are active.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - fFxaaAlpha",
-      "Name": "AntiAlias - fFxaaAlpha",
-      "Description": "",
+      "Name": "FXAA: Alpha",
+      "Description": "Controls blending strength of FXAA edge smoothing. Higher values increase smoothing but may blur fine detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaReduceMin",
-      "Name": "AntiAlias - FxaaReduceMin",
-      "Description": "",
+      "Name": "FXAA: Reduce Minimum",
+      "Description": "Minimum edge detection threshold for FXAA. Lower values make the filter more sensitive to subtle edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaReduceMul",
-      "Name": "AntiAlias - FxaaReduceMul",
-      "Description": "",
+      "Name": "FXAA: Reduce Multiplier",
+      "Description": "Multiplier controlling edge detection sensitivity. Higher values reduce over-blurring by limiting weak edge influence.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaSpanMax",
-      "Name": "AntiAlias - FxaaSpanMax",
-      "Description": "",
+      "Name": "FXAA: Span Max",
+      "Description": "Maximum sampling span for FXAA edge search. Higher values improve quality on large edges but increase cost.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaThreshold",
-      "Name": "AntiAlias - DlaaThreshold",
-      "Description": "",
+      "Name": "DLAA: Threshold",
+      "Description": "Edge detection threshold for DLAA. Determines how strong a contrast must be to be treated as an edge.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaRamda",
-      "Name": "AntiAlias - DlaaRamda",
-      "Description": "",
+      "Name": "DLAA: Smoothing Strength",
+      "Description": "Controls smoothing strength in DLAA. Higher values increase blending across detected edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaEpsilon",
-      "Name": "AntiAlias - DlaaEpsilon",
-      "Description": "",
+      "Name": "DLAA: Epsilon",
+      "Description": "Small bias value to stabilize DLAA edge detection and prevent noise or flickering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FeedbackWeight",
-      "Name": "AntiAlias - FeedbackWeight",
-      "Description": "",
+      "Name": "Feedback Weight",
+      "Description": "Base weight of previous frame contribution in temporal anti-aliasing. Higher values increase stability but can cause ghosting.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - JitterCount",
-      "Name": "AntiAlias - JitterCount",
-      "Description": "",
+      "Name": "Jitter Count",
+      "Description": "Number of subpixel jitter samples used in temporal anti-aliasing. Higher values improve convergence but may increase flicker.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - EnableDitherSwitch",
-      "Name": "AntiAlias - EnableDitherSwitch",
-      "Description": "",
+      "Name": "Enable Dither Switch",
+      "Description": "Enables dithering to reduce banding and improve perceived smoothness in low-contrast areas.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AntiAlias - EnableMotionVectorDilation",
-      "Name": "AntiAlias - EnableMotionVectorDilation",
-      "Description": "",
+      "Name": "Enable Motion Vector Dilation",
+      "Description": "Expands motion vectors into neighboring pixels to improve temporal reprojection stability, especially on thin geometry.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AntiAlias - SharpenIntensity",
-      "Name": "AntiAlias - SharpenIntensity",
-      "Description": "",
+      "Name": "Sharpen Intensity",
+      "Description": "Strength of sharpening applied after anti-aliasing to recover lost detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - SharpenRangeMin",
-      "Name": "AntiAlias - SharpenRangeMin",
-      "Description": "",
+      "Name": "Sharpen Range Minimum",
+      "Description": "Minimum luminance or contrast threshold for sharpening to take effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - SharpenRangeMax",
-      "Name": "AntiAlias - SharpenRangeMax",
-      "Description": "",
+      "Name": "Sharpen Range Maximum",
+      "Description": "Maximum luminance or contrast range for sharpening. Helps limit sharpening to appropriate detail levels.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - SubpixelFeedbackFactor",
-      "Name": "AntiAlias - SubpixelFeedbackFactor",
-      "Description": "",
+      "Name": "Subpixel Feedback Factor",
+      "Description": "Controls accumulation strength for subpixel details in temporal AA. Higher values improve fine detail stability.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - CBFeedbackWeightSampled",
-      "Name": "AntiAlias - CBFeedbackWeightSampled",
-      "Description": "",
+      "Name": "CB Feedback Weight Sampled",
+      "Description": "Weight applied to directly sampled history color during temporal blending.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - CBFeedbackWeightFiltered",
-      "Name": "AntiAlias - CBFeedbackWeightFiltered",
-      "Description": "",
+      "Name": "CB Feedback Weight Filtered",
+      "Description": "Weight applied to filtered or neighborhood-clamped history samples to reduce ghosting artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - EnableStencilMask",
-      "Name": "AntiAlias - EnableStencilMask",
-      "Description": "",
+      "Name": "Enable Stencil Mask",
+      "Description": "Restricts anti-aliasing to specific screen regions using the stencil buffer.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AntiAlias - RejectedPixelBlurIntensity",
-      "Name": "AntiAlias - RejectedPixelBlurIntensity",
-      "Description": "",
+      "Name": "Rejected Pixel Blur Intensity",
+      "Description": "Amount of blur applied to pixels rejected during temporal reprojection, helping hide discontinuities.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FeedbackWeightScale(None)",
-      "Name": "AntiAlias - FeedbackWeightScale(None)",
-      "Description": "",
+      "Name": "Feedback Weight Scale (None)",
+      "Description": "Scaling factor applied to feedback weight when no special condition (e.g., motion or depth change) is detected.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FeedbackWeightScale(0)",
-      "Name": "AntiAlias - FeedbackWeightScale(0)",
-      "Description": "",
+      "Name": "Feedback Weight Scale (0)",
+      "Description": "Feedback weight scaling for condition set 0 (typically low motion or stable pixels).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FeedbackWeightScale(1)",
-      "Name": "AntiAlias - FeedbackWeightScale(1)",
-      "Description": "",
+      "Name": "Feedback Weight Scale (1)",
+      "Description": "Feedback weight scaling for condition set 1 (moderate motion or variation).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FeedbackWeightScale(2)",
-      "Name": "AntiAlias - FeedbackWeightScale(2)",
-      "Description": "",
+      "Name": "Feedback Weight Scale (2)",
+      "Description": "Feedback weight scaling for condition set 2 (high motion or instability).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightCancelByDepth(0)",
-      "Name": "AntiAlias - FBWeightCancelByDepth(0)",
-      "Description": "",
+      "Name": "Feedback Weight Cancel By Depth (0)",
+      "Description": "Amount of temporal feedback reduction based on depth differences for condition set 0.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightCancelByDepth(1)",
-      "Name": "AntiAlias - FBWeightCancelByDepth(1)",
-      "Description": "",
+      "Name": "Feedback Weight Cancel By Depth (1)",
+      "Description": "Amount of temporal feedback reduction based on depth differences for condition set 1.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightCancelByDepth(2)",
-      "Name": "AntiAlias - FBWeightCancelByDepth(2)",
-      "Description": "",
+      "Name": "Feedback Weight Cancel By Depth (2)",
+      "Description": "Amount of temporal feedback reduction based on depth differences for condition set 2.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightCancelByDepth(3)",
-      "Name": "AntiAlias - FBWeightCancelByDepth(3)",
-      "Description": "",
+      "Name": "Feedback Weight Cancel By Depth (3)",
+      "Description": "Amount of temporal feedback reduction based on depth differences for condition set 3.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightBorderDepth(0)",
-      "Name": "AntiAlias - FBWeightBorderDepth(0)",
-      "Description": "",
+      "Name": "Feedback Weight Border Depth (0)",
+      "Description": "Depth threshold defining when feedback reduction begins for condition set 0.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightBorderDepth(1)",
-      "Name": "AntiAlias - FBWeightBorderDepth(1)",
-      "Description": "",
+      "Name": "Feedback Weight Border Depth (1)",
+      "Description": "Depth threshold defining when feedback reduction begins for condition set 1.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FBWeightBorderDepth(2)",
-      "Name": "AntiAlias - FBWeightBorderDepth(2)",
-      "Description": "",
+      "Name": "Feedback Weight Border Depth (2)",
+      "Description": "Depth threshold defining when feedback reduction begins for condition set 2.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

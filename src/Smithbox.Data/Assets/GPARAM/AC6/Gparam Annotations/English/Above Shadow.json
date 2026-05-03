@@ -1,103 +1,103 @@
 {
   "ID": "AboveShadow ParamEditor",
-  "Name": "AboveShadow ParamEditor",
-  "Description": "",
+  "Name": "Overhead Shadow",
+  "Description": "Controls shadow rendering from an overhead (typically directional) light source using a dual-range shadow map system. Supports high-detail near shadows and lower-detail distant shadows with configurable biasing and stability options.",
   "Fields": [
     {
       "ID": "AboveShadow UpdateNarrowShadow",
-      "Name": "AboveShadow UpdateNarrowShadow",
-      "Description": "",
+      "Name": "Update Narrow Shadow",
+      "Description": "Enables updating of the high-resolution near shadow map. Disable to freeze or reuse previous narrow shadow results for performance.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AboveShadow UpdateBroadShadow",
-      "Name": "AboveShadow UpdateBroadShadow",
-      "Description": "",
+      "Name": "Update Broad Shadow",
+      "Description": "Enables updating of the low-resolution far shadow map. Disable to reduce cost when distant shadows do not need frequent updates.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AboveShadow NarrowShadowResolution",
-      "Name": "AboveShadow NarrowShadowResolution",
-      "Description": "",
+      "Name": "Narrow Shadow: Resolution",
+      "Description": "Resolution of the near (high-detail) shadow map. Higher values improve sharpness but increase memory and rendering cost.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow BroadShadowResolution",
-      "Name": "AboveShadow BroadShadowResolution",
-      "Description": "",
+      "Name": "Broad Shadow: Resolution",
+      "Description": "Resolution of the far (low-detail) shadow map. Lower values are typically sufficient due to distance-based blur.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow NarrowShadowRange",
-      "Name": "AboveShadow NarrowShadowRange",
-      "Description": "",
+      "Name": "Narrow Shadow: Range",
+      "Description": "Distance from the camera covered by the high-resolution shadow map. Objects within this range receive detailed shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow BroadShadowRange",
-      "Name": "AboveShadow BroadShadowRange",
-      "Description": "",
+      "Name": "Broad Shadow: Range",
+      "Description": "Maximum distance covered by the low-resolution shadow map. Extends shadow coverage beyond the narrow range.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow DepthOffset DepthOffset",
-      "Name": "AboveShadow DepthOffset DepthOffset",
-      "Description": "",
+      "Name": "Depth Offset",
+      "Description": "Constant offset applied to shadow depth values to reduce surface spots and self-shadowing artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow DepthOffset DepthBias",
-      "Name": "AboveShadow DepthOffset DepthBias",
-      "Description": "",
+      "Name": "Depth Bias",
+      "Description": "Integer depth bias applied during shadow map rasterization to shift depth values away from the light source.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow DepthOffset SlopeScaledDepthBias",
-      "Name": "AboveShadow DepthOffset SlopeScaledDepthBias",
-      "Description": "",
+      "Name": "Slope Scaled Depth Bias",
+      "Description": "Bias applied based on surface slope relative to the light direction. Helps reduce artifacts on steep angles.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow VolumeDepth",
-      "Name": "AboveShadow VolumeDepth",
-      "Description": "",
+      "Name": "Volume Depth",
+      "Description": "Depth extent of the shadow casting volume along the light direction. Controls how far shadows are projected downward.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AboveShadow ShadowModelCullFlip",
-      "Name": "AboveShadow ShadowModelCullFlip",
-      "Description": "",
+      "Name": "Shadow Model Cull Flip",
+      "Description": "Flips face culling mode during shadow rendering. Useful for correcting shadow artifacts on specific geometry or inverted meshes.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AboveShadow AlignTexel",
-      "Name": "AboveShadow AlignTexel",
-      "Description": "",
+      "Name": "Align Texel",
+      "Description": "Snaps the shadow projection to texel-sized increments to reduce shimmering and improve temporal stability when the camera moves.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }

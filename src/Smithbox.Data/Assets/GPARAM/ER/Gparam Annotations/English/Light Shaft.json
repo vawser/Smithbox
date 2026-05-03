@@ -1,188 +1,188 @@
 {
   "ID": "LightShaft[Yebis]",
-  "Name": "LightShaft[Yebis]",
-  "Description": "",
+  "Name": "Light Shafts",
+  "Description": "Simulates volumetric light shafts (god rays) produced when light interacts with atmospheric scattering and occlusion. Uses sky masking, directional filtering, and blur accumulation to approximate volumetric scattering in screen space.",
   "Fields": [
     {
       "ID": "GS Presents - LightShaft Enable",
-      "Name": "GS Presents - LightShaft Enable",
-      "Description": "",
+      "Name": "Enable Light Shafts",
+      "Description": "Enables or disables volumetric light shaft rendering. When disabled, no god ray or volumetric light scattering is applied.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - LightShaft Angle",
-      "Name": "GS Presents - LightShaft Angle",
-      "Description": "",
+      "Name": "Light Shaft: Angle",
+      "Description": "Direction of the light shaft effect, typically derived from sun or key light orientation in screen space.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft EnableRefLight",
-      "Name": "GS Presents - LightShaft EnableRefLight",
-      "Description": "",
+      "Name": "Light Shaft: Enable Reference Light",
+      "Description": "Enables use of a reference light source for generating light shaft direction and intensity instead of global lighting.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - LightShaft LightBankId",
-      "Name": "GS Presents - LightShaft LightBankId",
-      "Description": "",
+      "Name": "Light Shaft: Light Bank ID",
+      "Description": "Selects which light bank (group of lights) is used as the source for light shaft generation.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft LightId",
-      "Name": "GS Presents - LightShaft LightId",
-      "Description": "",
+      "Name": "Light Shaft: Light ID",
+      "Description": "Specifies the exact light source within the selected bank used for shaft generation.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft HighQualitySkyMask",
-      "Name": "GS Presents - LightShaft HighQualitySkyMask",
-      "Description": "",
+      "Name": "Light Shaft: High Quality Sky Mask",
+      "Description": "Enables higher precision sky masking to reduce artifacts and improve separation between sky and occluders.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskMode",
-      "Name": "GS Presents - LightShaft SkyMaskMode",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Mode",
+      "Description": "Selects the algorithm used to compute sky masking for occlusion of light shafts.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft MaskDepthThreshold",
-      "Name": "GS Presents - LightShaft MaskDepthThreshold",
-      "Description": "",
+      "Name": "Light Shaft: Mask Depth Threshold",
+      "Description": "Depth threshold used to determine whether a pixel contributes to light shaft occlusion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskSizeAngle",
-      "Name": "GS Presents - LightShaft SkyMaskSizeAngle",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Size Angle",
+      "Description": "Controls angular size of the sky mask region influencing light shaft spread and falloff.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskCenterPower",
-      "Name": "GS Presents - LightShaft SkyMaskCenterPower",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Center Power",
+      "Description": "Biases sky mask intensity toward the center, controlling concentration of volumetric rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Sky Multiply Color",
-      "Name": "GS Presents - Sky Multiply Color",
-      "Description": "",
+      "Name": "Light Shaft: Sky Multiply Color",
+      "Description": "Multiplicative color applied to sky contribution in the light shaft calculation.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Sky Add Color",
-      "Name": "GS Presents - Sky Add Color",
-      "Description": "",
+      "Name": "Light Shaft: Sky Add Color",
+      "Description": "Additive color contribution applied to sky-based light shaft scattering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyColorSaturate",
-      "Name": "GS Presents - LightShaft SkyColorSaturate",
-      "Description": "",
+      "Name": "Light Shaft: Sky Color Saturation",
+      "Description": "Controls saturation of sky colors contributing to light shafts, affecting vibrancy of rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyColorThreshold",
-      "Name": "GS Presents - LightShaft SkyColorThreshold",
-      "Description": "",
+      "Name": "Light Shaft: Sky Color Threshold",
+      "Description": "Threshold that determines which sky brightness values contribute to light shaft generation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ExposureInfluenceRate AddColor",
-      "Name": "GS Presents - ExposureInfluenceRate AddColor",
-      "Description": "",
+      "Name": "Exposure Influence Rate: Add Color",
+      "Description": "Controls how much scene exposure affects additive color contribution in light shafts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Parallel mode begin ang",
-      "Name": "GS Presents - Parallel mode begin ang",
-      "Description": "",
+      "Name": "Parallel Mode: Start Angle",
+      "Description": "Start angle defining the range in which light shafts are treated as parallel (directionally uniform rays).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Parallel mode end ang",
-      "Name": "GS Presents - Parallel mode end ang",
-      "Description": "",
+      "Name": "Parallel Mode: End Angle",
+      "Description": "End angle for parallel light shaft behavior, transitioning into radial or non-parallel scattering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Fade out begin ang",
-      "Name": "GS Presents - Fade out begin ang",
-      "Description": "",
+      "Name": "Fade Out: Start Angle",
+      "Description": "Angle at which light shaft intensity begins to fade based on view or light direction.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Fade out end ang",
-      "Name": "GS Presents - Fade out end ang",
-      "Description": "",
+      "Name": "Fade Out: End Angle",
+      "Description": "Angle at which light shafts are fully faded out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ShaftBlurRange",
-      "Name": "GS Presents - ShaftBlurRange",
-      "Description": "",
+      "Name": "Light Shaft: Blur Range",
+      "Description": "Controls spatial extent of blur applied to light shafts, affecting ray softness and spread.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurRange for Parallel",
-      "Name": "GS Presents - LightShaft ShaftBlurRange for Parallel",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Range for Parallel",
+      "Description": "Blur range specifically used when light shafts are in parallel mode.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurFallOff",
-      "Name": "GS Presents - LightShaft ShaftBlurFallOff",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Falloff",
+      "Description": "Controls how quickly light shaft blur diminishes with distance or sampling steps.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurCount",
-      "Name": "GS Presents - LightShaft ShaftBlurCount",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Count",
+      "Description": "Number of blur samples used to construct volumetric light shafts. Higher values improve quality but reduce performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false

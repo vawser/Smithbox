@@ -1,364 +1,364 @@
 {
   "ID": "VolumetricFog ParamEditor",
-  "Name": "VolumetricFog ParamEditor",
-  "Description": "",
+  "Name": "Volumetric Fog",
+  "Description": "Covers parameters relating to volumetric fog.",
   "Fields": [
     {
       "ID": "VolumetricFog Enable",
-      "Name": "VolumetricFog Enable",
-      "Description": "",
+      "Name": "Enable Volumetric Fog",
+      "Description": "Enables or disables the volumetric fog system.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "VolumetricFog VolumeWidth",
-      "Name": "VolumetricFog VolumeWidth",
-      "Description": "",
+      "Name": "Volume Width",
+      "Description": "Defines the horizontal resolution of the volumetric fog grid.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog VolumeDepth",
-      "Name": "VolumetricFog VolumeDepth",
-      "Description": "",
+      "Name": "Volume Depth",
+      "Description": "Defines the depth resolution of the volumetric fog volume.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog GameScale",
-      "Name": "VolumetricFog GameScale",
-      "Description": "",
+      "Name": "Game Scale",
+      "Description": "Scales the fog simulation relative to world scale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog NearDepth",
-      "Name": "VolumetricFog NearDepth",
-      "Description": "",
+      "Name": "Near Depth",
+      "Description": "Distance from the camera where volumetric fog begins.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog FarDepth",
-      "Name": "VolumetricFog FarDepth",
-      "Description": "",
+      "Name": "Far Depth",
+      "Description": "Distance where volumetric fog reaches full density or terminates.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog NearOffset",
-      "Name": "VolumetricFog NearOffset",
-      "Description": "",
+      "Name": "Near Offset",
+      "Description": "Offsets the near fog boundary for fine tuning local fog start position.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog FogEndDepth",
-      "Name": "VolumetricFog FogEndDepth",
-      "Description": "",
+      "Name": "Fog End Depth",
+      "Description": "Defines the maximum depth at which fog influence fades out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DrawTiming",
-      "Name": "VolumetricFog DrawTiming",
-      "Description": "",
+      "Name": "Fog Draw Timing",
+      "Description": "Controls when volumetric fog is rendered in the pipeline.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog EnableAnalyticalFog",
-      "Name": "VolumetricFog EnableAnalyticalFog",
-      "Description": "",
+      "Name": "Enable Analytical Fog",
+      "Description": "Enables analytical (non-volumetric) fog contribution.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "VolumetricFog VolumeSliceSampleOffset",
-      "Name": "VolumetricFog VolumeSliceSampleOffset",
-      "Description": "",
+      "Name": "Volume Slice Sample Offset",
+      "Description": "Offsets sampling positions within fog slices to reduce banding artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog CullingBySceneDepth",
-      "Name": "VolumetricFog CullingBySceneDepth",
-      "Description": "",
+      "Name": "Culling by Scene Depth",
+      "Description": "Enables culling of fog based on scene depth buffer information.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "VolumetricFog CancelInScatteringRateFromSSR",
-      "Name": "VolumetricFog CancelInScatteringRateFromSSR",
-      "Description": "",
+      "Name": "Cancel-In Scattering Rate from SSR",
+      "Description": "Reduces fog in-scattering contribution based on screen space reflections.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global FixedDensity",
-      "Name": "VolumetricFog Global FixedDensity",
-      "Description": "",
+      "Name": "Global Fixed Density",
+      "Description": "Sets a uniform base density for volumetric fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global ScatteringG",
-      "Name": "VolumetricFog Global ScatteringG",
-      "Description": "",
+      "Name": "Global Scattering",
+      "Description": "Controls anisotropy of light scattering in fog (forward/back scattering bias).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global LocalLightScale",
-      "Name": "VolumetricFog Global LocalLightScale",
-      "Description": "",
+      "Name": "Global Local Light Scale",
+      "Description": "Scales the contribution of local lights affecting volumetric fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global LocalLightDistScale",
-      "Name": "VolumetricFog Global LocalLightDistScale",
-      "Description": "",
+      "Name": "Global Local Light Distance Scale",
+      "Description": "Controls attenuation of local light influence over distance in fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global HeightFogDistribution",
-      "Name": "VolumetricFog Global HeightFogDistribution",
-      "Description": "",
+      "Name": "Global Height Fog Distribution",
+      "Description": "Defines how fog density is distributed vertically.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global HeightFogOffset",
-      "Name": "VolumetricFog Global HeightFogOffset",
-      "Description": "",
+      "Name": "Global Height Fog Offset",
+      "Description": "Offsets the vertical position of height-based fog distribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global HeightFogReferenceOffset",
-      "Name": "VolumetricFog Global HeightFogReferenceOffset",
-      "Description": "",
+      "Name": "Global Height Fog Reference Offset",
+      "Description": "Reference offset used for height fog calibration.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global HeightFogReferenceModeRate",
-      "Name": "VolumetricFog Global HeightFogReferenceModeRate",
-      "Description": "",
+      "Name": "Global Height Fog Reference Mode Rate",
+      "Description": "Blending rate for height fog reference mode transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global HeightFogDensity Scale",
-      "Name": "VolumetricFog Global HeightFogDensity Scale",
-      "Description": "",
+      "Name": "Global Height Fog Density Scale",
+      "Description": "Scales density of height-based fog globally.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Global AbsorptionScale",
-      "Name": "VolumetricFog Global AbsorptionScale",
-      "Description": "",
+      "Name": "Global Absorption Scale",
+      "Description": "Controls how strongly fog absorbs light across RGB channels.",
       "Type": "Vector3Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog SkyLight SkyColor",
-      "Name": "VolumetricFog SkyLight SkyColor",
-      "Description": "",
+      "Name": "Sky Light: Sky Color",
+      "Description": "Color of sky contribution to volumetric fog lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog SkyLight HeightAtten",
-      "Name": "VolumetricFog SkyLight HeightAtten",
-      "Description": "",
+      "Name": "Sky Light: Height Attenuation",
+      "Description": "Controls how sky lighting attenuates with altitude in fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog SkyLight StartDist",
-      "Name": "VolumetricFog SkyLight StartDist",
-      "Description": "",
+      "Name": "Sky Light: Start Distance",
+      "Description": "Distance at which sky lighting begins affecting fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight LightBankId",
-      "Name": "VolumetricFog DirLight LightBankId",
-      "Description": "",
+      "Name": "Directional Light: Light Bank ID",
+      "Description": "Identifier for directional light bank used in fog lighting.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight LightId",
-      "Name": "VolumetricFog DirLight LightId",
-      "Description": "",
+      "Name": "Directional Light: Light ID",
+      "Description": "Identifier for the directional light affecting volumetric fog.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight DirectColor",
-      "Name": "VolumetricFog DirLight DirectColor",
-      "Description": "",
+      "Name": "Directional Light: Direct Color",
+      "Description": "Color of direct light contribution in fog scattering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight OppositeColor",
-      "Name": "VolumetricFog DirLight OppositeColor",
-      "Description": "",
+      "Name": "Directional Light: Opposite Color",
+      "Description": "Color contribution from opposite scattering direction.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight HeightAtten",
-      "Name": "VolumetricFog DirLight HeightAtten",
-      "Description": "",
+      "Name": "VDirectional Light: Height Attenuation",
+      "Description": "Attenuation of directional light influence with height.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight StartDist",
-      "Name": "VolumetricFog DirLight StartDist",
-      "Description": "",
+      "Name": "Directional Light: Start Distance",
+      "Description": "Distance at which directional light starts affecting fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight ShadowSampleCount",
-      "Name": "VolumetricFog DirLight ShadowSampleCount",
-      "Description": "",
+      "Name": "Directional Light: Shadow Sample Count",
+      "Description": "Number of shadow samples used for directional light in fog.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight ShadowDither",
-      "Name": "VolumetricFog DirLight ShadowDither",
-      "Description": "",
+      "Name": "Directional Light: Shadow Dither",
+      "Description": "Amount of dithering applied to directional light shadows in fog.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight AngleClip",
-      "Name": "VolumetricFog DirLight AngleClip",
-      "Description": "",
+      "Name": "Directional Light: Angle Clip",
+      "Description": "Clips directional light influence based on angular threshold.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight EnableReproj",
-      "Name": "VolumetricFog DirLight EnableReproj",
-      "Description": "",
+      "Name": "Directional Light: Enable Reprojection",
+      "Description": "Enables temporal reprojection for directional light in fog.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "VolumetricFog DirLight JitterCount",
-      "Name": "VolumetricFog DirLight JitterCount",
-      "Description": "",
+      "Name": "Directional Light: Jitter Count",
+      "Description": "Number of jitter samples for directional light scattering.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight JitterXYSize",
-      "Name": "VolumetricFog DirLight JitterXYSize",
-      "Description": "",
+      "Name": "Directional Light: Jitter XY Size",
+      "Description": "Spatial size of jitter applied to directional light sampling.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog DirLight FeedbackWeight",
-      "Name": "VolumetricFog DirLight FeedbackWeight",
-      "Description": "",
+      "Name": "Directional Light: Feedback Weight",
+      "Description": "Temporal accumulation weight for directional light fog contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog FogVolume InjectingSampleCount",
-      "Name": "VolumetricFog FogVolume InjectingSampleCount",
-      "Description": "",
+      "Name": "Fog Volume: Injecting Sample Count",
+      "Description": "Number of samples used when injecting local fog volumes.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog FogVolume InjectingDither",
-      "Name": "VolumetricFog FogVolume InjectingDither",
-      "Description": "",
+      "Name": "Fog Volume: Injecting Dither",
+      "Description": "Dithering applied during fog volume injection to reduce banding.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog FogVolume InjectingReprojEnabled",
-      "Name": "VolumetricFog FogVolume InjectingReprojEnabled",
-      "Description": "",
+      "Name": "Fog Volume: Injecting Reprojection Enabled",
+      "Description": "Enables temporal reprojection for fog volume injection.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "VolumetricFog FogVolume InjectingFeedbackWeight",
-      "Name": "VolumetricFog FogVolume InjectingFeedbackWeight",
-      "Description": "",
+      "Name": "Fog Volume: Injecting Feedback Weight",
+      "Description": "Temporal feedback weight for fog volume injection.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Config SampleCount",
-      "Name": "VolumetricFog Config SampleCount",
-      "Description": "",
+      "Name": "Sample Count",
+      "Description": "Number of volumetric fog raymarching samples per frame.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "VolumetricFog Config Dither",
-      "Name": "VolumetricFog Config Dither",
-      "Description": "",
+      "Name": "Dither",
+      "Description": "Amount of dithering applied to volumetric fog sampling.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

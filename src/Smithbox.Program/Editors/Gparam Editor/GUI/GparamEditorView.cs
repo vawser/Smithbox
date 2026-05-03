@@ -26,9 +26,7 @@ public class GparamEditorView
     public GparamSelection Selection;
 
     public GparamPropertyEditor PropertyEditor;
-    public GparamActionHandler ActionHandler;
     public GparamFilters Filters;
-    public GparamContextMenu ContextMenu;
 
     public GparamQuickEdit QuickEditHandler;
 
@@ -45,9 +43,7 @@ public class GparamEditorView
         ViewIndex = imguiId;
 
         Selection = new GparamSelection(this, Project);
-        ActionHandler = new GparamActionHandler(this, Project);
         Filters = new GparamFilters(this, Project);
-        ContextMenu = new GparamContextMenu(this, Project);
 
         PropertyEditor = new GparamPropertyEditor(this, Project);
         QuickEditHandler = new GparamQuickEdit(this, Project);

@@ -1,76 +1,76 @@
 {
   "ID": "Bloom[Yebis]",
-  "Name": "Bloom[Yebis]",
-  "Description": "",
+  "Name": "Bloom",
+  "Description": "Controls the bloom (glare) post-processing effect, which simulates light bleeding from bright areas into surrounding pixels. Uses a multi-resolution blur and optional temporal feedback to produce soft highlights and cinematic glow.",
   "Fields": [
     {
       "ID": "Gs Presents【Bloom】 Enable",
-      "Name": "Gs Presents【Bloom】 Enable",
-      "Description": "",
+      "Name": "Enable Bloom",
+      "Description": "Enables or disables the bloom (glare) effect. When disabled, bright areas will not produce light bleed.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Gs Presents-GlareNumLevels",
-      "Name": "Gs Presents-GlareNumLevels",
-      "Description": "",
+      "Name": "Glare: Number of Levels",
+      "Description": "Number of downsampled blur levels used in the bloom pyramid. Higher values produce wider, softer bloom at increased performance cost.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-Glare Luminance",
-      "Name": "Gs Presents-Glare Luminance",
-      "Description": "",
+      "Name": "Glare: Luminance",
+      "Description": "Overall intensity multiplier for the bloom effect. Controls how strongly bright areas contribute to glare.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-Glare Threshold",
-      "Name": "Gs Presents-Glare Threshold",
-      "Description": "",
+      "Name": "Glare: Threshold",
+      "Description": "Brightness threshold for bloom extraction. Only pixels above this value will contribute to the bloom effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Alpha",
-      "Name": "Gs Presents-GlareBloom Alpha",
-      "Description": "",
+      "Name": "Glare: Bloom Alpha",
+      "Description": "Blend factor controlling how much of the blurred bloom is composited back onto the final image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom GaussianRadiusScale",
-      "Name": "Gs Presents-GlareBloom GaussianRadiusScale",
-      "Description": "",
+      "Name": "Glare: Bloom Gaussian Radius Scale",
+      "Description": "Scale factor applied to the Gaussian blur radius. Higher values result in wider and softer bloom spread.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Sturate Ctrl",
-      "Name": "Gs Presents-GlareBloom Sturate Ctrl",
-      "Description": "",
+      "Name": "Glare: Bloom Saturation Control",
+      "Description": "Controls color saturation of the bloom effect. Lower values desaturate bloom toward white, while higher values preserve original color.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Smooth",
-      "Name": "Gs Presents-GlareBloom Smooth",
-      "Description": "",
+      "Name": "Glare: Bloom Smoothing",
+      "Description": "Controls smoothness of bloom blending across levels. Higher values reduce harsh transitions between blur layers.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom FeedbackWeight",
-      "Name": "Gs Presents-GlareBloom FeedbackWeight",
-      "Description": "",
+      "Name": "Glare: Bloom Feedback Weight",
+      "Description": "Temporal feedback weight applied to bloom accumulation across frames. Higher values stabilize bloom but may introduce trailing artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

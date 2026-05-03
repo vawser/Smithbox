@@ -24,7 +24,7 @@ public class GparamCommandQueue
 
         if (initcmd != null && initcmd.Length > 1)
         {
-            // View Image:
+            // View:
             // e.g. "gparam/view/m00_00_0000/LightSet ParamEditor/Directional Light DiffColor0/100"
             if (initcmd[0] == "view" && initcmd.Length >= 2)
             {
@@ -60,7 +60,7 @@ public class GparamCommandQueue
                     {
                         if (activeView.Selection.IsGparamGroupSelected())
                         {
-                            GPARAM.Param data = activeView.Selection.GetSelectedGparamGroup();
+                            GPARAM.Param data = activeView.Selection.GetSelectedGroup();
 
                             for (int i = 0; i < data.Fields.Count; i++)
                             {
@@ -78,7 +78,7 @@ public class GparamCommandQueue
                         {
                             if (activeView.Selection.IsGparamFieldSelected())
                             {
-                                GPARAM.IField field = activeView.Selection.GetSelectedGparamField();
+                                GPARAM.IField field = activeView.Selection.GetSelectedField();
 
                                 for (int i = 0; i < field.Values.Count; i++)
                                 {

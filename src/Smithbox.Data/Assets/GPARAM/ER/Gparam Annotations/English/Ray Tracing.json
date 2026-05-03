@@ -1,204 +1,188 @@
 {
   "ID": "RayTracing ParamEditor",
-  "Name": "RayTracing ParamEditor",
-  "Description": "",
+  "Name": "Ray Tracing",
+  "Description": "Covers parameters relating to ray tracing.",
   "Fields": [
     {
       "ID": "RayTracing Enable DirLightShadow",
-      "Name": "RayTracing Enable DirLightShadow",
-      "Description": "",
+      "Name": "Enable Directional Light Shadow",
+      "Description": "Enables ray-traced shadows for directional lights, providing more accurate and realistic shadowing.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "RayTracing Enable AO",
-      "Name": "RayTracing Enable AO",
-      "Description": "",
+      "Name": "Enable Ambient Occlusion",
+      "Description": "Enables ray-traced ambient occlusion for improved contact shadows and depth perception.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "RayTracing DirLightShadow Ray SampleCount",
-      "Name": "RayTracing DirLightShadow Ray SampleCount",
-      "Description": "",
+      "Name": "Directional Light Shadow : Ray Sample Count",
+      "Description": "Number of rays cast per pixel for directional light shadow calculation. Higher values improve quality but reduce performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "RayTracing DirLightShadow Ray LengthMin",
-      "Name": "RayTracing DirLightShadow Ray LengthMin",
-      "Description": "",
+      "Name": "Directional Light Shadow: Minimum Ray Length",
+      "Description": "Minimum distance that shadow rays will travel when tracing directional light shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "RayTracing DirLightShadow Ray LengthMax",
-      "Name": "RayTracing DirLightShadow Ray LengthMax",
-      "Description": "",
+      "Name": "Directional Light Shadow : MaximumRay Length",
+      "Description": "Maximum distance that shadow rays will travel when tracing directional light shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "RayTracing DirLightShadow Ray EnableAlpha",
-      "Name": "RayTracing DirLightShadow Ray EnableAlpha",
-      "Description": "",
+      "Name": "Directional Light Shadow: Enable Ray Alpha",
+      "Description": "Allows shadow rays to account for alpha-tested or transparent geometry during intersection tests.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "RayTracing DirLightShadow ConeRadius",
-      "Name": "RayTracing DirLightShadow ConeRadius",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing DirLightShadow PostProcess EnableDenoise",
-      "Name": "RayTracing DirLightShadow PostProcess EnableDenoise",
-      "Description": "",
-      "Type": "BoolField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing DirLightShadow PostProcess FeedbackWeight",
-      "Name": "RayTracing DirLightShadow PostProcess FeedbackWeight",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing DirLightShadow Composite EnableFadeRate",
-      "Name": "RayTracing DirLightShadow Composite EnableFadeRate",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing DirLightShadow Composite FadeStartDist",
-      "Name": "RayTracing DirLightShadow Composite FadeStartDist",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing DirLightShadow Composite FadeRangeDist",
-      "Name": "RayTracing DirLightShadow Composite FadeRangeDist",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Ray SampleCount",
-      "Name": "RayTracing AO Ray SampleCount",
-      "Description": "",
-      "Type": "UintField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Ray LengthMin",
-      "Name": "RayTracing AO Ray LengthMin",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Ray LengthMax",
-      "Name": "RayTracing AO Ray LengthMax",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Ray EnableAlpha",
-      "Name": "RayTracing AO Ray EnableAlpha",
-      "Description": "",
-      "Type": "BoolField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Scale",
-      "Name": "RayTracing AO Scale",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Offset",
-      "Name": "RayTracing AO Offset",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO PostProcess EnableDenoise",
-      "Name": "RayTracing AO PostProcess EnableDenoise",
-      "Description": "",
-      "Type": "BoolField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO PostProcess FeedbackWeight",
-      "Name": "RayTracing AO PostProcess FeedbackWeight",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Composite EnableFadeRate",
-      "Name": "RayTracing AO Composite EnableFadeRate",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Composite FadeStartDist",
-      "Name": "RayTracing AO Composite FadeStartDist",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
-      "ID": "RayTracing AO Composite FadeRangeDist",
-      "Name": "RayTracing AO Composite FadeRangeDist",
-      "Description": "",
+      "Name": "Directional Light Shadow: Cone Radius",
+      "Description": "Defines the cone radius for soft shadow sampling, simulating area light effects for softer shadow edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "RayTracing DirLightShadow AdjustRayStartPosition",
-      "Name": "RayTracing DirLightShadow AdjustRayStartPosition",
-      "Description": "",
+      "Name": "Directional Light Shadow: Adjust Ray Start Position",
+      "Description": "Offsets the starting position of shadow rays to reduce self-intersection artifacts such as shadow spots.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "RayTracing DirLightShadow PostProcess EnableDenoise",
+      "Name": "Directional Light Shadow: Enable Denoise Post Process",
+      "Description": "Enables denoising of ray-traced shadow results to reduce noise from limited sample counts.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "RayTracing DirLightShadow PostProcess FeedbackWeight",
+      "Name": "Directional Light Shadow: Post Process Feedback Weight",
+      "Description": "Controls temporal accumulation weight for denoising, balancing stability versus responsiveness.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Composite FadeStartDist",
+      "Name": "Directional Light Shadow: Composite Fade Start Distance",
+      "Description": "Distance at which ray-traced shadows begin blending with other shadowing methods.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing DirLightShadow Composite FadeRangeDist",
+      "Name": "Directional Light Shadow: Composite Fade Range Distance",
+      "Description": "Distance range over which ray-traced shadows fully fade out or transition to alternative techniques.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray SampleCount",
+      "Name": "Ambient Occlusion: Ray Sample Count",
+      "Description": "Number of rays cast per pixel for ambient occlusion. Higher values improve accuracy but increase cost.",
+      "Type": "UintField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray LengthMin",
+      "Name": "Ambient Occlusion: Minimum Ray Length",
+      "Description": "Minimum ray length used when sampling ambient occlusion, controlling near-surface shadowing.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray LengthMax",
+      "Name": "Ambient Occlusion: Maximum Ray Length",
+      "Description": "Maximum ray length for ambient occlusion sampling, affecting how far occlusion is considered.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Ray EnableAlpha",
+      "Name": "Ambient Occlusion: Enable Ray Alpha",
+      "Description": "Enables occlusion rays to consider alpha-tested or transparent geometry.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "RayTracing AO Scale",
+      "Name": "Ambient Occlusion: Scale",
+      "Description": "Scales the overall intensity of ambient occlusion effect.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Offset",
+      "Name": "Ambient Occlusion: Offset",
+      "Description": "Bias applied to ambient occlusion to reduce self-shadowing artifacts.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO PostProcess EnableDenoise",
+      "Name": "Ambient Occlusion: Enable Denoise Post Process",
+      "Description": "Enables denoising of ray-traced ambient occlusion to reduce noise artifacts.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
     {
+      "ID": "RayTracing AO PostProcess FeedbackWeight",
+      "Name": "Ambient Occlusion: Post Process Feedback Weight",
+      "Description": "Controls temporal accumulation strength for ambient occlusion denoising.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
       "ID": "RayTracing AO PostProcess ATrousFilterSteps",
-      "Name": "RayTracing AO PostProcess ATrousFilterSteps",
-      "Description": "",
+      "Name": "Ambient Occlusion: Post Process Atrous Filter Steps",
+      "Description": "Number of iterations used in the Atrous filter for spatial denoising of ambient occlusion.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Composite FadeStartDist",
+      "Name": "Ambient Occlusion: Composite Fade Start Distance",
+      "Description": "Distance at which ray-traced ambient occlusion begins to fade out.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "RayTracing AO Composite FadeRangeDist",
+      "Name": "Ambient Occlusion: Composite Fade Range Distance",
+      "Description": "Distance range over which ambient occlusion fully fades out or blends with other techniques.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
