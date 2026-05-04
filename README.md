@@ -71,3 +71,6 @@ If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vaw
 * Intel GPUs currently don't seem to be working properly. At the moment you will need a dedicated NVIDIA or AMD GPU
 * A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes
 
+## AI Disclaimer
+Elements of the code and metadata for this project have been produced with AI tools.
+
