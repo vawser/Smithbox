@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
 
@@ -41,7 +42,8 @@ public class AddValueAction : EditorAction
 
         DispatchOnField(TargetField, TargetValues, add: true);
 
-        StoredParamExtras = new List<UnkParamExtra>(Data.UnkParamExtras);
+        StoredParamExtras = Data.UnkParamExtras.Select(x => x.Clone()).ToList();
+
         UpdateGroupIndexes(Data);
 
         return ActionEvent.ObjectAddedRemoved;
@@ -112,6 +114,11 @@ public class AddValueAction : EditorAction
             {
                 fieldValues.Remove((FieldValue<T>)target);
             }
+        }
+
+        if (TargetField is Field<T> f)
+        {
+            f.Capacity = (short)fieldValues.Count;
         }
     }
 

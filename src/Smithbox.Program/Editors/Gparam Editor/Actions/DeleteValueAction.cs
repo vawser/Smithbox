@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
 
@@ -32,7 +33,7 @@ public class DeleteValueAction : EditorAction
     public override ActionEvent Execute()
     {
         StoredIndices = new List<int>();
-        StoredParamExtras = new List<GPARAM.UnkParamExtra>(Data.UnkParamExtras);
+        StoredParamExtras = Data.UnkParamExtras.Select(x => x.Clone()).ToList();
 
         RemoveValues(TargetField, StoredValues);
         UpdateGroupIndexes(Data);
@@ -113,6 +114,11 @@ public class DeleteValueAction : EditorAction
 
                 fieldValues.Insert(insertIndex, (FieldValue<T>)targets[i]);
             }
+        }
+
+        if (TargetField is Field<T> f)
+        {
+            f.Capacity = (short)fieldValues.Count;
         }
     }
 

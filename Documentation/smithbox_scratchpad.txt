@@ -217,11 +217,6 @@
  
  WEAPON_STATS_AFFECT_PARAM
  
- WEAPON_STATS_AFFECT_PARAM
- 
 - Gparam Editor:
  - Add support for load/save for gparambnd files, which BB uses
  - Add json seralization for import/export
-
- - Fix edit/add/remove behavior
-  - Currently doesn't persist changes in saved file.
