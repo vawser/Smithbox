@@ -496,9 +496,9 @@ public class ParamFieldWindow
         PropertyInfo idProp = row.GetType().GetProperty("ID");
 
         PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, nameProp, "Name", ref imguiId,
-            activeParam);
+            activeParam, 1_000_000);
         PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, idProp, "ID", ref imguiId,
-            activeParam);
+            activeParam, 2_000_000);
 
         ImGui.Spacing();
     }
@@ -534,7 +534,7 @@ public class ParamFieldWindow
                     auxRows,
                     auxMatches.Select((x, j) => x.Count > i ? x[i] : (ParamEditorPseudoColumn.None, null)).ToList(),
                     OffsetTextOfColumn(primaryMatches[i].Item2),
-                    ref imguiId, activeParam, true);
+                    ref imguiId, activeParam, true, 4_000_000);
                 index++;
             }
         }
@@ -588,131 +588,119 @@ public class ParamFieldWindow
 
             foreach (var field in fieldOrder)
             {
-                if (firstRow)
-                {
-                    firstRow = false;
-                    if (pinnedFields?.Count > 0)
-                    {
-                        int pi = 0;
-                        DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
-                            cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
-                        EditorTableUtils.ImguiTableSeparator();
-                    }
-                }
-
                 RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref index);
             }
-
-            return;
         }
-
-        // Grouped Mode
-        if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible && pinnedFields?.Count > 0)
+        else
         {
-            int pi = 0;
-            DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
-                cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
-            EditorTableUtils.ImguiTableSeparator();
-        }
-
-        var groupedFieldNames = new HashSet<string>(
-            groupsDef.Groups.SelectMany(g => g.Fields.Select(f => f)));
-
-        if(CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Top)
-        {
-            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
-        }
-
-        foreach (var layout in groupsDef.Groups)
-        {
-            var layoutFields = fieldOrder
-                .Where(f => layout.Fields.Any(gf => gf == f))
-                .ToList();
-
-            var hasChanceLot = layout.ChanceLot != null;
-
-            if (layoutFields.Count == 0)
-                continue;
-
-            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
+            // Pinned Fields
+            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible && pinnedFields?.Count > 0)
             {
-                var name = layout.GetName();
-                if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
-                    name = "";
-
-                bool open = ImGui.CollapsingHeader(
-                    $"{name}##grp_{activeParam}_{layout.Key}",
-                    ImGuiTreeNodeFlags.DefaultOpen);
-
-                if (open && hasChanceLot)
-                {
-                    DisplayChance(row, layout);
-                }
-
-                if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
-                {
-                    int idx = 0;
-                    foreach (var field in layoutFields)
-                    {
-                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
-                    }
-
-                    ImGui.EndTable();
-                }
+                int pi = 0;
+                DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
+                    cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
             }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
+
+            // Grouped Mode
+            var groupedFieldNames = new HashSet<string>(
+                groupsDef.Groups.SelectMany(g => g.Fields.Select(f => f)));
+
+            if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Top)
             {
-                if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
-                {
-                    UIHelper.SimpleHeader($"{layout.GetName()}", "");
-                }
+                DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
+            }
 
-                if (hasChanceLot)
-                {
-                    DisplayChance(row, layout);
-                }
+            foreach (var layout in groupsDef.Groups)
+            {
+                var layoutFields = fieldOrder
+                    .Where(f => layout.Fields.Any(gf => gf == f))
+                    .ToList();
 
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
+                var hasChanceLot = layout.ChanceLot != null;
+
+                if (layoutFields.Count == 0)
+                    continue;
+
+                if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
                 {
-                    int idx = 0;
-                    foreach (var field in layoutFields)
+                    var name = layout.GetName();
+                    if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                        name = "";
+
+                    bool open = ImGui.CollapsingHeader(
+                        $"{name}##grp_{activeParam}_{layout.Key}",
+                        ImGuiTreeNodeFlags.DefaultOpen);
+
+                    if (open && hasChanceLot)
                     {
-                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        DisplayChance(row, layout);
                     }
 
-                    ImGui.EndTable();
-                }
+                    if (open && BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
+                    {
+                        int idx = 0;
+                        foreach (var field in layoutFields)
+                        {
+                            RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        }
 
-                if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                        ImGui.EndTable();
+                    }
+                }
+                else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
                 {
+                    if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    {
+                        UIHelper.SimpleHeader($"{layout.GetName()}", "");
+                    }
+
+                    if (hasChanceLot)
+                    {
+                        DisplayChance(row, layout);
+                    }
+
+                    if (BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
+                    {
+                        int idx = 0;
+                        foreach (var field in layoutFields)
+                        {
+                            RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        }
+
+                        ImGui.EndTable();
+                    }
+
+                    if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    {
+                        ImGui.Separator();
+                    }
+                }
+                else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+                {
+                    if (hasChanceLot)
+                    {
+                        DisplayChance(row, layout);
+                    }
+
+                    if (BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
+                    {
+                        int idx = 0;
+                        foreach (var field in layoutFields)
+                        {
+                            RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
+                        }
+
+                        ImGui.EndTable();
+                    }
+
                     ImGui.Separator();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+
+            if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Bottom)
             {
-                if (hasChanceLot)
-                {
-                    DisplayChance(row, layout);
-                }
-
-                if (BeginGroupTable($"ParamFieldsG_{activeParam}_{layout.Key}", columnCount))
-                {
-                    int idx = 0;
-                    foreach (var field in layoutFields)
-                    {
-                        RenderField(meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, field, activeParam, ref idx);
-                    }
-
-                    ImGui.EndTable();
-                }
-
-                ImGui.Separator();
+                DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
             }
-        }
-
-        if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Bottom)
-        {
-            DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
         }
     }
 
@@ -855,7 +843,7 @@ public class ParamFieldWindow
                 auxRows,
                 auxMatches.Select((x, _) => x.Count > i ? x[i] : (ParamEditorPseudoColumn.None, null)).ToList(),
                 OffsetTextOfColumn(matches[i].Item2),
-                ref idx, activeParam, false);
+                ref idx, activeParam, false, 3_000_000);
 
             idx++;
         }
@@ -958,7 +946,7 @@ public class ParamFieldWindow
     // Many parameter options, which may be simplified.
     private void PropEditorPropInfoRow(Param.Row row,
         ParamMeta meta, ParamAnnotationEntry annotations, Param.Row vrow,
-        List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId, string activeParam)
+        List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId, string activeParam, int displayIndex)
     {
         FieldRow(
             prop.GetValue(row),
@@ -977,14 +965,15 @@ public class ParamFieldWindow
             meta,
             activeParam,
             false,
-            null);
+            null, 
+            displayIndex);
     }
 
     private void PropEditorPropCellRow(ParamMeta meta, ParamAnnotationEntry annotations, 
         Param.Row row, Param.Row crow,
         (ParamEditorPseudoColumn, Param.Column) col, Param.Row vrow, (ParamEditorPseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(ParamEditorPseudoColumn, Param.Column)> auxCols, string fieldOffset,
-        ref int imguiId, string activeParam, bool isPinned)
+        ref int imguiId, string activeParam, bool isPinned, int displayIndex)
     {
         FieldRow(
             row.Get(col),
@@ -1002,14 +991,15 @@ public class ParamFieldWindow
             meta,
             activeParam,
             isPinned,
-            col.Item2);
+            col.Item2,
+            displayIndex);
     }
 
 
     private void FieldRow(object oldval, object compareval, object vanillaval,
         List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta, ParamAnnotationFieldEntry fieldAnnotation,
         Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta meta, string activeParam,
-        bool isPinned, Param.Column col)
+        bool isPinned, Param.Column col, int displayIndex)
     {
         var metaContext = new FieldMetaContext(ParentView, meta, cellMeta, fieldAnnotation, activeParam, internalName);
 
@@ -1023,7 +1013,7 @@ public class ParamFieldWindow
         //------------------------------
         // Name Column
         //------------------------------
-        ImGui.PushID(imguiId);
+        ImGui.PushID(imguiId + displayIndex);
 
         if (ImGui.TableNextColumn())
         {

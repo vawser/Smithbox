@@ -219,4 +219,5 @@
  
 - Gparam Editor:
  - Finish meta annotations for SDT/DS3/BB/DS2
- - Add json seralization for import/export
+ - Add json seralization for import
+ - Add finder tool (similar to the Param finders) for values
