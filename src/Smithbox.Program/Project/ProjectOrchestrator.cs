@@ -103,8 +103,7 @@ public class ProjectOrchestrator : IDisposable
         {
             if (ImGui.MenuItem("Create New Project"))
             {
-                CreationMenu.IsEditMode = false;
-                CreationMenu.IsDisplayed = true;
+                CreationMenu.OpenForCreate();
             }
             UIHelper.Tooltip($"Add a new project to the project list.");
 
@@ -432,10 +431,7 @@ public class ProjectOrchestrator : IDisposable
 
         if (ImGui.MenuItem($"Open Project Settings##projectSettings"))
         {
-            CreationMenu.Project = curProject;
-            CreationMenu.Descriptor = curProject.Descriptor;
-            CreationMenu.IsEditMode = true;
-            CreationMenu.IsDisplayed = true;
+            CreationMenu.OpenForEdit(curProject, curProject.Descriptor.Clone());
         }
 
         if (curProject.Initialized)
@@ -693,8 +689,8 @@ public class ProjectOrchestrator : IDisposable
 
     public void CreateProject(ProjectDescriptor newProjectDescriptor)
     {
-        var newProject = new ProjectEntry();
-        newProject.Descriptor = new ProjectDescriptor(newProjectDescriptor);
+        var newProject = new ProjectEntry(); 
+        newProject.Descriptor = ProjectDescriptor.CreateNew(newProjectDescriptor);
 
         Projects.Add(newProject);
 

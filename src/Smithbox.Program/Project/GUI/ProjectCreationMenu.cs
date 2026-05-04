@@ -34,6 +34,39 @@ public class ProjectCreationMenu
         Orchestrator = orchestrator;
     }
 
+    public void OpenForCreate()
+    {
+        IsDisplayed = true;
+        IsEditMode = false;
+
+        Descriptor = new ProjectDescriptor();
+        Project = new ProjectEntry();
+
+        InitialLayout = false;
+    }
+
+    public void OpenForEdit(ProjectEntry project, ProjectDescriptor descriptor)
+    {
+        IsDisplayed = true;
+        IsEditMode = true;
+
+        Project = project;
+        Descriptor = project.Descriptor.Clone();
+
+        InitialLayout = false;
+    }
+
+    private void ResetState()
+    {
+        IsDisplayed = false;
+        IsEditMode = false;
+
+        Descriptor = new ProjectDescriptor();
+        Project = new ProjectEntry();
+
+        InitialLayout = false;
+    }
+
     public void Draw()
     {
         if (IsDisplayed)
@@ -372,6 +405,7 @@ public class ProjectCreationMenu
                     ImGui.BeginDisabled();
                     if (ImGui.Button("Create##createProjectCreation"))
                     {
+
                     }
                     ImGui.EndDisabled();
                 }
@@ -381,8 +415,7 @@ public class ProjectCreationMenu
                 // Cancel
                 if (ImGui.Button("Cancel##cancelProjectCreation"))
                 {
-                    IsDisplayed = false;
-                    IsEditMode = false;
+                    ResetState();
                 }
             }
         }

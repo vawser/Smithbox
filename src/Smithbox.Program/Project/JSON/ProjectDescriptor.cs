@@ -113,6 +113,51 @@ public class ProjectDescriptor
 
         FolderTag = "";
     }
+
+    public ProjectDescriptor Clone()
+    {
+        return new ProjectDescriptor
+        {
+            ProjectGUID = this.ProjectGUID,
+            ProjectName = this.ProjectName,
+            ProjectPath = this.ProjectPath,
+            DataPath = this.DataPath,
+            ProjectType = this.ProjectType,
+
+            AutoSelect = this.AutoSelect,
+            ImportedParamRowNames = this.ImportedParamRowNames,
+
+            EnableMapEditor = this.EnableMapEditor,
+            EnableModelEditor = this.EnableModelEditor,
+            EnableTextEditor = this.EnableTextEditor,
+            EnableParamEditor = this.EnableParamEditor,
+            EnableGparamEditor = this.EnableGparamEditor,
+            EnableTextureViewer = this.EnableTextureViewer,
+            EnableMaterialEditor = this.EnableMaterialEditor,
+            EnableFileBrowser = this.EnableFileBrowser,
+            EnableAnimEditor = this.EnableAnimEditor,
+            EnableExternalMaterialData = this.EnableExternalMaterialData,
+
+            FolderTag = this.FolderTag,
+
+            PinnedParams = new List<string>(this.PinnedParams),
+            PinnedRows = this.PinnedRows.ToDictionary(
+                kvp => kvp.Key,
+                kvp => new List<int>(kvp.Value)
+            ),
+            PinnedFields = this.PinnedFields.ToDictionary(
+                kvp => kvp.Key,
+                kvp => new List<string>(kvp.Value)
+            )
+        };
+    }
+
+    public static ProjectDescriptor CreateNew(ProjectDescriptor template)
+    {
+        var clone = template.Clone();
+        clone.ProjectGUID = Guid.NewGuid();
+        return clone;
+    }
 }
 
 public class LegacyProjectDescriptor
