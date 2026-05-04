@@ -300,6 +300,8 @@ public static class RowNameHelper
 
             foreach (var entry in store.Params)
             {
+                textOuput = "";
+
                 var fullPath = Path.Combine(exportDir, $"{entry.Name}.txt");
 
                 if (paramName != "")
