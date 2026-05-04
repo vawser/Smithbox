@@ -98,7 +98,7 @@ public class GparamValueList
         if (field == null)
             return;
 
-        var columnCount = 2;
+        var columnCount = 3;
 
         if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
             columnCount++;
@@ -108,6 +108,7 @@ public class GparamValueList
 
         ImGui.Columns(columnCount);
 
+        DisplayColumn_Row(data, group, field);
         DisplayColumn_ID(data, group, field);
         DisplayColumn_TimeOfDay(data, group, field);
         DisplayColumn_Value(data, group, field);
@@ -118,9 +119,44 @@ public class GparamValueList
         Shortcuts(data, group, field);
     }
 
+    // Row
+    private void DisplayColumn_Row(GPARAM data, GPARAM.Param group, IField field)
+    {
+        ImGui.BeginChild("GparamPropList_Row");
+        UIHelper.SimpleHeader("Row", "");
+
+        for (int i = 0; i < field.Values.Count; i++)
+        {
+            var value = field.Values[i];
+            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+
+            if (!display)
+                continue;
+
+            GparamProperty_Row(data, group, field, value, i);
+        }
+
+        ImGui.EndChild();
+    }
+    public void GparamProperty_Row(GPARAM data, GPARAM.Param group,
+        IField field, IFieldValue value, int index)
+    {
+        var isSelected = index == Parent.Selection._selectedFieldValueIndex;
+
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Selectable($"Row {index}##{index}", isSelected))
+        {
+            Parent.Selection.SetGparamFieldValue(index, value);
+        }
+
+        ContextMenu(data, group, field, value, index);
+    }
+
     // ID
     private void DisplayColumn_ID(GPARAM data, GPARAM.Param group, IField field)
     {
+        ImGui.NextColumn();
+
         ImGui.BeginChild("GparamPropList_ID");
         UIHelper.SimpleHeader("ID", "");
 
@@ -141,17 +177,8 @@ public class GparamValueList
     public void GparamProperty_ID(GPARAM data, GPARAM.Param group, 
         IField field, IFieldValue value, int index)
     {
-        var isSelected = index == Parent.Selection._selectedFieldValueIndex;
-
-        string name = value.ID.ToString();
-
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Selectable($"{name}##{index}", isSelected))
-        {
-            Parent.Selection.SetGparamFieldValue(index, value);
-        }
-
-        ContextMenu(data, group, field, value, index);
+        Parent.PropertyEditor.IdField(data, group, field, value, index);
     }
 
     // Time of Day
@@ -173,15 +200,15 @@ public class GparamValueList
             if (!display)
                 continue;
 
-            GparamProperty_TimeOfDay(i, field, value);
+            GparamProperty_TimeOfDay(data, group, field, value, i);
         }
 
         ImGui.EndChild();
     }
-    public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
+    public void GparamProperty_TimeOfDay(GPARAM data, Param group, IField field, IFieldValue value, int index)
     {
         ImGui.AlignTextToFramePadding();
-        Parent.PropertyEditor.TimeOfDayField(index, field, value);
+        Parent.PropertyEditor.TimeOfDayField(data, group, field, value, index);
     }
 
     // Value
