@@ -832,7 +832,9 @@ public class CFG
     ///------------------------------------------------------------
     public string GparamEditor_Annotation_Language = "English";
 
+    public bool GparamEditor_File_List_Display_BB_BND_Files = true;
     public bool GparamEditor_File_List_Display_Aliases = true;
+
     public bool GparamEditor_Group_List_Display_Empty_Group = true;
 
     public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;

@@ -219,5 +219,4 @@
  
 - Gparam Editor:
  - Finish meta annotations for SDT/DS3/BB/DS2
- - Add support for load/save for gparambnd files, which BB uses
  - Add json seralization for import/export

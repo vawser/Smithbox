@@ -301,13 +301,13 @@ public class GparamEditorScreen : EditorScreen
         if (!autoSave && CFG.Current.GparamEditor_ManualSave_IncludeGPARAM ||
             autoSave && CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM)
         {
-            var targetScript = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == activeView.Selection.SelectedFileEntry.Filename);
+            var targetScript = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == activeView.Selection.SelectedFileEntry.Filename && e.Key.Extension == activeView.Selection.SelectedFileEntry.Extension);
 
             if (targetScript.Key != null)
             {
                 await Project.Handler.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
 
-                Smithbox.Log(this, $"[Graphics Param Editor] Saved {activeView.Selection.SelectedFileEntry.Filename}.gparam.dcx");
+                Smithbox.Log(this, $"[Graphics Param Editor] Saved {targetScript.Key.Filename}.{targetScript.Key.Extension}");
             }
         }
 

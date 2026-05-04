@@ -58,6 +58,24 @@ public class GparamFileList
         }
         UIHelper.Tooltip($"Toggle the display of file aliases.\nCurrent Mode: {aliasMode}");
 
+        // BND File Toggle
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Book}##bbFileContainerToggle"))
+            {
+                CFG.Current.GparamEditor_File_List_Display_BB_BND_Files = !CFG.Current.GparamEditor_File_List_Display_BB_BND_Files;
+            }
+
+            var bndMode = "Displaying GPARAMBND files.";
+            if (!CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
+            {
+                bndMode = "Displaying GPARAM files.";
+            }
+            UIHelper.Tooltip($"Toggle the display of GPARAMBND files.\nCurrent Mode: {bndMode}");
+        }
+
         ImGui.EndChild();
     }
 
@@ -66,6 +84,21 @@ public class GparamFileList
         for(int i = 0; i < Parent.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
         {
             var entry = Parent.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
+
+            // For BB, toggle which gparam files are displayed
+            if (Project.Descriptor.ProjectType is ProjectType.BB)
+            {
+                if (CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
+                {
+                    if (entry.Key.Extension == "gparam")
+                        continue;
+                }
+                else
+                {
+                    if (entry.Key.Extension == "gparambnd")
+                        continue;
+                }
+            }
 
             DisplayFileSelectable(entry.Key, i);
         }
@@ -80,8 +113,18 @@ public class GparamFileList
 
         ImGui.BeginGroup();
 
+        var filename = fileEntry.Filename;
+
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            if (CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
+            {
+                filename = $"{filename} [BND]";
+            }
+        }
+
         // File row
-        if (ImGui.Selectable($@" {fileEntry.Filename}", fileEntry.Filename == Parent.Selection._selectedGparamKey))
+        if (ImGui.Selectable($@" {filename}", fileEntry.Filename == Parent.Selection._selectedGparamKey))
         {
             Parent.Selection.SetFileSelection(fileEntry);
         }

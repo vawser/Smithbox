@@ -100,7 +100,7 @@ public class GparamSelection
 
         SelectedFileEntry = entry;
         var targetEntry = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
-         == entry.Filename);
+         == entry.Filename && e.Key.Extension == entry.Extension);
 
         _selectedGparamKey = targetEntry.Key.Filename;
         _selectedGparam = targetEntry.Value;
