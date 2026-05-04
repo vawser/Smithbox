@@ -9,6 +9,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -38,7 +39,6 @@ public class GparamQuickEdit
     {
         Parent = view;
         Project = project;
-
         RandomSource = RandomNumberGenerator.Create();
     }
 
@@ -54,9 +54,7 @@ public class GparamQuickEdit
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "File Filters:");
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}##fileFilterToggle", DPI.StandardButtonSize))
-        {
             displayFileFilterSection = !displayFileFilterSection;
-        }
         ImGui.Separator();
         if (displayFileFilterSection)
         {
@@ -77,9 +75,7 @@ public class GparamQuickEdit
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Group Filters:");
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}##groupFilterToggle", DPI.StandardButtonSize))
-        {
             displayGroupFilterSection = !displayGroupFilterSection;
-        }
         ImGui.Separator();
         if (displayGroupFilterSection)
         {
@@ -100,9 +96,7 @@ public class GparamQuickEdit
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Field Filters:");
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}##fieldFilterToggle", DPI.StandardButtonSize))
-        {
             displayFieldFilterSection = !displayFieldFilterSection;
-        }
         ImGui.Separator();
         if (displayFieldFilterSection)
         {
@@ -123,9 +117,7 @@ public class GparamQuickEdit
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Filters:");
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}##valueFilterToggle", DPI.StandardButtonSize))
-        {
             displayValueFilterSection = !displayValueFilterSection;
-        }
         ImGui.Separator();
         if (displayValueFilterSection)
         {
@@ -155,9 +147,7 @@ public class GparamQuickEdit
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Commands:");
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}##valueCommandToggle", DPI.StandardButtonSize))
-        {
             displayValueCommandSection = !displayValueCommandSection;
-        }
         ImGui.Separator();
         if (displayValueCommandSection)
         {
@@ -182,15 +172,13 @@ public class GparamQuickEdit
             UIHelper.WrappedText("Sets target rows to their vanilla Value.");
             UIHelper.WrappedText("");
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"random:[<x>][<y>]");
-            UIHelper.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
+            UIHelper.WrappedText("Sets target rows to a random value between <x> and <y>.");
             UIHelper.WrappedText("");
         }
     }
 
     public void DisplayInputWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
-
         ImGui.Text("File Filter:");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetParamString", ref _targetFileString, 255);
@@ -214,25 +202,25 @@ public class GparamQuickEdit
         ImGui.Text("Value Command:");
         DPI.ApplyInputWidth();
         ImGui.InputText("##commandString", ref _valueCommandString, 255);
-        UIHelper.Tooltip("Enter value command arguments here.");
+        UIHelper.Tooltip("Enter value command arguments here. For values represented by a vector, separate each digit with the brackets with the , symbol.");
 
-        if (ImGui.Button("Execute", DPI.StandardButtonSize))
-        {
-            ExecuteQuickEdit();
-        }
-
-        ImGui.SameLine();
         if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
         {
             GenerateQuickEditCommands();
         }
         UIHelper.Tooltip("Automatically fill the filter input based on current selection.");
 
-        ImGui.SameLine();
         if (ImGui.Button("Clear", DPI.StandardButtonSize))
         {
             ClearQuickEditCommands();
         }
+        UIHelper.Tooltip("Clear quick edit form.");
+
+        if (ImGui.Button("Execute", DPI.StandardButtonSize))
+        {
+            ExecuteQuickEdit();
+        }
+        UIHelper.Tooltip("Apply quick edit.");
     }
 
     public void ClearQuickEditCommands()
@@ -252,37 +240,25 @@ public class GparamQuickEdit
         _valueFilterString = "";
 
         if (Parent.Selection._selectedGparamKey != null)
-        {
             UpdateFileFilter(Parent.Selection._selectedGparamKey);
-        }
         else
-        {
             _valueFilterString = "*";
-        }
 
         if (Parent.Selection._selectedParamGroupKey != null)
-        {
             UpdateGroupFilter(Parent.Selection._selectedParamGroupKey);
-        }
         else
-        {
             _valueFilterString = "*";
-        }
 
         if (Parent.Selection._selectedParamFieldKey != null)
-        {
             UpdateFieldFilter(Parent.Selection._selectedParamFieldKey);
-        }
         else
-        {
             _valueFilterString = "*";
-        }
 
         if (Parent.Selection._selectedParamFieldKey != null)
         {
-            var fieldIndex = -1;
             var selectedField = Parent.Selection.GetSelectedField();
             var selectedValue = Parent.Selection.GetSelectedValue();
+            int fieldIndex = -1;
 
             for (int i = 0; i < selectedField.Values.Count; i++)
             {
@@ -294,9 +270,7 @@ public class GparamQuickEdit
             }
 
             if (fieldIndex != -1)
-            {
                 UpdateValueRowFilter(fieldIndex);
-            }
         }
         else
         {
@@ -307,60 +281,42 @@ public class GparamQuickEdit
     public void ExecuteQuickEdit()
     {
         List<string> resolvedList = new();
-        string curParamName = "";
-        string curGroupName = "";
-        string curFieldName = "";
-
         List<EditorAction> actionList = new();
 
         foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
-            if (IsTargetFile(entry.Key))
+            if (!IsTargetFile(entry.Key))
+                continue;
+
+            TargetFile = entry.Key;
+            targetGparam = entry.Value;
+            GPARAM data = entry.Value;
+            string curParamName = entry.Key.Filename;
+
+            foreach (GPARAM.Param curEntry in data.Params)
             {
-                TargetFile = entry.Key;
-                targetGparam = entry.Value;
-                GPARAM data = entry.Value;
-                curParamName = entry.Key.Filename;
+                if (!IsTargetGroup(curEntry))
+                    continue;
 
-                for (int i = 0; i < data.Params.Count; i++)
+                targetParamGroup = curEntry;
+                string curGroupName = targetParamGroup.Key;
+
+                foreach (GPARAM.IField fEntry in targetParamGroup.Fields)
                 {
-                    GPARAM.Param curEntry = data.Params[i];
+                    if (!IsTargetField(fEntry))
+                        continue;
 
-                    if (IsTargetGroup(curEntry))
-                    {
-                        targetParamGroup = curEntry;
-                        GPARAM.Param pData = targetParamGroup;
-                        curGroupName = pData.Name;
-
-                        for (int k = 0; k < pData.Fields.Count; k++)
-                        {
-                            GPARAM.IField fEntry = pData.Fields[k];
-
-                            if (IsTargetField(fEntry))
-                            {
-                                curFieldName = fEntry.Name;
-                                targetParamField = fEntry;
-                                resolvedList.Add($"{curParamName}:{curGroupName}:{curFieldName}");
-
-                                var actions = ResolveQuickEdit(curParamName, curGroupName, targetParamField);
-                                actionList.Add(actions);
-                            }
-                        }
-                    }
+                    targetParamField = fEntry;
+                    resolvedList.Add($"{curParamName}:{curGroupName}:{fEntry.Name}");
+                    actionList.Add(ResolveQuickEdit(curParamName, curGroupName, targetParamField));
                 }
             }
         }
 
         if (resolvedList.Count > 0)
         {
-            foreach (var entry in resolvedList)
-            {
-                //Smithbox.Log(this, $"Applied Quick Edit to: {entry}");
-            }
-
             if (actionList.Count > 0)
             {
-
                 var compoundAction = new CompoundAction(actionList);
                 Parent.ActionManager.ExecuteAction(compoundAction);
             }
@@ -373,185 +329,116 @@ public class GparamQuickEdit
 
     public bool IsTargetFile(FileDictionaryEntry entry)
     {
-        var match = false;
-
-        var commands = _targetFileString.Split($"+");
-        foreach (var command in commands)
+        foreach (var command in _targetFileString.Split("+"))
         {
-            if (command == "*")
+            if (command == "*") 
+                return true;
+
+            if (command == "selection" && Parent.Selection._selectedGparamKey == entry.Filename)
+                return true;
+
+            var m = Regex.Match(command, @"file:\[(.*)\]");
+
+            if (m.Success && m.Groups.Count >= 2)
             {
-                match = true;
-                continue;
-            }
-
-            if (command == "selection")
-            {
-                if (Parent.Selection._selectedGparamKey == entry.Filename)
-                {
-                    match = true;
-                    continue;
-                }
-            }
-
-            Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"file:\[(.*)\]");
-
-            if (filterMatch.Success && filterMatch.Groups.Count >= 2)
-            {
-                string commandValue = filterMatch.Groups[1].Value;
-
-                if (commandValue == entry.Filename || commandValue == "*")
-                {
-                    match = true;
-                }
+                string val = m.Groups[1].Value;
+                if (val == entry.Filename || val == "*") return true;
             }
         }
-
-        return match;
+        return false;
     }
+
     public bool IsTargetGroup(GPARAM.Param entry)
     {
-        var match = false;
-
-        var commands = _targetGroupString.Split($"+");
-        foreach (var command in commands)
+        foreach (var command in _targetGroupString.Split("+"))
         {
-            if (command == "*")
-            {
-                match = true;
-                continue;
-            }
+            if (command == "*") 
+                return true;
 
             if (command == "selection")
             {
-                var selectedGroup = Parent.Selection.GetSelectedGroup();
-
-                if (selectedGroup.Key == entry.Key || selectedGroup.Name == entry.Name)
-                {
-                    match = true;
-                    continue;
-                }
+                var sel = Parent.Selection.GetSelectedGroup();
+                if (sel.Key == entry.Key || sel.Name == entry.Name) return true;
             }
 
-            Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"group:\[(.*)\]");
+            var m = Regex.Match(command, @"group:\[(.*)\]");
 
-            if (filterMatch.Success && filterMatch.Groups.Count >= 2)
+            if (m.Success && m.Groups.Count >= 2)
             {
-                string commandValue = filterMatch.Groups[1].Value;
-
-                if (commandValue == entry.Name || commandValue == entry.Key || commandValue == "*")
-                {
-                    match = true;
-                }
+                string val = m.Groups[1].Value;
+                if (val == entry.Name || val == entry.Key || val == "*") return true;
             }
         }
-
-        return match;
+        return false;
     }
+
     public bool IsTargetField(GPARAM.IField entry)
     {
-        var match = false;
-
-        var commands = _targetFieldString.Split($"+");
-        foreach (var command in commands)
+        foreach (var command in _targetFieldString.Split("+"))
         {
             if (command == "*")
+                return true;
+
+            if (command == "selection" && Parent.Selection.GetSelectedField().Key == entry.Key)
+                return true;
+
+            var m = Regex.Match(command, @"field:\[(.*)\]");
+
+            if (m.Success && m.Groups.Count >= 2)
             {
-                match = true;
-                continue;
-            }
-
-            if (command == "selection")
-            {
-                var selectedField = Parent.Selection.GetSelectedField();
-
-                if (selectedField.Key == entry.Key)
-                {
-                    match = true;
-                    continue;
-                }
-            }
-
-            Match filterMatch = null;
-            filterMatch = Regex.Match(command, $@"field:\[(.*)\]");
-
-            if (filterMatch.Success && filterMatch.Groups.Count >= 2)
-            {
-                string commandValue = filterMatch.Groups[1].Value;
-
-                if (commandValue == entry.Name || commandValue == entry.Key || commandValue == "*")
-                {
-                    match = true;
-                }
+                string val = m.Groups[1].Value;
+                if (val == entry.Name || val == entry.Key || val == "*") return true;
             }
         }
-
-        return match;
+        return false;
     }
 
     public void UpdateFileFilter(string name)
     {
-        if (_targetFileString != "")
-        {
-            _targetFileString = $"{_targetFileString}+file:[{name}]";
-        }
-        else
-        {
-            _targetFileString = $"file:[{name}]";
-        }
+        _targetFileString = _targetFileString != ""
+            ? $"{_targetFileString}+file:[{name}]"
+            : $"file:[{name}]";
     }
+
     public void UpdateGroupFilter(string key)
     {
-        var input = key;
-
-        if (_targetGroupString != "")
-        {
-            _targetGroupString = $"{_targetGroupString}+group:[{input}]";
-        }
-        else
-        {
-            _targetGroupString = $"group:[{input}]";
-        }
+        _targetGroupString = _targetGroupString != ""
+            ? $"{_targetGroupString}+group:[{key}]"
+            : $"group:[{key}]";
     }
+
     public void UpdateFieldFilter(string key)
     {
-        var input = key;
-
-        if (_targetFieldString != "")
-        {
-            _targetFieldString = $"{_targetFieldString}+field:[{input}]";
-        }
-        else
-        {
-            _targetFieldString = $"field:[{input}]";
-        }
+        _targetFieldString = _targetFieldString != ""
+            ? $"{_targetFieldString}+field:[{key}]"
+            : $"field:[{key}]";
     }
+
     public void UpdateValueRowFilter(int index)
     {
-        if (_valueFilterString != "")
-        {
-            _valueFilterString = $"{_valueFilterString}+index:[{index}]";
-        }
-        else
-        {
-            _valueFilterString = $"index:[{index}]";
-        }
+        _valueFilterString = _valueFilterString != ""
+            ? $"{_valueFilterString}+index:[{index}]"
+            : $"index:[{index}]";
     }
 
     private BatchChangeAction ResolveQuickEdit(string gparamName, string groupName, GPARAM.IField targetField)
     {
+        var match = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == gparamName);
+
+        if (match.Value == null)
+            return null;
+
+        var gparam = match.Value;
+
+        var group = gparam.Params.FirstOrDefault(e => e.Key == groupName);
+
+        if(group == null) 
+            return null;
+
         filterTruth = new bool[targetField.Values.Count];
         actions = new List<EditValueAction>();
 
-        for (int i = 0; i < targetField.Values.Count; i++)
-        {
-            filterTruth[i] = false;
-        }
-
-        // Filter arguments
-        var filters = _valueFilterString.Split($"+");
-        foreach (var filter in filters)
+        foreach (var filter in _valueFilterString.Split("+"))
         {
             FilterAll(targetField, filter);
             FilterSelection(targetField, filter);
@@ -561,933 +448,618 @@ public class GparamQuickEdit
             FilterValue(targetField, filter);
         }
 
-        // Command arguments
-        var commands = _valueCommandString.Split($"+");
-        foreach (var command in commands)
+        foreach (var command in _valueCommandString.Split("+"))
         {
-            CommandAdjust(targetField, command, EditEffectType.Set, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.Add, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.Subtract, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.Multiply, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.SetByRow, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.Restore, gparamName, groupName);
-            CommandAdjust(targetField, command, EditEffectType.Random, gparamName, groupName);
+            CommandAdjust(targetField, command, EditEffectType.Set, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.Add, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.Subtract, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.Multiply, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.SetByRow, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.Restore, gparam, group);
+            CommandAdjust(targetField, command, EditEffectType.Random, gparam, group);
         }
 
-        // Combine all the individual changes into a single action
-        // so Undo/Redo treats the Quick Edit changes as one discrete change
         return new BatchChangeAction(actions);
     }
 
     private (bool, object) GetVanillaValue(int index)
     {
-        object vanillaValue = -1;
-        bool foundValue = false;
-
         var selectedGroup = Parent.Selection.GetSelectedGroup();
         var selectedField = Parent.Selection.GetSelectedField();
 
-        // Find vanilla value
         foreach (var entry in Project.Handler.GparamData.VanillaBank.Entries)
         {
-            if (entry.Key.Filename == Parent.Selection._selectedGparamKey)
+            if (entry.Key.Filename != Parent.Selection._selectedGparamKey)
+                continue;
+
+            foreach (var paramGroup in entry.Value.Params)
             {
-                foreach (var paramGroup in entry.Value.Params)
+                if (paramGroup.Key != selectedGroup.Key)
+                    continue;
+
+                foreach (var paramField in paramGroup.Fields)
                 {
-                    if (paramGroup.Key == selectedGroup.Key)
-                    {
-                        foreach (var paramField in paramGroup.Fields)
-                        {
-                            if (paramField.Key == selectedField.Key)
-                            {
-                                if (paramField.Values.Count > index)
-                                {
-                                    vanillaValue = paramField.Values[index].Value;
-                                    foundValue = true;
-                                    break;
-                                }
-                            }
-                        }
-                        if (foundValue)
-                            break;
-                    }
+                    if (paramField.Key == selectedField.Key && paramField.Values.Count > index)
+                        return (true, paramField.Values[index].Value);
                 }
             }
-            if (foundValue)
-                break;
         }
 
-        return (foundValue, vanillaValue);
+        return (false, -1);
     }
 
-    private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType, string gparamName, string groupName)
+    // Parses a comma-separated string into floats, returns null if any fail or count doesn't match.
+    private static float[] ParseFloats(string s, int count)
     {
-        //Smithbox.Log(this, commandArg);
+        var parts = s.Split(",");
 
-        Match valueCommandMatch = null;
+        if (parts.Length < count) 
+            return null;
 
-        if (effectType == EditEffectType.Set)
+        var result = new float[count];
+
+        for (int i = 0; i < count; i++)
         {
-            valueCommandMatch = Regex.Match(commandArg, $@"set:\[(.*)\]");
-        }
-        if (effectType == EditEffectType.Add)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"add:\[(.*)\]");
-        }
-        if (effectType == EditEffectType.Subtract)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"sub:\[(.*)\]");
-        }
-        if (effectType == EditEffectType.Multiply)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"mult:\[(.*)\]");
-        }
-        if (effectType == EditEffectType.SetByRow)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"rowset:\[(.*)\]");
-        }
-        if (effectType == EditEffectType.Restore)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"restore");
-        }
-        if (effectType == EditEffectType.Random)
-        {
-            valueCommandMatch = Regex.Match(commandArg, $@"random:\[(.*)\]\[(.*)\]");
+            if (!float.TryParse(parts[i], out result[i])) 
+                return null;
         }
 
-        if (valueCommandMatch == null)
+        return result;
+    }
+
+    private void AddAction(GPARAM data, GPARAM.Param group, GPARAM.IField field,
+        GPARAM.IFieldValue entry, object value, int index, ValueChangeType changeType)
+    {
+        var newAction = new EditValueAction(Project, data, group, field, new List<IFieldValue>() { entry }, value, changeType);
+        actions.Add(newAction);
+    }
+
+    private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType,
+        GPARAM data, Param group)
+    {
+        // Match the command pattern for this effect type
+        Match match = effectType switch
+        {
+            EditEffectType.Set => Regex.Match(commandArg, @"set:\[(.*)\]"),
+            EditEffectType.Add => Regex.Match(commandArg, @"add:\[(.*)\]"),
+            EditEffectType.Subtract => Regex.Match(commandArg, @"sub:\[(.*)\]"),
+            EditEffectType.Multiply => Regex.Match(commandArg, @"mult:\[(.*)\]"),
+            EditEffectType.SetByRow => Regex.Match(commandArg, @"rowset:\[(.*)\]"),
+            EditEffectType.Restore => Regex.Match(commandArg, @"restore"),
+            EditEffectType.Random => Regex.Match(commandArg, @"random:\[(.*)\]\[(.*)\]"),
+            _ => null
+        };
+
+        if (match == null) 
+            return;
+
+        bool proceed = effectType switch
+        {
+            EditEffectType.Restore => match.Success,
+            EditEffectType.Random => match.Success && match.Groups.Count >= 3,
+            _ => match.Success && match.Groups.Count >= 2
+        };
+
+        if (!proceed) 
+            return;
+
+        // Bool fields only support Set, Restore, and Random
+        if (targetField is GPARAM.BoolField &&
+            effectType is EditEffectType.Add or EditEffectType.Subtract
+                       or EditEffectType.Multiply or EditEffectType.SetByRow)
         {
             return;
         }
 
-        // Ignore commands that are not set for bools
-        if (targetField is GPARAM.BoolField)
-        {
-            if (effectType == EditEffectType.Add ||
-                effectType == EditEffectType.Subtract ||
-                effectType == EditEffectType.Multiply ||
-                effectType == EditEffectType.SetByRow)
-            {
-                return;
-            }
-        }
+        string primaryArg = effectType != EditEffectType.Restore ? match.Groups[1].Value : "0";
+        string secondaryArg = effectType == EditEffectType.Random ? match.Groups[2].Value : "";
 
-        var proceed = false;
-
-        if (effectType is EditEffectType.Set or EditEffectType.Add or EditEffectType.Subtract or EditEffectType.Multiply or EditEffectType.SetByRow)
+        // Map EditEffectType to ValueChangeType for the action
+        ValueChangeType ChangeType(EditEffectType e) => e switch
         {
-            if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 2)
-            {
-                proceed = true;
-            }
-        }
-        // Separate since Restore doesn't have pass a parameter
-        else if (effectType is EditEffectType.Restore)
-        {
-            if (valueCommandMatch.Success)
-            {
-                proceed = true;
-            }
-        }
-        else if (effectType is EditEffectType.Random)
-        {
-            if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 3)
-            {
-                proceed = true;
-            }
-        }
+            EditEffectType.Add => ValueChangeType.Addition,
+            EditEffectType.Subtract => ValueChangeType.Subtraction,
+            EditEffectType.Multiply => ValueChangeType.Multiplication,
+            _ => ValueChangeType.Set
+        };
 
-        if (proceed)
+        for (int i = 0; i < targetField.Values.Count; i++)
         {
-            string valueCommandString = valueCommandMatch.Groups[1].Value;
-            string valueCommandString_secondary = "";
+            if (!filterTruth[i]) 
+                continue;
 
-            // Read secondary group for "random" command
-            if (effectType is EditEffectType.Random)
-            {
-                valueCommandString_secondary = valueCommandMatch.Groups[2].Value;
-            }
+            var entry = targetField.Values[i];
 
-            // Set this to a dummy value since "restore" doesn't pass a value
+            // Restore is field-type agnostic — handle it once here
             if (effectType == EditEffectType.Restore)
             {
-                valueCommandString = "0";
-            }
-
-            int rowsetId = -1;
-            // Read value as int for set by row
-            if (effectType == EditEffectType.SetByRow)
-            {
-                int.TryParse(valueCommandString, out rowsetId);
-            }
-
-            for (int i = 0; i < targetField.Values.Count; i++)
-            {
-                // Only change if it matches filter truth
-                if (filterTruth[i] == true)
+                var (found, vanillaValue) = GetVanillaValue(i);
+                if (found)
                 {
-                    GPARAM.IFieldValue entry = targetField.Values[i];
-
-                    //Smithbox.Log(this, $"entry: {entry.Id} {entry.Value}");
-
-                    // INT
-                    if (targetField is GPARAM.IntField intField)
-                    {
-                        int commandValue = -1;
-                        var valid = int.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (intField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = intField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // UINT
-                    else if (targetField is GPARAM.UintField uintField)
-                    {
-                        uint commandValue = 0;
-                        var valid = uint.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (uintField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = uintField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    int newValue = Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (uint)newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // SHORT
-                    else if (targetField is GPARAM.ShortField shortField)
-                    {
-                        short commandValue = 0;
-                        var valid = short.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (shortField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = shortField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-
-                                    if (newValue > short.MaxValue)
-                                        newValue = short.MaxValue;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (short)newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // SBYTE
-                    else if (targetField is GPARAM.SbyteField sbyteField)
-                    {
-                        sbyte commandValue = 0;
-                        var valid = sbyte.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (sbyteField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = sbyteField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-
-                                    if (newValue > sbyte.MaxValue)
-                                        newValue = sbyte.MaxValue;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // BYTE
-                    else if (targetField is GPARAM.ByteField byteField)
-                    {
-                        byte commandValue = 0;
-                        var valid = byte.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (byteField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = byteField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-
-                                    if (newValue > byte.MaxValue)
-                                        newValue = byte.MaxValue;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (byte)newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // BOOL
-                    else if (targetField is GPARAM.BoolField boolField)
-                    {
-                        int commandValue = 0;
-                        var valid = int.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            else if (effectType == EditEffectType.Random)
-                            {
-                                int commandValue_secondary = -1;
-                                var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    double newValue = Utils.GenerateRandomDouble(RandomSource, 0, 1);
-
-                                    bool newBool = false;
-
-                                    if (newValue > 0.5)
-                                        newBool = true;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newBool, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            else
-                            {
-                                // Always set bools
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-                    }
-                    // FLOAT
-                    else if (targetField is GPARAM.FloatField floatField)
-                    {
-                        float commandValue = 0.0f;
-                        var valid = float.TryParse(valueCommandString, out commandValue);
-
-                        if (valid)
-                        {
-                            if (effectType == EditEffectType.Set)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Add)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Subtract)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.Multiply)
-                            {
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                actions.Add(action);
-                            }
-                            if (effectType == EditEffectType.SetByRow)
-                            {
-                                if (floatField.Values.Any(x => x.ID == rowsetId))
-                                {
-                                    commandValue = floatField.Values.Find(x => x.ID == rowsetId).Value;
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Restore)
-                            {
-                                bool foundValue = false;
-                                object vanillaValue = null;
-                                (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                                if (foundValue)
-                                {
-                                    var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                            if (effectType == EditEffectType.Random)
-                            {
-                                float commandValue_secondary = -1;
-                                var valid_secondary = float.TryParse(valueCommandString_secondary, out commandValue_secondary);
-
-                                if (valid_secondary)
-                                {
-                                    double newValue = Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
-
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, (float)newValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                            }
-                        }
-                    }
-                    // VECTOR2
-                    else if (targetField is GPARAM.Vector2Field vector2Field)
-                    {
-                        Vector2 commandValue = new Vector2(0, 0);
-
-                        if (effectType == EditEffectType.SetByRow)
-                        {
-                            if (vector2Field.Values.Any(x => x.ID == rowsetId))
-                            {
-                                commandValue = vector2Field.Values.Find(x => x.ID == rowsetId).Value;
-
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-                        if (effectType == EditEffectType.Restore)
-                        {
-                            bool foundValue = false;
-                            object vanillaValue = null;
-                            (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                            if (foundValue)
-                            {
-                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-
-                        if (!valueCommandString.Contains(","))
-                        {
-                            continue;
-                        }
-
-                        var parts = valueCommandString.Split(",");
-
-                        if (parts.Length > 1)
-                        {
-                            float commandValue1 = 0.0f;
-                            var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                            float commandValue2 = 0.0f;
-                            var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                            if (valid1 && valid2)
-                            {
-                                commandValue = new Vector2(commandValue1, commandValue2);
-
-                                if (effectType == EditEffectType.Set)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Add)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Subtract)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Multiply)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Random)
-                                {
-                                    var partsSecondary = valueCommandString_secondary.Split(",");
-
-                                    if (partsSecondary.Length > 1)
-                                    {
-                                        float commandValue_secondary1 = 0.0f;
-                                        var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
-
-                                        float commandValue_secondary2 = 0.0f;
-                                        var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
-
-                                        if (valid_secondary1 && valid_secondary2)
-                                        {
-                                            double newValue1 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                            double newValue2 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue2, (double)commandValue_secondary2);
-
-                                            Vector2 newValue = new Vector2((float)newValue1, (float)newValue2);
-
-                                            EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
-                                            actions.Add(action);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    // VECTOR3
-                    else if (targetField is GPARAM.Vector3Field vector3Field)
-                    {
-                        Vector3 commandValue = new Vector3(0, 0, 0);
-
-                        if (effectType == EditEffectType.SetByRow)
-                        {
-                            if (vector3Field.Values.Any(x => x.ID == rowsetId))
-                            {
-                                commandValue = vector3Field.Values.Find(x => x.ID == rowsetId).Value;
-
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-                        if (effectType == EditEffectType.Restore)
-                        {
-                            bool foundValue = false;
-                            object vanillaValue = null;
-                            (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                            if (foundValue)
-                            {
-                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-
-                        if (!valueCommandString.Contains(","))
-                        {
-                            continue;
-                        }
-
-                        var parts = valueCommandString.Split(",");
-
-                        if (parts.Length > 2)
-                        {
-                            float commandValue1 = 0.0f;
-                            var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                            float commandValue2 = 0.0f;
-                            var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                            float commandValue3 = 0.0f;
-                            var valid3 = float.TryParse(parts[2], out commandValue3);
-
-                            if (valid1 && valid2 && valid3)
-                            {
-                                commandValue = new Vector3(commandValue1, commandValue2, commandValue3);
-
-                                if (effectType == EditEffectType.Set)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Add)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Subtract)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Multiply)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Random)
-                                {
-                                    var partsSecondary = valueCommandString_secondary.Split(",");
-
-                                    if (partsSecondary.Length > 2)
-                                    {
-                                        float commandValue_secondary1 = 0.0f;
-                                        var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
-
-                                        float commandValue_secondary2 = 0.0f;
-                                        var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
-
-                                        float commandValue_secondary3 = 0.0f;
-                                        var valid_secondary3 = float.TryParse(partsSecondary[2], out commandValue_secondary3);
-
-                                        if (valid_secondary1 && valid_secondary2 && valid_secondary3)
-                                        {
-                                            double newValue1 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                            double newValue2 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue2, (double)commandValue_secondary2);
-                                            double newValue3 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue3, (double)commandValue_secondary3);
-
-                                            Vector3 newValue = new Vector3((float)newValue1, (float)newValue2, (float)newValue3);
-
-                                            EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
-                                            actions.Add(action);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    // VECTOR4
-                    else if (targetField is GPARAM.Vector4Field vector4Field)
-                    {
-                        Vector4 commandValue = new Vector4(0, 0, 0, 0);
-
-                        if (effectType == EditEffectType.SetByRow)
-                        {
-                            if (vector4Field.Values.Any(x => x.ID == rowsetId))
-                            {
-                                commandValue = vector4Field.Values.Find(x => x.ID == rowsetId).Value;
-
-                                EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-                        if (effectType == EditEffectType.Restore)
-                        {
-                            bool foundValue = false;
-                            object vanillaValue = null;
-                            (foundValue, vanillaValue) = GetVanillaValue(i);
-
-                            if (foundValue)
-                            {
-                                var action = new EditValueAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
-                                actions.Add(action);
-                            }
-                        }
-
-                        if (!valueCommandString.Contains(","))
-                        {
-                            continue;
-                        }
-
-                        var parts = valueCommandString.Split(",");
-
-                        if (parts.Length > 3)
-                        {
-                            float commandValue1 = 0.0f;
-                            var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                            float commandValue2 = 0.0f;
-                            var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                            float commandValue3 = 0.0f;
-                            var valid3 = float.TryParse(parts[2], out commandValue3);
-
-                            float commandValue4 = 0.0f;
-                            var valid4 = float.TryParse(parts[3], out commandValue4);
-
-                            if (valid1 && valid2 && valid3 && valid4)
-                            {
-                                commandValue = new Vector4(commandValue1, commandValue2, commandValue3, commandValue4);
-
-                                if (effectType == EditEffectType.Set)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Add)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Subtract)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Multiply)
-                                {
-                                    EditValueAction action = new EditValueAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
-                                    actions.Add(action);
-                                }
-                                if (effectType == EditEffectType.Random)
-                                {
-                                    var partsSecondary = valueCommandString_secondary.Split(",");
-
-                                    if (partsSecondary.Length > 3)
-                                    {
-                                        float commandValue_secondary1 = 0.0f;
-                                        var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
-
-                                        float commandValue_secondary2 = 0.0f;
-                                        var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
-
-                                        float commandValue_secondary3 = 0.0f;
-                                        var valid_secondary3 = float.TryParse(partsSecondary[2], out commandValue_secondary3);
-
-                                        float commandValue_secondary4 = 0.0f;
-                                        var valid_secondary4 = float.TryParse(partsSecondary[3], out commandValue_secondary4);
-
-                                        if (valid_secondary1 && valid_secondary2 && valid_secondary3 && valid_secondary4)
-                                        {
-                                            double newValue1 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                            double newValue2 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue2, (double)commandValue_secondary2);
-                                            double newValue3 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue3, (double)commandValue_secondary3);
-                                            double newValue4 = Utils.GenerateRandomDouble(
-                                                RandomSource, (double)commandValue4, (double)commandValue_secondary4);
-
-                                            Vector4 newValue = new Vector4((float)newValue1, (float)newValue2, (float)newValue3, (float)newValue4);
-
-                                            EditValueAction action = new EditValueAction(
-                                                gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
-                                            actions.Add(action);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    AddAction(data, group, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                 }
+
+                continue;
+            }
+
+            switch (targetField)
+            {
+                case GPARAM.IntField intField:
+                    {
+                        if (!int.TryParse(primaryArg, out int v))
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = intField.Values.Find(x => x.ID == int.Parse(primaryArg));
+
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    Utils.GenerateRandomInt(RandomSource, v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+                case GPARAM.UintField uintField:
+                    {
+                        if (!uint.TryParse(primaryArg, out uint v)) 
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = uintField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    (uint)Utils.GenerateRandomInt(RandomSource, (int)v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+                case GPARAM.ShortField shortField:
+                    {
+                        if (!short.TryParse(primaryArg, out short v)) 
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = shortField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                int rand = Utils.GenerateRandomInt(RandomSource, v, v2);
+                                AddAction(data, group, targetField, entry,
+                                    (short)System.Math.Min(rand, short.MaxValue), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+                case GPARAM.UshortField ushortField:
+                    {
+                        if (!ushort.TryParse(primaryArg, out ushort v))
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = ushortField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                int rand = Utils.GenerateRandomInt(RandomSource, v, v2);
+                                AddAction(data, group, targetField, entry,
+                                    (ushort)System.Math.Min(rand, ushort.MaxValue), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+                case GPARAM.SbyteField sbyteField:
+                    {
+                        if (!sbyte.TryParse(primaryArg, out sbyte v)) 
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = sbyteField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                int rand = Utils.GenerateRandomInt(RandomSource, v, v2);
+                                AddAction(data, group, targetField, entry,
+                                    (sbyte)System.Math.Min(rand, sbyte.MaxValue), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.ByteField byteField:
+                    {
+                        if (!byte.TryParse(primaryArg, out byte v)) 
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = byteField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out int v2))
+                            {
+                                int rand = Utils.GenerateRandomInt(RandomSource, v, v2);
+                                AddAction(data, group, targetField, entry,
+                                    (byte)System.Math.Min(rand, byte.MaxValue), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.BoolField boolField:
+                    {
+                        if (effectType == EditEffectType.Random)
+                        {
+                            if (int.TryParse(secondaryArg, out _))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    Utils.GenerateRandomDouble(RandomSource, 0, 1) > 0.5, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (int.TryParse(primaryArg, out int v))
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ValueChangeType.Set);
+                        }
+                        break;
+                    }
+
+                case GPARAM.FloatField floatField:
+                    {
+                        if (!float.TryParse(primaryArg, out float v)) 
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = floatField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (float.TryParse(secondaryArg, out float v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    (float)Utils.GenerateRandomDouble(RandomSource, v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.DoubleField doubleField:
+                    {
+                        if (!double.TryParse(primaryArg, out double v))
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = doubleField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (double.TryParse(secondaryArg, out double v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    (double)Utils.GenerateRandomDouble(RandomSource, v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.Vector2Field vector2Field:
+                    {
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = vector2Field.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                            break;
+                        }
+
+                        var f = ParseFloats(primaryArg, 2);
+
+                        if (f == null) 
+                            break;
+
+                        var v = new Vector2(f[0], f[1]);
+
+                        if (effectType == EditEffectType.Random)
+                        {
+                            var f2 = ParseFloats(secondaryArg, 2);
+
+                            if (f2 == null) 
+                                break;
+
+                            AddAction(data, group, targetField, entry, new Vector2(
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[0], f2[0]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[1], f2[1])), i, ValueChangeType.Set);
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.Vector3Field vector3Field:
+                    {
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = vector3Field.Values.Find(x => x.ID == int.Parse(primaryArg));
+
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                            break;
+                        }
+                        var f = ParseFloats(primaryArg, 3);
+
+                        if (f == null) 
+                            break;
+
+                        var v = new Vector3(f[0], f[1], f[2]);
+
+                        if (effectType == EditEffectType.Random)
+                        {
+                            var f2 = ParseFloats(secondaryArg, 3);
+
+                            if (f2 == null) 
+                                break;
+
+                            AddAction(data, group, targetField, entry, new Vector3(
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[0], f2[0]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[1], f2[1]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[2], f2[2])), i, ValueChangeType.Set);
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.Vector4Field vector4Field:
+                    {
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = vector4Field.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+
+                            break;
+                        }
+
+                        var f = ParseFloats(primaryArg, 4);
+
+                        if (f == null) 
+                            break;
+
+                        var v = new Vector4(f[0], f[1], f[2], f[3]);
+
+                        if (effectType == EditEffectType.Random)
+                        {
+                            var f2 = ParseFloats(secondaryArg, 4);
+
+                            if (f2 == null)
+                                break;
+
+                            AddAction(data, group, targetField, entry, new Vector4(
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[0], f2[0]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[1], f2[1]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[2], f2[2]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[3], f2[3])), i, ValueChangeType.Set);
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+
+                        break;
+                    }
+
+                case GPARAM.ColorField colorField:
+                    {
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = colorField.Values.Find(x => x.ID == int.Parse(primaryArg));
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+
+                            break;
+                        }
+
+                        var f = ParseFloats(primaryArg, 4);
+
+                        if (f == null)
+                            break;
+
+                        var v = new Vector4(f[0], f[1], f[2], f[3]);
+
+                        if (effectType == EditEffectType.Random)
+                        {
+                            var f2 = ParseFloats(secondaryArg, 4);
+
+                            if (f2 == null)
+                                break;
+
+                            AddAction(data, group, targetField, entry, new Vector4(
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[0], f2[0]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[1], f2[1]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[2], f2[2]),
+                                (float)Utils.GenerateRandomDouble(RandomSource, f[3], f2[3])), i, ValueChangeType.Set);
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+
+                        break;
+                    }
+
+                case GPARAM.LongField longField:
+                    {
+                        if (!long.TryParse(primaryArg, out long v))
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = longField.Values.Find(x => x.ID == int.Parse(primaryArg));
+
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (long.TryParse(secondaryArg, out long v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    Utils.GenerateRandomLong(RandomSource, v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.UlongField ulongField:
+                    {
+                        if (!ulong.TryParse(primaryArg, out ulong v))
+                            break;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = ulongField.Values.Find(x => x.ID == int.Parse(primaryArg));
+
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else if (effectType == EditEffectType.Random)
+                        {
+                            if (ulong.TryParse(secondaryArg, out ulong v2))
+                            {
+                                AddAction(data, group, targetField, entry,
+                                    Utils.GenerateRandomULong(RandomSource, v, v2), i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
+
+                case GPARAM.StringField strField:
+                    {
+                        string v = primaryArg;
+
+                        if (effectType == EditEffectType.SetByRow)
+                        {
+                            var src = strField.Values.Find(x => x.ID == int.Parse(primaryArg));
+
+                            if (src != null)
+                            {
+                                AddAction(data, group, targetField, entry, src.Value, i, ValueChangeType.Set);
+                            }
+                        }
+                        else
+                        {
+                            AddAction(data, group, targetField, entry, v, i, ChangeType(effectType));
+                        }
+                        break;
+                    }
             }
         }
     }
@@ -1497,14 +1069,10 @@ public class GparamQuickEdit
         if (filterArg == "*")
         {
             for (int i = 0; i < targetField.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = targetField.Values[i];
-
                 filterTruth[i] = true;
-                //Smithbox.Log(this, $"Filter All: {entry.Id}");
-            }
         }
     }
+
     private void FilterSelection(GPARAM.IField targetField, string filterArg)
     {
         if (filterArg == "selection")
@@ -1512,317 +1080,93 @@ public class GparamQuickEdit
             for (int i = 0; i < targetField.Values.Count; i++)
             {
                 if (Parent.Selection._selectedFieldValueIndex == i)
-                {
                     filterTruth[i] = true;
-                }
             }
         }
     }
 
     private void FilterId(GPARAM.IField targetField, string filterArg)
     {
-        var idMatch = Regex.Match(filterArg, $@"id:\[([0-9]+)\]");
+        var m = Regex.Match(filterArg, @"id:\[([0-9]+)\]");
+        if (!m.Success || m.Groups.Count < 2) return;
 
-        if (idMatch.Success && idMatch.Groups.Count >= 2)
+        if (!int.TryParse(m.Groups[1].Value, out int targetId)) return;
+
+        for (int i = 0; i < targetField.Values.Count; i++)
         {
-            int targetId = -1;
-            int.TryParse(idMatch.Groups[1].Value, out targetId);
-
-            for (int i = 0; i < targetField.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = targetField.Values[i];
-
-                if (entry.ID == targetId)
-                {
-                    filterTruth[i] = true;
-                    //Smithbox.Log(this, $"Filter: Matched ID {targetId} - {entry.Id}");
-                }
-            }
+            if (targetField.Values[i].ID == targetId)
+                filterTruth[i] = true;
         }
     }
 
     private void FilterIndex(GPARAM.IField targetField, string filterArg)
     {
-        var idxMatch = Regex.Match(filterArg, $@"index:\[([0-9]+)\]");
+        var m = Regex.Match(filterArg, @"index:\[([0-9]+)\]");
+        if (!m.Success || m.Groups.Count < 2) return;
 
-        if (idxMatch.Success && idxMatch.Groups.Count >= 2)
-        {
-            int targetIdx = -1;
-            int.TryParse(idxMatch.Groups[1].Value, out targetIdx);
+        if (!int.TryParse(m.Groups[1].Value, out int targetIdx)) return;
 
-            for (int i = 0; i < targetField.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = targetField.Values[i];
-
-                if (i == targetIdx)
-                {
-                    filterTruth[i] = true;
-                    //Smithbox.Log(this, $"Filter: Matched ID {targetId} - {entry.Id}");
-                }
-            }
-        }
+        if (targetIdx < targetField.Values.Count)
+            filterTruth[targetIdx] = true;
     }
 
     private void FilterTimeOfDay(GPARAM.IField targetField, string filterArg)
     {
-        var todMatch = Regex.Match(filterArg, $@"tod:\[([0-9]+)\]");
+        var m = Regex.Match(filterArg, @"tod:\[([0-9]+)\]");
+        if (!m.Success || m.Groups.Count < 2) return;
 
-        if (todMatch.Success && todMatch.Groups.Count >= 2)
+        if (!float.TryParse(m.Groups[1].Value, out float targetTod)) return;
+
+        for (int i = 0; i < targetField.Values.Count; i++)
         {
-            float targetTod = -1;
-            float.TryParse(todMatch.Groups[1].Value, out targetTod);
-
-            for (int i = 0; i < targetField.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = targetField.Values[i];
-
-                if (entry.TimeOfDay == targetTod)
-                {
-                    filterTruth[i] = true;
-                    //Smithbox.Log(this, $"Filter: Matched Time of Day {targetTod} - {entry.Id}");
-                }
-            }
+            if (targetField.Values[i].TimeOfDay == targetTod)
+                filterTruth[i] = true;
         }
     }
 
     private void FilterValue(GPARAM.IField targetField, string filterArg)
     {
-        var valueMatch = Regex.Match(filterArg, $@"value:\[(.*)\]");
+        var m = Regex.Match(filterArg, @"value:\[(.*)\]");
+        if (!m.Success || m.Groups.Count < 2) return;
 
-        if (valueMatch.Success && valueMatch.Groups.Count >= 2)
+        string targetValue = m.Groups[1].Value;
+
+        for (int i = 0; i < targetField.Values.Count; i++)
         {
-            string targetValue = valueMatch.Groups[1].Value;
-
-            for (int i = 0; i < targetField.Values.Count; i++)
+            bool matched = targetField switch
             {
-                GPARAM.IFieldValue entry = targetField.Values[i];
+                GPARAM.IntField f => int.TryParse(targetValue, out int iv) && f.Values[i].Value == iv,
+                GPARAM.UintField f => uint.TryParse(targetValue, out uint uv) && f.Values[i].Value == uv,
+                GPARAM.ShortField f => short.TryParse(targetValue, out short sv) && f.Values[i].Value == sv,
+                GPARAM.SbyteField f => sbyte.TryParse(targetValue, out sbyte bv) && f.Values[i].Value == bv,
+                GPARAM.ByteField f => byte.TryParse(targetValue, out byte byv) && f.Values[i].Value == byv,
+                GPARAM.BoolField f => bool.TryParse(targetValue, out bool blv) && f.Values[i].Value == blv,
+                GPARAM.FloatField f => float.TryParse(targetValue, out float fv) && f.Values[i].Value == fv,
+                GPARAM.Vector2Field f => MatchVector2(targetValue, f.Values[i].Value),
+                GPARAM.Vector3Field f => MatchVector3(targetValue, f.Values[i].Value),
+                GPARAM.Vector4Field f => MatchVector4(targetValue, f.Values[i].Value),
+                _ => false
+            };
 
-                // INT
-                if (targetField is GPARAM.IntField intField)
-                {
-                    int fieldValue = intField.Values[i].Value;
-
-                    int commandValue = -1;
-                    var valid = int.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value INT {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // UINT
-                else if (targetField is GPARAM.UintField uintField)
-                {
-                    uint fieldValue = uintField.Values[i].Value;
-
-                    uint commandValue = 0;
-                    var valid = uint.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value UINT {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // SHORT
-                else if (targetField is GPARAM.ShortField shortField)
-                {
-                    short fieldValue = shortField.Values[i].Value;
-
-                    short commandValue = 0;
-                    var valid = short.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value SHORT {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // SBYTE
-                else if (targetField is GPARAM.SbyteField sbyteField)
-                {
-                    sbyte fieldValue = sbyteField.Values[i].Value;
-
-                    sbyte commandValue = 0;
-                    var valid = sbyte.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value SBYTE {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // BYTE
-                else if (targetField is GPARAM.ByteField byteField)
-                {
-                    byte fieldValue = byteField.Values[i].Value;
-
-                    byte commandValue = 0;
-                    var valid = byte.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value BYTE {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // BOOL
-                else if (targetField is GPARAM.BoolField boolField)
-                {
-                    bool fieldValue = boolField.Values[i].Value;
-
-                    bool commandValue = false;
-                    var valid = bool.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value BOOL {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // FLOAT
-                else if (targetField is GPARAM.FloatField floatField)
-                {
-                    float fieldValue = floatField.Values[i].Value;
-
-                    float commandValue = 0.0f;
-                    var valid = float.TryParse(targetValue, out commandValue);
-
-                    if (valid)
-                    {
-                        if (fieldValue == commandValue)
-                        {
-                            filterTruth[i] = true;
-                            //Smithbox.Log(this, $"Filter: Matched Value FLOAT {commandValue} - {entry.Id}");
-                        }
-                    }
-                }
-                // VECTOR2
-                else if (targetField is GPARAM.Vector2Field vector2Field)
-                {
-                    Vector2 fieldValue = vector2Field.Values[i].Value;
-
-                    if (!targetValue.Contains(","))
-                    {
-                        continue;
-                    }
-
-                    var parts = targetValue.Split(",");
-
-                    if (parts.Length > 1)
-                    {
-                        float commandValue1 = 0.0f;
-                        var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                        float commandValue2 = 0.0f;
-                        var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                        if (valid1 && valid2)
-                        {
-                            Vector2 commandVector = new Vector2(commandValue1, commandValue2);
-
-                            if (fieldValue == commandVector)
-                            {
-                                filterTruth[i] = true;
-                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR2 {commandVector} - {entry.Id}");
-                            }
-                        }
-                    }
-                }
-                // VECTOR3
-                else if (targetField is GPARAM.Vector3Field vector3Field)
-                {
-                    Vector3 fieldValue = vector3Field.Values[i].Value;
-
-                    if (!targetValue.Contains(","))
-                    {
-                        continue;
-                    }
-
-                    var parts = targetValue.Split(",");
-
-                    if (parts.Length > 2)
-                    {
-                        float commandValue1 = 0.0f;
-                        var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                        float commandValue2 = 0.0f;
-                        var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                        float commandValue3 = 0.0f;
-                        var valid3 = float.TryParse(parts[2], out commandValue3);
-
-                        if (valid1 && valid2 && valid3)
-                        {
-                            Vector3 commandVector = new Vector3(commandValue1, commandValue2, commandValue3);
-
-                            if (fieldValue == commandVector)
-                            {
-                                filterTruth[i] = true;
-                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR3 {commandVector} - {entry.Id}");
-                            }
-                        }
-                    }
-                }
-                // VECTOR4
-                else if (targetField is GPARAM.Vector4Field vector4Field)
-                {
-                    Vector4 fieldValue = vector4Field.Values[i].Value;
-
-                    if (!targetValue.Contains(","))
-                    {
-                        continue;
-                    }
-
-                    var parts = targetValue.Split(",");
-
-                    if (parts.Length > 3)
-                    {
-                        float commandValue1 = 0.0f;
-                        var valid1 = float.TryParse(parts[0], out commandValue1);
-
-                        float commandValue2 = 0.0f;
-                        var valid2 = float.TryParse(parts[1], out commandValue2);
-
-                        float commandValue3 = 0.0f;
-                        var valid3 = float.TryParse(parts[2], out commandValue3);
-
-                        float commandValue4 = 0.0f;
-                        var valid4 = float.TryParse(parts[3], out commandValue4);
-
-
-                        if (valid1 && valid2 && valid3 && valid4)
-                        {
-                            Vector4 commandVector = new Vector4(commandValue1, commandValue2, commandValue3, commandValue4);
-
-                            if (fieldValue == commandVector)
-                            {
-                                filterTruth[i] = true;
-                                //Smithbox.Log(this, $"Filter: Matched Value VECTOR4 {commandVector} - {entry.Id}");
-                            }
-                        }
-                    }
-                }
-            }
+            if (matched) filterTruth[i] = true;
         }
+    }
+
+    private static bool MatchVector2(string s, Vector2 v)
+    {
+        var f = ParseFloats(s, 2);
+        return f != null && new Vector2(f[0], f[1]) == v;
+    }
+
+    private static bool MatchVector3(string s, Vector3 v)
+    {
+        var f = ParseFloats(s, 3);
+        return f != null && new Vector3(f[0], f[1], f[2]) == v;
+    }
+
+    private static bool MatchVector4(string s, Vector4 v)
+    {
+        var f = ParseFloats(s, 4);
+        return f != null && new Vector4(f[0], f[1], f[2], f[3]) == v;
     }
 }

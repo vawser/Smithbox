@@ -502,6 +502,46 @@ public static class Utils
         return (int)Math.Round(tResult);
     }
 
+    public static long GenerateRandomLong(RandomNumberGenerator randomSource, long min, long max)
+    {
+        double randomValue = randomSource.NextDouble();
+
+        Smithbox.Log(typeof(Utils), $"randomValue: {randomValue}");
+
+        long diff = max - min;
+
+        Smithbox.Log(typeof(Utils), $"diff: {diff}");
+        // In-case the order is swapped
+        if (max < min)
+            diff = min - max;
+
+        double tResult = (diff * randomValue);
+
+        Smithbox.Log(typeof(Utils), $"tResult: {tResult}");
+        Smithbox.Log(typeof(Utils), $"tResult Rounded: {(long)Math.Round(tResult)}");
+        return (long)Math.Round(tResult);
+    }
+
+    public static ulong GenerateRandomULong(RandomNumberGenerator randomSource, ulong min, ulong max)
+    {
+        double randomValue = randomSource.NextDouble();
+
+        Smithbox.Log(typeof(Utils), $"randomValue: {randomValue}");
+
+        ulong diff = max - min;
+
+        Smithbox.Log(typeof(Utils), $"diff: {diff}");
+        // In-case the order is swapped
+        if (max < min)
+            diff = min - max;
+
+        double tResult = (diff * randomValue);
+
+        Smithbox.Log(typeof(Utils), $"tResult: {tResult}");
+        Smithbox.Log(typeof(Utils), $"tResult Rounded: {(ulong)Math.Round(tResult)}");
+        return (ulong)Math.Round(tResult);
+    }
+
     public static double GenerateRandomDouble(RandomNumberGenerator randomSource, double min, double max)
     {
         double randomValue = randomSource.NextDouble();

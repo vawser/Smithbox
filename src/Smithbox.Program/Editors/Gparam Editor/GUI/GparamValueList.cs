@@ -200,15 +200,15 @@ public class GparamValueList
             if (!display)
                 continue;
 
-            GparamProperty_Value(i, field, value);
+            GparamProperty_Value(data, group, field, value, i);
         }
 
         ImGui.EndChild();
     }
-    public void GparamProperty_Value(int index, IField field, IFieldValue value)
+    public void GparamProperty_Value(GPARAM data, Param group, IField field, IFieldValue value, int index)
     {
         ImGui.AlignTextToFramePadding();
-        Parent.PropertyEditor.ValueField(index, field, value);
+        Parent.PropertyEditor.ValueField(data, group, field, value, index);
     }
 
     // Information

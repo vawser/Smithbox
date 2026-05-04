@@ -36,7 +36,7 @@ public class GparamPropertyEditor
         Project = project;
     }
 
-    public unsafe void ValueField(int idx, IField field, IFieldValue value)
+    public unsafe void ValueField(GPARAM data, Param group, IField field, IFieldValue value, int idx)
     {
         _changedCache = false;
         _committedCache = false;
@@ -178,6 +178,44 @@ public class GparamPropertyEditor
                 _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
+        else if (field is UshortField ushortField)
+        {
+            ushort fieldValue = ushortField.Values[idx].Value;
+            int shortInput = fieldValue;
+            oldValue = fieldValue;
+
+            if (isBool)
+            {
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if (boolInput)
+                    {
+                        newValue = 1;
+                    }
+                    else
+                    {
+                        newValue = 0;
+                    }
+                    _editedValueCache = newValue;
+                    _changedCache = true;
+                }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref shortInput))
+                {
+                    newValue = shortInput;
+                    _editedValueCache = newValue;
+                    _changedCache = true;
+                }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+        }
         // SBYTE
         else if (field is SbyteField sbyteField)
         {
@@ -259,6 +297,90 @@ public class GparamPropertyEditor
                         _editedValueCache = newValue;
                         _changedCache = true;
                     }
+                }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+        }
+        // LONG
+        else if (field is LongField longField)
+        {
+            long fieldValue = longField.Values[idx].Value;
+            int intInput = (int)fieldValue;
+            oldValue = fieldValue;
+
+            if (isBool)
+            {
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if (boolInput)
+                    {
+                        newValue = 1;
+                    }
+                    else
+                    {
+                        newValue = 0;
+                    }
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
+                }
+
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref intInput))
+                {
+                    newValue = intInput;
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
+                }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+        }
+        // ULONG
+        else if (field is UlongField ulongField)
+        {
+            ulong fieldValue = ulongField.Values[idx].Value;
+            int intInput = (int)fieldValue;
+            oldValue = fieldValue;
+
+            if (isBool)
+            {
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if (boolInput)
+                    {
+                        newValue = 1;
+                    }
+                    else
+                    {
+                        newValue = 0;
+                    }
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
+                }
+
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref intInput))
+                {
+                    newValue = intInput;
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
                 _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
@@ -409,6 +531,21 @@ public class GparamPropertyEditor
             }
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
+        // String
+        else if (field is StringField strfield)
+        {
+            string fieldValue = strfield.Values[idx].Value;
+            string strInput = fieldValue;
+            oldValue = fieldValue;
+
+            if (ImGui.InputText($"##value{idx}", ref strInput, 255))
+            {
+                newValue = strInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
+            }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+        }
         else
         {
             Smithbox.Log(this, $"{field.Name} {field.GetType()} is not supported.", LogLevel.Warning);
@@ -442,9 +579,8 @@ public class GparamPropertyEditor
                 }
                 else
                 {
-                    EditValueAction action = null;
-                    action = new EditValueAction(Parent.Selection._selectedGparamKey, Parent.Selection._selectedParamGroupKey, field, value, newValue, idx, ValueChangeType.Set);
-
+                    var action = new EditValueAction(Project, data, group, field, 
+                        new List<IFieldValue>() { value }, newValue, ValueChangeType.Set);
                     Parent.ActionManager.ExecuteAction(action);
                 }
             }
