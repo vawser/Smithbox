@@ -55,7 +55,7 @@ public class ProjectData : IDisposable
 
         HashSet<string> sourceDirectories =
         [
-            Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", 
+            Path.Join(StudioCore.Common.FileLocations.Assets, "Aliases", 
             ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType)),
             Path.Join(Project.Descriptor.ProjectPath,".smithbox","Assets","Aliases")
         ];

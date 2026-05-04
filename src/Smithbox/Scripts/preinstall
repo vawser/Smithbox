@@ -1,0 +1,58 @@
+#!/bin/sh
+
+if ! command -v install_name_tool &> /dev/null; then
+  cont=$(
+  osascript <<'EOF'
+display alert "Missing install_name_tool" ¬
+  message "Xcode command line tools are required for some unpacking features. Continue anyway?" ¬
+  as critical buttons {"Cancel", "Continue"} default button "Cancel"
+  return button returned of the result
+EOF
+  )
+  if [ "$cont" = "Cancel" ]; then
+    exit 1
+  elif [ "$cont" = "Continue" ]; then
+    exit 0
+  fi
+fi
+
+while true; do
+  dylib=$(
+    osascript <<'EOF'
+set f to choose file of type {"dylib"} with prompt "Select liboo2coremac dynamic library"
+POSIX path of f
+EOF
+  )
+  
+  if [ -z "$dylib" ]; then
+    canc=$(
+    osascript <<'EOF'
+display alert "No oodle library selected" ¬
+  message "Certain unpacking features will not be available." ¬
+  buttons {"Cancel", "Select file...", "Continue"} default button "Cancel"
+  return button returned of the result
+EOF
+    )
+
+    if [ "$canc" = "Cancel" ]; then
+      exit 1
+    elif [ "$canc" = "Continue" ]; then
+      exit 0
+    fi
+  else
+    break
+  fi
+done
+
+libname=$(basename -- "$dylib")
+cp "$dylib" "$INSTALLER_TEMP"
+install_name_tool -id "@executable_path/../../$libname" "$INSTALLER_TEMP/$libname"
+status=$?
+
+if [ $status -ne 0 ]; then
+  osascript -e 'display alert "install_name_tool failed. Please submit an issue on GitHub." buttons {"OK"} default button "Ok" as critical'
+  rm "$INSTALLER_TEMP/$libname"
+  exit $status
+fi
+
+exit 0

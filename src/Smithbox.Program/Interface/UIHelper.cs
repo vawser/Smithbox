@@ -72,11 +72,12 @@ public static class UIHelper
 
     public static void RestoreImguiIfMissing()
     {
-        var curImgui = Path.Join(AppContext.BaseDirectory, "imgui.ini");
-        var defaultImgui = Path.Join(AppContext.BaseDirectory, "imgui.default");
+        var curImgui = Path.Join(StudioCore.Common.FileLocations.CurImgui, "imgui.ini");
+        var defaultImgui = Path.Join(StudioCore.Common.FileLocations.Resources, "imgui.default");
 
         if (!File.Exists(curImgui) && File.Exists(defaultImgui))
         {
+            Directory.CreateDirectory(StudioCore.Common.FileLocations.CurImgui);
             var bytes = File.ReadAllBytes(defaultImgui);
             File.WriteAllBytes(curImgui, bytes);
         }

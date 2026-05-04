@@ -7,13 +7,11 @@
         <LangVersion>12</LangVersion>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-      <DefineConstants>DEBUG</DefineConstants>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-      <DefineConstants>RELEASE</DefineConstants>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <DebugType>embedded</DebugType>
     </PropertyGroup>

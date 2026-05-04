@@ -33,7 +33,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, 0.5f, 4.0f);
+                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, 0.3f, 4.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -479,7 +479,7 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Open Folder", DPI.SelectorButtonSize))
                 {
-                    Process.Start("explorer.exe", Path.Join(AppContext.BaseDirectory, "Assets", "Themes")); 
+                    StudioCore.Common.FileExplorer.Start(Path.Join(StudioCore.Common.FileLocations.Assets, "Themes")); 
                 }
             }
         };

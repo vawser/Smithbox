@@ -90,7 +90,7 @@ public class MapModelInsightView
 
             if (ImGui.Button($"{Icons.EnvelopeOpen}##openOutputDir", DPI.IconButtonSize))
             {
-                Process.Start("explorer.exe", outputDirectory);
+                StudioCore.Common.FileExplorer.Start(outputDirectory);
             }
 
             ImGui.SameLine();
