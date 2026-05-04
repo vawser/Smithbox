@@ -18,20 +18,33 @@ public class AddFieldAction : EditorAction
     private List<GparamAnnotationFieldEntry> TargetFields { get; set; }
     private List<GPARAM.IField> StoredFields { get; set; } = new();
 
+    private List<int> StoredIndices { get; set; } = new();
+
     public AddFieldAction(ProjectEntry project, GPARAM data, GPARAM.Param group, List<GparamAnnotationFieldEntry> fields)
     {
         Project = project;
         Data = data;
         TargetGroup = group;
         TargetFields = fields;
+
+        foreach (var entry in TargetFields)
+        {
+            var newField = GparamConstructUtils.AddNewField(entry);
+            StoredFields.Add(newField);
+        }
     }
 
     public override ActionEvent Execute()
     {
-        foreach (var entry in TargetFields)
+        StoredIndices = new List<int>();
+
+        int insertIndex = TargetGroup.Fields.Count;
+
+        foreach (var entry in StoredFields)
         {
-            var newField = GparamConstructUtils.AddNewField(entry);
-            TargetGroup.Fields.Add(newField);
+            TargetGroup.Fields.Insert(insertIndex, entry);
+            StoredIndices.Add(insertIndex);
+            insertIndex++;
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -39,14 +52,9 @@ public class AddFieldAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        for(int i = 0; i < Data.Params.Count; i++)
+        for (int i = StoredIndices.Count - 1; i >= 0; i--)
         {
-            var curParam = Data.Params[i];
-
-            if(curParam.Key == StoredGroup.Key)
-            {
-                Data.Params[i] = StoredGroup;
-            }
+            TargetGroup.Fields.RemoveAt(StoredIndices[i]);
         }
 
         return ActionEvent.ObjectAddedRemoved;

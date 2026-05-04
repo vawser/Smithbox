@@ -155,21 +155,55 @@ public class GparamEditorScreen : EditorScreen
 
                 ImGui.Separator();
 
-                if (ImGui.BeginMenu("Value Row"))
+                // Groups
+                if (ImGui.BeginMenu("Groups"))
+                {
+                    if (ImGui.MenuItem("Add All Missing", InputManager.GetHint(KeybindID.Add)))
+                    {
+                        activeView.GroupListView.AddGroupsShortcut();
+                    }
+                    UIHelper.Tooltip("Adds all missing groups.");
+
+                    if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                    {
+                        activeView.GroupListView.DeleteGroupsShortcut();
+                    }
+                    UIHelper.Tooltip("Delete the currently selected group.");
+
+                    ImGui.EndMenu();
+                }
+
+                // Fields
+                if (ImGui.BeginMenu("Fields"))
                 {
                     if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
                     {
-                        activeView.ActionHandler.DuplicateValueRow();
+                        activeView.FieldListView.AddFieldsShortcut();
                     }
 
                     if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
                     {
-                        activeView.ActionHandler.DeleteValueRow();
+                        activeView.FieldListView.DeleteFieldsShortcut();
                     }
 
                     ImGui.EndMenu();
                 }
 
+                // Values
+                if (ImGui.BeginMenu("Values"))
+                {
+                    if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+                    {
+                        activeView.FieldValueListView.AddValuesShortcut();
+                    }
+
+                    if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                    {
+                        activeView.FieldValueListView.DeleteValuesShortcut();
+                    }
+
+                    ImGui.EndMenu();
+                }
             }
 
             ImGui.EndMenu();

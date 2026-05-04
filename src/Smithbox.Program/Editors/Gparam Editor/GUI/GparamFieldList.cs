@@ -136,9 +136,7 @@ public class GparamFieldList
             // Delete
             if (ImGui.Selectable("Delete"))
             {
-                var action = new DeleteFieldAction(Project, data, param, field);
-
-                Parent.ActionManager.ExecuteAction(action);
+                DeleteFields(data, param, new List<GPARAM.IField>() { field });
             }
             UIHelper.Tooltip("Delete the selected field.");
 
@@ -195,9 +193,7 @@ public class GparamFieldList
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                var action = new DeleteFieldAction(Project, data, param, field);
-
-                Parent.ActionManager.ExecuteAction(action);
+                DeleteFields(data, param, new List<GPARAM.IField>() { field });
             }
         }
     }
@@ -330,8 +326,7 @@ public class GparamFieldList
             }
         }
 
-        var action = new AddFieldAction(Project, data, param, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        AddFields(data, param, entries);
 
         // Reset the to add state so we don't add the already present entries on secondary usages
         foreach (var entry in AddOptions)
@@ -344,6 +339,56 @@ public class GparamFieldList
                 }
             }
         }
+    }
+
+    public void AddFields(GPARAM data, Param group, List<GparamAnnotationFieldEntry> entries)
+    {
+        var action = new AddFieldAction(Project, data, group, entries);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void DeleteFields(GPARAM data, Param group, List<GPARAM.IField> entries)
+    {
+        var action = new DeleteFieldAction(Project, data, group, entries);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void AddFieldsShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+
+        PopulateAddOptions(group);
+
+        if (AddOptions.ContainsKey(group.Key))
+        {
+            var targetFields = AddOptions[group.Key];
+
+            for (int i = 0; i < targetFields.Count; i++)
+            {
+                var curOption = targetFields[i];
+
+                var curAnnotation = curOption.Annotation;
+                var curState = curOption.ToAdd;
+
+                // Ignore existing fields, we only want to allow adding missing fields
+                if (group.Fields.Any(e => e.Key == curAnnotation.ID))
+                    continue;
+
+                curOption.ToAdd = true;
+            }
+
+            AddNewFields(data, group);
+        }
+    }
+
+    public void DeleteFieldsShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+        var field = Parent.Selection.GetSelectedField();
+
+        DeleteFields(data, group, new List<GPARAM.IField>() { field });
     }
 }
 

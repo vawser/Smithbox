@@ -17,6 +17,8 @@ public class AddGroupAction : EditorAction
     private List<GparamAnnotationEntry> TargetGroups { get; set; } = new();
     private List<GPARAM.Param> StoredGroups { get; set; } = new();
 
+    private List<int> StoredIndices { get; set; } = new();
+
     public AddGroupAction(ProjectEntry project, GPARAM data, List<GparamAnnotationEntry> groups)
     {
         Project = project;
@@ -32,9 +34,15 @@ public class AddGroupAction : EditorAction
 
     public override ActionEvent Execute()
     {
-        foreach(var entry in StoredGroups)
+        StoredIndices = new List<int>();
+
+        int insertIndex = Data.Params.Count;
+
+        foreach (var entry in StoredGroups)
         {
-            Data.Params.Add(entry);
+            Data.Params.Insert(insertIndex, entry);
+            StoredIndices.Add(insertIndex);
+            insertIndex++;
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -42,9 +50,9 @@ public class AddGroupAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        foreach(var entry in StoredGroups)
+        for (int i = StoredIndices.Count - 1; i >= 0; i--)
         {
-            Data.Params.Remove(entry);
+            Data.Params.RemoveAt(StoredIndices[i]);
         }
 
         return ActionEvent.ObjectAddedRemoved;

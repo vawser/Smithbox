@@ -24,7 +24,8 @@ public class GparamSelection
     public int _selectedFieldValueKey;
     public int _selectedFieldValueIndex;
 
-    public int _duplicateValueRowId = 0;
+    public int DuplicateValueID = 0;
+    public int DuplicateValueOffset = 0;
 
     public bool SelectGparamFile = false;
     public bool SelectGparamGroup = false;
@@ -175,7 +176,7 @@ public class GparamSelection
     {
         _selectedFieldValueKey = entry.ID;
         _selectedFieldValueIndex = index;
-        _duplicateValueRowId = entry.ID;
+        DuplicateValueID = entry.ID;
     }
 
     /// <summary>

@@ -1,7 +1,11 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
@@ -12,8 +16,6 @@ public class GparamValueList
 {
     private GparamEditorView Parent;
     private ProjectEntry Project;
-
-    private bool[] displayTruth;
 
     public GparamValueList(GparamEditorView view, ProjectEntry project)
     {
@@ -96,8 +98,6 @@ public class GparamValueList
         if (field == null)
             return;
 
-        ResetDisplayTruth(field);
-
         var columnCount = 2;
 
         if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
@@ -114,6 +114,8 @@ public class GparamValueList
         DisplayColumn_Info(data, group, field);
 
         ImGui.Columns(1);
+
+        Shortcuts(data, group, field);
     }
 
     // ID
@@ -125,17 +127,17 @@ public class GparamValueList
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
 
-            displayTruth[i] = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+            if (!display)
+                continue;
 
-            if (displayTruth[i])
-            {
-                GparamProperty_ID(data, group, field, value, i);
-            }
+            GparamProperty_ID(data, group, field, value, i);
         }
 
         ImGui.EndChild();
     }
+
     public void GparamProperty_ID(GPARAM data, GPARAM.Param group, 
         IField field, IFieldValue value, int index)
     {
@@ -165,11 +167,13 @@ public class GparamValueList
 
         for (int i = 0; i < field.Values.Count; i++)
         {
-            if (displayTruth[i])
-            {
-                var entry = field.Values[i];
-                GparamProperty_TimeOfDay(i, field, entry);
-            }
+            var value = field.Values[i];
+            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+
+            if (!display)
+                continue;
+
+            GparamProperty_TimeOfDay(i, field, value);
         }
 
         ImGui.EndChild();
@@ -190,11 +194,13 @@ public class GparamValueList
 
         for (int i = 0; i < field.Values.Count; i++)
         {
-            if (displayTruth[i])
-            {
-                var entry = field.Values[i];
-                GparamProperty_Value(i, field, entry);
-            }
+            var value = field.Values[i];
+            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+
+            if (!display)
+                continue;
+
+            GparamProperty_Value(i, field, value);
         }
 
         ImGui.EndChild();
@@ -265,86 +271,73 @@ public class GparamValueList
         }
     }
 
-    public void ResetDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count];
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-
-    public void ExtendDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count + 1];
-
-        for (int i = 0; i < field.Values.Count + 1; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-
-    public void ReduceDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count + -1];
-
-        for (int i = 0; i < field.Values.Count + -1; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
     public void ContextMenu(GPARAM data, GPARAM.Param group, IField field, IFieldValue value, int index)
     {
-        var selectedField = Parent.Selection.GetSelectedField();
-        var selectedValue = Parent.Selection.GetSelectedValue();
-
         if (index == Parent.Selection._selectedFieldValueIndex)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
             {
-                if (ImGui.Selectable("Target in Quick Edit"))
+                // Duplicate
+                if (ImGui.BeginMenu("Duplicate"))
                 {
-                    var fieldIndex = -1;
-                    for (int i = 0; i < selectedField.Values.Count; i++)
+                    // Input
+                    ImGui.InputInt("ID##duplicateInput_ID", ref Parent.Selection.DuplicateValueID);
+
+                    if (Parent.Selection.DuplicateValueID < 0)
                     {
-                        if (selectedField.Values[i] == selectedValue)
-                        {
-                            fieldIndex = i;
-                            break;
-                        }
+                        Parent.Selection.DuplicateValueID = 0;
                     }
 
-                    if (fieldIndex != -1)
-                    {
-                        Parent.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
-                    }
+                    ImGui.InputInt("ID##duplicateInput_Offset", ref Parent.Selection.DuplicateValueOffset);
 
-                    ImGui.CloseCurrentPopup();
+                    // Submit
+                    if (ImGui.Selectable("Submit"))
+                    {
+                        AddValues(data, group, field, new List<GPARAM.IFieldValue>() { value }, false);
+                    }
+                    UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
-                if (ImGui.Selectable("Remove"))
+                // Delete
+                if (ImGui.Selectable("Delete"))
                 {
-                    Parent.ActionHandler.DeleteValueRow();
+                    DeleteValues(data, group, field, new List<GPARAM.IFieldValue>() { value });
 
                     ImGui.CloseCurrentPopup();
                 }
                 UIHelper.Tooltip("Delete the value row.");
 
-                if (ImGui.Selectable("Duplicate"))
+
+                ImGui.Separator();
+
+                // Quick Edit
+                if (ImGui.BeginMenu("Quick Edit"))
                 {
-                    Parent.ActionHandler.DuplicateValueRow();
+                    // Target
+                    if (ImGui.Selectable("Target"))
+                    {
+                        var fieldIndex = -1;
+                        for (int i = 0; i < field.Values.Count; i++)
+                        {
+                            if (field.Values[i] == value)
+                            {
+                                fieldIndex = i;
+                                break;
+                            }
+                        }
 
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                        if (fieldIndex != -1)
+                        {
+                            Parent.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
+                        }
 
-                ImGui.InputInt("##valueIdInput", ref Parent.Selection._duplicateValueRowId);
+                        ImGui.CloseCurrentPopup();
+                    }
+                    UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
-                if (Parent.Selection._duplicateValueRowId < 0)
-                {
-                    Parent.Selection._duplicateValueRowId = 0;
+                    ImGui.EndMenu();
                 }
 
                 ImGui.EndPopup();
@@ -352,6 +345,60 @@ public class GparamValueList
         }
     }
 
+    private void Shortcuts(GPARAM data, GPARAM.Param group, IField field)
+    {
+        var value = Parent.Selection.GetSelectedValue();
+
+        if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_Properties))
+        {
+            // Duplicate
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+            {
+                AddValues(data, group, field, new List<IFieldValue>() { value }, true);
+            }
+
+            // Delete
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                DeleteValues(data, group, field, new List<IFieldValue>() { value });
+            }
+        }
+    }
+
+    public void AddValues(GPARAM data, Param group, IField field, List<IFieldValue> entries, bool useDuplicateOffset)
+    {
+        var duplicateID = Parent.Selection.DuplicateValueID;
+        var duplicateOffset = Parent.Selection.DuplicateValueOffset;
+
+        var action = new AddValueAction(Project, data, group, field, entries, duplicateID, duplicateOffset, useDuplicateOffset);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void DeleteValues(GPARAM data, Param group, IField field, List<IFieldValue> entries)
+    {
+        var action = new DeleteValueAction(Project, data, group, field, entries);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void AddValuesShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+        var field = Parent.Selection.GetSelectedField();
+        var value = Parent.Selection.GetSelectedValue();
+
+        AddValues(data, group, field, new List<IFieldValue>() { value }, true);
+    }
+
+    public void DeleteValuesShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+        var field = Parent.Selection.GetSelectedField();
+        var value = Parent.Selection.GetSelectedValue();
+
+        DeleteValues(data, group, field, new List<IFieldValue>() { value });
+    }
 }
 
 

@@ -152,9 +152,7 @@ public class GparamGroupList
             // Delete
             if (ImGui.Selectable("Delete"))
             {
-                var action = new DeleteGroupAction(Project, data, new List<GPARAM.Param>() { group });
-
-                Parent.ActionManager.ExecuteAction(action);
+                DeleteGroups(data, new List<GPARAM.Param>() { group });
             }
             UIHelper.Tooltip("Delete the selected group.");
 
@@ -204,9 +202,7 @@ public class GparamGroupList
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                var action = new DeleteGroupAction(Project, data, new List<GPARAM.Param>() { entry });
-
-                Parent.ActionManager.ExecuteAction(action);
+                DeleteGroups(data, new List<GPARAM.Param>() { entry });
             }
         }
     }
@@ -352,14 +348,54 @@ public class GparamGroupList
             }
         }
 
-        var action = new AddGroupAction(Project, data, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        AddGroups(data, entries);
 
         // Reset the to add state so we don't add the already present entries on secondary usages
         foreach(var entry in AddOptions)
         {
             entry.ToAdd = false;
         }
+    }
+
+    public void AddGroups(GPARAM data, List<GparamAnnotationEntry> entries)
+    {
+        var action = new AddGroupAction(Project, data, entries);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void DeleteGroups(GPARAM data, List<GPARAM.Param> entries)
+    {
+        var action = new DeleteGroupAction(Project, data, entries);
+        Parent.ActionManager.ExecuteAction(action);
+    }
+
+    public void AddGroupsShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+
+        PopulateAddOptions();
+
+        for (int i = 0; i < AddOptions.Count; i++)
+        {
+            var curOption = AddOptions[i];
+            var curAnnotation = curOption.Annotation;
+
+            // Ignore existing groups, we only want to allow adding missing groups
+            if (data.Params.Any(e => e.Key == curAnnotation.ID))
+                continue;
+
+            curOption.ToAdd = true;
+        }
+
+        AddNewGroups(data, AddOptions);
+    }
+
+    public void DeleteGroupsShortcut()
+    {
+        var data = Parent.Selection.GetSelectedGparam();
+        var group = Parent.Selection.GetSelectedGroup();
+
+        DeleteGroups(data, new List<GPARAM.Param>() { group });
     }
 }
 
