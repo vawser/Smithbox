@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 // TKGP's latest version of GPARAM
 #nullable disable
@@ -910,7 +911,24 @@ namespace SoulsFormats
         /// <summary>
         /// A field of a param.
         /// </summary>
-        public interface IField
+        [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+        [JsonDerivedType(typeof(GPARAM.SbyteField), "sbyte")]
+        [JsonDerivedType(typeof(GPARAM.ShortField), "short")]
+        [JsonDerivedType(typeof(GPARAM.IntField), "int")]
+        [JsonDerivedType(typeof(GPARAM.LongField), "long")]
+        [JsonDerivedType(typeof(GPARAM.ByteField), "byte")]
+        [JsonDerivedType(typeof(GPARAM.UshortField), "ushort")]
+        [JsonDerivedType(typeof(GPARAM.UintField), "uint")]
+        [JsonDerivedType(typeof(GPARAM.UlongField), "ulong")]
+        [JsonDerivedType(typeof(GPARAM.FloatField), "float")]
+        [JsonDerivedType(typeof(GPARAM.DoubleField), "double")]
+        [JsonDerivedType(typeof(GPARAM.BoolField), "bool")]
+        [JsonDerivedType(typeof(GPARAM.Vector2Field), "vec2")]
+        [JsonDerivedType(typeof(GPARAM.Vector3Field), "vec3")]
+        [JsonDerivedType(typeof(GPARAM.Vector4Field), "vec4")]
+        [JsonDerivedType(typeof(GPARAM.ColorField), "color")]
+        [JsonDerivedType(typeof(GPARAM.StringField), "string")]
+        public interface IField 
         {
             /// <summary>
             /// Key for this field.
@@ -925,7 +943,7 @@ namespace SoulsFormats
             /// <summary>
             /// A set of values this field has.
             /// </summary>
-            IReadOnlyList<IFieldValue> Values { get; }
+            IReadOnlyList<IFieldValue> Values { get; set; }
 
             internal static IField Read(BinaryReaderEx br,
               GparamVersion version,
@@ -1015,6 +1033,7 @@ namespace SoulsFormats
             /// <summary>
             /// A set of values this field has.
             /// </summary>
+            [JsonInclude]
             public List<FieldValue<T>> Values { get; set; }
 
             /// <summary>
@@ -1027,9 +1046,11 @@ namespace SoulsFormats
             /// </summary>
             public short Unk { get; set; }
 
+            [JsonIgnore]
             IReadOnlyList<IFieldValue> IField.Values
             {
                 get => Values;
+                set => throw new NotImplementedException();
             }
 
             public Field()
@@ -1478,6 +1499,7 @@ namespace SoulsFormats
 
             public T Value { get; set; }
 
+            [JsonIgnore]
             object GPARAM.IFieldValue.Value
             {
                 get

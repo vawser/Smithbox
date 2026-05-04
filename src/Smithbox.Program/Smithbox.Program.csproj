@@ -136,7 +136,6 @@
     <Folder Include="Editors\File Browser\Data\" />
     <Folder Include="Editors\File Browser\Utils\" />
     <Folder Include="Editors\File Browser\Tools\" />
-    <Folder Include="Editors\Gparam Editor\Tools\" />
     <Folder Include="Editors\Material Editor\Tools\" />
   </ItemGroup>
 

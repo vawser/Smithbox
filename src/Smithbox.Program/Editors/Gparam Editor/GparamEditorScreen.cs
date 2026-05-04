@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 
@@ -55,6 +57,7 @@ public class GparamEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
+            DataMenu();
 
             ImGui.EndMenuBar();
         }
@@ -224,6 +227,66 @@ public class GparamEditorScreen : EditorScreen
 
             ViewHandler.DisplayMenu();
 
+            ImGui.EndMenu();
+        }
+    }
+
+    public void DataMenu()
+    {
+        var fileEntry = ViewHandler.ActiveView.Selection.SelectedFileEntry;
+        var curGparam = ViewHandler.ActiveView.Selection.GetSelectedGparam();
+
+        var enable = false;
+        if(fileEntry != null)
+        {
+            enable = true;
+        }
+
+        if (ImGui.BeginMenu("Data"))
+        {
+            // Import
+            /*
+            if (ImGui.BeginMenu("Import", enable))
+            {
+                if (ImGui.MenuItem("GPARAM"))
+                {
+                    var dialog = PlatformUtils.Instance.OpenFileDialog("Select File", out var path);
+
+                    if (dialog)
+                    {
+                        if (path.EndsWith(".json") && Path.Exists(path))
+                        {
+                            var newData = GPARAMJson.FromJson(path);
+
+                            var action = new OverwriteGparamAction(Project, curGparam, newData);
+                            ViewHandler.ActiveView.ActionManager.ExecuteAction(action);
+                        }
+                    }
+                }
+
+                ImGui.EndMenu();
+            }
+            */
+
+            // Export
+            if (ImGui.BeginMenu("Export", enable))
+            {
+                if (ImGui.MenuItem("GPARAM"))
+                {
+                    var json = GPARAMJson.ToJson(curGparam);
+
+                    var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+
+                    if (dialog)
+                    {
+                        var exportPath = Path.Combine(path, $"{fileEntry.Filename}.{fileEntry.Extension}.json");
+
+                        File.WriteAllText(exportPath, json);
+                    }
+                }
+
+                ImGui.EndMenu();
+            }
             ImGui.EndMenu();
         }
     }
