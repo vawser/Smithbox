@@ -4,19 +4,19 @@
     {
       "ID": 1000,
       "Entries": [
-        "Uncorrected weapon"
+        ""
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Throw knife"
+        ""
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "Molotov cocktail"
+        ""
       ]
     },
     {
@@ -100,7 +100,7 @@
     {
       "ID": 7100,
       "Entries": [
-        "Ichimonji: Doubel"
+        "Ichimonji: Double"
       ]
     },
     {
@@ -436,13 +436,13 @@
     {
       "ID": 210000,
       "Entries": [
-        "Skill Tree: Whirlwind Slash"
+        "Virtual Weapon: Whirlwind Slash"
       ]
     },
     {
       "ID": 211000,
       "Entries": [
-        "Skill Tree: Shadowrush"
+        "Virtual Weapon: Shadowrush"
       ]
     },
     {
@@ -472,73 +472,73 @@
     {
       "ID": 310000,
       "Entries": [
-        "Skill Tree: Nightjar Slash"
+        "Virtual Weapon: Nightjar Slash"
       ]
     },
     {
       "ID": 310100,
       "Entries": [
-        "Skill Tree: Nightjar Slash Reversal"
+        "Virtual Weapon: Nightjar Slash Reversal"
       ]
     },
     {
       "ID": 410000,
       "Entries": [
-        "Skill Tree: Ichimonji"
+        "Virtual Weapon: Ichimonji"
       ]
     },
     {
       "ID": 410100,
       "Entries": [
-        "Skill Tree: Ichimonji: Double"
+        "Virtual Weapon: Ichimonji: Double"
       ]
     },
     {
       "ID": 411000,
       "Entries": [
-        "Skill Tree: Ashina Cross"
+        "Virtual Weapon: Ashina Cross"
       ]
     },
     {
       "ID": 510000,
       "Entries": [
-        "Skill Tree: Praying Strikes"
+        "Virtual Weapon: Praying Strikes"
       ]
     },
     {
       "ID": 510100,
       "Entries": [
-        "Skill Tree: Praying Strikes - Exorcism"
+        "Virtual Weapon: Praying Strikes - Exorcism"
       ]
     },
     {
       "ID": 511000,
       "Entries": [
-        "Skill Tree: Senpou Leaping Kicks"
+        "Virtual Weapon: Senpou Leaping Kicks"
       ]
     },
     {
       "ID": 511100,
       "Entries": [
-        "Skill Tree: High Monk"
+        "Virtual Weapon: High Monk"
       ]
     },
     {
       "ID": 610100,
       "Entries": [
-        "Skill Tree: Shadowfall"
+        "Virtual Weapon: Shadowfall"
       ]
     },
     {
       "ID": 611100,
       "Entries": [
-        "Skill Tree: Spiral Cloud Passage"
+        "Virtual Weapon: Spiral Cloud Passage"
       ]
     },
     {
       "ID": 612100,
       "Entries": [
-        "Skill Tree: Empowered Mortal Draw"
+        "Virtual Weapon: Empowered Mortal Draw"
       ]
     },
     {
@@ -682,13 +682,13 @@
     {
       "ID": 670000,
       "Entries": [
-        "Mortal Draw"
+        "Virtual Weapon: Mortal Draw"
       ]
     },
     {
       "ID": 671000,
       "Entries": [
-        "Dragon Flash"
+        "Virtual Weapon: Dragon Flash"
       ]
     },
     {
@@ -700,13 +700,13 @@
     {
       "ID": 673000,
       "Entries": [
-        "One Mind"
+        "Virtual Weapon: One Mind"
       ]
     },
     {
       "ID": 674000,
       "Entries": [
-        "Sakura Dance"
+        "Virtual Weapon: Sakura Dance"
       ]
     },
     {
@@ -1006,37 +1006,37 @@
     {
       "ID": 8000000,
       "Entries": [
-        "Debug non-killing sword -- デバッグ無殺刀"
+        ""
       ]
     },
     {
       "ID": 8000100,
       "Entries": [
-        "Debug Special Sword -- デバッグ必殺刀"
+        ""
       ]
     },
     {
       "ID": 8000200,
       "Entries": [
-        "Debug bare hand sword -- デバッグ素手刀"
+        ""
       ]
     },
     {
       "ID": 9500000,
       "Entries": [
-        "Wire weapon -- ワイヤー武器"
+        ""
       ]
     },
     {
       "ID": 9600000,
       "Entries": [
-        "parachute -- 落下傘"
+        ""
       ]
     },
     {
       "ID": 9700000,
       "Entries": [
-        "Immortal sword -- 不死斬りの刀"
+        ""
       ]
     }
   ]

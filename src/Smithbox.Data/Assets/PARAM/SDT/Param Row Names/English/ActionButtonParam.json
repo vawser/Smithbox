@@ -4,223 +4,223 @@
     {
       "ID": 0,
       "Entries": [
-        "Test 0 -- テスト0"
+        ""
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Test 1 -- テスト1"
+        ""
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Regain lost life -- 失ったライフを取り戻す"
+        ""
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Take a life -- ライフをとる"
+        ""
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Read the tombstone -- 墓碑を読む"
+        ""
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Read the letter (summon) -- 手紙を読む（召喚）"
+        ""
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "Read the letter (summon a red sign) -- 手紙を読む（赤サイン召喚）"
+        ""
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Check your letter (summon) -- 自分の手紙を確認する（召喚）"
+        ""
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Read letter (blood letter) _ Used in NTCSTADIA version -- 手紙を読む（血文字）_NTCSTADIA版で使用"
+        "Touch Remnant"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        "Check your letter (blood letters) _ Used in NTCSTADIA version -- 自分の手紙を確認する（血文字）_NTCSTADIA版で使用"
+        "Touch your created Remnant"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Pick up an item -- アイテムを拾う"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4050,
       "Entries": [
-        "Pick up items (for water surface) -- アイテムを拾う(水面用)"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "Scour the corpse -- 死体をあさる"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4200,
       "Entries": [
-        "Purse _360 ° -- 巾着をあさる_360°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4201,
       "Entries": [
-        "Purse _180 ° -- 巾着をあさる_180°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4202,
       "Entries": [
-        "Purse _100 ° -- 巾着をあさる_100°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4210,
       "Entries": [
-        "Underwater purse _360 ° -- 水中巾着をあさる_360°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4211,
       "Entries": [
-        "Underwater purse _180 ° -- 水中巾着をあさる_180°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4215,
       "Entries": [
-        "Underwater purse _360 ° _for shallow water_used in sick village -- 水中巾着をあさる_360°_浅瀬用_病み村で使用"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4220,
       "Entries": [
-        "Squeeze a purse in a high place _360 ° -- 高い所の巾着をあさる_360°"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4300,
       "Entries": [
-        "Take the treasure -- 宝物をとる"
+        "Pick Up Item"
       ]
     },
     {
       "ID": 4400,
       "Entries": [
-        "OK -- OK"
+        "OK"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Climb the ladder -- はしごをのぼる"
+        ""
       ]
     },
     {
       "ID": 5010,
       "Entries": [
-        "Ladder -- はしごをおりる"
+        ""
       ]
     },
     {
       "ID": 5020,
       "Entries": [
-        "Stick -- 張り付く"
+        ""
       ]
     },
     {
       "ID": 5030,
       "Entries": [
-        "Hanging -- ぶら下がる"
+        ""
       ]
     },
     {
       "ID": 5031,
       "Entries": [
-        "Hanging -- ぶら下がる"
+        ""
       ]
     },
     {
       "ID": 5040,
       "Entries": [
-        "Grab the clouds -- 雲をつかむ"
+        ""
       ]
     },
     {
       "ID": 5100,
       "Entries": [
-        "Ritual: grab -- 儀式：つかむ"
+        ""
       ]
     },
     {
       "ID": 5110,
       "Entries": [
-        "Ritual -- 儀式"
+        ""
       ]
     },
     {
       "ID": 5111,
       "Entries": [
-        "Ritual: Level up -- 儀式：レベルアップ"
+        ""
       ]
     },
     {
       "ID": 5112,
       "Entries": [
-        "Ritual: Reassign status -- 儀式：ステータス振りなおし"
+        ""
       ]
     },
     {
       "ID": 5113,
       "Entries": [
-        "Ritual: Reset the deceased -- 儀式：亡者度リセット"
+        ""
       ]
     },
     {
       "ID": 5114,
       "Entries": [
-        "Ritual: Atonement -- 儀式：贖罪"
+        ""
       ]
     },
     {
       "ID": 5115,
       "Entries": [
-        "Ritual: Summon NPC White Spirit -- 儀式：NPC白霊召喚"
+        ""
       ]
     },
     {
       "ID": 5116,
       "Entries": [
-        "Ritual: Bomb -- 儀式：ボム"
+        ""
       ]
     },
     {
       "ID": 5117,
       "Entries": [
-        "Ritual: No invasion -- 儀式：侵入禁止"
+        ""
       ]
     },
     {
@@ -244,7 +244,7 @@
     {
       "ID": 6100,
       "Entries": [
-        "Light a bonfire -- 篝火を灯す"
+        "Commune with Sculptor's Idol"
       ]
     },
     {
