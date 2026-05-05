@@ -400,7 +400,7 @@
     {
       "ID": 100,
       "Entries": [
-        "Demon Buddha recovery effect 1 -- 鬼仏回復効果1"
+        "Idol Recovery Effect"
       ]
     },
     {
@@ -2272,49 +2272,49 @@
     {
       "ID": 4000,
       "Entries": [
-        "Sustained damage floor [Poison_Interval adjustment_Valley valley bottom (deep)] -- 持続ダメージ床【毒_間隔調整_渓谷谷底（深）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4001,
       "Entries": [
-        "Sustained damage floor [Poison_Effect body_Valley valley bottom (deep)] -- 持続ダメージ床【毒_効果本体_渓谷谷底（深）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4002,
       "Entries": [
-        "Sustained damage floor [Poison_Interval adjustment_Valley valley bottom (shallow)] -- 持続ダメージ床【毒_間隔調整_渓谷谷底（浅）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Sustained damage floor [Poison_Effect body_Valley valley bottom (shallow)] -- 持続ダメージ床【毒_効果本体_渓谷谷底（浅）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Sustained Damage Floor [Weak Flame + Damage_Interval Adjustment_Castle] -- 持続ダメージ床【弱炎+ダメージ_間隔調整_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Sustained Damage Floor [Weak Flame + Damage_Effect Body (Damage) _Castle] -- 持続ダメージ床【弱炎+ダメージ_効果本体（ダメージ）_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4012,
       "Entries": [
-        "Sustained damage floor [Weak flame + damage _ effect body (flaming) _ castle] -- 持続ダメージ床【弱炎+ダメージ_効果本体（炎上）_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4014,
       "Entries": [
-        "Sustained Damage Floor [Flame_Smoke Signal_Castle] -- 持続ダメージ床【炎_狼煙_城下】"
+        "Environmental Flame"
       ]
     },
     {
@@ -2326,19 +2326,19 @@
     {
       "ID": 4020,
       "Entries": [
-        "Sustained damage floor [Strong flame + damage_interval adjustment_samurai residence] -- 持続ダメージ床【強炎+ダメージ_間隔調整_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4021,
       "Entries": [
-        "Sustained damage floor [Strong flame + damage _ effect body (damage) _ samurai residence] -- 持続ダメージ床【強炎+ダメージ_効果本体（ダメージ）_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4022,
       "Entries": [
-        "Sustained damage floor [strong flame + damage _ effect body (flaming) _ samurai residence] -- 持続ダメージ床【強炎+ダメージ_効果本体（炎上）_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
@@ -2476,229 +2476,229 @@
     {
       "ID": 5020,
       "Entries": [
-        "General-purpose effect for logic judgment 1 -- ロジック判定用 汎用効果1"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5021,
       "Entries": [
-        "General-purpose effect for logic judgment 2 -- ロジック判定用 汎用効果2"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5022,
       "Entries": [
-        "General-purpose effect for logic judgment 3 -- ロジック判定用 汎用効果3"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5023,
       "Entries": [
-        "General-purpose effect for logic judgment 4 -- ロジック判定用 汎用効果4"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5024,
       "Entries": [
-        "General-purpose effect for logic judgment 5 -- ロジック判定用 汎用効果5"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5025,
       "Entries": [
-        "General-purpose effect for logic judgment 6 -- ロジック判定用 汎用効果6"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5026,
       "Entries": [
-        "General-purpose effect for logic judgment 7 -- ロジック判定用 汎用効果7"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5027,
       "Entries": [
-        "General-purpose effect for logic judgment 8 -- ロジック判定用 汎用効果8"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5028,
       "Entries": [
-        "General-purpose effect for logic judgment 9 -- ロジック判定用 汎用効果9"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5029,
       "Entries": [
-        "General-purpose effect for logic judgment 10 -- ロジック判定用 汎用効果10"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5030,
       "Entries": [
-        "General-purpose effect for logic judgment 11 -- ロジック判定用 汎用効果11"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5031,
       "Entries": [
-        "General-purpose effect for logic judgment 12 -- ロジック判定用 汎用効果12"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5032,
       "Entries": [
-        "General-purpose effect for logic judgment 13 -- ロジック判定用 汎用効果13"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5033,
       "Entries": [
-        "General-purpose effect for logic judgment 14 -- ロジック判定用 汎用効果14"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5034,
       "Entries": [
-        "General-purpose effect for logic judgment 15 -- ロジック判定用 汎用効果15"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5035,
       "Entries": [
-        "General-purpose effect for logic judgment 16 -- ロジック判定用 汎用効果16"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5036,
       "Entries": [
-        "General-purpose effect for logic judgment 17 -- ロジック判定用 汎用効果17"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5037,
       "Entries": [
-        "General-purpose effect for logic judgment 18 -- ロジック判定用 汎用効果18"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5038,
       "Entries": [
-        "General-purpose effect for logic judgment 19 -- ロジック判定用 汎用効果19"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5039,
       "Entries": [
-        "General-purpose effect for logic judgment 20 -- ロジック判定用 汎用効果20"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5040,
       "Entries": [
-        "MP reduction -1 -- MP減少-1"
+        ""
       ]
     },
     {
       "ID": 5041,
       "Entries": [
-        "MP reduction-2 -- MP減少-2"
+        ""
       ]
     },
     {
       "ID": 5042,
       "Entries": [
-        "MP reduction-3 -- MP減少-3"
+        ""
       ]
     },
     {
       "ID": 5043,
       "Entries": [
-        "MP reduction-4 -- MP減少-4"
+        ""
       ]
     },
     {
       "ID": 5044,
       "Entries": [
-        "MP reduction-5 -- MP減少-5"
+        ""
       ]
     },
     {
       "ID": 5045,
       "Entries": [
-        "MP recovery +1 -- MP回復+1"
+        ""
       ]
     },
     {
       "ID": 5046,
       "Entries": [
-        "MP recovery +2 -- MP回復+2"
+        ""
       ]
     },
     {
       "ID": 5047,
       "Entries": [
-        "MP recovery +3 -- MP回復+3"
+        ""
       ]
     },
     {
       "ID": 5048,
       "Entries": [
-        "MP recovery +4 -- MP回復+4"
+        ""
       ]
     },
     {
       "ID": 5049,
       "Entries": [
-        "MP recovery +5 -- MP回復+5"
+        ""
       ]
     },
     {
       "ID": 5060,
       "Entries": [
-        "Apply corpse reaction -- 死体反応を適用する"
+        "Apply Corpse Reaction"
       ]
     },
     {
       "ID": 5061,
       "Entries": [
-        "Corpse reaction pattern 0 -- 死体反応パターン0"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5062,
       "Entries": [
-        "Corpse reaction pattern 1 -- 死体反応パターン1"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5063,
       "Entries": [
-        "Corpse reaction pattern 2 -- 死体反応パターン2"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5100,
       "Entries": [
-        "EvE enemy weakening doping_attack 75% defense 125% -- EvE用敵弱体化ドーピング_攻75％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5101,
       "Entries": [
-        "EvE enemy weakening doping_attack 50% defense 125% -- EvE用敵弱体化ドーピング_攻50％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5102,
       "Entries": [
-        "EvE enemy weakening doping_attack 25% defense 125% -- EvE用敵弱体化ドーピング_攻25％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5110,
       "Entries": [
-        "EvE Samurai Residence Swordsman Doping_Attack 50% Defense 150% -- EvE武家屋敷剣客用ドーピング_攻50％防150％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
@@ -5644,7 +5644,7 @@
     {
       "ID": 8500,
       "Entries": [
-        "Remaining machine protection (demon Buddha) -- 残機プロテクト（鬼仏）"
+        "Unseen Aid"
       ]
     },
     {
@@ -5662,481 +5662,481 @@
     {
       "ID": 9000,
       "Entries": [
-        "Contact Medicine"
+        "Poison Type 1"
       ]
     },
     {
       "ID": 9001,
       "Entries": [
-        "Poison Bloodsmoke Ninjutsu"
+        "Poison Type 2"
       ]
     },
     {
       "ID": 9002,
       "Entries": [
-        "Poison Bestowal Ninjutsu"
+        "Poison Type 3"
       ]
     },
     {
       "ID": 9003,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 4"
       ]
     },
     {
       "ID": 9004,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 5"
       ]
     },
     {
       "ID": 9005,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 6"
       ]
     },
     {
       "ID": 9006,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 7"
       ]
     },
     {
       "ID": 9007,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 8"
       ]
     },
     {
       "ID": 9008,
       "Entries": [
-        "Sabimaru Poison"
+        "Poison Type 9"
       ]
     },
     {
       "ID": 9009,
       "Entries": [
-        "Sabimaru Poison Mist"
+        "Poison Type 10"
       ]
     },
     {
       "ID": 9010,
       "Entries": [
-        "Enemy Poison (Sample)"
+        "Poison Type 11"
       ]
     },
     {
       "ID": 9011,
       "Entries": [
-        "Gecko - Poison"
+        "Poison Type 12"
       ]
     },
     {
       "ID": 9012,
       "Entries": [
-        "Juzou - Poison Spit"
+        "Poison Type 13"
       ]
     },
     {
       "ID": 9013,
       "Entries": [
-        "Juzou - Poison Weapon Buff"
+        "Poison Type 14"
       ]
     },
     {
       "ID": 9014,
       "Entries": [
-        "Senpou Assassin - Poison Spread"
+        "Poison Type 15"
       ]
     },
     {
       "ID": 9015,
       "Entries": [
-        "Senpou Assassin - Poison Projectile"
+        "Poison Type 16"
       ]
     },
     {
       "ID": 9016,
       "Entries": [
-        "Bandit - Poison Arrow"
+        "Poison Type 17"
       ]
     },
     {
       "ID": 9017,
       "Entries": [
-        "Old Dragon of the Tree - Poison Cough"
+        "Poison Type 18"
       ]
     },
     {
       "ID": 9018,
       "Entries": [
-        "Lone Shadow - Poison Hand"
+        "Poison Type 19"
       ]
     },
     {
       "ID": 9019,
       "Entries": [
-        "Great Shinobi Owl - Poison Throw"
+        "Poison Type 20"
       ]
     },
     {
       "ID": 9020,
       "Entries": [
-        "Sabimaru Effect on Okami"
+        "Poison Effect on Okami"
       ]
     },
     {
       "ID": 9040,
       "Entries": [
-        "Contact Medicine Poison"
+        "Poison DoT Type 1"
       ]
     },
     {
       "ID": 9041,
       "Entries": [
-        "Ninjutsu Poison DoT"
+        "Poison DoT Type 2"
       ]
     },
     {
       "ID": 9043,
       "Entries": [
-        "Poison Damage 05 [PC_Firecracker Poison]"
+        "Poison DoT Type 3"
       ]
     },
     {
       "ID": 9045,
       "Entries": [
-        "Sabimaru Poison DoT"
+        "Poison DoT Type 4"
       ]
     },
     {
       "ID": 9049,
       "Entries": [
-        "Poison Swamp"
+        "Poison DoT Type 5"
       ]
     },
     {
       "ID": 9050,
       "Entries": [
-        "General Enemy Poison DoT"
+        "Poison DoT Type 6"
       ]
     },
     {
       "ID": 9080,
       "Entries": [
-        "Female poison additional damage permission -- 女毒追加ダメージ許可"
+        "O'Rin Poison Additional Effect Permission"
       ]
     },
     {
       "ID": 9100,
       "Entries": [
-        "Burning damage 00 [PC_Shaving 25] -- 炎上ダメージ00【PC_削り25】"
+        "Burn Type 0"
       ]
     },
     {
       "ID": 9101,
       "Entries": [
-        "Burning damage 01 [PC_Shaving 33] -- 炎上ダメージ01【PC_削り33】"
+        "Burn Type 1"
       ]
     },
     {
       "ID": 9102,
       "Entries": [
-        "Burning damage 02 [PC_Shaving 50] -- 炎上ダメージ02【PC_削り50】"
+        "Burn Type 2"
       ]
     },
     {
       "ID": 9103,
       "Entries": [
-        "Burning damage 03 [PC_Shaving 67] -- 炎上ダメージ03【PC_削り67】"
+        "Burn Type 3"
       ]
     },
     {
       "ID": 9104,
       "Entries": [
-        "Burning damage 04 [PC_Shaving 75] -- 炎上ダメージ04【PC_削り75】"
+        "Burn Type 4"
       ]
     },
     {
       "ID": 9105,
       "Entries": [
-        "Burning damage 05 [PC_Shaving 100] -- 炎上ダメージ05【PC_削り100】"
+        "Burn Type 5"
       ]
     },
     {
       "ID": 9106,
       "Entries": [
-        "Burning damage 06 [PC_Shaving 125] -- 炎上ダメージ06【PC_削り125】"
+        "Burn Type 6"
       ]
     },
     {
       "ID": 9107,
       "Entries": [
-        "Burning damage 07 [PC_Shaving 150] -- 炎上ダメージ07【PC_削り150】"
+        "Burn Type 7"
       ]
     },
     {
       "ID": 9108,
       "Entries": [
-        "Burning damage 08 [PC_Shaving 175] -- 炎上ダメージ08【PC_削り175】"
+        "Burn Type 8"
       ]
     },
     {
       "ID": 9109,
       "Entries": [
-        "Burning damage 09 [PC_Shaving 200] -- 炎上ダメージ09【PC_削り200】"
+        "Burn Type 9"
       ]
     },
     {
       "ID": 9110,
       "Entries": [
-        "Burn damage 10 [Enemy_Sample] -- 炎上ダメージ10【敵_サンプル】"
+        "Burn Type 10"
       ]
     },
     {
       "ID": 9111,
       "Entries": [
-        "Burning damage 11 [Centipede_flaming floor] -- 炎上ダメージ11【ムカデ_炎床】"
+        "Burn Type 11"
       ]
     },
     {
       "ID": 9112,
       "Entries": [
-        "Burning damage 12 [Bandit_Fire arrow] -- 炎上ダメージ12【野盗_火矢】"
+        "Burn Type 12"
       ]
     },
     {
       "ID": 9113,
       "Entries": [
-        "Burning damage 13 [Demon Buddhist _ Flame floor] -- 炎上ダメージ13【鬼仏師_炎床】"
+        "Burn Type 13"
       ]
     },
     {
       "ID": 9114,
       "Entries": [
-        "Burning damage 14 [Fire cow_rush] -- 炎上ダメージ14【火牛_突進】"
+        "Burn Type 14"
       ]
     },
     {
       "ID": 9115,
       "Entries": [
-        "Burning damage 15 [Bandit_Torches] -- 炎上ダメージ15【野盗_松明】"
+        "Burn Type 15"
       ]
     },
     {
       "ID": 9116,
       "Entries": [
-        "Burning Damage 16 [Demon Buddhist Master_Flame Arm] -- 炎上ダメージ16【鬼仏師_炎腕】"
+        "Burn Type 16"
       ]
     },
     {
       "ID": 9117,
       "Entries": [
-        "Flame damage 17 [Tokugawa Samurai_Flame radiation] -- 炎上ダメージ17【徳川侍_火炎放射】"
+        "Burn Type 17"
       ]
     },
     {
       "ID": 9118,
       "Entries": [
-        "Burning damage 18 [Tokugawa Samurai_Incendiary Gun] -- 炎上ダメージ18【徳川侍_焼夷銃】"
+        "Burn Type 18"
       ]
     },
     {
       "ID": 9119,
       "Entries": [
-        "Burning Damage 19 [Shura Samurai_Ignition Encha Slash] -- 炎上ダメージ19【修羅侍_発火エンチャ斬り】"
+        "Burn Type 19"
       ]
     },
     {
       "ID": 9120,
       "Entries": [
-        "Burning damage 20 [Shura Samurai_Fire Breathing] -- 炎上ダメージ20【修羅侍_火吹き】"
+        "Burn Type 20"
       ]
     },
     {
       "ID": 9121,
       "Entries": [
-        "Burning damage 21 [Fire cow_burning] -- 炎上ダメージ21【火牛_炎上しかけ】"
+        "Burn Type 21"
       ]
     },
     {
       "ID": 9122,
       "Entries": [
-        "Burning damage 22 [Fire cow_flaming slip damage] -- 炎上ダメージ22【火牛_炎上スリップダメージ】"
+        "Burn Type 22"
       ]
     },
     {
       "ID": 9123,
       "Entries": [
-        "Burning damage 23 [Sword sword holy _ weak flame] -- 炎上ダメージ23【病床剣聖_弱炎】"
+        "Burn Type 23"
       ]
     },
     {
       "ID": 9124,
       "Entries": [
-        "Burn damage 24 [Sword sword holy _ strong flame] -- 炎上ダメージ24【病床剣聖_強炎】"
+        "Burn Type 24"
       ]
     },
     {
       "ID": 9125,
       "Entries": [
-        "Flame Damage 25 [Nightjars_Flame Encha Attack] -- 炎上ダメージ25【夜鷹衆_炎エンチャ攻撃】"
+        "Burn Type 25"
       ]
     },
     {
       "ID": 9200,
       "Entries": [
-        "Scary damage 00 -- 怖気ダメージ00"
+        "Terror Type 1"
       ]
     },
     {
       "ID": 9201,
       "Entries": [
-        "Scary damage 01 -- 怖気ダメージ01"
+        "Terror Type 2"
       ]
     },
     {
       "ID": 9202,
       "Entries": [
-        "Scary damage 02 -- 怖気ダメージ02"
+        "Terror Type 3"
       ]
     },
     {
       "ID": 9203,
       "Entries": [
-        "Scary damage 03 -- 怖気ダメージ03"
+        "Terror Type 4"
       ]
     },
     {
       "ID": 9204,
       "Entries": [
-        "Scary damage 04 -- 怖気ダメージ04"
+        "Terror Type 5"
       ]
     },
     {
       "ID": 9205,
       "Entries": [
-        "Scary damage 05 -- 怖気ダメージ05"
+        "Terror Type 6"
       ]
     },
     {
       "ID": 9206,
       "Entries": [
-        "Scary damage 06 -- 怖気ダメージ06"
+        "Terror Type 7"
       ]
     },
     {
       "ID": 9207,
       "Entries": [
-        "Scary damage 07 -- 怖気ダメージ07"
+        "Terror Type 8"
       ]
     },
     {
       "ID": 9208,
       "Entries": [
-        "Scary damage 08 -- 怖気ダメージ08"
+        "Terror Type 9"
       ]
     },
     {
       "ID": 9209,
       "Entries": [
-        "Scary damage 09 -- 怖気ダメージ09"
+        "Terror Type 10"
       ]
     },
     {
       "ID": 9210,
       "Entries": [
-        "Scary damage 10 [enemy_sample] -- 怖気ダメージ10【敵_サンプル】"
+        "Terror Type 11"
       ]
     },
     {
       "ID": 9211,
       "Entries": [
-        "Scary Damage 11 [Seven-sided Warrior_Grief Bullet (Weak)] -- 怖気ダメージ11【七面武者_怨霊弾丸（弱）】"
+        "Terror Type 12"
       ]
     },
     {
       "ID": 9212,
       "Entries": [
-        "Scary Damage 12 [Seven-sided Warrior_Grief Bullet (Strong)] -- 怖気ダメージ12【七面武者_怨霊弾丸（強）】"
+        "Terror Type 13"
       ]
     },
     {
       "ID": 9213,
       "Entries": [
-        "Scary damage 13 [Neckless_Attack (weak)] -- 怖気ダメージ13【首なし_攻撃（弱）】"
+        "Terror Type 14"
       ]
     },
     {
       "ID": 9214,
       "Entries": [
-        "Scary damage 13 [Neckless_Attack (Middle)] -- 怖気ダメージ13【首なし_攻撃（中）】"
+        "Terror Type 15"
       ]
     },
     {
       "ID": 9215,
       "Entries": [
-        "Scary damage 14 [Neckless_Attack (strong)] -- 怖気ダメージ14【首なし_攻撃（強）】"
+        "Terror Type 16"
       ]
     },
     {
       "ID": 9216,
       "Entries": [
-        "Scary damage 16 [Yasha Ape_Roar] -- 怖気ダメージ16【夜叉猿_咆哮】"
+        "Terror Type 17"
       ]
     },
     {
       "ID": 9218,
       "Entries": [
-        "Scary damage 17 [Demon monkey _ all attacks] -- 怖気ダメージ17【鬼猿_全攻撃】"
+        "Terror Type 18"
       ]
     },
     {
       "ID": 9219,
       "Entries": [
-        "Scary Damage 19 [Seven-sided Warrior_Grief Field] -- 怖気ダメージ19【七面武者_怨霊フィールド】"
+        "Terror Type 19"
       ]
     },
     {
       "ID": 9220,
       "Entries": [
-        "Scary damage 20 [Yasha Ape&#39;s mad roar] -- 怖気ダメージ20【夜叉猿の発狂咆哮】"
+        "Terror Type 20"
       ]
     },
     {
       "ID": 9221,
       "Entries": [
-        "Scary Damage 21 [Underwater Neckless Hair Bullet] -- 怖気ダメージ21【水中首なしの髪の毛弾丸】"
+        "Terror Type 21"
       ]
     },
     {
       "ID": 9222,
       "Entries": [
-        "Scary damage 22 [Village zombies_mad dumplings_parents] -- 怖気ダメージ22【村人ゾンビ_発狂団子_親】"
+        "Terror Type 22"
       ]
     },
     {
       "ID": 9223,
       "Entries": [
-        "Scary damage 23 [Village zombie _ Mad dumpling _ Child] -- 怖気ダメージ23【村人ゾンビ_発狂団子_子】"
+        "Terror Type 23"
       ]
     },
     {
       "ID": 9250,
       "Entries": [
-        "Scary_abnormal icon display -- 怖気_状態異常アイコン表示"
+        "Terror Display Icon"
       ]
     },
     {
       "ID": 9280,
       "Entries": [
-        "Fear Resistance Shaving Permit"
+        "Terror Resistance Shaving Permit"
       ]
     },
     {
       "ID": 9281,
       "Entries": [
-        "Fear_Resistance Shaving Hold -- 怖気_耐性削り保留"
+        "Terror Resistance Shaving Hold"
       ]
     },
     {
@@ -6442,7 +6442,7 @@
     {
       "ID": 9800,
       "Entries": [
-        "Firecracker debuff -- 爆竹デバフ"
+        "Purple Fume Spark Debuff"
       ]
     },
     {
@@ -8134,7 +8134,7 @@
     {
       "ID": 100392,
       "Entries": [
-        "PC: Iron fan damage level for overwriting _ provisional -- PC：鉄扇ダメージレベル上書用_暫定"
+        "Loaded Umbrella - Overwriting Damage Level"
       ]
     },
     {
@@ -8236,121 +8236,121 @@
     {
       "ID": 104000,
       "Entries": [
-        "Critical symbol SFX_for enemy attack_piercing -- クリティカル記号SFX_敵攻撃用_刺突"
+        "Critical VFX - Thrust"
       ]
     },
     {
       "ID": 104001,
       "Entries": [
-        "Critical symbol SFX_for enemy attack_ground -- クリティカル記号SFX_敵攻撃用_対地"
+        "Critical VFX - Sweep"
       ]
     },
     {
       "ID": 104002,
       "Entries": [
-        "Critical symbol SFX_for enemy attack_light fire / anti-aircraft -- クリティカル記号SFX_敵攻撃用_軽射/対空"
+        "Critical VFX - Light Flame / Anti-air"
       ]
     },
     {
       "ID": 104005,
       "Entries": [
-        "Critical symbol SFX_for enemy attack_flame -- クリティカル記号SFX_敵攻撃用_火炎"
+        "Critical VFX - Flame"
       ]
     },
     {
       "ID": 104010,
       "Entries": [
-        "Critical symbol SFX_piercing -- クリティカル記号SFX_刺突"
+        "Critical VFX - Thrust Counter"
       ]
     },
     {
       "ID": 104011,
       "Entries": [
-        "Critical symbol SFX_ground -- クリティカル記号SFX_対地"
+        "Critical VFX - Sweep Counter"
       ]
     },
     {
       "ID": 104012,
       "Entries": [
-        "Critical symbol SFX_light / anti-aircraft -- クリティカル記号SFX_軽射/対空"
+        "Critical VFX - Anti-air"
       ]
     },
     {
       "ID": 104015,
       "Entries": [
-        "Critical symbol SFX_flame -- クリティカル記号SFX_火炎"
+        "Critical VFX - Flame"
       ]
     },
     {
       "ID": 104016,
       "Entries": [
-        "Critical symbol SFX_anti-spirit -- クリティカル記号SFX_対霊"
+        "Critical VFX - Anti-apparition"
       ]
     },
     {
       "ID": 104017,
       "Entries": [
-        "Critical symbol SFX_ Anti-aircraft (Kick rush first stage kick-up only) -- クリティカル記号SFX_対空（蹴りラッシュ初段蹴り上げ専用）"
+        "Critical VFX - Anti-air (Senpou Leaping Kicks / High Monk Kick-up)"
       ]
     },
     {
       "ID": 104018,
       "Entries": [
-        "Critical symbol SFX_Anti-aircraft (Kicking rush first stage kicking only) _Always Ver. -- クリティカル記号SFX_対空（蹴りラッシュ初段蹴り上げ専用）_常時Ver."
+        "Critical VFX - Anti-air (Senpou Leaping Kicks / High Monk Kick-up)"
       ]
     },
     {
       "ID": 104020,
       "Entries": [
-        "Critical symbol SFX_reaction system_firecracker -- クリティカル記号SFX_リアクション系_爆竹"
+        "Critical VFX - Firecracker"
       ]
     },
     {
       "ID": 104021,
       "Entries": [
-        "Critical symbol SFX_reaction system_ax -- クリティカル記号SFX_リアクション系_斧"
+        "Critical VFX - Axe"
       ]
     },
     {
       "ID": 104022,
       "Entries": [
-        "Critical symbol SFX_reaction system_female poison -- クリティカル記号SFX_リアクション系_女毒"
+        "Critical VFX - O'Rin Poison"
       ]
     },
     {
       "ID": 104023,
       "Entries": [
-        "Critical symbol SFX_reaction system_spear -- クリティカル記号SFX_リアクション系_槍"
+        "Critical VFX - Spear"
       ]
     },
     {
       "ID": 104024,
       "Entries": [
-        "Critical symbol SFX_reaction system_enemy turning -- クリティカル記号SFX_リアクション系_敵回し"
+        "Critical VFX - Divine Abduction"
       ]
     },
     {
       "ID": 104025,
       "Entries": [
-        "Critical symbol SFX_reaction system_seed ringing -- クリティカル記号SFX_リアクション系_種鳴らし"
+        "Critical VFX - Snap Seed"
       ]
     },
     {
       "ID": 104026,
       "Entries": [
-        "Critical symbol SFX_reaction system_finger whistle -- クリティカル記号SFX_リアクション系_指笛"
+        "Critical VFX - Finger Whistle"
       ]
     },
     {
       "ID": 104030,
       "Entries": [
-        "Critical symbol SFX_Reaction system playback permission_Firecracker -- クリティカル記号SFX_リアクション系再生許可_爆竹"
+        "Critical VFX - Hitting Beast With Firecrackers"
       ]
     },
     {
       "ID": 104031,
       "Entries": [
-        "Critical symbol SFX_Reaction system playback permission_Ax -- クリティカル記号SFX_リアクション系再生許可_斧"
+        "Critical VFX - Axe Play Permission"
       ]
     },
     {
@@ -8452,19 +8452,19 @@
     {
       "ID": 106030,
       "Entries": [
-        "Spirit enchantment -- 霊エンチャント"
+        "Living Force - Anti-apparition"
       ]
     },
     {
       "ID": 106031,
       "Entries": [
-        "Reinforcement of spirit enchantment_anti-spirit guard -- 霊エンチャント_対霊ガード強化"
+        "Living Force - Anti-apparition Guard"
       ]
     },
     {
       "ID": 106032,
       "Entries": [
-        "Spirit Enchantment_Anti-spirit Jasuga Strengthening -- 霊エンチャント_対霊ジャスガ強化"
+        "Living Force - Anti-apparition Deflection"
       ]
     },
     {
@@ -8584,7 +8584,7 @@
     {
       "ID": 107100,
       "Entries": [
-        "Prosthetic hand ninja _ firecracker _ cool time activation trigger -- 義手忍具_爆竹_クールタイム発動トリガー"
+        "Firecracker Cooldown"
       ]
     },
     {
@@ -8608,121 +8608,121 @@
     {
       "ID": 107600,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge LV0 monitoring / holding -- 義手忍具_鉄扇_チャージLV0監視/保持"
+        "Loaded Umbrella - Projectile Level 0"
       ]
     },
     {
       "ID": 107601,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge LV1 monitoring / holding -- 義手忍具_鉄扇_チャージLV1監視/保持"
+        "Loaded Umbrella - Projectile Level 1"
       ]
     },
     {
       "ID": 107602,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge LV2 monitoring / holding -- 義手忍具_鉄扇_チャージLV2監視/保持"
+        "Loaded Umbrella - Projectile Level 2"
       ]
     },
     {
       "ID": 107603,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge LV3 monitoring / holding -- 義手忍具_鉄扇_チャージLV3監視/保持"
+        "Loaded Umbrella - Projectile Level 3"
       ]
     },
     {
       "ID": 107610,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge LV1 is in operation -- 義手忍具_鉄扇_チャージLV1発動中"
+        "Loaded Umbrella - Projectile Level 1 Being Used"
       ]
     },
     {
       "ID": 107611,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge LV2 is active -- 義手忍具_鉄扇_チャージLV2発動中"
+        "Loaded Umbrella - Projectile Level 2 Being Used"
       ]
     },
     {
       "ID": 107612,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge LV3 is active -- 義手忍具_鉄扇_チャージLV3発動中"
+        "Loaded Umbrella - Projectile Level 3 Being Used"
       ]
     },
     {
       "ID": 107615,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge reset -- 義手忍具_鉄扇_チャージリセット"
+        "Loaded Umbrella - Projectile Charge Reset"
       ]
     },
     {
       "ID": 107621,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _1 Accumulate in 1 time -- 義手忍具_鉄扇_チャージ_1回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 1"
       ]
     },
     {
       "ID": 107622,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge-Accumulate in 2 times -- 義手忍具_鉄扇_チャージ_2回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 2"
       ]
     },
     {
       "ID": 107623,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 3 times -- 義手忍具_鉄扇_チャージ_3回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 3"
       ]
     },
     {
       "ID": 107624,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 4 times -- 義手忍具_鉄扇_チャージ_4回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 4"
       ]
     },
     {
       "ID": 107625,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 5 times -- 義手忍具_鉄扇_チャージ_5回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 5"
       ]
     },
     {
       "ID": 107626,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 6 times -- 義手忍具_鉄扇_チャージ_6回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 6"
       ]
     },
     {
       "ID": 107627,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 7 times -- 義手忍具_鉄扇_チャージ_7回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 7"
       ]
     },
     {
       "ID": 107628,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 8 times -- 義手忍具_鉄扇_チャージ_8回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 8"
       ]
     },
     {
       "ID": 107629,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 9 times -- 義手忍具_鉄扇_チャージ_9回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 9"
       ]
     },
     {
       "ID": 107630,
       "Entries": [
-        "Prosthetic hand Ninja _ Iron fan _ Charge _ Accumulate in 10 times -- 義手忍具_鉄扇_チャージ_10回で溜まる"
+        "Loaded Umbrella - Charge Accumulation 10"
       ]
     },
     {
       "ID": 107640,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge monitoring / holding possible -- 義手忍具_鉄扇_チャージ監視/保持可能"
+        "Loaded Umbrella - Projected Force Allow Use"
       ]
     },
     {
       "ID": 107641,
       "Entries": [
-        "Prosthetic hand ninja _ iron fan _ charge can be added -- 義手忍具_鉄扇_チャージ加算可能"
+        "Loaded Umbrella - Charge Can Be Added"
       ]
     },
     {
@@ -8794,19 +8794,19 @@
     {
       "ID": 107710,
       "Entries": [
-        "Enemy turn AI sound bullet"
+        "Divine Abduction - AI Sound"
       ]
     },
     {
       "ID": 107711,
       "Entries": [
-        "Enemy Turn Reaction Transparency"
+        "Divine Abduction - Reaction"
       ]
     },
     {
       "ID": 107712,
       "Entries": [
-        "Enemy Turn Reaction Short-term Blind"
+        "Divine Abduction - Short Blind"
       ]
     },
     {
@@ -10084,7 +10084,7 @@
     {
       "ID": 113000,
       "Entries": [
-        "Shuriken_Trunk recovery speed reduction -- 手裏剣_体幹回復速度減少"
+        "Shuriken Posture Recovery Reduction"
       ]
     },
     {
@@ -10270,73 +10270,73 @@
     {
       "ID": 127060,
       "Entries": [
-        "Money throwing _ possession LV0 -- 銭投げ_所持LV0"
+        "Sen Throw Consumption - No Money"
       ]
     },
     {
       "ID": 127061,
       "Entries": [
-        "Money throwing _ possession LV1 -- 銭投げ_所持LV1"
+        "Sen Throw Consumption - Little Money"
       ]
     },
     {
       "ID": 127062,
       "Entries": [
-        "Money throwing _ possession LV2 -- 銭投げ_所持LV2"
+        "Sen Throw Consumption - Some Money"
       ]
     },
     {
       "ID": 127063,
       "Entries": [
-        "Money throwing _ possession LV3 -- 銭投げ_所持LV3"
+        "Sen Throw Consumption - A Lot of Money"
       ]
     },
     {
       "ID": 127070,
       "Entries": [
-        "Money throwing _ consumption LV0 accumulation -- 銭投げ_消費LV0溜め"
+        "Sen Throw Charge Consumption - No Money"
       ]
     },
     {
       "ID": 127071,
       "Entries": [
-        "Money throwing _ consumption LV0 -- 銭投げ_消費LV0"
+        "Sen Throw Consumption - No Money"
       ]
     },
     {
       "ID": 127072,
       "Entries": [
-        "Money throwing _ consumption LV1 accumulation -- 銭投げ_消費LV1溜め"
+        "Sen Throw Charge Consumption - Little Money"
       ]
     },
     {
       "ID": 127073,
       "Entries": [
-        "Money throwing _ consumption LV1 -- 銭投げ_消費LV1"
+        "Sen Throw Consumption - Little Money"
       ]
     },
     {
       "ID": 127074,
       "Entries": [
-        "Money throwing _ consumption LV2 accumulation -- 銭投げ_消費LV2溜め"
+        "Sen Throw Charge Consumption - Some Money"
       ]
     },
     {
       "ID": 127075,
       "Entries": [
-        "Money throwing _ consumption LV2 -- 銭投げ_消費LV2"
+        "Sen Throw Consumption - Some Money"
       ]
     },
     {
       "ID": 127076,
       "Entries": [
-        "Money throwing _ consumption LV3 accumulation -- 銭投げ_消費LV3溜め"
+        "Sen Throw Charge Consumption - A Lot of Money"
       ]
     },
     {
       "ID": 127077,
       "Entries": [
-        "Money throwing _ consumption LV3 -- 銭投げ_消費LV3"
+        "Sen Throw Consumption - A Lot of Money"
       ]
     },
     {
@@ -12586,19 +12586,19 @@
     {
       "ID": 230100,
       "Entries": [
-        "Firecracker_special attack character definition -- 爆竹_特攻キャラ定義"
+        "Flag as Beast for Firecracker"
       ]
     },
     {
       "ID": 230110,
       "Entries": [
-        "Firecracker _ vs. non-special attack character attack -- 爆竹_対非特攻キャラ攻撃"
+        "Firecracker Normal Stun"
       ]
     },
     {
       "ID": 230111,
       "Entries": [
-        "Firecracker _ vs. special attack character attack -- 爆竹_対特攻キャラ攻撃"
+        "Firecracker Beast Stun"
       ]
     },
     {
@@ -12640,67 +12640,67 @@
     {
       "ID": 230500,
       "Entries": [
-        "Finger whistle_enemy madness_effect can be activated -- 指笛_敵狂わせ_効果発動可能"
+        "Finger Whistle - Enemy Affected by Beast Madness"
       ]
     },
     {
       "ID": 230510,
       "Entries": [
-        "Finger whistle_enemy madness_invoking_parent -- 指笛_敵狂わせ_発動中_親"
+        "Finger Whistle - Beast Madness Trigger"
       ]
     },
     {
       "ID": 230511,
       "Entries": [
-        "Finger whistle _ Enemy madness _ Activated _ Parent _ Minor Ver. -- 指笛_敵狂わせ_発動中_親_短調Ver."
+        "Malcontent - Apparition Madness Trigger"
       ]
     },
     {
       "ID": 230515,
       "Entries": [
-        "Finger whistle_enemy madness_invoking -- 指笛_敵狂わせ_発動中"
+        "Finger Whistle - Beast Madness"
       ]
     },
     {
       "ID": 230516,
       "Entries": [
-        "Finger whistle_enemy madness_invoking_minor Ver. -- 指笛_敵狂わせ_発動中_短調Ver."
+        "Malcontent - Apparition Madness"
       ]
     },
     {
       "ID": 230518,
       "Entries": [
-        "Finger whistle_enemy AI activation -- 指笛_敵AI起動"
+        "Finger Whistle - AI Sound"
       ]
     },
     {
       "ID": 230519,
       "Entries": [
-        "Finger whistle_enemy AI activation_minor Ver. -- 指笛_敵AI起動_短調Ver."
+        "Malcontent - Apparition AI Sound"
       ]
     },
     {
       "ID": 230520,
       "Entries": [
-        "Finger whistle LV3_minor_effect can be activated -- 指笛LV3_短調_効果発動可能"
+        "Malcontent - Enemy Affected by Apparition Madness"
       ]
     },
     {
       "ID": 230530,
       "Entries": [
-        "Finger whistle LV3_minor_invocation -- 指笛LV3_短調_発動"
+        "Malcontent"
       ]
     },
     {
       "ID": 230540,
       "Entries": [
-        "Finger whistle LV3_minor_invalid -- 指笛LV3_短調_無効"
+        "Malcontent - Apparition Madness Invalid"
       ]
     },
     {
       "ID": 230541,
       "Entries": [
-        "Finger whistle LV3_minor_cancellation timing -- 指笛LV3_短調_キャンセルタイミング"
+        "Malcontent - Apparition Madness Cancel"
       ]
     },
     {
@@ -12790,7 +12790,7 @@
     {
       "ID": 230645,
       "Entries": [
-        "Anti-spirit _ ghost barrier erase -- 対霊_怨霊バリア消し"
+        "Remove Apparition Barrier"
       ]
     },
     {
@@ -15964,7 +15964,7 @@
     {
       "ID": 3147000,
       "Entries": [
-        "[NTC] Kokageshu_Dog Whistle -- 【NTC】孤影衆_犬笛"
+        "Lone Shadow - Dog Whistle"
       ]
     },
     {
@@ -16360,7 +16360,7 @@
     {
       "ID": 3155140,
       "Entries": [
-        "[NTC] Bandit_Aburatsubo downs the flames -- 【NTC】野盗_油壺により炎上ダウン"
+        "Bandit - Oil"
       ]
     },
     {
@@ -17308,7 +17308,7 @@
     {
       "ID": 3509070,
       "Entries": [
-        "[NTC] Butterfly_Butterfly change -- 【NTC】お蝶_蝶々変化"
+        "Lady Butterfly - Release Illusion"
       ]
     },
     {
