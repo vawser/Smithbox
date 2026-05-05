@@ -2272,49 +2272,49 @@
     {
       "ID": 4000,
       "Entries": [
-        "Sustained damage floor [Poison_Interval adjustment_Valley valley bottom (deep)] -- 持続ダメージ床【毒_間隔調整_渓谷谷底（深）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4001,
       "Entries": [
-        "Sustained damage floor [Poison_Effect body_Valley valley bottom (deep)] -- 持続ダメージ床【毒_効果本体_渓谷谷底（深）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4002,
       "Entries": [
-        "Sustained damage floor [Poison_Interval adjustment_Valley valley bottom (shallow)] -- 持続ダメージ床【毒_間隔調整_渓谷谷底（浅）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Sustained damage floor [Poison_Effect body_Valley valley bottom (shallow)] -- 持続ダメージ床【毒_効果本体_渓谷谷底（浅）】"
+        "Poison Swamp"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Sustained Damage Floor [Weak Flame + Damage_Interval Adjustment_Castle] -- 持続ダメージ床【弱炎+ダメージ_間隔調整_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Sustained Damage Floor [Weak Flame + Damage_Effect Body (Damage) _Castle] -- 持続ダメージ床【弱炎+ダメージ_効果本体（ダメージ）_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4012,
       "Entries": [
-        "Sustained damage floor [Weak flame + damage _ effect body (flaming) _ castle] -- 持続ダメージ床【弱炎+ダメージ_効果本体（炎上）_城下】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4014,
       "Entries": [
-        "Sustained Damage Floor [Flame_Smoke Signal_Castle] -- 持続ダメージ床【炎_狼煙_城下】"
+        "Environmental Flame"
       ]
     },
     {
@@ -2326,19 +2326,19 @@
     {
       "ID": 4020,
       "Entries": [
-        "Sustained damage floor [Strong flame + damage_interval adjustment_samurai residence] -- 持続ダメージ床【強炎+ダメージ_間隔調整_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4021,
       "Entries": [
-        "Sustained damage floor [Strong flame + damage _ effect body (damage) _ samurai residence] -- 持続ダメージ床【強炎+ダメージ_効果本体（ダメージ）_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
       "ID": 4022,
       "Entries": [
-        "Sustained damage floor [strong flame + damage _ effect body (flaming) _ samurai residence] -- 持続ダメージ床【強炎+ダメージ_効果本体（炎上）_武家屋敷】"
+        "Environmental Flame"
       ]
     },
     {
@@ -2476,229 +2476,229 @@
     {
       "ID": 5020,
       "Entries": [
-        "General-purpose effect for logic judgment 1 -- ロジック判定用 汎用効果1"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5021,
       "Entries": [
-        "General-purpose effect for logic judgment 2 -- ロジック判定用 汎用効果2"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5022,
       "Entries": [
-        "General-purpose effect for logic judgment 3 -- ロジック判定用 汎用効果3"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5023,
       "Entries": [
-        "General-purpose effect for logic judgment 4 -- ロジック判定用 汎用効果4"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5024,
       "Entries": [
-        "General-purpose effect for logic judgment 5 -- ロジック判定用 汎用効果5"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5025,
       "Entries": [
-        "General-purpose effect for logic judgment 6 -- ロジック判定用 汎用効果6"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5026,
       "Entries": [
-        "General-purpose effect for logic judgment 7 -- ロジック判定用 汎用効果7"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5027,
       "Entries": [
-        "General-purpose effect for logic judgment 8 -- ロジック判定用 汎用効果8"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5028,
       "Entries": [
-        "General-purpose effect for logic judgment 9 -- ロジック判定用 汎用効果9"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5029,
       "Entries": [
-        "General-purpose effect for logic judgment 10 -- ロジック判定用 汎用効果10"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5030,
       "Entries": [
-        "General-purpose effect for logic judgment 11 -- ロジック判定用 汎用効果11"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5031,
       "Entries": [
-        "General-purpose effect for logic judgment 12 -- ロジック判定用 汎用効果12"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5032,
       "Entries": [
-        "General-purpose effect for logic judgment 13 -- ロジック判定用 汎用効果13"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5033,
       "Entries": [
-        "General-purpose effect for logic judgment 14 -- ロジック判定用 汎用効果14"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5034,
       "Entries": [
-        "General-purpose effect for logic judgment 15 -- ロジック判定用 汎用効果15"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5035,
       "Entries": [
-        "General-purpose effect for logic judgment 16 -- ロジック判定用 汎用効果16"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5036,
       "Entries": [
-        "General-purpose effect for logic judgment 17 -- ロジック判定用 汎用効果17"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5037,
       "Entries": [
-        "General-purpose effect for logic judgment 18 -- ロジック判定用 汎用効果18"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5038,
       "Entries": [
-        "General-purpose effect for logic judgment 19 -- ロジック判定用 汎用効果19"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5039,
       "Entries": [
-        "General-purpose effect for logic judgment 20 -- ロジック判定用 汎用効果20"
+        "General Purpose for Logic"
       ]
     },
     {
       "ID": 5040,
       "Entries": [
-        "MP reduction -1 -- MP減少-1"
+        ""
       ]
     },
     {
       "ID": 5041,
       "Entries": [
-        "MP reduction-2 -- MP減少-2"
+        ""
       ]
     },
     {
       "ID": 5042,
       "Entries": [
-        "MP reduction-3 -- MP減少-3"
+        ""
       ]
     },
     {
       "ID": 5043,
       "Entries": [
-        "MP reduction-4 -- MP減少-4"
+        ""
       ]
     },
     {
       "ID": 5044,
       "Entries": [
-        "MP reduction-5 -- MP減少-5"
+        ""
       ]
     },
     {
       "ID": 5045,
       "Entries": [
-        "MP recovery +1 -- MP回復+1"
+        ""
       ]
     },
     {
       "ID": 5046,
       "Entries": [
-        "MP recovery +2 -- MP回復+2"
+        ""
       ]
     },
     {
       "ID": 5047,
       "Entries": [
-        "MP recovery +3 -- MP回復+3"
+        ""
       ]
     },
     {
       "ID": 5048,
       "Entries": [
-        "MP recovery +4 -- MP回復+4"
+        ""
       ]
     },
     {
       "ID": 5049,
       "Entries": [
-        "MP recovery +5 -- MP回復+5"
+        ""
       ]
     },
     {
       "ID": 5060,
       "Entries": [
-        "Apply corpse reaction -- 死体反応を適用する"
+        "Apply Corpse Reaction"
       ]
     },
     {
       "ID": 5061,
       "Entries": [
-        "Corpse reaction pattern 0 -- 死体反応パターン0"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5062,
       "Entries": [
-        "Corpse reaction pattern 1 -- 死体反応パターン1"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5063,
       "Entries": [
-        "Corpse reaction pattern 2 -- 死体反応パターン2"
+        "Corpse Reaction Pattern"
       ]
     },
     {
       "ID": 5100,
       "Entries": [
-        "EvE enemy weakening doping_attack 75% defense 125% -- EvE用敵弱体化ドーピング_攻75％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5101,
       "Entries": [
-        "EvE enemy weakening doping_attack 50% defense 125% -- EvE用敵弱体化ドーピング_攻50％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5102,
       "Entries": [
-        "EvE enemy weakening doping_attack 25% defense 125% -- EvE用敵弱体化ドーピング_攻25％防125％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
       "ID": 5110,
       "Entries": [
-        "EvE Samurai Residence Swordsman Doping_Attack 50% Defense 150% -- EvE武家屋敷剣客用ドーピング_攻50％防150％"
+        "Enemy vs Enemy Power Reduction"
       ]
     },
     {
@@ -5644,7 +5644,7 @@
     {
       "ID": 8500,
       "Entries": [
-        "Remaining machine protection (demon Buddha) -- 残機プロテクト（鬼仏）"
+        "Unseen Aid"
       ]
     },
     {
