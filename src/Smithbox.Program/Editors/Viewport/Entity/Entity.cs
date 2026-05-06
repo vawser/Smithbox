@@ -131,6 +131,7 @@ public class Entity : ISelectable, IDisposable
     {
         set
         {
+            _renderSceneMesh?.Dispose();
             _renderSceneMesh = value;
             UpdateRenderModel();
         }
@@ -283,7 +284,7 @@ public class Entity : ISelectable, IDisposable
     {
         if (child.Parent != null)
         {
-            Parent.Children.Remove(child);
+            child.Parent.Children.Remove(child);
         }
 
         child.Parent = this;
@@ -305,7 +306,7 @@ public class Entity : ISelectable, IDisposable
     {
         if (child.Parent != null)
         {
-            Parent.Children.Remove(child);
+            child.Parent.Children.Remove(child);
         }
 
         child.Parent = this;
@@ -1017,7 +1018,7 @@ public class Entity : ISelectable, IDisposable
                     }
                 }
                 // AIP for ER
-                else if (rx == null && rx == null)
+                else if (rx == null && ry == null)
                 {
                     t.EulerRotation = new Vector3(0, Utils.DegToRadians((float)ry), 0);
                 }

@@ -818,8 +818,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             var sub = _submeshes[i];
 
-            sub.Unregister();
-
             sub.Dispose();
 
             _submeshes.RemoveAt(i);
@@ -827,13 +825,5 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         _submeshes.Clear();
         _submeshes.Add(selected);
-    }
-
-    public void Unregister()
-    {
-        foreach (var sub in _submeshes)
-        {
-            sub.Unregister();
-        }
     }
 }
