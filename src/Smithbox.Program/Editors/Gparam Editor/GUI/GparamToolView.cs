@@ -50,7 +50,7 @@ public class GparamToolView
 
                     if (ImGui.CollapsingHeader("Quick Edit Commands"))
                     {
-                        activeView.QuickEditHandler.DisplayCheatSheet();
+                        QuickEditCheatsheet.Display();
                     }
                 }
             }

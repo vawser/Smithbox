@@ -1,12 +1,12 @@
 {
   "ID": "SnowModel:Editor",
-  "Name": "SnowModel:Editor",
-  "Description": "",
+  "Name": "Model Snow",
+  "Description": "Controls procedural snow surface rendering on models.",
   "Fields": [
     {
       "ID": "SnowModel Snow Rate",
-      "Name": "SnowModel Snow Rate",
-      "Description": "",
+      "Name": "Snow Rate",
+      "Description": "Intensity of snowfall accumulation affecting how quickly snow builds up on models.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

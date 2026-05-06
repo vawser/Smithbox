@@ -1,76 +1,76 @@
 {
   "ID": "WaterInteraction-Editor",
-  "Name": "WaterInteraction-Editor",
-  "Description": "",
+  "Name": "Water Interaction",
+  "Description": "Covers parameters relating to water interactions.",
   "Fields": [
     {
       "ID": "WaterInteraction-Enable",
-      "Name": "WaterInteraction-Enable",
-      "Description": "",
+      "Name": "Enable Water Interaction",
+      "Description": "Enables or disables dynamic water interaction effects such as ripples and disturbances.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "WaterInteraction-Screen Space Enable",
-      "Name": "WaterInteraction-Screen Space Enable",
-      "Description": "",
+      "Name": "Enable Screen Space",
+      "Description": "Enables screen-space simulation for water interactions, allowing effects to be calculated based on what’s visible on screen.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "WaterInteraction - Create Distance",
-      "Name": "WaterInteraction - Create Distance",
-      "Description": "",
+      "Name": "Creation Distance",
+      "Description": "Maximum distance from the camera at which water interaction effects are generated.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - Delete Distance",
-      "Name": "WaterInteraction - Delete Distance",
-      "Description": "",
+      "Name": "Deletion Distance",
+      "Description": "Distance beyond which water interaction effects are removed to save performance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - MaxResolution",
-      "Name": "WaterInteraction - MaxResolution",
-      "Description": "",
+      "Name": "Max Resolution",
+      "Description": "Sets the maximum resolution of the water interaction simulation buffer.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - ScreenSpace TexelSize",
-      "Name": "WaterInteraction - ScreenSpace TexelSize",
-      "Description": "",
+      "Name": "Screen Space Texel Size",
+      "Description": "Defines the sampling resolution of the screen space water interaction buffer.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - ScreenSpace Max Resolution",
-      "Name": "WaterInteraction - ScreenSpace Max Resolution",
-      "Description": "",
+      "Name": "Screen Space Max Resolution",
+      "Description": "Sets the maximum resolution used for screen space water interaction simulation.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - ScreenSpace Wave Speed",
-      "Name": "WaterInteraction - ScreenSpace Wave Speed",
-      "Description": "",
+      "Name": "Screen Space Wave Speed",
+      "Description": "Controls the propagation speed of water surface waves in screen space.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "WaterInteraction - ScreenSpace Wave Attenuation",
-      "Name": "WaterInteraction - ScreenSpace Wave Attenuation",
-      "Description": "",
+      "Name": "Screen Space Wave Attenuation",
+      "Description": "Determines how quickly screen space waves lose energy over distance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

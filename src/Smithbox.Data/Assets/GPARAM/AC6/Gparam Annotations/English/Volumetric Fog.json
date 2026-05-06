@@ -245,7 +245,7 @@
     },
     {
       "ID": "VolumetricFog DirLight HeightAtten",
-      "Name": "VDirectional Light: Height Attenuation",
+      "Name": "Directional Light: Height Attenuation",
       "Description": "Attenuation of directional light influence with height.",
       "Type": "FloatField",
       "Enum": null,

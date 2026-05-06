@@ -1,36 +1,36 @@
 {
   "ID": "Wet ParamEditor",
-  "Name": "Wet ParamEditor",
-  "Description": "",
+  "Name": "Wet Effects",
+  "Description": "Covers parameters relating to wet effects.",
   "Fields": [
     {
       "ID": "Wet-OverrideAlbedo",
-      "Name": "Wet-OverrideAlbedo",
-      "Description": "",
+      "Name": "Override Albedo",
+      "Description": "Overrides the base surface color when wetness is applied, simulating darker or saturated materials.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Wet-OverrideShininess",
-      "Name": "Wet-OverrideShininess",
-      "Description": "",
+      "Name": "Override Shininess",
+      "Description": "Overrides surface shininess to simulate increased specular response on wet surfaces.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Wet-AlbedoRate",
-      "Name": "Wet-AlbedoRate",
-      "Description": "",
+      "Name": "Albedo Rate",
+      "Description": "Controls the intensity at which wetness affects the surface albedo over time or exposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Wet-ShininessRate",
-      "Name": "Wet-ShininessRate",
-      "Description": "",
+      "Name": "Shininess Rate",
+      "Description": "Controls how quickly wetness increases surface shininess to simulate moisture accumulation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
