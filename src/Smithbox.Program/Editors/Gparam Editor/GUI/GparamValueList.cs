@@ -306,7 +306,7 @@ public class GparamValueList
 
                     if (name != null)
                     {
-                        UIHelper.WrappedText($"{entry.Key} - {name}");
+                        UIHelper.WrappedText($"{entry.Key} - {name.Text}");
                     }
                     else
                     {

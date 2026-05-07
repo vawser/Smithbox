@@ -17,5 +17,6 @@
 
 - Gparam Editor:
  - Finish meta annotations for SDT/DS3/BB/DS2
+ - Add multi-select for the value list (and to duplicate/delete/export)
  - Add finder tool (similar to the Param finders) for values
  

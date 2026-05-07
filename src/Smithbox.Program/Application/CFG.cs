@@ -854,6 +854,7 @@ public class CFG
     // Tools
     public bool Interface_GparamEditor_ToolWindow = true;
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
+    public bool Interface_GparamEditor_Tool_Finder = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Gparam_Editor = false;

@@ -16,7 +16,7 @@
       "Name": "Tone Map Mode",
       "Description": "Selects the tone mapping algorithm used to convert HDR values into displayable color range.",
       "Type": "IntField",
-      "Enum": null,
+      "Enum": "TONE_MAP_MODE",
       "IsBoolean": false
     },
     {

@@ -10,10 +10,14 @@ public class GparamToolView
     private GparamEditorScreen Editor;
     private ProjectEntry Project;
 
+    private GparamDataFinder DataFinder;
+
     public GparamToolView(GparamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        DataFinder = new(editor, project);
     }
 
     /// <summary>
@@ -53,24 +57,16 @@ public class GparamToolView
                         QuickEditCheatsheet.Display();
                     }
                 }
-            }
 
-            // Gparam Reloader
-            /*
-            if (GparamMemoryTools.IsGparamReloaderSupported())
-            {
-                if (ImGui.CollapsingHeader("Gparam Reloader"))
+                if (CFG.Current.Interface_GparamEditor_Tool_Finder)
                 {
-                    UIHelper.WrappedText("");
-
-                    if (ImGui.Button("Reload Current Gparam", DPI.StandardButtonSize))
+                    if (ImGui.CollapsingHeader("Data Finder"))
                     {
-                        GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
+                        DataFinder.Display();
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
                 }
             }
-            */
+
         }
 
         ImGui.End();
@@ -85,6 +81,12 @@ public class GparamToolView
                 CFG.Current.Interface_GparamEditor_Tool_QuickEdit = !CFG.Current.Interface_GparamEditor_Tool_QuickEdit;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
+
+            if (ImGui.MenuItem("Finder"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_Finder = !CFG.Current.Interface_GparamEditor_Tool_Finder;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_Finder);
 
             ImGui.EndMenu();
         }
