@@ -1,0 +1,71 @@
+{
+  "ID": "Bloom",
+  "Name": "Bloom",
+  "Description": "Controls the bloom post-processing effect that causes bright light sources and high-intensity pixels to glow and bleed into surrounding areas. Simulates optical light scattering in camera lenses and enhances perceived brightness and atmosphere.",
+  "Fields": [
+    {
+      "ID": "Bloom有効",
+      "Name": "Is Bloom Enabled",
+      "Description": "Enables or disables the bloom effect. When disabled, bright pixels will not produce glow or light bleeding.",
+      "Type": "BoolField",
+      "Enum": null,
+      "IsBoolean": true
+    },
+    {
+      "ID": "ブルームアルファ",
+      "Name": "Bloom Alpha",
+      "Description": "Controls the overall opacity and blending intensity of the bloom effect over the final image.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルームカラースケール",
+      "Name": "Bloom Color Scale",
+      "Description": "Color multiplier applied to bloom contribution. Used to tint or amplify bloom coloration across the scene.",
+      "Type": "Vector4Field",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルームカラー係数",
+      "Name": "Bloom Color Coefficient",
+      "Description": "Controls the intensity scaling of bloom coloration. Higher values increase the strength of color contribution within the bloom effect.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム彩度制御",
+      "Name": "Bloom Saturation Control",
+      "Description": "Adjusts the saturation level of bloom highlights. Higher values produce more vivid and colorful glow effects, while lower values create softer white bloom.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数0",
+      "Name": "Bloom Coupling Coefficient: 0",
+      "Description": "Controls blending weight for the first bloom accumulation layer or blur stage.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数1",
+      "Name": "Bloom Coupling Coefficient: 1",
+      "Description": "Controls blending weight for the second bloom accumulation layer or blur stage.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "ブルーム結合係数2",
+      "Name": "Bloom Coupling Coefficient: 2",
+      "Description": "Controls blending weight for the third bloom accumulation layer or blur stage.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    }
+  ]
+}
