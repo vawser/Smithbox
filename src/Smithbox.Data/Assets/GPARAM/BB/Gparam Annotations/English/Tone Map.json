@@ -1,276 +1,276 @@
 {
   "ID": "Tone Map[Yebis]",
-  "Name": "Tone Map[Yebis]",
-  "Description": "",
+  "Name": "Tone Map",
+  "Description": "Covers parameters relating to the scene tonemapper.",
   "Fields": [
     {
       "ID": "Yebis-ToneMapExposure",
-      "Name": "Yebis-ToneMapExposure",
-      "Description": "",
+      "Name": "Yebis: Exposure",
+      "Description": "Controls the base exposure level applied within the Yebis tonemapper before curve processing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Gamma",
-      "Name": "Yebis-Gamma",
-      "Description": "",
+      "Name": "Yebis: Gamma",
+      "Description": "Applies gamma correction to the final image, affecting midtone brightness and perceived contrast.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneType",
-      "Name": "Yebis-ToneType",
-      "Description": "",
+      "Name": "Yebis: Tone Type",
+      "Description": "Selects the tone mapping curve model (e.g. linear, filmic, Reinhard-style) used by Yebis.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneMappingFactor",
-      "Name": "Yebis-ToneMappingFactor",
-      "Description": "",
+      "Name": "Yebis: Tone Mapping Factor",
+      "Description": "Controls the strength or influence of the tone mapping curve on HDR values.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-FilmicContrast",
-      "Name": "Yebis-FilmicContrast",
-      "Description": "",
+      "Name": "Yebis: Filmic Contrast",
+      "Description": "Adjusts contrast shaping in the filmic tone curve, especially affecting highlights and shadows.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ColorH",
-      "Name": "Yebis-ColorH",
-      "Description": "",
+      "Name": "Yebis: Color Hue",
+      "Description": "Applies a global hue shift within the Yebis color grading stage.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ColorS",
-      "Name": "Yebis-ColorS",
-      "Description": "",
+      "Name": "Yebis: Color Saturation",
+      "Description": "Controls overall color intensity after tone mapping in the Yebis pipeline.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ColorV",
-      "Name": "Yebis-ColorV",
-      "Description": "",
+      "Name": "Yebis: Color Value",
+      "Description": "Adjusts brightness scaling applied during Yebis color grading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Contrust",
-      "Name": "Yebis-Contrust",
-      "Description": "",
+      "Name": "Yebis: Contrast",
+      "Description": "Applies final contrast adjustment within the Yebis post-processing stage.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AutoExposure",
-      "Name": "Yebis-AutoExposure",
-      "Description": "",
+      "Name": "Yebis: Enable Auto Exposure",
+      "Description": "Enables or configures automatic exposure adaptation based on scene luminance.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-DelayFrame",
-      "Name": "Yebis-DelayFrame",
-      "Description": "",
+      "Name": "Yebis: Delay Frame",
+      "Description": "Introduces temporal delay in exposure adaptation to smooth abrupt lighting changes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MiddleGray",
-      "Name": "Yebis-MiddleGray",
-      "Description": "",
+      "Name": "Yebis: Middle Gray",
+      "Description": "Defines the reference luminance level treated as neutral gray for auto exposure calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneInfluencedByGlare",
-      "Name": "Yebis-ToneInfluencedByGlare",
-      "Description": "",
+      "Name": "Yebis: Tone Influenced by Glare",
+      "Description": "Controls how much glare/bloom contributes to tone mapping and exposure evaluation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MinExposure",
-      "Name": "Yebis-MinExposure",
-      "Description": "",
+      "Name": "Yebis: Minimum Exposure",
+      "Description": "Sets the lower bound for automatic exposure to prevent excessive darkening.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MaxExposure",
-      "Name": "Yebis-MaxExposure",
-      "Description": "",
+      "Name": "Yebis: Maximum Exposure",
+      "Description": "Sets the upper bound for automatic exposure to prevent excessive brightness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Exposure MeteringWidth",
-      "Name": "Yebis-Exposure MeteringWidth",
-      "Description": "",
+      "Name": "Yebis: Exposure Metering Width",
+      "Description": "Defines the horizontal size of the region used for luminance sampling in auto exposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Exposure MeteringHeight",
-      "Name": "Yebis-Exposure MeteringHeight",
-      "Description": "",
+      "Name": "Yebis: Exposure Metering Height",
+      "Description": "Defines the vertical size of the region used for luminance sampling in auto exposure.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Exposure MeteringOffsetX",
-      "Name": "Yebis-Exposure MeteringOffsetX",
-      "Description": "",
+      "Name": "Yebis: Exposure Metering Offset: X",
+      "Description": "Offsets the exposure sampling region horizontally from screen center.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Exposure MeteringOffsetY",
-      "Name": "Yebis-Exposure MeteringOffsetY",
-      "Description": "",
+      "Name": "Yebis: Exposure Metering Offset: Y",
+      "Description": "Offsets the exposure sampling region vertically from screen center.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AdaptationSensitivity",
-      "Name": "Yebis-AdaptationSensitivity",
-      "Description": "",
+      "Name": "Yebis: Bright Adaptation Sensitivity",
+      "Description": "Controls how strongly exposure reacts to increases in scene brightness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AdaptationScale",
-      "Name": "Yebis-AdaptationScale",
-      "Description": "",
+      "Name": "Yebis: Bright Adaptation Scale",
+      "Description": "Scales the magnitude of exposure adjustment when adapting to bright scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AdaptationSpeedLimit",
-      "Name": "Yebis-AdaptationSpeedLimit",
-      "Description": "",
+      "Name": "Yebis: Bright Adaptation Speed Limit",
+      "Description": "Limits how quickly exposure can increase when transitioning to brighter environments.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DarkAdaptationSensitivity",
-      "Name": "Yebis-DarkAdaptationSensitivity",
-      "Description": "",
+      "Name": "Yebis: Dark Adaptation Sensitivity",
+      "Description": "Controls how strongly exposure reacts to decreases in scene brightness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DarkAdaptationScale",
-      "Name": "Yebis-DarkAdaptationScale",
-      "Description": "",
+      "Name": "Yebis: Dark Adaptation Scale",
+      "Description": "Scales the magnitude of exposure adjustment when adapting to darker scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DarkAdaptationSpeedLimit",
-      "Name": "Yebis-DarkAdaptationSpeedLimit",
-      "Description": "",
+      "Name": "Yebis: Dark Adaptation Speed Limit",
+      "Description": "Limits how quickly exposure can decrease when transitioning to darker environments.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-fAdaptationScale / fDarkAdaptationScale",
-      "Name": "Yebis-fAdaptationScale / fDarkAdaptationScale",
-      "Description": "",
+      "Name": "Yebis: Bright to Dark Adaptation Scale Ratio",
+      "Description": "Controls the balance between brightening and darkening adaptation strengths.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Vignette Power",
-      "Name": "Yebis-Vignette Power",
-      "Description": "",
+      "Name": "Yebis: Vignette Power",
+      "Description": "Controls the intensity of edge darkening applied by the Yebis vignette effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-VignetteFovDependence",
-      "Name": "Yebis-VignetteFovDependence",
-      "Description": "",
+      "Name": "Yebis: Vignette FOV Dependence",
+      "Description": "Adjusts vignette strength relative to camera field of view.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Chromatic Aberration Enable",
-      "Name": "Yebis-Chromatic Aberration Enable",
-      "Description": "",
+      "Name": "Yebis: Enable Chromatic Aberration",
+      "Description": "Enables color channel separation to simulate lens chromatic aberration.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-WaveSample",
-      "Name": "Yebis-WaveSample",
-      "Description": "",
+      "Name": "Yebis: Wave Sample",
+      "Description": "Controls the sampling resolution used for dispersion or aberration wave simulation.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneLateralDispersion[0]",
-      "Name": "Yebis-ToneLateralDispersion[0]",
-      "Description": "",
+      "Name": "Yebis: Tone Lateral Dispersion (0)",
+      "Description": "Controls horizontal color channel offset for chromatic dispersion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneLateralDispersion[1]",
-      "Name": "Yebis-ToneLateralDispersion[1]",
-      "Description": "",
+      "Name": "Yebis: Tone Lateral Dispersion (1)",
+      "Description": "Controls vertical color channel offset for chromatic dispersion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneUniformDispersion[0]",
-      "Name": "Yebis-ToneUniformDispersion[0]",
-      "Description": "",
+      "Name": "Yebis: Tone Uniform Dispersion (0)",
+      "Description": "Applies uniform color channel offset across the image for dispersion effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ToneUniformDispersion[1]",
-      "Name": "Yebis-ToneUniformDispersion[1]",
-      "Description": "",
+      "Name": "Yebis: Tone Uniform Dispersion (1)",
+      "Description": "Secondary parameter controlling uniform dispersion strength or direction.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -285,136 +285,136 @@
     },
     {
       "ID": "GS Presents - ToneMap-AvgLuminance",
-      "Name": "GS Presents - ToneMap-AvgLuminance",
-      "Description": "",
+      "Name": "Average Luminance",
+      "Description": "Displays or controls the computed average scene luminance used for exposure calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-LuminanceBalanceR",
-      "Name": "GS Presents - ToneMap-LuminanceBalanceR",
-      "Description": "",
+      "Name": "Luminance Balance: R",
+      "Description": "Adjusts the contribution of the red channel to overall luminance calculation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-LuminanceBalanceG",
-      "Name": "GS Presents - ToneMap-LuminanceBalanceG",
-      "Description": "",
+      "Name": "Luminance Balance: G",
+      "Description": "Adjusts the contribution of the green channel to overall luminance calculation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-LuminanceBalanceB",
-      "Name": "GS Presents - ToneMap-LuminanceBalanceB",
-      "Description": "",
+      "Name": "Luminance Balance: B",
+      "Description": "Adjusts the contribution of the blue channel to overall luminance calculation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Scaler R",
-      "Name": "GS Presents - ToneMap-Scaler R",
-      "Description": "",
+      "Name": "Scaler: R",
+      "Description": "Applies a scaling factor to the red color channel before tone mapping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Scaler G",
-      "Name": "GS Presents - ToneMap-Scaler G",
-      "Description": "",
+      "Name": "Scaler: G",
+      "Description": "Applies a scaling factor to the green color channel before tone mapping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Scaler B",
-      "Name": "GS Presents - ToneMap-Scaler B",
-      "Description": "",
+      "Name": "Scaler: B",
+      "Description": "Applies a scaling factor to the blue color channel before tone mapping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-ToneMapMode",
-      "Name": "GS Presents - ToneMap-ToneMapMode",
-      "Description": "",
+      "Name": "Tone Map Mode",
+      "Description": "Selects the tone mapping algorithm used to convert HDR values into displayable color range.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Contrast",
-      "Name": "GS Presents - ToneMap-Contrast",
-      "Description": "",
+      "Name": "Contrast",
+      "Description": "Adjusts overall image contrast after tone mapping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Gamma",
-      "Name": "GS Presents - ToneMap-Gamma",
-      "Description": "",
+      "Name": "Final Gamma",
+      "Description": "Applies final gamma correction to convert from linear space to display space.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-UseTable",
-      "Name": "GS Presents - ToneMap-UseTable",
-      "Description": "",
+      "Name": "Use LUT Table",
+      "Description": "Enables use of a lookup table (LUT) for tone mapping instead of analytic curves.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-Enable AutoExposure",
-      "Name": "GS Presents - ToneMap-Enable AutoExposure",
-      "Description": "",
-      "Type": "IntField",
+      "Name": "Enable Auto Exposure",
+      "Description": "Enables automatic exposure adjustment based on scene brightness over time.",
+      "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
-      "Name": "GS Presents - ToneMap-AutoExposure LightAdapt Speed",
-      "Description": "",
+      "Name": "Auto Exposure: Light Adaptation Speed",
+      "Description": "Controls how quickly exposure adapts to brightening scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
-      "Name": "GS Presents - ToneMap-AutoExposure DarkAdapt Speed",
-      "Description": "",
+      "Name": "Auto Exposure: Dark Adaptation Speed",
+      "Description": "Controls how quickly exposure adapts to darker scenes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Middle Gray",
-      "Name": "GS Presents - ToneMap-AutoExposure Middle Gray",
-      "Description": "",
+      "Name": "Auto Exposure: Middle Gray",
+      "Description": "Defines the reference luminance level considered neutral gray for exposure calculation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-AutoExposure Center Weight",
-      "Name": "GS Presents - ToneMap-AutoExposure Center Weight",
-      "Description": "",
+      "Name": "Auto Exposure: Center Weight",
+      "Description": "Weights exposure calculation toward the center of the screen.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ToneMap-MaxLuminance",
-      "Name": "GS Presents - ToneMap-MaxLuminance",
-      "Description": "",
+      "Name": "Max Luminance",
+      "Description": "The maximum luminance for the tone mapper.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

@@ -1,20 +1,20 @@
 {
   "ID": "Env Map:Editor",
-  "Name": "Env Map:Editor",
-  "Description": "",
+  "Name": "Environment Map",
+  "Description": "Covers parameters relating to environment map reflections and ambient lighting contribution.",
   "Fields": [
     {
       "ID": "Env Map: EnvMapId",
-      "Name": "Env Map: EnvMapId",
-      "Description": "",
+      "Name": "Environment Map ID",
+      "Description": "Identifier for the environment (cube) map used for reflections and ambient lighting.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Env Map: ColorScale",
-      "Name": "Env Map: ColorScale",
-      "Description": "",
+      "Name": "Color Scale",
+      "Description": "Scales the intensity of the environment map contribution to reflections and ambient lighting.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

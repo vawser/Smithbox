@@ -1,12 +1,12 @@
 {
   "ID": "LensSimulation",
   "Name": "Lens Simulation",
-  "Description": "",
+  "Description": "Physically-inspired post-processing system that simulates real camera lens behavior, including depth of field, focus falloff, bokeh, motion blur, and circle of confusion to mimic optical imaging characteristics.",
   "Fields": [
     {
       "ID": "NearEnd",
       "Name": "Near End",
-      "Description": "",
+      "Description": "Defines the far boundary of the near-depth range where objects begin transitioning into blur due to proximity to the camera focus plane.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "NearStart",
       "Name": "Near Start",
-      "Description": "",
+      "Description": "Defines the start of the near-depth blur region, marking where foreground defocus begins relative to the focal distance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "FarStart",
       "Name": "Far Start",
-      "Description": "",
+      "Description": "Defines the start of far-depth blur, where distant objects begin losing sharpness due to depth of field falloff.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "FarEnd",
       "Name": "Far End",
-      "Description": "",
+      "Description": "Defines the farthest depth at which maximum blur is applied, representing full defocus in distant background regions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "FocusDist",
       "Name": "Focus Distance",
-      "Description": "",
+      "Description": "Primary focal plane distance from the camera where rendered objects appear sharpest with minimal depth of field blur.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "Camera Focus Offset",
       "Name": "Camera Focus Offset",
-      "Description": "",
+      "Description": "Adjusts the focus plane relative to the camera position, allowing fine-tuning of focal depth without changing scene geometry.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -54,7 +54,7 @@
     {
       "ID": "UseCameraFocus",
       "Name": "Use Camera Focus",
-      "Description": "",
+      "Description": "Enables automatic focus tracking based on camera parameters or target objects instead of fixed focus distance.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -62,7 +62,7 @@
     {
       "ID": "CoCBlurCount",
       "Name": "Circle of Confusion: Blur Count",
-      "Description": "",
+      "Description": "Number of samples used to approximate circle of confusion blur, affecting quality and smoothness of depth of field.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -70,7 +70,7 @@
     {
       "ID": "Lens F",
       "Name": "F-Number",
-      "Description": "",
+      "Description": "Aperture f-number controlling lens opening size; lower values produce stronger depth of field and more pronounced bokeh.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -78,7 +78,7 @@
     {
       "ID": "Av (絞り値)",
       "Name": "Aperture Value",
-      "Description": "",
+      "Description": "Logarithmic aperture setting used in exposure and depth of field calculations, influencing blur intensity and light intake.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -86,7 +86,7 @@
     {
       "ID": "FilmSize(mm)",
       "Name": "Film Size",
-      "Description": "In millimetres.",
+      "Description": "Simulated sensor or film size in millimeters, affecting field of view and depth of field characteristics.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -94,7 +94,7 @@
     {
       "ID": "CoC Near Factor",
       "Name": "Circle of Confusion: Near Factor",
-      "Description": "",
+      "Description": "Scaling factor that adjusts blur intensity for objects closer than the focal plane, controlling near-field defocus behavior.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -102,7 +102,7 @@
     {
       "ID": "CoC Far  Factor",
       "Name": "Circle of Confusion: Far Factor",
-      "Description": "",
+      "Description": "Scaling factor for far-field blur intensity, influencing how strongly distant objects are defocused.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -110,7 +110,7 @@
     {
       "ID": "CoCMode",
       "Name": "Circle of Confusion: Mode",
-      "Description": "",
+      "Description": "Selects computation method for circle of confusion, controlling how depth-based blur radius is derived and applied.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -118,7 +118,7 @@
     {
       "ID": "SkyDomeBokehRate",
       "Name": "Skybox Bokeh Rate",
-      "Description": "",
+      "Description": "Controls how much the skybox participates in bokeh rendering, affecting blurred highlights in sky or distant environment.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -126,7 +126,7 @@
     {
       "ID": "CMB Intensity",
       "Name": "CMB Intensity",
-      "Description": "",
+      "Description": "Intensity of camera motion blur or cinematic motion effect blending, enhancing perceived motion smoothness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -134,7 +134,7 @@
     {
       "ID": "CMB Active Rot Speed",
       "Name": "CMB Active Rotation Speed",
-      "Description": "",
+      "Description": "Speed of rotational contribution to motion blur, simulating camera spin or angular movement smear.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -142,7 +142,7 @@
     {
       "ID": "CMB Active Move Speed",
       "Name": "CMB Active Movement Speed",
-      "Description": "",
+      "Description": "Speed-based contribution of translational motion blur during active camera movement.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -150,7 +150,7 @@
     {
       "ID": "CMB Detect Time",
       "Name": "CMB Detection Time",
-      "Description": "",
+      "Description": "Time threshold used to detect motion before applying blur, preventing abrupt or short-lived blur artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -158,7 +158,7 @@
     {
       "ID": "SniperBlur Alpha",
       "Name": "Sniper: Blur Alpha",
-      "Description": "",
+      "Description": "Opacity control for sniper scope blur overlay, blending depth of field with scoped vision effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -166,7 +166,7 @@
     {
       "ID": "SniperBlur Begin",
       "Name": "Sniper: Blur Begin",
-      "Description": "",
+      "Description": "Depth threshold where sniper blur effect begins to activate, typically near scope zoom transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -174,7 +174,7 @@
     {
       "ID": "SniperBlur End",
       "Name": "Sniper: Blur End",
-      "Description": "",
+      "Description": "Depth threshold where sniper blur reaches full intensity, fully simulating scoped optical defocus.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -182,7 +182,7 @@
     {
       "ID": "Motion Blur Intensity",
       "Name": "Motion Blur Intensity",
-      "Description": "",
+      "Description": "Overall strength of motion blur effect applied to moving objects and camera motion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -190,7 +190,7 @@
     {
       "ID": "Shutter Speed",
       "Name": "Shutter Speed",
-      "Description": "",
+      "Description": "Simulated exposure time affecting motion blur length; slower shutter speeds produce stronger motion streaking.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -198,7 +198,7 @@
     {
       "ID": "Solve Single Step",
       "Name": "Solve Single Step",
-      "Description": "",
+      "Description": "Forces lens simulation to be evaluated in a single computation pass, improving determinism at potential cost of quality.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -206,7 +206,7 @@
     {
       "ID": "DOF Alpha",
       "Name": "Depth of Field Alpha",
-      "Description": "",
+      "Description": "Global blending factor for depth of field effect, controlling overall strength of blur applied based on focus distance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

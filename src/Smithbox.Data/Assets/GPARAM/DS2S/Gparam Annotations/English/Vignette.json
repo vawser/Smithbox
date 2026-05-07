@@ -1,12 +1,12 @@
 {
   "ID": "ケラレ",
   "Name": "Vignette",
-  "Description": "",
+  "Description": "Post-processing optical effect that darkens or tints the edges of the screen to simulate lens light falloff, emphasizing the center of the image and enhancing focus or cinematic framing.",
   "Fields": [
     {
       "ID": "色",
       "Name": "Color",
-      "Description": "",
+      "Description": "Color tint applied to the vignette effect, controlling the hue of edge darkening or stylized peripheral coloration.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "中心からの位置オフセット",
       "Name": "Offset from Center",
-      "Description": "",
+      "Description": "Shifts the vignette center away from the screen midpoint, allowing asymmetrical darkening effects for stylized framing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "グラデーション部の狭さ倍率",
       "Name": "Narrowing of Gradient Area",
-      "Description": "",
+      "Description": "Controls the width of the transition zone between clear center and darkened edges, affecting vignette sharpness and falloff steepness.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

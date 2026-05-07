@@ -16,5 +16,4 @@
  - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
 
 - Gparam Editor:
- - Finish meta annotations for BB/DS2
  - Add multi-select for the value list (and to duplicate/delete/export)

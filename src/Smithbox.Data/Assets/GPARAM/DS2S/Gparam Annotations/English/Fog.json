@@ -1,12 +1,12 @@
 {
   "ID": "フォグ",
   "Name": "Fog",
-  "Description": "",
+  "Description": "Controls volumetric and height-based fog rendering, including color, density falloff, and scene blending parameters used in post-processing and atmospheric effects.",
   "Fields": [
     {
       "ID": "色",
       "Name": "Color",
-      "Description": "",
+      "Description": "Base fog color used for atmospheric scattering and distance blending; determines the overall tint of the fog volume.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "距離",
       "Name": "Distance",
-      "Description": "",
+      "Description": "Maximum fog influence distance; controls how far from the camera fog begins to fully obscure scene geometry.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "高さフォグ基準",
       "Name": "Height Fog Standard",
-      "Description": "",
+      "Description": "Reference height used as the baseline for height-based fog calculations, typically representing ground or sea level.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "高さフォグ強さ",
       "Name": "Height Fog Intensity",
-      "Description": "",
+      "Description": "Controls the strength of vertical fog density variation; higher values increase fog density changes with altitude.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "上方向に減衰",
       "Name": "Upward Attenuation",
-      "Description": "",
+      "Description": "Enables fog density reduction as height increases, simulating thinning atmosphere or reduced ground fog impact upward.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "高さの計算を先に行う",
       "Name": "Perform Height Calculation First",
-      "Description": "",
+      "Description": "Determines whether height-based fog evaluation is computed before other fog blending operations for priority ordering.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -54,7 +54,7 @@
     {
       "ID": "カーブの計算を後に行う",
       "Name": "Perform Curve Calculation After",
-      "Description": "",
+      "Description": "Applies curve-based fog shaping after other fog computations, allowing post-adjustment of density falloff.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -62,15 +62,15 @@
     {
       "ID": "α",
       "Name": "Alpha",
-      "Description": "",
+      "Description": "Overall fog opacity multiplier controlling transparency and blend strength over the final rendered image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "コントラスト(廃止)",
-      "Name": "Constrast",
-      "Description": "",
+      "Name": "[Old] Contrast",
+      "Description": "Deprecated contrast control previously used to adjust fog density sharpness and tonal separation; no longer actively used.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -78,7 +78,7 @@
     {
       "ID": "カーブ",
       "Name": "Curve",
-      "Description": "",
+      "Description": "Controls nonlinear fog density falloff, shaping how quickly fog transitions from near to far distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -86,7 +86,7 @@
     {
       "ID": "scn-色",
       "Name": "Scene: Color",
-      "Description": "",
+      "Description": "Scene-specific override for fog color, allowing per-scene atmospheric tint customization independent of global fog settings.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -94,7 +94,7 @@
     {
       "ID": "scn-距離",
       "Name": "Scene: Distance",
-      "Description": "",
+      "Description": "Scene-specific fog distance override controlling how far fog extends within a particular scene context.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -102,7 +102,7 @@
     {
       "ID": "scn-高さフォグ基準",
       "Name": "Scene: Height Fog Standard",
-      "Description": "",
+      "Description": "Scene-level override for height fog baseline used for localized atmospheric height reference.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -110,7 +110,7 @@
     {
       "ID": "scn-高さフォグ強さ",
       "Name": "Scene: Height Fog Intensity",
-      "Description": "",
+      "Description": "Scene-specific multiplier for height fog intensity, enabling different vertical fog behavior per scene.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -118,7 +118,7 @@
     {
       "ID": "scn-α",
       "Name": "Scene: Alpha",
-      "Description": "",
+      "Description": "Scene-level fog opacity override controlling overall fog blending strength for the current scene.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -126,7 +126,7 @@
     {
       "ID": "scn-コントラスト",
       "Name": "Scene: Contrast",
-      "Description": "",
+      "Description": "Scene-specific contrast adjustment for fog density shaping, affecting perceived sharpness of fog transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -134,7 +134,7 @@
     {
       "ID": "テクスチャ1ID",
       "Name": "Texture ID: 1",
-      "Description": "",
+      "Description": "Primary fog noise or pattern texture used for adding spatial variation and realism to fog density distribution.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -142,7 +142,7 @@
     {
       "ID": "テクスチャ2ID",
       "Name": "Texture ID: 2",
-      "Description": "",
+      "Description": "Secondary fog texture used for blending additional noise layers or animated fog detail variations.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -150,7 +150,7 @@
     {
       "ID": "前移動倍率(前後)",
       "Name": "Forward Movement Magnification (Back/Forward)",
-      "Description": "",
+      "Description": "Scales fog movement response along the forward/backward axis, affecting perceived fog flow during camera motion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -158,7 +158,7 @@
     {
       "ID": "前移動倍率(上下)",
       "Name": "Forward Movement Magnification (Up/Down)",
-      "Description": "",
+      "Description": "Controls vertical parallax scaling of fog during forward motion, influencing depth perception in elevation changes.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -166,7 +166,7 @@
     {
       "ID": "前移動倍率(左右)",
       "Name": "Forward Movement Magnification (Left/Right)",
-      "Description": "",
+      "Description": "Adjusts horizontal fog motion response during forward movement to simulate parallax shifts across lateral camera movement.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -174,7 +174,7 @@
     {
       "ID": "前移動倍率(拡大最小)",
       "Name": "Forward Movement Magnification: Minimum",
-      "Description": "",
+      "Description": "Minimum scaling limit for fog movement magnification to prevent excessive compression or distortion effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -182,7 +182,7 @@
     {
       "ID": "前移動倍率(拡大最大)",
       "Name": "Forward Movement Magnification: Maximum",
-      "Description": "",
+      "Description": "Maximum scaling limit for fog movement magnification to cap extreme parallax or motion exaggeration.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -190,7 +190,7 @@
     {
       "ID": "前移動倍率(回転による)",
       "Name": "Forward Movement Magnification: Due to Rotation",
-      "Description": "",
+      "Description": "Adjusts fog displacement intensity based on camera rotation, enhancing rotational parallax effects in fog layers.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -198,7 +198,7 @@
     {
       "ID": "横スクロール倍率",
       "Name": "Horizontal Scroll Magnification",
-      "Description": "",
+      "Description": "Controls horizontal scrolling speed of animated fog textures, used for drifting or wind simulation effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -206,7 +206,7 @@
     {
       "ID": "縦スクロール倍率",
       "Name": "Vertical Scroll Magnification",
-      "Description": "",
+      "Description": "Controls vertical movement speed of fog texture scrolling, simulating rising or falling atmospheric flow.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -214,7 +214,7 @@
     {
       "ID": "クロスフェードの周期",
       "Name": "Crossfade Period",
-      "Description": "",
+      "Description": "Duration of fog texture blending cycles, controlling how frequently fog layers transition between states.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -222,7 +222,7 @@
     {
       "ID": "波の縦横倍率",
       "Name": "Wave Length and Width Scaling",
-      "Description": "",
+      "Description": "Scales spatial frequency of fog wave distortion in both horizontal and vertical directions for stylized motion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -230,7 +230,7 @@
     {
       "ID": "波の強さ",
       "Name": "Wave Strength",
-      "Description": "",
+      "Description": "Controls amplitude of procedural fog wave distortion, affecting turbulence and atmospheric motion intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -238,7 +238,7 @@
     {
       "ID": "波の周期1",
       "Name": "Wave Period: 1",
-      "Description": "",
+      "Description": "Primary frequency controlling fog wave oscillation timing and spatial repetition pattern.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -246,7 +246,7 @@
     {
       "ID": "波の周期2",
       "Name": "Wave Period: 2",
-      "Description": "",
+      "Description": "Secondary wave frequency used for layered or multi-scale fog motion variation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -254,16 +254,16 @@
     {
       "ID": "描画を行う",
       "Name": "Draw",
-      "Description": "",
+      "Description": "Enables or disables fog rendering; when disabled, fog effects are not applied in the final render.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
     },
     {
       "ID": "コントラスト",
-      "Name": "Constrast",
+      "Name": "Contrast",
+      "Description": "Adjusts fog density contrast, controlling the sharpness between dense and thin fog regions in the final image.",
       "Type": "FloatField",
-      "Description": "",
       "Enum": null,
       "IsBoolean": false
     }

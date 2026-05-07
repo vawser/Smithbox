@@ -1,36 +1,36 @@
 {
   "ID": "DominantLightMap:Editor",
-  "Name": "DominantLightMap:Editor",
-  "Description": "",
+  "Name": "Dominant Light Map",
+  "Description": "Controls parameters for dominant light extraction and spherical harmonics (SH) lighting contribution used in environment lighting.",
   "Fields": [
     {
       "ID": "Dominant Param  Dominant Sharpness Min Value",
-      "Name": "Dominant Param  Dominant Sharpness Min Value",
-      "Description": "",
+      "Name": "Dominant Sharpness: Minimum Value",
+      "Description": "Minimum baseline value for dominant light sharpness, ensuring a lower bound on directional clarity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Dominant Param  Dominant Sharpness Offset",
-      "Name": "Dominant Param  Dominant Sharpness Offset",
-      "Description": "",
+      "Name": "Dominant Sharpness: Offset",
+      "Description": "Offset applied to dominant light sharpness before further scaling or exponentiation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Dominant Param  Dominant Sharpness Exponant",
-      "Name": "Dominant Param  Dominant Sharpness Exponant",
-      "Description": "",
+      "Name": "Dominant Sharpness: Exponent",
+      "Description": "Exponent controlling the response curve of dominant light sharpness. Higher values increase contrast between dominant and ambient lighting.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Dominant Param  Dominant Sharpness RGB Scale",
-      "Name": "Dominant Param  Dominant Sharpness RGB Scale",
-      "Description": "",
+      "Name": "Dominant Sharpness: RGB Scale",
+      "Description": "Global scaling factor applied to dominant light sharpness across all color channels.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

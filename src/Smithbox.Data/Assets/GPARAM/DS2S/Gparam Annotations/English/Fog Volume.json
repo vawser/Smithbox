@@ -1,12 +1,12 @@
 {
   "ID": "ボリュームフォグ",
   "Name": "Fog Volume",
-  "Description": "",
+  "Description": "Controls volumetric fog density used for simulating localized atmospheric scattering within 3D space. Affects how light is absorbed and scattered through fog volumes to create depth, haze, and spatial atmosphere.",
   "Fields": [
     {
       "ID": "α",
       "Name": "Alpha",
-      "Description": "",
+      "Description": "Controls the overall density or opacity of the volumetric fog. Higher values produce thicker fog with stronger light scattering, while lower values create lighter, more transparent haze.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

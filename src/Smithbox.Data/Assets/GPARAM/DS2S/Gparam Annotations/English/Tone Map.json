@@ -1,12 +1,12 @@
 {
   "ID": "ToneMap",
   "Name": "Tone Map",
-  "Description": "",
+  "Description": "Post-processing tone mapping operator that converts high dynamic range (HDR) lighting into displayable low dynamic range (LDR) output while preserving perceptual brightness, contrast, and highlight detail.",
   "Fields": [
     {
       "ID": "AvgLuminance",
       "Name": "Average Luminance",
-      "Description": "",
+      "Description": "Scene-wide average brightness used as a reference for exposure adaptation and overall tone mapping balance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "LuminanceBalance",
       "Name": "Luminance Balance",
-      "Description": "",
+      "Description": "Multi-channel weighting factor controlling how different luminance ranges are balanced during tone mapping, affecting midtone and highlight distribution.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "MaxLuminance",
       "Name": "Max Luminance",
-      "Description": "",
+      "Description": "Upper bound for scene brightness used in tone mapping, clamping extreme highlights to prevent overexposure and clipping.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "Scaler",
       "Name": "Scaler",
-      "Description": "",
+      "Description": "Global exposure scaling factor applied to luminance values before tone mapping, controlling overall image brightness.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "高輝度抽出しきい値",
       "Name": "High Brightness Extraction Threshold",
-      "Description": "",
+      "Description": "Threshold values used to isolate high-intensity pixels for bloom and highlight processing prior to tone mapping compression.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false

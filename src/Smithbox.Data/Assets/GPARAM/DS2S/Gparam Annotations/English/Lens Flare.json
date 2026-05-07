@@ -1,12 +1,12 @@
 {
   "ID": "レンズフレア",
   "Name": "Lens Flare",
-  "Description": "",
+  "Description": "Post-processing optical effect that simulates internal light scattering, diffraction, and lens artifacts caused by bright light sources interacting with a camera lens system. It produces streaks, halos, and ghosting elements based on light position and intensity.",
   "Fields": [
     {
       "ID": "光状テクスチャID",
       "Name": "Luminous Texture ID",
-      "Description": "",
+      "Description": "Texture index used for the primary light flare or glow sprite that represents the core luminous artifact in the lens flare system.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "許容範囲",
       "Name": "Tolerance Range",
-      "Description": "",
+      "Description": "Threshold range that determines how sensitive the lens flare is to light brightness and visibility conditions before activation or attenuation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "アルファ",
       "Name": "Alpha",
-      "Description": "",
+      "Description": "Overall opacity multiplier controlling the visibility and blending strength of the lens flare effect in the final rendered image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "位置",
       "Name": "Position",
-      "Description": "",
+      "Description": "World or screen-space position of the light source that drives the lens flare effect, determining where flare artifacts originate.",
       "Type": "Vector3Field",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "角度",
       "Name": "Angle",
-      "Description": "",
+      "Description": "Directional orientation of flare components, controlling rotation and alignment of streaks or radial artifacts relative to the light source.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "距離",
       "Name": "Distance",
-      "Description": "",
+      "Description": "Distance-based attenuation factor influencing flare intensity and scaling based on camera-to-light separation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -54,7 +54,7 @@
     {
       "ID": "フレア1-中心時のスクリーンサイズ",
       "Name": "Flare 1: Screen Size at Center",
-      "Description": "",
+      "Description": "Screen-space size of the first flare element when positioned near the optical center of the screen or light axis.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -62,7 +62,7 @@
     {
       "ID": "フレア1-外周時のスクリーンサイズ",
       "Name": "Flare 1: Screen Size at Outer Edge",
-      "Description": "",
+      "Description": "Screen-space size of the first flare element when it shifts toward the screen edge, simulating lens distortion falloff.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -70,7 +70,7 @@
     {
       "ID": "フレア1-中心時の内部色",
       "Name": "Flare 1: Internal Color at Center",
-      "Description": "",
+      "Description": "Inner color of the first flare element when positioned at the center, typically representing core glow tint.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -78,7 +78,7 @@
     {
       "ID": "フレア1-中心時の外部色",
       "Name": "Flare 1: External Color at Center",
-      "Description": "",
+      "Description": "Outer gradient color of the first flare element at center position, used for halo or fringe coloration.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -86,7 +86,7 @@
     {
       "ID": "フレア1-外周時の内部色",
       "Name": "Flare 1: Internal Color at Outer Edge",
-      "Description": "",
+      "Description": "Inner color of the first flare element when shifted toward screen edges, allowing chromatic variation under distortion.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -94,7 +94,7 @@
     {
       "ID": "フレア1-外周時の外部色",
       "Name": "Flare 1: External Color at Outer Edge",
-      "Description": "",
+      "Description": "Outer color of the first flare element at edge positions, used to simulate lens aberration and falloff tinting.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -102,7 +102,7 @@
     {
       "ID": "フレア2-中心時のスクリーンサイズ",
       "Name": "Flare 2: Screen Size at Center",
-      "Description": "",
+      "Description": "Screen-space size of the second flare element when aligned near the optical center of the lens system.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -110,7 +110,7 @@
     {
       "ID": "フレア2-外周時のスクリーンサイズ",
       "Name": "Flare 2: Screen Size at Outer Edge",
-      "Description": "",
+      "Description": "Screen-space size of the second flare element when positioned toward the outer screen boundary, simulating lens falloff.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -118,7 +118,7 @@
     {
       "ID": "フレア2-中心時の内部色",
       "Name": "Flare 2: Internal Color at Center",
-      "Description": "",
+      "Description": "Inner core color of the second flare element at center alignment, defining primary glow tone.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -126,7 +126,7 @@
     {
       "ID": "フレア2-中心時の外部色",
       "Name": "Flare 2: External Color at Center",
-      "Description": "",
+      "Description": "Outer gradient color of the second flare element at center position, used for halo blending and bloom transition.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -134,7 +134,7 @@
     {
       "ID": "フレア2-外周時の内部色",
       "Name": "Flare 2: Internal Color at Outer Edge",
-      "Description": "",
+      "Description": "Inner color of the second flare element at edge positions, simulating chromatic shift and lens distortion effects.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -142,7 +142,7 @@
     {
       "ID": "フレア2-外周時の外部色",
       "Name": "Flare 2: External Color at Outer Edge",
-      "Description": "",
+      "Description": "Outer color of the second flare element at screen edges, controlling peripheral color fading and optical artifacts.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -150,7 +150,7 @@
     {
       "ID": "光状-中心時のスクリーンサイズ",
       "Name": "Light Shape: Screen Size",
-      "Description": "",
+      "Description": "Base screen-space size of the central light shape used in the lens flare core representation.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -158,7 +158,7 @@
     {
       "ID": "光状-外周時のスクリーンサイズ",
       "Name": "Light Shape: Screen Size at Outer Edge",
-      "Description": "",
+      "Description": "Screen-space size of the light shape when influenced by edge distortion or off-center positioning.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -166,7 +166,7 @@
     {
       "ID": "光状-中心時の内部色",
       "Name": "Light Shape: Internal Color at Center",
-      "Description": "",
+      "Description": "Inner color of the central light shape defining the core glow intensity and tint.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -174,7 +174,7 @@
     {
       "ID": "光状-中心時の外部色",
       "Name": "Light Shape: External Color at Center",
-      "Description": "",
+      "Description": "Outer color gradient of the central light shape used for halo blending and soft edge transition.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -182,7 +182,7 @@
     {
       "ID": "光状-外周時の内部色",
       "Name": "Light Shape: Internal Color at Outer Edge",
-      "Description": "",
+      "Description": "Inner color of the light shape when affected by edge distortion, simulating optical falloff variation.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false
@@ -190,7 +190,7 @@
     {
       "ID": "光状-外周時の外部色",
       "Name": "Light Shape: External Color at Outer Edge",
-      "Description": "",
+      "Description": "Outer color of the light shape at screen edges, used to simulate chromatic aberration and peripheral fading.",
       "Type": "ColorField",
       "Enum": null,
       "IsBoolean": false

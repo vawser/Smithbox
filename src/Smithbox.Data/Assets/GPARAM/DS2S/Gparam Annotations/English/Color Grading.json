@@ -1,12 +1,12 @@
 {
   "ID": "カラーグレーディング",
   "Name": "Color Grading",
-  "Description": "",
+  "Description": "Controls post-processing color grading used to alter the overall tone, mood, and visual style of the rendered image. Supports hue, saturation, brightness adjustments, and palette-based color transformations.",
   "Fields": [
     {
       "ID": "カラーグレーディング有効",
       "Name": "Is Color Grading Enabled",
-      "Description": "",
+      "Description": "Enables or disables the color grading effect. When disabled, the scene is rendered using its original color output without grading adjustments.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -14,7 +14,7 @@
     {
       "ID": "変換モード",
       "Name": "Conversion Mode",
-      "Description": "",
+      "Description": "Selects the color grading or color space conversion method used during post-processing.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "色相",
       "Name": "Hue",
-      "Description": "",
+      "Description": "Adjusts the global hue shift of the rendered image, rotating colors around the color spectrum.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "彩度",
       "Name": "Saturation",
-      "Description": "",
+      "Description": "Controls overall color intensity. Higher values produce more vivid colors, while lower values reduce colorfulness toward grayscale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "明度",
       "Name": "Brightness",
-      "Description": "",
+      "Description": "Adjusts overall image luminance after color grading is applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "パレットファイルID",
       "Name": "Palette File ID",
-      "Description": "",
+      "Description": "Specifies the lookup table (LUT) or palette resource used for palette-based color grading transformations.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false

@@ -1,12 +1,12 @@
 {
   "ID": "Fxaa",
   "Name": "FXAA",
-  "Description": "",
+  "Description": "Fast Approximate Anti-Aliasing (FXAA) post-processing effect that reduces visible edge aliasing by smoothing high-contrast pixel transitions in screen-space without requiring additional geometry sampling.",
   "Fields": [
     {
       "ID": "AA MODE",
       "Name": "Anti-Alias Mode",
-      "Description": "",
+      "Description": "Selects the FXAA quality or behavior mode, typically controlling trade-off between performance and edge smoothing strength.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
@@ -14,7 +14,7 @@
     {
       "ID": "Alpha",
       "Name": "Alpha",
-      "Description": "",
+      "Description": "Global blending factor for FXAA effect intensity, controlling how strongly anti-aliasing is applied over the final image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "ReduceMin",
       "Name": "Reduce Minimum",
-      "Description": "",
+      "Description": "Minimum luminance reduction threshold used in edge detection to avoid over-smoothing low-contrast areas and preserve fine detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "ReduceMul",
       "Name": "Reduce Muliplier",
-      "Description": "",
+      "Description": "Multiplier controlling sensitivity of edge detection by scaling luminance differences used in FXAA sampling.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "SpanMax",
       "Name": "Span Maximum",
-      "Description": "",
+      "Description": "Maximum pixel span used during edge search and smoothing; higher values allow FXAA to detect and blur wider aliasing edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

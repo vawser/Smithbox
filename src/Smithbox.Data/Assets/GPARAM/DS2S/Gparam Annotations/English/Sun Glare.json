@@ -1,12 +1,12 @@
 {
   "ID": "Starグレア",
   "Name": "Sun Glare",
-  "Description": "",
+  "Description": "Post-processing lens artifact effect that simulates starburst-style glare patterns produced when a bright light source interacts with camera aperture blades or optical diffraction, creating radial streaks and chromatic highlights.",
   "Fields": [
     {
       "ID": "Starグレア有効",
       "Name": "Is Sun Glare Enabled",
-      "Description": "",
+      "Description": "Enables or disables star-shaped glare generation around bright light sources in the scene.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -14,7 +14,7 @@
     {
       "ID": "アルファ",
       "Name": "Alpha",
-      "Description": "",
+      "Description": "Overall opacity of the sun glare effect, controlling the visibility of radial streaks and bloom intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "線の数",
       "Name": "Number of Lines",
-      "Description": "",
+      "Description": "Defines the number of radial streaks emitted from the light source, simulating aperture blade diffraction patterns.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "パス数",
       "Name": "Number of Passes",
-      "Description": "",
+      "Description": "Number of rendering passes used to accumulate and refine the glare effect for smoother or more intense starburst results.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "長さ",
       "Name": "Length",
-      "Description": "",
+      "Description": "Controls the length of radial glare streaks extending from the light source, affecting overall starburst scale.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "減衰",
       "Name": "Attenuation",
-      "Description": "",
+      "Description": "Controls how quickly glare intensity fades along the streak length, simulating light falloff in optical diffraction.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -54,7 +54,7 @@
     {
       "ID": "角度",
       "Name": "Angle",
-      "Description": "",
+      "Description": "Rotational offset of the starburst pattern, determining the orientation of radial glare streaks around the light source.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -62,7 +62,7 @@
     {
       "ID": "色収差",
       "Name": "Chromatic Aberration",
-      "Description": "",
+      "Description": "Controls the amount of color separation along glare streaks, simulating lens-induced chromatic dispersion effects.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -70,7 +70,7 @@
     {
       "ID": "カラー係数",
       "Name": "Color Coefficient",
-      "Description": "",
+      "Description": "Overall color scaling factor for the glare effect, adjusting intensity and tint of the starburst highlights.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

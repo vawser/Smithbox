@@ -1,12 +1,12 @@
 {
   "ID": "平行ライト",
   "Name": "Parallel Light",
-  "Description": "",
+  "Description": "Directional lighting system that simulates distant light sources such as sunlight, where all light rays are parallel. Supports multi-slot lighting parameters, hemisphere shading, point-cloud based effects, and global illumination scaling for advanced scene illumination control.",
   "Fields": [
     {
       "ID": "有効",
       "Name": "Is Parallel Light Enabled",
-      "Description": "",
+      "Description": "Enables or disables the parallel (directional) light contribution in the scene lighting calculation.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -14,7 +14,7 @@
     {
       "ID": "Angle 0",
       "Name": "Angle: 0",
-      "Description": "",
+      "Description": "Primary directional angle of the first light channel, defining the orientation of the parallel light source.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "DiffColor 0",
       "Name": "Diffuse Color: 0",
-      "Description": "",
+      "Description": "Diffuse lighting color for channel 0, controlling base light contribution on matte surfaces.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "SpecColor 0",
       "Name": "Specular Color: 0",
-      "Description": "",
+      "Description": "Specular reflection color for channel 0, defining highlight tint from directional light reflections.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "HemiColorUp 0",
       "Name": "Hemisphere Color Up: 0",
-      "Description": "",
+      "Description": "Sky-facing hemisphere lighting color for channel 0, simulating ambient sky illumination from above.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "HemiColorDown 0",
       "Name": "Hemisphere Color Down: 0",
-      "Description": "",
+      "Description": "Ground-facing hemisphere lighting color for channel 0, simulating bounce light from the ground or lower environment.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -54,7 +54,7 @@
     {
       "ID": "AddHemiColorUp 0",
       "Name": "Additive Hemisphere Color Up: 0",
-      "Description": "",
+      "Description": "Additional additive sky hemisphere contribution for fine-tuning ambient upper lighting intensity.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -62,7 +62,7 @@
     {
       "ID": "AddHemiColorDown 0",
       "Name": "Additive Hemisphere Color Down: 0",
-      "Description": "",
+      "Description": "Additional additive ground hemisphere contribution for enhancing ambient lower lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -70,7 +70,7 @@
     {
       "ID": "PointCloud Scale 0",
       "Name": "Point Cloud Scale: 0",
-      "Description": "",
+      "Description": "Scaling factor for point-based lighting distribution used to approximate indirect or volumetric light scattering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -78,7 +78,7 @@
     {
       "ID": "PointCloud Offset 0",
       "Name": "Point Cloud Offset: 0",
-      "Description": "",
+      "Description": "Positional offset for point cloud light sampling, adjusting spatial distribution of indirect lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -86,7 +86,7 @@
     {
       "ID": "PointCloud Scale 0 Slot1",
       "Name": "Point Cloud Scale 0: Slot 1",
-      "Description": "",
+      "Description": "Secondary point cloud scale modifier for additional lighting layer or sampling slot 1.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -94,7 +94,7 @@
     {
       "ID": "PointCloud Offset 0 Slot1",
       "Name": "Point Cloud Offset 0: Slot 1",
-      "Description": "",
+      "Description": "Offset for point cloud slot 1, used to shift secondary indirect lighting distribution.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -102,7 +102,7 @@
     {
       "ID": "PointCloud Scale 0 Slot2",
       "Name": "Point Cloud Scale 0: Slot 2",
-      "Description": "",
+      "Description": "Scaling for third-layer point cloud lighting, enabling multi-layer indirect illumination control.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -110,7 +110,7 @@
     {
       "ID": "PointCloud Offset 0 Slot2",
       "Name": "Point Cloud Offset 0: Slot 2",
-      "Description": "",
+      "Description": "Offset for point cloud slot 2, adjusting spatial variation of layered light sampling.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -118,7 +118,7 @@
     {
       "ID": "PointCloud Scale 0 Slot3",
       "Name": "Point Cloud Scale 0: Slot 3",
-      "Description": "",
+      "Description": "Scaling for additional point cloud lighting layer 3, used for fine indirect lighting refinement.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -126,7 +126,7 @@
     {
       "ID": "PointCloud Offset 0 Slot3",
       "Name": "Point Cloud Offset 0: Slot 3",
-      "Description": "",
+      "Description": "Offset for point cloud slot 3, controlling distribution of tertiary indirect lighting samples.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -134,7 +134,7 @@
     {
       "ID": "GI Color Scale 0",
       "Name": "Global Illumination Color Scale: 0",
-      "Description": "",
+      "Description": "Multiplier for global illumination color contribution from directional light channel 0.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -142,7 +142,7 @@
     {
       "ID": "ライトをカメラに追従 0",
       "Name": "Light Tracks Camera: 0",
-      "Description": "",
+      "Description": "Makes the directional light orientation follow the camera direction for consistent lighting in camera-relative systems.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -150,7 +150,7 @@
     {
       "ID": "ライトマップを無効にする 0",
       "Name": "Disable Light Map: 0",
-      "Description": "",
+      "Description": "Disables baked lightmap contribution for this light channel, forcing real-time lighting only.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -158,7 +158,7 @@
     {
       "ID": "Angle 10",
       "Name": "Angle: 10",
-      "Description": "",
+      "Description": "Directional angle for secondary light configuration set 10, defining light orientation for that layer.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
@@ -166,7 +166,7 @@
     {
       "ID": "DiffColor 10",
       "Name": "Diffuse Color: 10",
-      "Description": "",
+      "Description": "Diffuse lighting color for channel 10, controlling base surface illumination for that light layer.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -174,7 +174,7 @@
     {
       "ID": "SpecColor 10",
       "Name": "Specular Color: 10",
-      "Description": "",
+      "Description": "Specular highlight color for light channel 10, affecting reflective surface brightness and tint.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -182,7 +182,7 @@
     {
       "ID": "HemiColorUp 10",
       "Name": "Hemisphere Color Up: 10",
-      "Description": "",
+      "Description": "Sky hemisphere ambient color for channel 10, simulating upper environmental lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -190,7 +190,7 @@
     {
       "ID": "HemiColorDown 10",
       "Name": "Hemisphere Color Down: 10",
-      "Description": "",
+      "Description": "Ground hemisphere ambient color for channel 10, simulating reflected environmental light from below.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -198,7 +198,7 @@
     {
       "ID": "AddHemiColorUp 10",
       "Name": "Additive Hemisphere Color Up: 10",
-      "Description": "",
+      "Description": "Additional sky hemisphere contribution for channel 10, used to boost ambient upper lighting.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -206,7 +206,7 @@
     {
       "ID": "AddHemiColorDown 10",
       "Name": "Additive Hemisphere Color Down: 10",
-      "Description": "",
+      "Description": "Additional ground hemisphere contribution for channel 10, enhancing lower ambient light.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -214,7 +214,7 @@
     {
       "ID": "PointCloud Scale 10",
       "Name": "Point Cloud Scale: 10",
-      "Description": "",
+      "Description": "Scaling factor for point cloud lighting in channel 10, controlling spatial distribution of indirect lighting samples.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -222,7 +222,7 @@
     {
       "ID": "PointCloud Offset 10",
       "Name": "Point Cloud Offset: 10",
-      "Description": "",
+      "Description": "Offset applied to point cloud lighting in channel 10, shifting indirect light sampling positions.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -230,7 +230,7 @@
     {
       "ID": "PointCloud Scale 10 Slot1",
       "Name": "Point Cloud Scale 10: Slot 1",
-      "Description": "",
+      "Description": "First slot scaling for point cloud lighting in channel 10, enabling layered indirect light adjustment.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -238,7 +238,7 @@
     {
       "ID": "PointCloud Offset 10 Slot1",
       "Name": "Point Cloud Offset 10: Slot 1",
-      "Description": "",
+      "Description": "Offset for slot 1 of point cloud lighting in channel 10.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -246,7 +246,7 @@
     {
       "ID": "PointCloud Scale 10 Slot2",
       "Name": "Point Cloud Scale 10: Slot 2",
-      "Description": "",
+      "Description": "Second slot scaling for point cloud lighting in channel 10.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -254,7 +254,7 @@
     {
       "ID": "PointCloud Offset 10 Slot2",
       "Name": "Point Cloud Offset 10: Slot 2",
-      "Description": "",
+      "Description": "Offset for slot 2 of point cloud lighting in channel 10.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -262,7 +262,7 @@
     {
       "ID": "PointCloud Scale 10 Slot3",
       "Name": "Point Cloud Scale 10: Slot 3",
-      "Description": "",
+      "Description": "Third slot scaling for point cloud lighting in channel 10.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -270,14 +270,14 @@
     {
       "ID": "PointCloud Offset 10 Slot3",
       "Name": "Point Cloud Offset 10: Slot 3",
-      "Description": "",
+      "Description": "Offset for slot 3 of point cloud lighting in channel 10.",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GI Color Scale 10",
       "Name": "Global Illumination Color Scale: 10",
-      "Description": "",
+      "Description": "Global illumination color multiplier for light channel 10, scaling indirect lighting contribution.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
@@ -285,7 +285,7 @@
     {
       "ID": "ライトをカメラに追従 10",
       "Name": "Light Tracks Camera: 10",
-      "Description": "",
+      "Description": "Makes light channel 10 follow camera orientation for consistent camera-relative directional lighting.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -293,7 +293,7 @@
     {
       "ID": "ライト向きを、ライト0に追従 10",
       "Name": "Direction of Light Follows Light 0: 10",
-      "Description": "",
+      "Description": "Synchronizes light direction of channel 10 with channel 0, ensuring consistent directional lighting alignment.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -301,7 +301,7 @@
     {
       "ID": "ライトマップを無効にする 10",
       "Name": "Disable Lightmap: 10",
-      "Description": "",
+      "Description": "Disables baked lightmap contribution for channel 10, forcing dynamic lighting only.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -309,7 +309,7 @@
     {
       "ID": "αをフェードで薄くする",
       "Name": "Fade Out Alpha",
-      "Description": "",
+      "Description": "Enables alpha fading over time to smoothly transition light visibility in and out of the scene.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
@@ -317,7 +317,7 @@
     {
       "ID": "αをフェードで薄くするまで待つ時間",
       "Name": "Delay for Alpha Fade Out",
-      "Description": "",
+      "Description": "Delay time before alpha fade-out begins, allowing timed light disappearance transitions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -325,7 +325,7 @@
     {
       "ID": "αをフェードで薄くする時間",
       "Name": "Duration for Alpha Fade Out",
-      "Description": "",
+      "Description": "Duration over which the light alpha fades to zero, controlling smoothness of light deactivation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

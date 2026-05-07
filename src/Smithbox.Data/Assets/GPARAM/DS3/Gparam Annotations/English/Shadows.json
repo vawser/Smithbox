@@ -13,7 +13,7 @@
     },
     {
       "ID": "shadowParam -   Shadow:  Shadow Light Id",
-      "Name": "Shadow Light Id",
+      "Name": "Shadow Light ID",
       "Description": "Identifier for the light source that contributes to shadow rendering in this configuration.",
       "Type": "UintField",
       "Enum": null,

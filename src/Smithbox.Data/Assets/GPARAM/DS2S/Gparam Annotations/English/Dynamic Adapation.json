@@ -1,12 +1,12 @@
 {
   "ID": "動的順応",
   "Name": "Dynamic Adapation",
-  "Description": "",
+  "Description": "Controls automatic exposure adaptation based on scene luminance. Simulates eye or camera exposure adjustment over time, allowing the scene to dynamically respond to changes in brightness by shifting perceived exposure levels.",
   "Fields": [
     {
       "ID": "動的順応有効",
       "Name": "Is Dynamic Adapation Enabled",
-      "Description": "",
+      "Description": "Enables or disables dynamic exposure adaptation. When disabled, scene exposure remains fixed regardless of lighting changes.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": true
@@ -14,7 +14,7 @@
     {
       "ID": "順応速度",
       "Name": "Adaptation Speed",
-      "Description": "",
+      "Description": "Controls how quickly exposure adapts to changes in scene brightness. Higher values result in faster adjustment.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -22,7 +22,7 @@
     {
       "ID": "順応最低輝度",
       "Name": "Minimum Optimal Brightness",
-      "Description": "",
+      "Description": "Defines the lower bound of luminance considered during exposure adaptation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -30,7 +30,7 @@
     {
       "ID": "順応最高輝度",
       "Name": "Maximum Brightness at Adaptation Level",
-      "Description": "",
+      "Description": "Defines the upper luminance limit used for exposure adaptation calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -38,7 +38,7 @@
     {
       "ID": "順応輝度中心",
       "Name": "Adaptation Luminance Center",
-      "Description": "",
+      "Description": "Target luminance value that the system adapts toward, acting as the midpoint for exposure balancing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -46,7 +46,7 @@
     {
       "ID": "順応感度-暗",
       "Name": "Adaptation Sensitivity: Dark",
-      "Description": "",
+      "Description": "Controls sensitivity of exposure adaptation in low-light conditions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -54,7 +54,7 @@
     {
       "ID": "順応感度-明",
       "Name": "Adaptation Sensitivity: Bright",
-      "Description": "",
+      "Description": "Controls sensitivity of exposure adaptation in bright conditions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
@@ -62,7 +62,7 @@
     {
       "ID": "順応抑制値",
       "Name": "Adaptation Inhibition Value",
-      "Description": "",
+      "Description": "Reduces or dampens exposure changes to prevent overreaction to rapid lighting shifts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

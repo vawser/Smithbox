@@ -1,199 +1,199 @@
 {
   "ID": "Setting Info[Yebis]",
-  "Name": "Setting Info[Yebis]",
-  "Description": "",
+  "Name": "Setting Info",
+  "Description": "Global scene and rendering configuration parameters for environmental lighting, background color, and dynamic light collection used in post-processing and scene evaluation.",
   "Fields": [
     {
       "ID": "Yebis-Use DepthTexture",
-      "Name": "Yebis-Use DepthTexture",
-      "Description": "",
+      "Name": "Use Depth Texture",
+      "Description": "Enables usage of the scene depth buffer for post-processing effects such as depth of field, SSAO, and fog.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable LensDistortion",
-      "Name": "Yebis-Enable LensDistortion",
-      "Description": "",
+      "Name": "Enable Lens Distortion",
+      "Description": "Applies lens distortion to simulate camera optics, including barrel or pincushion distortion.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable ApertureairyDisc",
-      "Name": "Yebis-Enable ApertureairyDisc",
-      "Description": "",
+      "Name": "Enable Aperture Airy Disc",
+      "Description": "Enables diffraction-based blur patterns (Airy disk) to simulate realistic aperture diffraction in highlights.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable ApertureairyUnlimitedRadius",
-      "Name": "Yebis-Enable ApertureairyUnlimitedRadius",
-      "Description": "",
+      "Name": "Enable Aperture Airy Disk: Unlimited Radius",
+      "Description": "Removes radius limits on Airy disk simulation, allowing large diffraction patterns for strong highlights.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable MotionBlur-Dof",
-      "Name": "Yebis-Enable MotionBlur-Dof",
-      "Description": "",
+      "Name": "Enable Motion Blur Depth of Field",
+      "Description": "Enables motion blur that interacts with depth of field, combining motion and focus-based blur effects.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable MotionBlurUnlimitedrecursion",
-      "Name": "Yebis-Enable MotionBlurUnlimitedrecursion",
-      "Description": "",
+      "Name": "Enable Motion Blur: Unlimited Recursion",
+      "Description": "Allows motion blur to accumulate recursively for stronger streaking effects, potentially increasing cost.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Create MotionBlurInternalVelocityTex",
-      "Name": "Yebis-Create MotionBlurInternalVelocityTex",
-      "Description": "",
+      "Name": "Enable Motion Blur Internal Velocity Texture",
+      "Description": "Generates an internal velocity buffer for motion blur when external motion vectors are unavailable.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable Gaussian",
-      "Name": "Yebis-Enable Gaussian",
-      "Description": "",
+      "Name": "Enable Gaussian",
+      "Description": "Enables Gaussian blur filtering, typically used for bloom, glare, or general smoothing.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable FeedBackEffect",
-      "Name": "Yebis-Enable FeedBackEffect",
-      "Description": "",
+      "Name": "Enable Feedback Effect",
+      "Description": "Enables temporal feedback effects where previous frame data is blended into the current frame for stylized or smoothing effects.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Use Enable Anti-Alias",
-      "Name": "Yebis-Use Enable Anti-Alias",
-      "Description": "",
+      "Name": "Enable Anti-Aliasing",
+      "Description": "Enables post-process anti-aliasing to reduce jagged edges and improve image smoothness.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable LightShaft",
-      "Name": "Yebis-Enable LightShaft",
-      "Description": "",
+      "Name": "Enable Light Shaft",
+      "Description": "Enables volumetric light shafts (god rays) caused by light scattering through occluding geometry.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable Choromaticaberration",
-      "Name": "Yebis-Enable Choromaticaberration",
-      "Description": "",
+      "Name": "Enable Chromatic Aberration",
+      "Description": "Enables lens-based color fringing effect caused by wavelength-dependent refraction.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable AnamophicLensAspectratio",
-      "Name": "Yebis-Enable AnamophicLensAspectratio",
-      "Description": "",
+      "Name": "Enable Anamophic Lens Aspect Ratio",
+      "Description": "Simulates anamorphic lens stretching, affecting bokeh shape and horizontal flare characteristics.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable AnamorphicLensAperture",
-      "Name": "Yebis-Enable AnamorphicLensAperture",
-      "Description": "",
+      "Name": "Enable Anamorphic Lens Aperture",
+      "Description": "Enables anamorphic aperture simulation, influencing bokeh shape and highlight distortion.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable ColorGrading",
-      "Name": "Yebis-Enable ColorGrading",
-      "Description": "",
+      "Name": "Enable Color Grading",
+      "Description": "Enables color grading adjustments such as LUTs or HSV transformations for final image tone control.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-Enable  SceneLuminanceScale",
-      "Name": "Yebis-Enable  SceneLuminanceScale",
-      "Description": "",
+      "Name": "Scene Luminance Scale",
+      "Description": "Applies a global luminance scaling factor to the scene before post-processing, affecting overall brightness and exposure response.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-BlurShape",
-      "Name": "Yebis-BlurShape",
-      "Description": "",
+      "Name": "Blur Shape",
+      "Description": "Selects the kernel shape used for blur effects (e.g., circular, hexagonal, anamorphic).",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-Use GlareQuality",
-      "Name": "Yebis-Use GlareQuality",
-      "Description": "",
+      "Name": "Use Glare Quality",
+      "Description": "Enables higher quality glare and bloom processing with improved sampling and filtering.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-DepthOfFieldQuality",
-      "Name": "Yebis-DepthOfFieldQuality",
-      "Description": "",
+      "Name": "Depth of Field Quality",
+      "Description": "Controls the quality level of depth of field rendering, affecting sample count and blur accuracy.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect- Auto Compute Enable",
-      "Name": "SceneSetting-  LightCollect- Auto Compute Enable",
-      "Description": "",
-      "Type": "ByteField",
+      "Name": "Light Collection: Enable Auto Compute",
+      "Description": "Enables automatic gathering and evaluation of scene lights for post-processing and global illumination setup.",
+      "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SceneSetting-  LightCollect- BaseDist",
-      "Name": "SceneSetting-  LightCollect- BaseDist",
-      "Description": "",
+      "Name": "Light Collection: Base Distance",
+      "Description": "Base radius used to determine which lights are included in the light collection system.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect-DistScaler",
-      "Name": "SceneSetting-  LightCollect-DistScaler",
-      "Description": "",
+      "Name": "Light Collection: Distance Scaler",
+      "Description": "Multiplier applied to light collection distance thresholds to expand or reduce light influence range.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  LightCollect-DistMax",
-      "Name": "SceneSetting-  LightCollect-DistMax",
-      "Description": "",
+      "Name": "Light Collection: Maximum Distance",
+      "Description": "Maximum distance at which lights are considered for inclusion in scene lighting calculations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SceneSetting-  ReflectScene Assign DynamicLight",
-      "Name": "SceneSetting-  ReflectScene Assign DynamicLight",
-      "Description": "",
-      "Type": "ByteField",
+      "Name": "Reflect Scene: Assign Dynamic Light",
+      "Description": "Enables dynamic lights to be included in reflection rendering for more accurate reflective surfaces.",
+      "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }
