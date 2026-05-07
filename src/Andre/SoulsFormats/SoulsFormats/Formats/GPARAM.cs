@@ -79,17 +79,23 @@ namespace SoulsFormats
 
             // Add clones within
             clone.Params = new();
-            foreach(var entry in Params)
+            if (Params != null)
             {
-                var newEntry = entry.Clone();
-                clone.Params.Add(newEntry);
+                foreach (var entry in Params)
+                {
+                    var newEntry = entry.Clone();
+                    clone.Params.Add(newEntry);
+                }
             }
 
             clone.UnkParamExtras = new();
-            foreach (var entry in UnkParamExtras)
+            if (UnkParamExtras != null)
             {
-                var newEntry = entry.Clone();
-                clone.UnkParamExtras.Add(newEntry);
+                foreach (var entry in UnkParamExtras)
+                {
+                    var newEntry = entry.Clone();
+                    clone.UnkParamExtras.Add(newEntry);
+                }
             }
 
             return clone;

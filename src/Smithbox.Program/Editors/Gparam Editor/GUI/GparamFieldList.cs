@@ -54,6 +54,7 @@ public class GparamFieldList
         if (!Parent.Selection.IsGparamGroupSelected())
             return;
 
+        var fileEntry = Parent.Selection.SelectedFileEntry;
         var data = Parent.Selection.GetSelectedGparam();
         var group = Parent.Selection.GetSelectedGroup();
         var field = Parent.Selection.GetSelectedField();
@@ -68,15 +69,24 @@ public class GparamFieldList
         {
             var curField = group.Fields[i];
 
-            DisplayFieldSelectable(data, group, curField, i);
+            DisplayFieldSelectable(fileEntry, data, group, curField, i);
+        }
+
+        if (group.Fields.Count == 0)
+        {
+            DisplayDummySelectable(fileEntry, data, group);
         }
 
         Shortcuts(data, group, field);
     }
 
-    private void DisplayFieldSelectable(GPARAM data, Param group, IField field, int index)
+    private void DisplayFieldSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, IField field, int index)
     {
         var selected = index == Parent.Selection._selectedParamFieldIndex;
+
+        if (field == null)
+            return;
+
         var fieldName = GetFieldName(field);
         var fieldDesc = GetFieldDescription(field);
 
@@ -113,10 +123,27 @@ public class GparamFieldList
 
         ImGui.EndGroup();
 
-        ContextMenu(data, group, field, index);
+        ContextMenu(fileEntry, data, group, field, index);
     }
 
-    public void ContextMenu(GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
+    private void DisplayDummySelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group)
+    {
+        ImGui.BeginGroup();
+
+        if (ImGui.Selectable($@" Empty##addFieldDummy"))
+        {
+
+        }
+        UIHelper.Tooltip("Right-click to add missing fields.");
+
+        ImGui.EndGroup();
+
+        DummyContextMenu(fileEntry, data, group);
+    }
+
+    private string OverrideFileName = "";
+
+    public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
     {
         var fieldIndex = Parent.Selection._selectedParamFieldIndex;
 
@@ -142,6 +169,30 @@ public class GparamFieldList
 
             ImGui.Separator();
 
+            // Import
+            if (ImGui.Selectable("Import"))
+            {
+                GparamDataImport.ImportField(Project, Parent, fileEntry, data, param, field);
+            }
+            UIHelper.Tooltip("Import a GPARAM Field json to overwrite this entry.");
+
+            // Export
+            if (ImGui.BeginMenu("Export"))
+            {
+                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
+                UIHelper.Tooltip("Define the filename for the exported GPARAM Field file.");
+
+                if (ImGui.Selectable("Export File"))
+                {
+                    GparamDataExport.ExportField(fileEntry, data, param, field, OverrideFileName);
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Export this currently selected GPARAM Field to JSON.");
+
+            ImGui.Separator();
+
             // Quick Edit
             if (ImGui.BeginMenu("Quick Edit"))
             {
@@ -154,6 +205,17 @@ public class GparamFieldList
 
                 ImGui.EndMenu();
             }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    private void DummyContextMenu(FileDictionaryEntry fileEntry, GPARAM data, Param group)
+    {
+        if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+        {
+            // Add
+            AddFieldMenu(data, group);
 
             ImGui.EndPopup();
         }
@@ -269,6 +331,11 @@ public class GparamFieldList
         {
             AddNewFields(data, param);
         }
+    }
+
+    public void InvalidateAddOptions()
+    {
+        AddOptions = null;
     }
 
     private void PopulateAddOptions(GPARAM.Param param)

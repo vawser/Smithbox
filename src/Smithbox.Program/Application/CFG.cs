@@ -843,6 +843,8 @@ public class CFG
 
     public ColorEditDisplayMode GparamEditor_Color_Edit_Mode = ColorEditDisplayMode.RGB;
 
+    public bool GparamEditor_Data_Import_Overwrite = false;
+
     // Windows
     public bool Interface_GparamEditor_FileList = true;
     public bool Interface_GparamEditor_GroupList = true;

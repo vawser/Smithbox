@@ -100,11 +100,11 @@ public class GparamFileList
                 }
             }
 
-            DisplayFileSelectable(entry.Key, i);
+            DisplayFileSelectable(entry.Key, entry.Value, i);
         }
     }
 
-    private void DisplayFileSelectable(FileDictionaryEntry fileEntry, int index)
+    private void DisplayFileSelectable(FileDictionaryEntry fileEntry, GPARAM curGparam, int index)
     {
         var alias = AliasHelper.GetGparamAliasName(Parent.Project, fileEntry.Filename);
 
@@ -152,14 +152,16 @@ public class GparamFileList
 
         ImGui.EndGroup();
 
-        ContextMenu(fileEntry);
+        ContextMenu(fileEntry, curGparam);
     }
 
-    public void ContextMenu(FileDictionaryEntry entry)
+    private string OverrideFileName = "";
+
+    public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM curGparam)
     {
         var fileKey = Parent.Selection._selectedGparamKey;
 
-        if (entry.Filename != fileKey)
+        if (fileEntry.Filename != fileKey)
             return;
 
         if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
@@ -171,16 +173,40 @@ public class GparamFileList
 
                 ImGui.EndMenu();
             }
+            UIHelper.Tooltip("Copy this GPARAM and rename the copied file.");
 
             // Delete
-            if (IsDeletableGparamFile(entry))
+            if (IsDeletableGparamFile(fileEntry))
             {
                 if (ImGui.Selectable("Delete"))
                 {
-                    DeleteGparamFile(entry);
+                    DeleteGparamFile(fileEntry);
                 }
                 UIHelper.Tooltip("Will delete this GPARAM.");
             }
+
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Import"))
+            {
+                GparamDataImport.ImportGPARAM(Project, Parent, fileEntry, curGparam);
+            }
+            UIHelper.Tooltip("Import a GPARAM json to overwrite this entry.");
+
+            if (ImGui.BeginMenu("Export"))
+            {
+                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
+                UIHelper.Tooltip("Define the filename for the exported file.");
+
+                if (ImGui.Selectable("Export File"))
+                {
+                    GparamDataExport.ExportGPARAM(fileEntry, curGparam, OverrideFileName);
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Export this currently selected GPARAM to JSON.");
 
             ImGui.Separator();
 
@@ -190,7 +216,7 @@ public class GparamFileList
                 // Target
                 if (ImGui.Selectable("Target"))
                 {
-                    Parent.QuickEditHandler.UpdateFileFilter(entry.Filename);
+                    Parent.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
                 }
                 UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
 
@@ -201,16 +227,16 @@ public class GparamFileList
         }
     }
 
-    private string copyAsFileName = "";
+    private string CopyAsFileName = "";
 
     public void CopyAsMenu()
     {
-        ImGui.InputText("##copyAsFileNameInput", ref copyAsFileName, 255);
+        ImGui.InputText("##copyAsFileNameInput", ref CopyAsFileName, 255);
         UIHelper.Tooltip("Enter the filename this file will be renamed to when copied.");
 
         if(ImGui.Selectable("Submit"))
         {
-            if(copyAsFileName == "")
+            if(CopyAsFileName == "")
             {
                 Smithbox.LogError<GparamFileList>("Copy As filename cannot be empty.");
             }
@@ -235,8 +261,8 @@ public class GparamFileList
                     // Add the new file to the internal structures so it is immediately editable
                     var oldName = Parent.Selection.SelectedFileEntry.Filename;
                     var newFileEntry = Parent.Selection.SelectedFileEntry.Clone();
-                    newFileEntry.Path = newFileEntry.Path.Replace(oldName, copyAsFileName);
-                    newFileEntry.Filename = newFileEntry.Filename.Replace(oldName, copyAsFileName);
+                    newFileEntry.Path = newFileEntry.Path.Replace(oldName, CopyAsFileName);
+                    newFileEntry.Filename = newFileEntry.Filename.Replace(oldName, CopyAsFileName);
 
                     Project.Locator.GparamFiles.Entries.Add(newFileEntry);
                     Project.Handler.GparamData.PrimaryBank.Entries.Add(newFileEntry, null);

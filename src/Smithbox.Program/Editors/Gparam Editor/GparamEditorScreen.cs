@@ -233,60 +233,11 @@ public class GparamEditorScreen : EditorScreen
 
     public void DataMenu()
     {
-        var fileEntry = ViewHandler.ActiveView.Selection.SelectedFileEntry;
-        var curGparam = ViewHandler.ActiveView.Selection.GetSelectedGparam();
-
-        var enable = false;
-        if(fileEntry != null)
-        {
-            enable = true;
-        }
-
         if (ImGui.BeginMenu("Data"))
         {
-            // Import
-            /*
-            if (ImGui.BeginMenu("Import", enable))
-            {
-                if (ImGui.MenuItem("GPARAM"))
-                {
-                    var dialog = PlatformUtils.Instance.OpenFileDialog("Select File", out var path);
+            GparamDataImport.DisplayMenu(ViewHandler.ActiveView);
+            GparamDataExport.DisplayMenu(ViewHandler.ActiveView);
 
-                    if (dialog)
-                    {
-                        if (path.EndsWith(".json") && Path.Exists(path))
-                        {
-                            var newData = GPARAMJson.FromJson(path);
-
-                            var action = new OverwriteGparamAction(Project, curGparam, newData);
-                            ViewHandler.ActiveView.ActionManager.ExecuteAction(action);
-                        }
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
-            */
-
-            // Export
-            if (ImGui.BeginMenu("Export", enable))
-            {
-                if (ImGui.MenuItem("GPARAM"))
-                {
-                    var json = GPARAMJson.ToJson(curGparam);
-
-                    var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
-
-                    if (dialog)
-                    {
-                        var exportPath = Path.Combine(path, $"{fileEntry.Filename}.{fileEntry.Extension}.json");
-
-                        File.WriteAllText(exportPath, json);
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
             ImGui.EndMenu();
         }
     }

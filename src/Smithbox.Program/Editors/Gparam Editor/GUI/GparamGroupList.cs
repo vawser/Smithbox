@@ -8,6 +8,7 @@ using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Veldrid.MetalBindings;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -70,6 +71,7 @@ public class GparamGroupList
         if (!Parent.Selection.IsFileSelected())
             return;
 
+        var fileEntry = Parent.Selection.SelectedFileEntry;
         var data = Parent.Selection.GetSelectedGparam();
         var group = Parent.Selection.GetSelectedGroup();
 
@@ -81,13 +83,18 @@ public class GparamGroupList
         {
             var curGroup = data.Params[i];
 
-            DisplayGroupSelectable(data, curGroup, i);
+            DisplayGroupSelectable(fileEntry, data, curGroup, i);
+        }
+
+        if(data.Params.Count == 0)
+        {
+            DisplayDummySelectable(fileEntry, data);
         }
 
         Shortcuts(data, group);
     }
 
-    private void DisplayGroupSelectable(GPARAM data, Param group, int index)
+    private void DisplayGroupSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, int index)
     {
         var selected = index == Parent.Selection._selectedParamGroupIndex;
         var groupName = GetGroupName(group);
@@ -105,6 +112,7 @@ public class GparamGroupList
         if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
         {
             Parent.Selection.SetGparamGroup(index, group);
+            Parent.FieldListView.InvalidateAddOptions();
         }
 
         if (groupDesc != "")
@@ -117,6 +125,7 @@ public class GparamGroupList
         {
             Parent.Selection.SelectGparamGroup = false;
             Parent.Selection.SetGparamGroup(index, group);
+            Parent.FieldListView.InvalidateAddOptions();
         }
 
         if (ImGui.IsItemFocused())
@@ -129,12 +138,30 @@ public class GparamGroupList
 
         ImGui.EndGroup();
 
-        ContextMenu(data, group, index);
+        ContextMenu(fileEntry, data, group, index);
     }
 
-    private void ContextMenu(GPARAM data, GPARAM.Param group, int index)
+    private void DisplayDummySelectable(FileDictionaryEntry fileEntry, GPARAM data)
+    {
+        ImGui.BeginGroup();
+
+        if (ImGui.Selectable($@" Empty##addGroupDummy"))
+        {
+
+        }
+        UIHelper.Tooltip("Right-click to add missing groups.");
+
+        ImGui.EndGroup();
+
+        DummyContextMenu(fileEntry, data);
+    }
+
+    private string OverrideFileName = "";
+
+    private void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, int index)
     {
         var groupIndex = Parent.Selection._selectedParamGroupIndex;
+        bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
 
         if (index != groupIndex)
             return;
@@ -158,6 +185,28 @@ public class GparamGroupList
 
             ImGui.Separator();
 
+            if (ImGui.Selectable("Import"))
+            {
+                GparamDataImport.ImportGroup(Project, Parent, fileEntry, data, group);
+            }
+            UIHelper.Tooltip("Import a GPARAM Group json to overwrite this entry.");
+
+            if (ImGui.BeginMenu("Export"))
+            {
+                ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
+                UIHelper.Tooltip("Define the filename for the exported GPARAM Group file.");
+
+                if (ImGui.Selectable("Export File"))
+                {
+                    GparamDataExport.ExportGroup(fileEntry, data, group, OverrideFileName);
+                }
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip("Export this currently selected GPARAM Group to JSON.");
+
+            ImGui.Separator();
+
             // Quick Edit
             if (ImGui.BeginMenu("Quick Edit"))
             {
@@ -170,6 +219,17 @@ public class GparamGroupList
 
                 ImGui.EndMenu();
             }
+
+            ImGui.EndPopup();
+        }
+    }
+
+    private void DummyContextMenu(FileDictionaryEntry fileEntry, GPARAM data)
+    {
+        if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+        {
+            // Add
+            AddGroupMenu(data);
 
             ImGui.EndPopup();
         }

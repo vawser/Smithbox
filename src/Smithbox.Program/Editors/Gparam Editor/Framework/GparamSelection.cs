@@ -37,6 +37,14 @@ public class GparamSelection
         Project = project;
     }
 
+    public void ResetSelection()
+    {
+        ResetGparamFileSelection();
+        ResetGparamGroupSelection();
+        ResetGparamFieldSelection();
+        ResetGparamFieldValueSelection();
+    }
+
     public bool CanAffectSelection()
     {
         if(IsFileSelected() && 
@@ -192,9 +200,12 @@ public class GparamSelection
     /// </summary>
     public GPARAM.Param GetSelectedGroup()
     {
-        if(_selectedGparam.Params.Any(e => e.Key == _selectedParamGroupKey))
+        if (_selectedGparam != null)
         {
-            return _selectedGparam.Params.First(e => e.Key == _selectedParamGroupKey);
+            if (_selectedGparam.Params.Any(e => e.Key == _selectedParamGroupKey))
+            {
+                return _selectedGparam.Params.First(e => e.Key == _selectedParamGroupKey);
+            }
         }
 
         return null;

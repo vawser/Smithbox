@@ -85,6 +85,7 @@ public class GparamValueList
         if (!Parent.Selection.IsGparamFieldSelected())
             return;
 
+        var fileEntry = Parent.Selection.SelectedFileEntry;
         var data = Parent.Selection.GetSelectedGparam();
         var group = Parent.Selection.GetSelectedGroup();
         var field = Parent.Selection.GetSelectedField();
@@ -108,7 +109,7 @@ public class GparamValueList
 
         ImGui.Columns(columnCount);
 
-        DisplayColumn_Row(data, group, field);
+        DisplayColumn_Row(fileEntry, data, group, field);
         DisplayColumn_ID(data, group, field);
         DisplayColumn_TimeOfDay(data, group, field);
         DisplayColumn_Value(data, group, field);
@@ -120,7 +121,7 @@ public class GparamValueList
     }
 
     // Row
-    private void DisplayColumn_Row(GPARAM data, GPARAM.Param group, IField field)
+    private void DisplayColumn_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
     {
         ImGui.BeginChild("GparamPropList_Row");
         UIHelper.SimpleHeader("Row", "");
@@ -128,17 +129,26 @@ public class GparamValueList
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+            if (value == null)
+                continue;
+
             var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
 
             if (!display)
                 continue;
 
-            GparamProperty_Row(data, group, field, value, i);
+            GparamProperty_Row(fileEntry, data, group, field, value, i);
+        }
+
+
+        if (field.Values.Count == 0)
+        {
+            DisplayDummySelectable(fileEntry, data, group, field);
         }
 
         ImGui.EndChild();
     }
-    public void GparamProperty_Row(GPARAM data, GPARAM.Param group,
+    public void GparamProperty_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group,
         IField field, IFieldValue value, int index)
     {
         var isSelected = index == Parent.Selection._selectedFieldValueIndex;
@@ -149,7 +159,7 @@ public class GparamValueList
             Parent.Selection.SetGparamFieldValue(index, value);
         }
 
-        ContextMenu(data, group, field, value, index);
+        ContextMenu(fileEntry, data, group, field, value, index);
     }
 
     // ID
@@ -163,6 +173,9 @@ public class GparamValueList
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+            if (value == null)
+                continue;
+
             var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
 
             if (!display)
@@ -195,6 +208,9 @@ public class GparamValueList
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+            if (value == null)
+                continue;
+
             var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
 
             if (!display)
@@ -222,6 +238,9 @@ public class GparamValueList
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+            if (value == null)
+                continue;
+
             var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
 
             if (!display)
@@ -298,8 +317,58 @@ public class GparamValueList
         }
     }
 
-    public void ContextMenu(GPARAM data, GPARAM.Param group, IField field, IFieldValue value, int index)
+    private void DisplayDummySelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, IField field)
     {
+        ImGui.BeginGroup();
+
+        if (ImGui.Selectable($@" Empty##addValueDummy"))
+        {
+            AddNewValue(fileEntry, data, group, field);
+        }
+        UIHelper.Tooltip("Click to add new value.");
+
+        ImGui.EndGroup();
+    }
+
+    private void AddNewValue(FileDictionaryEntry fileEntry, GPARAM data, Param group, IField field)
+    {
+        // Get the annotation for this field so we can seed to new value properly
+        var potentialGroups = Project.Handler.GparamData.Annotations.Entries.FirstOrDefault(
+            e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
+
+        if (potentialGroups.Value == null)
+            return;
+
+        GparamAnnotationFieldEntry addValueAnnotation = null;
+
+        var groups = potentialGroups.Value.Params.ToList();
+        foreach (var curGroup in groups)
+        {
+            if (curGroup.ID == group.Key)
+            {
+                foreach (var curField in curGroup.Fields)
+                {
+                    if (curField.ID == field.Key)
+                    {
+                        addValueAnnotation = curField;
+                    }
+                }
+            }
+        }
+
+        if (addValueAnnotation != null)
+        {
+            var action = new ReplaceFieldAction(Project, data, group, new List<GparamAnnotationFieldEntry>() { addValueAnnotation } );
+            Parent.ActionManager.ExecuteAction(action);
+        }
+    }
+
+    private string OverrideFileName = "";
+
+    public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field, IFieldValue value, int index)
+    {
+        bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
+
         if (index == Parent.Selection._selectedFieldValueIndex)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
@@ -336,6 +405,29 @@ public class GparamValueList
                 }
                 UIHelper.Tooltip("Delete the value row.");
 
+                ImGui.Separator();
+
+                // Import
+                if (ImGui.Selectable("Import"))
+                {
+                    GparamDataImport.ImportValue(Project, Parent, fileEntry, data, group, field, value, overwrite);
+                }
+                UIHelper.Tooltip("Import a GPARAM Value json to overwrite this entry.");
+
+                // Export
+                if (ImGui.BeginMenu("Export"))
+                {
+                    ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
+                    UIHelper.Tooltip("Define the filename for the exported GPARAM Value file.");
+
+                    if (ImGui.Selectable("Export File"))
+                    {
+                        GparamDataExport.ExportValue(fileEntry, data, group, field, value, OverrideFileName);
+                    }
+
+                    ImGui.EndMenu();
+                }
+                UIHelper.Tooltip("Export this currently selected GPARAM Value to JSON.");
 
                 ImGui.Separator();
 
