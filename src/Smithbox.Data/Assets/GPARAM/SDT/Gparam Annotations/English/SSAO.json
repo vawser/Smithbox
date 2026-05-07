@@ -114,7 +114,7 @@
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
-    },
+    }, 
     {
       "ID": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
       "Name": "[V2] Previous Frame Depth Aware",

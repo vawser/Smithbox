@@ -39,11 +39,29 @@ public class GparamEditorPrefs
     #endregion
 
     #region Group List
+    public static PreferenceItem GparamEditor_Group_List_Display_Descriptions()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.GparamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.GparamEditor_Group_List,
+
+            Title = "Display Group Descriptions",
+            Description = "If enabled, the group descriptions are displayed on hover.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Descriptions);
+            }
+        };
+    }
     public static PreferenceItem GparamEditor_Group_List_Display_Empty_Group()
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 1,
             Category = PreferenceCategory.GparamEditor,
             Spacer = true,
 
@@ -60,6 +78,24 @@ public class GparamEditorPrefs
     #endregion
 
     #region Field List
+    public static PreferenceItem GparamEditor_Field_List_Display_Descriptions()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.GparamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.GparamEditor_Field_List,
+
+            Title = "Display Field Descriptions",
+            Description = "If enabled, the field descriptions are displayed on hover.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Field_List_Display_Descriptions);
+            }
+        };
+    }
     #endregion
 
     #region Value List

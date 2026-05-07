@@ -101,9 +101,12 @@ public class GparamFieldList
             Parent.Selection.SetGparamField(index, field);
         }
 
-        if (fieldDesc != "")
+        if (CFG.Current.GparamEditor_Field_List_Display_Descriptions)
         {
-            UIHelper.Tooltip(fieldDesc);
+            if (fieldDesc != "")
+            {
+                UIHelper.Tooltip(fieldDesc);
+            }
         }
 
         // Arrow Selection
@@ -324,14 +327,17 @@ public class GparamFieldList
                 curOption.ToAdd = curState;
             }
 
-            var desc = "";
-
-            if(curOption.Annotation.Description != "")
-                desc = curOption.Annotation.Description;
-
-            if(desc != "")
+            if (CFG.Current.GparamEditor_Field_List_Display_Descriptions)
             {
-                UIHelper.Tooltip(desc);
+                var desc = "";
+
+                if (curOption.Annotation.Description != "")
+                    desc = curOption.Annotation.Description;
+
+                if (desc != "")
+                {
+                    UIHelper.Tooltip(desc);
+                }
             }
         }
 

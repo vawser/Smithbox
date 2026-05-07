@@ -1,124 +1,124 @@
 {
   "ID": "LightShaft[Yebis]",
-  "Name": "LightShaft[Yebis]",
-  "Description": "",
+  "Name": "Light Shafts",
+  "Description": "Simulates volumetric light shafts (god rays) produced when light interacts with atmospheric scattering and occlusion. Uses sky masking, directional filtering, and blur accumulation to approximate volumetric scattering in screen space.",
   "Fields": [
     {
       "ID": "Yebis-LightShaft Enable",
-      "Name": "Yebis-LightShaft Enable",
-      "Description": "",
+      "Name": "Yebis: Enable Light Shafts",
+      "Description": "Enables the Yebis light shaft rendering pipeline for volumetric ray and glare simulation.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-ColorScale",
-      "Name": "Yebis-ColorScale",
-      "Description": "",
+      "Name": "Yebis: Color Scale",
+      "Description": "Scales the final color intensity of light shafts and volumetric scattering contributions.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ShaftLength",
-      "Name": "Yebis-ShaftLength",
-      "Description": "",
+      "Name": "Yebis: Shaft Length",
+      "Description": "Controls the apparent length and extension of volumetric light rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareRatio",
-      "Name": "Yebis-GlareRatio",
-      "Description": "",
+      "Name": "Yebis: Glare Ratio",
+      "Description": "Adjusts the amount of glare blended into light shafts, affecting bloom-like intensity around bright sources.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AngleAttenuation",
-      "Name": "Yebis-AngleAttenuation",
-      "Description": "",
+      "Name": "Yebis: Angle Attenuation",
+      "Description": "Controls how strongly light shafts fade based on viewing angle relative to the light source.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-NoiseMask",
-      "Name": "Yebis-NoiseMask",
-      "Description": "",
+      "Name": "Yebis: Noise Mask",
+      "Description": "Controls procedural noise masking used to break up banding and add natural variation to light shafts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-NoiseFrequency",
-      "Name": "Yebis-NoiseFrequency",
-      "Description": "",
+      "Name": "Yebis: Noise Frequency",
+      "Description": "Adjusts the scale and frequency of procedural noise patterns used in volumetric scattering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft RadX",
-      "Name": "Yebis-LighShaft RadX",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Radial: X",
+      "Description": "Horizontal radial spread of the light shaft effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft RadY",
-      "Name": "Yebis-LighShaft RadY",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Radial: Y",
+      "Description": "Vertical radial spread of the light shaft effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft DistanceZ",
-      "Name": "Yebis-LighShaft DistanceZ",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Distance: Z",
+      "Description": "Depth-based distance scaling for light shaft projection and attenuation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRing",
-      "Name": "Yebis-DiffractionRing",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring",
+      "Description": "Controls the intensity of diffraction ring artifacts generated around bright light sources.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingRadius",
-      "Name": "Yebis-DiffractionRingRadius",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Radius",
+      "Description": "Defines the radius or size of diffraction ring patterns around bright highlights.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingAttenuation",
-      "Name": "Yebis-DiffractionRingAttenuation",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Attenuation",
+      "Description": "Controls how quickly diffraction ring intensity fades outward from the light source.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingSpectrumOrder",
-      "Name": "Yebis-DiffractionRingSpectrumOrder",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Spectrum Order",
+      "Description": "Adjusts spectral ordering and color separation within diffraction ring patterns.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-RingOuterColor",
-      "Name": "Yebis-RingOuterColor",
-      "Description": "",
+      "Name": "Yebis: Ring Outer Color",
+      "Description": "Color tint applied to the outer region of diffraction rings and light scattering halos.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false

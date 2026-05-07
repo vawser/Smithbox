@@ -835,7 +835,10 @@ public class CFG
     public bool GparamEditor_File_List_Display_BB_BND_Files = true;
     public bool GparamEditor_File_List_Display_Aliases = true;
 
+    public bool GparamEditor_Group_List_Display_Descriptions = true;
     public bool GparamEditor_Group_List_Display_Empty_Group = true;
+
+    public bool GparamEditor_Field_List_Display_Descriptions = true;
 
     public bool GparamEditor_Value_List_Display_Color_Edit_V4 = true;
     public bool GparamEditor_Value_List_Display_Time_Of_Day_Column = true;

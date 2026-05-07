@@ -1,92 +1,92 @@
 {
   "ID": "Snow:Editor",
-  "Name": "Snow:Editor",
-  "Description": "",
+  "Name": "Snow",
+  "Description": "Controls procedural snow surface rendering, including texture mapping, accumulation, surface response, and visual properties such as sparkle, reflectance, and normal detail.",
   "Fields": [
     {
       "ID": "Snow Texture: Id",
-      "Name": "Snow Texture: Id",
-      "Description": "",
+      "Name": "Texture ID",
+      "Description": "Identifier for the snow texture used for surface appearance and detail mapping.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Snow Angle Detail Info",
-      "Name": "Snow Angle Detail Info",
-      "Description": "",
+      "Name": "Angle",
+      "Description": "Orientation angle of snow accumulation or texture projection direction.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Snow Tiling Scale Detail Info",
-      "Name": "Snow Tiling Scale Detail Info",
-      "Description": "",
+      "Name": "Tiling Scale",
+      "Description": "Controls how frequently the snow texture repeats across surfaces.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Snow Scene Snow Rate Detail Info",
-      "Name": "Snow Scene Snow Rate Detail Info",
-      "Description": "",
+      "Name": "Scene Snow Rate",
+      "Description": "Intensity of snowfall accumulation affecting how quickly snow builds up in the scene.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Sparkle Tiling Scale Detail Info",
-      "Name": "Sparkle Tiling Scale Detail Info",
-      "Description": "",
+      "Name": "Sparkle Tiling Scale",
+      "Description": "Controls tiling frequency of sparkly highlights or icy glints on snow surfaces.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Snow Ground Plane Height Detail Info",
-      "Name": "Snow Ground Plane Height Detail Info",
-      "Description": "",
+      "Name": "Ground Plane Height",
+      "Description": "Defines the base height of the ground plane where snow accumulation is applied.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Snow Plane Height Detail Info",
-      "Name": "Snow Plane Height Detail Info",
-      "Description": "",
+      "Name": "Plane Height",
+      "Description": "Overall height offset of the snow surface above geometry.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Normal Scale Detail Info",
-      "Name": "Normal Scale Detail Info",
-      "Description": "",
+      "Name": "Normal Scale",
+      "Description": "Strength of normal map detail affecting perceived surface roughness of snow.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Normal Blur Radius Detail Info",
-      "Name": "Normal Blur Radius Detail Info",
-      "Description": "",
+      "Name": "Normal Blur Radius",
+      "Description": "Radius used to smooth normal map details, softening sharp surface variations.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Albedo Scale Detail Info",
-      "Name": "Albedo Scale Detail Info",
-      "Description": "",
+      "Name": "Albedo Scale",
+      "Description": "RGBA scaling applied to snow base color for tinting and brightness adjustment.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Reflectance Detail Info",
-      "Name": "Reflectance Detail Info",
-      "Description": "",
+      "Name": "Reflectance",
+      "Description": "Controls how reflective the snow surface is, affecting icy or matte appearance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

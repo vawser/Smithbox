@@ -1,172 +1,172 @@
 {
   "ID": "MotionBlur-Editor[Yebis]",
-  "Name": "MotionBlur-Editor[Yebis]",
-  "Description": "",
+  "Name": "Motion Blur",
+  "Description": "Applies screen-space motion blur based on camera and object velocity to simulate camera shutter exposure over time. Produces directional streaking and temporal blending to enhance motion realism or cinematic feel.",
   "Fields": [
     {
       "ID": "Yebis-MotionBlur-Enable",
-      "Name": "Yebis-MotionBlur-Enable",
-      "Description": "",
+      "Name": "Yebis: Enable Motion Blur",
+      "Description": "Enables the Yebis motion blur pipeline, applying velocity-based blur as part of post-processing.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-BlurTimeRatio",
-      "Name": "Yebis-BlurTimeRatio",
-      "Description": "",
+      "Name": "Yebis: Blur Time Ratio",
+      "Description": "Controls how motion blur accumulates over time relative to frame duration, affecting streak persistence.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-NumBaseSamples",
-      "Name": "Yebis-NumBaseSamples",
-      "Description": "",
+      "Name": "Yebis: Number of Base Samples",
+      "Description": "Defines the base sample count used along motion vectors for blur reconstruction.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MaxBlurLength",
-      "Name": "Yebis-MaxBlurLength",
-      "Description": "",
+      "Name": "Yebis: Max Blur Length",
+      "Description": "Limits the maximum length of motion blur streaks to prevent excessive smearing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MotionBlurScale",
-      "Name": "Yebis-MotionBlurScale",
-      "Description": "",
+      "Name": "Yebis: Motion Blur Scale",
+      "Description": "Scales the contribution of motion vectors to blur intensity, acting as a multiplier for motion magnitude.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MaxRecurrences",
-      "Name": "Yebis-MaxRecurrences",
-      "Description": "",
+      "Name": "Yebis: Max Recurrences",
+      "Description": "Controls the number of recursive blur passes used to accumulate motion blur for stronger trailing effects.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-SampleInterleaved",
-      "Name": "Yebis-SampleInterleaved",
-      "Description": "",
+      "Name": "Yebis: Sample Interleaved",
+      "Description": "Enables interleaved sampling patterns to reduce banding and improve performance during blur sampling.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CameraRotationPerspectiveThreshold",
-      "Name": "Yebis-CameraRotationPerspectiveThreshold",
-      "Description": "",
+      "Name": "Yebis: Camera Rotation Perspective Threshold",
+      "Description": "Threshold controlling how camera rotation contributes to motion blur intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CameraTranslationThreshold",
-      "Name": "Yebis-CameraTranslationThreshold",
-      "Description": "",
+      "Name": "Yebis: Camera Translation Threshold",
+      "Description": "Threshold controlling how camera movement contributes to motion blur intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-FalloffDistanceMin",
-      "Name": "Yebis-FalloffDistanceMin",
-      "Description": "",
+      "Name": "Yebis: Falloff Distance Minimum",
+      "Description": "Minimum depth at which motion blur begins to attenuate based on distance from the camera.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-FalloffDistanceMax",
-      "Name": "Yebis-FalloffDistanceMax",
-      "Description": "",
+      "Name": "Yebis: Falloff Distance Maximum",
+      "Description": "Maximum depth at which motion blur fully fades out, reducing distant blur artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-MotionBlur-Bidirectional PermissionEnable",
-      "Name": "Yebis-MotionBlur-Bidirectional PermissionEnable",
-      "Description": "",
+      "Name": "Yebis: Enable Bidirectional Permission",
+      "Description": "Allows motion blur to be applied in both forward and backward directions along motion vectors.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GSPresents-MotionBlur-Enable",
-      "Name": "GSPresents-MotionBlur-Enable",
-      "Description": "",
+      "Name": "Enable Motion Blur",
+      "Description": "Enables or disables the motion blur effect. When disabled, no velocity-based temporal smearing is applied.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "MotionBlur[GS Presents] Motion Blur Intensity",
-      "Name": "MotionBlur[GS Presents] Motion Blur Intensity",
-      "Description": "",
+      "Name": "Motion Blur Intensity",
+      "Description": "Controls the global strength of motion blur applied to the image, scaling velocity-based streaking intensity.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Object Blur Intensity",
-      "Name": "MotionBlur[GS Presents] Object Blur Intensity",
-      "Description": "",
+      "Name": "Object Blur Intensity",
+      "Description": "Controls motion blur contribution from object movement independently of camera motion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Camera Blur Intensity",
-      "Name": "MotionBlur[GS Presents] Camera Blur Intensity",
-      "Description": "",
+      "Name": "Camera Blur Intensity",
+      "Description": "Controls motion blur contribution caused by camera movement and rotation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "MotionBlur[GS Presents] Blur ReccurenceCount",
-      "Name": "MotionBlur[GS Presents] Blur ReccurenceCount",
-      "Description": "",
+      "Name": "Blur Reccurence Count",
+      "Description": "Number of iterative blur passes applied to simulate stronger temporal accumulation of motion trails.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GSPresents-MotionBlur-bInnerTime",
-      "Name": "GSPresents-MotionBlur-bInnerTime",
-      "Description": "",
+      "Name": "Enable Inner Simulation Time",
+      "Description": "Enables an internal simulation time step for motion blur evaluation, decoupled from frame time for stability.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
-      "Name": "GSPresents-MotionBlur-Enable Average Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Average Inner Simulation Time",
+      "Description": "Averages internal simulation timing across frames to reduce jitter in motion blur accumulation.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
-      "Name": "GSPresents-MotionBlur-Enable Fixed Inner Simulation Time",
-      "Description": "",
+      "Name": "Enable Fixed Inner Simulation Time",
+      "Description": "Uses a fixed timestep for motion blur simulation to ensure deterministic and stable blur behavior.",
       "Type": "ByteField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "MotionBlur[GS Presents] Fix Fps",
-      "Name": "MotionBlur[GS Presents] Fix Fps",
-      "Description": "",
+      "Name": "Fixed Fps",
+      "Description": "Locks motion blur calculations to a fixed frame rate to ensure consistent blur behavior regardless of runtime FPS.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

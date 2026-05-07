@@ -1,76 +1,76 @@
 {
   "ID": "Anti-Alias-Editor",
-  "Name": "Anti-Alias-Editor",
-  "Description": "",
+  "Name": "Anti-Aliasing",
+  "Description": "Controls anti-aliasing techniques including post-process edge smoothing (FXAA/DLAA) and temporal accumulation. Provides fine control over edge detection, temporal feedback, sharpening, and stability to balance image quality and performance.",
   "Fields": [
     {
       "ID": "Yebis-Anti-Alias Enable",
-      "Name": "Yebis-Anti-Alias Enable",
-      "Description": "",
-      "Type": "IntField",
+      "Name": "Enable Anti-Alias",
+      "Description": "Enables or disables the anti-aliasing system. When disabled, no edge smoothing or temporal accumulation is applied.",
+      "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AntiAlias - AntiAliasType",
-      "Name": "AntiAlias - AntiAliasType",
-      "Description": "",
+      "Name": "Anti-Alias Type",
+      "Description": "Selects the anti-aliasing method. Determines which parameters are active.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - fFxaaAlpha",
-      "Name": "AntiAlias - fFxaaAlpha",
-      "Description": "",
+      "Name": "FXAA: Alpha",
+      "Description": "Controls blending strength of FXAA edge smoothing. Higher values increase smoothing but may blur fine detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaReduceMin",
-      "Name": "AntiAlias - FxaaReduceMin",
-      "Description": "",
+      "Name": "FXAA: Reduce Minimum",
+      "Description": "Minimum edge detection threshold for FXAA. Lower values make the filter more sensitive to subtle edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaReduceMul",
-      "Name": "AntiAlias - FxaaReduceMul",
-      "Description": "",
+      "Name": "FXAA: Reduce Multiplier",
+      "Description": "Multiplier controlling edge detection sensitivity. Higher values reduce over-blurring by limiting weak edge influence.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - FxaaSpanMax",
-      "Name": "AntiAlias - FxaaSpanMax",
-      "Description": "",
+      "Name": "FXAA: Span Max",
+      "Description": "Maximum sampling span for FXAA edge search. Higher values improve quality on large edges but increase cost.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaThreshold",
-      "Name": "AntiAlias - DlaaThreshold",
-      "Description": "",
+      "Name": "DLAA: Threshold",
+      "Description": "Edge detection threshold for DLAA. Determines how strong a contrast must be to be treated as an edge.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaRamda",
-      "Name": "AntiAlias - DlaaRamda",
-      "Description": "",
+      "Name": "DLAA: Smoothing Strength",
+      "Description": "Controls smoothing strength in DLAA. Higher values increase blending across detected edges.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AntiAlias - DlaaEpsilon",
-      "Name": "AntiAlias - DlaaEpsilon",
-      "Description": "",
+      "Name": "DLAA: Epsilon",
+      "Description": "Small bias value to stabilize DLAA edge detection and prevent noise or flickering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

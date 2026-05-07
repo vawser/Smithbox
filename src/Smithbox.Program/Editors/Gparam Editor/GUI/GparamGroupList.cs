@@ -116,9 +116,12 @@ public class GparamGroupList
             Parent.FieldListView.InvalidateAddOptions();
         }
 
-        if (groupDesc != "")
+        if (CFG.Current.GparamEditor_Group_List_Display_Descriptions)
         {
-            UIHelper.Tooltip(groupDesc);
+            if (groupDesc != "")
+            {
+                UIHelper.Tooltip(groupDesc);
+            }
         }
 
         // Arrow Selection
@@ -360,14 +363,17 @@ public class GparamGroupList
                 curOption.ToAdd = curState;
             }
 
-            var desc = "";
-
-            if (curOption.Annotation.Description != "")
-                desc = curOption.Annotation.Description;
-
-            if (desc != "")
+            if (CFG.Current.GparamEditor_Group_List_Display_Descriptions)
             {
-                UIHelper.Tooltip(desc);
+                var desc = "";
+
+                if (curOption.Annotation.Description != "")
+                    desc = curOption.Annotation.Description;
+
+                if (desc != "")
+                {
+                    UIHelper.Tooltip(desc);
+                }
             }
         }
 

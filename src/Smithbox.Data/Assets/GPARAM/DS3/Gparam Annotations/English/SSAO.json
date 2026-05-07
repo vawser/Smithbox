@@ -1,279 +1,279 @@
 {
   "ID": "SSAO Editor",
-  "Name": "SSAO Editor",
-  "Description": "",
+  "Name": "Screen Space Ambient Occlusion",
+  "Description": "Covers parameters relating to Screen Space Ambient Occlusion.",
   "Fields": [
     {
-      "ID": "FilterOther-fDepthClipRange",
-      "Name": "FilterOther-fDepthClipRange",
-      "Description": "",
-      "Type": "FloatField",
-      "Enum": null,
-      "IsBoolean": false
-    },
-    {
       "ID": "SSAO - Edit-UseNormal",
-      "Name": "SSAO - Edit-UseNormal",
-      "Description": "",
+      "Name": "Use Normal",
+      "Description": "Enables the use of surface normals when calculating ambient occlusion for improved accuracy on edges and creases.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-UseReProj",
-      "Name": "SSAO - Edit-UseReProj",
-      "Description": "",
+      "Name": "Use Re-projection",
+      "Description": "Uses temporal reprojection to stabilize SSAO over time and reduce flickering between frames.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-PreventGhost",
-      "Name": "SSAO - Edit-PreventGhost",
-      "Description": "",
+      "Name": "Prevent Ghosting",
+      "Description": "Reduces temporal artifacts where previous-frame data incorrectly lingers in motion-heavy scenes.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-EnableUpScale",
-      "Name": "SSAO - Edit-EnableUpScale",
-      "Description": "",
+      "Name": "Enable Upscaling",
+      "Description": "Enables upscaling of SSAO from a lower internal resolution for improved performance.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-Ver2 Sample Offset",
-      "Name": "SSAO - Edit-Ver2 Sample Offset",
-      "Description": "",
+      "Name": "[V2] Sample Offset",
+      "Description": "Adjusts the sampling radius offset used when gathering occlusion samples around pixels.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 AO Scale",
-      "Name": "SSAO - Edit-Ver2 AO Scale",
-      "Description": "",
+      "Name": "[V2] Ambient Occlusion Scale",
+      "Description": "Controls the overall intensity of ambient occlusion shading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 AO Offset",
-      "Name": "SSAO - Edit-Ver2 AO Offset",
-      "Description": "",
+      "Name": "[V2] Ambient Occlusion Offset",
+      "Description": "Biases SSAO results to reduce overly dark or overly bright occlusion response.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Base Dist",
-      "Description": "",
+      "Name": "[V2] Kernel Scale Base Distance",
+      "Description": "Defines the reference distance at which SSAO sampling kernel scaling is centered.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Min",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Min",
-      "Description": "",
+      "Name": "[V2] Kernel Scale Minimum",
+      "Description": "Minimum allowed size of the SSAO sampling kernel at close distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Kernel Scale Max",
-      "Name": "SSAO - Edit-Ver2 Kernel Scale Max",
-      "Description": "",
+      "Name": "[V2] Kernel Scale Maximum",
+      "Description": "Maximum allowed size of the SSAO sampling kernel at far distances.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrevFrame Strengh",
-      "Name": "SSAO - Edit-Ver2 PrevFrame Strengh",
-      "Description": "",
+      "Name": "[V2] Previous Frame Strengh",
+      "Description": "Controls how strongly previous-frame SSAO results influence the current frame for temporal stability.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 DepthFadeStart",
-      "Name": "SSAO - Edit-Ver2 DepthFadeStart",
-      "Description": "",
+      "Name": "[V2] Depth Fade Start",
+      "Description": "Distance at which SSAO begins fading out based on depth to reduce far-range artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 DepthFadeRange",
-      "Name": "SSAO - Edit-Ver2 DepthFadeRange",
-      "Description": "",
+      "Name": "[V2] Depth Fade Range",
+      "Description": "Range over which SSAO fades out with increasing depth.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrecisionDepth",
-      "Name": "SSAO - Edit-Ver2 PrecisionDepth",
-      "Description": "",
+      "Name": "[V2] Precision Depth",
+      "Description": "Improves depth buffer precision used in SSAO calculations to reduce banding and artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
-      "Name": "SSAO - Edit-Ver2 PrevFrame Depth Aware",
-      "Description": "",
+      "Name": "[V2] Previous Frame Depth Aware",
+      "Description": "Enables depth-aware temporal accumulation to better reject mismatched history samples.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Depth Reject Rate",
-      "Name": "SSAO - Edit-Ver2 Depth Reject Rate",
-      "Description": "",
+      "Name": "[V2] Depth Reject Rate",
+      "Description": "Controls how aggressively outdated or mismatched depth samples are rejected in temporal SSAO.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Ver2 Geom Bent Offset",
-      "Name": "SSAO - Edit-Ver2 Geom Bent Offset",
-      "Description": "",
+      "Name": "[V2] Geometry Bent Offset",
+      "Description": "Adjusts the bias applied to bent normals used for directional ambient occlusion shading.",
+      "Type": "FloatField",
+      "Enum": null,
+      "IsBoolean": false
+    },
+    {
+      "ID": "FilterOther-fDepthClipRange",
+      "Name": "Depth Clip Range",
+      "Description": "Defines the maximum depth range considered for SSAO sampling to avoid evaluating distant geometry.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FilterOther-DepthEvalRange 0",
-      "Name": "FilterOther-DepthEvalRange 0",
-      "Description": "",
+      "Name": "Depth Evaluation Range: 0",
+      "Description": "Defines the near-range depth interval used for evaluating occlusion contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FilterOther-DepthEvalRange 1",
-      "Name": "FilterOther-DepthEvalRange 1",
-      "Description": "",
+      "Name": "Depth Evaluation Range: 1",
+      "Description": "Defines the mid-range depth interval used for evaluating occlusion contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FilterOther-DepthEvalRange 2",
-      "Name": "FilterOther-DepthEvalRange 2",
-      "Description": "",
+      "Name": "Depth Evaluation Range: 2",
+      "Description": "Defines the far-range depth interval used for evaluating occlusion contribution.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "FilterOther-fAOScale",
-      "Name": "FilterOther-fAOScale",
-      "Description": "",
+      "Name": "Ambient Occlusion Scale",
+      "Description": "Controls the overall strength of the ambient occlusion effect applied to the scene.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-UseNewVersion",
-      "Name": "SSAO - Edit-UseNewVersion",
-      "Description": "",
+      "Name": "Use V2 Fields",
+      "Description": "Switches to the newer SSAO implementation, enabling Version 2 parameters and behavior.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "SSAO - Edit-fSampleOffset",
-      "Name": "SSAO - Edit-fSampleOffset",
-      "Description": "",
+      "Name": "Sample Offset",
+      "Description": "Controls the base offset distance used when sampling surrounding pixels for occlusion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-fAOOffset",
-      "Name": "SSAO - Edit-fAOOffset",
-      "Description": "",
+      "Name": "Ambient Occlusion Offset",
+      "Description": "Applies a bias to the occlusion result to reduce excessive darkening or flatten the effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-AO Blend Scale 0",
-      "Name": "SSAO - Edit-AO Blend Scale 0",
-      "Description": "",
+      "Name": "Ambient Occlusion Blend Scale: 0",
+      "Description": "Controls blending strength of the first occlusion layer, typically affecting fine detail.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-AO Blend Scale 1",
-      "Name": "SSAO - Edit-AO Blend Scale 1",
-      "Description": "",
+      "Name": "Ambient Occlusion Blend Scale: 1",
+      "Description": "Controls blending strength of the second occlusion layer, contributing to mid-scale shading.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-AO Blend Scale 2",
-      "Name": "SSAO - Edit-AO Blend Scale 2",
-      "Description": "",
+      "Name": "Ambient Occlusion Blend Scale: 2",
+      "Description": "Controls blending strength of the third occlusion layer, typically affecting large-scale occlusion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Blur Radius 0",
-      "Name": "SSAO - Edit-Blur Radius 0",
-      "Description": "",
+      "Name": "Blur Radius: 0",
+      "Description": "Sets the blur radius for the first denoising pass, preserving fine detail while reducing noise.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Blur Radius 1",
-      "Name": "SSAO - Edit-Blur Radius 1",
-      "Description": "",
+      "Name": "Blur Radius: 1",
+      "Description": "Sets the blur radius for the second denoising pass, smoothing mid-frequency noise.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Blur Radius 2",
-      "Name": "SSAO - Edit-Blur Radius 2",
-      "Description": "",
+      "Name": "Blur Radius: 2",
+      "Description": "Sets the blur radius for the third denoising pass, smoothing large-scale noise and artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Final Blur Radius",
-      "Name": "SSAO - Edit-Final Blur Radius",
-      "Description": "",
+      "Name": "Final Blur Radius",
+      "Description": "Controls the radius of the final blur pass applied to the SSAO result before compositing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-Final Blur Radius2",
-      "Name": "SSAO - Edit-Final Blur Radius2",
-      "Description": "",
+      "Name": "Final Blur Radius: 2",
+      "Description": "Secondary parameter for final blur, often used for anisotropic or directional smoothing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "SSAO - Edit-FinalBlur4x2",
-      "Name": "SSAO - Edit-FinalBlur4x2",
-      "Description": "",
+      "Name": "Final Blur 4x2",
+      "Description": "Enables a 4x2 kernel pattern for the final blur pass to improve performance or directional smoothing.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     }
   ]
 }

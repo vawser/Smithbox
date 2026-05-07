@@ -1,100 +1,100 @@
 {
   "ID": "LightScattering : ParamEditor",
-  "Name": "LightScattering : ParamEditor",
-  "Description": "",
+  "Name": "Light Scattering",
+  "Description": "Controls directional light (sun) parameters and atmospheric scattering used for sky lighting, color, and environmental illumination.",
   "Fields": [
     {
       "ID": "Ls-sunRotX",
-      "Name": "Ls-sunRotX",
-      "Description": "",
+      "Name": "Sun Rotation: X",
+      "Description": "Controls the vertical rotation (elevation) of the sun, affecting its height in the sky and shadow length.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-sunRotY",
-      "Name": "Ls-sunRotY",
-      "Description": "",
+      "Name": "Sun Rotation: Y",
+      "Description": "Controls the horizontal rotation (azimuth) of the sun, determining its direction across the sky.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-距離倍率[%]",
-      "Name": "Ls-距離倍率[%]",
-      "Description": "",
+      "Name": "Distance Magnification",
+      "Description": "Scales the effective distance of the sun, influencing attenuation and atmospheric scattering calculations.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-光源色R",
-      "Name": "Ls-光源色R",
-      "Description": "",
+      "Name": "Light Source Color: R",
+      "Description": "Red channel of the sun’s light color.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-光源色G",
-      "Name": "Ls-光源色G",
-      "Description": "",
+      "Name": "Light Source Color: G",
+      "Description": "Green channel of the sun’s light color.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-光源色B",
-      "Name": "Ls-光源色B",
-      "Description": "",
+      "Name": "Light Source Color: B",
+      "Description": "Blue channel of the sun’s light color.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-光源RGB倍率[%]",
-      "Name": "Ls-光源RGB倍率[%]",
-      "Description": "",
+      "Name": "Light Source RGB Magnification",
+      "Description": "Overall intensity multiplier applied to the sun’s RGB color.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-散乱方向係数",
-      "Name": "Ls-散乱方向係数",
-      "Description": "",
+      "Name": "Scattering Direction Coefficient",
+      "Description": "Controls the anisotropy of atmospheric scattering, affecting how light is preferentially scattered forward or backward.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-レイリー散乱係数",
-      "Name": "Ls-レイリー散乱係数",
-      "Description": "",
+      "Name": "Rayleigh Scattering Coefficient",
+      "Description": "Controls Rayleigh scattering intensity, responsible for sky color and wavelength-dependent light scattering (e.g., blue sky).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-ミー散乱係数",
-      "Name": "Ls-ミー散乱係数",
-      "Description": "",
+      "Name": "Mie Scattering Coefficient",
+      "Description": "Controls Mie scattering intensity, affecting haze, fog, and light diffusion around the sun.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-ブレンド係数[%]",
-      "Name": "Ls-ブレンド係数[%]",
-      "Description": "",
+      "Name": "Blend Coefficient",
+      "Description": "Blends between different atmospheric or lighting states, such as time-of-day transitions.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Ls-地上の乱反射光RGB倍率[%]",
-      "Name": "Ls-地上の乱反射光RGB倍率[%]",
-      "Description": "",
+      "Name": "Ground Diffuse Reflection RGB Magnification",
+      "Description": "Scales the contribution of ground-reflected light (indirect diffuse lighting) affecting ambient illumination.",
       "Type": "ShortField",
       "Enum": null,
       "IsBoolean": false

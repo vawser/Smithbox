@@ -1,348 +1,348 @@
 {
   "ID": "Bloom[Yebis]",
-  "Name": "Bloom[Yebis]",
-  "Description": "",
+  "Name": "Bloom",
+  "Description": "Applies color grading using lookup tables (LUTs) to remap scene colors for artistic or cinematic effects. Supports smooth transitions between grading profiles over time.",
   "Fields": [
     {
       "ID": "Yebis-GlareLuminance",
-      "Name": "Yebis-GlareLuminance",
-      "Description": "",
+      "Name": "Yebis: Glare Luminance",
+      "Description": "Additional bloom intensity control specific to Yebis processing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareThreshold",
-      "Name": "Yebis-GlareThreshold",
-      "Description": "",
+      "Name": "Yebis: Glare Threshold",
+      "Description": "Threshold for bloom extraction in Yebis pipeline.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareSamplingThreshold",
-      "Name": "Yebis-GlareSamplingThreshold",
-      "Description": "",
+      "Name": "Yebis: Glare Sampling Threshold",
+      "Description": "Controls sampling cutoff when extracting bright regions.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-RemapFactor",
-      "Name": "Yebis-RemapFactor",
-      "Description": "",
+      "Name": "Yebis: Remap Factor",
+      "Description": "Remaps brightness values before bloom processing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareStarLengthFovDependence",
-      "Name": "Yebis-GlareStarLengthFovDependence",
-      "Description": "",
+      "Name": "Yebis: Glare Star Length FOV Dependence",
+      "Description": "Adjusts star streak length based on camera field of view.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareStarFileterThreshold",
-      "Name": "Yebis-GlareStarFileterThreshold",
-      "Description": "",
+      "Name": "Yebis: Glare Star Fileter Threshold",
+      "Description": "Threshold for generating star-shaped glare artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareStarSoftness",
-      "Name": "Yebis-GlareStarSoftness",
-      "Description": "",
+      "Name": "Yebis: Glare Star Softness",
+      "Description": "Controls softness of star-shaped glare streaks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareShape",
-      "Name": "Yebis-GlareShape",
-      "Description": "",
+      "Name": "Yebis: Glare Shape",
+      "Description": "Selects glare shape pattern (e.g., star, cross, circular).",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareNumLevels",
-      "Name": "Yebis-GlareNumLevels",
-      "Description": "",
+      "Name": "Yebis: Glare Number of Levels",
+      "Description": "Number of blur levels used in Yebis bloom.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareBloomGaussianRadiusScale",
-      "Name": "Yebis-GlareBloomGaussianRadiusScale",
-      "Description": "",
+      "Name": "Yebis: Glare Bloom Gaussian Radius Scale",
+      "Description": "Controls blur radius scaling for Yebis bloom.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareBloomLuminanceGamma",
-      "Name": "Yebis-GlareBloomLuminanceGamma",
-      "Description": "",
+      "Name": "Yebis: Glare Bloom Luminance Gamma",
+      "Description": "Gamma adjustment applied to bloom luminance.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareGhostConcentricDistortion",
-      "Name": "Yebis-GlareGhostConcentricDistortion",
-      "Description": "",
+      "Name": "Yebis: Glare Ghost Concentric Distortion",
+      "Description": "Controls radial distortion of lens ghost artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom GlareLuminance",
-      "Name": "Yebis-CustomBloom GlareLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Glare Luminance",
+      "Description": "Controls brightness of glare component in custom bloom.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom BloomLuminance",
-      "Name": "Yebis-CustomBloom BloomLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Bloom Luminance",
+      "Description": "Controls brightness of bloom component.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom BloomDispersion",
-      "Name": "Yebis-CustomBloom BloomDispersion",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Bloom Dispersion",
+      "Description": "Controls color separation within bloom.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom BloomDispersionBaseLevel",
-      "Name": "Yebis-CustomBloom BloomDispersionBaseLevel",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Bloom Dispersion Base Level",
+      "Description": "Base level where dispersion begins.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom GhostLuminance",
-      "Name": "Yebis-CustomBloom GhostLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Ghost Luminance",
+      "Description": "Brightness of ghosting artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom GhostHaloLuminance",
-      "Name": "Yebis-CustomBloom GhostHaloLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Ghost Halo Luminance",
+      "Description": "Intensity of halo around ghost artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom GhostDistortion",
-      "Name": "Yebis-CustomBloom GhostDistortion",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Ghost Distortion",
+      "Description": "Distortion applied to ghost artifacts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis--CustomBloom GhostSharpness",
-      "Name": "Yebis--CustomBloom GhostSharpness",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Ghost Sharpness",
+      "Description": "Sharpness of ghost reflections.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarLuminance",
-      "Name": "Yebis-CustomBloom StarLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Luminance",
+      "Description": "Brightness of star-shaped glare.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarStreaks",
-      "Name": "Yebis-CustomBloom StarStreaks",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Streaks",
+      "Description": "Number of streaks in star glare.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarLength",
-      "Name": "Yebis-CustomBloom StarLength",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Length",
+      "Description": "Length of star streaks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarSecondaryLength",
-      "Name": "Yebis-CustomBloom StarSecondaryLength",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Secondary Length",
+      "Description": "Length of secondary streaks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis--CustomBloom StarRotation",
-      "Name": "Yebis--CustomBloom StarRotation",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Rotation",
+      "Description": "Rotation of star streak pattern.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarInclinationAngle",
-      "Name": "Yebis-CustomBloom StarInclinationAngle",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Inclination Angle",
+      "Description": "Angle of star streak tilt.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom StarDispersion",
-      "Name": "Yebis-CustomBloom StarDispersion",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Dispersion",
+      "Description": "Color dispersion across star streaks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis--CustomBloom StarForceDispersion",
-      "Name": "Yebis--CustomBloom StarForceDispersion",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Star Force Dispersion",
+      "Description": "Forces dispersion effect regardless of brightness.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom AfterimageLuminance",
-      "Name": "Yebis-CustomBloom AfterimageLuminance",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Afterimage Luminance",
+      "Description": "Intensity of trailing afterimage effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-CustomBloom AfterimageLength",
-      "Name": "Yebis-CustomBloom AfterimageLength",
-      "Description": "",
+      "Name": "Yebis: Custom Bloom: Afterimage Length",
+      "Description": "Length of afterimage trails.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AnamorphicLens Enable",
-      "Name": "Yebis-AnamorphicLens Enable",
-      "Description": "",
+      "Name": "Yebis: Enable Anamorphic Lens",
+      "Description": "Enables anamorphic lens flare effects.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-AnamorphicFlareLuminance",
-      "Name": "Yebis-AnamorphicFlareLuminance",
-      "Description": "",
+      "Name": "Yebis: Anamorphic Flare Luminance",
+      "Description": "Intensity of anamorphic flare streaks.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AnamorphicFlareGhostLuminanceScale",
-      "Name": "Yebis-AnamorphicFlareGhostLuminanceScale",
-      "Description": "",
+      "Name": "Yebis: Anamorphic Flare Ghost Luminance Scale",
+      "Description": "Scales brightness of ghost artifacts in anamorphic flares.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AnamorphicFlareColor",
-      "Name": "Yebis-AnamorphicFlareColor",
-      "Description": "",
+      "Name": "Yebis: Anamorphic Flare Color",
+      "Description": "Color tint applied to anamorphic flares.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AnamorphicGhostColor",
-      "Name": "Yebis-AnamorphicGhostColor",
-      "Description": "",
+      "Name": "Yebis: Anamorphic Ghost Color",
+      "Description": "Color of ghost artifacts in anamorphic lens simulation.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents【Bloom】 Enable",
-      "Name": "Gs Presents【Bloom】 Enable",
-      "Description": "",
+      "Name": "Enable Bloom",
+      "Description": "Enables or disables the bloom (glare) effect. When disabled, bright areas will not produce light bleed.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Gs Presents-GlareNumLevels",
-      "Name": "Gs Presents-GlareNumLevels",
-      "Description": "",
+      "Name": "Glare: Number of Levels",
+      "Description": "Number of downsampled blur levels used in the bloom pyramid. Higher values produce wider, softer bloom at increased performance cost.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-Glare Luminance",
-      "Name": "Gs Presents-Glare Luminance",
-      "Description": "",
+      "Name": "Glare: Luminance",
+      "Description": "Overall intensity multiplier for the bloom effect. Controls how strongly bright areas contribute to glare.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-Glare Threshold",
-      "Name": "Gs Presents-Glare Threshold",
-      "Description": "",
+      "Name": "Glare: Threshold",
+      "Description": "Brightness threshold for bloom extraction. Only pixels above this value will contribute to the bloom effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Alpha",
-      "Name": "Gs Presents-GlareBloom Alpha",
-      "Description": "",
+      "Name": "Glare: Bloom Alpha",
+      "Description": "Blend factor controlling how much of the blurred bloom is composited back onto the final image.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom GaussianRadiusScale",
-      "Name": "Gs Presents-GlareBloom GaussianRadiusScale",
-      "Description": "",
+      "Name": "Glare: Bloom Gaussian Radius Scale",
+      "Description": "Scale factor applied to the Gaussian blur radius. Higher values result in wider and softer bloom spread.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Sturate Ctrl",
-      "Name": "Gs Presents-GlareBloom Sturate Ctrl",
-      "Description": "",
+      "Name": "Glare: Bloom Saturation Control",
+      "Description": "Controls color saturation of the bloom effect. Lower values desaturate bloom toward white, while higher values preserve original color.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Gs Presents-GlareBloom Smooth",
-      "Name": "Gs Presents-GlareBloom Smooth",
-      "Description": "",
+      "Name": "Glare: Bloom Smoothing",
+      "Description": "Controls smoothness of bloom blending across levels. Higher values reduce harsh transitions between blur layers.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
