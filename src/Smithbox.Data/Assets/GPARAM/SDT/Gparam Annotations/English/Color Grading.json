@@ -2,7 +2,6 @@
   "ID": "ColorGrading[Yebis]",
   "Name": "Color Grading",
   "Description": "Applies color grading using lookup tables (LUTs) to remap scene colors for artistic or cinematic effects. Supports smooth transitions between grading profiles over time.",
-  "Description": "",
   "Fields": [
     {
       "ID": "Yebis-ColorGrading-Enable",

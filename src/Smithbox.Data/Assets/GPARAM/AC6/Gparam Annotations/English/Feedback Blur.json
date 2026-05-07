@@ -1,6 +1,6 @@
 {
   "ID": "FeedBackBlur-Editor[Yebis]",
-  "Name": "FeedBackBlur-Editor[Yebis]",
+  "Name": "Feedback Blur",
   "Description": "Applies a temporal feedback blur effect by blending the current frame with previous frames. Used to create motion trails, persistence effects, or stylized ghosting based on accumulated history.",
   "Fields": [
     {

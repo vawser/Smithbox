@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using HKLib.hk2018.hkReflect;
+using Microsoft.VisualBasic.FileIO;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
@@ -357,6 +358,16 @@ public class GparamGroupList
             if(ImGui.IsItemDeactivatedAfterEdit())
             {
                 curOption.ToAdd = curState;
+            }
+
+            var desc = "";
+
+            if (curOption.Annotation.Description != "")
+                desc = curOption.Annotation.Description;
+
+            if (desc != "")
+            {
+                UIHelper.Tooltip(desc);
             }
         }
 

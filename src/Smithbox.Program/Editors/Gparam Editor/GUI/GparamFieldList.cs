@@ -323,6 +323,16 @@ public class GparamFieldList
             {
                 curOption.ToAdd = curState;
             }
+
+            var desc = "";
+
+            if(curOption.Annotation.Description != "")
+                desc = curOption.Annotation.Description;
+
+            if(desc != "")
+            {
+                UIHelper.Tooltip(desc);
+            }
         }
 
         ImGui.EndChild();

@@ -1,6 +1,6 @@
 {
   "ID": "LsParamEditor",
-  "Name": "Sun",
+  "Name": "Light Scattering",
   "Description": "Controls directional light (sun) parameters and atmospheric scattering used for sky lighting, color, and environmental illumination.",
   "Fields": [
     {

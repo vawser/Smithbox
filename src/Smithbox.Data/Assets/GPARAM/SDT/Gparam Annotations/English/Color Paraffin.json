@@ -1,7 +1,7 @@
 {
   "ID": "ColorParaffin Filter-Editor",
   "Name": "Radial Color Filter",
-  "Description": "",
+  "Description": "Applies color grading using lookup tables (LUTs) to remap scene colors for artistic or cinematic effects. Supports smooth transitions between grading profiles over time.",
   "Fields": [
     {
       "ID": "ColorParaffin Filter-Enable",

@@ -1,52 +1,52 @@
 {
   "ID": "AOFields - Editor",
-  "Name": "AOFields - Editor",
-  "Description": "",
+  "Name": "Ambient Occlusion",
+  "Description": "Controls screen-space ambient occlusion (SSAO) rendering parameters used to darken creases, corners, and contact areas where light is naturally occluded. Enhances scene depth perception and grounding by approximating indirect shadowing in screen space.",
   "Fields": [
     {
       "ID": "AOFields - Enable Draw",
-      "Name": "AOFields - Enable Draw",
-      "Description": "",
+      "Name": "Enable Draw",
+      "Description": "Enables or disables ambient occlusion rendering. When disabled, no occlusion darkening is applied to the scene.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AOFields - Enable UpScale",
-      "Name": "AOFields - Enable UpScale",
-      "Description": "",
+      "Name": "Enable Upscaling",
+      "Description": "Enables resolution upscaling for ambient occlusion calculations, allowing AO to be computed at lower resolution and reconstructed for performance optimization.",
       "Type": "UintField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "AOFields - Global Strength",
-      "Name": "AOFields - Global Strength",
-      "Description": "",
+      "Name": "Global Strength",
+      "Description": "Controls the overall intensity of the ambient occlusion effect. Higher values produce darker and more pronounced contact shadowing.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AOFields - Depth Thresh",
-      "Name": "AOFields - Depth Thresh",
-      "Description": "",
+      "Name": "Depth Threshold",
+      "Description": "Depth difference threshold used when evaluating occlusion between neighboring pixels. Helps reduce haloing and false occlusion artifacts across large depth discontinuities.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AOFields - Distance Max",
-      "Name": "AOFields - Distance Max",
-      "Description": "",
+      "Name": "Distance Maximum",
+      "Description": "Maximum sampling distance used for ambient occlusion evaluation. Larger values allow wider-scale occlusion at increased performance cost.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "AOFields - Distance Margin",
-      "Name": "AOFields - Distance Margin",
-      "Description": "",
+      "Name": "Distance Margin",
+      "Description": "Additional margin applied to occlusion distance calculations to soften transitions and stabilize AO blending between surfaces.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false

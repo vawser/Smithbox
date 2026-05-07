@@ -1,31 +1,31 @@
 {
   "ID": "LightShaft[Yebis]",
-  "Name": "LightShaft[Yebis]",
-  "Description": "",
+  "Name": "Light Shafts",
+  "Description": "Simulates volumetric light shafts (god rays) produced when light interacts with atmospheric scattering and occlusion. Uses sky masking, directional filtering, and blur accumulation to approximate volumetric scattering in screen space.",
   "Fields": [
     {
       "ID": "GS Presents - LightShaft Enable",
-      "Name": "GS Presents - LightShaft Enable",
-      "Description": "",
+      "Name": "Enable Light Shafts",
+      "Description": "Enables or disables volumetric light shaft rendering. When disabled, no god ray or volumetric light scattering is applied.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - LightShaft Angle",
-      "Name": "GS Presents - LightShaft Angle",
-      "Description": "",
+      "Name": "Light Shaft: Angle",
+      "Description": "Direction of the light shaft effect, typically derived from sun or key light orientation in screen space.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft EnableRefLight",
-      "Name": "GS Presents - LightShaft EnableRefLight",
-      "Description": "",
+      "Name": "Light Shaft: Enable Reference Light",
+      "Description": "Enables use of a reference light source for generating light shaft direction and intensity instead of global lighting.",
       "Type": "BoolField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "GS Presents - LightShaft LightBankId",
@@ -37,280 +37,280 @@
     },
     {
       "ID": "GS Presents - LightShaft LightId",
-      "Name": "GS Presents - LightShaft LightId",
-      "Description": "",
+      "Name": "Light Shaft: Light Bank ID",
+      "Description": "Selects which light bank (group of lights) is used as the source for light shaft generation.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft HighQualitySkyMask",
-      "Name": "GS Presents - LightShaft HighQualitySkyMask",
-      "Description": "",
+      "Name": "Light Shaft: High Quality Sky Mask",
+      "Description": "Enables higher precision sky masking to reduce artifacts and improve separation between sky and occluders.",
       "Type": "BoolField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft MaskDepthThreshold",
-      "Name": "GS Presents - LightShaft MaskDepthThreshold",
-      "Description": "",
+      "Name": "Light Shaft: Mask Depth Threshold",
+      "Description": "Depth threshold used to determine whether a pixel contributes to light shaft occlusion.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskSizeAngle",
-      "Name": "GS Presents - LightShaft SkyMaskSizeAngle",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Size Angle",
+      "Description": "Controls angular size of the sky mask region influencing light shaft spread and falloff.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskCenterPower",
-      "Name": "GS Presents - LightShaft SkyMaskCenterPower",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Center Power",
+      "Description": "Biases sky mask intensity toward the center, controlling concentration of volumetric rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Sky Multiply Color",
-      "Name": "GS Presents - Sky Multiply Color",
-      "Description": "",
+      "Name": "Light Shaft: Sky Multiply Color",
+      "Description": "Multiplicative color applied to sky contribution in the light shaft calculation.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Sky Add Color",
-      "Name": "GS Presents - Sky Add Color",
-      "Description": "",
+      "Name": "Light Shaft: Sky Add Color",
+      "Description": "Additive color contribution applied to sky-based light shaft scattering.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ExposureInfluenceRate AddColor",
-      "Name": "GS Presents - ExposureInfluenceRate AddColor",
-      "Description": "",
+      "Name": "Exposure Influence Rate: Add Color",
+      "Description": "Controls how much scene exposure affects additive color contribution in light shafts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Parallel mode begin ang",
-      "Name": "GS Presents - Parallel mode begin ang",
-      "Description": "",
+      "Name": "Parallel Mode: Start Angle",
+      "Description": "Start angle defining the range in which light shafts are treated as parallel (directionally uniform rays).",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Parallel mode end ang",
-      "Name": "GS Presents - Parallel mode end ang",
-      "Description": "",
+      "Name": "Parallel Mode: End Angle",
+      "Description": "End angle for parallel light shaft behavior, transitioning into radial or non-parallel scattering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Fade out begin ang",
-      "Name": "GS Presents - Fade out begin ang",
-      "Description": "",
+      "Name": "Fade Out: Start Angle",
+      "Description": "Angle at which light shaft intensity begins to fade based on view or light direction.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - Fade out end ang",
-      "Name": "GS Presents - Fade out end ang",
-      "Description": "",
+      "Name": "Fade Out: End Angle",
+      "Description": "Angle at which light shafts are fully faded out.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - ShaftBlurRange",
-      "Name": "GS Presents - ShaftBlurRange",
-      "Description": "",
+      "Name": "Light Shaft: Blur Range",
+      "Description": "Controls spatial extent of blur applied to light shafts, affecting ray softness and spread.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurRange for Parallel",
-      "Name": "GS Presents - LightShaft ShaftBlurRange for Parallel",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Range for Parallel",
+      "Description": "Blur range specifically used when light shafts are in parallel mode.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurFallOff",
-      "Name": "GS Presents - LightShaft ShaftBlurFallOff",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Falloff",
+      "Description": "Controls how quickly light shaft blur diminishes with distance or sampling steps.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft ShaftBlurCount",
-      "Name": "GS Presents - LightShaft ShaftBlurCount",
-      "Description": "",
+      "Name": "Light Shaft: Shaft Blur Count",
+      "Description": "Number of blur samples used to construct volumetric light shafts. Higher values improve quality but reduce performance.",
       "Type": "UintField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LightShaft Enable",
-      "Name": "Yebis-LightShaft Enable",
-      "Description": "",
+      "Name": "Yebis: Enable Light Shafts",
+      "Description": "Enables the Yebis light shaft rendering pipeline for volumetric ray and glare simulation.",
       "Type": "IntField",
       "Enum": null,
-      "IsBoolean": false
+      "IsBoolean": true
     },
     {
       "ID": "Yebis-ColorScale",
-      "Name": "Yebis-ColorScale",
-      "Description": "",
+      "Name": "Yebis: Color Scale",
+      "Description": "Scales the final color intensity of light shafts and volumetric scattering contributions.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-ShaftLength",
-      "Name": "Yebis-ShaftLength",
-      "Description": "",
+      "Name": "Yebis: Shaft Length",
+      "Description": "Controls the apparent length and extension of volumetric light rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-GlareRatio",
-      "Name": "Yebis-GlareRatio",
-      "Description": "",
+      "Name": "Yebis: Glare Ratio",
+      "Description": "Adjusts the amount of glare blended into light shafts, affecting bloom-like intensity around bright sources.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-AngleAttenuation",
-      "Name": "Yebis-AngleAttenuation",
-      "Description": "",
+      "Name": "Yebis: Angle Attenuation",
+      "Description": "Controls how strongly light shafts fade based on viewing angle relative to the light source.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-NoiseMask",
-      "Name": "Yebis-NoiseMask",
-      "Description": "",
+      "Name": "Yebis: Noise Mask",
+      "Description": "Controls procedural noise masking used to break up banding and add natural variation to light shafts.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-NoiseFrequency",
-      "Name": "Yebis-NoiseFrequency",
-      "Description": "",
+      "Name": "Yebis: Noise Frequency",
+      "Description": "Adjusts the scale and frequency of procedural noise patterns used in volumetric scattering.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LightShaftAngle",
-      "Name": "Yebis-LightShaftAngle",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Angle",
+      "Description": "Directional angle of Yebis light shaft projection in screen or world space.",
       "Type": "Vector2Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft RadX",
-      "Name": "Yebis-LighShaft RadX",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Radial: X",
+      "Description": "Horizontal radial spread of the light shaft effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft RadY",
-      "Name": "Yebis-LighShaft RadY",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Radial: Y",
+      "Description": "Vertical radial spread of the light shaft effect.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-LighShaft DistanceZ",
-      "Name": "Yebis-LighShaft DistanceZ",
-      "Description": "",
+      "Name": "Yebis: Light Shaft Distance: Z",
+      "Description": "Depth-based distance scaling for light shaft projection and attenuation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRing",
-      "Name": "Yebis-DiffractionRing",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring",
+      "Description": "Controls the intensity of diffraction ring artifacts generated around bright light sources.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingRadius",
-      "Name": "Yebis-DiffractionRingRadius",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Radius",
+      "Description": "Defines the radius or size of diffraction ring patterns around bright highlights.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingAttenuation",
-      "Name": "Yebis-DiffractionRingAttenuation",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Attenuation",
+      "Description": "Controls how quickly diffraction ring intensity fades outward from the light source.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-DiffractionRingSpectrumOrder",
-      "Name": "Yebis-DiffractionRingSpectrumOrder",
-      "Description": "",
+      "Name": "Yebis: Diffraction Ring Spectrum Order",
+      "Description": "Adjusts spectral ordering and color separation within diffraction ring patterns.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "Yebis-RingOuterColor",
-      "Name": "Yebis-RingOuterColor",
-      "Description": "",
+      "Name": "Yebis: Ring Outer Color",
+      "Description": "Color tint applied to the outer region of diffraction rings and light scattering halos.",
       "Type": "Vector4Field",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyMaskMode",
-      "Name": "GS Presents - LightShaft SkyMaskMode",
-      "Description": "",
+      "Name": "Light Shaft: Sky Mask Mode",
+      "Description": "Selects the algorithm used to compute sky masking for occlusion of light shafts.",
       "Type": "IntField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyColorSaturate",
-      "Name": "GS Presents - LightShaft SkyColorSaturate",
-      "Description": "",
+      "Name": "Light Shaft: Sky Color Saturation",
+      "Description": "Controls saturation of sky colors contributing to light shafts, affecting vibrancy of rays.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
     },
     {
       "ID": "GS Presents - LightShaft SkyColorThreshold",
-      "Name": "GS Presents - LightShaft SkyColorThreshold",
-      "Description": "",
+      "Name": "Light Shaft: Sky Color Threshold",
+      "Description": "Threshold that determines which sky brightness values contribute to light shaft generation.",
       "Type": "FloatField",
       "Enum": null,
       "IsBoolean": false
