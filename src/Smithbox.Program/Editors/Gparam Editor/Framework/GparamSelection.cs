@@ -31,6 +31,10 @@ public class GparamSelection
     public bool SelectGparamGroup = false;
     public bool SelectGparamField = false;
 
+    public bool FocusFile = false;
+    public bool FocusGroup = false;
+    public bool FocusField = false;
+
     public GparamSelection(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;

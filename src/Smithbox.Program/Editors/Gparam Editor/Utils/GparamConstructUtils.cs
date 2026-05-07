@@ -510,4 +510,40 @@ public static class GparamConstructUtils
 
         return field;
     }
+
+    // Parses a comma-separated string into floats, returns null if any fail or count doesn't match.
+    public static float[] ParseFloats(string s, int count)
+    {
+        var parts = s.Split(",");
+
+        if (parts.Length < count)
+            return null;
+
+        var result = new float[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            if (!float.TryParse(parts[i], out result[i]))
+                return null;
+        }
+
+        return result;
+    }
+    public static int[] ParseInts(string s, int count)
+    {
+        var parts = s.Split(",");
+
+        if (parts.Length < count)
+            return null;
+
+        var result = new int[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            if (!int.TryParse(parts[i], out result[i]))
+                return null;
+        }
+
+        return result;
+    }
 }

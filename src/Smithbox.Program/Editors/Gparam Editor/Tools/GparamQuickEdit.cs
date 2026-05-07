@@ -5,6 +5,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -353,25 +354,6 @@ public class GparamQuickEdit
         return (false, -1);
     }
 
-    // Parses a comma-separated string into floats, returns null if any fail or count doesn't match.
-    private static float[] ParseFloats(string s, int count)
-    {
-        var parts = s.Split(",");
-
-        if (parts.Length < count) 
-            return null;
-
-        var result = new float[count];
-
-        for (int i = 0; i < count; i++)
-        {
-            if (!float.TryParse(parts[i], out result[i])) 
-                return null;
-        }
-
-        return result;
-    }
-
     private void AddAction(GPARAM data, GPARAM.Param group, GPARAM.IField field,
         GPARAM.IFieldValue entry, object value, int index, ValueChangeType changeType)
     {
@@ -703,7 +685,7 @@ public class GparamQuickEdit
                             break;
                         }
 
-                        var f = ParseFloats(primaryArg, 2);
+                        var f = GparamConstructUtils.ParseFloats(primaryArg, 2);
 
                         if (f == null) 
                             break;
@@ -712,7 +694,7 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.Random)
                         {
-                            var f2 = ParseFloats(secondaryArg, 2);
+                            var f2 = GparamConstructUtils.ParseFloats(secondaryArg, 2);
 
                             if (f2 == null) 
                                 break;
@@ -740,7 +722,7 @@ public class GparamQuickEdit
                             }
                             break;
                         }
-                        var f = ParseFloats(primaryArg, 3);
+                        var f = GparamConstructUtils.ParseFloats(primaryArg, 3);
 
                         if (f == null) 
                             break;
@@ -749,7 +731,7 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.Random)
                         {
-                            var f2 = ParseFloats(secondaryArg, 3);
+                            var f2 = GparamConstructUtils.ParseFloats(secondaryArg, 3);
 
                             if (f2 == null) 
                                 break;
@@ -779,7 +761,7 @@ public class GparamQuickEdit
                             break;
                         }
 
-                        var f = ParseFloats(primaryArg, 4);
+                        var f = GparamConstructUtils.ParseFloats(primaryArg, 4);
 
                         if (f == null) 
                             break;
@@ -788,7 +770,7 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.Random)
                         {
-                            var f2 = ParseFloats(secondaryArg, 4);
+                            var f2 = GparamConstructUtils.ParseFloats(secondaryArg, 4);
 
                             if (f2 == null)
                                 break;
@@ -820,7 +802,7 @@ public class GparamQuickEdit
                             break;
                         }
 
-                        var f = ParseFloats(primaryArg, 4);
+                        var f = GparamConstructUtils.ParseFloats(primaryArg, 4);
 
                         if (f == null)
                             break;
@@ -829,7 +811,7 @@ public class GparamQuickEdit
 
                         if (effectType == EditEffectType.Random)
                         {
-                            var f2 = ParseFloats(secondaryArg, 4);
+                            var f2 = GparamConstructUtils.ParseFloats(secondaryArg, 4);
 
                             if (f2 == null)
                                 break;
@@ -1000,38 +982,52 @@ public class GparamQuickEdit
         {
             bool matched = targetField switch
             {
+                GPARAM.LongField f => long.TryParse(targetValue, out long iv) && f.Values[i].Value == iv,
+                GPARAM.UlongField f => ulong.TryParse(targetValue, out ulong uv) && f.Values[i].Value == uv,
                 GPARAM.IntField f => int.TryParse(targetValue, out int iv) && f.Values[i].Value == iv,
                 GPARAM.UintField f => uint.TryParse(targetValue, out uint uv) && f.Values[i].Value == uv,
                 GPARAM.ShortField f => short.TryParse(targetValue, out short sv) && f.Values[i].Value == sv,
+                GPARAM.UshortField f => ushort.TryParse(targetValue, out ushort sv) && f.Values[i].Value == sv,
                 GPARAM.SbyteField f => sbyte.TryParse(targetValue, out sbyte bv) && f.Values[i].Value == bv,
                 GPARAM.ByteField f => byte.TryParse(targetValue, out byte byv) && f.Values[i].Value == byv,
                 GPARAM.BoolField f => bool.TryParse(targetValue, out bool blv) && f.Values[i].Value == blv,
                 GPARAM.FloatField f => float.TryParse(targetValue, out float fv) && f.Values[i].Value == fv,
+                GPARAM.DoubleField f => double.TryParse(targetValue, out double fv) && f.Values[i].Value == fv,
                 GPARAM.Vector2Field f => MatchVector2(targetValue, f.Values[i].Value),
                 GPARAM.Vector3Field f => MatchVector3(targetValue, f.Values[i].Value),
                 GPARAM.Vector4Field f => MatchVector4(targetValue, f.Values[i].Value),
+                GPARAM.ColorField f => MatchColor(targetValue, f.Values[i].Value),
+                GPARAM.StringField f => $"{targetValue}" == f.Values[i].Value,
                 _ => false
             };
 
-            if (matched) filterTruth[i] = true;
+            if (matched) 
+                filterTruth[i] = true;
         }
     }
 
     private static bool MatchVector2(string s, Vector2 v)
     {
-        var f = ParseFloats(s, 2);
+        var f = GparamConstructUtils.ParseFloats(s, 2);
         return f != null && new Vector2(f[0], f[1]) == v;
     }
 
     private static bool MatchVector3(string s, Vector3 v)
     {
-        var f = ParseFloats(s, 3);
+        var f = GparamConstructUtils.ParseFloats(s, 3);
         return f != null && new Vector3(f[0], f[1], f[2]) == v;
     }
 
     private static bool MatchVector4(string s, Vector4 v)
     {
-        var f = ParseFloats(s, 4);
+        var f = GparamConstructUtils.ParseFloats(s, 4);
         return f != null && new Vector4(f[0], f[1], f[2], f[3]) == v;
+    }
+
+    private static bool MatchColor(string s, Color v)
+    {
+        var f = GparamConstructUtils.ParseInts(s, 4);
+
+        return f != null && Color.FromArgb(f[0], f[1], f[2], f[3]) == v;
     }
 }
