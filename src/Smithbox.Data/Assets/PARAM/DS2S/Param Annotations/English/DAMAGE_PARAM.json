@@ -2,352 +2,352 @@
   "Param": "DAMAGE_PARAM",
   "Type": "DAMAGE_PARAM",
   "Name": "DAMAGE_PARAM",
-  "Description": "",
+  "Description": "Defines attack damage behavior, hit detection, collision settings, special effects, knockback, and damage interaction rules.",
   "Fields": [
     {
       "Field": "damageCategory",
-      "Name": "ダメージカテゴリ",
-      "Description": ""
+      "Name": "Damage Category",
+      "Description": "Category type used to classify the damage behavior."
     },
     {
       "Field": "childDamage",
-      "Name": "子ダメージID",
-      "Description": ""
+      "Name": "Child Damage ID",
+      "Description": "Reference ID for an additional or chained damage entry triggered by this attack."
     },
     {
       "Field": "damageGroup",
-      "Name": "ダメージグループID",
-      "Description": ""
+      "Name": "Damage Group ID",
+      "Description": "Group identifier used for shared damage interaction logic."
     },
     {
       "Field": "damage01",
-      "Name": "ダメージ値1",
-      "Description": ""
+      "Name": "Damage Value: 1",
+      "Description": "Primary damage value dealt by the attack."
     },
     {
       "Field": "damage02",
-      "Name": "ダメージ値2",
-      "Description": ""
+      "Name": "Damage Value: 2",
+      "Description": "Secondary damage value dealt by the attack."
     },
     {
       "Field": "damage03",
-      "Name": "ダメージ値3",
-      "Description": ""
+      "Name": "Damage Value: 3",
+      "Description": "Tertiary damage value dealt by the attack."
     },
     {
       "Field": "damageLower",
-      "Name": "ダメージ最低保障値",
-      "Description": ""
+      "Name": "Minimum Guaranteed Damage",
+      "Description": "Minimum amount of damage guaranteed regardless of defenses or scaling."
     },
     {
       "Field": "damageType01",
-      "Name": "ダメージ属性1",
-      "Description": ""
+      "Name": "Damage Attribute: 1",
+      "Description": "Primary damage attribute type used by the attack."
     },
     {
       "Field": "damageType02",
-      "Name": "ダメージ属性2",
-      "Description": ""
+      "Name": "Damage Attribute: 2",
+      "Description": "Secondary damage attribute type used by the attack."
     },
     {
       "Field": "damageType03",
-      "Name": "ダメージ属性3",
-      "Description": ""
+      "Name": "Damage Attribute: 3",
+      "Description": "Tertiary damage attribute type used by the attack."
     },
     {
       "Field": "damageRate",
-      "Name": "ダメージ倍率",
-      "Description": ""
+      "Name": "Final Damage %",
+      "Description": "Multiplier applied to the attack's final damage."
     },
     {
       "Field": "counterDamageRate",
-      "Name": "カウンターダメージ倍率",
-      "Description": ""
+      "Name": "Counter Damage %",
+      "Description": "Damage multiplier applied when hitting a target during a counter state."
     },
     {
       "Field": "staminaDamage",
-      "Name": "スタミナ奪取量",
-      "Description": ""
+      "Name": "Stamina Damage",
+      "Description": "Amount of stamina removed from the target on hit."
     },
     {
       "Field": "durabilityDamage",
-      "Name": "耐久削り値",
-      "Description": ""
+      "Name": "Durability Damage",
+      "Description": "Amount of equipment durability damage inflicted."
     },
     {
       "Field": "knockBackPower",
-      "Name": "ノックバック[m]",
-      "Description": ""
+      "Name": "Knockback Distance [m]",
+      "Description": "Distance the target is pushed back by the attack."
     },
     {
       "Field": "stiff",
-      "Name": "硬直[sec]",
-      "Description": ""
+      "Name": "Stagger Duration [sec]",
+      "Description": "Duration of hitstun or stagger caused by the attack."
     },
     {
       "Field": "hitDummyPolyType",
-      "Name": "発生源タイプ",
-      "Description": ""
+      "Name": "Source Type",
+      "Description": "Type of dummy polygon used as the attack origin."
     },
     {
       "Field": "hitDummyPolyId",
-      "Name": "発生源ダミポリID",
-      "Description": ""
+      "Name": "Source Dummy Poly ID",
+      "Description": "Dummy polygon ID used as the attack origin point."
     },
     {
       "Field": "hitAttackMotionType",
-      "Name": "攻撃属性 モーション",
-      "Description": ""
+      "Name": "Attack Motion Attribute",
+      "Description": "Motion attribute type associated with the attack."
     },
     {
       "Field": "hitModelType",
-      "Name": "形状タイプ",
-      "Description": ""
+      "Name": "Shape Type",
+      "Description": "Shape used for hit detection collision."
     },
     {
       "Field": "radius",
-      "Name": "半径[m]",
-      "Description": ""
+      "Name": "Radius [m]",
+      "Description": "Radius of the attack hitbox."
     },
     {
       "Field": "length",
-      "Name": "長さ[m]",
-      "Description": ""
+      "Name": "Length [m]",
+      "Description": "Length of the attack hitbox."
     },
     {
       "Field": "hitDistance",
-      "Name": "連続HIT設定",
-      "Description": ""
+      "Name": "Continuous Hit Interval",
+      "Description": "Controls repeated hit detection behavior."
     },
     {
       "Field": "downAttackFlag",
-      "Name": "ダウン攻撃フラグ",
-      "Description": ""
+      "Name": "Downed Attack Flag",
+      "Description": "Determines whether the attack can hit downed targets."
     },
     {
       "Field": "onceFlag",
-      "Name": "単体限定フラグ",
-      "Description": ""
+      "Name": "Single Target Flag",
+      "Description": "Restricts the attack to hitting only one target."
     },
     {
       "Field": "hitFlagOwner",
-      "Name": "オーナーヒット許可",
-      "Description": ""
+      "Name": "Allow Owner Hit",
+      "Description": "Determines whether the attack can hit its owner."
     },
     {
       "Field": "hitFlagFriend",
-      "Name": "友軍ヒット許可",
-      "Description": ""
+      "Name": "Allow Friendly Hit",
+      "Description": "Determines whether the attack can hit allies."
     },
     {
       "Field": "hitFlagEnemy",
-      "Name": "敵軍ヒット許可",
-      "Description": ""
+      "Name": "Allow Enemy Hit",
+      "Description": "Determines whether the attack can hit enemies."
     },
     {
       "Field": "hitFlagNeutral",
-      "Name": "中立ヒット許可",
-      "Description": ""
+      "Name": "Allow Neutral Hit",
+      "Description": "Determines whether the attack can hit neutral entities."
     },
     {
       "Field": "hitFlagMap",
-      "Name": "マップヒット許可",
-      "Description": ""
+      "Name": "Allow Map Hit",
+      "Description": "Determines whether the attack can collide with map geometry."
     },
     {
       "Field": "hitFlagObj",
-      "Name": "OBJヒット許可",
-      "Description": ""
+      "Name": "Allow Object Hit",
+      "Description": "Determines whether the attack can collide with objects."
     },
     {
       "Field": "directionType",
-      "Name": "ノックバック方向",
-      "Description": ""
+      "Name": "Knockback Direction",
+      "Description": "Controls the direction targets are pushed when hit."
     },
     {
       "Field": "guardDirectionType",
-      "Name": "ガード判定方向",
-      "Description": ""
+      "Name": "Guard Detection Direction",
+      "Description": "Direction used when determining guard effectiveness."
     },
     {
       "Field": "hitPosType",
-      "Name": "ＨＩＴ上下位置",
-      "Description": ""
+      "Name": "Hit Vertical Position",
+      "Description": "Vertical hit position category used for reaction logic."
     },
     {
       "Field": "hitAngleXZ",
-      "Name": "強制HIT角度\u3000XZ",
-      "Description": ""
+      "Name": "Forced Hit Angle XZ",
+      "Description": "Horizontal angle applied to the hit reaction."
     },
     {
       "Field": "hitAngleY",
-      "Name": "強制HIT角度\u3000Y",
-      "Description": ""
+      "Name": "Forced Hit Angle Y",
+      "Description": "Vertical angle applied to the hit reaction."
     },
     {
       "Field": "isDamageGroupChr",
-      "Name": "キャラのグループ判定",
-      "Description": ""
+      "Name": "Character Group Check",
+      "Description": "Enables damage group checks for characters."
     },
     {
       "Field": "isDamageGroupMap",
-      "Name": "マップのグループ判定",
-      "Description": ""
+      "Name": "Map Group Check",
+      "Description": "Enables damage group checks for map geometry."
     },
     {
       "Field": "isDamageGroupObj",
-      "Name": "OBJのグループ判定",
-      "Description": ""
+      "Name": "Object Group Check",
+      "Description": "Enables damage group checks for objects."
     },
     {
       "Field": "spEffectIdWhenHit",
-      "Name": "ヒット時に発動する特殊効果のID",
-      "Description": ""
+      "Name": "Special Effect ID: On Hit",
+      "Description": "Special effect applied when the attack hits."
     },
     {
       "Field": "spEffectTarget",
-      "Name": "ヒット時に発動する特殊効果の発動対象",
-      "Description": ""
+      "Name": "Special Effect Target",
+      "Description": "Target affected by the special effect triggered on hit."
     },
     {
       "Field": "spEffectTargetRegion",
-      "Name": "特殊効果管理カテゴリ",
-      "Description": ""
+      "Name": "Special Effect Management Category",
+      "Description": "Category used for managing special effect application."
     },
     {
       "Field": "spEffectDuplication",
-      "Name": "特殊効果の重複判定",
-      "Description": ""
+      "Name": "Special Effect Duplication Check",
+      "Description": "Controls whether duplicate special effects can stack."
     },
     {
       "Field": "materialSize",
-      "Name": "サイズ",
-      "Description": ""
+      "Name": "Material Size",
+      "Description": "Size category used for material impact effects."
     },
     {
       "Field": "material",
-      "Name": "材質",
-      "Description": ""
+      "Name": "Material",
+      "Description": "Material type used for impact effects and sounds."
     },
     {
       "Field": "traceSfx",
-      "Name": "軌跡SFX",
-      "Description": ""
+      "Name": "Trail SFX",
+      "Description": "Visual trail effect used by the attack."
     },
     {
       "Field": "traceSfxColor",
-      "Name": "軌跡SFX追従ダミポリ色",
-      "Description": ""
+      "Name": "Trail SFX Dummy Poly Color",
+      "Description": "Color category for the trail effect attachment point."
     },
     {
       "Field": "traceSfxPos",
-      "Name": "軌跡SFX位置",
-      "Description": ""
+      "Name": "Trail SFX Position",
+      "Description": "Position setting for the trail effect."
     },
     {
       "Field": "overKilledBlowPower",
-      "Name": "オーバーキル 吹き飛び初速[m/sec]",
-      "Description": ""
+      "Name": "Overkill Launch Speed [m/sec]",
+      "Description": "Initial launch speed applied when overkilling a target."
     },
     {
       "Field": "movementPowerType",
-      "Name": "運動量",
-      "Description": ""
+      "Name": "Movement Power",
+      "Description": "Movement power parameter type used for knockback calculations."
     },
     {
       "Field": "attackTypeRateType",
-      "Name": "攻撃タイプ倍率",
-      "Description": ""
+      "Name": "Attack Type %",
+      "Description": "Multiplier category applied based on attack type."
     },
     {
       "Field": "styleRateType",
-      "Name": "持ち方倍率",
-      "Description": ""
+      "Name": "Stance %",
+      "Description": "Multiplier category applied based on weapon handling style."
     },
     {
       "Field": "eventDamage",
-      "Name": "イベントダメージ",
-      "Description": ""
+      "Name": "Event Damage",
+      "Description": "Determines whether the damage is treated as event-related."
     },
     {
       "Field": "flipHitDummyPolyType",
-      "Name": "弾きＨＩＴ 発生源タイプ",
-      "Description": ""
+      "Name": "Deflection Hit Source Type",
+      "Description": "Dummy polygon type used for deflection hit calculations."
     },
     {
       "Field": "flipHitDummyPolyId",
-      "Name": "弾きＨＩＴ 発生源ダミポリID",
-      "Description": ""
+      "Name": "Deflection Hit Dummy Poly ID",
+      "Description": "Dummy polygon ID used for deflection hit calculations."
     },
     {
       "Field": "flipHitModelType",
-      "Name": "弾きＨＩＴ 形状タイプ",
-      "Description": ""
+      "Name": "Deflection Hit Shape Type",
+      "Description": "Collision shape type used for deflection hit detection."
     },
     {
       "Field": "damagOverwrite",
-      "Name": "ダメージ強制上書き",
-      "Description": ""
+      "Name": "Forced Damage Override",
+      "Description": "Overrides the normal damage reaction behavior."
     },
     {
       "Field": "disallowInvincible",
-      "Name": "無敵無効化フラグ",
-      "Description": ""
+      "Name": "Disable Invincibility Flag",
+      "Description": "Allows the attack to ignore invincibility states."
     },
     {
       "Field": "flipFlagMapFloor",
-      "Name": "マップ弾かれ\u3000床\u3000無効",
-      "Description": ""
+      "Name": "Disable Map Floor Deflection",
+      "Description": "Prevents the attack from being deflected by map floors."
     },
     {
       "Field": "flipFlagMapWall",
-      "Name": "マップ弾かれ\u3000壁\u3000無効",
-      "Description": ""
+      "Name": "Disable Map Wall Deflection",
+      "Description": "Prevents the attack from being deflected by map walls."
     },
     {
       "Field": "flipFlagObj",
-      "Name": "OBJ弾かれ無効",
-      "Description": ""
+      "Name": "Disable Object Deflection",
+      "Description": "Prevents the attack from being deflected by objects."
     },
     {
       "Field": "isDoorCheck",
-      "Name": "扉判定を行う",
-      "Description": ""
+      "Name": "Enable Door Check",
+      "Description": "Determines whether the attack checks for door collisions."
     },
     {
       "Field": "expandSfxDisable",
-      "Name": "SFX拡大 無効",
-      "Description": ""
+      "Name": "Disable SFX Scaling",
+      "Description": "Disables scaling of visual effects with attack size."
     },
     {
       "Field": "dummy5",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "flipHitRadius",
-      "Name": "弾きＨＩＴ 半径[m]",
-      "Description": ""
+      "Name": "Deflection Hit Radius [m]",
+      "Description": "Radius of the deflection hitbox."
     },
     {
       "Field": "flipHitLength",
-      "Name": "弾きＨＩＴ 長さ[m]",
-      "Description": ""
+      "Name": "Deflection Hit Length [m]",
+      "Description": "Length of the deflection hitbox."
     },
     {
       "Field": "grabParamId",
-      "Name": "投げパラメータID",
-      "Description": ""
+      "Name": "Grab Parameter ID",
+      "Description": "Reference ID for grab or throw behavior parameters."
     },
     {
       "Field": "expandSize",
-      "Name": "拡大サイズ[m]",
-      "Description": ""
+      "Name": "Expansion Size [m]",
+      "Description": "Maximum expanded size of the attack hitbox."
     },
     {
       "Field": "expandTime",
-      "Name": "拡大時間[sec]",
-      "Description": ""
+      "Name": "Expansion Time [sec]",
+      "Description": "Time required for the hitbox expansion to complete."
     }
   ]
 }

@@ -2,1206 +2,1206 @@
   "Param": "DAMAGE_EFFECT_MATERIAL_PARAM",
   "Type": "DAMAGE_EFFECT_MATERIAL_PARAM",
   "Name": "DAMAGE_EFFECT_MATERIAL_PARAM",
-  "Description": "",
+  "Description": "Defines visual effects (SFX), effect sizes, and dummy references used when attacks or impacts interact with different material types and surfaces.",
   "Fields": [
     {
       "Field": "bodyEffect01",
-      "Name": "本体：SFX1",
-      "Description": ""
+      "Name": "Body: SFX 1",
+      "Description": "Primary visual effect ID used for normal body material interactions."
     },
     {
       "Field": "bodyEffect02",
-      "Name": "本体：SFX2",
-      "Description": ""
+      "Name": "Body: SFX 2",
+      "Description": "Secondary visual effect ID used for normal body material interactions."
     },
     {
       "Field": "bodySize01",
-      "Name": "本体：サイズ1",
-      "Description": ""
+      "Name": "Body: Size 1",
+      "Description": "Primary size or scale parameter for body material effects."
     },
     {
       "Field": "bodySize02",
-      "Name": "本体：サイズ2",
-      "Description": ""
+      "Name": "Body: Size 2",
+      "Description": "Secondary size or scale parameter for body material effects."
     },
     {
       "Field": "bodyDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "petrifiedBossBodyEffect01",
-      "Name": "石化ボス本体：SFX1",
-      "Description": ""
+      "Name": "Petrified Boss Body: SFX 1",
+      "Description": "Primary visual effect ID used for body material interactions."
     },
     {
       "Field": "petrifiedBossBodyEffect02",
-      "Name": "石化ボス本体：SFX2",
-      "Description": ""
+      "Name": "Petrified Boss Body: SFX 2",
+      "Description": "Secondary visual effect ID used for body material interactions."
     },
     {
       "Field": "petrifiedBossBodySize01",
-      "Name": "石化ボス本体：サイズ1",
-      "Description": ""
+      "Name": "Petrified Boss Body: Size 1",
+      "Description": "Primary size or scale parameter for body material effects."
     },
     {
       "Field": "petrifiedBossBodySize02",
-      "Name": "石化ボス本体：サイズ2",
-      "Description": ""
+      "Name": "Petrified Boss Body: Size 2",
+      "Description": "Secondary size or scale parameter for body material effects."
     },
     {
       "Field": "petrifiedBossBodyDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "noneEffect01",
-      "Name": "なし：SFX1",
-      "Description": ""
+      "Name": "None: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "noneEffect02",
-      "Name": "なし：SFX2",
-      "Description": ""
+      "Name": "None: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "noneSize01",
-      "Name": "なし：サイズ1",
-      "Description": ""
+      "Name": "None: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "noneSize02",
-      "Name": "なし：サイズ2",
-      "Description": ""
+      "Name": "None: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "noneDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "metalEffect01",
-      "Name": "鉄：SFX1",
-      "Description": ""
+      "Name": "Metal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "metalEffect02",
-      "Name": "鉄：SFX2",
-      "Description": ""
+      "Name": "Metal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "metalSize01",
-      "Name": "鉄：サイズ1",
-      "Description": ""
+      "Name": "Metal: Body: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "metalSize02",
-      "Name": "鉄：サイズ2",
-      "Description": ""
+      "Name": "Metal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "metalDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "heavymetalEffect01",
-      "Name": "重鉄：SFX1",
-      "Description": ""
+      "Name": "Heavy Metal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "heavymetalEffect02",
-      "Name": "重鉄：SFX2",
-      "Description": ""
+      "Name": "Heavy Metal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "heavymetalSize01",
-      "Name": "重鉄：サイズ1",
-      "Description": ""
+      "Name": "Heavy Metal: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "heavymetalSize02",
-      "Name": "重鉄：サイズ2",
-      "Description": ""
+      "Name": "Heavy Metal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "heavymetalDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "woodEffect01",
-      "Name": "木：SFX1",
-      "Description": ""
+      "Name": "Wood: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "woodEffect02",
-      "Name": "木：SFX2",
-      "Description": ""
+      "Name": "Wood: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "woodSize01",
-      "Name": "木：サイズ1",
-      "Description": ""
+      "Name": "Wood: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "woodSize02",
-      "Name": "木：サイズ2",
-      "Description": ""
+      "Name": "Wood: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "woodDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "waterEffect01",
-      "Name": "水：SFX1",
-      "Description": ""
+      "Name": "Water: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "waterEffect02",
-      "Name": "水：SFX2",
-      "Description": ""
+      "Name": "Water: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "waterSize01",
-      "Name": "水：サイズ1",
-      "Description": ""
+      "Name": "Water: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "waterSize02",
-      "Name": "水：サイズ2",
-      "Description": ""
+      "Name": "Water: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "waterDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "swampEffect01",
-      "Name": "沼：SFX1",
-      "Description": ""
+      "Name": "Swamp: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "swampEffect02",
-      "Name": "沼：SFX2",
-      "Description": ""
+      "Name": "Swamp: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "swampSize01",
-      "Name": "沼：サイズ1",
-      "Description": ""
+      "Name": "Swamp: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "swampSize02",
-      "Name": "沼：サイズ2",
-      "Description": ""
+      "Name": "Swamp: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "swampDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "lumberEffect01",
-      "Name": "木材：SFX1",
-      "Description": ""
+      "Name": "Lumber: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "lumberEffect02",
-      "Name": "木材：SFX2",
-      "Description": ""
+      "Name": "Lumber: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "lumberSize01",
-      "Name": "木材：サイズ1",
-      "Description": ""
+      "Name": "Lumber: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "lumberSize02",
-      "Name": "木材：サイズ2",
-      "Description": ""
+      "Name": "Lumber: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "lumberDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "meatEffect01",
-      "Name": "生者肉：SFX1",
-      "Description": ""
+      "Name": "Living Flesh: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "meatEffect02",
-      "Name": "生者肉：SFX2",
-      "Description": ""
+      "Name": "Living Flesh: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "meatSize01",
-      "Name": "生者肉：サイズ1",
-      "Description": ""
+      "Name": "Living Flesh: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "meatSize02",
-      "Name": "生者肉：サイズ2",
-      "Description": ""
+      "Name": "Living Flesh: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "meatDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "deadmeatEffect01",
-      "Name": "亡者肉：SFX1",
-      "Description": ""
+      "Name": "Dead Flesh: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "deadmeatEffect02",
-      "Name": "亡者肉：SFX2",
-      "Description": ""
+      "Name": "Dead Flesh: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "deadmeatSize01",
-      "Name": "亡者肉：サイズ1",
-      "Description": ""
+      "Name": "Dead Flesh: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "deadmeatSize02",
-      "Name": "亡者肉：サイズ2",
-      "Description": ""
+      "Name": "Dead Flesh: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "deadmeatDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "insectEffect01",
-      "Name": "虫：SFX1",
-      "Description": ""
+      "Name": "Insect: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "insectEffect02",
-      "Name": "虫：SFX2",
-      "Description": ""
+      "Name": "Insect: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "insectSize01",
-      "Name": "虫：サイズ1",
-      "Description": ""
+      "Name": "Insect: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "insectSize02",
-      "Name": "虫：サイズ2",
-      "Description": ""
+      "Name": "Insect: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "insectDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "giantEffect01",
-      "Name": "巨人：SFX1",
-      "Description": ""
+      "Name": "Giant Skin: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "giantEffect02",
-      "Name": "巨人：SFX2",
-      "Description": ""
+      "Name": "Giant Skin: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "giantSize01",
-      "Name": "巨人：サイズ1",
-      "Description": ""
+      "Name": "Giant Skin: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "giantSize02",
-      "Name": "巨人：サイズ2",
-      "Description": ""
+      "Name": "Giant Skin: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "giantDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "boneEffect01",
-      "Name": "骨：SFX1",
-      "Description": ""
+      "Name": "Bone: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "boneEffect02",
-      "Name": "骨：SFX2",
-      "Description": ""
+      "Name": "Bone: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "boneSize01",
-      "Name": "骨：サイズ1",
-      "Description": ""
+      "Name": "Bone: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "boneSize02",
-      "Name": "骨：サイズ2",
-      "Description": ""
+      "Name": "Bone: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "boneDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "copperEffect01",
-      "Name": "銅：SFX1",
-      "Description": ""
+      "Name": "Copper: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "copperEffect02",
-      "Name": "銅：SFX2",
-      "Description": ""
+      "Name": "Copper: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "copperSize01",
-      "Name": "銅：サイズ1",
-      "Description": ""
+      "Name": "Copper: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "copperSize02",
-      "Name": "銅：サイズ2",
-      "Description": ""
+      "Name": "Copper: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "copperDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "energyEffect01",
-      "Name": "エネルギー：SFX1",
-      "Description": ""
+      "Name": "Energy: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "energyEffect02",
-      "Name": "エネルギー：SFX2",
-      "Description": ""
+      "Name": "Energy: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "energySize01",
-      "Name": "エネルギー：サイズ1",
-      "Description": ""
+      "Name": "Energy: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "energySize02",
-      "Name": "エネルギー：サイズ2",
-      "Description": ""
+      "Name": "Energy: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "energyDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "fireEffect01",
-      "Name": "炎：SFX1",
-      "Description": ""
+      "Name": "Fire: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "fireEffect02",
-      "Name": "炎：SFX2",
-      "Description": ""
+      "Name": "Fire: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "fireSize01",
-      "Name": "炎：サイズ1",
-      "Description": ""
+      "Name": "Fire: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "fireSize02",
-      "Name": "炎：サイズ2",
-      "Description": ""
+      "Name": "Fire: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "fireDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "thunderEffect01",
-      "Name": "雷：SFX1",
-      "Description": ""
+      "Name": "Lightning: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "thunderEffect02",
-      "Name": "雷：SFX2",
-      "Description": ""
+      "Name": "Lightning: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "thunderSize01",
-      "Name": "雷：サイズ1",
-      "Description": ""
+      "Name": "Lightning: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "thunderSize02",
-      "Name": "雷：サイズ2",
-      "Description": ""
+      "Name": "Lightning: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "thunderDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "darkEffect01",
-      "Name": "闇：SFX1",
-      "Description": ""
+      "Name": "Dark: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "darkEffect02",
-      "Name": "闇：SFX2",
-      "Description": ""
+      "Name": "Dark: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "darkSize01",
-      "Name": "闇：サイズ1",
-      "Description": ""
+      "Name": "Dark: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "darkSize02",
-      "Name": "闇：サイズ2",
-      "Description": ""
+      "Name": "Dark: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "darkDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "magicEffect01",
-      "Name": "魔力：SFX1",
-      "Description": ""
+      "Name": "Magic: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "magicEffect02",
-      "Name": "魔力：SFX2",
-      "Description": ""
+      "Name": "Magic: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "magicSize01",
-      "Name": "魔力：サイズ1",
-      "Description": ""
+      "Name": "Magic: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "magicSize02",
-      "Name": "魔力：サイズ2",
-      "Description": ""
+      "Name": "Magic: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "magicDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "stoneEffect01",
-      "Name": "石：SFX1",
-      "Description": ""
+      "Name": "Stone: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneEffect02",
-      "Name": "石：SFX2",
-      "Description": ""
+      "Name": "Stone: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneSize01",
-      "Name": "石：サイズ1",
-      "Description": ""
+      "Name": "Stone: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "stoneSize02",
-      "Name": "石：サイズ2",
-      "Description": ""
+      "Name": "Stone: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "stoneDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "dirtEffect01",
-      "Name": "土：SFX1",
-      "Description": ""
+      "Name": "Dirt: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "dirtEffect02",
-      "Name": "土：SFX2",
-      "Description": ""
+      "Name": "Dirt: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "dirtSize01",
-      "Name": "土：サイズ1",
-      "Description": ""
+      "Name": "Dirt: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "dirtSize02",
-      "Name": "土：サイズ2",
-      "Description": ""
+      "Name": "Dirt: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "dirtDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "carpetEffect01",
-      "Name": "カーペット：SFX1",
-      "Description": ""
+      "Name": "Carpet: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "carpetEffect02",
-      "Name": "カーペット：SFX2",
-      "Description": ""
+      "Name": "Carpet: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "carpetSize01",
-      "Name": "カーペット：サイズ1",
-      "Description": ""
+      "Name": "Carpet: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "carpetSize02",
-      "Name": "カーペット：サイズ2",
-      "Description": ""
+      "Name": "Carpet: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "carpetDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "grassEffect01",
-      "Name": "草：SFX1",
-      "Description": ""
+      "Name": "Grass: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "grassEffect02",
-      "Name": "草：SFX2",
-      "Description": ""
+      "Name": "Grass: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "grassSize01",
-      "Name": "草：サイズ1",
-      "Description": ""
+      "Name": "Grass: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "grassSize02",
-      "Name": "草：サイズ2",
-      "Description": ""
+      "Name": "Grass: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "grassDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "gravelEffect01",
-      "Name": "砂利：SFX1",
-      "Description": ""
+      "Name": "Gravel: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "gravelEffect02",
-      "Name": "砂利：SFX2",
-      "Description": ""
+      "Name": "Gravel: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "gravelSize01",
-      "Name": "砂利：サイズ1",
-      "Description": ""
+      "Name": "Gravel: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "gravelSize02",
-      "Name": "砂利：サイズ2",
-      "Description": ""
+      "Name": "Gravel: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "gravelDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "clothEffect01",
-      "Name": "布：SFX1",
-      "Description": ""
+      "Name": "Cloth: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "clothEffect02",
-      "Name": "布：SFX2",
-      "Description": ""
+      "Name": "Cloth: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "clothSize01",
-      "Name": "布：サイズ1",
-      "Description": ""
+      "Name": "Cloth: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "clothSize02",
-      "Name": "布：サイズ2",
-      "Description": ""
+      "Name": "Cloth: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "clothDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "sandEffect01",
-      "Name": "砂：SFX1",
-      "Description": ""
+      "Name": "Sand: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "sandEffect02",
-      "Name": "砂：SFX2",
-      "Description": ""
+      "Name": "Sand: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "sandSize01",
-      "Name": "砂：サイズ1",
-      "Description": ""
+      "Name": "Sand: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "sandSize02",
-      "Name": "砂：サイズ2",
-      "Description": ""
+      "Name": "Sand: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "sandDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "ashEffect01",
-      "Name": "灰：SFX1",
-      "Description": ""
+      "Name": "Ash: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "ashEffect02",
-      "Name": "灰：SFX2",
-      "Description": ""
+      "Name": "Ash: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "ashSize01",
-      "Name": "灰：サイズ1",
-      "Description": ""
+      "Name": "Ash: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "ashSize02",
-      "Name": "灰：サイズ2",
-      "Description": ""
+      "Name": "Ash: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "ashDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "poisonswampEffect01",
-      "Name": "毒沼：SFX1",
-      "Description": ""
+      "Name": "Poison Swamp: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "poisonswampEffect02",
-      "Name": "毒沼：SFX2",
-      "Description": ""
+      "Name": "Poison Swamp: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "poisonswampSize01",
-      "Name": "毒沼：サイズ1",
-      "Description": ""
+      "Name": "Poison Swamp: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "poisonswampSize02",
-      "Name": "毒沼：サイズ2",
-      "Description": ""
+      "Name": "Poison Swamp: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "poisonswampDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "oilEffect01",
-      "Name": "油：SFX1",
-      "Description": ""
+      "Name": "Oil: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "oilEffect02",
-      "Name": "油：SFX2",
-      "Description": ""
+      "Name": "Oil: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "oilSize01",
-      "Name": "油：サイズ1",
-      "Description": ""
+      "Name": "Oil: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "oilSize02",
-      "Name": "油：サイズ2",
-      "Description": ""
+      "Name": "Oil: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "oilDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "coaltarEffect01",
-      "Name": "コールタール：SFX1",
-      "Description": ""
+      "Name": "Coal Tar: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "coaltarEffect02",
-      "Name": "コールタール：SFX2",
-      "Description": ""
+      "Name": "Coal Tar: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "coaltarSize01",
-      "Name": "コールタール：サイズ1",
-      "Description": ""
+      "Name": "Coal Tar: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "coaltarSize02",
-      "Name": "コールタール：サイズ2",
-      "Description": ""
+      "Name": "Coal Tar: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "coaltarDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "lavaEffect01",
-      "Name": "溶岩：SFX1",
-      "Description": ""
+      "Name": "Lava: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "lavaEffect02",
-      "Name": "溶岩：SFX2",
-      "Description": ""
+      "Name": "Lava: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "lavaSize01",
-      "Name": "溶岩：サイズ1",
-      "Description": ""
+      "Name": "Lava: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "lavaSize02",
-      "Name": "溶岩：サイズ2",
-      "Description": ""
+      "Name": "Lava: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "lavaDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "stringEffect01",
-      "Name": "蜘蛛の糸：SFX1",
-      "Description": ""
+      "Name": "Spider Web: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "stringEffect02",
-      "Name": "蜘蛛の糸：SFX2",
-      "Description": ""
+      "Name": "Spider Web: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "stringSize01",
-      "Name": "蜘蛛の糸：サイズ1",
-      "Description": ""
+      "Name": "Spider Web: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "stringSize02",
-      "Name": "蜘蛛の糸：サイズ2",
-      "Description": ""
+      "Name": "Spider Web: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "stringDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "sulfurcrystalEffect01",
-      "Name": "硫黄結晶：SFX1",
-      "Description": ""
+      "Name": "Sulfur Crystal: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "sulfurcrystalEffect02",
-      "Name": "硫黄結晶：SFX2",
-      "Description": ""
+      "Name": "Sulfur Crystal: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "sulfurcrystalSize01",
-      "Name": "硫黄結晶：サイズ1",
-      "Description": ""
+      "Name": "Sulfur Crystal: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "sulfurcrystalSize02",
-      "Name": "硫黄結晶：サイズ2",
-      "Description": ""
+      "Name": "Sulfur Crystal: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "sulfurcrystalDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "soulEffect01",
-      "Name": "ソウル：SFX1",
-      "Description": ""
+      "Name": "Soul: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "soulEffect02",
-      "Name": "ソウル：SFX2",
-      "Description": ""
+      "Name": "Soul: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "soulSize01",
-      "Name": "ソウル：サイズ1",
-      "Description": ""
+      "Name": "Soul: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "soulSize02",
-      "Name": "ソウル：サイズ2",
-      "Description": ""
+      "Name": "Soul: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "soulDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "frogEffect01",
-      "Name": "美声カエル：SFX1",
-      "Description": ""
+      "Name": "Frog: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "frogEffect02",
-      "Name": "美声カエル：SFX2",
-      "Description": ""
+      "Name": "Frog: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "frogSize01",
-      "Name": "美声カエル：サイズ1",
-      "Description": ""
+      "Name": "Frog: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "frogSize02",
-      "Name": "美声カエル：サイズ2",
-      "Description": ""
+      "Name": "Frog: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "frogDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "stoneWaterEffect01",
-      "Name": "石水：SFX1",
-      "Description": ""
+      "Name": "Stone Water: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneWaterEffect02",
-      "Name": "石水：SFX2",
-      "Description": ""
+      "Name": "Stone Water: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneWaterSize01",
-      "Name": "石水：サイズ1",
-      "Description": ""
+      "Name": "Stone Water: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "stoneWaterSize02",
-      "Name": "石水：サイズ2",
-      "Description": ""
+      "Name": "Stone Water: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "stoneWaterDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "stoneEnergyEffect01",
-      "Name": "石エネルギー：SFX1",
-      "Description": ""
+      "Name": "Stone Energy: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneEnergyEffect02",
-      "Name": "石エネルギー：SFX2",
-      "Description": ""
+      "Name": "Stone Energy: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "stoneEnergySize01",
-      "Name": "石エネルギー：サイズ1",
-      "Description": ""
+      "Name": "Stone Energy: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "stoneEnergySize02",
-      "Name": "石エネルギー：サイズ2",
-      "Description": ""
+      "Name": "Stone Energy: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "stoneEnergyDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "coverEffect01",
-      "Name": "肩代わり：SFX1",
-      "Description": ""
+      "Name": "Substitute: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "coverEffect02",
-      "Name": "肩代わり：SFX2",
-      "Description": ""
+      "Name": "Substitute: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "coverSize01",
-      "Name": "肩代わり：サイズ1",
-      "Description": ""
+      "Name": "Substitute: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "coverSize02",
-      "Name": "肩代わり：サイズ2",
-      "Description": ""
+      "Name": "Substitute: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "coverDummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat0Effect01",
-      "Name": "肩代わり：SFX1",
-      "Description": ""
+      "Name": "Unknown 0: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat0Effect02",
-      "Name": "肩代わり：SFX2",
-      "Description": ""
+      "Name": "Unknown 0: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat0Size01",
-      "Name": "肩代わり：サイズ1",
-      "Description": ""
+      "Name": "Unknown 0: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat0Size02",
-      "Name": "肩代わり：サイズ2",
-      "Description": ""
+      "Name": "Unknown 0: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat0Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat1Effect01",
-      "Name": "肩代わり：SFX1 [Mat1]",
-      "Description": ""
+      "Name": "Unknown 1: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat1Effect02",
-      "Name": "肩代わり：SFX2 [Mat1]",
-      "Description": ""
+      "Name": "Unknown 1: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat1Size01",
-      "Name": "肩代わり：サイズ1 [Mat1]",
-      "Description": ""
+      "Name": "Unknown 1: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat1Size02",
-      "Name": "肩代わり：サイズ2 [Mat1]",
-      "Description": ""
+      "Name": "Unknown 1: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat1Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat2Effect01",
-      "Name": "肩代わり：SFX1 [Mat2]",
-      "Description": ""
+      "Name": "Unknown 2: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat2Effect02",
-      "Name": "肩代わり：SFX2 [Mat2]",
-      "Description": ""
+      "Name": "Unknown 2: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat2Size01",
-      "Name": "肩代わり：サイズ1 [Mat2]",
-      "Description": ""
+      "Name": "Unknown 2: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat2Size02",
-      "Name": "肩代わり：サイズ2 [Mat2]",
-      "Description": ""
+      "Name": "Unknown 2: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat2Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat3Effect01",
-      "Name": "肩代わり：SFX1 [Mat3]",
-      "Description": ""
+      "Name": "Unknown 3: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat3Effect02",
-      "Name": "肩代わり：SFX2 [Mat3]",
-      "Description": ""
+      "Name": "Unknown 3: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat3Size01",
-      "Name": "肩代わり：サイズ1 [Mat3]",
-      "Description": ""
+      "Name": "Unknown 3: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat3Size02",
-      "Name": "肩代わり：サイズ2 [Mat3]",
-      "Description": ""
+      "Name": "Unknown 3: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat3Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat4Effect01",
-      "Name": "肩代わり：SFX1 [Mat4]",
-      "Description": ""
+      "Name": "Unknown 4: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat4Effect02",
-      "Name": "肩代わり：SFX2 [Mat4]",
-      "Description": ""
+      "Name": "Unknown 4: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat4Size01",
-      "Name": "肩代わり：サイズ1 [Mat4]",
-      "Description": ""
+      "Name": "Unknown 4: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat4Size02",
-      "Name": "肩代わり：サイズ2 [Mat4]",
-      "Description": ""
+      "Name": "Unknown 4: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat4Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat5Effect01",
-      "Name": "肩代わり：SFX1 [Mat5]",
-      "Description": ""
+      "Name": "Unknown 5: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat5Effect02",
-      "Name": "肩代わり：SFX2 [Mat5]",
-      "Description": ""
+      "Name": "Unknown 5: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat5Size01",
-      "Name": "肩代わり：サイズ1 [Mat5]",
-      "Description": ""
+      "Name": "Unknown 5: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat5Size02",
-      "Name": "肩代わり：サイズ2 [Mat5]",
-      "Description": ""
+      "Name": "Unknown 5: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat5Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat6Effect01",
-      "Name": "肩代わり：SFX1 [Mat6]",
-      "Description": ""
+      "Name": "Unknown 6: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat6Effect02",
-      "Name": "肩代わり：SFX2 [Mat6]",
-      "Description": ""
+      "Name": "Unknown 6: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat6Size01",
-      "Name": "肩代わり：サイズ1 [Mat6]",
-      "Description": ""
+      "Name": "Unknown 6: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat6Size02",
-      "Name": "肩代わり：サイズ2 [Mat6]",
-      "Description": ""
+      "Name": "Unknown 6: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat6Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat7Effect01",
-      "Name": "肩代わり：SFX1 [Mat7]",
-      "Description": ""
+      "Name": "Unknown 7: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat7Effect02",
-      "Name": "肩代わり：SFX2 [Mat7]",
-      "Description": ""
+      "Name": "Unknown 7: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat7Size01",
-      "Name": "肩代わり：サイズ1 [Mat7]",
-      "Description": ""
+      "Name": "Unknown 7: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat7Size02",
-      "Name": "肩代わり：サイズ2 [Mat7]",
-      "Description": ""
+      "Name": "Unknown 7: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat7Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "unkMat8Effect01",
-      "Name": "肩代わり：SFX1 [Mat8]",
-      "Description": ""
+      "Name": "Unknown 8: SFX 1",
+      "Description": "Primary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat8Effect02",
-      "Name": "肩代わり：SFX2 [Mat8]",
-      "Description": ""
+      "Name": "Unknown 8: SFX 2",
+      "Description": "Secondary visual effect ID used for material interactions."
     },
     {
       "Field": "unkMat8Size01",
-      "Name": "肩代わり：サイズ1 [Mat8]",
-      "Description": ""
+      "Name": "Unknown 8: Size 1",
+      "Description": "Primary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat8Size02",
-      "Name": "肩代わり：サイズ2 [Mat8]",
-      "Description": ""
+      "Name": "Unknown 8: Size 2",
+      "Description": "Secondary size or scale parameter for material effects."
     },
     {
       "Field": "unkMat8Dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

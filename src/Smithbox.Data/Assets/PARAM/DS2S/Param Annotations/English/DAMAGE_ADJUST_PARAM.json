@@ -2,502 +2,502 @@
   "Param": "DAMAGE_ADJUST_PARAM",
   "Type": "DAMAGE_ADJUST_PARAM",
   "Name": "DAMAGE_ADJUST_PARAM",
-  "Description": "",
+  "Description": "Controls global damage adjustment multipliers for players and enemies, including difficulty scaling, co-op/invasion modifiers, NG+ cycle scaling, attribute damage adjustments, durability modifiers, and covenant effects.",
   "Fields": [
     {
       "Field": "pcFallAtkAdjustLightWeight",
-      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 小",
-      "Description": ""
+      "Name": "Player Fall Attack Weight Adjustment % (Light)",
+      "Description": "Damage multiplier applied to player fall attacks while in a light weight state."
     },
     {
       "Field": "pcFallAtkAdjustMiddleWeight",
-      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 中",
-      "Description": ""
+      "Name": "Player Fall Attack Weight Adjustment % (Medium)",
+      "Description": "Damage multiplier applied to player fall attacks while in a medium weight state."
     },
     {
       "Field": "pcFallAtkAdjustHeavyWeight",
-      "Name": "プレイヤー 落下攻撃 ウェイト補正倍率 大",
-      "Description": ""
+      "Name": "Player Fall Attack Weight Adjustment % (Heavy)",
+      "Description": "Damage multiplier applied to player fall attacks while in a heavy weight state."
     },
     {
       "Field": "pcKillStaminaAdjust",
-      "Name": "プレイヤー スタミナ奪取量調整倍率",
-      "Description": ""
+      "Name": "Player Stamina Damage Adjustment %",
+      "Description": "Adjusts the amount of stamina damage dealt by the player."
     },
     {
       "Field": "pcSpecialMoveKillStaminaAdjust",
-      "Name": "プレイヤー 特殊移動 スタミナ奪取量 調整倍率",
-      "Description": ""
+      "Name": "Player Special Movement Stamina Damage Adjustment %",
+      "Description": "Adjusts stamina damage dealt during special movement attacks."
     },
     {
       "Field": "pcLackOfStatAdjust",
-      "Name": "プレイヤー ステータス不足補正倍率",
-      "Description": ""
+      "Name": "Player Insufficient Stat Adjustment %",
+      "Description": "Multiplier applied when using equipment without meeting stat requirements."
     },
     {
       "Field": "pcFluctuationAdjustMin",
-      "Name": "プレイヤー 揺らぎ補正倍率 最小",
-      "Description": ""
+      "Name": "Player Damage Variance Adjustment % (Minimum)",
+      "Description": "Minimum random damage variance multiplier for player attacks."
     },
     {
       "Field": "pcFluctuationAdjustMax",
-      "Name": "プレイヤー 揺らぎ補正倍率 最大",
-      "Description": ""
+      "Name": "Player Damage Variance Adjustment % (Maximum)",
+      "Description": "Maximum random damage variance multiplier for player attacks."
     },
     {
       "Field": "pcDifficultyAdjustVeryEasy",
-      "Name": "プレイヤー 難易度補正倍率 Very Easy",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Very Easy)",
+      "Description": "Player damage adjustment multiplier used on Very Easy difficulty."
     },
     {
       "Field": "pcDifficultyAdjustEasy",
-      "Name": "プレイヤー 難易度補正倍率 Easy",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Easy)",
+      "Description": "Player damage adjustment multiplier used on Easy difficulty."
     },
     {
       "Field": "pcDifficultyAdjustNormal",
-      "Name": "プレイヤー 難易度補正倍率 Normal",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Normal)",
+      "Description": "Player damage adjustment multiplier used on Normal difficulty."
     },
     {
       "Field": "pcDifficultyAdjustHard",
-      "Name": "プレイヤー 難易度補正倍率 Hard",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Hard)",
+      "Description": "Player damage adjustment multiplier used on Hard difficulty."
     },
     {
       "Field": "pcDifficultyAdjustVeryHard",
-      "Name": "プレイヤー 難易度補正倍率 Very Hard",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Very Hard)",
+      "Description": "Player damage adjustment multiplier used on Very Hard difficulty."
     },
     {
       "Field": "pcDifficultyAdjustHell",
-      "Name": "プレイヤー 難易度補正倍率 Hell",
-      "Description": ""
+      "Name": "Player Difficulty Adjustment % (Hell)",
+      "Description": "Player damage adjustment multiplier used on Hell difficulty."
     },
     {
       "Field": "pcDurabilityRateWeapon",
-      "Name": "プレイヤー 耐久削り値 補正倍率 武器",
-      "Description": ""
+      "Name": "Player Durability Damage % (Weapon)",
+      "Description": "Adjusts durability loss applied to equipped weapons."
     },
     {
       "Field": "pcDurabilityRateHead",
-      "Name": "プレイヤー 耐久削り値 補正倍率 頭防具",
-      "Description": ""
+      "Name": "Player Durability Damage % (Head Armor)",
+      "Description": "Adjusts durability loss applied to head armor."
     },
     {
       "Field": "pcDurabilityRateBody",
-      "Name": "プレイヤー 耐久削り値 補正倍率 胴防具",
-      "Description": ""
+      "Name": "Player Durability Damage % (Body Armor)",
+      "Description": "Adjusts durability loss applied to body armor."
     },
     {
       "Field": "pcDurabilityRateArm",
-      "Name": "プレイヤー 耐久削り値 補正倍率 腕防具",
-      "Description": ""
+      "Name": "Player Durability Damage % (Arm Armor)",
+      "Description": "Adjusts durability loss applied to arm armor."
     },
     {
       "Field": "pcDurabilityRateReg",
-      "Name": "プレイヤー 耐久削り値 補正倍率 足防具",
-      "Description": ""
+      "Name": "Player Durability Damage % (Leg Armor)",
+      "Description": "Adjusts durability loss applied to leg armor."
     },
     {
       "Field": "pcDurabilityRateRing",
-      "Name": "プレイヤー耐久削り値 補正倍率 指輪",
-      "Description": ""
+      "Name": "Player Durability Damage % (Ring)",
+      "Description": "Adjusts durability loss applied to rings."
     },
     {
       "Field": "pcDurabilityRateGuardWeapon",
-      "Name": "プレイヤー 耐久削り値 補正倍率 武器",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Weapon)",
+      "Description": "Adjusts durability loss to weapons while guarding."
     },
     {
       "Field": "pcDurabilityRateGuardHead",
-      "Name": "プレイヤー 耐久削り値 補正倍率 頭防具",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Head Armor)",
+      "Description": "Adjusts durability loss to head armor while guarding."
     },
     {
       "Field": "pcDurabilityRateGuardBody",
-      "Name": "プレイヤー 耐久削り値 補正倍率 胴防具",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Body Armor)",
+      "Description": "Adjusts durability loss to body armor while guarding."
     },
     {
       "Field": "pcDurabilityRateGuardArm",
-      "Name": "プレイヤー 耐久削り値 補正倍率 腕防具",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Arm Armor)",
+      "Description": "Adjusts durability loss to arm armor while guarding."
     },
     {
       "Field": "pcDurabilityRateGuardReg",
-      "Name": "プレイヤー 耐久削り値 補正倍率 足防具",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Leg Armor)",
+      "Description": "Adjusts durability loss to leg armor while guarding."
     },
     {
       "Field": "pcDurabilityRateGuardRing",
-      "Name": "プレイヤー耐久削り値 補正倍率 指輪",
-      "Description": ""
+      "Name": "Player Guard Durability Damage % (Ring)",
+      "Description": "Adjusts durability loss to rings while guarding."
     },
     {
       "Field": "pcCoorpAdjust01",
-      "Name": "プレイヤー 協力プレイ補正倍率1",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 1",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 1."
     },
     {
       "Field": "pcCoorpAdjust02",
-      "Name": "プレイヤー 協力プレイ補正倍率2",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 2",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 2."
     },
     {
       "Field": "pcCoorpAdjust03",
-      "Name": "プレイヤー 協力プレイ補正倍率3",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 3",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 3."
     },
     {
       "Field": "pcCoorpAdjust04",
-      "Name": "プレイヤー 協力プレイ補正倍率4",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 4",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 4."
     },
     {
       "Field": "pcCoorpAdjust05",
-      "Name": "プレイヤー 協力プレイ補正倍率5",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 5",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 5."
     },
     {
       "Field": "pcCoorpAdjust06",
-      "Name": "プレイヤー 協力プレイ補正倍率6",
-      "Description": ""
+      "Name": "Player Co-op Adjustment % 6",
+      "Description": "Player adjustment multiplier used for co-op scaling slot 6."
     },
     {
       "Field": "pcInvasionAdjust01",
-      "Name": "プレイヤー 敵対プレイ補正倍率1",
-      "Description": ""
+      "Name": "Player Invasion Adjustment % 1",
+      "Description": "Player adjustment multiplier used during hostile/invasion multiplayer."
     },
     {
       "Field": "pcInvasionAdjust02",
-      "Name": "プレイヤー 敵対プレイ補正倍率2",
-      "Description": ""
+      "Name": "Player Invasion Adjustment % 2",
+      "Description": "Player adjustment multiplier used during hostile/invasion multiplayer."
     },
     {
       "Field": "pcInvasionAdjust03",
-      "Name": "プレイヤー 敵対プレイ補正倍率3",
-      "Description": ""
+      "Name": "Player Invasion Adjustment % 3",
+      "Description": "Player adjustment multiplier used during hostile/invasion multiplayer."
     },
     {
       "Field": "pcGameCycleAdjust01",
-      "Name": "プレイヤー 周回補正倍率1",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 1",
+      "Description": "Player scaling multiplier for New Game cycle 1."
     },
     {
       "Field": "pcGameCycleAdjust02",
-      "Name": "プレイヤー 周回補正倍率2",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 2",
+      "Description": "Player scaling multiplier for New Game cycle 2."
     },
     {
       "Field": "pcGameCycleAdjust03",
-      "Name": "プレイヤー 周回補正倍率3",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 3",
+      "Description": "Player scaling multiplier for New Game cycle 3."
     },
     {
       "Field": "pcGameCycleAdjust04",
-      "Name": "プレイヤー 周回補正倍率4",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 4",
+      "Description": "Player scaling multiplier for New Game cycle 4."
     },
     {
       "Field": "pcGameCycleAdjust05",
-      "Name": "プレイヤー 周回補正倍率5",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 5",
+      "Description": "Player scaling multiplier for New Game cycle 5."
     },
     {
       "Field": "pcGameCycleAdjust06",
-      "Name": "プレイヤー 周回補正倍率6",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 6",
+      "Description": "Player scaling multiplier for New Game cycle 6."
     },
     {
       "Field": "pcGameCycleAdjust07",
-      "Name": "プレイヤー 周回補正倍率7",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 7",
+      "Description": "Player scaling multiplier for New Game cycle 7."
     },
     {
       "Field": "pcGameCycleAdjust08",
-      "Name": "プレイヤー 周回補正倍率8",
-      "Description": ""
+      "Name": "Player NG Cycle Adjustment % 8",
+      "Description": "Player scaling multiplier for New Game cycle 8."
     },
     {
       "Field": "ecFluctuationAdjustMin",
-      "Name": "エネミー 揺らぎ補正倍率 最小",
-      "Description": ""
+      "Name": "Enemy Damage Variance Adjustment % (Minimum)",
+      "Description": "Minimum random damage variance multiplier for enemy attacks."
     },
     {
       "Field": "ecFluctuationAdjustMax",
-      "Name": "エネミー 揺らぎ補正倍率 最大",
-      "Description": ""
+      "Name": "Enemy Damage Variance Adjustment % (Maximum)",
+      "Description": "Maximum random damage variance multiplier for enemy attacks."
     },
     {
       "Field": "ecDifficultyAdjustVeryEasy",
-      "Name": "エネミー 難易度補正倍率 Very Easy",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Very Easy)",
+      "Description": "Enemy damage adjustment multiplier used on Very Easy difficulty."
     },
     {
       "Field": "ecDifficultyAdjustEasy",
-      "Name": "エネミー 難易度補正倍率 Easy",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Easy)",
+      "Description": "Enemy damage adjustment multiplier used on Easy difficulty."
     },
     {
       "Field": "ecDifficultyAdjustNormal",
-      "Name": "エネミー 難易度補正倍率 Normal",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Normal)",
+      "Description": "Enemy damage adjustment multiplier used on Normal difficulty."
     },
     {
       "Field": "ecDifficultyAdjustHard",
-      "Name": "エネミー 難易度補正倍率 Hard",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Hard)",
+      "Description": "Enemy damage adjustment multiplier used on Hard difficulty."
     },
     {
       "Field": "ecDifficultyAdjustVeryHard",
-      "Name": "エネミー 難易度補正倍率 Very Hard",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Very Hard)",
+      "Description": "Enemy damage adjustment multiplier used on Very Hard difficulty."
     },
     {
       "Field": "ecDifficultyAdjustHell",
-      "Name": "エネミー 難易度補正倍率 Hell",
-      "Description": ""
+      "Name": "Enemy Difficulty Adjustment % (Hell)",
+      "Description": "Enemy damage adjustment multiplier used on Hell difficulty."
     },
     {
       "Field": "ecCoorpAdjust01",
-      "Name": "エネミー 協力プレイ補正倍率1",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 1",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer. Likely used for the first co-op player count tier."
     },
     {
       "Field": "ecCoorpAdjust02",
-      "Name": "エネミー 協力プレイ補正倍率2",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 2",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer for the second player count or scaling tier."
     },
     {
       "Field": "ecCoorpAdjust03",
-      "Name": "エネミー 協力プレイ補正倍率3",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 3",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer for the third player count or scaling tier."
     },
     {
       "Field": "ecCoorpAdjust04",
-      "Name": "エネミー 協力プレイ補正倍率4",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 4",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer for the fourth player count or scaling tier."
     },
     {
       "Field": "ecCoorpAdjust05",
-      "Name": "エネミー 協力プレイ補正倍率5",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 5",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer for the fifth player count or scaling tier."
     },
     {
       "Field": "ecCoorpAdjust06",
-      "Name": "エネミー 協力プレイ補正倍率6",
-      "Description": ""
+      "Name": "Enemy Co-op Play Adjustment % 6",
+      "Description": "Enemy scaling multiplier applied during cooperative multiplayer for the sixth player count or scaling tier."
     },
     {
       "Field": "ecInvasionAdjust01",
-      "Name": "エネミー 敵対プレイ補正倍率1",
-      "Description": ""
+      "Name": "Enemy Invasion Adjustment % 1",
+      "Description": "Enemy scaling multiplier applied during hostile multiplayer or invasion scenarios. Likely used for the first invasion scaling tier."
     },
     {
       "Field": "ecInvasionAdjust02",
-      "Name": "エネミー 敵対プレイ補正倍率2",
-      "Description": ""
+      "Name": "Enemy Invasion Adjustment % 2",
+      "Description": "Enemy scaling multiplier applied during hostile multiplayer or invasion scenarios for the second scaling tier."
     },
     {
       "Field": "ecInvasionAdjust03",
-      "Name": "エネミー 敵対プレイ補正倍率3",
-      "Description": ""
+      "Name": "Enemy Invasion Adjustment % 3",
+      "Description": "Enemy scaling multiplier applied during hostile multiplayer or invasion scenarios for the third scaling tier."
     },
     {
       "Field": "ecGameCycleAdjust01",
-      "Name": "エネミー 周回補正倍率1",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 1",
+      "Description": "Enemy scaling multiplier applied during the first New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust02",
-      "Name": "エネミー 周回補正倍率2",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 2",
+      "Description": "Enemy scaling multiplier applied during the second New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust03",
-      "Name": "エネミー 周回補正倍率3",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 3",
+      "Description": "Enemy scaling multiplier applied during the third New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust04",
-      "Name": "エネミー 周回補正倍率4",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 4",
+      "Description": "Enemy scaling multiplier applied during the fourth New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust05",
-      "Name": "エネミー 周回補正倍率5",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 5",
+      "Description": "Enemy scaling multiplier applied during the fifth New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust06",
-      "Name": "エネミー 周回補正倍率6",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 6",
+      "Description": "Enemy scaling multiplier applied during the sixth New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust07",
-      "Name": "エネミー 周回補正倍率7",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 7",
+      "Description": "Enemy scaling multiplier applied during the seventh New Game Plus cycle."
     },
     {
       "Field": "ecGameCycleAdjust08",
-      "Name": "エネミー 周回補正倍率8",
-      "Description": ""
+      "Name": "Enemy New Game Cycle Adjustment % 8",
+      "Description": "Enemy scaling multiplier applied during the eighth New Game Plus cycle."
     },
     {
       "Field": "ecNtVerAdjust",
-      "Name": "NT版フィナーレイベント用攻撃力倍率",
-      "Description": ""
+      "Name": "Network Test Finale Event Attack Power %",
+      "Description": "Attack power multiplier used during the network test finale event."
     },
     {
       "Field": "attributeAdjustNormalMul01",
-      "Name": "物理属性調整 乗算倍率 初周",
-      "Description": ""
+      "Name": "Physical Attribute Adjustment %",
+      "Description": "Global damage adjustment multiplier for physical-element attacks."
     },
     {
       "Field": "attributeAdjustMagic",
-      "Name": "魔力属性調整倍率",
-      "Description": ""
+      "Name": "Magic Attribute Adjustment %",
+      "Description": "Global damage adjustment multiplier for magic-element attacks."
     },
     {
       "Field": "attributeAdjustThunder",
-      "Name": "雷属性調整倍率",
-      "Description": ""
+      "Name": "Lightning Attribute Adjustment %",
+      "Description": "Global damage adjustment multiplier for lightning-element attacks."
     },
     {
       "Field": "attributeAdjustFire",
-      "Name": "炎属性調整倍率",
-      "Description": ""
+      "Name": "Fire Attribute Adjustment %",
+      "Description": "Global damage adjustment multiplier for fire-element attacks."
     },
     {
       "Field": "attributeAdjustDark",
-      "Name": "闇属性調整倍率",
-      "Description": ""
+      "Name": "Dark Attribute Adjustment %",
+      "Description": "Global damage adjustment multiplier for dark-element attacks."
     },
     {
       "Field": "attributeAdjustPoison",
-      "Name": "毒属性調整倍率",
-      "Description": ""
+      "Name": "Poison Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for poison buildup or damage."
     },
     {
       "Field": "attributeAdjustBleed",
-      "Name": "出血属性調整倍率",
-      "Description": ""
+      "Name": "Bleed Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for bleed buildup or damage."
     },
     {
       "Field": "attributeAdjustWeaponBreak",
-      "Name": "武器破壊属性調整倍率",
-      "Description": ""
+      "Name": "Weapon Break Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for weapon durability damage effects."
     },
     {
       "Field": "attributeAdjustCurse",
-      "Name": "呪い属性調整倍率",
-      "Description": ""
+      "Name": "Curse Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for curse effects."
     },
     {
       "Field": "attributeAdjustBurning",
-      "Name": "燃焼属性調整倍率",
-      "Description": ""
+      "Name": "Burn Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for burning effects."
     },
     {
       "Field": "attributeAdjustDeadlyPoison",
-      "Name": "猛毒属性調整倍率",
-      "Description": ""
+      "Name": "Deadly Poison Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for deadly poison effects."
     },
     {
       "Field": "attributeAdjustPetrified",
-      "Name": "石化属性調整倍率",
-      "Description": ""
+      "Name": "Petrification Attribute Adjustment %",
+      "Description": "Global adjustment multiplier for petrification effects."
     },
     {
       "Field": "vowStrongAtkAdjustRate",
-      "Name": "誓約[強者] 与ダメージ倍率",
-      "Description": ""
+      "Name": "Covenant of Champions Damage Dealt %",
+      "Description": "Multiplier applied to outgoing damage while the Covenant of Champions is active."
     },
     {
       "Field": "vowStrongDefAdjustRate",
-      "Name": "誓約[強者] 被ダメージ倍率",
-      "Description": ""
+      "Name": "Covenant of Champions Damage Taken %",
+      "Description": "Multiplier applied to incoming damage while the Covenant of Champions is active."
     },
     {
       "Field": "attributeAdjustNormalDiv01",
-      "Name": "物理属性調整\u3000除算倍率 初周",
-      "Description": ""
+      "Name": "Physical Attribute Adjustment Divisor (First Playthrough)",
+      "Description": "Divisor applied to physical damage or attribute scaling during the first playthrough. Higher values reduce the resulting adjusted value."
     },
     {
       "Field": "attributeAdjustNormalMul02",
-      "Name": "物理属性調整 乗算倍率 周回",
-      "Description": ""
+      "Name": "Physical Attribute Adjustment % (NG+ Cycles)",
+      "Description": "Multiplier applied to physical damage or attribute scaling during New Game Plus and subsequent cycles."
     },
     {
       "Field": "attributeAdjustNormalDiv02",
-      "Name": "物理属性調整 除算倍率 周回",
-      "Description": ""
+      "Name": "Physical Attribute Adjustment Divisor (NG+ Cycles)",
+      "Description": "Divisor applied to physical damage or attribute scaling during New Game Plus and subsequent cycles."
     },
     {
       "Field": "pcAttributeAdjustNormalMul",
-      "Name": "Player physical attribute adjustment multiplication factor",
-      "Description": ""
+      "Name": "Player Physical Attribute Adjustment %",
+      "Description": "Multiplier affecting the player's physical damage or physical attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustNormalDiv",
-      "Name": "Player physical attribute adjustment division magnification",
-      "Description": ""
+      "Name": "Player Physical Attribute Adjustment Divisor",
+      "Description": "Divisor affecting the player's physical damage or physical attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustMagic",
-      "Name": "Player magic attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Magic Attribute Adjustment %",
+      "Description": "Multiplier affecting the player's magic damage or magic-related attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustThunder",
-      "Name": "Player thunder attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Lightning Attribute Adjustment %",
+      "Description": "Multiplier affecting the player's lightning damage or lightning-related attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustFire",
-      "Name": "Player fire attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Fire Attribute Adjustment %",
+      "Description": "Multiplier affecting the player's fire damage or fire-related attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustDark",
-      "Name": "Player dark attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Dark Attribute Adjustment %",
+      "Description": "Multiplier affecting the player's dark damage or dark-related attribute scaling."
     },
     {
       "Field": "pcAttributeAdjustPoison",
-      "Name": "Player poison attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Poison Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of poison status effects applied by the player."
     },
     {
       "Field": "pcAttributeAdjustBleed",
-      "Name": "Player bleeding attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Bleed Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of bleed status effects applied by the player."
     },
     {
       "Field": "pcAttributeAdjustWeaponBreak",
-      "Name": "Player weapon break attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Weapon Durability Damage Adjustment %",
+      "Description": "Multiplier affecting the amount of durability damage or weapon break buildup caused by the player."
     },
     {
       "Field": "pcAttributeAdjustCurse",
-      "Name": "Player curse attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Curse Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of curse status effects applied by the player."
     },
     {
       "Field": "pcAttributeAdjustBurning",
-      "Name": "Player burning attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Burning Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of burning status effects applied by the player."
     },
     {
       "Field": "pcAttributeAdjustDeadlyPoison",
-      "Name": "Player deadly poison attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Toxic Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of toxic/deadly poison status effects applied by the player."
     },
     {
       "Field": "pcAttributeAdjustPetrified",
-      "Name": "Player petrified attribute adjustment magnification",
-      "Description": ""
+      "Name": "Player Petrification Attribute Adjustment %",
+      "Description": "Multiplier affecting the buildup or effectiveness of petrification status effects applied by the player."
     }
   ]
 }

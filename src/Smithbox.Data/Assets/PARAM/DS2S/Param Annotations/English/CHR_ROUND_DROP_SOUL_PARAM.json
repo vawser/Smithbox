@@ -6,42 +6,42 @@
   "Fields": [
     {
       "Field": "roundSoulPercent01",
-      "Name": "New Game Cycle 1: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 1: Soul Gain %",
       "Description": "Soul rewards obtained in the first playthrough cycle."
     },
     {
       "Field": "roundSoulPercent02",
-      "Name": "New Game Cycle 2: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 2: Soul Gain %",
       "Description": "Soul rewards obtained in the second playthrough cycle."
     },
     {
       "Field": "roundSoulPercent03",
-      "Name": "New Game Cycle 3: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 3: Soul Gain %",
       "Description": "Soul rewards obtained in the third playthrough cycle."
     },
     {
       "Field": "roundSoulPercent04",
-      "Name": "New Game Cycle 4: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 4: Soul Gain %",
       "Description": "Soul rewards obtained in the fourth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent05",
-      "Name": "New Game Cycle 5: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 5: Soul Gain %",
       "Description": "Soul rewards obtained in the fifth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent06",
-      "Name": "New Game Cycle 6: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 6: Soul Gain %",
       "Description": "Soul rewards obtained in the sixth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent07",
-      "Name": "New Game Cycle 7: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 7: Soul Gain %",
       "Description": "Soul rewards obtained in the seventh playthrough cycle."
     },
     {
       "Field": "roundSoulPercent08",
-      "Name": "New Game Cycle 8: Soul Gain Multiplier [%]",
+      "Name": "New Game Cycle 8: Soul Gain %",
       "Description": "Soul rewards obtained in the eighth playthrough cycle."
     }
   ]

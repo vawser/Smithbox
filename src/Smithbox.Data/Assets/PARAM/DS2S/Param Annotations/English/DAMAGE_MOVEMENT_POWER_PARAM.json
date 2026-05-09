@@ -2,17 +2,17 @@
   "Param": "DAMAGE_MOVEMENT_POWER_PARAM",
   "Type": "DAMAGE_MOVEMENT_POWER_PARAM",
   "Name": "DAMAGE_MOVEMENT_POWER_PARAM",
-  "Description": "",
+  "Description": "Defines movement force values applied by attacks, including additional force used when objects or guards are broken.",
   "Fields": [
     {
       "Field": "power",
-      "Name": "運動量[m/sec]",
-      "Description": ""
+      "Name": "Movement Power [m/sec]",
+      "Description": "Base movement force or knockback velocity applied by the attack."
     },
     {
       "Field": "break_power",
-      "Name": "破壊時の運動量[m/sec]",
-      "Description": ""
+      "Name": "Broken Movement Power [m/sec]",
+      "Description": "Movement force or knockback velocity applied when weapon used for the attack is broken."
     }
   ]
 }

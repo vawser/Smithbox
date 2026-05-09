@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Edge Color" Fields="edgeColorR,edgeColorG,edgeColorB,edgeColorA" PlacedField="edgeColorA" />
+    
+    <ColorEditor Name="Front Color" Fields="frontColorR,frontColorG,frontColorB,frontColorA" PlacedField="frontColorA" />
+    
+    <ColorEditor Name="Diffuse Color" Fields="diffMulColorR,diffMulColorG,diffMulColorB,diffMulColorA" PlacedField="diffMulColorA" />
+    
+    <ColorEditor Name="Specular Color" Fields="specMulColorR,specMulColorG,specMulColorB,specMulColorA" PlacedField="specMulColorA" />
+    
+    <ColorEditor Name="Light Color" Fields="lightColorR,lightColorG,lightColorB,lightColorA" PlacedField="lightColorA" />
+  </ColorEdit>
     <Field>
         <edgeColorR />
         <edgeColorG />

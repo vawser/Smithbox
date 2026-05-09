@@ -1,0 +1,20 @@
+{
+  "Key": "ANIMATION_ID",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "ANIMATION_ID"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None"
+        }
+      ]
+    }
+  ]
+}

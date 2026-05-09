@@ -2,142 +2,142 @@
   "Param": "DAMAGE_OVER_WRITE_PARAM",
   "Type": "DAMAGE_OVER_WRITE_PARAM",
   "Name": "DAMAGE_OVER_WRITE_PARAM",
-  "Description": "",
+  "Description": "Defines override damage reaction types and forced motion states used to replace default hit reactions under specific attack conditions.",
   "Fields": [
     {
       "Field": "damageOverWriteNoMotion",
-      "Name": "ノーモーション",
-      "Description": ""
+      "Name": "No Motion",
+      "Description": "Overrides the damage reaction with no animation or movement response."
     },
     {
       "Field": "damageOverWriteSmall",
-      "Name": "極小",
-      "Description": ""
+      "Name": "Tiny",
+      "Description": "Overrides the damage reaction with a very small hit animation."
     },
     {
       "Field": "damageOverWriteSmallKnockBack",
-      "Name": "小ノックバック",
-      "Description": ""
+      "Name": "Small Knockback",
+      "Description": "Overrides the damage reaction with a small knockback animation."
     },
     {
       "Field": "damageOverWriteLargeKnockBack",
-      "Name": "大ノックバック",
-      "Description": ""
+      "Name": "Large Knockback",
+      "Description": "Overrides the damage reaction with a large knockback animation."
     },
     {
       "Field": "damageOverWriteLarge",
-      "Name": "特大",
-      "Description": ""
+      "Name": "Very Large",
+      "Description": "Overrides the damage reaction with a very large hit animation."
     },
     {
       "Field": "damageOverWriteBlow",
-      "Name": "吹き飛ばし",
-      "Description": ""
+      "Name": "Blow Away",
+      "Description": "Overrides the damage reaction with a launch or blow-away animation."
     },
     {
       "Field": "damageOverWriteUpper",
-      "Name": "打ち上げ",
-      "Description": ""
+      "Name": "Launch Upward",
+      "Description": "Overrides the damage reaction with an upward launch animation."
     },
     {
       "Field": "damageOverWriteBreath",
-      "Name": "ブレス",
-      "Description": ""
+      "Name": "Breath",
+      "Description": "Overrides the damage reaction with a breath-type stagger animation."
     },
     {
       "Field": "damageOverWriteStumble",
-      "Name": "転倒",
-      "Description": ""
+      "Name": "Stumble",
+      "Description": "Overrides the damage reaction with a stumble or trip animation."
     },
     {
       "Field": "damageOverWriteBreakDown",
-      "Name": "崩れ落ち",
-      "Description": ""
+      "Name": "Collapse",
+      "Description": "Overrides the damage reaction with a collapsing animation."
     },
     {
       "Field": "damageOverWriteAerialDown",
-      "Name": "空中転倒",
-      "Description": ""
+      "Name": "Aerial Knockdown",
+      "Description": "Overrides the damage reaction with an airborne knockdown animation."
     },
     {
       "Field": "damageOverWriteDown",
-      "Name": "ダウン",
-      "Description": ""
+      "Name": "Knockdown",
+      "Description": "Overrides the damage reaction with a grounded knockdown animation."
     },
     {
       "Field": "damageOverWriteDownAttack",
-      "Name": "ダウン攻撃",
-      "Description": ""
+      "Name": "Downed Attack",
+      "Description": "Overrides the damage reaction for attacks performed against downed targets."
     },
     {
       "Field": "damageOverWriteLadder",
-      "Name": "はしご",
-      "Description": ""
+      "Name": "Ladder",
+      "Description": "Overrides the damage reaction while the target is on a ladder."
     },
     {
       "Field": "damageOverWriteRope",
-      "Name": "ロープ",
-      "Description": ""
+      "Name": "Rope",
+      "Description": "Overrides the damage reaction while the target is attached to or interacting with a rope."
     },
     {
       "Field": "damageOverWriteParryBreak",
-      "Name": "パリィブレイク",
-      "Description": ""
+      "Name": "Parry Break",
+      "Description": "Overrides the damage reaction with a parry break animation."
     },
     {
       "Field": "damageOverWriteGuardBreak",
-      "Name": "ガードブレイク",
-      "Description": ""
+      "Name": "Guard Break",
+      "Description": "Overrides the damage reaction with a guard break animation."
     },
     {
       "Field": "damageOverWriteStun",
-      "Name": "気絶",
-      "Description": ""
+      "Name": "Stun",
+      "Description": "Overrides the damage reaction with a stun animation."
     },
     {
       "Field": "damageOverWriteBleeding",
-      "Name": "出血",
-      "Description": ""
+      "Name": "Bleeding",
+      "Description": "Overrides the damage reaction with a bleeding animation."
     },
     {
       "Field": "damageOverWriteGrab",
-      "Name": "掴み",
-      "Description": ""
+      "Name": "Grab",
+      "Description": "Overrides the damage reaction with a grabbed or captured animation."
     },
     {
       "Field": "damageOverWriteHeadShot",
-      "Name": "ヘッドショット",
-      "Description": ""
+      "Name": "Headshot",
+      "Description": "Overrides the damage reaction with a headshot-specific animation."
     },
     {
       "Field": "damageOverWriteFallSmall",
-      "Name": "落下中小ダメージ",
-      "Description": ""
+      "Name": "Small Falling Damage",
+      "Description": "Overrides the damage reaction with a small falling damage animation."
     },
     {
       "Field": "damageOverWriteFallLarge",
-      "Name": "落下中大ダメージ",
-      "Description": ""
+      "Name": "Large Falling Damage",
+      "Description": "Overrides the damage reaction with a large falling damage animation."
     },
     {
       "Field": "damageOverWriteAerialSmall",
-      "Name": "空中小ダメージ",
-      "Description": ""
+      "Name": "Small Aerial Damage",
+      "Description": "Overrides the damage reaction with a small airborne damage animation."
     },
     {
       "Field": "damageOverWriteAerialLarge",
-      "Name": "空中大ダメージ",
-      "Description": ""
+      "Name": "Large Aerial Damage",
+      "Description": "Overrides the damage reaction with a large airborne damage animation."
     },
     {
       "Field": "damageOverWriteGroundJumpAttack",
-      "Name": "ジャンプ地上衝突",
-      "Description": ""
+      "Name": "Ground Jump Impact",
+      "Description": "Overrides the damage reaction caused by a jumping attack impacting the ground."
     },
     {
       "Field": "damageOverWriteAerialJumpAttack",
-      "Name": "ジャンプ空中衝突",
-      "Description": ""
+      "Name": "Aerial Jump Impact",
+      "Description": "Overrides the damage reaction caused by a midair jumping attack impact."
     }
   ]
 }

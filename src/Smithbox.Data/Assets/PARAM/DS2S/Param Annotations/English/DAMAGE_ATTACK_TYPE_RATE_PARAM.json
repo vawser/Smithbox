@@ -2,17 +2,17 @@
   "Param": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
   "Type": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
   "Name": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
-  "Description": "",
+  "Description": "Defines damage scaling multipliers for specific attack types, including separate scaling applied when a target or object is in a broken or destroyed state.",
   "Fields": [
     {
       "Field": "rate",
-      "Name": "倍率",
-      "Description": ""
+      "Name": "Multiplier",
+      "Description": "Base damage multiplier applied for the associated attack type."
     },
     {
       "Field": "break_rate",
-      "Name": "破壊時倍率",
-      "Description": ""
+      "Name": "Broken State Multiplier",
+      "Description": "Damage multiplier applied when the target, guard, or destructible object is in a broken or destroyed state."
     }
   ]
 }

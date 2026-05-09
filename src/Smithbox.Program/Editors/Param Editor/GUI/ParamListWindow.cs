@@ -409,6 +409,9 @@ public class ParamListWindow
     {
         if (ImGui.BeginPopupContextItem($"{paramKey}"))
         {
+            ImGui.Text($"Param Type: {param.ParamType}");
+            ImGui.Separator();
+
             if (ImGui.Selectable("Copy Name"))
             {
                 PlatformUtils.Instance.SetClipboardText(paramKey);

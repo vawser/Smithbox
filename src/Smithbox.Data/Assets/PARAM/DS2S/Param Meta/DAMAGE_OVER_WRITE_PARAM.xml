@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
     <Field>
-        <damageOverWriteNoMotion />
-        <damageOverWriteSmall />
-        <damageOverWriteSmallKnockBack />
-        <damageOverWriteLargeKnockBack />
-        <damageOverWriteLarge />
-        <damageOverWriteBlow />
-        <damageOverWriteUpper />
-        <damageOverWriteBreath />
-        <damageOverWriteStumble />
-        <damageOverWriteBreakDown />
-        <damageOverWriteAerialDown />
-        <damageOverWriteDown />
-        <damageOverWriteDownAttack />
-        <damageOverWriteLadder />
-        <damageOverWriteRope />
-        <damageOverWriteParryBreak />
-        <damageOverWriteGuardBreak />
-        <damageOverWriteStun />
-        <damageOverWriteBleeding />
-        <damageOverWriteGrab />
-        <damageOverWriteHeadShot />
-        <damageOverWriteFallSmall />
-        <damageOverWriteFallLarge />
-        <damageOverWriteAerialSmall />
-        <damageOverWriteAerialLarge />
-        <damageOverWriteGroundJumpAttack />
-        <damageOverWriteAerialJumpAttack />
+        <damageOverWriteNoMotion Enum="ANIMATION_ID" />
+        <damageOverWriteSmall Enum="ANIMATION_ID" />
+        <damageOverWriteSmallKnockBack Enum="ANIMATION_ID" />
+        <damageOverWriteLargeKnockBack Enum="ANIMATION_ID" />
+        <damageOverWriteLarge Enum="ANIMATION_ID" />
+        <damageOverWriteBlow Enum="ANIMATION_ID" />
+        <damageOverWriteUpper Enum="ANIMATION_ID" />
+        <damageOverWriteBreath Enum="ANIMATION_ID" />
+        <damageOverWriteStumble Enum="ANIMATION_ID" />
+        <damageOverWriteBreakDown Enum="ANIMATION_ID" />
+        <damageOverWriteAerialDown Enum="ANIMATION_ID" />
+        <damageOverWriteDown Enum="ANIMATION_ID" />
+        <damageOverWriteDownAttack Enum="ANIMATION_ID" />
+        <damageOverWriteLadder Enum="ANIMATION_ID" />
+        <damageOverWriteRope Enum="ANIMATION_ID" />
+        <damageOverWriteParryBreak Enum="ANIMATION_ID" />
+        <damageOverWriteGuardBreak Enum="ANIMATION_ID" />
+        <damageOverWriteStun Enum="ANIMATION_ID" />
+        <damageOverWriteBleeding Enum="ANIMATION_ID" />
+        <damageOverWriteGrab Enum="ANIMATION_ID" />
+        <damageOverWriteHeadShot Enum="ANIMATION_ID" />
+        <damageOverWriteFallSmall Enum="ANIMATION_ID" />
+        <damageOverWriteFallLarge Enum="ANIMATION_ID" />
+        <damageOverWriteAerialSmall Enum="ANIMATION_ID" />
+        <damageOverWriteAerialLarge Enum="ANIMATION_ID" />
+        <damageOverWriteGroundJumpAttack Enum="ANIMATION_ID" />
+        <damageOverWriteAerialJumpAttack Enum="ANIMATION_ID" />
     </Field>
 </PARAMMETA>

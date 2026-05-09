@@ -2,81 +2,81 @@
   "Param": "DECAL_PARAM",
   "Type": "DECAL_PARAM",
   "Name": "DECAL_PARAM",
-  "Description": "",
+  "Description": "Defines decal projection properties including size, texture assignment, color tinting, lighting, and behavior rules such as fade and culling.",
   "Fields": [
     {
       "Field": "width",
-      "Name": "X",
-      "Description": ""
+      "Name": "Width (X)",
+      "Description": "Horizontal size of the decal projection along the X axis."
     },
     {
       "Field": "height",
-      "Name": "Y",
-      "Description": ""
+      "Name": "Height (Y)",
+      "Description": "Vertical size of the decal projection along the Y axis."
     },
     {
       "Field": "depth",
-      "Name": "Z",
-      "Description": ""
+      "Name": "Depth (Z)",
+      "Description": "Depth or projection thickness of the decal along the Z axis."
     },
     {
       "Field": "texId",
-      "Name": "テクスチャID",
-      "Description": ""
+      "Name": "Texture ID",
+      "Description": "Primary texture used for the decal."
     },
     {
       "Field": "bumpTexId",
-      "Name": "バンプテクスチャID",
-      "Description": ""
+      "Name": "Normal Map Texture ID",
+      "Description": "Bump/normal map texture used to simulate surface detail."
     },
     {
       "Field": "colorR",
-      "Name": "色R",
-      "Description": ""
+      "Name": "Color: Red",
+      "Description": "Red channel tint applied to the decal."
     },
     {
       "Field": "colorG",
-      "Name": "色G",
-      "Description": ""
+      "Name": "Color: Green",
+      "Description": "Green channel tint applied to the decal."
     },
     {
       "Field": "colorB",
-      "Name": "色B",
-      "Description": ""
+      "Name": "Color: Blue",
+      "Description": "Blue channel tint applied to the decal."
     },
     {
       "Field": "colorA",
-      "Name": "色A",
-      "Description": ""
+      "Name": "Opacity",
+      "Description": "Transparency level of the decal."
     },
     {
       "Field": "invisibleDeleteTime",
-      "Name": "視野外での削除までの時間",
-      "Description": ""
+      "Name": "Off-Screen Delete Time",
+      "Description": "Time in seconds before decal is removed when outside the camera view."
     },
     {
       "Field": "parallaxScale",
-      "Name": "視差マップスケール",
-      "Description": ""
+      "Name": "Parallax Scale",
+      "Description": "Strength of parallax mapping effect applied to the decal."
     },
     {
       "Field": "lightId",
-      "Name": "ライトID",
-      "Description": ""
+      "Name": "Light ID",
+      "Description": "Identifier for lighting influence applied to the decal."
     },
     {
       "Field": "flipType",
-      "Name": "左右フリップ",
-      "Description": ""
+      "Name": "Flip Mode",
+      "Description": "Controls horizontal or vertical flipping of the decal."
     },
     {
       "Field": "rotateType",
-      "Name": "回転",
-      "Description": ""
+      "Name": "Rotation Mode",
+      "Description": "Defines rotation behavior of the decal projection."
     },
     {
       "Field": "aReserved",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -11,16 +11,16 @@
         <physicalByCrudeSoul />
         <physicalByEnchantedSoul />
         <physicalByAbyssSoul />
-        <physicalItemID />
-        <fireItemID />
-        <magicItemID />
-        <thunderItemID />
-        <darkItemID />
-        <poisonItemID />
-        <bleedItemID />
-        <physicalByCrudeItemID />
-        <physicalByEnchantedItemID />
-        <physicalByAbyssItemID />
+        <physicalItemID Refs="ItemParam" />
+        <fireItemID Refs="ItemParam" />
+        <magicItemID Refs="ItemParam" />
+        <thunderItemID Refs="ItemParam" />
+        <darkItemID Refs="ItemParam" />
+        <poisonItemID Refs="ItemParam" />
+        <bleedItemID Refs="ItemParam" />
+        <physicalByCrudeItemID Refs="ItemParam" />
+        <physicalByEnchantedItemID Refs="ItemParam" />
+        <physicalByAbyssItemID Refs="ItemParam" />
         <physicalItemNumber />
         <fireItemNumber />
         <magicItemNumber />

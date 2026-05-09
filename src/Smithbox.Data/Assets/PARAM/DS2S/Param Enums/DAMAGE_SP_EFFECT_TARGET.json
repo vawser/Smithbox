@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The one who was eaten"
+          "Text": "Target"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The one who gave"
+          "Text": "Attacker"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Both"
+          "Text": "Target and Attacker"
         }
       ]
     }

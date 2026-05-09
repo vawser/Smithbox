@@ -2,32 +2,32 @@
   "Param": "DAMAGE_WEAPON_TYPE_PARAM",
   "Type": "DAMAGE_WEAPON_TYPE_PARAM",
   "Name": "DAMAGE_WEAPON_TYPE_PARAM",
-  "Description": "",
+  "Description": "Defines damage multipliers based on target weapon/body material type, adjusting effectiveness depending on physical composition and entity class.",
   "Fields": [
     {
       "Field": "phantomRate",
-      "Name": "霊体",
-      "Description": ""
+      "Name": "Spirit: Damage %",
+      "Description": "Damage multiplier applied against ethereal or phantom entities."
     },
     {
       "Field": "freshRate",
-      "Name": "生・布",
-      "Description": ""
+      "Name": "Flesh: Damage %",
+      "Description": "Damage multiplier applied against soft organic materials such as flesh or cloth."
     },
     {
       "Field": "hardRate",
-      "Name": "やや硬い",
-      "Description": ""
+      "Name": "Hard: Damage %",
+      "Description": "Damage multiplier applied against moderately tough materials."
     },
     {
       "Field": "veryHardRate",
-      "Name": "とても硬い",
-      "Description": ""
+      "Name": "Very Hard: Damage %",
+      "Description": "Damage multiplier applied against highly durable materials such as stone or metal."
     },
     {
       "Field": "giantRate",
-      "Name": "巨人・デーモン",
-      "Description": ""
+      "Name": "Giant: Damage %",
+      "Description": "Damage multiplier applied against large-scale entities such as giants or demonic beings."
     }
   ]
 }

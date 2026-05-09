@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Others"
+          "Text": "Blank"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal status - poison"
+          "Text": "Abnormal Status: Poison"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Auxiliary-Jihad"
+          "Text": "Abnormal Status: Bleed"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - feet"
+          "Text": "Equipment: Leg"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - Arm"
+          "Text": "Equipment: Arm"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - Torso"
+          "Text": "Equipment: Body"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment-Head"
+          "Text": "Equipment: Head"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal status - deadly poison"
+          "Text": "Abnormal Status: Toxic Poison"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - Ring"
+          "Text": "Equipment: Ring"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - left weapon"
+          "Text": "Equipment: Left weapon"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment - right weapon"
+          "Text": "Equipment: Right weapon"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Both legs"
+          "Text": "Both Legs"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal status - wet"
+          "Text": "Abnormal Status: Wet"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Status Abnormality - Spell Seal"
+          "Text": "Abnormal Status: Spell Seal"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not set"
+          "Text": "None"
         }
       ]
     }

@@ -6,202 +6,202 @@
   "Fields": [
     {
       "Field": "round1DamagePercent",
-      "Name": "New Game Cycle 1: Damage Multiplier [%]",
+      "Name": "New Game Cycle 1: Damage %",
       "Description": "Player damage scaling for the first playthrough cycle."
     },
     {
       "Field": "round1StaminaDamagePercent",
-      "Name": "New Game Cycle 1: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 1: Stamina Damage %",
       "Description": "Amount of stamina drained from enemies in the first cycle."
     },
     {
       "Field": "round1StunDamagePercent",
-      "Name": "New Game Cycle 1: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 1: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the first cycle."
     },
     {
       "Field": "round2DamagePercent",
-      "Name": "New Game Cycle 2: Damage Multiplier [%]",
+      "Name": "New Game Cycle 2: Damage %",
       "Description": "Player damage scaling for the second playthrough cycle."
     },
     {
       "Field": "round2StaminaDamagePercent",
-      "Name": "New Game Cycle 2: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 2: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the second cycle."
     },
     {
       "Field": "round2StunDamagePercent",
-      "Name": "New Game Cycle 2: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 2: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the second cycle."
     },
     {
       "Field": "round3DamagePercent",
-      "Name": "New Game Cycle 3: Damage Multiplier [%]",
+      "Name": "New Game Cycle 3: Damage %",
       "Description": "Player damage scaling for the third playthrough cycle."
     },
     {
       "Field": "round3StaminaDamagePercent",
-      "Name": "New Game Cycle 3: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 3: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the third cycle."
     },
     {
       "Field": "round3StunDamagePercent",
-      "Name": "New Game Cycle 3: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 3: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the third cycle."
     },
     {
       "Field": "round4DamagePercent",
-      "Name": "New Game Cycle 4: Damage Multiplier [%]",
+      "Name": "New Game Cycle 4: Damage %",
       "Description": "Player damage scaling for the fourth playthrough cycle."
     },
     {
       "Field": "round4StaminaDamagePercent",
-      "Name": "New Game Cycle 4: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 4: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the fourth cycle."
     },
     {
       "Field": "round4StunDamagePercent",
-      "Name": "New Game Cycle 4: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 4: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the fourth cycle."
     },
     {
       "Field": "round5DamagePercent",
-      "Name": "New Game Cycle 5: Damage Multiplier [%]",
+      "Name": "New Game Cycle 5: Damage %",
       "Description": "Player damage scaling for the fifth playthrough cycle."
     },
     {
       "Field": "round5StaminaDamagePercent",
-      "Name": "New Game Cycle 5: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 5: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the fifth cycle."
     },
     {
       "Field": "round5StunDamagePercent",
-      "Name": "New Game Cycle 5: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 5: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the fifth cycle."
     },
     {
       "Field": "round6DamagePercent",
-      "Name": "New Game Cycle 6: Damage Multiplier [%]",
+      "Name": "New Game Cycle 6: Damage %",
       "Description": "Player damage scaling for the sixth playthrough cycle."
     },
     {
       "Field": "round6StaminaDamagePercent",
-      "Name": "New Game Cycle 6: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 6: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the sixth cycle."
     },
     {
       "Field": "round6StunDamagePercent",
-      "Name": "New Game Cycle 6: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 6: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the sixth cycle."
     },
     {
       "Field": "round7DamagePercent",
-      "Name": "New Game Cycle 7: Damage Multiplier [%]",
+      "Name": "New Game Cycle 7: Damage %",
       "Description": "Player damage scaling for the seventh playthrough cycle."
     },
     {
       "Field": "round7StaminaDamagePercent",
-      "Name": "New Game Cycle 7: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 7: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the seventh cycle."
     },
     {
       "Field": "round7StunDamagePercent",
-      "Name": "New Game Cycle 7: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 7: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the seventh cycle."
     },
     {
       "Field": "round8DamagePercent",
-      "Name": "New Game Cycle 8: Damage Multiplier [%]",
+      "Name": "New Game Cycle 8: Damage %",
       "Description": "Player damage scaling for the eighth playthrough cycle."
     },
     {
       "Field": "round8StaminaDamagePercent",
-      "Name": "New Game Cycle 8: Stamina Damage Multiplier [%]",
+      "Name": "New Game Cycle 8: Stamina Damage %",
       "Description": "Stamina damage dealt to enemies in the eighth cycle."
     },
     {
       "Field": "round8StunDamagePercent",
-      "Name": "New Game Cycle 8: Stun Accumulation Multiplier [%]",
+      "Name": "New Game Cycle 8: Stun Accumulation %",
       "Description": "Stun buildup effectiveness in the eighth cycle."
     },
     {
       "Field": "round1StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 1: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 1: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 1."
     },
     {
       "Field": "round1StunDamageTakenPercent",
-      "Name": "New Game Cycle 1: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 1: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 1."
     },
     {
       "Field": "round2StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 2: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 2: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 2."
     },
     {
       "Field": "round2StunDamageTakenPercent",
-      "Name": "New Game Cycle 2: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 2: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 2."
     },
     {
       "Field": "round3StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 3: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 3: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 3."
     },
     {
       "Field": "round3StunDamageTakenPercent",
-      "Name": "New Game Cycle 3: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 3: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 3."
     },
     {
       "Field": "round4StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 4: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 4: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 4."
     },
     {
       "Field": "round4StunDamageTakenPercent",
-      "Name": "New Game Cycle 4: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 4: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 4."
     },
     {
       "Field": "round5StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 5: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 5: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 5."
     },
     {
       "Field": "round5StunDamageTakenPercent",
-      "Name": "New Game Cycle 5: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 5: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 5."
     },
     {
       "Field": "round6StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 6: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 6: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 6."
     },
     {
       "Field": "round6StunDamageTakenPercent",
-      "Name": "New Game Cycle 6: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 6: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 6."
     },
     {
       "Field": "round7StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 7: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 7: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 7."
     },
     {
       "Field": "round7StunDamageTakenPercent",
-      "Name": "New Game Cycle 7: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 7: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 7."
     },
     {
       "Field": "round8StaminaDamageTakenPercent",
-      "Name": "New Game Cycle 8: Incoming Stamina Damage Multiplier",
+      "Name": "New Game Cycle 8: Incoming Stamina Damage %",
       "Description": "Multiplier for stamina damage received from enemies in cycle 8."
     },
     {
       "Field": "round8StunDamageTakenPercent",
-      "Name": "New Game Cycle 8: Incoming Stun Multiplier",
+      "Name": "New Game Cycle 8: Incoming Stun %",
       "Description": "Multiplier for stun buildup received from enemies in cycle 8."
     }
   ]
