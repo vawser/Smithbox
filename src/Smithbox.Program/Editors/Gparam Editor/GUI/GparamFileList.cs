@@ -182,7 +182,7 @@ public class GparamFileList
                 {
                     DeleteGparamFile(fileEntry);
                 }
-                UIHelper.Tooltip("Will delete this GPARAM.");
+                UIHelper.Tooltip("Will delete this GPARAM from the project.");
             }
 
 

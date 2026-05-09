@@ -1,6 +1,9 @@
 #---------------------
 # TODO 
 #---------------------
+- General
+ - Check backwards compat with keybinds, 2.1.1 usage with newer keybinds store causes CTD.
+
 - Model Editor
  - Mesh visbility/delete not working properly
  

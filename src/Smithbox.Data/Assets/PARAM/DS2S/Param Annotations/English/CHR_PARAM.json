@@ -2,547 +2,547 @@
   "Param": "CHR_PARAM",
   "Type": "CHR_PARAM",
   "Name": "CHR_PARAM",
-  "Description": "",
+  "Description": "Core character definition parameters covering stats, equipment, defense, scaling, status effects, and gameplay rules for NPCs and characters.",
   "Fields": [
     {
       "Field": "modelId",
-      "Name": "モデルID",
-      "Description": ""
+      "Name": "Model ID",
+      "Description": "Identifier for the character model asset."
     },
     {
       "Field": "animId",
-      "Name": "アニメID",
-      "Description": ""
+      "Name": "Animation ID",
+      "Description": "Identifier for the character animation set."
     },
     {
       "Field": "commonId",
-      "Name": "共通ＩＤ",
-      "Description": ""
+      "Name": "Common ID",
+      "Description": "Shared identifier used across multiple character systems."
     },
     {
       "Field": "moveId",
-      "Name": "移動ＩＤ",
-      "Description": ""
+      "Name": "Movement ID",
+      "Description": "Identifier for the movement parameter set used by this character."
     },
     {
       "Field": "npcStatusId",
-      "Name": "NPCステータスＩＤ",
-      "Description": ""
+      "Name": "NPC Status ID",
+      "Description": "Reference to the NPC status configuration entry."
     },
     {
       "Field": "groupType",
-      "Name": "所属設定",
-      "Description": ""
+      "Name": "Group Type",
+      "Description": "Defines the group affiliation of the character."
     },
     {
       "Field": "categoryType",
-      "Name": "キャラクターカテゴリ",
-      "Description": ""
+      "Name": "Character Category",
+      "Description": "Defines the general classification of the character (e.g., enemy, NPC, player-type)."
     },
     {
       "Field": "materialType",
-      "Name": "本体材質",
-      "Description": ""
+      "Name": "Body Material Type",
+      "Description": "Defines the physical material properties of the character model."
     },
     {
       "Field": "visualType",
-      "Name": "見た目",
-      "Description": ""
+      "Name": "Visual Type",
+      "Description": "Defines appearance variation or visual preset."
     },
     {
       "Field": "multiplayParamId",
-      "Name": "マルチプレイ補正ID",
-      "Description": ""
+      "Name": "Multiplayer Scaling Parameter ID",
+      "Description": "Reference to multiplayer balance adjustments for this character."
     },
     {
       "Field": "respawnNum",
-      "Name": "リスポーン数",
-      "Description": ""
+      "Name": "Respawn Count",
+      "Description": "Number of times the character can respawn."
     },
     {
       "Field": "isUndead",
-      "Name": "死亡しない",
-      "Description": ""
+      "Name": "Immortal Flag",
+      "Description": "If enabled, the character cannot die normally."
     },
     {
       "Field": "isRunaway",
-      "Name": "落下死亡時に逃亡する",
-      "Description": ""
+      "Name": "Flee on Fall Death",
+      "Description": "If enabled, the character will flee when death occurs from falling."
     },
     {
       "Field": "hitPoint",
-      "Name": "体力\u30001周目",
-      "Description": ""
+      "Name": "HP (New Game Cycle 1)",
+      "Description": "Base health value for the first playthrough cycle."
     },
     {
       "Field": "staminaPoint",
-      "Name": "スタミナ値",
-      "Description": ""
+      "Name": "Stamina",
+      "Description": "Total stamina capacity."
     },
     {
       "Field": "staminaRecoveryValue",
-      "Name": "秒間スタミナ回復値 [point/s]",
-      "Description": ""
+      "Name": "Stamina Recovery Rate",
+      "Description": "Stamina recovered per second."
     },
     {
       "Field": "staminaLoanMin",
-      "Name": "スタミナ 借金量 最小",
-      "Description": ""
+      "Name": "Stamina Debt (Min)",
+      "Description": "Minimum stamina overdraw limit."
     },
     {
       "Field": "staminaLoanMax",
-      "Name": "スタミナ 借金量 最大",
-      "Description": ""
+      "Name": "Stamina Debt (Max)",
+      "Description": "Maximum stamina overdraw limit."
     },
     {
       "Field": "staminaCostMoveBase",
-      "Name": "スタミナ消費量 ベース値",
-      "Description": ""
+      "Name": "Base Movement Stamina Cost",
+      "Description": "Base stamina cost for movement actions."
     },
     {
       "Field": "deadType",
-      "Name": "死亡タイプ１",
-      "Description": ""
+      "Name": "Death Type 1",
+      "Description": "Primary death behavior classification."
     },
     {
       "Field": "deadType02",
-      "Name": "死亡タイプ２",
-      "Description": ""
+      "Name": "Death Type 2",
+      "Description": "Secondary death behavior classification."
     },
     {
       "Field": "defaultEquipWeapon",
-      "Name": "初期装備",
-      "Description": ""
+      "Name": "Default Weapon",
+      "Description": "Weapon equipped by default on spawn."
     },
     {
       "Field": "equipWeaponAId00",
-      "Name": "所持装備 装備１武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 1 ID",
+      "Description": "First equipped weapon slot."
     },
     {
       "Field": "equipWeaponAId01",
-      "Name": "所持装備 装備２武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 2 ID",
+      "Description": "Second equipped weapon slot."
     },
     {
       "Field": "equipWeaponAId02",
-      "Name": "所持装備 装備３武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 3 ID",
+      "Description": "Third equipped weapon slot."
     },
     {
       "Field": "equipWeaponAId03",
-      "Name": "所持装備 装備４武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 4 ID",
+      "Description": "Fourth equipped weapon slot."
     },
     {
       "Field": "equipWeaponAId04",
-      "Name": "所持装備 装備５武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 5 ID",
+      "Description": "Fifth equipped weapon slot."
     },
     {
       "Field": "equipWeaponAId05",
-      "Name": "所持装備 装備６武器ID",
-      "Description": ""
+      "Name": "Weapon Slot 6 ID",
+      "Description": "Sixth equipped weapon slot."
     },
     {
       "Field": "equipAccessory01",
-      "Name": "装飾品カリングID1",
-      "Description": ""
+      "Name": "Accessory Slot 1 ID",
+      "Description": "First accessory slot."
     },
     {
       "Field": "equipAccessory02",
-      "Name": "装飾品カリングID2",
-      "Description": ""
+      "Name": "Accessory Slot 2 ID",
+      "Description": "Second accessory slot."
     },
     {
       "Field": "equipAccessory03",
-      "Name": "装飾品カリングID3",
-      "Description": ""
+      "Name": "Accessory Slot 3 ID",
+      "Description": "Third accessory slot."
     },
     {
       "Field": "equipAccessory04",
-      "Name": "装飾品カリングID4",
-      "Description": ""
+      "Name": "Accessory Slot 4 ID",
+      "Description": "Fourth accessory slot."
     },
     {
       "Field": "equipAccessory05",
-      "Name": "装飾品カリングID5",
-      "Description": ""
+      "Name": "Accessory Slot 5 ID",
+      "Description": "Fifth accessory slot."
     },
     {
       "Field": "roundDamageCategory",
-      "Name": "周回ダメージ補正カテゴリ",
-      "Description": ""
+      "Name": "NG+ Damage Scaling Category",
+      "Description": "Category used for scaling damage in New Game cycles."
     },
     {
       "Field": "guardPassiveLevelType",
-      "Name": "盾 ガードレベル",
-      "Description": ""
+      "Name": "Shield Guard Level",
+      "Description": "Defines passive guard strength level for shields."
     },
     {
       "Field": "parryType",
-      "Name": "盾 パリィ種類",
-      "Description": ""
+      "Name": "Parry Type",
+      "Description": "Defines the type of parry behavior used by the shield."
     },
     {
       "Field": "spellParrySfxId",
-      "Name": "盾 スペルパリィSFXID",
-      "Description": ""
+      "Name": "Spell Parry SFX ID",
+      "Description": "Sound effect played when parrying spells."
     },
     {
       "Field": "shieldMaterialType",
-      "Name": "盾 盾材質",
-      "Description": ""
+      "Name": "Shield Material Type",
+      "Description": "Defines shield material properties."
     },
     {
       "Field": "shieldReceiveValue",
-      "Name": "盾 受け能力",
-      "Description": ""
+      "Name": "Shield Guard Strength",
+      "Description": "How much physical impact the shield can absorb."
     },
     {
       "Field": "shieldDefenseValue",
-      "Name": "盾 防御力",
-      "Description": ""
+      "Name": "Shield Physical Defense",
+      "Description": "Physical damage reduction from shield."
     },
     {
       "Field": "shieldMagicDefenseValue",
-      "Name": "盾 魔力耐性",
-      "Description": ""
+      "Name": "Shield Magic Resistance",
+      "Description": "Magic damage reduction from shield."
     },
     {
       "Field": "shieldMiracleDefenseValue",
-      "Name": "盾 奇蹟耐性",
-      "Description": ""
+      "Name": "Shield Miracle Resistance",
+      "Description": "Faith/miracle damage resistance."
     },
     {
       "Field": "shieldPyromancyDefenseValue",
-      "Name": "盾 呪術耐性",
-      "Description": ""
+      "Name": "Shield Pyromancy Resistance",
+      "Description": "Fire-based magic resistance."
     },
     {
       "Field": "shieldDarkMagicDefenseValue",
-      "Name": "盾 闇術耐性",
-      "Description": ""
+      "Name": "Shield Dark Resistance",
+      "Description": "Dark magic resistance."
     },
     {
       "Field": "shieldPoisonDefenseValue",
-      "Name": "盾 毒耐性",
-      "Description": ""
+      "Name": "Shield Poison Resistance",
+      "Description": "Resistance to poison buildup."
     },
     {
       "Field": "shieldBleedingDefenseValue",
-      "Name": "盾 出血耐性",
-      "Description": ""
+      "Name": "Shield Bleed Resistance",
+      "Description": "Resistance to bleeding buildup."
     },
     {
       "Field": "shieldDestructionDefenseValue",
-      "Name": "盾 武器破壊耐性",
-      "Description": ""
+      "Name": "Shield Durability Damage Resistance",
+      "Description": "Resistance to equipment durability damage."
     },
     {
       "Field": "shieldCurseDefenseValue",
-      "Name": "盾 呪い耐性",
-      "Description": ""
+      "Name": "Shield Curse Resistance",
+      "Description": "Resistance to curse effects."
     },
     {
       "Field": "armorDefenseValue",
-      "Name": "防具 防御力",
-      "Description": ""
+      "Name": "Armor Physical Defense",
+      "Description": "Physical damage reduction from armor."
     },
     {
       "Field": "armorMagicDefenseValue",
-      "Name": "防具 魔力耐性",
-      "Description": ""
+      "Name": "Armor Magic Resistance",
+      "Description": "Magic damage reduction from armor."
     },
     {
       "Field": "armorMiracleDefenseValue",
-      "Name": "防具 奇蹟耐性",
-      "Description": ""
+      "Name": "Armor Miracle Resistance",
+      "Description": "Faith/miracle resistance from armor."
     },
     {
       "Field": "armorPyromancyDefenseValue",
-      "Name": "防具 呪術耐性",
-      "Description": ""
+      "Name": "Armor Pyromancy Resistance",
+      "Description": "Fire resistance from armor."
     },
     {
       "Field": "armorDarkMagicDefenseValue",
-      "Name": "防具 闇術耐性",
-      "Description": ""
+      "Name": "Armor Dark Resistance",
+      "Description": "Dark magic resistance from armor."
     },
     {
       "Field": "armorPoisonDefenseValue",
-      "Name": "防具 毒耐性",
-      "Description": ""
+      "Name": "Armor Poison Resistance",
+      "Description": "Resistance to poison buildup."
     },
     {
       "Field": "armorBleedingDefenseValue",
-      "Name": "防具 出血耐性",
-      "Description": ""
+      "Name": "Armor Bleed Resistance",
+      "Description": "Resistance to bleed buildup."
     },
     {
       "Field": "armorDestructionDefenseValue",
-      "Name": "防具 武器破壊耐性",
-      "Description": ""
+      "Name": "Armor Durability Damage Resistance",
+      "Description": "Resistance to durability loss."
     },
     {
       "Field": "armorCurseDefenseValue",
-      "Name": "防具 呪い耐性",
-      "Description": ""
+      "Name": "Armor Curse Resistance",
+      "Description": "Resistance to curse effects."
     },
     {
       "Field": "armorMaterialType",
-      "Name": "防具 材質",
-      "Description": ""
+      "Name": "Armor Material Type",
+      "Description": "Defines material properties of armor."
     },
     {
       "Field": "armorToughValue",
-      "Name": "防具 強靱度",
-      "Description": ""
+      "Name": "Armor Poise",
+      "Description": "Resistance to stagger effects."
     },
     {
       "Field": "armorStunBaseValue",
-      "Name": "防具 気絶基本ゲージ",
-      "Description": ""
+      "Name": "Armor Stun Gauge (Base)",
+      "Description": "Base stun buildup threshold."
     },
     {
       "Field": "armorStunRecoveryRate",
-      "Name": "防具 気絶回復速度 [%/sec]",
-      "Description": ""
+      "Name": "Armor Stun Recovery Rate",
+      "Description": "Rate at which stun buildup recovers per second."
     },
     {
       "Field": "dropSoulValue",
-      "Name": "入手ソウル量",
-      "Description": ""
+      "Name": "Soul Reward",
+      "Description": "Amount of souls dropped on defeat."
     },
     {
       "Field": "dropType",
-      "Name": "ドロップ抽選タイプ",
-      "Description": ""
+      "Name": "Drop Type",
+      "Description": "Defines loot drop behavior type."
     },
     {
       "Field": "damageAdjustRate",
-      "Name": "ダメージ倍率",
-      "Description": ""
+      "Name": "Damage Multiplier",
+      "Description": "Global damage scaling multiplier."
     },
     {
       "Field": "damageAdjustRatePlayer",
-      "Name": "ダメージ倍率 プレイヤー",
-      "Description": ""
+      "Name": "Damage Multiplier (Player)",
+      "Description": "Damage scaling against players."
     },
     {
       "Field": "damageAdjustRateEnemy",
-      "Name": "ダメージ倍率\u3000エネミー",
-      "Description": ""
+      "Name": "Damage Multiplier (Enemy)",
+      "Description": "Damage scaling against enemies."
     },
     {
       "Field": "damageAdjustRateNeutral",
-      "Name": "ダメージ倍率\u3000中立",
-      "Description": ""
+      "Name": "Damage Multiplier (Neutral)",
+      "Description": "Damage scaling against neutral targets."
     },
     {
       "Field": "damageAdjustRateHitObj",
-      "Name": "被ダメージ倍率\u3000OBJ",
-      "Description": ""
+      "Name": "Damage Multiplier (Objects)",
+      "Description": "Damage scaling against environmental objects."
     },
     {
       "Field": "residentDamageId1",
-      "Name": "常時ダメージＩＤ１",
-      "Description": ""
+      "Name": "Passive Damage ID 1",
+      "Description": "Constant damage effect ID slot 1."
     },
     {
       "Field": "residentDamageId2",
-      "Name": "常時ダメージＩＤ２",
-      "Description": ""
+      "Name": "Passive Damage ID 2",
+      "Description": "Constant damage effect ID slot 2."
     },
     {
       "Field": "residentDamageId3",
-      "Name": "常時ダメージＩＤ３",
-      "Description": ""
+      "Name": "Passive Damage ID 3",
+      "Description": "Constant damage effect ID slot 3."
     },
     {
       "Field": "stunDisableFlag",
-      "Name": "気絶無効フラグ",
-      "Description": ""
+      "Name": "Stun Immunity Flag",
+      "Description": "If enabled, the character cannot be stunned."
     },
     {
       "Field": "isPartsGuardDamage",
-      "Name": "部位はじき：ダメージ",
-      "Description": ""
+      "Name": "Part Guard: Damage",
+      "Description": "Enables guarding interactions for damage hits."
     },
     {
       "Field": "isPartsGuardBullet",
-      "Name": "部位はじき：バレット",
-      "Description": ""
+      "Name": "Part Guard: Projectiles",
+      "Description": "Enables guarding interactions for bullets/projectiles."
     },
     {
       "Field": "isPartsGuardSpellParry",
-      "Name": "部位はじき：スペルパリィ",
-      "Description": ""
+      "Name": "Part Guard: Spell Parry",
+      "Description": "Enables spell parry interactions on body parts."
     },
     {
       "Field": "stunMaxValue",
-      "Name": "気絶値最大値",
-      "Description": ""
+      "Name": "Stun Threshold",
+      "Description": "Maximum stun buildup before stagger occurs."
     },
     {
       "Field": "stunRecoverValue",
-      "Name": "気絶値回復速度[sec/point]",
-      "Description": ""
+      "Name": "Stun Recovery Speed",
+      "Description": "Time-based recovery rate for stun buildup. In seconds per second."
     },
     {
       "Field": "changeStunMaxValue",
-      "Name": "[変更時]気絶値最大値",
-      "Description": ""
+      "Name": "Modified Stun Threshold",
+      "Description": "Alternative stun threshold under special conditions."
     },
     {
       "Field": "changeStunRecoverValue",
-      "Name": "[変更時]気絶値回復速度[sec/point]",
-      "Description": ""
+      "Name": "Modified Stun Recovery Speed",
+      "Description": "Alternative stun recovery rate under special conditions. In seconds per second."
     },
     {
       "Field": "fadeInTime",
-      "Name": "フェードイン時間[sec]",
-      "Description": ""
+      "Name": "Fade-In Time",
+      "Description": "Time taken for character to visually fade in. In seconds."
     },
     {
       "Field": "generateSfx",
-      "Name": "生成時SFX",
-      "Description": ""
+      "Name": "Spawn SFX",
+      "Description": "Sound effect triggered on character spawn."
     },
     {
       "Field": "partsGuardSpellParryAngle",
-      "Name": "部位はじき：スペルパリィ有効角度",
-      "Description": ""
+      "Name": "Spell Parry Angle Threshold",
+      "Description": "Valid angle window for spell parry detection."
     },
     {
       "Field": "poiseValue",
-      "Name": "強靭度ゲージ",
-      "Description": ""
+      "Name": "Poise Gauge",
+      "Description": "Stagger resistance meter value."
     },
     {
       "Field": "poiseRecoveryValue",
-      "Name": "強靭度回復量[p/s]",
-      "Description": ""
+      "Name": "Poise Recovery Rate",
+      "Description": "Rate at which poise regenerates per second."
     },
     {
       "Field": "changePoiseValue",
-      "Name": "[変更時]強靭度ゲージ",
-      "Description": ""
+      "Name": "Modified Poise Gauge",
+      "Description": "Alternative poise value under special conditions."
     },
     {
       "Field": "changePoiseRecoveryValue",
-      "Name": "[変更時]強靭度回復量[p/s]",
-      "Description": ""
+      "Name": "Modified Poise Recovery Rate",
+      "Description": "Alternative poise recovery rate under special conditions."
     },
     {
       "Field": "overKillRate",
-      "Name": "オーバーキル HP割合",
-      "Description": ""
+      "Name": "Overkill Bonus Threshold",
+      "Description": "HP percentage threshold used for overkill detection."
     },
     {
       "Field": "decLimitTime",
-      "Name": "マルチプレイ制限時間減少量[sec]",
-      "Description": ""
+      "Name": "Multiplayer Time Reduction",
+      "Description": "Amount of time reduced from multiplayer limit."
     },
     {
       "Field": "isDisallowMultiTarget",
-      "Name": "複数ロックオン無効",
-      "Description": ""
+      "Name": "Disable Multi-Lock-On",
+      "Description": "Prevents locking onto multiple targets."
     },
     {
       "Field": "isHollow",
-      "Name": "亡者",
-      "Description": ""
+      "Name": "Hollow State",
+      "Description": "Marks the character as hollow/undead state."
     },
     {
       "Field": "isClothHitMap",
-      "Name": "クロスがマップと当たる",
-      "Description": ""
+      "Name": "Enable Cloth Map Collision",
+      "Description": "Enables cloth simulation collision with environment."
     },
     {
       "Field": "roundDropSoulCategory",
-      "Name": "周回獲得ソウル補正カテゴリ",
-      "Description": ""
+      "Name": "NG+ Soul Scaling Category",
+      "Description": "Category used for scaling soul rewards in NG+ cycles."
     },
     {
       "Field": "itemLotId",
-      "Name": "初週アイテム抽選ID（ホスト）",
-      "Description": ""
+      "Name": "Item Drop Table ID (Host)",
+      "Description": "Loot table used for host player in first playthrough cycle."
     },
     {
       "Field": "itemLotIdForGuest",
-      "Name": "初週アイテム抽選ID（ゲスト）",
-      "Description": ""
+      "Name": "Item Drop Table ID (Guest)",
+      "Description": "Loot table used for guest players in multiplayer."
     },
     {
       "Field": "guardDelay",
-      "Name": "ガード判定遅延時間[sec]",
-      "Description": ""
+      "Name": "Guard Activation Delay",
+      "Description": "Delay before guard becomes active after input."
     },
     {
       "Field": "hitPoint02",
-      "Name": "体力\u30002周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 2)",
+      "Description": "Health value for second playthrough cycle."
     },
     {
       "Field": "hitPoint03",
-      "Name": "体力\u30003周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 3)",
+      "Description": "Health value for third playthrough cycle."
     },
     {
       "Field": "hitPoint04",
-      "Name": "体力\u30004周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 4)",
+      "Description": "Health value for fourth playthrough cycle."
     },
     {
       "Field": "hitPoint05",
-      "Name": "体力\u30005周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 5)",
+      "Description": "Health value for fifth playthrough cycle."
     },
     {
       "Field": "hitPoint06",
-      "Name": "体力\u30006周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 6)",
+      "Description": "Health value for sixth playthrough cycle."
     },
     {
       "Field": "hitPoint07",
-      "Name": "体力\u30007周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 7)",
+      "Description": "Health value for seventh playthrough cycle."
     },
     {
       "Field": "hitPoint08",
-      "Name": "体力\u30008周目",
-      "Description": ""
+      "Name": "HP (NG+ Cycle 8)",
+      "Description": "Health value for eighth playthrough cycle."
     },
     {
       "Field": "nameTextId",
-      "Name": "キャラ名テキストID",
-      "Description": ""
+      "Name": "Character Name Text ID",
+      "Description": "Reference to localized display name text."
     },
     {
       "Field": "bStrongDrop",
-      "Name": "強者ドロップ",
-      "Description": ""
+      "Name": "High-Value Drop Flag",
+      "Description": "Enables rare or high-value item drops."
     },
     {
       "Field": "bThrowableByEnemy",
-      "Name": "敵に投げられるのが可能か",
-      "Description": ""
+      "Name": "Can Be Thrown by Enemy",
+      "Description": "Determines if the character can be grabbed/thrown."
     },
     {
       "Field": "bBulletAllDelete",
-      "Name": "弾全削除",
-      "Description": ""
+      "Name": "Projectile Nullification",
+      "Description": "Removes all incoming projectiles."
     },
     {
       "Field": "padding",
-      "Name": "予約",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Unused parameter slot."
     },
     {
       "Field": "effectID",
-      "Name": "SpEffectID",
-      "Description": ""
+      "Name": "Special Effect ID",
+      "Description": "Reference to applied special effect configuration."
     }
   ]
 }

@@ -2,47 +2,47 @@
   "Param": "CHR_ROUND_DROP_SOUL_PARAM",
   "Type": "CHR_ROUND_DROP_SOUL_PARAM",
   "Name": "CHR_ROUND_DROP_SOUL_PARAM",
-  "Description": "",
+  "Description": "Defines scaling multipliers for soul (currency/experience) rewards obtained across New Game cycles (NG+1 to NG+8).",
   "Fields": [
     {
       "Field": "roundSoulPercent01",
-      "Name": "周回獲得ソウル倍率 1周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 1: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the first playthrough cycle."
     },
     {
       "Field": "roundSoulPercent02",
-      "Name": "周回獲得ソウル倍率 2周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 2: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the second playthrough cycle."
     },
     {
       "Field": "roundSoulPercent03",
-      "Name": "周回獲得ソウル倍率 3周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 3: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the third playthrough cycle."
     },
     {
       "Field": "roundSoulPercent04",
-      "Name": "周回獲得ソウル倍率 4周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 4: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the fourth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent05",
-      "Name": "周回獲得ソウル倍率 5周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 5: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the fifth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent06",
-      "Name": "周回獲得ソウル倍率 6周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 6: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the sixth playthrough cycle."
     },
     {
       "Field": "roundSoulPercent07",
-      "Name": "周回獲得ソウル倍率 7周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 7: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the seventh playthrough cycle."
     },
     {
       "Field": "roundSoulPercent08",
-      "Name": "周回獲得ソウル倍率 8周目 [%]",
-      "Description": ""
+      "Name": "New Game Cycle 8: Soul Gain Multiplier [%]",
+      "Description": "Soul rewards obtained in the eighth playthrough cycle."
     }
   ]
 }

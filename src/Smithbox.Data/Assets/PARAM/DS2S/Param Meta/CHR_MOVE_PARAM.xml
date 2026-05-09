@@ -194,6 +194,6 @@
         <landingRagdollSfxId />
         <fMaterialMoveInfluenceRate />
         <fMaterialTurnInfluenceRate />
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

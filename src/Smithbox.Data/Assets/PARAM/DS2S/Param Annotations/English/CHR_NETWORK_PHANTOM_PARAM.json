@@ -2,7 +2,7 @@
   "Param": "CHR_NETWORK_PHANTOM_PARAM",
   "Type": "CHR_NETWORK_PHANTOM_PARAM",
   "Name": "CHR_NETWORK_PHANTOM_PARAM",
-  "Description": "",
+  "Description": "Network phantom (multiplayer ghost/entity) behavior parameters controlling appearance effects, multiplayer rules, scaling, rewards, and session constraints.",
   "Fields": [
     {
       "Field": "level0ShaderType",
@@ -36,183 +36,183 @@
     },
     {
       "Field": "speedDownHpMinRate",
-      "Name": "速度低下発生HP 最小[%]",
-      "Description": ""
+      "Name": "HP Threshold for Speed Reduction (Min %)",
+      "Description": "Lower HP percentage threshold at which movement speed reduction begins to apply."
     },
     {
       "Field": "speedDownHpMaxRate",
-      "Name": "速度低下発生HP 最大[%]",
-      "Description": ""
+      "Name": "HP Threshold for Speed Reduction (Max %)",
+      "Description": "Upper HP percentage threshold for full movement speed reduction effect."
     },
     {
       "Field": "speedDownRate",
-      "Name": "速度低下割合[%]",
-      "Description": ""
+      "Name": "Movement Speed Reduction %",
+      "Description": "Percentage reduction applied to movement speed under low HP conditions."
     },
     {
       "Field": "entrySfxId",
-      "Name": "生成SFXID",
-      "Description": ""
+      "Name": "Spawn SFX ID",
+      "Description": "SFX effect ID played when the phantom is created."
     },
     {
       "Field": "entryFullBodySfx",
-      "Name": "生成全身SFXパラメータ",
-      "Description": ""
+      "Name": "Spawn Full Body SFX",
+      "Description": "Full-body SFX effect configuration used on spawn."
     },
     {
       "Field": "deadType",
-      "Name": "死亡タイプ",
-      "Description": ""
+      "Name": "Death Type",
+      "Description": "Defines how the phantom behaves or is handled upon death."
     },
     {
       "Field": "limitTime",
-      "Name": "マルチプレイ制限時間[Sec]",
-      "Description": ""
+      "Name": "Multiplayer Time Limit",
+      "Description": "Maximum duration allowed in a multiplayer session for this phantom. In seconds."
     },
     {
       "Field": "returnWaitTime",
-      "Name": "マルチプレイ終了帰還待ち時間[sec]",
-      "Description": ""
+      "Name": "Return Delay After Multiplayer Ends",
+      "Description": "Time delay before returning after multiplayer session ends. In seconds."
     },
     {
       "Field": "respawnPosTypeSuccess",
-      "Name": "マルチ終了帰還位置 成功",
-      "Description": ""
+      "Name": "Return Position: Success",
+      "Description": "Respawn position used when multiplayer ends successfully."
     },
     {
       "Field": "respawnPosTypeFaild",
-      "Name": "マルチ終了帰還位置 失敗",
-      "Description": ""
+      "Name": "Return Position: Failure",
+      "Description": "Respawn position used when multiplayer ends in failure."
     },
     {
       "Field": "respawnPosTypeDead",
-      "Name": "マルチ終了帰還位置 死亡",
-      "Description": ""
+      "Name": "Return Position: Death",
+      "Description": "Respawn position used when the phantom dies during multiplayer."
     },
     {
       "Field": "pad1",
-      "Name": "予約領域",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Unused reserved parameter slot."
     },
     {
       "Field": "respawnConditionTypeSuccess",
-      "Name": "マルチ終了復帰状態 成功",
-      "Description": ""
+      "Name": "Return State: Success",
+      "Description": "Player state applied when returning after successful multiplayer completion."
     },
     {
       "Field": "respawnConditionTypeFaild",
-      "Name": "マルチ終了復帰状態 失敗",
-      "Description": ""
+      "Name": "Return State: Failure",
+      "Description": "Player state applied when returning after failed multiplayer session."
     },
     {
       "Field": "respawnConditionTypeDead",
-      "Name": "マルチ終了復帰状態 死亡",
-      "Description": ""
+      "Name": "Return State: Death",
+      "Description": "Player state applied when returning after death in multiplayer."
     },
     {
       "Field": "pad2",
-      "Name": "予約領域",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Unused reserved parameter slot."
     },
     {
       "Field": "voiceChatType",
-      "Name": "ボイスチャット設定",
-      "Description": ""
+      "Name": "Voice Chat Settings",
+      "Description": "Defines voice chat behavior or availability for the phantom."
     },
     {
       "Field": "hostReturnWarpEnable",
-      "Name": "ホストからの送還許可",
-      "Description": ""
+      "Name": "Allow Host Forced Return",
+      "Description": "Determines whether the host can force the phantom to return."
     },
     {
       "Field": "ownerReturnWarpEnable",
-      "Name": "自力帰還許可",
-      "Description": ""
+      "Name": "Allow Manual Return",
+      "Description": "Determines whether the phantom can return voluntarily."
     },
     {
       "Field": "handicapEnable",
-      "Name": "ハンディ設定",
-      "Description": ""
+      "Name": "Enable Handicap System",
+      "Description": "Enables gameplay balancing adjustments for multiplayer phantoms."
     },
     {
       "Field": "maxHpRate",
-      "Name": "最大HP補正[倍]",
-      "Description": ""
+      "Name": "Maximum HP Scaling Multiplier",
+      "Description": "Multiplier applied to maximum HP in multiplayer."
     },
     {
       "Field": "summonEnable",
-      "Name": "召喚者設定",
-      "Description": ""
+      "Name": "Summon Enabled",
+      "Description": "Defines whether the phantom is treated as a summoned entity."
     },
     {
       "Field": "summonSupportEnable",
-      "Name": "召喚者補助許可設定",
-      "Description": ""
+      "Name": "Allow Summon Support",
+      "Description": "Enables support actions for summoned players or entities."
     },
     {
       "Field": "isEnableBossSoul",
-      "Name": "獲得ソウル許可 ボス",
-      "Description": ""
+      "Name": "Allow Boss Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from bosses."
     },
     {
       "Field": "isEnableEnemySoul",
-      "Name": "獲得ソウル許可 ザコ",
-      "Description": ""
+      "Name": "Allow Enemy Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from regular enemies."
     },
     {
       "Field": "isEnableNpcSoul",
-      "Name": "獲得ソウル許可 NPC",
-      "Description": ""
+      "Name": "Allow NPC Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from NPCs."
     },
     {
       "Field": "isEnableHostSoul",
-      "Name": "獲得ソウル許可 ホスト",
-      "Description": ""
+      "Name": "Allow Host Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from the host player."
     },
     {
       "Field": "isEnableNetPhantomSoul",
-      "Name": "獲得ソウル許可 霊体",
-      "Description": ""
+      "Name": "Allow Phantom Soul Acquisition",
+      "Description": "Determines whether souls can be obtained from network phantoms."
     },
     {
       "Field": "healItemUsageType",
-      "Name": "回復アイテム使用タイプ",
-      "Description": ""
+      "Name": "Healing Item Usage Type",
+      "Description": "Defines restrictions or rules for using healing items."
     },
     {
       "Field": "getSoulRate",
-      "Name": "獲得ソウル補正倍率[倍]",
-      "Description": ""
+      "Name": "Soul Gain Multiplier",
+      "Description": "Multiplier applied to soul rewards earned in multiplayer."
     },
     {
       "Field": "fadeOutTimeStep1",
-      "Name": "マルチプレイ見た目一段階落とす時間[Sec]",
-      "Description": ""
+      "Name": "Multiplayer Visual Fade Step 1",
+      "Description": "Time until the first stage of visual fading occurs in multiplayer. In seconds."
     },
     {
       "Field": "fadeOutTimeStep2",
-      "Name": "マルチプレイ見た目二段階落とす時間[Sec]",
-      "Description": ""
+      "Name": "Multiplayer Visual Fade Step 2",
+      "Description": "Time until the second stage of visual fading occurs in multiplayer. In seconds"
     },
     {
       "Field": "level1ShaderType",
-      "Name": "制約レベル１シェーダー設定",
-      "Description": ""
+      "Name": "Level 1 Constraint Shader Type",
+      "Description": "Shader used for Level 1 constraint state."
     },
     {
       "Field": "level2ShaderType",
-      "Name": "制約レベル２シェーダー設定",
-      "Description": ""
+      "Name": "Level 2 Constraint Shader Type",
+      "Description": "Shader used for Level 2 constraint state."
     },
     {
       "Field": "level3ShaderType",
-      "Name": "制約レベル３シェーダー設定",
-      "Description": ""
+      "Name": "Level 3 Constraint Shader Type",
+      "Description": "Shader used for Level 3 constraint state."
     },
     {
       "Field": "getBossSoulRate",
-      "Name": "獲得ボスソウル補正倍率[倍]",
-      "Description": ""
+      "Name": "Boss Soul Gain Multiplier",
+      "Description": "Multiplier applied specifically to souls gained from bosses."
     }
   ]
 }

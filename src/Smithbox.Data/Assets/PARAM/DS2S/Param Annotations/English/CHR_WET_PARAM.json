@@ -2,32 +2,32 @@
   "Param": "CHR_WET_PARAM",
   "Type": "CHR_WET_PARAM",
   "Name": "CHR_WET_PARAM",
-  "Description": "",
+  "Description": "Defines how wetness fades and dries over time on character materials, including separate behavior for standard and metallic surfaces.",
   "Fields": [
     {
       "Field": "dryRate",
-      "Name": "割合減少率(通常部)",
-      "Description": ""
+      "Name": "Drying Rate (Standard)",
+      "Description": "Rate at which wetness decreases on non-metallic surfaces."
     },
     {
       "Field": "metalDryRate",
-      "Name": "割合減少率(金属部)",
-      "Description": ""
+      "Name": "Drying Rate (Metal)",
+      "Description": "Rate at which wetness decreases on metallic surfaces."
     },
     {
       "Field": "wetParamId",
-      "Name": "濡れ種類",
-      "Description": ""
+      "Name": "Wetness Type",
+      "Description": "Selects the wetness behavior or configuration preset applied to the character."
     },
     {
       "Field": "dryType",
-      "Name": "乾燥種類",
-      "Description": ""
+      "Name": "Drying Behavior Type",
+      "Description": "Determines how wetness transitions back to a dry state over time."
     },
     {
       "Field": "aReserved",
-      "Name": "予約領域",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Unused field reserved for future expansion."
     }
   ]
 }

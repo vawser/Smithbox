@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self FieldLayout="EnemyComboBehaviorParam" />
     <Field>
         <combo0AttackMotionId />
         <combo0ComboAttackRoute1  Enum="COMBO_ROUTE_TYPE"/>
         <combo0ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo0ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo0BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo0AttackId01 />
-        <combo0AttackId02 />
-        <combo0AttackId03 />
-        <combo0AttackId04 />
-        <combo0BulletId01 />
-        <combo0BulletId02 />
-        <combo0BulletId03 />
-        <combo0BulletId04 />
+        <combo0AttackId01 RefGroup="damageparam" />
+        <combo0AttackId02 RefGroup="damageparam" />
+        <combo0AttackId03 RefGroup="damageparam" />
+        <combo0AttackId04 RefGroup="damageparam" />
+        <combo0BulletId01 RefGroup="bulletparam" />
+        <combo0BulletId02 RefGroup="bulletparam" />
+        <combo0BulletId03 RefGroup="bulletparam" />
+        <combo0BulletId04 RefGroup="bulletparam" />
         <combo0ShtoStanceTime01 />
         <combo0ShtoStanceTime02 />
         <combo0ShtoStanceTime03 />
@@ -70,14 +71,14 @@
         <combo1ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo1ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo1BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo1AttackId01 />
-        <combo1AttackId02 />
-        <combo1AttackId03 />
-        <combo1AttackId04 />
-        <combo1BulletId01 />
-        <combo1BulletId02 />
-        <combo1BulletId03 />
-        <combo1BulletId04 />
+        <combo1AttackId01 RefGroup="damageparam" />
+        <combo1AttackId02 RefGroup="damageparam" />
+        <combo1AttackId03 RefGroup="damageparam" />
+        <combo1AttackId04 RefGroup="damageparam" />
+        <combo1BulletId01 RefGroup="bulletparam" />
+        <combo1BulletId02 RefGroup="bulletparam" />
+        <combo1BulletId03 RefGroup="bulletparam" />
+        <combo1BulletId04 RefGroup="bulletparam" />
         <combo1ShtoStanceTime01 />
         <combo1ShtoStanceTime02 />
         <combo1ShtoStanceTime03 />
@@ -134,14 +135,14 @@
         <combo2ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo2ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo2BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo2AttackId01 />
-        <combo2AttackId02 />
-        <combo2AttackId03 />
-        <combo2AttackId04 />
-        <combo2BulletId01 />
-        <combo2BulletId02 />
-        <combo2BulletId03 />
-        <combo2BulletId04 />
+        <combo2AttackId01 RefGroup="damageparam" />
+        <combo2AttackId02 RefGroup="damageparam" />
+        <combo2AttackId03 RefGroup="damageparam" />
+        <combo2AttackId04 RefGroup="damageparam" />
+        <combo2BulletId01 RefGroup="bulletparam" />
+        <combo2BulletId02 RefGroup="bulletparam" />
+        <combo2BulletId03 RefGroup="bulletparam" />
+        <combo2BulletId04 RefGroup="bulletparam" />
         <combo2ShtoStanceTime01 />
         <combo2ShtoStanceTime02 />
         <combo2ShtoStanceTime03 />
@@ -198,14 +199,14 @@
         <combo3ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo3ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo3BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo3AttackId01 />
-        <combo3AttackId02 />
-        <combo3AttackId03 />
-        <combo3AttackId04 />
-        <combo3BulletId01 />
-        <combo3BulletId02 />
-        <combo3BulletId03 />
-        <combo3BulletId04 />
+        <combo3AttackId01 RefGroup="damageparam" />
+        <combo3AttackId02 RefGroup="damageparam" />
+        <combo3AttackId03 RefGroup="damageparam" />
+        <combo3AttackId04 RefGroup="damageparam" />
+        <combo3BulletId01 RefGroup="bulletparam" />
+        <combo3BulletId02 RefGroup="bulletparam" />
+        <combo3BulletId03 RefGroup="bulletparam" />
+        <combo3BulletId04 RefGroup="bulletparam" />
         <combo3ShtoStanceTime01 />
         <combo3ShtoStanceTime02 />
         <combo3ShtoStanceTime03 />
@@ -262,14 +263,14 @@
         <combo4ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo4ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo4BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo4AttackId01 />
-        <combo4AttackId02 />
-        <combo4AttackId03 />
-        <combo4AttackId04 />
-        <combo4BulletId01 />
-        <combo4BulletId02 />
-        <combo4BulletId03 />
-        <combo4BulletId04 />
+        <combo4AttackId01 RefGroup="damageparam" />
+        <combo4AttackId02 RefGroup="damageparam" />
+        <combo4AttackId03 RefGroup="damageparam" />
+        <combo4AttackId04 RefGroup="damageparam" />
+        <combo4BulletId01 RefGroup="bulletparam" />
+        <combo4BulletId02 RefGroup="bulletparam" />
+        <combo4BulletId03 RefGroup="bulletparam" />
+        <combo4BulletId04 RefGroup="bulletparam" />
         <combo4ShtoStanceTime01 />
         <combo4ShtoStanceTime02 />
         <combo4ShtoStanceTime03 />
@@ -326,14 +327,14 @@
         <combo5ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo5ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo5BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo5AttackId01 />
-        <combo5AttackId02 />
-        <combo5AttackId03 />
-        <combo5AttackId04 />
-        <combo5BulletId01 />
-        <combo5BulletId02 />
-        <combo5BulletId03 />
-        <combo5BulletId04 />
+        <combo5AttackId01 RefGroup="damageparam" />
+        <combo5AttackId02 RefGroup="damageparam" />
+        <combo5AttackId03 RefGroup="damageparam" />
+        <combo5AttackId04 RefGroup="damageparam" />
+        <combo5BulletId01 RefGroup="bulletparam" />
+        <combo5BulletId02 RefGroup="bulletparam" />
+        <combo5BulletId03 RefGroup="bulletparam" />
+        <combo5BulletId04 RefGroup="bulletparam" />
         <combo5ShtoStanceTime01 />
         <combo5ShtoStanceTime02 />
         <combo5ShtoStanceTime03 />
@@ -390,14 +391,14 @@
         <combo6ComboAttackRoute2  Enum="COMBO_ROUTE_TYPE"/>
         <combo6ComboAttackRoute3  Enum="COMBO_ROUTE_TYPE"/>
         <combo6BladeCtrlType  Enum="BLADE_CTRL_TYPE"/>
-        <combo6AttackId01 />
-        <combo6AttackId02 />
-        <combo6AttackId03 />
-        <combo6AttackId04 />
-        <combo6BulletId01 />
-        <combo6BulletId02 />
-        <combo6BulletId03 />
-        <combo6BulletId04 />
+        <combo6AttackId01 RefGroup="damageparam" />
+        <combo6AttackId02 RefGroup="damageparam" />
+        <combo6AttackId03 RefGroup="damageparam" />
+        <combo6AttackId04 RefGroup="damageparam" />
+        <combo6BulletId01 RefGroup="bulletparam" />
+        <combo6BulletId02 RefGroup="bulletparam" />
+        <combo6BulletId03 RefGroup="bulletparam" />
+        <combo6BulletId04 RefGroup="bulletparam" />
         <combo6ShtoStanceTime01 />
         <combo6ShtoStanceTime02 />
         <combo6ShtoStanceTime03 />

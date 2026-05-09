@@ -2,2246 +2,2246 @@
   "Param": "COMBO_BEHAVIOR_PARAM",
   "Type": "COMBO_BEHAVIOR_PARAM",
   "Name": "COMBO_BEHAVIOR_PARAM",
-  "Description": "",
+  "Description": "Defines combo attack behavior parameters including melee/ranged attacks, movement attacks, timing, targeting, and animation control across multiple combo chains.",
   "Fields": [
     {
       "Field": "combo0AttackMotionId",
-      "Name": "《コンボ行動0 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 0: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 0."
     },
     {
       "Field": "combo0ComboAttackRoute1",
-      "Name": "《コンボ行動0 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 0: Combo Step 2",
+      "Description": "Defines the second attack route in combo 0."
     },
     {
       "Field": "combo0ComboAttackRoute2",
-      "Name": "《コンボ行動0 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 0: Combo Step 3",
+      "Description": "Defines the third attack route in combo 0."
     },
     {
       "Field": "combo0ComboAttackRoute3",
-      "Name": "《コンボ行動0 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 0: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 0."
     },
     {
       "Field": "combo0BladeCtrlType",
-      "Name": "《コンボ行動0 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 0: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 0."
     },
     {
       "Field": "combo0AttackId01",
-      "Name": "《コンボ行動0 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 0: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 0."
     },
     {
       "Field": "combo0AttackId02",
-      "Name": "《コンボ行動0 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 0: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 0."
     },
     {
       "Field": "combo0AttackId03",
-      "Name": "《コンボ行動0 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 0: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 0."
     },
     {
       "Field": "combo0AttackId04",
-      "Name": "《コンボ行動0 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 0: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 0."
     },
     {
       "Field": "combo0BulletId01",
-      "Name": "《コンボ行動0 BulletID1》",
-      "Description": ""
+      "Name": "Action 0: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 0."
     },
     {
       "Field": "combo0BulletId02",
-      "Name": "《コンボ行動0 BulletID2》",
-      "Description": ""
+      "Name": "Action 0: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 0."
     },
     {
       "Field": "combo0BulletId03",
-      "Name": "《コンボ行動0 BulletID3》",
-      "Description": ""
+      "Name": "Action 0: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 0."
     },
     {
       "Field": "combo0BulletId04",
-      "Name": "《コンボ行動0 BulletID4》",
-      "Description": ""
+      "Name": "Action 0: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 0."
     },
     {
       "Field": "combo0ShtoStanceTime01",
-      "Name": "《コンボ行動0 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 0: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo0ShtoStanceTime02",
-      "Name": "《コンボ行動0 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 0: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo0ShtoStanceTime03",
-      "Name": "《コンボ行動0 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 0: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo0ShtoStanceTime04",
-      "Name": "《コンボ行動0 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 0: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo0NonInterruptibleType01",
-      "Name": "《コンボ行動0 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 0: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo0NonInterruptibleType02",
-      "Name": "《コンボ行動0 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 0: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo0NonInterruptibleType03",
-      "Name": "《コンボ行動0 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 0: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo0NonInterruptibleType04",
-      "Name": "《コンボ行動0 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 0: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo0AttackMoveId01",
-      "Name": "《コンボ行動0 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo0AttackMoveId02",
-      "Name": "《コンボ行動0 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo0AttackMoveId03",
-      "Name": "《コンボ行動0 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo0AttackMoveId04",
-      "Name": "《コンボ行動0 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo0AttackHomingCancel01",
-      "Name": "《コンボ行動0 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 0: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo0AttackHomingCancel02",
-      "Name": "《コンボ行動0 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 0: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo0AttackHomingCancel03",
-      "Name": "《コンボ行動0 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 0: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo0AttackHomingCancel04",
-      "Name": "《コンボ行動0 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 0: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo0AttackRange01",
-      "Name": "《コンボ行動0 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo0AttackRange02",
-      "Name": "《コンボ行動0 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo0AttackRange03",
-      "Name": "《コンボ行動0 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo0AttackRange04",
-      "Name": "《コンボ行動0 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 0: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo0AttackBackSwingSpeed01",
-      "Name": "《コンボ行動0 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 0: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 0."
     },
     {
       "Field": "fCombo0AttackBackSwingSpeed02",
-      "Name": "《コンボ行動0 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 0: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 0."
     },
     {
       "Field": "fCombo0AttackBackSwingSpeed03",
-      "Name": "《コンボ行動0 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 0: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 0."
     },
     {
       "Field": "fCombo0AttackBackSwingSpeed04",
-      "Name": "《コンボ行動0 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 0: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 0."
     },
     {
       "Field": "fCombo0AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動0 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 0: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 0."
     },
     {
       "Field": "fCombo0AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動0 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 0: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 0."
     },
     {
       "Field": "fCombo0AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動0 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 0: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 0."
     },
     {
       "Field": "fCombo0AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動0 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 0: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 0."
     },
     {
       "Field": "fCombo0EstimateFutureTime01",
-      "Name": "《コンボ行動0 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 0: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 0."
     },
     {
       "Field": "fCombo0EstimateFutureTime02",
-      "Name": "《コンボ行動0 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 0: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 0."
     },
     {
       "Field": "fCombo0EstimateFutureTime03",
-      "Name": "《コンボ行動0 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 0: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 0."
     },
     {
       "Field": "fCombo0EstimateFutureTime04",
-      "Name": "《コンボ行動0 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 0: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 0."
     },
     {
       "Field": "combo0AttackAngle01",
-      "Name": "《コンボ行動0 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 0: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo0AttackAngle02",
-      "Name": "《コンボ行動0 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 0: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo0AttackAngle03",
-      "Name": "《コンボ行動0 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 0: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo0AttackAngle04",
-      "Name": "《コンボ行動0 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 0: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo0AttackRotateHigh01",
-      "Name": "《コンボ行動0 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo0AttackRotateHigh02",
-      "Name": "《コンボ行動0 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo0AttackRotateHigh03",
-      "Name": "《コンボ行動0 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo0AttackRotateHigh04",
-      "Name": "《コンボ行動0 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo0AttackRotateLow01",
-      "Name": "《コンボ行動0 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo0AttackRotateLow02",
-      "Name": "《コンボ行動0 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo0AttackRotateLow03",
-      "Name": "《コンボ行動0 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo0AttackRotateLow04",
-      "Name": "《コンボ行動0 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 0: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo0AttackHand01",
-      "Name": "《コンボ行動0 攻撃手1》",
-      "Description": ""
+      "Name": "Action 0: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo0AttackHand02",
-      "Name": "《コンボ行動0 攻撃手2》",
-      "Description": ""
+      "Name": "Action 0: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo0AttackHand03",
-      "Name": "《コンボ行動0 攻撃手3》",
-      "Description": ""
+      "Name": "Action 0: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo0AttackHand04",
-      "Name": "《コンボ行動0 攻撃手4》",
-      "Description": ""
+      "Name": "Action 0: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo0AttackChantSfx",
-      "Name": "《コンボ行動0 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 0: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo0Reload",
-      "Name": "《コンボ行動0 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 0: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad00",
-      "Name": "予約",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "combo1AttackMotionId",
-      "Name": "《コンボ行動1 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 1: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 1."
     },
     {
       "Field": "combo1ComboAttackRoute1",
-      "Name": "《コンボ行動1 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 1: Combo Step 2",
+      "Description": "Defines the second attack route in combo 1."
     },
     {
       "Field": "combo1ComboAttackRoute2",
-      "Name": "《コンボ行動1 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 1: Combo Step 3",
+      "Description": "Defines the third attack route in combo 1."
     },
     {
       "Field": "combo1ComboAttackRoute3",
-      "Name": "《コンボ行動1 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 1: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 1."
     },
     {
       "Field": "combo1BladeCtrlType",
-      "Name": "《コンボ行動1 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 1: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 1."
     },
     {
       "Field": "combo1AttackId01",
-      "Name": "《コンボ行動1 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 1: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 1."
     },
     {
       "Field": "combo1AttackId02",
-      "Name": "《コンボ行動1 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 1: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 1."
     },
     {
       "Field": "combo1AttackId03",
-      "Name": "《コンボ行動1 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 1: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 1."
     },
     {
       "Field": "combo1AttackId04",
-      "Name": "《コンボ行動1 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 1: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 1."
     },
     {
       "Field": "combo1BulletId01",
-      "Name": "《コンボ行動1 BulletID1》",
-      "Description": ""
+      "Name": "Action 1: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 1."
     },
     {
       "Field": "combo1BulletId02",
-      "Name": "《コンボ行動1 BulletID2》",
-      "Description": ""
+      "Name": "Action 1: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 1."
     },
     {
       "Field": "combo1BulletId03",
-      "Name": "《コンボ行動1 BulletID3》",
-      "Description": ""
+      "Name": "Action 1: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 1."
     },
     {
       "Field": "combo1BulletId04",
-      "Name": "《コンボ行動1 BulletID4》",
-      "Description": ""
+      "Name": "Action 1: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 1."
     },
     {
       "Field": "combo1ShtoStanceTime01",
-      "Name": "《コンボ行動1 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 1: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo1ShtoStanceTime02",
-      "Name": "《コンボ行動1 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 1: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo1ShtoStanceTime03",
-      "Name": "《コンボ行動1 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 1: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo1ShtoStanceTime04",
-      "Name": "《コンボ行動1 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 1: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo1NonInterruptibleType01",
-      "Name": "《コンボ行動1 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 1: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo1NonInterruptibleType02",
-      "Name": "《コンボ行動1 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 1: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo1NonInterruptibleType03",
-      "Name": "《コンボ行動1 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 1: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo1NonInterruptibleType04",
-      "Name": "《コンボ行動1 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 1: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo1AttackMoveId01",
-      "Name": "《コンボ行動1 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo1AttackMoveId02",
-      "Name": "《コンボ行動1 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo1AttackMoveId03",
-      "Name": "《コンボ行動1 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo1AttackMoveId04",
-      "Name": "《コンボ行動1 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo1AttackHomingCancel01",
-      "Name": "《コンボ行動1 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 1: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo1AttackHomingCancel02",
-      "Name": "《コンボ行動1 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 1: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo1AttackHomingCancel03",
-      "Name": "《コンボ行動1 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 1: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo1AttackHomingCancel04",
-      "Name": "《コンボ行動1 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 1: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo1AttackRange01",
-      "Name": "《コンボ行動1 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo1AttackRange02",
-      "Name": "《コンボ行動1 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo1AttackRange03",
-      "Name": "《コンボ行動1 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo1AttackRange04",
-      "Name": "《コンボ行動1 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 1: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo1AttackBackSwingSpeed01",
-      "Name": "《コンボ行動1 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 1: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 1."
     },
     {
       "Field": "fCombo1AttackBackSwingSpeed02",
-      "Name": "《コンボ行動1 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 1: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 1."
     },
     {
       "Field": "fCombo1AttackBackSwingSpeed03",
-      "Name": "《コンボ行動1 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 1: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 1."
     },
     {
       "Field": "fCombo1AttackBackSwingSpeed04",
-      "Name": "《コンボ行動1 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 1: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 1."
     },
     {
       "Field": "fCombo1AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動1 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 1: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 1."
     },
     {
       "Field": "fCombo1AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動1 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 1: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 1."
     },
     {
       "Field": "fCombo1AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動1 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 1: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 1."
     },
     {
       "Field": "fCombo1AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動1 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 1: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 1."
     },
     {
       "Field": "fCombo1EstimateFutureTime01",
-      "Name": "《コンボ行動1 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 1: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 1."
     },
     {
       "Field": "fCombo1EstimateFutureTime02",
-      "Name": "《コンボ行動1 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 1: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 1."
     },
     {
       "Field": "fCombo1EstimateFutureTime03",
-      "Name": "《コンボ行動1 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 1: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 1."
     },
     {
       "Field": "fCombo1EstimateFutureTime04",
-      "Name": "《コンボ行動1 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 1: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 1."
     },
     {
       "Field": "combo1AttackAngle01",
-      "Name": "《コンボ行動1 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 1: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo1AttackAngle02",
-      "Name": "《コンボ行動1 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 1: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo1AttackAngle03",
-      "Name": "《コンボ行動1 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 1: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo1AttackAngle04",
-      "Name": "《コンボ行動1 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 1: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo1AttackRotateHigh01",
-      "Name": "《コンボ行動1 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo1AttackRotateHigh02",
-      "Name": "《コンボ行動1 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo1AttackRotateHigh03",
-      "Name": "《コンボ行動1 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo1AttackRotateHigh04",
-      "Name": "《コンボ行動1 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo1AttackRotateLow01",
-      "Name": "《コンボ行動1 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo1AttackRotateLow02",
-      "Name": "《コンボ行動1 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo1AttackRotateLow03",
-      "Name": "《コンボ行動1 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo1AttackRotateLow04",
-      "Name": "《コンボ行動1 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 1: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo1AttackHand01",
-      "Name": "《コンボ行動1 攻撃手1》",
-      "Description": ""
+      "Name": "Action 1: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo1AttackHand02",
-      "Name": "《コンボ行動1 攻撃手2》",
-      "Description": ""
+      "Name": "Action 1: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo1AttackHand03",
-      "Name": "《コンボ行動1 攻撃手3》",
-      "Description": ""
+      "Name": "Action 1: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo1AttackHand04",
-      "Name": "《コンボ行動1 攻撃手4》",
-      "Description": ""
+      "Name": "Action 1: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo1AttackChantSfx",
-      "Name": "《コンボ行動1 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 1: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo1Reload",
-      "Name": "《コンボ行動1 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 1: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad01",
-      "Name": "予約",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "combo2AttackMotionId",
-      "Name": "《コンボ行動2 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 2: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 2."
     },
     {
       "Field": "combo2ComboAttackRoute1",
-      "Name": "《コンボ行動2 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 2: Combo Step 2",
+      "Description": "Defines the second attack route in combo 2."
     },
     {
       "Field": "combo2ComboAttackRoute2",
-      "Name": "《コンボ行動2 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 2: Combo Step 3",
+      "Description": "Defines the third attack route in combo 2."
     },
     {
       "Field": "combo2ComboAttackRoute3",
-      "Name": "《コンボ行動2 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 2: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 2."
     },
     {
       "Field": "combo2BladeCtrlType",
-      "Name": "《コンボ行動2 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 2: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 2."
     },
     {
       "Field": "combo2AttackId01",
-      "Name": "《コンボ行動2 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 2: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 2."
     },
     {
       "Field": "combo2AttackId02",
-      "Name": "《コンボ行動2 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 2: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 2."
     },
     {
       "Field": "combo2AttackId03",
-      "Name": "《コンボ行動2 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 2: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 2."
     },
     {
       "Field": "combo2AttackId04",
-      "Name": "《コンボ行動2 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 2: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 2."
     },
     {
       "Field": "combo2BulletId01",
-      "Name": "《コンボ行動2 BulletID1》",
-      "Description": ""
+      "Name": "Action 2: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 2."
     },
     {
       "Field": "combo2BulletId02",
-      "Name": "《コンボ行動2 BulletID2》",
-      "Description": ""
+      "Name": "Action 2: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 2."
     },
     {
       "Field": "combo2BulletId03",
-      "Name": "《コンボ行動2 BulletID3》",
-      "Description": ""
+      "Name": "Action 2: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 2."
     },
     {
       "Field": "combo2BulletId04",
-      "Name": "《コンボ行動2 BulletID4》",
-      "Description": ""
+      "Name": "Action 2: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 2."
     },
     {
       "Field": "combo2ShtoStanceTime01",
-      "Name": "《コンボ行動2 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 2: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo2ShtoStanceTime02",
-      "Name": "《コンボ行動2 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 2: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo2ShtoStanceTime03",
-      "Name": "《コンボ行動2 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 2: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo2ShtoStanceTime04",
-      "Name": "《コンボ行動2 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 2: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo2NonInterruptibleType01",
-      "Name": "《コンボ行動2 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 2: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo2NonInterruptibleType02",
-      "Name": "《コンボ行動2 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 2: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo2NonInterruptibleType03",
-      "Name": "《コンボ行動2 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 2: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo2NonInterruptibleType04",
-      "Name": "《コンボ行動2 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 2: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo2AttackMoveId01",
-      "Name": "《コンボ行動2 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo2AttackMoveId02",
-      "Name": "《コンボ行動2 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo2AttackMoveId03",
-      "Name": "《コンボ行動2 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo2AttackMoveId04",
-      "Name": "《コンボ行動2 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo2AttackHomingCancel01",
-      "Name": "《コンボ行動2 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 2: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo2AttackHomingCancel02",
-      "Name": "《コンボ行動2 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 2: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo2AttackHomingCancel03",
-      "Name": "《コンボ行動2 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 2: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo2AttackHomingCancel04",
-      "Name": "《コンボ行動2 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 2: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo2AttackRange01",
-      "Name": "《コンボ行動2 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo2AttackRange02",
-      "Name": "《コンボ行動2 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo2AttackRange03",
-      "Name": "《コンボ行動2 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo2AttackRange04",
-      "Name": "《コンボ行動2 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 2: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo2AttackBackSwingSpeed01",
-      "Name": "《コンボ行動2 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 2: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 2."
     },
     {
       "Field": "fCombo2AttackBackSwingSpeed02",
-      "Name": "《コンボ行動2 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 2: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 2."
     },
     {
       "Field": "fCombo2AttackBackSwingSpeed03",
-      "Name": "《コンボ行動2 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 2: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 2."
     },
     {
       "Field": "fCombo2AttackBackSwingSpeed04",
-      "Name": "《コンボ行動2 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 2: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 2."
     },
     {
       "Field": "fCombo2AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動2 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 2: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 2."
     },
     {
       "Field": "fCombo2AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動2 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 2: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 2."
     },
     {
       "Field": "fCombo2AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動2 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 2: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 2."
     },
     {
       "Field": "fCombo2AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動2 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 2: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 2."
     },
     {
       "Field": "fCombo2EstimateFutureTime01",
-      "Name": "《コンボ行動2 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 2: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 2."
     },
     {
       "Field": "fCombo2EstimateFutureTime02",
-      "Name": "《コンボ行動2 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 2: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 2."
     },
     {
       "Field": "fCombo2EstimateFutureTime03",
-      "Name": "《コンボ行動2 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 2: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 2."
     },
     {
       "Field": "fCombo2EstimateFutureTime04",
-      "Name": "《コンボ行動2 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 2: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 2."
     },
     {
       "Field": "combo2AttackAngle01",
-      "Name": "《コンボ行動2 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 2: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo2AttackAngle02",
-      "Name": "《コンボ行動2 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 2: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo2AttackAngle03",
-      "Name": "《コンボ行動2 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 2: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo2AttackAngle04",
-      "Name": "《コンボ行動2 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 2: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo2AttackRotateHigh01",
-      "Name": "《コンボ行動2 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo2AttackRotateHigh02",
-      "Name": "《コンボ行動2 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo2AttackRotateHigh03",
-      "Name": "《コンボ行動2 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo2AttackRotateHigh04",
-      "Name": "《コンボ行動2 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo2AttackRotateLow01",
-      "Name": "《コンボ行動2 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo2AttackRotateLow02",
-      "Name": "《コンボ行動2 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo2AttackRotateLow03",
-      "Name": "《コンボ行動2 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo2AttackRotateLow04",
-      "Name": "《コンボ行動2 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 2: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo2AttackHand01",
-      "Name": "《コンボ行動2 攻撃手1》",
-      "Description": ""
+      "Name": "Action 2: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo2AttackHand02",
-      "Name": "《コンボ行動2 攻撃手2》",
-      "Description": ""
+      "Name": "Action 2: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo2AttackHand03",
-      "Name": "《コンボ行動2 攻撃手3》",
-      "Description": ""
+      "Name": "Action 2: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo2AttackHand04",
-      "Name": "《コンボ行動2 攻撃手4》",
-      "Description": ""
+      "Name": "Action 2: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo2AttackChantSfx",
-      "Name": "《コンボ行動2 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 2: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo2Reload",
-      "Name": "《コンボ行動2 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 2: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad02",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "combo3AttackMotionId",
-      "Name": "《コンボ行動3 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 3: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 3."
     },
     {
       "Field": "combo3ComboAttackRoute1",
-      "Name": "《コンボ行動3 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 3: Combo Step 2",
+      "Description": "Defines the second attack route in combo 3."
     },
     {
       "Field": "combo3ComboAttackRoute2",
-      "Name": "《コンボ行動3 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 3: Combo Step 3",
+      "Description": "Defines the third attack route in combo 3."
     },
     {
       "Field": "combo3ComboAttackRoute3",
-      "Name": "《コンボ行動3 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 3: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 3."
     },
     {
       "Field": "combo3BladeCtrlType",
-      "Name": "《コンボ行動3 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 3: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 3."
     },
     {
       "Field": "combo3AttackId01",
-      "Name": "《コンボ行動3 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 3: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 3."
     },
     {
       "Field": "combo3AttackId02",
-      "Name": "《コンボ行動3 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 3: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 3."
     },
     {
       "Field": "combo3AttackId03",
-      "Name": "《コンボ行動3 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 3: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 3."
     },
     {
       "Field": "combo3AttackId04",
-      "Name": "《コンボ行動3 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 3: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 3."
     },
     {
       "Field": "combo3BulletId01",
-      "Name": "《コンボ行動3 BulletID1》",
-      "Description": ""
+      "Name": "Action 3: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 3."
     },
     {
       "Field": "combo3BulletId02",
-      "Name": "《コンボ行動3 BulletID2》",
-      "Description": ""
+      "Name": "Action 3: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 3."
     },
     {
       "Field": "combo3BulletId03",
-      "Name": "《コンボ行動3 BulletID3》",
-      "Description": ""
+      "Name": "Action 3: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 3."
     },
     {
       "Field": "combo3BulletId04",
-      "Name": "《コンボ行動3 BulletID4》",
-      "Description": ""
+      "Name": "Action 3: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 3."
     },
     {
       "Field": "combo3ShtoStanceTime01",
-      "Name": "《コンボ行動3 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 3: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo3ShtoStanceTime02",
-      "Name": "《コンボ行動3 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 3: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo3ShtoStanceTime03",
-      "Name": "《コンボ行動3 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 3: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo3ShtoStanceTime04",
-      "Name": "《コンボ行動3 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 3: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo3NonInterruptibleType01",
-      "Name": "《コンボ行動3 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 3: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo3NonInterruptibleType02",
-      "Name": "《コンボ行動3 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 3: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo3NonInterruptibleType03",
-      "Name": "《コンボ行動3 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 3: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo3NonInterruptibleType04",
-      "Name": "《コンボ行動3 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 3: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo3AttackMoveId01",
-      "Name": "《コンボ行動3 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo3AttackMoveId02",
-      "Name": "《コンボ行動3 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo3AttackMoveId03",
-      "Name": "《コンボ行動3 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo3AttackMoveId04",
-      "Name": "《コンボ行動3 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo3AttackHomingCancel01",
-      "Name": "《コンボ行動3 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 3: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo3AttackHomingCancel02",
-      "Name": "《コンボ行動3 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 3: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo3AttackHomingCancel03",
-      "Name": "《コンボ行動3 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 3: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo3AttackHomingCancel04",
-      "Name": "《コンボ行動3 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 3: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo3AttackRange01",
-      "Name": "《コンボ行動3 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo3AttackRange02",
-      "Name": "《コンボ行動3 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo3AttackRange03",
-      "Name": "《コンボ行動3 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo3AttackRange04",
-      "Name": "《コンボ行動3 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 3: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo3AttackBackSwingSpeed01",
-      "Name": "《コンボ行動3 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 3: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 3."
     },
     {
       "Field": "fCombo3AttackBackSwingSpeed02",
-      "Name": "《コンボ行動3 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 3: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 3."
     },
     {
       "Field": "fCombo3AttackBackSwingSpeed03",
-      "Name": "《コンボ行動3 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 3: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 3."
     },
     {
       "Field": "fCombo3AttackBackSwingSpeed04",
-      "Name": "《コンボ行動3 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 3: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 3."
     },
     {
       "Field": "fCombo3AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動3 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 3: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 3."
     },
     {
       "Field": "fCombo3AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動3 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 3: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 3."
     },
     {
       "Field": "fCombo3AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動3 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 3: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 3."
     },
     {
       "Field": "fCombo3AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動3 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 3: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 3."
     },
     {
       "Field": "fCombo3EstimateFutureTime01",
-      "Name": "《コンボ行動3 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 3: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 3."
     },
     {
       "Field": "fCombo3EstimateFutureTime02",
-      "Name": "《コンボ行動3 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 3: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 3."
     },
     {
       "Field": "fCombo3EstimateFutureTime03",
-      "Name": "《コンボ行動3 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 3: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 3."
     },
     {
       "Field": "fCombo3EstimateFutureTime04",
-      "Name": "《コンボ行動3 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 3: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 3."
     },
     {
       "Field": "combo3AttackAngle01",
-      "Name": "《コンボ行動3 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 3: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo3AttackAngle02",
-      "Name": "《コンボ行動3 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 3: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo3AttackAngle03",
-      "Name": "《コンボ行動3 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 3: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo3AttackAngle04",
-      "Name": "《コンボ行動3 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 3: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo3AttackRotateHigh01",
-      "Name": "《コンボ行動3 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo3AttackRotateHigh02",
-      "Name": "《コンボ行動3 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo3AttackRotateHigh03",
-      "Name": "《コンボ行動3 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo3AttackRotateHigh04",
-      "Name": "《コンボ行動3 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo3AttackRotateLow01",
-      "Name": "《コンボ行動3 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo3AttackRotateLow02",
-      "Name": "《コンボ行動3 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo3AttackRotateLow03",
-      "Name": "《コンボ行動3 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo3AttackRotateLow04",
-      "Name": "《コンボ行動3 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 3: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo3AttackHand01",
-      "Name": "《コンボ行動3 攻撃手1》",
-      "Description": ""
+      "Name": "Action 3: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo3AttackHand02",
-      "Name": "《コンボ行動3 攻撃手2》",
-      "Description": ""
+      "Name": "Action 3: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo3AttackHand03",
-      "Name": "《コンボ行動3 攻撃手3》",
-      "Description": ""
+      "Name": "Action 3: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo3AttackHand04",
-      "Name": "《コンボ行動3 攻撃手4》",
-      "Description": ""
+      "Name": "Action 3: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo3AttackChantSfx",
-      "Name": "《コンボ行動3 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 3: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo3Reload",
-      "Name": "《コンボ行動3 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 3: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad03",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "combo4AttackMotionId",
-      "Name": "《コンボ行動4 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 4: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 4."
     },
     {
       "Field": "combo4ComboAttackRoute1",
-      "Name": "《コンボ行動4 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 4: Combo Step 2",
+      "Description": "Defines the second attack route in combo 4."
     },
     {
       "Field": "combo4ComboAttackRoute2",
-      "Name": "《コンボ行動4 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 4: Combo Step 3",
+      "Description": "Defines the third attack route in combo 4."
     },
     {
       "Field": "combo4ComboAttackRoute3",
-      "Name": "《コンボ行動4 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 4: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 4."
     },
     {
       "Field": "combo4BladeCtrlType",
-      "Name": "《コンボ行動4 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 4: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 4."
     },
     {
       "Field": "combo4AttackId01",
-      "Name": "《コンボ行動4 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 4: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 4."
     },
     {
       "Field": "combo4AttackId02",
-      "Name": "《コンボ行動4 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 4: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 4."
     },
     {
       "Field": "combo4AttackId03",
-      "Name": "《コンボ行動4 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 4: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 4."
     },
     {
       "Field": "combo4AttackId04",
-      "Name": "《コンボ行動4 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 4: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 4."
     },
     {
       "Field": "combo4BulletId01",
-      "Name": "《コンボ行動4 BulletID1》",
-      "Description": ""
+      "Name": "Action 4: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 4."
     },
     {
       "Field": "combo4BulletId02",
-      "Name": "《コンボ行動4 BulletID2》",
-      "Description": ""
+      "Name": "Action 4: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 4."
     },
     {
       "Field": "combo4BulletId03",
-      "Name": "《コンボ行動4 BulletID3》",
-      "Description": ""
+      "Name": "Action 4: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 4."
     },
     {
       "Field": "combo4BulletId04",
-      "Name": "《コンボ行動4 BulletID4》",
-      "Description": ""
+      "Name": "Action 4: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 4."
     },
     {
       "Field": "combo4ShtoStanceTime01",
-      "Name": "《コンボ行動4 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 4: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo4ShtoStanceTime02",
-      "Name": "《コンボ行動4 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 4: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo4ShtoStanceTime03",
-      "Name": "《コンボ行動4 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 4: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo4ShtoStanceTime04",
-      "Name": "《コンボ行動4 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 4: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo4NonInterruptibleType01",
-      "Name": "《コンボ行動4 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 4: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo4NonInterruptibleType02",
-      "Name": "《コンボ行動4 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 4: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo4NonInterruptibleType03",
-      "Name": "《コンボ行動4 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 4: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo4NonInterruptibleType04",
-      "Name": "《コンボ行動4 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 4: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo4AttackMoveId01",
-      "Name": "《コンボ行動4 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo4AttackMoveId02",
-      "Name": "《コンボ行動4 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo4AttackMoveId03",
-      "Name": "《コンボ行動4 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo4AttackMoveId04",
-      "Name": "《コンボ行動4 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo4AttackHomingCancel01",
-      "Name": "《コンボ行動4 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 4: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo4AttackHomingCancel02",
-      "Name": "《コンボ行動4 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 4: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo4AttackHomingCancel03",
-      "Name": "《コンボ行動4 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 4: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo4AttackHomingCancel04",
-      "Name": "《コンボ行動4 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 4: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo4AttackRange01",
-      "Name": "《コンボ行動4 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo4AttackRange02",
-      "Name": "《コンボ行動4 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo4AttackRange03",
-      "Name": "《コンボ行動4 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo4AttackRange04",
-      "Name": "《コンボ行動4 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 4: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo4AttackBackSwingSpeed01",
-      "Name": "《コンボ行動4 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 4: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 4."
     },
     {
       "Field": "fCombo4AttackBackSwingSpeed02",
-      "Name": "《コンボ行動4 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 4: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 4."
     },
     {
       "Field": "fCombo4AttackBackSwingSpeed03",
-      "Name": "《コンボ行動4 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 4: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 4."
     },
     {
       "Field": "fCombo4AttackBackSwingSpeed04",
-      "Name": "《コンボ行動4 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 4: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 4."
     },
     {
       "Field": "fCombo4AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動4 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 4: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 4."
     },
     {
       "Field": "fCombo4AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動4 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 4: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 4."
     },
     {
       "Field": "fCombo4AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動4 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 4: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 4."
     },
     {
       "Field": "fCombo4AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動4 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 4: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 4."
     },
     {
       "Field": "fCombo4EstimateFutureTime01",
-      "Name": "《コンボ行動4 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 4: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 4."
     },
     {
       "Field": "fCombo4EstimateFutureTime02",
-      "Name": "《コンボ行動4 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 4: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 4."
     },
     {
       "Field": "fCombo4EstimateFutureTime03",
-      "Name": "《コンボ行動4 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 4: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 4."
     },
     {
       "Field": "fCombo4EstimateFutureTime04",
-      "Name": "《コンボ行動4 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 4: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 4."
     },
     {
       "Field": "combo4AttackAngle01",
-      "Name": "《コンボ行動4 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 4: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo4AttackAngle02",
-      "Name": "《コンボ行動4 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 4: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo4AttackAngle03",
-      "Name": "《コンボ行動4 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 4: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo4AttackAngle04",
-      "Name": "《コンボ行動4 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 4: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo4AttackRotateHigh01",
-      "Name": "《コンボ行動4 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo4AttackRotateHigh02",
-      "Name": "《コンボ行動4 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo4AttackRotateHigh03",
-      "Name": "《コンボ行動4 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo4AttackRotateHigh04",
-      "Name": "《コンボ行動4 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo4AttackRotateLow01",
-      "Name": "《コンボ行動4 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo4AttackRotateLow02",
-      "Name": "《コンボ行動4 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo4AttackRotateLow03",
-      "Name": "《コンボ行動4 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo4AttackRotateLow04",
-      "Name": "《コンボ行動4 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 4: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo4AttackHand01",
-      "Name": "《コンボ行動4 攻撃手1》",
-      "Description": ""
+      "Name": "Action 4: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo4AttackHand02",
-      "Name": "《コンボ行動4 攻撃手2》",
-      "Description": ""
+      "Name": "Action 4: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo4AttackHand03",
-      "Name": "《コンボ行動4 攻撃手3》",
-      "Description": ""
+      "Name": "Action 4: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo4AttackHand04",
-      "Name": "《コンボ行動4 攻撃手4》",
-      "Description": ""
+      "Name": "Action 4: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo4AttackChantSfx",
-      "Name": "《コンボ行動4 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 4: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo4Reload",
-      "Name": "《コンボ行動4 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 4: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad04",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "combo5AttackMotionId",
-      "Name": "《コンボ行動5 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 5: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 5."
     },
     {
       "Field": "combo5ComboAttackRoute1",
-      "Name": "《コンボ行動5 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 5: Combo Step 2",
+      "Description": "Defines the second attack route in combo 5."
     },
     {
       "Field": "combo5ComboAttackRoute2",
-      "Name": "《コンボ行動5 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 5: Combo Step 3",
+      "Description": "Defines the third attack route in combo 5."
     },
     {
       "Field": "combo5ComboAttackRoute3",
-      "Name": "《コンボ行動5 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 5: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 5."
     },
     {
       "Field": "combo5BladeCtrlType",
-      "Name": "《コンボ行動5 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 5: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 5."
     },
     {
       "Field": "combo5AttackId01",
-      "Name": "《コンボ行動5 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 5: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 5."
     },
     {
       "Field": "combo5AttackId02",
-      "Name": "《コンボ行動5 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 5: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 5."
     },
     {
       "Field": "combo5AttackId03",
-      "Name": "《コンボ行動5 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 5: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 5."
     },
     {
       "Field": "combo5AttackId04",
-      "Name": "《コンボ行動5 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 5: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 5."
     },
     {
       "Field": "combo5BulletId01",
-      "Name": "《コンボ行動5 BulletID1》",
-      "Description": ""
+      "Name": "Action 5: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 5."
     },
     {
       "Field": "combo5BulletId02",
-      "Name": "《コンボ行動5 BulletID2》",
-      "Description": ""
+      "Name": "Action 5: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 5."
     },
     {
       "Field": "combo5BulletId03",
-      "Name": "《コンボ行動5 BulletID3》",
-      "Description": ""
+      "Name": "Action 5: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 5."
     },
     {
       "Field": "combo5BulletId04",
-      "Name": "《コンボ行動5 BulletID4》",
-      "Description": ""
+      "Name": "Action 5: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 5."
     },
     {
       "Field": "combo5ShtoStanceTime01",
-      "Name": "《コンボ行動5 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 5: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo5ShtoStanceTime02",
-      "Name": "《コンボ行動5 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 5: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo5ShtoStanceTime03",
-      "Name": "《コンボ行動5 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 5: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo5ShtoStanceTime04",
-      "Name": "《コンボ行動5 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 5: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo5NonInterruptibleType01",
-      "Name": "《コンボ行動5 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 5: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo5NonInterruptibleType02",
-      "Name": "《コンボ行動5 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 5: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo5NonInterruptibleType03",
-      "Name": "《コンボ行動5 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 5: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo5NonInterruptibleType04",
-      "Name": "《コンボ行動5 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 5: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo5AttackMoveId01",
-      "Name": "《コンボ行動5 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo5AttackMoveId02",
-      "Name": "《コンボ行動5 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo5AttackMoveId03",
-      "Name": "《コンボ行動5 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo5AttackMoveId04",
-      "Name": "《コンボ行動5 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo5AttackHomingCancel01",
-      "Name": "《コンボ行動5 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 5: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo5AttackHomingCancel02",
-      "Name": "《コンボ行動5 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 5: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo5AttackHomingCancel03",
-      "Name": "《コンボ行動5 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 5: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo5AttackHomingCancel04",
-      "Name": "《コンボ行動5 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 5: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo5AttackRange01",
-      "Name": "《コンボ行動5 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo5AttackRange02",
-      "Name": "《コンボ行動5 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo5AttackRange03",
-      "Name": "《コンボ行動5 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo5AttackRange04",
-      "Name": "《コンボ行動5 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 5: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo5AttackBackSwingSpeed01",
-      "Name": "《コンボ行動5 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 5: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 5."
     },
     {
       "Field": "fCombo5AttackBackSwingSpeed02",
-      "Name": "《コンボ行動5 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 5: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 5."
     },
     {
       "Field": "fCombo5AttackBackSwingSpeed03",
-      "Name": "《コンボ行動5 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 5: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 5."
     },
     {
       "Field": "fCombo5AttackBackSwingSpeed04",
-      "Name": "《コンボ行動5 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 5: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 5."
     },
     {
       "Field": "fCombo5AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動5 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 5: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 5."
     },
     {
       "Field": "fCombo5AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動5 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 5: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 5."
     },
     {
       "Field": "fCombo5AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動5 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 5: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 5."
     },
     {
       "Field": "fCombo5AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動5 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 5: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 5."
     },
     {
       "Field": "fCombo5EstimateFutureTime01",
-      "Name": "《コンボ行動5 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 5: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 5."
     },
     {
       "Field": "fCombo5EstimateFutureTime02",
-      "Name": "《コンボ行動5 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 5: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 5."
     },
     {
       "Field": "fCombo5EstimateFutureTime03",
-      "Name": "《コンボ行動5 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 5: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 5."
     },
     {
       "Field": "fCombo5EstimateFutureTime04",
-      "Name": "《コンボ行動5 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 5: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 5."
     },
     {
       "Field": "combo5AttackAngle01",
-      "Name": "《コンボ行動5 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 5: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo5AttackAngle02",
-      "Name": "《コンボ行動5 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 5: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo5AttackAngle03",
-      "Name": "《コンボ行動5 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 5: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo5AttackAngle04",
-      "Name": "《コンボ行動5 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 5: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo5AttackRotateHigh01",
-      "Name": "《コンボ行動5 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo5AttackRotateHigh02",
-      "Name": "《コンボ行動5 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo5AttackRotateHigh03",
-      "Name": "《コンボ行動5 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo5AttackRotateHigh04",
-      "Name": "《コンボ行動5 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo5AttackRotateLow01",
-      "Name": "《コンボ行動5 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo5AttackRotateLow02",
-      "Name": "《コンボ行動5 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo5AttackRotateLow03",
-      "Name": "《コンボ行動5 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo5AttackRotateLow04",
-      "Name": "《コンボ行動5 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 5: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo5AttackHand01",
-      "Name": "《コンボ行動5 攻撃手1》",
-      "Description": ""
+      "Name": "Action 5: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo5AttackHand02",
-      "Name": "《コンボ行動5 攻撃手2》",
-      "Description": ""
+      "Name": "Action 5: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo5AttackHand03",
-      "Name": "《コンボ行動5 攻撃手3》",
-      "Description": ""
+      "Name": "Action 5: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo5AttackHand04",
-      "Name": "《コンボ行動5 攻撃手4》",
-      "Description": ""
+      "Name": "Action 5: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo5AttackChantSfx",
-      "Name": "《コンボ行動5 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 5: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo5Reload",
-      "Name": "《コンボ行動5 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 5: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad05",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "combo6AttackMotionId",
-      "Name": "《コンボ行動6 コンボ一段目》",
-      "Description": ""
+      "Name": "Action 6: Combo Step 1",
+      "Description": "Animation ID for the first attack in combo 6."
     },
     {
       "Field": "combo6ComboAttackRoute1",
-      "Name": "《コンボ行動6 コンボ二段目》",
-      "Description": ""
+      "Name": "Action 6: Combo Step 2",
+      "Description": "Defines the second attack route in combo 6."
     },
     {
       "Field": "combo6ComboAttackRoute2",
-      "Name": "《コンボ行動6 コンボ三段目》",
-      "Description": ""
+      "Name": "Action 6: Combo Step 3",
+      "Description": "Defines the third attack route in combo 6."
     },
     {
       "Field": "combo6ComboAttackRoute3",
-      "Name": "《コンボ行動6 コンボ四段目》",
-      "Description": ""
+      "Name": "Action 6: Combo Step 4",
+      "Description": "Defines the fourth attack route in combo 6."
     },
     {
       "Field": "combo6BladeCtrlType",
-      "Name": "《コンボ行動6 近接制御タイプ》",
-      "Description": ""
+      "Name": "Action 6: Melee Control Type",
+      "Description": "Determines melee weapon control behavior for combo 6."
     },
     {
       "Field": "combo6AttackId01",
-      "Name": "《コンボ行動6 攻撃ID1》",
-      "Description": ""
+      "Name": "Action 6: Attack ID 1",
+      "Description": "Identifier for the first attack action in combo 6."
     },
     {
       "Field": "combo6AttackId02",
-      "Name": "《コンボ行動6 攻撃ID2》",
-      "Description": ""
+      "Name": "Action 6: Attack ID 2",
+      "Description": "Identifier for the second attack action in combo 6."
     },
     {
       "Field": "combo6AttackId03",
-      "Name": "《コンボ行動6 攻撃ID3》",
-      "Description": ""
+      "Name": "Action 6: Attack ID 3",
+      "Description": "Identifier for the third attack action in combo 6."
     },
     {
       "Field": "combo6AttackId04",
-      "Name": "《コンボ行動6 攻撃ID4》",
-      "Description": ""
+      "Name": "Action 6: Attack ID 4",
+      "Description": "Identifier for the fourth attack action in combo 6."
     },
     {
       "Field": "combo6BulletId01",
-      "Name": "《コンボ行動6 BulletID1》",
-      "Description": ""
+      "Name": "Action 6: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 6."
     },
     {
       "Field": "combo6BulletId02",
-      "Name": "《コンボ行動6 BulletID2》",
-      "Description": ""
+      "Name": "Action 6: Bullet ID 1",
+      "Description": "Projectile ID for the first ranged attack in combo 6."
     },
     {
       "Field": "combo6BulletId03",
-      "Name": "《コンボ行動6 BulletID3》",
-      "Description": ""
+      "Name": "Action 6: Bullet ID 3",
+      "Description": "Projectile ID for the third ranged attack in combo 6."
     },
     {
       "Field": "combo6BulletId04",
-      "Name": "《コンボ行動6 BulletID4》",
-      "Description": ""
+      "Name": "Action 6: Bullet ID 4",
+      "Description": "Projectile ID for the fourth ranged attack in combo 6."
     },
     {
       "Field": "combo6ShtoStanceTime01",
-      "Name": "《コンボ行動6 射撃構え時間1》",
-      "Description": ""
+      "Name": "Action 6: Shooting Stance Time 1",
+      "Description": "Time spent in aiming stance before attack 1."
     },
     {
       "Field": "combo6ShtoStanceTime02",
-      "Name": "《コンボ行動6 射撃構え時間2》",
-      "Description": ""
+      "Name": "Action 6: Shooting Stance Time 2",
+      "Description": "Time spent in aiming stance before attack 2."
     },
     {
       "Field": "combo6ShtoStanceTime03",
-      "Name": "《コンボ行動6 射撃構え時間3》",
-      "Description": ""
+      "Name": "Action 6: Shooting Stance Time 3",
+      "Description": "Time spent in aiming stance before attack 3."
     },
     {
       "Field": "combo6ShtoStanceTime04",
-      "Name": "《コンボ行動6 射撃構え時間4》",
-      "Description": ""
+      "Name": "Action 6: Shooting Stance Time 4",
+      "Description": "Time spent in aiming stance before attack 4."
     },
     {
       "Field": "combo6NonInterruptibleType01",
-      "Name": "《コンボ行動6 割り込み不可タイプ1》",
-      "Description": ""
+      "Name": "Action 6: Non-interruptible Type 1",
+      "Description": "Determines if attack 1 can be interrupted."
     },
     {
       "Field": "combo6NonInterruptibleType02",
-      "Name": "《コンボ行動6 割り込み不可タイプ2》",
-      "Description": ""
+      "Name": "Action 6: Non-interruptible Type 2",
+      "Description": "Determines if attack 2 can be interrupted."
     },
     {
       "Field": "combo6NonInterruptibleType03",
-      "Name": "《コンボ行動6 割り込み不可タイプ3》",
-      "Description": ""
+      "Name": "Action 6: Non-interruptible Type 3",
+      "Description": "Determines if attack 3 can be interrupted."
     },
     {
       "Field": "combo6NonInterruptibleType04",
-      "Name": "《コンボ行動6 割り込み不可タイプ4》",
-      "Description": ""
+      "Name": "Action 6: Non-interruptible Type 4",
+      "Description": "Determines if attack 4 can be interrupted."
     },
     {
       "Field": "combo6AttackMoveId01",
-      "Name": "《コンボ行動6 歩行攻撃ID1》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack ID 1",
+      "Description": "Attack ID used while moving for attack 1."
     },
     {
       "Field": "combo6AttackMoveId02",
-      "Name": "《コンボ行動6 歩行攻撃ID2》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack ID 2",
+      "Description": "Attack ID used while moving for attack 2."
     },
     {
       "Field": "combo6AttackMoveId03",
-      "Name": "《コンボ行動6 歩行攻撃ID3》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack ID 3",
+      "Description": "Attack ID used while moving for attack 3."
     },
     {
       "Field": "combo6AttackMoveId04",
-      "Name": "《コンボ行動6 歩行攻撃ID4》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack ID 4",
+      "Description": "Attack ID used while moving for attack 4."
     },
     {
       "Field": "combo6AttackHomingCancel01",
-      "Name": "《コンボ行動6 ホーミング解除有効設定1》",
-      "Description": ""
+      "Name": "Action 6: Homing Cancel Setting 1",
+      "Description": "Whether homing is disabled for attack 1."
     },
     {
       "Field": "combo6AttackHomingCancel02",
-      "Name": "《コンボ行動6 ホーミング解除有効設定2》",
-      "Description": ""
+      "Name": "Action 6: Homing Cancel Setting 2",
+      "Description": "Whether homing is disabled for attack 2."
     },
     {
       "Field": "combo6AttackHomingCancel03",
-      "Name": "《コンボ行動6 ホーミング解除有効設定3》",
-      "Description": ""
+      "Name": "Action 6: Homing Cancel Setting 3",
+      "Description": "Whether homing is disabled for attack 3."
     },
     {
       "Field": "combo6AttackHomingCancel04",
-      "Name": "《コンボ行動6 ホーミング解除有効設定4》",
-      "Description": ""
+      "Name": "Action 6: Homing Cancel Setting 4",
+      "Description": "Whether homing is disabled for attack 4."
     },
     {
       "Field": "combo6AttackRange01",
-      "Name": "《コンボ行動6 歩行攻撃攻撃範囲1》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack Range 1",
+      "Description": "Effective range for attack 1 while moving."
     },
     {
       "Field": "combo6AttackRange02",
-      "Name": "《コンボ行動6 歩行攻撃攻撃範囲2》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack Range 2",
+      "Description": "Effective range for attack 2 while moving."
     },
     {
       "Field": "combo6AttackRange03",
-      "Name": "《コンボ行動6 歩行攻撃攻撃範囲3》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack Range 3",
+      "Description": "Effective range for attack 3 while moving."
     },
     {
       "Field": "combo6AttackRange04",
-      "Name": "《コンボ行動6 歩行攻撃攻撃範囲4》",
-      "Description": ""
+      "Name": "Action 6: Walking Attack Range 4",
+      "Description": "Effective range for attack 4 while moving."
     },
     {
       "Field": "fCombo6AttackBackSwingSpeed01",
-      "Name": "《コンボ行動6 攻撃開始部速度倍率1》",
-      "Description": ""
+      "Name": "Action 6: Attack Startup Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 1 in combo 6."
     },
     {
       "Field": "fCombo6AttackBackSwingSpeed02",
-      "Name": "《コンボ行動6 攻撃開始部速度倍率2》",
-      "Description": ""
+      "Name": "Action 6: Attack Startup Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 2 in combo 6."
     },
     {
       "Field": "fCombo6AttackBackSwingSpeed03",
-      "Name": "《コンボ行動6 攻撃開始部速度倍率3》",
-      "Description": ""
+      "Name": "Action 6: Attack Startup Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 3 in combo 6."
     },
     {
       "Field": "fCombo6AttackBackSwingSpeed04",
-      "Name": "《コンボ行動6 攻撃開始部速度倍率4》",
-      "Description": ""
+      "Name": "Action 6: Attack Startup Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the startup (wind-up) phase of attack 4 in combo 6."
     },
     {
       "Field": "fCombo6AttackFollowSwingSpeed01",
-      "Name": "《コンボ行動6 攻撃終了部速度倍率1》",
-      "Description": ""
+      "Name": "Action 6: Attack Recovery Speed Multiplier 1",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 1 in combo 6."
     },
     {
       "Field": "fCombo6AttackFollowSwingSpeed02",
-      "Name": "《コンボ行動6 攻撃終了部速度倍率2》",
-      "Description": ""
+      "Name": "Action 6: Attack Recovery Speed Multiplier 2",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 2 in combo 6."
     },
     {
       "Field": "fCombo6AttackFollowSwingSpeed03",
-      "Name": "《コンボ行動6 攻撃終了部速度倍率3》",
-      "Description": ""
+      "Name": "Action 6: Attack Recovery Speed Multiplier 3",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 3 in combo 6."
     },
     {
       "Field": "fCombo6AttackFollowSwingSpeed04",
-      "Name": "《コンボ行動6 攻撃終了部速度倍率4》",
-      "Description": ""
+      "Name": "Action 6: Attack Recovery Speed Multiplier 4",
+      "Description": "Speed multiplier applied during the recovery (end lag) phase of attack 4 in combo 6."
     },
     {
       "Field": "fCombo6EstimateFutureTime01",
-      "Name": "《コンボ行動6 位置予測時間1》",
-      "Description": ""
+      "Name": "Action 6: Target Prediction Time 1",
+      "Description": "Time used to predict target position for attack 1 in combo 6."
     },
     {
       "Field": "fCombo6EstimateFutureTime02",
-      "Name": "《コンボ行動6 位置予測時間2》",
-      "Description": ""
+      "Name": "Action 6: Target Prediction Time 2",
+      "Description": "Time used to predict target position for attack 2 in combo 6."
     },
     {
       "Field": "fCombo6EstimateFutureTime03",
-      "Name": "《コンボ行動6 位置予測時間3》",
-      "Description": ""
+      "Name": "Action 6: Target Prediction Time 3",
+      "Description": "Time used to predict target position for attack 3 in combo 6."
     },
     {
       "Field": "fCombo6EstimateFutureTime04",
-      "Name": "《コンボ行動6 位置予測時間4》",
-      "Description": ""
+      "Name": "Action 6: Target Prediction Time 4",
+      "Description": "Time used to predict target position for attack 4 in combo 6."
     },
     {
       "Field": "combo6AttackAngle01",
-      "Name": "《コンボ行動6 角度補正1[deg]》",
-      "Description": ""
+      "Name": "Action 6: Attack Angle Correction 1",
+      "Description": "Angular adjustment applied to attack direction for attack 1. In degree.s"
     },
     {
       "Field": "combo6AttackAngle02",
-      "Name": "《コンボ行動6 角度補正2[deg]》",
-      "Description": ""
+      "Name": "Action 6: Attack Angle Correction 2",
+      "Description": "Angular adjustment applied to attack direction for attack 2. In degree.s"
     },
     {
       "Field": "combo6AttackAngle03",
-      "Name": "《コンボ行動6 角度補正3[deg]》",
-      "Description": ""
+      "Name": "Action 6: Attack Angle Correction 3",
+      "Description": "Angular adjustment applied to attack direction for attack 3. In degree.s"
     },
     {
       "Field": "combo6AttackAngle04",
-      "Name": "《コンボ行動6 角度補正4[deg]》",
-      "Description": ""
+      "Name": "Action 6: Attack Angle Correction 4",
+      "Description": "Angular adjustment applied to attack direction for attack 4. In degree.s"
     },
     {
       "Field": "fCombo6AttackRotateHigh01",
-      "Name": "《コンボ行動6 旋回補間開始距離1[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation Start Distance 1",
+      "Description": "Distance at which turn interpolation begins for attack 1. In metres."
     },
     {
       "Field": "fCombo6AttackRotateHigh02",
-      "Name": "《コンボ行動6 旋回補間開始距離2[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation Start Distance 2",
+      "Description": "Distance at which turn interpolation begins for attack 2. In metres."
     },
     {
       "Field": "fCombo6AttackRotateHigh03",
-      "Name": "《コンボ行動6 旋回補間開始距離3[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation Start Distance 3",
+      "Description": "Distance at which turn interpolation begins for attack 3. In metres."
     },
     {
       "Field": "fCombo6AttackRotateHigh04",
-      "Name": "《コンボ行動6 旋回補間開始距離4[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation Start Distance 4",
+      "Description": "Distance at which turn interpolation begins for attack 4. In metres."
     },
     {
       "Field": "fCombo6AttackRotateLow01",
-      "Name": "《コンボ行動6 旋回補間終了距離1[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation End Distance 1",
+      "Description": "Distance at which turn interpolation ends for attack 1. In metres."
     },
     {
       "Field": "fCombo6AttackRotateLow02",
-      "Name": "《コンボ行動6 旋回補間終了距離2[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation End Distance 2",
+      "Description": "Distance at which turn interpolation ends for attack 2. In metres."
     },
     {
       "Field": "fCombo6AttackRotateLow03",
-      "Name": "《コンボ行動6 旋回補間終了距離3[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation End Distance 3",
+      "Description": "Distance at which turn interpolation ends for attack 3. In metres."
     },
     {
       "Field": "fCombo6AttackRotateLow04",
-      "Name": "《コンボ行動6 旋回補間終了距離4[m]》",
-      "Description": ""
+      "Name": "Action 6: Turn Interpolation End Distance 4",
+      "Description": "Distance at which turn interpolation ends for attack 4. In metres."
     },
     {
       "Field": "combo6AttackHand01",
-      "Name": "《コンボ行動6 攻撃手1》",
-      "Description": ""
+      "Name": "Action 6: Attack Hand: 1",
+      "Description": "Defines which hand is used for attack 1 (e.g., right/left weapon slot)."
     },
     {
       "Field": "combo6AttackHand02",
-      "Name": "《コンボ行動6 攻撃手2》",
-      "Description": ""
+      "Name": "Action 6: Attack Hand: 2",
+      "Description": "Defines which hand is used for attack 2."
     },
     {
       "Field": "combo6AttackHand03",
-      "Name": "《コンボ行動6 攻撃手3》",
-      "Description": ""
+      "Name": "Action 6: Attack Hand: 3",
+      "Description": "Defines which hand is used for attack 3."
     },
     {
       "Field": "combo6AttackHand04",
-      "Name": "《コンボ行動6 攻撃手4》",
-      "Description": ""
+      "Name": "Action 6: Attack Hand: 4",
+      "Description": "Defines which hand is used for attack 4."
     },
     {
       "Field": "combo6AttackChantSfx",
-      "Name": "《コンボ行動6 詠唱SFX》",
-      "Description": ""
+      "Name": "Action 6: Casting Chant SFX",
+      "Description": "Sound effect played during attack preparation or casting."
     },
     {
       "Field": "combo6Reload",
-      "Name": "《コンボ行動6 リロード時間[sec]》",
-      "Description": ""
+      "Name": "Action 6: Reload Time (sec)",
+      "Description": "Time required to reload or reset after completing the combo sequence."
     },
     {
       "Field": "pad06",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]
