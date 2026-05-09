@@ -98,7 +98,7 @@ public class GparamData : IDisposable
         GparamAnnotationLanguages = new();
 
         // Build the language list first
-        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", "Annotation Languages.json");
+        var sourcefile = Path.Join(StudioCore.Common.FileLocations.Assets, "GPARAM", "Annotation Languages.json");
 
         if (Path.Exists(sourcefile))
         {
@@ -130,7 +130,7 @@ public class GparamData : IDisposable
             var paramList = new GparamAnnotationList();
             Annotations.Entries.Add(lang, paramList);
 
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Annotations", lang.Folder);
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Annotations", lang.Folder);
 
             if (Path.Exists(sourceFolder))
             {
@@ -164,7 +164,7 @@ public class GparamData : IDisposable
 
         Enums = new();
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Enums");
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "GPARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Gparam Enums");
 
         if (Path.Exists(sourceFolder))
         {

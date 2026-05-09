@@ -22,11 +22,14 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_6_win64.dll"))
-#elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.6.dylib"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}\oo2core_6_win64.dll"))
+#elif MACOS
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2coremac64.2.6.dylib") &&
+            new FileInfo($@"{AppContext.BaseDirectory}/liboo2coremac64.2.6.dylib").Length > 50 * 1024)
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.6"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2corelinux64.so.6"))
+#else
+        return false;
 #endif
         {
             Oodle6Exists = true;
@@ -42,11 +45,14 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_8_win64.dll"))
-#elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.8.dylib"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}\oo2core_8_win64.dll"))
+#elif MACOS
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2coremac64.2.8.dylib") &&
+            new FileInfo($@"{AppContext.BaseDirectory}/liboo2coremac64.2.8.dylib").Length > 50 * 1024)
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.8"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2corelinux64.so.8"))
+#else
+        return false;
 #endif
         {
             Oodle8Exists = true;
@@ -62,11 +68,14 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_9_win64.dll"))
-#elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.9.dylib"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}\oo2core_9_win64.dll"))
+#elif MACOS
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2coremac64.2.9.dylib") &&
+            new FileInfo($@"{AppContext.BaseDirectory}/liboo2coremac64.2.9.dylib").Length > 50*1024)
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.9"))
+        if (Path.Exists($@"{AppContext.BaseDirectory}/liboo2corelinux64.so.9"))
+#else
+        return false;
 #endif
         {
             Oodle9Exists = true;
@@ -121,12 +130,15 @@ public class Oodle
 #if WINDOWS
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
             + $"Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory");
-#elif OSX
+#elif MACOS
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy liboo2coremac64.2.6.dylib, liboo2coremac64.2.8.dylib or liboo2coremac64.2.9.dylib into the Smithbox program directory");
+            + $"Please copy liboo2coremac64.2.6.dylib, liboo2coremac64.2.8.dylib or liboo2coremac64.2.9.dylib into the Smithbox MonoBundle directory "
+            + $"and set LC_ID_DYLIB to @executable_path/../../Contents/MonoBundle/liboo2coremac64.2.9.dylib");
 #elif LINUX
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
             + $"Please copy liboo2corelinux64.so.6, liboo2corelinux64.so.8 or liboo2corelinux64.so.9 into the Smithbox program directory");
+#else
+        return false;
 #endif
     }
 

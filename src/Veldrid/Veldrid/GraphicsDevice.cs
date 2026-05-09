@@ -56,6 +56,7 @@ namespace Veldrid
         private const int SharedCommandPoolCount = 4;
         private VkDescriptorPoolManager _descriptorPoolManager;
         private bool _standardValidationSupported;
+        private bool _isPortabilitySubset = OperatingSystem.IsMacOS();
         private bool _standardClipYDirection;
         private vkGetBufferMemoryRequirements2_t _getBufferMemoryRequirements2;
         private vkGetImageMemoryRequirements2_t _getImageMemoryRequirements2;
@@ -676,6 +677,29 @@ namespace Veldrid
             }
 
             return VkSampleCountFlags.Count1;
+        }
+
+        /// <summary>
+        /// Gets the maximum image extent for the given <see cref="VkFormat"/>.
+        /// </summary>
+        /// <param name="type">The image type.</param>
+        /// <param name="format">The format to query.</param>
+        /// <param name="usageFlags">The usage flags.</param>
+        /// <param name="createFlags">The creation flags.</param>
+        /// <param name="tiling">The tiling options.</param>
+        /// <returns>A <see cref="VkExtent3D"/> struct representing the maximum width, height, and depth that a <see cref="Texture"/> of that
+        /// format can be created with.</returns>
+        public VkExtent3D GetImageFormatMaxExtent(VkImageType type, VkFormat format, VkImageUsageFlags usageFlags, VkImageCreateFlags createFlags, VkImageTiling tiling)
+        {
+            vkGetPhysicalDeviceImageFormatProperties(
+                _physicalDevice,
+                format,
+                type,
+                tiling,
+                usageFlags,
+                createFlags,
+                out VkImageFormatProperties formatProperties);
+            return formatProperties.maxExtent;
         }
 
         /// <summary>
@@ -1673,6 +1697,12 @@ namespace Veldrid
                 }
             }
 
+            if (availableInstanceExtensions.Contains(CommonStrings.VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME))
+            {
+                _isPortabilitySubset = true;
+                instanceExtensions.Add(CommonStrings.VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
+            }
+
             var instanceCI = new VkInstanceCreateInfo
             {
                 pApplicationInfo = &applicationInfo,
@@ -1681,6 +1711,8 @@ namespace Veldrid
                 enabledLayerCount = instanceLayers.Count,
                 ppEnabledLayerNames = (instanceLayers.Count > 0) ? (sbyte**)instanceLayers.Data : null
             };
+            if (_isPortabilitySubset)
+                instanceCI.flags = VkInstanceCreateFlags.EnumeratePortabilityKHR;
 
             VkDebugUtilsMessengerCreateInfoEXT debugCallbackCI;
             if (debug && debugUtilsExtensionAvailable)
@@ -1818,9 +1850,7 @@ namespace Veldrid
                     deviceVulkan11Features.uniformAndStorageBuffer16BitAccess != VkBool32.True)
                     continue;
                 if (
-#if !OSX
-                    deviceVulkan12Features.drawIndirectCount != VkBool32.True || //! not supported by metal
-#endif
+                    deviceVulkan12Features.drawIndirectCount != VkBool32.True && !_isPortabilitySubset ||
                     deviceVulkan12Features.descriptorIndexing != VkBool32.True ||
                     deviceVulkan12Features.descriptorBindingVariableDescriptorCount != VkBool32.True ||
                     deviceVulkan12Features.runtimeDescriptorArray != VkBool32.True ||
@@ -1966,11 +1996,7 @@ namespace Veldrid
 
             var deviceFeatures12 = new VkPhysicalDeviceVulkan12Features
             {
-#if OSX
-                drawIndirectCount = VkBool32.False, //! not supported by metal
-#else
-                drawIndirectCount = VkBool32.True,
-#endif
+                drawIndirectCount = _isPortabilitySubset ? VkBool32.False : VkBool32.True,
                 descriptorIndexing = VkBool32.True,
                 descriptorBindingVariableDescriptorCount = VkBool32.True,
                 descriptorBindingSampledImageUpdateAfterBind = VkBool32.True,
@@ -2024,6 +2050,11 @@ namespace Veldrid
                     extensionNames.Add((IntPtr)properties[property].extensionName);
                     requiredInstanceExtensions.Remove(extensionName);
                     hasDedicatedAllocation = true;
+                }
+                else if (extensionName == "VK_KHR_portability_subset")
+                {
+                    extensionNames.Add((IntPtr)properties[property].extensionName);
+                    requiredInstanceExtensions.Remove(extensionName);
                 }
                 else if (requiredInstanceExtensions.Remove(extensionName))
                 {

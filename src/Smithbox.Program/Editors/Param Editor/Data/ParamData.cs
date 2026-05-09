@@ -397,7 +397,7 @@ public class ParamData : IDisposable
         }
 
         // Param Type Info
-        var paramTypeInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
+        var paramTypeInfoPath = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
 
         if (File.Exists(paramTypeInfoPath))
         {
@@ -535,7 +535,7 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
+        var rootMetaDir = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
         var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
@@ -579,7 +579,7 @@ public class ParamData : IDisposable
         ParamAnnotationLanguages = new();
 
         // Build the language list first
-        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", "Annotation Languages.json");
+        var sourcefile = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", "Annotation Languages.json");
 
         if (Path.Exists(sourcefile))
         {
@@ -611,7 +611,7 @@ public class ParamData : IDisposable
             var paramList = new ParamAnnotationList();
             ParamAnnotations.Entries.Add(lang, paramList);
 
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
 
             if (Path.Exists(sourceFolder))
             {
@@ -646,7 +646,7 @@ public class ParamData : IDisposable
         RowImportLanguages = new();
 
         // Build the language list first
-        var sourcefile = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Row Import Languages.json");
+        var sourcefile = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Row Import Languages.json");
 
         if (Path.Exists(sourcefile))
         {
@@ -708,7 +708,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Enum_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
 
             if (Path.Exists(sourceFolder))
             {
@@ -766,7 +766,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Graph_Annotation_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
 
             if (Path.Exists(sourceFolder))
             {
@@ -823,7 +823,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Icon_Configuration_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
 
             if (Path.Exists(sourceFolder))
             {
@@ -856,7 +856,7 @@ public class ParamData : IDisposable
 
         ParamReloaderOffsets = new();
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Reloader");
+        var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Reloader");
 
         if (Path.Exists(sourceFolder))
         {
@@ -916,7 +916,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Category_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
             if (Path.Exists(sourceFolder))
             {
@@ -978,7 +978,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
 
             if (Path.Exists(sourceFolder))
             {
@@ -1040,7 +1040,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
 
             if (Path.Exists(sourceFolder))
             {
@@ -1102,7 +1102,7 @@ public class ParamData : IDisposable
 
         if (!CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override)
         {
-            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
+            var sourceFolder = Path.Join(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
 
             if (Path.Exists(sourceFolder))
             {
@@ -1134,7 +1134,7 @@ public class ParamData : IDisposable
         await Task.Yield();
 
         var lang = CFG.Current.ParamEditor_Import_Language;
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Table Names", lang);
+        var srcDir = Path.Combine(StudioCore.Common.FileLocations.Assets,  "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Table Names", lang);
 
         if (!Directory.Exists(srcDir))
         {
@@ -1246,7 +1246,7 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var srcFile = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
+        var srcFile = Path.Combine(StudioCore.Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
         var projFile = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Table Params.json");
 
         if (Directory.Exists(projFile))
@@ -1286,7 +1286,7 @@ public class ParamData : IDisposable
     public void CreateProjectParamMeta()
     {
         var metaDir = ParamLocator.GetParammetaDir(Project);
-        var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
+        var rootDir = Path.Combine(StudioCore.Common.FileLocations.Resources, metaDir);
         var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", metaDir);
 
         if (!Directory.Exists(projectDir))
@@ -1309,7 +1309,7 @@ public class ParamData : IDisposable
 
     public void CopyMetadataFile(string name)
     {
-        var srcFolder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var srcFolder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var srcFile = Path.Combine(srcFolder, name);
 
         var targetFolder = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project");

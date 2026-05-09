@@ -365,7 +365,9 @@ CMakeSettings.json
 
 Dump
 Media
+
 .DS_Store
+src/Platform.Build.props
 
 Documentation/BB
 src/Smithbox.Data/Assets/Shaders/build_shader.bat

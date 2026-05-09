@@ -145,7 +145,7 @@ namespace Veldrid
             if (hasExtMetalSurface)
             {
                 VkMetalSurfaceCreateInfoEXT surfaceCI = new VkMetalSurfaceCreateInfoEXT();
-                //surfaceCI.sType = VkMetalSurfaceCreateInfoEXT.VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT; //! handled by constructor
+                surfaceCI.sType = VkMetalSurfaceCreateInfoEXT.VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT;
                 surfaceCI.pLayer = metalLayer.NativePtr.ToPointer();
                 VkSurfaceKHR surface = new VkSurfaceKHR();
                 VkResult result = gd.CreateMetalSurfaceEXT(instance, &surfaceCI, null, &surface);

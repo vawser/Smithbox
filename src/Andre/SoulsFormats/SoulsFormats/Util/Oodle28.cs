@@ -58,7 +58,7 @@ namespace SoulsFormats
         /// <param name="scratchSize">= 0</param>
 #if WINDOWS
         [DllImport("oo2core_8_win64.dll", CallingConvention = CallingConvention.StdCall)]
-#elif OSX
+#elif MACOS
         [DllImport("liboo2coremac64.2.8.dylib", CallingConvention = CallingConvention.StdCall)]
 #elif LINUX
         [DllImport("liboo2corelinux64.so.8", CallingConvention = CallingConvention.StdCall)]
@@ -85,7 +85,7 @@ namespace SoulsFormats
         /// <param name="lzLevel">= OodleLZ_CompressionLevel_Normal</param>
 #if WINDOWS
         [DllImport("oo2core_8_win64.dll", CallingConvention = CallingConvention.StdCall)]
-#elif OSX
+#elif MACOS
         [DllImport("liboo2coremac64.2.8.dylib", CallingConvention = CallingConvention.StdCall)]
 #elif LINUX
         [DllImport("liboo2corelinux64.so.8", CallingConvention = CallingConvention.StdCall)]
@@ -108,7 +108,7 @@ namespace SoulsFormats
         /// <param name="threadPhase">= OodleLZ_Decode_Unthreaded</param>
 #if WINDOWS
         [DllImport("oo2core_8_win64.dll", CallingConvention = CallingConvention.StdCall)]
-#elif OSX
+#elif MACOS
         [DllImport("liboo2coremac64.2.8.dylib", CallingConvention = CallingConvention.StdCall)]
 #elif LINUX
         [DllImport("liboo2corelinux64.so.8", CallingConvention = CallingConvention.StdCall)]
@@ -138,7 +138,7 @@ namespace SoulsFormats
 
 #if WINDOWS
         [DllImport("oo2core_8_win64.dll", CallingConvention = CallingConvention.StdCall)]
-#elif OSX
+#elif MACOS
         [DllImport("liboo2coremac64.2.8.dylib", CallingConvention = CallingConvention.StdCall)]
 #elif LINUX
         [DllImport("liboo2corelinux64.so.8", CallingConvention = CallingConvention.StdCall)]
@@ -150,7 +150,7 @@ namespace SoulsFormats
 
 #if WINDOWS
         [DllImport("oo2core_8_win64.dll", CallingConvention = CallingConvention.StdCall)]
-#elif OSX
+#elif MACOS
         [DllImport("liboo2coremac64.2.8.dylib", CallingConvention = CallingConvention.StdCall)]
 #elif LINUX
         [DllImport("liboo2corelinux64.so.8", CallingConvention = CallingConvention.StdCall)]

@@ -1477,7 +1477,7 @@ public static class ExternalReferenceHelper
 
             if (File.Exists(path))
             {
-                Process.Start("explorer.exe", $"/select,\"{path}\"");
+                StudioCore.Common.FileExplorer.Start($"/select,\"{path}\"");
             }
             else
             {

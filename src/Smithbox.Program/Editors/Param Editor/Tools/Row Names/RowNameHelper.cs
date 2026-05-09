@@ -53,7 +53,7 @@ public static class RowNameHelper
         await Task.Yield();
 
         var sourceDirectory = filepath;
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(project)}";
+        var folder = @$"{StudioCore.Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(project)}";
 
         sourceDirectory = Path.Combine(folder, "Param Row Names", language);
 

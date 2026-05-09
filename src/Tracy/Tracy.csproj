@@ -9,17 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="TracyClient.dll">
+    <None Remove="*TracyClient*" />
+    <Content Include="TracyClient.dll" Condition="$(DefineConstants.Contains(WINDOWS))">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libTracyClient.dylib" Condition="$(DefineConstants.Contains(MACOS))">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libTracyClient.so" Condition="$(DefineConstants.Contains(LINUX))">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
-  </PropertyGroup>
 
 </Project>
