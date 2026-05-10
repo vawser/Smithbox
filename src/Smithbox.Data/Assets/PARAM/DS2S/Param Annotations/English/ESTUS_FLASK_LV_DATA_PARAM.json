@@ -2,21 +2,21 @@
   "Param": "ESTUS_FLASK_LV_DATA_PARAM",
   "Type": "ESTUS_FLASK_LV_DATA_PARAM",
   "Name": "ESTUS_FLASK_LV_DATA_PARAM",
-  "Description": "",
+  "Description": "Defines Estus Flask upgrade level behavior, including the applied special effect and number of uses granted.",
   "Fields": [
     {
       "Field": "spEffectId",
-      "Name": "特殊効果ID",
-      "Description": ""
+      "Name": "Special Effect ID",
+      "Description": "References the SpEffect applied when the Estus Flask is used at this upgrade level. Controls healing amount and any additional effects."
     },
     {
       "Field": "usableCount",
-      "Name": "使用回数",
-      "Description": ""
+      "Name": "Use Count",
+      "Description": "Number of times the flask can be used at this upgrade level before needing to rest or refill."
     },
     {
       "Field": "padding",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     }
   ]

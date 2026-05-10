@@ -2,116 +2,116 @@
   "Param": "DEMO_SPOT_LIGHT_PARAM",
   "Type": "DEMO_SPOT_LIGHT_PARAM",
   "Name": "DEMO_SPOT_LIGHT_PARAM",
-  "Description": "",
+  "Description": "Defines configuration for spotlight behavior in demo scenes, including position, color, cone shape, range, shadowing, and flicker effects.",
   "Fields": [
     {
       "Field": "offsetX",
-      "Name": "位置X",
-      "Description": ""
+      "Name": "Position: X",
+      "Description": "X-axis offset of the spotlight position."
     },
     {
       "Field": "offsetY",
-      "Name": "位置Y",
-      "Description": ""
+      "Name": "Position: Y",
+      "Description": "Y-axis offset of the spotlight position."
     },
     {
       "Field": "offsetZ",
-      "Name": "位置Z",
-      "Description": ""
+      "Name": "Position: Z",
+      "Description": "Z-axis offset of the spotlight position."
     },
     {
       "Field": "diffuseR",
-      "Name": "デフューズR",
-      "Description": ""
+      "Name": "Diffuse: Red",
+      "Description": "Red channel of the diffuse light color."
     },
     {
       "Field": "diffuseG",
-      "Name": "デフューズG",
-      "Description": ""
+      "Name": "Diffuse: Green",
+      "Description": "Green channel of the diffuse light color."
     },
     {
       "Field": "diffuseB",
-      "Name": "デフューズB",
-      "Description": ""
+      "Name": "Diffuse: Blue",
+      "Description": "Blue channel of the diffuse light color."
     },
     {
       "Field": "diffuseA",
-      "Name": "デフューズA",
-      "Description": ""
+      "Name": "Diffuse: Alpha",
+      "Description": "Intensity/opacity component of the diffuse light."
     },
     {
       "Field": "specularR",
-      "Name": "スペキュラR",
-      "Description": ""
+      "Name": "Specular: Red",
+      "Description": "Red channel of the specular highlight color."
     },
     {
       "Field": "specularG",
-      "Name": "スペキュラG",
-      "Description": ""
+      "Name": "Specular: Green",
+      "Description": "Green channel of the specular highlight color."
     },
     {
       "Field": "specularB",
-      "Name": "スペキュラB",
-      "Description": ""
+      "Name": "Specular: Blue",
+      "Description": "Blue channel of the specular highlight color."
     },
     {
       "Field": "specularA",
-      "Name": "スペキュラA",
-      "Description": ""
+      "Name": "Specular: Alpha",
+      "Description": "Intensity component of the specular highlight."
     },
     {
       "Field": "nearLength",
-      "Name": "開始距離",
-      "Description": ""
+      "Name": "Near Distance",
+      "Description": "Distance at which the spotlight begins affecting objects."
     },
     {
       "Field": "farLength",
-      "Name": "終了距離",
-      "Description": ""
+      "Name": "Far Distance",
+      "Description": "Maximum distance at which the spotlight has effect."
     },
     {
       "Field": "width",
-      "Name": "横幅",
-      "Description": ""
+      "Name": "Width",
+      "Description": "Horizontal spread of the spotlight cone."
     },
     {
       "Field": "height",
-      "Name": "縦幅",
-      "Description": ""
+      "Name": "Height",
+      "Description": "Vertical spread of the spotlight cone."
     },
     {
       "Field": "priority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Priority",
+      "Description": "Rendering or evaluation priority of the spotlight."
     },
     {
       "Field": "depthShadow",
-      "Name": "影の濃さ",
-      "Description": ""
+      "Name": "Shadow Strength",
+      "Description": "Controls intensity of shadows cast by the spotlight."
     },
     {
       "Field": "blinkTimeMax",
-      "Name": "明滅の時間(最大)",
-      "Description": ""
+      "Name": "Blink Duration: Maximum",
+      "Description": "Maximum duration of light flicker cycles."
     },
     {
       "Field": "blinkTimeMin",
-      "Name": "明滅の時間(最小)",
-      "Description": ""
+      "Name": "Blink Duration: Minimum",
+      "Description": "Minimum duration of light flicker cycles."
     },
     {
       "Field": "blinkPower",
-      "Name": "明滅の強さ",
-      "Description": ""
+      "Name": "Blink Intensity",
+      "Description": "Strength of spotlight flickering effect."
     },
     {
       "Field": "enableShadow",
-      "Name": "影を落とす",
-      "Description": ""
+      "Name": "Enable Shadow Casting",
+      "Description": "Determines whether the spotlight casts shadows."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -5,8 +5,8 @@
         <maxValue />
         <faceParamType />
         <faceParamCategory  Enum="CHR_EDIT_FACE_PARAM_CATEGORY"/>
-        <montageUsed />
-        <menuReverse />
-        <dummy />
+        <montageUsed IsBool="" />
+        <menuReverse IsBool="" />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

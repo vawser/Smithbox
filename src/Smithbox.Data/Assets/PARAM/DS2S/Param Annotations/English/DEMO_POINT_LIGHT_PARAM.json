@@ -2,101 +2,101 @@
   "Param": "DEMO_POINT_LIGHT_PARAM",
   "Type": "DEMO_POINT_LIGHT_PARAM",
   "Name": "DEMO_POINT_LIGHT_PARAM",
-  "Description": "",
+  "Description": "Defines configuration for point lights in demo scenes, including position, color, intensity, shadow behavior, and flicker (blink) effects.",
   "Fields": [
     {
       "Field": "offsetX",
-      "Name": "位置X",
-      "Description": ""
+      "Name": "Position: X",
+      "Description": "X-axis offset of the point light position."
     },
     {
       "Field": "offsetY",
-      "Name": "位置Y",
-      "Description": ""
+      "Name": "Position: Y",
+      "Description": "Y-axis offset of the point light position."
     },
     {
       "Field": "offsetZ",
-      "Name": "位置Z",
-      "Description": ""
+      "Name": "Position: Z",
+      "Description": "Z-axis offset of the point light position."
     },
     {
       "Field": "diffuseR",
-      "Name": "デフューズR",
-      "Description": ""
+      "Name": "Diffuse: Red",
+      "Description": "Red component of the diffuse light color."
     },
     {
       "Field": "diffuseG",
-      "Name": "デフューズG",
-      "Description": ""
+      "Name": "Diffuse: Green",
+      "Description": "Green component of the diffuse light color."
     },
     {
       "Field": "diffuseB",
-      "Name": "デフューズB",
-      "Description": ""
+      "Name": "Diffuse: Blue",
+      "Description": "Blue component of the diffuse light color."
     },
     {
       "Field": "diffuseA",
-      "Name": "デフューズA",
-      "Description": ""
+      "Name": "Diffuse: Alpha",
+      "Description": "Alpha (intensity/opacity) component of the diffuse light."
     },
     {
       "Field": "specularR",
-      "Name": "スペキュラR",
-      "Description": ""
+      "Name": "Specular: Red",
+      "Description": "Red component of the specular highlight color."
     },
     {
       "Field": "specularG",
-      "Name": "スペキュラG",
-      "Description": ""
+      "Name": "Specular: Green",
+      "Description": "Green component of the specular highlight color."
     },
     {
       "Field": "specularB",
-      "Name": "スペキュラB",
-      "Description": ""
+      "Name": "Specular: Blue",
+      "Description": "Blue component of the specular highlight color."
     },
     {
       "Field": "specularA",
-      "Name": "スペキュラA",
-      "Description": ""
+      "Name": "Specular: Alpha",
+      "Description": "Alpha (intensity) component of the specular highlight."
     },
     {
       "Field": "radius",
-      "Name": "ライトの半径",
-      "Description": ""
+      "Name": "Light Radius",
+      "Description": "Effective range of the point light."
     },
     {
       "Field": "priority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Priority",
+      "Description": "Rendering or evaluation priority of the light."
     },
     {
       "Field": "depthShadow",
-      "Name": "影の濃さ",
-      "Description": ""
+      "Name": "Shadow Strength",
+      "Description": "Controls the intensity/darkness of shadows cast by the light."
     },
     {
       "Field": "blinkTimeMax",
-      "Name": "明滅の時間(最大)",
-      "Description": ""
+      "Name": "Blink Duration: Maximum",
+      "Description": "Maximum duration of light blinking cycles."
     },
     {
       "Field": "blinkTimeMin",
-      "Name": "明滅の時間(最小)",
-      "Description": ""
+      "Name": "Blink Duration: Minimum",
+      "Description": "Minimum duration of light blinking cycles."
     },
     {
       "Field": "blinkPower",
-      "Name": "明滅の強さ",
-      "Description": ""
+      "Name": "Blink Intensity",
+      "Description": "Strength of the light flickering effect."
     },
     {
       "Field": "enableShadow",
-      "Name": "影を落とす",
-      "Description": ""
+      "Name": "Enable Shadow Casting",
+      "Description": "Determines whether this light casts shadows."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

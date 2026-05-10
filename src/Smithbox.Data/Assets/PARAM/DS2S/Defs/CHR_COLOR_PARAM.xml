@@ -923,7 +923,7 @@
             <Increment>1</Increment>
             <SortID>11032</SortID>
         </Field>
-        <Field Def="u8 partsB3 = 255">
+        <Field Def="u8 pattern10PartsB3 = 255">
             <DisplayName>パーツ3_色B</DisplayName>
             <DisplayFormat>$d</DisplayFormat>
             <Maximum>255</Maximum>

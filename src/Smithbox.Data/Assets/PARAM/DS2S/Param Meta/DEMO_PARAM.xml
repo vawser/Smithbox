@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Image 0 Color" Fields="img0MulColorR,img0MulColorG,img0MulColorB,alpha0Factor" PlacedField="img0MulColorB" />
+    <ColorEditor Name="Image 1 Color" Fields="img1MulColorR,img1MulColorG,img1MulColorB,alpha1Factor" PlacedField="img1MulColorB" />
+  </ColorEdit>
     <Field>
         <groupMask />
         <memoryBlock />

@@ -3,6 +3,6 @@
     <Field>
         <spEffectId />
         <usableCount />
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

@@ -2,42 +2,42 @@
   "Param": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
   "Type": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
   "Name": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
-  "Description": "",
+  "Description": "Defines camera positioning and viewing settings used during facial editing montage or character customization scenes.",
   "Fields": [
     {
       "Field": "fov",
-      "Name": "画角",
-      "Description": ""
+      "Name": "Field of View",
+      "Description": "Camera field of view angle used during the face editing montage."
     },
     {
       "Field": "positionX",
-      "Name": "カメラ位置X",
-      "Description": ""
+      "Name": "Camera Position: X",
+      "Description": "X-axis position of the camera."
     },
     {
       "Field": "positionY",
-      "Name": "カメラ位置Y",
-      "Description": ""
+      "Name": "Camera Position: Y",
+      "Description": "Y-axis position of the camera."
     },
     {
       "Field": "positionZ",
-      "Name": "カメラ位置Z",
-      "Description": ""
+      "Name": "Camera Position: Z",
+      "Description": "Z-axis position of the camera."
     },
     {
       "Field": "lookAtX",
-      "Name": "カメラ焦点X",
-      "Description": ""
+      "Name": "Camera Focus: X",
+      "Description": "X-axis coordinate of the camera focus target."
     },
     {
       "Field": "lookAtY",
-      "Name": "カメラ焦点Y",
-      "Description": ""
+      "Name": "Camera Focus: Y",
+      "Description": "Y-axis coordinate of the camera focus target."
     },
     {
       "Field": "lookAtZ",
-      "Name": "カメラ焦点Z",
-      "Description": ""
+      "Name": "Camera Focus: Z",
+      "Description": "Z-axis coordinate of the camera focus target."
     }
   ]
 }

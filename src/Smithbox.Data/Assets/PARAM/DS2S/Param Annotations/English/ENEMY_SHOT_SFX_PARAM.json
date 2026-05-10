@@ -2,17 +2,17 @@
   "Param": "ENEMY_SHOT_SFX_PARAM",
   "Type": "ENEMY_SHOT_SFX_PARAM",
   "Name": "ENEMY_SHOT_SFX_PARAM",
-  "Description": "",
+  "Description": "Defines the special effects (SFX) used when an enemy performs a projectile or shooting action, including the effect ID and its spawn location reference.",
   "Fields": [
     {
       "Field": "sfxId",
       "Name": "SFX ID",
-      "Description": ""
+      "Description": "Identifier for the visual effect triggered when the enemy fires a shot."
     },
     {
       "Field": "dummyPolyId",
-      "Name": "生成ダミポリ",
-      "Description": ""
+      "Name": "Spawn Dummy Polygon ID",
+      "Description": "ID of the dummy polygon used as the emission or spawn point for the shot SFX."
     }
   ]
 }

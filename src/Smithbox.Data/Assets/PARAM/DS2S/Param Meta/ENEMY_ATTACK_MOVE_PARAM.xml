@@ -17,6 +17,6 @@
         <rotationOffsetDummyPoly />
         <attackDashFailedCancel  IsBool=""/>
         <disableCollisionCheck  IsBool=""/>
-        <dummy1 />
+        <dummy1 Padding="" />
     </Field>
 </PARAMMETA>

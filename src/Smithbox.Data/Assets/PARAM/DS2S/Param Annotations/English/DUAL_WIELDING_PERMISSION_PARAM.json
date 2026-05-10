@@ -6,138 +6,138 @@
   "Fields": [
     {
       "Field": "none",
-      "Name": "なし",
-      "Description": ""
+      "Name": "None",
+      "Description": "No dual-wielding permission or category applied."
     },
     {
       "Field": "unarmed",
-      "Name": "二刀流 素手",
-      "Description": ""
+      "Name": "Dual-Wielding: Unarmed",
+      "Description": "Allows dual-wielding behavior while unarmed."
     },
     {
       "Field": "fist",
-      "Name": "二刀流 拳",
-      "Description": ""
+      "Name": "Dual-Wielding: Fist Weapon",
+      "Description": "Allows dual-wielding for fist-based weapons or martial arts equipment."
     },
     {
       "Field": "dagger",
-      "Name": "二刀流 短剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Dagger",
+      "Description": "Allows dual-wielding for dagger-type weapons."
     },
     {
       "Field": "thrustingSword",
-      "Name": "二刀流 刺剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Thrusting Sword",
+      "Description": "Allows dual-wielding for thrusting sword-type weapons."
     },
     {
       "Field": "sword",
-      "Name": "二刀流 片手剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Straight Sword",
+      "Description": "Allows dual-wielding for one-handed swords."
     },
     {
       "Field": "doublelBlade",
-      "Name": "二刀流 双刃剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Twinblade",
+      "Description": "Allows dual-wielding for twinblade-style weapons."
     },
     {
       "Field": "hammer",
-      "Name": "二刀流 片手槌",
-      "Description": ""
+      "Name": "Dual-Wielding: One-Handed Hammer",
+      "Description": "Allows dual-wielding for one-handed hammer-type weapons."
     },
     {
       "Field": "greatSword",
-      "Name": "二刀流 両手剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Greatsword",
+      "Description": "Allows dual-wielding for two-handed sword-class weapons."
     },
     {
       "Field": "axe",
-      "Name": "二刀流 片手斧",
-      "Description": ""
+      "Name": "Dual-Wielding: One-Handed Axe",
+      "Description": "Allows dual-wielding for one-handed axe-type weapons."
     },
     {
       "Field": "greatHammer",
-      "Name": "二刀流 両手槌",
-      "Description": ""
+      "Name": "Dual-Wielding: Great Hammer",
+      "Description": "Allows dual-wielding for large hammer-type weapons."
     },
     {
       "Field": "ultraGreatSword",
-      "Name": "二刀流 両手特大剣",
-      "Description": ""
+      "Name": "Dual-Wielding: Ultra Greatsword",
+      "Description": "Allows dual-wielding for ultra-large greatsword-type weapons."
     },
     {
       "Field": "greatAxe",
-      "Name": "二刀流 両手斧",
-      "Description": ""
+      "Name": "Dual-Wielding: Great Axe",
+      "Description": "Allows dual-wielding for large axe-type weapons."
     },
     {
       "Field": "scythe",
-      "Name": "二刀流 両手鎌",
-      "Description": ""
+      "Name": "Dual-Wielding: Scythe",
+      "Description": "Allows dual-wielding for scythe-type weapons."
     },
     {
       "Field": "halberd",
-      "Name": "二刀流 両手長斧",
-      "Description": ""
+      "Name": "Dual-Wielding: Halberd",
+      "Description": "Allows dual-wielding for halberd-type polearm weapons."
     },
     {
       "Field": "spear",
-      "Name": "二刀流 槍",
-      "Description": ""
+      "Name": "Dual-Wielding: Spear",
+      "Description": "Allows dual-wielding for spear-type weapons."
     },
     {
       "Field": "lance",
-      "Name": "二刀流 突撃槍",
-      "Description": ""
+      "Name": "Dual-Wielding: Lance",
+      "Description": "Allows dual-wielding for charge-type lance weapons."
     },
     {
       "Field": "whip",
-      "Name": "二刀流 鞭",
-      "Description": ""
+      "Name": "Dual-Wielding: Whip",
+      "Description": "Allows dual-wielding for whip-type weapons."
     },
     {
       "Field": "bow",
-      "Name": "二刀流 片手ボウ",
-      "Description": ""
+      "Name": "Dual-Wielding: Bow",
+      "Description": "Allows dual-wielding for bow-type ranged weapons."
     },
     {
       "Field": "burstBow",
-      "Name": "二刀流 連射片手ボウ",
-      "Description": ""
+      "Name": "Dual-Wielding: Rapid-Fire Bow",
+      "Description": "Allows dual-wielding for rapid-fire bow variants."
     },
     {
       "Field": "wand",
-      "Name": "二刀流 片手杖",
-      "Description": ""
+      "Name": "Dual-Wielding: Wand",
+      "Description": "Allows dual-wielding for wand-type casting weapons."
     },
     {
       "Field": "bell",
-      "Name": "二刀流 片手ベル",
-      "Description": ""
+      "Name": "Dual-Wielding: Bell",
+      "Description": "Allows dual-wielding for bell-type casting tools."
     },
     {
       "Field": "rightShield",
-      "Name": "二刀流 右盾",
-      "Description": ""
+      "Name": "Dual-Wielding: Right-Hand Shield",
+      "Description": "Allows dual-wielding shields in the right hand slot."
     },
     {
       "Field": "leftShield",
-      "Name": "二刀流 左盾",
-      "Description": ""
+      "Name": "Dual-Wielding: Left-Hand Shield",
+      "Description": "Allows dual-wielding shields in the left hand slot."
     },
     {
       "Field": "claw",
-      "Name": "二刀流 かぎ爪",
-      "Description": ""
+      "Name": "Dual-Wielding: Claw",
+      "Description": "Allows dual-wielding for claw-type weapons."
     },
     {
       "Field": "unk0",
-      "Name": "Dual-wielding Unknown0",
-      "Description": ""
+      "Name": "Dual-Wielding: Unknown Type 0",
+      "Description": "Unknown or unused dual-wielding category."
     },
     {
       "Field": "unk1",
-      "Name": "Dual-wielding Unknown1",
-      "Description": ""
+      "Name": "Dual-Wielding: Unknown Type 1",
+      "Description": "Unknown or unused dual-wielding category."
     }
   ]
 }

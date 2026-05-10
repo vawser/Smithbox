@@ -2,56 +2,56 @@
   "Param": "EVENT_PARAM",
   "Type": "EVENT_PARAM",
   "Name": "EVENT_PARAM",
-  "Description": "",
+  "Description": "Defines configuration settings for a gameplay or map event, including ownership, startup behavior, state handling, and execution conditions.",
   "Fields": [
     {
       "Field": "stateMapId",
-      "Name": "ステートマップID",
-      "Description": ""
+      "Name": "State Map ID",
+      "Description": "Identifier of the state map associated with this event. Used to determine event state transitions or conditions."
     },
     {
       "Field": "ownerId",
-      "Name": "オーナータイプID",
-      "Description": ""
+      "Name": "Owner Entity ID",
+      "Description": "Identifier of the owner entity or object associated with this event."
     },
     {
       "Field": "bonfireId",
-      "Name": "篝火ID",
-      "Description": ""
+      "Name": "Bonfire ID",
+      "Description": "References the bonfire tied to this event, if applicable."
     },
     {
       "Field": "resourceType",
-      "Name": "リソースタイプ",
-      "Description": ""
+      "Name": "Resource Type",
+      "Description": "Specifies the type of resource or asset used by the event."
     },
     {
       "Field": "bootType",
-      "Name": "起動タイプ",
-      "Description": ""
+      "Name": "Boot Type",
+      "Description": "Determines how or when the event is initialized or started."
     },
     {
       "Field": "ownerType",
-      "Name": "オーナータイプ",
-      "Description": ""
+      "Name": "Owner Type",
+      "Description": "Specifies the category or classification of the event owner."
     },
     {
       "Field": "bGroupConditionSync",
-      "Name": "グループ条件同期",
-      "Description": ""
+      "Name": "Group Condition Sync",
+      "Description": "Controls whether event group conditions are synchronized across related events."
     },
     {
       "Field": "bPlayerDeadPlaying",
-      "Name": "プレイヤー死亡時に動作させるか",
-      "Description": ""
+      "Name": "Run While Player Is Dead",
+      "Description": "If enabled, the event continues to execute even while the player character is dead."
     },
     {
       "Field": "bDemoPlaying",
-      "Name": "カットシーン中に動作させるか",
-      "Description": ""
+      "Name": "Run During Cutscenes",
+      "Description": "If enabled, the event remains active during cutscenes or demo playback."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

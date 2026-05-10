@@ -2,27 +2,27 @@
   "Param": "ENEMY_DEFAULT_LOGIC_PARAM",
   "Type": "ENEMY_DEFAULT_LOGIC_PARAM",
   "Name": "ENEMY_DEFAULT_LOGIC_PARAM",
-  "Description": "",
+  "Description": "Defines the default AI logic configuration for enemies, including startup state and hierarchical logic flow between upper and lower behavior modules.",
   "Fields": [
     {
       "Field": "stateId",
-      "Name": "キャラ起動ステートID",
-      "Description": ""
+      "Name": "Initial Character State ID",
+      "Description": "State ID used when the character's AI logic is first activated."
     },
     {
       "Field": "upperLogickId",
-      "Name": "上位ロジックID",
-      "Description": ""
+      "Name": "Overall Logic ID",
+      "Description": "Identifier for the higher-level AI logic module controlling overall behavior."
     },
     {
       "Field": "lowerLogickId",
-      "Name": "下位ロジックID",
-      "Description": ""
+      "Name": "Detailed Logic ID",
+      "Description": "Identifier for the lower-level AI logic module controlling detailed behavior execution."
     },
     {
       "Field": "lowerStartStateId",
-      "Name": "下位ロジックステートID",
-      "Description": ""
+      "Name": "Detailed Logic Start State ID",
+      "Description": "Initial state ID used when entering the lower-level logic module."
     }
   ]
 }

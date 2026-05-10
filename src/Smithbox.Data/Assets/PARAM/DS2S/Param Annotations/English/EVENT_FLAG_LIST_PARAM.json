@@ -2,12 +2,12 @@
   "Param": "EVENT_FLAG_LIST_PARAM",
   "Type": "EVENT_FLAG_LIST_PARAM",
   "Name": "EVENT_FLAG_LIST_PARAM",
-  "Description": "",
+  "Description": "Defines a list entry containing a single event flag ID used by event logic, conditions, or progression systems.",
   "Fields": [
     {
       "Field": "flagId",
-      "Name": "フラグID",
-      "Description": ""
+      "Name": "Flag ID",
+      "Description": "Identifier of the event flag referenced by scripts, conditions, or gameplay progression logic."
     }
   ]
 }

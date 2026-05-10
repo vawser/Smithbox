@@ -2,41 +2,40 @@
   "Param": "FACE_EDIT_PARAM",
   "Type": "FACE_EDIT_PARAM",
   "Name": "FACE_EDIT_PARAM",
-  "Description": "",
+  "Description": "Defines adjustable facial customization parameters used by the character creator and face generation system.",
   "Fields": [
     {
       "Field": "minValue",
-      "Name": "最低変動値",
-      "Description": ""
+      "Name": "Minimum Adjustment Value",
+      "Description": "Lowest value the facial parameter slider or adjustment can reach."
     },
     {
       "Field": "maxValue",
-      "Name": "最大変動値",
-      "Description": ""
+      "Name": "Maximum Adjustment Value",
+      "Description": "Highest value the facial parameter slider or adjustment can reach."
     },
     {
       "Field": "faceParamType",
-      "Name": "FaceGenParam名",
-      "Description": ""
+      "Name": "FaceGen Parameter Name",
+      "Description": "Specifies the internal FaceGen parameter controlled by this entry."
     },
     {
       "Field": "faceParamCategory",
-      "Name": "カテゴリ",
-      "Description": ""
+      "Name": "Category",
+      "Description": "Category grouping used to organize this facial parameter in the character customization menu."
     },
     {
       "Field": "montageUsed",
-      "Name": "モンタージュ使用",
-      "Description": ""
+      "Description": "Determines whether this facial parameter is used by montage-based facial editing or blending systems."
     },
     {
       "Field": "menuReverse",
-      "Name": "メニュー反転操作",
-      "Description": ""
+      "Name": "Reverse Menu Control",
+      "Description": "If enabled, reverses the direction of the menu slider or adjustment control for this parameter."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー\u3000",
+      "Name": "Padding",
       "Description": ""
     }
   ]
