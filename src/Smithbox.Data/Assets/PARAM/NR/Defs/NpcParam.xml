@@ -2225,6 +2225,7 @@
     <Field Def="s32 chaosMatchingItemLotId" FirstVersion="10200000"/>
     <Field Def="s32 chaosMatchingUnk" FirstVersion="10200000"/>
     
-    <Field Def="dummy8 endPadding[12]" FirstVersion="10200000"/>
+    <Field Def="f32 analyseDistCorrection" FirstVersion="10200000"/>
+    <Field Def="dummy8 endPadding[8]" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>
