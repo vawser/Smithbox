@@ -7,6 +7,6 @@
         <RotationX />
         <RotationY />
         <RotationZ />
-        <aReserved1 />
+        <aReserved1 Padding="" />
     </Field>
 </PARAMMETA>

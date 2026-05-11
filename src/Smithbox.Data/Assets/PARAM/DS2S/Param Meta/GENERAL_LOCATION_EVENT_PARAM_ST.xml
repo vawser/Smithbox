@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Color" Fields="colorR,colorG,colorB" PlacedField="colorB" />
+  </ColorEdit>
     <Field>
         <PositionX />
         <PositionY />
@@ -14,7 +17,7 @@
         <radius />
         <height />
         <depth />
-        <aReserved />
+        <aReserved Padding="" />
         <memoryBlockId />
         <categoryType  Enum="GENERAL_LOCATION_EVENT_ENUM"/>
         <categoryId />

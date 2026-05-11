@@ -2,222 +2,223 @@
   "Param": "FOOT_EFFECT_SFX_PARAM",
   "Type": "FOOT_EFFECT_SFX_PARAM",
   "Name": "FOOT_EFFECT_SFX_PARAM",
-  "Description": "",
+  "Description": "Defines footstep effect based on surface material types.",
   "Fields": [
     {
       "Field": "none",
-      "Name": "なし",
-      "Description": ""
+      "Name": "None",
+      "Description": "No footstep effect."
     },
     {
       "Field": "metal",
-      "Name": "鉄",
-      "Description": ""
+      "Name": "Iron",
+      "Description": "Footstep effect for standard metal surfaces."
     },
     {
       "Field": "heavymetal",
-      "Name": "重鉄",
-      "Description": ""
+      "Name": "Heavy Iron",
+      "Description": "Footstep effect for dense or thick metal surfaces."
     },
     {
       "Field": "wood",
-      "Name": "木",
-      "Description": ""
+      "Name": "Wood",
+      "Description": "Footstep effect for wooden surfaces such as planks or floors."
     },
     {
       "Field": "water",
-      "Name": "水",
-      "Description": ""
+      "Name": "Water",
+      "Description": "Footstep effect for shallow water surfaces."
     },
     {
       "Field": "swamp",
-      "Name": "沼",
-      "Description": ""
+      "Name": "Swamp",
+      "Description": "Footstep effect for muddy swamp terrain."
     },
     {
       "Field": "lumber",
-      "Name": "木材",
-      "Description": ""
+      "Name": "Lumber",
+      "Description": "Footstep effect for processed wood or stacked lumber."
     },
     {
       "Field": "meat",
-      "Name": "生者肉",
-      "Description": ""
+      "Name": "Living Flesh",
+      "Description": "Footstep effect for organic flesh-like surfaces."
     },
     {
       "Field": "deadmeat",
-      "Name": "亡者肉",
-      "Description": ""
+      "Name": "Dead Flesh",
+      "Description": "Footstep effect for decomposed or lifeless flesh-like surfaces."
     },
     {
       "Field": "insect",
-      "Name": "虫",
-      "Description": ""
+      "Name": "Insect",
+      "Description": "Footstep effect for chitinous or insect-like surfaces."
     },
     {
       "Field": "giant",
-      "Name": "巨人",
-      "Description": ""
+      "Name": "Giant",
+      "Description": "Footstep effect for massive creature-like surfaces."
     },
     {
       "Field": "bone",
-      "Name": "骨",
-      "Description": ""
+      "Name": "Bone",
+      "Description": "Footstep effect for bone or skeletal surfaces."
     },
     {
       "Field": "copper",
-      "Name": "銅",
-      "Description": ""
+      "Name": "Copper",
+      "Description": "Footstep effect for copper or similar metal surfaces."
     },
     {
       "Field": "energy",
-      "Name": "エネルギー",
-      "Description": ""
+      "Name": "Energy",
+      "Description": "Footstep effect for energy field or magical energy surfaces."
     },
     {
       "Field": "fire",
-      "Name": "炎",
-      "Description": ""
+      "Name": "Fire",
+      "Description": "Footstep effect for fiery or burning surfaces."
     },
     {
       "Field": "thunder",
-      "Name": "雷",
-      "Description": ""
+      "Name": "Thunder",
+      "Description": "Footstep effect for electrical or lightning-infused surfaces."
     },
     {
       "Field": "dark",
-      "Name": "闇",
-      "Description": ""
+      "Name": "Dark",
+      "Description": "Footstep effect for dark or void-like energy surfaces."
     },
     {
       "Field": "magic",
-      "Name": "魔力",
-      "Description": ""
+      "Name": "Magic",
+      "Description": "Footstep effect for magical or enchanted surfaces."
     },
     {
       "Field": "stone",
-      "Name": "石",
-      "Description": ""
+      "Name": "Stone",
+      "Description": "Footstep effect for rocky or stone surfaces."
     },
     {
       "Field": "dirt",
-      "Name": "土",
-      "Description": ""
+      "Name": "Dirt",
+      "Description": "Footstep effect for soil or earth surfaces."
     },
     {
       "Field": "carpet",
-      "Name": "カーペット",
-      "Description": ""
+      "Name": "Carpet",
+      "Description": "Footstep effect for fabric carpet surfaces."
     },
     {
       "Field": "grass",
-      "Name": "草",
-      "Description": ""
+      "Name": "Grass",
+      "Description": "Footstep effect for grassy terrain."
     },
     {
       "Field": "gravel",
-      "Name": "砂利",
-      "Description": ""
+      "Name": "Gravel",
+      "Description": "Footstep effect for loose gravel surfaces."
     },
     {
       "Field": "cloth",
-      "Name": "布",
-      "Description": ""
+      "Name": "Cloth",
+      "Description": "Footstep effect for fabric or cloth surfaces."
     },
     {
       "Field": "sand",
-      "Name": "砂",
-      "Description": ""
+      "Field": "sand",
+      "Name": "Sand",
+      "Description": "Footstep effect for sandy terrain."
     },
     {
       "Field": "ash",
-      "Name": "灰",
-      "Description": ""
+      "Name": "Ash",
+      "Description": "Footstep effect for ash-covered ground."
     },
     {
       "Field": "poisonswamp",
-      "Name": "毒沼",
-      "Description": ""
+      "Name": "Poison Swamp",
+      "Description": "Footstep effect for toxic or poisonous swamp terrain."
     },
     {
       "Field": "oil",
-      "Name": "油",
-      "Description": ""
+      "Name": "Oil",
+      "Description": "Footstep effect for slippery oil-covered surfaces."
     },
     {
       "Field": "coaltar",
-      "Name": "コールタール",
-      "Description": ""
+      "Name": "Coal Tar",
+      "Description": "Footstep effect for sticky coal tar surfaces."
     },
     {
       "Field": "lava",
-      "Name": "溶岩",
-      "Description": ""
+      "Name": "Lava",
+      "Description": "Footstep effect for molten lava surfaces."
     },
     {
       "Field": "string",
-      "Name": "蜘蛛の糸",
-      "Description": ""
+      "Name": "Spider Web",
+      "Description": "Footstep effect for web-like or stringy surfaces."
     },
     {
       "Field": "sulfurcrystal",
-      "Name": "硫黄結晶",
-      "Description": ""
+      "Name": "Sulfur Crystal",
+      "Description": "Footstep effect for crystalline sulfur formations."
     },
     {
       "Field": "footEffect33",
-      "Name": "Foot effect 33",
-      "Description": ""
+      "Name": "Foot Effect 33",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect34",
-      "Name": "Foot effect 34",
-      "Description": ""
+      "Name": "Foot Effect 34",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect35",
-      "Name": "Foot effect 35",
-      "Description": ""
+      "Name": "Foot Effect 35",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect36",
-      "Name": "Foot effect 36",
-      "Description": ""
+      "Name": "Foot Effect 36",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect37",
-      "Name": "Foot effect 37",
-      "Description": ""
+      "Name": "Foot Effect 37",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect38",
-      "Name": "Foot effect 38",
-      "Description": ""
+      "Name": "Foot Effect 38",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect39",
-      "Name": "Foot effect 39",
-      "Description": ""
+      "Name": "Foot Effect 39",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect40",
-      "Name": "Foot effect 40",
-      "Description": ""
+      "Name": "Foot Effect 40",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect41",
-      "Name": "Foot effect 41",
-      "Description": ""
+      "Name": "Foot Effect 41",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect42",
-      "Name": "Foot effect 42",
-      "Description": ""
+      "Name": "Foot Effect 42",
+      "Description": "Unused or custom footstep effect slot."
     },
     {
       "Field": "footEffect43",
-      "Name": "Foot effect 43",
-      "Description": ""
+      "Name": "Foot Effect 43",
+      "Description": "Unused or custom footstep effect slot."
     }
   ]
 }

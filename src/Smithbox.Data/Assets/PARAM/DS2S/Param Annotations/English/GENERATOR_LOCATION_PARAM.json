@@ -2,41 +2,41 @@
   "Param": "GENERATOR_LOCATION_PARAM",
   "Type": "GENERATOR_LOCATION_PARAM",
   "Name": "GENERATOR_LOCATION_PARAM",
-  "Description": "",
+  "Description": "Defines a spawn or generator placement in world space, including position and orientation data.",
   "Fields": [
     {
       "Field": "positionX",
-      "Name": "配置位置X",
-      "Description": ""
+      "Name": "Placement Position: X",
+      "Description": "World-space X coordinate where the generator is placed."
     },
     {
       "Field": "positionY",
-      "Name": "配置位置Y",
-      "Description": ""
+      "Name": "Placement Position: Y",
+      "Description": "World-space Y coordinate where the generator is placed."
     },
     {
       "Field": "positionZ",
-      "Name": "配置位置Z",
-      "Description": ""
+      "Name": "Placement Position: Z",
+      "Description": "World-space Z coordinate where the generator is placed."
     },
     {
       "Field": "angleX",
-      "Name": "配置角度X",
-      "Description": ""
+      "Name": "Placement Rotation: X",
+      "Description": "Rotation around the X-axis (pitch) for generator orientation."
     },
     {
       "Field": "angleY",
-      "Name": "配置角度Y",
-      "Description": ""
+      "Name": "Placement Rotation: Y",
+      "Description": "Rotation around the Y-axis (yaw) for generator orientation."
     },
     {
       "Field": "angleZ",
-      "Name": "配置角度Z",
-      "Description": ""
+      "Name": "Placement Rotation: Z",
+      "Description": "Rotation around the Z-axis (roll) for generator orientation."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,12 +2,12 @@
   "Param": "FE_TIME_SETTING_PARAM",
   "Type": "FE_TIME_SETTING_PARAM",
   "Name": "FE_TIME_SETTING_PARAM",
-  "Description": "",
+  "Description": "Defines time-related settings for the front-end system.",
   "Fields": [
     {
       "Field": "Time",
-      "Name": "時間",
-      "Description": ""
+      "Name": "Time",
+      "Description": "Represents a time value used by the front-end system for UI or state timing configuration."
     }
   ]
 }

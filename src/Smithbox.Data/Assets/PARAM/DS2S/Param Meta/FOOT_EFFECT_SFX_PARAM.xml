@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
     <Field>
-        <none />
-        <metal />
-        <heavymetal />
-        <wood />
-        <water />
-        <swamp />
-        <lumber />
-        <meat />
-        <deadmeat />
-        <insect />
-        <giant />
-        <bone />
-        <copper />
-        <energy />
-        <fire />
-        <thunder />
-        <dark />
-        <magic />
-        <stone />
-        <dirt />
-        <carpet />
-        <grass />
-        <gravel />
-        <cloth />
-        <sand />
-        <ash />
-        <poisonswamp />
-        <oil />
-        <coaltar />
-        <lava />
-        <string />
-        <sulfurcrystal />
-        <footEffect33 />
-        <footEffect34 />
-        <footEffect35 />
-        <footEffect36 />
-        <footEffect37 />
-        <footEffect38 />
-        <footEffect39 />
-        <footEffect40 />
-        <footEffect41 />
-        <footEffect42 />
-        <footEffect43 />
+        <none ParticleAlias="" />
+        <metal ParticleAlias="" />
+        <heavymetal ParticleAlias="" />
+        <wood ParticleAlias="" />
+        <water ParticleAlias="" />
+        <swamp ParticleAlias="" />
+        <lumber ParticleAlias="" />
+        <meat ParticleAlias="" />
+        <deadmeat ParticleAlias="" />
+        <insect ParticleAlias="" />
+        <giant ParticleAlias="" />
+        <bone ParticleAlias="" />
+        <copper ParticleAlias="" />
+        <energy ParticleAlias="" />
+        <fire ParticleAlias="" />
+        <thunder ParticleAlias="" />
+        <dark ParticleAlias="" />
+        <magic ParticleAlias="" />
+        <stone ParticleAlias="" />
+        <dirt ParticleAlias="" />
+        <carpet ParticleAlias="" />
+        <grass ParticleAlias="" />
+        <gravel ParticleAlias="" />
+        <cloth ParticleAlias="" />
+        <sand ParticleAlias="" />
+        <ash ParticleAlias="" />
+        <poisonswamp ParticleAlias="" />
+        <oil ParticleAlias="" />
+        <coaltar ParticleAlias="" />
+        <lava ParticleAlias="" />
+        <string ParticleAlias="" />
+        <sulfurcrystal ParticleAlias="" />
+        <footEffect33 ParticleAlias="" />
+        <footEffect34 ParticleAlias="" />
+        <footEffect35 ParticleAlias="" />
+        <footEffect36 ParticleAlias="" />
+        <footEffect37 ParticleAlias="" />
+        <footEffect38 ParticleAlias="" />
+        <footEffect39 ParticleAlias="" />
+        <footEffect40 ParticleAlias="" />
+        <footEffect41 ParticleAlias="" />
+        <footEffect42 ParticleAlias="" />
+        <footEffect43 ParticleAlias="" />
     </Field>
 </PARAMMETA>

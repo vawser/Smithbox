@@ -2,351 +2,351 @@
   "Param": "GENERATOR_MERGED_PARAM",
   "Type": "GENERATOR_MERGED_PARAM",
   "Name": "GENERATOR_MERGED_PARAM",
-  "Description": "",
+  "Description": "Comprehensive enemy/spawn generator configuration defining placement, lifecycle rules, AI logic, respawn behavior, and event-driven control systems.",
   "Fields": [
     {
       "Field": "PositionX",
-      "Name": "配置位置X",
-      "Description": ""
+      "Name": "Placement Position: X",
+      "Description": "World-space X coordinate of the generator."
     },
     {
       "Field": "PositionY",
-      "Name": "配置位置Y",
-      "Description": ""
+      "Name": "Placement Position: Y",
+      "Description": "World-space Y coordinate of the generator."
     },
     {
       "Field": "PositionZ",
-      "Name": "配置位置Z",
-      "Description": ""
+      "Name": "Placement Position: Z",
+      "Description": "World-space Z coordinate of the generator."
     },
     {
       "Field": "RotationX",
-      "Name": "配置角度X",
-      "Description": ""
+      "Name": "Placement Rotation: X",
+      "Description": "X-axis rotation (pitch) of the generator."
     },
     {
       "Field": "RotationY",
-      "Name": "配置角度Y",
-      "Description": ""
+      "Name": "Placement Rotation: Y",
+      "Description": "Y-axis rotation (yaw) of the generator."
     },
     {
       "Field": "RotationZ",
-      "Name": "配置角度Z",
-      "Description": ""
+      "Name": "Placement Rotation: Z",
+      "Description": "Z-axis rotation (roll) of the generator."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "maxRespawnNum",
-      "Name": "リスポーン上限数",
-      "Description": ""
+      "Name": "Max Respawn Count",
+      "Description": "Maximum number of times this entity can respawn in a playthrough."
     },
     {
       "Field": "maxRespawnNum2ndOver",
-      "Name": "2週目以降リスポーン上限数",
-      "Description": ""
+      "Name": "NG+ Max Respawn Count",
+      "Description": "Respawn limit for New Game+ and beyond."
     },
     {
       "Field": "eventGroupId",
-      "Name": "イベントグループID",
-      "Description": ""
+      "Name": "Event Group ID",
+      "Description": "Groups generators for shared event control logic."
     },
     {
       "Field": "logicGroupId",
-      "Name": "ロジックグループID",
-      "Description": ""
+      "Name": "Logic Group ID",
+      "Description": "Defines shared AI or behavior logic grouping."
     },
     {
       "Field": "respawnDisableFlag",
-      "Name": "再稼動禁止フラグID",
-      "Description": ""
+      "Name": "Respawn Disable Flag ID",
+      "Description": "Flag that disables respawning when set."
     },
     {
       "Field": "GeneratorRegistParam",
-      "Name": "登録エネミー名称",
-      "Description": ""
+      "Name": "Registered Enemy Reference",
+      "Description": "Identifier for the enemy or entity type spawned."
     },
     {
       "Field": "startConditionJudgeType",
-      "Name": "稼働開始条件判定",
-      "Description": ""
+      "Name": "Start Condition Evaluation Type",
+      "Description": "Defines how spawn activation conditions are evaluated."
     },
     {
       "Field": "startConditionCondition1",
-      "Name": "稼動開始条件1",
-      "Description": ""
+      "Name": "Start Condition: 1",
+      "Description": "First condition required to start generator."
     },
     {
       "Field": "startConditionCondition2",
-      "Name": "稼動開始条件2",
-      "Description": ""
+      "Name": "Start Condition: 2",
+      "Description": "Second condition required to start generator."
     },
     {
       "Field": "startConditionCondition3",
-      "Name": "稼動開始条件3",
-      "Description": ""
+      "Name": "Start Condition: 3",
+      "Description": "Third condition required to start generator."
     },
     {
       "Field": "startConditionParam1",
-      "Name": "稼動開始条件Param1",
-      "Description": ""
+      "Name": "Start Condition Parameter: 1",
+      "Description": "Parameter for first start condition."
     },
     {
       "Field": "startConditionParam2",
-      "Name": "稼動開始条件Param2",
-      "Description": ""
+      "Name": "Start Condition Parameter: 2",
+      "Description": "Parameter for second start condition."
     },
     {
       "Field": "startConditionParam3",
-      "Name": "稼動開始条件Param3",
-      "Description": ""
+      "Name": "Start Condition Parameter: 3",
+      "Description": "Parameter for third start condition."
     },
     {
       "Field": "stopConditionJudgeType",
-      "Name": "停止条件判定",
-      "Description": ""
+      "Name": "Stop Condition Evaluation Type",
+      "Description": "Defines how deactivation conditions are evaluated."
     },
     {
       "Field": "stopConditionCondition1",
-      "Name": "停止条件1",
-      "Description": ""
+      "Name": "Stop Condition: 1",
+      "Description": "First condition required to stop generator."
     },
     {
       "Field": "stopConditionCondition2",
-      "Name": "停止条件2",
-      "Description": ""
+      "Name": "Stop Condition: 2",
+      "Description": "Second condition required to stop generator."
     },
     {
       "Field": "stopConditionCondition3",
-      "Name": "停止条件3",
-      "Description": ""
+      "Name": "Stop Condition: 3",
+      "Description": "Third condition required to stop generator."
     },
     {
       "Field": "stopConditionParam1",
-      "Name": "停止条件Param1",
-      "Description": ""
+      "Name": "Stop Condition Parameter: 1",
+      "Description": "Parameter for first stop condition."
     },
     {
       "Field": "stopConditionParam2",
-      "Name": "停止条件Param2",
-      "Description": ""
+      "Name": "Stop Condition Parameter: 2",
+      "Description": "Parameter for second stop condition."
     },
     {
       "Field": "stopConditionParam3",
-      "Name": "停止条件Param3",
-      "Description": ""
+      "Name": "Stop Condition Parameter: 3",
+      "Description": "Parameter for third stop condition."
     },
     {
       "Field": "logicMoveZoneId1",
-      "Name": "ロジック移動領域1",
-      "Description": ""
+      "Name": "Logic Move Zone: 1",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "logicMoveZoneId2",
-      "Name": "ロジック移動領域2",
-      "Description": ""
+      "Name": "Logic Move Zone: 2",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "logicMoveZoneId3",
-      "Name": "ロジック移動領域3",
-      "Description": ""
+      "Name": "Logic Move Zone: 3",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "logicMoveZoneId4",
-      "Name": "ロジック移動領域4",
-      "Description": ""
+      "Name": "Logic Move Zone: 4",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "logicMoveZoneId5",
-      "Name": "ロジック移動領域5",
-      "Description": ""
+      "Name": "Logic Move Zone: 5",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "logicMoveZoneId6",
-      "Name": "ロジック移動領域6",
-      "Description": ""
+      "Name": "Logic Move Zone: 6",
+      "Description": "Movement area assigned to AI logic."
     },
     {
       "Field": "infinityGenerateTime",
-      "Name": "無限生成間隔",
-      "Description": ""
+      "Name": "Infinite Spawn Interval",
+      "Description": "Time interval between repeated spawns when infinite generation is enabled."
     },
     {
       "Field": "infinityGenerate",
-      "Name": "無限生成",
-      "Description": ""
+      "Name": "Infinite Generation Enabled",
+      "Description": "Enables continuous spawning behavior."
     },
     {
       "Field": "drawGroupDeleteDisable",
-      "Name": "描画グループ削除無効",
-      "Description": ""
+      "Name": "Disable Draw Group Removal",
+      "Description": "Prevents automatic removal of draw groups."
     },
     {
       "Field": "bossBattleStopDisable",
-      "Name": "ボス戦中非停止",
-      "Description": ""
+      "Name": "Disable Stop During Boss Battle",
+      "Description": "Keeps generator active during boss fights."
     },
     {
       "Field": "hpGaugeDisable",
-      "Name": "HPゲージ非表示",
-      "Description": ""
+      "Name": "Hide HP Gauge",
+      "Description": "Disables health bar display for spawned entities."
     },
     {
       "Field": "resetPosition",
-      "Name": "見えなくなったら位置リセット",
-      "Description": ""
+      "Name": "Reset Position When Offscreen",
+      "Description": "Resets generator position when it becomes invisible."
     },
     {
       "Field": "generateOverDeleteDisable",
-      "Name": "上限オーバー削除無効",
-      "Description": ""
+      "Name": "Disable Over-Spawn Deletion",
+      "Description": "Prevents automatic deletion when spawn limit is exceeded."
     },
     {
       "Field": "invincibleWithoutBossBattle",
-      "Name": "ボス戦以外無敵",
-      "Description": ""
+      "Name": "Invincible Outside Boss Battle",
+      "Description": "Makes entities invulnerable except during boss battles."
     },
     {
       "Field": "netUpdatePriority",
-      "Name": "マルチプレイ時更新優先度",
-      "Description": ""
+      "Name": "Network Update Priority",
+      "Description": "Determines update priority in multiplayer sessions."
     },
     {
       "Field": "bonfireId",
-      "Name": "篝火ID",
-      "Description": ""
+      "Name": "Bonfire ID",
+      "Description": "Associated bonfire ID."
     },
     {
       "Field": "returnDistance",
-      "Name": "帰還距離",
-      "Description": ""
+      "Name": "Return Distance",
+      "Description": "Distance threshold for returning to origin or patrol zone."
     },
     {
       "Field": "logicNaviPoint1",
-      "Name": "ロジックナビポイント1",
-      "Description": ""
+      "Name": "Logic Navigation Point: 1",
+      "Description": "First navigation waypoint for AI logic."
     },
     {
       "Field": "logicNaviPoint2",
-      "Name": "ロジックナビポイント2",
-      "Description": ""
+      "Name": "Logic Navigation Point: 2",
+      "Description": "Second navigation waypoint for AI logic."
     },
     {
       "Field": "bootLowStateId",
-      "Name": "下位ロジック起動ステートID",
-      "Description": ""
+      "Name": "Initial Logic State ID",
+      "Description": "Defines the starting AI state."
     },
     {
       "Field": "logicEventFlag1",
-      "Name": "イベントフラグ1",
-      "Description": ""
+      "Name": "Logic Event Flag: 1",
+      "Description": "Event flag used in AI logic evaluation."
     },
     {
       "Field": "logicEventFlag2",
-      "Name": "イベントフラグ2",
-      "Description": ""
+      "Name": "Logic Event Flag: 2",
+      "Description": "Event flag used in AI logic evaluation."
     },
     {
       "Field": "logicEventFlag3",
-      "Name": "イベントフラグ3",
-      "Description": ""
+      "Name": "Logic Event Flag: 3",
+      "Description": "Event flag used in AI logic evaluation."
     },
     {
       "Field": "logicEventFlag4",
-      "Name": "イベントフラグ4",
-      "Description": ""
+      "Name": "Logic Event Flag: 4",
+      "Description": "Event flag used in AI logic evaluation."
     },
     {
       "Field": "logicStartInterval",
-      "Name": "動き出し間隔[秒]",
-      "Description": ""
+      "Name": "Logic Start Interval (seconds)",
+      "Description": "Delay before AI becomes active."
     },
     {
       "Field": "returnPointId1",
-      "Name": "帰還領域1",
-      "Description": ""
+      "Name": "Return Area: 1",
+      "Description": "Primary return zone for AI."
     },
     {
       "Field": "returnPointId2",
-      "Name": "帰還領域2",
-      "Description": ""
+      "Name": "Return Area: 2",
+      "Description": "Secondary return zone for AI."
     },
     {
       "Field": "returnPointId3",
-      "Name": "帰還領域3",
-      "Description": ""
+      "Name": "Return Area: 3",
+      "Description": "Tertiary return zone for AI."
     },
     {
       "Field": "logicAreaEventValue1",
-      "Name": "イベントエリア変数1",
-      "Description": ""
+      "Name": "Area Event Variable: 1",
+      "Description": "Variable used for area-based event logic."
     },
     {
       "Field": "logicAreaEventValue2",
-      "Name": "イベントエリア変数2",
-      "Description": ""
+      "Name": "Area Event Variable: 2",
+      "Description": "Variable used for area-based event logic."
     },
     {
       "Field": "logicGlobalEventValue1",
-      "Name": "イベントグローバル変数1",
-      "Description": ""
+      "Name": "Global Event Variable: 1",
+      "Description": "Global variable used in logic evaluation."
     },
     {
       "Field": "logicGlobalEventValue2",
-      "Name": "イベントグローバル変数2",
-      "Description": ""
+      "Name": "Global Event Variable: 2",
+      "Description": "Global variable used in logic evaluation."
     },
     {
       "Field": "decLimitTime",
-      "Name": "マルチプレイ制限時間減少量",
-      "Description": ""
+      "Name": "Multiplayer Time Penalty Reduction",
+      "Description": "Amount by which multiplayer limit time is decreased."
     },
     {
       "Field": "spGenerateType",
-      "Name": "特殊生成タイプ",
-      "Description": ""
+      "Name": "Special Generation Type",
+      "Description": "Defines special spawning behavior type."
     },
     {
       "Field": "instanceColor",
-      "Name": "カラー",
-      "Description": ""
+      "Name": "Instance Color",
+      "Description": "Debug or visualization color for the generator instance."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "itemId",
-      "Name": "初週アイテム抽選ID",
-      "Description": ""
+      "Name": "First Playthrough Item Drop ID",
+      "Description": "Item drop table for initial playthrough."
     },
     {
       "Field": "itemId2ndOver",
-      "Name": "2週目以降アイテム抽選ID",
-      "Description": ""
+      "Name": "NG+ Item Drop ID",
+      "Description": "Item drop table for NG+ and beyond."
     },
     {
       "Field": "endEventId",
-      "Name": "毎生成時の終了必須イベントID",
-      "Description": ""
+      "Name": "Mandatory End Event ID",
+      "Description": "Event that must complete per spawn cycle."
     },
     {
       "Field": "aiReturnStandbyRange",
-      "Name": "AI帰還準備距離[m]",
-      "Description": ""
+      "Name": "AI Return Standby Range (m)",
+      "Description": "Distance at which AI begins return preparation."
     },
     {
       "Field": "aiReturnType",
-      "Name": "AI帰還方法",
-      "Description": ""
+      "Name": "AI Return Type",
+      "Description": "Defines how AI returns to its origin."
     },
     {
       "Field": "aReserved2",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

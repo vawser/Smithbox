@@ -2,182 +2,182 @@
   "Param": "GRAB_PARAM",
   "Type": "GRAB_PARAM",
   "Name": "GRAB_PARAM",
-  "Description": "",
+  "Description": "Defines grab, throw, and attachment behavior between attacker and target characters, including IK attachment points, positional alignment, cast detection, and camera settings.",
   "Fields": [
     {
       "Field": "grabAttackDumyPolyId",
-      "Name": "投げる側 ダミポリID",
-      "Description": ""
+      "Name": "Attacker Dummy Poly ID",
+      "Description": "Dummy polygon ID used as the attachment or alignment point for the grabbing character."
     },
     {
       "Field": "grabAttackRotationType",
-      "Name": "投げる側 旋回設定",
-      "Description": ""
+      "Name": "Attacker Rotation Type",
+      "Description": "Controls rotational alignment behavior for the grabbing character."
     },
     {
       "Field": "grabAttackRHandDumyPolyId",
-      "Name": "投げる側 右手IKダミポリID",
-      "Description": ""
+      "Name": "Attacker Right Hand IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for right hand inverse kinematics during the grab animation."
     },
     {
       "Field": "grabAttackLHandDumyPolyId",
-      "Name": "投げる側 左手IKダミポリID",
-      "Description": ""
+      "Name": "Attacker Left Hand IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for left hand inverse kinematics during the grab animation."
     },
     {
       "Field": "grabAttackRRegDumyPolyId",
-      "Name": "投げる側 右足IKダミポリID",
-      "Description": ""
+      "Name": "Attacker Right Leg IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for right leg inverse kinematics during the grab animation."
     },
     {
       "Field": "grabAttackLRegDumyPolyId",
-      "Name": "投げる側 左足IKダミポリID",
-      "Description": ""
+      "Name": "Attacker Left Leg IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for left leg inverse kinematics during the grab animation."
     },
     {
       "Field": "grabDefenseDumyPolyId",
-      "Name": "投げられる側 ダミポリID",
-      "Description": ""
+      "Name": "Defender Dummy Poly ID",
+      "Description": "Dummy polygon ID used as the attachment or alignment point for the grabbed target."
     },
     {
       "Field": "grabDefenseRotationType",
-      "Name": "投げられる側 旋回設定",
-      "Description": ""
+      "Name": "Defender Rotation Type",
+      "Description": "Controls rotational alignment behavior for the grabbed target."
     },
     {
       "Field": "grabDefenseRHandDumyPolyId",
-      "Name": "投げられる側 右手IKダミポリID",
-      "Description": ""
+      "Name": "Defender Right Hand IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for right hand inverse kinematics on the grabbed target."
     },
     {
       "Field": "grabDefenseLHandDumyPolyId",
-      "Name": "投げられる側 左手IKダミポリID",
-      "Description": ""
+      "Name": "Defender Left Hand IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for left hand inverse kinematics on the grabbed target."
     },
     {
       "Field": "grabDefenseRRegDumyPolyId",
-      "Name": "投げられる側 右足IKダミポリID",
-      "Description": ""
+      "Name": "Defender Right Leg IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for right leg inverse kinematics on the grabbed target."
     },
     {
       "Field": "grabDefenseLRegDumyPolyId",
-      "Name": "投げられる側 左足IKダミポリID",
-      "Description": ""
+      "Name": "Defender Left Leg IK Dummy Poly ID",
+      "Description": "Dummy polygon ID used for left leg inverse kinematics on the grabbed target."
     },
     {
       "Field": "grabAttachType",
-      "Name": "投げ位置吸着設定",
-      "Description": ""
+      "Name": "Grab Position Attachment Type",
+      "Description": "Determines how the grabbed target snaps to the grab position."
     },
     {
       "Field": "grabAttachFollow",
-      "Name": "投げ吸着追従設定",
-      "Description": ""
+      "Name": "Grab Attachment Follow Setting",
+      "Description": "Controls whether the grabbed target continuously follows the grab attachment point."
     },
     {
       "Field": "dummy2",
-      "Name": "dummy",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "grabDirAttachType",
-      "Name": "投げ向き吸着設定",
-      "Description": ""
+      "Name": "Grab Direction Attachment Type",
+      "Description": "Determines how facing direction is aligned during the grab."
     },
     {
       "Field": "dummy1",
-      "Name": "dummy",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "grabDirReversal",
-      "Name": "投げ向き反転有効設定",
-      "Description": ""
+      "Name": "Grab Direction Reversal Enabled",
+      "Description": "Enables reversing the facing direction during grab alignment."
     },
     {
       "Field": "grabPosOffsetX",
-      "Name": "投げ位置オフセットX",
-      "Description": ""
+      "Name": "Grab Position Offset: X",
+      "Description": "Horizontal X-axis offset applied to the grab attachment position."
     },
     {
       "Field": "grabPosOffsetZ",
-      "Name": "投げ位置オフセットZ",
-      "Description": ""
+      "Name": "Grab Position Offset: Z",
+      "Description": "Forward/backward Z-axis offset applied to the grab attachment position."
     },
     {
       "Field": "grabBreakHp",
-      "Name": "投げブレイク HP",
-      "Description": ""
+      "Name": "Grab Break HP Threshold",
+      "Description": "HP threshold at which the grab can be interrupted or broken."
     },
     {
       "Field": "grabCameraId",
-      "Name": "投げカメラＩＤ",
-      "Description": ""
+      "Name": "Grab Camera ID",
+      "Description": "Camera configuration used during the grab animation or cinematic."
     },
     {
       "Field": "grabCastType",
-      "Name": "キャスト基準",
-      "Description": ""
+      "Name": "Grab Cast Type",
+      "Description": "Specifies the collision or detection cast type used to validate grab targets."
     },
     {
       "Field": "dummy3",
-      "Name": "dummy",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "grabRadius",
-      "Name": "キャスト半径",
-      "Description": ""
+      "Name": "Cast Radius",
+      "Description": "Radius of the detection cast used for grab targeting."
     },
     {
       "Field": "grabHeight",
-      "Name": "キャスト高さ",
-      "Description": ""
+      "Name": "Cast Height",
+      "Description": "Height of the detection cast used for grab targeting."
     },
     {
       "Field": "grabLength",
-      "Name": "キャスト長さ",
-      "Description": ""
+      "Name": "Cast Length",
+      "Description": "Forward length of the detection cast used for grab targeting."
     },
     {
       "Field": "grabOffsetX",
-      "Name": "キャストオフセット位置 Ｘ",
-      "Description": ""
+      "Name": "Cast Offset: X",
+      "Description": "Horizontal X-axis offset applied to the detection cast position."
     },
     {
       "Field": "grabOffsetY",
-      "Name": "キャストオフセット位置 Y",
-      "Description": ""
+      "Name": "Cast Offset: Y",
+      "Description": "Vertical Y-axis offset applied to the detection cast position."
     },
     {
       "Field": "grabOffsetZ",
-      "Name": "キャストオフセット位置 Z",
-      "Description": ""
+      "Name": "Cast Offset: Z",
+      "Description": "Forward/backward Z-axis offset applied to the detection cast position."
     },
     {
       "Field": "grabSideAngle",
-      "Name": "投げ許可左右角度",
-      "Description": ""
+      "Name": "Allowed Horizontal Grab Angle",
+      "Description": "Maximum horizontal angle allowed for a valid grab target."
     },
     {
       "Field": "grabUpAngle",
-      "Name": "投げ許可上角度",
-      "Description": ""
+      "Name": "Allowed Upward Grab Angle",
+      "Description": "Maximum upward angle allowed for a valid grab target."
     },
     {
       "Field": "grabDownAngle",
-      "Name": "投げ許可下角度",
-      "Description": ""
+      "Name": "Allowed Downward Grab Angle",
+      "Description": "Maximum downward angle allowed for a valid grab target."
     },
     {
       "Field": "dummy4",
-      "Name": "dummy",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "grabAngleDiff",
-      "Name": "Grab angle maximum difference",
-      "Description": ""
+      "Name": "Maximum Grab Angle Difference",
+      "Description": "Maximum allowed facing angle difference between attacker and target for a successful grab."
     }
   ]
 }

@@ -2,27 +2,27 @@
   "Param": "FE_COLOR_SET_PARAM",
   "Type": "FE_COLOR_SET_PARAM",
   "Name": "FE_COLOR_SET_PARAM",
-  "Description": "",
+  "Description": "Defines an RGBA color set.",
   "Fields": [
     {
       "Field": "red",
-      "Name": "赤",
-      "Description": ""
+      "Name": "Red",
+      "Description": "Red color channel intensity value for the preset."
     },
     {
       "Field": "green",
-      "Name": "緑",
-      "Description": ""
+      "Name": "Green",
+      "Description": "Green color channel intensity value for the preset."
     },
     {
       "Field": "blue",
-      "Name": "青",
-      "Description": ""
+      "Name": "Blue",
+      "Description": "Blue color channel intensity value for the preset."
     },
     {
       "Field": "alpha",
-      "Name": "不透明度",
-      "Description": ""
+      "Name": "Alpha Value",
+      "Description": "Alpha or transparency value associated with the color preset."
     }
   ]
 }

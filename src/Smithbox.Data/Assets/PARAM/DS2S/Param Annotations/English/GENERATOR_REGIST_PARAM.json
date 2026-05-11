@@ -2,112 +2,112 @@
   "Param": "GENERATOR_REGIST_PARAM",
   "Type": "GENERATOR_REGIST_PARAM",
   "Name": "GENERATOR_REGIST_PARAM",
-  "Description": "",
+  "Description": "Defines enemy registration data used by generators, including logic configuration, startup behavior, and memory slots for runtime parameters.",
   "Fields": [
     {
       "Field": "EnemyId",
-      "Name": "登録エネミー",
-      "Description": ""
+      "Name": "Registered Enemy",
+      "Description": "ID of the enemy entity to be spawned or registered."
     },
     {
       "Field": "HighLogicId",
-      "Name": "上位ロジックID",
-      "Description": ""
+      "Name": "Overall Logic ID",
+      "Description": "Identifier for the upper-tier AI or behavior logic."
     },
     {
       "Field": "LowLogicId",
-      "Name": "下位ロジックID",
-      "Description": ""
+      "Name": "Detailed Logic ID",
+      "Description": "Identifier for the lower-tier AI or behavior logic."
     },
     {
       "Field": "startUpStateType",
-      "Name": "起動ステートタイプ",
-      "Description": ""
+      "Name": "Startup State Type",
+      "Description": "Determines the initial state or behavior mode when the generator activates."
     },
     {
       "Field": "bAnotherWorldGenerate",
-      "Name": "異次元空間生成",
-      "Description": ""
+      "Name": "Otherworld Generation",
+      "Description": "Enables spawning in an alternate or special world context."
     },
     {
       "Field": "memoryBlock1",
-      "Name": "メモリ1",
-      "Description": ""
+      "Name": "Memory Block 1",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock2",
-      "Name": "メモリ2",
-      "Description": ""
+      "Name": "Memory Block 2",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock3",
-      "Name": "メモリ3",
-      "Description": ""
+      "Name": "Memory Block 3",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock4",
-      "Name": "メモリ4",
-      "Description": ""
+      "Name": "Memory Block 4",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock5",
-      "Name": "メモリ5",
-      "Description": ""
+      "Name": "Memory Block 5",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock6",
-      "Name": "メモリ6",
-      "Description": ""
+      "Name": "Memory Block 6",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock7",
-      "Name": "メモリ7",
-      "Description": ""
+      "Name": "Memory Block 7",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock8",
-      "Name": "メモリ8",
-      "Description": ""
+      "Name": "Memory Block 8",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock9",
-      "Name": "メモリ9",
-      "Description": ""
+      "Name": "Memory Block 9",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock10",
-      "Name": "メモリ10",
-      "Description": ""
+      "Name": "Memory Block 10",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock11",
-      "Name": "メモリ11",
-      "Description": ""
+      "Name": "Memory Block 11",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock12",
-      "Name": "メモリ12",
-      "Description": ""
+      "Name": "Memory Block 12",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock13",
-      "Name": "メモリ13",
-      "Description": ""
+      "Name": "Memory Block 13",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock14",
-      "Name": "メモリ14",
-      "Description": ""
+      "Name": "Memory Block 14",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock15",
-      "Name": "メモリ15",
-      "Description": ""
+      "Name": "Memory Block 15",
+      "Description": "General-purpose runtime memory slot for generator logic."
     },
     {
       "Field": "memoryBlock16",
-      "Name": "メモリ16",
-      "Description": ""
+      "Name": "Memory Block 16",
+      "Description": "General-purpose runtime memory slot for generator logic."
     }
   ]
 }

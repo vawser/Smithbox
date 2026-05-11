@@ -15,16 +15,16 @@
         <grabDefenseLRegDumyPolyId />
         <grabAttachType  Enum="GRAB_ATTACH_TYPE"/>
         <grabAttachFollow  IsBool=""/>
-        <dummy2 />
+        <dummy2 Padding="" />
         <grabDirAttachType  Enum="GRAB_ATTACH_TYPE"/>
-        <dummy1 />
+        <dummy1 Padding="" />
         <grabDirReversal  IsBool=""/>
         <grabPosOffsetX />
         <grabPosOffsetZ />
         <grabBreakHp />
         <grabCameraId />
         <grabCastType  Enum="GRAB_CAST_TYPE"/>
-        <dummy3 />
+        <dummy3 Padding="" />
         <grabRadius />
         <grabHeight />
         <grabLength />
@@ -34,7 +34,7 @@
         <grabSideAngle />
         <grabUpAngle />
         <grabDownAngle />
-        <dummy4 />
+        <dummy4 Padding="" />
         <grabAngleDiff />
     </Field>
 </PARAMMETA>

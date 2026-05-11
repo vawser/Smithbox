@@ -51,6 +51,9 @@ public class SelectionGroupTool
         if (View.Project.Descriptor.ProjectType == ProjectType.Undefined)
             return;
 
+        if (View.Project.Handler.MapData.MapObjectSelections == null)
+            return;
+
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
@@ -147,6 +150,9 @@ public class SelectionGroupTool
     public void OnToolWindow()
     {
         if (View.Project.Descriptor.ProjectType == ProjectType.Undefined)
+            return;
+
+        if (View.Project.Handler.MapData.MapObjectSelections == null)
             return;
 
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)

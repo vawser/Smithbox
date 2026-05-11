@@ -7,13 +7,13 @@
         <RotationX />
         <RotationY />
         <RotationZ />
-        <aReserved1 />
+        <aReserved1 Padding="" />
         <maxRespawnNum />
         <maxRespawnNum2ndOver />
         <eventGroupId />
         <logicGroupId />
         <respawnDisableFlag />
-        <GeneratorRegistParam />
+        <GeneratorRegistParam RefGroup="generatorregistparam" />
         <startConditionJudgeType  Enum="GENERATOR_JUDGE_ENUM"/>
         <startConditionCondition1  Enum="GENERATOR_EVAL_ENUM"/>
         <startConditionCondition2  Enum="GENERATOR_EVAL_ENUM"/>
@@ -63,12 +63,12 @@
         <decLimitTime />
         <spGenerateType  Enum="GENERATOR_SP_GENERATE_TYPE"/>
         <instanceColor />
-        <aReserved1 IsPadding="" />
-        <itemId />
-        <itemId2ndOver />
+        <aReserved1 Padding="" />
+        <itemId RefGroup="itemlot" />
+        <itemId2ndOver RefGroup="itemlot" />
         <endEventId />
         <aiReturnStandbyRange />
         <aiReturnType  Enum="GENERATOR_AIRETURN_TYPE"/>
-        <aReserved2 IsPadding=""  />
+        <aReserved2 Padding=""  />
     </Field>
 </PARAMMETA>

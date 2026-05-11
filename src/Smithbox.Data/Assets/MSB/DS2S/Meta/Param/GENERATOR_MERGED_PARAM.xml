@@ -12,7 +12,7 @@
         <eventGroupId />
         <logicGroupId />
         <respawnDisableFlag />
-        <GeneratorRegistParam />
+        <GeneratorRegistParam RefGroup="generatorregistparam" />
         <startConditionJudgeType  Enum="GENERATOR_JUDGE_ENUM"/>
         <startConditionCondition1  Enum="GENERATOR_EVAL_ENUM"/>
         <startConditionCondition2  Enum="GENERATOR_EVAL_ENUM"/>
@@ -63,8 +63,8 @@
         <spGenerateType  Enum="GENERATOR_SP_GENERATE_TYPE"/>
         <instanceColor />
         <aReserved1 Padding="" />
-        <itemId />
-        <itemId2ndOver />
+        <itemId RefGroup="itemlot" />
+        <itemId2ndOver RefGroup="itemlot" />
         <endEventId />
         <aiReturnStandbyRange />
         <aiReturnType  Enum="GENERATOR_AIRETURN_TYPE"/>

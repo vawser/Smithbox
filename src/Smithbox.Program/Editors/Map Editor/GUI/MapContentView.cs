@@ -500,7 +500,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
-            if (ImGui.Button($"{icon}##mapObject{key}", DPI.InlineIconButtonSize))
+            if (ImGui.Button($"{icon}##mapObject{key}{index}", DPI.InlineIconButtonSize))
             {
                 if (InputManager.IsPressed(KeybindID.Apply_to_All))
                 {

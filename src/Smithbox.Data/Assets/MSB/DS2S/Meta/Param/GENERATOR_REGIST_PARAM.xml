@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MSBMETA XmlVersion="0">
     <Field>
-        <EnemyId  Enum="ENEMY_LIST_ENUM"/>
+        <EnemyId Refs="EnemyParam" />
         <HighLogicId />
         <LowLogicId />
         <startUpStateType />
