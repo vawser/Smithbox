@@ -57,11 +57,21 @@ public class ParamFieldWindow
 
             var bank = ParentView.GetPrimaryBank();
             var curRow = activeRow;
-            var vanillaRow = vanillaParam?[activeRow.ID];
+
+            // Find the position of activeRow among all rows with the same ID in the primary param.
+            // This is needed so that for params with non-unique row IDs (e.g. RandomAppearParam),
+            // the nth duplicate in the primary is compared against the nth duplicate in vanilla/aux,
+            // not always the first one as the this[int id] indexer would return.
+            var primaryParam = bank.Params?.GetValueOrDefault(activeParam);
+            int duplicateIndex = GetDuplicateIndex(primaryParam, activeRow);
+
+            var vanillaRow = GetRowAtDuplicateIndex(vanillaParam, activeRow.ID, duplicateIndex);
 
             var auxRows = Editor.Project.Handler.ParamData.AuxBanks
-                .Select((bank, i) => (bank.Key, bank.Value.Params?
-                .GetValueOrDefault(activeParam)?[activeRow.ID]))
+                .Select((auxBank, i) => (auxBank.Key, GetRowAtDuplicateIndex(
+                    auxBank.Value.Params?.GetValueOrDefault(activeParam),
+                    activeRow.ID,
+                    duplicateIndex)))
                 .ToList();
 
             var compareRow = ParentView.Selection.GetCompareRow();
@@ -207,13 +217,13 @@ public class ParamFieldWindow
         var cols = CacheBank.GetCached(Editor, curRow, "fieldFilter",
             () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
 
-       var vcols = CacheBank.GetCached(Editor, vanillaRow, "vFieldFilter",
-            () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
+        var vcols = CacheBank.GetCached(Editor, vanillaRow, "vFieldFilter",
+             () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
 
         var auxCols = CacheBank.GetCached(Editor, auxRows,
             "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
-       var pinnedFields = Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
+        var pinnedFields = Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
 
         // Field Table
         if (EditorTableUtils.ImGuiTableGroupedColumns("ParamFieldsT", columnCount))
@@ -284,7 +294,7 @@ public class ParamFieldWindow
             ? Project.Handler.ParamData.FieldLayouts.Entries.FirstOrDefault(e => e.Name == meta.FieldLayout)
             : null;
 
-        if(useLayout && groupsDef.TotalChanceLot != null)
+        if (useLayout && groupsDef.TotalChanceLot != null)
         {
             DisplayTotalChance(curRow, groupsDef);
         }
@@ -503,7 +513,7 @@ public class ParamFieldWindow
         ImGui.Spacing();
     }
 
-    private void DisplayPinnedFields(List<string> pinList, 
+    private void DisplayPinnedFields(List<string> pinList,
         ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols, List<(ParamEditorPseudoColumn, Param.Column)> vcols,
@@ -545,7 +555,7 @@ public class ParamFieldWindow
         return EditorTableUtils.ImGuiTableStdColumnsNoScroll(tableId, columnCount);
     }
 
-    private void DisplayFields(ParamMeta meta, ParamAnnotationEntry annotations, 
+    private void DisplayFields(ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
@@ -713,24 +723,24 @@ public class ParamFieldWindow
 
         float curChance = 0;
         float totalChance = 0;
-        
-        foreach(var field in row.Columns)
+
+        foreach (var field in row.Columns)
         {
             var fieldName = field.Def.InternalName;
 
-            if(fieldName == chanceLot.TargetField)
+            if (fieldName == chanceLot.TargetField)
             {
                 var val = field.GetValue(row);
 
                 float intVal = 0;
                 var success = float.TryParse($"{val}", out intVal);
-                if(success)
+                if (success)
                 {
                     curChance = intVal;
                 }
             }
 
-            if(chanceLot.ChanceSet.Contains(fieldName))
+            if (chanceLot.ChanceSet.Contains(fieldName))
             {
                 var val = field.GetValue(row);
 
@@ -743,9 +753,9 @@ public class ParamFieldWindow
             }
         }
 
-        if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if(row.Def.ParamType == "ITEM_LOT_PARAM2")
+            if (row.Def.ParamType == "ITEM_LOT_PARAM2")
             {
                 var dropType = row.Columns.FirstOrDefault(e => e.Def.InternalName == "lotDropType");
                 var value = $"{dropType.GetValue(row)}";
@@ -824,7 +834,7 @@ public class ParamFieldWindow
         ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop has a {totalChance}%% chance to occur.");
     }
 
-    private void RenderField(ParamMeta meta, ParamAnnotationEntry annotations, 
+    private void RenderField(ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
@@ -884,7 +894,7 @@ public class ParamFieldWindow
     private void DisplayUnsortedFields(
         List<string> fieldOrder,
         HashSet<string> groupedFieldNames,
-        ParamMeta meta, ParamAnnotationEntry annotations, 
+        ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow,
         List<(ParamEditorPseudoColumn, Param.Column)> cols,
@@ -997,11 +1007,11 @@ public class ParamFieldWindow
             meta,
             activeParam,
             false,
-            null, 
+            null,
             displayIndex);
     }
 
-    private void PropEditorPropCellRow(ParamMeta meta, ParamAnnotationEntry annotations, 
+    private void PropEditorPropCellRow(ParamMeta meta, ParamAnnotationEntry annotations,
         Param.Row row, Param.Row crow,
         (ParamEditorPseudoColumn, Param.Column) col, Param.Row vrow, (ParamEditorPseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(ParamEditorPseudoColumn, Param.Column)> auxCols, string fieldOffset,
@@ -1620,5 +1630,50 @@ public class ParamFieldWindow
                 }
             }
         }
+    }
+    /// <summary>
+    /// Returns the position of <paramref name="row"/> among all rows in <paramref name="param"/>
+    /// that share the same ID. Returns 0 if the param is null or the row is not found.
+    /// </summary>
+    private static int GetDuplicateIndex(Param param, Param.Row row)
+    {
+        if (param == null || row == null)
+            return 0;
+
+        int index = 0;
+        foreach (var r in param.Rows)
+        {
+            if (r == row)
+                return index;
+            if (r.ID == row.ID)
+                index++;
+        }
+
+        return 0;
+    }
+
+    /// <summary>
+    /// Returns the row at position <paramref name="duplicateIndex"/> among all rows in
+    /// <paramref name="param"/> that have the given <paramref name="id"/>.
+    /// Falls back to the first match if the index is out of range, and returns null if
+    /// no match exists at all.
+    /// </summary>
+    private static Param.Row GetRowAtDuplicateIndex(Param param, int id, int duplicateIndex)
+    {
+        if (param == null)
+            return null;
+
+        int count = 0;
+        foreach (var row in param.Rows)
+        {
+            if (row.ID == id)
+            {
+                if (count == duplicateIndex)
+                    return row;
+                count++;
+            }
+        }
+
+        return null;
     }
 }
