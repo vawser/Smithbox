@@ -1985,9 +1985,9 @@
       "Description": "If set to 0, temporary poise will not apply multiplayer correction."
     },
     {
-      "Field": "unknown_241b_3",
-      "Name": "",
-      "Description": ""
+      "Field": "dedupeAccumuTrigger",
+      "Name": "Prevent Accumulator Duplicate Triggering",
+      "Description": "Set to 1 to avoid redundant accumulator triggers within a short time frame."
     },
     {
       "Field": "unknown_241b_4",
@@ -1995,9 +1995,9 @@
       "Description": ""
     },
     {
-      "Field": "unknown_241b_5",
-      "Name": "",
-      "Description": ""
+      "Field": "syncTotalHp",
+      "Name": "Sync to Total HP Bar",
+      "Description": "Determines whether HP change from this SpEffect is synchronized to the team fight’s total HP bar."
     },
     {
       "Field": "unknown_241b_6",

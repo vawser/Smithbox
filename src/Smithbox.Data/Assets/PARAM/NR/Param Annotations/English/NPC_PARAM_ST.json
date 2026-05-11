@@ -1765,6 +1765,11 @@
       "Description": ""
     },
     {
+      "Field": "analyseDistCorrection",
+      "Name": "Analyse Distance Correction",
+      "Description": "Adds an offset to the distance calculation for the Analyse skill. Higher values simulate a closer proximity to the target."
+    },
+    {
       "Field": "endPadding",
       "Name": "",
       "Description": ""

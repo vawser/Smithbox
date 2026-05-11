@@ -418,9 +418,9 @@
     <Field Def="u8 unknown_241a"/>
     <Field Def="u8 unknown_241b_1:1"/>
 	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
-	<Field Def="u8 unknown_241b_3:1"/>
+	<Field Def="u8 dedupeAccumuTrigger:1"/>
 	<Field Def="u8 unknown_241b_4:1"/>
-	<Field Def="u8 unknown_241b_5:1"/>
+	<Field Def="u8 syncTotalHp:1"/>
 	<Field Def="u8 unknown_241b_6:1"/>
 	<Field Def="u8 dispDartDebuffStacks:1"/>
 	<Field Def="u8 unknown_241b_8:1"/>
