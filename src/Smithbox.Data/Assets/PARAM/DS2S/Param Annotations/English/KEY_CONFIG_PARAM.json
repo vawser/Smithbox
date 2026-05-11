@@ -2,381 +2,381 @@
   "Param": "KEY_CONFIG_PARAM",
   "Type": "KEY_CONFIG_PARAM",
   "Name": "KEY_CONFIG_PARAM",
-  "Description": "",
+  "Description": "Defines the game's input binding configuration, mapping player actions (movement, camera control, combat, menu navigation, and system actions) to control inputs, including primary and secondary (additional) bindings.",
   "Fields": [
     {
       "Field": "moveAdvance",
-      "Name": "歩行（前進）",
-      "Description": ""
+      "Name": "Move Forward",
+      "Description": "Primary input for moving the player character forward."
     },
     {
       "Field": "moveAdvanceAdd",
-      "Name": "歩行（前進）[追加入力]",
-      "Description": ""
+      "Name": "Move Forward (Additional Input)",
+      "Description": "Secondary input binding for moving the player character forward."
     },
     {
       "Field": "moveRecession",
-      "Name": "歩行（後退）",
-      "Description": ""
+      "Name": "Move Backward",
+      "Description": "Primary input for moving the player character backward."
     },
     {
       "Field": "moveRecessionAdd",
-      "Name": "歩行（後退）[追加入力]",
-      "Description": ""
+      "Name": "Move Backward (Additional Input)",
+      "Description": "Secondary input binding for moving the player character backward."
     },
     {
       "Field": "moveRight",
-      "Name": "歩行（右移動）",
-      "Description": ""
+      "Name": "Move Right",
+      "Description": "Primary input for moving the player character to the right."
     },
     {
       "Field": "moveRightAdd",
-      "Name": "歩行（右移動）[追加入力]",
-      "Description": ""
+      "Name": "Move Right (Additional Input)",
+      "Description": "Secondary input binding for moving the player character to the right."
     },
     {
       "Field": "moveLeft",
-      "Name": "歩行（左移動）",
-      "Description": ""
+      "Name": "Move Left",
+      "Description": "Primary input for moving the player character to the left."
     },
     {
       "Field": "moveLeftAdd",
-      "Name": "歩行（左移動）[追加入力]",
-      "Description": ""
+      "Name": "Move Left (Additional Input)",
+      "Description": "Secondary input binding for moving the player character to the left."
     },
     {
       "Field": "parallelMoveAdvance",
-      "Name": "平行移動",
-      "Description": ""
+      "Name": "Walk (Strafe/Parallel Move)",
+      "Description": "Input for switching to or performing controlled parallel movement mode."
     },
     {
       "Field": "dashMoveAdvance",
-      "Name": "ダッシュ",
-      "Description": ""
+      "Name": "Dash / Sprint",
+      "Description": "Input for initiating a fast movement dash or sprint action."
     },
     {
       "Field": "cameraUp",
-      "Name": "カメラ上移動",
-      "Description": ""
+      "Name": "Camera Move Up",
+      "Description": "Primary input for moving the camera upward."
     },
     {
       "Field": "cameraUpAdd",
-      "Name": "カメラ上移動[追加入力]",
-      "Description": ""
+      "Name": "Camera Move Up (Additional Input)",
+      "Description": "Secondary input for moving the camera upward."
     },
     {
       "Field": "cameraDown",
-      "Name": "カメラ下移動",
-      "Description": ""
+      "Name": "Camera Move Down",
+      "Description": "Primary input for moving the camera downward."
     },
     {
       "Field": "cameraDownAdd",
-      "Name": "カメラ下移動[追加入力]",
-      "Description": ""
+      "Name": "Camera Move Down (Additional Input)",
+      "Description": "Secondary input for moving the camera downward."
     },
     {
       "Field": "cameraRight",
-      "Name": "カメラ右移動",
-      "Description": ""
+      "Name": "Camera Move Right",
+      "Description": "Primary input for rotating/moving the camera to the right."
     },
     {
       "Field": "cameraRightAdd",
-      "Name": "カメラ右移動[追加入力]",
-      "Description": ""
+      "Name": "Camera Move Right (Additional Input)",
+      "Description": "Secondary input for camera right movement."
     },
     {
       "Field": "cameraLeft",
-      "Name": "カメラ左移動",
-      "Description": ""
+      "Name": "Camera Move Left",
+      "Description": "Primary input for rotating/moving the camera to the left."
     },
     {
       "Field": "cameraLeftAdd",
-      "Name": "カメラ左移動[追加入力]",
-      "Description": ""
+      "Name": "Camera Move Left (Additional Input)",
+      "Description": "Secondary input for camera left movement."
     },
     {
       "Field": "lockonAndReset",
-      "Name": "ロックオン／カメラリセット",
-      "Description": ""
+      "Name": "Lock-On / Reset Camera",
+      "Description": "Toggles target lock-on or resets camera depending on context."
     },
     {
       "Field": "lockonAndResetAdd",
-      "Name": "ロックオン／カメラリセット[追加入力]",
-      "Description": ""
+      "Name": "Lock-On / Reset Camera (Additional Input)",
+      "Description": "Secondary binding for lock-on or camera reset."
     },
     {
       "Field": "changeSelectMagic",
-      "Name": "魔法切り替え",
-      "Description": ""
+      "Name": "Switch Magic",
+      "Description": "Cycles or changes selected magic/spells."
     },
     {
       "Field": "changeSelectMagicAdd",
-      "Name": "魔法切り替え[追加入力]",
-      "Description": ""
+      "Name": "Switch Magic (Additional Input)",
+      "Description": "Secondary binding for switching magic."
     },
     {
       "Field": "changeSelectItem",
-      "Name": "道具切り替え",
-      "Description": ""
+      "Name": "Switch Item",
+      "Description": "Cycles or changes selected consumable item."
     },
     {
       "Field": "changeSelectItemAdd",
-      "Name": "道具切り替え[追加入力]",
-      "Description": ""
+      "Name": "Switch Item (Additional Input)",
+      "Description": "Secondary binding for switching items."
     },
     {
       "Field": "changeSelectRWeapon",
-      "Name": "右武器切り替え",
-      "Description": ""
+      "Name": "Switch Right Weapon",
+      "Description": "Changes the equipped right-hand weapon."
     },
     {
       "Field": "changeSelectRWeaponAdd",
-      "Name": "右武器切り替え[追加入力]",
-      "Description": ""
+      "Name": "Switch Right Weapon (Additional Input)",
+      "Description": "Secondary binding for right-hand weapon switching."
     },
     {
       "Field": "changeSelectLWeapon",
-      "Name": "左武器切り替え",
-      "Description": ""
+      "Name": "Switch Left Weapon",
+      "Description": "Changes the equipped left-hand weapon."
     },
     {
       "Field": "changeSelectLWeaponAdd",
-      "Name": "左武器切り替え[追加入力]",
-      "Description": ""
+      "Name": "Switch Left Weapon (Additional Input)",
+      "Description": "Secondary binding for left-hand weapon switching."
     },
     {
       "Field": "weakAttackRight",
-      "Name": "右手アクション（弱攻撃）",
-      "Description": ""
+      "Name": "Right Hand Weak Attack",
+      "Description": "Performs a light attack using the right-hand weapon."
     },
     {
       "Field": "weakAttackRightAdd",
-      "Name": "右手アクション（弱攻撃）[追加入力]",
-      "Description": ""
+      "Name": "Right Hand Weak Attack (Additional Input)",
+      "Description": "Secondary binding for right-hand light attack."
     },
     {
       "Field": "strongAttackRight",
-      "Name": "右手アクション（強攻撃）",
-      "Description": ""
+      "Name": "Right Hand Strong Attack",
+      "Description": "Performs a heavy attack using the right-hand weapon."
     },
     {
       "Field": "strongAttackRightAdd",
-      "Name": "右手アクション（強攻撃）[追加入力]",
-      "Description": ""
+      "Name": "Right Hand Strong Attack (Additional Input)",
+      "Description": "Secondary binding for right-hand heavy attack."
     },
     {
       "Field": "weakAttackLeft",
-      "Name": "左手アクション（弱攻撃）",
-      "Description": ""
+      "Name": "Left Hand Weak Attack",
+      "Description": "Performs a light attack using the left-hand weapon."
     },
     {
       "Field": "weakAttackLeftAdd",
-      "Name": "左手アクション（弱攻撃）[追加入力]",
-      "Description": ""
+      "Name": "Left Hand Weak Attack (Additional Input)",
+      "Description": "Secondary binding for left-hand light attack."
     },
     {
       "Field": "strongAttackLeft",
-      "Name": "左手アクション（強攻撃）",
-      "Description": ""
+      "Name": "Left Hand Strong Attack",
+      "Description": "Performs a heavy attack using the left-hand weapon."
     },
     {
       "Field": "strongAttackLeftAdd",
-      "Name": "左手アクション（強攻撃）[追加入力]",
-      "Description": ""
+      "Name": "Left Hand Strong Attack (Additional Input)",
+      "Description": "Secondary binding for left-hand heavy attack."
     },
     {
       "Field": "useItem",
-      "Name": "アイテム使用",
-      "Description": ""
+      "Name": "Use Item",
+      "Description": "Uses the currently selected item."
     },
     {
       "Field": "useItemAdd",
-      "Name": "アイテム使用[追加入力]",
-      "Description": ""
+      "Name": "Use Item (Additional Input)",
+      "Description": "Secondary binding for item usage."
     },
     {
       "Field": "operation",
-      "Name": "操作アクション",
-      "Description": ""
+      "Name": "Context Action",
+      "Description": "Performs context-sensitive interaction actions such as examining or interacting."
     },
     {
       "Field": "operationAdd",
-      "Name": "操作アクション[追加入力]",
-      "Description": ""
+      "Name": "Context Action (Additional Input)",
+      "Description": "Secondary binding for context actions."
     },
     {
       "Field": "switchingTwoHandsRight",
-      "Name": "両手持ち切り替え",
-      "Description": ""
+      "Name": "Two-Hand Weapon Toggle",
+      "Description": "Switches right-hand weapon to two-handed use or back."
     },
     {
       "Field": "switchingTwoHandsRightAdd",
-      "Name": "両手持ち切り替え[追加入力]",
-      "Description": ""
+      "Name": "Two-Hand Weapon Toggle (Additional Input)",
+      "Description": "Secondary binding for two-hand weapon toggle."
     },
     {
       "Field": "showMenu",
-      "Name": "メニュー表示",
-      "Description": ""
+      "Name": "Open Menu",
+      "Description": "Opens the main system/menu interface."
     },
     {
       "Field": "showMenuAdd",
-      "Name": "メニュー表示[追加入力]",
-      "Description": ""
+      "Name": "Open Menu (Additional Input)",
+      "Description": "Secondary binding for opening the menu."
     },
     {
       "Field": "selectUp",
-      "Name": "選択（上）",
-      "Description": ""
+      "Name": "Navigate Up",
+      "Description": "Moves selection cursor upward in menus."
     },
     {
       "Field": "selectUpAdd",
-      "Name": "選択（上）[追加入力]",
-      "Description": ""
+      "Name": "Navigate Up (Additional Input)",
+      "Description": "Secondary binding for menu upward navigation."
     },
     {
       "Field": "selectDown",
-      "Name": "選択（下）",
-      "Description": ""
+      "Name": "Navigate Down",
+      "Description": "Moves selection cursor downward in menus."
     },
     {
       "Field": "selectDownAdd",
-      "Name": "選択（下）[追加入力]",
-      "Description": ""
+      "Name": "Navigate Down (Additional Input)",
+      "Description": "Secondary binding for menu downward navigation."
     },
     {
       "Field": "selectRight",
-      "Name": "選択（右）",
-      "Description": ""
+      "Name": "Navigate Right",
+      "Description": "Moves selection cursor to the right in menus."
     },
     {
       "Field": "selectRightAdd",
-      "Name": "選択（右）[追加入力]",
-      "Description": ""
+      "Name": "Navigate Right (Additional Input)",
+      "Description": "Secondary binding for menu right navigation."
     },
     {
       "Field": "selectLeft",
-      "Name": "選択（左）",
-      "Description": ""
+      "Name": "Navigate Left",
+      "Description": "Moves selection cursor to the left in menus."
     },
     {
       "Field": "selectLeftAdd",
-      "Name": "選択（左）[追加入力]",
-      "Description": ""
+      "Name": "Navigate Left (Additional Input)",
+      "Description": "Secondary binding for menu left navigation."
     },
     {
       "Field": "select",
-      "Name": "決定",
-      "Description": ""
+      "Name": "Confirm / Accept",
+      "Description": "Confirms selection or activates selected menu option."
     },
     {
       "Field": "selectAdd",
-      "Name": "決定[追加入力]",
-      "Description": ""
+      "Name": "Confirm (Additional Input)",
+      "Description": "Secondary confirm input binding."
     },
     {
       "Field": "cancel",
-      "Name": "キャンセル",
-      "Description": ""
+      "Name": "Cancel / Back",
+      "Description": "Cancels an action or returns to the previous menu."
     },
     {
       "Field": "cancelAdd",
-      "Name": "キャンセル[追加入力]",
-      "Description": ""
+      "Name": "Cancel (Additional Input)",
+      "Description": "Secondary cancel/back input binding."
     },
     {
       "Field": "unk58",
-      "Name": "unk58",
-      "Description": ""
+      "Name": "Unknown 58",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk59",
-      "Name": "unk59",
-      "Description": ""
+      "Name": "Unknown 59",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk60",
-      "Name": "unk60",
-      "Description": ""
+      "Name": "Unknown 60",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk61",
-      "Name": "unk61",
-      "Description": ""
+      "Name": "Unknown 61",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk62",
-      "Name": "unk62",
-      "Description": ""
+      "Name": "Unknown 62",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk63",
-      "Name": "unk63",
-      "Description": ""
+      "Name": "Unknown 63",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk64",
-      "Name": "unk64",
-      "Description": ""
+      "Name": "Unknown 64",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk65",
-      "Name": "unk65",
-      "Description": ""
+      "Name": "Unknown 65",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk66",
-      "Name": "unk66",
-      "Description": ""
+      "Name": "Unknown 66",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk67",
-      "Name": "unk67",
-      "Description": ""
+      "Name": "Unknown 67",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk68",
-      "Name": "unk68",
-      "Description": ""
+      "Name": "Unknown 68",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk69",
-      "Name": "unk69",
-      "Description": ""
+      "Name": "Unknown 69",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk70",
-      "Name": "unk70",
-      "Description": ""
+      "Name": "Unknown 70",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk71",
-      "Name": "unk71",
-      "Description": ""
+      "Name": "Unknown 71",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk72",
-      "Name": "unk72",
-      "Description": ""
+      "Name": "Unknown 72",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk73",
-      "Name": "unk73",
-      "Description": ""
+      "Name": "Unknown 73",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk74",
-      "Name": "unk74",
-      "Description": ""
+      "Name": "Unknown 74",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "unk75",
-      "Name": "unk75",
-      "Description": ""
+      "Name": "Unknown 75",
+      "Description": "Unidentified input slot (likely reserved or unused)."
     },
     {
       "Field": "padding",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     }
   ]

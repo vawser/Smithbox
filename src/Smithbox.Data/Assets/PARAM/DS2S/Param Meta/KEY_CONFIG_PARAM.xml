@@ -11,14 +11,14 @@
         <moveLeftAdd  Enum="INPUT_ADD_KEY_TYPE"/>
         <parallelMoveAdvance  Enum="INPUT_KEY_TYPE"/>
         <dashMoveAdvance  Enum="INPUT_KEY_TYPE"/>
-        <cameraUp />
-        <cameraUpAdd />
-        <cameraDown />
-        <cameraDownAdd />
-        <cameraRight />
-        <cameraRightAdd />
-        <cameraLeft />
-        <cameraLeftAdd />
+        <cameraUp Enum="INPUT_KEY_TYPE"/>
+        <cameraUpAdd Enum="INPUT_ADD_KEY_TYPE"/>
+        <cameraDown Enum="INPUT_KEY_TYPE"/>
+        <cameraDownAdd Enum="INPUT_ADD_KEY_TYPE"/>
+        <cameraRight Enum="INPUT_KEY_TYPE"/>
+        <cameraRightAdd Enum="INPUT_ADD_KEY_TYPE"/>
+        <cameraLeft Enum="INPUT_KEY_TYPE"/>
+        <cameraLeftAdd Enum="INPUT_ADD_KEY_TYPE"/>
         <lockonAndReset  Enum="INPUT_KEY_TYPE"/>
         <lockonAndResetAdd  Enum="INPUT_ADD_KEY_TYPE"/>
         <changeSelectMagic  Enum="INPUT_KEY_TYPE"/>
@@ -75,6 +75,6 @@
         <unk73 Enum="INPUT_ADD_KEY_TYPE"/>
         <unk74 Enum="INPUT_KEY_TYPE"/>
         <unk75 Enum="INPUT_ADD_KEY_TYPE"/>
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

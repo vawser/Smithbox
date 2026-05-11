@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
     <Field>
-        <textId />
+        <textId FmgRef="keyguide" />
         <width_radius />
         <height />
         <depth />
