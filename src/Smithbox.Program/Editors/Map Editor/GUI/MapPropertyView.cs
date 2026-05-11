@@ -158,62 +158,49 @@ public class MapPropertyView
         ImGui.EndChild();
     }
 
+    private static readonly PropertyInfo _rowNameProp = typeof(Param.Row).GetProperty("Name");
+    private static readonly PropertyInfo _rowIdProp = typeof(Param.Row).GetProperty("ID");
+
     private void PropEditorParamRow(Entity selection)
     {
-        var rowID = -1;
-
-        IReadOnlyList<Param.Cell> cells = new List<Param.Cell>();
-        if (selection.WrappedObject is Param.Row row)
-        {
-            cells = row.Cells;
-            rowID = row.ID;
-        }
-        else if (selection.WrappedObject is MergedParamRow mrow)
-        {
-            cells = mrow.CellHandles;
-            rowID = mrow.ID;
-        }
-
         ImGui.Columns(2);
         ImGui.Separator();
         var id = 0;
 
-        // This should be rewritten somehow it's super ugly
-        PropertyInfo nameProp = selection.WrappedObject.GetType().GetProperty("Name");
-        PropertyInfo idProp = selection.WrappedObject.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(selection.WrappedObject, nameProp, "Name", ref id, selection);
-        PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
+        PropEditorPropInfoRow(selection.WrappedObject, _rowNameProp, "Name", ref id, selection);
+        PropEditorPropInfoRow(selection.WrappedObject, _rowIdProp, "ID", ref id, selection);
 
-        MapEntityPropertyFieldMeta meta = null;
-        ParamAnnotationEntry annotations = null;
-        ParamAnnotationFieldEntry fieldAnnotation = null;
-
-        foreach (Param.Cell cell in cells)
+        if (selection.WrappedObject is MergedParamRow mergedRow)
         {
-            if (selection.WrappedObject is MergedParamRow)
+            var annotations = View.Project.Handler.ParamData.GetParamAnnotations(mergedRow.MetaName);
+            var metaPrefix = $"Param_{mergedRow.MetaName}";
+
+            foreach (Param.Cell cell in mergedRow.CellHandles)
             {
-                var mergedRow = (MergedParamRow)selection.WrappedObject;
+                var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, metaPrefix);
 
-                meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+                if (!CFG.Current.MapEditor_Field_List_Display_Padding && meta.IsPadding)
+                    continue;
 
-                annotations = View.Project.Handler.ParamData.GetParamAnnotations(mergedRow.MetaName);
-                fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
-
+                var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
+                PropEditorPropCellRow(meta, fieldAnnotation, cell, ref id, selection, mergedRow.ID);
             }
-            if (selection.WrappedObject is Param.Row)
+        }
+        else if (selection.WrappedObject is Param.Row row)
+        {
+            var annotations = View.Project.Handler.ParamData.GetParamAnnotations(row.Def.ParamType);
+            var metaPrefix = $"Param_{row.Def.ParamType}";
+
+            foreach (Param.Column column in row.Columns)
             {
-                var paramRow = (Param.Row)selection.WrappedObject;
+                var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, metaPrefix);
 
-                meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+                if (!CFG.Current.MapEditor_Field_List_Display_Padding && meta.IsPadding)
+                    continue;
 
-                annotations = View.Project.Handler.ParamData.GetParamAnnotations(paramRow.Def.ParamType);
-                fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
+                var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, column.Def.InternalName);
+                PropEditorPropCellRow(meta, fieldAnnotation, row[column], ref id, selection, row.ID);
             }
-
-            if (!CFG.Current.MapEditor_Field_List_Display_Padding && meta.IsPadding)
-                continue;
-
-            PropEditorPropCellRow(meta, fieldAnnotation, cell, ref id, selection, rowID);
         }
 
         ImGui.Columns(1);
@@ -225,24 +212,21 @@ public class MapPropertyView
         ImGui.Separator();
         var id = 0;
 
-        // This should be rewritten somehow it's super ugly
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRow_Text);
-        PropertyInfo nameProp = row.GetType().GetProperty("Name");
-        PropertyInfo idProp = row.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
-        PropEditorPropInfoRow(row, idProp, "ID", ref id, null);
+        PropEditorPropInfoRow(row, _rowNameProp, "Name", ref id, null);
+        PropEditorPropInfoRow(row, _rowIdProp, "ID", ref id, null);
         ImGui.PopStyleColor();
 
         ImGui.Separator();
 
-        foreach (Param.Column cell in row.Columns)
+        var annotations = View.Project.Handler.ParamData.GetParamAnnotations(row.Def.ParamType);
+
+        foreach (Param.Column column in row.Columns)
         {
-            var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, column.Def.Parent.ParamType);
+            var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, column.Def.InternalName);
 
-            var annotations = View.Project.Handler.ParamData.GetParamAnnotations(row.Def.ParamType);
-            var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
-
-            PropEditorPropCellRow(meta, fieldAnnotation, row[cell], ref id, null, row.ID);
+            PropEditorPropCellRow(meta, fieldAnnotation, row[column], ref id, null, row.ID);
         }
 
         ImGui.Columns(1);
@@ -605,7 +589,7 @@ public class MapPropertyView
         ImGui.NextColumn();
         var first = entities.First();
 
-        if (first != editName.entity) 
+        if (first != editName.entity)
             editName = (first.Name, first);
 
         ImGui.PushItemWidth(-1);
@@ -853,7 +837,7 @@ public class MapPropertyView
             if (meta != null && meta.IndexProperty)
                 continue;
 
-            if(!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
+            if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             {
                 // Rough heuristic since all unknown fields start with Unk
                 var propName = prop.Name.ToLower();
@@ -1582,7 +1566,7 @@ public class MapPropertyView
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                //Smithbox.Log(this, 
+                //Smithbox.Log(this,
                 //    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
                 //    LogLevel.Warning, LogPriority.Low);
 
