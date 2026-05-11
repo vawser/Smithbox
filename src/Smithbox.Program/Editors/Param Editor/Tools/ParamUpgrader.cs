@@ -64,7 +64,7 @@ public class ParamUpgrader
                 var vanillaVersion = ParamUtils.ParseRegulationVersion(paramData.VanillaBank.ParamVersion);
 
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-                ImGui.Text($"Project primary bank version is below current game version: {primaryVersion} < {vanillaVersion} -- Use the Param Upgrader in the Tool window.");
+                ImGui.Text($"Project primary bank version is below current game version: {primaryVersion} < {vanillaVersion} -- Open the Param Upgrader category in the Tools window.");
                 ImGui.PopStyleColor(1);
             }
         }
