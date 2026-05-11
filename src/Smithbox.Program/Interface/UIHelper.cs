@@ -1,10 +1,12 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.DirectXTex;
 using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System;
 using System.IO;
 using System.Numerics;
 using System.Text;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Application;
 public static class UIHelper
@@ -446,6 +448,278 @@ public static class UIHelper
             pMax,
             ImGui.ColorConvertFloat4ToU32(color)
         );
+    }
+
+    // Int Input
+    public static void IntInput(string id, ref int input, string name = "")
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var width = ImGui.GetWindowWidth() * 0.5f;
+            if (name == "")
+                width = ImGui.GetWindowWidth();
+
+            ImGui.PushItemWidth(width);
+            ImGui.InputInt($"{name}##{id}_input", ref input);
+
+            ImGui.EndTable();
+        }
+    }
+
+    // Text Input
+    public static void SinglelineTextInput(string id, ref string input, string name = "")
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var width = ImGui.GetWindowWidth() * 0.5f;
+            if (name == "")
+                width = ImGui.GetWindowWidth();
+
+            ImGui.PushItemWidth(width);
+            ImGui.InputText($"{name}##{id}_input", ref input, 255);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultilineTextInput(string id, ref string input)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var inputSize = GetMultilineTextSize();
+            ImGui.InputTextMultiline($"##{id}_input", ref input, 65536, inputSize);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static Vector2 GetMultilineTextSize(float height = 150f)
+    {
+        var width = ImGui.GetWindowWidth();
+
+        return new Vector2(width, height);
+    }
+
+    // Button Input
+    public static void ButtonInputEntry(string buttonId, string buttonTitle, string buttonTooltip, Action buttonFunc)
+    {
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ButtonTextAlign, new Vector2(0.01f, 0.5f));
+        if (ImGui.Button($"{buttonTitle}##{buttonId}", GetButtonSize()))
+        {
+            buttonFunc.Invoke();
+        }
+        ImGui.PopStyleVar();
+        if(buttonTooltip != "")
+        {
+            Tooltip(buttonTooltip);
+        }
+    }
+
+    public static Vector2 GetButtonSize(float height = 24f)
+    {
+        var width = ImGui.GetWindowWidth();
+
+        return new Vector2(width, height);
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id, 
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3,
+        string id4, string title4, string tooltip4, Action func4)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+            ButtonInputEntry(id4, title4, tooltip4, func4);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3,
+        string id4, string title4, string tooltip4, Action func4,
+        string id5, string title5, string tooltip5, Action func5)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+            ButtonInputEntry(id4, title4, tooltip4, func4);
+            ButtonInputEntry(id5, title5, tooltip5, func5);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3,
+        string id4, string title4, string tooltip4, Action func4,
+        string id5, string title5, string tooltip5, Action func5,
+        string id6, string title6, string tooltip6, Action func6)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+            ButtonInputEntry(id4, title4, tooltip4, func4);
+            ButtonInputEntry(id5, title5, tooltip5, func5);
+            ButtonInputEntry(id6, title6, tooltip6, func6);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3,
+        string id4, string title4, string tooltip4, Action func4,
+        string id5, string title5, string tooltip5, Action func5,
+        string id6, string title6, string tooltip6, Action func6,
+        string id7, string title7, string tooltip7, Action func7)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+            ButtonInputEntry(id4, title4, tooltip4, func4);
+            ButtonInputEntry(id5, title5, tooltip5, func5);
+            ButtonInputEntry(id6, title6, tooltip6, func6);
+            ButtonInputEntry(id7, title7, tooltip7, func7);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void MultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1,
+        string id2, string title2, string tooltip2, Action func2,
+        string id3, string title3, string tooltip3, Action func3,
+        string id4, string title4, string tooltip4, Action func4,
+        string id5, string title5, string tooltip5, Action func5,
+        string id6, string title6, string tooltip6, Action func6,
+        string id7, string title7, string tooltip7, Action func7,
+        string id8, string title8, string tooltip8, Action func8)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1);
+            ButtonInputEntry(id2, title2, tooltip2, func2);
+            ButtonInputEntry(id3, title3, tooltip3, func3);
+            ButtonInputEntry(id4, title4, tooltip4, func4);
+            ButtonInputEntry(id5, title5, tooltip5, func5);
+            ButtonInputEntry(id6, title6, tooltip6, func6);
+            ButtonInputEntry(id7, title7, tooltip7, func7);
+            ButtonInputEntry(id8, title8, tooltip8, func8);
+
+            ImGui.EndTable();
+        }
     }
 }
 

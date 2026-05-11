@@ -594,7 +594,6 @@ public class ParamFieldWindow
         if (!useLayout || groupsDef == null)
         {
             int index = 0;
-            bool firstRow = true;
 
             foreach (var field in fieldOrder)
             {

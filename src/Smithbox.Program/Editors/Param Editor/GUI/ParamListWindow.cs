@@ -9,6 +9,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ public class ParamListWindow
 
     public void Display(bool doFocus, bool isActiveView, float scrollTo)
     {
+        DisplayTitle();
         DisplayHeader(isActiveView);
 
         if (CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
@@ -55,25 +57,28 @@ public class ParamListWindow
         ImGui.EndChild();
     }
 
-    private void DisplayHeader(bool isActiveView)
+    private void DisplayTitle()
     {
-        ImGui.Text("Params");
+        var paramListTitle = "Param List";
 
         // Param Version
         if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion != 0)
         {
-            ImGui.SameLine();
-            ImGui.Text($"- Version {ParamUtils.ParseParamVersion(Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion)}");
+            paramListTitle = $"Param List - Version {ParamUtils.ParseParamVersion(Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion)}";
 
             if (Editor.Project.Handler.ParamData.PrimaryBank.ParamVersion < Editor.Project.Handler.ParamData.VanillaBank.ParamVersion)
             {
-                ImGui.SameLine();
-
-                UIHelper.WrappedText("(out of date)");
+                paramListTitle = $"{paramListTitle} (out of date)";
             }
         }
 
-        ImGui.Separator();
+        UIHelper.SimpleHeader($"{paramListTitle}", "");
+    }
+
+    private void DisplayHeader(bool isActiveView)
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("ParamFileHeaderSection", searchHeight, ImGuiChildFlags.Borders);
 
         // Autofill
         if (ParentView.MassEdit.AutoFill != null)
@@ -108,18 +113,21 @@ public class ParamListWindow
         }
 
         // Toggle Table Group Column
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Table}##tableGroupVisToggle"))
+        if (AllowTableGroupToggle())
         {
-            CFG.Current.ParamEditor_Display_Table_List = !CFG.Current.ParamEditor_Display_Table_List;
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Table}##tableGroupVisToggle"))
+            {
+                CFG.Current.ParamEditor_Display_Table_List = !CFG.Current.ParamEditor_Display_Table_List;
+            }
+
+            var tableGroupWindowVis = "Hidden";
+            if (!CFG.Current.ParamEditor_Display_Table_List)
+                tableGroupWindowVis = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of the Table Group window.\nCurrent Mode: {tableGroupWindowVis}");
         }
-
-        var tableGroupWindowVis = "Hidden";
-        if (!CFG.Current.ParamEditor_Display_Table_List)
-            tableGroupWindowVis = "Visible";
-
-        UIHelper.Tooltip($"Toggle the display of the Table Group window.\nCurrent Mode: {tableGroupWindowVis}");
 
         // Toggle Param Community Names
         ImGui.SameLine();
@@ -149,7 +157,25 @@ public class ParamListWindow
 
         UIHelper.Tooltip($"Toggle the display of param categories.\nCurrent Mode: {paramCategoriesVis}");
 
-        ImGui.Separator();
+        ImGui.EndChild();
+    }
+
+    private bool AllowTableGroupToggle()
+    {
+        var activeParam = ParentView.Selection.GetActiveParam();
+
+        if (Project.Handler.ParamData.TableParamList == null)
+            return false;
+
+        if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
+            return false;
+
+        if (Project.Handler.ParamData.TableParamList.Params.Contains(activeParam))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void DisplayPinnedParams()
@@ -158,6 +184,11 @@ public class ParamListWindow
 
         if (pinnedParamKeyList.Count > 0)
         {
+            var height = 6 + (20 * pinnedParamKeyList.Count);
+
+            var searchHeight = new Vector2(0, height) * DPI.UIScale();
+            ImGui.BeginChild("ParamFilePinnedSection", searchHeight, ImGuiChildFlags.Borders);
+
             foreach (var paramKey in pinnedParamKeyList)
             {
                 HashSet<int> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
@@ -189,14 +220,14 @@ public class ParamListWindow
                 }
             }
 
-            ImGui.Spacing();
-            ImGui.Separator();
-            ImGui.Spacing();
+            ImGui.EndChild();
         }
     }
 
     private void DisplayParams(bool doFocus, float scrollTo)
     {
+        ImGui.BeginChild("ParamFileParamSection", ImGuiChildFlags.Borders);
+
         List<string> paramKeyList = CacheBank.GetCached(Editor, ParentView.ViewIndex, () =>
         {
             var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
@@ -320,6 +351,8 @@ public class ParamListWindow
             // Fallback to full view
             DisplayParamList(paramKeyList, paramKeyList, doFocus, scrollTo);
         }
+
+        ImGui.EndChild();
     }
 
     public void DisplayParamList(List<string> paramKeyList, List<string> visibleParams, bool doFocus, float scrollTo)

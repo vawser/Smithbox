@@ -488,6 +488,21 @@ public class ParamTableWindow
 
         return false;
     }
+    public bool AllowTableGroupToggle(string activeParam)
+    {
+        if (!CFG.Current.ParamEditor_Display_Table_List)
+            return false;
+
+        if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
+            return false;
+
+        if (Project.Handler.ParamData.TableParamList.Params.Contains(activeParam))
+        {
+            return true;
+        }
+
+        return false;
+    }
 
     public void WriteTableGroupNames(string writeDir = "")
     {

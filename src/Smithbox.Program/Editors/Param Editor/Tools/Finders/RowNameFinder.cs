@@ -40,14 +40,10 @@ public class RowNameFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = (Size.X / 100) * 95;
-        float EditY = (Size.Y / 100) * 25;
-
         UIHelper.WrappedText("Display all instances of a specificed row name.");
         UIHelper.WrappedText("");
 
-        /// Targeted Param
+        // Targeted Param
         UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
 
         // Add
@@ -95,6 +91,7 @@ public class RowNameFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
+            ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
             if (ImGui.InputText($"##paramTargetInput{i}_rowNameFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -104,28 +101,20 @@ public class RowNameFinder
 
         UIHelper.WrappedText("");
 
-        /// Search Configuration
-        UIHelper.SimpleHeader("Search Configuration", "The configuration parameters for the search.");
+        // Search Text
+        UIHelper.SimpleHeader("Search", "");
 
         // Row Index
-        UIHelper.WrappedText("Row Index:");
-        ImGui.InputInt($"##rowIndex_{imguiID}", ref SearchIndex);
-
+        UIHelper.IntInput($"rowIndex_{imguiID}", ref SearchIndex, "Row Index");
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
         // Search Text
-        UIHelper.WrappedText("Search Text:");
-        ImGui.InputText($"##searchText_{imguiID}", ref SearchText, 255);
+        UIHelper.SinglelineTextInput($"searchText_{imguiID}", ref SearchText, "Search Text");
         UIHelper.Tooltip("The row name to search for. Matches loosely.");
 
-        // Search Button
-        if (ImGui.Button("Search##action_SearchForRowNames"))
-        {
-            CachedSearchText = SearchText;
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
+        UIHelper.MultiButtonInput("searchActions",
+            "search", "Search", "", ConductSearch,
+            "clearSearch", "Clear", "", ClearSearch);
 
         UIHelper.WrappedText("");
 
@@ -144,7 +133,7 @@ public class RowNameFinder
             UIHelper.WrappedText($"Param: Row Name");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
+                new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -162,6 +151,21 @@ public class RowNameFinder
         }
 
         UIHelper.WrappedText("");
+    }
+
+    public void ConductSearch()
+    {
+        CachedSearchText = SearchText;
+
+        Results = ConstructResults();
+        Results.Sort();
+    }
+
+    public void ClearSearch()
+    {
+        SearchText = "";
+        CachedSearchText = "";
+        Results = new();
     }
 
     /// <summary>

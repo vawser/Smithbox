@@ -58,52 +58,9 @@ public class ParamListCategories
 
             UIHelper.SimpleHeader("Actions", "");
 
-            if (ImGui.Button("New Entry"))
-            {
-                isNewEntryMode = true;
-                isEditEntryMode = false;
-
-                NewEntryName = "";
-                NewEntryParamsCount = 1;
-                NewEntryParams = new List<string>() { "" };
-            }
-            UIHelper.Tooltip("Create a new param category.");
-
-            ImGui.SameLine();
-            if (ImGui.Button("Save Changes"))
-            {
-                Write();
-                isNewEntryMode = false;
-                isEditEntryMode = false;
-            }
-            UIHelper.Tooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
-
-            if (ImGui.Button("Edit Selected Entry"))
-            {
-                isNewEntryMode = false;
-                isEditEntryMode = true;
-                isInitialEditMode = true;
-            }
-            UIHelper.Tooltip("Edit the currently selected param category.");
-
-            ImGui.SameLine();
-            if (ImGui.Button("Delete Selected Entry"))
-            {
-                Project.Handler.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
-
-                _selectedUserCategory = null;
-                isNewEntryMode = false;
-                isEditEntryMode = false;
-            }
-            UIHelper.Tooltip("Delete the currently selected param category.");
-
-            if (ImGui.Button("Restore Base Categories"))
-            {
-                RestoreDefault();
-                isNewEntryMode = false;
-                isEditEntryMode = false;
-            }
-            UIHelper.Tooltip("Restore the default param categories.");
+            UIHelper.MultiButtonInput("baseActions",
+                "saveEntries", "Save Changes", "Save the current changes made to categories.", SaveEntriesAction,
+                "restoreEntries", "Restore Base Categories", "Restore the base category list.", RestoreEntriesAction);
 
             ImGui.Text("");
 
@@ -121,152 +78,269 @@ public class ParamListCategories
             }
             ImGui.EndChild();
 
+            UIHelper.MultiButtonInput("entryActions",
+                "newEntry", "Create New Entry", "Create a new category.", NewEntryAction,
+                "editEntry", "Edit Selected Entry", "Edit an existing category.", EditEntryAction,
+                "deleteEntry", "Delete Selected Entry", "Delete an existing category.", DeleteEntryAction);
+
             ImGui.Text("");
 
             // New Entry
             if (isNewEntryMode)
             {
-                UIHelper.SimpleHeader("New Param Category Entry", "");
-
-                ImGui.InputText("Name##newEntryName", ref NewEntryName, 255);
-                UIHelper.Tooltip("The name of this param category.");
-
-                if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
-                {
-                    ForceBottom = false;
-                }
-                UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
-
-                if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
-                {
-                    ForceTop = false;
-                }
-                UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
-
-                if (ImGui.Button("Expand List", DPI.StandardButtonSize))
-                {
-                    NewEntryParams.Add("");
-                    NewEntryParamsCount++;
-                }
-                UIHelper.Tooltip("Add another param entry to fill.");
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Finalize Entry", DPI.StandardButtonSize))
-                {
-                    isNewEntryMode = false;
-
-                    var nameEntry = new ParamCategoryNameEntry();
-                    nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
-                    nameEntry.Name = NewEntryName;
-
-                    var newCategoryEntry = new ParamCategoryEntry();
-                    newCategoryEntry.Key = NewEntryName;
-                    newCategoryEntry.DisplayNames = [nameEntry];
-                    newCategoryEntry.Params = NewEntryParams;
-
-                    Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
-                }
-
-                ImGui.Text("");
-                ImGui.Text("Params to add:");
-                for (int i = 0; i < NewEntryParamsCount; i++)
-                {
-                    var curText = NewEntryParams[i];
-                    ImGui.InputText($"##newParamName{i}", ref curText, 255);
-                    NewEntryParams[i] = curText;
-
-                    ImGui.SameLine();
-
-                    if (NewEntryParams.Count > 1)
-                    {
-                        if (ImGui.Button($"Remove##removeNewParamName{i}"))
-                        {
-                            NewEntryParams.RemoveAt(i);
-                            NewEntryParamsCount = NewEntryParams.Count;
-                        }
-                    }
-                }
+                DisplayNewEntrySection();
             }
 
             // Edit Entry
             if (isEditEntryMode)
             {
-                UIHelper.SimpleHeader("Edit Param Category Entry", "");
-
-                if (_selectedUserCategory != null)
-                {
-                    // Fill with existing stuff
-                    if (isInitialEditMode)
-                    {
-                        isInitialEditMode = false;
-
-                        NewEntryName = _selectedUserCategory.GetDisplayName();
-                        NewEntryParamsCount = _selectedUserCategory.Params.Count;
-                        ForceTop = _selectedUserCategory.ForceTop;
-                        ForceBottom = _selectedUserCategory.ForceBottom;
-                        NewEntryParams = _selectedUserCategory.Params;
-                    }
-
-                    // Edit
-                    if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
-                    {
-                        ForceBottom = false;
-                    }
-                    UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
-
-                    if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
-                    {
-                        ForceTop = false;
-                    }
-                    UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
-
-                    if (ImGui.Button("Expand List", DPI.StandardButtonSize))
-                    {
-                        NewEntryParams.Add("");
-                        NewEntryParamsCount++;
-                    }
-                    UIHelper.Tooltip("Add another param entry to fill.");
-
-                    ImGui.SameLine();
-
-                    if (ImGui.Button("Finalize Entry", DPI.StandardButtonSize))
-                    {
-                        isEditEntryMode = false;
-
-                        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.GetDisplayName() == NewEntryName).FirstOrDefault();
-
-                        if (curEntry != null)
-                        {
-                            curEntry.Params = NewEntryParams;
-                            curEntry.ForceTop = ForceTop;
-                            curEntry.ForceBottom = ForceBottom;
-                        }
-                    }
-
-                    ImGui.Text("");
-                    ImGui.Text("Params to add:");
-                    for (int i = 0; i < NewEntryParamsCount; i++)
-                    {
-                        var curText = NewEntryParams[i];
-                        ImGui.InputText($"##newParamName{i}", ref curText, 255);
-                        NewEntryParams[i] = curText;
-
-                        ImGui.SameLine();
-
-                        if (NewEntryParams.Count > 1)
-                        {
-                            if (ImGui.Button($"Remove##removeNewParamName{i}"))
-                            {
-                                NewEntryParams.RemoveAt(i);
-                                NewEntryParamsCount = NewEntryParams.Count;
-                            }
-                        }
-                    }
-                }
+                DisplayEditEntrySection();
             }
 
             ImGui.EndChild();
+        }
+    }
+
+    public void NewEntryAction()
+    {
+        isNewEntryMode = true;
+        isEditEntryMode = false;
+
+        NewEntryName = "";
+        NewEntryParamsCount = 1;
+        NewEntryParams = new List<string>() { "" };
+    }
+
+    public void SaveEntriesAction()
+    {
+        Write();
+        isNewEntryMode = false;
+        isEditEntryMode = false;
+    }
+
+    public void EditEntryAction()
+    {
+        isNewEntryMode = false;
+        isEditEntryMode = true;
+        isInitialEditMode = true;
+    }
+    public void DeleteEntryAction()
+    {
+        Project.Handler.ParamData.ParamCategories.Categories.Remove(_selectedUserCategory);
+
+        _selectedUserCategory = null;
+        isNewEntryMode = false;
+        isEditEntryMode = false;
+    }
+
+    public void RestoreEntriesAction()
+    {
+        RestoreDefault();
+        isNewEntryMode = false;
+        isEditEntryMode = false;
+    }
+
+    public void DisplayNewEntrySection()
+    {
+        UIHelper.SimpleHeader("New Entry Name", "");
+
+        UIHelper.SinglelineTextInput("newEntryName", ref NewEntryName);
+        UIHelper.Tooltip("The name of the new param category.");
+
+        UIHelper.MultiButtonInput("newEntryActions",
+            "finalizeNewEntry", "Finalize", "", FinalizeNewEntry);
+
+        UIHelper.WrappedText("");
+        UIHelper.SimpleHeader("New Entry Options", "");
+
+        if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+        {
+            ForceBottom = false;
+        }
+        UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+
+        if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
+        {
+            ForceTop = false;
+        }
+        UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+
+        UIHelper.WrappedText("");
+        UIHelper.SimpleHeader("New Entry Params", "");
+
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory"))
+        {
+            NewEntryParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (NewEntryParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory"))
+            {
+                NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory"))
+            {
+                NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset_ParamListCategory"))
+        {
+            NewEntryParams = new List<string>();
+        }
+        UIHelper.Tooltip("Reset param target input rows.");
+
+        for (int i = 0; i < NewEntryParams.Count; i++)
+        {
+            var curText = NewEntryParams[i];
+
+            ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
+            if (ImGui.InputText($"##newParamName{i}", ref curText, 255))
+            {
+                NewEntryParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param to include within this category.");
+        }
+    }
+
+    public void FinalizeNewEntry()
+    {
+        isNewEntryMode = false;
+
+        var nameEntry = new ParamCategoryNameEntry();
+        nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
+        nameEntry.Name = NewEntryName;
+
+        var newCategoryEntry = new ParamCategoryEntry();
+        newCategoryEntry.Key = NewEntryName;
+        newCategoryEntry.DisplayNames = [nameEntry];
+        newCategoryEntry.Params = NewEntryParams;
+
+        Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
+    }
+
+    public void DisplayEditEntrySection()
+    {
+        if (_selectedUserCategory != null)
+        {
+            // Fill with existing stuff
+            if (isInitialEditMode)
+            {
+                isInitialEditMode = false;
+
+                NewEntryName = _selectedUserCategory.GetDisplayName();
+                NewEntryParamsCount = _selectedUserCategory.Params.Count;
+                ForceTop = _selectedUserCategory.ForceTop;
+                ForceBottom = _selectedUserCategory.ForceBottom;
+                NewEntryParams = _selectedUserCategory.Params;
+            }
+
+            UIHelper.SimpleHeader("Edit Entry", "");
+
+            UIHelper.MultiButtonInput("editEntryActions",
+                "finalizeEditEntry", "Finalize", "", FinalizeEditEntry);
+
+            UIHelper.WrappedText("");
+            UIHelper.SimpleHeader("Edit Entry Options", "");
+
+            // Edit
+            if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+            {
+                ForceBottom = false;
+            }
+            UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+
+            if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
+            {
+                ForceTop = false;
+            }
+            UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+
+            UIHelper.WrappedText("");
+            UIHelper.SimpleHeader("Edit Entry Params", "");
+
+            // Add
+            if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory_edit"))
+            {
+                NewEntryParams.Add("");
+            }
+            UIHelper.Tooltip("Add new param target input row.");
+
+            ImGui.SameLine();
+
+            // Remove
+            if (NewEntryParams.Count < 2)
+            {
+                ImGui.BeginDisabled();
+
+                if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory_edit"))
+                {
+                    NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
+                }
+                UIHelper.Tooltip("Remove last added param target input row.");
+
+                ImGui.EndDisabled();
+            }
+            else
+            {
+                if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory_edit"))
+                {
+                    NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
+                    UIHelper.Tooltip("Remove last added param target input row.");
+                }
+            }
+
+            ImGui.SameLine();
+
+            // Reset
+            if (ImGui.Button("Reset##paramTargetReset_ParamListCategory_edit"))
+            {
+                NewEntryParams = new List<string>();
+            }
+            UIHelper.Tooltip("Reset param target input rows.");
+
+            for (int i = 0; i < NewEntryParams.Count; i++)
+            {
+                var curText = NewEntryParams[i];
+
+                ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
+                if (ImGui.InputText($"##newParamName_edit{i}", ref curText, 255))
+                {
+                    NewEntryParams[i] = curText;
+                }
+                UIHelper.Tooltip("The param to include within this category.");
+            }
+        }
+    }
+    public void FinalizeEditEntry()
+    {
+        isEditEntryMode = false;
+
+        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.GetDisplayName() == NewEntryName).FirstOrDefault();
+
+        if (curEntry != null)
+        {
+            curEntry.Params = NewEntryParams;
+            curEntry.ForceTop = ForceTop;
+            curEntry.ForceBottom = ForceBottom;
         }
     }
 

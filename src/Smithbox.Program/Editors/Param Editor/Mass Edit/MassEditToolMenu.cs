@@ -36,6 +36,7 @@ public class MassEditToolMenu
     {
         MassEditScriptSetup();
 
+        // Tabs
         if (ImGui.BeginTabBar("massEditTabs"))
         {
             if (ImGui.BeginTabItem("Command Palette"))
@@ -60,78 +61,47 @@ public class MassEditToolMenu
     private void DisplayCommandPalette()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = Size.X * 0.92f;
-        float EditY = Size.Y * 0.1f;
-
+        // Header
         UIHelper.WrappedText("Write and execute mass edit commands here.");
-        UIHelper.WrappedText("");
-
-        // AutoFill
-        if (Parent.AutoFill != null)
-        {
-            var res = Parent.AutoFill.MassEditCompleteAutoFill();
-            if (res != null)
-            {
-                Parent.State.CurrentMenuInput = Parent.State.CurrentMenuInput + res;
-            }
-        }
 
         // Input
-        UIHelper.SimpleHeader("Input", "Type in the mass edit commands you wish to apply here.");
+        UIHelper.WrappedText("");
+        MassEditUtils.MassEditHeader(Parent, 
+            "Input", "Type in the mass edit commands you wish to apply here.");
 
-        ImGui.InputTextMultiline("##MEditRegexInput", ref Parent.State.CurrentMenuInput, 65536,
-        new Vector2(EditX, EditY));
+        UIHelper.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
 
-        if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", DPI.StandardButtonSize))
-        {
-            Parent.ExecuteMassEdit(
-                Parent.State.CurrentMenuInput,
-                Parent.CurrentView.GetPrimaryBank(),
-                Parent.CurrentView.Selection);
-        }
-
-        ImGui.SameLine();
-
-        if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", DPI.StandardButtonSize))
-        {
-            Parent.State.CurrentMenuInput = "";
-        }
-
-        ImGui.Text("");
+        UIHelper.MultiButtonInput("massEditActions", 
+            "massEditApply", "Apply", "Apply this script", ApplyMassEditAction, 
+            "massEditClear", "Clear", "Clear this script", ClearMassEditInputAction);
 
         // Templates
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Templates", "");
 
-        if (ImGui.BeginCombo("##massEditScripts", CurrentTemplate.name))
-        {
-            foreach (var script in ScriptList)
-            {
-                if (ImGui.Selectable(script.name, CurrentTemplate.name == script.name))
-                {
-                    CurrentTemplate = script;
-                }
-            }
+        MassEditUtils.TemplateComboBox("massEditScripts",ref CurrentTemplate, ScriptList);
 
-            ImGui.EndCombo();
-        }
-
-        if (CurrentTemplate != null)
-        {
-            ImGui.SameLine();
-            if (ImGui.Button("Load"))
-            {
-                Parent.State.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
-            }
-        }
-
-        UIHelper.WrappedText("");
+        UIHelper.MultiButtonInput("massEditScriptActions",
+            "massEditScriptLoad", "Load", "Load this script", LoadMassEditTemplate);
 
         // Output
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Output", "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
         UIHelper.WrappedText($"{Parent.State.MassEditResult}");
+    }
+
+    public void ApplyMassEditAction()
+    {
+        Parent.ExecuteMassEdit(
+            Parent.State.CurrentMenuInput,
+            Parent.CurrentView.GetPrimaryBank(),
+            Parent.CurrentView.Selection);
+    }
+
+    public void ClearMassEditInputAction()
+    {
+        Parent.State.CurrentMenuInput = "";
     }
 
     private void DisplayTemplateMenu()
@@ -139,79 +109,68 @@ public class MassEditToolMenu
         var windowWidth = ImGui.GetWindowWidth();
         var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
 
+        // Header
         UIHelper.WrappedText("Create and edit mass edit templates here.");
-        UIHelper.WrappedText("");
 
+        // Templates
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Existing Templates", "");
 
-        // Scripts
-        if (ImGui.BeginCombo("##massEditScripts", CurrentTemplate.name))
-        {
-            foreach (var script in ScriptList)
-            {
-                if (ImGui.Selectable(script.name, CurrentTemplate.name == script.name))
-                {
-                    CurrentTemplate = script;
-                }
-            }
+        MassEditUtils.TemplateComboBox("massEditScripts", ref CurrentTemplate, ScriptList);
 
-            ImGui.EndCombo();
-        }
+        UIHelper.MultiButtonInput("massEditScriptActions",
+            "massEditScriptEdit", "Edit", "Edit this script", EditMassEditTemplate,
+            "massEditScriptReload", "Update Template List", "", ReloadScripts,
+            "massEditOpenFolder", "Open Template Folder", "", OpenTemplateFolder);
 
-        if (CurrentTemplate != null)
-        {
-            if (ImGui.Button("Load"))
-            {
-                Parent.State.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
-            }
-
-            ImGui.SameLine();
-            if (ImGui.Button("Edit"))
-            {
-                NewScriptName = CurrentTemplate.name;
-                NewScriptContents = GenerateMassedit(CurrentTemplate);
-            }
-            ImGui.SameLine();
-        }
-
-        if (ImGui.Button("Reload"))
-        {
-            ReloadScripts();
-        }
-
+        // Template Contents
         UIHelper.WrappedText("");
+        UIHelper.SimpleHeader("Template Contents", "");
 
+        UIHelper.MultilineTextInput("massEditContents", ref NewScriptContents);
+
+        UIHelper.MultiButtonInput("massEditContentsActions",
+            "massEditScriptSave", "Save", "Save this script", SaveMassEditScript,
+            "massEditScriptClear", "Clear", "Clear this script", ClearMassEditContentsAction);
+
+        // New Template
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("New Template", "");
 
-        ImGui.InputText("##scriptName", ref NewScriptName, 255);
+        UIHelper.SinglelineTextInput("newTemplateName",ref NewScriptName, "Name");
         UIHelper.Tooltip("The file name used for this template.");
-        UIHelper.WrappedText("");
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = Size.X / 100 * 975;
-        float EditY = Size.Y / 100 * 10;
+        UIHelper.MultiButtonInput("massEditTemplateActions",
+            "massEditScriptSave", "Save", "Save this script", SaveMassEditScript);
+    }
 
-        UIHelper.WrappedText("Template:");
-        UIHelper.Tooltip("The mass edit template.");
-
-        ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX, EditY));
-
-        UIHelper.WrappedText("");
-
-        if (ImGui.Button("Save"))
+    public void LoadMassEditTemplate()
+    {
+        if (CurrentTemplate != null)
         {
-            SaveMassEditScript();
-        }
-
-        ImGui.SameLine();
-
-        if (ImGui.Button("Open Template Folder"))
-        {
-            var projectScriptDir = Path.Combine(Parent.Editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Scripts");
-
-            Process.Start("explorer.exe", projectScriptDir);
+            Parent.State.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
         }
     }
+
+    public void EditMassEditTemplate()
+    {
+        NewScriptName = CurrentTemplate.name;
+        NewScriptContents = GenerateMassedit(CurrentTemplate);
+    }
+
+    public void ClearMassEditContentsAction()
+    {
+        NewScriptName = "";
+        NewScriptContents = "";
+    }
+
+    public void OpenTemplateFolder()
+    {
+        var projectScriptDir = Path.Combine(Parent.Editor.Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Scripts");
+
+        Process.Start("explorer.exe", projectScriptDir);
+    }
+
     private void MassEditScriptSetup()
     {
         if (!InitialScriptLoad)

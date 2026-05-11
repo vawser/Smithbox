@@ -45,19 +45,34 @@ public class FieldValueFinder
             return;
         }
 
-        var windowWidth = ImGui.GetWindowWidth();
-
-        var Size = ImGui.GetWindowSize();
-        float EditX = (Size.X / 100) * 95;
-        float EditY = (Size.Y / 100) * 25;
-
+        // Header
         UIHelper.WrappedText("Display all instances of a specified field value.");
         UIHelper.WrappedText("");
+
+        // Search Configuration
+        UIHelper.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Display Row Context Action", ref CFG.Current.ParamEditor_Row_Context_Display_Finder_Quick_Option);
         UIHelper.Tooltip("If enabled, a quick search option will appear in the right-click Row Context menu within the Row List.");
 
-        /// Targeted Param
+        // Checkbox: Enable Range Search
+        ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
+
+        UIHelper.Tooltip("If enabled, the search will search for matches between a start and end value.");
+
+        // Checkbox: Display First Match Only
+        ImGui.Checkbox($"Display First Match Only##firstMatchOnly_{imguiID}", ref DisplayFirstMatchOnlyInResult);
+
+        UIHelper.Tooltip("Only display the first match within a param, instead of all matches.");
+
+        // Checkbox: Display Community Name in Result
+        ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}",
+            ref DisplayCommunityNameInResult);
+        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
+
+        UIHelper.WrappedText("");
+
+        // Targeted Param
         UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
 
         // Add
@@ -105,6 +120,7 @@ public class FieldValueFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
+            ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
             if (ImGui.InputText($"##paramTargetInput{i}_fieldValueFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -114,58 +130,27 @@ public class FieldValueFinder
 
         UIHelper.WrappedText("");
 
-        /// Search Configuration
-        UIHelper.SimpleHeader("Search Configuration", "The configuration parameters for the search.");
-
-        // Checkbox: Enable Range Search
-        ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
-
-        UIHelper.Tooltip("If enabled, the search will search for matches between a start and end value.");
-
-        // Checkbox: Display First Match Only
-        ImGui.Checkbox($"Display First Match Only##firstMatchOnly_{imguiID}", ref DisplayFirstMatchOnlyInResult);
-
-        UIHelper.Tooltip("Only display the first match within a param, instead of all matches.");
-
-        // Checkbox: Display Community Name in Result
-        ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}",
-            ref DisplayCommunityNameInResult);
-        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
-
-        UIHelper.WrappedText("");
+        // Search Text
+        UIHelper.SimpleHeader("Search", "");
 
         if (UseRangeMatchMode)
         {
-            // Start Value
-            UIHelper.WrappedText("Start Value:");
-            ImGui.InputText($"##startSearchValue_{imguiID}", ref RangeSearchText_Start, 255);
+            UIHelper.SinglelineTextInput($"startSearchValue_{imguiID}", ref RangeSearchText_Start, "Start Value");
             UIHelper.Tooltip("The start value in the search range.");
 
-            // End Value
-            UIHelper.WrappedText("End Value:");
-            ImGui.InputText($"##endSearchValue_{imguiID}", ref RangeSearchText_End, 255);
+            UIHelper.SinglelineTextInput($"endSearchValue_{imguiID}", ref RangeSearchText_End, "End Value");
             UIHelper.Tooltip("The end value in the search range.");
         }
 
         if (!UseRangeMatchMode)
         {
-            UIHelper.WrappedText("Search Value:");
-            ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
+            UIHelper.SinglelineTextInput($"searchValue_{imguiID}", ref SearchText, "Search Text");
             UIHelper.Tooltip("The value to search for.");
         }
 
-        if (ImGui.Button($"Search##searchButton_{imguiID}"))
-        {
-            CachedSearchText = SearchText;
-
-            if (UseRangeMatchMode)
-            {
-                CachedSearchText = $"{RangeSearchText_Start} -> {RangeSearchText_End}";
-            }
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
+        UIHelper.MultiButtonInput("searchActions",
+            "search", "Search", "", ConductSearch,
+            "clearSearch", "Clear", "", ClearSearch);
 
         UIHelper.WrappedText("");
 
@@ -184,7 +169,7 @@ public class FieldValueFinder
             UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
+                new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -226,6 +211,26 @@ public class FieldValueFinder
 
         UIHelper.WrappedText("");
 
+    }
+
+    public void ConductSearch()
+    {
+        CachedSearchText = SearchText;
+
+        if (UseRangeMatchMode)
+        {
+            CachedSearchText = $"{RangeSearchText_Start} -> {RangeSearchText_End}";
+        }
+
+        Results = ConstructResults();
+        Results.Sort();
+    }
+
+    public void ClearSearch()
+    {
+        SearchText = "";
+        CachedSearchText = "";
+        Results = new();
     }
 
     /// <summary>

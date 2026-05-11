@@ -45,14 +45,40 @@ public class FieldNameFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = (Size.X / 100) * 95;
-        float EditY = (Size.Y / 100) * 25;
-
+        // Header
         UIHelper.WrappedText("Display all fields and the respective params they appear in based on the search text.");
         UIHelper.WrappedText("");
 
-        /// Targeted Param
+        // Options
+        UIHelper.SimpleHeader("Options", "");
+
+        // Checkbox: Include Community Name in Search
+        ImGui.Checkbox($"Include Community Name in Search##includeCommunityName_{imguiID}",
+            ref IncludeCommunityNameInSearch);
+
+        UIHelper.Tooltip("Include the community name text for a field in the search.");
+
+        // Checkbox: Include Descriptions in Search
+        ImGui.Checkbox($"Include Descriptions in Search##includeDescriptions_{imguiID}",
+            ref IncludeDescriptionInSearch);
+
+        UIHelper.Tooltip("Include the description text for a field in the search.");
+
+        // Checkbox: Match Exactly
+        ImGui.Checkbox($"Complete Word Match##matchExact_{imguiID}",
+            ref MatchTextExactly);
+
+        UIHelper.Tooltip("When matching, ensure the search term is an exact match for a word, not a partial element of the word." +
+            "\nFor internal names, this will split the string based on capitalization before checking.");
+
+        // Checkbox: Display Community Name in Results
+        ImGui.Checkbox($"Display Community Name in Results##useCommunityNames_{imguiID}",
+            ref DisplayCommunityNameInResult);
+        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
+
+        UIHelper.WrappedText("");
+
+        // Targeted Params
         UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
 
         // Add
@@ -100,6 +126,7 @@ public class FieldNameFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
+            ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
             if (ImGui.InputText($"##paramTargetInput{i}_fieldIdFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -109,52 +136,14 @@ public class FieldNameFinder
 
         UIHelper.WrappedText("");
 
-        /// Search Configuration
-        UIHelper.SimpleHeader("Search Configuration", "The configuration parameters for the search.");
-
-        // Checkbox: Include Community Name in Search
-        ImGui.Checkbox($"Include Community Name in Search##includeCommunityName_{imguiID}",
-            ref IncludeCommunityNameInSearch);
-
-        UIHelper.Tooltip("Include the community name text for a field in the search.");
-
-        // Checkbox: Include Descriptions in Search
-        ImGui.Checkbox($"Include Descriptions in Search##includeDescriptions_{imguiID}",
-            ref IncludeDescriptionInSearch);
-
-        UIHelper.Tooltip("Include the description text for a field in the search.");
-
-        // Checkbox: Match Exactly
-        ImGui.Checkbox($"Complete Word Match##matchExact_{imguiID}",
-            ref MatchTextExactly);
-
-        UIHelper.Tooltip("When matching, ensure the search term is an exact match for a word, not a partial element of the word." +
-            "\nFor internal names, this will split the string based on capitalization before checking.");
-
-        // Checkbox: Display Community Name in Results
-        ImGui.Checkbox($"Display Community Name in Results##useCommunityNames_{imguiID}",
-            ref DisplayCommunityNameInResult);
-        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
-
-        UIHelper.WrappedText("");
-
         // Search Text
-        UIHelper.WrappedText("Search Text:");
+        UIHelper.SimpleHeader("Search", "");
 
-        ImGui.InputText("##searchString", ref SearchText, 255);
-        UIHelper.Tooltip("The text to search for. Matches loosely by default.");
+        UIHelper.SinglelineTextInput("searchInput", ref SearchText, "Search Text");
 
-        // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}"))
-        {
-            if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
-            {
-                CachedSearchText = SearchText;
-
-                Results = ConstructResults();
-                Results.Sort();
-            }
-        }
+        UIHelper.MultiButtonInput("searchActions",
+            "search", "Search", "", ConductSearch,
+            "clearSearch", "Clear", "", ClearSearch);
 
         UIHelper.WrappedText("");
 
@@ -173,7 +162,7 @@ public class FieldNameFinder
             UIHelper.WrappedText($"Param: Row Name");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
+                new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -198,6 +187,24 @@ public class FieldNameFinder
         }
 
         UIHelper.WrappedText("");
+    }
+
+    public void ConductSearch()
+    {
+        if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
+        {
+            CachedSearchText = SearchText;
+
+            Results = ConstructResults();
+            Results.Sort();
+        }
+    }
+
+    public void ClearSearch()
+    {
+        SearchText = "";
+        CachedSearchText = "";
+        Results = new();
     }
 
     /// <summary>

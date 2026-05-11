@@ -113,6 +113,11 @@ public class AutoFill
         ImGui.SameLine();
         ImGui.Button($@"{Icons.CaretDown}##massEditAutofill");
 
+        return MassEditAutoFillPopup();
+    }
+
+    public string MassEditAutoFillPopup()
+    {
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");

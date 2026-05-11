@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.GparamEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,68 +47,14 @@ public class ParamMerger
             ImGui.BeginChild("ParamMergerToolSection", ImGuiChildFlags.Borders);
 
             UIHelper.WrappedText("Select a compatible project below to merge into your current project.");
-            UIHelper.WrappedText("");
             UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
             UIHelper.WrappedText("");
 
             UIHelper.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
 
-            if (ParamMerge_TargetProject != null)
-            {
-                // Load
-                if (!paramData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
-                {
-                    if (ImGui.Button("Load##action_Load", DPI.StandardButtonSize))
-                    {
-                        Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
-
-                        Task.WaitAll(loadTask);
-
-                        paramData.RefreshParamDifferenceCacheTask(true);
-                        TargetParams = new();
-                    }
-
-                    ImGui.SameLine();
-                    ImGui.BeginDisabled();
-                    if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
-                    {
-                    }
-                    ImGui.EndDisabled();
-                }
-                else
-                {
-                    ImGui.BeginDisabled();
-                    if (ImGui.Button("Load##action_Load", DPI.StandardButtonSize))
-                    {
-                    }
-                    ImGui.EndDisabled();
-
-                    ImGui.SameLine();
-                    // Merge
-                    if (ParamMerge_InProgress)
-                    {
-                        ImGui.BeginDisabled();
-                        if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
-                        {
-                        }
-                        ImGui.EndDisabled();
-                    }
-                    else if (!ParamMerge_InProgress)
-                    {
-                        if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
-                        {
-                            MergeParamHandler();
-                        }
-                    }
-                }
-            }
-            else
-            {
-                ImGui.Text("Select a project from below.");
-                ImGui.Text($"");
-            }
-
             var projectList = Smithbox.Orchestrator.Projects;
+
+            ImGui.BeginChild("ProjectListSection", new Vector2(0, 200f), ImGuiChildFlags.Borders);
 
             foreach (var proj in projectList)
             {
@@ -133,17 +80,21 @@ public class ParamMerger
                 }
             }
 
-            UIHelper.WrappedText("");
+            ImGui.EndChild();
+
+            UIHelper.MultiButtonInput("mergeActions",
+                "loadProject", "Load Selected Project", "", LoadProjectAction,
+                "mergeProject", "Merge Selected Project", "Merges the params from the selected project into our current project.", MergeParamsAction);
 
             // Options
+            UIHelper.WrappedText("");
             UIHelper.SimpleHeader("Options", "Options to apply when merging.");
 
             ImGui.Checkbox("Merge Unique Row IDs only", ref ParamMerge_TargetUniqueOnly);
             UIHelper.Tooltip("If enabled, rows where the ID is unique will be merged.");
 
-            UIHelper.WrappedText("");
-
             // Target Params
+            UIHelper.WrappedText("");
             UIHelper.ConditionalHeader("Target Params", "The params to merge.", ref DisplayParamToggles);
 
             // Generate bool dict once
@@ -157,16 +108,12 @@ public class ParamMerger
 
             if (DisplayParamToggles)
             {
-                ImGui.InputText("##paramToggleFilter", ref TargetParamFilter, 255);
+                UIHelper.SinglelineTextInput("paramToggleFilter", ref TargetParamFilter);
 
-                ImGui.SameLine();
-                if (ImGui.Button("Toggle All"))
-                {
-                    foreach (var param in TargetParams)
-                    {
-                        TargetParams[param.Key] = !TargetParams[param.Key];
-                    }
-                }
+                UIHelper.MultiButtonInput("paramToggleActions",
+                    "toggleAllParams", "Toggle All Params", "", ToggleParamsAction);
+
+                ImGui.BeginChild("ParamToggleList", new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
                 foreach (var param in TargetParams)
                 {
@@ -195,20 +142,46 @@ public class ParamMerger
                         }
                     }
                 }
+
+                ImGui.EndChild();
             }
             else
             {
                 ImGui.Text("...");
             }
 
-            UIHelper.WrappedText("");
-
             ImGui.EndChild();
         }
     }
 
-    public void MergeParamHandler()
+    public void ToggleParamsAction()
     {
+        foreach (var param in TargetParams)
+        {
+            TargetParams[param.Key] = !TargetParams[param.Key];
+        }
+    }
+
+    public void LoadProjectAction()
+    {
+        var paramData = Project.Handler.ParamData;
+
+        if (!paramData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
+        {
+            Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
+
+            Task.WaitAll(loadTask);
+
+            paramData.RefreshParamDifferenceCacheTask(true);
+            TargetParams = new();
+        }
+    }
+
+    public void MergeParamsAction()
+    {
+        if (ParamMerge_InProgress)
+            return;
+
         ParamMerge_InProgress = true;
 
         var auxBank = Editor.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];

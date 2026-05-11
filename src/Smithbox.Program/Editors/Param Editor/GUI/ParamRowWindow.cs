@@ -1,6 +1,5 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -10,8 +9,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using Veldrid;
-using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore.Editors.ParamEditor;
 

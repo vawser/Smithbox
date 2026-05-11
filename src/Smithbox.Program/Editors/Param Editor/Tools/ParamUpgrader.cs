@@ -39,7 +39,9 @@ public class ParamUpgrader
         if (ImGui.CollapsingHeader("Param Upgrader"))
         {
             ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
+
             UpgraderMenu();
+
             ImGui.EndChild();
         }
     }
@@ -89,13 +91,15 @@ public class ParamUpgrader
         var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+        UIHelper.WrappedText("Upgrade the param version for this project's params.");
 
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Version", "");
 
         ImGui.Text($"Primary Param Version: {primaryBank.ParamVersion}");
         ImGui.Text($"Source Param Version: {vanillaBank.ParamVersion}");
-        ImGui.Text($"");
 
+        UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Actions", "");
 
         // Start

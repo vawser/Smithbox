@@ -95,7 +95,12 @@ public class ParamDeltaPatcher
 
     public void DisplayImportTab()
     {
+        UIHelper.WrappedText("Import a param delta file here.");
+        UIHelper.WrappedText("");
+
+        // Options
         UIHelper.SimpleHeader("Options", "Options to set for the delta import.");
+
         ImGui.Checkbox("Display All Entries", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -119,42 +124,45 @@ public class ParamDeltaPatcher
         UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
 
         ImGui.Text("");
-
         UIHelper.SimpleHeader("Actions", "");
 
-        if(ImGui.Button("Import", DPI.StandardButtonSize))
+        UIHelper.MultiButtonInput("deltaImportActions",
+            "importDelta", "Import Delta", "Import the currently selected import entry.", ImportAction,
+            "refreshDeltaList", "Refresh Delta List", "Refreshes the delta import list.", RefreshImportListAction);
+
+        if (Selection.ImportList.Count > 0)
         {
-            if (Selection.SelectedImport != null)
-            {
-                ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
-            }
+            ImGui.Text("");
+            UIHelper.SimpleHeader("Entries", "");
+
+            ImGui.BeginChild("importEntryList");
+
+            DisplayEntryList();
+
+            ImGui.Text("");
+
+            ImGui.EndChild();
         }
-        UIHelper.Tooltip("Import the currently selected import entry.");
-
-        ImGui.SameLine();
-
-        if (ImGui.Button("Refresh", DPI.StandardButtonSize))
-        {
-            Selection.RefreshImportList();
-        }
-        UIHelper.Tooltip("Refresh the import entries list.");
-
-        ImGui.Text("");
-
-        UIHelper.SimpleHeader("Entries", "");
-        ImGui.BeginChild("importEntryList");
-
-        DisplayEntryList();
-
-        ImGui.Text("");
-
-        ImGui.EndChild();
 
         if(Selection.QueueImportListRefresh)
         {
             Selection.QueueImportListRefresh = false;
             Selection.RefreshImportList();
         }
+    }
+
+    public void ImportAction()
+    {
+        if (Selection.SelectedImport != null)
+        {
+            ImportPreviewModal.Show(Selection.SelectedImport.Filename, Selection.SelectedImport.Delta);
+        }
+    }
+
+    public void RefreshImportListAction()
+    {
+
+        Selection.RefreshImportList();
     }
 
     public void DisplayEntryList()
@@ -181,7 +189,6 @@ public class ParamDeltaPatcher
         }
 
         // General
-
         if (Selection.ImportList.Any(e => e.Delta.Tag == ""))
         {
             if (ImGui.CollapsingHeader($"General##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
@@ -301,18 +308,20 @@ public class ParamDeltaPatcher
 
     public void DisplayExportTab()
     {
-        UIHelper.SimpleHeader("Filename", "The name of the delta file.");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##inputFileName", ref Selection.ExportName, 255);
+        UIHelper.WrappedText("Export a param delta file here.");
+        UIHelper.WrappedText("");
 
-        UIHelper.SimpleHeader("Tag", "The file tag for the delta file.");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##inputFileTag", ref Selection.ExportFileTag, 255);
+        UIHelper.SimpleHeader("Filename", "The name assigned to the delta file.");
+        UIHelper.SinglelineTextInput($"inputFileName", ref Selection.ExportName);
 
-        UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
+        UIHelper.SimpleHeader("Tags", "The tags assigned to the delta file.");
+        UIHelper.SinglelineTextInput($"inputFileTag", ref Selection.ExportFileTag);
 
-        DPI.ApplyInputWidth();
-        if (ImGui.BeginCombo("Export Mode##inputValue", Selection.CurrentExportMode.GetDisplayName()))
+
+        UIHelper.SimpleHeader("Export Type", "The type of export performed.");
+        var width = ImGui.GetWindowWidth() * 0.5f;
+        ImGui.PushItemWidth(width);
+        if (ImGui.BeginCombo("##inputValue", Selection.CurrentExportMode.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaExportMode)))
             {
@@ -326,31 +335,34 @@ public class ParamDeltaPatcher
             ImGui.EndCombo();
         }
 
+        ImGui.Text("");
+        UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
         ImGui.Checkbox("Ignore Indexed Params", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
         UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
 
         ImGui.Text("");
-
         UIHelper.SimpleHeader("Actions", "");
-        if (ImGui.Button("Export", DPI.StandardButtonSize))
-        {
-            Exporter.GenerateDeltaPatch();
-        }
-        UIHelper.Tooltip("Generate a delta file that represents the changes made within this regulation compared to vanilla.");
 
-        ImGui.SameLine();
-
-        if (ImGui.Button("View Deltas", DPI.StandardButtonSize))
-        {
-            var storageDir = ProjectUtils.GetParamDeltaFolder();
-
-            Process.Start("explorer.exe", storageDir);
-        }
+        UIHelper.MultiButtonInput("exportDeltaActions",
+            "exportDelta", "Export Delta", "", ExportAction,
+            "openDeltaFolder", "Open Delta Folder", "", OpenDeltaFolder);
 
         ImGui.Text("");
     }
 
     #endregion
+
+    public void ExportAction()
+    {
+        Exporter.GenerateDeltaPatch();
+    }
+
+    public void OpenDeltaFolder()
+    {
+        var storageDir = ProjectUtils.GetParamDeltaFolder();
+
+        Process.Start("explorer.exe", storageDir);
+    }
 
     #region IO
     public void DeleteDeltaPatch(string name)

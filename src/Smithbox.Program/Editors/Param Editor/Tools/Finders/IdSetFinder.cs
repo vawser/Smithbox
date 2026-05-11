@@ -36,27 +36,20 @@ public class IdSetFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = (Size.X / 100) * 95;
-        float EditY = (Size.Y / 100) * 25;
-
         UIHelper.WrappedText("Display param that contains the specified set of rows.");
         UIHelper.WrappedText("");
 
-        /// Search Configuration
-        UIHelper.SimpleHeader("Search Configuration", "The configuration parameters for the search.");
+        // Search Text
+        UIHelper.SimpleHeader("Search", "");
 
-        UIHelper.WrappedText("Search Value:");
-
-        ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
+        UIHelper.SinglelineTextInput($"searchValue_{imguiID}", ref SearchText, "Search Text");
         UIHelper.Tooltip("The values to search for. Split with a space.");
 
-        if (ImGui.Button($"Search##searchButton_{imguiID}"))
-        {
-            CachedSearchText = SearchText;
+        UIHelper.MultiButtonInput("searchActions",
+            "search", "Search", "", ConductSearch,
+            "clearSearch", "Clear", "", ClearSearch);
 
-            Results = ConstructResults();
-        }
+        UIHelper.WrappedText("");
 
         // Result List
         if (Results.Count > 0)
@@ -73,7 +66,7 @@ public class IdSetFinder
             UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
+               new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -91,6 +84,20 @@ public class IdSetFinder
 
         UIHelper.WrappedText("");
 
+    }
+
+    public void ConductSearch()
+    {
+        CachedSearchText = SearchText;
+
+        Results = ConstructResults();
+    }
+
+    public void ClearSearch()
+    {
+        SearchText = "";
+        CachedSearchText = "";
+        Results = new();
     }
 
     /// <summary>

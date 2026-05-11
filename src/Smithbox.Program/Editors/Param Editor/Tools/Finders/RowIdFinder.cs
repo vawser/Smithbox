@@ -42,14 +42,10 @@ public class RowIdFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        var Size = ImGui.GetWindowSize();
-        float EditX = (Size.X / 100) * 95;
-        float EditY = (Size.Y / 100) * 25;
-
         UIHelper.WrappedText("Display all instances of a specificed row ID.");
         UIHelper.WrappedText("");
 
-        /// Targeted Param
+        // Targeted Param
         UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
 
         // Add
@@ -97,6 +93,7 @@ public class RowIdFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
+            ImGui.PushItemWidth(ImGui.GetWindowWidth() * 0.5f);
             if (ImGui.InputText($"##paramTargetInput{i}_rowIdFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -106,29 +103,20 @@ public class RowIdFinder
 
         UIHelper.WrappedText("");
 
-        /// Search Configuration
-        UIHelper.SimpleHeader("Search Configuration", "The configuration parameters for the search.");
+        // Search Text
+        UIHelper.SimpleHeader("Search", "");
 
         // Row Index
-        UIHelper.WrappedText("Row Index:");
-        ImGui.InputInt($"##searchIndex_{imguiID}", ref SearchIndex);
-
+        UIHelper.IntInput($"rowIndex_{imguiID}", ref SearchIndex, "Row Index");
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
-        // Row ID
-        UIHelper.WrappedText("Row ID:");
-
-        ImGui.InputInt($"##searchId_{imguiID}", ref SearchID);
+        // Search Text
+        UIHelper.IntInput($"searchId_{imguiID}", ref SearchID, "Row ID");
         UIHelper.Tooltip("The row ID to search for.");
 
-        // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}"))
-        {
-            CachedSearchID = SearchID;
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
+        UIHelper.MultiButtonInput("searchActions",
+            "search", "Search", "", ConductSearch,
+            "clearSearch", "Clear", "", ClearSearch);
 
         UIHelper.WrappedText("");
 
@@ -147,7 +135,7 @@ public class RowIdFinder
             UIHelper.WrappedText($"Param:");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
+                new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -165,6 +153,21 @@ public class RowIdFinder
         }
 
         UIHelper.WrappedText("");
+    }
+
+    public void ConductSearch()
+    {
+        CachedSearchID = SearchID;
+
+        Results = ConstructResults();
+        Results.Sort();
+    }
+
+    public void ClearSearch()
+    {
+        SearchID = -1;
+        CachedSearchID = -1;
+        Results = new();
     }
 
     /// <summary>
