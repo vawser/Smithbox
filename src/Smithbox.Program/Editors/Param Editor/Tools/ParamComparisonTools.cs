@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
@@ -30,6 +31,8 @@ public class ParamComparisonTools
     public bool ImportNamesOnGeneration_Compare = false;
 
     public List<string> TargetedParams = new();
+
+    private readonly StringBuilder _reportBuilder = new StringBuilder();
 
     public ParamComparisonTools(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -138,14 +141,17 @@ public class ParamComparisonTools
         IsReportGenerated = false;
         IsGeneratingReport = true;
         ReportText = "";
+        _reportBuilder.Clear();
 
         var primaryBank = paramData.PrimaryBank;
         var compareBank = paramData.VanillaBank;
 
         if (TargetProjectName != "Vanilla")
         {
-            var auxBank = paramData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
-            compareBank = auxBank.Value;
+            if (paramData.AuxBanks.TryGetValue(TargetProjectName, out var auxBankValue))
+            {
+                compareBank = auxBankValue;
+            }
         }
 
         if (ImportNamesOnGeneration_Primary)
@@ -167,16 +173,19 @@ public class ParamComparisonTools
             }
             else
             {
-                var auxBank = paramData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
-
-                RowNameHelper.ImportRowNames(
-                    Project,
-                    auxBank.Value,
-                    CFG.Current.ParamEditor_Import_Language);
+                if (paramData.AuxBanks.TryGetValue(TargetProjectName, out var auxBankValue))
+                {
+                    RowNameHelper.ImportRowNames(
+                        Project,
+                        auxBankValue,
+                        CFG.Current.ParamEditor_Import_Language);
+                }
             }
         }
 
         AddLog($"# Field values follow this format: [Comparison Value] -> [Primary Value]");
+
+        var targetedSet = TargetedParams.Count > 0 ? new HashSet<string>(TargetedParams) : null;
 
         foreach (var param in primaryBank.Params)
         {
@@ -184,18 +193,13 @@ public class ParamComparisonTools
 
             var primaryParam = param.Value;
 
-            if (TargetedParams.Count > 0)
+            if (targetedSet != null && !targetedSet.Contains(param.Key))
             {
-                if (!TargetedParams.Contains(param.Key))
-                {
-                    continue;
-                }
+                continue;
             }
 
-            if (compareBank.Params.ContainsKey(param.Key))
+            if (compareBank.Params.TryGetValue(param.Key, out var compareParam))
             {
-                var compareParam = compareBank.Params[param.Key];
-
                 ReportDifferences(param.Key, primaryParam, compareParam);
             }
             else
@@ -203,6 +207,7 @@ public class ParamComparisonTools
                 AddLog($"{param.Key} does not exist in comparison.");
             }
         }
+        ReportText = _reportBuilder.ToString();
 
         IsGeneratingReport = false;
         IsReportGenerated = true;
@@ -210,16 +215,21 @@ public class ParamComparisonTools
 
     public void ReportDifferences(string paramKey, Param primaryParam, Param compareParam)
     {
+        var compareRowsById = new Dictionary<int, Queue<Param.Row>>(compareParam.Rows.Count);
+        foreach (var row in compareParam.Rows)
+        {
+            if (!compareRowsById.TryGetValue(row.ID, out var queue))
+                compareRowsById[row.ID] = queue = new Queue<Param.Row>();
+            queue.Enqueue(row);
+        }
+
+        var columns = primaryParam.Columns;
+
         bool HadParamDifference = false;
-        bool HadRowDifference = false;
-        bool HadCellDifference = false;
 
         foreach (var primaryRow in primaryParam.Rows)
         {
-            Param.Row indexedPrimaryRow = primaryParam?[primaryRow.ID];
-            Param.Row indexedCompareRow = compareParam?[primaryRow.ID];
-
-            if (indexedCompareRow == null)
+            if (!compareRowsById.TryGetValue(primaryRow.ID, out var queue) || queue.Count == 0)
             {
                 if (!HadParamDifference)
                 {
@@ -227,68 +237,65 @@ public class ParamComparisonTools
                     AddLog($"[-- {paramKey} --]");
                 }
 
-                if (indexedPrimaryRow.Name != "")
-                {
-                    AddLog($"  {indexedPrimaryRow.ID} ({indexedPrimaryRow.Name}) does not exist in comparison.");
-                }
+                if (!string.IsNullOrEmpty(primaryRow.Name))
+                    AddLog($"  {primaryRow.ID} ({primaryRow.Name}) does not exist in comparison.");
                 else
+                    AddLog($"  {primaryRow.ID} does not exist in comparison.");
+
+                continue;
+            }
+
+            var compareRow = queue.Dequeue();
+
+            if (primaryRow.DataEquals(compareRow))
+                continue;
+
+            bool HadRowDifference = false;
+            bool HadCellDifference = false;
+
+            for (int i = 0; i < columns.Count; i++)
+            {
+                var column = columns[i];
+
+                if (column.Def.DisplayType == PARAMDEF.DefType.dummy8)
+                    continue;
+
+                var primaryValue = column.GetValue(primaryRow);
+                var compareValue = column.GetValue(compareRow);
+
+                if (!primaryValue.Equals(compareValue))
                 {
-                    AddLog($"  {indexedPrimaryRow.ID} does not exist in comparison.");
+                    if (!HadParamDifference)
+                    {
+                        HadParamDifference = true;
+                        AddLog($"[-- {paramKey} --]");
+                    }
+
+                    if (!HadRowDifference)
+                    {
+                        HadRowDifference = true;
+                        if (!string.IsNullOrEmpty(primaryRow.Name))
+                            AddLog($"  {primaryRow.ID} {primaryRow.Name}:");
+                        else
+                            AddLog($"  {primaryRow.ID}:");
+                    }
+
+                    HadCellDifference = true;
+
+                    AddLog($"    [{column.Def.InternalName}]: {compareValue} -> {primaryValue}");
                 }
             }
-            else
+
+            if (HadCellDifference)
             {
-                HadRowDifference = false;
-                HadCellDifference = false;
-
-                foreach (var primaryCell in indexedPrimaryRow.Cells)
-                {
-                    var compareCell = indexedCompareRow.Cells.Where(e => e.Def == primaryCell.Def).FirstOrDefault();
-
-                    if (!compareCell.IsNull())
-                    {
-                        var primaryValue = primaryCell.Value.ToString();
-                        var compareValue = compareCell.Value.ToString();
-
-                        if (primaryValue != compareValue)
-                        {
-                            if (!HadParamDifference)
-                            {
-                                HadParamDifference = true;
-                                AddLog($"[-- {paramKey} --]");
-                            }
-
-                            if (!HadRowDifference)
-                            {
-                                HadRowDifference = true;
-                                if (indexedPrimaryRow.Name != "")
-                                {
-                                    AddLog($"  {indexedPrimaryRow.ID} {indexedPrimaryRow.Name}:");
-                                }
-                                else
-                                {
-                                    AddLog($"  {indexedPrimaryRow.ID}:");
-                                }
-                            }
-
-                            HadCellDifference = true;
-
-                            AddLog($"    [{primaryCell.Def.InternalName}]: {compareValue} -> {primaryValue}");
-                        }
-                    }
-                }
-
-                if (HadCellDifference)
-                {
-                    AddLog($"");
-                }
+                AddLog(string.Empty);
             }
         }
     }
 
     public void AddLog(string text)
     {
-        ReportText = $"{ReportText}{text}\n";
+        _reportBuilder.AppendLine(text);
     }
 
     public ProjectEntry TargetProject;
